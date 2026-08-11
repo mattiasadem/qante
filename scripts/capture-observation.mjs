@@ -123,13 +123,24 @@ try {
     const prepareClick =
       obs.prepareClick || obs.capture?.prepareClick || null;
     if (prepareClick) {
-      const opener = page.locator(prepareClick).first();
-      if (await opener.count()) {
-        await opener.click({ force: true }).catch(() => {});
-        await page.waitForTimeout(1200);
-      } else {
-        console.warn(`prepareClick eşleşmedi: ${prepareClick}`);
+      // Görünür opener tercih et — gizli close/overlay veya yanlış link .first() tuzağı
+      const openers = page.locator(prepareClick);
+      const n = await openers.count();
+      let clicked = false;
+      for (let i = 0; i < n; i++) {
+        const opener = openers.nth(i);
+        if (await opener.isVisible().catch(() => false)) {
+          await opener.click({ force: true }).catch(() => {});
+          clicked = true;
+          break;
+        }
       }
+      if (!clicked && n) {
+        await openers.first().click({ force: true }).catch(() => {});
+        clicked = true;
+      }
+      if (!clicked) console.warn(`prepareClick eşleşmedi: ${prepareClick}`);
+      else await page.waitForTimeout(1200);
     }
 
     const prepareFill = obs.prepareFill || obs.capture?.prepareFill || null;
@@ -140,6 +151,33 @@ try {
         await field.fill(prepareFill.value || "chair").catch(() => {});
         await page.waitForTimeout(1200);
       }
+    }
+
+    // Force-open: bazı overlay'ler gizli/zero-size; JS ile aç
+    if (obs.prepareForceOpen || obs.capture?.prepareForceOpen) {
+      await page.evaluate((sel) => {
+        const els = [...document.querySelectorAll(sel)];
+        for (const el of els) {
+          el.hidden = false;
+          el.removeAttribute("hidden");
+          el.classList.add("active", "open", "is-open");
+          el.classList.remove("drawer--loading", "loading", "is-loading");
+          el.setAttribute("open", "");
+          el.setAttribute("aria-hidden", "false");
+          if (typeof el.show === "function") el.show();
+          if (typeof el.open === "function" && el.open.length === 0) {
+            try {
+              el.open();
+            } catch {}
+          }
+        }
+        document.documentElement.classList.add(
+          "overflow-hidden",
+          "drawer-open",
+          "modal-showing"
+        );
+      }, obs.selector);
+      await page.waitForTimeout(800);
     }
 
     const all = page.locator(obs.selector);
@@ -171,7 +209,10 @@ try {
       await page.evaluate((sel) => {
         const els = [...document.querySelectorAll(sel)];
         for (const el of els) {
+          el.hidden = false;
+          el.removeAttribute("hidden");
           el.classList.add("active", "open", "is-open");
+          el.classList.remove("drawer--loading", "loading", "is-loading");
           el.setAttribute("open", "");
           el.setAttribute("aria-hidden", "false");
           if (typeof el.open === "boolean") el.open = true;
@@ -210,6 +251,37 @@ try {
     // capture.mode:
     //   section  → margin-box kırp (default)
     //   viewport → tüm viewport (drawer/modal: masaüstünde sağ panel + sayfa bağlamı)
+    // Drawer loading spinner / page loader temizliği (SS'e gömülmesin)
+    await page.evaluate((sel) => {
+      document.querySelectorAll(sel).forEach((el) => {
+        el.classList.remove("drawer--loading", "loading", "is-loading");
+      });
+      document.querySelectorAll(
+        ".loading-bar, .loading-overlay, .spinner-overlay, [class*='page-loading']"
+      ).forEach((el) => {
+        el.style?.setProperty("display", "none", "important");
+      });
+      // Tam ekran ortalanmış spinner kutusu (drawer--loading artığı)
+      document.querySelectorAll("*").forEach((el) => {
+        const cls = (el.className || "").toString().toLowerCase();
+        if (!/spinner|loading/.test(cls)) return;
+        const s = getComputedStyle(el);
+        if (s.position !== "fixed" && s.position !== "absolute") return;
+        const r = el.getBoundingClientRect();
+        if (r.width > 80 && r.width < 420 && r.height > 80 && r.height < 420) {
+          const cx = r.left + r.width / 2;
+          const cy = r.top + r.height / 2;
+          if (
+            Math.abs(cx - innerWidth / 2) < 120 &&
+            Math.abs(cy - innerHeight / 2) < 160
+          ) {
+            el.style.setProperty("display", "none", "important");
+          }
+        }
+      });
+    }, obs.selector);
+    await page.waitForTimeout(300);
+
     const mode = obs.captureMode || obs.capture?.mode || "section";
     let clipInfo;
     if (mode === "viewport") {
