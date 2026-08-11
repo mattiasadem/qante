@@ -154,9 +154,9 @@ async function refresh({ keepDetail = false } = {}) {
   facets = data.facets;
 
   const rowCount = data.total;
-  const shotCount = data.groups.reduce((n, g) => n + g.evidenceCount, 0);
   $("#n-browse").textContent = rowCount ? ` ${rowCount}` : "";
-  $("#n-gallery").textContent = shotCount ? ` ${shotCount}` : "";
+
+  if (state.view === "gallery") state.view = "browse";
 
   if (state.view === "candidates" || !candidatesData) {
     candidatesData = await api("/api/candidates");
@@ -175,12 +175,10 @@ async function refresh({ keepDetail = false } = {}) {
 
   if (state.view === "browse") {
     if (!keepDetail) await renderDetail();
-  } else if (state.view === "gallery") {
-    renderGallery();
-  } else if (state.view === "coverage") {
-    await renderCoverage();
   } else if (state.view === "candidates") {
     renderCandidatesDetail();
+  } else if (state.view === "coverage") {
+    await renderCoverage();
   } else if (state.view === "health") {
     await renderHealth();
   }
@@ -717,39 +715,6 @@ function wireCandLinks() {
       refresh();
     };
   });
-}
-
-/* ---------------- gallery ---------------- */
-
-function renderGallery() {
-  const rows = items.groups.flatMap((g) => g.items);
-  const shots = rows.flatMap((r) =>
-    r.evidence
-      .filter((e) => state.vp === "compare" || e.viewport === state.vp)
-      .map((e) => ({ ...e, row: r }))
-  );
-
-  $("#main").innerHTML = `
-    <h2>Galeri</h2>
-    <p class="amac">${shots.length} görsel · filtreye uyan tüm evidence</p>
-    ${renderVpTabs()}
-    ${
-      shots.length
-        ? `<div class="gallery">${shots
-            .map(
-              (s) => `<figure>
-                <img src="/${esc(s.path)}" alt="${esc(s.path)}" loading="lazy" decoding="async" data-shot="${esc(s.path)}" />
-                <figcaption>
-                  <span>${esc(s.row.schemaId)}</span>
-                  <span>${esc(s.row.kaynak || "—")} · ${esc(s.viewport || "?")}</span>
-                </figcaption>
-              </figure>`
-            )
-            .join("")}</div>`
-        : `<p class="empty">Görsel yok. Filtreyi gevşet veya capture çalıştır.</p>`
-    }
-  `;
-  wireImages();
 }
 
 /* ---------------- coverage ---------------- */

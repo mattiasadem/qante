@@ -29,9 +29,8 @@ viewer/
 | Sekme | Ne yapar |
 |---|---|
 | **Gözat** | Sol listede gruplanmış kayıtlar, sağda şema + gözlemleri + evidence |
-| **Galeri** | Filtreye uyan tüm SS'ler tek grid — göz taraması için |
-| **Kapsama** | Satır = şema, kolon = tema/preset. Yeşil 3/3, sarı kısmi, kırmızı SS yok, nokta hiç gözlem yok |
 | **Adaylar** | `candidates/` — aday kategoriler + şemaya sığmayanlar |
+| **Kapsama** | Satır = şema, kolon = tema/preset. Yeşil 3/3, sarı kısmi, kırmızı SS yok, nokta hiç gözlem yok |
 | **Sağlık** | Hata/uyarı/bilgi bulguları + düzeltme komutu (tıkla → kopyalanır) |
 
 ## Filtreler
