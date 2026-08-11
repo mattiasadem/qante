@@ -40,10 +40,10 @@ qante/
 **İki kimlik:**
 | | Nerede | Örnek |
 |---|---|---|
-| Şema | `sections/.../before-after-slider.json` | `id: before-after-slider` |
-| Gözlem | `observations/hyper/ceramide/home/before-after-slider.json` | `observationId: hyper.ceramide.home.before-after-slider` |
+| Şema | `sections/.../product-showcase-grid-featured.json` | `id: product-showcase-grid-featured` |
+| Gözlem | `observations/hyper/default/home/product-showcase-grid-featured.json` | `observationId: hyper.default.home.product-showcase-grid-featured` |
 
-İkinci before-after görürsen: **aynı şema dosyasına yazma.** Yeni gözlem dosyası aç, örn. `observations/ozy/v2/home/before-after-slider.json`. Şema yoksa önce `sections/`’a tip ekle.
+Aynı tipi başka temada görürsen: **aynı şema dosyasına yazma.** Yeni gözlem dosyası aç, örn. `observations/ozy/v1/home/product-showcase-grid-featured.json`. Şema yoksa önce `sections/`’a tip ekle.
 
 ---
 

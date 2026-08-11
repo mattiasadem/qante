@@ -1,7 +1,6 @@
 # Todo — Hyper (Shopify) · tam tema envanteri
 
 *Kaynak (default):* https://hyper-theme-demo.myshopify.com/  
-*Ceramide:* https://hyper-ceramide.myshopify.com/ (before-after için denendi)  
 *Walkthrough:* `../qante-ornek-calisma-hyper.md`  
 *Evidence:* `evidence/hyper/{preset}/{sayfa}/`
 
@@ -16,13 +15,12 @@
 | | |
 |---|---|
 | Preset | `default` ✅ |
-| Observation | **81** (80 tam 3vp · 1 blokeli) |
-| Şema | **46** (`sections/instance` + `sections/global`) |
+| Observation | **80** (80 tam 3vp) |
+| Şema | **45** (`sections/instance` + `sections/global`) |
 | Sayfa tipleri | home · collection · product-detail · search · cart · cart-drawer · about-brand · contact · faq-support · blog-list · blog-post |
-| Blokeli | `before-after-slider` — temada var, canlı preset home’larda yok |
 
 **Kapsam satırı:**  
-`Hyper (default) · 11 sayfa · 46 şema · 80/81 evidence · 1 demo-gap (before-after) · Shopify`
+`Hyper (default) · 11 sayfa · 45 şema · 80/80 evidence · Shopify`
 
 ---
 
@@ -36,7 +34,6 @@
 - [x] F5 Search / Cart / Content / Blog / FAQ  
 - [x] Global overlay’ler (cart · menu · compare · quick-view · predictive-search · spotlight)  
 - [ ] F6 Preset delta (ceramide/pillar/trove/nexvo) — opsiyonel sonraki iş  
-- [ ] `before-after-slider` canlı instance bulununca capture  
 
 ---
 
@@ -59,9 +56,9 @@
 
 ## Bilinçli boşluklar
 
-1. **before-after-slider** — FoxEcom docs’ta section var; default/ceramide/pillar/trove/nexvo home’da yok → `capture.blocked`  
-2. **Preset delta** henüz yok (aynı şemaların ceramide vb. farkları)  
-3. Policy sayfaları düşük öncelik, taranmadı  
+1. **Preset delta** henüz yok (aynı şemaların ceramide vb. farkları)  
+2. Policy sayfaları düşük öncelik, taranmadı  
+3. `before-after` kategori taksonomide duruyor; Hyper canlı demoda instance yok → envanterden çıkarıldı (walkthrough Örnek 5 pedagogik kaldı)
 
 ---
 

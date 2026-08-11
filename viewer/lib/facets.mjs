@@ -55,7 +55,6 @@ export const SCHEMA_PRIORITY = [
   "trust-icon-row",
   "trust-contact-icon-band",
   "comparison-quick-table",
-  "before-after-slider",
   "faq-collapsible-tabs",
   "editorial-image-with-text",
   "editorial-image-with-text-overlay",

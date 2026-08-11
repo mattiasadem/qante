@@ -5,12 +5,12 @@
 
 | Tema | Dosya | Durum |
 |---|---|---|
-| Hyper (Shopify) | [`hyper.md`](./hyper.md) | ✅ **default tamam** — 46 şema · 80/81 evidence · before-after demo-gap |
+| Hyper (Shopify) | [`hyper.md`](./hyper.md) | ✅ **default tamam** — 45 şema · 80/80 evidence |
 | _(sonraki)_ | `ozy.md` / `marka-….md` | henüz yok |
 
 ## Hyper özeti
 
-11 sayfa tipi (home → blog-post) envanterlendi. Tek bilinçli boşluk: `before-after-slider` canlı demoda yok.
+11 sayfa tipi (home → blog-post) envanterlendi.
 
 ## Yeni tema dosyası
 
