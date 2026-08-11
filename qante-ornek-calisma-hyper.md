@@ -224,6 +224,6 @@ Kararsız kaldığında kural bu: **zorlamayla yanlış kategoriye sokma, aday a
 - [ ] `scope` kararı verildi ve gerekçesi bir cümleyle yazıldı
 - [ ] Tüm slot'lar tip + kısıtla tanımlı; renk/font YOK
 - [ ] dataBindings soyut DataSource ile (platform adı geçmiyor)
-- [ ] actions listesi dolu (yoksa "yok" yazıldı, boş bırakılmadı)
+- [ ] actions listesi dolu: demoda tıklanan/kaydırılan her şey yazıldı; gerçekten etkileşim yoksa bilinçli `[]` (string `"yok"` kullanma)
 - [ ] En az 1 ekran görüntüsü + kaynak referansı
 - [ ] Hook noktaları önerildi (B paketiyle ortak adlandırma)
