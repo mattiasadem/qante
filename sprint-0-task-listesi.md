@@ -28,9 +28,9 @@
 | A3 | Kaynak seti Sprint 0 dilimi: Hyper (default) + 1 ikinci kaynak (ikas ozy veya referans marka) | Kapsam raporuna satır düşmüş |
 | A4 | Hyper vakasını uygula (tek preset, sabit rota) | ~12–16 section keşfi notu; Sprint 0 için 8’i tam şema |
 | A5 | **İlk 8 örnek section tam doldurulmuş** (en az 3 kategori; en az 2’si `global`) | Her kayıt: slots, styleKnobs, dataBindings, actions, hookNoktaları, ≥1 evidence |
-| A6 | Aday-kategori süreci yazılı + ilk aday(lar) (örn. commerce-tools) | Süreç notu + en az 1 aday kaydı |
-| A7 | “Şemaya sığmayanlar” listesi + her madde için karar önerisi | Liste boş değilse önerisiz madde yok |
-| A8 | Kapsam raporu Sprint 0 satırı (taranan kaynak, sektör, aday, platform notu) | Tek sayfa / tablo satırı |
+| A6 | Aday-kategori süreci yazılı + ilk aday(lar) (örn. commerce-tools) | ✅ `candidates/commerce-tools.md` |
+| A7 | “Şemaya sığmayanlar” listesi + her madde için karar önerisi | ✅ `candidates/sigmayanlar.md` |
+| A8 | Kapsam raporu Sprint 0 satırı (taranan kaynak, sektör, aday, platform notu) | ✅ `kapsam-raporu-sprint-0.md` |
 
 **A Sprint 0 kapısı (mini):** 8 örnekte tüm şema alanları dolu · kategori taksonomiden veya aday açılmış · renk/font styleKnob’da yok · DataSource soyut.
 

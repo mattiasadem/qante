@@ -33,7 +33,8 @@ qante/
 ├── evidence/                # screenshot — evidence/{tema}/{preset}/{sayfa}/
 ├── todo/                    # saha takibi (tema başına md)
 ├── viewer/                  # lokal web UI — node server.mjs
-├── candidates/
+├── candidates/              # aday kategori + şemaya sığmayanlar
+├── kapsam-raporu-sprint-0.md
 └── *.md
 ```
 

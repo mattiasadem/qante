@@ -20,7 +20,8 @@
 | Sayfa tipleri | home · collection · product-detail · search · cart · cart-drawer · about-brand · contact · faq-support · blog-list · blog-post |
 
 **Kapsam satırı:**  
-`Hyper (default) · 11 sayfa · 45 şema · 80/80 evidence · Shopify`
+`Hyper (default) · 11 sayfa · 45 şema · 80 evidence · 1 aday (commerce-tools) · Shopify`  
+→ resmi rapor: [`../kapsam-raporu-sprint-0.md`](../kapsam-raporu-sprint-0.md)
 
 ---
 
