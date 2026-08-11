@@ -68,7 +68,10 @@
     "kolonSayisi": [2, 3, 4, 5],
     "mobilAccordion": true
   },
-  "dataBindings": ["NavigationMenu", "NewsletterList", "PaymentMethods"],
+  "dataBindings": [
+    { "name": "menu", "source": "DataSource.navigation" },
+    { "name": "odemeYontemleri", "source": "DataSource.paymentMethods" }
+  ],
   "actions": ["subscribe", "navigate", "changeLocale"],
   "hookNoktalari": [
     "mount:footer.before",
