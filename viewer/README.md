@@ -28,8 +28,8 @@ viewer/
 
 | Sekme | Ne yapar |
 |---|---|
-| **Gözat** | Sol listede gruplanmış kayıtlar, sağda şema + gözlemleri + evidence |
-| **Adaylar** | `candidates/` — aday kategoriler + şemaya sığmayanlar |
+| **Envanter** | Sol listede gruplanmış şema + gözlem kayıtları, sağda evidence |
+| **Aday & sığmayanlar** | `candidates/` — aday kategoriler + şemaya sığmayanlar |
 | **Kapsama** | Satır = şema, kolon = tema/preset. Yeşil 3/3, sarı kısmi, kırmızı SS yok, nokta hiç gözlem yok |
 | **Sağlık** | Hata/uyarı/bilgi bulguları + düzeltme komutu (tıkla → kopyalanır) |
 

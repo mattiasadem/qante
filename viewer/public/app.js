@@ -547,10 +547,10 @@ function renderCandidatesSidebar() {
 
   $("#sidebar").innerHTML = `
     <div class="facet-head list-head">
-      <strong>Adaylar · ${flat.length}</strong>
+      <strong>Aday &amp; sığmayanlar · ${flat.length}</strong>
     </div>
     <p class="amac" style="padding:.55rem .85rem;margin:0;font-size:.78rem">
-      18 kategoriye oturmayanlar + section yapmadığımız gözlemler.
+      18 kategoriye oturmayan adaylar + section yapmadığımız gözlemler.
       Kaynak: <code>candidates/</code>
     </p>
     ${groupsHtml || `<p class="empty">Aday / sığmayan kaydı yok</p>`}
