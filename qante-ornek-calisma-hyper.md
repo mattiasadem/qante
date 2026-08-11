@@ -187,7 +187,7 @@ Kararsız kaldığında kural bu: **zorlamayla yanlış kategoriye sokma, aday a
   "slots": { "once": { "tip": "image" }, "sonra": { "tip": "image" },
              "baslik": { "tip": "text", "zorunlu": false } },
   "styleKnobs": { "yon": "yatay|dikey", "baslangicKonumu": 50 },
-  "dataBindings": [], "actions": [],
+  "dataBindings": [], "actions": ["yok"],
   "hookNoktalari": ["mount:section.after"],
   "ornekler": ["hyper/ceramide/home ss-05", "+2"]
 }
@@ -224,6 +224,6 @@ Kararsız kaldığında kural bu: **zorlamayla yanlış kategoriye sokma, aday a
 - [ ] `scope` kararı verildi ve gerekçesi bir cümleyle yazıldı
 - [ ] Tüm slot'lar tip + kısıtla tanımlı; renk/font YOK
 - [ ] dataBindings soyut DataSource ile (platform adı geçmiyor)
-- [ ] actions listesi dolu: demoda tıklanan/kaydırılan her şey yazıldı; gerçekten etkileşim yoksa bilinçli `[]` (string `"yok"` kullanma)
+- [ ] actions listesi dolu: demoda tıklanan/kaydırılan her şey yazıldı; gerçekten etkileşim yoksa `["yok"]` (boş `[]` bırakma — üzerinden geçildiğini gösterir)
 - [ ] En az 1 ekran görüntüsü + kaynak referansı
 - [ ] Hook noktaları önerildi (B paketiyle ortak adlandırma)
