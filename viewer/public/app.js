@@ -414,6 +414,7 @@ async function renderDetail() {
     <h3>Gözlemler (${obs.length}${hiddenCount ? ` / ${obsAll.length}, ${hiddenCount} filtre dışı` : ""})</h3>
     ${cards}
   `;
+  main.scrollTop = 0;
   wireImages();
 }
 
