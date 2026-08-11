@@ -31,6 +31,7 @@ viewer/
 | **Gözat** | Sol listede gruplanmış kayıtlar, sağda şema + gözlemleri + evidence |
 | **Galeri** | Filtreye uyan tüm SS'ler tek grid — göz taraması için |
 | **Kapsama** | Satır = şema, kolon = tema/preset. Yeşil 3/3, sarı kısmi, kırmızı SS yok, nokta hiç gözlem yok |
+| **Adaylar** | `candidates/` — aday kategoriler + şemaya sığmayanlar |
 | **Sağlık** | Hata/uyarı/bilgi bulguları + düzeltme komutu (tıkla → kopyalanır) |
 
 ## Filtreler
@@ -57,6 +58,7 @@ Tüm filtre + seçim + viewport durumu URL'de: link paylaşılabilir, F5 dayanı
 | `/api/schema/:id` | tek şema + bağlı gözlemler (tam JSON) |
 | `/api/observation?id=` | tek gözlem (tam JSON) |
 | `/api/coverage` | şema × tema matrisi |
+| `/api/candidates` | aday kategoriler + sığmayanlar (`candidates/*.md`) |
 | `/api/health` | tutarsızlık listesi |
 
 Liste endpoint'i tam JSON gövdesi taşımaz; detay ayrı istekle gelir — binlerce kayıtta da hafif kalır.

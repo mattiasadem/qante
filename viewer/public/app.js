@@ -30,12 +30,14 @@ const state = {
   schemaState: "",
   sel: null,
   selObs: null,
+  selCand: null,
   vp: "compare",
 };
 
 let stats = null;
 let items = null;
 let facets = null;
+let candidatesData = null;
 let lightboxList = [];
 let lightboxIndex = 0;
 let openFacets = new Set(JSON.parse(localStorage.getItem("qante.openFacets") || '["kaynak","sayfa","kategori"]'));
@@ -78,6 +80,7 @@ function syncUrl() {
   if (state.view !== "browse") p.set("view", state.view);
   if (state.sel) p.set("sel", state.sel);
   if (state.selObs) p.set("obs", state.selObs);
+  if (state.selCand) p.set("cand", state.selCand);
   if (state.vp !== "compare") p.set("vp", state.vp);
   const url = p.toString() ? `?${p}` : location.pathname;
   history.replaceState(null, "", url);
@@ -96,6 +99,7 @@ function readUrl() {
   state.view = p.get("view") || "browse";
   state.sel = p.get("sel") || null;
   state.selObs = p.get("obs") || null;
+  state.selCand = p.get("cand") || null;
   state.vp = p.get("vp") || "compare";
 }
 
@@ -154,8 +158,20 @@ async function refresh({ keepDetail = false } = {}) {
   $("#n-browse").textContent = rowCount ? ` ${rowCount}` : "";
   $("#n-gallery").textContent = shotCount ? ` ${shotCount}` : "";
 
+  if (state.view === "candidates" || !candidatesData) {
+    candidatesData = await api("/api/candidates");
+    const n =
+      (candidatesData.counts?.candidates || 0) +
+      (candidatesData.counts?.misfits || 0);
+    $("#n-candidates").textContent = n ? ` ${n}` : "";
+  }
+
   renderTabs();
-  renderSidebar();
+  if (state.view === "candidates") {
+    renderCandidatesSidebar();
+  } else {
+    renderSidebar();
+  }
 
   if (state.view === "browse") {
     if (!keepDetail) await renderDetail();
@@ -163,6 +179,8 @@ async function refresh({ keepDetail = false } = {}) {
     renderGallery();
   } else if (state.view === "coverage") {
     await renderCoverage();
+  } else if (state.view === "candidates") {
+    renderCandidatesDetail();
   } else if (state.view === "health") {
     await renderHealth();
   }
@@ -480,6 +498,227 @@ function obsCard(o, schemaJson = "") {
   </div>`;
 }
 
+/* ---------------- candidates / sığmayanlar ---------------- */
+
+function candidatesFlat() {
+  if (!candidatesData) return [];
+  return [
+    ...(candidatesData.candidates || []).map((c) => ({
+      ...c,
+      listTitle: c.slug || c.title,
+      listSub: c.durum || c.sourceFile,
+      group: "Aday kategori",
+    })),
+    ...(candidatesData.misfits || []).map((m) => ({
+      ...m,
+      listTitle: m.gozlem,
+      listSub: m.karar || m.neden,
+      group: "Sığmayanlar",
+    })),
+  ];
+}
+
+function renderCandidatesSidebar() {
+  const flat = candidatesFlat();
+  if (!state.selCand && flat[0]) state.selCand = flat[0].id;
+
+  const byGroup = new Map();
+  for (const row of flat) {
+    if (!byGroup.has(row.group)) byGroup.set(row.group, []);
+    byGroup.get(row.group).push(row);
+  }
+
+  const groupsHtml = [...byGroup.entries()]
+    .map(([key, rows]) => {
+      const head = `<div class="group-head"><span>▾ ${esc(key)}</span><span>${rows.length}</span></div>`;
+      const buttons = rows
+        .map((row) => {
+          const active = state.selCand === row.id;
+          return `<button class="item ${active ? "active" : ""}" data-cand="${esc(row.id)}">
+            <div class="id">${esc(row.listTitle)}</div>
+            <div class="sub">${esc(row.listSub || "")}</div>
+            <div class="chips">
+              <span class="chip">${esc(row.kind === "candidate" ? "aday" : "sığmayan")}</span>
+            </div>
+          </button>`;
+        })
+        .join("");
+      return head + buttons;
+    })
+    .join("");
+
+  $("#sidebar").innerHTML = `
+    <div class="facet-head list-head">
+      <strong>Adaylar · ${flat.length}</strong>
+    </div>
+    <p class="amac" style="padding:.55rem .85rem;margin:0;font-size:.78rem">
+      18 kategoriye oturmayanlar + section yapmadığımız gözlemler.
+      Kaynak: <code>candidates/</code>
+    </p>
+    ${groupsHtml || `<p class="empty">Aday / sığmayan kaydı yok</p>`}
+  `;
+}
+
+function renderCandidatesDetail() {
+  const main = $("#main");
+  const flat = candidatesFlat();
+  let row = flat.find((r) => r.id === state.selCand);
+  if (!row && flat[0]) {
+    state.selCand = flat[0].id;
+    row = flat[0];
+    syncUrl();
+  }
+  if (!row) {
+    main.innerHTML = `<p class="empty">Aday / sığmayan kaydı yok. <code>candidates/</code> altına .md ekle.</p>`;
+    return;
+  }
+
+  if (row.kind === "candidate") {
+    main.innerHTML = `
+      <h2>${esc(row.slug)}</h2>
+      <p class="amac">${esc(row.title)}</p>
+      <div class="chips">
+        <span class="chip">aday kategori</span>
+        ${row.durum ? `<span class="chip warn">${esc(row.durum)}</span>` : ""}
+        ${row.kaynak ? `<span class="chip">${esc(row.kaynak)}</span>` : ""}
+        <span class="chip mono">${esc(row.sourceFile)}</span>
+      </div>
+      ${candBlock("Gerekçe", row.gerekce)}
+      ${candBlock("Örnekler", row.ornekler)}
+      ${candBlock("Öneri", row.oneri)}
+      ${candBlock("Karar", row.karar)}
+      <details class="raw" open><summary>Kaynak markdown</summary><pre>${esc(row.raw)}</pre></details>
+    `;
+    wireCandLinks();
+    main.scrollTop = 0;
+    return;
+  }
+
+  main.innerHTML = `
+    <h2>${esc(row.gozlem)}</h2>
+    <p class="amac">Şemaya sığmayan gözlem — yeni section yazılmadı.</p>
+    <div class="chips">
+      <span class="chip">sığmayan</span>
+      <span class="chip">#${esc(row.num)}</span>
+      <span class="chip mono">${esc(row.sourceFile)}</span>
+    </div>
+    <div class="card" style="margin-top:1rem">
+      <div class="card-head"><strong>Neden section değil?</strong></div>
+      <p class="amac">${esc(row.neden)}</p>
+    </div>
+    <div class="card">
+      <div class="card-head"><strong>Karar önerisi</strong></div>
+      <p class="amac">${formatKararHtml(row.karar)}</p>
+    </div>
+  `;
+  wireCandLinks();
+  main.scrollTop = 0;
+}
+
+function candBlock(title, body) {
+  if (!body) return "";
+  return `<div class="card" style="margin-top:.75rem">
+    <div class="card-head"><strong>${esc(title)}</strong></div>
+    <div class="cand-md">${simpleMd(body)}</div>
+  </div>`;
+}
+
+function formatKararHtml(text) {
+  const t = String(text || "");
+  // `schema-id` → clickable if looks like schema
+  return esc(t).replace(
+    /`([a-z0-9-]+)`/gi,
+    (_, id) =>
+      `<button class="linkish" data-goto-schema="${id}">${id}</button>`
+  );
+}
+
+function simpleMd(src) {
+  const lines = String(src || "").split(/\r?\n/);
+  let html = "";
+  let inUl = false;
+  let inTable = false;
+  let tableHeadDone = false;
+
+  const closeUl = () => {
+    if (inUl) {
+      html += "</ul>";
+      inUl = false;
+    }
+  };
+  const closeTable = () => {
+    if (inTable) {
+      html += "</tbody></table></div>";
+      inTable = false;
+      tableHeadDone = false;
+    }
+  };
+
+  for (const line of lines) {
+    if (/^\|.+\|$/.test(line.trim())) {
+      closeUl();
+      if (/^[-:|\s]+$/.test(line)) continue;
+      const cells = line
+        .trim()
+        .replace(/^\|/, "")
+        .replace(/\|$/, "")
+        .split("|")
+        .map((c) => c.trim());
+      if (!inTable) {
+        html += `<div class="table-wrap"><table><thead><tr>${cells
+          .map((c) => `<th>${inlineMd(c)}</th>`)
+          .join("")}</tr></thead><tbody>`;
+        inTable = true;
+        tableHeadDone = true;
+        continue;
+      }
+      if (tableHeadDone) {
+        html += `<tr>${cells.map((c) => `<td>${inlineMd(c)}</td>`).join("")}</tr>`;
+      }
+      continue;
+    }
+    closeTable();
+
+    if (/^[-*]\s+/.test(line)) {
+      if (!inUl) {
+        html += "<ul>";
+        inUl = true;
+      }
+      html += `<li>${inlineMd(line.replace(/^[-*]\s+/, ""))}</li>`;
+      continue;
+    }
+    closeUl();
+    if (!line.trim()) continue;
+    html += `<p>${inlineMd(line)}</p>`;
+  }
+  closeUl();
+  closeTable();
+  return html || `<p class="empty">—</p>`;
+}
+
+function inlineMd(s) {
+  return esc(s)
+    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+    .replace(
+      /`([a-z0-9._:-]+)`/gi,
+      (_, id) =>
+        /^[a-z0-9-]+$/i.test(id)
+          ? `<button class="linkish" data-goto-schema="${id}">${id}</button>`
+          : `<code>${id}</code>`
+    );
+}
+
+function wireCandLinks() {
+  $("#main").querySelectorAll("[data-goto-schema]").forEach((el) => {
+    el.onclick = () => {
+      state.sel = el.dataset.gotoSchema;
+      state.selObs = null;
+      state.view = "browse";
+      refresh();
+    };
+  });
+}
+
 /* ---------------- gallery ---------------- */
 
 function renderGallery() {
@@ -638,6 +877,7 @@ function bindEvents() {
 
   $("#reload").addEventListener("click", async () => {
     await api("/api/stats", new URLSearchParams({ fresh: "1" }));
+    candidatesData = null;
     await loadStats();
     await refresh();
   });
@@ -692,6 +932,13 @@ function bindEvents() {
       const k = gh.dataset.groupKey;
       collapsedGroups.has(k) ? collapsedGroups.delete(k) : collapsedGroups.add(k);
       return renderSidebar();
+    }
+
+    const cand = e.target.closest(".item[data-cand]");
+    if (cand) {
+      state.selCand = cand.dataset.cand;
+      state.view = "candidates";
+      return refresh();
     }
 
     const item = e.target.closest(".item");

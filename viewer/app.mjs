@@ -17,6 +17,7 @@ import {
   DIMENSIONS,
 } from "./lib/facets.mjs";
 import { runHealth } from "./lib/health.mjs";
+import { loadCandidates } from "./lib/candidates.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export const PUBLIC_DIR = path.join(__dirname, "public");
@@ -134,6 +135,10 @@ const routes = {
 
   "/api/health": (url, res, inv) => {
     json(res, runHealth(inv));
+  },
+
+  "/api/candidates": (_url, res) => {
+    json(res, loadCandidates(ROOT));
   },
 
   "/api/observation": (url, res, inv) => {
