@@ -22,6 +22,125 @@ export const GROUPS = {
   scope: { label: "Scope", field: "scope" },
 };
 
+/** En önemli → az önemli (düşük rank = önce). Tanımsızlar sona. */
+export const SCHEMA_PRIORITY = [
+  "navigation-header-mega",
+  "promo-announcement-bar",
+  "hero-slideshow",
+  "product-info-main",
+  "product-info-tabs",
+  "product-showcase-grid-plp",
+  "product-showcase-grid-featured",
+  "product-showcase-related",
+  "product-showcase-favorites",
+  "product-showcase-recently-viewed",
+  "collection-banner",
+  "search-results",
+  "cart-page-main",
+  "global-cart-drawer",
+  "global-menu-drawer",
+  "global-predictive-search",
+  "global-quick-view",
+  "global-compare-drawer",
+  "collection-nav-tabs",
+  "collection-nav-grid",
+  "collection-nav-slider",
+  "collection-nav-icon-buttons",
+  "promo-banner-countdown",
+  "promo-spotlight-tab",
+  "promo-scrolling-marquee",
+  "features-multicolumn",
+  "features-slider-multicolumn",
+  "testimonial-quote-carousel",
+  "trust-icon-row",
+  "trust-contact-icon-band",
+  "comparison-quick-table",
+  "before-after-slider",
+  "faq-collapsible-tabs",
+  "editorial-image-with-text",
+  "editorial-image-with-text-overlay",
+  "editorial-rich-text",
+  "editorial-custom-content",
+  "media-lookbook-banner",
+  "media-lookbook-slider",
+  "media-scrolling-gallery",
+  "lead-capture-form",
+  "page-content-main",
+  "blog-list-main",
+  "blog-post-main",
+  "navigation-breadcrumbs",
+  "footer-columns-newsletter",
+];
+
+export const CATEGORY_PRIORITY = [
+  "navigation",
+  "hero",
+  "product-info",
+  "product-showcase",
+  "collection-nav",
+  "promo",
+  "features-benefits",
+  "social-proof",
+  "testimonial-ugc",
+  "trust",
+  "comparison",
+  "before-after",
+  "faq",
+  "cta-band",
+  "editorial",
+  "media",
+  "lead-capture",
+  "footer",
+];
+
+export const PAGE_PRIORITY = [
+  "home",
+  "product-detail",
+  "collection",
+  "search",
+  "cart",
+  "cart-drawer",
+  "about-brand",
+  "faq-support",
+  "contact",
+  "blog-list",
+  "blog-post",
+  "landing-campaign",
+  "listicle-advertorial",
+  "lookbook",
+  "policy",
+];
+
+const SCOPE_PRIORITY = ["global", "instance"];
+
+function rankOf(list, value) {
+  if (!value) return 9000;
+  const i = list.indexOf(value);
+  return i === -1 ? 8000 : i;
+}
+
+function schemaRank(schemaId) {
+  return rankOf(SCHEMA_PRIORITY, schemaId);
+}
+
+function groupKeyRank(groupBy, key) {
+  if (groupBy === "schema") return schemaRank(key);
+  if (groupBy === "kategori") return rankOf(CATEGORY_PRIORITY, key);
+  if (groupBy === "sayfa") return rankOf(PAGE_PRIORITY, key);
+  if (groupBy === "scope") return rankOf(SCOPE_PRIORITY, key);
+  return 0;
+}
+
+function compareRows(a, b) {
+  const bySchema = schemaRank(a.schemaId) - schemaRank(b.schemaId);
+  if (bySchema) return bySchema;
+  const byPage = rankOf(PAGE_PRIORITY, a.sayfa) - rankOf(PAGE_PRIORITY, b.sayfa);
+  if (byPage) return byPage;
+  return (a.observationId || a.schemaId || "").localeCompare(
+    b.observationId || b.schemaId || ""
+  );
+}
+
 export function parseFilters(searchParams) {
   const list = (k) => {
     const raw = searchParams.get(k);
@@ -166,13 +285,13 @@ export function groupRows(rows, group) {
       key,
       count: items.length,
       evidenceCount: items.reduce((n, r) => n + r.evidenceCount, 0),
-      items: items.sort((a, b) =>
-        (a.observationId || a.schemaId).localeCompare(
-          b.observationId || b.schemaId
-        )
-      ),
+      items: items.slice().sort(compareRows),
     }))
-    .sort((a, b) => a.key.localeCompare(b.key));
+    .sort((a, b) => {
+      const byRank = groupKeyRank(group, a.key) - groupKeyRank(group, b.key);
+      if (byRank) return byRank;
+      return a.key.localeCompare(b.key);
+    });
 }
 
 /** Liste için hafif satır (tam JSON gövdesi yok) */
