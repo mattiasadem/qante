@@ -1,0 +1,30 @@
+{
+  "id": "global-predictive-search",
+  "kategori": "navigation",
+  "varyant": "predictive-search",
+  "scope": "global",
+  "amac": "Yazarken ürün/koleksiyon/sayfa önerileri gösteren arama",
+  "slots": {
+    "placeholder": {
+      "tip": "text",
+      "maxLen": 40,
+      "zorunlu": false
+    }
+  },
+  "styleKnobs": {},
+  "dataBindings": [
+    {
+      "name": "oneriler",
+      "source": "DataSource.searchSuggest"
+    }
+  ],
+  "actions": [
+    "navigate",
+    "emit:search.submit"
+  ],
+  "hookNoktalari": [
+    "mount:search.after"
+  ],
+  "bagimliliklar": [],
+  "responsive": "Mobilde genişleyen overlay"
+}

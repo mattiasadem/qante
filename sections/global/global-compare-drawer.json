@@ -1,0 +1,29 @@
+{
+  "id": "global-compare-drawer",
+  "kategori": "comparison",
+  "varyant": "compare-drawer",
+  "scope": "global",
+  "amac": "Karşılaştırma listesini drawer/modalda göstermek",
+  "slots": {
+    "baslik": {
+      "tip": "text",
+      "maxLen": 40
+    }
+  },
+  "styleKnobs": {},
+  "dataBindings": [
+    {
+      "name": "urunler",
+      "source": "DataSource.compareList"
+    }
+  ],
+  "actions": [
+    "navigate",
+    "emit:compare.clear"
+  ],
+  "hookNoktalari": [
+    "mount:compare.after"
+  ],
+  "bagimliliklar": [],
+  "responsive": "Mobil tam ekran"
+}

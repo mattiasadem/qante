@@ -1,0 +1,48 @@
+{
+  "id": "product-info-main",
+  "kategori": "product-info",
+  "varyant": "main",
+  "scope": "instance",
+  "amac": "PDP ana blok: galeri, başlık, fiyat, varyant, sepete ekle",
+  "slots": {
+    "baslik": {
+      "tip": "text",
+      "maxLen": 100
+    },
+    "aciklama": {
+      "tip": "richtext",
+      "zorunlu": false
+    },
+    "galeri": {
+      "tip": "array",
+      "item": {
+        "gorsel": {
+          "tip": "image"
+        }
+      }
+    }
+  },
+  "styleKnobs": {
+    "galeriLayout": "thumbnails-left|thumbnails-bottom|stack",
+    "stickyBuyBox": true
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "emit:cart.add",
+    "emit:variant.change",
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:gallery.after"
+  ],
+  "bagimliliklar": [
+    "global-cart-drawer"
+  ],
+  "responsive": "Mobilde galeri üstte, buy box altta"
+}

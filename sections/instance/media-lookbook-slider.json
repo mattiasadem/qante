@@ -1,0 +1,43 @@
+{
+  "id": "media-lookbook-slider",
+  "kategori": "media",
+  "varyant": "lookbook-slider",
+  "scope": "instance",
+  "amac": "Mekan/look görselleri üzerinden ürün hotspot’larıyla lookbook vitrini",
+  "slots": {
+    "baslik": { "tip": "text", "maxLen": 80 },
+    "slides": {
+      "tip": "array",
+      "min": 1,
+      "max": 10,
+      "item": {
+        "gorsel": { "tip": "image" },
+        "etiket": { "tip": "text", "maxLen": 40, "zorunlu": false },
+        "urunler": {
+          "tip": "array",
+          "max": 8,
+          "item": {
+            "urun": { "tip": "product" },
+            "hotspot": { "tip": "object", "zorunlu": false }
+          }
+        },
+        "cta": { "tip": "button", "zorunlu": false }
+      }
+    }
+  },
+  "styleKnobs": {
+    "layout": "slider|stacked",
+    "hotspotGoster": true
+  },
+  "dataBindings": [
+    {
+      "name": "urunler",
+      "source": "DataSource.productList",
+      "params": { "kaynak": "manual", "limit": 8 }
+    }
+  ],
+  "actions": ["navigate", "emit:product.quickView"],
+  "hookNoktalari": ["mount:section.after", "mount:hotspot"],
+  "bagimliliklar": [],
+  "responsive": "Mobilde tek slide + ürün listesi altta"
+}

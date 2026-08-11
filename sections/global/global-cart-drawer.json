@@ -1,0 +1,34 @@
+{
+  "id": "global-cart-drawer",
+  "tur": "global-bilesen",
+  "scope": "global",
+  "amac": "Sayfadan çıkmadan sepet yönetimi; momentum kaybettirmeden cross-sell",
+  "slots": {
+    "kargoBar": {
+      "tip": "progress",
+      "zorunlu": false,
+      "not": "ücretsiz kargo eşiği"
+    },
+    "notAlani": { "tip": "toggle+textarea", "zorunlu": false },
+    "hediyePaketi": { "tip": "toggle", "zorunlu": false },
+    "crossSell": { "tip": "productMiniList", "zorunlu": false }
+  },
+  "styleKnobs": {},
+  "dataBindings": [
+    { "name": "sepet", "source": "DataSource.cart" },
+    {
+      "name": "oneriler",
+      "source": "DataSource.productList",
+      "params": { "kaynak": "recommended", "limit": 4 }
+    }
+  ],
+  "actions": ["listen:cart.added", "emit:cart.updated", "emit:checkout.start"],
+  "hookNoktalari": [
+    "mount:cartDrawer.aboveItems",
+    "mount:cartDrawer.belowItems"
+  ],
+  "bagimliliklar": [],
+  "filterOrnegi": "filter:price.display (KDV/para birimi gösterimi buradan geçer)",
+  "platformNotu": "Studio tık-dinleyici davranışı: drawer açan linkler koruma deseni ister",
+  "responsive": ""
+}

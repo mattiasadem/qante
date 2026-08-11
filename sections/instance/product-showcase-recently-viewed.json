@@ -1,0 +1,36 @@
+{
+  "id": "product-showcase-recently-viewed",
+  "kategori": "product-showcase",
+  "varyant": "recently-viewed",
+  "scope": "instance",
+  "amac": "Kullanıcının son baktığı ürünleri göstermek",
+  "slots": {
+    "baslik": {
+      "tip": "text",
+      "maxLen": 60,
+      "zorunlu": false
+    }
+  },
+  "styleKnobs": {
+    "layout": "slider|grid"
+  },
+  "dataBindings": [
+    {
+      "name": "urunler",
+      "source": "DataSource.productList",
+      "params": {
+        "kaynak": "recentlyViewed",
+        "limit": 8
+      }
+    }
+  ],
+  "actions": [
+    "navigate",
+    "emit:product.quickView"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "responsive": "Boşsa gizlenir"
+}

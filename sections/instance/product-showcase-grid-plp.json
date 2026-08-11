@@ -1,0 +1,45 @@
+{
+  "id": "product-showcase-grid-plp",
+  "kategori": "product-showcase",
+  "varyant": "grid-plp",
+  "scope": "instance",
+  "amac": "Koleksiyon ürünlerini filtre/sort ile ızgara olarak listelemek",
+  "slots": {
+    "baslik": {
+      "tip": "text",
+      "maxLen": 60,
+      "zorunlu": false
+    }
+  },
+  "styleKnobs": {
+    "kolon": [
+      2,
+      3,
+      4
+    ],
+    "filtreGoster": true,
+    "sortGoster": true
+  },
+  "dataBindings": [
+    {
+      "name": "urunler",
+      "source": "DataSource.productList",
+      "params": {
+        "kaynak": "collection",
+        "limit": 48
+      }
+    }
+  ],
+  "actions": [
+    "emit:product.quickView",
+    "emit:cart.add",
+    "navigate",
+    "emit:filter.change"
+  ],
+  "hookNoktalari": [
+    "mount:productCard.badge",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "responsive": "Mobil 2 kolon; filtre drawer"
+}

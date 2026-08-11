@@ -1,0 +1,37 @@
+{
+  "id": "cart-page-main",
+  "kategori": "product-info",
+  "varyant": "cart-page",
+  "scope": "instance",
+  "amac": "Tam sayfa sepet: satırlar, özet, boş durum",
+  "slots": {
+    "baslik": {
+      "tip": "text",
+      "maxLen": 40
+    },
+    "bosMesaj": {
+      "tip": "text",
+      "maxLen": 120,
+      "zorunlu": false
+    }
+  },
+  "styleKnobs": {
+    "layout": "two-column|stacked"
+  },
+  "dataBindings": [
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "emit:cart.update",
+    "emit:checkout.start",
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:cart.after"
+  ],
+  "bagimliliklar": [],
+  "responsive": "Mobilde özet alta"
+}

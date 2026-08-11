@@ -1,0 +1,29 @@
+{
+  "id": "media-scrolling-gallery",
+  "kategori": "media",
+  "varyant": "scrolling-gallery",
+  "scope": "instance",
+  "amac": "UGC/galeri görsellerini yatay kaydırmalı şeritte göstermek",
+  "slots": {
+    "baslik": { "tip": "text", "maxLen": 60, "zorunlu": false },
+    "items": {
+      "tip": "array",
+      "min": 3,
+      "max": 24,
+      "item": {
+        "gorsel": { "tip": "image" },
+        "etiket": { "tip": "text", "maxLen": 40, "zorunlu": false },
+        "link": { "tip": "link", "zorunlu": false }
+      }
+    }
+  },
+  "styleKnobs": {
+    "otomatikKaydir": true,
+    "oran": "1:1|4:5"
+  },
+  "dataBindings": [],
+  "actions": ["navigate"],
+  "hookNoktalari": ["mount:section.after"],
+  "bagimliliklar": [],
+  "responsive": "Mobilde daha dar kart; swipe"
+}

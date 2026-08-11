@@ -1,0 +1,29 @@
+{
+  "id": "trust-contact-icon-band",
+  "kategori": "trust",
+  "varyant": "contact-icon-band",
+  "scope": "global",
+  "amac": "Footer üstü iletişim / destek bilgilerini ikonlu şerit olarak göstermek",
+  "slots": {
+    "items": {
+      "tip": "array",
+      "min": 2,
+      "max": 6,
+      "item": {
+        "baslik": { "tip": "text", "maxLen": 40 },
+        "metin": { "tip": "text", "maxLen": 80 },
+        "link": { "tip": "link", "zorunlu": false },
+        "ikon": { "tip": "image", "zorunlu": false }
+      }
+    }
+  },
+  "styleKnobs": {
+    "kolon": [2, 3, 4],
+    "layout": "horizontal"
+  },
+  "dataBindings": [],
+  "actions": ["navigate"],
+  "hookNoktalari": ["mount:footer.before"],
+  "bagimliliklar": [],
+  "responsive": "Mobilde stack veya 2 kolon"
+}

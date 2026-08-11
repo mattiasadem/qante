@@ -1,0 +1,32 @@
+{
+  "id": "hero-slideshow",
+  "kategori": "hero",
+  "varyant": "slideshow",
+  "scope": "instance",
+  "amac": "Ana vitrinde tam genişlik slaytlarla koleksiyon/kampanya hikâyesi anlatmak ve CTA ile yönlendirmek",
+  "slots": {
+    "slaytlar": {
+      "tip": "array",
+      "min": 1,
+      "max": 8,
+      "item": {
+        "eyebrow": { "tip": "text", "maxLen": 40, "zorunlu": false },
+        "baslik": { "tip": "text", "maxLen": 60 },
+        "gorsel": { "tip": "image" },
+        "cta": { "tip": "button", "zorunlu": false }
+      }
+    }
+  },
+  "styleKnobs": {
+    "hizalama": "center|left|right",
+    "yukseklik": "compact|regular|tall",
+    "otomatikOynat": true,
+    "okGoster": true,
+    "noktaGoster": true
+  },
+  "dataBindings": [],
+  "actions": ["navigate"],
+  "hookNoktalari": ["mount:section.before", "mount:section.after"],
+  "bagimliliklar": [],
+  "responsive": "Mobilde tam genişlik; oklar küçülür veya swipe; metin boyutu düşer"
+}

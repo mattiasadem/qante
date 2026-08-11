@@ -1,0 +1,27 @@
+{
+  "id": "global-quick-view",
+  "kategori": "product-info",
+  "varyant": "quick-view",
+  "scope": "global",
+  "amac": "Ürünü sayfadan çıkmadan hızlı görüntüle / sepete ekle",
+  "slots": {},
+  "styleKnobs": {
+    "type": "modal|drawer"
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "emit:cart.add",
+    "navigate",
+    "emit:modal.close"
+  ],
+  "hookNoktalari": [
+    "mount:quickView.after"
+  ],
+  "bagimliliklar": [],
+  "responsive": "Mobil tam ekran modal"
+}

@@ -1,0 +1,39 @@
+{
+  "id": "collection-nav-grid",
+  "kategori": "collection-nav",
+  "varyant": "grid",
+  "scope": "instance",
+  "amac": "Koleksiyonları ızgara kartlarıyla kategori keşfine açmak",
+  "slots": {
+    "baslik": { "tip": "text", "maxLen": 60, "zorunlu": false },
+    "altBaslik": { "tip": "text", "maxLen": 120, "zorunlu": false },
+    "items": {
+      "tip": "array",
+      "min": 2,
+      "max": 16,
+      "item": {
+        "ad": { "tip": "text", "maxLen": 40 },
+        "gorsel": { "tip": "image" },
+        "link": { "tip": "link" },
+        "urunSayisi": { "tip": "number", "zorunlu": false }
+      }
+    },
+    "cta": { "tip": "button", "zorunlu": false }
+  },
+  "styleKnobs": {
+    "kolon": [2, 3, 4, 5],
+    "kartStili": "image-overlay|image-below",
+    "oran": "1:1|4:5|16:9"
+  },
+  "dataBindings": [
+    {
+      "name": "koleksiyonlar",
+      "source": "DataSource.collectionList",
+      "params": { "kaynak": "manual|all|parent", "limit": 12 }
+    }
+  ],
+  "actions": ["navigate"],
+  "hookNoktalari": ["mount:section.before", "mount:section.after"],
+  "bagimliliklar": [],
+  "responsive": "Mobil 2 kolon; tablet 3; desktop 4+"
+}

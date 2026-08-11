@@ -1,0 +1,30 @@
+{
+  "id": "features-multicolumn",
+  "kategori": "features-benefits",
+  "varyant": "multicolumn",
+  "scope": "instance",
+  "amac": "Fayda/özellik metinlerini çok kolonlu kart grid’inde sunmak",
+  "slots": {
+    "baslik": { "tip": "text", "maxLen": 80, "zorunlu": false },
+    "items": {
+      "tip": "array",
+      "min": 2,
+      "max": 8,
+      "item": {
+        "baslik": { "tip": "text", "maxLen": 60 },
+        "metin": { "tip": "text", "maxLen": 280 },
+        "gorsel": { "tip": "image", "zorunlu": false },
+        "ikon": { "tip": "image", "zorunlu": false }
+      }
+    }
+  },
+  "styleKnobs": {
+    "kolon": [2, 3, 4],
+    "gorselGoster": true
+  },
+  "dataBindings": [],
+  "actions": ["navigate"],
+  "hookNoktalari": ["mount:section.after"],
+  "bagimliliklar": [],
+  "responsive": "Mobilde 1 kolon"
+}

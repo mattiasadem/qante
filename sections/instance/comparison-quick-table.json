@@ -1,0 +1,50 @@
+{
+  "id": "comparison-quick-table",
+  "kategori": "comparison",
+  "varyant": "quick-table",
+  "scope": "instance",
+  "amac": "Ürünleri özellik satırlarıyla yan yana hızlı karşılaştırma",
+  "slots": {
+    "baslik": {
+      "tip": "text",
+      "maxLen": 60,
+      "zorunlu": false
+    },
+    "urunler": {
+      "tip": "array",
+      "min": 2,
+      "max": 5,
+      "item": {
+        "urun": {
+          "tip": "product"
+        }
+      }
+    }
+  },
+  "styleKnobs": {
+    "kolon": [
+      2,
+      3,
+      4
+    ]
+  },
+  "dataBindings": [
+    {
+      "name": "urunler",
+      "source": "DataSource.productList",
+      "params": {
+        "kaynak": "manual",
+        "limit": 4
+      }
+    }
+  ],
+  "actions": [
+    "navigate",
+    "emit:product.quickView"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "responsive": "Mobilde yatay scroll tablo"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "navigation-breadcrumbs",
+  "kategori": "navigation",
+  "varyant": "breadcrumbs",
+  "scope": "instance",
+  "amac": "Sayfa hiyerarşisini gösterip üst seviyelere dönüş yolu vermek",
+  "slots": {
+    "items": {
+      "tip": "array",
+      "min": 1,
+      "max": 8,
+      "item": {
+        "etiket": {
+          "tip": "text",
+          "maxLen": 40
+        },
+        "link": {
+          "tip": "link",
+          "zorunlu": false
+        }
+      }
+    }
+  },
+  "styleKnobs": {
+    "separator": "slash|chevron"
+  },
+  "dataBindings": [],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "responsive": "Mobilde truncate"
+}

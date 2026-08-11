@@ -1,0 +1,38 @@
+{
+  "id": "faq-collapsible-tabs",
+  "kategori": "faq",
+  "varyant": "collapsible-tabs",
+  "scope": "instance",
+  "amac": "SSS / accordion sekmeleriyle soru-cevap sunmak",
+  "slots": {
+    "baslik": {
+      "tip": "text",
+      "maxLen": 80,
+      "zorunlu": false
+    },
+    "items": {
+      "tip": "array",
+      "min": 1,
+      "max": 30,
+      "item": {
+        "soru": {
+          "tip": "text",
+          "maxLen": 120
+        },
+        "cevap": {
+          "tip": "richtext"
+        }
+      }
+    }
+  },
+  "styleKnobs": {
+    "allowMultipleOpen": false
+  },
+  "dataBindings": [],
+  "actions": [],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "responsive": "Tam genişlik accordion"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "product-showcase-favorites",
+  "kategori": "product-showcase",
+  "varyant": "favorites",
+  "scope": "instance",
+  "amac": "Öne çıkan / favori ürünleri kaydırılabilir vitrinde göstermek",
+  "slots": {
+    "baslik": { "tip": "text", "maxLen": 60, "zorunlu": false },
+    "altBaslik": { "tip": "text", "maxLen": 120, "zorunlu": false },
+    "cta": { "tip": "button", "zorunlu": false }
+  },
+  "styleKnobs": {
+    "layout": "slider|grid",
+    "kolon": [2, 3, 4],
+    "rozetGoster": true
+  },
+  "dataBindings": [
+    {
+      "name": "urunler",
+      "source": "DataSource.productList",
+      "params": {
+        "kaynak": "manual|collection|favorite",
+        "limit": 12
+      }
+    }
+  ],
+  "actions": ["emit:product.quickView", "emit:cart.add", "navigate"],
+  "hookNoktalari": [
+    "mount:productCard.badge",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "responsive": "Mobilde slider; desktop’ta 3–4 kart görünür"
+}

@@ -1,0 +1,37 @@
+{
+  "id": "blog-post-main",
+  "kategori": "editorial",
+  "varyant": "blog-post",
+  "scope": "instance",
+  "amac": "Blog yazısı gövdesi: başlık, meta, içerik",
+  "slots": {
+    "baslik": {
+      "tip": "text",
+      "maxLen": 120
+    },
+    "icerik": {
+      "tip": "richtext"
+    },
+    "kapak": {
+      "tip": "image",
+      "zorunlu": false
+    }
+  },
+  "styleKnobs": {
+    "genislik": "narrow|wide"
+  },
+  "dataBindings": [
+    {
+      "name": "yazi",
+      "source": "DataSource.blogPost"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "responsive": "Okuma genişliği daralır"
+}

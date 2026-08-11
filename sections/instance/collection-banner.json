@@ -1,0 +1,38 @@
+{
+  "id": "collection-banner",
+  "kategori": "collection-nav",
+  "varyant": "banner",
+  "scope": "instance",
+  "amac": "Koleksiyon başlığı, açıklama ve isteğe bağlı görseli üst bantta göstermek",
+  "slots": {
+    "baslik": {
+      "tip": "text",
+      "maxLen": 80
+    },
+    "aciklama": {
+      "tip": "text",
+      "maxLen": 200,
+      "zorunlu": false
+    },
+    "gorsel": {
+      "tip": "image",
+      "zorunlu": false
+    }
+  },
+  "styleKnobs": {
+    "hizalama": "left|center",
+    "yukseklik": "sm|md|lg"
+  },
+  "dataBindings": [
+    {
+      "name": "koleksiyon",
+      "source": "DataSource.collection"
+    }
+  ],
+  "actions": [],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "responsive": "Mobilde daha kısa banner"
+}

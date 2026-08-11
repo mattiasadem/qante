@@ -1,0 +1,26 @@
+# Todo — tema bazlı envanter takibi
+
+**Şemalar** `sections/` altında (section-first).  
+**Saha / ilerleme** burada (theme-first): her tema için bir dosya.
+
+| Tema | Dosya | Durum |
+|---|---|---|
+| Hyper (Shopify) | [`hyper.md`](./hyper.md) | ✅ **default tamam** — 46 şema · 80/81 evidence · before-after demo-gap |
+| _(sonraki)_ | `ozy.md` / `marka-….md` | henüz yok |
+
+## Hyper özeti
+
+11 sayfa tipi (home → blog-post) envanterlendi. Tek bilinçli boşluk: `before-after-slider` canlı demoda yok.
+
+## Yeni tema dosyası
+
+1. `_template.md` kopyala → `todo/{tema-slug}.md`
+2. Bu tabloda satır aç
+3. Evidence kökü: `evidence/{tema-slug}/…`
+
+## Akış (her bileşen)
+
+1. Sayfa tara → todo’ya roster  
+2. Şema yoksa `sections/` JSON  
+3. `observations/{tema}/{preset}/{sayfa}/…` + `capture-observation.mjs`  
+4. Todo `[x]`

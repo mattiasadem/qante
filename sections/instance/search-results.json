@@ -1,0 +1,36 @@
+{
+  "id": "search-results",
+  "kategori": "product-showcase",
+  "varyant": "search-results",
+  "scope": "instance",
+  "amac": "Arama sonuçlarını ürün/grid ve filtrelerle göstermek",
+  "slots": {
+    "baslik": {
+      "tip": "text",
+      "maxLen": 60,
+      "zorunlu": false
+    }
+  },
+  "styleKnobs": {
+    "kolon": [
+      2,
+      3,
+      4
+    ]
+  },
+  "dataBindings": [
+    {
+      "name": "sonuclar",
+      "source": "DataSource.searchResults"
+    }
+  ],
+  "actions": [
+    "navigate",
+    "emit:product.quickView"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "responsive": "Mobil 2 kolon"
+}

@@ -1,0 +1,80 @@
+{
+  "id": "footer-columns-newsletter",
+  "kategori": "footer",
+  "varyant": "columns-newsletter",
+  "scope": "global",
+  "amac": "Site geneli alt bilgi: newsletter, link kolonları, sosyal, ödeme ve yasal satır",
+  "slots": {
+    "newsletter": {
+      "tip": "object",
+      "zorunlu": false,
+      "alanlar": {
+        "baslik": { "tip": "text", "maxLen": 60 },
+        "aciklama": { "tip": "text", "maxLen": 160, "zorunlu": false },
+        "placeholder": { "tip": "text", "maxLen": 40, "zorunlu": false },
+        "cta": { "tip": "text", "maxLen": 30 },
+        "yasalNot": { "tip": "text", "maxLen": 160, "zorunlu": false }
+      }
+    },
+    "menuKolonlari": {
+      "tip": "array",
+      "min": 1,
+      "max": 6,
+      "item": {
+        "baslik": { "tip": "text", "maxLen": 40 },
+        "linkler": {
+          "tip": "array",
+          "min": 1,
+          "max": 12,
+          "item": {
+            "etiket": { "tip": "text", "maxLen": 40 },
+            "link": { "tip": "link" }
+          }
+        }
+      }
+    },
+    "sosyal": {
+      "tip": "array",
+      "zorunlu": false,
+      "item": {
+        "platform": { "tip": "text", "maxLen": 30 },
+        "link": { "tip": "link" }
+      }
+    },
+    "odemeIkonlari": {
+      "tip": "array",
+      "zorunlu": false,
+      "item": { "ad": { "tip": "text", "maxLen": 30 } }
+    },
+    "copyright": { "tip": "text", "maxLen": 120 },
+    "yasalLinkler": {
+      "tip": "array",
+      "zorunlu": false,
+      "item": {
+        "etiket": { "tip": "text", "maxLen": 40 },
+        "link": { "tip": "link" }
+      }
+    },
+    "localeSwitcher": {
+      "tip": "object",
+      "zorunlu": false,
+      "alanlar": {
+        "etiket": { "tip": "text", "maxLen": 40 }
+      }
+    }
+  },
+  "styleKnobs": {
+    "layout": "newsletter-left|newsletter-top|columns-only",
+    "kolonSayisi": [2, 3, 4, 5],
+    "mobilAccordion": true
+  },
+  "dataBindings": ["NavigationMenu", "NewsletterList", "PaymentMethods"],
+  "actions": ["subscribe", "navigate", "changeLocale"],
+  "hookNoktalari": [
+    "mount:footer.before",
+    "mount:footer.after",
+    "mount:newsletter.after"
+  ],
+  "bagimliliklar": [],
+  "responsive": "Mobilde menü kolonları accordion; newsletter üstte; ödeme/sosyal alt şeritte"
+}

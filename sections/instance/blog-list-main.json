@@ -1,0 +1,36 @@
+{
+  "id": "blog-list-main",
+  "kategori": "editorial",
+  "varyant": "blog-list",
+  "scope": "instance",
+  "amac": "Blog yazılarını kart/listede göstermek",
+  "slots": {
+    "baslik": {
+      "tip": "text",
+      "maxLen": 60,
+      "zorunlu": false
+    }
+  },
+  "styleKnobs": {
+    "kolon": [
+      1,
+      2,
+      3
+    ],
+    "layout": "grid|list"
+  },
+  "dataBindings": [
+    {
+      "name": "yazilar",
+      "source": "DataSource.blogList"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "responsive": "Mobil tek kolon"
+}

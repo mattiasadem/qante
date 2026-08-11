@@ -1,0 +1,39 @@
+{
+  "id": "media-lookbook-banner",
+  "kategori": "media",
+  "varyant": "lookbook-banner",
+  "scope": "instance",
+  "amac": "Tek büyük lookbook görseli + hotspot/ürün bağları",
+  "slots": {
+    "gorsel": {
+      "tip": "image"
+    },
+    "baslik": {
+      "tip": "text",
+      "maxLen": 60,
+      "zorunlu": false
+    },
+    "hotspotlar": {
+      "tip": "array",
+      "zorunlu": false,
+      "item": {
+        "urun": {
+          "tip": "product"
+        }
+      }
+    }
+  },
+  "styleKnobs": {
+    "hotspotGoster": true
+  },
+  "dataBindings": [],
+  "actions": [
+    "emit:product.quickView",
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:hotspot"
+  ],
+  "bagimliliklar": [],
+  "responsive": "Mobilde hotspot listesi alta"
+}

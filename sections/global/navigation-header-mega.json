@@ -1,0 +1,36 @@
+{
+  "id": "navigation-header-mega",
+  "kategori": "navigation",
+  "varyant": "header-mega",
+  "scope": "global",
+  "amac": "Ana gezinme; çok koleksiyonlu mağazada menüyü merchandising alanına çevirir",
+  "slots": {
+    "logo": { "tip": "image" },
+    "menu": { "tip": "menuRef" },
+    "megaPaneller": {
+      "tip": "array",
+      "max": 6,
+      "item": {
+        "kolonlar": "menuRef",
+        "gorsel": { "tip": "image", "zorunlu": false },
+        "promoKarti": { "tip": "promoRef", "zorunlu": false }
+      }
+    }
+  },
+  "styleKnobs": {
+    "sticky": true,
+    "seffafBaslangic": false,
+    "yukseklik": "compact|regular"
+  },
+  "dataBindings": [
+    { "name": "menu", "source": "DataSource.navigation" }
+  ],
+  "actions": ["emit:search.open", "emit:cart.open", "navigate"],
+  "hookNoktalari": [
+    "mount:header.before",
+    "mount:header.utility",
+    "mount:header.after"
+  ],
+  "bagimliliklar": ["cart-drawer", "search-overlay"],
+  "responsive": "Mobilde hamburger + tam ekran menü; mega paneller akordeon olur"
+}

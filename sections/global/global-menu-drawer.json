@@ -1,0 +1,39 @@
+{
+  "id": "global-menu-drawer",
+  "kategori": "navigation",
+  "varyant": "menu-drawer",
+  "scope": "global",
+  "amac": "Mobil/yan menü drawer ile navigasyon",
+  "slots": {
+    "menuler": {
+      "tip": "array",
+      "item": {
+        "etiket": {
+          "tip": "text",
+          "maxLen": 40
+        },
+        "link": {
+          "tip": "link"
+        }
+      }
+    }
+  },
+  "styleKnobs": {
+    "side": "left|right"
+  },
+  "dataBindings": [
+    {
+      "name": "menu",
+      "source": "DataSource.navigationMenu"
+    }
+  ],
+  "actions": [
+    "navigate",
+    "emit:drawer.close"
+  ],
+  "hookNoktalari": [
+    "mount:menu.after"
+  ],
+  "bagimliliklar": [],
+  "responsive": "Özellikle mobilde birincil nav"
+}

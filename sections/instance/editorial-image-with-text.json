@@ -1,0 +1,24 @@
+{
+  "id": "editorial-image-with-text",
+  "kategori": "editorial",
+  "varyant": "image-with-text",
+  "scope": "instance",
+  "amac": "Görsel + metin yan yana marka/hikâye anlatımı",
+  "slots": {
+    "baslik": { "tip": "text", "maxLen": 80 },
+    "metin": { "tip": "text", "maxLen": 400, "zorunlu": false },
+    "gorsel": { "tip": "image" },
+    "cta": { "tip": "button", "zorunlu": false },
+    "badge": { "tip": "text", "maxLen": 40, "zorunlu": false }
+  },
+  "styleKnobs": {
+    "imagePozisyon": "left|right",
+    "oran": "1:1|4:5|16:9",
+    "badgeGoster": true
+  },
+  "dataBindings": [],
+  "actions": ["navigate"],
+  "hookNoktalari": ["mount:section.after"],
+  "bagimliliklar": [],
+  "responsive": "Mobilde görsel üstte, metin altta"
+}

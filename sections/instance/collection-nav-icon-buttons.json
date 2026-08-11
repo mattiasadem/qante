@@ -1,0 +1,34 @@
+{
+  "id": "collection-nav-icon-buttons",
+  "kategori": "collection-nav",
+  "varyant": "icon-buttons",
+  "scope": "instance",
+  "amac": "İkon + etiket butonlarıyla hızlı kategori/koleksiyon gezinmesi",
+  "slots": {
+    "items": {
+      "tip": "array",
+      "min": 2,
+      "max": 16,
+      "item": {
+        "etiket": { "tip": "text", "maxLen": 40 },
+        "ikon": { "tip": "image", "zorunlu": false },
+        "link": { "tip": "link" }
+      }
+    }
+  },
+  "styleKnobs": {
+    "layout": "row|wrap|marquee",
+    "ikonGoster": true
+  },
+  "dataBindings": [
+    {
+      "name": "koleksiyonlar",
+      "source": "DataSource.collectionList",
+      "params": { "kaynak": "manual", "limit": 12 }
+    }
+  ],
+  "actions": ["navigate"],
+  "hookNoktalari": ["mount:section.after"],
+  "bagimliliklar": [],
+  "responsive": "Mobilde yatay scroll"
+}

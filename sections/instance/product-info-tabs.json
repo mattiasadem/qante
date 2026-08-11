@@ -1,0 +1,35 @@
+{
+  "id": "product-info-tabs",
+  "kategori": "product-info",
+  "varyant": "tabs",
+  "scope": "instance",
+  "amac": "Ürün detaylarını sekmeli içerik panellerinde sunmak",
+  "slots": {
+    "sekmeler": {
+      "tip": "array",
+      "min": 1,
+      "max": 8,
+      "item": {
+        "etiket": {
+          "tip": "text",
+          "maxLen": 40
+        },
+        "icerik": {
+          "tip": "richtext"
+        }
+      }
+    }
+  },
+  "styleKnobs": {
+    "layout": "tabs|accordion"
+  },
+  "dataBindings": [],
+  "actions": [
+    "emit:tab.change"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "responsive": "Mobilde accordion"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "features-slider-multicolumn",
+  "kategori": "features-benefits",
+  "varyant": "slider-multicolumn",
+  "scope": "instance",
+  "amac": "Özellik/detay anlatımını slider + çok kolonlu kartlarla göstermek",
+  "slots": {
+    "baslik": { "tip": "text", "maxLen": 80 },
+    "altBaslik": { "tip": "text", "maxLen": 160, "zorunlu": false },
+    "items": {
+      "tip": "array",
+      "min": 2,
+      "max": 12,
+      "item": {
+        "baslik": { "tip": "text", "maxLen": 60 },
+        "metin": { "tip": "text", "maxLen": 200, "zorunlu": false },
+        "gorsel": { "tip": "image", "zorunlu": false }
+      }
+    }
+  },
+  "styleKnobs": {
+    "kolon": [2, 3, 4],
+    "slider": true
+  },
+  "dataBindings": [],
+  "actions": ["navigate"],
+  "hookNoktalari": ["mount:section.after"],
+  "bagimliliklar": [],
+  "responsive": "Mobilde tek kart swipe"
+}

@@ -1,0 +1,48 @@
+{
+  "id": "lead-capture-form",
+  "kategori": "lead-capture",
+  "varyant": "form",
+  "scope": "instance",
+  "amac": "İletişim / lead form alanları ve gönderim",
+  "slots": {
+    "baslik": {
+      "tip": "text",
+      "maxLen": 60,
+      "zorunlu": false
+    },
+    "alanlar": {
+      "tip": "array",
+      "min": 1,
+      "max": 12,
+      "item": {
+        "etiket": {
+          "tip": "text",
+          "maxLen": 40
+        },
+        "tip": {
+          "tip": "text",
+          "maxLen": 20
+        },
+        "zorunlu": {
+          "tip": "boolean"
+        }
+      }
+    },
+    "cta": {
+      "tip": "text",
+      "maxLen": 30
+    }
+  },
+  "styleKnobs": {
+    "layout": "stacked|two-column"
+  },
+  "dataBindings": [],
+  "actions": [
+    "emit:form.submit"
+  ],
+  "hookNoktalari": [
+    "mount:form.after"
+  ],
+  "bagimliliklar": [],
+  "responsive": "Mobil tek kolon"
+}

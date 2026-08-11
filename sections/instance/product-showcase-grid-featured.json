@@ -1,0 +1,36 @@
+{
+  "id": "product-showcase-grid-featured",
+  "kategori": "product-showcase",
+  "varyant": "grid-featured",
+  "scope": "instance",
+  "amac": "Seçili ürün listesini kartlarla vitrine çıkarmak",
+  "slots": {
+    "baslik": { "tip": "text", "maxLen": 60 },
+    "altBaslik": { "tip": "text", "maxLen": 120, "zorunlu": false },
+    "cta": { "tip": "button", "zorunlu": false }
+  },
+  "styleKnobs": {
+    "kolon": [2, 3, 4],
+    "kartStili": "minimal|framed",
+    "rozetGoster": true,
+    "hizliEkleGoster": true
+  },
+  "dataBindings": [
+    {
+      "name": "urunler",
+      "source": "DataSource.productList",
+      "params": {
+        "kaynak": "collection|manual|recommended|recentlyViewed",
+        "limit": 8
+      }
+    }
+  ],
+  "actions": ["emit:product.quickView", "emit:cart.add", "navigate"],
+  "hookNoktalari": [
+    "mount:productCard.badge",
+    "mount:productCard.footer",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "responsive": "Mobil 2 kolon; hızlı ekle butonu her zaman görünür"
+}

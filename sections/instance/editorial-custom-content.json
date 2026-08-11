@@ -1,0 +1,31 @@
+{
+  "id": "editorial-custom-content",
+  "kategori": "editorial",
+  "varyant": "custom-content",
+  "scope": "instance",
+  "amac": "Serbest blok düzeniyle editoryal/ürün karışık içerik alanı",
+  "slots": {
+    "bloklar": {
+      "tip": "array",
+      "min": 1,
+      "max": 12,
+      "item": {
+        "tip": { "tip": "text", "maxLen": 30 },
+        "gorsel": { "tip": "image", "zorunlu": false },
+        "baslik": { "tip": "text", "maxLen": 80, "zorunlu": false },
+        "metin": { "tip": "text", "maxLen": 200, "zorunlu": false },
+        "link": { "tip": "link", "zorunlu": false },
+        "urun": { "tip": "product", "zorunlu": false }
+      }
+    }
+  },
+  "styleKnobs": {
+    "kolon": [1, 2, 3, 4],
+    "yogunluk": "compact|airy"
+  },
+  "dataBindings": [],
+  "actions": ["navigate", "emit:product.quickView"],
+  "hookNoktalari": ["mount:section.after"],
+  "bagimliliklar": [],
+  "responsive": "Mobilde tek kolon stack"
+}

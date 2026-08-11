@@ -1,0 +1,28 @@
+{
+  "id": "promo-scrolling-marquee",
+  "kategori": "promo",
+  "varyant": "scrolling-marquee",
+  "scope": "instance",
+  "amac": "Kısa mesaj/koleksiyon adlarını sürekli kayan şerit olarak göstermek",
+  "slots": {
+    "items": {
+      "tip": "array",
+      "min": 2,
+      "max": 20,
+      "item": {
+        "metin": { "tip": "text", "maxLen": 40 },
+        "link": { "tip": "link", "zorunlu": false }
+      }
+    }
+  },
+  "styleKnobs": {
+    "hiz": "slow|normal|fast",
+    "yon": "left|right",
+    "pauseOnHover": true
+  },
+  "dataBindings": [],
+  "actions": ["navigate"],
+  "hookNoktalari": ["mount:section.after"],
+  "bagimliliklar": [],
+  "responsive": "Tüm viewport’larda aynı şerit; font küçülür"
+}

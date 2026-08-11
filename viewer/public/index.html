@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QANTE Envanter</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-row">
+      <div class="brand">
+        <h1>QANTE Envanter</h1>
+        <span class="ver" id="taxonomy-version"></span>
+      </div>
+      <div class="stats" id="stats">Yükleniyor…</div>
+      <div class="controls">
+        <input id="q" type="search" placeholder="Ara (/)  id, tema, not…" aria-label="Ara" />
+        <label class="sr" for="group">Gruplama</label>
+        <select id="group" aria-label="Gruplama"></select>
+        <button type="button" class="badge-health" id="health-badge" title="Sağlık raporuna git">…</button>
+        <button type="button" class="primary" id="reload">Yenile</button>
+      </div>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Görünüm">
+      <button class="tab" role="tab" data-view="browse" aria-selected="true">Gözat<span class="n" id="n-browse"></span></button>
+      <button class="tab" role="tab" data-view="gallery" aria-selected="false">Galeri<span class="n" id="n-gallery"></span></button>
+      <button class="tab" role="tab" data-view="coverage" aria-selected="false">Kapsama</button>
+      <button class="tab" role="tab" data-view="health" aria-selected="false">Sağlık</button>
+    </div>
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar" aria-label="Filtreler ve liste"></aside>
+    <main id="main"><p class="empty">Yükleniyor…</p></main>
+  </div>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Görsel">
+    <div class="lightbox-bar">
+      <span id="lb-title"></span>
+      <span>
+        <button type="button" id="lb-prev" title="Önceki (←)">←</button>
+        <button type="button" id="lb-next" title="Sonraki (→)">→</button>
+        <button type="button" id="lb-close" title="Kapat (Esc)">Kapat</button>
+      </span>
+    </div>
+    <div class="lightbox-body"><img id="lb-img" alt="" /></div>
+  </div>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
