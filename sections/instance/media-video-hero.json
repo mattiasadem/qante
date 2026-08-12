@@ -1,0 +1,24 @@
+{
+  "id": "media-video-hero",
+  "kategori": "media",
+  "varyant": "video-hero",
+  "scope": "instance",
+  "amac": "Video arka planlı editorial/hero blok ile ürün veya hikâye anlatmak",
+  "slots": {
+    "baslik": { "tip": "text", "maxLen": 100 },
+    "altBaslik": { "tip": "text", "maxLen": 200, "zorunlu": false },
+    "video": { "tip": "video" },
+    "poster": { "tip": "image", "zorunlu": false },
+    "cta": { "tip": "button", "zorunlu": false }
+  },
+  "styleKnobs": {
+    "autoplay": true,
+    "muted": true,
+    "overlayMetin": "left|center"
+  },
+  "dataBindings": [],
+  "actions": ["navigate", "emit:video.play"],
+  "hookNoktalari": ["mount:section.after"],
+  "bagimliliklar": [],
+  "responsive": "Mobilde video poster’a düşebilir veya kısa klip"
+}

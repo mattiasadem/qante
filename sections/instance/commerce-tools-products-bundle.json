@@ -1,0 +1,32 @@
+{
+  "id": "commerce-tools-products-bundle",
+  "kategori": "product-showcase",
+  "varyant": "products-bundle",
+  "scope": "instance",
+  "amac": "Birden fazla ürünü paket/indirimle birlikte seçtirip sepete eklemek (bundle builder)",
+  "slots": {
+    "baslik": { "tip": "text", "maxLen": 80 },
+    "altBaslik": { "tip": "text", "maxLen": 160, "zorunlu": false },
+    "indirimEtiketi": { "tip": "text", "maxLen": 40, "zorunlu": false },
+    "cta": { "tip": "button" }
+  },
+  "styleKnobs": {
+    "layout": "horizontal|stacked",
+    "secimZorunlu": true
+  },
+  "dataBindings": [
+    {
+      "name": "urunler",
+      "source": "DataSource.productList",
+      "params": { "kaynak": "manual|bundle", "limit": 6 }
+    }
+  ],
+  "actions": ["emit:cart.add", "emit:bundle.change", "navigate"],
+  "hookNoktalari": [
+    "mount:bundle.afterItems",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "responsive": "Mobilde ürünler stack; CTA sabit altta kalabilir",
+  "_taxonomyNote": "Aday kategori commerce-tools — onaylanınca kategori alanı güncellenir (candidates/commerce-tools.md)"
+}

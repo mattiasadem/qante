@@ -34,7 +34,9 @@
 - [x] F4 PDP  
 - [x] F5 Search / Cart / Content / Blog / FAQ  
 - [x] Global overlay’ler (cart · menu · compare · quick-view · predictive-search · spotlight)  
-- [ ] F6 Preset delta (ceramide/pillar/trove/nexvo) — opsiyonel sonraki iş  
+- [x] F6 Preset delta başlandı → [`hyper-ceramide.md`](./hyper-ceramide.md)  
+- [ ] F6b Pillar / Trove / Nexvo — gerekirse kısa tarama  
+ 
 
 ---
 

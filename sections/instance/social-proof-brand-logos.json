@@ -1,0 +1,29 @@
+{
+  "id": "social-proof-brand-logos",
+  "kategori": "social-proof",
+  "varyant": "brand-logos",
+  "scope": "instance",
+  "amac": "Marka / basın logolarını şerit halinde göstererek güven ve keşif sağlamak",
+  "slots": {
+    "baslik": { "tip": "text", "maxLen": 60, "zorunlu": false },
+    "logolar": {
+      "tip": "array",
+      "min": 3,
+      "max": 16,
+      "item": {
+        "gorsel": { "tip": "image" },
+        "ad": { "tip": "text", "maxLen": 40, "zorunlu": false },
+        "link": { "tip": "link", "zorunlu": false }
+      }
+    }
+  },
+  "styleKnobs": {
+    "layout": "static|marquee",
+    "griTon": true
+  },
+  "dataBindings": [],
+  "actions": ["navigate"],
+  "hookNoktalari": ["mount:section.after"],
+  "bagimliliklar": [],
+  "responsive": "Mobilde daha az logo veya marquee"
+}

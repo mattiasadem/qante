@@ -5,12 +5,13 @@
 
 | Tema | Dosya | Durum |
 |---|---|---|
-| Hyper (Shopify) | [`hyper.md`](./hyper.md) | ✅ **default tamam** — 45 şema · 80/80 evidence |
+| Hyper (Shopify) | [`hyper.md`](./hyper.md) | ✅ **default tamam** — 45 şema · 80 evidence |
+| Hyper · Ceramide | [`hyper-ceramide.md`](./hyper-ceramide.md) | ✅ delta — 5 yeni şema · 5 obs |
 | _(sonraki)_ | `ozy.md` / `marka-….md` | henüz yok |
 
 ## Hyper özeti
 
-11 sayfa tipi (home → blog-post) envanterlendi.
+11 sayfa tipi (home → blog-post) envanterlendi. Ceramide delta: [`hyper-ceramide.md`](./hyper-ceramide.md).
 
 ## Yeni tema dosyası
 

@@ -16,7 +16,8 @@ Zorlamayla `product-showcase` veya `comparison` altına sokmak yanlış granüla
 
 | Örnek | Nerede | Not |
 |---|---|---|
-| Bundle builder | Hyper/Trove (theme docs + Ceramide ailesi) | “kendi paketini kur” |
+| Bundle builder | **Ceramide home canlı** → şema: `commerce-tools-products-bundle` | “Saving 20% On Bundle” |
+| Bundle (docs) | Hyper/Trove theme docs | “kendi paketini kur” |
 | Compare drawer | Hyper default → şema: `global-compare-drawer` | Overlay; kategori adayıyla hizalı |
 | Quick order list | Hyper feature sözlüğü | B2B / toptan |
 

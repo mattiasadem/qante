@@ -1,0 +1,37 @@
+{
+  "id": "media-shop-the-feed",
+  "kategori": "media",
+  "varyant": "shop-the-feed",
+  "scope": "instance",
+  "amac": "Sosyal / UGC görsel akışından ürün keşfi (shop the look / feed)",
+  "slots": {
+    "baslik": { "tip": "text", "maxLen": 80 },
+    "altBaslik": { "tip": "text", "maxLen": 160, "zorunlu": false },
+    "items": {
+      "tip": "array",
+      "min": 3,
+      "max": 18,
+      "item": {
+        "gorsel": { "tip": "image" },
+        "urunRef": { "tip": "productRef", "zorunlu": false },
+        "etiket": { "tip": "text", "maxLen": 40, "zorunlu": false }
+      }
+    }
+  },
+  "styleKnobs": {
+    "layout": "grid|masonry|slider",
+    "kolon": [2, 3, 4]
+  },
+  "dataBindings": [
+    {
+      "name": "urunler",
+      "source": "DataSource.productList",
+      "params": { "kaynak": "manual", "limit": 12 },
+      "zorunlu": false
+    }
+  ],
+  "actions": ["emit:product.quickView", "navigate"],
+  "hookNoktalari": ["mount:feedItem.after", "mount:section.after"],
+  "bagimliliklar": [],
+  "responsive": "Mobil 2 kolon; hotspot/quick view dokunmatik"
+}
