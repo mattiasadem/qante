@@ -269,6 +269,12 @@ function build(root) {
         .length,
       noEvidence: observations.filter((o) => o.evidenceStatus === "none").length,
       themes: new Set(observations.map((o) => o.kaynak).filter(Boolean)).size,
+      presets: new Set(observations.map((o) => o.preset).filter(Boolean)).size,
+      themePresets: new Set(
+        observations
+          .map((o) => [o.kaynak, o.preset].filter(Boolean).join("/"))
+          .filter(Boolean)
+      ).size,
       pages: new Set(observations.map((o) => o.sayfa).filter(Boolean)).size,
     },
   };

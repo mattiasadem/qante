@@ -124,6 +124,15 @@ export const PAGE_PRIORITY = [
   "policy",
 ];
 
+/** Hyper ailesi önce; diğerleri alfabetik. */
+export const PRESET_PRIORITY = [
+  "default",
+  "ceramide",
+  "pillar",
+  "trove",
+  "nexvo",
+];
+
 const SCOPE_PRIORITY = ["global", "instance"];
 
 function rankOf(list, value) {
@@ -249,7 +258,19 @@ function countValues(rows, dim) {
   }
   return [...map.entries()]
     .map(([value, count]) => ({ value, count }))
-    .sort((a, b) => b.count - a.count || a.value.localeCompare(b.value));
+    .sort((a, b) => {
+      if (dim === "preset") {
+        const byPreset =
+          rankOf(PRESET_PRIORITY, a.value) - rankOf(PRESET_PRIORITY, b.value);
+        if (byPreset) return byPreset;
+      }
+      if (dim === "sayfa") {
+        const byPage =
+          rankOf(PAGE_PRIORITY, a.value) - rankOf(PAGE_PRIORITY, b.value);
+        if (byPage) return byPage;
+      }
+      return b.count - a.count || a.value.localeCompare(b.value);
+    });
 }
 
 export function computeFacets(inv, f) {

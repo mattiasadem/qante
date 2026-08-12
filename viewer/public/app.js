@@ -9,6 +9,9 @@ const DIM_LABEL = {
   scope: "Scope",
   viewport: "Viewport",
 };
+
+/** Varsayılan açık facet’ler — preset kritik (Hyper ailesi burada) */
+const DEFAULT_OPEN_FACETS = ["kaynak", "preset", "sayfa", "kategori"];
 const EVIDENCE_LABEL = { full: "Tam (3 viewport)", partial: "Kısmi", none: "Yok" };
 const SCHEMA_STATE_LABEL = {
   observed: "Gözlemi olan",
@@ -40,7 +43,15 @@ let facets = null;
 let candidatesData = null;
 let lightboxList = [];
 let lightboxIndex = 0;
-let openFacets = new Set(JSON.parse(localStorage.getItem("qante.openFacets") || '["kaynak","sayfa","kategori"]'));
+let openFacets = new Set(
+  JSON.parse(localStorage.getItem("qante.openFacets") || JSON.stringify(DEFAULT_OPEN_FACETS))
+);
+// Eski localStorage’da preset kapalı kalmış olabilir — bir kez zorla aç
+if (localStorage.getItem("qante.openFacets.v2") !== "1") {
+  for (const d of DEFAULT_OPEN_FACETS) openFacets.add(d);
+  localStorage.setItem("qante.openFacets", JSON.stringify([...openFacets]));
+  localStorage.setItem("qante.openFacets.v2", "1");
+}
 let collapsedGroups = new Set();
 let filtersOpen = localStorage.getItem("qante.filtersOpen") === "1";
 
@@ -133,8 +144,9 @@ async function loadStats() {
     : "";
 
   const c = stats.counts;
+  const presetBit = c.presets ? ` · ${c.presets} preset` : "";
   $("#stats").textContent =
-    `${c.schemas} şema · ${c.observations} gözlem · ${c.themes} tema · ${c.pages} sayfa · ` +
+    `${c.schemas} şema · ${c.observations} gözlem · ${c.themes} tema${presetBit} · ${c.pages} sayfa · ` +
     `${c.evidenceFiles} SS (${c.fullEvidence} tam / ${c.partialEvidence} kısmi / ${c.noEvidence} yok)`;
 
   const h = stats.health;
@@ -230,9 +242,12 @@ function facetBlock(dim) {
       </label>`
     )
     .join("");
-  const isOpen = openFacets.has(dim) || sel.size > 0;
+  // Birden fazla preset varsa paneli açık tut (Hyper default/ceramide/pillar…)
+  const multiPreset = dim === "preset" && opts.length > 1;
+  const isOpen = openFacets.has(dim) || sel.size > 0 || multiPreset;
+  const selNote = sel.size ? ` · ${sel.size} seçili` : "";
   return `<details class="facet" data-facet="${dim}" ${isOpen ? "open" : ""}>
-    <summary>${DIM_LABEL[dim]}${sel.size ? ` (${sel.size})` : ""}</summary>
+    <summary>${DIM_LABEL[dim]} · ${opts.length}${selNote}</summary>
     <div class="facet-body">${body}</div>
   </details>`;
 }
