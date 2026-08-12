@@ -1,0 +1,29 @@
+{
+  "id": "collection-nav-banners",
+  "kategori": "collection-nav",
+  "varyant": "banners-with-categories",
+  "scope": "instance",
+  "amac": "Üst kategori keşfini banner + kategori satırı kombinasyonuyla sunmak",
+  "slots": {
+    "baslik": { "tip": "text", "maxLen": 60, "zorunlu": false },
+    "items": {
+      "tip": "array",
+      "min": 2,
+      "max": 8,
+      "item": {
+        "gorsel": { "tip": "image" },
+        "baslik": { "tip": "text", "maxLen": 40 },
+        "link": { "tip": "link" }
+      }
+    }
+  },
+  "styleKnobs": {
+    "layout": "row|grid",
+    "kolon": [3, 4, 5]
+  },
+  "dataBindings": [],
+  "actions": ["navigate"],
+  "hookNoktalari": ["mount:section.after"],
+  "bagimliliklar": [],
+  "responsive": "Mobilde yatay scroll veya 2 kolon"
+}

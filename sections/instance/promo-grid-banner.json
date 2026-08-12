@@ -1,0 +1,29 @@
+{
+  "id": "promo-grid-banner",
+  "kategori": "promo",
+  "varyant": "grid-banner",
+  "scope": "instance",
+  "amac": "Birden fazla kampanya/görsel kartını grid banner olarak vitrine çıkarmak",
+  "slots": {
+    "items": {
+      "tip": "array",
+      "min": 2,
+      "max": 8,
+      "item": {
+        "gorsel": { "tip": "image" },
+        "baslik": { "tip": "text", "maxLen": 60, "zorunlu": false },
+        "cta": { "tip": "button", "zorunlu": false },
+        "link": { "tip": "link" }
+      }
+    }
+  },
+  "styleKnobs": {
+    "kolon": [2, 3, 4],
+    "yogunluk": "compact|regular"
+  },
+  "dataBindings": [],
+  "actions": ["navigate"],
+  "hookNoktalari": ["mount:section.after"],
+  "bagimliliklar": [],
+  "responsive": "Mobilde 1–2 kolon stack"
+}

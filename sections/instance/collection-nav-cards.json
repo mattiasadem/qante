@@ -1,0 +1,29 @@
+{
+  "id": "collection-nav-cards",
+  "kategori": "collection-nav",
+  "varyant": "cards",
+  "scope": "instance",
+  "amac": "Kampanya / koleksiyon setlerini kart grid ile sunmak (Shop by Campaign)",
+  "slots": {
+    "baslik": { "tip": "text", "maxLen": 60, "zorunlu": false },
+    "items": {
+      "tip": "array",
+      "min": 2,
+      "max": 8,
+      "item": {
+        "gorsel": { "tip": "image" },
+        "baslik": { "tip": "text", "maxLen": 40 },
+        "aciklama": { "tip": "text", "maxLen": 80, "zorunlu": false },
+        "link": { "tip": "link" }
+      }
+    }
+  },
+  "styleKnobs": {
+    "kolon": [2, 3, 4]
+  },
+  "dataBindings": [],
+  "actions": ["navigate"],
+  "hookNoktalari": ["mount:section.after"],
+  "bagimliliklar": [],
+  "responsive": "Mobilde 2 kolon"
+}

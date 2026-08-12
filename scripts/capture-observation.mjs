@@ -88,11 +88,13 @@ const results = [];
 
 try {
   for (const vp of viewports) {
+    // Viewport boyutunu değiştir; isMobile/UA ile Shopify demo redirect
+    // (ör. Nexvo home → /collections/portables) tetikleme.
     const page = await browser.newPage({
       viewport: { width: vp.width, height: vp.height },
       deviceScaleFactor: 1,
-      isMobile: vp.width <= 768,
-      hasTouch: vp.width <= 768,
+      isMobile: false,
+      hasTouch: false,
     });
 
     const warmupUrl = obs.warmupUrl || obs.capture?.warmupUrl || null;
@@ -102,17 +104,70 @@ try {
       await dismissAllOverlays(page);
     }
 
+    const target = new URL(url);
     await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
     await page.waitForTimeout(3500);
 
+    // Mobil/tablet redirect veya overlay click ile sayfa kaydıysa home'a geri al
+    const landed = new URL(page.url());
+    if (
+      landed.origin === target.origin &&
+      landed.pathname.replace(/\/$/, "") !== target.pathname.replace(/\/$/, "")
+    ) {
+      console.warn(
+        `URL kaydı (${vp.id}): ${landed.pathname} → yeniden ${target.pathname || "/"}`
+      );
+      await page.goto(url, { waitUntil: "networkidle", timeout: 90000 }).catch(() =>
+        page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 })
+      );
+      await page.waitForTimeout(2500);
+    }
+
     await dismissAllOverlays(page);
+
+    // Overlay dismiss bazen collection link'ine tıklayabiliyor — geri al
+    {
+      const afterDismiss = new URL(page.url());
+      if (
+        afterDismiss.origin === target.origin &&
+        afterDismiss.pathname.replace(/\/$/, "") !==
+          target.pathname.replace(/\/$/, "")
+      ) {
+        console.warn(
+          `Dismiss sonrası URL kaydı (${vp.id}): ${afterDismiss.pathname} → geri`
+        );
+        await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
+        await page.waitForTimeout(2500);
+        await dismissAllOverlays(page);
+      }
+    }
+
     await assertCleanForScreenshot(page);
     await page.waitForTimeout(800);
 
+    // Lazy section hydrate: kısa scroll pass, sonra hedefe in
+    await page.evaluate(async () => {
+      const step = Math.max(400, Math.floor(window.innerHeight * 0.85));
+      const max = Math.max(
+        document.body?.scrollHeight || 0,
+        document.documentElement?.scrollHeight || 0
+      );
+      for (let y = 0; y < max; y += step) {
+        window.scrollTo(0, y);
+        await new Promise((r) => setTimeout(r, 120));
+      }
+      window.scrollTo(0, 0);
+    });
+    await page.waitForTimeout(400);
+
     const prepareScroll =
-      obs.prepareScroll || obs.capture?.prepareScroll || null;
+      obs.prepareScroll || obs.capture?.prepareScroll || obs.selector;
     if (prepareScroll) {
       const scrollTarget = page.locator(prepareScroll).first();
+      // Selector henüz yoksa kısa bekle (hydrate)
+      await scrollTarget
+        .waitFor({ state: "attached", timeout: 12000 })
+        .catch(() => {});
       if (await scrollTarget.count()) {
         await scrollTarget.scrollIntoViewIfNeeded().catch(() => {});
         await page.waitForTimeout(500);

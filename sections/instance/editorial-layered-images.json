@@ -1,0 +1,27 @@
+{
+  "id": "editorial-layered-images",
+  "kategori": "editorial",
+  "varyant": "layered-images-with-text",
+  "scope": "instance",
+  "amac": "Katmanlı görseller + metin/CTA ile editorial kampanya bloğu",
+  "slots": {
+    "baslik": { "tip": "text", "maxLen": 80 },
+    "altBaslik": { "tip": "text", "maxLen": 160, "zorunlu": false },
+    "gorseller": {
+      "tip": "array",
+      "min": 1,
+      "max": 4,
+      "item": { "gorsel": { "tip": "image" } }
+    },
+    "cta": { "tip": "button", "zorunlu": false }
+  },
+  "styleKnobs": {
+    "metinKonumu": "left|right|center",
+    "katmanStili": "overlap|stack"
+  },
+  "dataBindings": [],
+  "actions": ["navigate"],
+  "hookNoktalari": ["mount:section.after"],
+  "bagimliliklar": [],
+  "responsive": "Mobilde görseller stack; metin altta"
+}

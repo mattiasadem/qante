@@ -4,7 +4,7 @@
 *Walkthrough:* `../qante-ornek-calisma-hyper.md`  
 *Evidence:* `evidence/hyper/{preset}/{sayfa}/`
 
-**Şu anki odak:** ✅ Hyper **default tam envanter bitti** — sonraki tema veya preset delta
+**Şu anki odak:** ✅ Hyper **default + tüm preset delta** bitti — ozy’ye geçiş review sonrası
 
 **Evidence kuralı:** `selector` + url → `capture-observation.mjs` (3vp) · drawer/modal: `captureMode: viewport` + `prepareClick` / `prepareFill` / `prepareScroll`
 
@@ -34,9 +34,9 @@
 - [x] F4 PDP  
 - [x] F5 Search / Cart / Content / Blog / FAQ  
 - [x] Global overlay’ler (cart · menu · compare · quick-view · predictive-search · spotlight)  
-- [x] F6 Preset delta başlandı → [`hyper-ceramide.md`](./hyper-ceramide.md)  
-- [ ] F6b Pillar / Trove / Nexvo — gerekirse kısa tarama  
- 
+- [x] F6 Preset delta → [`hyper-ceramide.md`](./hyper-ceramide.md)  
+- [x] F6b Pillar / Trove / Nexvo → [`hyper-presets.md`](./hyper-presets.md)  
+
 
 ---
 
@@ -59,9 +59,9 @@
 
 ## Bilinçli boşluklar
 
-1. **Preset delta** henüz yok (aynı şemaların ceramide vb. farkları)  
+1. Soft-reuse notları (Nexvo `slideshow_with_product`, `collection_list_with_banner`) — isteğe bağlı  
 2. Policy sayfaları düşük öncelik, taranmadı  
-3. `before-after` kategori taksonomide duruyor; Hyper canlı demoda instance yok → envanterden çıkarıldı (walkthrough Örnek 5 pedagogik kaldı)
+3. Ceramide PDP’de `before-after-slider` eklendi; diğer preset’lerde yoksa sorun değil
 
 ---
 

@@ -1,0 +1,31 @@
+{
+  "id": "promo-banner-tabs",
+  "kategori": "promo",
+  "varyant": "banner-with-tabs",
+  "scope": "instance",
+  "amac": "Sekmeli kampanya banner’ı — her sekmede farklı görsel/ürün/CTA",
+  "slots": {
+    "baslik": { "tip": "text", "maxLen": 60, "zorunlu": false },
+    "sekmeler": {
+      "tip": "array",
+      "min": 2,
+      "max": 6,
+      "item": {
+        "etiket": { "tip": "text", "maxLen": 30 },
+        "gorsel": { "tip": "image" },
+        "baslik": { "tip": "text", "maxLen": 60, "zorunlu": false },
+        "cta": { "tip": "button", "zorunlu": false },
+        "link": { "tip": "link", "zorunlu": false }
+      }
+    }
+  },
+  "styleKnobs": {
+    "autoplay": false,
+    "sekmeKonumu": "top|side"
+  },
+  "dataBindings": [],
+  "actions": ["emit:tab.change", "navigate"],
+  "hookNoktalari": ["mount:section.after"],
+  "bagimliliklar": [],
+  "responsive": "Mobilde sekmeler chip scroll"
+}
