@@ -15,6 +15,12 @@
       "zorunlu": false,
       "maxLen": 200
     },
+    "onerilerBasligi": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 40,
+      "not": "Cross-sell bloğunun başlığı — dolu drawer'da 'Pair Well With'"
+    },
     "oneriler": {
       "tip": "array",
       "zorunlu": false,
@@ -27,6 +33,37 @@
           "zorunlu": true
         }
       }
+    },
+    "bosSepetBasligi": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 60,
+      "not": "Boş state — 'Your cart is currently empty.'"
+    },
+    "bosSepetAltMetni": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 120,
+      "not": "Boş state yönlendirme cümlesi"
+    },
+    "bosSepetKoleksiyonlari": {
+      "tip": "array",
+      "zorunlu": false,
+      "min": 0,
+      "max": 4,
+      "item": {
+        "koleksiyon": {
+          "tip": "ref",
+          "hedef": "collection",
+          "zorunlu": true
+        }
+      },
+      "not": "Boş state'te görsel+ad kartı olarak çıkan koleksiyon seçkisi (1440'ta 2×2)"
+    },
+    "bosSepetButonu": {
+      "tip": "button",
+      "zorunlu": false,
+      "not": "Boş state kapanış CTA'sı — 'Continue Shopping'"
     }
   },
   "styleKnobs": {},
@@ -54,9 +91,9 @@
     "mount:cartDrawer.belowItems"
   ],
   "bagimliliklar": [],
-  "responsive": "",
+  "responsive": "1440'ta sağdan 500px panel, arka sayfa karartılı; öneriler 3'lü grid + metinli 'View' butonu. 375'te tam genişlik sheet; öneriler yatay kaydırmalı şeride dönüşüyor ve buton ikon-only sepet simgesine iniyor. Alt yardımcı çipler (Order Note / Estimate Shipping / Coupon) 375'te ikiye düşüyor.",
   "_tur": "global-bilesen",
   "_filterOrnegi": "filter:price.display (KDV/para birimi gösterimi buradan geçer)",
   "_platformNotu": "Studio tık-dinleyici davranışı: drawer açan linkler koruma deseni ister",
-  "_knobNote": "Global overlay; hediye paketi slot zorunlu:false + compiler. *Goster uydurulmadı."
+  "_knobNote": "Global overlay; hediye paketi slot zorunlu:false + compiler. *Goster uydurulmadı. filled/changed kanıtı denetlendi: alt yardımcı çipler (Order Note / Estimate Shipping / Coupon) hep AÇIK görüldü, kapatılabilirliği kanıtlanamadığı için knob yazılmadı."
 }

@@ -1,0 +1,48 @@
+{
+  "id": "media-mosaic-grid",
+  "kategori": "media",
+  "varyant": "mosaic-grid",
+  "scope": "instance",
+  "amac": "Editorial görselleri sabit mozaik ızgarada göstermek",
+  "slots": {
+    "baslik": {
+      "tip": "text",
+      "maxLen": 80,
+      "zorunlu": false
+    },
+    "items": {
+      "tip": "array",
+      "min": 2,
+      "max": 12,
+      "item": {
+        "gorsel": {
+          "tip": "image",
+          "zorunlu": true
+        },
+        "link": {
+          "tip": "link",
+          "zorunlu": false
+        }
+      },
+      "zorunlu": true
+    }
+  },
+  "styleKnobs": {
+    "layout": "hero-left|hero-right|mosaic|equal",
+    "kolon": [
+      2,
+      3,
+      4
+    ]
+  },
+  "dataBindings": [],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "responsive": "375'te tek kolon yığın. 1440 ızgara (hero / mosaic / equal) korunur.",
+  "_knobNote": "Allure about 4+2 mosaic ve 3 equal; PDP 1+4 hero-left. Etiket/CTA bu karelerde yok — uydurulmadı. 2 knob."
+}

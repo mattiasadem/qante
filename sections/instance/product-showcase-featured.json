@@ -1,0 +1,51 @@
+{
+  "id": "product-showcase-featured",
+  "kategori": "product-showcase",
+  "varyant": "featured",
+  "scope": "instance",
+  "amac": "Tek öne çıkan ürünü galeri + satın alma kutusuyla vitrine koymak",
+  "slots": {
+    "ustEtiket": {
+      "tip": "text",
+      "maxLen": 40,
+      "zorunlu": false
+    },
+    "baslik": {
+      "tip": "text",
+      "maxLen": 80,
+      "zorunlu": true
+    },
+    "urun": {
+      "tip": "ref",
+      "hedef": "product",
+      "zorunlu": true
+    }
+  },
+  "styleKnobs": {
+    "gorselKonumu": "left|right",
+    "varyantGosterim": "swatch|dropdown",
+    "miktarGosterim": "stepper|dropdown",
+    "noktaGoster": true,
+    "rozetGoster": true
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "emit:cart.add",
+    "emit:variant.change",
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:gallery.after",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [
+    "global-cart-drawer"
+  ],
+  "responsive": "1440 galeri sol / buy box sağ. 375 istif, noktalar görselin altında."
+}

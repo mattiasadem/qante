@@ -1,0 +1,107 @@
+{
+  "_kullanim": "Etkileşimli keşif şablonu (/qante-discover-interact). _template.json'ın üstüne interaction alanları ekler. Alt çizgili alanları (_kullanim, _ornek*) gerçek dosyaya kopyalamayın.",
+  "observationId": "{tema}.{preset}.{sayfa}.{schemaId}",
+  "schemaId": "",
+  "kaynak": "",
+  "preset": "",
+  "sayfa": "",
+  "url": "https://... demo URL",
+  "selector": "CSS selector — component DOM sınırı",
+  "captureMode": "section | viewport",
+  "evidenceSlug": "schemaId ile aynı olabilir; dosya adı: {slug}.{state}.{375|768|1440}.png",
+  "evidence": [],
+
+  "interactionStates": [
+    "_ornek: yakalanan state adları — yalnız initial|hover|input|open|filled|changed"
+  ],
+
+  "_etiketNotu": "capture:true olan her adıma okunur 'etiket' ver — dosya adına gömülür: {slug}.{state}.{etiket}.{vp}.png. Türkçe olabilir; script ascii'ye çevirir.",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "selector": null,
+      "value": "https://... sayfa URL'si",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "İlk görünen hâl"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "selector": null,
+      "value": "https://.../products/ornek-urun",
+      "capture": false,
+      "not": "Sepeti doldurmak için PDP'ye git"
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[type='submit']",
+      "value": null,
+      "capture": false,
+      "not": "Gerçek UI tıklaması tercih edilir; fallback kullanıldıysa interactionNote'a yaz"
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a.cart-drawer-button[aria-controls='CartDrawer']",
+      "value": null,
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus']",
+      "value": null,
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet artır → ara toplam güncelleniyor mu"
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": ".card__media",
+      "value": null,
+      "capture": true,
+      "etiket": "hover-ikinci-gorsel",
+      "not": "İkinci görsel / quick add çıkıyor mu"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input[name='q']",
+      "value": "chair",
+      "capture": true,
+      "etiket": "arama-sonucu",
+      "not": "Öneri/sonuç/boş sonuç state'i"
+    }
+  ],
+
+  "stateFindings": {
+    "_ornek": "state adı → o karede görülen fark, düz cümle. Sadece görüneni yaz.",
+    "initial": "",
+    "filled": ""
+  },
+
+  "missingStates": [
+    {
+      "state": "_ornek: hover",
+      "sebep": "Denendi ama alınamadı — selector yok / site engelledi / davranış tetiklenmedi / bu component'te anlamsız"
+    }
+  ],
+
+  "interactionNote": "Emin olunmayan yer, site engeli, fallback kullanımı. Tahmin buraya yazılır — şemaya değil.",
+
+  "capture": {
+    "url": "",
+    "viewports": ["375", "768", "1440"],
+    "mode": "",
+    "method": "",
+    "updatedAt": ""
+  },
+  "notlar": "",
+  "delta": "Şemadan sapma varsa yaz. Boş↔dolu farkı sapma DEĞİL — stateFindings'e gider, yeni schemaId açılmaz."
+}

@@ -7,6 +7,7 @@
 |---|---|---|
 | Hyper (Shopify) | [`hyper.md`](./hyper.md) | ✅ **default tamam** — 45 şema · 80 evidence |
 | Hyper · Ceramide | [`hyper-ceramide.md`](./hyper-ceramide.md) | ✅ delta — 5 yeni şema · 5 obs |
+| Prestige · Allure | [`prestige.md`](./prestige.md) | ✅ Allure 9 sayfa · 65 obs · 4 yeni şema · F6 diğer preset açık |
 | _(sonraki)_ | `ozy.md` / `marka-….md` | henüz yok |
 
 **QC / improvement backlog:** [`../improvements-qc.md`](../improvements-qc.md)

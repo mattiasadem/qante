@@ -1,0 +1,55 @@
+{
+  "id": "editorial-images-scroll",
+  "kategori": "editorial",
+  "varyant": "images-scroll",
+  "scope": "instance",
+  "amac": "Numaralı hikâye adımlarını görsel + metinle kaydırarak anlatmak",
+  "slots": {
+    "adimlar": {
+      "tip": "array",
+      "min": 2,
+      "max": 8,
+      "item": {
+        "etiket": {
+          "tip": "text",
+          "maxLen": 20,
+          "zorunlu": false
+        },
+        "baslik": {
+          "tip": "text",
+          "maxLen": 80,
+          "zorunlu": true
+        },
+        "metin": {
+          "tip": "text",
+          "maxLen": 400,
+          "zorunlu": false
+        },
+        "gorsel": {
+          "tip": "image",
+          "zorunlu": true
+        },
+        "cta": {
+          "tip": "button",
+          "zorunlu": false
+        }
+      },
+      "zorunlu": true
+    }
+  },
+  "styleKnobs": {
+    "gorselKonumu": "left|right",
+    "hizalama": "left|center",
+    "noktaGoster": true,
+    "layout": "split|stacked"
+  },
+  "dataBindings": [],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "responsive": "1440 görsel sol / metin sağ. 375 istif + nokta; swipe."
+}

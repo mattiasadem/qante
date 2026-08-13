@@ -10,9 +10,79 @@
   "captureMode": "viewport",
   "evidenceSlug": "global-cart-drawer",
   "evidence": [
-    "evidence/hyper/default/cart-drawer/global-cart-drawer.375.png",
-    "evidence/hyper/default/cart-drawer/global-cart-drawer.768.png",
-    "evidence/hyper/default/cart-drawer/global-cart-drawer.1440.png"
+    "evidence/hyper/default/cart-drawer/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/hyper/default/cart-drawer/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/hyper/default/cart-drawer/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/hyper/default/cart-drawer/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/hyper/default/cart-drawer/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/hyper/default/cart-drawer/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/hyper/default/cart-drawer/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/hyper/default/cart-drawer/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/hyper/default/cart-drawer/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hyper-theme-demo.myshopify.com/",
+      "capture": false,
+      "not": "Boş sepet bağlamı için home"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.cart-drawer-button[aria-controls='CartDrawer']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş sepet drawer'ı: koleksiyon kartları + Continue Shopping"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://hyper-theme-demo.myshopify.com/products/arc-chair",
+      "capture": false,
+      "not": "Sepeti doldurmak için PDP'ye git"
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button.product-form__submit",
+      "capture": false,
+      "not": "Gerçek 'Add to cart' tıklaması"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://hyper-theme-demo.myshopify.com/",
+      "capture": false,
+      "not": "Boş state ile aynı bağlamda çekmek için home'a dön"
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a.cart-drawer-button[aria-controls='CartDrawer']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer: satır ürün + adet + ara toplam + checkout"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": false,
+      "not": "Adet 1 → 2"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet artışı sonrası: satır fiyatı ve ara toplam güncellendi mi"
+    }
   ],
   "capture": {
     "url": "https://hyper-theme-demo.myshopify.com/",
@@ -22,10 +92,22 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
+    "method": "interaction-steps",
     "prepareClick": "a.cart-drawer-button[aria-controls='CartDrawer']",
-    "updatedAt": "2026-08-11T13:48:15.657Z"
+    "updatedAt": "2026-08-13T19:55:30.779Z"
   },
-  "notlar": "Boş sepet drawer. Capture: viewport modu — masaüstünde sağ panel + karartılmış sayfa bağlamı görünür (sadece panel kırpılmaz).",
-  "delta": "sayfa alanı cart-drawer — taksonomi pageTypes’ta yok; global bileşen bağlamı."
+  "notlar": "Boş (initial) + dolu (filled) + adet değişimi (changed) yakalandı. Capture: viewport modu — masaüstünde sağ panel + karartılmış sayfa bağlamı görünür (sadece panel kırpılmaz). Sepet doldurma: arc-chair PDP'sinde gerçek 'Add to cart' tıklaması (AJAX fallback'e düşmedi).",
+  "delta": "sayfa alanı cart-drawer — taksonomi pageTypes’ta yok; global bileşen bağlamı.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Boş sepet TAMAMEN başka bir kompozisyon: 'Your cart is currently empty.' başlığı, 'Not sure where to start? Try these collections:' alt metni, 2×2 koleksiyon kartı seçkisi (görsel + ad + chevron) ve 'Continue Shopping' butonu. Kargo barı, toplamlar, checkout butonu YOK.",
+    "filled": "Tek ürün girince ortaya çıkanlar: (1) ücretsiz kargo eşiği barı + 'You are eligible for free shipping.' yeşil bildirimi, (2) satır ürün — thumbnail, ad, varyant metni 'Light Beige, Oak', × kaldır, − 1 + adet stepper'ı, satır fiyatı, (3) 'Pair Well With' cross-sell bloğu: 3 ürün kartı, görsel + ad + fiyat (üstü çizili karşılaştırma fiyatı dahil) + 'View' butonu, (4) alt blok: Order Note / Estimate Shipping / Coupon açılır çipleri, 'Estimated total', vergi notu, 'View Cart' + 'Check Out'. Başlık sayaç gösteriyor: 'Your cart (1)'.",
+    "changed": "Adet + tuşuna basınca: başlık (1) → (2), stepper 1 → 2, Estimated total $699.00 → $1,398.00. DİKKAT: satır fiyatı $699.00'da sabit kaldı — yani satır BİRİM fiyat gösteriyor, satır toplamı değil. Sayfa yenilenmedi, drawer açık kalarak güncellendi (emit:cart.updated doğrulandı)."
+  },
+  "interactionNote": "Açık kalan iki soru: (1) Şemadaki `sepetNotu` slot'u text/maxLen 200 olarak merchant içeriği gibi duruyor ama kanıtta 'Order Note' müşterinin doldurduğu bir alan — modelleme yanlış olabilir, merchant yalnız etiketi/açılışı ayarlıyor olabilir. Kanıtla çözülemedi, dokunulmadı. (2) Order Note / Estimate Shipping / Coupon çiplerinin merchant tarafından kapatılabilir olup olmadığı screenshot'tan anlaşılmıyor; hep açık göründü, o yüzden knob yazılmadı."
 }

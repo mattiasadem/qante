@@ -2,7 +2,7 @@
 
 QANTE section envanteri — keşif, şema onarımı, todo'dan devam, denetim.
 
-**Önce `qante/.agents/skills/qante-discover/SKILL.md` dosyasını oku ve harfiyen uygula.**
+**Önce `.agents/skills/qante-discover/SKILL.md` dosyasını oku ve harfiyen uygula.**
 Sözleşmeler: `qante/schema-standard.md` + `qante/styleknobs-standard.md`. Bunlarla çelişen hiçbir şey yazma.
 
 ## Argüman → mod

@@ -1,0 +1,57 @@
+{
+  "id": "editorial-timeline",
+  "kategori": "editorial",
+  "varyant": "timeline",
+  "scope": "instance",
+  "amac": "Marka hikâyesini yıl sekmeleriyle adım adım göstermek",
+  "slots": {
+    "adimlar": {
+      "tip": "array",
+      "min": 2,
+      "max": 12,
+      "item": {
+        "etiket": {
+          "tip": "text",
+          "maxLen": 20,
+          "zorunlu": true
+        },
+        "ustEtiket": {
+          "tip": "text",
+          "maxLen": 40,
+          "zorunlu": false
+        },
+        "baslik": {
+          "tip": "text",
+          "maxLen": 80,
+          "zorunlu": true
+        },
+        "metin": {
+          "tip": "text",
+          "maxLen": 500,
+          "zorunlu": false
+        },
+        "gorsel": {
+          "tip": "image",
+          "zorunlu": true
+        }
+      },
+      "zorunlu": true
+    }
+  },
+  "styleKnobs": {
+    "gorselKonumu": "left|right",
+    "hizalama": "left|center",
+    "layout": "split|stacked"
+  },
+  "dataBindings": [],
+  "actions": [
+    "emit:tab.change",
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "responsive": "1440 görsel sol / metin sağ, yıllar kartın altında. 375 istif.",
+  "_knobNote": "Yıl şeridi kartın altında; sözlükte tabPozisyon yalnız top|side. 3 knob."
+}

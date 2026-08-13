@@ -53,3 +53,19 @@ Bildirim olayları geçmiş zaman (`cart.added`, `cart.updated`), komutlar emir 
 
 1. "Compare" checkbox'ı olan `search-results` / `product-showcase-grid-plp` `global-compare-drawer`'a bağımlı mı? Ekran görüntüsünde Compare var ama compare olayı yayınlamıyorlar. Eklensin mi?
 2. `emit:cart.add` (emir) vs `listen:cart.added` (bildirim) — arada komutu bildirime çeviren controller var sayılıyor. Şema seviyesi doğru; event-bus tasarımı burada değil.
+3. `global-cart-drawer.sepetNotu` (`text`, maxLen 200) merchant içeriği gibi modellenmiş, ama `filled` kanıtında "Order Note" **müşterinin** doldurduğu bir alan olarak çıkıyor. Merchant muhtemelen yalnız etiketi/açık-kapalı olmasını ayarlıyor. Kanıtla çözülemedi, dokunulmadı. Kaynak: `/qante-discover-interact` · 2026-08-13.
+
+---
+
+## C · Boş state'in gizlediği yapı (yeni katman)
+
+*`/qante-discover-interact` · 2026-08-13 · ilk koşu: `global-cart-drawer`*
+
+Boş yakalanan bir overlay, şemanın **yarısını görünmez kılıyor**. Cart drawer'ın dolu hâli 4 slot ortaya çıkardı (`onerilerBasligi`, `bosSepetBasligi`, `bosSepetAltMetni`, `bosSepetKoleksiyonlari`, `bosSepetButonu`) — hiçbiri boş screenshot'ta yoktu. Aynı risk şu bileşenlerde duruyor ve `filled` state'i çekilmeli:
+
+| Şema | Neden boş kanıt yetersiz |
+|---|---|
+| `cart-page-main` | Satır tablosu, adet, ara toplam, kupon hiç görünmüyor |
+| `global-compare-drawer` | Karşılaştırma tablosu boşken sütun/satır dilbilgisi yok |
+| `global-predictive-search` | Öneri/sonuç/boş-sonuç katmanları yazı yazmadan çıkmıyor |
+| `global-quick-view` | Dialog kapalıyken varyant/adet/ATC bloğu ölçülemez |
