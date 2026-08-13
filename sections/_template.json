@@ -4,13 +4,21 @@
   "varyant": "",
   "scope": "instance",
   "amac": "Tek cümle: bu blok hangi işi görür?",
-  "slots": {},
+  "slots": {
+    "_ornek": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Her slotta 'tip' + 'zorunlu' zorunlu. text ise maxLen. array ise item+min+max. object ise alanlar. ref ise hedef. Tipler: text richtext image video icon link button number boolean datetime ref object array"
+    }
+  },
   "styleKnobs": {},
+  "_knobNote": "instance için tipik 4-8 knob (styleknobs-standard.md §5). Az ise gerekçeyi buraya yaz, sonra bu satırı sil.",
   "dataBindings": [],
   "actions": ["yok"],
-  "_actionsNote": "Demoda gözlenen etkileşimleri yaz (navigate, emit:…). Gerçekten etkileşim yoksa [\"yok\"] — boş [] bırakma; üzerinden geçildiğini gösterir.",
-  "hookNoktalari": [],
+  "_actionsNote": "navigate | emit:alan.olay | listen:alan.olay | filter:yol | yok. Boş [] bırakma.",
+  "hookNoktalari": ["mount:section.after"],
   "bagimliliklar": [],
   "responsive": "",
-  "_note": "Bu dosya SADECE şema. Tema/evidence gözlemi → observations/{tema}/{preset}/{sayfa}/{schemaId}.json"
+  "_note": "Bu dosya SADECE şema. Sözleşme: ../schema-standard.md · Gözlem: observations/{tema}/{preset}/{sayfa}/{schemaId}.json · Bitince: node scripts/validate-schemas.mjs"
 }

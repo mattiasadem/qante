@@ -9,6 +9,8 @@
 | Hyper · Ceramide | [`hyper-ceramide.md`](./hyper-ceramide.md) | ✅ delta — 5 yeni şema · 5 obs |
 | _(sonraki)_ | `ozy.md` / `marka-….md` | henüz yok |
 
+**QC / improvement backlog:** [`../improvements-qc.md`](../improvements-qc.md)
+
 ## Hyper özeti
 
 11 sayfa tipi (home → blog-post) envanterlendi. Ceramide delta: [`hyper-ceramide.md`](./hyper-ceramide.md).

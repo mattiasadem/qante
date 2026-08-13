@@ -1,17 +1,19 @@
 /* QANTE viewer — vanilla, bağımlılıksız. */
 
-const DIMS = ["kaynak", "preset", "sayfa", "kategori", "scope", "viewport"];
+const DIMS = ["kaynak", "tp", "sayfa", "kategori", "scope", "viewport"];
+// Yan panelde düz facet olarak çizilenler (tema+preset iç içe ağaçta)
+const FLAT_DIMS = ["sayfa", "kategori", "scope", "viewport"];
 const DIM_LABEL = {
   kaynak: "Tema",
-  preset: "Preset",
+  tp: "Preset",
   sayfa: "Sayfa",
   kategori: "Kategori",
   scope: "Scope",
   viewport: "Viewport",
 };
 
-/** Varsayılan açık facet’ler — preset kritik (Hyper ailesi burada) */
-const DEFAULT_OPEN_FACETS = ["kaynak", "preset", "sayfa", "kategori"];
+/** Varsayılan açık facet’ler — tema ağacı kritik (Hyper ailesi burada) */
+const DEFAULT_OPEN_FACETS = ["tema", "sayfa", "kategori"];
 const EVIDENCE_LABEL = { full: "Tam (3 viewport)", partial: "Kısmi", none: "Yok" };
 const SCHEMA_STATE_LABEL = {
   observed: "Gözlemi olan",
@@ -24,7 +26,7 @@ const state = {
   q: "",
   group: "schema",
   kaynak: [],
-  preset: [],
+  tp: [],
   sayfa: [],
   kategori: [],
   scope: [],
@@ -208,8 +210,9 @@ function activeChips() {
   const chips = [];
   for (const d of DIMS) {
     for (const v of state[d]) {
+      const shown = d === "tp" ? v.replace("/", " › ") : v;
       chips.push(
-        `<button class="active-chip" data-dim="${d}" data-val="${esc(v)}">${DIM_LABEL[d]}: ${esc(v)}</button>`
+        `<button class="active-chip" data-dim="${d}" data-val="${esc(v)}">${DIM_LABEL[d]}: ${esc(shown)}</button>`
       );
     }
   }
@@ -242,13 +245,46 @@ function facetBlock(dim) {
       </label>`
     )
     .join("");
-  // Birden fazla preset varsa paneli açık tut (Hyper default/ceramide/pillar…)
-  const multiPreset = dim === "preset" && opts.length > 1;
-  const isOpen = openFacets.has(dim) || sel.size > 0 || multiPreset;
+  const isOpen = openFacets.has(dim) || sel.size > 0;
   const selNote = sel.size ? ` · ${sel.size} seçili` : "";
   return `<details class="facet" data-facet="${dim}" ${isOpen ? "open" : ""}>
     <summary>${DIM_LABEL[dim]} · ${opts.length}${selNote}</summary>
     <div class="facet-body">${body}</div>
+  </details>`;
+}
+
+function themeTreeBlock() {
+  const tree = facets.temaAgaci || [];
+  if (!tree.length) return "";
+  const selTheme = new Set(state.kaynak);
+  const selTp = new Set(state.tp);
+  const body = tree
+    .map((t) => {
+      const presets = t.presets
+        .map(
+          (p) => `<label class="facet-opt preset-opt${p.count ? "" : " zero"}">
+            <input type="checkbox" data-dim="tp" value="${esc(p.tp)}" ${selTp.has(p.tp) ? "checked" : ""} />
+            <span>${esc(p.value)}</span>
+            <span class="n">${p.count}</span>
+          </label>`
+        )
+        .join("");
+      return `<div class="tema-grup">
+        <label class="facet-opt tema-opt${t.count ? "" : " zero"}">
+          <input type="checkbox" data-dim="kaynak" value="${esc(t.theme)}" ${selTheme.has(t.theme) ? "checked" : ""} />
+          <span>${esc(t.theme)}</span>
+          <span class="n">${t.count}</span>
+        </label>
+        <div class="preset-list">${presets || `<span class="preset-empty">preset yok</span>`}</div>
+      </div>`;
+    })
+    .join("");
+  const selCount = selTheme.size + selTp.size;
+  const isOpen = openFacets.has("tema") || selCount > 0 || tree.length >= 1;
+  const selNote = selCount ? ` · ${selCount} seçili` : "";
+  return `<details class="facet" data-facet="tema" ${isOpen ? "open" : ""}>
+    <summary>Tema › Preset · ${tree.length}${selNote}</summary>
+    <div class="facet-body tema-agaci">${body}</div>
   </details>`;
 }
 
@@ -295,7 +331,8 @@ function renderSidebar() {
   const nActive = activeFilterCount();
   const filterBody = `
     ${activeChips()}
-    ${DIMS.map(facetBlock).join("")}
+    ${themeTreeBlock()}
+    ${FLAT_DIMS.map(facetBlock).join("")}
     ${statusFacetBlock()}
     ${
       uncovered.length
@@ -317,7 +354,8 @@ function renderSidebar() {
       ${filtersOpen ? `<div class="filter-body">${filterBody}</div>` : nActive ? activeChips() : ""}
     </div>
     <div class="facet-head list-head">
-      <strong>${esc(items.groupLabel)} · ${items.total}</strong>
+      <strong>${esc(items.groupLabel)} · ${items.groups.length}</strong>
+      <span class="list-head-count">${items.total} kayıt</span>
     </div>
     ${groupsHtml || `<p class="empty">Sonuç yok</p>`}
   `;

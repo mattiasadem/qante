@@ -1,20 +1,70 @@
-# QANTE — Agent rehberi
+# QANTE — giriş kapısı
 
-Bu klasör, e-ticaret temalarını **şema + örnek envanter** olarak tanımlar. Amaç şu an kod/tema üretmek değil; gerçek sitelerden section dilbilgisini çıkarmak (Sprint 0 / İş Paketi A).
+E-ticaret temalarını **şema + kanıtlı envanter** olarak tanımlar. Amaç şu an kod/tema üretmek değil; gerçek sitelerden section dilbilgisini çıkarmak (Sprint 0 / İş Paketi A).
 
-Platform hedefi: önce ikas Studio; IR/şema platform-bağımsız tutulur.
+Platform hedefi: önce ikas Studio; IR/şema platform-bağımsız.
+
+**Anlık durum:** 59 şema (49 instance · 10 global) · 105 observation · 312 evidence PNG · taksonomi v0.1.0
 
 ---
 
-## Önce bunları oku (sırayla)
+## Agent buradan başlar
 
-1. Bu README
-2. **Lokal UI:** `cd qante/viewer && node server.mjs` → http://localhost:3456
-3. `todo/` — tema bazlı ilerleme (`todo/hyper.md` şu an aktif)
-3. `qante-teknik-ekip-brief.md` — terimler, şema boyutları, iş paketleri
-4. `qante-ornek-calisma-hyper.md` — Hyper üzerinden “nasıl envanterlenir” walkthrough
-5. `sprint-0-task-listesi.md` — Sprint 0 checklist (ihtiyaca göre)
-6. `tema-fabrikasi-master-plan-v02.md` — büyük vizyon (yalnız bağlam gerekirken)
+```
+/qante-discover            → todo'dan devam
+/qante-discover <url>      → yeni tema/sayfa keşfi
+/qante-discover <schemaId> → tek şema onarımı
+/qante-discover denetim    → tüm envanteri doğrula
+```
+
+Komut: `.cursor/commands/qante-discover.md` → skill: `.agents/skills/qante-discover/SKILL.md`
+
+**Elle çalışıyorsan okuma sırası:** bu README → `schema-standard.md` → `styleknobs-standard.md`. Üçü yeterli; gerisi bağlam.
+
+---
+
+## Doküman haritası — her dosyanın **rolü**
+
+Dosyaları rolüne göre oku. Sözleşme bağlar, rehber öğretir, kayıt bilgi verir.
+
+### 🔒 Sözleşme — bunlarla çelişemezsin
+
+| Dosya | Kapsam |
+|---|---|
+| [`schema-standard.md`](./schema-standard.md) | **Şemanın tamamı**: 12 alan · slot tip seti · DataSource listesi · action grameri · scope testi |
+| [`styleknobs-standard.md`](./styleknobs-standard.md) | Yalnız `styleKnobs`: sözlük · karar testi · bütçe (4–8) · responsive |
+| [`taxonomy/v0.1.0.json`](./taxonomy/v0.1.0.json) | Geçerli kategori + sayfa tipi (en yüksek sürümü kullan) |
+| `sections/_template.json` · `observations/_template.json` | Dosya iskeletleri |
+| [`scripts/validate-schemas.mjs`](./scripts/validate-schemas.mjs) | Sözleşmenin **kod hali** — hakem budur |
+
+### 📖 Rehber — nasıl yapılır
+
+| Dosya | Ne öğretir |
+|---|---|
+| [`qante-ornek-calisma-hyper.md`](./qante-ornek-calisma-hyper.md) | Uçtan uca vaka: sınır çizme, feature≠section, 5 örnek kayıt, **sık düşülen 6 hata** |
+| [`scripts/README.md`](./scripts/README.md) | Evidence yakalama (3 viewport, drawer/modal) |
+| [`todo/README.md`](./todo/README.md) | Tema bazlı saha takibi nasıl işler |
+| [`reviews/styleknobs/wine-store-shape-atlas.md`](./reviews/styleknobs/wine-store-shape-atlas.md) | Eski editörden şekil eksenleri — knob için 3. kanıt |
+
+### 📌 Durum — nerede kaldık
+
+| Dosya | Ne der |
+|---|---|
+| [`improvements-qc.md`](./improvements-qc.md) | **Sıradaki iş buradan seçilir** — QC bulguları + backlog |
+| [`todo/*.md`](./todo/) | Tema başına ilerleme (`hyper.md` bitti, sıradaki `ozy.md`) |
+| [`kapsam-raporu-sprint-0.md`](./kapsam-raporu-sprint-0.md) | Resmi kapsam beyanı (A4) |
+| [`sprint-0-task-listesi.md`](./sprint-0-task-listesi.md) | Sprint 0 checklist |
+| [`candidates/`](./candidates/) | Aday kategoriler + taranacak kaynak havuzu |
+| [`reviews/`](./reviews/) | Agent önerileri (şema değil — öneri) |
+
+### 🗺️ Bağlam — sadece gerekince
+
+| Dosya | Ne |
+|---|---|
+| [`qante-teknik-ekip-brief.md`](./qante-teknik-ekip-brief.md) | 4 iş paketi (A/B/C/D), kapılar, deliverable'lar |
+| [`tema-fabrikasi-master-plan-v02.md`](./tema-fabrikasi-master-plan-v02.md) | Büyük vizyon |
+
+> Brief bir **hedef** dokümanıdır, sözleşme değil. Brief ile `schema-standard.md` çelişirse standart kazanır (bilinçli sapmalar `improvements-qc.md` §2'de yazılı).
 
 ---
 
@@ -22,52 +72,50 @@ Platform hedefi: önce ikas Studio; IR/şema platform-bağımsız tutulur.
 
 ```
 qante/
+├── schema-standard.md          ← SÖZLEŞME (şemanın tamamı)
+├── styleknobs-standard.md      ← SÖZLEŞME (styleKnobs)
 ├── taxonomy/v0.1.0.json
-├── sections/                # ŞEMA (tip sözleşmesi) — tip başına TEK dosya
+├── sections/                   ŞEMA — tip başına TEK dosya
 │   ├── _template.json
-│   ├── global/
-│   └── instance/
-├── observations/            # GÖZLEM (hangi temada gördük) — her sighting ayrı dosya
-│   ├── _template.json
+│   ├── global/                 (10)
+│   └── instance/               (49)
+├── observations/               GÖZLEM — her sighting ayrı dosya
 │   └── {tema}/{preset}/{sayfa}/{schemaId}.json
-├── evidence/                # screenshot — evidence/{tema}/{preset}/{sayfa}/
-├── todo/                    # saha takibi (tema başına md)
-├── viewer/                  # lokal web UI — node server.mjs
-├── candidates/              # aday kategori + şemaya sığmayanlar
-├── kapsam-raporu-sprint-0.md
-└── *.md
+├── evidence/{tema}/{preset}/{sayfa}/{slug}.{375|768|1440}.png
+├── scripts/                    capture-observation · validate-schemas
+├── reviews/                    agent önerileri (styleknobs/ · schema/)
+├── todo/                       saha takibi (tema başına)
+├── candidates/                 aday kategori + kaynak havuzu
+└── viewer/                     lokal web UI
 ```
 
-**İki kimlik:**
+**İki kimlik — karıştırma:**
+
 | | Nerede | Örnek |
 |---|---|---|
-| Şema | `sections/.../product-showcase-grid-featured.json` | `id: product-showcase-grid-featured` |
-| Gözlem | `observations/hyper/default/home/product-showcase-grid-featured.json` | `observationId: hyper.default.home.product-showcase-grid-featured` |
+| Şema (tip) | `sections/instance/hero-slideshow.json` | `id: hero-slideshow` |
+| Gözlem (sighting) | `observations/hyper/default/home/hero-slideshow.json` | `observationId: hyper.default.home.hero-slideshow` |
 
-Aynı tipi başka temada görürsen: **aynı şema dosyasına yazma.** Yeni gözlem dosyası aç, örn. `observations/ozy/v1/home/product-showcase-grid-featured.json`. Şema yoksa önce `sections/`’a tip ekle.
+Aynı tipi başka temada görürsen **şema dosyasına dokunma** — yeni observation aç, farkı `delta`'ya yaz.
 
 ---
 
-## Yeni kayıt nasıl eklenir
+## Yeni kayıt akışı
 
-1. Demo gez → section sınırını çiz.
-2. Bu tip `sections/`’ta var mı?
-   - **Yok** → `sections/_template.json` → şema oluştur.
-   - **Var** → şemaya dokunma (veya `delta` ile genişletmeyi tartış).
-3. `observations/_template.json` kopyala → `observations/{tema}/{preset}/{sayfa}/{schemaId}.json`
-4. `observationId` = `{tema}.{preset}.{sayfa}.{schemaId}` (1, 2, 3 yok).
-5. Evidence (3 viewport — **manuel SS yok**):
+1. Demo gez → section sınırını çiz (kart/buton değil, **kabı**).
+2. Tip `sections/`'ta var mı?
+   - **Yok** → `_template.json`'dan şema aç (`schema-standard.md` §2–7).
+   - **Var** → şemaya dokunma.
+3. `observations/{tema}/{preset}/{sayfa}/{schemaId}.json` — zorunlu: `selector` (+ `url`).
+4. Evidence — **manuel screenshot yok**:
    ```bash
-   cd qante/scripts && node capture-observation.mjs ../observations/{tema}/{preset}/{sayfa}/{schemaId}.json
+   cd qante/scripts && node capture-observation.mjs ../observations/hyper/default/home/hero-slideshow.json
    ```
-   Çıktı: `evidence/.../{slug}.375.png` · `.768.png` · `.1440.png`  
-   Observation’da zorunlu: `selector` (+ `url` veya bilinen tema).  
-   Script: overlay kapat → margin-box kırp → `evidence[]` güncelle. Ayrıntı: `scripts/README.md`.
-6. Kategori uymuyorsa `candidates/`.
-
-Örnek çiftler:
-- `sections/instance/hero-slideshow.json` ↔ `observations/hyper/default/home/hero-slideshow.json`
-- `sections/instance/testimonial-quote-carousel.json` ↔ `observations/hyper/default/home/testimonial-quote-carousel.json`
+5. Doğrula:
+   ```bash
+   cd qante && node scripts/validate-schemas.mjs hero-slideshow
+   ```
+6. `todo/{tema}.md` → `[x]`. Kategori uymadıysa `candidates/`.
 
 ---
 
@@ -75,32 +123,34 @@ Aynı tipi başka temada görürsen: **aynı şema dosyasına yazma.** Yeni göz
 
 | Yap | Yapma |
 |---|---|
-| Soyut `DataSource.*` kullan | Platform adı yaz (`Shopify collection` değil) |
-| Stil için `styleKnobs` (kolon, hizalama, yoğunluk…) | Renk / font / spacing token’ı şemaya koy |
-| `scope`: `global` \| `page-template` \| `instance` | Her şeyi `instance` say |
-| Action’ları yaz (`emit:` / `listen:` / `navigate`) | Tıklanabilirleri atla |
-| Kanıt (URL + screenshot) bağla | Sadece hayali şema uydur |
-| Altın örnekleri dondur; iddiayı ölçüme bağla | “Sayaca bak” — yayınlanmış vitrine bak |
+| Soyut `DataSource.*` | Platform adı (`Shopify collection`) |
+| Yapısal `styleKnobs` (kolon, hizalama, layout) | Renk / font / spacing şemaya |
+| `scope`: `global` \| `page-template` \| `instance` | Her şeyi `instance` saymak |
+| Action'ları yaz; yoksa `["yok"]` | Boş `[]` bırakmak |
+| Her slotta `tip` + `zorunlu` | Tip uydurmak (sözlük 13 değer) |
+| Kanıt bağla (observation + 3vp) | Hayali şema |
+| Bitirince validator koş | "Herhalde doğrudur" |
 
-**AI / agent rolü burada:** şema doldur, envanter çıkar. Serbest komponent kodu / stil üretme. Hard-coded stil yasak ilkesi Base/Preset aşamasına da taşınır.
+**AI/agent rolü:** şema doldurur, envanter çıkarır. Serbest komponent kodu veya stil üretmez.
 
 ---
 
-## Sözlük (kısa)
+## Sözlük
 
 - **Section** — sayfanın bağımsız yapı taşı (şemayla tanımlı)
-- **Slot** — içerik alanı (text, image, array…)
-- **styleKnob** — yapısal ayar (token değil)
+- **Slot** — merchant'ın editörde doldurduğu içerik alanı
+- **styleKnob** — yapısal/davranışsal seçim (token değil)
 - **DataSource** — soyut veri bağı; compiler platforma çevirir
-- **Scope** — `global` (her yer) · `page-template` · `instance` (sayfa satırı)
-- **Hook** — `mount:` / `event:` / `filter:` genişleme noktaları
+- **Scope** — `global` · `page-template` · `instance`
+- **Hook** — `mount:` genişleme noktası
+- **Observation** — "bu tipi şu temada gördük" kaydı
 - **Preset** — Base üstünde tokens + styleProfile + reçete (şimdilik kapsam dışı)
 
 ---
 
-## Sprint 0 odağı (agent için)
+## Viewer
 
-Hedef: şablon + gerçek örneklerle **en az 8 tam section kaydı** (bir kısmı `global`).  
-Hook PoC, QANTE Base, Preset → Sprint 1+.
-
-Şüphede kalınca: `qante-ornek-calisma-hyper.md` “Sık düşülecek 6 hata” bölümüne bak.
+```bash
+cd qante && npm run dev        # http://localhost:3456
+```
+Canlı: https://qante.vercel.app

@@ -6,7 +6,7 @@
 
 export const DIMENSIONS = [
   "kaynak",
-  "preset",
+  "tp", // tema/preset bileşik — preset'i temaya bağlar ( br. "hyper/default")
   "sayfa",
   "kategori",
   "scope",
@@ -175,7 +175,7 @@ export function parseFilters(searchParams) {
   return {
     q: (searchParams.get("q") || "").trim().toLowerCase(),
     kaynak: list("kaynak"),
-    preset: list("preset"),
+    tp: list("tp"),
     sayfa: list("sayfa"),
     kategori: list("kategori"),
     scope: list("scope"),
@@ -193,6 +193,9 @@ function matchesDimension(row, dim, values) {
   if (!values.length) return true;
   if (dim === "viewport") {
     return values.some((v) => row.viewports.includes(v));
+  }
+  if (dim === "tp") {
+    return values.includes(`${row.kaynak || "?"}/${row.preset || "?"}`);
   }
   return values.includes(row[dim] || "");
 }
@@ -232,17 +235,61 @@ function matchesSchemaState(row, state) {
   return true;
 }
 
-export function applyFilters(rows, f, { skipDimension = null } = {}) {
+export function applyFilters(rows, f, { skipDimension = null, skipDimensions = null } = {}) {
+  const skip = new Set(skipDimensions || (skipDimension ? [skipDimension] : []));
   return rows.filter((row) => {
     if (!matchesQuery(row, f.q)) return false;
     if (!matchesEvidence(row, f.evidence)) return false;
     if (!matchesSchemaState(row, f.schemaState)) return false;
     for (const dim of DIMENSIONS) {
-      if (dim === skipDimension) continue;
+      if (skip.has(dim)) continue;
       if (!matchesDimension(row, dim, f[dim])) return false;
     }
     return true;
   });
+}
+
+/**
+ * Tema → preset ağacı. Preset her zaman kendi temasının altında sayılır,
+ * böylece iki farklı tema aynı preset adını (ör. "default") taşısa bile karışmaz.
+ * Sayımlar tema+preset dışındaki filtreler uygulanmış halde hesaplanır.
+ */
+export function computeThemeTree(inv, f) {
+  const scoped = applyFilters(inv.rows, f, { skipDimensions: ["kaynak", "tp"] });
+  const themes = new Map();
+  for (const row of scoped) {
+    const theme = row.kaynak || "?";
+    const preset = row.preset || "?";
+    if (!themes.has(theme)) themes.set(theme, { count: 0, presets: new Map() });
+    const t = themes.get(theme);
+    t.count++;
+    t.presets.set(preset, (t.presets.get(preset) || 0) + 1);
+  }
+
+  // Seçili ama sonuç dışı kalan tema/preset'ler de görünsün (kaldırılabilsin)
+  for (const theme of f.kaynak) {
+    if (!themes.has(theme)) themes.set(theme, { count: 0, presets: new Map() });
+  }
+  for (const tp of f.tp) {
+    const [theme, preset] = tp.split("/");
+    if (!themes.has(theme)) themes.set(theme, { count: 0, presets: new Map() });
+    if (!themes.get(theme).presets.has(preset)) themes.get(theme).presets.set(preset, 0);
+  }
+
+  return [...themes.entries()]
+    .map(([theme, t]) => ({
+      theme,
+      count: t.count,
+      presets: [...t.presets.entries()]
+        .map(([value, count]) => ({ value, count, tp: `${theme}/${value}` }))
+        .sort(
+          (a, b) =>
+            rankOf(PRESET_PRIORITY, a.value) - rankOf(PRESET_PRIORITY, b.value) ||
+            b.count - a.count ||
+            a.value.localeCompare(b.value)
+        ),
+    }))
+    .sort((a, b) => b.count - a.count || a.theme.localeCompare(b.theme));
 }
 
 function countValues(rows, dim) {
@@ -285,6 +332,8 @@ export function computeFacets(inv, f) {
       }
     }
   }
+
+  facets.temaAgaci = computeThemeTree(inv, f);
 
   const all = applyFilters(inv.rows, f);
   facets.evidence = ["full", "partial", "none"].map((value) => ({
