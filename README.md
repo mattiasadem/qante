@@ -17,7 +17,7 @@ Platform hedefi: önce ikas Studio; IR/şema platform-bağımsız.
 /qante-discover denetim    → tüm envanteri doğrula
 ```
 
-Komut: `.cursor/commands/qante-discover.md` → skill: `.agents/skills/qante-discover/SKILL.md`
+Komut: [`.cursor/commands/qante-discover.md`](./.cursor/commands/qante-discover.md) → skill: [`.agents/skills/qante-discover/SKILL.md`](./.agents/skills/qante-discover/SKILL.md) · knob denetimi: [`.agents/skills/styleknobs-auditor/SKILL.md`](./.agents/skills/styleknobs-auditor/SKILL.md)
 
 **Elle çalışıyorsan okuma sırası:** bu README → `schema-standard.md` → `styleknobs-standard.md`. Üçü yeterli; gerisi bağlam.
 
@@ -36,6 +36,7 @@ Dosyaları rolüne göre oku. Sözleşme bağlar, rehber öğretir, kayıt bilgi
 | [`taxonomy/v0.1.0.json`](./taxonomy/v0.1.0.json) | Geçerli kategori + sayfa tipi (en yüksek sürümü kullan) |
 | `sections/_template.json` · `observations/_template.json` | Dosya iskeletleri |
 | [`scripts/validate-schemas.mjs`](./scripts/validate-schemas.mjs) | Sözleşmenin **kod hali** — hakem budur |
+| [`.agents/skills/qante-discover/`](./.agents/skills/qante-discover/SKILL.md) | `/qante-discover` workflow · [styleknobs-auditor](./.agents/skills/styleknobs-auditor/SKILL.md) knob denetimi |
 
 ### 📖 Rehber — nasıl yapılır
 

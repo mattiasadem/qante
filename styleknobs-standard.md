@@ -298,4 +298,4 @@ Token/px/font **compiler’a** iner (~%63 COLOR+SLIDER). Kalan emek iki yerde du
 
 ## 6. Screenshot'tan knob çıkarma
 
-Evidence PNG'lerinden (375/768/1440) knob önerisi çıkarma işi **styleknobs-auditor** agent'ına devredildi: `.agents/skills/styleknobs-auditor/SKILL.md`. Agent bu dosyayı sözleşme olarak okur; önerileri şemaya doğrudan yazmaz, review dosyasına çıkarır.
+Evidence PNG'lerinden (375/768/1440) knob önerisi çıkarma işi **styleknobs-auditor** agent'ına devredildi: [`.agents/skills/styleknobs-auditor/SKILL.md`](./.agents/skills/styleknobs-auditor/SKILL.md). Agent bu dosyayı sözleşme olarak okur; önerileri şemaya doğrudan yazmaz, review dosyasına çıkarır.
