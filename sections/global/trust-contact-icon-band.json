@@ -10,20 +10,43 @@
       "min": 2,
       "max": 6,
       "item": {
-        "baslik": { "tip": "text", "maxLen": 40 },
-        "metin": { "tip": "text", "maxLen": 80 },
-        "link": { "tip": "link", "zorunlu": false },
-        "ikon": { "tip": "image", "zorunlu": false }
-      }
+        "baslik": {
+          "tip": "text",
+          "maxLen": 40,
+          "zorunlu": true
+        },
+        "metin": {
+          "tip": "text",
+          "maxLen": 80,
+          "zorunlu": false
+        },
+        "link": {
+          "tip": "link",
+          "zorunlu": false
+        },
+        "ikon": {
+          "tip": "image",
+          "zorunlu": false
+        }
+      },
+      "zorunlu": true
     }
   },
   "styleKnobs": {
-    "kolon": [2, 3, 4],
-    "layout": "horizontal"
+    "kolon": [
+      2,
+      3,
+      4
+    ],
+    "layout": "horizontal|vertical"
   },
   "dataBindings": [],
-  "actions": ["navigate"],
-  "hookNoktalari": ["mount:footer.before"],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:footer.before"
+  ],
   "bagimliliklar": [],
-  "responsive": "Mobilde stack veya 2 kolon"
+  "responsive": "Mobilde ikon satırı istiflenir."
 }

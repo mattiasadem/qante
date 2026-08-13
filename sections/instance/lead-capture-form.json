@@ -10,31 +10,38 @@
       "maxLen": 60,
       "zorunlu": false
     },
-    "alanlar": {
+    "formAlanlari": {
       "tip": "array",
       "min": 1,
       "max": 12,
       "item": {
         "etiket": {
           "tip": "text",
-          "maxLen": 40
+          "maxLen": 40,
+          "zorunlu": false
         },
-        "tip": {
+        "tur": {
           "tip": "text",
-          "maxLen": 20
+          "maxLen": 20,
+          "zorunlu": false
         },
-        "zorunlu": {
-          "tip": "boolean"
+        "zorunluMu": {
+          "tip": "boolean",
+          "zorunlu": false
         }
-      }
+      },
+      "zorunlu": false
     },
     "cta": {
       "tip": "text",
-      "maxLen": 30
+      "maxLen": 30,
+      "zorunlu": false
     }
   },
   "styleKnobs": {
-    "layout": "stacked|two-column"
+    "layout": "stacked|two-column",
+    "hizalama": "left|center",
+    "ikonGoster": true
   },
   "dataBindings": [],
   "actions": [
@@ -44,5 +51,6 @@
     "mount:form.after"
   ],
   "bagimliliklar": [],
-  "responsive": "Mobil tek kolon"
+  "responsive": "Mobilde form tek kolon; Need Help bu 375 kanıtında yok.",
+  "_knobNote": "1440 form | Need Help. stacked 375 otomatik. İkinci masaüstü iskeleti yok."
 }

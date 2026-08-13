@@ -10,23 +10,43 @@
       "min": 1,
       "max": 8,
       "item": {
-        "eyebrow": { "tip": "text", "maxLen": 40, "zorunlu": false },
-        "baslik": { "tip": "text", "maxLen": 60 },
-        "gorsel": { "tip": "image" },
-        "cta": { "tip": "button", "zorunlu": false }
-      }
+        "ustEtiket": {
+          "tip": "text",
+          "maxLen": 40,
+          "zorunlu": false
+        },
+        "baslik": {
+          "tip": "text",
+          "maxLen": 60,
+          "zorunlu": true
+        },
+        "gorsel": {
+          "tip": "image",
+          "zorunlu": true
+        },
+        "cta": {
+          "tip": "button",
+          "zorunlu": false
+        }
+      },
+      "zorunlu": true
     }
   },
   "styleKnobs": {
     "hizalama": "center|left|right",
     "yukseklik": "compact|regular|tall",
-    "otomatikOynat": true,
+    "autoplay": true,
     "okGoster": true,
     "noktaGoster": true
   },
   "dataBindings": [],
-  "actions": ["navigate"],
-  "hookNoktalari": ["mount:section.before", "mount:section.after"],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.before",
+    "mount:section.after"
+  ],
   "bagimliliklar": [],
   "responsive": "Mobilde tam genişlik; oklar küçülür veya swipe; metin boyutu düşer"
 }

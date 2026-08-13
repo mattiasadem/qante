@@ -10,28 +10,60 @@
       "min": 1,
       "max": 8,
       "item": {
-        "etiket": { "tip": "text", "maxLen": 40 },
-        "baslik": { "tip": "text", "maxLen": 80, "zorunlu": false },
-        "aciklama": { "tip": "text", "maxLen": 220, "zorunlu": false },
-        "gorsel": { "tip": "image" },
-        "cta": { "tip": "button" },
-        "koleksiyon": { "tip": "link" }
-      }
+        "etiket": {
+          "tip": "text",
+          "maxLen": 40,
+          "zorunlu": false
+        },
+        "baslik": {
+          "tip": "text",
+          "maxLen": 80,
+          "zorunlu": false
+        },
+        "metin": {
+          "tip": "text",
+          "maxLen": 220,
+          "zorunlu": false
+        },
+        "gorsel": {
+          "tip": "image",
+          "zorunlu": true
+        },
+        "cta": {
+          "tip": "button",
+          "zorunlu": false
+        },
+        "koleksiyon": {
+          "tip": "link",
+          "zorunlu": false
+        }
+      },
+      "zorunlu": true
     }
   },
   "styleKnobs": {
-    "layout": "media-left|media-right|media-background",
-    "tabPozisyon": "top|side"
+    "layout": "media-left|media-right",
+    "tabPozisyon": "top|side",
+    "hizalama": "left|center"
   },
   "dataBindings": [
     {
       "name": "koleksiyonlar",
       "source": "DataSource.collectionList",
-      "params": { "kaynak": "manual", "limit": 8 }
+      "params": {
+        "kaynak": "manual",
+        "limit": 8
+      }
     }
   ],
-  "actions": ["navigate", "emit:tab.change"],
-  "hookNoktalari": ["mount:section.after"],
+  "actions": [
+    "navigate",
+    "emit:tab.change"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
   "bagimliliklar": [],
-  "responsive": "Mobilde sekmeler yatay scroll; medya üstte"
+  "responsive": "Mobilde medya üste iner; dikey koleksiyon listesi üstte kalır.",
+  "_knobNote": "1440 media-right + yan liste. media-background ve yatay top-tab şeridi bu PNG'lerde yok. 3 knob."
 }

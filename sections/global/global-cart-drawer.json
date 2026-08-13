@@ -1,34 +1,62 @@
 {
   "id": "global-cart-drawer",
-  "tur": "global-bilesen",
+  "kategori": "product-showcase",
+  "varyant": "cart-drawer",
   "scope": "global",
   "amac": "Sayfadan çıkmadan sepet yönetimi; momentum kaybettirmeden cross-sell",
   "slots": {
-    "kargoBar": {
-      "tip": "progress",
+    "kargoEsigi": {
+      "tip": "number",
       "zorunlu": false,
       "not": "ücretsiz kargo eşiği"
     },
-    "notAlani": { "tip": "toggle+textarea", "zorunlu": false },
-    "hediyePaketi": { "tip": "toggle", "zorunlu": false },
-    "crossSell": { "tip": "productMiniList", "zorunlu": false }
+    "sepetNotu": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 200
+    },
+    "oneriler": {
+      "tip": "array",
+      "zorunlu": false,
+      "min": 0,
+      "max": 4,
+      "item": {
+        "urun": {
+          "tip": "ref",
+          "hedef": "product",
+          "zorunlu": true
+        }
+      }
+    }
   },
   "styleKnobs": {},
   "dataBindings": [
-    { "name": "sepet", "source": "DataSource.cart" },
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    },
     {
       "name": "oneriler",
       "source": "DataSource.productList",
-      "params": { "kaynak": "recommended", "limit": 4 }
+      "params": {
+        "kaynak": "recommended",
+        "limit": 4
+      }
     }
   ],
-  "actions": ["listen:cart.added", "emit:cart.updated", "emit:checkout.start"],
+  "actions": [
+    "listen:cart.added",
+    "emit:cart.updated",
+    "emit:checkout.start"
+  ],
   "hookNoktalari": [
     "mount:cartDrawer.aboveItems",
     "mount:cartDrawer.belowItems"
   ],
   "bagimliliklar": [],
-  "filterOrnegi": "filter:price.display (KDV/para birimi gösterimi buradan geçer)",
-  "platformNotu": "Studio tık-dinleyici davranışı: drawer açan linkler koruma deseni ister",
-  "responsive": ""
+  "responsive": "",
+  "_tur": "global-bilesen",
+  "_filterOrnegi": "filter:price.display (KDV/para birimi gösterimi buradan geçer)",
+  "_platformNotu": "Studio tık-dinleyici davranışı: drawer açan linkler koruma deseni ister",
+  "_knobNote": "Global overlay; hediye paketi slot zorunlu:false + compiler. *Goster uydurulmadı."
 }

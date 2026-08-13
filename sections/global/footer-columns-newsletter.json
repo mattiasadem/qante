@@ -9,11 +9,31 @@
       "tip": "object",
       "zorunlu": false,
       "alanlar": {
-        "baslik": { "tip": "text", "maxLen": 60 },
-        "aciklama": { "tip": "text", "maxLen": 160, "zorunlu": false },
-        "placeholder": { "tip": "text", "maxLen": 40, "zorunlu": false },
-        "cta": { "tip": "text", "maxLen": 30 },
-        "yasalNot": { "tip": "text", "maxLen": 160, "zorunlu": false }
+        "baslik": {
+          "tip": "text",
+          "maxLen": 60,
+          "zorunlu": true
+        },
+        "metin": {
+          "tip": "text",
+          "maxLen": 160,
+          "zorunlu": false
+        },
+        "placeholder": {
+          "tip": "text",
+          "maxLen": 40,
+          "zorunlu": false
+        },
+        "cta": {
+          "tip": "text",
+          "maxLen": 30,
+          "zorunlu": false
+        },
+        "yasalNot": {
+          "tip": "text",
+          "maxLen": 160,
+          "zorunlu": false
+        }
       }
     },
     "menuKolonlari": {
@@ -21,58 +41,120 @@
       "min": 1,
       "max": 6,
       "item": {
-        "baslik": { "tip": "text", "maxLen": 40 },
+        "baslik": {
+          "tip": "text",
+          "maxLen": 40,
+          "zorunlu": true
+        },
         "linkler": {
           "tip": "array",
           "min": 1,
           "max": 12,
           "item": {
-            "etiket": { "tip": "text", "maxLen": 40 },
-            "link": { "tip": "link" }
-          }
+            "etiket": {
+              "tip": "text",
+              "maxLen": 40,
+              "zorunlu": false
+            },
+            "link": {
+              "tip": "link",
+              "zorunlu": false
+            }
+          },
+          "zorunlu": true
         }
-      }
+      },
+      "zorunlu": true
     },
     "sosyal": {
       "tip": "array",
       "zorunlu": false,
       "item": {
-        "platform": { "tip": "text", "maxLen": 30 },
-        "link": { "tip": "link" }
-      }
+        "platform": {
+          "tip": "text",
+          "maxLen": 30,
+          "zorunlu": false
+        },
+        "link": {
+          "tip": "link",
+          "zorunlu": false
+        }
+      },
+      "min": 0,
+      "max": 12
     },
     "odemeIkonlari": {
       "tip": "array",
       "zorunlu": false,
-      "item": { "ad": { "tip": "text", "maxLen": 30 } }
+      "item": {
+        "ad": {
+          "tip": "text",
+          "maxLen": 30,
+          "zorunlu": false
+        }
+      },
+      "min": 0,
+      "max": 12
     },
-    "copyright": { "tip": "text", "maxLen": 120 },
+    "copyright": {
+      "tip": "text",
+      "maxLen": 120,
+      "zorunlu": false
+    },
     "yasalLinkler": {
       "tip": "array",
       "zorunlu": false,
       "item": {
-        "etiket": { "tip": "text", "maxLen": 40 },
-        "link": { "tip": "link" }
-      }
+        "etiket": {
+          "tip": "text",
+          "maxLen": 40,
+          "zorunlu": false
+        },
+        "link": {
+          "tip": "link",
+          "zorunlu": false
+        }
+      },
+      "min": 0,
+      "max": 12
     },
-    "localeSwitcher": {
+    "dilSecici": {
       "tip": "object",
       "zorunlu": false,
       "alanlar": {
-        "etiket": { "tip": "text", "maxLen": 40 }
+        "etiket": {
+          "tip": "text",
+          "maxLen": 40,
+          "zorunlu": false
+        }
       }
     }
   },
   "styleKnobs": {
     "layout": "newsletter-left|newsletter-top|columns-only",
-    "kolonSayisi": [2, 3, 4, 5],
+    "kolon": [
+      2,
+      3,
+      4,
+      5
+    ],
     "mobilAccordion": true
   },
   "dataBindings": [
-    { "name": "menu", "source": "DataSource.navigation" },
-    { "name": "odemeYontemleri", "source": "DataSource.paymentMethods" }
+    {
+      "name": "menu",
+      "source": "DataSource.navigation"
+    },
+    {
+      "name": "odemeYontemleri",
+      "source": "DataSource.paymentMethods"
+    }
   ],
-  "actions": ["subscribe", "navigate", "changeLocale"],
+  "actions": [
+    "emit:newsletter.subscribe",
+    "navigate",
+    "emit:locale.change"
+  ],
   "hookNoktalari": [
     "mount:footer.before",
     "mount:footer.after",

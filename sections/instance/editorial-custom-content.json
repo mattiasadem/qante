@@ -10,22 +10,59 @@
       "min": 1,
       "max": 12,
       "item": {
-        "tip": { "tip": "text", "maxLen": 30 },
-        "gorsel": { "tip": "image", "zorunlu": false },
-        "baslik": { "tip": "text", "maxLen": 80, "zorunlu": false },
-        "metin": { "tip": "text", "maxLen": 200, "zorunlu": false },
-        "link": { "tip": "link", "zorunlu": false },
-        "urun": { "tip": "product", "zorunlu": false }
-      }
+        "tur": {
+          "tip": "text",
+          "maxLen": 30,
+          "zorunlu": false
+        },
+        "gorsel": {
+          "tip": "image",
+          "zorunlu": false
+        },
+        "baslik": {
+          "tip": "text",
+          "maxLen": 80,
+          "zorunlu": false
+        },
+        "metin": {
+          "tip": "text",
+          "maxLen": 200,
+          "zorunlu": false
+        },
+        "link": {
+          "tip": "link",
+          "zorunlu": false
+        },
+        "urun": {
+          "tip": "ref",
+          "zorunlu": false,
+          "hedef": "product"
+        }
+      },
+      "zorunlu": true
     }
   },
   "styleKnobs": {
-    "kolon": [1, 2, 3, 4],
-    "yogunluk": "compact|airy"
+    "layout": "overlay|split|lookbook",
+    "kolon": [
+      2,
+      3,
+      4
+    ],
+    "hizalama": "left|center",
+    "hotspotGoster": true,
+    "rozetGoster": true
   },
   "dataBindings": [],
-  "actions": ["navigate", "emit:product.quickView"],
-  "hookNoktalari": ["mount:section.after"],
-  "bagimliliklar": [],
-  "responsive": "Mobilde tek kolon stack"
+  "actions": [
+    "navigate",
+    "emit:product.quickView"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [
+    "global-quick-view"
+  ],
+  "responsive": "Overlay ve lookbook mobilde 1 kart + peek. Split bannerlar tek kolon."
 }

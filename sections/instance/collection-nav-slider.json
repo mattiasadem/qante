@@ -5,32 +5,56 @@
   "scope": "instance",
   "amac": "Koleksiyonları yatay kaydırılabilir şerit/kartlarla gezdirmek",
   "slots": {
-    "baslik": { "tip": "text", "maxLen": 60, "zorunlu": false },
+    "baslik": {
+      "tip": "text",
+      "maxLen": 60,
+      "zorunlu": false
+    },
     "items": {
       "tip": "array",
       "min": 3,
       "max": 20,
       "item": {
-        "ad": { "tip": "text", "maxLen": 40 },
-        "gorsel": { "tip": "image", "zorunlu": false },
-        "link": { "tip": "link" }
-      }
+        "ad": {
+          "tip": "text",
+          "maxLen": 40,
+          "zorunlu": false
+        },
+        "gorsel": {
+          "tip": "image",
+          "zorunlu": false
+        },
+        "link": {
+          "tip": "link",
+          "zorunlu": false
+        }
+      },
+      "zorunlu": true
     }
   },
   "styleKnobs": {
     "kartStili": "circle|rounded|square",
     "gorselBoyut": "sm|md|lg",
-    "okGoster": true
+    "okGoster": true,
+    "hizalama": "left|center"
   },
   "dataBindings": [
     {
       "name": "koleksiyonlar",
       "source": "DataSource.collectionList",
-      "params": { "kaynak": "manual|all|parent", "limit": 12 }
+      "params": {
+        "kaynak": "manual|all|parent",
+        "limit": 12
+      }
     }
   ],
-  "actions": ["navigate"],
-  "hookNoktalari": ["mount:section.before", "mount:section.after"],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.before",
+    "mount:section.after"
+  ],
   "bagimliliklar": [],
   "responsive": "Mobilde swipe; desktop’ta ok veya trackpad kaydırma"
 }

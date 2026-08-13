@@ -5,33 +5,65 @@
   "scope": "instance",
   "amac": "Koleksiyon veya kategori keşfini büyük görsel kartlarla yönlendirmek",
   "slots": {
-    "baslik": { "tip": "text", "maxLen": 80, "zorunlu": false },
-    "altBaslik": { "tip": "text", "maxLen": 160, "zorunlu": false },
+    "baslik": {
+      "tip": "text",
+      "maxLen": 80,
+      "zorunlu": false
+    },
+    "altBaslik": {
+      "tip": "text",
+      "maxLen": 160,
+      "zorunlu": false
+    },
     "items": {
       "tip": "array",
       "min": 2,
       "max": 8,
       "item": {
-        "gorsel": { "tip": "image" },
-        "baslik": { "tip": "text", "maxLen": 40 },
-        "link": { "tip": "link" }
-      }
+        "gorsel": {
+          "tip": "image",
+          "zorunlu": true
+        },
+        "baslik": {
+          "tip": "text",
+          "maxLen": 40,
+          "zorunlu": true
+        },
+        "link": {
+          "tip": "link",
+          "zorunlu": false
+        }
+      },
+      "zorunlu": true
     }
   },
   "styleKnobs": {
-    "kolon": [2, 3, 4],
-    "metinKonumu": "overlay|below"
+    "kolon": [
+      3,
+      4
+    ],
+    "metinKonumu": "overlay|below",
+    "hizalama": "left|center",
+    "okGoster": true,
+    "rozetGoster": true
   },
   "dataBindings": [
     {
       "name": "koleksiyonlar",
       "source": "DataSource.collectionList",
-      "params": { "kaynak": "manual|menu", "limit": 8 },
+      "params": {
+        "kaynak": "manual|menu",
+        "limit": 8
+      },
       "zorunlu": false
     }
   ],
-  "actions": ["navigate"],
-  "hookNoktalari": ["mount:section.after"],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
   "bagimliliklar": [],
-  "responsive": "Mobilde 1–2 kart"
+  "responsive": "Mobilde 1 kart + peek; ok kaybolabilir."
 }

@@ -4,9 +4,15 @@
   "varyant": "quick-view",
   "scope": "global",
   "amac": "Ürünü sayfadan çıkmadan hızlı görüntüle / sepete ekle",
-  "slots": {},
+  "slots": {
+    "cta": {
+      "tip": "button",
+      "zorunlu": false,
+      "not": "Ürün detayına git — ürün alanları dataBinding"
+    }
+  },
   "styleKnobs": {
-    "type": "modal|drawer"
+    "layout": "modal|drawer"
   },
   "dataBindings": [
     {
@@ -22,6 +28,8 @@
   "hookNoktalari": [
     "mount:quickView.after"
   ],
-  "bagimliliklar": [],
+  "bagimliliklar": [
+    "global-cart-drawer"
+  ],
   "responsive": "Mobil tam ekran modal"
 }

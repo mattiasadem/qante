@@ -89,6 +89,13 @@ const RETIRED_SOURCES = { 'DataSource.navigationMenu': 'DataSource.navigation' }
 const RETIRED_ACTIONS = {
   subscribe: 'emit:newsletter.subscribe',
   changeLocale: 'emit:locale.change',
+  'emit:cart.update': 'emit:cart.updated (bildirim geçmiş zaman, §5.1)',
+};
+
+// Overlay tetikleyen action → zorunlu global bağımlılık (schema-standard §5.2)
+const ACTION_REQUIRES_DEP = {
+  'emit:cart.add': 'global-cart-drawer',
+  'emit:product.quickView': 'global-quick-view',
 };
 
 const PLATFORM_WORDS = ['shopify', 'ikas', 'woocommerce', 'magento', 'bigcommerce', 'shopware'];
@@ -397,6 +404,17 @@ function validate(file, taxonomy) {
     for (const d of j.bagimliliklar) {
       const found = SCOPES.some(s => existsSync(join(ROOT, 'sections', s, `${d}.json`)));
       if (!found) add('WARN', `bagimlilik "${d}" için şema bulunamadı`);
+    }
+  }
+
+  // overlay wiring: tetikleyen action → zorunlu bağımlılık (§5.2)
+  if (Array.isArray(j.actions) && Array.isArray(j.bagimliliklar)) {
+    for (const [act, dep] of Object.entries(ACTION_REQUIRES_DEP)) {
+      if (!j.actions.includes(act)) continue;
+      if (j.id === dep) continue; // overlay kendini tetikliyor
+      if (!j.bagimliliklar.includes(dep)) {
+        add('ERROR', `"${act}" yayınlıyor ama "${dep}" bagimliliklar'da yok (§5.2 wiring)`);
+      }
     }
   }
 

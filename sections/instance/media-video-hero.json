@@ -5,20 +5,43 @@
   "scope": "instance",
   "amac": "Video arka planlı editorial/hero blok ile ürün veya hikâye anlatmak",
   "slots": {
-    "baslik": { "tip": "text", "maxLen": 100 },
-    "altBaslik": { "tip": "text", "maxLen": 200, "zorunlu": false },
-    "video": { "tip": "video" },
-    "poster": { "tip": "image", "zorunlu": false },
-    "cta": { "tip": "button", "zorunlu": false }
+    "baslik": {
+      "tip": "text",
+      "maxLen": 100,
+      "zorunlu": true
+    },
+    "altBaslik": {
+      "tip": "text",
+      "maxLen": 200,
+      "zorunlu": false
+    },
+    "video": {
+      "tip": "video",
+      "zorunlu": true
+    },
+    "poster": {
+      "tip": "image",
+      "zorunlu": false
+    },
+    "cta": {
+      "tip": "button",
+      "zorunlu": false
+    }
   },
   "styleKnobs": {
-    "autoplay": true,
-    "muted": true,
-    "overlayMetin": "left|center"
+    "hizalama": "left|center",
+    "dikeyHizalama": "top|center",
+    "metinKonumu": "overlay|below"
   },
   "dataBindings": [],
-  "actions": ["navigate", "emit:video.play"],
-  "hookNoktalari": ["mount:section.after"],
+  "actions": [
+    "navigate",
+    "emit:video.play"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
   "bagimliliklar": [],
-  "responsive": "Mobilde video poster’a düşebilir veya kısa klip"
+  "responsive": "Mobilde portrait kutu; overlay ve center aynı.",
+  "_knobNote": "Overlay ortalı metin+CTA. Autoplay still karede okunmaz. İkinci oran yok."
 }

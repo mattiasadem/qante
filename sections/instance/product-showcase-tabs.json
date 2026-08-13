@@ -5,30 +5,59 @@
   "scope": "instance",
   "amac": "Birden fazla ürün listesini sekmelerle aynı vitrinde göstermek",
   "slots": {
-    "baslik": { "tip": "text", "maxLen": 80, "zorunlu": false },
+    "baslik": {
+      "tip": "text",
+      "maxLen": 80,
+      "zorunlu": false
+    },
     "sekmeler": {
       "tip": "array",
       "min": 2,
       "max": 6,
       "item": {
-        "etiket": { "tip": "text", "maxLen": 30 },
-        "urunKaynak": { "tip": "text", "maxLen": 40 }
-      }
+        "etiket": {
+          "tip": "text",
+          "maxLen": 30,
+          "zorunlu": false
+        },
+        "urunKaynak": {
+          "tip": "text",
+          "maxLen": 40,
+          "zorunlu": false
+        }
+      },
+      "zorunlu": true
     }
   },
   "styleKnobs": {
-    "kolon": [2, 3, 4],
-    "layout": "grid|slider"
+    "layout": "split|stacked",
+    "tabPozisyon": "side|top",
+    "kategoriTabGoster": true
   },
   "dataBindings": [
     {
       "name": "urunler",
       "source": "DataSource.productList",
-      "params": { "kaynak": "collection|manual", "limit": 8 }
+      "params": {
+        "kaynak": "collection|manual",
+        "limit": 8
+      }
     }
   ],
-  "actions": ["emit:tab.change", "emit:product.quickView", "emit:cart.add", "navigate"],
-  "hookNoktalari": ["mount:productCard.badge", "mount:section.after"],
-  "bagimliliklar": [],
-  "responsive": "Mobilde sekmeler yatay scroll; grid 2 kolon"
+  "actions": [
+    "emit:tab.change",
+    "emit:product.quickView",
+    "emit:cart.add",
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:productCard.badge",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [
+    "global-cart-drawer",
+    "global-quick-view"
+  ],
+  "responsive": "375 kopya + yatay sekme + 1 kart peek. 1440 yan sekme ve sağda iki kart.",
+  "_knobNote": "1440 split+yan sekme, 375 stacked+üst sekme birlikte kırılıyor. 3–4 ürün kolonu sayılmadı."
 }

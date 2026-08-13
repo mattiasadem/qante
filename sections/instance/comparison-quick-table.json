@@ -16,17 +16,22 @@
       "max": 5,
       "item": {
         "urun": {
-          "tip": "product"
+          "tip": "ref",
+          "hedef": "product",
+          "zorunlu": true
         }
-      }
+      },
+      "zorunlu": true
     }
   },
   "styleKnobs": {
+    "layout": "stacked|split",
     "kolon": [
-      2,
       3,
-      4
-    ]
+      5
+    ],
+    "hizalama": "left|center",
+    "ikonGoster": true
   },
   "dataBindings": [
     {
@@ -45,6 +50,8 @@
   "hookNoktalari": [
     "mount:section.after"
   ],
-  "bagimliliklar": [],
-  "responsive": "Mobilde yatay scroll tablo"
+  "bagimliliklar": [
+    "global-quick-view"
+  ],
+  "responsive": "Mobilde tablo yatay kayar; split intro üste düşer."
 }

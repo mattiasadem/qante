@@ -7,10 +7,12 @@
   "slots": {
     "baslik": {
       "tip": "text",
-      "maxLen": 120
+      "maxLen": 120,
+      "zorunlu": true
     },
     "icerik": {
-      "tip": "richtext"
+      "tip": "richtext",
+      "zorunlu": false
     },
     "kapak": {
       "tip": "image",
@@ -18,7 +20,8 @@
     }
   },
   "styleKnobs": {
-    "genislik": "narrow|wide"
+    "genislik": "narrow|wide",
+    "hizalama": "left|center"
   },
   "dataBindings": [
     {
@@ -33,5 +36,6 @@
     "mount:section.after"
   ],
   "bagimliliklar": [],
-  "responsive": "Okuma genişliği daralır"
+  "responsive": "Okuma genişliği daralır; related kartlar bu şemanın iskeleti değil.",
+  "_knobNote": "Dar okuma sütunu + ortalı başlık. İkinci article layout yok."
 }

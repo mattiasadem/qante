@@ -5,27 +5,56 @@
   "scope": "instance",
   "amac": "Sekmeli kampanya banner’ı — her sekmede farklı görsel/ürün/CTA",
   "slots": {
-    "baslik": { "tip": "text", "maxLen": 60, "zorunlu": false },
+    "baslik": {
+      "tip": "text",
+      "maxLen": 60,
+      "zorunlu": false
+    },
     "sekmeler": {
       "tip": "array",
       "min": 2,
       "max": 6,
       "item": {
-        "etiket": { "tip": "text", "maxLen": 30 },
-        "gorsel": { "tip": "image" },
-        "baslik": { "tip": "text", "maxLen": 60, "zorunlu": false },
-        "cta": { "tip": "button", "zorunlu": false },
-        "link": { "tip": "link", "zorunlu": false }
-      }
+        "etiket": {
+          "tip": "text",
+          "maxLen": 30,
+          "zorunlu": false
+        },
+        "gorsel": {
+          "tip": "image",
+          "zorunlu": true
+        },
+        "baslik": {
+          "tip": "text",
+          "maxLen": 60,
+          "zorunlu": false
+        },
+        "cta": {
+          "tip": "button",
+          "zorunlu": false
+        },
+        "link": {
+          "tip": "link",
+          "zorunlu": false
+        }
+      },
+      "zorunlu": true
     }
   },
   "styleKnobs": {
-    "autoplay": false,
-    "sekmeKonumu": "top|side"
+    "tabPozisyon": "top|side",
+    "ikonGoster": true,
+    "hizalama": "left|center"
   },
   "dataBindings": [],
-  "actions": ["emit:tab.change", "navigate"],
-  "hookNoktalari": ["mount:section.after"],
+  "actions": [
+    "emit:tab.change",
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
   "bagimliliklar": [],
-  "responsive": "Mobilde sekmeler chip scroll"
+  "responsive": "Masaüstü yan sekmeler; mobilde üstte chip scroll, kart alta iner.",
+  "_knobNote": "nexvo: yan sekme + ürün + yüzen kart. Autoplay/ok bu karede yok."
 }

@@ -7,7 +7,8 @@
   "slots": {
     "baslik": {
       "tip": "text",
-      "maxLen": 60
+      "maxLen": 60,
+      "zorunlu": true
     },
     "altBaslik": {
       "tip": "text",
@@ -16,12 +17,9 @@
     }
   },
   "styleKnobs": {
-    "layout": "slider|grid",
-    "kolon": [
-      2,
-      3,
-      4
-    ]
+    "rozetGoster": true,
+    "hizliEkleGoster": true,
+    "hizalama": "left|center"
   },
   "dataBindings": [
     {
@@ -41,6 +39,10 @@
   "hookNoktalari": [
     "mount:section.after"
   ],
-  "bagimliliklar": [],
-  "responsive": "Mobil slider"
+  "bagimliliklar": [
+    "global-cart-drawer",
+    "global-quick-view"
+  ],
+  "responsive": "1440 beş kartlık satır (ok yok). 375 peek slider + progress bar.",
+  "_knobNote": "1440 beş kart satır, 375 peek slider (otomatik). kolon 2–4 sayılmadı. 3 knob."
 }

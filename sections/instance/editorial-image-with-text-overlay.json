@@ -7,7 +7,8 @@
   "slots": {
     "baslik": {
       "tip": "text",
-      "maxLen": 80
+      "maxLen": 80,
+      "zorunlu": true
     },
     "altBaslik": {
       "tip": "text",
@@ -15,7 +16,8 @@
       "zorunlu": false
     },
     "gorsel": {
-      "tip": "image"
+      "tip": "image",
+      "zorunlu": true
     },
     "cta": {
       "tip": "button",
@@ -24,7 +26,8 @@
   },
   "styleKnobs": {
     "hizalama": "left|center|right",
-    "yukseklik": "md|lg"
+    "dikeyHizalama": "top|center",
+    "metinKonumu": "overlay|below"
   },
   "dataBindings": [],
   "actions": [
@@ -34,5 +37,6 @@
     "mount:section.after"
   ],
   "bagimliliklar": [],
-  "responsive": "Mobilde metin görsel üzerinde kalır"
+  "responsive": "Mobilde metin görsel üzerinde kalır; dikey konum ortaya kayar.",
+  "_knobNote": "Tek kare: görsel-üstü sol-üst metin. İkinci yükseklik (md|lg) bu PNG'lerde yok."
 }

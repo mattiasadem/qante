@@ -5,12 +5,27 @@
   "scope": "instance",
   "amac": "Seçili ürün listesini kartlarla vitrine çıkarmak",
   "slots": {
-    "baslik": { "tip": "text", "maxLen": 60 },
-    "altBaslik": { "tip": "text", "maxLen": 120, "zorunlu": false },
-    "cta": { "tip": "button", "zorunlu": false }
+    "baslik": {
+      "tip": "text",
+      "maxLen": 60,
+      "zorunlu": true
+    },
+    "altBaslik": {
+      "tip": "text",
+      "maxLen": 120,
+      "zorunlu": false
+    },
+    "cta": {
+      "tip": "button",
+      "zorunlu": false
+    }
   },
   "styleKnobs": {
-    "kolon": [2, 3, 4],
+    "kolon": [
+      2,
+      3,
+      4
+    ],
     "kartStili": "minimal|framed",
     "rozetGoster": true,
     "hizliEkleGoster": true
@@ -25,12 +40,19 @@
       }
     }
   ],
-  "actions": ["emit:product.quickView", "emit:cart.add", "navigate"],
+  "actions": [
+    "emit:product.quickView",
+    "emit:cart.add",
+    "navigate"
+  ],
   "hookNoktalari": [
     "mount:productCard.badge",
     "mount:productCard.footer",
     "mount:section.after"
   ],
-  "bagimliliklar": [],
+  "bagimliliklar": [
+    "global-cart-drawer",
+    "global-quick-view"
+  ],
   "responsive": "Mobil 2 kolon; hızlı ekle butonu her zaman görünür"
 }

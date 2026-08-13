@@ -5,32 +5,86 @@
   "scope": "global",
   "amac": "Ana gezinme; çok koleksiyonlu mağazada menüyü merchandising alanına çevirir",
   "slots": {
-    "logo": { "tip": "image" },
-    "menu": { "tip": "menuRef" },
+    "logo": {
+      "tip": "image",
+      "zorunlu": true
+    },
+    "menu": {
+      "tip": "ref",
+      "hedef": "menu",
+      "zorunlu": true
+    },
     "megaPaneller": {
       "tip": "array",
       "max": 6,
       "item": {
-        "kolonlar": "menuRef",
-        "gorsel": { "tip": "image", "zorunlu": false },
-        "promoKarti": { "tip": "promoRef", "zorunlu": false }
-      }
+        "kolonlar": {
+          "tip": "array",
+          "zorunlu": true,
+          "min": 1,
+          "max": 4,
+          "item": {
+            "baslik": {
+              "tip": "text",
+              "zorunlu": false,
+              "maxLen": 40
+            },
+            "linkler": {
+              "tip": "array",
+              "zorunlu": true,
+              "min": 1,
+              "max": 12,
+              "item": {
+                "etiket": {
+                  "tip": "text",
+                  "zorunlu": true,
+                  "maxLen": 40
+                },
+                "link": {
+                  "tip": "link",
+                  "zorunlu": true
+                }
+              }
+            }
+          }
+        },
+        "gorsel": {
+          "tip": "image",
+          "zorunlu": false
+        },
+        "promoKarti": {
+          "tip": "ref",
+          "zorunlu": false,
+          "hedef": "promo"
+        }
+      },
+      "zorunlu": true,
+      "min": 1
     }
   },
   "styleKnobs": {
     "sticky": true,
-    "seffafBaslangic": false,
     "yukseklik": "compact|regular"
   },
   "dataBindings": [
-    { "name": "menu", "source": "DataSource.navigation" }
+    {
+      "name": "menu",
+      "source": "DataSource.navigation"
+    }
   ],
-  "actions": ["emit:search.open", "emit:cart.open", "navigate"],
+  "actions": [
+    "emit:search.open",
+    "emit:cart.open",
+    "navigate"
+  ],
   "hookNoktalari": [
     "mount:header.before",
     "mount:header.utility",
     "mount:header.after"
   ],
-  "bagimliliklar": ["cart-drawer", "search-overlay"],
+  "bagimliliklar": [
+    "global-cart-drawer",
+    "global-predictive-search"
+  ],
   "responsive": "Mobilde hamburger + tam ekran menü; mega paneller akordeon olur"
 }

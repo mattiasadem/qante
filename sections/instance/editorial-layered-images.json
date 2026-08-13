@@ -5,23 +5,45 @@
   "scope": "instance",
   "amac": "Katmanlı görseller + metin/CTA ile editorial kampanya bloğu",
   "slots": {
-    "baslik": { "tip": "text", "maxLen": 80 },
-    "altBaslik": { "tip": "text", "maxLen": 160, "zorunlu": false },
+    "baslik": {
+      "tip": "text",
+      "maxLen": 80,
+      "zorunlu": true
+    },
+    "altBaslik": {
+      "tip": "text",
+      "maxLen": 160,
+      "zorunlu": false
+    },
     "gorseller": {
       "tip": "array",
       "min": 1,
       "max": 4,
-      "item": { "gorsel": { "tip": "image" } }
+      "item": {
+        "gorsel": {
+          "tip": "image",
+          "zorunlu": true
+        }
+      },
+      "zorunlu": true
     },
-    "cta": { "tip": "button", "zorunlu": false }
+    "cta": {
+      "tip": "button",
+      "zorunlu": false
+    }
   },
   "styleKnobs": {
-    "metinKonumu": "left|right|center",
-    "katmanStili": "overlap|stack"
+    "hizalama": "left|center",
+    "layout": "overlap|stack"
   },
   "dataBindings": [],
-  "actions": ["navigate"],
-  "hookNoktalari": ["mount:section.after"],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
   "bagimliliklar": [],
-  "responsive": "Mobilde görseller stack; metin altta"
+  "responsive": "Mobilde görseller tek satır; metin üstte.",
+  "_knobNote": "1440 overlap + ortalı metin; 375 stack otomatik. Metin left/right yok. Rozet içerik."
 }

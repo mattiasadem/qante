@@ -5,17 +5,33 @@
   "scope": "instance",
   "amac": "Öncesi/sonrası karşılaştırmasıyla ürün etkisini kanıtlamak (kozmetik, temizlik…)",
   "slots": {
-    "once": { "tip": "image" },
-    "sonra": { "tip": "image" },
-    "baslik": { "tip": "text", "zorunlu": false }
+    "once": {
+      "tip": "image",
+      "zorunlu": true
+    },
+    "sonra": {
+      "tip": "image",
+      "zorunlu": true
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80
+    }
   },
   "styleKnobs": {
     "yon": "yatay|dikey",
-    "baslangicKonumu": 50
+    "baslangicKonumu": 50,
+    "gorselKonumu": "left|right",
+    "hizalama": "left|center"
   },
   "dataBindings": [],
-  "actions": ["emit:slider.drag"],
-  "hookNoktalari": ["mount:section.after"],
+  "actions": [
+    "emit:slider.drag"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
   "bagimliliklar": [],
   "responsive": "Mobilde tam genişlik; sürükleme dokunmatik"
 }

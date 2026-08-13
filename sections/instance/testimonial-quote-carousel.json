@@ -5,28 +5,61 @@
   "scope": "instance",
   "amac": "Müşteri alıntılarıyla sosyal kanıt göstermek; güven ve yaşam tarzı doğrulaması",
   "slots": {
-    "baslik": { "tip": "text", "maxLen": 80, "zorunlu": false },
+    "baslik": {
+      "tip": "text",
+      "maxLen": 80,
+      "zorunlu": false
+    },
     "items": {
       "tip": "array",
       "min": 1,
       "max": 12,
       "item": {
-        "alinti": { "tip": "text", "maxLen": 280 },
-        "ad": { "tip": "text", "maxLen": 60 },
-        "konum": { "tip": "text", "maxLen": 80, "zorunlu": false },
-        "avatar": { "tip": "image", "zorunlu": false },
-        "puan": { "tip": "number", "zorunlu": false }
-      }
+        "alinti": {
+          "tip": "text",
+          "maxLen": 280,
+          "zorunlu": false
+        },
+        "ad": {
+          "tip": "text",
+          "maxLen": 60,
+          "zorunlu": false
+        },
+        "konum": {
+          "tip": "text",
+          "maxLen": 80,
+          "zorunlu": false
+        },
+        "avatar": {
+          "tip": "image",
+          "zorunlu": false
+        },
+        "puan": {
+          "tip": "number",
+          "zorunlu": false
+        }
+      },
+      "zorunlu": true
     }
   },
   "styleKnobs": {
-    "layout": "carousel|grid",
-    "kolon": [1, 2, 3],
-    "hizalama": "left|center"
+    "kolon": [
+      1,
+      3
+    ],
+    "hizalama": "left|center",
+    "kartStili": "minimal|framed",
+    "okGoster": true
   },
   "dataBindings": [],
-  "actions": ["emit:carousel.next", "emit:carousel.prev"],
-  "hookNoktalari": ["mount:section.before", "mount:section.after"],
+  "actions": [
+    "emit:carousel.next",
+    "emit:carousel.prev"
+  ],
+  "hookNoktalari": [
+    "mount:section.before",
+    "mount:section.after"
+  ],
   "bagimliliklar": [],
-  "responsive": "Mobilde tek kart / swipe; desktop’ta 2–3 kart veya carousel"
+  "responsive": "Mobilde 1 kart. Home oklar 375'te alta iner. PDP kart görseli üste alır."
 }

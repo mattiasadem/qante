@@ -5,25 +5,51 @@
   "scope": "instance",
   "amac": "Marka / basın logolarını şerit halinde göstererek güven ve keşif sağlamak",
   "slots": {
-    "baslik": { "tip": "text", "maxLen": 60, "zorunlu": false },
+    "baslik": {
+      "tip": "text",
+      "maxLen": 60,
+      "zorunlu": false
+    },
     "logolar": {
       "tip": "array",
       "min": 3,
       "max": 16,
       "item": {
-        "gorsel": { "tip": "image" },
-        "ad": { "tip": "text", "maxLen": 40, "zorunlu": false },
-        "link": { "tip": "link", "zorunlu": false }
-      }
+        "gorsel": {
+          "tip": "image",
+          "zorunlu": true
+        },
+        "ad": {
+          "tip": "text",
+          "maxLen": 40,
+          "zorunlu": false
+        },
+        "link": {
+          "tip": "link",
+          "zorunlu": false
+        }
+      },
+      "zorunlu": true
     }
   },
   "styleKnobs": {
-    "layout": "static|marquee",
-    "griTon": true
+    "layout": "horizontal|grid",
+    "hizalama": "left|center",
+    "kartStili": "minimal|framed",
+    "kolon": [
+      2,
+      3,
+      5,
+      6
+    ]
   },
   "dataBindings": [],
-  "actions": ["navigate"],
-  "hookNoktalari": ["mount:section.after"],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
   "bagimliliklar": [],
-  "responsive": "Mobilde daha az logo veya marquee"
+  "responsive": "Pillar tek satır 6→3. Nexvo/ceramide çerçeveli ızgara 375'te 2 kolon."
 }

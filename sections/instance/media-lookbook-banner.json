@@ -6,7 +6,8 @@
   "amac": "Tek büyük lookbook görseli + hotspot/ürün bağları",
   "slots": {
     "gorsel": {
-      "tip": "image"
+      "tip": "image",
+      "zorunlu": true
     },
     "baslik": {
       "tip": "text",
@@ -18,13 +19,18 @@
       "zorunlu": false,
       "item": {
         "urun": {
-          "tip": "product"
+          "tip": "ref",
+          "hedef": "product",
+          "zorunlu": true
         }
-      }
+      },
+      "min": 0,
+      "max": 12
     }
   },
   "styleKnobs": {
-    "hotspotGoster": true
+    "hotspotGoster": true,
+    "hizalama": "left|center"
   },
   "dataBindings": [],
   "actions": [
@@ -32,8 +38,11 @@
     "navigate"
   ],
   "hookNoktalari": [
-    "mount:hotspot"
+    "mount:hotspot.after"
   ],
-  "bagimliliklar": [],
-  "responsive": "Mobilde hotspot listesi alta"
+  "bagimliliklar": [
+    "global-quick-view"
+  ],
+  "responsive": "375'te de başlık üstte; hotspot görsel üzerinde kalır (liste alta inmez).",
+  "_knobNote": "Tek tam genişlik foto + başlık. PNG'de yalnız hotspot işaretleri yapısal. İkinci iskelet yok."
 }

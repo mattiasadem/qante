@@ -5,25 +5,49 @@
   "scope": "instance",
   "amac": "Üst kategori keşfini banner + kategori satırı kombinasyonuyla sunmak",
   "slots": {
-    "baslik": { "tip": "text", "maxLen": 60, "zorunlu": false },
+    "baslik": {
+      "tip": "text",
+      "maxLen": 60,
+      "zorunlu": false
+    },
     "items": {
       "tip": "array",
       "min": 2,
       "max": 8,
       "item": {
-        "gorsel": { "tip": "image" },
-        "baslik": { "tip": "text", "maxLen": 40 },
-        "link": { "tip": "link" }
-      }
+        "gorsel": {
+          "tip": "image",
+          "zorunlu": true
+        },
+        "baslik": {
+          "tip": "text",
+          "maxLen": 40,
+          "zorunlu": true
+        },
+        "link": {
+          "tip": "link",
+          "zorunlu": false
+        }
+      },
+      "zorunlu": true
     }
   },
   "styleKnobs": {
-    "layout": "row|grid",
-    "kolon": [3, 4, 5]
+    "kolon": [
+      2,
+      4
+    ],
+    "gorselKonumu": "left|right",
+    "hizalama": "left|center"
   },
   "dataBindings": [],
-  "actions": ["navigate"],
-  "hookNoktalari": ["mount:section.after"],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
   "bagimliliklar": [],
-  "responsive": "Mobilde yatay scroll veya 2 kolon"
+  "responsive": "Mobilde bannerlar tek kolon; kategori ızgarası 4 kolon.",
+  "_knobNote": "Tek Trove: sidebar + 1 büyük + 3 banner. İkinci layout yok. 3 knob."
 }

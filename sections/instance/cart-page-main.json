@@ -7,7 +7,8 @@
   "slots": {
     "baslik": {
       "tip": "text",
-      "maxLen": 40
+      "maxLen": 40,
+      "zorunlu": true
     },
     "bosMesaj": {
       "tip": "text",
@@ -16,7 +17,11 @@
     }
   },
   "styleKnobs": {
-    "layout": "two-column|stacked"
+    "hizalama": "left|center",
+    "kolon": [
+      3,
+      4
+    ]
   },
   "dataBindings": [
     {
@@ -25,7 +30,7 @@
     }
   ],
   "actions": [
-    "emit:cart.update",
+    "emit:cart.updated",
     "emit:checkout.start",
     "navigate"
   ],
@@ -33,5 +38,6 @@
     "mount:cart.after"
   ],
   "bagimliliklar": [],
-  "responsive": "Mobilde özet alta"
+  "responsive": "375'te koleksiyon kartları 1+peek kayar. Dolu sepet kırılımı yakalanmadı.",
+  "_knobNote": "Evidence boş sepet: ortalı metin + 4 koleksiyon kartı. Dolu sepet (satır+özet two-column) bu PNG'lerde yok."
 }

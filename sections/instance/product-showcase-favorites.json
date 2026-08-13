@@ -5,14 +5,26 @@
   "scope": "instance",
   "amac": "Öne çıkan / favori ürünleri kaydırılabilir vitrinde göstermek",
   "slots": {
-    "baslik": { "tip": "text", "maxLen": 60, "zorunlu": false },
-    "altBaslik": { "tip": "text", "maxLen": 120, "zorunlu": false },
-    "cta": { "tip": "button", "zorunlu": false }
+    "baslik": {
+      "tip": "text",
+      "maxLen": 60,
+      "zorunlu": false
+    },
+    "altBaslik": {
+      "tip": "text",
+      "maxLen": 120,
+      "zorunlu": false
+    },
+    "cta": {
+      "tip": "button",
+      "zorunlu": false
+    }
   },
   "styleKnobs": {
-    "layout": "slider|grid",
-    "kolon": [2, 3, 4],
-    "rozetGoster": true
+    "gorselKonumu": "left|right",
+    "okGoster": true,
+    "swatchSekli": "circle|square",
+    "hizalama": "left|center"
   },
   "dataBindings": [
     {
@@ -24,11 +36,18 @@
       }
     }
   ],
-  "actions": ["emit:product.quickView", "emit:cart.add", "navigate"],
+  "actions": [
+    "emit:product.quickView",
+    "emit:cart.add",
+    "navigate"
+  ],
   "hookNoktalari": [
     "mount:productCard.badge",
     "mount:section.after"
   ],
-  "bagimliliklar": [],
-  "responsive": "Mobilde slider; desktop’ta 3–4 kart görünür"
+  "bagimliliklar": [
+    "global-cart-drawer",
+    "global-quick-view"
+  ],
+  "responsive": "375 ürün kartını alıntı panelinin üstüne istifler. 1440 yan yana slider."
 }

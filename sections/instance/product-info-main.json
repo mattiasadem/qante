@@ -7,9 +7,10 @@
   "slots": {
     "baslik": {
       "tip": "text",
-      "maxLen": 100
+      "maxLen": 100,
+      "zorunlu": true
     },
-    "aciklama": {
+    "icerik": {
       "tip": "richtext",
       "zorunlu": false
     },
@@ -17,14 +18,20 @@
       "tip": "array",
       "item": {
         "gorsel": {
-          "tip": "image"
+          "tip": "image",
+          "zorunlu": true
         }
-      }
+      },
+      "zorunlu": true,
+      "min": 1,
+      "max": 12
     }
   },
   "styleKnobs": {
-    "galeriLayout": "thumbnails-left|thumbnails-bottom|stack",
-    "stickyBuyBox": true
+    "gorselKonumu": "left|right",
+    "varyantGosterim": "swatch|dropdown",
+    "miktarGosterim": "stepper|dropdown",
+    "rozetGoster": true
   },
   "dataBindings": [
     {
@@ -44,5 +51,5 @@
   "bagimliliklar": [
     "global-cart-drawer"
   ],
-  "responsive": "Mobilde galeri üstte, buy box altta"
+  "responsive": "Mobilde galeri üstte (ana görsel + thumb alta), buy box alta. 768 hâlâ 2×2 sol + buy box sağ."
 }

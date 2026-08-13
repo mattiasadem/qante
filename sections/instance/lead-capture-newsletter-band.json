@@ -5,18 +5,41 @@
   "scope": "instance",
   "amac": "Sayfa akışında bağımsız newsletter / e-posta yakalama bandı (footer dışı)",
   "slots": {
-    "baslik": { "tip": "text", "maxLen": 80 },
-    "aciklama": { "tip": "text", "maxLen": 160, "zorunlu": false },
-    "placeholder": { "tip": "text", "maxLen": 40, "zorunlu": false },
-    "cta": { "tip": "text", "maxLen": 30 }
+    "baslik": {
+      "tip": "text",
+      "maxLen": 80,
+      "zorunlu": true
+    },
+    "metin": {
+      "tip": "text",
+      "maxLen": 160,
+      "zorunlu": false
+    },
+    "placeholder": {
+      "tip": "text",
+      "maxLen": 40,
+      "zorunlu": false
+    },
+    "cta": {
+      "tip": "text",
+      "maxLen": 30,
+      "zorunlu": false
+    }
   },
   "styleKnobs": {
-    "layout": "inline|stacked",
+    "layout": "split|inline",
+    "gorselGoster": true,
     "hizalama": "left|center"
   },
   "dataBindings": [],
-  "actions": ["subscribe"],
-  "hookNoktalari": ["mount:newsletter.after", "mount:section.after"],
+  "actions": [
+    "emit:newsletter.subscribe"
+  ],
+  "hookNoktalari": [
+    "mount:newsletter.after",
+    "mount:section.after"
+  ],
   "bagimliliklar": [],
-  "responsive": "Mobilde form stack"
+  "responsive": "Trove mobil: görsel üstte. Pillar mobilde metin ortalanır; input+buton yan yana kalır.",
+  "_knobNote": "Trove görselli split; Pillar görselsiz inline. stacked yalnız Trove mobil (otomatik)."
 }

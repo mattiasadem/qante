@@ -5,25 +5,48 @@
   "scope": "instance",
   "amac": "UGC/galeri görsellerini yatay kaydırmalı şeritte göstermek",
   "slots": {
-    "baslik": { "tip": "text", "maxLen": 60, "zorunlu": false },
+    "baslik": {
+      "tip": "text",
+      "maxLen": 60,
+      "zorunlu": false
+    },
     "items": {
       "tip": "array",
       "min": 3,
       "max": 24,
       "item": {
-        "gorsel": { "tip": "image" },
-        "etiket": { "tip": "text", "maxLen": 40, "zorunlu": false },
-        "link": { "tip": "link", "zorunlu": false }
-      }
+        "gorsel": {
+          "tip": "image",
+          "zorunlu": true
+        },
+        "etiket": {
+          "tip": "text",
+          "maxLen": 40,
+          "zorunlu": false
+        },
+        "link": {
+          "tip": "link",
+          "zorunlu": false
+        }
+      },
+      "zorunlu": true
     }
   },
   "styleKnobs": {
-    "otomatikKaydir": true,
-    "oran": "1:1|4:5"
+    "kolon": [
+      4,
+      5
+    ],
+    "hizalama": "left|center"
   },
   "dataBindings": [],
-  "actions": ["navigate"],
-  "hookNoktalari": ["mount:section.after"],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
   "bagimliliklar": [],
-  "responsive": "Mobilde daha dar kart; swipe"
+  "responsive": "375 bir kiremit + peek; 1440 beş tam kare satır.",
+  "_knobNote": "Still kare: 1440'ta 5 adet 1:1 kiremit. autoplay/loop/ok ve oran ikinci değeri görünmedi."
 }

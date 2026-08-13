@@ -63,7 +63,7 @@ Bunun dışında `tip` yazılmaz. Yeni tip gerekirse §9 süreci.
 | `video` | Video dosyası/embed | — | |
 | `icon` | İkon seçimi | — | Görsel yükleme değilse; yüklemeyse `image` |
 | `link` | URL / iç hedef | — | Tek başına link |
-| `button` | Etiket + hedef çifti | — | `link` + metin birlikteyse. Ayrı slot açma |
+| `button` | Etiket + hedef çifti (bileşik) | — | Kesin iç şekli §3.3b. `link` + metin birlikteyse. Ayrı slot açma |
 | `number` | Sayı | — | Puan, adet, eşik |
 | `boolean` | Evet/hayır **içerik alanı** | — | Nadir. Form alanının "zorunlu mu" gibi. UI toggle'ı ise **knob** |
 | `datetime` | Tarih/saat | — | Countdown bitişi |
@@ -120,6 +120,19 @@ Merchant editörde mağaza varlığı seçiyorsa (ürün, koleksiyon, menü). Ot
 ```json
 "oneCikan": { "tip": "ref", "hedef": "product", "zorunlu": false }
 ```
+
+### 3.3b `button` — etiket + hedef çifti
+
+`button` **bileşik** bir tiptir: içinde her zaman **düzenlenebilir bir etiket (buton yazısı) + bir hedef (nereye gider)** vardır. Ayrı `text` + `link` slotu açmamak için tek tip olarak tutulur. Şemada `{ "tip": "button" }` yazmak yeterlidir; iç alanları burada dondurulmuştur — her `button` **tam olarak** şuna genişler:
+
+| İç alan | tip | zorunlu | Ne |
+|---|---|---|---|
+| `etiket` | `text` (`maxLen` 40) | **evet** | Buton üstündeki yazı — merchant editörde girer/değiştirir |
+| `hedef` | `link` | **evet** | Tıklayınca gidilen yer (URL veya iç sayfa) |
+
+**Component üretici kuralı:** Bir slot `"tip": "button"` ise, üretilen component/editör **zorunlu olarak** bir metin girişi (`etiket`) + bir link seçici (`hedef`) sunmalıdır. Yani buton yazısı ayarlanabilir olmak zorundadır — şemada ayrı bir prop görünmemesi eksiklik değil, `button` tipinin tanımı gereğidir.
+
+`button` yerine `object` + `alanlar` yazma; ikisi aynı şeyi anlatır ama sözlük `button`'ı tek biçim olarak dondurur. Etiket sabit, hedef merchant'ın değilse (form "Gönder" gibi) buton değil, düz `text` kullan (§3.5 `cta` satırı).
 
 ### 3.4 Granülarite
 
@@ -224,6 +237,23 @@ Dört gramerden biri. Boş `[]` **yasak**; gerçekten etkileşim yoksa `["yok"]`
 |---|---|
 | `subscribe` | `emit:newsletter.subscribe` |
 | `changeLocale` | `emit:locale.change` |
+
+### 5.1 Olay zamanı (kip)
+
+- **Komut** = emir kipi: `cart.add`, `checkout.start`, `search.submit`, `variant.change`.
+- **Bildirim** = geçmiş zaman: `cart.added`, `cart.updated`.
+- Karışık yazım yok. Sepet içeriğini değiştirip yayınlıyorsan `emit:cart.updated` (`emit:cart.update` **yasak**).
+
+### 5.2 Overlay wiring (zorunlu)
+
+Bir section bir **global overlay'i tetikleyen** olay yayınlıyorsa, o overlay'i `bagimliliklar`'a yazmak zorundadır — yoksa üretilen component'te tetiklenen katman sayfada bulunmaz. Validator bunu **ERROR** ile yakalar.
+
+| Yayınlanan action | Zorunlu `bagimliliklar` |
+|---|---|
+| `emit:cart.add` | `global-cart-drawer` |
+| `emit:product.quickView` | `global-quick-view` |
+
+Overlay'in kendisi bu olayı yayınlıyorsa (ör. quick-view içinden sepete ekleme) kendine bağımlı sayılmaz; yalnız tetiklediği *başka* overlay bildirilir.
 
 ---
 

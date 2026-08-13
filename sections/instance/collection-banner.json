@@ -7,9 +7,10 @@
   "slots": {
     "baslik": {
       "tip": "text",
-      "maxLen": 80
+      "maxLen": 80,
+      "zorunlu": true
     },
-    "aciklama": {
+    "metin": {
       "tip": "text",
       "maxLen": 200,
       "zorunlu": false
@@ -20,8 +21,7 @@
     }
   },
   "styleKnobs": {
-    "hizalama": "left|center",
-    "yukseklik": "sm|md|lg"
+    "hizalama": "left|center"
   },
   "dataBindings": [
     {
@@ -29,10 +29,13 @@
       "source": "DataSource.collection"
     }
   ],
-  "actions": ["yok"],
+  "actions": [
+    "yok"
+  ],
   "hookNoktalari": [
     "mount:section.after"
   ],
   "bagimliliklar": [],
-  "responsive": "Mobilde daha kısa banner"
+  "responsive": "Mobilde aynı sol yığın.",
+  "_knobNote": "Yalnız sol başlık+açıklama, görsel yok. yukseklik varyantı bu karede yok."
 }

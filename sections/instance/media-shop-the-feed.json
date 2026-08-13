@@ -5,33 +5,69 @@
   "scope": "instance",
   "amac": "Sosyal / UGC görsel akışından ürün keşfi (shop the look / feed)",
   "slots": {
-    "baslik": { "tip": "text", "maxLen": 80 },
-    "altBaslik": { "tip": "text", "maxLen": 160, "zorunlu": false },
+    "baslik": {
+      "tip": "text",
+      "maxLen": 80,
+      "zorunlu": true
+    },
+    "altBaslik": {
+      "tip": "text",
+      "maxLen": 160,
+      "zorunlu": false
+    },
     "items": {
       "tip": "array",
       "min": 3,
       "max": 18,
       "item": {
-        "gorsel": { "tip": "image" },
-        "urunRef": { "tip": "productRef", "zorunlu": false },
-        "etiket": { "tip": "text", "maxLen": 40, "zorunlu": false }
-      }
+        "gorsel": {
+          "tip": "image",
+          "zorunlu": true
+        },
+        "urun": {
+          "tip": "ref",
+          "zorunlu": false,
+          "hedef": "product"
+        },
+        "etiket": {
+          "tip": "text",
+          "maxLen": 40,
+          "zorunlu": false
+        }
+      },
+      "zorunlu": true
     }
   },
   "styleKnobs": {
-    "layout": "grid|masonry|slider",
-    "kolon": [2, 3, 4]
+    "layout": "grid|slider",
+    "kolon": [
+      3,
+      4
+    ],
+    "okGoster": true,
+    "hizalama": "left|center"
   },
   "dataBindings": [
     {
       "name": "urunler",
       "source": "DataSource.productList",
-      "params": { "kaynak": "manual", "limit": 12 },
+      "params": {
+        "kaynak": "manual",
+        "limit": 12
+      },
       "zorunlu": false
     }
   ],
-  "actions": ["emit:product.quickView", "navigate"],
-  "hookNoktalari": ["mount:feedItem.after", "mount:section.after"],
-  "bagimliliklar": [],
-  "responsive": "Mobil 2 kolon; hotspot/quick view dokunmatik"
+  "actions": [
+    "emit:product.quickView",
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:feedItem.after",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [
+    "global-quick-view"
+  ],
+  "responsive": "375 bir kart + peek; masaüstü oklar 375 kırpımında yok (kaydırma)."
 }

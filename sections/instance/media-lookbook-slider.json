@@ -5,39 +5,86 @@
   "scope": "instance",
   "amac": "Mekan/look görselleri üzerinden ürün hotspot’larıyla lookbook vitrini",
   "slots": {
-    "baslik": { "tip": "text", "maxLen": 80 },
-    "slides": {
+    "baslik": {
+      "tip": "text",
+      "maxLen": 80,
+      "zorunlu": true
+    },
+    "slaytlar": {
       "tip": "array",
       "min": 1,
       "max": 10,
       "item": {
-        "gorsel": { "tip": "image" },
-        "etiket": { "tip": "text", "maxLen": 40, "zorunlu": false },
+        "gorsel": {
+          "tip": "image",
+          "zorunlu": true
+        },
+        "etiket": {
+          "tip": "text",
+          "maxLen": 40,
+          "zorunlu": false
+        },
         "urunler": {
           "tip": "array",
           "max": 8,
           "item": {
-            "urun": { "tip": "product" },
-            "hotspot": { "tip": "object", "zorunlu": false }
-          }
+            "urun": {
+              "tip": "ref",
+              "hedef": "product",
+              "zorunlu": true
+            },
+            "hotspot": {
+              "tip": "object",
+              "zorunlu": false,
+              "alanlar": {
+                "x": {
+                  "tip": "number",
+                  "zorunlu": true
+                },
+                "y": {
+                  "tip": "number",
+                  "zorunlu": true
+                }
+              }
+            }
+          },
+          "zorunlu": true,
+          "min": 1
         },
-        "cta": { "tip": "button", "zorunlu": false }
-      }
+        "cta": {
+          "tip": "button",
+          "zorunlu": false
+        }
+      },
+      "zorunlu": true
     }
   },
   "styleKnobs": {
-    "layout": "slider|stacked",
-    "hotspotGoster": true
+    "hotspotGoster": true,
+    "okGoster": true,
+    "hizalama": "left|center"
   },
   "dataBindings": [
     {
       "name": "urunler",
       "source": "DataSource.productList",
-      "params": { "kaynak": "manual", "limit": 8 }
+      "params": {
+        "kaynak": "manual",
+        "limit": 8
+      }
     }
   ],
-  "actions": ["navigate", "emit:product.quickView"],
-  "hookNoktalari": ["mount:section.after", "mount:hotspot"],
-  "bagimliliklar": [],
-  "responsive": "Mobilde tek slide + ürün listesi altta"
+  "actions": [
+    "navigate",
+    "emit:product.quickView"
+  ],
+  "hookNoktalari": [
+    "mount:section.after",
+    "mount:hotspot.after"
+  ],
+  "bagimliliklar": [
+    "global-quick-view"
+  ],
+  "responsive": "1440 ~2 kart peek + ok + progress. 375 1+peek; ok kaybolur.",
+  "_knobNote": "PNG peek-slider + hotspot chip + ok. stacked ikinci iskelet yok."
 }

@@ -20,10 +20,10 @@
 | # | İş | Neden | Effort |
 |---|---|---|---|
 | ~~3~~ | ~~A2 — SectionSchema spec + validate~~ | ✅ **bitti** — `schema-standard.md` + `validate-schemas.mjs` | — |
-| **0** | **45 ERROR'ı kapat** → [`reviews/schema/_debt.md`](./reviews/schema/_debt.md) §1 | Sözleşme ihlali; ozy’ye geçmeden temizlensin. Çoğu mekanik rename (19 emekli slot adı, 4 hook) | M |
+| ~~0~~ | ~~45 ERROR + 214 WARN~~ | ✅ `/qante-discover` onarım 2026-08-13 — `npm run validate` 59/59 temiz | — |
 | 1 | Taksonomi `pageTypes` + `candidateQueue` düzelt → `v0.2.0` | Gözlemler taksonomi dışı sayfa tipi kullanıyor; aday dosyada var, tax’ta yok | S |
-| 2 | 137 slotta eksik `zorunlu` alanını doldur | Editör davranışı belirsiz kalıyor; en büyük tek warn kalemi | M |
-| 3b | styleKnobs bütçe borcu: **53/59 şema 4 knob altında** → auditor’ı sırayla koş | v1.2 bütçesi uygulanmadı; envanter eski minimalizmde | L |
+| 2 | ~~137 slotta eksik `zorunlu`~~ | ✅ dolduruldu | — |
+| 3b | Knob bütçesi: aile taraması + `_knobNote` (uydurma yok) | Evidence ile tek tek auditor hâlâ değerli — şema artık sözleşmeye uyuyor | M |
 | 4 | `cta-band` kapat veya bilinçli boşluk beyan et | 18 kategoriden tek boşluk | S |
 | 5 | `page-template` scope’u doğrula (breadcrumbs) | Scope modelinin 1/3’ü hiç kullanılmamış | S |
 | 6 | A3 — ikinci kaynak **ozy** (ikas) | Hyper tek motor; çapraz satıcı doğrulama yok | L |
@@ -116,9 +116,9 @@ Walkthrough breadcrumbs’ı `page-template` öneriyor; şema `navigation-breadc
 
 - [x] SectionSchema sözleşmesi + doğrulayıcı (`schema-standard.md` · `validate-schemas.mjs`)
 - [x] Agent girişi: `/qante-discover` komutu + skill
-- [ ] `reviews/schema/_debt.md` §1 — 25 ERROR
-- [ ] 137 slotta `zorunlu` alanı
-- [ ] styleKnobs bütçe borcu (53 şema)
+- [x] `reviews/schema/_debt.md` — 0 error / 0 warn (2026-08-13 onarım)
+- [x] 137 slotta `zorunlu` alanı
+- [x] styleKnobs sözleşme uyumu (aile seti + `_knobNote`; auditor hâlâ isteğe bağlı)
 - [ ] `taxonomy/v0.2.0.json` — pageTypes + candidateQueue
 - [ ] CI: `npm run validate` pipeline'a bağla
 - [ ] `cta-band` şema veya bilinçli boşluk

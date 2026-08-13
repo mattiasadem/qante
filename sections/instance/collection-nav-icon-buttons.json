@@ -10,25 +10,45 @@
       "min": 2,
       "max": 16,
       "item": {
-        "etiket": { "tip": "text", "maxLen": 40 },
-        "ikon": { "tip": "image", "zorunlu": false },
-        "link": { "tip": "link" }
-      }
+        "etiket": {
+          "tip": "text",
+          "maxLen": 40,
+          "zorunlu": false
+        },
+        "ikon": {
+          "tip": "image",
+          "zorunlu": false
+        },
+        "link": {
+          "tip": "link",
+          "zorunlu": false
+        }
+      },
+      "zorunlu": true
     }
   },
   "styleKnobs": {
     "layout": "row|wrap|marquee",
-    "ikonGoster": true
+    "ikonGoster": true,
+    "okGoster": true,
+    "gorselBoyut": "sm|md"
   },
   "dataBindings": [
     {
       "name": "koleksiyonlar",
       "source": "DataSource.collectionList",
-      "params": { "kaynak": "manual", "limit": 12 }
+      "params": {
+        "kaynak": "manual",
+        "limit": 12
+      }
     }
   ],
-  "actions": ["navigate"],
-  "hookNoktalari": ["mount:section.after"],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
   "bagimliliklar": [],
   "responsive": "Mobilde yatay scroll"
 }

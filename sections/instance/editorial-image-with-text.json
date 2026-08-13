@@ -5,20 +5,43 @@
   "scope": "instance",
   "amac": "Görsel + metin yan yana marka/hikâye anlatımı",
   "slots": {
-    "baslik": { "tip": "text", "maxLen": 80 },
-    "metin": { "tip": "text", "maxLen": 400, "zorunlu": false },
-    "gorsel": { "tip": "image" },
-    "cta": { "tip": "button", "zorunlu": false },
-    "badge": { "tip": "text", "maxLen": 40, "zorunlu": false }
+    "baslik": {
+      "tip": "text",
+      "maxLen": 80,
+      "zorunlu": true
+    },
+    "metin": {
+      "tip": "text",
+      "maxLen": 400,
+      "zorunlu": false
+    },
+    "gorsel": {
+      "tip": "image",
+      "zorunlu": true
+    },
+    "cta": {
+      "tip": "button",
+      "zorunlu": false
+    },
+    "rozet": {
+      "tip": "text",
+      "maxLen": 40,
+      "zorunlu": false
+    }
   },
   "styleKnobs": {
-    "imagePozisyon": "left|right",
-    "oran": "1:1|4:5|16:9",
-    "badgeGoster": true
+    "gorselKonumu": "left|right",
+    "rozetGoster": true,
+    "hizalama": "left|center"
   },
   "dataBindings": [],
-  "actions": ["navigate"],
-  "hookNoktalari": ["mount:section.after"],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
   "bagimliliklar": [],
-  "responsive": "Mobilde görsel üstte, metin altta"
+  "responsive": "Mobilde görsel üstte, metin altta.",
+  "_knobNote": "Overlay ayrı şema. Oran ölçülmedi — 1:1|4:5|16:9 uydurulmadı. 3 knob."
 }

@@ -5,18 +5,36 @@
   "scope": "instance",
   "amac": "Kısa vurgu metni + görsel ile marka/özellik highlight bandı",
   "slots": {
-    "baslik": { "tip": "text", "maxLen": 100, "zorunlu": false },
-    "metin": { "tip": "text", "maxLen": 200 },
-    "gorsel": { "tip": "image", "zorunlu": false },
-    "cta": { "tip": "button", "zorunlu": false }
+    "baslik": {
+      "tip": "text",
+      "maxLen": 100,
+      "zorunlu": false
+    },
+    "metin": {
+      "tip": "text",
+      "maxLen": 200,
+      "zorunlu": false
+    },
+    "gorsel": {
+      "tip": "image",
+      "zorunlu": false
+    },
+    "cta": {
+      "tip": "button",
+      "zorunlu": false
+    }
   },
   "styleKnobs": {
-    "hizalama": "left|center",
-    "gorselKonumu": "left|right|background"
+    "hizalama": "left|center"
   },
   "dataBindings": [],
-  "actions": ["navigate"],
-  "hookNoktalari": ["mount:section.after"],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
   "bagimliliklar": [],
-  "responsive": "Mobilde tek kolon"
+  "responsive": "Mobilde satır kırılır; pill görseller satır içi kalır.",
+  "_knobNote": "Ortalı cümle + satır içi pill görseller. Yan/arka görsel yok — gorselKonumu uydurulmadı."
 }

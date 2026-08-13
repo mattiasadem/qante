@@ -17,22 +17,31 @@
       "item": {
         "soru": {
           "tip": "text",
-          "maxLen": 120
+          "maxLen": 120,
+          "zorunlu": true
         },
         "cevap": {
-          "tip": "richtext"
+          "tip": "richtext",
+          "zorunlu": true
         }
-      }
+      },
+      "zorunlu": true
     }
   },
   "styleKnobs": {
-    "allowMultipleOpen": false
+    "allowMultipleOpen": false,
+    "openFirst": true,
+    "hizalama": "left|center"
   },
   "dataBindings": [],
-  "actions": ["emit:accordion.toggle", "navigate"],
+  "actions": [
+    "emit:accordion.toggle",
+    "navigate"
+  ],
   "hookNoktalari": [
     "mount:section.after"
   ],
   "bagimliliklar": [],
-  "responsive": "Tam genişlik accordion"
+  "responsive": "Tam genişlik accordion",
+  "_knobNote": "1440 FAQ: tek accordion, ilk madde açık, arama yok. 3 knob — dördüncü uydurulmadı."
 }

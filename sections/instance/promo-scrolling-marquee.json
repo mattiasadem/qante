@@ -10,19 +10,32 @@
       "min": 2,
       "max": 20,
       "item": {
-        "metin": { "tip": "text", "maxLen": 40 },
-        "link": { "tip": "link", "zorunlu": false }
-      }
+        "metin": {
+          "tip": "text",
+          "maxLen": 40,
+          "zorunlu": false
+        },
+        "link": {
+          "tip": "link",
+          "zorunlu": false
+        }
+      },
+      "zorunlu": true
     }
   },
   "styleKnobs": {
-    "hiz": "slow|normal|fast",
+    "gorselGoster": true,
+    "loop": true,
     "yon": "left|right",
-    "pauseOnHover": true
+    "autoplay": true
   },
   "dataBindings": [],
-  "actions": ["navigate"],
-  "hookNoktalari": ["mount:section.after"],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
   "bagimliliklar": [],
-  "responsive": "Tüm viewport’larda aynı şerit; font küçülür"
+  "responsive": "Her iki genişlikte tek yatay şerit; 375 daha az öğe sığdırır."
 }
