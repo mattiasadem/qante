@@ -230,11 +230,26 @@ function syncNotifyBtn() {
   btn.classList.toggle("on", p === "granted");
   btn.classList.toggle("off", p === "denied");
   btn.textContent =
-    p === "granted" ? "Bildirim açık" : p === "denied" ? "Bildirim kapalı" : "Bildirim aç";
+    p === "granted" ? "Bildirim açık" : p === "denied" ? "Bildirim kapalı — tıkla" : "Bildirim aç";
+  btn.title =
+    p === "denied"
+      ? "Chrome bu siteyi engellemiş. Adres çubuğundaki kilit → Bildirimler → İzin ver"
+      : "Yeni tema gelince Chrome bildirimi";
 }
 
 async function askNotifyPermission() {
   if (!("Notification" in window)) return "denied";
+  if (Notification.permission === "denied") {
+    syncNotifyBtn();
+    window.alert(
+      "Chrome bildirimleri bu site için kapalı.\n\n" +
+        "1. Adres çubuğunda kilit / slayt ikonuna tıkla\n" +
+        "2. Bildirimler → İzin ver (Allow)\n" +
+        "3. Sayfayı yenile\n\n" +
+        "veya chrome://settings/content/notifications → localhost’u listeden sil"
+    );
+    return "denied";
+  }
   if (Notification.permission !== "default") {
     syncNotifyBtn();
     return Notification.permission;
