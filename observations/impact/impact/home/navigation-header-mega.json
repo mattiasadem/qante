@@ -1,0 +1,112 @@
+{
+  "observationId": "impact.impact.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "impact",
+  "preset": "impact",
+  "sayfa": "home",
+  "url": "https://impact-theme-sound.myshopify.com/",
+  "selector": "#shopify-section-sections--16731742961914__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/impact/impact/home/navigation-header-mega.1440.png",
+    "evidence/impact/impact/home/navigation-header-mega.375.png",
+    "evidence/impact/impact/home/navigation-header-mega.768.png",
+    "evidence/impact/impact/home/navigation-header-mega.changed.mobil-shop-acik.375.png",
+    "evidence/impact/impact/home/navigation-header-mega.changed.mobil-shop-acik.768.png",
+    "evidence/impact/impact/home/navigation-header-mega.initial.kapali-header.1440.png",
+    "evidence/impact/impact/home/navigation-header-mega.initial.kapali-header.375.png",
+    "evidence/impact/impact/home/navigation-header-mega.initial.kapali-header.768.png",
+    "evidence/impact/impact/home/navigation-header-mega.open.mobil-menu-acik.375.png",
+    "evidence/impact/impact/home/navigation-header-mega.open.mobil-menu-acik.768.png",
+    "evidence/impact/impact/home/navigation-header-mega.open.shop-panel-acik.1440.png"
+  ],
+  "captureMode": "viewport",
+  "notlar": "Header.",
+  "delta": "",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://impact-theme-sound.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali-header",
+      "not": "Shop paneli kapalı — Headphones/Earphones listesi yok"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#shopify-section-sections--16731742961914__header button[aria-controls='navigation-drawer-1']",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-panel-acik",
+      "not": "Shop tık → navigation-drawer-1. Hover Collaborations details açılmadı; tık sayfa değiştirmedi."
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#shopify-section-sections--16731742961914__header button[aria-controls='header-sidebar-menu']",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mobil-menu-acik",
+      "not": "Hamburger → header-sidebar-menu"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#header-sidebar-menu button:has-text('Shop')",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mobil-shop-acik",
+      "not": "Sidebar içindeki Shop — yazılı <a> değil. Compare/Blog/About link, tıklama."
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Masaüstü Shop tık ile açılıyor; Collaborations details hover kapalı kaldı"
+    },
+    {
+      "state": "filled",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "input",
+      "sebep": "Arama ayrı component"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Shop kapalı. 1440: IMPACT + Shop/Collaborations/Compare/Blog/About/Theme Features + USD/arama/hesap/sepet. 375: hamburger + büyüteç + logo + sepet.",
+    "open": "1440 Shop tık → soldan beyaz drawer: Headphones, Earphones, Accessories, Speaker + altta MG20 promo kartı (oklar). 375/768 hamburger → Shop, Collaborations (ok), Compare, Blog, About, Theme Features + sosyal + USD + Account.",
+    "changed": "375/768 sidebar Shop tık → geri oku + Shop başlığı, aynı kategori listesi + MG20 carousel. Compare/Blog/About yazılı link, tıklanmadı."
+  },
+  "interactionNote": "Shop opener: button[aria-controls='navigation-drawer-1'] — hover mega değil, tık ile sol drawer. Collaborations details>summary hover açmadı. Mega promo kartı drawer içinde.",
+  "delta": "Shop tık → sol drawer (liste + promo kartı); hover mega değil. Şema tipi aynı.",
+  "capture": {
+    "url": "https://impact-theme-sound.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T11:49:33.236Z",
+    "mode": "viewport"
+  }
+}

@@ -77,6 +77,17 @@ export async function dismissAllOverlays(page, { rounds = 8 } = {}) {
         }
 
         if (s.position !== "fixed") return;
+        if (s.visibility === "hidden" || s.opacity === "0") return;
+        const id = (el.id || "").toLowerCase();
+        const tag = (el.tagName || "").toLowerCase();
+        if (
+          id === "search-drawer" ||
+          id === "cart-drawer" ||
+          tag === "search-drawer" ||
+          tag === "cart-drawer"
+        ) {
+          return;
+        }
 
         const coversCenter =
           r.width > 360 &&

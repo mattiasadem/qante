@@ -1,0 +1,90 @@
+{
+  "observationId": "impact.impact.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "impact",
+  "preset": "impact",
+  "sayfa": "home",
+  "url": "https://impact-theme-sound.myshopify.com/",
+  "selector": "#search-drawer",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/impact/impact/home/global-predictive-search.initial.arama-kapali.1440.png",
+    "evidence/impact/impact/home/global-predictive-search.initial.arama-kapali.375.png",
+    "evidence/impact/impact/home/global-predictive-search.initial.arama-kapali.768.png",
+    "evidence/impact/impact/home/global-predictive-search.input.arama-sonucu.1440.png",
+    "evidence/impact/impact/home/global-predictive-search.input.arama-sonucu.375.png",
+    "evidence/impact/impact/home/global-predictive-search.input.arama-sonucu.768.png"
+  ],
+  "captureMode": "viewport",
+  "prepareClick": "a[aria-controls=\"search-drawer\"]",
+  "notlar": "Search drawer — Popular requests.",
+  "delta": "",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://impact-theme-sound.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#shopify-section-sections--16731742961914__header",
+      "etiket": "arama-kapali",
+      "not": "Drawer kapalı (yükseklik 0) — kare header'daki büyüteç. forceOpen kullanma."
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "a[aria-controls='search-drawer']",
+      "capture": false,
+      "not": "İki opener: sm:hidden ve sm:block. clickVisible görünür olanı alır."
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input[name='q']",
+      "value": "wireless",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "katalogSorgu wireless — 12 sonuç beklenir"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Yazmadan sonuç yok"
+    },
+    {
+      "state": "filled",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "open",
+      "sebep": "Boş drawer ayrı kare değil; dilbilgisi yazınca ölçüldü"
+    },
+    {
+      "state": "changed",
+      "sebep": "Products/Blog/Collections tab tıklanmadı — yazınca Products zaten açık"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Drawer kapalı. Header'da büyüteç; arama kutusu ve sonuç yok.",
+    "input": "wireless yazılınca sağdan (375'te tam) beyaz drawer: Clear + kapat, Products / Blog posts / Collections sekmeleri, ürün listesi (küçük görsel + ad + fiyat). MW01 Wireless $69 ve MH40 satırları görünür."
+  },
+  "interactionNote": "İki opener: sm:hidden / sm:block — clickVisible görünür olanı alır. a[href=/search] sayfaya gider, kullanılmadı. İlk çekimde dismissAllOverlays kapalı search-drawer'ı display:none yaptı; overlay script artık hidden drawer'ı öldürmüyor.",
+  "delta": "Yazınca Products/Blog posts/Collections sekmeli liste. Şema tipi aynı.",
+  "capture": {
+    "url": "https://impact-theme-sound.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T11:56:24.359Z",
+    "mode": "viewport"
+  }
+}

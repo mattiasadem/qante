@@ -3,7 +3,7 @@
 *Kaynak:* https://impulse-theme-fashion.myshopify.com/  
 *Preset:* `fashion` · Theme Store Impulse (Modern vitrin)
 
-**Şu anki odak:** ✅ Fashion tam tur bitti — Dune / Terrain / Apothecary ayrı
+**Şu anki odak:** ✅ Fashion · ✅ Dune · ✅ Terrain · ✅ Apothecary — Impulse preset turu bitti
 
 **Evidence:** `evidence/impulse/fashion/{sayfa}/` · `capture-observation.mjs` (3vp) · overlay: `capture-interaction.mjs`
 
@@ -33,7 +33,9 @@
 - [x] F5 Search / cart sayfası
 - [x] F6 Blog / about / contact / faq / lookbook / footer
 - [x] Interact: mega · search · kart hover · cart drawer · quick view · FAQ · dolu cart · shoppable hero hotspot
-- [ ] Dune / Terrain / Apothecary (ayrı demo, bu turda yok)
+- [x] Dune delta — [`impulse-dune.md`](./impulse-dune.md)
+- [x] Terrain delta — [`impulse-terrain.md`](./impulse-terrain.md)
+- [x] Apothecary delta — [`impulse-apothecary.md`](./impulse-apothecary.md)
 
 ---
 
@@ -88,11 +90,14 @@
 4. PLP filtre açık hâli — statik karede bar var, tıklanmadı
 5. Lookbook sayfasındaki mosaic’te hotspot yok; home shoppable hero popover çekildi. VIEW PRODUCT → QV ayrıca tıklanmadı
 6. Contact form gönderilmedi · checkout yok
-7. Dune / Terrain / Apothecary / Apparel demo ayrı
+7. Impulse style preset’leri bitti (Dune / Terrain / Apothecary)
 8. Policy sayfaları taranmadı
 
 ---
 
 ## Sonraki
 
-- [ ] Impulse diğer style preset’leri (Dune / Terrain / Apothecary) — yalnız delta
+- [x] Dune delta
+- [x] Terrain delta
+- [x] Apothecary delta
+- [ ] Impact (Sound) — `todo/impact.md`

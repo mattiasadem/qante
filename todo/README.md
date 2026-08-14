@@ -13,7 +13,10 @@
 | Prestige · Vogue | [`prestige-vogue.md`](./prestige-vogue.md) | ✅ 10 sayfa · 40 obs · 0 yeni şema |
 | Prestige · Strass | [`prestige-strass.md`](./prestige-strass.md) | ✅ 11 sayfa · 61 obs · 0 yeni şema |
 | Impulse · Fashion | [`impulse.md`](./impulse.md) | ✅ Fashion tamam — 11 sayfa · 27 şema · 43 obs · 156 kanıt · 0 yeni şema |
-| _(sonraki)_ | `ozy.md` / `marka-….md` | henüz yok |
+| Impulse · Dune | [`impulse-dune.md`](./impulse-dune.md) | ✅ delta — 8 sayfa · 8 obs · 21 kanıt |
+| Impulse · Terrain | [`impulse-terrain.md`](./impulse-terrain.md) | ⚡ delta — 5 obs · 15 kanıt |
+| Impulse · Apothecary | [`impulse-apothecary.md`](./impulse-apothecary.md) | ⚡ delta — 2 obs · 6 kanıt |
+| Impact · default (Sound) | [`impact.md`](./impact.md) | ✅ 14 sayfa · 99 obs · 97 kare · 0 yeni şema · home interact |
 
 **QC / improvement backlog:** [`../improvements-qc.md`](../improvements-qc.md)
 

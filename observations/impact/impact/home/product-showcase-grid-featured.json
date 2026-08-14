@@ -1,0 +1,107 @@
+{
+  "observationId": "impact.impact.home.product-showcase-grid-featured",
+  "schemaId": "product-showcase-grid-featured",
+  "kaynak": "impact",
+  "preset": "impact",
+  "sayfa": "home",
+  "url": "https://impact-theme-sound.myshopify.com/",
+  "selector": "#shopify-section-template--16701007790330__16566902402ae4ce0f",
+  "evidenceSlug": "product-showcase-grid-featured",
+  "evidence": [
+    "evidence/impact/impact/home/product-showcase-grid-featured.1440.png",
+    "evidence/impact/impact/home/product-showcase-grid-featured.375.png",
+    "evidence/impact/impact/home/product-showcase-grid-featured.768.png",
+    "evidence/impact/impact/home/product-showcase-grid-featured.hover.hover-reveal.1440.png",
+    "evidence/impact/impact/home/product-showcase-grid-featured.hover.hover-reveal.375.png",
+    "evidence/impact/impact/home/product-showcase-grid-featured.hover.hover-reveal.768.png",
+    "evidence/impact/impact/home/product-showcase-grid-featured.initial.ilk-hal.1440.png",
+    "evidence/impact/impact/home/product-showcase-grid-featured.initial.ilk-hal.375.png",
+    "evidence/impact/impact/home/product-showcase-grid-featured.initial.ilk-hal.768.png"
+  ],
+  "notlar": "featured-collection.",
+  "delta": "",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://impact-theme-sound.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16701007790330__16566902402ae4ce0f",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Best sellers kapalı kartlar"
+    },
+    {
+      "state": "hover",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "5sn newsletter-popup pointer'ı kesiyor"
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#shopify-section-template--16701007790330__16566902402ae4ce0f product-card[handle='mw08-sport-green-sapphire-glass-black-kevlar-r-case']",
+      "capture": true,
+      "etiket": "hover-reveal",
+      "not": "İlk kart Sold out. MW08 stokta — ikinci görsel + Quick add. 375/768 aynıysa missing."
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#shopify-section-template--16701007790330__16566902402ae4ce0f product-card[handle='mw08-sport-green-sapphire-glass-black-kevlar-r-case'] button.button[aria-controls^='quick-buy-']",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "quick-add-acik",
+      "not": "Masaüstü Quick add class=button; mobile-quick-buy-button 1440'ta gizli"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "hover",
+    "open"
+  ],
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hover karesinde + Quick add var; tık iki denemede dialog getirmedi (ilki gizli mobile-quick-buy, ikincisi button.button 0 eşleşme — section SS hover'ı düşürüyor). Üçüncü yok."
+    },
+    {
+      "state": "filled",
+      "sebep": "Quick add sepete ekleme bu turda yok; drawer ayrı"
+    },
+    {
+      "state": "input",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "changed",
+      "sebep": "Swatch radio var ama hover kanıtı yetti; varyant tıklanmadı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Best sellers, View all. Kart: görsel, rozet (Sold out / New), ad, yıldız, fiyat, swatch. Quick add yok.",
+    "hover": "1440 ve 375: MW08 kartında görselin sağ altında siyah + Quick add. İlk kart Sold out, hover orada buton çıkarmadı. 768 karesi initial ile aynı — doğrulanamadı.",
+    "open": "Quick-buy dialog karesi yok."
+  },
+  "interactionNote": "İlk .product-card Sold out. Stoktaki MW08 handle ile hover. 5sn newsletter-popup hover'ı kesiyor — Escape + force hover. [class*=product-card] 58 eşleşme.",
+  "delta": "Hover'da + Quick add. Dialog açılamadı. Şema tipi aynı.",
+  "capture": {
+    "url": "https://impact-theme-sound.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T12:13:20.071Z",
+    "mode": "section"
+  }
+}

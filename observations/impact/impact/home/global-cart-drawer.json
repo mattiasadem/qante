@@ -1,0 +1,124 @@
+{
+  "observationId": "impact.impact.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "impact",
+  "preset": "impact",
+  "sayfa": "home",
+  "url": "https://impact-theme-sound.myshopify.com/",
+  "selector": "#cart-drawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/impact/impact/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/impact/impact/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/impact/impact/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/impact/impact/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/impact/impact/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/impact/impact/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/impact/impact/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/impact/impact/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/impact/impact/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "captureMode": "viewport",
+  "prepareClick": "a[aria-controls=\"cart-drawer\"]",
+  "notlar": "Boş sepet drawer.",
+  "delta": "",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://impact-theme-sound.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[aria-controls='cart-drawer']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://impact-theme-sound.myshopify.com/products/mw08-sport-green-sapphire-glass-black-kevlar-r-case",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--16701008806138__main button:has-text('Add to cart')",
+      "capture": false,
+      "not": "PDP görünür Add to cart"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://impact-theme-sound.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a[aria-controls='cart-drawer']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu satır + toplam"
+    },
+    {
+      "state": "changed",
+      "action": "fill",
+      "selector": "#cart-drawer input.quantity-input",
+      "value": "2",
+      "capture": false,
+      "not": "Plus butonu yok; görünür quantity-input. Mobil sm:hidden, masaüstü line-item__actions."
+    },
+    {
+      "state": "changed",
+      "action": "press",
+      "value": "Enter",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 2 → toplam $698 beklenir"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "input",
+      "sebep": "Anlamsız — adet changed ile dolduruldu"
+    },
+    {
+      "state": "open",
+      "sebep": "Boş drawer initial; ayrı open yok"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Sağdan beyaz drawer: sepet ikonu rozet 0, Your cart is empty, Continue shopping. Satır yok.",
+    "filled": "Cart rozet 1. Free shipping bar dolu. MW08 Sport satırı $349, adet 1, Remove. Complete with (Headphone Stand + Add). Total $349. View cart (sarı) + Checkout. ATC UI ile.",
+    "changed": "Adet kutusu 2, satır $698, rozet 2, Total $698. Plus butonu yok — quantity-input."
+  },
+  "interactionNote": "ATC görünür Add to cart (ui, fallback yok). Adet name=plus değil; #cart-drawer input.quantity-input (mobil sm:hidden, masaüstü line-item__actions). Checkout tıklanmadı.",
+  "delta": "Boş: ikon+Continue shopping. Dolu: kargo barı + Complete with + sipariş notu. Şema tipi aynı.",
+  "capture": {
+    "url": "https://impact-theme-sound.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T12:05:41.354Z",
+    "mode": "viewport"
+  }
+}

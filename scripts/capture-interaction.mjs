@@ -210,6 +210,7 @@ async function forceOpen(page, selector) {
     for (const el of document.querySelectorAll(sel)) {
       el.hidden = false;
       el.removeAttribute("hidden");
+      el.style.removeProperty("display");
       el.classList.add("active", "open", "is-open");
       el.classList.remove("drawer--loading", "loading", "is-loading");
       el.setAttribute("open", "");
@@ -410,12 +411,22 @@ async function runStep(page, step) {
       const el = page.locator(sel).first();
       await el.waitFor({ state: "visible", timeout: 12000 });
       await el.scrollIntoViewIfNeeded().catch(() => {});
-      await el.hover();
+      await el.hover({ force: true });
       await page.waitForTimeout(Number(step.value) || 900);
       return null;
     }
     case "fill": {
-      const el = page.locator(sel).first();
+      const nodes = page.locator(sel);
+      await nodes.first().waitFor({ state: "attached", timeout: 12000 }).catch(() => {});
+      const n = await nodes.count();
+      if (!n) throw new Error(`selector eşleşmedi: ${sel}`);
+      let el = nodes.first();
+      for (let i = 0; i < n; i++) {
+        if (await nodes.nth(i).isVisible().catch(() => false)) {
+          el = nodes.nth(i);
+          break;
+        }
+      }
       await el.waitFor({ state: "visible", timeout: 12000 });
       await el.click({ force: true }).catch(() => {});
       if (step.value == null || String(step.value).trim() === "") {
