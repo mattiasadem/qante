@@ -1,0 +1,68 @@
+name: Notify new theme
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "observations/**"
+      - "todo/**"
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - id: detect
+        run: node scripts/detect-new-themes.mjs --github-output
+
+      - name: Slack
+        if: ${{ steps.detect.outputs.has_new == 'true' && secrets.SLACK_WEBHOOK_URL != '' }}
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          MSG: ${{ steps.detect.outputs.text }}
+          VIEWER: https://qante.vercel.app
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request
+          text = os.environ.get("MSG") or ""
+          payload = {
+            "text": f"*QANTE — yeni envanter*\n{text}\n<{os.environ['VIEWER']}|Viewer aç>"
+          }
+          req = urllib.request.Request(
+              os.environ["SLACK_WEBHOOK_URL"],
+              data=json.dumps(payload).encode(),
+              headers={"Content-Type": "application/json"},
+              method="POST",
+          )
+          urllib.request.urlopen(req, timeout=20)
+          PY
+
+      - name: Email (Resend)
+        if: ${{ steps.detect.outputs.has_new == 'true' && secrets.RESEND_API_KEY != '' && secrets.NOTIFY_EMAIL != '' }}
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
+          MSG: ${{ steps.detect.outputs.text }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request
+          payload = {
+            "from": "QANTE <beth.t@example.com>",
+            "to": [os.environ["NOTIFY_EMAIL"]],
+            "subject": "QANTE — yeni tema/preset",
+            "text": (os.environ.get("MSG") or "") + "\n\nhttps://qante.vercel.app",
+          }
+          req = urllib.request.Request(
+              "https://api.resend.com/emails",
+              data=json.dumps(payload).encode(),
+              headers={
+                  "Authorization": "Bearer " + os.environ["RESEND_API_KEY"],
+                  "Content-Type": "application/json",
+              },
+              method="POST",
+          )
+          urllib.request.urlopen(req, timeout=20)
+          PY

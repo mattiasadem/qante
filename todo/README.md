@@ -20,6 +20,15 @@
 
 **QC / improvement backlog:** [`../improvements-qc.md`](../improvements-qc.md)
 
+## Yeni tema bildirimi
+
+`main`’e push + yeni `observations/{tema}/` (veya yeni preset) → GitHub Action Slack/e-posta atar.
+
+1. Slack: kanal → Incoming Webhook → repo secret `SLACK_WEBHOOK_URL`
+2. E-posta (opsiyonel): [Resend](https://resend.com) → secret `RESEND_API_KEY` + `NOTIFY_EMAIL`
+
+Secret yoksa job sessiz geçer. Workflow: `.github/workflows/notify-theme.yml`
+
 ## Hyper özeti
 
 11 sayfa tipi (home → blog-post) envanterlendi. Ceramide delta: [`hyper-ceramide.md`](./hyper-ceramide.md).
