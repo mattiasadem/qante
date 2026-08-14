@@ -45,6 +45,77 @@ let facets = null;
 let candidatesData = null;
 let lightboxList = [];
 let lightboxIndex = 0;
+let advancing = false;
+let extraWheel = 0;
+
+function browseFlat() {
+  return items?.groups.flatMap((g) => g.items) || [];
+}
+
+function listPosition() {
+  const flat = browseFlat();
+  const idx = flat.findIndex(
+    (r) =>
+      r.schemaId === state.sel &&
+      ((r.observationId && r.observationId === state.selObs) ||
+        (!r.observationId && !state.selObs))
+  );
+  return { flat, idx, total: flat.length };
+}
+
+async function swapMain(dir, loadFn) {
+  const main = $("#main");
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce || !main?.animate) {
+    await loadFn();
+    return;
+  }
+  const outY = dir > 0 ? -16 : 16;
+  const inY = dir > 0 ? 22 : -22;
+  try {
+    await main.animate(
+      [
+        { opacity: 1, transform: "translateY(0)" },
+        { opacity: 0, transform: `translateY(${outY}px)` },
+      ],
+      { duration: 200, easing: "cubic-bezier(.4,0,.2,1)", fill: "forwards" }
+    ).finished;
+  } catch {
+    /* aborted */
+  }
+  await loadFn();
+  try {
+    await main.animate(
+      [
+        { opacity: 0, transform: `translateY(${inY}px)` },
+        { opacity: 1, transform: "translateY(0)" },
+      ],
+      { duration: 340, easing: "cubic-bezier(.22,1,.36,1)", fill: "forwards" }
+    ).finished;
+  } catch {
+    /* aborted */
+  }
+}
+
+async function goAdjacent(dir) {
+  if (state.view !== "browse" || advancing) return;
+  const { flat, idx } = listPosition();
+  if (!flat.length) return;
+  const next = Math.max(0, Math.min(flat.length - 1, (idx < 0 ? 0 : idx) + dir));
+  if (next === idx) return;
+  const picked = flat[next];
+  advancing = true;
+  extraWheel = 0;
+  state.sel = picked.schemaId;
+  state.selObs = picked.observationId || null;
+  state.view = "browse";
+  try {
+    await swapMain(dir, () => refresh());
+  } finally {
+    advancing = false;
+    extraWheel = 0;
+  }
+}
 let openFacets = new Set(
   JSON.parse(localStorage.getItem("qante.openFacets") || JSON.stringify(DEFAULT_OPEN_FACETS))
 );
@@ -477,14 +548,29 @@ async function renderDetail() {
       ? `<div class="card">${schemaJson}<p class="empty">Bu şema için gözlem yok.</p></div>`
       : `<p class="empty">Bu şema için gözlem yok.</p>`;
 
+  const pos = listPosition();
+  const navHint =
+    pos.idx < 0
+      ? ""
+      : `<p class="scroll-next-hint">${
+          pos.idx < pos.total - 1
+            ? "Alta kaydırınca sonraki şema"
+            : "Listenin sonu"
+        } · ${pos.idx + 1} / ${pos.total}</p>`;
+
   main.innerHTML = `
     ${head}
     ${renderVpTabs()}
     <h3>Gözlemler (${obs.length}${hiddenCount ? ` / ${obsAll.length}, ${hiddenCount} filtre dışı` : ""})</h3>
     ${cards}
+    ${navHint}
   `;
   main.scrollTop = 0;
+  extraWheel = 0;
   wireImages();
+  document.querySelector("#sidebar .item.active")?.scrollIntoView({
+    block: "nearest",
+  });
 }
 
 function renderVpTabs() {
@@ -1001,6 +1087,34 @@ function bindEvents() {
     localStorage.setItem("qante.openFacets", JSON.stringify([...openFacets]));
   }, true);
 
+  $("#main").addEventListener(
+    "wheel",
+    (e) => {
+      if (state.view !== "browse") return;
+      if ($("#lightbox").classList.contains("open")) return;
+      if (advancing) return;
+      const el = $("#main");
+      const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 12;
+      const atTop = el.scrollTop <= 12;
+      if (e.deltaY > 0 && atBottom) {
+        extraWheel += e.deltaY;
+        if (extraWheel > 160) {
+          extraWheel = 0;
+          goAdjacent(1);
+        }
+      } else if (e.deltaY < 0 && atTop) {
+        extraWheel += -e.deltaY;
+        if (extraWheel > 160) {
+          extraWheel = 0;
+          goAdjacent(-1);
+        }
+      } else {
+        extraWheel = 0;
+      }
+    },
+    { passive: true }
+  );
+
   // Main (delegate)
   $("#main").addEventListener("click", (e) => {
     const vp = e.target.closest(".vp-tab");
@@ -1045,23 +1159,7 @@ function bindEvents() {
     }
     if (typing) return;
     if (e.key === "j" || e.key === "k") {
-      const flat = items?.groups.flatMap((g) => g.items) || [];
-      if (!flat.length) return;
-      const idx = flat.findIndex(
-        (r) =>
-          r.schemaId === state.sel &&
-          ((r.observationId && r.observationId === state.selObs) ||
-            (!r.observationId && !state.selObs))
-      );
-      const next =
-        e.key === "j"
-          ? Math.min(flat.length - 1, idx + 1)
-          : Math.max(0, idx - 1);
-      const picked = flat[next < 0 ? 0 : next];
-      state.sel = picked.schemaId;
-      state.selObs = picked.observationId || null;
-      state.view = "browse";
-      refresh();
+      goAdjacent(e.key === "j" ? 1 : -1);
     }
   });
 
