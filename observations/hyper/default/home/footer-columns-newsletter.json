@@ -8,9 +8,16 @@
   "selector": "footer.footer",
   "evidenceSlug": "footer-columns-newsletter",
   "evidence": [
+    "evidence/hyper/default/home/footer-columns-newsletter.1440.png",
     "evidence/hyper/default/home/footer-columns-newsletter.375.png",
     "evidence/hyper/default/home/footer-columns-newsletter.768.png",
-    "evidence/hyper/default/home/footer-columns-newsletter.1440.png"
+    "evidence/hyper/default/home/footer-columns-newsletter.changed.kolon-company.375.png",
+    "evidence/hyper/default/home/footer-columns-newsletter.initial.ilk-hal.1440.png",
+    "evidence/hyper/default/home/footer-columns-newsletter.initial.ilk-hal.375.png",
+    "evidence/hyper/default/home/footer-columns-newsletter.initial.ilk-hal.768.png",
+    "evidence/hyper/default/home/footer-columns-newsletter.open.locale-liste.1440.png",
+    "evidence/hyper/default/home/footer-columns-newsletter.open.locale-liste.375.png",
+    "evidence/hyper/default/home/footer-columns-newsletter.open.locale-liste.768.png"
   ],
   "capture": {
     "url": "https://hyper-theme-demo.myshopify.com/",
@@ -19,9 +26,56 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-11T13:15:15.854Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T21:08:06.119Z",
+    "mode": "section"
   },
   "notlar": "Newsletter (Join Our Newsletter / %10 off) + 3 menü kolonu (Company, Collection, Shop) + alt şerit: locale, payment icons, sosyal, © Hyper Garace. Üstündeki Customer Service / Call Us şeridi ayrı footer-group section — bu şemaya dahil değil.",
-  "delta": ""
+  "delta": "",
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hyper-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "footer.footer",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Locale kapalı: United States (USD $)."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "footer.footer summary:has-text('Company')",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "etiket": "kolon-company",
+      "not": "375 akordeon: Company + → About us / Contact. Locale henüz açılmadı."
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "footer.footer [aria-expanded]:has-text('United States')",
+      "capture": true,
+      "etiket": "locale-liste",
+      "not": "Ülke listesi (Australia, Austria…). Ülke tıklanmaz, form gönderilmez."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "open": "Locale listesi açıldı: bayrak + ülke (Australia/France…). United States (USD $) chevron yukarı. Form gönderilmedi.",
+    "changed": "375: Company − açık; About us, Contact, FAQs, Blog, Find a Store. Collection/Shop hâlâ +. Locale United States kaldı."
+  },
+  "interactionNote": "Newsletter input var, Sign up gönderilmedi. Company/Collection/Shop 1440'te zaten açık kolon. Topbar locale aynı chrome — announcement'da tekrar yok."
 }

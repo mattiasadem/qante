@@ -4,7 +4,7 @@
 *Walkthrough:* `../qante-ornek-calisma-hyper.md`  
 *Evidence:* `evidence/hyper/{preset}/{sayfa}/`
 
-**Şu anki odak:** ✅ Hyper **default + tüm preset delta** bitti — ozy’ye geçiş review sonrası
+**Şu anki odak:** ✅ Hyper **default + tüm preset delta** bitti — interact kuyruğu [`interact.md`](./interact.md)
 
 **Evidence kuralı:** `selector` + url → `capture-observation.mjs` (3vp) · drawer/modal: `captureMode: viewport` + `prepareClick` / `prepareFill` / `prepareScroll`
 
@@ -61,7 +61,9 @@
 
 1. Soft-reuse notları (Nexvo `slideshow_with_product`, `collection_list_with_banner`) — isteğe bağlı  
 2. Policy sayfaları düşük öncelik, taranmadı  
-3. Ceramide PDP’de `before-after-slider` eklendi; diğer preset’lerde yoksa sorun değil
+3. Ceramide PDP’de `before-after-slider` eklendi; diğer preset’lerde yoksa sorun değil  
+4. Compare drawer dolu çekildi — Grind Vessel + Spoke Sofa TonePlay (2/5)
+5. Interact: cart sayfa dolu · PLP Out of stock · FAQ ikinci soru · PDP Yellow swatch · PDP About Brand · slideshow Spoke→Dining · lookbook Shop this look · favori 1/3→2/3 · features slayt
 
 ---
 
@@ -72,6 +74,6 @@
 
 ---
 
-## Sonraki tema
+## Sonraki
 
-- [ ] `todo/_template.md` → örn. `ozy.md`
+Yeni tema bu agent’ta yok. Interact: [`interact.md`](./interact.md).

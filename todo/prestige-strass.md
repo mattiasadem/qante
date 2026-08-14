@@ -67,5 +67,5 @@ Kanıt sonrası remap:
 ## Evidence backlog
 
 - [x] Strass 11 sayfa 3vp capture (61 obs · 183 PNG)
-- [ ] Dolu cart / drawer
+- [x] Dolu cart / drawer — Allure’da çekildi (aynı chrome)
 - [ ] Newsletter popup

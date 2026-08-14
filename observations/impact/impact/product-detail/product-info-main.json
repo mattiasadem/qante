@@ -8,12 +8,59 @@
   "selector": "#shopify-section-template--16701008806138__main",
   "evidenceSlug": "product-info-main",
   "evidence": [
+    "evidence/impact/impact/product-detail/product-info-main.1440.png",
     "evidence/impact/impact/product-detail/product-info-main.375.png",
     "evidence/impact/impact/product-detail/product-info-main.768.png",
-    "evidence/impact/impact/product-detail/product-info-main.1440.png"
+    "evidence/impact/impact/product-detail/product-info-main.changed.swatch-black.1440.png",
+    "evidence/impact/impact/product-detail/product-info-main.changed.swatch-black.375.png",
+    "evidence/impact/impact/product-detail/product-info-main.changed.swatch-black.768.png",
+    "evidence/impact/impact/product-detail/product-info-main.initial.ilk-hal.1440.png",
+    "evidence/impact/impact/product-detail/product-info-main.initial.ilk-hal.375.png",
+    "evidence/impact/impact/product-detail/product-info-main.initial.ilk-hal.768.png"
   ],
-  "notlar": "MW08 Sport main.",
+  "notlar": "MW08 Sport main. Interact: Black swatch.",
   "delta": "",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://impact-theme-sound.myshopify.com/products/mw08-sport-green-sapphire-glass-black-kevlar-r-case",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16701008806138__main",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Green Sapphire seçili. product-info 0×0 — kesit çek."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--16701008806138__main a.thumbnail-swatch[href='/products/mw08-sport-black-sapphire-glass-black-kevlar-r-case']",
+      "value": 3500,
+      "capture": true,
+      "captureSelector": ".product",
+      "etiket": "swatch-black",
+      "not": "<a> linked ürün. Yeni sayfada __main id kaybolabiliyor — .product çek."
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "375 iki denemede de .product karesi sepet çekmecesi + buy box; başlık/swatch yok. 768/1440 Black Sapphire duruyor."
+    }
+  ],
+  "stateFindings": {
+    "initial": "MW08 Sport Green Sapphire / Black Kevlar $349, yeşil swatch seçili, 4.8. Add to cart zeytin.",
+    "changed": "768/1440: Black Sapphire / Black Kevlar $349, ilk swatch seçili. Add to cart sarı. URL black-sapphire."
+  },
+  "interactionNote": "Swatch <a> linked ürün. product-rerender 0×0. 375 changed yazılmadı (sepet sızdı). Buy it now tıklanmadı.",
   "capture": {
     "url": "https://impact-theme-sound.myshopify.com/products/mw08-sport-green-sapphire-glass-black-kevlar-r-case",
     "viewports": [
@@ -21,8 +68,8 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-14T12:58:55.256Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T16:35:52.860Z",
     "mode": "section"
   }
 }

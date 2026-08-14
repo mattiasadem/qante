@@ -8,12 +8,70 @@
   "selector": "#shopify-section-template--15179704631359__main",
   "evidenceSlug": "cart-page-main",
   "evidence": [
+    "evidence/prestige/allure/cart/cart-page-main.1440.png",
     "evidence/prestige/allure/cart/cart-page-main.375.png",
     "evidence/prestige/allure/cart/cart-page-main.768.png",
-    "evidence/prestige/allure/cart/cart-page-main.1440.png"
+    "evidence/prestige/allure/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/prestige/allure/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/prestige/allure/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/prestige/allure/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/prestige/allure/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/prestige/allure/cart/cart-page-main.initial.cart-bos.768.png"
   ],
   "notlar": "Boş sepet + CONTINUE SHOPPING.",
-  "delta": "Boş durum: CART + Your cart is empty + CONTINUE SHOPPING. Dolu sepet (satır+özet) bu PNG'lerde yok — uydurulmadı.",
+  "delta": "Boş durum: CART + Your cart is empty + CONTINUE SHOPPING. Dolu: Mini Dalia satırı.",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://prestige-theme-allure.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15179704631359__main",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://prestige-theme-allure.myshopify.com/products/le-mini-dalia-black-liege",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button.button--outline.w-full",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://prestige-theme-allure.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15179704631359__main",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart: satır + özet"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Ortalı CART + Your cart is empty + CONTINUE SHOPPING. Satır yok.",
+    "filled": "CART başlık. Satır: Le Mini Dalia Black Liégé $350, adet 1, Remove. Sağ Total $350 + CHECKOUT. Altta ESTIMATE SHIPPING."
+  },
+  "interactionNote": "ATC UI (outline Add to cart). Checkout tıklanmadı.",
   "capture": {
     "url": "https://prestige-theme-allure.myshopify.com/cart",
     "viewports": [
@@ -21,8 +79,8 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-13T19:23:28.094Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T14:46:56.853Z",
     "mode": "section"
   }
 }

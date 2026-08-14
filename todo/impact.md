@@ -83,9 +83,16 @@ Aynı tip = şemaya dokunma, observation + delta. Yeni şema yalnız 1440/375 so
 - [x] `global-predictive-search` — wireless → Products/Blog/Collections liste
 - [x] `global-cart-drawer` — boş / MW08 $349 / adet 2 → $698
 - [x] `product-showcase-grid-featured` — hover + Quick add (1440/375); dialog açılamadı; 768 hover = initial
+- [x] `cart-page-main` — boş + MW08 Sport $349 (satır + özet + Checkout)
+- [x] `product-showcase-grid-plp` — Color Galactic White → MG20 $449
+- [x] `faq-collapsible-tabs` — What is the status of my order?
+- [x] `product-info-main` — Black Sapphire (768/1440)
+- [x] `media-lookbook-slider` — Read more Inductive Wireless Charging
+- [x] `testimonial-quote-carousel` — Men's Health → Forbes MW08
+- [x] `editorial-timeline` — 2014 NYC → 2017 Adjaye speaker
 
 ## Evidence backlog
 
 - [x] Impact default 3vp capture (97/99; 2 revealed-image boş)
-- [x] Dolu cart / drawer (home interact)
-- [ ] Balance / Cocoon delta
+- [x] Dolu cart drawer + dolu cart sayfası
+- [x] Balance / Cocoon delta — [`impact-balance.md`](./impact-balance.md) · [`impact-cocoon.md`](./impact-cocoon.md)

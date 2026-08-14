@@ -4,7 +4,7 @@
 *Parent:* [`impulse.md`](./impulse.md) · Dune: [`impulse-dune.md`](./impulse-dune.md)  
 *Theme Store:* Terrain → Sports demosu
 
-**Şu anki odak:** ⚡ delta + collection-banner + about marquee — harita şemasız
+**Şu anki odak:** ✅ delta + spec hotspot interact
 
 **Kural:** Full kopya yok — Fashion/Dune’da olmayan / farklı kurulan tipler.
 
@@ -66,10 +66,14 @@ PDP: Frame/Wheels/Chain/Casette → product-info-tabs ✅. Video / IWT / countdo
 
 ---
 
+## Interact
+
+- `product-info-tabs` — Frame → Wheels ETHIRTEEN (hotspot, tab çubuğu yok)
+
 ## Bilinçli boşluklar
 
 1. Countdown 1440 ince bant, sticky header üstüne biniyor
-2. Spec hotspot `changed` (Wheels/Chain) tıklanmadı
+2. Spec hotspot `changed` — Wheels ETHIRTEEN (Frame’den). Chain/Cassette ayrıca yok
 3. Recently viewed — başlık var, kart yok
 4. Newsletter “Get 10% off” karesi envanterde yok
 5. Video hero / dual featured yeniden çekilmedi

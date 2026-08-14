@@ -65,5 +65,5 @@ Kanıt sonrası remap:
 ## Evidence backlog
 
 - [x] Vogue 10 sayfa 3vp capture (40 obs · 120 PNG)
-- [ ] Dolu cart / drawer
+- [x] Dolu cart / drawer — Allure’da çekildi (aynı chrome)
 - [ ] Newsletter popup

@@ -8,9 +8,15 @@
   "selector": ".shopify-section[id*='tabs_content_']",
   "evidenceSlug": "product-info-tabs",
   "evidence": [
+    "evidence/hyper/default/product-detail/product-info-tabs.1440.png",
     "evidence/hyper/default/product-detail/product-info-tabs.375.png",
     "evidence/hyper/default/product-detail/product-info-tabs.768.png",
-    "evidence/hyper/default/product-detail/product-info-tabs.1440.png"
+    "evidence/hyper/default/product-detail/product-info-tabs.changed.about-brand.1440.png",
+    "evidence/hyper/default/product-detail/product-info-tabs.changed.about-brand.375.png",
+    "evidence/hyper/default/product-detail/product-info-tabs.changed.about-brand.768.png",
+    "evidence/hyper/default/product-detail/product-info-tabs.initial.ilk-hal.1440.png",
+    "evidence/hyper/default/product-detail/product-info-tabs.initial.ilk-hal.375.png",
+    "evidence/hyper/default/product-detail/product-info-tabs.initial.ilk-hal.768.png"
   ],
   "capture": {
     "url": "https://hyper-theme-demo.myshopify.com/products/arc-chair",
@@ -19,10 +25,45 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
+    "method": "interaction-steps",
     "mode": "section",
-    "updatedAt": "2026-08-11T14:42:00.825Z"
+    "updatedAt": "2026-08-14T17:57:38.034Z"
   },
-  "notlar": "Specifications / About Brand / Shipping tabs",
-  "delta": ""
+  "notlar": "Specifications / About Brand / Shipping. Interact: About Brand.",
+  "delta": "",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hyper-theme-demo.myshopify.com/products/arc-chair",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": ".shopify-section[id*='tabs_content_']",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Specifications altı çizili, ölçü çizimleri."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#image_with_text_LQUEir",
+      "value": 800,
+      "capture": true,
+      "etiket": "about-brand",
+      "not": "About Brand: Danish Design. Sayfa PDP'de kalır."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Specifications altı çizili. Sol ölçü çizimleri (593/803 mm), sağ plywood metni.",
+    "changed": "About Brand altı çizili. Sol mavi sandalye foto, sağ Danish Design With Global Outlook + Shop More Products."
+  },
+  "interactionNote": "Tab button #image_with_text_LQUEir unique. Shop More Products tıklanmadı."
 }

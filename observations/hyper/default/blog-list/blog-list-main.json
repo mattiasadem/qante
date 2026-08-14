@@ -8,9 +8,15 @@
   "selector": "#MainContent .shopify-section[id*='main']",
   "evidenceSlug": "blog-list-main",
   "evidence": [
+    "evidence/hyper/default/blog-list/blog-list-main.1440.png",
     "evidence/hyper/default/blog-list/blog-list-main.375.png",
     "evidence/hyper/default/blog-list/blog-list-main.768.png",
-    "evidence/hyper/default/blog-list/blog-list-main.1440.png"
+    "evidence/hyper/default/blog-list/blog-list-main.changed.advice-reviews.1440.png",
+    "evidence/hyper/default/blog-list/blog-list-main.changed.advice-reviews.375.png",
+    "evidence/hyper/default/blog-list/blog-list-main.changed.advice-reviews.768.png",
+    "evidence/hyper/default/blog-list/blog-list-main.initial.ilk-hal.1440.png",
+    "evidence/hyper/default/blog-list/blog-list-main.initial.ilk-hal.375.png",
+    "evidence/hyper/default/blog-list/blog-list-main.initial.ilk-hal.768.png"
   ],
   "capture": {
     "url": "https://hyper-theme-demo.myshopify.com/blogs/inspirations",
@@ -19,10 +25,45 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
+    "method": "interaction-steps",
     "mode": "section",
-    "updatedAt": "2026-08-11T14:20:19.066Z"
+    "updatedAt": "2026-08-14T20:42:51.890Z"
   },
-  "notlar": "Inspirations blog index",
-  "delta": ""
+  "notlar": "Inspirations. Interact: Advice & Reviews hap.",
+  "delta": "",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hyper-theme-demo.myshopify.com/blogs/inspirations",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#MainContent .shopify-section[id*='main']",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "All posts aktif, 3 kolon."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "a.main-blog__tag[href='/blogs/inspirations/tagged/advice-reviews']",
+      "value": 2500,
+      "capture": true,
+      "etiket": "advice-reviews",
+      "not": "Etiket sayfasına gider; aynı şema, hap değişir."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "All posts siyah hap. Featured Eco System Design. Altta 3 kolon ızgara.",
+    "changed": "Advice & Reviews hap aktif. Featured Modern Furniture. Tagged URL /blogs/inspirations/tagged/advice-reviews."
+  },
+  "interactionNote": "Hap <a> — in-page değil, tagged sayfa. Aynı şema."
 }

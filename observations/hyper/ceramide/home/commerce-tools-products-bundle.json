@@ -5,15 +5,56 @@
   "preset": "ceramide",
   "sayfa": "home",
   "url": "https://hyper-ceramide.myshopify.com/",
-  "selector": ".shopify-section[id*='products_bundle']",
+  "selector": "#shopify-section-template--25390148944166__products_bundle_wYQMTX",
   "evidenceSlug": "commerce-tools-products-bundle",
   "evidence": [
+    "evidence/hyper/ceramide/home/commerce-tools-products-bundle.1440.png",
     "evidence/hyper/ceramide/home/commerce-tools-products-bundle.375.png",
     "evidence/hyper/ceramide/home/commerce-tools-products-bundle.768.png",
-    "evidence/hyper/ceramide/home/commerce-tools-products-bundle.1440.png"
+    "evidence/hyper/ceramide/home/commerce-tools-products-bundle.changed.shampoo-946.1440.png",
+    "evidence/hyper/ceramide/home/commerce-tools-products-bundle.changed.shampoo-946.375.png",
+    "evidence/hyper/ceramide/home/commerce-tools-products-bundle.changed.shampoo-946.768.png",
+    "evidence/hyper/ceramide/home/commerce-tools-products-bundle.initial.ilk-hal.1440.png",
+    "evidence/hyper/ceramide/home/commerce-tools-products-bundle.initial.ilk-hal.375.png",
+    "evidence/hyper/ceramide/home/commerce-tools-products-bundle.initial.ilk-hal.768.png"
   ],
-  "notlar": "Saving 20% On Bundle — canlı commerce-tools adayı. Default Hyper home’da yok.",
+  "notlar": "Saving 20% On Bundle. Interact: Smoothing Shampoo 512ml → 946ml. Add All To Cart yok.",
   "delta": "default: yok → ceramide: products_bundle section",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hyper-ceramide.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--25390148944166__products_bundle_wYQMTX",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Shampoo 512ml, Serum 50ml, Mask 50ml."
+    },
+    {
+      "state": "changed",
+      "action": "select",
+      "selector": "#shopify-section-template--25390148944166__products_bundle_wYQMTX select[name='id']",
+      "value": "50348524568870",
+      "capture": true,
+      "etiket": "shampoo-946",
+      "not": "İlk select 512ml → 946ml. Add All To Cart tıklanmaz."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Saving 20% On Bundle. Smoothing Shampoo 512ml $45, şişe foto. Serum 50ml, Mask 50ml. Add All To Cart.",
+    "changed": "Shampoo select 946ml. Kart görseli şişeden saç yıkama fotoya döndü, fiyat $45 aynı."
+  },
+  "interactionNote": "İlk select[name=id] 512ml→946ml (variant 50348524568870). Add All To Cart tıklanmadı — sepet çekmecesi ayrı şema.",
   "capture": {
     "url": "https://hyper-ceramide.myshopify.com/",
     "viewports": [
@@ -22,7 +63,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-12T08:02:33.045Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T18:08:41.426Z"
   }
 }

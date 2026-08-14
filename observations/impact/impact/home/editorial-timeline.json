@@ -8,12 +8,53 @@
   "selector": "#shopify-section-template--16701007790330__1664201020f61fd017",
   "evidenceSlug": "editorial-timeline",
   "evidence": [
+    "evidence/impact/impact/home/editorial-timeline.1440.png",
     "evidence/impact/impact/home/editorial-timeline.375.png",
     "evidence/impact/impact/home/editorial-timeline.768.png",
-    "evidence/impact/impact/home/editorial-timeline.1440.png"
+    "evidence/impact/impact/home/editorial-timeline.changed.yil-2017.1440.png",
+    "evidence/impact/impact/home/editorial-timeline.changed.yil-2017.375.png",
+    "evidence/impact/impact/home/editorial-timeline.changed.yil-2017.768.png",
+    "evidence/impact/impact/home/editorial-timeline.initial.ilk-hal.1440.png",
+    "evidence/impact/impact/home/editorial-timeline.initial.ilk-hal.375.png",
+    "evidence/impact/impact/home/editorial-timeline.initial.ilk-hal.768.png"
   ],
-  "notlar": "Story timeline.",
+  "notlar": "Story timeline. Interact: 2017.",
   "delta": "",
+  "stateFindings": {
+    "initial": "2014 dolu nokta. Neon M görseli, NYC lansman metni.",
+    "changed": "2017 dolu nokta. Raf üstü speaker, Adjaye concrete wireless metni."
+  },
+  "interactionNote": "aria-current=false ilk 2017. aria-selected yoktu.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://impact-theme-sound.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16701007790330__1664201020f61fd017",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "2014 seçili, NYC lansmanı."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--16701007790330__1664201020f61fd017 button.timeline__nav-item[aria-current='false']",
+      "value": 1000,
+      "capture": true,
+      "etiket": "yil-2017",
+      "not": "İlk seçili olmayan 2017. Probe: Adjaye speaker. Shop yok."
+    }
+  ],
+  "missingStates": [],
   "capture": {
     "url": "https://impact-theme-sound.myshopify.com/",
     "viewports": [
@@ -21,8 +62,8 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-14T11:59:56.505Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T18:26:19.219Z",
     "mode": "section"
   }
 }

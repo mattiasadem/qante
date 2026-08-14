@@ -37,7 +37,7 @@
 
 | # | Shopify type | schemaId | kategori | Screenshot | JSON | Done |
 |---|---|---|---|---|---|---|
-| 1 | `products_bundle` | `commerce-tools-products-bundle` | product-showcase* (aday: commerce-tools) | [x] | [x] | [x] |
+| 1 | `products_bundle` | `commerce-tools-products-bundle` | product-showcase* (aday: commerce-tools) | [x] | [x] | [x] interact: 512→946ml |
 | 2 | `brand_logos` | `social-proof-brand-logos` | social-proof | [x] | [x] | [x] |
 | 3 | `shop_the_feed` | `media-shop-the-feed` | media | [x] | [x] | [x] |
 | 4 | `image_comparison` | `before-after-slider` | before-after | [x] | [x] | [x] |

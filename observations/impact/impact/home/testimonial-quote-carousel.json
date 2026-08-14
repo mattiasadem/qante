@@ -8,12 +8,53 @@
   "selector": "#shopify-section-template--16701007790330__16566902990b2d84d1",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
+    "evidence/impact/impact/home/testimonial-quote-carousel.1440.png",
     "evidence/impact/impact/home/testimonial-quote-carousel.375.png",
     "evidence/impact/impact/home/testimonial-quote-carousel.768.png",
-    "evidence/impact/impact/home/testimonial-quote-carousel.1440.png"
+    "evidence/impact/impact/home/testimonial-quote-carousel.changed.sonraki-alinti.1440.png",
+    "evidence/impact/impact/home/testimonial-quote-carousel.changed.sonraki-alinti.375.png",
+    "evidence/impact/impact/home/testimonial-quote-carousel.changed.sonraki-alinti.768.png",
+    "evidence/impact/impact/home/testimonial-quote-carousel.initial.ilk-hal.1440.png",
+    "evidence/impact/impact/home/testimonial-quote-carousel.initial.ilk-hal.375.png",
+    "evidence/impact/impact/home/testimonial-quote-carousel.initial.ilk-hal.768.png"
   ],
-  "notlar": "press. Logo ise remap.",
+  "notlar": "press. Interact: Next ok.",
   "delta": "",
+  "stateFindings": {
+    "initial": "Men's Health: first-class audio listening. İlk nokta, sol-sağ ok.",
+    "changed": "Forbes: MW08 Sport were made for you. Alıntı ve logo değişti."
+  },
+  "interactionNote": "Next is='next-button'; :text-is sr-only yüzünden eşleşmedi. Hyper home'da ok yok (yan peek).",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://impact-theme-sound.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16701007790330__16566902990b2d84d1",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Men's Health alıntısı, ilk nokta."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--16701007790330__16566902990b2d84d1 button[is='next-button']",
+      "value": 1000,
+      "capture": true,
+      "etiket": "sonraki-alinti",
+      "not": "Next. Previous ilk circle-button — first() onu tutar."
+    }
+  ],
+  "missingStates": [],
   "capture": {
     "url": "https://impact-theme-sound.myshopify.com/",
     "viewports": [
@@ -21,8 +62,8 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-14T11:49:38.951Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T18:25:34.515Z",
     "mode": "section"
   }
 }

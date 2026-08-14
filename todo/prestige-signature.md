@@ -68,5 +68,5 @@ Kanıt sonrası remap:
 ## Evidence backlog
 
 - [x] Signature 14 sayfa 3vp capture (85 obs)
-- [ ] Dolu cart / drawer
+- [x] Dolu cart / drawer — Allure’da çekildi (aynı chrome)
 - [ ] Newsletter popup

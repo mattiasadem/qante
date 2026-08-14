@@ -8,9 +8,15 @@
   "selector": ".shopify-section[id*='main-cart']",
   "evidenceSlug": "cart-page-main",
   "evidence": [
+    "evidence/hyper/default/cart/cart-page-main.1440.png",
     "evidence/hyper/default/cart/cart-page-main.375.png",
     "evidence/hyper/default/cart/cart-page-main.768.png",
-    "evidence/hyper/default/cart/cart-page-main.1440.png"
+    "evidence/hyper/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/hyper/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/hyper/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/hyper/default/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/hyper/default/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/hyper/default/cart/cart-page-main.initial.cart-bos.768.png"
   ],
   "capture": {
     "url": "https://hyper-theme-demo.myshopify.com/cart",
@@ -19,10 +25,63 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
+    "method": "interaction-steps",
     "mode": "section",
-    "updatedAt": "2026-08-11T14:23:26.665Z"
+    "updatedAt": "2026-08-14T16:58:00.818Z"
   },
-  "notlar": "Empty cart page",
-  "delta": ""
+  "notlar": "Boş + dolu cart sayfası. ATC drawer ile aynı (Arc Chair).",
+  "delta": "",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hyper-theme-demo.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": ".shopify-section[id*='main-cart']",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://hyper-theme-demo.myshopify.com/products/arc-chair",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button.product-form__submit",
+      "capture": false,
+      "not": "Drawer interact ile aynı ATC"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://hyper-theme-demo.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": ".shopify-section[id*='main-cart']",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart sayfası: satır + özet. Check Out tıklanmaz."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Your cart is currently empty. + Not sure where to start? Try these collections: + 4 koleksiyon kartı (Furniture / Chairs & Stools / Home & Decor / Spoke Sofa) + Continue Shopping. Satır / toplam / Check Out yok. 375'te kartlar 1+peek.",
+    "filled": "Your cart (1). Arc Chair, Light Beige, Oak, $699, adet 1, ×. You are eligible for free shipping + yeşil bar. Order note / Estimate Shipping (kapalı). Estimated total $699.00 USD, Check Out. 1440/768 sol satır + sağ özet; 375 tek kolon. Coupon çipi sayfada yok (drawer'da vardı)."
+  },
+  "interactionNote": "ATC görünür Add to cart (ui), drawer ile aynı. Check Out ve Order note açılmadı."
 }

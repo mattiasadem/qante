@@ -35,4 +35,3 @@ Overlay dismiss bazen collection URL’ine kaydırıyordu → `capture-observati
 
 - [x] Pillar/Trove/Nexvo evidence capture (3vp)
 - [ ] Soft-reuse notları (slideshow_with_product, collection_list_with_banner) — isteğe bağlı
-- [ ] Ozy’ye geç — **Hyper preset review bitince**

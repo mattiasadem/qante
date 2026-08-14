@@ -5,18 +5,22 @@
 
 | Tema | Dosya | Durum |
 |---|---|---|
-| Hyper (Shopify) | [`hyper.md`](./hyper.md) | ✅ **default tamam** — 45 şema · 80 evidence |
+| Hyper (Shopify) | [`hyper.md`](./hyper.md) | ✅ **default tamam** — 45 şema · 80 evidence · compare dolu |
 | Hyper · Ceramide | [`hyper-ceramide.md`](./hyper-ceramide.md) | ✅ delta — 5 yeni şema · 5 obs |
-| Prestige · Allure | [`prestige.md`](./prestige.md) | ✅ Allure 9 sayfa · 65 obs · 4 yeni şema |
+| Prestige · Allure | [`prestige.md`](./prestige.md) | ✅ Allure 9 sayfa · 66 obs · 4 yeni şema · dolu cart |
 | Prestige · Signature | [`prestige-signature.md`](./prestige-signature.md) | ✅ 14 sayfa · 85 obs · 1 yeni şema |
 | Prestige · Couture | [`prestige-couture.md`](./prestige-couture.md) | ✅ 11 sayfa · 64 obs · 0 yeni şema |
 | Prestige · Vogue | [`prestige-vogue.md`](./prestige-vogue.md) | ✅ 10 sayfa · 40 obs · 0 yeni şema |
 | Prestige · Strass | [`prestige-strass.md`](./prestige-strass.md) | ✅ 11 sayfa · 61 obs · 0 yeni şema |
 | Impulse · Fashion | [`impulse.md`](./impulse.md) | ✅ Fashion tamam — 11 sayfa · 27 şema · 43 obs · 156 kanıt · 0 yeni şema |
 | Impulse · Dune | [`impulse-dune.md`](./impulse-dune.md) | ✅ delta — 8 sayfa · 8 obs · 21 kanıt |
-| Impulse · Terrain | [`impulse-terrain.md`](./impulse-terrain.md) | ⚡ delta — 5 obs · 15 kanıt |
-| Impulse · Apothecary | [`impulse-apothecary.md`](./impulse-apothecary.md) | ⚡ delta — 2 obs · 6 kanıt |
+| Impulse · Terrain | [`impulse-terrain.md`](./impulse-terrain.md) | ✅ delta — 5 obs · 15 kanıt · spec hotspot interact |
+| Impulse · Apothecary | [`impulse-apothecary.md`](./impulse-apothecary.md) | ✅ delta — 2 obs · 6 kanıt · before-after drag yoklandı |
 | Impact · default (Sound) | [`impact.md`](./impact.md) | ✅ 14 sayfa · 99 obs · 97 kare · 0 yeni şema · home interact |
+| Impact · Balance | [`impact-balance.md`](./impact-balance.md) | ✅ delta — 4 obs · 12 kanıt |
+| Impact · Cocoon | [`impact-cocoon.md`](./impact-cocoon.md) | ✅ delta — 2 obs · 6 kanıt |
+
+**Interact (discover sonrası derinlik):** [`interact.md`](./interact.md) — kapalı kare yalanı; yeni tema yok.
 
 **QC / improvement backlog:** [`../improvements-qc.md`](../improvements-qc.md)
 

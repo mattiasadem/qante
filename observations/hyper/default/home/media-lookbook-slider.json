@@ -8,9 +8,15 @@
   "selector": ".shopify-section[id*='__lookbook_slider']",
   "evidenceSlug": "media-lookbook-slider",
   "evidence": [
+    "evidence/hyper/default/home/media-lookbook-slider.1440.png",
     "evidence/hyper/default/home/media-lookbook-slider.375.png",
     "evidence/hyper/default/home/media-lookbook-slider.768.png",
-    "evidence/hyper/default/home/media-lookbook-slider.1440.png"
+    "evidence/hyper/default/home/media-lookbook-slider.initial.ilk-hal.1440.png",
+    "evidence/hyper/default/home/media-lookbook-slider.initial.ilk-hal.375.png",
+    "evidence/hyper/default/home/media-lookbook-slider.initial.ilk-hal.768.png",
+    "evidence/hyper/default/home/media-lookbook-slider.open.look-urunleri.1440.png",
+    "evidence/hyper/default/home/media-lookbook-slider.open.look-urunleri.375.png",
+    "evidence/hyper/default/home/media-lookbook-slider.open.look-urunleri.768.png"
   ],
   "capture": {
     "url": "https://hyper-theme-demo.myshopify.com/",
@@ -19,10 +25,62 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-11T14:02:56.420Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T18:08:40.627Z",
     "mode": "section"
   },
-  "notlar": "Get Inspired by Spaces — lookbook slider + shop this look ürünleri.",
-  "delta": ""
+  "notlar": "Get Inspired by Spaces. Interact: karttaki 3 etiketi → ürün listesi.",
+  "delta": "",
+  "stateFindings": {
+    "initial": "Get Inspired by Spaces. Kartlarda 3 etiketi, altta progress + oklar. Ürün listesi yok.",
+    "open": "Shop this look: Loop Sofa Armrest $3,289, Flip Table Lamp $605, Swivel Table $305. 768/1440 kart üstü popover; 375 tam ekran alt çekmece (viewport)."
+  },
+  "interactionNote": "Ürün satırı <a> tıklanmadı. 375 ilk section kırpısı çekmeceyi kaçırdı; viewport ile alındı.",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hyper-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": ".shopify-section[id*='__lookbook_slider']",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "3 etiketi kapalı — ürün listesi yok."
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.lbcard__popup-btn-trigger[aria-controls='lbcard__popup-lookbook_card_8cicAx']",
+      "value": 800,
+      "capture": true,
+      "etiket": "look-urunleri",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "not": "İlk kart 3 → Shop this look popover. Ürün <a> tıklanmaz."
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.lbcard__popup-btn-trigger[aria-controls='lbcard__popup-lookbook_card_8cicAx']",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "look-urunleri",
+      "viewports": [
+        "375"
+      ],
+      "not": "375 popup tam ekran drawer (375×812); section kırpıyordu."
+    }
+  ],
+  "missingStates": []
 }

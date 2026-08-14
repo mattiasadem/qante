@@ -5,15 +5,56 @@
   "preset": "nexvo",
   "sayfa": "home",
   "url": "https://hyper-nexvo.myshopify.com/",
-  "selector": ".shopify-section[id*='banner_with_tabs']",
+  "selector": "#shopify-section-template--17431669375050__banner_with_tabs_XzddMn",
   "evidenceSlug": "promo-banner-tabs",
   "evidence": [
+    "evidence/hyper/nexvo/home/promo-banner-tabs.1440.png",
     "evidence/hyper/nexvo/home/promo-banner-tabs.375.png",
     "evidence/hyper/nexvo/home/promo-banner-tabs.768.png",
-    "evidence/hyper/nexvo/home/promo-banner-tabs.1440.png"
+    "evidence/hyper/nexvo/home/promo-banner-tabs.changed.phone-cases.1440.png",
+    "evidence/hyper/nexvo/home/promo-banner-tabs.changed.phone-cases.375.png",
+    "evidence/hyper/nexvo/home/promo-banner-tabs.changed.phone-cases.768.png",
+    "evidence/hyper/nexvo/home/promo-banner-tabs.initial.ilk-hal.1440.png",
+    "evidence/hyper/nexvo/home/promo-banner-tabs.initial.ilk-hal.375.png",
+    "evidence/hyper/nexvo/home/promo-banner-tabs.initial.ilk-hal.768.png"
   ],
-  "notlar": "Limited Edition banner tabs",
+  "notlar": "Limited Edition banner tabs. Interact: Phone Cases sekmesi.",
   "delta": "yeni tip",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hyper-nexvo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17431669375050__banner_with_tabs_XzddMn",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Headphones seçili, yan kart Headphones + Shop."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#tab_GMJM76",
+      "value": 1200,
+      "capture": true,
+      "etiket": "phone-cases",
+      "not": "Phone Cases. Shop / koleksiyon <a> tıklanmaz."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Limited Edition. Headphones seçili. Mavi kulaklık görseli, sağ/alt kart Headphones + Shop.",
+    "changed": "Phone Cases seçili. Telefon kılıfı görseli, kart başlığı Phone Cases. Shop tıklanmadı."
+  },
+  "interactionNote": "Tab #tab_GMJM76 unique. Kart açıklaması Phone Cases'te de 'listening sessions' kalıyor — tema kopyası. Shop / koleksiyon <a> yok.",
   "capture": {
     "url": "https://hyper-nexvo.myshopify.com/",
     "viewports": [
@@ -22,7 +63,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-12T08:32:05.611Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T18:08:41.491Z"
   }
 }

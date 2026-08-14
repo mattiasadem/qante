@@ -8,12 +8,69 @@
   "selector": "#shopify-section-template--15179705352255__b86761d3-bfe7-48d8-a53e-f2b00601f0ff",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
+    "evidence/prestige/allure/home/testimonial-quote-carousel.1440.png",
     "evidence/prestige/allure/home/testimonial-quote-carousel.375.png",
     "evidence/prestige/allure/home/testimonial-quote-carousel.768.png",
-    "evidence/prestige/allure/home/testimonial-quote-carousel.1440.png"
+    "evidence/prestige/allure/home/testimonial-quote-carousel.changed.logo-2.1440.png",
+    "evidence/prestige/allure/home/testimonial-quote-carousel.changed.logo-2.375.png",
+    "evidence/prestige/allure/home/testimonial-quote-carousel.changed.logo-2.768.png",
+    "evidence/prestige/allure/home/testimonial-quote-carousel.initial.ilk-hal.1440.png",
+    "evidence/prestige/allure/home/testimonial-quote-carousel.initial.ilk-hal.375.png",
+    "evidence/prestige/allure/home/testimonial-quote-carousel.initial.ilk-hal.768.png"
   ],
-  "notlar": "GQ alıntı testi monyal.",
+  "notlar": "GQ alıntı. Interact: ikinci logo (FARFETCH).",
   "delta": "",
+  "stateFindings": {
+    "initial": "GQ Binder alıntısı. 1440 GQ logo parlak; 375 ilk nokta + GQ.",
+    "changed": "FARFETCH: Le Petit Violette. 1440 FARFETCH parlak; 375 orta nokta."
+  },
+  "interactionNote": "1440 thumbnail; 375/768 tap-area. Logo <a> değil.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://prestige-theme-allure.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15179705352255__b86761d3-bfe7-48d8-a53e-f2b00601f0ff",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "GQ alıntısı, GQ logo parlak."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--15179705352255__b86761d3-bfe7-48d8-a53e-f2b00601f0ff button.testimonial-list__thumbnail[aria-label='Go to item 2']",
+      "value": 1000,
+      "capture": true,
+      "etiket": "logo-2",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Masaüstü FARFETCH thumbnail."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--15179705352255__b86761d3-bfe7-48d8-a53e-f2b00601f0ff button.tap-area[aria-label='Go to item 2']",
+      "value": 1000,
+      "capture": true,
+      "etiket": "logo-2",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "375/768 thumbnail gizli; tap-area nokta."
+    }
+  ],
+  "missingStates": [],
   "capture": {
     "url": "https://prestige-theme-allure.myshopify.com/",
     "viewports": [
@@ -21,8 +78,8 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-13T18:58:02.575Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T18:27:04.268Z",
     "mode": "section"
   }
 }

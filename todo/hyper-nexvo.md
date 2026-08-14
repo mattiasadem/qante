@@ -6,7 +6,7 @@
 |---|---|---|
 | promo-grid-banner | reuse | [x] |
 | editorial-highlight-text-image | NEW | [x] |
-| promo-banner-tabs | NEW | [x] |
+| promo-banner-tabs | NEW | [x] interact: Phone Cases |
 | commerce-tools-products-bundle | reuse | [x] |
 | comparison-quick-table | reuse (home) | [x] |
 | social-proof-brand-logos | reuse | [x] |

@@ -8,12 +8,53 @@
   "selector": "#shopify-section-template--16701008019706__165769839625f7f26b",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/impact/impact/faq-support/faq-collapsible-tabs.1440.png",
     "evidence/impact/impact/faq-support/faq-collapsible-tabs.375.png",
     "evidence/impact/impact/faq-support/faq-collapsible-tabs.768.png",
-    "evidence/impact/impact/faq-support/faq-collapsible-tabs.1440.png"
+    "evidence/impact/impact/faq-support/faq-collapsible-tabs.changed.ilk-soru-acik.1440.png",
+    "evidence/impact/impact/faq-support/faq-collapsible-tabs.changed.ilk-soru-acik.375.png",
+    "evidence/impact/impact/faq-support/faq-collapsible-tabs.changed.ilk-soru-acik.768.png",
+    "evidence/impact/impact/faq-support/faq-collapsible-tabs.initial.ilk-hal.1440.png",
+    "evidence/impact/impact/faq-support/faq-collapsible-tabs.initial.ilk-hal.375.png",
+    "evidence/impact/impact/faq-support/faq-collapsible-tabs.initial.ilk-hal.768.png"
   ],
-  "notlar": "Shopping.",
+  "notlar": "Shopping. Interact: ilk soru açık.",
   "delta": "",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://impact-theme-sound.myshopify.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16701008019706__165769839625f7f26b",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "3 soru kapalı. Shopping intro."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--16701008019706__165769839625f7f26b .accordion-box details:nth-of-type(1) > summary",
+      "value": 600,
+      "capture": true,
+      "etiket": "ilk-soru-acik",
+      "not": "What is the status of my order? Üç details aynı kutu içinde kardeş."
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Sol Shopping + 3 soru kapalı, aşağı chevron. 375'te intro üstte, kutu altta.",
+    "changed": "İlk soru açık, yukarı ok: Order History. Diğer ikisi kapalı."
+  },
+  "interactionNote": "details#id yok. :text-is + ikon yüzünden 0. Üç details tek .accordion-box içinde — nth-of-type(1) burada unique. Home FAQ ayrı obs, tıklanmadı.",
   "capture": {
     "url": "https://impact-theme-sound.myshopify.com/pages/faq",
     "viewports": [
@@ -21,8 +62,8 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-14T12:40:37.222Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T16:23:18.767Z",
     "mode": "section"
   }
 }

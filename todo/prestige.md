@@ -13,7 +13,7 @@
 |---|---|
 | Evidence kökü | `evidence/prestige/allure/` |
 | Walkthrough / not | Theme Store: https://themes.shopify.com/themes/prestige |
-| Kapsam satırı (bitince) | Prestige · Allure · 9 sayfa · 65 gözlem · 4 yeni şema · dolu sepet / newsletter-popup açık |
+| Kapsam satırı (bitince) | Prestige · Allure · 9 sayfa · 66 gözlem · 4 yeni şema · dolu sepet + drawer · newsletter-popup aday |
 
 ---
 
@@ -22,7 +22,7 @@
 - [x] F1 Home roster + evidence
 - [x] F2 Collection / PLP
 - [x] F3 PDP
-- [x] F4 Search / cart (drawer boş — home'da)
+- [x] F4 Search / cart (dolu sayfa + drawer)
 - [x] F5 Content / blog / about / faq / contact
 - [x] F6 Signature tam tur: [`prestige-signature.md`](./prestige-signature.md)
 - [x] F7 Couture tam tur: [`prestige-couture.md`](./prestige-couture.md)
@@ -39,7 +39,7 @@ Prestige section class → QANTE şema. Aynı tip varsa **şemaya dokunma**, obs
 |---|---|---|---|
 | 1 | countdown-condensed | `promo-announcement-bar` | reuse · delta: timer + shop now |
 | 2 | header | `navigation-header-mega` | reuse |
-| 3 | cart-drawer | `global-cart-drawer` | reuse · boş sepet (henüz doldurulmadı) |
+| 3 | cart-drawer | `global-cart-drawer` | reuse · boş + Mini Dalia $350 |
 | 4 | newsletter-popup | aday overlay | şema yok · sonra |
 | 5 | privacy-banner | atla | boş |
 | 6 | slideshow | `hero-slideshow` | reuse |
@@ -100,7 +100,7 @@ Prestige section class → QANTE şema. Aynı tip varsa **şemaya dokunma**, obs
 | 25 | media-scrolling-gallery | instance | [x] | [x] | reuse | [x] |
 | 26 | trust-icon-row | instance | [x] | [x] | reuse | [x] |
 | 27 | footer-columns-newsletter | instance | [x] | [x] | reuse | [x] |
-| 28 | global-cart-drawer | global | [ ] | boş | reuse | [ ] |
+| 28 | global-cart-drawer | global | [x] | dolu | reuse | [x] |
 
 ### F2 Collection / PLP
 
@@ -160,6 +160,19 @@ Prestige section class → QANTE şema. Aynı tip varsa **şemaya dokunma**, obs
 
 ## Evidence backlog
 
-- [x] Allure 9 sayfa 3vp capture (home 27 + diğer 38 = 65 obs)
-- [ ] Dolu cart / drawer (araç henüz sepete ürün atmıyor)
+- [x] Allure 9 sayfa 3vp + cart drawer interact (66 obs)
+- [x] Dolu cart / drawer — Mini Dalia $350 (sayfa + drawer). Adet + shadow, changed yok
 - [ ] Newsletter popup overlay
+
+## Interact
+
+- `navigation-header-mega` — Women/Men mega + mobil hamburger (önceki tur)
+- `cart-page-main` — boş / Mini Dalia $350 + ESTIMATE SHIPPING
+- `global-cart-drawer` — boş / Mini Dalia $350 + COMPLETE WITH. Adet changed yok (shadow)
+- `global-predictive-search` — dalia: Suggestions + 4 ürün + View all
+- `product-showcase-grid-plp` — Filter çekmece + Mini bags 65→13
+- `product-info-main` — Ivory swatch → /products/le-mini-dalia-ivory-liege $350
+- `faq-collapsible-tabs` — How to add a FAQ… açık
+- `media-lookbook-slider` — 1440 hotspot Nova $450 → Primo $420
+- `product-showcase-tabs` — WOMEN Mini Dalia → MEN Slim Briefcase $420
+- `testimonial-quote-carousel` — GQ → FARFETCH Le Petit Violette

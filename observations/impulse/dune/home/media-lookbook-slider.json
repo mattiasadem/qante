@@ -8,12 +8,52 @@
   "selector": "#shopify-section-template--18938110541895__d1dd1da9-c6b5-48c9-8798-c682fd9474b6",
   "evidenceSlug": "media-lookbook-slider",
   "evidence": [
+    "evidence/impulse/dune/home/media-lookbook-slider.1440.png",
     "evidence/impulse/dune/home/media-lookbook-slider.375.png",
     "evidence/impulse/dune/home/media-lookbook-slider.768.png",
-    "evidence/impulse/dune/home/media-lookbook-slider.1440.png"
+    "evidence/impulse/dune/home/media-lookbook-slider.changed.hotspot-chino.1440.png",
+    "evidence/impulse/dune/home/media-lookbook-slider.changed.hotspot-chino.375.png",
+    "evidence/impulse/dune/home/media-lookbook-slider.changed.hotspot-chino.768.png",
+    "evidence/impulse/dune/home/media-lookbook-slider.initial.ilk-hal.1440.png",
+    "evidence/impulse/dune/home/media-lookbook-slider.initial.ilk-hal.375.png",
+    "evidence/impulse/dune/home/media-lookbook-slider.initial.ilk-hal.768.png"
   ],
   "notlar": "SHOP THE LOOK. 3 hotspot. 1440'te solda ürün kartı (Bear Pocket Tee / Quick view), sağda look. 375/768'de görsel üstte, kart altta. Ok 375'te var.",
   "delta": "Fashion shoppable hero (banner + popover) değil — kalıcı ürün kartı + hotspot. Aynı şema, farklı iskelet.",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://impulse-theme-apparel.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--18938110541895__d1dd1da9-c6b5-48c9-8798-c682fd9474b6",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Aktif kart: Bear Pocket Tee - Black $48"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--18938110541895__d1dd1da9-c6b5-48c9-8798-c682fd9474b6 .hotspot__button--48d4233d-aab4-490f-9f8c-d6cf2066d33a",
+      "capture": true,
+      "etiket": "hotspot-chino",
+      "not": "Alt hotspot → Slim Chino $136. URL home'da kalmalı."
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Sol kart: Bear Pocket Tee - Black / MUTTONHEAD / $48. Sağda look + 3 hotspot. 375'te görsel üstte, kart altta.",
+    "changed": "Alt hotspot: Slim Chino - 10oz Denim - Indigo / NAKED AND FAMOUS / $136. Look aynı, sayfa home'da."
+  },
+  "interactionNote": "3 hotspot; blazer denenmedi. Quick view tıklanmadı — Fashion QV var. Şemaya dokunulmadı (quickView + navigate yeterli).",
   "capture": {
     "url": "https://impulse-theme-apparel.myshopify.com/",
     "viewports": [
@@ -22,7 +62,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-14T11:08:44.668Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T14:40:17.744Z"
   }
 }

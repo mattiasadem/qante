@@ -8,9 +8,15 @@
   "selector": ".shopify-section[id*='collapsible_tabs_phAkEE']",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/hyper/default/faq-support/faq-collapsible-tabs.1440.png",
     "evidence/hyper/default/faq-support/faq-collapsible-tabs.375.png",
     "evidence/hyper/default/faq-support/faq-collapsible-tabs.768.png",
-    "evidence/hyper/default/faq-support/faq-collapsible-tabs.1440.png"
+    "evidence/hyper/default/faq-support/faq-collapsible-tabs.changed.ikinci-soru-acik.1440.png",
+    "evidence/hyper/default/faq-support/faq-collapsible-tabs.changed.ikinci-soru-acik.375.png",
+    "evidence/hyper/default/faq-support/faq-collapsible-tabs.changed.ikinci-soru-acik.768.png",
+    "evidence/hyper/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.1440.png",
+    "evidence/hyper/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.375.png",
+    "evidence/hyper/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.768.png"
   ],
   "capture": {
     "url": "https://hyper-theme-demo.myshopify.com/pages/faqs",
@@ -19,10 +25,45 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
+    "method": "interaction-steps",
     "mode": "section",
-    "updatedAt": "2026-08-11T14:32:13.668Z"
+    "updatedAt": "2026-08-14T16:58:46.946Z"
   },
-  "notlar": "FAQ Orders & Purchases",
-  "delta": ""
+  "notlar": "FAQ Orders & Purchases. Interact: ikinci soru açık.",
+  "delta": "",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hyper-theme-demo.myshopify.com/pages/faqs",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": ".shopify-section[id*='collapsible_tabs_phAkEE']",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "İlk soru açık (openFirst). Orders & Purchases."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "[id*='collapsible_tabs_phAkEE'] .accordion-item:nth-child(3) details > summary",
+      "value": 800,
+      "capture": true,
+      "etiket": "ikinci-soru-acik",
+      "not": "How can I track my order? Başlık div yüzünden nth-of-type(2) ilk maddeye gidiyor."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Frequently Asked Questions + Orders & Purchases. İlk soru açık (−): How do I cancel or edit an order? + 24 saat / Live Chat maddeleri. Diğer üçü kapalı (+).",
+    "changed": "İkinci soru açık (−): How can I track my order? + kargo e-postası / My Orders. İlk soru kapalı. allowMultipleOpen görünmedi."
+  },
+  "interactionNote": "details#id yok. Başlık div yüzünden .accordion-item:nth-of-type(2) ilk maddeye gidiyor — nth-child(3) ikinci soru. Returns / Shipping kesitleri ayrı obs, tıklanmadı."
 }

@@ -8,12 +8,56 @@
   "selector": "#shopify-section-template--15179705352255__a7b611f2-bfa1-4b73-afdd-afa7047323b2",
   "evidenceSlug": "editorial-images-scroll",
   "evidence": [
+    "evidence/prestige/allure/home/editorial-images-scroll.1440.png",
     "evidence/prestige/allure/home/editorial-images-scroll.375.png",
     "evidence/prestige/allure/home/editorial-images-scroll.768.png",
-    "evidence/prestige/allure/home/editorial-images-scroll.1440.png"
+    "evidence/prestige/allure/home/editorial-images-scroll.changed.adim-2.375.png",
+    "evidence/prestige/allure/home/editorial-images-scroll.changed.adim-2.768.png",
+    "evidence/prestige/allure/home/editorial-images-scroll.initial.ilk-hal.1440.png",
+    "evidence/prestige/allure/home/editorial-images-scroll.initial.ilk-hal.375.png",
+    "evidence/prestige/allure/home/editorial-images-scroll.initial.ilk-hal.768.png"
   ],
-  "notlar": "THE DESIGN / scroll ile görsel+metin adımları. Hyper'da yok — yeni şema adayı.",
+  "notlar": "THE DESIGN. Interact: 375/768 nokta 2.",
   "delta": "Yeni tip; şema evidence sonrası yazılacak.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://prestige-theme-allure.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15179705352255__a7b611f2-bfa1-4b73-afdd-afa7047323b2",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "1440 adım 1. Noktalar 1440'ta gizli."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--15179705352255__a7b611f2-bfa1-4b73-afdd-afa7047323b2 button.tap-area:has-text('Go to item 2')",
+      "value": 1200,
+      "capture": true,
+      "etiket": "adim-2",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "375/768 tap-area. 1440 nokta yok — changed yok."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "375 #1 THE DESIGN, çanta close-up, ilk nokta. 1440 split adım 1, nokta yok.",
+    "changed": "375/768 #2 OUR COMMITMENTS, trench+çanta, ikinci nokta. 1440 changed yok."
+  },
+  "interactionNote": ":text-is fail, :has-text 375/768. 1440 tap-area gizli.",
   "capture": {
     "url": "https://prestige-theme-allure.myshopify.com/",
     "viewports": [
@@ -21,8 +65,8 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-13T18:44:48.852Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T20:46:28.542Z",
     "mode": "section"
   }
 }

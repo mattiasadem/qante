@@ -32,7 +32,7 @@
 - [x] F4 PDP
 - [x] F5 Search / cart sayfası
 - [x] F6 Blog / about / contact / faq / lookbook / footer
-- [x] Interact: mega · search · kart hover · cart drawer · quick view · FAQ · dolu cart · shoppable hero hotspot
+- [x] Interact: mega · search · kart hover · cart drawer · quick view · FAQ · dolu cart · shoppable hero hotspot · PLP filtre
 - [x] Dune delta — [`impulse-dune.md`](./impulse-dune.md)
 - [x] Terrain delta — [`impulse-terrain.md`](./impulse-terrain.md)
 - [x] Apothecary delta — [`impulse-apothecary.md`](./impulse-apothecary.md)
@@ -68,6 +68,7 @@
 | faq-collapsible-tabs | initial, changed | ilk soru açık |
 | cart-page-main | initial, filled | sol satır + sağ özet |
 | media-lookbook-banner | initial, open | Lena Midi + → ad / fiyat / VIEW PRODUCT popover |
+| product-showcase-grid-plp | initial, open, changed | Filter drawer + Size=XS (36→3) |
 
 ---
 
@@ -87,11 +88,12 @@
 1. Newsletter popup — gizli; Prestige gibi aday, şema yok
 2. Recently viewed — ilk ziyarette kutu 0
 3. Collection header — yükseklik 0
-4. PLP filtre açık hâli — statik karede bar var, tıklanmadı
-5. Lookbook sayfasındaki mosaic’te hotspot yok; home shoppable hero popover çekildi. VIEW PRODUCT → QV ayrıca tıklanmadı
+4. PLP filtre — drawer + Size=XS çekildi
+5. Lookbook mosaic’te hotspot yok. Home shoppable: + → popover → 1440 VIEW PRODUCT = Lena Midi QV. 375/768 aynı link PDP’ye gider.
 6. Contact form gönderilmedi · checkout yok
 7. Impulse style preset’leri bitti (Dune / Terrain / Apothecary)
 8. Policy sayfaları taranmadı
+9. Interact: PDP SIZE XS→S · hero-slideshow atlandı (ok/changer yok)
 
 ---
 
@@ -100,4 +102,5 @@
 - [x] Dune delta
 - [x] Terrain delta
 - [x] Apothecary delta
-- [ ] Impact (Sound) — `todo/impact.md`
+- [x] Impact default (Sound) — `todo/impact.md`
+- [x] Impact Balance / Cocoon delta

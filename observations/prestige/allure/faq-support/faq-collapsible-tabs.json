@@ -8,12 +8,53 @@
   "selector": "#shopify-section-template--15179705614399__d2b55f7b-41eb-4919-a3b2-e419f737eca7",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/prestige/allure/faq-support/faq-collapsible-tabs.1440.png",
     "evidence/prestige/allure/faq-support/faq-collapsible-tabs.375.png",
     "evidence/prestige/allure/faq-support/faq-collapsible-tabs.768.png",
-    "evidence/prestige/allure/faq-support/faq-collapsible-tabs.1440.png"
+    "evidence/prestige/allure/faq-support/faq-collapsible-tabs.changed.ilk-soru-acik.1440.png",
+    "evidence/prestige/allure/faq-support/faq-collapsible-tabs.changed.ilk-soru-acik.375.png",
+    "evidence/prestige/allure/faq-support/faq-collapsible-tabs.changed.ilk-soru-acik.768.png",
+    "evidence/prestige/allure/faq-support/faq-collapsible-tabs.initial.ilk-hal.1440.png",
+    "evidence/prestige/allure/faq-support/faq-collapsible-tabs.initial.ilk-hal.375.png",
+    "evidence/prestige/allure/faq-support/faq-collapsible-tabs.initial.ilk-hal.768.png"
   ],
-  "notlar": "Sol kategori nav + gruplu accordion.",
+  "notlar": "Sol kategori nav + gruplu accordion. Interact: ilk soru açık.",
   "delta": "Hyper tek accordion. Allure 1440: Theme Info / Product & Care / Order / Delivery sol nav; 375'te kategori başlıkları istif. Şemaya dokunulmadı.",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://prestige-theme-allure.myshopify.com/pages/faq-new",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15179705614399__d2b55f7b-41eb-4919-a3b2-e419f737eca7",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "12 soru kapalı. Theme Info seçili."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--15179705614399__d2b55f7b-41eb-4919-a3b2-e419f737eca7 accordion-disclosure:nth-of-type(1) details > summary",
+      "value": 700,
+      "capture": true,
+      "etiket": "ilk-soru-acik",
+      "not": "How to add a FAQ to your store? cevabı. details#id yok; :text-is + ikon yüzünden tutmadı."
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "12 soru kapalı, hepsinde +. 1440 sol nav: Theme Info altı çizili / Product & Care / Order / Delivery & Returns. 375'te grup başlıkları istif.",
+    "changed": "İlk soru açık, – : Prestige FAQ şablonu + documentation linki. Diğerleri kapalı."
+  },
+  "interactionNote": "details:first-of-type 12 kez eşleşir (her biri kendi accordion-disclosure içinde). accordion-disclosure:nth-of-type(1) tek. Kategori nav (Product & Care) tıklanmadı.",
   "capture": {
     "url": "https://prestige-theme-allure.myshopify.com/pages/faq-new",
     "viewports": [
@@ -21,8 +62,8 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-13T19:28:59.298Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T16:08:06.705Z",
     "mode": "section"
   }
 }

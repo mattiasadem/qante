@@ -5,12 +5,16 @@
   "preset": "default",
   "sayfa": "product-detail",
   "url": "https://hyper-theme-demo.myshopify.com/products/arc-chair",
-  "selector": ".shopify-section[id*='related-products']",
+  "selector": "#shopify-section-template--24624869998889__related-products",
   "evidenceSlug": "product-showcase-related",
   "evidence": [
+    "evidence/hyper/default/product-detail/product-showcase-related.1440.png",
     "evidence/hyper/default/product-detail/product-showcase-related.375.png",
     "evidence/hyper/default/product-detail/product-showcase-related.768.png",
-    "evidence/hyper/default/product-detail/product-showcase-related.1440.png"
+    "evidence/hyper/default/product-detail/product-showcase-related.hover.hover-reveal.1440.png",
+    "evidence/hyper/default/product-detail/product-showcase-related.initial.ilk-hal.1440.png",
+    "evidence/hyper/default/product-detail/product-showcase-related.initial.ilk-hal.375.png",
+    "evidence/hyper/default/product-detail/product-showcase-related.initial.ilk-hal.768.png"
   ],
   "capture": {
     "url": "https://hyper-theme-demo.myshopify.com/products/arc-chair",
@@ -19,10 +23,47 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
+    "method": "interaction-steps",
     "mode": "section",
-    "updatedAt": "2026-08-11T14:42:32.886Z"
+    "updatedAt": "2026-08-14T20:56:19.204Z"
   },
-  "notlar": "Best Choice related products",
-  "delta": ""
+  "notlar": "You May Also Like. Interact: kart hover Choose options.",
+  "delta": "",
+  "interactionStates": [
+    "initial",
+    "hover"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hyper-theme-demo.myshopify.com/products/arc-chair",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24624869998889__related-products",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Kartlar, Choose options gizli."
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#shopify-section-template--24624869998889__related-products .product-card.product-card-style-standard",
+      "value": 900,
+      "capture": true,
+      "etiket": "hover-reveal",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Choose options overlay. QV chrome tekrarlanmaz. 375 hover yok."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "hover": "1440: ilk kart Atella Jug üzerinde siyah Choose Options overlay. initial'da yok. QV chrome tekrarlanmadı."
+  },
+  "interactionNote": "QV global-quick-view'da var. Swatch <a> varyant URL'ye kaçabilir — tıklanmadı. 375/768 hover çekilmedi (parmak)."
 }

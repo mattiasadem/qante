@@ -5,15 +5,80 @@
   "preset": "fashion",
   "sayfa": "collection",
   "url": "https://impulse-theme-fashion.myshopify.com/collections/2026-new",
-  "selector": "[id*='__main-collection']",
+  "selector": "#shopify-section-template--16365546733626__main-collection",
   "evidenceSlug": "product-showcase-grid-plp",
   "evidence": [
+    "evidence/impulse/fashion/collection/product-showcase-grid-plp.1440.png",
     "evidence/impulse/fashion/collection/product-showcase-grid-plp.375.png",
     "evidence/impulse/fashion/collection/product-showcase-grid-plp.768.png",
-    "evidence/impulse/fashion/collection/product-showcase-grid-plp.1440.png"
+    "evidence/impulse/fashion/collection/product-showcase-grid-plp.changed.size-xs.1440.png",
+    "evidence/impulse/fashion/collection/product-showcase-grid-plp.changed.size-xs.375.png",
+    "evidence/impulse/fashion/collection/product-showcase-grid-plp.changed.size-xs.768.png",
+    "evidence/impulse/fashion/collection/product-showcase-grid-plp.initial.ilk-hal.1440.png",
+    "evidence/impulse/fashion/collection/product-showcase-grid-plp.initial.ilk-hal.375.png",
+    "evidence/impulse/fashion/collection/product-showcase-grid-plp.initial.ilk-hal.768.png",
+    "evidence/impulse/fashion/collection/product-showcase-grid-plp.open.filtre-cekmece.1440.png",
+    "evidence/impulse/fashion/collection/product-showcase-grid-plp.open.filtre-cekmece.375.png",
+    "evidence/impulse/fashion/collection/product-showcase-grid-plp.open.filtre-cekmece.768.png"
   ],
   "notlar": "/collections/2026-new — filtre + sort + ~36 kart. Tam boy kare (uzun).",
-  "delta": "collection-header yükseklik 0, atlandı. Filtre açık hâli interact.",
+  "delta": "collection-header yükseklik 0, atlandı. Filtre drawer: açık hâl + Size=XS (36→3).",
+  "captureMode": "section",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://impulse-theme-fashion.myshopify.com/collections/2026-new",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16365546733626__main-collection",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "ilk-hal",
+      "not": "Filter + 36 products. Drawer kapalı."
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.js-drawer-open-collection-filters",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "filtre-cekmece",
+      "not": "Sol Filter drawer: Price / Size / Product type / Availability. Sayfa koleksiyonda kalmalı."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#FilterDrawer button[aria-controls='SidebarDrawer-2-filter-size']",
+      "capture": false,
+      "not": "Size akordeon açılsın"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='tagInput-filter.v.option.size-1']",
+      "value": "2500",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "size-xs",
+      "not": "XS (3) → URL ?filter.v.option.size=XS, 3 ürün, Filter (1). Drawer kapanır."
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Filter butonu + 36 products + Featured sort. Drawer yok. 1440'te 4 kolon (Wren / Ceru / Hana / Lark).",
+    "open": "Sol Filter drawer: başlık + X, PRICE / SIZE / PRODUCT TYPE / AVAILABILITY (hepsi kapalı chevron). Arkada ızgara karartılı. 375'te drawer neredeyse tam genişlik.",
+    "changed": "Size=XS. Filter (1), 3 products (Wren Coat $286 / Ora Tank $65 / Nico Tee $75). Drawer kapalı."
+  },
+  "interactionNote": "Selector unique section id. Kart hover bu koşuda yok (featured'da var). Şemada emit:filter.change zaten vardı.",
   "capture": {
     "url": "https://impulse-theme-fashion.myshopify.com/collections/2026-new",
     "viewports": [
@@ -22,7 +87,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-14T10:01:56.725Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T14:39:25.598Z"
   }
 }

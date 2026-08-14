@@ -194,6 +194,107 @@ async function api(path, params) {
   return res.json();
 }
 
+/* ---------------- Chrome bildirim (tab açıkken) ---------------- */
+
+const SEEN_THEMES_KEY = "qante.seenThemePresets";
+const THEME_POLL_MS = 10 * 60 * 1000;
+
+function themePresetList(data) {
+  return data?.counts?.themePresetList || [];
+}
+
+function seenThemes() {
+  try {
+    return new Set(JSON.parse(localStorage.getItem(SEEN_THEMES_KEY) || "[]"));
+  } catch {
+    return new Set();
+  }
+}
+
+function saveSeenThemes(list) {
+  localStorage.setItem(SEEN_THEMES_KEY, JSON.stringify([...new Set(list)].sort()));
+}
+
+function seedSeenThemes(data) {
+  if (seenThemes().size === 0) saveSeenThemes(themePresetList(data));
+}
+
+function syncNotifyBtn() {
+  const btn = $("#notify-btn");
+  if (!btn) return;
+  if (!("Notification" in window)) {
+    btn.hidden = true;
+    return;
+  }
+  const p = Notification.permission;
+  btn.classList.toggle("on", p === "granted");
+  btn.classList.toggle("off", p === "denied");
+  btn.textContent =
+    p === "granted" ? "Bildirim açık" : p === "denied" ? "Bildirim kapalı" : "Bildirim aç";
+}
+
+async function askNotifyPermission() {
+  if (!("Notification" in window)) return "denied";
+  if (Notification.permission !== "default") {
+    syncNotifyBtn();
+    return Notification.permission;
+  }
+  const result = await Notification.requestPermission();
+  syncNotifyBtn();
+  if (result === "granted") seedSeenThemes(stats);
+  return result;
+}
+
+function showThemeNotification(added) {
+  if (!("Notification" in window) || Notification.permission !== "granted") return;
+  const body =
+    added.length === 1
+      ? `Yeni tema/preset: ${added[0]}`
+      : `${added.length} yeni: ${added.slice(0, 4).join(", ")}${added.length > 4 ? "…" : ""}`;
+  const n = new Notification("QANTE envanter", {
+    body,
+    tag: "qante-theme",
+    silent: false,
+  });
+  n.onclick = () => {
+    window.focus();
+    n.close();
+  };
+}
+
+async function checkThemeNotify({ announce = false } = {}) {
+  let data;
+  try {
+    data = await api("/api/stats", new URLSearchParams({ fresh: "1" }));
+  } catch {
+    return;
+  }
+  const now = themePresetList(data);
+  const seen = seenThemes();
+  if (seen.size === 0) {
+    saveSeenThemes(now);
+    return;
+  }
+  const added = now.filter((k) => !seen.has(k));
+  if (added.length && announce) showThemeNotification(added);
+  saveSeenThemes([...seen, ...now]);
+}
+
+function wireThemeNotify() {
+  syncNotifyBtn();
+  $("#notify-btn")?.addEventListener("click", () => askNotifyPermission());
+  if ("Notification" in window) {
+    setInterval(() => {
+      if (Notification.permission === "granted") checkThemeNotify({ announce: true });
+    }, THEME_POLL_MS);
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "visible" && Notification.permission === "granted") {
+        checkThemeNotify({ announce: true });
+      }
+    });
+  }
+}
+
 /* ---------------- boot ---------------- */
 
 async function boot() {
@@ -201,6 +302,8 @@ async function boot() {
   $("#q").value = state.q;
   bindEvents();
   await loadStats();
+  seedSeenThemes(stats);
+  wireThemeNotify();
   await refresh();
 }
 
@@ -983,6 +1086,7 @@ function bindEvents() {
     await api("/api/stats", new URLSearchParams({ fresh: "1" }));
     candidatesData = null;
     await loadStats();
+    await checkThemeNotify({ announce: true });
     await refresh();
   });
 

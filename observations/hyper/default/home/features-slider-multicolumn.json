@@ -5,12 +5,18 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://hyper-theme-demo.myshopify.com/",
-  "selector": ".shopify-section[id*='__slider_with_multicolumn']",
+  "selector": "#shopify-section-template--24624869605673__slider_with_multicolumn_aJwbrc",
   "evidenceSlug": "features-slider-multicolumn",
   "evidence": [
+    "evidence/hyper/default/home/features-slider-multicolumn.1440.png",
     "evidence/hyper/default/home/features-slider-multicolumn.375.png",
     "evidence/hyper/default/home/features-slider-multicolumn.768.png",
-    "evidence/hyper/default/home/features-slider-multicolumn.1440.png"
+    "evidence/hyper/default/home/features-slider-multicolumn.changed.sonraki-slayt.1440.png",
+    "evidence/hyper/default/home/features-slider-multicolumn.changed.sonraki-slayt.375.png",
+    "evidence/hyper/default/home/features-slider-multicolumn.changed.sonraki-slayt.768.png",
+    "evidence/hyper/default/home/features-slider-multicolumn.initial.ilk-hal.1440.png",
+    "evidence/hyper/default/home/features-slider-multicolumn.initial.ilk-hal.375.png",
+    "evidence/hyper/default/home/features-slider-multicolumn.initial.ilk-hal.768.png"
   ],
   "capture": {
     "url": "https://hyper-theme-demo.myshopify.com/",
@@ -19,10 +25,45 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-11T14:06:42.734Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T18:23:57.095Z",
     "mode": "section"
   },
-  "notlar": "Dining & Kitchen / Difference in the Details — slider + multicolumn.",
-  "delta": ""
+  "notlar": "Dining & Kitchen slider. Interact: Next. Shop Now yok.",
+  "delta": "",
+  "stateFindings": {
+    "initial": "1440 karesinde Hot Deals / Bow Chairs (autoplay ilk slaytı geçmiş olabilir).",
+    "changed": "Dining & Kitchen / Difference in the Details. Sağdaki 4 kart aynı."
+  },
+  "interactionNote": "Autoplay yarışı: initial bazen 2. slayt. Kareler yine farklı. Shop Now tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hyper-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24624869605673__slider_with_multicolumn_aJwbrc",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Difference in the Details, ilk nokta."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--24624869605673__slider_with_multicolumn_aJwbrc .swiper-button-next",
+      "value": 1000,
+      "capture": true,
+      "etiket": "sonraki-slayt",
+      "not": "Next. Shop Now <a> koleksiyona kaçar."
+    }
+  ],
+  "missingStates": []
 }

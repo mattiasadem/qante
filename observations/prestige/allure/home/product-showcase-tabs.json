@@ -8,12 +8,53 @@
   "selector": "#shopify-section-template--15179705352255__b0ce58f8-be7a-4c04-9dd1-e43c34483746",
   "evidenceSlug": "product-showcase-tabs",
   "evidence": [
+    "evidence/prestige/allure/home/product-showcase-tabs.1440.png",
     "evidence/prestige/allure/home/product-showcase-tabs.375.png",
     "evidence/prestige/allure/home/product-showcase-tabs.768.png",
-    "evidence/prestige/allure/home/product-showcase-tabs.1440.png"
+    "evidence/prestige/allure/home/product-showcase-tabs.changed.sekme-men.1440.png",
+    "evidence/prestige/allure/home/product-showcase-tabs.changed.sekme-men.375.png",
+    "evidence/prestige/allure/home/product-showcase-tabs.changed.sekme-men.768.png",
+    "evidence/prestige/allure/home/product-showcase-tabs.initial.ilk-hal.1440.png",
+    "evidence/prestige/allure/home/product-showcase-tabs.initial.ilk-hal.375.png",
+    "evidence/prestige/allure/home/product-showcase-tabs.initial.ilk-hal.768.png"
   ],
-  "notlar": "OUR BEST SELLERS + WOMEN/MEN sekmeli ürün ızgarası, Add to cart.",
+  "notlar": "OUR BEST SELLERS. Interact: MEN sekmesi.",
   "delta": "Hyper split lookbook değil; üst sekme + ürün grid.",
+  "stateFindings": {
+    "initial": "WOMEN altı çizili. Mini Dalia $350, Gina Petrol, Sac Élégant, Grand Nova. ALL WOMEN'S BAGS.",
+    "changed": "MEN altı çizili. Slim Briefcase $420, Portfolio Navy $320, Nouveau Cartable, Compact Weekender. ALL MEN'S BAGS."
+  },
+  "interactionNote": "DOM metni Men, CSS uppercase. :text-is('MEN') eşleşmedi; button.h2[aria-current='false'] Men'i tuttu. has-text Women'a da uyar. ALL … BAGS tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://prestige-theme-allure.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15179705352255__b0ce58f8-be7a-4c04-9dd1-e43c34483746",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "WOMEN altı çizili, çanta ızgarası."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--15179705352255__b0ce58f8-be7a-4c04-9dd1-e43c34483746 button.h2[aria-current='false']",
+      "value": 2000,
+      "capture": true,
+      "etiket": "sekme-men",
+      "not": "DOM metni Men, CSS uppercase MEN. :text-is('MEN') eşleşmedi. has-text Women'a da uyar. ALL WOMEN'S BAGS tıklanmaz."
+    }
+  ],
+  "missingStates": [],
   "capture": {
     "url": "https://prestige-theme-allure.myshopify.com/",
     "viewports": [
@@ -21,8 +62,8 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-13T18:54:20.561Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T18:05:23.988Z",
     "mode": "section"
   }
 }

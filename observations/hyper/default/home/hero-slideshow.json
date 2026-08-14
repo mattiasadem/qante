@@ -5,15 +5,56 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://hyper-theme-demo.myshopify.com/",
-  "selector": "[class*='slideshow'], [class*='Slideshow'], section[class*='hero']",
+  "selector": "#shopify-section-template--24624869605673__slideshow_q3U4Jn",
   "evidenceSlug": "hero-slideshow",
   "evidence": [
+    "evidence/hyper/default/home/hero-slideshow.1440.png",
     "evidence/hyper/default/home/hero-slideshow.375.png",
     "evidence/hyper/default/home/hero-slideshow.768.png",
-    "evidence/hyper/default/home/hero-slideshow.1440.png"
+    "evidence/hyper/default/home/hero-slideshow.changed.sonraki-slayt.1440.png",
+    "evidence/hyper/default/home/hero-slideshow.changed.sonraki-slayt.375.png",
+    "evidence/hyper/default/home/hero-slideshow.changed.sonraki-slayt.768.png",
+    "evidence/hyper/default/home/hero-slideshow.initial.ilk-hal.1440.png",
+    "evidence/hyper/default/home/hero-slideshow.initial.ilk-hal.375.png",
+    "evidence/hyper/default/home/hero-slideshow.initial.ilk-hal.768.png"
   ],
-  "notlar": "Slideshow; slide örnekleri 'Contemporary Grace / Dining & Kitchen' ve 'Modern Elegance / Spoke Sofa'; CTA 'Shop Collection'. Görsel yatay inset + radius.",
+  "notlar": "Slideshow. Interact: Next ok. Shop Collection tıklanmaz.",
   "delta": "",
+  "stateFindings": {
+    "initial": "Spoke Sofa / Modern Elegance, Shop Collection. Alttaki ilk nokta hap, diğerleri daire. Sol-sağ ok var.",
+    "changed": "Dining & Kitchen / Contemporary Grace. Aktif nokta ortaya kaydı; 375'te üç gösterge (nokta, hap, çubuk)."
+  },
+  "interactionNote": "Unique id #slideshow_q3U4Jn — genel slideshow class 3 eşleşirdi. Shop Collection <a> koleksiyona kaçar, tıklanmadı. Autoplay var; kareler yine farklı slayt (Spoke → Dining).",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hyper-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24624869605673__slideshow_q3U4Jn",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Dining & Kitchen veya o anki slayt. Genel slideshow class 3 eşleşirdi."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--24624869605673__slideshow_q3U4Jn .swiper-button-next",
+      "value": 1200,
+      "capture": true,
+      "etiket": "sonraki-slayt",
+      "not": "Next slide. Shop Collection <a> koleksiyona kaçar."
+    }
+  ],
+  "missingStates": [],
   "capture": {
     "url": "https://hyper-theme-demo.myshopify.com/",
     "viewports": [
@@ -21,7 +62,8 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-11T11:09:39.948Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T18:00:22.072Z",
+    "mode": "section"
   }
 }

@@ -6,12 +6,15 @@
   "sayfa": "cart",
   "url": "https://hyper-theme-demo.myshopify.com/cart",
   "warmupUrl": "https://hyper-theme-demo.myshopify.com/products/arc-chair",
-  "selector": ".shopify-section[id*='recently_viewed_products']",
+  "selector": "#shopify-section-template--24624869146921__recently_viewed_products_w4PGc3",
   "evidenceSlug": "product-showcase-recently-viewed",
   "evidence": [
+    "evidence/hyper/default/cart/product-showcase-recently-viewed.1440.png",
     "evidence/hyper/default/cart/product-showcase-recently-viewed.375.png",
     "evidence/hyper/default/cart/product-showcase-recently-viewed.768.png",
-    "evidence/hyper/default/cart/product-showcase-recently-viewed.1440.png"
+    "evidence/hyper/default/cart/product-showcase-recently-viewed.filled.arc-chair.1440.png",
+    "evidence/hyper/default/cart/product-showcase-recently-viewed.filled.arc-chair.375.png",
+    "evidence/hyper/default/cart/product-showcase-recently-viewed.filled.arc-chair.768.png"
   ],
   "capture": {
     "url": "https://hyper-theme-demo.myshopify.com/cart",
@@ -20,10 +23,61 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
+    "method": "interaction-steps",
     "mode": "section",
-    "updatedAt": "2026-08-11T14:24:51.111Z"
+    "updatedAt": "2026-08-14T20:57:22.146Z"
   },
-  "notlar": "Recently viewed — boş olabilir",
-  "delta": ""
+  "notlar": "Recently viewed. Interact: boş cart → PDP → dolu.",
+  "delta": "",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hyper-theme-demo.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24624869146921__recently_viewed_products_w4PGc3",
+      "capture": true,
+      "etiket": "bos",
+      "not": "PDP görülmeden boş/ince şerit."
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://hyper-theme-demo.myshopify.com/products/arc-chair",
+      "capture": false,
+      "not": "Geçmiş üret."
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://hyper-theme-demo.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24624869146921__recently_viewed_products_w4PGc3",
+      "capture": true,
+      "etiket": "arc-chair",
+      "not": "Arc Chair kartı görünmeli."
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "PDP görülmeden section zero-size; boş kutu yok. İkinci deneme yok."
+    }
+  ],
+  "stateFindings": {
+    "filled": "Cart'ta Recently viewed products: Arc Chair $699 (Sale, Selling Fast), 3 swatch. PDP warmup goto ile."
+  },
+  "interactionNote": "Boş hâl collapse. Kart hover featured/related ile aynı chrome — tekrar yok."
 }

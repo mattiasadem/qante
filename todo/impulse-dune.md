@@ -4,7 +4,7 @@
 *Parent:* [`impulse.md`](./impulse.md) (Fashion tamam)  
 *Theme Store:* Dune → Apparel demosu
 
-**Şu anki odak:** ✅ sayfa taraması bitti — 8 delta obs, yeni tip yok
+**Şu anki odak:** ✅ delta + lookbook hotspot interact
 
 **Kural:** Full kopya yok — Fashion’da olmayan / farklı kurulan tipler.
 
@@ -90,12 +90,16 @@ PDP: testimonial ✅ · recently-viewed denendi (kare yok) · shop-the-look / vi
 
 ---
 
+## Interact
+
+- `media-lookbook-slider` — Bear Pocket Tee → Slim Chino $136 (alt hotspot)
+
 ## Bilinçli boşluklar
 
 1. Recently viewed — unique id ile de capture zero-size; kart çıkmadı
 2. PDP flagship / retail store — IWT + adres, yeni şema açılmadı
 3. PDP Fair Trade / video / clearance / reviews app — Fashion tipleri veya uygulama
-4. Lookbook hotspot `changed` — interact bu turda yok (kart zaten açık)
+4. Lookbook hotspot `changed` — Slim Chino $136 (Bear Pocket Tee’den)
 5. Newsletter popup / checkout yok
 6. `/pages/about` ve lookbook 404
 7. Theme Features sayfası envanterlenmedi (tema pazarlama)

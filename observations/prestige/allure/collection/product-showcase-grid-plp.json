@@ -8,12 +8,84 @@
   "selector": "#shopify-section-template--15179705057343__main",
   "evidenceSlug": "product-showcase-grid-plp",
   "evidence": [
+    "evidence/prestige/allure/collection/product-showcase-grid-plp.1440.png",
     "evidence/prestige/allure/collection/product-showcase-grid-plp.375.png",
     "evidence/prestige/allure/collection/product-showcase-grid-plp.768.png",
-    "evidence/prestige/allure/collection/product-showcase-grid-plp.1440.png"
+    "evidence/prestige/allure/collection/product-showcase-grid-plp.changed.mini-bags.1440.png",
+    "evidence/prestige/allure/collection/product-showcase-grid-plp.changed.mini-bags.375.png",
+    "evidence/prestige/allure/collection/product-showcase-grid-plp.changed.mini-bags.768.png",
+    "evidence/prestige/allure/collection/product-showcase-grid-plp.initial.ilk-hal.1440.png",
+    "evidence/prestige/allure/collection/product-showcase-grid-plp.initial.ilk-hal.375.png",
+    "evidence/prestige/allure/collection/product-showcase-grid-plp.initial.ilk-hal.768.png",
+    "evidence/prestige/allure/collection/product-showcase-grid-plp.open.filtre-cekmece.1440.png",
+    "evidence/prestige/allure/collection/product-showcase-grid-plp.open.filtre-cekmece.375.png",
+    "evidence/prestige/allure/collection/product-showcase-grid-plp.open.filtre-cekmece.768.png"
   ],
-  "notlar": "FILTER / SORT / 65 products ızgara.",
+  "notlar": "FILTER / SORT / 65 products. Interact: sağ facets-drawer + Mini bags.",
   "delta": "",
+  "captureMode": "viewport",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://prestige-theme-allure.myshopify.com/collections/women-1",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15179705057343__main",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "ilk-hal",
+      "not": "Filter + Sort + 65 products. Drawer kapalı."
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#shopify-section-template--15179705057343__main button[aria-controls='facets-drawer']",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "filtre-cekmece",
+      "not": "Sağ FILTERS: Product type / Color / Availability / Price + View results. URL women-1."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#facets-drawer details.accordion__disclosure:first-of-type > summary",
+      "capture": false,
+      "not": "PRODUCT TYPE açılsın"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='checkbox-facets-drawer-2-template--15179705057343__main--filter.p.product_type-mini-bags']",
+      "capture": false,
+      "not": "Mini bags (13)"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#facets-drawer button.button.w-full",
+      "capture": false,
+      "not": "VIEW RESULTS"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mini-bags",
+      "not": "URL Mini+bags, 13 products. Drawer kapanır."
+    }
+  ],
   "capture": {
     "url": "https://prestige-theme-allure.myshopify.com/collections/women-1",
     "viewports": [
@@ -21,8 +93,20 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-13T19:25:59.740Z",
-    "mode": "section"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T15:52:22.925Z",
+    "mode": "viewport"
+  },
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "65 products. Filter + Sort by. Drawer yok.",
+    "open": "Sağ FILTERS çekmece: Product type / Color / Availability / Price (kapalı) + View results. 375'te çekmece neredeyse tam ekran.",
+    "changed": "Mini bags. 13 products, Filter (1), chip Product type: Mini bags. Drawer kapalı."
+  },
+  "interactionNote": "Seçim hemen uygulanmıyor; View results şart. URL ?filter.p.product_type=Mini+bags."
 }

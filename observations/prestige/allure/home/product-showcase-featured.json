@@ -8,12 +8,53 @@
   "selector": "#shopify-section-template--15179705352255__78a5db19-b230-4b47-a4f1-4c5b07493df3",
   "evidenceSlug": "product-showcase-featured",
   "evidence": [
+    "evidence/prestige/allure/home/product-showcase-featured.1440.png",
     "evidence/prestige/allure/home/product-showcase-featured.375.png",
     "evidence/prestige/allure/home/product-showcase-featured.768.png",
-    "evidence/prestige/allure/home/product-showcase-featured.1440.png"
+    "evidence/prestige/allure/home/product-showcase-featured.changed.galeri-2.1440.png",
+    "evidence/prestige/allure/home/product-showcase-featured.changed.galeri-2.375.png",
+    "evidence/prestige/allure/home/product-showcase-featured.changed.galeri-2.768.png",
+    "evidence/prestige/allure/home/product-showcase-featured.initial.ilk-hal.1440.png",
+    "evidence/prestige/allure/home/product-showcase-featured.initial.ilk-hal.375.png",
+    "evidence/prestige/allure/home/product-showcase-featured.initial.ilk-hal.768.png"
   ],
-  "notlar": "PRODUCT OF THE WEEK tek ürün + galeri. Hyper'da yok — yeni şema adayı.",
+  "notlar": "PRODUCT OF THE WEEK. Interact: galeri item 2.",
   "delta": "Yeni tip; şema evidence sonrası yazılacak.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://prestige-theme-allure.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15179705352255__78a5db19-b230-4b47-a4f1-4c5b07493df3",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Cüzdan görseli, nokta 1, tek swatch Camel Liégé."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--15179705352255__78a5db19-b230-4b47-a4f1-4c5b07493df3 button.tap-area:has-text('Go to item 2')",
+      "value": 1200,
+      "capture": true,
+      "etiket": "galeri-2",
+      "not": "İkinci galeri karesi. Swatch tek — varyant tıklanmaz. ATC drawer tekrarlanmaz."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Cüzdan düz/üstten. 5 nokta, ilki koyu. Tek swatch Camel Liégé. NEW + $200 + ATC.",
+    "changed": "Galeri tıklandı (:has-text item 2). Cüzdan üç çeyrek açı. Swatch hâlâ tek."
+  },
+  "interactionNote": ":text-is eşleşmedi, :has-text oldu. İkinci renk yok — varyant changed yok. ATC drawer tekrarlanmadı.",
   "capture": {
     "url": "https://prestige-theme-allure.myshopify.com/",
     "viewports": [
@@ -21,8 +62,8 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-13T18:52:53.781Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T20:44:52.338Z",
     "mode": "section"
   }
 }

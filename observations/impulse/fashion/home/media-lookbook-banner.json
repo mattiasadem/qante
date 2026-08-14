@@ -11,6 +11,7 @@
     "evidence/impulse/fashion/home/media-lookbook-banner.1440.png",
     "evidence/impulse/fashion/home/media-lookbook-banner.375.png",
     "evidence/impulse/fashion/home/media-lookbook-banner.768.png",
+    "evidence/impulse/fashion/home/media-lookbook-banner.changed.qv-lena.1440.png",
     "evidence/impulse/fashion/home/media-lookbook-banner.initial.ilk-hal.1440.png",
     "evidence/impulse/fashion/home/media-lookbook-banner.initial.ilk-hal.375.png",
     "evidence/impulse/fashion/home/media-lookbook-banner.initial.ilk-hal.768.png",
@@ -18,7 +19,7 @@
     "evidence/impulse/fashion/home/media-lookbook-banner.open.hotspot-popover.375.png",
     "evidence/impulse/fashion/home/media-lookbook-banner.open.hotspot-popover.768.png"
   ],
-  "notlar": "Shoppable hero: Easy by design + 3 hotspot (+). Tıklanınca küçük ürün popover.",
+  "notlar": "Shoppable hero: + → popover → 1440 VIEW PRODUCT = Lena Midi QV.",
   "delta": "Impulse shoppable_hero. Şemaya altBaslik + cta eklendi. Sticky header görselin üstüne biner.",
   "interactionSteps": [
     {
@@ -42,23 +43,33 @@
       "capture": true,
       "etiket": "hotspot-popover",
       "not": "Lena Midi + → kit-popover: ad + fiyat + VIEW PRODUCT. Sayfa değişmemeli."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "a.shoppable-hero__popover-link[href='/products/the-lena-midi']",
+      "value": 2500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "qv-lena",
+      "viewports": [
+        "1440"
+      ],
+      "not": "1440: QuickShopModal Lena Midi. 375/768'de js-modal yok — PDP'ye gider, tıklama yok."
     }
   ],
   "interactionStates": [
     "initial",
-    "open"
+    "open",
+    "changed"
   ],
-  "missingStates": [
-    {
-      "state": "changed",
-      "sebep": "VIEW PRODUCT quick view açar; bu koşuda tıklanmadı (global-quick-view ayrı)"
-    }
-  ],
+  "missingStates": [],
   "stateFindings": {
     "initial": "3 beyaz + dairesi (Riva Tank / Lena Midi / Cami). Popover yok.",
-    "open": "Orta + (Lena Midi) açık: beyaz kit-popover, ad + $168 + VIEW PRODUCT. Sayfa home'da kaldı. VIEW PRODUCT class'ı js-modal-open-quick-modal — tam QV değil, küçük kart."
+    "open": "Orta + (Lena Midi) açık: beyaz kit-popover, ad + $168 + VIEW PRODUCT. Sayfa home'da kaldı.",
+    "changed": "1440 QuickShopModal: The Lena Midi, Organic cotton, $168, thumb + ana görsel, SIZE CHART, In stock, ADD TO CART, 4 akordeon. Home URL. Featured Lido QV ile aynı iskelet."
   },
-  "interactionNote": "Bu +'lar mega menüde değil, shoppable hero'da. Selector unique section id; genel [id*='shoppable_hero'] hotspot id'lerine de uyuyor.",
+  "interactionNote": "1440 VIEW PRODUCT class js-modal-open-quick-modal-7528995651642. 375/768'de aynı link yalnız href — PDP /products/the-lena-midi, modal yok; o yüzden changed yalnız 1440. ADD TO CART tıklanmadı.",
   "capture": {
     "url": "https://impulse-theme-fashion.myshopify.com/",
     "viewports": [
@@ -68,6 +79,6 @@
     ],
     "mode": "section",
     "method": "interaction-steps",
-    "updatedAt": "2026-08-14T10:44:30.843Z"
+    "updatedAt": "2026-08-14T17:23:06.210Z"
   }
 }

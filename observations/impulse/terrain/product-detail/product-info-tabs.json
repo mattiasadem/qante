@@ -8,12 +8,52 @@
   "selector": "#shopify-section-template--18445470236733__30076fa6-f568-49ee-a8bd-f0e8a746b8e5",
   "evidenceSlug": "product-info-tabs",
   "evidence": [
+    "evidence/impulse/terrain/product-detail/product-info-tabs.1440.png",
     "evidence/impulse/terrain/product-detail/product-info-tabs.375.png",
     "evidence/impulse/terrain/product-detail/product-info-tabs.768.png",
-    "evidence/impulse/terrain/product-detail/product-info-tabs.1440.png"
+    "evidence/impulse/terrain/product-detail/product-info-tabs.changed.hotspot-wheels.1440.png",
+    "evidence/impulse/terrain/product-detail/product-info-tabs.changed.hotspot-wheels.375.png",
+    "evidence/impulse/terrain/product-detail/product-info-tabs.changed.hotspot-wheels.768.png",
+    "evidence/impulse/terrain/product-detail/product-info-tabs.initial.ilk-hal.1440.png",
+    "evidence/impulse/terrain/product-detail/product-info-tabs.initial.ilk-hal.375.png",
+    "evidence/impulse/terrain/product-detail/product-info-tabs.initial.ilk-hal.768.png"
   ],
   "notlar": "Bisiklet görseli + 4 hotspot. İlk hâl Frame metni. Klasik tab çubuğu yok — hotspot metni değiştiriyor. 1440 sağ panel, 375/768 metin altta.",
   "delta": "Fashion PDP'de spec bloğu yok. İçerik tab, UI lookbook hotspot.",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://impulse-theme-sports.myshopify.com/collections/trail/products/acv-pro-build",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--18445470236733__30076fa6-f568-49ee-a8bd-f0e8a746b8e5",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Aktif metin: Frame"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--18445470236733__30076fa6-f568-49ee-a8bd-f0e8a746b8e5 .hotspot__button--48d0d8d9-c2d1-4718-a7da-10835867e5e5",
+      "capture": true,
+      "etiket": "hotspot-wheels",
+      "not": "Sol-alt hotspot → Wheels ETHIRTEEN. Sayfa PDP'de kalmalı."
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Sol bisiklet + 4 hotspot. Sağ başlık Frame + Primer S 29 karbon metni. Tab çubuğu yok.",
+    "changed": "Aynı görsel. Sağ başlık Wheels + ETHIRTEEN LG1 Enduro 30MM Rim. Sayfa PDP'de."
+  },
+  "interactionNote": "4 hotspot: Frame / Wheels / Chain / Cassette. Chain ve Cassette ayrıca çekilmedi. Şemada emit:tab.change vardı.",
   "capture": {
     "url": "https://impulse-theme-sports.myshopify.com/collections/trail/products/acv-pro-build",
     "viewports": [
@@ -22,7 +62,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-14T11:27:43.458Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T14:41:10.621Z"
   }
 }

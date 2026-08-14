@@ -8,12 +8,49 @@
   "selector": "#shopify-section-template--16701007364346__main",
   "evidenceSlug": "cart-page-main",
   "evidence": [
+    "evidence/impact/impact/cart/cart-page-main.1440.png",
     "evidence/impact/impact/cart/cart-page-main.375.png",
     "evidence/impact/impact/cart/cart-page-main.768.png",
-    "evidence/impact/impact/cart/cart-page-main.1440.png"
+    "evidence/impact/impact/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/impact/impact/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/impact/impact/cart/cart-page-main.filled.sepete-eklendi.768.png"
   ],
-  "notlar": "Boş sepet.",
+  "notlar": "Boş + dolu cart sayfası. ATC UI (drawer ile aynı).",
   "delta": "",
+  "stateFindings": {
+    "initial": "Ortalı sepet ikonu (0), Your cart is empty, Continue shopping. Satır / toplam yok.",
+    "filled": "Cart başlık + You are eligible for free shipping. MW08 Sport satırı $349, adet 1, Remove. Estimate shipping akordeon (kapalı). Sağ/alt özet: Subtotal $349, Total $349 USD, Order note, Checkout. We accept + kart logoları. 375 tek kolon."
+  },
+  "interactionNote": "ATC görünür Add to cart (ui). Checkout ve Estimate shipping açılmadı.",
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://impact-theme-sound.myshopify.com/products/mw08-sport-green-sapphire-glass-black-kevlar-r-case",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--16701008806138__main button:has-text('Add to cart')",
+      "capture": false,
+      "not": "Drawer interact ile aynı ATC"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://impact-theme-sound.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16701007364346__main",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart sayfası: satır + özet"
+    }
+  ],
   "capture": {
     "url": "https://impact-theme-sound.myshopify.com/cart",
     "viewports": [
@@ -21,8 +58,13 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-14T12:24:16.768Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T15:20:45.977Z",
     "mode": "section"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "missingStates": []
 }

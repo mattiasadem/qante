@@ -5,15 +5,65 @@
   "preset": "fashion",
   "sayfa": "product-detail",
   "url": "https://impulse-theme-fashion.myshopify.com/products/the-wren-coat",
-  "selector": "[id$='__main']",
+  "selector": "#shopify-section-template--16365547618362__main",
   "evidenceSlug": "product-info-main",
   "evidence": [
+    "evidence/impulse/fashion/product-detail/product-info-main.1440.png",
     "evidence/impulse/fashion/product-detail/product-info-main.375.png",
     "evidence/impulse/fashion/product-detail/product-info-main.768.png",
-    "evidence/impulse/fashion/product-detail/product-info-main.1440.png"
+    "evidence/impulse/fashion/product-detail/product-info-main.changed.size-s.1440.png",
+    "evidence/impulse/fashion/product-detail/product-info-main.changed.size-s.375.png",
+    "evidence/impulse/fashion/product-detail/product-info-main.changed.size-s.768.png",
+    "evidence/impulse/fashion/product-detail/product-info-main.initial.ilk-hal.1440.png",
+    "evidence/impulse/fashion/product-detail/product-info-main.initial.ilk-hal.375.png",
+    "evidence/impulse/fashion/product-detail/product-info-main.initial.ilk-hal.768.png"
   ],
-  "notlar": "The Wren Coat. Sol dikey thumb + ana görsel. Sağ: fiyat, SIZE hapları (XS–XL), kargo/stok satırı, PRE-ORDER, açıklama, SHIPPING / ASK A QUESTION akordeon, paylaş.",
+  "notlar": "The Wren Coat. Interact: SIZE S hapı (in-page variant).",
   "delta": "CTA metni PRE-ORDER (yine cart.add). Adet stepper yok. Varyant pill, dropdown değil.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://impulse-theme-fashion.myshopify.com/products/the-wren-coat",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16365547618362__main .product-single__meta",
+      "capture": true,
+      "captureSelector": "#shopify-section-template--16365547618362__main .product-single__meta",
+      "etiket": "ilk-hal",
+      "not": "SIZE XS seçili. [id$='__main'] 3 eşleşme — unique section id. PRE-ORDER tıklanmaz."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='ProductSelect-template--16365547618362__main-7528997126202-option-size-S']",
+      "value": 2500,
+      "capture": false,
+      "not": "S radio. URL ?variant=. Aynı sayfa."
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16365547618362__main .product-single__meta",
+      "capture": true,
+      "captureSelector": "#shopify-section-template--16365547618362__main .product-single__meta",
+      "etiket": "size-s",
+      "not": "SIZE S çerçeveli. Fiyat $286, başlık Wren Coat."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "The Wren Coat $286. SIZE XS kalın çerçeve, S–XL ince. Free worldwide shipping, In stock, PRE-ORDER. SHIPPING / ASK A QUESTION kapalı.",
+    "changed": "SIZE S kalın çerçeve. Fiyat $286, başlık aynı. PRE-ORDER duruyor. URL ?variant=."
+  },
+  "interactionNote": "Size radio, linked ürün değil. Buy box (.product-single__meta) çekildi; [id$='__main'] 3 eşleşiyordu. 375/768 sticky header buy box'a sızıyor, hap değişimi duruyor. PRE-ORDER ve Ask a question tıklanmadı.",
   "capture": {
     "url": "https://impulse-theme-fashion.myshopify.com/products/the-wren-coat",
     "viewports": [
@@ -22,7 +72,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-14T10:02:41.295Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T17:13:05.565Z"
   }
 }

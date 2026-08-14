@@ -1,0 +1,98 @@
+{
+  "observationId": "prestige.allure.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "prestige",
+  "preset": "allure",
+  "sayfa": "home",
+  "url": "https://prestige-theme-allure.myshopify.com/",
+  "selector": "#header-search-sections--15179701223487__header",
+  "captureMode": "viewport",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/prestige/allure/home/global-predictive-search.initial.arama-kapali.1440.png",
+    "evidence/prestige/allure/home/global-predictive-search.initial.arama-kapali.375.png",
+    "evidence/prestige/allure/home/global-predictive-search.initial.arama-kapali.768.png",
+    "evidence/prestige/allure/home/global-predictive-search.input.arama-sonucu.1440.png",
+    "evidence/prestige/allure/home/global-predictive-search.input.arama-sonucu.375.png",
+    "evidence/prestige/allure/home/global-predictive-search.input.arama-sonucu.768.png"
+  ],
+  "prepareClick": "a[aria-controls='header-search-sections--15179701223487__header']",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://prestige-theme-allure.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#shopify-section-sections--15179701223487__header",
+      "etiket": "arama-kapali",
+      "not": "Host 0px — header'ı çek (forceOpen olmasın). Karede büyüteç, bar yok."
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "a[aria-controls='header-search-sections--15179701223487__header']",
+      "capture": false,
+      "not": "Overlay aç. URL home."
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input.header-search__input[name='q']",
+      "value": "dalia",
+      "capture": false,
+      "not": "katalog: Le Dalia / Mini Dalia"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "Suggestions + Products. URL home."
+    }
+  ],
+  "notlar": "Prestige Allure predictive search. Overlay header-search.",
+  "delta": "",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Sonuç yazmadan gizli; hover ilk hâl değil"
+    },
+    {
+      "state": "filled",
+      "sebep": "Arama veri doldurma değil"
+    },
+    {
+      "state": "open",
+      "sebep": "Boş bar açılınca da dilbilgisi input (yazınca Suggestions/Products)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Header'da büyüteç. Arama barı ve sonuç yok.",
+    "input": "dalia: sol SUGGESTIONS (dalia / dalia black / le dalia…). Sağ PRODUCTS (altı çizili) + COLLECTIONS sekmesi. 4 kart: Le Dalia Ivory/Black $380, Mini Dalia $350, Printed Lizard Camel $380. VIEW ALL RESULTS. 375'te öneriler yatay chip, ürünler satır."
+  },
+  "interactionNote": "Host kapalıyken 0px; initial'ı header'dan çektim (forceOpen barı açıyordu). Opener a[aria-controls] + href=/search; tık home'da kaldı. Şema oneriler yeterli, yeni slot yok.",
+  "capture": {
+    "url": "https://prestige-theme-allure.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T15:51:07.166Z"
+  }
+}

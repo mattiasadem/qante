@@ -1,0 +1,115 @@
+{
+  "observationId": "prestige.allure.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "prestige",
+  "preset": "allure",
+  "sayfa": "home",
+  "url": "https://prestige-theme-allure.myshopify.com/",
+  "selector": "#cart-drawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/prestige/allure/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/prestige/allure/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/prestige/allure/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/prestige/allure/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/prestige/allure/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/prestige/allure/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "Prestige cart-drawer: host yükseklik 0, panel shadow DOM (450×1000, sağ). Viewport kare.",
+  "delta": "Boş: CART + YOUR CART IS EMPTY. Dolu: Mini Dalia $350 + adet. Signature zero-size notu buradan çözüldü.",
+  "captureMode": "viewport",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://prestige-theme-allure.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[aria-controls='cart-drawer']",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "body",
+      "etiket": "cart-bos",
+      "not": "Boş sağ drawer: CART + YOUR CART IS EMPTY"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://prestige-theme-allure.myshopify.com/products/le-mini-dalia-black-liege",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button.button--outline.w-full",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": "1800",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "body",
+      "etiket": "sepete-eklendi",
+      "not": "375: ATC drawer'ı kendisi açıyor; bag tık kapatır"
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a[aria-controls='cart-drawer']",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "body",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer: Le Mini Dalia $350"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[aria-label='Increase quantity']",
+      "value": "1500",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "body",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2, ara toplam değişmeli"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "adım 6 (click button[aria-label='Increase quantity']): selector eşleşmedi: button[aria-label='Increase quantity']"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Sağ drawer: CART + X + YOUR CART IS EMPTY. Arkada home karartılı.",
+    "filled": "Le Mini Dalia Black Liégé $350, adet 1, Remove. COMPLETE WITH (Le Briefcase Navy). CHECKOUT • $350. 375'te ATC drawer'ı açıyor."
+  },
+  "interactionNote": "Host height 0, panel shadow DOM. Viewport + body. ATC UI. Adet + light-DOM'da yok — changed alınamadı. Checkout yok.",
+  "capture": {
+    "url": "https://prestige-theme-allure.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T14:55:13.003Z"
+  }
+}

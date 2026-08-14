@@ -275,6 +275,13 @@ function build(root) {
           .map((o) => [o.kaynak, o.preset].filter(Boolean).join("/"))
           .filter(Boolean)
       ).size,
+      themePresetList: [
+        ...new Set(
+          observations
+            .map((o) => [o.kaynak, o.preset].filter(Boolean).join("/"))
+            .filter(Boolean)
+        ),
+      ].sort(),
       pages: new Set(observations.map((o) => o.sayfa).filter(Boolean)).size,
     },
   };

@@ -8,12 +8,54 @@
   "selector": "#shopify-section-template--15179705352255__6e127d82-2b16-49ba-8ebf-aaabc2cb3b1d",
   "evidenceSlug": "media-lookbook-slider",
   "evidence": [
+    "evidence/prestige/allure/home/media-lookbook-slider.1440.png",
     "evidence/prestige/allure/home/media-lookbook-slider.375.png",
     "evidence/prestige/allure/home/media-lookbook-slider.768.png",
-    "evidence/prestige/allure/home/media-lookbook-slider.1440.png"
+    "evidence/prestige/allure/home/media-lookbook-slider.changed.hotspot-primo.1440.png",
+    "evidence/prestige/allure/home/media-lookbook-slider.initial.ilk-hal.1440.png",
+    "evidence/prestige/allure/home/media-lookbook-slider.initial.ilk-hal.375.png",
+    "evidence/prestige/allure/home/media-lookbook-slider.initial.ilk-hal.768.png"
   ],
-  "notlar": "SHOP OUR LOOKS lookbook slider + ürün kartı.",
+  "notlar": "SHOP OUR LOOKS lookbook slider + ürün kartı. Interact: 1440 hotspot.",
   "delta": "",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://prestige-theme-allure.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15179705352255__6e127d82-2b16-49ba-8ebf-aaabc2cb3b1d",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "1440: Le Grand Nova Ivory Liégé $450. 375/768: kart yok, VIEW PRODUCTS."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--15179705352255__6e127d82-2b16-49ba-8ebf-aaabc2cb3b1d carousel-navigation.shop-the-look__hot-spot-list[aria-controls='shop-the-look-item-carousel-template--14544585850943__6e127d82-2b16-49ba-8ebf-aaabc2cb3b1d-16807677230c2b6157-0-md-max'] button.shop-the-look__hot-spot[aria-label='Go to item 2']",
+      "value": 1200,
+      "capture": true,
+      "etiket": "hotspot-primo",
+      "viewports": [
+        "1440"
+      ],
+      "not": "İkinci hotspot → Le Primo Greige $420. URL home. VIEW PRODUCT tıklanmadı."
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "1440: sol look + 2 hotspot, sağ kart Le Grand Nova Ivory Liégé $450 + BEST SELLER + VIEW PRODUCT. 375: look + hotspot + VIEW PRODUCTS, kalıcı kart yok.",
+    "changed": "1440 ikinci hotspot: Le Primo Greige Pebbled Leather $420, ikinci nokta dolu. Look aynı, URL home."
+  },
+  "interactionNote": "375/768'de kalıcı kart yok; VIEW PRODUCTS popover'da Nova $450 + Primo $420 birlikte. Hotspot orada kartı değiştirmiyor. md-max seçici 375'te gizli.",
   "capture": {
     "url": "https://prestige-theme-allure.myshopify.com/",
     "viewports": [
@@ -21,8 +63,8 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-13T18:49:57.565Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T16:08:52.011Z",
     "mode": "section"
   }
 }

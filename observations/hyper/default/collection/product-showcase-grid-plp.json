@@ -8,9 +8,17 @@
   "selector": ".shopify-section[id*='product-grid']",
   "evidenceSlug": "product-showcase-grid-plp",
   "evidence": [
+    "evidence/hyper/default/collection/product-showcase-grid-plp.1440.png",
     "evidence/hyper/default/collection/product-showcase-grid-plp.375.png",
     "evidence/hyper/default/collection/product-showcase-grid-plp.768.png",
-    "evidence/hyper/default/collection/product-showcase-grid-plp.1440.png"
+    "evidence/hyper/default/collection/product-showcase-grid-plp.changed.stok-disi.1440.png",
+    "evidence/hyper/default/collection/product-showcase-grid-plp.changed.stok-disi.375.png",
+    "evidence/hyper/default/collection/product-showcase-grid-plp.changed.stok-disi.768.png",
+    "evidence/hyper/default/collection/product-showcase-grid-plp.initial.ilk-hal.1440.png",
+    "evidence/hyper/default/collection/product-showcase-grid-plp.initial.ilk-hal.375.png",
+    "evidence/hyper/default/collection/product-showcase-grid-plp.initial.ilk-hal.768.png",
+    "evidence/hyper/default/collection/product-showcase-grid-plp.open.filtre-cekmece.375.png",
+    "evidence/hyper/default/collection/product-showcase-grid-plp.open.filtre-cekmece.768.png"
   ],
   "capture": {
     "url": "https://hyper-theme-demo.myshopify.com/collections/all",
@@ -19,10 +27,91 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
+    "method": "interaction-steps",
     "mode": "section",
-    "updatedAt": "2026-08-11T14:28:01.777Z"
+    "updatedAt": "2026-08-14T17:00:05.738Z"
   },
-  "notlar": "PLP product grid + filters/compare",
-  "delta": ""
+  "notlar": "PLP ızgara + filtre. Interact: Out of stock (2 ürün).",
+  "delta": "",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hyper-theme-demo.myshopify.com/collections/all",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": ".shopify-section[id*='product-grid']",
+      "capture": true,
+      "captureMode": "section",
+      "etiket": "ilk-hal",
+      "not": "98 ürün. 1440 sidebar görünür; 375/768 Filter butonu."
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.facet-drawer-button[aria-controls='FacetDrawer']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "filtre-cekmece",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Sol FacetDrawer. 1440'te sidebar zaten açık — Filter drawer açmaz."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='vertical-filter.v.availability-2']",
+      "value": 4000,
+      "capture": true,
+      "captureMode": "section",
+      "etiket": "stok-disi",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Sidebar Out of stock. Hemen uygulanır. Izgara 2 ürüne iner."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='drawer-filter.v.availability-2']",
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Drawer Out of stock. Color swatch 375'te işaretlenmedi."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#FacetDrawer button.btn--primary.w-full",
+      "value": 4000,
+      "capture": true,
+      "captureMode": "section",
+      "etiket": "stok-disi",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Apply. Drawer kapanır. 2 ürün."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "98 products, Sort Best selling, Compare kapalı, ızgara + Home & Decor promo. 1440 sol sidebar (Availability / Price / Color / Category). 375/768 Filter butonu, sidebar yok.",
+    "open": "375/768 sol FacetDrawer: Filter + X, Sort by Best selling, Availability / Price / Color (hepsi açık), Apply. 768'de arkada ızgara karartılı. 1440 open yok — sidebar zaten initial'da.",
+    "changed": "Out Of Stock çipi, 2 of 98 products, Filter (1) (375/768). Izgara: Home & Decor promo + Stitch Layer $240 Sold out + Bar Chair Ash $589. 1440 sidebar Out of stock işaretli."
+  },
+  "interactionNote": "1440 Filter butonu FacetDrawer açmaz (sidebar xl:block). 375/768 Apply şart; desktop hemen. Color swatch 375'te checkbox'ı işaretlemedi — Availability kullanıldı. Desktop ve drawer label for= farklı (vertical-filter vs drawer-filter). Compare bar 0/5 kesitte duruyor, tekrar çekilmedi."
 }

@@ -8,12 +8,63 @@
   "selector": "#shopify-section-template--15179706368063__main",
   "evidenceSlug": "product-info-main",
   "evidence": [
+    "evidence/prestige/allure/product-detail/product-info-main.1440.png",
     "evidence/prestige/allure/product-detail/product-info-main.375.png",
     "evidence/prestige/allure/product-detail/product-info-main.768.png",
-    "evidence/prestige/allure/product-detail/product-info-main.1440.png"
+    "evidence/prestige/allure/product-detail/product-info-main.changed.swatch-ivory.1440.png",
+    "evidence/prestige/allure/product-detail/product-info-main.changed.swatch-ivory.375.png",
+    "evidence/prestige/allure/product-detail/product-info-main.changed.swatch-ivory.768.png",
+    "evidence/prestige/allure/product-detail/product-info-main.initial.ilk-hal.1440.png",
+    "evidence/prestige/allure/product-detail/product-info-main.initial.ilk-hal.375.png",
+    "evidence/prestige/allure/product-detail/product-info-main.initial.ilk-hal.768.png"
   ],
-  "notlar": "PDP ana: sol thumb + yığın galeri, sağ buy box.",
+  "notlar": "PDP ana: sol thumb + yığın galeri, sağ buy box. Interact: Ivory swatch.",
   "delta": "Renk swatch, outlined ATC + Buy it now, ikon özellik şeridi, PRODUCT DETAILS / SHIPPING accordion, COMBINE WITH. Sticky ATC diğer kesitlere sızıyor. Şemaya dokunulmadı.",
+  "captureMode": "section",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://prestige-theme-allure.myshopify.com/products/le-mini-dalia-black-liege",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15179706368063__main .product-info",
+      "capture": true,
+      "captureSelector": "#shopify-section-template--15179706368063__main .product-info",
+      "etiket": "ilk-hal",
+      "not": "Le Mini Dalia Black Liégé, Color: Black Liégé, siyah swatch seçili. Tam kesit 4640px — yalnız buy box."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--15179706368063__main a.color-swatch[href='/products/le-mini-dalia-ivory-liege']",
+      "value": 2800,
+      "capture": false,
+      "not": "<a> — /products/le-mini-dalia-ivory-liege'e gider. Aynı şema."
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15179706368063__main .product-info",
+      "capture": true,
+      "captureSelector": "#shopify-section-template--15179706368063__main .product-info",
+      "etiket": "swatch-ivory",
+      "not": "Başlık Ivory, swatch is-selected kaydı. Buy it now tıklanmadı."
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Le Mini Dalia Black Liégé $350, Color: Black Liégé, siyah kare seçili. 4 swatch. ADD TO CART + BUY IT NOW. MORE INFORMATION kapalı.",
+    "changed": "Le Mini Dalia Ivory Liégé $350, Color: Ivory Liégé, ikinci kare seçili. Fiyat aynı. URL /products/le-mini-dalia-ivory-liege."
+  },
+  "interactionNote": "Swatch <a> ile linked ürüne gidiyor (aynı şema). Buy box çekildi; galeri 3936px. 375/768 changed karesinde sticky header buy box'a sızıyor, renk değişimi duruyor. Buy it now tıklanmadı.",
   "capture": {
     "url": "https://prestige-theme-allure.myshopify.com/products/le-mini-dalia-black-liege",
     "viewports": [
@@ -21,8 +72,8 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-13T19:34:24.172Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T16:07:27.654Z",
     "mode": "section"
   }
 }

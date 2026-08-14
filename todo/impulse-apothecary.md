@@ -4,7 +4,7 @@
 *Parent:* [`impulse.md`](./impulse.md)  
 *Theme Store:* Apothecary → Jewelry demosu
 
-**Şu anki odak:** ⚡ delta + PLP before-after — about/faq 404
+**Şu anki odak:** ✅ delta + before-after yoklandı (drag action yok)
 
 **Kural:** Full kopya yok — Fashion/Dune/Terrain’de olmayan tipler.
 
@@ -57,3 +57,4 @@ PDP: HOW TO USE, icons, IWT, testimonial, aynı marquee, related — reuse.
 1. Sticky header ince şeridi örtüyor — kare header gizlenerek alındı
 2. PDP’deki ikinci marquee ayrıca çekilmedi
 3. Add to Cart kart butonu / shoppable hero yeniden envanterlenmedi
+4. before-after `changed` — yalnız sürükleme; action setinde drag yok, tıklama tutamacı oynatmıyor

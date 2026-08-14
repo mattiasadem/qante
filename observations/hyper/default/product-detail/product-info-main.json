@@ -8,9 +8,15 @@
   "selector": "#MainContent .shopify-section[id*='__main']:not([id*='main-cart'])",
   "evidenceSlug": "product-info-main",
   "evidence": [
+    "evidence/hyper/default/product-detail/product-info-main.1440.png",
     "evidence/hyper/default/product-detail/product-info-main.375.png",
     "evidence/hyper/default/product-detail/product-info-main.768.png",
-    "evidence/hyper/default/product-detail/product-info-main.1440.png"
+    "evidence/hyper/default/product-detail/product-info-main.changed.swatch-yellow.1440.png",
+    "evidence/hyper/default/product-detail/product-info-main.changed.swatch-yellow.375.png",
+    "evidence/hyper/default/product-detail/product-info-main.changed.swatch-yellow.768.png",
+    "evidence/hyper/default/product-detail/product-info-main.initial.ilk-hal.1440.png",
+    "evidence/hyper/default/product-detail/product-info-main.initial.ilk-hal.375.png",
+    "evidence/hyper/default/product-detail/product-info-main.initial.ilk-hal.768.png"
   ],
   "capture": {
     "url": "https://hyper-theme-demo.myshopify.com/products/arc-chair",
@@ -19,10 +25,54 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
+    "method": "interaction-steps",
     "mode": "section",
-    "updatedAt": "2026-08-11T14:41:28.799Z"
+    "updatedAt": "2026-08-14T17:01:29.759Z"
   },
-  "notlar": "Arc Chair PDP main (gallery + buy box). Selector: main product section.",
-  "delta": ""
+  "notlar": "Arc Chair PDP. Interact: Yellow swatch (in-page variant).",
+  "delta": "",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hyper-theme-demo.myshopify.com/products/arc-chair",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24624869998889__main .product__info-wrapper",
+      "capture": true,
+      "captureSelector": "#shopify-section-template--24624869998889__main .product__info-wrapper",
+      "etiket": "ilk-hal",
+      "not": "Light Beige + Oak. Tam kesit 1617px — yalnız buy kolon. Buy it now tıklanmaz."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='template--24624869998889__main-1-1']",
+      "value": 2500,
+      "capture": false,
+      "not": "Yellow radio. URL ?variant=… Aynı sayfa, linked ürün değil."
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24624869998889__main .product__info-wrapper",
+      "capture": true,
+      "captureSelector": "#shopify-section-template--24624869998889__main .product__info-wrapper",
+      "etiket": "swatch-yellow",
+      "not": "Color: Yellow. Başlık Arc Chair kalır."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Arc Chair $699 (üstü $729), Save 4%, Color: Light Beige seçili, Material Oak. Hurry up, only 3 items left + yeşil bar. Add To Cart + Buy It Now. Perfect Match With.",
+    "changed": "Color: Yellow, sarı kare çerçeveli. Başlık Arc Chair, fiyat aynı. Available in stock (12), düşük stok barı yok. Oak duruyor. URL ?variant=."
+  },
+  "interactionNote": "Swatch radio, linked ürün değil. Tam kesit 1617px — buy kolon (.product__info-wrapper) çekildi. 375 sepet sızmadı. Buy it now tıklanmadı."
 }

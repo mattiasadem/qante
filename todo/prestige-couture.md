@@ -67,5 +67,5 @@ Kanıt sonrası remap:
 ## Evidence backlog
 
 - [x] Couture 11 sayfa 3vp capture (64 obs · 192 PNG)
-- [ ] Dolu cart / drawer
+- [x] Dolu cart / drawer — Allure’da çekildi (aynı chrome)
 - [ ] Newsletter popup
