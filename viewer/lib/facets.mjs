@@ -258,8 +258,9 @@ export function computeThemeTree(inv, f) {
   const scoped = applyFilters(inv.rows, f, { skipDimensions: ["kaynak", "tp"] });
   const themes = new Map();
   for (const row of scoped) {
-    const theme = row.kaynak || "?";
-    const preset = row.preset || "?";
+    if (!row.kaynak) continue; // şema-only / bozuk JSON → "?" facet üretme
+    const theme = row.kaynak;
+    const preset = row.preset || "—";
     if (!themes.has(theme)) themes.set(theme, { count: 0, presets: new Map() });
     const t = themes.get(theme);
     t.count++;

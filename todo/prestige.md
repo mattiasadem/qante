@@ -3,7 +3,7 @@
 *Kaynak:* https://prestige-theme-allure.myshopify.com/  
 *Preset:* `allure` · Maestrooo Prestige
 
-**Şu anki odak:** Allure sayfa turu bitti · F6 diğer preset'ler bekliyor
+**Şu anki odak:** Allure + Signature + Couture + Vogue + Strass bitti
 
 ---
 
@@ -24,7 +24,10 @@
 - [x] F3 PDP
 - [x] F4 Search / cart (drawer boş — home'da)
 - [x] F5 Content / blog / about / faq / contact
-- [ ] F6 Diğer preset delta (Couture, Vogue, Signature, Strass)
+- [x] F6 Signature tam tur: [`prestige-signature.md`](./prestige-signature.md)
+- [x] F7 Couture tam tur: [`prestige-couture.md`](./prestige-couture.md)
+- [x] F8 Vogue tam tur: [`prestige-vogue.md`](./prestige-vogue.md)
+- [x] F9 Strass tam tur: [`prestige-strass.md`](./prestige-strass.md)
 
 ---
 

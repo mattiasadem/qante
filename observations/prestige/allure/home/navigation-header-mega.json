@@ -8,12 +8,88 @@
   "selector": "#shopify-section-sections--15179701223487__header",
   "evidenceSlug": "navigation-header-mega",
   "evidence": [
+    "evidence/prestige/allure/home/navigation-header-mega.1440.png",
     "evidence/prestige/allure/home/navigation-header-mega.375.png",
     "evidence/prestige/allure/home/navigation-header-mega.768.png",
-    "evidence/prestige/allure/home/navigation-header-mega.1440.png"
+    "evidence/prestige/allure/home/navigation-header-mega.changed.men-mega-acik.1440.png",
+    "evidence/prestige/allure/home/navigation-header-mega.changed.mobil-akordeon-acik.375.png",
+    "evidence/prestige/allure/home/navigation-header-mega.changed.mobil-akordeon-acik.768.png",
+    "evidence/prestige/allure/home/navigation-header-mega.open.mobil-menu-acik.375.png",
+    "evidence/prestige/allure/home/navigation-header-mega.open.mobil-menu-acik.768.png",
+    "evidence/prestige/allure/home/navigation-header-mega.open.women-mega-acik.1440.png"
   ],
-  "notlar": "Logo ortada, mega menü WOMEN/MEN, locale, hesap, arama, sepet.",
-  "delta": "Şeffaf overlay header; logo center.",
+  "captureMode": "viewport",
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://prestige-theme-allure.myshopify.com/",
+      "capture": false,
+      "not": "Taban sayfa"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "details.header__menu-disclosure > summary.h6:text-is('Women')",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "women-mega-acik",
+      "not": "1440: Women summary hover → mega panel (kolonlar + ürün kartları). Beklenen: Bags/Popular models kolonları + promo görselleri."
+    },
+    {
+      "state": "changed",
+      "action": "mouseMove",
+      "value": "20,400",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "Panel dışına çık. Women açıkken Men hover geçmiyor; Men'e tıklamak /collections/men-1'e gidiyor (summary link)."
+    },
+    {
+      "state": "changed",
+      "action": "hover",
+      "selector": "details.header__menu-disclosure > summary.h6:text-is('Men')",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "men-mega-acik",
+      "not": "1440: Men'e hover → panel içeriği Women'dan farklı kolon/ürün setine dönmeli"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button[aria-controls='sidebar-menu']",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mobil-menu-acik",
+      "not": "375/768: hamburger (scan: Navigation menu → sidebar-menu). Beklenen: tam ekran/yan menü, Women/Men satırları."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button.header-sidebar__linklist-button:has-text('Women')",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mobil-akordeon-acik",
+      "not": "375/768: Women satırına bas → alt-linkler/kolonlar açılmalı (masaüstü kolonları burada dikey)"
+    }
+  ],
+  "notlar": "Logo ortada, mega menü WOMEN/MEN, locale, hesap, arama, sepet. Interact: scan-affordances → Women/Men details (1440 hover), hamburger sidebar-menu (375/768). Search/Cart ayrı overlay — bu koşuda atlandı.",
+  "delta": "Şeffaf overlay header; logo center. 768 hâlâ hamburger. Mobil ilk tık drill-down (Women >), ikinci seviye + akordeon.",
   "capture": {
     "url": "https://prestige-theme-allure.myshopify.com/",
     "viewports": [
@@ -21,8 +97,33 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-13T18:52:11.089Z",
-    "mode": "section"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-13T21:24:50.043Z",
+    "mode": "viewport"
+  },
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Mega panelin kendisi hover ile AÇILIYOR — o kare open/women-mega-acik. Kart hover-reveal yok."
+    },
+    {
+      "state": "input",
+      "sebep": "Header'da search input var ama gizli; Search opener ayrı overlay (global-predictive-search). Bu koşuda atlandı."
+    },
+    {
+      "state": "filled",
+      "sebep": "Mega menü veri doldurma istemiyor."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Kapalı header: WOMEN/MEN/BLOG/ABOUT/PRESETS + ortada PRESTIGE logo + USD/hesap/arama/sepet. megaPaneller içeriği görünmüyor.",
+    "open": "1440 Women hover: 3 metin kolonu (BAGS, POPULAR MODELS, POPULAR COLORS) + 2 görsel promo kartı (The Dalia, Almond Green). Şemadaki megaPaneller = kolonlar[] + gorsel + promoKarti birebir. 375/768 hamburger: sol drawer, WOMEN/MEN/ABOUT/PRESETS chevron'lu, BLOG düz link, altta LOGIN + USD. Mega kolonları burada yok.",
+    "changed": "1440 Men: kolonlar değişti — BAGS (Business/Weekend), SMALL LEATHER GOODS (Wallet/Card holder), POPULAR COLORS (Black/Navy/Khaki); promo kartları Le Nouveau Cartable + Le Porte-Cartes. 375/768 Women tık: drill-down '< WOMEN', sonra BAGS+/POPULAR MODELS+/POPULAR COLORS+ ve aynı 2 promo kartı."
+  },
+  "interactionNote": "scan taslağındaki kart-hover ve 'variant' (Popular colors linki) atıldı — mega dilbilgisi değil. has-text('Men') Women'a da uyuyor (içinde 'men' var); text-is şart. Women açıkken Men'e tıklamak /collections/men-1'e gidiyor. Women açıkken Men hover da geçmiyor — önce mouseMove ile panel dışına çık."
 }

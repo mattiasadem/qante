@@ -37,6 +37,7 @@ const qanteRoot = path.resolve(__dirname, "..");
 
 const DEFAULT_URLS = {
   hyper: "https://hyper-theme-demo.myshopify.com/",
+  impulse: "https://impulse-theme-fashion.myshopify.com/",
 };
 
 const STATES = ["initial", "hover", "input", "open", "filled", "changed"];
@@ -69,6 +70,7 @@ const ACTIONS = [
   "waitFor",
   "addToCart",
   "forceOpen",
+  "mouseMove",
 ];
 
 const viewports = JSON.parse(
@@ -416,7 +418,10 @@ async function runStep(page, step) {
       const el = page.locator(sel).first();
       await el.waitFor({ state: "visible", timeout: 12000 });
       await el.click({ force: true }).catch(() => {});
-      await el.fill(step.value ?? "chair");
+      if (step.value == null || String(step.value).trim() === "") {
+        throw new Error("fill value yok — katalog kelimesi yaz (scan.katalogSorgu); chair sabit değil");
+      }
+      await el.fill(String(step.value));
       await page.waitForTimeout(1600);
       return null;
     }
@@ -438,6 +443,14 @@ async function runStep(page, step) {
         await page.waitForTimeout(Number(step.value) || 1000);
       }
       return null;
+    case "mouseMove": {
+      const [x, y] = String(step.value || "20,400")
+        .split(",")
+        .map((n) => Number(n.trim()));
+      await page.mouse.move(x || 20, y || 400);
+      await page.waitForTimeout(500);
+      return null;
+    }
     case "addToCart":
       return await addToCart(page, sel);
     case "forceOpen":
@@ -473,6 +486,9 @@ try {
     const broken = new Set();
 
     for (const [i, step] of steps.entries()) {
+      // Viewport filtresi: adım yalnız belirli viewport'larda koşsun
+      // (mega-menu hover = masaüstü, hamburger = mobil gibi ayrımlar için)
+      if (Array.isArray(step.viewports) && !step.viewports.includes(vp.id)) continue;
       if (broken.has(step.state)) continue;
 
       try {
@@ -521,6 +537,7 @@ try {
   );
   obs.evidence = [...new Set([...kept, ...newFiles])].sort();
 
+  const prevStates = Array.isArray(obs.interactionStates) ? obs.interactionStates : [];
   const capturedStates = [...capturedFiles.keys()];
   const hasUnsuffixedInitial = obs.evidence.some((r) =>
     new RegExp(`/${slug}\\.\\d+\\.png$`).test(r)
@@ -528,10 +545,14 @@ try {
   if (hasUnsuffixedInitial && !capturedStates.includes("initial")) {
     capturedStates.unshift("initial"); // eski ek'siz dosyalar initial sayılır
   }
-  obs.interactionStates = STATES.filter((s) => capturedStates.includes(s));
+  // --state yalnız yazmayı filtreler; önceki yakalanmış state'leri silme
+  const mergedStates = [...new Set([...prevStates, ...capturedStates])];
+  obs.interactionStates = STATES.filter((s) => mergedStates.includes(s));
 
   const missing = [...failures.entries()].map(([state, sebep]) => ({ state, sebep }));
-  const declared = [...new Set(steps.map((s) => s.state))];
+  const declared = [...new Set(steps.map((s) => s.state))].filter(
+    (s) => !wanted || wanted.has(s)
+  );
   for (const s of declared) {
     if (!obs.interactionStates.includes(s) && !failures.has(s)) {
       missing.push({ state: s, sebep: "adımlar koştu ama capture:true adım yok" });

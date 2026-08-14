@@ -11,10 +11,58 @@
   "captureMode": "viewport",
   "evidenceSlug": "global-quick-view",
   "evidence": [
+    "evidence/hyper/default/home/global-quick-view.1440.png",
     "evidence/hyper/default/home/global-quick-view.375.png",
     "evidence/hyper/default/home/global-quick-view.768.png",
-    "evidence/hyper/default/home/global-quick-view.1440.png"
+    "evidence/hyper/default/home/global-quick-view.open.dialog-acik.1440.png",
+    "evidence/hyper/default/home/global-quick-view.open.dialog-acik.375.png",
+    "evidence/hyper/default/home/global-quick-view.open.dialog-acik.768.png"
   ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://hyper-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "scrollTo",
+      "selector": "main .featured-collection",
+      "capture": false,
+      "not": "Tetikleyici kartlar modalın dışında"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "main .featured-collection button.product-card__action-button",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "dialog-acik",
+      "not": "Choose options → quick view modal. Scanner kapalı modalda tetikleyiciyi göremez; prepareClick şart."
+    }
+  ],
+  "notlar": "Quick view — featured collection kartında Choose Options ile açılır. Interact: dialog açık.",
+  "delta": "",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Tetikleyici kart hover'ı product-showcase'e ait; modal kapalıyken hover anlamsız"
+    },
+    {
+      "state": "changed",
+      "sebep": "Dialog içinde swatch/material var (Light Beige/Oak) ama bu koşuda değiştirilmedi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Kapalı modal — eski kanıt Choose options sonrası. Kapalı DOM'da neredeyse hiçbir affordance görünür değil.",
+    "open": "Ortalanmış modal: sol galeri (ana görsel + thumb), sağda Sale rozeti, başlık Cross Chair Heritage, fiyat $589/$600, stok barı, Color swatch, Material pill (Oak/Wool), X kapat. Viewport karesi ATC/adet'i kesmiş olabilir — altta kalıyor."
+  },
+  "interactionNote": "Scanner'ı kapalı modal selector'ına bağlamak tetikleyiciyi kaçırır. Overlay'lerde observation.prepareClick şart. layout=modal kanıtlandı (drawer değil).",
   "capture": {
     "url": "https://hyper-theme-demo.myshopify.com/",
     "viewports": [
@@ -23,11 +71,7 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "prepareScroll": "main .featured-collection",
-    "prepareClick": "main .featured-collection button.product-card__action-button",
-    "updatedAt": "2026-08-11T14:47:40.822Z"
-  },
-  "notlar": "Quick view — featured collection kartında Choose Options ile açılır.",
-  "delta": ""
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-13T23:32:02.808Z"
+  }
 }

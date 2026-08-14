@@ -1,57 +1,33 @@
 # /qante-discover-interact
 
-QANTE **etkileşimli** component keşfi — bir component'in davranışsal hâllerini (hover, yazılan input, açılan drawer/dialog, dolu sepet, değişen varyant) aşama aşama kanıtla.
+Bir component'in kapalı karesinin sakladığı hâlleri kanıtla (hover, arama, açık menü, dolu sepet, değişen varyant).
 
-**Önce `.agents/skills/qante-discover-interact/SKILL.md` dosyasını oku ve harfiyen uygula.**
-Sözleşmeler: `qante/schema-standard.md` + `qante/styleknobs-standard.md`. Bunlarla çelişen hiçbir şey yazma.
-`qante-discover` agent dosyalarına **dokunma** — onları yalnız okursun.
+**Önce** `.agents/skills/qante-discover-interact/SKILL.md` — oradaki döngüyü uygula.
+Sözleşmeler: `qante/schema-standard.md` + `qante/styleknobs-standard.md`.
+`qante-discover` dosyalarına **dokunma**.
 
-## Ne zaman bu, ne zaman `/qante-discover`
+İlk envanter yoksa bu komut değil, `/qante-discover`. Component + URL belirsizse sor.
 
-| | `/qante-discover` | `/qante-discover-interact` |
-|---|---|---|
-| İş | Sınır çizme + ilk envanter | Bilinen component'in state derinliği |
-| Çıktı | Şema + observation + 3vp `initial` | State ekli evidence + interaction alanları |
-| Tipik tetik | "bu demoyu envanterle" | "cart drawer boş çekilmiş, dolu çek" |
+## Döngü
 
-## Argüman → kapsam
+1. **Ne denecek** — şema + observation. Unique selector. Anlamsız state’i zorlama.
+2. **Tara** — `scan-affordances.mjs`. Taslağı kör koşma. `uyari` / `matches` varsa dur (unique id, `prepareClick`).
+3. **Şüphe varsa yokla** — `_probe.mjs` (tıklanınca sayfa değişiyor mu, kutu büyüyor mu). Çıktıyı dosyaya yaz, oku, sil. Başka temanın selector’ını kopyalama.
+4. **Yaz, çek** — `interactionSteps` + `etiket` + beklenen değişim. Mega 1440 / hamburger 375+768 ayrı. `capture-interaction.mjs`. `fill` = `katalogSorgu`.
+5. **Bak** — PNG’yi bir önceki kareyle karşılaştır. Aynıysa veya yanlış sayfadaysa bir kez `--state` ile düzelt. İkincide olmazsa `missingStates`. Script’in yeşili yetmez.
+6. **Yaz** — `stateFindings` gördüğün şey. Şema yalnız yeni merchant alanı / olay / overlay. Validator. Kullanıcıya düz cümle — tablo yok.
 
-| Argüman | İş |
-|---|---|
-| bir schemaId (`global-cart-drawer`) | O component için state matrisini çıkar, eksik state'leri yakala |
-| URL + component adı | O sayfada component'i bul, state matrisini çıkar |
-| tek state ("hover'ı al", "dolu çek") | Yalnız istenen state |
-| boş | Boş/yanıltıcı kanıtı olan bileşenleri listele, **hangisi** diye sor |
+```bash
+cd qante/scripts
+node scan-affordances.mjs ../observations/{tema}/{preset}/{sayfa}/{schemaId}.json
+node capture-interaction.mjs ../observations/{tema}/{preset}/{sayfa}/{schemaId}.json
+node capture-interaction.mjs <obs.json> --state changed
+cd ../ && node scripts/validate-schemas.mjs {schemaId}
+```
 
-Kapsam belirsizse **sor** — 15 PNG'yi yanlış component için üretme.
+State adları: `initial` · `hover` · `input` · `open` · `filled` · `changed`.
+Evidence: `{slug}.{state}.{etiket}.{375|768|1440}.png`. Eski `{slug}.1440.png` = initial.
 
-## State taksonomisi (dondurulmuş 6 ad)
+## Bozulmaz
 
-`initial` · `hover` · `input` · `open` · `filled` · `changed`
-Anlamsız state'i zorlama; **denenip alınamayanı** `missingStates`'e sebebiyle yaz.
-
-## Her koşuda değişmeyen
-
-1. **Kanıtsız schema yazma.** Boş state'i component'in tek hâli sanma — doldurulabiliyorsa doldur.
-2. **Yıkıcı etkileşim yok:** ödeme başlatma, gerçek form gönderimi, hesap açma, sipariş verme. Sepete ekleme serbest.
-3. Evidence adı: `evidence/{tema}/{preset}/{sayfa}/{slug}.{state}.{etiket}.{375|768|1440}.png`
-   Her `capture:true` adıma okunur `etiket` ver (`cart-bos`, `sepete-eklendi`, `adet-artti`) — klasöre bakan ne olduğunu okusun.
-   State eki olmayan eski dosyalar `initial` sayılır — onları yeniden adlandırma.
-4. Observation'a `interactionStates` · `interactionSteps` · `stateFindings` · `missingStates` · `interactionNote` ekle (`observations/_template-interaction.json`).
-5. Şemaya etkisi karar tablosuyla: yeni içerik alanı → `slots` · yeni olay → `actions` · tetiklenen overlay → `bagimliliklar` · iskelet seçimi → `styleKnobs`. **Yalnız hover görselliği (renk/gölge/zoom) şemaya girmez** → token notu.
-6. Boş↔dolu aynı component → **yeni şema açma**, farkı `stateFindings`'e yaz.
-7. Evidence elle değil script'ten (`--state a,b` ile daralt, `--headed` ile izle):
-   ```bash
-   cd qante/scripts && node capture-interaction.mjs ../observations/{tema}/{preset}/{sayfa}/{schemaId}.json
-   ```
-   Adımları yazmadan önce selector'ları geçici bir yoklama script'iyle **doğrula**, sonra yoklamayı sil. Elle screenshot evidence olmaz.
-8. **Bitirmeden** doğrula:
-   ```bash
-   cd qante && node scripts/validate-schemas.mjs
-   ```
-9. Kanıtsız alan yazma → `Açık soru` olarak raporla.
-10. 3'ten fazla dosya değiştirecekse önce planı sun, onay al.
-
-## Bitişte
-
-SKILL.md'deki özet bloğunu doldur: mod (`interact`), tema/preset/sayfa, component, yakalanan state'ler, alınamayanlar, yeni evidence sayısı, şema değişti mi, validator sonucu, açık sorular, sıradaki adım.
+Kanıtsız şema yok. Ödeme / gerçek form / hesap yok; sepete ekleme serbest. Boş↔dolu aynı component. Hover yalnız renk/gölge ise token. Elle screenshot yok.

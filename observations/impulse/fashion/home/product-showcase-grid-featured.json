@@ -1,0 +1,79 @@
+{
+  "observationId": "impulse.fashion.home.product-showcase-grid-featured",
+  "schemaId": "product-showcase-grid-featured",
+  "kaynak": "impulse",
+  "preset": "fashion",
+  "sayfa": "home",
+  "url": "https://impulse-theme-fashion.myshopify.com/",
+  "selector": ".shopify-section[id*='featured_collection_6YhzLm']",
+  "captureMode": "section",
+  "evidenceSlug": "product-showcase-grid-featured",
+  "evidence": [
+    "evidence/impulse/fashion/home/product-showcase-grid-featured.hover.hover-reveal.1440.png",
+    "evidence/impulse/fashion/home/product-showcase-grid-featured.hover.hover-reveal.375.png",
+    "evidence/impulse/fashion/home/product-showcase-grid-featured.hover.hover-reveal.768.png",
+    "evidence/impulse/fashion/home/product-showcase-grid-featured.initial.ilk-hal.1440.png",
+    "evidence/impulse/fashion/home/product-showcase-grid-featured.initial.ilk-hal.375.png",
+    "evidence/impulse/fashion/home/product-showcase-grid-featured.initial.ilk-hal.768.png"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://impulse-theme-fashion.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": ".shopify-section[id*='featured_collection_6YhzLm']",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Everyday Essentials — unique id. Genel .grid-product başka featured_collection_VeXeTB (All New) ile karışır."
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": ".shopify-section[id*='featured_collection_6YhzLm'] .grid-product",
+      "capture": true,
+      "etiket": "hover-reveal",
+      "not": "Beklenen: The Lido Short üzerinde Quick View opacity 0→1"
+    }
+  ],
+  "notlar": "Everyday Essentials (6YhzLm). Interact sıfır-bellek denemesi — All New ayrı blok.",
+  "delta": "",
+  "interactionStates": [
+    "initial",
+    "hover"
+  ],
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Bu blokta tab/filtre yok — başlık + View all + kartlar"
+    },
+    {
+      "state": "filled",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "open",
+      "sebep": "Quick View dialog ayrı component; bu koşuda açılmadı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Everyday Essentials: 5 kart (Lido Short, Brisa Overshirt, Cove Skirt, Arden Co-ord, Vela Shirt). Sale rozeti, çizili fiyat. Quick View yok.",
+    "hover": "1440: ilk kart (The Lido Short) üzerinde koyu Quick View butonu çıktı. 375 ve 768 kareleri initial ile aynı — dokunmatikte hover yok, doğrulanamadı."
+  },
+  "interactionNote": "Scan hoverReveal'da Quick View gördü ama suggestedSteps'e hover koymadı. Unique id şart: All New = featured_collection_VeXeTB.",
+  "capture": {
+    "url": "https://impulse-theme-fashion.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T00:22:54.669Z"
+  }
+}

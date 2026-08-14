@@ -1,0 +1,73 @@
+{
+  "observationId": "impulse.fashion.home.media-lookbook-banner",
+  "schemaId": "media-lookbook-banner",
+  "kaynak": "impulse",
+  "preset": "fashion",
+  "sayfa": "home",
+  "url": "https://impulse-theme-fashion.myshopify.com/",
+  "selector": "#shopify-section-template--16365547094074__shoppable_hero_9HDgMT",
+  "evidenceSlug": "media-lookbook-banner",
+  "evidence": [
+    "evidence/impulse/fashion/home/media-lookbook-banner.1440.png",
+    "evidence/impulse/fashion/home/media-lookbook-banner.375.png",
+    "evidence/impulse/fashion/home/media-lookbook-banner.768.png",
+    "evidence/impulse/fashion/home/media-lookbook-banner.initial.ilk-hal.1440.png",
+    "evidence/impulse/fashion/home/media-lookbook-banner.initial.ilk-hal.375.png",
+    "evidence/impulse/fashion/home/media-lookbook-banner.initial.ilk-hal.768.png",
+    "evidence/impulse/fashion/home/media-lookbook-banner.open.hotspot-popover.1440.png",
+    "evidence/impulse/fashion/home/media-lookbook-banner.open.hotspot-popover.375.png",
+    "evidence/impulse/fashion/home/media-lookbook-banner.open.hotspot-popover.768.png"
+  ],
+  "notlar": "Shoppable hero: Easy by design + 3 hotspot (+). Tıklanınca küçük ürün popover.",
+  "delta": "Impulse shoppable_hero. Şemaya altBaslik + cta eklendi. Sticky header görselin üstüne biner.",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://impulse-theme-fashion.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16365547094074__shoppable_hero_9HDgMT",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "+ işaretleri kapalı — popover yok"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#shopify-section-template--16365547094074__shoppable_hero_9HDgMT button.shoppable-hero__btn[aria-label='The Lena Midi']",
+      "capture": true,
+      "etiket": "hotspot-popover",
+      "not": "Lena Midi + → kit-popover: ad + fiyat + VIEW PRODUCT. Sayfa değişmemeli."
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "VIEW PRODUCT quick view açar; bu koşuda tıklanmadı (global-quick-view ayrı)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "3 beyaz + dairesi (Riva Tank / Lena Midi / Cami). Popover yok.",
+    "open": "Orta + (Lena Midi) açık: beyaz kit-popover, ad + $168 + VIEW PRODUCT. Sayfa home'da kaldı. VIEW PRODUCT class'ı js-modal-open-quick-modal — tam QV değil, küçük kart."
+  },
+  "interactionNote": "Bu +'lar mega menüde değil, shoppable hero'da. Selector unique section id; genel [id*='shoppable_hero'] hotspot id'lerine de uyuyor.",
+  "capture": {
+    "url": "https://impulse-theme-fashion.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T10:44:30.843Z"
+  }
+}

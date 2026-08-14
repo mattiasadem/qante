@@ -1,0 +1,67 @@
+{
+  "observationId": "impulse.fashion.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "impulse",
+  "preset": "fashion",
+  "sayfa": "faq-support",
+  "url": "https://impulse-theme-fashion.myshopify.com/pages/faq",
+  "selector": "[id$='__faq']",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/impulse/fashion/faq-support/faq-collapsible-tabs.1440.png",
+    "evidence/impulse/fashion/faq-support/faq-collapsible-tabs.375.png",
+    "evidence/impulse/fashion/faq-support/faq-collapsible-tabs.768.png",
+    "evidence/impulse/fashion/faq-support/faq-collapsible-tabs.changed.ilk-soru-acik.1440.png",
+    "evidence/impulse/fashion/faq-support/faq-collapsible-tabs.changed.ilk-soru-acik.375.png",
+    "evidence/impulse/fashion/faq-support/faq-collapsible-tabs.changed.ilk-soru-acik.768.png",
+    "evidence/impulse/fashion/faq-support/faq-collapsible-tabs.initial.ilk-hal.1440.png",
+    "evidence/impulse/fashion/faq-support/faq-collapsible-tabs.initial.ilk-hal.375.png",
+    "evidence/impulse/fashion/faq-support/faq-collapsible-tabs.initial.ilk-hal.768.png"
+  ],
+  "notlar": "FAQs: Orders & Shipping / Returns / Sizing grupları. Tüm maddeler kapalı.",
+  "delta": "Grup başlığı şemada yok (item.soru yeter). openFirst=false.",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://impulse-theme-fashion.myshopify.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "[id$='__faq']",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Tüm akordeonlar kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "[id$='__faq'] .collapsible-trigger",
+      "capture": true,
+      "etiket": "ilk-soru-acik",
+      "not": "How long does shipping take? cevabı görünür"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "3 grup (Orders & Shipping / Returns / Sizing), tüm sorular kapalı, aşağı chevron.",
+    "changed": "İlk soru açık: 'How long does shipping take?' + 5–7 gün cevabı, chevron yukarı. Diğerleri kapalı (allowMultipleOpen görünmedi)."
+  },
+  "capture": {
+    "url": "https://impulse-theme-fashion.myshopify.com/pages/faq",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T10:35:30.973Z"
+  }
+}

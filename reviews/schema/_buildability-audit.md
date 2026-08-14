@@ -65,6 +65,7 @@ Boş yakalanan bir overlay, şemanın **yarısını görünmez kılıyor**. Cart
 
 | Şema | Neden boş kanıt yetersiz |
 |---|---|
+| `navigation-header-mega` | `megaPaneller` (kolon/başlık/link/görsel/promo) kapalı panelde tamamen gizli — mevcut kanıt sadece kapalı header; şema DOM'dan yazılmış, kanıt yok. Ayrıca mobil hamburger+akordeon ayrı state |
 | `cart-page-main` | Satır tablosu, adet, ara toplam, kupon hiç görünmüyor |
 | `global-compare-drawer` | Karşılaştırma tablosu boşken sütun/satır dilbilgisi yok |
 | `global-predictive-search` | Öneri/sonuç/boş-sonuç katmanları yazı yazmadan çıkmıyor |

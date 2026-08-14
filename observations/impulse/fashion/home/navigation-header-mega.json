@@ -1,0 +1,108 @@
+{
+  "observationId": "impulse.fashion.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "impulse",
+  "preset": "fashion",
+  "sayfa": "home",
+  "url": "https://impulse-theme-fashion.myshopify.com/",
+  "selector": "#SiteHeader",
+  "captureMode": "viewport",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/impulse/fashion/home/navigation-header-mega.changed.mobil-akordeon-acik.375.png",
+    "evidence/impulse/fashion/home/navigation-header-mega.changed.mobil-akordeon-acik.768.png",
+    "evidence/impulse/fashion/home/navigation-header-mega.initial.kapali-header.1440.png",
+    "evidence/impulse/fashion/home/navigation-header-mega.initial.kapali-header.375.png",
+    "evidence/impulse/fashion/home/navigation-header-mega.initial.kapali-header.768.png",
+    "evidence/impulse/fashion/home/navigation-header-mega.open.mega-panel-acik.1440.png",
+    "evidence/impulse/fashion/home/navigation-header-mega.open.mobil-menu-acik.375.png",
+    "evidence/impulse/fashion/home/navigation-header-mega.open.mobil-menu-acik.768.png"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://impulse-theme-fashion.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali-header",
+      "not": "Mega kapalı — panel kolonları görünmez"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#site-nav-item--2 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mega-panel-acik",
+      "not": "Clothing (2. nav item). has-text regex summary içindeki SVG yüzünden patlıyor; id kullan."
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.js-drawer-open-nav[aria-controls='NavDrawer']",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mobil-menu-acik",
+      "not": "768'de de desktop summary gizli — hamburger"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#NavDrawer button.collapsible-trigger[aria-controls='Linklist-collections-all2']",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mobil-akordeon-acik",
+      "not": "Clothing yanındaki boş chevron (Linklist-collections-all2). Shop By Category Playwright tıklanınca koleksiyon sayfasına kaçtı."
+    }
+  ],
+  "notlar": "Impulse Fashion home header. Interact sıfır-bellek denemesi — tam envanter değil.",
+  "delta": "Clothing mega 5 kolon (şema max 4'tü → 6'ya çekildi). Her kolonda küçük yatay görsel var — kolon.item.gorsel eklendi. New panelinde ayrıca promo kartı (Linen Favorites / The Wren Coat) DOM'da duruyor; Clothing açık karesinde promo yok.",
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Ayrı state değil — masaüstü mega hover ile open üretildi"
+    },
+    {
+      "state": "filled",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "input",
+      "sebep": "Arama ayrı component (global-predictive-search)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Kapalı header: announcement + utility, ortada IMPULSE, New/Clothing/Sale | Lookbook/Journal/Theme Features, arama ikonu ve sepet. Mega kolonları yok.",
+    "open": "1440: Clothing hover → tam genişlik beyaz panel, 5 kolon (Tops, Bottoms, Dresses, Layers, Linen), her birinde küçük görsel + alt linkler. 375/768: hamburger → sol drawer (New/Clothing/Theme Features chevron, Sale/Lookbook/Journal düz link, Log in, utility, sosyal).",
+    "changed": "375/768: Clothing yanındaki boş chevron → Tops / Bottoms / Dresses / Layers / Linen açıldı (masaüstü kolon başlıklarıyla aynı). Her alt öğenin de kendi chevron'u var (üçüncü seviye). İlk deneme Shop By Category'ye tıklayınca drawer kapandı ve koleksiyon sayfasına gitti — o kare atıldı."
+  },
+  "interactionNote": "Clothing summary id = #site-nav-item--2 (SVG yüzünden text regex fail). 768 hamburger (desktop summary gizli). Shop By Category Playwright click ile navigate etti; evaluate click drawer'da kalıyordu. Doğru expander: #NavDrawer button.collapsible-trigger[aria-controls='Linklist-collections-all2'].",
+  "capture": {
+    "url": "https://impulse-theme-fashion.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T00:22:10.600Z"
+  }
+}

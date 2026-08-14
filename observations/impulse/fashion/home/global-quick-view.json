@@ -1,0 +1,82 @@
+{
+  "observationId": "impulse.fashion.home.global-quick-view",
+  "schemaId": "global-quick-view",
+  "kaynak": "impulse",
+  "preset": "fashion",
+  "sayfa": "home",
+  "url": "https://impulse-theme-fashion.myshopify.com/",
+  "selector": "#QuickShopModal-7528996241466",
+  "prepareScroll": ".shopify-section[id*='featured_collection_6YhzLm']",
+  "prepareClick": ".shopify-section[id*='featured_collection_6YhzLm'] .quick-product__btn",
+  "captureMode": "viewport",
+  "evidenceSlug": "global-quick-view",
+  "evidence": [
+    "evidence/impulse/fashion/home/global-quick-view.open.dialog-acik.1440.png"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://impulse-theme-fashion.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "scrollTo",
+      "selector": ".shopify-section[id*='featured_collection_6YhzLm']",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": ".shopify-section[id*='featured_collection_6YhzLm'] .grid-product",
+      "capture": false,
+      "viewports": [
+        "1440"
+      ],
+      "not": "Quick View small--hide — yalnız masaüstü"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": ".shopify-section[id*='featured_collection_6YhzLm'] .quick-product__btn",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "dialog-acik",
+      "viewports": [
+        "1440"
+      ],
+      "not": "The Lido Short QuickShopModal modal--is-active"
+    }
+  ],
+  "notlar": "Everyday Essentials ilk kart (Lido Short) Quick View. Kapalı modal boş.",
+  "delta": "layout=modal (ortalanmış, drawer değil). 375/768'de buton small--hide.",
+  "interactionStates": [
+    "open"
+  ],
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Kart hover'ı product-showcase-grid-featured'a ait"
+    },
+    {
+      "state": "changed",
+      "sebep": "Modal içi varyant/akordeon bu koşuda değiştirilmedi"
+    }
+  ],
+  "stateFindings": {
+    "open": "Ortalanmış modal: sol thumb+ana görsel, sağ Lido Short, Organic cotton, $120/$96 Save $24, SIZE CHART, stok, ADD TO CART, 4 akordeon (DESCRIPTION / MATERIALS / CERTIFICATIONS / SHIPPING). layout=modal."
+  },
+  "interactionNote": "Tetikleyici .quick-product__btn small--hide — 375/768 çekilmedi. Hover sonra force click.",
+  "capture": {
+    "url": "https://impulse-theme-fashion.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T10:34:38.724Z"
+  }
+}

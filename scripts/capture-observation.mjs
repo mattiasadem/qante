@@ -26,6 +26,7 @@ const qanteRoot = path.resolve(__dirname, "..");
 
 const DEFAULT_URLS = {
   hyper: "https://hyper-theme-demo.myshopify.com/",
+  impulse: "https://impulse-theme-fashion.myshopify.com/",
 };
 
 const viewports = JSON.parse(
@@ -203,7 +204,12 @@ try {
       const field = page.locator(prepareFill.selector).first();
       if (await field.count()) {
         await field.click({ force: true }).catch(() => {});
-        await field.fill(prepareFill.value || "chair").catch(() => {});
+        const q = (prepareFill.value || "").trim();
+        if (!q) {
+          console.warn("prepareFill.value yok — katalog kelimesi yaz; chair sabit değil");
+        } else {
+          await field.fill(q).catch(() => {});
+        }
         await page.waitForTimeout(1200);
       }
     }

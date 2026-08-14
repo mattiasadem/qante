@@ -1,0 +1,84 @@
+{
+  "observationId": "impulse.fashion.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "impulse",
+  "preset": "fashion",
+  "sayfa": "home",
+  "url": "https://impulse-theme-fashion.myshopify.com/",
+  "selector": "predictive-search",
+  "captureMode": "viewport",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/impulse/fashion/home/global-predictive-search.initial.arama-kapali.1440.png",
+    "evidence/impulse/fashion/home/global-predictive-search.initial.arama-kapali.375.png",
+    "evidence/impulse/fashion/home/global-predictive-search.initial.arama-kapali.768.png",
+    "evidence/impulse/fashion/home/global-predictive-search.input.arama-sonucu.1440.png",
+    "evidence/impulse/fashion/home/global-predictive-search.input.arama-sonucu.375.png",
+    "evidence/impulse/fashion/home/global-predictive-search.input.arama-sonucu.768.png"
+  ],
+  "prepareClick": "a.js-search-header",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://impulse-theme-fashion.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-kapali",
+      "not": "Arama overlay header üstünde off-screen (top negatif); ikon görünür"
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "a.js-search-header",
+      "capture": false,
+      "not": "Overlay'i viewport'a indir. İki ikon var (small / medium-up); clickVisible görünür olanı alır."
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input.search__input[name='q']",
+      "value": "dress",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "Fashion demo — chair boş döner. dress: suggestions + pages + collections + products"
+    }
+  ],
+  "notlar": "Impulse Fashion predictive search. Interact sıfır-bellek denemesi.",
+  "delta": "",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Sonuç kartları yazmadan gizli; hover search'ün ilk hali değil"
+    },
+    {
+      "state": "filled",
+      "sebep": "Anlamsız — arama veri doldurma değil, sorgu"
+    },
+    {
+      "state": "open",
+      "sebep": "İkon tıklanınca overlay iner ama dilbilgisi input (yazınca katmanlar) ile ölçüldü"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Arama overlay off-screen (top negatif). Header'da büyüteç ikonu (a.js-search-header). Sonuç paneli yok.",
+    "input": "dress yazınca overlay: SUGGESTIONS (dress, maxi dress, wrap dress), PRODUCTS (The Remy Day Dress, The Kai Shirt Dress, The Lena Midi + thumbnail), PAGES (How to pick out the perfect dress), COLLECTIONS (2026 Mini/Shirt/Maxi). 1440 iki kolon (sol metin, sağ ürün); 375/768 dikey yığın. View more + X kapatma. Şema oneriler/searchSuggest bunu kapsar; yeni slot yok."
+  },
+  "interactionNote": "Scan chair önerdi — fashion katalogda boş. Tetikleyici predictive-search dışında (prepareClick: a.js-search-header). Overlay kapalıyken input offsetParent true ama top:-239, fill için önce click şart.",
+  "capture": {
+    "url": "https://impulse-theme-fashion.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T00:14:43.985Z"
+  }
+}

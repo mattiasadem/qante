@@ -8,9 +8,61 @@
   "selector": ".header-section",
   "evidenceSlug": "navigation-header-mega",
   "evidence": [
+    "evidence/hyper/default/home/navigation-header-mega.1440.png",
     "evidence/hyper/default/home/navigation-header-mega.375.png",
     "evidence/hyper/default/home/navigation-header-mega.768.png",
-    "evidence/hyper/default/home/navigation-header-mega.1440.png"
+    "evidence/hyper/default/home/navigation-header-mega.changed.mobil-akordeon-acik.375.png",
+    "evidence/hyper/default/home/navigation-header-mega.changed.mobil-akordeon-acik.768.png",
+    "evidence/hyper/default/home/navigation-header-mega.open.mega-panel-acik.1440.png",
+    "evidence/hyper/default/home/navigation-header-mega.open.mobil-menu-acik.375.png",
+    "evidence/hyper/default/home/navigation-header-mega.open.mobil-menu-acik.768.png"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://hyper-theme-demo.myshopify.com/",
+      "capture": false,
+      "not": "Header için home"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "details > summary:has-text('Shop By Categories')",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mega-panel-acik",
+      "not": "Masaüstü: kategori menüsüne hover → mega panel (kolonlar + alt-linkler + görsel)"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.menu-drawer-button[aria-controls='MenuDrawer']",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mobil-menu-acik",
+      "not": "Mobil/tablet: hamburger → tam ekran menü drawer (768'de de summary gizli)"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#MenuDrawer summary, #MenuDrawer button[aria-expanded]",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mobil-akordeon-acik",
+      "not": "Mobil/tablet: bir üst kategoriye bas → akordeon alt-linkleri açılır"
+    }
   ],
   "capture": {
     "url": "https://hyper-theme-demo.myshopify.com/",
@@ -19,9 +71,22 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-11T13:26:12.118Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-13T20:57:30.493Z",
+    "mode": "section"
   },
-  "notlar": "Sticky header + mega menu (DOM’da .mega-menu var). Capture kapalı mega paneli gösterir; panel açık hali ayrı evidence olabilir.",
-  "delta": ""
+  "notlar": "Sticky header + mega menu (DOM’da .mega-menu var). initial kanıtı kapalı header; open state (mega panel açık) ve mobil menü drawer + akordeon interact ile eklendi.",
+  "delta": "",
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Kapalı header: logo, arama kutusu (kategori dropdown + input), utility linkleri (Find a store / Sign in / cart), altında yatay menü çubuğu (Shop By Categories, Shop By Room, Tables & Desks, Chairs & Stools, Pages, Theme Features, On Sale). megaPaneller'in içeriği burada GÖRÜNMÜYOR.",
+    "open": "1440: 'Shop By Categories'e hover → mega panel açıldı. 4 kolon (Furniture / Table & Desks / Chair & Stools / Home & Decor), her kolonda kalın başlık + altında dikey alt-link listesi (Sofas, Dining Tables, ...). Sağda ayrı bir görsel+promo kartı: 'Home & Decor / Decoration From $10 / Shop Now'. Bu tam olarak şemadaki megaPaneller.item = { kolonlar[].{baslik, linkler[]}, gorsel, promoKarti } yapısı. 375/768: summary gizli, hamburger açılıyor → tam ekran menü drawer, 'Shop By Categories' başlıklı liste + aynı promo kartı.",
+    "changed": "375/768: menü drawer içinde bir üst kategoriye basınca akordeon açılıyor — kolonlar masaüstünde yan yana, mobilde '+' genişleticili dikey akordeon (Furniture, Table & Desks, Chair & Stools, Home & Decor her biri +). Promo kartı mobilde de listenin altında duruyor."
+  },
+  "interactionNote": "Masaüstü mega panel HOVER ile açılıyor (JS/CSS). 768'de 'Shop By Categories' summary'si gizli — tablet mobil hamburger yolunu kullanıyor, o yüzden mega-hover adımı 1440'a, hamburger adımları 375+768'e viewport-filtrelendi. Şema (navigation-header-mega) önceden kanıtsız yazılmıştı; open state ile megaPaneller yapısı (kolon başlığı + linkler + görsel + promo kartı) artık görsel kanıtla doğrulandı."
 }

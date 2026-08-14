@@ -1,0 +1,68 @@
+{
+  "id": "editorial-dynamic-grid",
+  "kategori": "editorial",
+  "varyant": "dynamic-grid",
+  "scope": "instance",
+  "amac": "Kampanya veya lookbook görsellerini serbest bento ızgarada metin ve CTA ile sunmak",
+  "slots": {
+    "baslik": {
+      "tip": "text",
+      "maxLen": 80,
+      "zorunlu": false
+    },
+    "metin": {
+      "tip": "text",
+      "maxLen": 400,
+      "zorunlu": false
+    },
+    "cta": {
+      "tip": "button",
+      "zorunlu": false
+    },
+    "items": {
+      "tip": "array",
+      "min": 1,
+      "max": 16,
+      "item": {
+        "gorsel": {
+          "tip": "image",
+          "zorunlu": true
+        },
+        "etiket": {
+          "tip": "text",
+          "maxLen": 40,
+          "zorunlu": false
+        },
+        "link": {
+          "tip": "link",
+          "zorunlu": false
+        },
+        "span": {
+          "tip": "number",
+          "zorunlu": false
+        }
+      },
+      "zorunlu": true
+    }
+  },
+  "styleKnobs": {
+    "layout": "mosaic|equal|hero-left|hero-right",
+    "hizalama": "left|center",
+    "kolon": [
+      2,
+      3,
+      4
+    ],
+    "metinKonumu": "below|overlay"
+  },
+  "dataBindings": [],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "responsive": "1440 karışık span (1/2/3 kolon satırlar). 375 iki kolon veya yığın; kampanya metni alta iner.",
+  "_knobNote": "Signature home/blog-list kampanya + lookbook. Atlas bento. custom yok — span item slot'ta."
+}

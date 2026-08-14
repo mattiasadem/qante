@@ -8,10 +8,39 @@
   "selector": "predictive-search",
   "evidenceSlug": "global-predictive-search",
   "evidence": [
+    "evidence/hyper/default/home/global-predictive-search.1440.png",
     "evidence/hyper/default/home/global-predictive-search.375.png",
     "evidence/hyper/default/home/global-predictive-search.768.png",
-    "evidence/hyper/default/home/global-predictive-search.1440.png"
+    "evidence/hyper/default/home/global-predictive-search.input.arama-sonucu.1440.png",
+    "evidence/hyper/default/home/global-predictive-search.input.arama-sonucu.375.png",
+    "evidence/hyper/default/home/global-predictive-search.input.arama-sonucu.768.png"
   ],
+  "prepareFill": {
+    "selector": "input.search__input[type='search']",
+    "value": "chair"
+  },
+  "captureMode": "viewport",
+  "interactionSteps": [
+    {
+      "state": "input",
+      "action": "goto",
+      "value": "https://hyper-theme-demo.myshopify.com/",
+      "capture": false,
+      "not": "Taban sayfa"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input.search__input[type='search']",
+      "value": "chair",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "chair yaz → öneri/ürün sonuç paneli. select dropdown'ına yazılmaz."
+    }
+  ],
+  "notlar": "Predictive search — input fill ile sonuç paneli. Interact: chair sorgusu.",
+  "delta": "",
   "capture": {
     "url": "https://hyper-theme-demo.myshopify.com/",
     "viewports": [
@@ -19,19 +48,31 @@
       "768",
       "1440"
     ],
-    "method": "viewport",
+    "method": "interaction-steps",
     "mode": "viewport",
-    "updatedAt": "2026-08-11T14:35:50.578Z",
+    "updatedAt": "2026-08-13T23:31:04.953Z",
     "prepareFill": {
       "selector": "input.search__input[type='search']",
       "value": "chair"
     }
   },
-  "notlar": "Predictive search — input focus ile aç",
-  "delta": "",
-  "prepareFill": {
-    "selector": "input.search__input[type='search']",
-    "value": "chair"
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Search sonuç kartları yazmadan gizli; hover search'ün ilk hali değil"
+    },
+    {
+      "state": "filled",
+      "sebep": "Anlamsız — arama veri 'doldurma' değil, sorgu"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Kapalı: kategori select + 'What are you looking for?' input. Sonuç paneli yok.",
+    "input": "chair yazınca tam genişlik overlay: solda Related Products ızgarası (rozet, swatch, See All Results For 'Chair'), sağda Suggestions listesi + Collections listesi. Clear + X kapatma. Şema oneriler/searchSuggest bunu kapsar; yeni slot yok (ürünler mağaza verisi)."
   },
-  "captureMode": "viewport"
+  "interactionNote": "İlk scan taslağı select[type=select-one]'a chair yazmayı önerdi — elekten geçti. Doğru hedef input[name=q]."
 }

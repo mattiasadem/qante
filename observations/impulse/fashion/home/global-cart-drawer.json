@@ -1,0 +1,113 @@
+{
+  "observationId": "impulse.fashion.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "impulse",
+  "preset": "fashion",
+  "sayfa": "home",
+  "url": "https://impulse-theme-fashion.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/impulse/fashion/home/global-cart-drawer.1440.png",
+    "evidence/impulse/fashion/home/global-cart-drawer.375.png",
+    "evidence/impulse/fashion/home/global-cart-drawer.768.png",
+    "evidence/impulse/fashion/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/impulse/fashion/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/impulse/fashion/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/impulse/fashion/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/impulse/fashion/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/impulse/fashion/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/impulse/fashion/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/impulse/fashion/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/impulse/fashion/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "Boş çekmece: Cart + X + Your cart is currently empty. Hyper'daki koleksiyon kartları / Continue Shopping yok.",
+  "delta": "Boş hâl sade metin. Dolu: satır + adet + ORDER NOTE + SUBTOTAL + terms + CHECK OUT. Pair Well With yok.",
+  "captureMode": "viewport",
+  "prepareClick": "a.js-drawer-open-cart",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://impulse-theme-fashion.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.js-drawer-open-cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer: yalnız empty metin"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://impulse-theme-fashion.myshopify.com/products/the-wren-coat",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add']",
+      "capture": false,
+      "not": "PRE-ORDER gerçekten sepete ekler (Wren Coat XS)"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://impulse-theme-fashion.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a.js-drawer-open-cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu: ürün satırı + adet + ara toplam + checkout"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer .js-qty__adjust--plus",
+      "capture": false,
+      "not": "Adet 1 → 2"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet ve subtotal güncellendi mi"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Boş drawer: Cart + X + 'Your cart is currently empty.' Koleksiyon kartı / Continue Shopping / kargo barı yok.",
+    "filled": "The Wren Coat XS, thumb, − 1 + , birim $286, ORDER NOTE, SUBTOTAL $286, terms checkbox, CHECK OUT. Pair Well With yok.",
+    "changed": "Adet 1→2, SUBTOTAL $286→$572. Satır fiyatı birim ($286) kaldı. Drawer açık kalarak güncellendi."
+  },
+  "interactionNote": "PRE-ORDER butonu gerçek cart.add. Plus: #CartDrawer .js-qty__adjust--plus.",
+  "capture": {
+    "url": "https://impulse-theme-fashion.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T10:33:57.617Z",
+    "prepareClick": "a.js-drawer-open-cart, a[aria-controls='CartDrawer']"
+  }
+}

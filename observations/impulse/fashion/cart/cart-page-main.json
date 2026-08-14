@@ -1,0 +1,85 @@
+{
+  "observationId": "impulse.fashion.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "impulse",
+  "preset": "fashion",
+  "sayfa": "cart",
+  "url": "https://impulse-theme-fashion.myshopify.com/cart",
+  "selector": "[id$='__main']",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/impulse/fashion/cart/cart-page-main.1440.png",
+    "evidence/impulse/fashion/cart/cart-page-main.375.png",
+    "evidence/impulse/fashion/cart/cart-page-main.768.png",
+    "evidence/impulse/fashion/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/impulse/fashion/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/impulse/fashion/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/impulse/fashion/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/impulse/fashion/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/impulse/fashion/cart/cart-page-main.initial.cart-bos.768.png"
+  ],
+  "notlar": "Boş: Cart + Your cart is currently empty. + Continue shopping. Koleksiyon kartı yok.",
+  "delta": "Hyper boş sepetindeki 2×2 koleksiyon yok.",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://impulse-theme-fashion.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "[id$='__main']",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://impulse-theme-fashion.myshopify.com/products/the-wren-coat",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://impulse-theme-fashion.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "[id$='__main']",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart sayfası: satır + özet"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Ortalı Cart + empty metin + Continue shopping. Koleksiyon kartı yok.",
+    "filled": "1440 iki kolon: sol satır (thumb, Wren Coat XS, adet, Remove, $286) + sağ özet (ORDER NOTE, Subtotal, terms, CHECK OUT)."
+  },
+  "capture": {
+    "url": "https://impulse-theme-fashion.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T10:37:39.547Z"
+  }
+}
