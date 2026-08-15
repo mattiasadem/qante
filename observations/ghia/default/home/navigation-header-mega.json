@@ -1,0 +1,44 @@
+{
+  "observationId": "ghia.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "ghia",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://drinkghia.com/",
+  "selector": "#shopify-section-header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Sticky burgundy bar. Sol: Shop + Build Your Own Bundle / Order Our Cookbook / Recipes / Subscription / Find In Store. Orta Ghia SVG logo. Sağ: arama, Account, cart (0).",
+  "delta": "Shop hover → .mega-menu-container (CATEGORIES + FEATURED PRODUCTS). Dil seçici yok. Account /account (PII). 375 hamburger .mobile-menu-toggle.",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://drinkghia.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı sticky bar"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#header a[href*='all-of-the-spirit-none-of-the-booze'], header-menu a:has-text('Shop')",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Shop hover → CATEGORIES + featured ürünler"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Shop / Bundle / Cookbook / Recipes / Subscription / Find In Store; arama; Account; cart 0.",
+    "open": "1440 Shop mega: Bestsellers / Le Spritz / Apéritif / Le Fizz / Bundles / Objects + featured products."
+  },
+  "missingStates": []
+}

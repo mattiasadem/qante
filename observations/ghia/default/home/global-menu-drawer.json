@@ -1,0 +1,43 @@
+{
+  "observationId": "ghia.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "ghia",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://drinkghia.com/",
+  "selector": "#mobile-menu",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "375/768 hamburger → #mobile-menu tam ekran burgundy. Shop best sellers, cookbook promo, Shop All, Bundle, Subscription, Find In Store, Recipes, Obsessed review.",
+  "delta": "1440 hamburger 0px (lg:hidden). Mega masaüstü ayrı.",
+  "captureMode": "viewport",
+  "prepareClick": ".mobile-menu-toggle",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://drinkghia.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": ".mobile-menu-toggle",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Mobil menü açık"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: SHOP BEST SELLERS + cookbook + Shop All / Bundle / Subscription / Find In Store / Recipes."
+  },
+  "missingStates": []
+}

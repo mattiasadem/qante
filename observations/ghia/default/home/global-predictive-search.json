@@ -1,0 +1,51 @@
+{
+  "observationId": "ghia.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "ghia",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://drinkghia.com/",
+  "selector": ".header-search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "Header büyüteç .toggle-search → .header-search input[name=q] placeholder Search for products.",
+  "delta": "Öneri listesi yoklandıktan sonra yazılacak. Submit /search.",
+  "captureMode": "viewport",
+  "prepareClick": ".toggle-search",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://drinkghia.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".toggle-search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bos",
+      "not": "Açık arama input"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input[name='q']",
+      "value": "spritz",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "spritz",
+      "not": "katalogSorgu spritz — öneri beklenir"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Header içi Search for products.",
+    "input": "Yakalanacak."
+  },
+  "missingStates": []
+}

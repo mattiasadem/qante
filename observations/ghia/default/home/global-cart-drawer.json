@@ -1,0 +1,70 @@
+{
+  "observationId": "ghia.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "ghia",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://drinkghia.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Sağ panel #CartDrawer .cart__container 480px. Boş: YOUR CART IS EMPTY + SHOP NOW. Spend $60 for Free Shipping. Gift note $1. FREQUENTLY BOUGHT TOGETHER.",
+  "delta": "/cart ana section height 0 — sepet drawer. Native cart page yok.",
+  "captureMode": "viewport",
+  "prepareClick": ".site-header__cart-toggle",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://drinkghia.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".site-header__cart-toggle",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "YOUR CART IS EMPTY + frequently bought"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://drinkghia.com/products/ghia",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#shopify-section-template--17451695702250__main_product_v2 button[name='add'], #shopify-section-template--17451695702250__main_product_v2 button[type='submit']",
+      "capture": false,
+      "not": "PDP ATC — drawer açılmalı"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": ".site-header__cart-toggle",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "original-aperitif",
+      "not": "ATC sonrası drawer; kapalıysa ikon"
+    }
+  ],
+  "stateFindings": {
+    "initial": "YOUR CART IS EMPTY; Spend $60 for Free Shipping; gift note; FBT pour spout / Blood Orange.",
+    "filled": "Yakalanacak — Original Apéritif satırı beklenir."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout/kupon/gift note doldurulmadı. /cart sayfa gövdesi 0px."
+}
