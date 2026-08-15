@@ -1,0 +1,67 @@
+{
+  "observationId": "vessi.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "vessi",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/vessi/default/product-detail/product-info-main.1440.png",
+    "evidence/vessi/default/product-detail/product-info-main.375.png",
+    "evidence/vessi/default/product-detail/product-info-main.768.png",
+    "evidence/vessi/default/product-detail/product-info-main.changed.beden-6.1440.png",
+    "evidence/vessi/default/product-detail/product-info-main.changed.beden-6.375.png",
+    "evidence/vessi/default/product-detail/product-info-main.changed.beden-6.768.png",
+    "evidence/vessi/default/product-detail/product-info-main.initial.marble-white.1440.png",
+    "evidence/vessi/default/product-detail/product-info-main.initial.marble-white.375.png",
+    "evidence/vessi/default/product-detail/product-info-main.initial.marble-white.768.png"
+  ],
+  "url": "https://vessi.com/products/womens-weekend-classic-marble-white",
+  "selector": "#shopify-section-template--16074643898453__main",
+  "notlar": "Best Seller · Weekend Classic · $150 · (25,182). Galeri + buy box. ~1248px.",
+  "delta": "Breadcrumb bu dump'ta main içinde net değil. Reviews sayısı buy box'ta.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://vessi.com/products/womens-weekend-classic-marble-white",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16074643898453__main",
+      "capture": true,
+      "etiket": "marble-white"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--16074643898453__main input[name='Size'][value='6']",
+      "capture": true,
+      "etiket": "beden-6",
+      "not": "Beden 6 — fiyat/ATC değişimi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Best Seller · Weekend Classic · $150 · 25,184 reviews; Marble White; sizes 5–11 unselected; CTA Select a size.",
+    "changed": "Size: 6 (solid blue); Only a few left; CTA Add to Cart."
+  },
+  "missingStates": [],
+  "interactionNote": "Size = label.product-main__selector--size + radio name=Size. Size guide + FIND A STORE leftover. Reviews sayısı buy box'ta.",
+  "capture": {
+    "url": "https://vessi.com/products/womens-weekend-classic-marble-white",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:11:45.899Z"
+  }
+}

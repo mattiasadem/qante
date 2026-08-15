@@ -1,0 +1,63 @@
+{
+  "observationId": "vessi.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "vessi",
+  "preset": "default",
+  "sayfa": "home",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/vessi/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/vessi/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "url": "https://vessi.com/",
+  "selector": "#mobile-menu-drawer",
+  "captureMode": "viewport",
+  "notlar": "Mobil hamburger #mobile-menu-trigger → #mobile-menu-drawer. Üst: account / search / cart / USD|EN / X. Shop: Women [+] Men [+] Best Sellers / Back to school / SALE; SUPPORT+.",
+  "delta": "1440'ta hamburger lg_min:hidden — N/A beklenir. Ayrı shopify-section yok.",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://vessi.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "header-v2.header-v2",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#mobile-menu-trigger",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "viewports": [
+        "375",
+        "768"
+      ]
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 full-screen: account, search, cart, USD | EN, X; Shop · Women [+] · Men [+] · Best Sellers · Back to school · SALE (lime) · SUPPORT +."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 N/A. 1. deneme .header-v2-drawer__content 0px (Women mega). 2. deneme #mobile-menu-drawer OK. Women/Men/Support accordion leftover. Search ikonu bu drawer'da — 375 predictive leftover.",
+  "capture": {
+    "url": "https://vessi.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:10:04.304Z",
+    "prepareClick": "#mobile-menu-trigger"
+  }
+}
