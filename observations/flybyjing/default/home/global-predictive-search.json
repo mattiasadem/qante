@@ -1,0 +1,78 @@
+{
+  "observationId": "flybyjing.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "flybyjing",
+  "preset": "default",
+  "sayfa": "home",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/flybyjing/default/home/global-predictive-search.initial.bar.1440.png",
+    "evidence/flybyjing/default/home/global-predictive-search.input.chili.1440.png"
+  ],
+  "delta": "Shapes Alpine predictive. Overlay #predictiveSearchResults tam ekran. /search sayfası ayrı (search-results).",
+  "url": "https://flybyjing.com/",
+  "selector": "#predictiveSearchResults",
+  "captureMode": "viewport",
+  "notlar": "SEARCH link header input'u açar (#header-search). chili → PRODUCTS 5 kart + ARTICLES + PAGES + VIEW ALL RESULTS.",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://flybyjing.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.font-heading[href='/search']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bar",
+      "viewports": ["1440"],
+      "not": "Header search input açık; sonuç yok"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#header-search",
+      "value": "chili",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "chili",
+      "viewports": ["1440"],
+      "not": "PRODUCTS + ARTICLES + PAGES"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440 SEARCH → kırmızı overlay; boş #header-search.",
+    "input": "chili → PRODUCTS 5 kart (Original / XL / Noodles / Xtra Crunchy / Trio) + ARTICLES + PAGES + VIEW ALL RESULTS."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "375/768 header SEARCH gizli. Menü drawer #Search dolduruldu; #predictiveSearchResults 0px. Mobil overlay yoklandı değil — leftover."
+    }
+  ],
+  "interactionNote": "katalogSorgu=chili. Predictive yalnız 1440.",
+  "capture": {
+    "url": "https://flybyjing.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:36:38.980Z"
+  }
+}
