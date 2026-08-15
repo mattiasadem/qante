@@ -4,7 +4,7 @@ Discover bitti. Bu dosya **yalnız kapalı kare yalanı** için: mega, arama, se
 
 Aynı chrome’u preset’te tekrar çekme (Allure drawer = diğer Prestige). Yeni şema yok. Şema uydurma / sürükleme / ödeme yok.
 
-**Şu anki odak:** 64 şema temsilcisi interact’ten geçti. Yeni tur yok; kullanıcı istemeden chrome tekrarı / styleKnobs yok.
+**Şu anki odak:** Unique yalancı kuyruğu boş. Kalanlar chrome tekrarı / sürükleme / form.
 
 ---
 
@@ -17,6 +17,7 @@ Aynı chrome’u preset’te tekrar çekme (Allure drawer = diğer Prestige). Ye
 | Impulse Dune / Terrain | lookbook / spec hotspot `changed` |
 | Prestige Allure | mega · cart sayfa · cart drawer · search · PLP filtre · PDP swatch · FAQ · lookbook hotspot · WOMEN/MEN sekme · GQ/FARFETCH alıntı |
 | Impact Sound | mega · search · cart drawer · featured hover · cart sayfa · PLP filtre · FAQ · PDP swatch · lookbook Read more · alıntı Next · timeline 2017 |
+| Impact Cocoon / Balance | shop-the-look hotspot (Vase→Plica · Bra→Leggings) · Balance PDP Sizing accordion |
 
 ---
 
@@ -125,3 +126,57 @@ Temsilci tarandı. Şema uydurulmadı. Form / kupon / ülke seçimi gönderilmed
 - [x] promo-announcement-bar (locale footer ile aynı) · countdown (kupon yok) · grid-banner · marquee
 - [x] social-proof-brand-logos · trust-icon-row · trust-contact-icon-band
 - [x] lead-capture-form · lead-capture-newsletter-band — gönderilmedi
+
+---
+
+## Stretch · Snow
+
+- [x] `navigation-header-mega` — 1440’te de Menu tık; Apparel → Jackets + ürün kartları
+- [x] `global-predictive-search` — jacket → Products ızgarası
+- [x] `global-cart-drawer` — boş / Alta €675 / adet 2 €1.350 (`updates[]`)
+- [x] `product-showcase-grid-featured` — hover beden
+- [x] `product-showcase-grid-plp` — Filters çekmecesi
+- [x] `product-info-main` — SM → MD; renk linked PDP
+- [x] `faq-collapsible-tabs` — ilk `summary`
+- [x] `footer-columns-newsletter` — ülke listesi
+- [x] `editorial-timeline` — Performance
+- [x] `media-lookbook-slider` — + → Toba QV
+- [x] `search-results` — Pages / Size chart
+- [x] featured slider Next — 375/768 gizli; 1440 kare aynı (missingStates)
+
+## Stretch · Sand
+
+- [x] `navigation-header-mega` — 375/768 hamburger; 1440 Learn/Theme/Presets (Shop koleksiyona gider)
+- [x] `global-predictive-search` — oil → Products
+- [x] `global-cart-drawer` — gel €36 / adet 2 €72
+- [x] `product-showcase-tabs` — Best sellers → Sets
+- [x] `hero-slideshow` — slayt 2 ethical beauty
+- [x] `product-showcase-grid-plp` — Filter çekmecesi
+- [x] `product-info-main` — Skin type accordion
+- [x] `faq-collapsible-tabs` — ilk summary
+- [x] `editorial-timeline` — hyaluronic acid
+- [x] `search-results` — Blog posts
+- [x] `footer-columns-newsletter` — ülke listesi
+
+## Stretch · Diffuse
+
+- [x] `navigation-header-mega` — 375/768 Sun/Optical/Our world/Presets; 1440 Our world/Presets (SUN/OPTICAL koleksiyona gider)
+- [x] `global-predictive-search` — sun → Products
+- [x] `global-cart-drawer` — Traveler €209 / adet 2 €418
+- [x] `product-showcase-tabs` — SUN → OPTICAL
+- [x] `hero-slideshow` — Vision, perfectly framed
+- [x] `media-lookbook-slider` — + → Elias QV
+- [x] `product-showcase-grid-plp` — Filter çekmecesi
+- [x] `search-results` — Blog posts
+- [x] `product-info-main` — Shipping accordion
+- [x] `faq-collapsible-tabs` — ilk summary
+- [x] `editorial-timeline` — About Restoring vision · Craftsmanship Titanium
+- [x] Elias tabs SUN → OPTICAL
+- [x] Titanium hotspot + → Titanium frames
+- [x] `footer-columns-newsletter` — ülke listesi
+
+## Impact · Cocoon / Balance (shop-the-look)
+
+- [x] Cocoon `media-lookbook-slider` — Vase $68 → Plica cushion From $79
+- [x] Balance `media-lookbook-slider` — Grace Bra €89 → Skye Leggings €89 (375'te liste zaten açık)
+- [x] Balance `product-info-tabs` — Sizing açık (size up, model M)

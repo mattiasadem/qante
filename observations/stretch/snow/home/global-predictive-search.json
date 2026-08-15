@@ -1,0 +1,73 @@
+{
+  "observationId": "stretch.snow.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "stretch",
+  "preset": "snow",
+  "sayfa": "home",
+  "url": "https://stretch-theme-snow.myshopify.com/",
+  "selector": "#predictive-search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/stretch/snow/home/global-predictive-search.1440.png",
+    "evidence/stretch/snow/home/global-predictive-search.375.png",
+    "evidence/stretch/snow/home/global-predictive-search.768.png",
+    "evidence/stretch/snow/home/global-predictive-search.initial.arama-bos.1440.png",
+    "evidence/stretch/snow/home/global-predictive-search.initial.arama-bos.375.png",
+    "evidence/stretch/snow/home/global-predictive-search.initial.arama-bos.768.png",
+    "evidence/stretch/snow/home/global-predictive-search.input.arama-sonucu.1440.png",
+    "evidence/stretch/snow/home/global-predictive-search.input.arama-sonucu.375.png",
+    "evidence/stretch/snow/home/global-predictive-search.input.arama-sonucu.768.png"
+  ],
+  "notlar": "Arama drawer. #search-drawer display:contents — görünür panel #predictive-search.",
+  "delta": "Host display:contents; kutu #predictive-search. Popular searches + featured products.",
+  "captureMode": "viewport",
+  "prepareClick": "a[aria-controls=\"search-drawer\"]",
+  "capture": {
+    "url": "https://stretch-theme-snow.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T22:10:43.249Z",
+    "prepareClick": "a[aria-controls=\"search-drawer\"]"
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://stretch-theme-snow.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[aria-controls=\"search-drawer\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Popular searches + featured products. Host display:contents."
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#search-drawer-input",
+      "value": "jacket",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "katalogSorgu jacket — ürün listesi beklenir"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Sağ drawer: Search for…, Popular searches (Lookbook, Jackets, Alta, Lokka), Featured products.",
+    "input": "jacket yazınca Products/Collections/Blog posts/Pages sekmeleri + 2×2 ürün ızgarası (Cana, Teide, Senja)."
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "observationId": "stretch.diffuse.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "stretch",
+  "preset": "diffuse",
+  "sayfa": "home",
+  "url": "https://stretch-theme-amber.myshopify.com/",
+  "selector": "#predictive-search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/stretch/diffuse/home/global-predictive-search.1440.png",
+    "evidence/stretch/diffuse/home/global-predictive-search.375.png",
+    "evidence/stretch/diffuse/home/global-predictive-search.768.png",
+    "evidence/stretch/diffuse/home/global-predictive-search.initial.arama-bos.1440.png",
+    "evidence/stretch/diffuse/home/global-predictive-search.initial.arama-bos.375.png",
+    "evidence/stretch/diffuse/home/global-predictive-search.initial.arama-bos.768.png",
+    "evidence/stretch/diffuse/home/global-predictive-search.input.arama-sonucu.1440.png",
+    "evidence/stretch/diffuse/home/global-predictive-search.input.arama-sonucu.375.png",
+    "evidence/stretch/diffuse/home/global-predictive-search.input.arama-sonucu.768.png"
+  ],
+  "notlar": "Arama drawer.",
+  "delta": "Host display:contents.",
+  "capture": {
+    "url": "https://stretch-theme-amber.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T10:14:17.579Z",
+    "prepareClick": "a[aria-controls=\"search-drawer\"]"
+  },
+  "captureMode": "viewport",
+  "prepareClick": "a[aria-controls=\"search-drawer\"]",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://stretch-theme-amber.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[aria-controls=\"search-drawer\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Popular: women men titanium elias."
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#search-drawer-input",
+      "value": "sun",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "katalogSorgu sun."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Sağ drawer: SEARCH FOR…, Popular: Women Men Titanium Elias Marlowe.",
+    "input": "sun → Products/Collections; Capsule / Minimal / Elias ızgarası."
+  }
+}

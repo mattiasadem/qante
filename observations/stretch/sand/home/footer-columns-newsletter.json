@@ -1,0 +1,69 @@
+{
+  "observationId": "stretch.sand.home.footer-columns-newsletter",
+  "schemaId": "footer-columns-newsletter",
+  "kaynak": "stretch",
+  "preset": "sand",
+  "sayfa": "home",
+  "url": "https://stretch-theme-sand.myshopify.com/",
+  "selector": "#shopify-section-sections--24036029759797__footer",
+  "evidenceSlug": "footer-columns-newsletter",
+  "evidence": [
+    "evidence/stretch/sand/home/footer-columns-newsletter.1440.png",
+    "evidence/stretch/sand/home/footer-columns-newsletter.375.png",
+    "evidence/stretch/sand/home/footer-columns-newsletter.768.png",
+    "evidence/stretch/sand/home/footer-columns-newsletter.initial.ilk-hal.1440.png",
+    "evidence/stretch/sand/home/footer-columns-newsletter.initial.ilk-hal.375.png",
+    "evidence/stretch/sand/home/footer-columns-newsletter.initial.ilk-hal.768.png",
+    "evidence/stretch/sand/home/footer-columns-newsletter.open.ulke-listesi.1440.png",
+    "evidence/stretch/sand/home/footer-columns-newsletter.open.ulke-listesi.375.png",
+    "evidence/stretch/sand/home/footer-columns-newsletter.open.ulke-listesi.768.png"
+  ],
+  "notlar": "Shop / brand / info kolonları + newsletter.",
+  "delta": "",
+  "capture": {
+    "url": "https://stretch-theme-sand.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T08:12:27.541Z"
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionNote": "Form submit yok. Ülke listesi section kutusunda; viewport tepeye kaçmasın.",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://stretch-theme-sand.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-sections--24036029759797__footer",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Footer."
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#shopify-section-sections--24036029759797__footer button[aria-controls=\"popover-localization--sections--24036029759797__footer-country\"]",
+      "capture": true,
+      "captureMode": "section",
+      "etiket": "ulke-listesi",
+      "not": "Canada/France/HK/Japan/UK/US."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Shop/brand/info/about + STRETCH filigran, france (eur €).",
+    "open": "Ülke listesi: Canada, France ✓, HK, Japan, UK, US. Section kutusunda."
+  }
+}

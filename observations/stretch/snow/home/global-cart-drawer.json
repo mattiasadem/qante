@@ -1,0 +1,113 @@
+{
+  "observationId": "stretch.snow.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "stretch",
+  "preset": "snow",
+  "sayfa": "home",
+  "url": "https://stretch-theme-snow.myshopify.com/",
+  "selector": "#cart-drawer x-tabs",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/stretch/snow/home/global-cart-drawer.1440.png",
+    "evidence/stretch/snow/home/global-cart-drawer.375.png",
+    "evidence/stretch/snow/home/global-cart-drawer.768.png",
+    "evidence/stretch/snow/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/stretch/snow/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/stretch/snow/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/stretch/snow/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/stretch/snow/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/stretch/snow/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/stretch/snow/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/stretch/snow/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/stretch/snow/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "Boş sepet drawer. #cart-drawer display:contents — görünür panel x-tabs. Cart/Offers sekmeleri.",
+  "delta": "Host display:contents; kutu x-tabs. Cart + Offers sekmeli boş hâl.",
+  "captureMode": "viewport",
+  "prepareClick": "a[aria-controls=\"cart-drawer\"]",
+  "capture": {
+    "url": "https://stretch-theme-snow.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T22:26:06.747Z",
+    "prepareClick": "a[aria-controls=\"cart-drawer\"]"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://stretch-theme-snow.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[aria-controls=\"cart-drawer\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Your cart is empty + Offers sekmesi"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://stretch-theme-snow.myshopify.com/products/alta-down-jacket-black",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--23731650691440__main button:has-text('Add to cart')",
+      "capture": false,
+      "not": "Alta Down Jacket Black ATC"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://stretch-theme-snow.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a[aria-controls=\"cart-drawer\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Alta satırı + toplam"
+    },
+    {
+      "state": "changed",
+      "action": "fill",
+      "selector": "#cart-drawer input[name='updates[]']",
+      "value": "2",
+      "capture": false,
+      "not": "Plus name yok; input aria=Change quantity"
+    },
+    {
+      "state": "changed",
+      "action": "press",
+      "value": "Enter",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 2 → toplam €1350 beklenir"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Sağ drawer: Cart + Offers (kırmızı nokta), Your cart is empty, Continue shopping.",
+    "filled": "Cart (1), free shipping bar, Ready to ship, Alta SM €675, adet 1, You may also like, Checkout. ATC ui.",
+    "changed": "Adet 2, satır ve Total €1.350, Cart (2). Plus name yok — input updates[]."
+  }
+}

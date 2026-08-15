@@ -1,0 +1,101 @@
+{
+  "observationId": "stretch.snow.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "stretch",
+  "preset": "snow",
+  "sayfa": "home",
+  "url": "https://stretch-theme-snow.myshopify.com/",
+  "selector": "#shopify-section-sections--23643214578032__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/stretch/snow/home/navigation-header-mega.1440.png",
+    "evidence/stretch/snow/home/navigation-header-mega.375.png",
+    "evidence/stretch/snow/home/navigation-header-mega.768.png",
+    "evidence/stretch/snow/home/navigation-header-mega.changed.apparel-panel.1440.png",
+    "evidence/stretch/snow/home/navigation-header-mega.changed.apparel-panel.375.png",
+    "evidence/stretch/snow/home/navigation-header-mega.changed.apparel-panel.768.png",
+    "evidence/stretch/snow/home/navigation-header-mega.changed.presets-panel.1440.png",
+    "evidence/stretch/snow/home/navigation-header-mega.changed.presets-panel.375.png",
+    "evidence/stretch/snow/home/navigation-header-mega.changed.presets-panel.768.png",
+    "evidence/stretch/snow/home/navigation-header-mega.changed.presets-panel.1440.png",
+    "evidence/stretch/snow/home/navigation-header-mega.changed.presets-panel.375.png",
+    "evidence/stretch/snow/home/navigation-header-mega.changed.presets-panel.768.png",
+    "evidence/stretch/snow/home/navigation-header-mega.initial.kapali-header.1440.png",
+    "evidence/stretch/snow/home/navigation-header-mega.initial.kapali-header.375.png",
+    "evidence/stretch/snow/home/navigation-header-mega.initial.kapali-header.768.png",
+    "evidence/stretch/snow/home/navigation-header-mega.open.menu-acik.1440.png",
+    "evidence/stretch/snow/home/navigation-header-mega.open.menu-acik.375.png",
+    "evidence/stretch/snow/home/navigation-header-mega.open.menu-acik.768.png"
+  ],
+  "notlar": "Header: logo, Menu, EUR, Login, News modal, Search, Cart. Katmanlı drawer: Apparel + Presets.",
+  "delta": "",
+  "interactionNote": "Jackets/Tops/Bottoms/Shop all yazılı <a> — koleksiyona gider, changed değil. Presets altındaki Beauty/Jewelry/Clothing ve Stretch/Diffuse/Snow kartları Theme Store’a çıkar (pxf). Next her iki panelde de aynı üç kartı bırakıyor, Previous beliriyor; ayrı kare yok.",
+  "capture": {
+    "url": "https://stretch-theme-snow.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T23:01:05.107Z"
+  },
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://stretch-theme-snow.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali-header",
+      "not": "Menu kapalı. 1440'te de hamburger — hover mega yok."
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button[aria-controls=\"menu-drawer\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "menu-acik",
+      "not": "Menu → Apparel, FW24 Lookbook, Accessories, About…"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#menu-drawer button[aria-controls=\"menu-drawer-panel-1\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "apparel-panel",
+      "not": "Apparel → Back, Jackets/Tops/Bottoms + ürün kartları. Yazılı <a> tıklanmaz."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#menu-drawer button[aria-controls=\"menu-drawer-panel-main\"]",
+      "capture": false,
+      "not": "Back → ana menü. Presets Apparel açıkken gizli."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#menu-drawer button[aria-controls=\"menu-drawer-panel-6\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "presets-panel",
+      "not": "Presets → Back + Beauty/Jewelry/Clothing + Stretch/Diffuse/Snow kartları. Kartlar Theme Store'a çıkar, tıklanmaz."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "1440'te de hamburger. STRETCH + EUR/hesap/zil/arama/sepet. Mega hover yok.",
+    "open": "Menu tık → soldan beyaz drawer: Apparel (ok), FW24 Lookbook, Accessories, About, Journal, Presets (ok); altta Theme features/Docs/FAQ/Contact + sosyal.",
+    "changed": "İki katman. Apparel: Back, Jackets/Tops/Bottoms/Shop all + Alta / 6_01 / Lokka. Presets: Back, Beauty & Cosmetics / Jewelry & Accessories / Clothing & Fashion + Stretch / Diffuse / Snow telefon kartları ve Next."
+  }
+}

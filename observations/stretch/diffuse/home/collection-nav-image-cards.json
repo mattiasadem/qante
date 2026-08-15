@@ -1,0 +1,73 @@
+{
+  "observationId": "stretch.diffuse.home.collection-nav-image-cards",
+  "schemaId": "collection-nav-image-cards",
+  "kaynak": "stretch",
+  "preset": "diffuse",
+  "sayfa": "home",
+  "url": "https://stretch-theme-amber.myshopify.com/",
+  "selector": "#shopify-section-template--17169449254987__links_with_image_TRyGtU",
+  "evidenceSlug": "collection-nav-image-cards",
+  "evidence": [
+    "evidence/stretch/diffuse/home/collection-nav-image-cards.1440.png",
+    "evidence/stretch/diffuse/home/collection-nav-image-cards.375.png",
+    "evidence/stretch/diffuse/home/collection-nav-image-cards.768.png",
+    "evidence/stretch/diffuse/home/collection-nav-image-cards.changed.capsule.375.png",
+    "evidence/stretch/diffuse/home/collection-nav-image-cards.changed.capsule.768.png",
+    "evidence/stretch/diffuse/home/collection-nav-image-cards.initial.titanium.1440.png",
+    "evidence/stretch/diffuse/home/collection-nav-image-cards.initial.titanium.375.png",
+    "evidence/stretch/diffuse/home/collection-nav-image-cards.initial.titanium.768.png"
+  ],
+  "notlar": "Titanium + görsel linkler.",
+  "delta": "links_with_image.",
+  "interactionNote": "1440 liste <a> (Titanium/Capsule/Ellipse) sayfa değiştirir. Changed yalnız 375/768 Go to item 2.",
+  "capture": {
+    "url": "https://stretch-theme-amber.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T10:32:23.286Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://stretch-theme-amber.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17169449254987__links_with_image_TRyGtU",
+      "capture": true,
+      "etiket": "titanium",
+      "not": "Titanium aktif."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--17169449254987__links_with_image_TRyGtU button:has-text('Go to item 2')",
+      "value": 1000,
+      "capture": true,
+      "etiket": "capsule",
+      "not": "Nokta 2 — Capsule. Liste <a> sayfa değiştirir."
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "1440 scroll-marker gizli; liste <a> sayfa değiştirir. 375/768 Capsule slayt yazıldı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440 Titanium/Capsule/Ellipse liste + görsel. 375 Titanium slayt 1.",
+    "changed": "375/768 Go to item 2 → Capsule, modern versatile. 1440 nokta gizli."
+  }
+}

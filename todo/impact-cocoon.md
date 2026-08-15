@@ -4,7 +4,7 @@
 *Parent:* [`impact.md`](./impact.md) · Balance: [`impact-balance.md`](./impact-balance.md)  
 *Theme Store:* Cocoon → Home demosu
 
-**Şu anki odak:** ✅ delta — 2 obs · 6 kanıt · 0 yeni şema
+**Şu anki odak:** ✅ delta + shop-the-look hotspot — 2 obs · 12 kanıt · 0 yeni şema
 
 **Kural:** Full kopya yok.
 
@@ -16,13 +16,13 @@
 |---|---|
 | Preset | `cocoon` ✅ |
 | Observation | **2** (3vp) |
-| Evidence PNG | **6** |
+| Evidence PNG | **12** |
 | Şema | **2 reuse** · **0 yeni** |
 | Taranan sayfa | home · collection · PDP · about · faq · blog |
 | Atlandı | theme-features · designer landing · revealed-image (0) · newsletter-popup |
 
 **Kapsam satırı:**  
-`Impact · Cocoon · delta · 6 sayfa gezildi · 2 gözlem · 6 kanıt · 0 yeni şema · Shopify`
+`Impact · Cocoon · delta · 6 sayfa gezildi · 2 gözlem · 12 kanıt · 0 yeni şema · Shopify · hotspot interact`
 
 ---
 
@@ -53,3 +53,4 @@
 1. revealed-image zero-size (Sound ile aynı)
 2. Designer sayfaları taranmadı
 3. PDP shop-the-look / feature-chart ayrıca çekilmedi
+4. Home shop-the-look hotspot `changed` — Vase $68 → Plica From $79 (üç viewport)

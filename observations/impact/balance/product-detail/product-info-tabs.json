@@ -8,12 +8,53 @@
   "selector": "#shopify-section-template--16046401683632__1663063455d4de7f0c",
   "evidenceSlug": "product-info-tabs",
   "evidence": [
+    "evidence/impact/balance/product-detail/product-info-tabs.1440.png",
     "evidence/impact/balance/product-detail/product-info-tabs.375.png",
     "evidence/impact/balance/product-detail/product-info-tabs.768.png",
-    "evidence/impact/balance/product-detail/product-info-tabs.1440.png"
+    "evidence/impact/balance/product-detail/product-info-tabs.changed.beden.1440.png",
+    "evidence/impact/balance/product-detail/product-info-tabs.changed.beden.375.png",
+    "evidence/impact/balance/product-detail/product-info-tabs.changed.beden.768.png",
+    "evidence/impact/balance/product-detail/product-info-tabs.initial.kapali.1440.png",
+    "evidence/impact/balance/product-detail/product-info-tabs.initial.kapali.375.png",
+    "evidence/impact/balance/product-detail/product-info-tabs.initial.kapali.768.png"
   ],
   "notlar": "Sol Description + başlık. Sağ kutu: Details / Sizing / Care / Sustainability (kapalı). 375'te istif.",
   "delta": "Sound PDP'de ayrı accordion-content yok.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://impact-theme-shape.myshopify.com/products/infinity-bra-navy-blue",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16046401683632__1663063455d4de7f0c",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "Dört accordion kapalı."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--16046401683632__1663063455d4de7f0c details.accordion:has-text('Sizing') > summary",
+      "value": 800,
+      "capture": true,
+      "etiket": "beden",
+      "not": "Sizing açık: size up, model M. URL PDP'de."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Sol Description + Infinity bra metni. Sağ (375'te altta) dört kapalı satır: Details / Sizing / Care / Sustainability, ok aşağı.",
+    "changed": "Sizing açık, ok yukarı: We recommend sizing up · Model size M · 180cm / 5’9” · Bra EU 75, US/UK 34. Diğer üçü kapalı. URL PDP'de."
+  },
+  "interactionNote": "Details / Care / Sustainability ayrıca açılmadı. Şemada accordion + tab.change zaten var.",
   "capture": {
     "url": "https://impact-theme-shape.myshopify.com/products/infinity-bra-navy-blue",
     "viewports": [
@@ -22,7 +63,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-14T15:08:11.918Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T10:47:52.823Z"
   }
 }

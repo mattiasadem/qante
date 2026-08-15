@@ -8,17 +8,62 @@
   "selector": "#shopify-section-template--16687744418048__1656505187d97aa25a",
   "evidenceSlug": "media-lookbook-slider",
   "evidence": [
+    "evidence/impact/cocoon/home/media-lookbook-slider.1440.png",
     "evidence/impact/cocoon/home/media-lookbook-slider.375.png",
     "evidence/impact/cocoon/home/media-lookbook-slider.768.png",
-    "evidence/impact/cocoon/home/media-lookbook-slider.1440.png"
+    "evidence/impact/cocoon/home/media-lookbook-slider.changed.yastik.1440.png",
+    "evidence/impact/cocoon/home/media-lookbook-slider.changed.yastik.375.png",
+    "evidence/impact/cocoon/home/media-lookbook-slider.changed.yastik.768.png",
+    "evidence/impact/cocoon/home/media-lookbook-slider.initial.vazo.1440.png",
+    "evidence/impact/cocoon/home/media-lookbook-slider.initial.vazo.375.png",
+    "evidence/impact/cocoon/home/media-lookbook-slider.initial.vazo.768.png"
   ],
   "notlar": "Shop the room. Sol oda + 2 hotspot, sağ Bottoms Up Vase $68 kartı.",
   "delta": "Sound'da shop-the-look yok. Balance sustainability ile aynı iskelet, home'da.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://impact-theme-home.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16687744418048__1656505187d97aa25a",
+      "capture": true,
+      "etiket": "vazo",
+      "not": "Bottoms Up Vase $68."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--16687744418048__1656505187d97aa25a button.shop-the-look__dot:has-text('Go to item 2')",
+      "value": 1000,
+      "capture": true,
+      "etiket": "yastik",
+      "not": "Plica Sprinkle Cushion. URL home'da."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Shop the room. Sol oda + 2 nokta (vazo aktif). 768/1440 sağ kart: Bottoms Up Vase (Navy Blue) $68, HAY, New, tek lacivert swatch. 375'te görsel üstte, altta yatay kart: vazo + Add, yastık kartı sağda kesik.",
+    "changed": "İkinci nokta (yastık). 768/1440 sağ kart: Plica Sprinkle Cushion From $79 (üstü çizili $95), On sale, Grey/Yellow/Pink/Green. 375'te kaydırılmış kart: Plica + Add, solda vazo başlığı kesik. URL home'da."
+  },
+  "interactionNote": "Aynı noktadan gizli + görünür kopya var; tık görünür olana gitti. Sağdaki ok denenmedi. Şemaya dokunulmadı — Dune gibi kalıcı kart + hotspot.",
   "capture": {
     "url": "https://impact-theme-home.myshopify.com/",
-    "viewports": ["375", "768", "1440"],
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-14T15:08:51.519Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T10:41:01.918Z"
   }
 }

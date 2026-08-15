@@ -1,0 +1,68 @@
+{
+  "observationId": "stretch.snow.home.product-showcase-featured",
+  "schemaId": "product-showcase-featured",
+  "kaynak": "stretch",
+  "preset": "snow",
+  "sayfa": "home",
+  "url": "https://stretch-theme-snow.myshopify.com/",
+  "selector": "#shopify-section-template--23643213234544__products_with_image_zeQNmM",
+  "evidenceSlug": "product-showcase-featured",
+  "evidence": [
+    "evidence/stretch/snow/home/product-showcase-featured.1440.png",
+    "evidence/stretch/snow/home/product-showcase-featured.375.png",
+    "evidence/stretch/snow/home/product-showcase-featured.768.png",
+    "evidence/stretch/snow/home/product-showcase-featured.changed.sonraki-urun.1440.png",
+    "evidence/stretch/snow/home/product-showcase-featured.initial.ilk-hal.1440.png",
+    "evidence/stretch/snow/home/product-showcase-featured.initial.ilk-hal.375.png",
+    "evidence/stretch/snow/home/product-showcase-featured.initial.ilk-hal.768.png"
+  ],
+  "notlar": "Görsel + ürün slider.",
+  "delta": "",
+  "capture": {
+    "url": "https://stretch-theme-snow.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T22:20:21.795Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://stretch-theme-snow.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--23643213234544__products_with_image_zeQNmM",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Nova Beanie ilk kart"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--23643213234544__products_with_image_zeQNmM button:has-text('Next')",
+      "value": 1200,
+      "capture": true,
+      "etiket": "sonraki-urun",
+      "not": "Sonraki ürün. Shop CTA tıklanmaz."
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "375/768 Next görünür değil. 1440 tıklandı ama kare Nova Beanie / ilk tire — slayt değişmedi."
+    }
+  ],
+  "interactionNote": "Ok class products-with-image__carousel-arrow. 1440 kare aynı kaldı, ikinci deneme yok."
+}

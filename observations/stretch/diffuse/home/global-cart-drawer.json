@@ -1,0 +1,112 @@
+{
+  "observationId": "stretch.diffuse.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "stretch",
+  "preset": "diffuse",
+  "sayfa": "home",
+  "url": "https://stretch-theme-amber.myshopify.com/",
+  "selector": "#cart-drawer x-tabs",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/stretch/diffuse/home/global-cart-drawer.1440.png",
+    "evidence/stretch/diffuse/home/global-cart-drawer.375.png",
+    "evidence/stretch/diffuse/home/global-cart-drawer.768.png",
+    "evidence/stretch/diffuse/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/stretch/diffuse/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/stretch/diffuse/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/stretch/diffuse/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/stretch/diffuse/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/stretch/diffuse/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/stretch/diffuse/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/stretch/diffuse/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/stretch/diffuse/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "Boş sepet drawer.",
+  "delta": "Host display:contents.",
+  "capture": {
+    "url": "https://stretch-theme-amber.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T10:18:34.769Z",
+    "prepareClick": "a[aria-controls=\"cart-drawer\"]"
+  },
+  "captureMode": "viewport",
+  "prepareClick": "a[aria-controls=\"cart-drawer\"]",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://stretch-theme-amber.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[aria-controls=\"cart-drawer\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Empty + Offers."
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://stretch-theme-amber.myshopify.com/products/sun-traveler-tortoise",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--17194059694155__main button:has-text('Add to cart')",
+      "capture": false,
+      "not": "Traveler tortoise ATC."
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://stretch-theme-amber.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a[aria-controls=\"cart-drawer\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Traveler satırı €209."
+    },
+    {
+      "state": "changed",
+      "action": "fill",
+      "selector": "#cart-drawer input[name='updates[]']",
+      "value": "2",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "press",
+      "value": "Enter",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 2."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Cart + Offers (kırmızı nokta), empty, continue shopping.",
+    "filled": "Cart (1), Traveler Tortoise €209, free shipping, also like Traveler optical €195, checkout.",
+    "changed": "Adet 2, satır ve TOTAL €418, Cart (2). updates[] + Enter."
+  }
+}

@@ -8,17 +8,62 @@
   "selector": "#shopify-section-template--16046401487024__02eaec34-c954-4f97-87d5-14823dbe8ee5",
   "evidenceSlug": "media-lookbook-slider",
   "evidence": [
+    "evidence/impact/balance/landing-campaign/media-lookbook-slider.1440.png",
     "evidence/impact/balance/landing-campaign/media-lookbook-slider.375.png",
     "evidence/impact/balance/landing-campaign/media-lookbook-slider.768.png",
-    "evidence/impact/balance/landing-campaign/media-lookbook-slider.1440.png"
+    "evidence/impact/balance/landing-campaign/media-lookbook-slider.changed.tayt.1440.png",
+    "evidence/impact/balance/landing-campaign/media-lookbook-slider.changed.tayt.375.png",
+    "evidence/impact/balance/landing-campaign/media-lookbook-slider.changed.tayt.768.png",
+    "evidence/impact/balance/landing-campaign/media-lookbook-slider.initial.bra.1440.png",
+    "evidence/impact/balance/landing-campaign/media-lookbook-slider.initial.bra.375.png",
+    "evidence/impact/balance/landing-campaign/media-lookbook-slider.initial.bra.768.png"
   ],
   "notlar": "Shop the green look. Sol look + 2 hotspot, sağ Grace Bra Top kartı (fiyat, swatch, ok).",
   "delta": "Sound'da shop-the-look yok (yalnız hot-spots metin paneli). Dune slider iskeleti: kalıcı ürün kartı.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://impact-theme-shape.myshopify.com/pages/sustainability",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16046401487024__02eaec34-c954-4f97-87d5-14823dbe8ee5",
+      "capture": true,
+      "etiket": "bra",
+      "not": "Grace Bra Top €89."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--16046401487024__02eaec34-c954-4f97-87d5-14823dbe8ee5 button.shop-the-look__dot:has-text('Go to item 2')",
+      "value": 1000,
+      "capture": true,
+      "etiket": "tayt",
+      "not": "Skye Crop Leggings. URL sustainability'de."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Shop the green look. Sol look + 2 nokta (üstte bra). 768/1440 sağ kart: Grace Bra Top €89, Forest/Black/Chili. 375'te görsel altındaki listede iki ürün birden: Grace Bra + Skye Crop Leggings, her birinde + Add.",
+    "changed": "Alt nokta (tayt). 768/1440 sağ kart: Skye Crop Leggings €89, Forest/Blue/Black/Burgundy. 375'te liste aynı duruyor; değişen şey aktif nokta halkası. URL sustainability'de."
+  },
+  "interactionNote": "375'te kart değişmez çünkü iki ürün zaten alt alta. Ok denenmedi. Sound'daki Read more popover değil. Şemaya dokunulmadı.",
   "capture": {
     "url": "https://impact-theme-shape.myshopify.com/pages/sustainability",
-    "viewports": ["375", "768", "1440"],
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-14T15:06:28.625Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T10:41:48.464Z"
   }
 }

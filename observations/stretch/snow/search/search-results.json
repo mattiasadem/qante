@@ -1,0 +1,68 @@
+{
+  "observationId": "stretch.snow.search.search-results",
+  "schemaId": "search-results",
+  "kaynak": "stretch",
+  "preset": "snow",
+  "sayfa": "search",
+  "url": "https://stretch-theme-snow.myshopify.com/search?q=jacket",
+  "selector": "#shopify-section-template--23643213889904__main",
+  "evidenceSlug": "search-results",
+  "evidence": [
+    "evidence/stretch/snow/search/search-results.1440.png",
+    "evidence/stretch/snow/search/search-results.375.png",
+    "evidence/stretch/snow/search/search-results.768.png",
+    "evidence/stretch/snow/search/search-results.changed.pages-sekmesi.1440.png",
+    "evidence/stretch/snow/search/search-results.changed.pages-sekmesi.375.png",
+    "evidence/stretch/snow/search/search-results.changed.pages-sekmesi.768.png",
+    "evidence/stretch/snow/search/search-results.initial.ilk-hal.1440.png",
+    "evidence/stretch/snow/search/search-results.initial.ilk-hal.375.png",
+    "evidence/stretch/snow/search/search-results.initial.ilk-hal.768.png"
+  ],
+  "notlar": "jacket araması, 20 sonuç + filtre.",
+  "delta": "",
+  "capture": {
+    "url": "https://stretch-theme-snow.myshopify.com/search?q=jacket",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T22:21:06.586Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://stretch-theme-snow.myshopify.com/search?q=jacket",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--23643213889904__main",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Products sekmesi, 20 results"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--23643213889904__main :text-is('PAGES'), #shopify-section-template--23643213889904__main button:has-text('Pages')",
+      "value": 1500,
+      "capture": true,
+      "etiket": "pages-sekmesi",
+      "not": "Pages sekmesi — ürün ızgarası değişir"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "20 results, Products altı çizili, ceket ızgarası.",
+    "changed": "Pages altı çizili, Size chart (jackets) satırı. Izgara yok."
+  }
+}

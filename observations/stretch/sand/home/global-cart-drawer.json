@@ -1,0 +1,112 @@
+{
+  "observationId": "stretch.sand.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "stretch",
+  "preset": "sand",
+  "sayfa": "home",
+  "url": "https://stretch-theme-sand.myshopify.com/",
+  "selector": "#cart-drawer x-tabs",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/stretch/sand/home/global-cart-drawer.1440.png",
+    "evidence/stretch/sand/home/global-cart-drawer.375.png",
+    "evidence/stretch/sand/home/global-cart-drawer.768.png",
+    "evidence/stretch/sand/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/stretch/sand/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/stretch/sand/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/stretch/sand/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/stretch/sand/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/stretch/sand/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/stretch/sand/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/stretch/sand/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/stretch/sand/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "Boş sepet drawer. Host display:contents.",
+  "delta": "Host display:contents; kutu x-tabs.",
+  "capture": {
+    "url": "https://stretch-theme-sand.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T08:05:40.872Z",
+    "prepareClick": "a[aria-controls=\"cart-drawer\"]"
+  },
+  "captureMode": "viewport",
+  "prepareClick": "a[aria-controls=\"cart-drawer\"]",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://stretch-theme-sand.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[aria-controls=\"cart-drawer\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Empty + Offers."
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://stretch-theme-sand.myshopify.com/products/illuminating-cleansing-gel",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--24278246654261__main button:has-text('Add to cart')",
+      "capture": false,
+      "not": "Illuminating cleansing gel ATC."
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://stretch-theme-sand.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a[aria-controls=\"cart-drawer\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Gel satırı €36."
+    },
+    {
+      "state": "changed",
+      "action": "fill",
+      "selector": "#cart-drawer input[name='updates[]']",
+      "value": "2",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "press",
+      "value": "Enter",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 2."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Cart + Offers (kırmızı nokta), empty, continue shopping.",
+    "filled": "Cart (1), illuminating cleansing gel 50 ml €36, free shipping bar, complete your routine, checkout.",
+    "changed": "Adet 2, satır ve TOTAL €72, Cart (2). Plus name yok — updates[]."
+  }
+}

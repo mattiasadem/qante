@@ -1,0 +1,68 @@
+{
+  "observationId": "stretch.sand.home.product-showcase-tabs",
+  "schemaId": "product-showcase-tabs",
+  "kaynak": "stretch",
+  "preset": "sand",
+  "sayfa": "home",
+  "url": "https://stretch-theme-sand.myshopify.com/",
+  "selector": "#shopify-section-template--24036029202741__featured_collections_nR6xJx",
+  "evidenceSlug": "product-showcase-tabs",
+  "evidence": [
+    "evidence/stretch/sand/home/product-showcase-tabs.1440.png",
+    "evidence/stretch/sand/home/product-showcase-tabs.375.png",
+    "evidence/stretch/sand/home/product-showcase-tabs.768.png",
+    "evidence/stretch/sand/home/product-showcase-tabs.changed.sets-sekmesi.1440.png",
+    "evidence/stretch/sand/home/product-showcase-tabs.changed.sets-sekmesi.375.png",
+    "evidence/stretch/sand/home/product-showcase-tabs.changed.sets-sekmesi.768.png",
+    "evidence/stretch/sand/home/product-showcase-tabs.initial.best-sellers.1440.png",
+    "evidence/stretch/sand/home/product-showcase-tabs.initial.best-sellers.375.png",
+    "evidence/stretch/sand/home/product-showcase-tabs.initial.best-sellers.768.png"
+  ],
+  "notlar": "Best sellers / Sets sekmeli ürün ızgarası.",
+  "delta": "featured_collections + role=tab.",
+  "capture": {
+    "url": "https://stretch-theme-sand.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T08:06:28.618Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://stretch-theme-sand.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24036029202741__featured_collections_nR6xJx",
+      "capture": true,
+      "etiket": "best-sellers",
+      "not": "Best sellers aktif."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--24036029202741__featured_collections_nR6xJx [role='tab']:has-text('sets')",
+      "value": 1200,
+      "capture": true,
+      "etiket": "sets-sekmesi",
+      "not": "Nutrition / Anti-aging / Super glow set."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "best sellers aktif: Illuminating gel, Unifying spray, Super glow, Radiance oil.",
+    "changed": "sets: Nutrition / Anti-aging / Super glow / Dream body. 375’te kart + Next."
+  }
+}

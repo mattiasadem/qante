@@ -1,0 +1,68 @@
+{
+  "observationId": "stretch.snow.home.footer-columns-newsletter",
+  "schemaId": "footer-columns-newsletter",
+  "kaynak": "stretch",
+  "preset": "snow",
+  "sayfa": "home",
+  "url": "https://stretch-theme-snow.myshopify.com/",
+  "selector": "#shopify-section-sections--23643214479728__footer",
+  "evidenceSlug": "footer-columns-newsletter",
+  "evidence": [
+    "evidence/stretch/snow/home/footer-columns-newsletter.1440.png",
+    "evidence/stretch/snow/home/footer-columns-newsletter.375.png",
+    "evidence/stretch/snow/home/footer-columns-newsletter.768.png",
+    "evidence/stretch/snow/home/footer-columns-newsletter.initial.ilk-hal.1440.png",
+    "evidence/stretch/snow/home/footer-columns-newsletter.initial.ilk-hal.375.png",
+    "evidence/stretch/snow/home/footer-columns-newsletter.initial.ilk-hal.768.png",
+    "evidence/stretch/snow/home/footer-columns-newsletter.open.ulke-listesi.1440.png",
+    "evidence/stretch/snow/home/footer-columns-newsletter.open.ulke-listesi.375.png",
+    "evidence/stretch/snow/home/footer-columns-newsletter.open.ulke-listesi.768.png"
+  ],
+  "notlar": "Footer kolon + newsletter + ülke.",
+  "delta": "",
+  "capture": {
+    "url": "https://stretch-theme-snow.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-14T22:26:51.571Z"
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://stretch-theme-snow.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-sections--23643214479728__footer",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Footer. Form submit yok."
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#shopify-section-sections--23643214479728__footer button[aria-label='Change country or currency']",
+      "capture": true,
+      "captureMode": "section",
+      "etiket": "ulke-listesi",
+      "not": "Ülke listesi footer kutusunda. Viewport tepeye kaçtı."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "About/Shop/Explore/Infos/Newsletter + STRETCH filigran.",
+    "open": "France (EUR €) listesi: Canada, France ✓, Hong Kong, Japan, UK, US."
+  }
+}

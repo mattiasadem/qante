@@ -127,6 +127,12 @@ export async function dismissAllOverlays(page, { rounds = 8 } = {}) {
         }
       });
 
+      document.querySelectorAll("newsletter-popup").forEach((el) => {
+        el.style?.setProperty("display", "none", "important");
+        el.removeAttribute("open");
+        el.hidden = true;
+      });
+
       document.body.style.overflow = "auto";
       document.documentElement.style.overflow = "auto";
     });

@@ -17,10 +17,11 @@
 | Impulse · Terrain | [`impulse-terrain.md`](./impulse-terrain.md) | ✅ delta — 5 obs · 15 kanıt · spec hotspot interact |
 | Impulse · Apothecary | [`impulse-apothecary.md`](./impulse-apothecary.md) | ✅ delta — 2 obs · 6 kanıt · before-after drag yoklandı |
 | Impact · default (Sound) | [`impact.md`](./impact.md) | ✅ 14 sayfa · 99 obs · 97 kare · 0 yeni şema · home interact |
-| Impact · Balance | [`impact-balance.md`](./impact-balance.md) | ✅ delta — 4 obs · 12 kanıt |
-| Impact · Cocoon | [`impact-cocoon.md`](./impact-cocoon.md) | ✅ delta — 2 obs · 6 kanıt |
+| Impact · Balance | [`impact-balance.md`](./impact-balance.md) | ✅ delta — 4 obs · 24 kanıt · hotspot + PDP accordion |
+| Impact · Cocoon | [`impact-cocoon.md`](./impact-cocoon.md) | ✅ delta — 2 obs · 12 kanıt · hotspot interact |
+| Stretch · Snow / Sand / Diffuse | [`stretch.md`](./stretch.md) | Snow ✅ · Sand ✅ · Diffuse ✅ · 86 obs · 365 kare · 0 yeni şema · interact |
 
-**Interact (discover sonrası derinlik):** [`interact.md`](./interact.md) — kapalı kare yalanı; yeni tema yok.
+**Interact (discover sonrası derinlik):** [`interact.md`](./interact.md) — kapalı kare yalanı; Stretch + Cocoon/Balance shop-the-look kapandı.
 
 **QC / improvement backlog:** [`../improvements-qc.md`](../improvements-qc.md)
 
