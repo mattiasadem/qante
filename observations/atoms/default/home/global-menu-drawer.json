@@ -1,0 +1,64 @@
+{
+  "observationId": "atoms.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "atoms",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://atoms.com/",
+  "selector": "body",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/atoms/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/atoms/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "375/768 hamburger. Dialog: Water-Repellent Series, Shop, Explore, Find Your Fit, MKBHD, Sale, New Koi Orange; altta Order Status / Blog / Ambassador / Help Center.",
+  "delta": "1440 hamburger yok (mega). Dialog wrapper height 0 olabilir — viewport capture.",
+  "captureMode": "viewport",
+  "prepareClick": "button:has-text(\"Menu\")",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://atoms.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button:has-text(\"Menu\")",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Mobil menü"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: Shop/Explore/Fit/MKBHD/Sale + New Koi Orange + Account/Blog/Help. 1440 N/A."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 N/A. Alt accordion leftover.",
+  "capture": {
+    "url": "https://atoms.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:51:33.643Z"
+  }
+}
