@@ -1,0 +1,62 @@
+{
+  "observationId": "waterboy.default.home.promo-banner-tabs",
+  "schemaId": "promo-banner-tabs",
+  "kaynak": "waterboy",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.waterboy.com/",
+  "selector": "#shopify-section-template--19929781305592__fa984711-252c-4420-a025-46e6202f0516",
+  "evidenceSlug": "promo-banner-tabs",
+  "evidence": [
+    "evidence/waterboy/default/home/promo-banner-tabs.1440.png",
+    "evidence/waterboy/default/home/promo-banner-tabs.375.png",
+    "evidence/waterboy/default/home/promo-banner-tabs.768.png",
+    "evidence/waterboy/default/home/promo-banner-tabs.changed.tab-daily.1440.png",
+    "evidence/waterboy/default/home/promo-banner-tabs.changed.tab-daily.375.png",
+    "evidence/waterboy/default/home/promo-banner-tabs.changed.tab-daily.768.png"
+  ],
+  "notlar": "I WANT HYDRATION FOR: WEEKENDS | WORKOUTS | DAILY. Varsayılan WEEKENDS: After the Bar / hair of the dog + 3205mg vs 870mg kutu + SHOP WEEKEND RECOVERY + poşet.",
+  "delta": "Hoox value-props. Sekme ürün grid'i değil editorial+CTA. Üç panel (weekends/workouts/daily) farklı görsel/metin/CTA.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://www.waterboy.com/",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19929781305592__fa984711-252c-4420-a025-46e6202f0516",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".b-value-props__tab:has-text('DAILY')",
+      "capture": true,
+      "etiket": "tab-daily",
+      "not": "DAILY sekmesi: For Everyday / sugar free / SHOP DAILY HYDRATION"
+    }
+  ],
+  "stateFindings": {
+    "initial": "WEEKENDS aktif; After the Bar + Weekend Recovery poşeti.",
+    "changed": "DAILY hapı dolu kırmızı. For Everyday / SUGAR FREE HYDRATION / 1540mg vs 870mg kutuları / SHOP DAILY HYDRATION + kırmızı Cucumber Citrus poşet. WEEKENDS mavi panelden ayrı."
+  },
+  "missingStates": [],
+  "capture": {
+    "url": "https://www.waterboy.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:16:18.041Z"
+  }
+}
