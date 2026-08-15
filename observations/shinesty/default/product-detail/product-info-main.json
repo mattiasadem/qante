@@ -6,14 +6,43 @@
   "sayfa": "product-detail",
   "evidenceSlug": "product-info-main",
   "evidence": [
+    "evidence/shinesty/default/product-detail/product-info-main.1440.png",
     "evidence/shinesty/default/product-detail/product-info-main.375.png",
     "evidence/shinesty/default/product-detail/product-info-main.768.png",
-    "evidence/shinesty/default/product-detail/product-info-main.1440.png"
+    "evidence/shinesty/default/product-detail/product-info-main.changed.size-m-oos.1440.png",
+    "evidence/shinesty/default/product-detail/product-info-main.changed.size-m-oos.375.png",
+    "evidence/shinesty/default/product-detail/product-info-main.changed.size-m-oos.768.png"
   ],
   "url": "https://www.shinesty.com/products/apex-boa-boxers",
   "selector": "div.md\\:grid.grid-cols-3.gap-8",
-  "notlar": "The Trouser Snake - Boa Ball Hammock® Pouch Underwear. $29.99 → $19.99. Galeri + size + ATC. 8 varyant.",
-  "delta": "Headless PDP. Reviews 11009 ayrı leftover. Size swatch changed interact.",
+  "notlar": "The Trouser Snake - Boa Ball Hammock® Pouch Underwear. $29.99 → $19.99. Galeri + size + ATC. 8 varyant. Tüm beden OOS (sold out badge).",
+  "delta": "Headless PDP. Reviews 11009 ayrı leftover. Size tık OOS → Notify Me (PII doldurulmadı).",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://www.shinesty.com/products/apex-boa-boxers",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label:has(span:text-is(\"M\"))",
+      "capture": true,
+      "etiket": "size-m-oos",
+      "not": "M tık — OOS notify formu. Email doldurulmadı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boa yeşil yılan görseli. ~~29.99~~ 19.99. Crotch Shots swatch. Size S–5X hepsi sold-out rozeti. Subscribe 19.99 + Add to Cart (size seçilmeden).",
+    "changed": "M seçili (kalın çerçeve). ATC yerine He Gone. But Will Return! + Email + Notify Me + marketing checkbox. Email doldurulmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "Tüm size img[alt=sold out]. In-stock size+ATC The Blender cart filled'de. Notify Me PII yok.",
   "capture": {
     "url": "https://www.shinesty.com/products/apex-boa-boxers",
     "viewports": [
@@ -22,7 +51,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T22:40:26.855Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:14:19.919Z"
   }
 }

@@ -5,10 +5,107 @@
   "preset": "default",
   "sayfa": "home",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/shinesty/default/home/global-cart-drawer.filled.blender-m.1440.png",
+    "evidence/shinesty/default/home/global-cart-drawer.filled.blender-m.375.png",
+    "evidence/shinesty/default/home/global-cart-drawer.filled.blender-m.768.png",
+    "evidence/shinesty/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/shinesty/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/shinesty/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
   "url": "https://www.shinesty.com/",
   "selector": "body",
   "captureMode": "viewport",
-  "notlar": "Sepet ikonu header'da. Boş/dolu drawer interact ile doğrulanacak.",
-  "delta": "Headless cart overlay. /cart tam sayfa da var."
+  "notlar": "Header cart ikonu sağ drawer. Boş copy: Your cart is empty for some stupid reason. /cart tam sayfa ayrı.",
+  "delta": "Headless cart overlay (z-index 2147483001). /cart.js yok — addToCart AJAX fallback çalışmaz.",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.shinesty.com/",
+      "capture": false,
+      "viewports": [
+        "375",
+        "1440"
+      ]
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button:has(img[alt=\"Cart\"])",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "viewports": [
+        "375",
+        "1440"
+      ],
+      "not": "Boş drawer. 768 ayrı koşuldu — aynı oturumda KeepCart ATC'yi yutuyor."
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.shinesty.com/products/grey-duck-camo-ball-hammock-pouch-underwear-with-fly",
+      "capture": false,
+      "not": "The Blender — stokta. Claiming PDP Boa tüm beden OOS."
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "label:has(span:text-is(\"M\"))",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "label:has(span:text-is(\"M\"))",
+      "capture": false,
+      "not": "Beden M"
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "button:has-text(\"Add to Cart\")",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button:has-text(\"Add to Cart\")",
+      "value": 2800,
+      "capture": false,
+      "not": "UI ATC. /cart.js 404 — addToCart helper yok."
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": "text=CLEAR CART",
+      "value": 10000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "blender-m",
+      "not": "Drawer. 768 empty aynı oturumda yok (KeepCart)."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Sağ drawer (375 tam ekran): Your cart is empty for some stupid reason. Subtotal: 0.00. Ok ile kapat.",
+    "filled": "CLEAR CART. New Subscription — First Pair: The Blender, Monthly With Fly, Size M, ~~29.99~~ 19.99. Free sock subscription upsell. Cuts carousel. Shipping FREE / Saving $10 / Subtotal 19.99 / Checkout."
+  },
+  "missingStates": [],
+  "interactionNote": "KeepCart (cdn.keepcart.co) headless drawer. /cart.js 404 — UI ATC, addToCart helper yok. Boa OOS; filled The Blender With Fly M (varsayılan Subscribe). 768 empty aynı oturumda KeepCart ATC'yi yutuyor — empty 768 ayrı koşuldu, filled 768 home'suz. Checkout tıklanmadı.",
+  "capture": {
+    "url": "https://www.shinesty.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:26:14.940Z"
+  }
 }

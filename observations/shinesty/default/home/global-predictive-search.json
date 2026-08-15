@@ -5,10 +5,65 @@
   "preset": "default",
   "sayfa": "home",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/shinesty/default/home/global-predictive-search.initial.search-bos.1440.png",
+    "evidence/shinesty/default/home/global-predictive-search.initial.search-bos.375.png",
+    "evidence/shinesty/default/home/global-predictive-search.initial.search-bos.768.png",
+    "evidence/shinesty/default/home/global-predictive-search.input.blender.1440.png",
+    "evidence/shinesty/default/home/global-predictive-search.input.blender.375.png",
+    "evidence/shinesty/default/home/global-predictive-search.input.blender.768.png"
+  ],
   "url": "https://www.shinesty.com/",
   "selector": "body",
   "captureMode": "viewport",
-  "notlar": "Header search ikonu. Searchspring tracking script. /search?q=ball sonuç sayfası ayrı.",
-  "delta": "Predictive overlay yoklandıktan sonra stateFindings yazılacak. Searchspring."
+  "notlar": "Header search ikonu overlay açar (URL home). Input placeholder Ask Jeeves... Searchspring. /search?q=ball ayrı sayfa.",
+  "delta": "Predictive overlay + Popular Searches / öneri grid. Searchspring. Tam sayfa /search ayrı observation.",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.shinesty.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button:has(img[alt=\"search\"])",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Boş overlay: Ask Jeeves... + Popular Searches + öneri kartları"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input[placeholder=\"Ask Jeeves...\"]",
+      "value": "blender",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "blender",
+      "not": "katalog: The Blender (PLP camo). Overlay ürün kartlarına dönmeli"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Ask Jeeves... + X. Popular Searches: Slippery / Pirate / The Pitch / The Silk &Amp; Saddle / The Popsicle Stick / Chicks Dig It. We think you might be looking for: The Big Rock Star, The Blender, packs. Alt: Apparel / Women's Underwear / Men's Underwear / New Arrivals.",
+    "input": "Sorgu blender. Kartlar The Blender camo: Modal Boxer Brief With Fly / No Fly / Magnum / Youth + lifestyle $59.99. See All. Popular listesi kayboldu."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu blender (The Blender / grey-duck-camo PLP). URL home kaldı. /search ayrı. Email/PII yok.",
+  "capture": {
+    "url": "https://www.shinesty.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:11:15.796Z"
+  }
 }

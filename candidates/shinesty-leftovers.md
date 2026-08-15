@@ -109,3 +109,19 @@ ADAY: shinesty-searchspring
 Gerekçe: PLP/search `searchspringResponse` + `searchspring-tracking` script. Filtre chip All/With Fly/No Fly PLP `filtreGoster` delta; ayrı şema yok.  
 Öneri: app leftover  
 Karar: onay bekliyor
+
+---
+
+ADAY: shinesty-keepcart  
+Gerekçe: Cart drawer `cdn.keepcart.co/headless-theme.js`, host `z-[2147483001]`. `/cart.js` www'de 404. 768'de home empty drawer aynı oturumda ATC'yi yutuyor.  
+Örnekler: header cart / The Blender ATC  
+Öneri: üçüncü parti headless cart  
+Karar: onay bekliyor
+
+---
+
+ADAY: shinesty-boa-oos-notify  
+Gerekçe: `/products/apex-boa-boxers` tüm size `img[alt=sold out]`. Size tık → He Gone. But Will Return! + Notify Me email. PII doldurulmadı.  
+Örnekler: https://www.shinesty.com/products/apex-boa-boxers  
+Öneri: PII stop  
+Karar: onay bekliyor
