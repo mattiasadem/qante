@@ -1,0 +1,74 @@
+{
+  "observationId": "comradsocks.default.home.product-showcase-tabs",
+  "schemaId": "product-showcase-tabs",
+  "kaynak": "comradsocks",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.comradsocks.com/",
+  "selector": "#shopify-section-template--19421943365849__featured_products_multi_dkAYrp",
+  "evidenceSlug": "product-showcase-tabs",
+  "evidence": [
+    "evidence/comradsocks/default/home/product-showcase-tabs.1440.png",
+    "evidence/comradsocks/default/home/product-showcase-tabs.375.png",
+    "evidence/comradsocks/default/home/product-showcase-tabs.768.png",
+    "evidence/comradsocks/default/home/product-showcase-tabs.changed.best-sellers.1440.png",
+    "evidence/comradsocks/default/home/product-showcase-tabs.changed.best-sellers.375.png",
+    "evidence/comradsocks/default/home/product-showcase-tabs.changed.best-sellers.768.png",
+    "evidence/comradsocks/default/home/product-showcase-tabs.initial.new-arrivals.1440.png",
+    "evidence/comradsocks/default/home/product-showcase-tabs.initial.new-arrivals.375.png",
+    "evidence/comradsocks/default/home/product-showcase-tabs.initial.new-arrivals.768.png"
+  ],
+  "notlar": "New Arrivals / Best Sellers sekmeleri. The Long Shift 4-Pack + New rozeti. Skip carousel.",
+  "delta": "type_Featured_Products_Multi. Sekme tık in-page — interact adayı.",
+  "capture": {
+    "url": "https://www.comradsocks.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:29:49.593Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.comradsocks.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": "3000",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19421943365849__featured_products_multi_dkAYrp",
+      "capture": true,
+      "etiket": "new-arrivals",
+      "not": "New Arrivals"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--19421943365849__featured_products_multi_dkAYrp label.util-tab:has-text('Best Sellers')",
+      "capture": true,
+      "etiket": "best-sellers",
+      "not": "Best Sellers sekmesi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "New Arrivals altı çizili. The Long Shift 4-Pack $130 (list $144, Save 10%) + New; CloudCotton Stripes $42; Varsity 3-Pack $97; Varsity $34.",
+    "changed": "Best Sellers altı çizili. Workweek Essentials $124.60 (list $178, Save 30%); 3 Pack Solids $96.90 Best Seller; Solid $34 Best Seller. URL / kaldı."
+  },
+  "missingStates": [],
+  "interactionNote": "label.util-tab Best Sellers. URL değişmemeli."
+}
