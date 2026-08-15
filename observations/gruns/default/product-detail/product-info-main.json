@@ -1,0 +1,48 @@
+{
+  "observationId": "gruns.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "gruns",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://gruns.co/products/gruns",
+  "selector": "#shopify-section-template--18534285574210__usnacks_buybox_GJXtyp",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "Grüns Superfood Gummies. Light Labs JUL 2026. Flavor Original / Bello Banana Berry. Start Now .add-to-cart-btn → /cart/add. Galeri + nutrition label.",
+  "delta": "usnacks_buybox. sticky CTA 0px leftover. Flavor # href.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://gruns.co/products/gruns",
+      "capture": true,
+      "etiket": "original",
+      "not": "Original flavor buybox"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "a[href='#']:has-text('Bello Banana Berry')",
+      "capture": false,
+      "not": "Brand New flavor tab"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "etiket": "bello-berry",
+      "not": "Flavor değiştiyse galeri/fiyat"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Original Adults buybox + Start Now.",
+    "changed": "Bello Banana Berry tab tıklandı — karede flavor/fiyat farkı varsa yazılacak."
+  },
+  "missingStates": [],
+  "interactionNote": "Flavor link href=#. Piksel değişmezse missingStates."
+}

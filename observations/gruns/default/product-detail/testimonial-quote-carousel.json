@@ -1,0 +1,45 @@
+{
+  "observationId": "gruns.default.product-detail.testimonial-quote-carousel",
+  "schemaId": "testimonial-quote-carousel",
+  "kaynak": "gruns",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://gruns.co/products/gruns",
+  "selector": "#shopify-section-template--18534285574210__usnacks_review_tabs_qpQQ38",
+  "evidenceSlug": "testimonial-quote-carousel",
+  "evidence": [],
+  "notlar": "Join 1,000,000+ Others. Tab: Taste / Value / Vs Powders / Benefits / Ingredients / Convenience. Alıntı: 10/10 would recommend.",
+  "delta": "Tabbed quotes; ok/dot yok bu taramada.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://gruns.co/products/gruns",
+      "capture": true,
+      "etiket": "taste-tab"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--18534285574210__usnacks_review_tabs_qpQQ38 :text('Vs Powders')",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 600,
+      "capture": true,
+      "etiket": "vs-powders"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Taste tab açık.",
+    "changed": "Vs Powders tab — alıntı değiştiyse yazılacak."
+  },
+  "missingStates": [],
+  "interactionNote": "Tab metin selector."
+}

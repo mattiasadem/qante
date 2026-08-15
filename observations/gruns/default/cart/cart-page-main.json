@@ -1,0 +1,59 @@
+{
+  "observationId": "gruns.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "gruns",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://gruns.co/cart",
+  "selector": "#shopify-section-template--17618044813378__cart",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Your cart is empty. Continue shopping → /. Header cart ikon home'da drawer açmadı; /cart sayfa.",
+  "delta": "Keepcart app.css preload; drawer DOM yok. Native cart page.",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://gruns.co/cart",
+      "capture": true,
+      "etiket": "bos"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://gruns.co/products/gruns",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "form[action='/cart/add'] button.add-to-cart-btn",
+      "capture": false,
+      "not": "Start Now ATC"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://gruns.co/cart",
+      "capture": true,
+      "etiket": "dolu",
+      "not": "ATC sonrası /cart — checkout girilmedi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Empty cart + Continue shopping.",
+    "filled": "ATC sonrası satır — karede doğrulanacak."
+  },
+  "missingStates": [],
+  "interactionNote": "Home #cart-icon-bubble tık URL değiştirmedi. Checkout PII yok."
+}

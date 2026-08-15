@@ -1,0 +1,46 @@
+{
+  "observationId": "gruns.default.product-detail.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "gruns",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://gruns.co/products/gruns",
+  "selector": "#shopify-section-template--18534285574210__fto_faq_abQVa8",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [],
+  "notlar": "Any last questions? Custom accordion (details yok). İlk soru Raspberry Lemonade permanent? Cevap görünür.",
+  "delta": "fto_faq button#trigger-… . <details> yok.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://gruns.co/products/gruns",
+      "capture": true,
+      "etiket": "ilk-soru"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#trigger-template--18534285574210__fto_faq_abQVa8-4",
+      "capture": false,
+      "not": "When will my gummies arrive?"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 500,
+      "capture": true,
+      "etiket": "shipping-cevap"
+    }
+  ],
+  "stateFindings": {
+    "initial": "İlk soru + cevap (Raspberry Lemonade limited).",
+    "changed": "When will my gummies arrive? — 24h ship / 3-5 days."
+  },
+  "missingStates": [],
+  "interactionNote": "İkinci denemede piksel yoksa leftover."
+}
