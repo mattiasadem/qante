@@ -12,6 +12,38 @@
     "evidence/magicmind/default/home/navigation-header-mega.768.png",
     "evidence/magicmind/default/home/navigation-header-mega.1440.png"
   ],
+  "captureMode": "section",
+  "interactionStates": ["hover"],
+  "interactionSteps": [
+    {
+      "state": "hover",
+      "action": "goto",
+      "value": "https://magicmind.com/",
+      "capture": false
+    },
+    {
+      "state": "hover",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "a.menu-link",
+      "value": 1000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "viewports": ["1440"],
+      "not": "Shop hover → #megamenu-shop 40→425, list 0→400"
+    }
+  ],
+  "stateFindings": {
+    "hover": "Henüz PNG bakılmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 Shop link w=0 — hover yalnız 1440. Predictive search yok.",
   "notlar": "new-header-v4: logo + Shop / Science / Reviews + Cart. Login /a/account/login. 375 hamburger var. Arama ikonu yok.",
   "delta": "Shop aria-expanded + .header__megamenu-item ürün kartları (0mg / 55mg / 165mg / rise brighter). Science düz blog link. Predictive search yok.",
   "capture": {

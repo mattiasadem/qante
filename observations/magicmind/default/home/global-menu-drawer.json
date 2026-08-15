@@ -7,11 +7,10 @@
   "url": "https://magicmind.com/",
   "selector": "#sidebar-menu",
   "captureMode": "viewport",
-  "prepareClick": "[class*='hamburger'], [aria-label*='menu' i], .header__icon--menu",
   "evidenceSlug": "global-menu-drawer",
   "evidence": [],
-  "notlar": "sidebar-menu Drawer--fromLeft. Kapalı 0px. .new-header__mobile-menu: Shop / Science / Reviews + kafein linkleri.",
-  "delta": "İki katman: #sidebar-menu (Learn/Buy Now/Find In Store/Account) ve .new-header__mobile-menu. Hangisinin hamburger olduğu 375’te yoklanacak.",
+  "notlar": "sidebar-menu Drawer--fromLeft. Kapalı x=-310 aria-hidden. Opener .header__mob-btn / .hamburger-wrapper (375).",
+  "delta": ".new-header__mobile-menu display:none. 1440 hamburger yok.",
   "interactionStates": ["open"],
   "interactionSteps": [
     {
@@ -29,17 +28,18 @@
     {
       "state": "open",
       "action": "click",
-      "selector": "[class*='hamburger'], [aria-label*='menu' i]",
+      "selector": ".header__mob-btn",
+      "value": 1500,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "menu",
       "viewports": ["375", "768"],
-      "not": "Mobil hamburger"
+      "not": "Sol hamburger — drawer x=-310→0 beklenir"
     }
   ],
   "stateFindings": {
-    "open": "Henüz çekilmedi."
+    "open": "Henüz PNG bakılmadı."
   },
   "missingStates": [],
-  "interactionNote": "1440 hamburger beklenmiyor. Selector ilk hipotez."
+  "interactionNote": "İlk probe tık drawer’ı açmadı; resmi capture PNG ile doğrulanacak. 1440 yok."
 }

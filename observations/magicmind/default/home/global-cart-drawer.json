@@ -9,31 +9,10 @@
   "captureMode": "viewport",
   "evidenceSlug": "global-cart-drawer",
   "evidence": [],
-  "notlar": "NS hybrid cart. /cart → /?cart=open (sayfa yok). Opener button.cart-icon. Checkout tıklanmadı.",
-  "delta": "Drawer kapalı 0px. cart-page-main yok.",
-  "interactionStates": ["initial", "filled"],
+  "notlar": "NS hybrid cart. /cart → /?cart=open. Opener button.cart-icon (görünür olan). Checkout tıklanmadı.",
+  "delta": "Boş tıkta hybrid 0px kaldı. cart-page-main yok.",
+  "interactionStates": ["filled"],
   "interactionSteps": [
-    {
-      "state": "initial",
-      "action": "goto",
-      "value": "https://magicmind.com/?cart=open",
-      "capture": false
-    },
-    {
-      "state": "initial",
-      "action": "waitFor",
-      "value": 3000,
-      "capture": false
-    },
-    {
-      "state": "initial",
-      "action": "click",
-      "selector": "button.cart-icon",
-      "capture": true,
-      "captureMode": "viewport",
-      "etiket": "cart-bos",
-      "not": "Boş hybrid cart — selector capture sonrası doğrulanacak"
-    },
     {
       "state": "filled",
       "action": "goto",
@@ -43,35 +22,41 @@
     {
       "state": "filled",
       "action": "waitFor",
-      "value": 3000,
+      "value": 3500,
       "capture": false
     },
     {
       "state": "filled",
       "action": "addToCart",
-      "selector": "button[name='add'], button.add-to-cart, [type='submit']",
-      "capture": false
+      "selector": "button.main-product-v2__atc-button",
+      "capture": false,
+      "not": "UI ATC; olmazsa cart/add.js"
     },
     {
       "state": "filled",
       "action": "waitFor",
-      "value": 2500,
+      "value": 3500,
       "capture": false
     },
     {
       "state": "filled",
       "action": "click",
       "selector": "button.cart-icon",
+      "value": 4000,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "original-eklendi",
-      "not": "ATC sonrası drawer"
+      "not": "ATC sonrası görünür cart-icon"
     }
   ],
   "stateFindings": {
-    "initial": "Henüz çekilmedi.",
-    "filled": "Henüz çekilmedi."
+    "filled": "Henüz PNG bakılmadı."
   },
-  "missingStates": [],
-  "interactionNote": "Adımlar ilk hipotez; PNG bakılmadan şema güncellenmedi. Checkout yok."
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "Boş cart-icon tıkı hybrid bölümü 0px bıraktı — görünür drawer yok"
+    }
+  ],
+  "interactionNote": "NS hybrid hydrate yavaş olabilir. Checkout yok. PII yok."
 }

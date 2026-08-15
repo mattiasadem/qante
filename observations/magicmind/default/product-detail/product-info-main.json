@@ -14,6 +14,35 @@
   ],
   "notlar": "Original buy box. Suffix __main-product; template id A/B.",
   "delta": "main-product-v2. Selling plan + varyant. HSA/FSA satırı. Frontrow sticker iframe leftover.",
+  "interactionStates": ["changed"],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://magicmind.com/products/mental-performance-shot-original",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='pack-size-30-bottles']",
+      "value": 1500,
+      "capture": true,
+      "etiket": "30-bottles",
+      "not": "15→30 pack — fiyat/ATC değişmeli"
+    }
+  ],
+  "stateFindings": {
+    "changed": "Henüz PNG bakılmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "label[for=pack-size-30-bottles] probe’da gizliydi; click force. Subscribe varsayılan.",
   "capture": {
     "url": "https://magicmind.com/products/mental-performance-shot-original",
     "viewports": [

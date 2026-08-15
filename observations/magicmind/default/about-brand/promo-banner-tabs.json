@@ -12,6 +12,35 @@
     "evidence/magicmind/default/about-brand/promo-banner-tabs.768.png",
     "evidence/magicmind/default/about-brand/promo-banner-tabs.1440.png"
   ],
+  "interactionStates": ["changed"],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://magicmind.com/pages/learn",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "text=Sleep",
+      "value": 1200,
+      "capture": true,
+      "etiket": "sleep-tab",
+      "not": "Focus → Sleep toggle"
+    }
+  ],
+  "stateFindings": {
+    "changed": "Henüz PNG bakılmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "Ingredient hover ayrıca; tab değişimi birincil.",
   "notlar": "Magic properties. Real ingredients. Sekmeli malzeme.",
   "delta": "Kampanya değil malzeme tab’ı; en yakın mevcut tip promo-banner-tabs.",
   "capture": {
