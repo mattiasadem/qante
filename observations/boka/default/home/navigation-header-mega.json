@@ -1,0 +1,119 @@
+{
+  "observationId": "boka.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "boka",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.boka.com/",
+  "selector": "#shopify-section-sections--26470593003563__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/boka/default/home/navigation-header-mega.1440.png",
+    "evidence/boka/default/home/navigation-header-mega.375.png",
+    "evidence/boka/default/home/navigation-header-mega.768.png",
+    "evidence/boka/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/boka/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/boka/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/boka/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
+  "notlar": "Impact header: Shop / Subscribe & Save / Best Sellers · logo Boka · Find In Store / Dental Pros / About · Search · Login · Cart 0. Mega #mega-menu-mega_menu_Ax9Qet DOM'da.",
+  "delta": "Custom Boka mega (boka-mega-menu-custom) + promo carousel. Locale switcher yok. Tema Impact 7.0.1.",
+  "captureMode": "viewport",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.boka.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": "8500",
+      "capture": false,
+      "not": "Klaviyo 10% OFF dialog ~8s — her yeni sayfada tekrarlar"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.klaviyo-close-form[aria-label='Close dialog']",
+      "capture": false,
+      "not": "Klaviyo dialog kapat — PII form gönderilmedi"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": "400",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button[aria-label='Close teaser'], button.klaviyo-close-form[aria-label='Close dialog']",
+      "capture": false,
+      "not": "Get 10% off teaser varsa kapat; yoksa gizli dialog close no-op"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": "400",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bar",
+      "not": "Klaviyo kapandıktan sonra kapalı sticky header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#shopify-section-sections--26470593003563__header details > summary:has-text('Shop')",
+      "value": "1500",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "1440 Shop summary hover — tık /collections/shop-all'a kaçtı; hover mega metnini açar"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "stateFindings": {
+    "initial": "Shop kapalı. 1440: Shop / Subscribe & Save / Best Sellers · BOKA · Find In Store / Dental Pros / About · arama/hesap/sepet. 375: hamburger + büyüteç + BOKA + sepet; altında mobile home nav (n-Ha Toothpaste / Subscribe & Save / Whitening). Mega kolonları yok.",
+    "open": "1440 Shop hover: sol liste Toothpaste, Whitening Collection, Kids Oral Care, Mouthwash, Kits & Bundles, Toothbrushes & Accessories, Shop All. Sağda Renew Mouthwash promo + Shop now + oklar. URL / kaldı."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "open hover ile ölçüldü"
+    },
+    {
+      "state": "filled",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "input",
+      "sebep": "Arama ayrı component"
+    },
+    {
+      "state": "changed",
+      "sebep": "Mega alt link tıklanmadı — yazılı <a> sayfaya gider"
+    }
+  ],
+  "prepareClick": "button.klaviyo-close-form[aria-label='Close dialog']",
+  "interactionNote": "Klaviyo SIGN UP 10% OFF her goto'da ~8s; form doldurulmadı. Shop tık Shop All PLP'ye gider; open = summary hover. forceOpen details'i tema JS kapattı.",
+  "capture": {
+    "url": "https://www.boka.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:31:47.525Z",
+    "prepareClick": "button.klaviyo-close-form[aria-label='Close dialog']"
+  }
+}
