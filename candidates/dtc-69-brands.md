@@ -59,7 +59,7 @@ Durum: `done` = main'e merge · `in progress` = açık PR · boş = kuyrukta
 | 47 | done | hellobubble.com | https://hellobubble.com |
 | 48 | | pamos.com | https://pamos.com |
 | 49 | | rhone.com | https://rhone.com |
-| 50 | | kettleandfire.com | https://kettleandfire.com |
+| 50 | done | kettleandfire.com | https://kettleandfire.com |
 | 51 | done | vegamour.com | https://vegamour.com |
 | 52 | | kizik.com | https://kizik.com |
 | 53 | | lemme.com | https://lemme.com |
