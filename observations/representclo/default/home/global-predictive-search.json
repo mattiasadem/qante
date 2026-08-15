@@ -5,13 +5,13 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://representclo.com/",
-  "selector": "#searchbox",
+  "selector": "header-navigation [x-ref='input_search']",
   "evidenceSlug": "global-predictive-search",
   "evidence": [],
-  "notlar": "Tagalys/mm-search. input[name=q] placeholder Search for…. #searchbox + .mm-search-dropdown. Kapalı 0px.",
-  "delta": "Desktop search #mobile-search-toggle değil. body.search_open. /search tam sayfa ayrı observation.",
+  "notlar": "Alpine $store.isSearchOpen. Mobilde input header'da görünür (x-show max-width 1023). Desktop overlay body.search_open / #searchbox 0px kaldı.",
+  "delta": "Tagalys. /search tam sayfa ayrı. Desktop toggle a[btn-search=toggle] Pandectes altında; mobil input birincil kanıt.",
   "captureMode": "viewport",
-  "prepareClick": "#shopify-section-desktop-menu-header a[aria-label='Search']:not(#mobile-search-toggle)",
+  "prepareClick": "a[btn-search='toggle']:not(#mobile-search-toggle)",
   "interactionStates": [
     "initial",
     "input"
@@ -60,5 +60,17 @@
     "input": "t-shirt öneri/ürün."
   },
   "missingStates": [],
-  "interactionNote": "İlk eşleşme mobile-search-toggle gizli — :not() şart."
+  "interactionNote": "İlk eşleşme mobile-search-toggle gizli — :not() şart.",
+  "capture": {
+    "url": "https://representclo.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "viewport",
+    "updatedAt": "2026-08-15T21:05:43.857Z",
+    "prepareClick": "#shopify-section-desktop-menu-header a[aria-label='Search']:not(#mobile-search-toggle)"
+  }
 }
