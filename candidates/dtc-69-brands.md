@@ -52,21 +52,21 @@ Durum: `done` = main'e merge · `in progress` = açık PR · boş = kuyrukta
 | 40 | done | functionhealth.com | https://functionhealth.com |
 | 41 | done | chamberlaincoffee.com | https://chamberlaincoffee.com |
 | 42 | done | dukecannon.com | https://dukecannon.com |
-| 43 | | magicmind.com | https://magicmind.com |
+| 43 | in progress | magicmind.com | https://magicmind.com |
 | 44 | done | atoms.com | https://atoms.com |
 | 45 | done | cymbiotika.com | https://cymbiotika.com |
 | 46 | done | greatjonesgoods.com | https://greatjonesgoods.com |
 | 47 | done | hellobubble.com | https://hellobubble.com |
-| 48 | | pamos.com | https://pamos.com |
-| 49 | | rhone.com | https://rhone.com |
+| 48 | in progress | pamos.com | https://pamos.com |
+| 49 | done | rhone.com | https://rhone.com |
 | 50 | done | kettleandfire.com | https://kettleandfire.com |
 | 51 | done | vegamour.com | https://vegamour.com |
-| 52 | | kizik.com | https://kizik.com |
-| 53 | | lemme.com | https://lemme.com |
-| 54 | | shinesty.com | https://shinesty.com |
-| 55 | | omsom.com | https://omsom.com |
-| 56 | | desoi.com | https://desoi.com |
-| 57 | | materialkitchen.com | https://materialkitchen.com |
+| 52 | in progress | kizik.com | https://kizik.com |
+| 53 | in progress | lemme.com | https://lemme.com |
+| 54 | in progress | shinesty.com | https://shinesty.com |
+| 55 | in progress | omsom.com | https://omsom.com |
+| 56 | in progress | desoi.com | https://desoi.com |
+| 57 | in progress | materialkitchen.com | https://materialkitchen.com |
 | 58 | | onnit.com | https://onnit.com |
 | 59 | | buckmason.com | https://buckmason.com |
 | 60 | | herocosmetics.com | https://herocosmetics.com |
