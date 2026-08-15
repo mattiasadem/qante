@@ -1,0 +1,74 @@
+{
+  "observationId": "symmetry.symmetry.home.media-lookbook-banner",
+  "schemaId": "media-lookbook-banner",
+  "kaynak": "symmetry",
+  "preset": "symmetry",
+  "sayfa": "home",
+  "url": "https://chantilly.myshopify.com/",
+  "selector": "#shopify-section-template--24058934296599__9a2b5d28-d921-46f4-9eeb-fe87535b6228",
+  "evidenceSlug": "media-lookbook-banner",
+  "evidence": [
+    "evidence/symmetry/symmetry/home/media-lookbook-banner.1440.png",
+    "evidence/symmetry/symmetry/home/media-lookbook-banner.375.png",
+    "evidence/symmetry/symmetry/home/media-lookbook-banner.768.png",
+    "evidence/symmetry/symmetry/home/media-lookbook-banner.changed.heavy-rotation.1440.png",
+    "evidence/symmetry/symmetry/home/media-lookbook-banner.changed.heavy-rotation.375.png",
+    "evidence/symmetry/symmetry/home/media-lookbook-banner.changed.heavy-rotation.768.png",
+    "evidence/symmetry/symmetry/home/media-lookbook-banner.initial.kapali.1440.png",
+    "evidence/symmetry/symmetry/home/media-lookbook-banner.initial.kapali.375.png",
+    "evidence/symmetry/symmetry/home/media-lookbook-banner.initial.kapali.768.png"
+  ],
+  "notlar": "WE ARE CHANTILLY. 3 hotspot + View details.",
+  "delta": "",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://chantilly.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24058934296599__9a2b5d28-d921-46f4-9eeb-fe87535b6228",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "3 artı pin. Kart kapalı."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--24058934296599__9a2b5d28-d921-46f4-9eeb-fe87535b6228 .hotspot-1 .hotspot__btn",
+      "value": 800,
+      "capture": true,
+      "etiket": "heavy-rotation",
+      "not": "Kart: Heavy Rotation. URL home'da."
+    }
+  ],
+  "stateFindings": {
+    "initial": "3 artı pin. Kartlar kapalı.",
+    "changed": "768/1440 ilk pin kartı açık: Heavy Rotation. 375 kart açılmadı."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "375'te pin tıklandı ama Heavy Rotation kartı karede yok. 768/1440 kart açık."
+    }
+  ],
+  "interactionNote": "Hotspot kartı ürün fiyatı değil, stil notu. Navigate yok. 375 bir kez denendi.",
+  "capture": {
+    "url": "https://chantilly.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "method": "interaction-steps",
+    "mode": "section",
+    "updatedAt": "2026-08-15T12:43:41.721Z"
+  }
+}

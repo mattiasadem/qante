@@ -4,7 +4,7 @@ Discover bitti. Bu dosya **yalnız kapalı kare yalanı** için: mega, arama, se
 
 Aynı chrome’u preset’te tekrar çekme (Allure drawer = diğer Prestige). Yeni şema yok. Şema uydurma / sürükleme / ödeme yok.
 
-**Şu anki odak:** Motion üç preset envanter + WEAR/CARRY. Mega/arama/sepet Impulse tekrarı.
+**Şu anki odak:** Symmetry default kapandı (hotspot + FAQ). Mega/arama/sepet Impulse tekrarı.
 
 ---
 
@@ -18,6 +18,7 @@ Aynı chrome’u preset’te tekrar çekme (Allure drawer = diğer Prestige). Ye
 | Prestige Allure | mega · cart sayfa · cart drawer · search · PLP filtre · PDP swatch · FAQ · lookbook hotspot · WOMEN/MEN sekme · GQ/FARFETCH alıntı |
 | Impact Sound | mega · search · cart drawer · featured hover · cart sayfa · PLP filtre · FAQ · PDP swatch · lookbook Read more · alıntı Next · timeline 2017 |
 | Impact Cocoon / Balance | shop-the-look hotspot (Vase→Plica · Bra→Leggings) · Balance PDP Sizing accordion |
+| Symmetry default | lookbook hotspot Heavy Rotation · customer-help FAQ size guide |
 
 ---
 
