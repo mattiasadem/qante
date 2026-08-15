@@ -8,12 +8,75 @@
   "selector": "#shopify-section-sections--17653237219495__header",
   "evidenceSlug": "navigation-header-mega",
   "evidence": [
+    "evidence/im8health/default/home/navigation-header-mega.1440.png",
     "evidence/im8health/default/home/navigation-header-mega.375.png",
     "evidence/im8health/default/home/navigation-header-mega.768.png",
-    "evidence/im8health/default/home/navigation-header-mega.1440.png"
+    "evidence/im8health/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/im8health/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/im8health/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/im8health/default/home/navigation-header-mega.open.shop-mega.1440.png"
   ],
   "notlar": "IM8 logo; Shop / Science / The Beckham Stack / Welcome from David / Reviews / Ingredients / Discover. Sağ: localization USD, Log in, Cart 0. Predictive search ikonu yok.",
   "delta": "Dawn mega-menu. Arama header'da yok (yalnız /search sayfa). Cart #cart-icon-bubble → Rebuy smart-cart + native #CartDrawer. Account Log in (PII). EqualWeb a11y butonu var.",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://im8health.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#HeaderMenu-shop",
+      "value": 2000,
+      "capture": false,
+      "viewports": [
+        "1440"
+      ],
+      "not": "Shop <a href=javascript:void(0)> — yalnız hover"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "selector": "#MegaMenu-Content-1",
+      "value": 5000,
+      "capture": false,
+      "viewports": [
+        "1440"
+      ]
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#MegaMenu-Content-1",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "İmleç panelde — The Beckham Stack / Essentials / Longevity / Reviews / Merchandise / All"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Kapalı bar: I·M·8 + Shop / Science / The Beckham Stack / Welcome from David / Reviews / Ingredients / Discover + Log in + Cart. Mega yok.",
+    "open": "1440 Shop hover: sol kart kolonu The Beckham Stack / Daily Ultimate Essentials Pro / Daily Ultimate Longevity / Reviews / Shop Merchandise. Sağda hero duruyor."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375/768 mega yok — hamburger global-menu-drawer. Discover mega bu turda yok."
+    }
+  ],
+  "interactionNote": "Shop href=javascript:void(0) — yalnız hover. Discover details#Details-HeaderMenu-3 ayrı; leftover.",
   "capture": {
     "url": "https://im8health.com/",
     "viewports": [
@@ -22,7 +85,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T19:28:03.207Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:10:14.951Z"
   }
 }

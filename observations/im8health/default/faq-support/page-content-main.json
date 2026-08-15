@@ -5,17 +5,24 @@
   "preset": "default",
   "sayfa": "faq-support",
   "url": "https://im8health.com/pages/frequently-asked-questions",
-  "selector": "iframe#sdxd9sqe",
+  "selector": "#shopify-section-template--17653238956199__custom_liquid_adyRx7, .ghc-app",
   "evidenceSlug": "page-content-main",
-  "evidence": [],
-  "notlar": "Gorgias help center iframe #sdxd9sqe (help-center.gorgias.help). Merchant accordion değil.",
-  "delta": "Zorlama page-content-main. leftover: gorgias-help-center. iframe contentFrame.",
+  "evidence": [
+    "evidence/im8health/default/faq-support/page-content-main.375.png",
+    "evidence/im8health/default/faq-support/page-content-main.768.png",
+    "evidence/im8health/default/faq-support/page-content-main.1440.png"
+  ],
+  "notlar": "768/1440: Shopify custom_liquid + Gorgias iframe #sdxd9sqe. 375: viewport im8health-copy-1.gorgias.help/en-US (.ghc-app) — ayrı origin, aynı yardım merkezi.",
+  "delta": "Zorlama page-content-main. leftover: gorgias-help-center. 375 redirect; selector birleşik (Shopify section | .ghc-app).",
   "capture": {
     "url": "https://im8health.com/pages/frequently-asked-questions",
     "viewports": [
       "375",
       "768",
       "1440"
-    ]
+    ],
+    "mode": "section",
+    "method": "margin-box+minPad8",
+    "updatedAt": "2026-08-15T20:06:19.538Z"
   }
 }

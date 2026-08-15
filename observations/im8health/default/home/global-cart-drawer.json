@@ -7,12 +7,23 @@
   "url": "https://im8health.com/",
   "selector": ".rebuy-cart__flyout",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/im8health/default/home/global-cart-drawer.1440.png",
+    "evidence/im8health/default/home/global-cart-drawer.768.png",
+    "evidence/im8health/default/home/global-cart-drawer.filled.beckham-stack.1440.png",
+    "evidence/im8health/default/home/global-cart-drawer.filled.beckham-stack.375.png",
+    "evidence/im8health/default/home/global-cart-drawer.filled.beckham-stack.768.png",
+    "evidence/im8health/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/im8health/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
   "captureMode": "viewport",
   "prepareClick": "#cart-icon-bubble",
-  "notlar": "Rebuy #rebuy-cart / .rebuy-cart__flyout. YOUR CART · $150 from FREE SHIPPING · empty: Shop Now. Native #CartDrawer Dawn is-empty 0px.",
+  "notlar": "Rebuy #rebuy-cart / .rebuy-cart__flyout. YOUR CART · $150 from FREE SHIPPING · empty: Shop Now. Native #CartDrawer Dawn is-empty 0px. dismissAllOverlays Escape kapatır — prepareClick #cart-icon-bubble yeniden açar.",
   "delta": "/cart → /?viewcart=true (index). cart-page-main yok. Rebuy üçüncü parti; en yakın global-cart-drawer.",
-  "interactionStates": ["initial", "filled"],
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
   "interactionSteps": [
     {
       "state": "initial",
@@ -22,8 +33,23 @@
     },
     {
       "state": "initial",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false,
+      "not": "settle() Escape Rebuy'u kapatır"
+    },
+    {
+      "state": "initial",
       "action": "click",
       "selector": "#cart-icon-bubble",
+      "capture": false,
+      "not": "Kapalı flyout'u aç"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "selector": ".rebuy-cart__flyout",
+      "value": 8000,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "cart-bos",
@@ -45,25 +71,35 @@
     {
       "state": "filled",
       "action": "waitFor",
-      "value": 3000,
-      "capture": false
-    },
-    {
-      "state": "filled",
-      "action": "click",
-      "selector": "#cart-icon-bubble",
+      "selector": ".rebuy-cart__flyout",
+      "value": 8000,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "beckham-stack",
-      "not": "ATC sonrası Rebuy dolu"
+      "not": "ATC sonrası Rebuy dolu — cart icon toggle etme"
     }
   ],
-  "stateFindings": {},
-  "missingStates": [],
-  "interactionNote": "Checkout'a girilmedi. Native Dawn drawer kullanılmıyor.",
+  "stateFindings": {
+    "initial": "768/1440: YOUR CART · You are $150 away from FREE SHIPPING! · Your cart is empty! · Shop Now. 375 boş: flyout click sonrası hidden kaldı.",
+    "filled": "375/768/1440: The Beckham Stack Variety Pack / Quarterly Subscription $548 · Congrats! You've unlocked FREE SHIPPING! · UPGRADE travel pouch $35 ADD · Subtotal $548 · Checkout → (girilmedi)."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "375: #cart-icon-bubble sonrası .rebuy-cart__flyout hidden kaldı (t=812). Boş 375 yok. Dolu 375 ATC ile geldi."
+    }
+  ],
+  "interactionNote": "Checkout'a girilmedi. Native Dawn drawer kullanılmıyor. 3vp boş 768/1440; dolu 3vp.",
   "capture": {
     "url": "https://im8health.com/",
-    "viewports": ["375", "768", "1440"],
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:09:20.153Z",
     "prepareClick": "#cart-icon-bubble"
   }
 }
