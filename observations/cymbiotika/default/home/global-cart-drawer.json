@@ -1,0 +1,115 @@
+{
+  "observationId": "cymbiotika.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "cymbiotika",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://cymbiotika.com/",
+  "selector": "#drawer-cart",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/cymbiotika/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/cymbiotika/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/cymbiotika/default/home/global-cart-drawer.filled.glutathione.1440.png",
+    "evidence/cymbiotika/default/home/global-cart-drawer.filled.glutathione.768.png",
+    "evidence/cymbiotika/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/cymbiotika/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/cymbiotika/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "Sabit sağ panel #drawer-cart (kapalıda x≈3072). /cart → /?cart= (sayfa yok). Boş: Back to cart / free-gift / You may also like.",
+  "delta": "cart-page-main yok. Görünür opener #navbar__cart (v3 buton gizli). ATC UI tercih; variant 39369057861679 fallback.",
+  "captureMode": "viewport",
+  "prepareClick": "#navbar__cart",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://cymbiotika.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#navbar__cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://cymbiotika.com/products/glutathione",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.add-to-cart-btn",
+      "capture": false,
+      "not": "UI ATC; /cart.js bot-wall ise fallback"
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#navbar__cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "glutathione",
+      "not": "Dolu drawer (eklenemezse adım patlar)"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#drawer-cart button[aria-label*='increase' i], #drawer-cart button[name='plus'], #drawer-cart [class*='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boş drawer 3vp: Your Cart (0 items) · SET YOUR SUMMER RITUAL · More subscriptions, more savings · Add items / Start Shopping · You may also like.",
+    "filled": "768/1440: Your Cart (1 items) Liposomal Glutathione subscription $61.60 (was $88) · 30% off · Delivers every 30 days. ATC via UI.",
+    "changed": "768/1440: qty 2 · $116.16 (was $176) · 34% off · tier 1+2 check. 375 yok."
+  },
+  "missingStates": [
+    {
+      "state": "filled",
+      "sebep": "375: addToCart UI + /cart/add.js bot-wall (Verifying your connection). 768/1440 UI ATC çalıştı."
+    },
+    {
+      "state": "changed",
+      "sebep": "375 filled kırılınca qty atlandı. 768/1440 doğrulandı."
+    }
+  ],
+  "interactionNote": "/cart.js HTML bot-wall. ATC 768/1440 UI. 375 filled yok.",
+  "capture": {
+    "url": "https://cymbiotika.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:05:23.291Z"
+  }
+}
