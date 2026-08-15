@@ -1,0 +1,76 @@
+{
+  "observationId": "necessaire.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "url": "https://necessaire.com/products/the-body-retinol",
+  "selector": "#shopify-section-template--19863517757553__product",
+  "notlar": "The Body Retinol | 0.1% Retinol. BESTSELLER. 4.4 stars. One Time $65 / Subscribe + Save 15% $55.25. Add to Cart.",
+  "delta": "Galeri carousel + dots. Recharge selling-plan. Breadcrumb HOME | THE BODY RETINOL section içinde. ATC .g-add-to-cart-btn → Rebuy drawer.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://necessaire.com/products/the-body-retinol",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19863517757553__product",
+      "capture": true,
+      "etiket": "onetime"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label.rc_widget__option__label:has-text('Subscribe'), .rc-option__subsave label, .rc_widget__option--subsave label",
+      "capture": true,
+      "etiket": "subscribe",
+      "not": "Subscribe + Save 15% — fiyat $65 → $55.25"
+    }
+  ],
+  "stateFindings": {
+    "initial": "One Time Delivery seçili; Add to Cart $65; BESTSELLER; 150 ml.",
+    "changed": "768/1440: Subscribe + Save 15% seçili; Delivery every 1 month; Add to Cart $55.25. 375: karede One Time + ATC $65 kaldı — sticky ATC subscribe etiketini örtüyor."
+  },
+  "missingStates": [],
+  "interactionNote": "Recharge. Checkout/form yok. 375 changed fiyat değişmedi (sticky ATC); 768+1440 kanıtlı.",
+  "kaynak": "necessaire",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/necessaire/default/product-detail/product-info-main.changed.subscribe.1440.png",
+    "evidence/necessaire/default/product-detail/product-info-main.changed.subscribe.375.png",
+    "evidence/necessaire/default/product-detail/product-info-main.changed.subscribe.768.png",
+    "evidence/necessaire/default/product-detail/product-info-main.initial.onetime.1440.png",
+    "evidence/necessaire/default/product-detail/product-info-main.initial.onetime.375.png",
+    "evidence/necessaire/default/product-detail/product-info-main.initial.onetime.768.png"
+  ],
+  "capture": {
+    "url": "https://necessaire.com/products/the-body-retinol",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:40:09.834Z"
+  }
+}
