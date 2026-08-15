@@ -1,0 +1,114 @@
+{
+  "observationId": "boka.default.product-detail.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "boka",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://www.boka.com/products/ela-mint-toothpaste",
+  "selector": "#shopify-section-template--26470592839723__product_metafield_faq_kCUkCD",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/boka/default/product-detail/faq-collapsible-tabs.1440.png",
+    "evidence/boka/default/product-detail/faq-collapsible-tabs.375.png",
+    "evidence/boka/default/product-detail/faq-collapsible-tabs.768.png",
+    "evidence/boka/default/product-detail/faq-collapsible-tabs.changed.ilk-soru.1440.png",
+    "evidence/boka/default/product-detail/faq-collapsible-tabs.changed.ilk-soru.375.png",
+    "evidence/boka/default/product-detail/faq-collapsible-tabs.changed.ilk-soru.768.png",
+    "evidence/boka/default/product-detail/faq-collapsible-tabs.initial.kapali.1440.png",
+    "evidence/boka/default/product-detail/faq-collapsible-tabs.initial.kapali.375.png",
+    "evidence/boka/default/product-detail/faq-collapsible-tabs.initial.kapali.768.png"
+  ],
+  "notlar": "PDP metafield FAQ. Cruelty-free / children / sensitive / how often.",
+  "delta": "Metafield accordion; kategori tab yok.",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.boka.com/products/ela-mint-toothpaste",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": "8500",
+      "capture": false,
+      "not": "Klaviyo 10% OFF dialog ~8s — her yeni sayfada tekrarlar"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.klaviyo-close-form[aria-label='Close dialog']",
+      "capture": false,
+      "not": "Klaviyo dialog kapat — PII form gönderilmedi"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": "400",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button[aria-label='Close teaser'], button.klaviyo-close-form[aria-label='Close dialog']",
+      "capture": false,
+      "not": "Get 10% off teaser varsa kapat; yoksa gizli dialog close no-op"
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--26470592839723__product_metafield_faq_kCUkCD",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "Sorular kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--26470592839723__product_metafield_faq_kCUkCD details:first-of-type > summary",
+      "capture": true,
+      "etiket": "ilk-soru",
+      "not": "Is Boka toothpaste cruelty-free and vegan?"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "stateFindings": {
+    "initial": "On soru kapalı, sağda +. İlk: Is Boka toothpaste cruelty-free and vegan? Cevap yok.",
+    "changed": "İlk soru açık (−). Cevap: Yes, Boka toothpaste is both cruelty-free and vegan. PETA certified. Diğerleri + kapalı."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "filled",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "input",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "open",
+      "sebep": "Akordeon changed"
+    }
+  ],
+  "prepareClick": "button.klaviyo-close-form[aria-label='Close dialog']",
+  "interactionNote": "Klaviyo dialog kapatıldı; form doldurulmadı.",
+  "capture": {
+    "url": "https://www.boka.com/products/ela-mint-toothpaste",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:27:02.280Z",
+    "prepareClick": "button.klaviyo-close-form[aria-label='Close dialog']"
+  }
+}
