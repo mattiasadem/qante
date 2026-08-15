@@ -10,13 +10,12 @@
 
 ## Karar
 
-- Mevcut `page-content-main` (başlık + richtext) loyalty motorunu tutmaz.
-- **Yeni points-engine şeması yazılmadı** (talimat).
-- Observation açılmadı — embed seçici kararsız (geç hydrate / app iframe).
-- Aday: `lead-capture` veya `loyalty-rewards-embed` varyantı, yeniden yakalanınca.
+- Observation: `observations/obvi/default/rewards/page-content-main.json` (`.LoyaltyPage`)
+- **Yeni points-engine şeması yazılmadı.**
+- page-content-main en yakın mevcut şema; embed Influence.io.
 
 ## Karar kutusu
 
-- [ ] Onayla → şema + 3vp observation
-- [ ] Reddet
-- [x] Ertele — candidate; points engine icat etme
+- [x] page-content-main observation + 3vp
+- [ ] Ayrı loyalty şeması — gerekirse sonra
+- [x] Points engine icat etme
