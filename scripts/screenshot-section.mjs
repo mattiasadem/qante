@@ -69,13 +69,29 @@ export async function screenshotSectionWithPadding(
     };
   }
 
-  // Üst pad için scroll hizala
-  const absoluteTop =
-    (await locator.evaluate((el) => {
-      const r = el.getBoundingClientRect();
-      return r.top + window.scrollY;
-    })) - padT;
-  await page.evaluate((y) => window.scrollTo(0, Math.max(0, y)), absoluteTop);
+  // Üst pad için scroll hizala. Kısa şeritler sticky announcement+header
+  // altına oturmasın — clip chrome değil section olsun.
+  const chromeBottom = await page.evaluate(() => {
+    let bottom = 0;
+    for (const n of document.querySelectorAll(
+      "header, .global-header, .global-announcement, [class*='announcement']"
+    )) {
+      const s = getComputedStyle(n);
+      if (s.position !== "fixed" && s.position !== "sticky") continue;
+      const hr = n.getBoundingClientRect();
+      if (hr.height < 16 || hr.top > 160) continue;
+      bottom = Math.max(bottom, hr.bottom);
+    }
+    return Math.round(bottom);
+  });
+  const elementAbsTop = await locator.evaluate(
+    (el) => el.getBoundingClientRect().top + window.scrollY
+  );
+  const clearance = borderBox.height <= 320 ? chromeBottom : 0;
+  await page.evaluate(
+    ({ y, pad, chrome }) => window.scrollTo(0, Math.max(0, y - pad - chrome)),
+    { y: elementAbsTop, pad: padT, chrome: clearance }
+  );
   await page.waitForTimeout(200);
 
   const after = await getSectionMarginBox(locator);

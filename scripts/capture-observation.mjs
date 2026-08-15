@@ -124,10 +124,9 @@ try {
       await page.waitForTimeout(2500);
     }
 
-    await dismissAllOverlays(page);
-
-    // Overlay dismiss bazen collection link'ine tıklayabiliyor — geri al
-    {
+    // Overlay dismiss bazen CTA/link'e tıklayabiliyor — stabilize olana kadar geri al
+    for (let d = 0; d < 3; d++) {
+      await dismissAllOverlays(page);
       const afterDismiss = new URL(page.url());
       if (
         afterDismiss.origin === target.origin &&
@@ -139,20 +138,23 @@ try {
         );
         await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
         await page.waitForTimeout(2500);
-        await dismissAllOverlays(page);
+        continue;
       }
+      break;
     }
 
     await assertCleanForScreenshot(page);
     await page.waitForTimeout(800);
 
-    // Lazy section hydrate: kısa scroll pass, sonra hedefe in
+    // Lazy section hydrate: kısa scroll pass, sonra hedefe in.
+    // Infinite-scroll PLP (50k+ px) taranırsa sayfa ölür — tavan 4 viewport.
     await page.evaluate(async () => {
       const step = Math.max(400, Math.floor(window.innerHeight * 0.85));
-      const max = Math.max(
+      const docMax = Math.max(
         document.body?.scrollHeight || 0,
         document.documentElement?.scrollHeight || 0
       );
+      const max = Math.min(docMax, window.innerHeight * 4);
       for (let y = 0; y < max; y += step) {
         window.scrollTo(0, y);
         await new Promise((r) => setTimeout(r, 120));
