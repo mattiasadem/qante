@@ -7,9 +7,124 @@
   "url": "https://www.comradsocks.com/",
   "selector": "#side-cart",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/comradsocks/default/home/global-cart-drawer.1440.png",
+    "evidence/comradsocks/default/home/global-cart-drawer.375.png",
+    "evidence/comradsocks/default/home/global-cart-drawer.768.png",
+    "evidence/comradsocks/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/comradsocks/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/comradsocks/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/comradsocks/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/comradsocks/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/comradsocks/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/comradsocks/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/comradsocks/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/comradsocks/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
   "notlar": "Simplistic #side-cart slide-in. /cart home'a yönlendirir — sayfa yok, drawer asıl sepet.",
   "delta": "type_Side_Cart. shopify-section-side_cart height 0; görünür kutu #side-cart. Checkout tıklanmadı.",
   "captureMode": "viewport",
-  "prepareClick": "a.trigger-cart"
+  "prepareClick": "a.trigger-cart",
+  "capture": {
+    "url": "https://www.comradsocks.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:40:54.889Z",
+    "prepareClick": "a.trigger-cart"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.comradsocks.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": "2500",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.trigger-cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.comradsocks.com/products/knee-high-compression-socks-solid",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": "3000",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--19465594208473__product_main button.btn.add",
+      "capture": false,
+      "not": "Companions Solid ATC $34"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": "1500",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.comradsocks.com/",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": "2000",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a.trigger-cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu satır"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#side-cart button.quantity-button.plus",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Dolu drawer'da görülen + — ikinci deneme unique selector"
+    }
+  ],
+  "stateFindings": {
+    "initial": "YOUR CART (0). Your cart is empty! Add Your Favorite Items To Your Cart. Start Shopping.",
+    "filled": "YOUR CART (1). Knee-High Compression Socks - Solid · Black · Small · $34. Free-shipping bar: $51 away from FREE GROUND SHIPPING. Qty − 1 +. Add 2 more for 5% off. Subtotal $34. Checkout+ $1.98 → CHECKOUT+ | $35.98. Checkout tıklanmadı.",
+    "changed": "YOUR CART (2). Aynı satır Black/Small. Qty 2 · satır $68. $17 away from FREE GROUND SHIPPING. Add 1 more for 5% off. Subtotal $68. CHECKOUT+ | $69.98. Checkout tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "/cart home redirect. ATC via UI. 1. deneme plus selector eşleşmedi; 2. deneme #side-cart button.quantity-button.plus — adet 1→2 kanıtlı. Checkout tıklanmadı."
 }

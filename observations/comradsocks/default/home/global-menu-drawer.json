@@ -7,9 +7,32 @@
   "url": "https://www.comradsocks.com/",
   "selector": "#mobile-menu",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
-  "notlar": "375/768 hamburger Open Menu → #mobile-menu from-left slide-in. 1440 large--hide — zero-size beklenir.",
-  "delta": "Simplistic mobile-menu. 1440 N/A.",
+  "evidence": [
+    "evidence/comradsocks/default/home/global-menu-drawer.375.png",
+    "evidence/comradsocks/default/home/global-menu-drawer.768.png"
+  ],
+  "notlar": "375/768 hamburger Open Menu → #mobile-menu from-left. Menu + Search + NEW Varsity / Best Sellers / … / Sock Quiz. 1440 #mobile-menu DOM'da yok.",
+  "delta": "Simplistic mobile-menu. 1440 N/A — capture-observation 1440 Selector eşleşmedi.",
   "captureMode": "viewport",
-  "prepareClick": "button.mobile-menu-button[aria-label='Open Menu']"
+  "prepareClick": "button.mobile-menu-button[aria-label='Open Menu']",
+  "interactionStates": ["open"],
+  "stateFindings": {
+    "open": "375: Menu başlık, Search, NEW Varsity Knee-Highs, Best Sellers, New Arrivals, Save w/ Packs, Women/Men/Wide Calf, Build a Pack, Final Sale, Shop All, Sock Quiz."
+  },
+  "missingStates": [
+    { "state": "initial", "sebep": "Kapalı drawer height 0; open prepareClick ile alındı" },
+    { "state": "hover", "sebep": "Anlamsız" },
+    { "state": "filled", "sebep": "Anlamsız" },
+    { "state": "input", "sebep": "Arama ayrı" },
+    { "state": "changed", "sebep": "Yazılı menü linki sayfaya gider" }
+  ],
+  "interactionNote": "1440 menü yok. 375/768 open karesi capture-observation prepareClick.",
+  "capture": {
+    "url": "https://www.comradsocks.com/",
+    "viewports": ["375", "768"],
+    "mode": "viewport",
+    "method": "viewport",
+    "updatedAt": "2026-08-15T19:23:00.000Z",
+    "prepareClick": "button.mobile-menu-button[aria-label='Open Menu']"
+  }
 }

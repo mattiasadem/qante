@@ -7,9 +7,79 @@
   "url": "https://www.comradsocks.com/",
   "selector": "#search-bar",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
-  "notlar": "button.trigger-search → #search-bar embedded bar (1440 ~87px). Placeholder Search. Tam sayfa /search ayrı.",
-  "delta": "Modal overlay değil üst bar. Öneri listesi yoklandı değil — interact'te bakılacak.",
+  "evidence": [
+    "evidence/comradsocks/default/home/global-predictive-search.1440.png",
+    "evidence/comradsocks/default/home/global-predictive-search.375.png",
+    "evidence/comradsocks/default/home/global-predictive-search.768.png",
+    "evidence/comradsocks/default/home/global-predictive-search.input.knee.1440.png"
+  ],
+  "notlar": "1440: header .embedded-search her zaman görünür (placeholder Search). #search-bar overlay + button.trigger-search 1440'ta gizli. 375/768 arama #mobile-menu içinde. Tam sayfa /search ayrı.",
+  "delta": "Modal değil; 1440 gömülü header alanı. trigger-search görünür değil.",
   "captureMode": "viewport",
-  "prepareClick": "button.trigger-search[aria-label='Search']"
+  "capture": {
+    "url": "https://www.comradsocks.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:39:15.567Z",
+    "prepareClick": "button.trigger-search[aria-label='Search']"
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.comradsocks.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": "3000",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": "400",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bar-gomulu",
+      "viewports": [
+        "1440"
+      ],
+      "not": "1440 gömülü Search, overlay kapalı"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#shopify-section-header .embedded-search input[name='q']",
+      "value": "knee",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "knee",
+      "viewports": [
+        "1440"
+      ],
+      "not": "katalogSorgu knee — 1440 görünür header input"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440 header Search boş, placeholder Search. Popular terms yok (focus yok).",
+    "input": "1440: alan = knee. Dropdown PRODUCTS: Knee-High Compression Socks $34–$38, CloudCotton $38 + küçük thumb. Altta See all 10 results. URL / kaldı."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "375/768: header .embedded-search ve trigger-search görünür değil; arama #mobile-menu içinde. Üçüncü deneme yok."
+    }
+  ],
+  "interactionNote": "1. deneme trigger-search + #search-bar input gizli. 2. deneme 1440 .embedded-search input — öneri listesi kanıtlı. 375/768 leftover."
 }

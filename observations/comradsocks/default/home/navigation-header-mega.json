@@ -7,8 +7,80 @@
   "url": "https://www.comradsocks.com/",
   "selector": "#shopify-section-header",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
+  "evidence": [
+    "evidence/comradsocks/default/home/navigation-header-mega.1440.png",
+    "evidence/comradsocks/default/home/navigation-header-mega.375.png",
+    "evidence/comradsocks/default/home/navigation-header-mega.768.png",
+    "evidence/comradsocks/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/comradsocks/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/comradsocks/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/comradsocks/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
   "notlar": "1440: Shop / Learn / Help / Sock Quiz · logo · Search · Cart(0). Shop/Learn/Help button.mega-menu-trigger. Sock Quiz → /pages/sock-recommendation-quiz. Mobil: button[aria-label='Open Menu'].",
   "delta": "Tema comradsocks/main · schema_name Simplistic 3.0.26 · theme_store_id null. Mega .mega-menu-content header içinde; shopify-section-mega_menu_* height 0. Locale yok.",
-  "captureMode": "viewport"
+  "captureMode": "viewport",
+  "capture": {
+    "url": "https://www.comradsocks.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:29:49.230Z"
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.comradsocks.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": "3500",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button[aria-label*='Close' i], button.klaviyo-close-form, #alia-root-245211 button",
+      "capture": false,
+      "not": "Alia/Klaviyo kapat — PII yok"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": "400",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bar",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#shopify-section-header .mega-menu-trigger",
+      "value": "1200",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "İlk mega-menu-trigger = Shop"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Shop kapalı. 1440: Shop / Learn / Help / Sock Quiz · COMRAD · Search · Cart(0). Mega kolonları yok.",
+    "open": "1440 Shop hover: NEW Varsity / Best-Sellers / New Arrivals / Save w/ Packs / Wide Calf / Build a Pack / Women / Men / Warehouse Sale; Collection Everyday/Running/Medical; Fabric CloudCotton/Nylon/Recycled Cotton/Cozy/Merino; Height Knee-High/Ankle/Quarter/Crew/No-Show; Compression Targeted/Light/Medium/Firm; promo Shop Essential Packs + Wide Calf. Aynı karede Search altında Popular terms (Knee-High, Cute Socks, Packs) — input state değil. URL / kaldı."
+  },
+  "missingStates": [],
+  "interactionNote": "Alia 20% Off her goto'da olabilir; form doldurulmadı. Shop tık home'da kaldı; open = trigger hover."
 }

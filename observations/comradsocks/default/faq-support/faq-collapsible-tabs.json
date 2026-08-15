@@ -7,7 +7,68 @@
   "url": "https://www.comradsocks.com/pages/frequently-asked-questions",
   "selector": "#shopify-section-template--19523728834777__accordion_Rg8VcE",
   "evidenceSlug": "faq-collapsible-tabs",
-  "evidence": [],
+  "evidence": [
+    "evidence/comradsocks/default/faq-support/faq-collapsible-tabs.1440.png",
+    "evidence/comradsocks/default/faq-support/faq-collapsible-tabs.375.png",
+    "evidence/comradsocks/default/faq-support/faq-collapsible-tabs.768.png",
+    "evidence/comradsocks/default/faq-support/faq-collapsible-tabs.changed.graduated.1440.png",
+    "evidence/comradsocks/default/faq-support/faq-collapsible-tabs.changed.graduated.375.png",
+    "evidence/comradsocks/default/faq-support/faq-collapsible-tabs.changed.graduated.768.png",
+    "evidence/comradsocks/default/faq-support/faq-collapsible-tabs.initial.ilk-acik.1440.png",
+    "evidence/comradsocks/default/faq-support/faq-collapsible-tabs.initial.ilk-acik.375.png",
+    "evidence/comradsocks/default/faq-support/faq-collapsible-tabs.initial.ilk-acik.768.png"
+  ],
   "notlar": "Product Basics. İlk soru açık: What are compression socks? Diğerleri kapalı.",
-  "delta": "type_Accordion. İkinci soru interact adayı."
+  "delta": "type_Accordion. İkinci soru interact adayı.",
+  "capture": {
+    "url": "https://www.comradsocks.com/pages/frequently-asked-questions",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:30:40.396Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.comradsocks.com/pages/frequently-asked-questions",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": "2500",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19523728834777__accordion_Rg8VcE",
+      "capture": true,
+      "etiket": "ilk-acik",
+      "not": "İlk soru açık"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--19523728834777__accordion_Rg8VcE button.accordion-trigger:has-text('What is graduated compression?')",
+      "capture": true,
+      "etiket": "graduated",
+      "not": "İkinci soru"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Product Basics. What are compression socks? açık; diğerleri kapalı.",
+    "changed": "What is graduated compression? açık (en güçlü basınç bilekte, dize doğru azalır). İlk soru kapalı. URL /pages/frequently-asked-questions."
+  },
+  "missingStates": [],
+  "interactionNote": "accordion-trigger. allowMultipleOpen yoklandı değil."
 }
