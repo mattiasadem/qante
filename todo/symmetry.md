@@ -7,11 +7,11 @@
 |---|---|---|
 | symmetry | https://chantilly.myshopify.com/ | ✅ 55 obs · 177 kare · hotspot + FAQ |
 | salt-yard | https://salt-yard.myshopify.com/ | ✅ 29 obs · 87 kare |
-| beatnik | https://beatnik-5.myshopify.com/ | ⬜ |
+| beatnik | https://beatnik-5.myshopify.com/ | ✅ 21 obs · 63 kare |
 | duke | https://duke-16.myshopify.com/ | ⬜ |
 | amara | https://symmetry-amara.myshopify.com/ | ⬜ |
 
-**Şu anki odak:** Beatnik delta
+**Şu anki odak:** Duke delta
 
 ---
 
@@ -20,8 +20,8 @@
 | | |
 |---|---|
 | Evidence kökü | `evidence/symmetry/{symmetry,salt-yard,beatnik,duke,amara}/` |
-| Observation | default **55** |
-| Evidence PNG | default **177** |
+| Observation | default **55** · salt-yard **29** |
+| Evidence PNG | default **177** · salt-yard **87** |
 | Yeni şema | **0** |
 | Atlandı | newsletter-popup · theme-features 503 · `/pages/about` 404 (`/pages/our-story`) · `/pages/faq` düz RTE · `/blogs/journal` boş · mega/arama/sepet chrome |
 
