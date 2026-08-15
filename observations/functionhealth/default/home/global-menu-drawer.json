@@ -1,0 +1,63 @@
+{
+  "observationId": "functionhealth.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "functionhealth",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.functionhealth.com/",
+  "selector": ".header_menu-mobile-surface",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "header_hamburger Open menu. html.has-mobile-menu-open. How it works / What we test / Imaging / FAQ / About / Start testing / Log in / Gift Function / For Employers / Pricing / Contact us.",
+  "delta": "Mega değil düz liste. 1440 hamburger 0px beklenir.",
+  "captureMode": "viewport",
+  "prepareClick": "button.header_hamburger",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://www.functionhealth.com/",
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ]
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.header_hamburger",
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ]
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "selector": ".header_menu-mobile-surface",
+      "value": 4000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "menu-acik",
+      "viewports": [
+        "375",
+        "768"
+      ]
+    }
+  ],
+  "stateFindings": {
+    "open": ""
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger yok — mega/düz header."
+    }
+  ],
+  "interactionNote": "1440 N/A. Yazılı <a> sayfaya gider — alt akordeon yoklandıysa yazılacak."
+}

@@ -1,0 +1,52 @@
+{
+  "observationId": "functionhealth.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "functionhealth",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.functionhealth.com/",
+  "selector": ".fh-search-modal",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "SearchModal.astro. header_icon Search. Overlay .fh-search-modal. Tab: All / Biomarkers / Articles / FAQs / Testimonials. URL ?search=. Featured biomarkers. /search 404.",
+  "delta": "Sayfa araması değil overlay. Ürün önerisi yok — biomarker/article/FAQ. search-results sayfası yok.",
+  "captureMode": "viewport",
+  "prepareClick": "header.header button.header_icon[aria-label='Search']",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.functionhealth.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header.header button.header_icon[aria-label='Search']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "overlay-bos",
+      "not": "Site search overlay; featured biomarkers"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#fh-search-modal-input",
+      "value": "ferritin",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "ferritin",
+      "not": "katalogSorgu: ferritin — biomarker + article + testimonial"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "input": ""
+  },
+  "missingStates": [],
+  "interactionNote": "375'te header_icon gizliyse leftover. Checkout/login yok. /search 404."
+}
