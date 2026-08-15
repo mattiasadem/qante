@@ -20,6 +20,8 @@ Hydrogen sayfalarında `#shopify-section-*` yok. Sanity homepage `_type`: `hero`
 | 404 video (“404 are you lost?”) | Özel 404 şablonu | `page-content-main` (gözlem var) |
 | Blog list `/blogs/news` | Hydrogen **404**; article URL yaşıyor | — |
 | `/campaigns` | Hydrate boş / video hub | — |
+| About OUR PRINCIPLES | Accordion/tab; madde tık leftover | `editorial-image-with-text` |
+| Predictive search 375/768 | Fill sonrası chip; ürün satırı 1440’ta | `global-predictive-search` |
 | Rewards loyalty widget | Üçüncü parti; boş section’lar | `page-content-main` |
 | Selling-plan sıklık (subscription PLP) | commerce-tools adayı | `product-showcase-grid-featured` |
 

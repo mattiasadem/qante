@@ -5,11 +5,95 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://mytopicals.com/",
-  "selector": "[role=\"dialog\"]:has-text(\"BAG\")",
+  "selector": "[role=\"dialog\"]",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
-  "notlar": "Sağ drawer: BAG, free-shipping progress, boş hâl Your bag is empty + Shop bestsellers, Estimated Total, Checkout.",
+  "evidence": [
+    "evidence/topicals/default/home/global-cart-drawer.1440.png",
+    "evidence/topicals/default/home/global-cart-drawer.375.png",
+    "evidence/topicals/default/home/global-cart-drawer.768.png",
+    "evidence/topicals/default/home/global-cart-drawer.filled.peel-pads.1440.png",
+    "evidence/topicals/default/home/global-cart-drawer.filled.peel-pads.375.png",
+    "evidence/topicals/default/home/global-cart-drawer.filled.peel-pads.768.png",
+    "evidence/topicals/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/topicals/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/topicals/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "Sağ drawer: BAG, free-shipping progress, boş hâl + Shop bestsellers, Estimated Total, Checkout.",
   "delta": "Radix dialog (id kararsız). /cart aynı bileşen. Hediyeli eşik (sample/gift). Hydrogen — Liquid cart-drawer yok.",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://mytopicals.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button[aria-label='Open cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "[role='dialog']",
+      "etiket": "cart-bos",
+      "not": "Boş BAG"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://mytopicals.com/products/faded-dark-spot-peel-pads",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button:has-text('Add to bag')",
+      "capture": false,
+      "not": "PDP buy box Add to bag — Hydrogen form /cart LinesAdd; addToCart /cart/add.js yok"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button[aria-label='Open cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "[role='dialog']",
+      "etiket": "peel-pads",
+      "not": "Dolu BAG; drawer add sonrası kapandıysa ikonla aç"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Sağ drawer BAG 0: You’re $50 away from free shipping & sample, Your bag is empty, Shop bestsellers, Estimated Total $0, Checkout gri/disabled.",
+    "filled": "BAG 1: Faded Dark Spot Peel Pads $20, adet −/+, Remove, You’re $30 away…, CHOOSE A FREE SAMPLE (Active Scar Primer / Slather…), YOU MAY LIKE carousel, Estimated Total $20, Checkout kırmızı."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Adet +/− yoklandı değil — leftover. Dolu kare satır + sample + upsell gösteriyor."
+    }
+  ],
+  "interactionNote": "Hydrogen cart: gizli cartFormInput JSON (LinesAdd + merchandiseId gid). addToCart /cart/add.js ve numeric input[name=id] yok — script varyant id bulamadı. Asıl yol: PDP button:has-text('Add to bag') tık. /cart aynı sağ drawer. dismiss-overlays açık dialog’u kapatır; prepareClick Open cart ile yeniden açılır.",
   "captureMode": "viewport",
-  "prepareClick": "button[aria-label=\"Open cart\"]"
+  "prepareClick": "button[aria-label=\"Open cart\"]",
+  "capture": {
+    "url": "https://mytopicals.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T17:22:55.247Z",
+    "prepareClick": "button[aria-label=\"Open cart\"]"
+  }
 }

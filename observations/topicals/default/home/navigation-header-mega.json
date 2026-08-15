@@ -7,7 +7,58 @@
   "url": "https://mytopicals.com/",
   "selector": "header",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
+  "evidence": [
+    "evidence/topicals/default/home/navigation-header-mega.1440.png",
+    "evidence/topicals/default/home/navigation-header-mega.375.png",
+    "evidence/topicals/default/home/navigation-header-mega.768.png",
+    "evidence/topicals/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
   "notlar": "SHOP / LEARN / WATCH + logo + USD + SEARCH + SIGN IN + sepet. 375 hamburger Open menu.",
-  "delta": "Mega SHOP hover/click ile header içinde açılır (ayrı dialog değil). Featured ürün kartları + Shop By Concern. Dil yerine para birimi USD. Hydrogen custom header."
+  "delta": "Mega SHOP hover/click ile header içinde açılır (ayrı dialog değil). Featured ürün kartları + Shop By Concern. Dil yerine para birimi USD. Hydrogen custom header.",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://mytopicals.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "header button:has-text(\"SHOP\")",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "SHOP hover → Shop / Shop By Concern / Featured ürünler"
+    }
+  ],
+  "stateFindings": {
+    "initial": "SHOP / LEARN / WATCH + TOPICALS + USD + SEARCH + SIGN IN + sepet 0. Mega kapalı.",
+    "open": "1440 SHOP hover: üç kolon — SHOP (Faded Under Eye Mask, Shop All…), SHOP BY CONCERN (Acne, Hyperpigmentation…), FEATURED ürün kartları (Peel Pads, Faded Serum, Birthday Set)."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375/768 mega yok — hamburger global-menu-drawer.open.hamburger."
+    }
+  ],
+  "interactionNote": "375/768 mega yok — hamburger global-menu-drawer. Mega ayrı dialog değil; header içi blur overlay.",
+  "capture": {
+    "url": "https://mytopicals.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T17:16:16.080Z"
+  }
 }

@@ -2,9 +2,9 @@
 
 *Kaynak:* https://mytopicals.com · *Preset:* `default` · *Tema adı vitrinde yok*
 
-**Platform:** Shopify **Hydrogen + Oxygen** + **Sanity CMS** (`powered-by: Shopify, Oxygen, Hydrogen`). Theme Store / `Shopify.theme.name` yok — uydurulmadı.
+**Platform:** Shopify **Hydrogen + Oxygen** + **Sanity CMS** (`powered-by: Shopify, Oxygen, Hydrogen`). Theme Store / `Shopify.theme.name` yok — uydurulmadı. Envanter slug’ı `topicals`.
 
-**Şu anki odak:** resmi 3vp capture + interact (mega / search / cart / hamburger)
+**Durum:** ✅ walk + resmi 3vp kapandı · leftover’lar aşağıda (şema icat yok)
 
 ---
 
@@ -16,7 +16,8 @@
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | mevcut tiplere observation + delta — `sections/*.json` dokunulmadı |
 | Yeni şema | 0 |
-| Kapsam satırı | Topicals · default · Hydrogen/Sanity · home→PDP→PLP→search→cart→content→footer→mobile menu · 40 obs · adaylar açık |
+| Gözlem / kanıt | 40 obs · 135 PNG (120 statik 3vp + interact) |
+| Kapsam satırı | Topicals · default · Hydrogen/Sanity · home→PDP→PLP→search→cart→content→footer→mobile menu · 40 obs · 0 yeni şema · adaylar açık |
 
 ---
 
@@ -24,26 +25,26 @@
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home (6 Sanity section + chrome) | ⬜ obs yazıldı | ⬜ |
-| PDP Faded Dark Spot Peel Pads | ⬜ | ⬜ |
-| PLP `/collections/all` | ⬜ | ⬜ |
-| Search `?q=faded` | ⬜ | ⬜ |
-| Cart `/cart` + drawer | ⬜ | ⬜ |
-| About `/pages/about` | ⬜ | ⬜ |
-| FAQ `/pages/faq` | ⬜ | ⬜ |
-| Contact `/pages/contact-us` | ⬜ form gönderilmedi | ⬜ |
-| Rewards `/pages/rewards` | ⬜ | ⬜ |
-| Subscription `/pages/subscription` | ⬜ | ⬜ |
-| Promotions `/pages/topicals-promotions` | ⬜ | ⬜ |
-| Policy `/policies/privacy-policy` | ⬜ | ⬜ |
-| Store locator | ⬜ aday | ⬜ |
-| Blog article (list 404) | ⬜ article var | ⬜ |
-| 404 `/blogs/news` | ⬜ aday | ⬜ |
-| Mobile 375 menu | ⬜ | ⬜ |
-| Predictive search | ⬜ kapalı kare yanıltır | ⬜ |
-| Footer | ⬜ | ⬜ |
+| Home (6 Sanity section + chrome) | ✅ | ✅ |
+| PDP `/products/faded-dark-spot-peel-pads` | ✅ buy box `<main>` üstü | ✅ |
+| PLP `/collections/all` | ✅ `<main>` yok | ✅ |
+| Search `?q=faded` | ✅ 28 ürün | ✅ |
+| Cart `/cart` + drawer | ✅ aynı sağ dialog | ✅ boş + dolu |
+| About `/pages/about` | ✅ 6 section | ✅ |
+| FAQ `/pages/faq` | ✅ + ilk soru `changed` | ✅ |
+| Contact `/pages/contact-us` | ✅ form **gönderilmedi** | ✅ |
+| Rewards `/pages/rewards` | ✅ Spline hero + how-it-works | ✅ |
+| Subscription `/pages/subscription` | ✅ selling-plan satır | ✅ |
+| Promotions `/pages/topicals-promotions` | ✅ | ✅ |
+| Policy `/policies/privacy-policy` | ✅ `<main>` yok | ✅ |
+| Store locator `/pages/store-locator` | ⛔ aday (Sephora/Mapbox) · en yakın `page-content-main` | ✅ |
+| Blog article `/blogs/news/who-cares-looks-fade` | ✅ list 404 | ✅ |
+| 404 `/blogs/news` | ⛔ aday video 404 · `page-content-main` | ✅ |
+| Mobile 375 menu | ✅ 375/768 open · 1440 N/A | ✅ |
+| Predictive search | ✅ fill `faded` | ✅ |
+| Footer | ✅ newsletter **doldurulmadı** | ✅ |
 | Campaigns `/campaigns` | ⛔ hydrate boş — aday | — |
-| Blog list `/blogs/*` | ⛔ 404 | — |
+| Blog list `/blogs/news`, `/blogs/flareupfiles` | ⛔ Hydrogen 404 | — |
 
 ---
 
@@ -52,7 +53,7 @@
 | # | Sanity | QANTE schemaId | Karar |
 |---|---|---|---|
 | — | banner | `promo-announcement-bar` | reuse |
-| — | header mega | `navigation-header-mega` | reuse · interact |
+| — | header mega | `navigation-header-mega` | reuse · SHOP hover 1440 |
 | 1 | hero | `hero-slideshow` | reuse · tek slayt |
 | 2 | productCarousel | `product-showcase-grid-featured` | reuse · slider |
 | 3 | fullBleed (subscribe) | `product-showcase-featured` | reuse |
@@ -60,9 +61,9 @@
 | 5 | fullBleed video | `media-video-hero` | reuse |
 | 6 | socialGallery | `media-shop-the-feed` | reuse |
 | — | footer | `footer-columns-newsletter` | reuse |
-| — | cart dialog | `global-cart-drawer` | reuse |
-| — | search overlay | `global-predictive-search` | reuse · interact |
-| — | 375 sticky menu | `global-menu-drawer` | reuse · interact |
+| — | cart dialog | `global-cart-drawer` | reuse · boş + dolu |
+| — | search overlay | `global-predictive-search` | reuse · fill |
+| — | 375 sticky menu | `global-menu-drawer` | reuse · 375/768 |
 
 ---
 
@@ -70,46 +71,68 @@
 
 | # | Bileşen / id | scope | Screenshot | Not | JSON | Done |
 |---|---|---|---|---|---|---|
-| 1 | promo-announcement-bar | global | [ ] | [x] | reuse | [ ] |
-| 2 | navigation-header-mega | global | [ ] | [x] | reuse | [ ] |
-| 3 | hero-slideshow | instance | [ ] | [x] | reuse | [ ] |
-| 4 | product-showcase-grid-featured | instance | [ ] | [x] | reuse | [ ] |
-| 5 | product-showcase-featured | instance | [ ] | [x] | reuse | [ ] |
-| 6 | editorial-image-with-text | instance | [ ] | [x] | reuse | [ ] |
-| 7 | media-video-hero | instance | [ ] | [x] | reuse | [ ] |
-| 8 | media-shop-the-feed | instance | [ ] | [x] | reuse | [ ] |
-| 9 | footer-columns-newsletter | global | [ ] | [x] | reuse | [ ] |
-| 10 | global-cart-drawer | global | [ ] | [x] | reuse | [ ] |
-| 11 | global-predictive-search | global | [ ] | [x] | reuse | [ ] |
-| 12 | global-menu-drawer | global | [ ] | [x] | reuse | [ ] |
-| 13 | product-info-main | instance | [ ] | [x] | reuse | [ ] |
-| 14 | before-after-slider (PDP RESULTS) | instance | [ ] | [x] | reuse | [ ] |
-| 15 | media-video-hero (how-to) | instance | [ ] | [x] | reuse | [ ] |
-| 16 | features-multicolumn (ingredients) | instance | [ ] | [x] | reuse | [ ] |
-| 17 | faq-collapsible-tabs (PDP) | instance | [ ] | [x] | reuse | [ ] |
-| 18 | product-showcase-related | instance | [ ] | [x] | reuse | [ ] |
-| 19 | product-showcase-grid-plp | instance | [ ] | [x] | reuse | [ ] |
-| 20 | search-results | instance | [ ] | [x] | reuse | [ ] |
-| 21 | cart-page-main | instance | [ ] | [x] | reuse | [ ] |
-| 22 | about + faq + contact + rewards + sub + promo + policy + locator + blog + 404 | mixed | [ ] | [x] | reuse | [ ] |
+| 1 | promo-announcement-bar | global | [x] | [x] | reuse | [x] |
+| 2 | navigation-header-mega | global | [x] | [x] | reuse | [x] |
+| 3 | hero-slideshow | instance | [x] | [x] | reuse | [x] |
+| 4 | product-showcase-grid-featured | instance | [x] | [x] | reuse | [x] |
+| 5 | product-showcase-featured | instance | [x] | [x] | reuse | [x] |
+| 6 | editorial-image-with-text | instance | [x] | [x] | reuse | [x] |
+| 7 | media-video-hero | instance | [x] | [x] | reuse | [x] |
+| 8 | media-shop-the-feed | instance | [x] | [x] | reuse | [x] |
+| 9 | footer-columns-newsletter | global | [x] | [x] | reuse | [x] |
+| 10 | global-cart-drawer | global | [x] | [x] | reuse | [x] |
+| 11 | global-predictive-search | global | [x] | [x] | reuse | [x] |
+| 12 | global-menu-drawer | global | [x] | [x] | reuse | [x] |
+| 13 | product-info-main | instance | [x] | [x] | reuse | [x] |
+| 14 | before-after-slider (PDP RESULTS) | instance | [x] | [x] | reuse | [x] |
+| 15 | media-video-hero (how-to) | instance | [x] | [x] | reuse | [x] |
+| 16 | features-multicolumn (ingredients) | instance | [x] | [x] | reuse | [x] |
+| 17 | faq-collapsible-tabs (PDP) | instance | [x] | [x] | reuse | [x] |
+| 18 | product-showcase-related | instance | [x] | [x] | reuse | [x] |
+| 19 | product-showcase-grid-plp | instance | [x] | [x] | reuse | [x] |
+| 20 | search-results | instance | [x] | [x] | reuse | [x] |
+| 21 | cart-page-main | instance | [x] | [x] | reuse | [x] |
+| 22 | about + faq + contact + rewards + sub + promo + policy + locator + blog + 404 | mixed | [x] | [x] | reuse | [x] |
+
+---
+
+## Interact
+
+| Component | State | Kanıt | Not |
+|---|---|---|---|
+| navigation-header-mega | open 1440 | `open.shop-mega.1440` | SHOP hover · 3 kolon + Featured |
+| global-menu-drawer | open 375/768 | `open.hamburger.{375,768}` | 1440 hamburger yok |
+| global-predictive-search | input | `input.faded.{375,768,1440}` | 1440 ürün satırı; 375/768 chip |
+| global-cart-drawer | initial + filled | `cart-bos` + `peel-pads` | Add to bag click; addToCart yok |
+| faq-collapsible-tabs | changed | `changed.ilk-soru` | gluten-free cevap açık |
 
 ---
 
 ## Aday / şemaya sığmayan
 
-- Alia scratch-card popup (`#alia-root-*`, “Try your luck”) — üçüncü parti overlay
+- Alia scratch-card popup (`#alia-root-*`, “Try your luck”) — üçüncü parti; e-posta/PII’ye girilmedi
 - Okendo PDP reviews (section 5) — reviews şeması yok
-- Store locator harita (StoreRocket / Sephora)
-- 404 video hero şablonu
+- Store locator harita (Mapbox / Sephora, 772 stores)
+- 404 video hero (“404 are you lost?”)
 - Blog **list** (`/blogs/news`, `/blogs/flareupfiles`) Hydrogen 404; article URL yaşıyor
 - `/campaigns` hydrate boş
-- Loyalty/rewards widget (Influence/üçüncü parti?)
-- Hydrogen/Sanity section id yok — selector `main#main > section:nth-of-type(n)` / Playwright `:has-text`
+- Loyalty/rewards widget + Spline 3D (“Built with Spline”)
+- Selling-plan sıklık (subscription PLP satırları)
+- Hydrogen/Sanity section id yok — selector `main#main > section:nth-of-type(n)` / class
+
+Ayrıntı: `candidates/topicals-hydrogen.md` · `candidates/topicals-404s.md`
 
 ---
 
-## Evidence backlog
+## Leftover (interact / yoklama)
 
-- [ ] Resmi 3vp tüm claiming obs
-- [ ] Interact: SHOP mega (1440), hamburger (375/768), search fill `faded`, cart filled
-- [ ] Alia overlay capture’ı bozarsa not
+- [ ] Cart adet `changed` (+/−)
+- [ ] PLP Filter / Sort panel
+- [ ] PDP before-after sürükle (statik kare zaten BEFORE\|AFTER kesik)
+- [ ] PDP FAQ accordion `changed`
+- [ ] About OUR PRINCIPLES madde 2–4 (görsel/caption değişir)
+- [ ] FAQ kategori tık (SHIPPING vb.)
+- [ ] 375/768 predictive search ürün satırı (2 deneme — yalnız chip)
+- [ ] Alia overlay (PII yok)
+- [ ] `/campaigns` hydrate
+- [ ] Newsletter / contact submit — **yapılmayacak** (PII)
