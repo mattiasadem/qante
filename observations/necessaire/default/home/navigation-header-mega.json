@@ -41,29 +41,49 @@
       "state": "open",
       "action": "click",
       "selector": "header button[data-dropdown-trigger='#dropdown-d132b01b-87a5-49c5-ab86-e562c25e3f4b']",
+      "capture": false,
+      "viewports": [
+        "1440"
+      ]
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 800,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "shop-mega",
       "viewports": [
         "1440"
       ],
-      "not": "Shop → siyah mega: Shop All/New/Bestsellers/By Scent + 2 promo kart"
+      "not": "Shop tık + 800ms — siyah mega boyansın"
     }
   ],
   "stateFindings": {
     "initial": "Shop Body Hair Sets Travel About; Search; Account; Cart 0.",
     "open": "1440 Shop → siyah full-width mega: Shop All / New / Bestsellers / By Scent + New + Bestsellers görsel kartları."
   },
-  "missingStates": [
-    {
-      "state": "open",
-      "sebep": "375/768 mega yok — hamburger .mobile-menu (global-menu-drawer)"
-    }
-  ],
+  "missingStates": [],
   "interactionNote": "Shop tık (hover değil). Cookie dismiss script. Chat bubble karede kalabilir (PII yok, doldurulmadı).",
   "kaynak": "necessaire",
   "preset": "default",
   "sayfa": "home",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": []
+  "evidence": [
+    "evidence/necessaire/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/necessaire/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/necessaire/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/necessaire/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
+  "capture": {
+    "url": "https://necessaire.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:45:36.635Z"
+  }
 }

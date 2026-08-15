@@ -3,8 +3,8 @@
   "schemaId": "faq-collapsible-tabs",
   "url": "https://necessaire.com/products/the-body-retinol",
   "selector": "#shopify-section-template--19863517757553__product-faq",
-  "notlar": "FAQs. İlk soru How Soon Will I See Results From Retinol? (karede açık göründü).",
-  "delta": ".faq-section. Kategori tab yok. Accordion tıkı ayrıca denenecek.",
+  "notlar": "FAQs. Q/A her zaman açık (How Soon Will I See Results From Retinol?). Accordion yok.",
+  "delta": ".faq-section. Kategori tab yok. Toggle yok — changed missing.",
   "interactionStates": [
     "initial",
     "changed"
@@ -44,14 +44,34 @@
     }
   ],
   "stateFindings": {
-    "initial": "FAQs; ilk soru + cevap görünür (How Soon Will I See Results From Retinol?).",
-    "changed": "Accordion toggle — karede doğrulanacak."
+    "initial": "FAQs; Q/A yan yana açık (How Soon Will I See Results From Retinol? + pH / Eczema / Pregnant / Gluten). +/− yok.",
+    "changed": "Yok — DOM'da accordion tetik yok."
   },
-  "missingStates": [],
-  "interactionNote": "İlk karede cevap zaten açık olabilir; toggle piksel değişmezse missingStates.",
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "adım 4 (click #shopify-section-template--19863517757553__product-faq .expandable-list__header-title, #shopify-section-template--19863517757553__product-faq [data-toggle='collapse'], #shopify-section-template--19863517757553__product-faq button, #shopify-section-template--19863517757553__product-faq a[role='button']): selector eşleşmedi: #shopify-section-template--19863517757553__product-faq .expandable-list__header-title, #shopify-section-template--19863517757553__product-faq [data-toggle='collapse'], #shopify-section-template--19863517757553__product-faq button, #shopify-section-template--19863517757553__product-faq a[role='button']"
+    }
+  ],
+  "interactionNote": "Statik Q&A — changed denendi, selector eşleşmedi. initial 3vp yeterli.",
   "kaynak": "necessaire",
   "preset": "default",
   "sayfa": "product-detail",
   "evidenceSlug": "faq-collapsible-tabs",
-  "evidence": []
+  "evidence": [
+    "evidence/necessaire/default/product-detail/faq-collapsible-tabs.initial.faq-ilk.1440.png",
+    "evidence/necessaire/default/product-detail/faq-collapsible-tabs.initial.faq-ilk.375.png",
+    "evidence/necessaire/default/product-detail/faq-collapsible-tabs.initial.faq-ilk.768.png"
+  ],
+  "capture": {
+    "url": "https://necessaire.com/products/the-body-retinol",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:41:38.522Z"
+  }
 }

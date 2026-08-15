@@ -71,6 +71,14 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: necessaire-shoplift-quick-nav  
+Gerekçe: Home `#shopify-section-sl_quick_nav_1_1_Wgcgq9` (Shoplift). 768/1440 height 0. 375 resmi capture announcement/header chrome'a denk geldi (chip şerit değil). 375 home karesinde Bestsellers/Body/Hair/Sets/Shop All header altında görünür.  
+Örnekler: https://necessaire.com/  
+Öneri: leftover — app chip; 3vp yok  
+Karar: onay bekliyor
+
+---
+
 ADAY: necessaire-scent-repeats  
 Gerekçe: `/pages/scent` 7× `section_50_50` + 7× `index_product_grid` (Eucalyptus…Fragrance-Free). İlk trio alındı; kalanı aynı iskelet.  
 Örnekler: https://necessaire.com/pages/scent  
@@ -83,6 +91,14 @@ ADAY: necessaire-community-404
 Gerekçe: Footer “Community” → `/pages/community` 404.  
 Örnekler: https://necessaire.com/pages/community  
 Öneri: leftover — kırık link  
+Karar: onay bekliyor
+
+---
+
+ADAY: necessaire-plp-search-filters  
+Gerekçe: PLP `#collection` ve search `#shopify-section-search` DOM'da Sort + Filter By Category/Scent/Concern/Ingredient. Panel açılmadı; in-page filter `changed` yok.  
+Örnekler: https://necessaire.com/collections/body · https://necessaire.com/search?q=body  
+Öneri: leftover — filter drawer/accordion  
 Karar: onay bekliyor
 
 ---
@@ -107,6 +123,10 @@ Karar: onay bekliyor
 - Subscribe sayfası banner1/banner3 — editorial tekrar  
 - Terms / Accessibility — `page-content-main` aynı page-text ailesi  
 - Corporate gifting / gift card — kampanya; PDP ailesi veya leftover  
-- Shoplift `sl_quick_nav` 1440 height 0 — 375 şerit observation  
+- Shoplift `sl_quick_nav` 1440 height 0 — 375 chip görünür, claiming obs yok  
 - Web-pixel / Rebuy tracker iframe — dokunulmadı  
-- Spacers (`index_spacer_*`) — section değil  
+- Spacers (`index_spacer_*`) — section değil
+- PLP/search `Filters (0)` / Category / Scent / Concern paneli — açılmadı (`changed` yok)
+- PDP `product-info-tabs` kesitinde search drawer chrome (Escape + scroll yetmedi; header-içi fixed)
+- PDP 375 Subscribe radio — sticky ATC örttü; fiyat karesi 768/1440
+- Breadcrumb `#collection-breadcrumbs` 375 height 0
