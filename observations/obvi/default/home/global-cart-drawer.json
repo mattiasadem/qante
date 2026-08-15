@@ -1,0 +1,70 @@
+{
+  "observationId": "obvi.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "obvi",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://myobvi.com/products/detox-collagen",
+  "selector": "cart-drawer, #CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/obvi/default/home/global-cart-drawer.filled.detox-qty1.1440.png",
+    "evidence/obvi/default/home/global-cart-drawer.changed.qty2.1440.png"
+  ],
+  "captureMode": "viewport",
+  "interactionStates": ["filled", "changed"],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://myobvi.com/products/detox-collagen",
+      "capture": false,
+      "not": "Detox PDP; varsayılan SUBSCRIBE & SAVE 15%"
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button:has-text('ADD TO CART'), button:has-text('Add to cart')",
+      "capture": false,
+      "not": "Subscribe $33.99 / 4 weeks; one-time $39.99"
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#cart-icon-bubble, a[href='/cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "detox-qty1",
+      "not": "YOUR CART (1)"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], .quantity__button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "qty2",
+      "not": "Adet 2 → YOUR CART (2), subtotal güncellendi"
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "Boş sepet + merchandised goal kartları + quiz CTA ilk pass'te görüldü; bu pass'te ayrı kare alınmadı"
+    }
+  ],
+  "stateFindings": {
+    "filled": "Üstte ADD $7.01 FOR FREE SHIPPING! progress. YOUR CART (1): Detox 30 Day Supply $33.99 (üstü $39.99), qty stepper, trash, satırda DELIVERED EVERY 4 WEEKS abonelik dropdown. COMPLETE YOUR SET carousel (Collagenic Burn Stim Free Pineapple Coconut $49.99 ADD +). Subtotal $33.99, CHECKOUT, 90 days satisfaction guarantee.",
+    "changed": "YOUR CART (2); qty 2; subtotal $79.98 → $67.98 (indirimli); free-shipping bar güncellendi."
+  },
+  "interactionNote": "kargoEsigi, oneriler, bosSepetKoleksiyonlari mevcut şemada var; Obvi dolu drawer kanıtlandı.",
+  "capture": {
+    "url": "https://myobvi.com/products/detox-collagen",
+    "viewports": ["1440"],
+    "mode": "viewport",
+    "method": "desktop-interact-pass",
+    "updatedAt": "2026-08-15T13:42:00.000Z"
+  },
+  "notlar": "Boş sepet: goal kartları + quiz CTA ilk oturumda görüldü (kare yok).",
+  "delta": "Satır bazında abonelik sıklığı dropdown (DELIVERED EVERY 4 WEEKS) — DataSource.cart satır meta; merchant slot değil. onerilerBasligi metni: COMPLETE YOUR SET."
+}

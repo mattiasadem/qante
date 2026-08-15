@@ -1,0 +1,48 @@
+{
+  "id": "product-finder-quiz",
+  "kategori": "product-showcase",
+  "varyant": "quiz",
+  "scope": "instance",
+  "amac": "Çok adımlı ürün keşif testi; kullanıcı hedef/tercih seçerek önerilen ürünlere yönlendirilir",
+  "slots": {
+    "baslik": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120
+    },
+    "items": {
+      "tip": "array",
+      "zorunlu": true,
+      "min": 2,
+      "max": 8,
+      "item": {
+        "ikon": {
+          "tip": "icon",
+          "zorunlu": true
+        },
+        "etiket": {
+          "tip": "text",
+          "zorunlu": true,
+          "maxLen": 60
+        }
+      }
+    }
+  },
+  "styleKnobs": {
+    "layout": "grid|stacked",
+    "hizalama": "left|center",
+    "kolon": [2, 4],
+    "gorselBoyut": "sm|md|lg",
+    "ikonGoster": true
+  },
+  "dataBindings": [],
+  "actions": [
+    "navigate",
+    "emit:quiz.step"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "responsive": "Mobilde ikon kartları 2 kolon grid; başlık üstte ortalı"
+}

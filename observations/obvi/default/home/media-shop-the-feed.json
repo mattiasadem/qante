@@ -1,0 +1,51 @@
+{
+  "observationId": "obvi.default.home.media-shop-the-feed",
+  "schemaId": "media-shop-the-feed",
+  "kaynak": "obvi",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://myobvi.com/",
+  "selector": "section:has-text('SEE OBVI IN ACTION')",
+  "evidenceSlug": "media-shop-the-feed",
+  "evidence": [
+    "evidence/obvi/default/home/media-shop-the-feed.initial.ugc-feed.1440.png"
+  ],
+  "captureMode": "section",
+  "interactionStates": ["initial"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://myobvi.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "text=SEE OBVI IN ACTION",
+      "capture": true,
+      "captureMode": "section",
+      "etiket": "ugc-feed",
+      "not": "Creator video carousel; next ok ilerletildi (kanıt initial kare)"
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Next arrow ile video değişimi görüldü ama ayrı state karesi bu pass'te kaydedilmedi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "SEE OBVI IN ACTION! başlığı; creator video carousel; ürün etiketleri düz link (/products/detox-collagen, /products/obvi-collagenic-fat-burner) — overlay/quick-view yok."
+  },
+  "interactionNote": "Next arrow ile creator videoları ilerledi; etiketler PDP'ye navigate eder.",
+  "capture": {
+    "url": "https://myobvi.com/",
+    "viewports": ["1440"],
+    "mode": "section",
+    "method": "desktop-interact-pass",
+    "updatedAt": "2026-08-15T13:42:00.000Z"
+  },
+  "notlar": "UGC video feed; media-video yerine shop-the-feed daha yakın (ürün etiketli feed).",
+  "delta": "Ürün etiketleri overlay/quick-view tetiklemez; düz navigate (/products/…). emit:product.quickView kullanılmıyor."
+}

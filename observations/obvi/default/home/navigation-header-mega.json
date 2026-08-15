@@ -1,0 +1,58 @@
+{
+  "observationId": "obvi.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "obvi",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://myobvi.com/",
+  "selector": "header, .header-wrapper",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/obvi/default/home/navigation-header-mega.open.shop-mega.1440.png",
+    "evidence/obvi/default/home/navigation-header-mega.changed.learn-mega.1440.png"
+  ],
+  "captureMode": "viewport",
+  "interactionStates": ["open", "changed"],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://myobvi.com/",
+      "capture": false,
+      "not": "Ana sayfa"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "text=SHOP",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "SHOP hover — tıklama /collections/shop-all'a gider; hover panel açılır"
+    },
+    {
+      "state": "changed",
+      "action": "hover",
+      "selector": "text=LEARN",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "learn-mega",
+      "not": "LEARN paneli SHOP'tan farklı içerik"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "open": "Floating pill header: SHOP▾ LEARN▾ BLOG RECIPES · obvi. logo · TAKE THE QUIZ · arama · hesap · sepet. SHOP mega: BY BENEFIT (Weight Loss / Collagen Support / Daily Health), SHOP ALL, BUILD YOUR OWN BUNDLE, New Arrivals / Best Sellers / Not Sure? Take Our Quiz! kutuları.",
+    "changed": "LEARN mega: Our Story, How To Start, Community, Blog, Recipes — SHOP panelinden farklı link seti."
+  },
+  "interactionNote": "SHOP tıklanırsa koleksiyona gider; mega yalnız hover. Quiz CTA header'da birinci sınıf pill buton.",
+  "capture": {
+    "url": "https://myobvi.com/",
+    "viewports": ["1440"],
+    "mode": "viewport",
+    "method": "desktop-interact-pass",
+    "updatedAt": "2026-08-15T13:40:00.000Z"
+  },
+  "notlar": "Platter custom floating pill header.",
+  "delta": "Header utility'de TAKE THE QUIZ birinci sınıf CTA (pill border). Mega paneller menü öğesine göre farklı içerik (SHOP vs LEARN)."
+}

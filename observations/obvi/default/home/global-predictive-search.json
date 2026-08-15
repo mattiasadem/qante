@@ -1,0 +1,47 @@
+{
+  "observationId": "obvi.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "obvi",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://myobvi.com/",
+  "selector": "[id*='search'], .search-modal, form[action*='/search']",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/obvi/default/home/global-predictive-search.input.collagen.1440.png"
+  ],
+  "captureMode": "viewport",
+  "interactionStates": ["input"],
+  "interactionSteps": [
+    {
+      "state": "input",
+      "action": "goto",
+      "value": "https://myobvi.com/",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input[name='q'], input[type='search']",
+      "value": "collagen",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "collagen",
+      "not": "Arama overlay açık; collagen yazıldı → ?q=collagen"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "input": "Predictive overlay: Product Results, 4 ürün kartı (Collagen Peptides Caramel Macchiato, Collagenic Burn Fast ×2, Collagen Hydration Raspberry Rosé) + See 8 results."
+  },
+  "interactionNote": "Headless'ta overlay input görünürlüğü zor; arama sonuç sayfası/kanıt aynı sorguyu gösterir.",
+  "capture": {
+    "url": "https://myobvi.com/",
+    "viewports": ["1440"],
+    "mode": "viewport",
+    "method": "desktop-interact-pass",
+    "updatedAt": "2026-08-15T13:41:00.000Z"
+  },
+  "notlar": "",
+  "delta": ""
+}
