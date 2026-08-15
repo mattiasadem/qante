@@ -61,6 +61,13 @@ Karar: leftover
 
 ---
 
+ADAY: vollebak-cart-qty-changed  
+Gerekçe: Dolu drawer’da Decrease/Increase quantity var; `changed` çekilmedi (2 deneme kuralı — ATC+size yeterli).  
+Öneri: leftover  
+Karar: leftover
+
+---
+
 ## Bilinçli atlananlar
 
 - `/account` / login / checkout  

@@ -5,9 +5,16 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://vollebak.com/",
-  "selector": "#search-modal",
+  "selector": "dialog.search-modal__content",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/vollebak/default/home/global-predictive-search.initial.search-bos.1440.png",
+    "evidence/vollebak/default/home/global-predictive-search.initial.search-bos.375.png",
+    "evidence/vollebak/default/home/global-predictive-search.initial.search-bos.768.png",
+    "evidence/vollebak/default/home/global-predictive-search.input.jacket.1440.png",
+    "evidence/vollebak/default/home/global-predictive-search.input.jacket.375.png",
+    "evidence/vollebak/default/home/global-predictive-search.input.jacket.768.png"
+  ],
   "notlar": "dialog-component#search-modal + predictive-search-component. Kapalı 0 yükseklik. Search ikon tık → overlay.",
   "delta": "Horizon predictive-search-form. View all. Kapalı kare yanıltır.",
   "captureMode": "viewport",
@@ -18,24 +25,27 @@
   ],
   "interactionSteps": [
     {
-      "state": "input",
+      "state": "initial",
       "action": "goto",
       "value": "https://vollebak.com/",
       "capture": false
     },
     {
-      "state": "input",
+      "state": "initial",
       "action": "click",
       "selector": "header button.search-modal__button[aria-label='Search']",
-      "capture": false
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Boş overlay: Search / Clear / View all"
     },
     {
       "state": "input",
       "action": "fill",
-      "selector": "#search-modal input[type='search'], #search-modal input[name='q'], predictive-search-component input",
+      "selector": "dialog.search-modal__content input[type='search'], dialog.search-modal__content input[name='q']",
       "value": "jacket",
       "capture": false,
-      "not": "katalog: Full Metal Jacket / FWAHBL Jacket"
+      "not": "katalog: Full Metal Jacket Copper / Sashiko Chore Jacket"
     },
     {
       "state": "input",
@@ -46,17 +56,29 @@
     {
       "state": "input",
       "action": "click",
-      "selector": "#search-modal input[type='search'], #search-modal input[name='q'], predictive-search-component input",
+      "selector": "dialog.search-modal__content input[type='search'], dialog.search-modal__content input[name='q']",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "jacket",
-      "not": "Öneri listesi"
+      "not": "18 sonuç: FMJ Copper, Sashiko, Field Jacket…"
     }
   ],
   "stateFindings": {
-    "initial": "Kapalı search-modal 0px — kapalı kare yanıltır.",
-    "input": "jacket fill sonrası öneri beklenen (capture sonrası yazılacak)."
+    "initial": "Search overlay açık, boş: başlık Search, çizgi input (Q Enter), Close X. Ürün yok.",
+    "input": "jacket → 18 results. 1440 bir satır: FMJ Copper, Sashiko Blue, Field Jacket Green, Suit Jacket Black + View all. 375 iki kolon aynı ürünler."
   },
   "missingStates": [],
-  "interactionNote": "Sorgu mağaza ürünü: jacket. PII yok."
+  "interactionNote": "Sorgu mağaza ürünü: jacket. PII yok.",
+  "capture": {
+    "url": "https://vollebak.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:02:53.897Z",
+    "prepareClick": "header button.search-modal__button[aria-label='Search']"
+  }
 }
