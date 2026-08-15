@@ -17,6 +17,7 @@
 | `/pages/bundler` | **404** | Bundle alternatif |
 | `/pages/wholesale-inquiries` | **404** | Footer |
 | `/pages/tracking` | **404** | Footer |
+| `/pages/how-to-use` | **404** | How To Start kartı hedefi |
 
 `/pages/community` 200 (ayrı landing; join CTA değil).
 
