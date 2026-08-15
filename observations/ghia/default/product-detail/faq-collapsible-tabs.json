@@ -1,0 +1,61 @@
+{
+  "observationId": "ghia.default.product-detail.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "ghia",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://drinkghia.com/products/ghia",
+  "selector": "#shopify-section-template--17451695702250__faqs_simple_grqYyd",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/ghia/default/product-detail/faq-collapsible-tabs.1440.png",
+    "evidence/ghia/default/product-detail/faq-collapsible-tabs.375.png",
+    "evidence/ghia/default/product-detail/faq-collapsible-tabs.768.png",
+    "evidence/ghia/default/product-detail/faq-collapsible-tabs.changed.aperitif.1440.png",
+    "evidence/ghia/default/product-detail/faq-collapsible-tabs.changed.aperitif.375.png",
+    "evidence/ghia/default/product-detail/faq-collapsible-tabs.changed.aperitif.768.png",
+    "evidence/ghia/default/product-detail/faq-collapsible-tabs.initial.kapali.1440.png",
+    "evidence/ghia/default/product-detail/faq-collapsible-tabs.initial.kapali.375.png",
+    "evidence/ghia/default/product-detail/faq-collapsible-tabs.initial.kapali.768.png"
+  ],
+  "notlar": "FREQUENTLY ASKED QUESTIONS. İlk: What is an Apéritif? Cevap accordion'da.",
+  "delta": "faqs_simple. Kategori tab yok.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://drinkghia.com/products/ghia",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "FAQ listesi; ilk cevap önizlemesi olabilir"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--17451695702250__faqs_simple_grqYyd :text('What is an Apéritif?')",
+      "capture": true,
+      "etiket": "aperitif",
+      "not": "İlk soru açık"
+    }
+  ],
+  "stateFindings": {
+    "initial": "FAQ başlıkları + ilk cevap önizlemesi.",
+    "changed": "What is an Apéritif? açık."
+  },
+  "missingStates": [],
+  "capture": {
+    "url": "https://drinkghia.com/products/ghia",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:06:38.955Z"
+  }
+}
