@@ -65,6 +65,29 @@ Karar: onay bekliyor
 | `/cart` | `/?viewcart=true` homepage — sepet Rebuy drawer |
 | sitemap.xml | index (5 loc) — ürün/sayfa loc yok |
 
+---
+
+ADAY: flamingoestate-cart-filled-768  
+Gerekçe: Rebuy filled 375+1440 alındı. 768 iki deneme: UI addToCart + `/cart/add.js` reddetti (varyant id yok). Skill: iki deneme sonra dur.  
+Öneri: sonraki tur — 768’de PDP subscribe submit veya cart.js varyant  
+Karar: onay bekliyor
+
+---
+
+ADAY: flamingoestate-predictive-list  
+Gerekçe: Header search açılıyor; `soap` yazılıyor; 2.5s sonra dropdown/öneri DOM’da yok. Sonuç `/search?q=soap` sayfasında (ayrı observation).  
+Öneri: ertele — predictive overlay bu temada yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: flamingoestate-menu-accordion  
+Gerekçe: `.megamenu-v3-menu-card` açık 375/768 + 1440 Shop click. Shop by Room / Projects alt satırları tıklanmadı (aynı kart, ekstra piksel iddiası yok).  
+Öneri: ertele  
+Karar: onay bekliyor
+
+---
+
 ## Bilinçli atlananlar
 
 - `/account/login` — auth
@@ -77,3 +100,6 @@ Karar: onay bekliyor
 - PDP review widget
 - `/collections/candles` custom LP
 - Stockists map
+- 768 cart filled (2 deneme)
+- Predictive ürün listesi
+- Shop by Room / Projects accordion

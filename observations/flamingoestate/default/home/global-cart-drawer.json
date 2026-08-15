@@ -8,8 +8,17 @@
   "selector": ".rebuy-cart__flyout",
   "captureMode": "viewport",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
-  "interactionStates": ["initial", "filled"],
+  "evidence": [
+    "evidence/flamingoestate/default/home/global-cart-drawer.filled.rosemary-qty1.1440.png",
+    "evidence/flamingoestate/default/home/global-cart-drawer.filled.rosemary-qty1.375.png",
+    "evidence/flamingoestate/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/flamingoestate/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/flamingoestate/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
   "interactionSteps": [
     {
       "state": "initial",
@@ -55,11 +64,27 @@
     }
   ],
   "stateFindings": {
-    "initial": "",
-    "filled": ""
+    "initial": "1440/768 Rebuy: Your Basket is Empty + TRY NEW PLEASURES Jasmine $64 ADD. 375: LATEST RELEASE kartları (Summer Travel Set / Noir Fig / Three Sisters) — empty-cart-promos.",
+    "filled": "375+1440: Tuscan Rosemary Candle $57.60/$64, Delivery Every 4 Weeks, qty 1, $92.40 to FREE SHIPPING, TRY NEW PLEASURES, CHECKOUT. SMS checkbox."
   },
-  "missingStates": [],
-  "interactionNote": "/cart → /?viewcart=true homepage. Sepet Rebuy #rebuy-cart. İlk megamenu-cart-icon 0px; clickVisible görüneni alır. AJAX fallback varsa not.",
-  "notlar": "Rebuy smart cart. Boş: Your Basket is Empty. TRY NEW PLEASURES.",
-  "delta": "Prestige cart-drawer değil Rebuy overlay. empty-cart-promos section merchandising. cart-page-main yok."
+  "missingStates": [
+    {
+      "state": "filled",
+      "sebep": "768 iki deneme: addToCart UI+/cart/add.js reddetti (varyant id yok). 375/1440 UI doldu. Dur."
+    }
+  ],
+  "interactionNote": "/cart → /?viewcart=true. Rebuy .rebuy-cart__flyout. addToCart 375/1440 UI (subscribe default). 768 yok. Checkout tıklanmadı.",
+  "notlar": "Rebuy smart cart. Boş masaüstü: Your Basket is Empty. Mobil boş: LATEST RELEASE promos.",
+  "delta": "Prestige cart-drawer değil Rebuy. cart-page-main yok. 375 boş ≠ 1440 boş.",
+  "capture": {
+    "url": "https://flamingoestate.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:41:46.092Z"
+  }
 }
