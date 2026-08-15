@@ -2,7 +2,7 @@
 
 *Kaynak:* https://myobvi.com · *Preset:* default · *Tema:* Platter custom (Theme Store skin değil)
 
-**Şu anki odak:** İlk envanter — desktop interact pass tamamlandı
+**Durum:** ✅ **KAPALI** — tam envanter (33 obs · 110 kanıt · 1 yeni şema)
 
 ---
 
@@ -11,53 +11,84 @@
 | | |
 |---|---|
 | Evidence kökü | `evidence/obvi/default/` |
-| Walkthrough / not | Desktop interact pass; **capture-observation.mjs 3vp çalıştırılmadı** |
-| Kapsam satırı | Obvi · default · home + product-detail + quiz · 9 obs · 1 yeni şema · Platter custom |
-
-### Capture sınırlaması
-
-Tüm kanıtlar **tek viewport (1440)** desktop interact pass ile alındı. `capture.method = desktop-interact-pass`. Resmi `capture-observation.mjs` üç viewport (375/768/1440) akışı bu tema için **henüz koşulmadı** — validator WARN beklenen.
-
----
-
-## Bileşen checklist
-
-| # | Bileşen / id | scope | Screenshot | Not | JSON | Done |
-|---|---|---|---|---|---|---|
-| 1 | promo-announcement-bar | global | [x] | FREE SHIPPING $75 | [x] | [x] |
-| 2 | navigation-header-mega | global | [x] | SHOP vs LEARN mega hover | [x] | [x] |
-| 3 | hero-slideshow | instance | [x] | BACK IN STOCK hero | [x] | [x] |
-| 4 | global-predictive-search | global | [x] | collagen input | [x] | [x] |
-| 5 | product-showcase-tabs | instance | [x] | COLLAGEN tab changed | [x] | [x] |
-| 6 | media-shop-the-feed | instance | [x] | UGC tags navigate | [x] | [x] |
-| 7 | global-cart-drawer | global | [x] | filled + qty changed | [x] | [x] |
-| 8 | product-info-main | instance | [x] | Detox subscribe PDP | [x] | [x] |
-| 9 | product-finder-quiz | instance | [x] | quiz screen 1 only | [x] | [x] |
+| Capture yöntemi | Resmi `capture-observation.mjs` + `capture-interaction.mjs` (375 / 768 / 1440) |
+| Batch script | `scripts/run-obvi-captures.mjs` |
+| Kapsam | Obvi · default · 12 sayfa tipi · 33 obs · 1 yeni şema (`product-finder-quiz`) |
+| Validate | `npm run validate` → **65 temiz · 0 error · 0 warn** |
+| PR | https://github.com/mattiasadem/qante/pull/1 (draft, merge yok) |
 
 ---
 
-## Aday / şemaya sığmayan
+## Sayfa tipi checklist (definition of done)
 
-- **Scratch-card %20 popup + CLAIM 20% OFF sticky pill** — ilk oturumda görüldü, ikinci oturumda yok; kanıt yok → [`candidates/obvi-gamified-offer.md`](../candidates/obvi-gamified-offer.md)
-- **product-finder kategori** — şema `product-showcase` + `quiz` varyantı; taksonomi adayı → [`candidates/obvi-product-finder.md`](../candidates/obvi-product-finder.md)
-- **Boş sepet merchandised goal kartları + quiz CTA** — ilk pass'te görüldü, bu pass'te kare yok (global-cart-drawer missingState)
+| # | Sayfa tipi | Durum | Observation(s) | Not |
+|---|---|---|---|---|
+| 1 | **Home** — tüm section'lar | ✅ done | 21 obs (aşağıda) | Marquee → footer newsletter |
+| 2 | **PDP** — Detox + farklı şablon | ✅ done | `product-info-main`, `product-info-main-2`, `before-after-slider` | Burn PDP'de before/after slider |
+| 3 | **PLP** — shop-all + benefit | ✅ done | `collection-nav-tabs`, `product-showcase-grid-plp`, `*-2` (weight-loss) | |
+| 4 | **Search results** — `collagen` tam sayfa | ✅ done | `search/search-results` | Overlay değil `/search?q=collagen` |
+| 5 | **Cart** — `/cart` + drawer boş + dolu | ✅ done | `cart/cart-page-main`, `home/global-cart-drawer` | initial + filled + changed (qty2) 3vp |
+| 6 | **Quiz** — ekran 1–2 | 🟡 partial | `quiz/product-finder-quiz` | Ekran 1: 3vp ✅ · Ekran 2: **blocked** (iframe click) |
+| 7 | **Blog** — liste + post | ✅ done | `blog-list/blog-list-main`, `blog-post/blog-post-main` | |
+| 8 | **Recipes** — liste + post (farklı şablon) | ✅ done | `blog-list/blog-list-main-2`, `blog-post/blog-post-main-2` | Aynı blog şablonu, farklı koleksiyon |
+| 9 | **Learn** — Our Story + How To Start | ✅ done | `about-brand/editorial-image-with-text` (`/pages/about-us-1`), `about-brand/collection-nav-slider` | `/pages/our-story` 404 |
+| 10 | **Bundle builder** | ⛔ blocked | — | `/pages/bundle-builder` broken; `candidates/obvi-blocked-pages.md` |
+| 11 | **Mobile menu** — 375 hamburger | ✅ done | `home/navigation-header-mega` · `open.mobil-menu` 375+768 | `changed` (LEARN mega) yalnız 1440 |
+| 12 | **Community join 404** | ⛔ blocked | delta only | `/pages/join-obvi-community` → 404; home band `editorial-image-with-text-3` |
 
 ---
 
-## Evidence backlog
+## Home section checklist (21 obs)
 
-- [ ] 3vp `capture-observation.mjs` yeniden koş (375/768/1440)
-- [ ] Scratch-card popup yeniden yakala (koşullu görünürlük)
-- [ ] Boş sepet drawer + goal kartları
-- [ ] Quiz adım 2+ (seçenek tıklanınca)
-- [ ] PDP supply 60/90 + one-time radio changed state
-- [ ] UGC carousel next-arrow changed kare
-- [ ] Home sayfasının geri kalan section'ları (footer, testimonials, vb.)
+| Section | schemaId | obs dosyası | 3vp | Done |
+|---|---|---|---|---|
+| Promo bar | promo-announcement-bar | home/promo-announcement-bar | ✅ | ✅ |
+| Header + mega + mobil menu | navigation-header-mega | home/navigation-header-mega | ✅ | ✅ |
+| Hero slideshow | hero-slideshow | home/hero-slideshow | ✅ | ✅ |
+| Predictive search overlay | global-predictive-search | home/global-predictive-search | ✅ | ✅ |
+| Marquee | promo-scrolling-marquee | home/promo-scrolling-marquee | ✅ | ✅ |
+| Category tiles (benefit) | collection-nav-slider | home/collection-nav-slider | ✅ | ✅ |
+| Category tiles 2 | collection-nav-slider | home/collection-nav-slider-2 | ✅ | ✅ |
+| Product tabs | product-showcase-tabs | home/product-showcase-tabs | ✅ | ✅ |
+| Image+text (quiz band) | editorial-image-with-text | home/editorial-image-with-text | ✅ | ✅ |
+| Trust icons | trust-icon-row | home/trust-icon-row | ✅ | ✅ |
+| Community band | editorial-image-with-text | home/editorial-image-with-text-3 | ✅ | ✅ (CTA 404) |
+| Subscribe & save | editorial-image-with-text | home/editorial-image-with-text-4 | ✅ | ✅ |
+| UGC feed | media-shop-the-feed | home/media-shop-the-feed | ✅ | ✅ |
+| Blog teaser | editorial-image-with-text | home/editorial-image-with-text-5 | ✅ | ✅ |
+| Image+text 2 | editorial-image-with-text | home/editorial-image-with-text-2 | ✅ | ✅ |
+| Cart drawer | global-cart-drawer | home/global-cart-drawer | ✅ | ✅ |
+| Footer newsletter | footer-columns-newsletter | home/footer-columns-newsletter | ✅ | ✅ |
 
 ---
 
-## Notlar
+## Blocker kayıtları (honest — icat edilmedi)
 
-- Quiz CTA birinci sınıf: header pill, hero CTA, mega tile, boş sepet (görüldü, kare yok)
-- Hero before/after kolaj = hero görseli, `before-after-slider` section değil
-- Cart satırında abonelik sıklığı dropdown — observation delta, yeni cart şeması açılmadı
+| Blocker | Kayıt | Retry |
+|---|---|---|
+| Quiz ekran 2 (iframe Next) | `quiz/product-finder-quiz` · `missingStates.changed` | ✅ 1 retry — iframe piercing başarısız |
+| Bundle builder | `candidates/obvi-blocked-pages.md` | Sayfa "Something went wrong" |
+| Community join 404 | `editorial-image-with-text-3` delta + candidates | `/pages/join-obvi-community` 404 |
+| Scratch-card popup | `candidates/obvi-gamified-offer.md` | Koşullu görünürlük; kanıt yok |
+
+---
+
+## Yeni şema
+
+| schemaId | Dosya | Gerekçe |
+|---|---|---|
+| product-finder-quiz | `sections/instance/product-finder-quiz.json` | Octane/lightbox quiz — mevcut şemalara sığmıyor |
+
+---
+
+## Evidence özeti
+
+- **110 PNG** — `evidence/obvi/default/`
+- Tüm obs: kanıt iddiası olan state'lerde 375+768+1440 **veya** `missingStates` (quiz changed, nav changed@mobil N/A)
+- Predictive search + mobil menu selector düzeltmeleri ikinci pass'te uygulandı
+
+---
+
+## Açık iş
+
+*Yok — checklist kapalı. Blocker'lar yukarıda kayıtlı.*

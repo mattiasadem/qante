@@ -4,67 +4,109 @@
   "kaynak": "obvi",
   "preset": "default",
   "sayfa": "home",
-  "url": "https://myobvi.com/products/detox-collagen",
-  "selector": "cart-drawer, #CartDrawer",
+  "url": "https://myobvi.com/",
+  "selector": "[id*=\"modal_cart_drawer\"] div.max-w-md",
   "evidenceSlug": "global-cart-drawer",
   "evidence": [
+    "evidence/obvi/default/home/global-cart-drawer.changed.qty2.1440.png",
+    "evidence/obvi/default/home/global-cart-drawer.changed.qty2.375.png",
+    "evidence/obvi/default/home/global-cart-drawer.changed.qty2.768.png",
     "evidence/obvi/default/home/global-cart-drawer.filled.detox-qty1.1440.png",
-    "evidence/obvi/default/home/global-cart-drawer.changed.qty2.1440.png"
+    "evidence/obvi/default/home/global-cart-drawer.filled.detox-qty1.375.png",
+    "evidence/obvi/default/home/global-cart-drawer.filled.detox-qty1.768.png",
+    "evidence/obvi/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/obvi/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/obvi/default/home/global-cart-drawer.initial.cart-bos.768.png"
   ],
   "captureMode": "viewport",
-  "interactionStates": ["filled", "changed"],
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
   "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://myobvi.com/",
+      "capture": false,
+      "not": "Sepet capture öncesi /cart/clear.js ile boşaltılır"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[href=\"/#modal--cart-drawer\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "[id*=\"modal_cart_drawer\"] div.max-w-md",
+      "etiket": "cart-bos",
+      "not": "YOUR CART (0); goal kartları + TAKE OUR QUIZ"
+    },
     {
       "state": "filled",
       "action": "goto",
       "value": "https://myobvi.com/products/detox-collagen",
-      "capture": false,
-      "not": "Detox PDP; varsayılan SUBSCRIBE & SAVE 15%"
+      "capture": false
     },
     {
       "state": "filled",
       "action": "addToCart",
-      "selector": "button:has-text('ADD TO CART'), button:has-text('Add to cart')",
+      "selector": "button:has-text(\"ADD TO CART\")",
       "capture": false,
-      "not": "Subscribe $33.99 / 4 weeks; one-time $39.99"
+      "not": "Detox subscribe default"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://myobvi.com/",
+      "capture": false
     },
     {
       "state": "filled",
       "action": "click",
-      "selector": "#cart-icon-bubble, a[href='/cart']",
+      "selector": "a[href=\"/#modal--cart-drawer\"]",
       "capture": true,
       "captureMode": "viewport",
+      "captureSelector": "[id*=\"modal_cart_drawer\"] div.max-w-md",
       "etiket": "detox-qty1",
-      "not": "YOUR CART (1)"
+      "not": "YOUR CART (1); DELIVERED EVERY 4 WEEKS; COMPLETE YOUR SET"
     },
     {
       "state": "changed",
       "action": "click",
-      "selector": "button[name='plus'], .quantity__button[name='plus']",
+      "selector": "[id*=\"modal_cart_drawer\"] button[aria-label=\"Increase quantity\"]",
+      "value": 2000,
       "capture": true,
       "captureMode": "viewport",
+      "captureSelector": "[id*=\"modal_cart_drawer\"] div.max-w-md",
       "etiket": "qty2",
-      "not": "Adet 2 → YOUR CART (2), subtotal güncellendi"
+      "not": "YOUR CART (2)"
     }
   ],
-  "missingStates": [
-    {
-      "state": "initial",
-      "sebep": "Boş sepet + merchandised goal kartları + quiz CTA ilk pass'te görüldü; bu pass'te ayrı kare alınmadı"
-    }
-  ],
+  "missingStates": [],
   "stateFindings": {
-    "filled": "Üstte ADD $7.01 FOR FREE SHIPPING! progress. YOUR CART (1): Detox 30 Day Supply $33.99 (üstü $39.99), qty stepper, trash, satırda DELIVERED EVERY 4 WEEKS abonelik dropdown. COMPLETE YOUR SET carousel (Collagenic Burn Stim Free Pineapple Coconut $49.99 ADD +). Subtotal $33.99, CHECKOUT, 90 days satisfaction guarantee.",
-    "changed": "YOUR CART (2); qty 2; subtotal $79.98 → $67.98 (indirimli); free-shipping bar güncellendi."
+    "initial": "ADD $74.99 FOR FREE SHIPPING!; YOUR CART (0); goal kartları Weight Loss/Collagen/Daily Health + TAKE OUR QUIZ + SHOP ALL.",
+    "filled": "YOUR CART (1) Detox $33.99; satırda abonelik dropdown; COMPLETE YOUR SET upsell.",
+    "changed": "YOUR CART (2); qty 2; subtotal güncellendi."
   },
-  "interactionNote": "kargoEsigi, oneriler, bosSepetKoleksiyonlari mevcut şemada var; Obvi dolu drawer kanıtlandı.",
+  "interactionNote": "initial state öncesi sepet /cart/clear.js ile boşaltılır (run-obvi-captures.mjs).",
   "capture": {
-    "url": "https://myobvi.com/products/detox-collagen",
-    "viewports": ["1440"],
+    "url": "https://myobvi.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
     "mode": "viewport",
-    "method": "desktop-interact-pass",
-    "updatedAt": "2026-08-15T13:42:00.000Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T15:04:43.224Z"
   },
-  "notlar": "Boş sepet: goal kartları + quiz CTA ilk oturumda görüldü (kare yok).",
-  "delta": "Satır bazında abonelik sıklığı dropdown (DELIVERED EVERY 4 WEEKS) — DataSource.cart satır meta; merchant slot değil. onerilerBasligi metni: COMPLETE YOUR SET."
+  "notlar": "",
+  "delta": "Satır bazında abonelik sıklığı dropdown — DataSource.cart satır meta. onerilerBasligi: COMPLETE YOUR SET. bosSepetKoleksiyonlari: goal kartları."
 }

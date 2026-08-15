@@ -5,13 +5,17 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://myobvi.com/",
-  "selector": "[id*='search'], .search-modal, form[action*='/search']",
+  "selector": "#shopify-section-sections--14239256609029__modal_search_wUnfgp",
   "evidenceSlug": "global-predictive-search",
   "evidence": [
-    "evidence/obvi/default/home/global-predictive-search.input.collagen.1440.png"
+    "evidence/obvi/default/home/global-predictive-search.input.collagen.1440.png",
+    "evidence/obvi/default/home/global-predictive-search.input.collagen.375.png",
+    "evidence/obvi/default/home/global-predictive-search.input.collagen.768.png"
   ],
   "captureMode": "viewport",
-  "interactionStates": ["input"],
+  "interactionStates": [
+    "input"
+  ],
   "interactionSteps": [
     {
       "state": "input",
@@ -21,26 +25,37 @@
     },
     {
       "state": "input",
+      "action": "click",
+      "selector": "header button:has-text(\"Search\")",
+      "capture": false
+    },
+    {
+      "state": "input",
       "action": "fill",
-      "selector": "input[name='q'], input[type='search']",
+      "selector": "input[name=\"q\"]:visible",
       "value": "collagen",
       "capture": true,
       "captureMode": "viewport",
+      "captureSelector": "[id*=\"modal_search\"] section.fixed, [id*=\"modal_search\"] .fixed.inset-x-0",
       "etiket": "collagen",
-      "not": "Arama overlay açık; collagen yazıldı → ?q=collagen"
+      "not": "Predictive Product Results + See 8 results"
     }
   ],
   "missingStates": [],
   "stateFindings": {
-    "input": "Predictive overlay: Product Results, 4 ürün kartı (Collagen Peptides Caramel Macchiato, Collagenic Burn Fast ×2, Collagen Hydration Raspberry Rosé) + See 8 results."
+    "input": "collagen yazıldı → Product Results, 4 ürün kartı + See 8 results."
   },
-  "interactionNote": "Headless'ta overlay input görünürlüğü zor; arama sonuç sayfası/kanıt aynı sorguyu gösterir.",
+  "interactionNote": "",
   "capture": {
     "url": "https://myobvi.com/",
-    "viewports": ["1440"],
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
     "mode": "viewport",
-    "method": "desktop-interact-pass",
-    "updatedAt": "2026-08-15T13:41:00.000Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T15:02:56.694Z"
   },
   "notlar": "",
   "delta": ""

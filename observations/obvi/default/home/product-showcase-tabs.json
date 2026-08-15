@@ -5,14 +5,21 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://myobvi.com/",
-  "selector": "section:has-text('THE OBVI CHOICE')",
+  "selector": "#shopify-section-template--14239255462149__slider_ngLxiE",
   "evidenceSlug": "product-showcase-tabs",
   "evidence": [
+    "evidence/obvi/default/home/product-showcase-tabs.changed.collagen.1440.png",
+    "evidence/obvi/default/home/product-showcase-tabs.changed.collagen.375.png",
+    "evidence/obvi/default/home/product-showcase-tabs.changed.collagen.768.png",
     "evidence/obvi/default/home/product-showcase-tabs.initial.weight-loss.1440.png",
-    "evidence/obvi/default/home/product-showcase-tabs.changed.collagen.1440.png"
+    "evidence/obvi/default/home/product-showcase-tabs.initial.weight-loss.375.png",
+    "evidence/obvi/default/home/product-showcase-tabs.initial.weight-loss.768.png"
   ],
   "captureMode": "section",
-  "interactionStates": ["initial", "changed"],
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
   "interactionSteps": [
     {
       "state": "initial",
@@ -23,34 +30,36 @@
     {
       "state": "initial",
       "action": "scrollTo",
-      "selector": "text=THE OBVI CHOICE",
+      "selector": "#shopify-section-template--14239255462149__slider_ngLxiE",
       "capture": true,
-      "captureMode": "section",
       "etiket": "weight-loss",
-      "not": "Varsayılan sekme WEIGHT LOSS"
+      "not": "Varsayılan WEIGHT LOSS sekmesi"
     },
     {
       "state": "changed",
       "action": "click",
-      "selector": "button:visible:has-text('COLLAGEN')",
+      "selector": "#shopify-section-template--14239255462149__slider_ngLxiE button:visible:has-text(\"COLLAGEN\")",
       "capture": true,
-      "captureMode": "section",
       "etiket": "collagen",
-      "not": "COLLAGEN sekmesi → peptides/hydration/colostrum grid"
+      "not": "COLLAGEN → peptides/hydration/colostrum grid"
     }
   ],
   "missingStates": [],
   "stateFindings": {
-    "initial": "THE OBVI CHOICE TO başlığı; WEIGHT LOSS sekmesi aktif; weight-loss ürün grid'i.",
-    "changed": "COLLAGEN sekmesi seçildi; grid collagen peptides / hydration / colostrum ürünlerine döndü."
+    "initial": "THE OBVI CHOICE TO; WEIGHT LOSS aktif.",
+    "changed": "COLLAGEN sekmesi; collagen ürün grid'i."
   },
   "interactionNote": "",
   "capture": {
     "url": "https://myobvi.com/",
-    "viewports": ["1440"],
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
     "mode": "section",
-    "method": "desktop-interact-pass",
-    "updatedAt": "2026-08-15T13:42:00.000Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T14:48:01.220Z"
   },
   "notlar": "",
   "delta": ""

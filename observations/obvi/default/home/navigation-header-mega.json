@@ -5,54 +5,93 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://myobvi.com/",
-  "selector": "header, .header-wrapper",
+  "selector": "#shopify-section-sections--14239256543493__navigation-bar",
   "evidenceSlug": "navigation-header-mega",
   "evidence": [
-    "evidence/obvi/default/home/navigation-header-mega.open.shop-mega.1440.png",
-    "evidence/obvi/default/home/navigation-header-mega.changed.learn-mega.1440.png"
+    "evidence/obvi/default/home/navigation-header-mega.changed.learn-mega.1440.png",
+    "evidence/obvi/default/home/navigation-header-mega.open.mobil-menu.375.png",
+    "evidence/obvi/default/home/navigation-header-mega.open.mobil-menu.768.png",
+    "evidence/obvi/default/home/navigation-header-mega.open.shop-mega.1440.png"
   ],
   "captureMode": "viewport",
-  "interactionStates": ["open", "changed"],
+  "interactionStates": [
+    "open",
+    "changed"
+  ],
   "interactionSteps": [
     {
       "state": "open",
       "action": "goto",
       "value": "https://myobvi.com/",
-      "capture": false,
-      "not": "Ana sayfa"
+      "capture": false
     },
     {
       "state": "open",
       "action": "hover",
-      "selector": "text=SHOP",
+      "selector": "header a:has-text(\"SHOP\")",
+      "viewports": [
+        "1440"
+      ],
       "capture": true,
       "captureMode": "viewport",
+      "captureSelector": "[id=\"Desktop Megamenu\"]",
       "etiket": "shop-mega",
-      "not": "SHOP hover — tıklama /collections/shop-all'a gider; hover panel açılır"
+      "not": "SHOP hover mega — BY BENEFIT + promo kutuları"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "a[href=\"#megamenu--mobile\"]",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "[id*=\"modal_sidebar_menu\"] section.fixed",
+      "etiket": "mobil-menu",
+      "not": "375/768 hamburger sidebar"
+    },
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://myobvi.com/",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
     },
     {
       "state": "changed",
       "action": "hover",
-      "selector": "text=LEARN",
+      "selector": "header a:has-text(\"LEARN\")",
+      "viewports": [
+        "1440"
+      ],
       "capture": true,
       "captureMode": "viewport",
+      "captureSelector": "[id=\"Desktop Megamenu\"]",
       "etiket": "learn-mega",
-      "not": "LEARN paneli SHOP'tan farklı içerik"
+      "not": "LEARN panel: Our Story, How To Start, Community, Blog, Recipes"
     }
   ],
   "missingStates": [],
   "stateFindings": {
-    "open": "Floating pill header: SHOP▾ LEARN▾ BLOG RECIPES · obvi. logo · TAKE THE QUIZ · arama · hesap · sepet. SHOP mega: BY BENEFIT (Weight Loss / Collagen Support / Daily Health), SHOP ALL, BUILD YOUR OWN BUNDLE, New Arrivals / Best Sellers / Not Sure? Take Our Quiz! kutuları.",
-    "changed": "LEARN mega: Our Story, How To Start, Community, Blog, Recipes — SHOP panelinden farklı link seti."
+    "open": "1440 SHOP mega: BY BENEFIT, SHOP ALL, BUILD YOUR OWN BUNDLE, New Arrivals/Best Sellers/Quiz kutuları. 375/768: Main Menu sidebar, Shop All + benefit linkleri.",
+    "changed": "1440 LEARN mega: Our Story, How To Start, Community, Blog, Recipes — SHOP panelinden farklı."
   },
-  "interactionNote": "SHOP tıklanırsa koleksiyona gider; mega yalnız hover. Quiz CTA header'da birinci sınıf pill buton.",
+  "interactionNote": "SHOP tıklanırsa /collections/shop-all'a gider; yalnız hover. Header'da TAKE THE QUIZ birinci sınıf CTA.",
   "capture": {
     "url": "https://myobvi.com/",
-    "viewports": ["1440"],
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
     "mode": "viewport",
-    "method": "desktop-interact-pass",
-    "updatedAt": "2026-08-15T13:40:00.000Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T15:02:05.303Z"
   },
-  "notlar": "Platter custom floating pill header.",
-  "delta": "Header utility'de TAKE THE QUIZ birinci sınıf CTA (pill border). Mega paneller menü öğesine göre farklı içerik (SHOP vs LEARN)."
+  "notlar": "Floating pill header.",
+  "delta": "Utility'de TAKE THE QUIZ pill CTA. Mega paneller menü öğesine göre farklı içerik (SHOP vs LEARN)."
 }

@@ -22,7 +22,7 @@
 | Stretch · Snow / Sand / Diffuse | [`stretch.md`](./stretch.md) | Snow ✅ · Sand ✅ · Diffuse ✅ · 86 obs · 365 kare · 0 yeni şema · interact |
 | Motion · Motion / Satchel / Memo | [`motion.md`](./motion.md) | ✅ 69 obs · 213 kare · 0 yeni şema · WEAR/CARRY |
 | Symmetry · 5 preset | [`symmetry.md`](./symmetry.md) | ✅ 145 obs · 447 kare · 0 yeni şema · hotspot + FAQ |
-| Obvi (Platter custom) | [`obvi.md`](./obvi.md) | 🟡 ilk pass — 9 obs · 12 kare (1440 only) · 1 yeni şema · desktop interact |
+| Obvi (Platter custom) | [`obvi.md`](./obvi.md) | ✅ tamam — 12 sayfa tipi · 33 obs · 110 kanıt · 1 yeni şema · 3 blocker kayıtlı |
 
 **Interact (discover sonrası derinlik):** [`interact.md`](./interact.md) — kapalı kare yalanı; Stretch + Cocoon/Balance shop-the-look kapandı.
 

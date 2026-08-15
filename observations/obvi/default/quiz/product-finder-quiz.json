@@ -5,41 +5,64 @@
   "preset": "default",
   "sayfa": "quiz",
   "url": "https://myobvi.com/pages/supplement-quiz",
-  "selector": "main, .page-width:has-text('ultimate health')",
+  "selector": "iframe[id^=\"lightbox-iframe-\"]",
   "evidenceSlug": "product-finder-quiz",
   "evidence": [
-    "evidence/obvi/default/quiz/product-finder-quiz.initial.goal-screen.1440.png"
+    "evidence/obvi/default/quiz/product-finder-quiz.initial.goal-screen.1440.png",
+    "evidence/obvi/default/quiz/product-finder-quiz.initial.goal-screen.375.png",
+    "evidence/obvi/default/quiz/product-finder-quiz.initial.goal-screen.768.png"
   ],
-  "captureMode": "viewport",
-  "interactionStates": ["initial"],
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
   "interactionSteps": [
     {
       "state": "initial",
       "action": "goto",
       "value": "https://myobvi.com/pages/supplement-quiz",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "selector": "iframe[id^=\"lightbox-iframe-\"]",
+      "value": 10000,
       "capture": true,
-      "captureMode": "viewport",
       "etiket": "goal-screen",
-      "not": "İlk ekran; cevap verilmedi"
+      "not": "Ekran 1: What is your ultimate health and beauty goal?"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "iframe[id^=\"lightbox-iframe-\"] >> text=Lose Weight",
+      "capture": false,
+      "not": "Lightbox iframe — capture-interaction iframe piercing başarısız (retry aynı)"
     }
   ],
   "missingStates": [
     {
       "state": "changed",
-      "sebep": "Dört seçenekten biri tıklanmadı; sonraki adımlar görülmedi"
+      "sebep": "adım 2 (click iframe[id^=\"lightbox-iframe-\"] >> text=Lose Weight): selector eşleşmedi: iframe[id^=\"lightbox-iframe-\"] >> text=Lose Weight"
     }
   ],
   "stateFindings": {
-    "initial": "What is your ultimate health and beauty goal? — dört ikonlu daire seçenek: Lose Weight, Boost my energy, Detox and gut cleanse, Look youthful and radiant. E-posta/lead alanı yok (lead-capture-form değil)."
+    "initial": "Dört ikon seçenek: Lose Weight, Boost my energy, Detox and gut cleanse, Look youthful and radiant. Lead alanı yok.",
+    "changed": "Lose Weight seçildi → What do you struggle with in your weightloss journey? (multi-select + Next/Back). E-posta alanı yok."
   },
-  "interactionNote": "Yalnız ekran 1 belgelendi. kategori adayı: candidates/obvi-product-finder.md",
+  "interactionNote": "Quiz Octane/lightbox iframe içinde. kategori adayı: candidates/obvi-product-finder.md",
   "capture": {
     "url": "https://myobvi.com/pages/supplement-quiz",
-    "viewports": ["1440"],
-    "mode": "viewport",
-    "method": "desktop-interact-pass",
-    "updatedAt": "2026-08-15T13:42:00.000Z"
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T14:53:37.559Z"
   },
-  "notlar": "Yeni şema product-finder-quiz; scope instance, sayfa /pages/supplement-quiz.",
-  "delta": ""
+  "notlar": "Iframe embed; adım 2 blocked — capture-interaction iframe click piercing başarısız.",
+  "delta": "Quiz third-party lightbox iframe embed. Adım 2 (weightloss journey) manuel probe'da görüldü; resmi capture blocked."
 }
