@@ -86,6 +86,28 @@ Karar: onay bekliyor
 ---
 
 ADAY: drinktrip-newsletter-popup  
-Gerekçe: Header `button[aria-label=newsletter-popup]` “Newsletter”. PII — açılmadı/gönderilmedi.  
+Gerekçe: Header envelope `button` “Newsletter” / `aria-label=newsletter-popup`. PII — açılmadı/gönderilmedi.  
 Öneri: leftover  
+Karar: onay bekliyor
+
+---
+
+ADAY: drinktrip-search-page-capture-crash  
+Gerekçe: `/search?q=mango` probe 200, 10 ürün, Filters, `#…__main` 1657px. Resmi `capture-observation.mjs` `dismissAllOverlays` içinde `TypeError: Cannot read properties of null (reading 'style')` — iki deneme. Script’e dokunulmadı. Predictive drawer mango 3vp home’da.  
+Örnekler: https://drink-trip.com/search?q=mango  
+Öneri: leftover — script bug; observation JSON duruyor, evidence[] boş  
+Karar: onay bekliyor
+
+---
+
+ADAY: drinktrip-rebuy-bleed-on-static  
+Gerekçe: Rebuy `.rebuy-cart__flyout` bazı resmi section karelerinin sağına biniyor (PDP buy box, FAQ, ingredients, affiliate). Kapalı flyout x=2380; yine de 1440 kırpımda YOUR CART görülebiliyor. Script’e dokunulmadı. İçerik okunur; sepet kendi obs’unda.  
+Öneri: leftover — moonjuice/brez ile aynı aile  
+Karar: onay bekliyor
+
+---
+
+ADAY: drinktrip-logo-list-is-celebs  
+Gerekçe: Home/PDP `logo_list_large` karede marka logosu yok — Joe Jonas / Ambrosio / Wesley / Mackintosh alıntı kartları. Observation `testimonial-quote-carousel` (+ PDP `.2`).  
+Öneri: leftover not — şema uydurulmadı  
 Karar: onay bekliyor

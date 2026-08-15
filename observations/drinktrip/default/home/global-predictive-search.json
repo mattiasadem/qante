@@ -7,14 +7,21 @@
   "url": "https://drink-trip.com/",
   "selector": "#search-drawer",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/drinktrip/default/home/global-predictive-search.input.mango.1440.png",
+    "evidence/drinktrip/default/home/global-predictive-search.input.mango.375.png",
+    "evidence/drinktrip/default/home/global-predictive-search.input.mango.768.png",
+    "evidence/drinktrip/default/home/global-predictive-search.open.drawer-acik.1440.png",
+    "evidence/drinktrip/default/home/global-predictive-search.open.drawer-acik.375.png",
+    "evidence/drinktrip/default/home/global-predictive-search.open.drawer-acik.768.png"
+  ],
   "notlar": "PREDICTIVE-SEARCH-DRAWER#search-drawer sağ 500px. Kapalı x=1440. Input .predictive-search__input.",
   "delta": "Focal predictive-search drawer. 1440 opener hidden-pocket; 375 opener hidden-desk. Native /search sayfası ayrı obs.",
   "captureMode": "viewport",
   "prepareClick": "a[aria-label=\"Search\"][aria-controls=\"search-drawer\"].hidden-pocket",
   "interactionStates": [
-    "open",
-    "input"
+    "input",
+    "open"
   ],
   "interactionSteps": [
     {
@@ -44,9 +51,20 @@
     }
   ],
   "stateFindings": {
-    "open": "Sağ drawer açık; input boş (metin yoklandı boş).",
-    "input": "mango → PRODUCTS / SUGGESTIONS / Tropical Mango £24.00 / VIEW ALL RESULTS."
+    "open": "Sağ drawer; placeholder What are you looking for?; PRODUCTS/SUGGESTIONS yok; VIEW ALL yok.",
+    "input": "mango → PRODUCTS (aktif) / SUGGESTIONS / Tropical Mango NEW £24.00 / VIEW ALL RESULTS."
   },
   "missingStates": [],
-  "interactionNote": "375 opener a.hidden-desk. :visible her vp’de doğru ikonu seçer."
+  "interactionNote": "375 opener a.hidden-desk. :visible her vp’de doğru ikonu seçer.",
+  "capture": {
+    "url": "https://drink-trip.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:01:12.924Z"
+  }
 }
