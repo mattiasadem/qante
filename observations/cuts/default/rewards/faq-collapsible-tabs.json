@@ -1,0 +1,69 @@
+{
+  "observationId": "cuts.default.rewards.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "cuts",
+  "preset": "default",
+  "sayfa": "rewards",
+  "url": "https://www.cutsclothing.com/pages/cuts-club",
+  "selector": "#mainContent > div > section:nth-of-type(6)",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/cuts/default/rewards/faq-collapsible-tabs.1440.png",
+    "evidence/cuts/default/rewards/faq-collapsible-tabs.375.png",
+    "evidence/cuts/default/rewards/faq-collapsible-tabs.768.png",
+    "evidence/cuts/default/rewards/faq-collapsible-tabs.changed.benefits-open.1440.png",
+    "evidence/cuts/default/rewards/faq-collapsible-tabs.changed.benefits-open.375.png",
+    "evidence/cuts/default/rewards/faq-collapsible-tabs.changed.benefits-open.768.png"
+  ],
+  "notlar": "Frequently Asked Questions. WHAT IS CUTS CLUB? açık metin; diğerleri Open accordion. Site-wide FAQ Kustomer’da (dış).",
+  "delta": "openFirst ilk soru metni görünür. Kategori tab yok.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://www.cutsclothing.com/pages/cuts-club",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "button[aria-label='Open accordion for What are the benefits of CUTS CLUB?']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[aria-label='Open accordion for What are the benefits of CUTS CLUB?']",
+      "capture": false,
+      "not": "İkinci soru — aria-label exact (has-text başka benefits satırına kaçmasın)"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": true,
+      "etiket": "benefits-open",
+      "not": "Benefits açık + VIP Membership metni"
+    }
+  ],
+  "stateFindings": {
+    "changed": "WHAT ARE THE BENEFITS OF CUTS CLUB? açık (−): VIP $10 monthly credits / Legacy 5% credit. İlk soru kapalı."
+  },
+  "missingStates": [],
+  "interactionNote": "Site FAQ Kustomer — bu sayfa yalnız Club SSS.",
+  "capture": {
+    "url": "https://www.cutsclothing.com/pages/cuts-club",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:08:39.850Z"
+  }
+}
