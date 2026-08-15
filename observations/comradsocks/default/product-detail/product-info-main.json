@@ -1,0 +1,74 @@
+{
+  "observationId": "comradsocks.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "comradsocks",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://www.comradsocks.com/products/knee-high-compression-socks-solid",
+  "selector": "#shopify-section-template--19465594208473__product_main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/comradsocks/default/product-detail/product-info-main.1440.png",
+    "evidence/comradsocks/default/product-detail/product-info-main.375.png",
+    "evidence/comradsocks/default/product-detail/product-info-main.768.png",
+    "evidence/comradsocks/default/product-detail/product-info-main.changed.3-pack.1440.png",
+    "evidence/comradsocks/default/product-detail/product-info-main.changed.3-pack.375.png",
+    "evidence/comradsocks/default/product-detail/product-info-main.changed.3-pack.768.png",
+    "evidence/comradsocks/default/product-detail/product-info-main.initial.1-pair.1440.png",
+    "evidence/comradsocks/default/product-detail/product-info-main.initial.1-pair.375.png",
+    "evidence/comradsocks/default/product-detail/product-info-main.initial.1-pair.768.png"
+  ],
+  "notlar": "COMPANIONS Knee-High Compression Socks - Solid. 4.7 / 5,956 Reviews. $34. 15–20 mmHg. Color Black. Size S/SW/M… Add to cart $34.",
+  "delta": "Simplistic type_Product_Main. Galeri sol + buy box. Swatch renk + size. ATC shopify-product-form /cart/add.",
+  "capture": {
+    "url": "https://www.comradsocks.com/products/knee-high-compression-socks-solid",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:29:48.493Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.comradsocks.com/products/knee-high-compression-socks-solid",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": "3000",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19465594208473__product_main",
+      "capture": true,
+      "etiket": "1-pair",
+      "not": "1 Pair $34 seçili"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--19465594208473__product_main button.quantity-buttons__btn:has-text('3-Pack')",
+      "capture": true,
+      "etiket": "3-pack",
+      "not": "3-Pack SAVE 5% — ATC fiyat değişmeli"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1 Pair seçili. COMPANIONS Knee-High Compression Socks - Solid. $34. Color Black. Size S. Add to cart $34.",
+    "changed": "3-Pack Popular seçili. Birim $32.30 Save 5% (üstü çizili $34). Add to cart $96.90. 1 Pair kapalı. URL aynı PDP."
+  },
+  "missingStates": [],
+  "interactionNote": "Pack kartı quantity-buttons__btn. Renk swatch ikinci deneme değil."
+}
