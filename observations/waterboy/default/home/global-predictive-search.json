@@ -8,9 +8,15 @@
   "selector": "details-modal.header__search .search-modal",
   "evidenceSlug": "global-predictive-search",
   "evidence": [
+    "evidence/waterboy/default/home/global-predictive-search.1440.png",
     "evidence/waterboy/default/home/global-predictive-search.375.png",
     "evidence/waterboy/default/home/global-predictive-search.768.png",
-    "evidence/waterboy/default/home/global-predictive-search.1440.png"
+    "evidence/waterboy/default/home/global-predictive-search.initial.modal-bos.1440.png",
+    "evidence/waterboy/default/home/global-predictive-search.initial.modal-bos.375.png",
+    "evidence/waterboy/default/home/global-predictive-search.initial.modal-bos.768.png",
+    "evidence/waterboy/default/home/global-predictive-search.input.daily.1440.png",
+    "evidence/waterboy/default/home/global-predictive-search.input.daily.375.png",
+    "evidence/waterboy/default/home/global-predictive-search.input.daily.768.png"
   ],
   "notlar": "Refresh details-modal.header__search. İkon tık → .search-modal + #Search-In-Modal. predictive-search custom element yok.",
   "delta": "Kapalı kare yanıltır. Overlay modal, ayrı sayfa değil. <predictive-search> yok — Refresh search-modal.",
@@ -48,11 +54,11 @@
     }
   ],
   "stateFindings": {
-    "initial": "Search ikonu; overlay kapalı.",
-    "input": "Kanıt karesine bakılacak — daily önerisi."
+    "initial": "Search ikonu tık → mavi search-modal; boş Search + X. Ürün/koleksiyon önerisi yok.",
+    "input": "Alana daily yazıldı; öneri satırı hâlâ yok."
   },
   "missingStates": [],
-  "interactionNote": "predictive-search elementi yok. Fill sonrası ürün satırı gelmezse missingStates.",
+  "interactionNote": "<predictive-search> yok. input yalnız yazı; sonuç listesi üretilmedi.",
   "capture": {
     "url": "https://www.waterboy.com/",
     "viewports": [
@@ -61,8 +67,8 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-08-15T18:03:21.279Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:17:50.719Z",
     "prepareClick": ".header__icon--search"
   }
 }

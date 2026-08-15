@@ -4,50 +4,26 @@
   "kaynak": "waterboy",
   "preset": "default",
   "sayfa": "home",
-  "url": "https://www.waterboy.com/products/daily-hydration",
+  "url": "https://www.waterboy.com/products/baby-tee",
   "selector": "#cart-notification",
   "evidenceSlug": "global-cart-drawer",
   "evidence": [
+    "evidence/waterboy/default/home/global-cart-drawer.1440.png",
     "evidence/waterboy/default/home/global-cart-drawer.375.png",
-    "evidence/waterboy/default/home/global-cart-drawer.768.png",
-    "evidence/waterboy/default/home/global-cart-drawer.1440.png"
+    "evidence/waterboy/default/home/global-cart-drawer.768.png"
   ],
   "notlar": "Refresh cart-notification dialog (Item added to your cart). Yan drawer yok; Cart ikonu /cart sayfasına gider.",
   "delta": "global-cart-drawer şemasına en yakın overlay — bildirim popup, sağ çekmece değil. Boş halde 0-size. Dolu için ATC şart.",
   "captureMode": "viewport",
   "interactionStates": [
+    "initial",
     "filled"
   ],
   "interactionSteps": [
     {
       "state": "filled",
       "action": "goto",
-      "value": "https://www.waterboy.com/products/daily-hydration",
-      "capture": false
-    },
-    {
-      "state": "filled",
-      "action": "click",
-      "selector": ".pdp-june-flavor__add",
-      "capture": false,
-      "not": "İlk aroma Add + — builder'da ADD TO CART çıkar"
-    },
-    {
-      "state": "filled",
-      "action": "waitFor",
-      "value": 800,
-      "capture": false
-    },
-    {
-      "state": "filled",
-      "action": "click",
-      "selector": "button:has-text('ADD TO CART'), button:has-text('Add to cart')",
-      "capture": false
-    },
-    {
-      "state": "filled",
-      "action": "waitFor",
-      "value": 1500,
+      "value": "https://www.waterboy.com/products/baby-tee",
       "capture": false
     },
     {
@@ -55,30 +31,23 @@
       "action": "addToCart",
       "selector": "button:has-text('ADD TO CART')",
       "capture": false,
-      "not": "UI tık olmazsa /cart/add.js fallback — variant Daily Cucumber Citrus 45613885292792"
-    },
-    {
-      "state": "filled",
-      "action": "click",
-      "selector": "#cart-icon-bubble",
-      "capture": false,
-      "not": "Notification görünmezse cart ikonu — /cart'a kaçabilir"
+      "not": "Merch Refresh form [name=id]=43824811180280. Daily june form yok."
     },
     {
       "state": "filled",
       "action": "waitFor",
-      "value": 800,
+      "value": 1200,
       "capture": true,
       "captureMode": "viewport",
-      "etiket": "daily-eklendi",
-      "not": "cart-notification veya /cart dolu"
+      "etiket": "tee-eklendi",
+      "not": "#cart-notification Item added"
     }
   ],
   "stateFindings": {
-    "filled": "Kanıt karesine bakılacak."
+    "filled": "İkinci çekim karesine bakılacak."
   },
   "missingStates": [],
-  "interactionNote": "Drawer yok. Add+ tek başına sepete yazmıyor; ADD TO CART sonrası notification. addToCart fallback variant 45613885292792.",
+  "interactionNote": "Drawer yok. Daily june ATC form id vermedi (1. deneme). Retry merch /products/baby-tee standart ADD TO CART.",
   "capture": {
     "url": "https://www.waterboy.com/products/daily-hydration",
     "viewports": [
@@ -87,7 +56,7 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-08-15T18:02:40.085Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:19:31.281Z"
   }
 }

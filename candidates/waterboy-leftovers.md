@@ -68,7 +68,7 @@ Karar: onay bekliyor
 - `/pages/this-page-does-not-exist-xyz` — 404 template  
 - `/blogs/news` — “0 articles / No articles found”  
 - `/pages/store-locator` — Stockist load fail  
-- `/pages/wholesale` — yalnız “Wholesale” başlığı  
+- `/pages/wholesale` — Typeform embed (Powered by Typeform); form PII, doldurulmadı  
 - `/pages/waterboy-subscribe-page` — SMS, section id yok  
 - `/pages/contact-us-2` — yoklanmadı  
 - Landing LPs (`sports-landing-page`, `weekend-recovery-lp`, `workout-hydration-lp`, `samplepack`) — walk dışı leftover

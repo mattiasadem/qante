@@ -8,9 +8,12 @@
   "selector": "#shopify-section-template--22761846341880__main",
   "evidenceSlug": "product-info-main",
   "evidence": [
+    "evidence/waterboy/default/product-detail/product-info-main.1440.png",
     "evidence/waterboy/default/product-detail/product-info-main.375.png",
     "evidence/waterboy/default/product-detail/product-info-main.768.png",
-    "evidence/waterboy/default/product-detail/product-info-main.1440.png"
+    "evidence/waterboy/default/product-detail/product-info-main.changed.30-sticks.1440.png",
+    "evidence/waterboy/default/product-detail/product-info-main.changed.30-sticks.375.png",
+    "evidence/waterboy/default/product-detail/product-info-main.changed.30-sticks.768.png"
   ],
   "notlar": "DAILY HYDRATION 4.8 (1767) 96% Recommended. Galeri + 0 sugar / 10 cal / gf/df. Sağ: Mix your flavors builder — 15/30/45/60 sticks, AUTO FILL BESTSELLERS, aroma Add+.",
   "delta": "pdp-june bundle builder (tek section). Üstte ayrı info_bar: 1 Waterboy Daily = 1.8 Liquid IVs. Standart varyant swatch değil. Ken peach ayrı template.",
@@ -27,11 +30,24 @@
     },
     {
       "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false,
+      "not": "pdp-june-2026 hydrate"
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": ".pdp-june-tier",
+      "capture": false
+    },
+    {
+      "state": "changed",
       "action": "click",
-      "selector": ".pdp-june-tier__node:has-text('30 sticks')",
+      "selector": ".pdp-june-tier__node-label:has-text('30 sticks')",
       "capture": true,
       "etiket": "30-sticks",
-      "not": "30 sticks + FREE SHIPPING seçili mi"
+      "not": "Retry: label tık — 1. deneme node tık kareyi değiştirmedi"
     }
   ],
   "stateFindings": {
@@ -47,7 +63,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T18:07:38.482Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:20:13.597Z"
   }
 }
