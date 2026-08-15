@@ -1,0 +1,113 @@
+{
+  "observationId": "drinktrip.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "drinktrip",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://drink-trip.com/",
+  "selector": ".rebuy-cart__flyout",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/drinktrip/default/home/global-cart-drawer.changed.qty2.1440.png",
+    "evidence/drinktrip/default/home/global-cart-drawer.changed.qty2.375.png",
+    "evidence/drinktrip/default/home/global-cart-drawer.changed.qty2.768.png",
+    "evidence/drinktrip/default/home/global-cart-drawer.filled.variety-qty1.1440.png",
+    "evidence/drinktrip/default/home/global-cart-drawer.filled.variety-qty1.375.png",
+    "evidence/drinktrip/default/home/global-cart-drawer.filled.variety-qty1.768.png",
+    "evidence/drinktrip/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/drinktrip/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/drinktrip/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "Rebuy sağ flyout. Boş: YOUR CART, £30 FREE SHIPPING (UK Mainland Only), Your cart is empty!, SHOP NOW, Why not try something new? Dream Gummies / Dream Powder / Pomegranate powder ADD.",
+  "delta": "Focal CART-DRAWER#mini-cart 0×0. /cart → /?viewcart=true home + rebuy-cart-visible. smart-cart--enabled. cart-page-main yok.",
+  "captureMode": "viewport",
+  "prepareClick": "a[aria-label=\"Cart\"][href=\"/cart\"]",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://drink-trip.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[aria-label=\"Cart\"][href=\"/cart\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş Rebuy"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://drink-trip.com/products/variety-pack-value",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-highlight__btn",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a[aria-label=\"Cart\"][href=\"/cart\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "variety-qty1",
+      "not": "ATC sonrası Rebuy"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".rebuy-cart__flyout button[aria-label*='Increase'], .rebuy-cart__flyout [class*='quantity'] button:last-child, .rebuy-cart__flyout button:has-text('+')",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "qty2",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "YOUR CART; You are £30.00 away from FREE SHIPPING UK Mainland Only; empty + SHOP NOW; upsell Dream Gummies £28 / Dream Powder £29.99 / Pomegranate powder £35 ADD.",
+    "filled": "FREE SHIPPING unlocked. FREE TRIP T-Shirt L £0 / FREE 3 Months Calm Premium £0 / Calming Variety Pack 48PACK qty 1 £48 (üstü £96). Subtotal 3 items £48. CHECKOUT + CONTINUE SHOPPING.",
+    "changed": "Variety qty 2; Subtotal 4 items £96 (üstü £278.97). Hediye satırlar duruyor."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart UI button.product-highlight__btn (Subscribe & Save 50%). Checkout’a girilmedi. Rebuy bazı statik karelere binebiliyor.",
+  "capture": {
+    "url": "https://drink-trip.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:05:01.138Z"
+  }
+}
