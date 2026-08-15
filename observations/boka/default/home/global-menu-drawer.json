@@ -1,0 +1,106 @@
+{
+  "observationId": "boka.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "boka",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.boka.com/",
+  "selector": "#header-sidebar-menu, navigation-drawer.navigation-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/boka/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/boka/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "Impact hamburger → header-sidebar-menu. 1440 N/A (lg:hidden).",
+  "delta": "Masaüstünde gizli. 375/768 open.",
+  "captureMode": "viewport",
+  "prepareClick": "button.klaviyo-close-form[aria-label='Close dialog']",
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://www.boka.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": "8500",
+      "capture": false,
+      "not": "Klaviyo 10% OFF dialog ~8s — her yeni sayfada tekrarlar"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.klaviyo-close-form[aria-label='Close dialog']",
+      "capture": false,
+      "not": "Klaviyo dialog kapat — PII form gönderilmedi"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": "400",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button[aria-label='Close teaser'], button.klaviyo-close-form[aria-label='Close dialog']",
+      "capture": false,
+      "not": "Get 10% off teaser varsa kapat; yoksa gizli dialog close no-op"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button[aria-controls='header-sidebar-menu']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Mobil menü — 1440 N/A (lg:hidden)"
+    }
+  ],
+  "interactionStates": [
+    "open"
+  ],
+  "stateFindings": {
+    "open": "375/768 soldan panel: X, Shop (ok), Subscribe & Save, Best Sellers, Find In Store, Dental Pros, About, sosyal (FB/IG/Pinterest/TikTok), Account. 1440 hamburger yok."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "Kapalı drawer 0px — header obs"
+    },
+    {
+      "state": "hover",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "filled",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "input",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "changed",
+      "sebep": "Shop ok tıklanmadı — yazılı link sayfaya gider"
+    }
+  ],
+  "interactionNote": "Klaviyo dialog kapatıldı; form doldurulmadı. 1440 hamburger yok.",
+  "capture": {
+    "url": "https://www.boka.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:32:59.868Z"
+  }
+}
