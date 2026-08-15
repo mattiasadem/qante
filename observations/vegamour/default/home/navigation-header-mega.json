@@ -1,0 +1,63 @@
+{
+  "observationId": "vegamour.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "vegamour",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://vegamour.com/",
+  "selector": "#shopify-section-sections--19977483288691__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/vegamour/default/home/navigation-header-mega.1440.png",
+    "evidence/vegamour/default/home/navigation-header-mega.375.png",
+    "evidence/vegamour/default/home/navigation-header-mega.768.png",
+    "evidence/vegamour/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/vegamour/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/vegamour/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/vegamour/default/home/navigation-header-mega.open.shop-all-mega.1440.png"
+  ],
+  "notlar": "Logo VEGAMOUR; Shop All / Best Sellers / Category / Concern / Hair Quiz; Sign In for Rewards; arama ikonu; Cart 0. Mega: #shop-all-menu 1440 hover.",
+  "delta": "Custom Pivotmade header. Mega paneller #shop-all-menu / #best-sellers-menu / #category-menu / #concern-menu / #hair-quiz-menu. Dil seçici yok. Account /account (PII). Sticky header.",
+  "capture": {
+    "url": "https://vegamour.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:31:46.731Z"
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://vegamour.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı sticky bar"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "a.nav__link--with-menu[href='/collections/all']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-all-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Shop All hover → Featured / Category / Concern kolonları"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Shop All / Best Sellers / Category / Concern / Hair Quiz; arama; Sign In for Rewards; Cart 0.",
+    "open": "1440 Shop All hover — Shop All + Featured (Best Sellers / Kits / Our Story) + Shop by Category + Shop by Concern + Best Sellers / Kits görselleri + Hair Quiz şeridi."
+  },
+  "missingStates": []
+}
