@@ -1,0 +1,71 @@
+{
+  "observationId": "shinesty.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "shinesty",
+  "preset": "default",
+  "sayfa": "home",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/shinesty/default/home/navigation-header-mega.1440.png",
+    "evidence/shinesty/default/home/navigation-header-mega.375.png",
+    "evidence/shinesty/default/home/navigation-header-mega.768.png",
+    "evidence/shinesty/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/shinesty/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/shinesty/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/shinesty/default/home/navigation-header-mega.open.featured-panel.1440.png"
+  ],
+  "url": "https://www.shinesty.com/",
+  "selector": "div.fixed.top-0.right-0.left-0.z-30",
+  "captureMode": "viewport",
+  "notlar": "1440: logo + Featured / Men's / Women's / Subscription / Couple's Matching / Sale / 3/$33 Socks + search/account/cart ikonları. Mega paneller DOM'da opacity-0. 375: 56px bar, hamburger + logo + ikon.",
+  "delta": "Next.js headless header (shopify-section yok). Mega hover ile açılır (opacity-0 → panel). Tema adı www'de yok; Shopify.theme yalnız shinesty.myshopify.com login'de: [Scoutside] Portal Theme / schema_name Skeleton theme 1.0.0 / theme_store_id null / id 122209206341 / CDN t/79.",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.shinesty.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Kapalı header — mega opacity-0"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "div.fixed.top-0 a:has-text(\"Featured\")",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "featured-panel",
+      "not": "Featured hover → mega opacity 0→1; New Arrivals / collabs / best sellers"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Kapalı header. 1440: Featured / Men's / Women's / Subscription / Couple's Matching / Sale / 3/$33 Socks + search/account/cart. Mega opacity-0. 375: logo + search/cart/hamburger.",
+    "open": "1440 Featured hover: Featured altı çizili. Panel New Arrivals, Nickelback X Shinesty, Hats, ParadICE, Middle Class Fancy, Swimwear, Wienerschnitzel, Margaritaville, Collaborations (Realtree / Diamond Cross Ranch / …), Men's/Women's Best Sellers, Gift Card."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375/768 mega yok — hamburger global-menu-drawer."
+    }
+  ],
+  "interactionNote": "Hover Featured (a, click değil). Account PII tıklanmadı.",
+  "capture": {
+    "url": "https://www.shinesty.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:09:20.042Z"
+  }
+}
