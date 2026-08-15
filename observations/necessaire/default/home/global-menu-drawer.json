@@ -1,0 +1,68 @@
+{
+  "observationId": "necessaire.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "url": "https://necessaire.com/",
+  "selector": ".mobile-menu .drawer",
+  "captureMode": "viewport",
+  "notlar": "375/768 hamburger a[data-mobile-menu-toggle] → .mobile-menu .drawer. Menu: Shop accordion + Body Hair Sets Travel About + My Account.",
+  "delta": "1440 N/A (header-nav--hide-on-mobile). Parent .mobile-menu.",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://necessaire.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "a[data-mobile-menu-toggle]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "menu-acik",
+      "viewports": [
+        "375",
+        "768"
+      ]
+    }
+  ],
+  "stateFindings": {
+    "open": "Close / Menu / Shop / Shop All / New / Bestsellers / By Scent / Body / Hair / Sets / Travel / About / My Account / New! The Hair Moisture Duo."
+  },
+  "missingStates": [],
+  "interactionNote": "Yalnız 375/768. Shop accordion tıkı sayfa değiştirebilir — ilk açık kare alındı.",
+  "kaynak": "necessaire",
+  "preset": "default",
+  "sayfa": "home",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/necessaire/default/home/global-menu-drawer.open.menu-acik.375.png",
+    "evidence/necessaire/default/home/global-menu-drawer.open.menu-acik.768.png"
+  ],
+  "capture": {
+    "url": "https://necessaire.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:35:59.643Z"
+  }
+}
