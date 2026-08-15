@@ -94,7 +94,12 @@ Karar: onay bekliyor
 - Home `intro_reveal_Eqqjhj` height 0
 - PLP `plp_callout_BNgx8J` height 0
 - Search filters section (`SHOW FILTER + SORT` / VIEW AS MODEL|PRODUCT) — ayrı 3vp yok
-- PLP `/collections/all` ve `/collections/best-sellers` resmi 3vp yok: `dismiss-overlays` `ds-quick-view` içindeki opacity-0 `aria-label=Close` butonuna force-click → `/products/compression-bundle?variant=…`. Orphan `evidence/hollowsocks/default/collection/product-showcase-grid-plp.375.png` (2 kolon + Labor Day mid-grid banner) — observation `evidence[]` boş, claim yok. Script’e dokunulmadı.
+- PLP resmi 3vp **yok** (2026-08-15 official `capture-observation.mjs` retry, `/collections/best-sellers`, tabs + grid). Blocker (script’e dokunulmadı):
+  1. Sayfa temiz: QV `never is-open`, `opacity-0` / `pointer-events-none`. Yine de `dismissAllOverlays` `page.locator('[aria-label="Close"]').first()` ile QV Close’a `force: true` (40×40, Playwright `isVisible`; href yok; `w/h` skip eşiğinin altında).
+  2. 768: o tık **4/4** → `/products/compression-bundle?variant=46935002579113`. Capture 3 kez geri alıyor; 4. dismiss de kaçırıyor.
+  3. Loop çıkınca son işlem `goto` PLP (başarılı dismiss yok). `assertCleanForScreenshot` kırılıyor: `ds-cart-drawer.pointer-events-none.fixed.inset-0` (768×1024, opacity 1, header/main dışında). Exact: `Screenshot iptal: ekranda hâlâ overlay var` + o DIV.
+  4. Aynı QV Close `/collections/all|everyday|running|compression` t=0’da DOM’da. 375/1440’te dismiss bazen URL değiştirmez; official sıra 375→768→1440 olduğu için 768’de duruyor.
+  5. Orphan `evidence/hollowsocks/default/collection/product-showcase-grid-plp.375.png` — `evidence[]` boş, claim yok.
 - Sub-nav görsel şerit yalnız <640 (`sm:h-0`)
 - Header mega drawer DOM (`.ds-meganav`) — nav `data-meganav-ignore`; hover panel getirmedi
 - Freegifts / BOGOS / Recart overlay (doldurulmadı)
