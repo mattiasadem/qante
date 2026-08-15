@@ -7,7 +7,15 @@
   "url": "https://hexclad.com/",
   "selector": "#shopify-section-header",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
+  "evidence": [
+    "evidence/hexclad/default/home/navigation-header-mega.1440.png",
+    "evidence/hexclad/default/home/navigation-header-mega.375.png",
+    "evidence/hexclad/default/home/navigation-header-mega.768.png",
+    "evidence/hexclad/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/hexclad/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/hexclad/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/hexclad/default/home/navigation-header-mega.open.hybrid-mega.1440.png"
+  ],
   "notlar": "Sticky header: announcement + About/Science/Recipes/HexClad Partners + HEXCLAD logo + search/account/cart. Alt sıra mega tetikleyiciler: Top Picks, Hybrid Cookware, Specialty Cookware, Knives/Cutting Boards, HexMills, Kitchen Tools, HexWear, Cocktail Shaker. 375 hamburger button[aria-label='Open menu'].",
   "delta": "Tema (vitrinde): Vaan UAT - 2026-07-30 | Evergreen 2026-08-11. schema_name Shiro 1.0.0, theme_store_id null, role main. Shop hexclad-cookware.myshopify.com. Shiro/Vaan custom header (mod_header_BIfLoG). Locale switcher header’da yok. Mega hover ile ürün kartları (js-submenu-card).",
   "interactionStates": [
@@ -25,21 +33,42 @@
     },
     {
       "state": "open",
-      "action": "hover",
-      "selector": "button.js-submenu-trigger:has-text('Hybrid Cookware')",
+      "action": "click",
+      "selector": "header button.mod_header_BIfLoG_Menu__link.js-submenu-trigger:has-text('Hybrid Cookware')",
+      "capture": false,
+      "viewports": [
+        "1440"
+      ],
+      "not": "Hover karede yalnız underline; tık ile mega"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 700,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "hybrid-mega",
       "viewports": [
         "1440"
       ],
-      "not": "Hybrid Cookware hover → ürün kartlı mega"
+      "not": "Mega panel"
     }
   ],
   "stateFindings": {
     "initial": "Yeşil announcement + siyah bar: About/Science/Recipes/HexClad Partners; logo; search/account/cart. Alt sıra kategori tetikleyicileri.",
-    "open": "1440 Hybrid Cookware hover: pans/pots/woks/griddles ürün kartları (görsel+fiyat)."
+    "open": "1440 Hybrid Cookware tık: sol alt kategori (Sets/Pans/Pots/Woks…) + 3 set kartı (12-PC $699, 6PC fry $399, 6-PC pot $379)."
   },
   "missingStates": [],
-  "interactionNote": "375/768 mega yok — hamburger ayrı observation (global-menu-drawer). HexClad Partners küçük dropdown, Hybrid mega asıl merchandising."
+  "interactionNote": "375/768 mega yok — hamburger ayrı observation (global-menu-drawer). HexClad Partners küçük dropdown, Hybrid mega asıl merchandising.",
+  "capture": {
+    "url": "https://hexclad.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:52:14.840Z"
+  }
 }

@@ -4,8 +4,8 @@
 *Tema (storefront):* **Vaan UAT - 2026-07-30 | Evergreen 2026-08-11** · `schema_name`: Shiro · `schema_version`: 1.0.0 · `theme_store_id`: null · role `main`  
 *Shop:* `hexclad-cookware.myshopify.com`
 
-**Durum:** Mod A walk yazılı — resmi 3vp + interact kuyrukta  
-**PR:** draft · **main'e merge yok**
+**Durum:** Mod A walk kapandı — 54 obs · resmi 3vp · interact piksel değişenlerde · leftover kayıtlı  
+**PR:** https://github.com/mattiasadem/qante/pull/22 (draft · **main'e merge yok**)
 
 ---
 
@@ -16,10 +16,12 @@
 | Evidence kökü | `evidence/hexclad/default/` |
 | Capture | resmi `capture-observation.mjs` + `capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
-| Parallel | yalnız `observations/hexclad/`, `evidence/hexclad/`, `todo/hexclad.md`, `candidates/hexclad-*.md` |
+| Validate | `validate-schemas.mjs` → 65 temiz · 0 error · 0 warn |
+| Gözlem / kanıt | 54 obs · 170 PNG |
+| Parallel | yalnız hexclad paths |
 
 **Kapsam satırı:**  
-`Hexclad · default · Vaan UAT / Evergreen / Shiro 1.0.0 · home→PDP→PLP→search→cart→content→footer→mobile · 54 obs (3vp pending) · 0 yeni şema`
+`Hexclad · default · Vaan UAT / Evergreen / Shiro 1.0.0 · home→PDP→PLP→search→cart→content→footer→mobile · 54 obs · 170 PNG · 0 yeni şema · leftover: 404 / Replo / Rivo / Junip / entry popup / press`
 
 ---
 
@@ -27,22 +29,25 @@
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home + announcement/header/footer | roster [x] | [ ] |
-| Mega / search overlay / cart drawer / mobile menu | roster [x] | [ ] interact |
-| PDP `/products/12-hexclad-pan-with-lid` | roster [x] | [ ] |
-| PLP `/collections/hybrid-cookware` | roster [x] | [ ] |
-| Search `/search?q=pan` | roster [x] | [ ] |
-| Cart `/cart` boş | roster [x] | [ ] |
-| About `/pages/about-us` | roster [x] | [ ] |
-| Science `/pages/hexclad-science` | roster [x] | [ ] |
-| Recipes hub + `/blogs/recipes` + article | roster [x] | [ ] |
-| FAQ `/pages/faq` | roster [x] | [ ] |
-| Contact Replo | roster [x] | [ ] |
-| Warranty / privacy | roster [x] | [ ] |
-| Gordon Ramsay | roster [x] | [ ] |
-| Care | roster [x] | [ ] |
+| Home + announcement/header/footer | ✅ | ✅ |
+| Mega Hybrid Cookware 1440 | ✅ interact | ✅ (375/768 N/A) |
+| Predictive search overlay | ✅ 1440 open+input | ✅ (375/768 menüde) |
+| Cart drawer boş + dolu | ✅ interact | ✅ |
+| Mobile menu 375+768 | ✅ interact | ✅ (1440 N/A) |
+| PDP `/products/12-hexclad-pan-with-lid` | ✅ | ✅ |
+| PLP `/collections/hybrid-cookware` | ✅ | ✅ |
+| Search `/search?q=pan` | ✅ | ✅ |
+| Cart `/cart` boş | ✅ | ✅ |
+| About `/pages/about-us` | ✅ | ✅ |
+| Science `/pages/hexclad-science` | ✅ | ✅ |
+| Recipes hub + `/blogs/recipes` + Niçoise | ✅ | ✅ |
+| FAQ `/pages/faq` | ✅ | ✅ |
+| Contact Replo | ✅ `page-content-main` | ✅ |
+| Warranty / privacy | ✅ | ✅ |
+| Gordon Ramsay | ✅ | ✅ |
+| Care | ✅ | ✅ |
 | Affiliate / refer / 404 / press / Junip | ⛔ candidates | — |
-| Newsletter / contact / warranty form | ⛔ PII yok | — |
+| Newsletter / warranty form / Claim Discount | ⛔ PII yok | — |
 
 ---
 
@@ -50,54 +55,57 @@
 
 | # | id | sayfa | Screenshot | Not | JSON | Done |
 |---|---|---|---|---|---|---|
-| 1 | promo-announcement-bar | home | [ ] | [x] | reuse | [ ] |
-| 2 | navigation-header-mega | home | [ ] | [x] | reuse | [ ] |
-| 3 | hero-slideshow | home | [ ] | [x] | reuse | [ ] |
-| 4 | collection-nav-slider | home | [ ] | [x] | reuse | [ ] |
-| 5 | product-showcase-grid-featured | home quadrant | [ ] | [x] | reuse | [ ] |
-| 6 | product-showcase-featured | home BBQ | [ ] | [x] | reuse | [ ] |
-| 7 | media-video-hero | home | [ ] | [x] | reuse | [ ] |
-| 8 | features-multicolumn | home | [ ] | [x] | reuse | [ ] |
-| 9 | testimonial-quote-carousel | home reviews | [ ] | [x] | reuse | [ ] |
-| 10 | product-showcase-grid-featured.2 | home bestsellers | [ ] | [x] | reuse | [ ] |
-| 11 | product-showcase-featured.2 | home knives | [ ] | [x] | reuse | [ ] |
-| 12 | media-shop-the-feed | home UGC | [ ] | [x] | reuse | [ ] |
-| 13 | editorial-image-with-text-overlay | home lifestyle | [ ] | [x] | reuse | [ ] |
-| 14 | social-proof-brand-logos | culinary council | [ ] | [x] | reuse | [ ] |
-| 15–16 | blog-list-main ×2 | home recipes/articles | [ ] | [x] | reuse | [ ] |
-| 17 | editorial-image-with-text | founder | [ ] | [x] | reuse | [ ] |
-| 18 | footer-columns-newsletter | home | [ ] | [x] | reuse | [ ] |
-| 19 | global-cart-drawer | home | [ ] | [x] | reuse | [ ] |
-| 20 | global-predictive-search | home | [ ] | [x] | reuse | [ ] |
-| 21 | global-menu-drawer | home 375/768 | [ ] | [x] | reuse | [ ] |
-| 22 | product-info-main | product-detail | [ ] | [x] | reuse | [ ] |
-| 23–29 | PDP features/video/reviews/hero/ugc/cats/media | product-detail | [ ] | [x] | reuse | [ ] |
-| 30–34 | PLP banner/nav/grid/faq/slider | collection | [ ] | [x] | reuse | [ ] |
-| 35 | search-results | search | [ ] | [x] | reuse | [ ] |
-| 36 | cart-page-main | cart | [ ] | [x] | reuse | [ ] |
-| 37–40 | about overlay/features/newsletter/shop | about-brand | [ ] | [x] | reuse | [ ] |
-| 41–42 | science | science | [ ] | [x] | reuse | [ ] |
-| 43–47 | recipes/blog/article | recipes + blog | [ ] | [x] | reuse | [ ] |
-| 48–54 | FAQ/contact/warranty/policy/gordon/care | content | [ ] | [x] | reuse | [ ] |
+| 1 | promo-announcement-bar | home | [x] | [x] | reuse | [x] |
+| 2 | navigation-header-mega | home + mega | [x] | [x] | reuse | [x] |
+| 3 | hero-slideshow | home | [x] | [x] | reuse | [x] |
+| 4 | collection-nav-slider | home | [x] | [x] | reuse | [x] |
+| 5 | product-showcase-grid-featured | home quadrant | [x] | [x] | reuse | [x] |
+| 6 | product-showcase-featured | home BBQ | [x] | [x] | reuse | [x] |
+| 7 | media-video-hero | home | [x] | [x] | reuse | [x] |
+| 8 | features-multicolumn | home | [x] | [x] | reuse | [x] |
+| 9 | testimonial-quote-carousel | home reviews | [x] | [x] | reuse | [x] |
+| 10 | product-showcase-grid-featured.2 | home bestsellers | [x] | [x] | reuse | [x] |
+| 11 | product-showcase-featured.2 | home knives | [x] | [x] | reuse | [x] |
+| 12 | media-shop-the-feed | home UGC | [x] | [x] | reuse | [x] |
+| 13 | editorial-image-with-text-overlay | home lifestyle | [x] | [x] | reuse | [x] |
+| 14 | social-proof-brand-logos | culinary council | [x] | [x] | reuse | [x] |
+| 15–16 | blog-list-main ×2 | home recipes/articles | [x] | [x] | reuse | [x] |
+| 17 | editorial-image-with-text | founder | [x] | [x] | reuse | [x] |
+| 18 | footer-columns-newsletter | home | [x] | [x] | reuse | [x] |
+| 19 | global-cart-drawer | home | [x] | [x] | reuse | [x] |
+| 20 | global-predictive-search | home 1440 | [x] | [x] | reuse | [x] |
+| 21 | global-menu-drawer | home 375/768 | [x] | [x] | reuse | [x] |
+| 22–29 | PDP info + 7 section | product-detail | [x] | [x] | reuse | [x] |
+| 30–34 | PLP banner/nav/grid/faq/slider | collection | [x] | [x] | reuse | [x] |
+| 35 | search-results | search | [x] | [x] | reuse | [x] |
+| 36 | cart-page-main | cart | [x] | [x] | reuse | [x] |
+| 37–40 | about | about-brand | [x] | [x] | reuse | [x] |
+| 41–42 | science | science | [x] | [x] | reuse | [x] |
+| 43–47 | recipes/blog/article | content | [x] | [x] | reuse | [x] |
+| 48–54 | FAQ/contact/warranty/policy/gordon/care | content | [x] | [x] | reuse | [x] |
 
 ---
 
 ## Aday / şemaya sığmayan
 
-- Replo contact/affiliate + Rivo refer → `candidates/hexclad-leftovers.md`
-- 404 kitchen page
-- Junip reviews widget
-- Entry discount circular popup (PII — Claim Discount yoklandı değil)
-- `/pages/press` home’a düşer
+- `candidates/hexclad-leftovers.md` — 404 kitchen, Replo contact/affiliate, Rivo refer, Junip, entry $75 popup, press→home
 - PDP sticky nav / what’s included h=0
 - Care accordion h=0
+- Search overlay 375/768 (menü içi)
+- Mega hover piksel vermedi; tık verdi
+- Cart: dismiss-overlays aside’ı gizliyor → forceOpen
+- Search fill öneri listesini değiştirmedi (statik suggested)
+- FAQ accordion `changed` yoklandı değil
+- PLP filtre paneli açılmadı
+- Mobil menü alt akordeon açılmadı
 - UGC video modal / FreeGiftProgressBarPopup
+- PII gönderilmedi
 
 ---
 
 ## Evidence backlog
 
-- [ ] Home static 3vp
-- [ ] Header mega / search / cart / mobile interact
-- [ ] PDP / PLP / search / cart 3vp
-- [ ] Content templates 3vp
+- [x] Home static 3vp
+- [x] Header mega / search 1440 / cart boş+dolu / mobile menu
+- [x] PDP / PLP / search / cart 3vp
+- [x] Content templates 3vp
