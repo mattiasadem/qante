@@ -1,0 +1,73 @@
+{
+  "observationId": "vessi.default.home.product-showcase-tabs",
+  "schemaId": "product-showcase-tabs",
+  "kaynak": "vessi",
+  "preset": "default",
+  "sayfa": "home",
+  "evidenceSlug": "product-showcase-tabs",
+  "evidence": [
+    "evidence/vessi/default/home/product-showcase-tabs.1440.png",
+    "evidence/vessi/default/home/product-showcase-tabs.375.png",
+    "evidence/vessi/default/home/product-showcase-tabs.768.png",
+    "evidence/vessi/default/home/product-showcase-tabs.changed.men-tab.1440.png",
+    "evidence/vessi/default/home/product-showcase-tabs.changed.men-tab.375.png",
+    "evidence/vessi/default/home/product-showcase-tabs.changed.men-tab.768.png",
+    "evidence/vessi/default/home/product-showcase-tabs.initial.women-tab.1440.png",
+    "evidence/vessi/default/home/product-showcase-tabs.initial.women-tab.375.png",
+    "evidence/vessi/default/home/product-showcase-tabs.initial.women-tab.768.png"
+  ],
+  "url": "https://vessi.com/",
+  "selector": "#shopify-section-template--16074611163221__collection_carousel_46ACQq",
+  "notlar": "Women | Men sekmeli ürün karoseli. Waterproof shoes; Weekend Classic (25,182).",
+  "delta": "collection_carousel — tab + slider. Başlık yok, sekme etiketleri Women/Men.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://vessi.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16074611163221__collection_carousel_46ACQq",
+      "capture": true,
+      "etiket": "women-tab",
+      "not": "Women sekmesi varsayılan"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--16074611163221__collection_carousel_46ACQq a[role='tab']:has-text('Men')",
+      "capture": true,
+      "etiket": "men-tab",
+      "not": "Men sekmesi — Asphalt Black vb."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Waterproof shoes; Women tab active; Weekend Classic USA $128 (was $165), Stormburst Low Top $170, Market Mary Jane $130, Weekend Classic Marble White $150.",
+    "changed": ""
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "2 deneme (text=Men, sonra a[role=tab] Men): Women tab hâlâ aktif; aynı 4 kart. Piksel değişmedi. Üçüncü yok."
+    }
+  ],
+  "interactionNote": "Men tab tık grid'i değiştirmedi (SPA/href?). men-tab PNG'ler Women karesi. Quick Add leftover.",
+  "capture": {
+    "url": "https://vessi.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:10:54.935Z"
+  }
+}
