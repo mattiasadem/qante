@@ -46,20 +46,20 @@
     }
   ],
   "stateFindings": {
-    "initial": "",
-    "input": ""
+    "initial": "1440: Trending searches (Commuter®, DreamGlow®, Golf, Tennis) + Popular products iskelet kartlar.",
+    "input": "1440 Origin Tee: sol öneriler (origin tee slim fit/white/bone) + View all (20) + Top suggestions ürün kartları ($54/$64)."
   },
   "missingStates": [
     {
       "state": "initial",
-      "sebep": "adım 1 (click .desktop-search-wrapper input[type='search'], .search-wrapper.desktop-search input): locator.click: Element is not visible\nCall log:\n  - waiting for locator('.desktop-search-wrapper input[type=\\'search\\'], .search-wrapper.desktop-search input').first()\n    - locator resolved to <input value=\"\" type=\"search\" class=\"input\" data-v-30574210=\"\" placeholder=\"Search\"/>\n  - attempting click action\n    - scrolling into view if needed\n"
+      "sebep": "375/768 masaüstü search input gizli. 1440 kare var. Mobil arama .nav-flyout içinde — leftover."
     },
     {
       "state": "input",
-      "sebep": "adım 2 (fill .desktop-search-wrapper input[type='search'], .search-wrapper.desktop-search input): locator.waitFor: Timeout 12000ms exceeded.\nCall log:\n  - waiting for locator('.desktop-search-wrapper input[type=\\'search\\'], .search-wrapper.desktop-search input').first() to be visible\n    28 × locator resolved to hidden <input value=\"\" type=\"search\" class=\"input\" data-v-30574210=\"\" placeholder=\"Search\"/>\n"
+      "sebep": "375/768 masaüstü input gizli. 1440 Origin Tee kare var."
     }
   ],
-  "interactionNote": "375 search ikon → overlay. PII yok.",
+  "interactionNote": "375/768 desktop input hidden. Mobil Search .nav-flyout satırında; ayrı 3vp çekilmedi. PII yok.",
   "prepareClick": "[aria-label=\"Close dialog\"]",
   "capture": {
     "url": "https://www.rhone.com/",

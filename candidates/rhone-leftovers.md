@@ -92,6 +92,13 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: rhone-search-mobile  
+Gerekçe: 375/768 masaüstü `.desktop-search-wrapper input` gizli. Mobil Search `.nav-flyout` satırında. 1440 Algolia overlay 3vp resmi (trending + Origin Tee). Mobil predictive 3vp yok.  
+Öneri: leftover  
+Karar: leftover
+
+---
+
 ADAY: rhone-plp-dy-related  
 Gerekçe: `#dy-recommendations-656481` “We think you'd like” yalnız derin scroll sonrası DOM’a giriyor. `capture-observation` 4vp tavanına sığmıyor (selector 1440 eşleşmedi). Aynı tip PDP’de 3vp var.  
 Öneri: leftover — recapture tavanı yetmedi, şema uydurulmadı  
@@ -120,9 +127,17 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: rhone-375-hydrate  
+Gerekçe: Home DY tabs 375 iskelet + For her underline taşımadı (768/1440 değişti). PDP 375 swatch tık sonrası hâlâ White Onyx / Loading Price (768/1440 Vintage Indigo $54). Resmi kareler var; piksel değişmedi.  
+Öneri: leftover — ikinci deneme  
+Karar: leftover
+
+---
+
 ## Bilinçli atlananlar
 
 - `/account` / login / checkout  
 - Newsletter / return portal / promo code (PII)  
 - Email / SMS  
 - Wholesale `/pages/wholesale-greengrass/`  
+- Cart page promo code alanı (görüldü, doldurulmadı)  

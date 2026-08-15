@@ -18,7 +18,7 @@
     "evidence/rhone/default/home/product-showcase-tabs.initial.for-him.375.png",
     "evidence/rhone/default/home/product-showcase-tabs.initial.for-him.768.png"
   ],
-  "notlar": "For him / For her sekmeler + Shop new arrivals. Swiper ürün kartları, Quick shop, New rozeti, renk swatch. Dynamic Yield #dy-recommendations-1358312.",
+  "notlar": "For him / For her sekmeler (.tab-title) + Shop new arrivals. Swiper ürün kartları, Quick shop, New rozeti, renk swatch. Dynamic Yield #dy-recommendations-1358312.",
   "delta": "Tema Store / Shopify.theme.name / schema_name yok (Shopify.theme boş nesne; uydurulmadı). Shop rhone.myshopify.com. Vitrin custom Nuxt (#__nuxt, /_nuxt/*.js) + Nacelle (nacelle class) + Shopify backend. #shopify-section-* yok. DY recs widget; sekmeler For him/For her. Şema tabPozisyon top.",
   "interactionStates": [
     "initial",
@@ -33,27 +33,54 @@
     },
     {
       "state": "initial",
+      "action": "click",
+      "selector": "[aria-label=\"Close dialog\"], #globalHeader",
+      "capture": false,
+      "not": "15% modal sekmeyi örtüyor; kapat"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false,
+      "not": "Modal fade bitsin"
+    },
+    {
+      "state": "initial",
       "action": "scrollTo",
       "selector": "#dy-recommendations-1358312",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "selector": "#dy-recommendations-1358312 .tab-title",
+      "value": 8000,
       "capture": true,
       "etiket": "for-him",
-      "not": "For him aktif"
+      "not": "For him aktif (underline)"
     },
     {
       "state": "changed",
       "action": "click",
-      "selector": "#dy-recommendations-1358312 :has-text('For her')",
+      "selector": "#dy-recommendations-1358312 .tab-title:has-text(\"For her\")",
       "capture": true,
       "etiket": "for-her",
-      "not": "For her sekmesi — ürünler değişiyor mu"
+      "not": "For her .tab-title — ürünler değişmeli"
     }
   ],
   "stateFindings": {
-    "initial": "For him + Shop new arrivals + erkek ürün swiper.",
-    "changed": ""
+    "initial": "768/1440: For him underline + erkek swiper (Commuter shirt/polo/pant). 375: For him + DY iskelet kartlar.",
+    "changed": "768/1440: For her underline + kadın ürünler (skort, Featherweight Rib Tee, Revive legging). 375 kare hâlâ For him + iskelet."
   },
-  "missingStates": [],
-  "interactionNote": "For her tık seçicisi capture sırasında doğrulanacak. DY hydrate gecikebilir.",
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "375: DY hydrate iskelet; For her tık underline taşımadı. 768/1440 değişti."
+    }
+  ],
+  "interactionNote": "İlk deneme :has-text ebeveyne denk geldi. Recapture .tab-title:has-text('For her') — 768/1440 doğrulandı. 375 ikinci denemede de değişmedi.",
+  "prepareClick": "[aria-label=\"Close dialog\"]",
   "capture": {
     "url": "https://www.rhone.com/",
     "viewports": [
@@ -63,8 +90,6 @@
     ],
     "mode": "section",
     "method": "interaction-steps",
-    "updatedAt": "2026-08-15T22:30:28.945Z",
-    "prepareClick": "[aria-label=\"Close dialog\"]"
-  },
-  "prepareClick": "[aria-label=\"Close dialog\"]"
+    "updatedAt": "2026-08-15T22:43:10.281Z"
+  }
 }

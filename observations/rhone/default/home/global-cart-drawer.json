@@ -7,9 +7,19 @@
   "url": "https://www.rhone.com/",
   "selector": ".mini-cart",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
-  "notlar": "Sağ 448px Shopping bag. Boş: $125 away from free standard shipping / Your shopping bag is currently empty / Continue shopping / Recommended for you. Checkout $0.",
-  "delta": "Tema Store / Shopify.theme.name / schema_name yok (Shopify.theme boş nesne; uydurulmadı). Shop rhone.myshopify.com. Vitrin custom Nuxt (#__nuxt, /_nuxt/*.js) + Nacelle (nacelle class) + Shopify backend. #shopify-section-* yok. Nacelle mini-cart. /cart/ ayrı tam sayfa da var.",
+  "evidence": [
+    "evidence/rhone/default/home/global-cart-drawer.changed.adet-2.1440.png",
+    "evidence/rhone/default/home/global-cart-drawer.changed.adet-2.375.png",
+    "evidence/rhone/default/home/global-cart-drawer.changed.adet-2.768.png",
+    "evidence/rhone/default/home/global-cart-drawer.filled.tee-qty1.1440.png",
+    "evidence/rhone/default/home/global-cart-drawer.filled.tee-qty1.375.png",
+    "evidence/rhone/default/home/global-cart-drawer.filled.tee-qty1.768.png",
+    "evidence/rhone/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/rhone/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/rhone/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "Sağ Shopping bag (1440 ~448px; 375 tam ekran). Boş: $125 away from free standard shipping / Your shopping bag is currently empty / Continue shopping / Recommended for you / Checkout $0. Dolu: satır + adet + Estimated total.",
+  "delta": "Tema Store / Shopify.theme.name / schema_name yok (Shopify.theme boş nesne; uydurulmadı). Shop rhone.myshopify.com. Vitrin custom Nuxt (#__nuxt, /_nuxt/*.js) + Nacelle (nacelle class) + Shopify backend. #shopify-section-* yok. Nacelle mini-cart. /cart/ ayrı tam sayfa da var. Shopify form[action*=/cart/add] yok — addToCart/cart.js kullanılmadı.",
   "captureMode": "viewport",
   "prepareClick": "button.main__nav__cart",
   "interactionStates": [
@@ -27,16 +37,37 @@
     {
       "state": "initial",
       "action": "click",
+      "selector": "[aria-label=\"Close dialog\"], #globalHeader",
+      "capture": false,
+      "not": "15% modal varsa kapat"
+    },
+    {
+      "state": "initial",
+      "action": "click",
       "selector": "button.main__nav__cart",
+      "capture": false,
+      "not": "Bag ikon"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "selector": ".mini-cart",
+      "value": 8000,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "cart-bos",
-      "not": "Boş drawer"
+      "not": "Boş bag + Recommended for you"
     },
     {
       "state": "filled",
       "action": "goto",
       "value": "https://www.rhone.com/products/mens-origin-tee-slim-fit/",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "[aria-label=\"Close dialog\"], #globalHeader",
       "capture": false
     },
     {
@@ -48,64 +79,44 @@
     {
       "state": "filled",
       "action": "click",
-      "selector": ".product-details-right :has-text('M')",
+      "selector": "button.swatch-option--size[aria-label=\"Medium size option\"]",
       "capture": false,
-      "not": "Beden M — yoksa addToCart fallback"
-    },
-    {
-      "state": "filled",
-      "action": "addToCart",
-      "selector": "#pdp-add-to-cart button",
-      "capture": false,
-      "not": "Add to bag; olmazsa /cart/add.js"
+      "not": "Beden M"
     },
     {
       "state": "filled",
       "action": "click",
-      "selector": "button.main__nav__cart",
+      "selector": "#pdp-add-to-cart button.btn--solid",
       "capture": false,
-      "not": "Drawer açılmadıysa cart ikon"
+      "not": "Add to bag — Nacelle UI, addToCart/cart.js yok"
     },
     {
       "state": "filled",
       "action": "waitFor",
       "selector": ".mini-cart",
-      "value": 8000,
+      "value": 10000,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "tee-qty1",
-      "not": "Dolu bag"
+      "not": "Dolu bag Origin Tee Medium"
     },
     {
       "state": "changed",
       "action": "click",
-      "selector": ".mini-cart button[aria-label*='increase' i], .mini-cart button[aria-label*='plus' i], .mini-cart [class*='qty'] button:last-child",
+      "selector": "button.itemquantity__button[aria-label=\"increase item quantity\"]",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "adet-2",
-      "not": "Adet + "
+      "not": "Adet +"
     }
   ],
   "stateFindings": {
-    "initial": "Boş bag + $125 kargo eşiği + Recommended for you.",
-    "filled": "",
-    "changed": ""
+    "initial": "Boş bag + Continue shopping + Recommended for you. 375 Estimated total $0; 1440 boş total $NaN. Checkout soluk.",
+    "filled": "Origin Tee - Slim Fit · White Onyx/True Navy Stripe | Medium · qty 1 · $64. $61 away from free shipping. Estimated total $64.",
+    "changed": "Adet 2 · satır $128 · Estimated total $128 · Free standard shipping unlocked."
   },
-  "missingStates": [
-    {
-      "state": "initial",
-      "sebep": "capture (375): zero-size / eşleşmedi: .mini-cart"
-    },
-    {
-      "state": "filled",
-      "sebep": "adım 5 (addToCart #pdp-add-to-cart button): sepete eklenemedi: varyant id bulunamadı"
-    },
-    {
-      "state": "changed",
-      "sebep": "adım 8 (click .mini-cart button[aria-label*='increase' i], .mini-cart button[aria-label*='plus' i], .mini-cart [class*='qty'] button:last-child): selector eşleşmedi: .mini-cart button[aria-label*='increase' i], .mini-cart button[aria-label*='plus' i], .mini-cart [class*='qty'] button:last-child"
-    }
-  ],
-  "interactionNote": "Nacelle ATC. addToCart/cart.js fallback gerekirse not. Checkout/login yok. Promo code PII yok.",
+  "missingStates": [],
+  "interactionNote": "Nacelle ATC — UI tık (Medium + Add to bag). addToCart/cart.js yok (varyant id formda yok). Checkout/login/promo PII yok.",
   "capture": {
     "url": "https://www.rhone.com/",
     "viewports": [
@@ -115,6 +126,6 @@
     ],
     "mode": "viewport",
     "method": "interaction-steps",
-    "updatedAt": "2026-08-15T22:33:31.578Z"
+    "updatedAt": "2026-08-15T22:46:26.113Z"
   }
 }
