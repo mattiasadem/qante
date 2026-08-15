@@ -1,0 +1,122 @@
+{
+  "observationId": "graza.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "graza",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.graza.co/",
+  "selector": "#cart-drawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/graza/default/home/global-cart-drawer.1440.png",
+    "evidence/graza/default/home/global-cart-drawer.375.png",
+    "evidence/graza/default/home/global-cart-drawer.768.png",
+    "evidence/graza/default/home/global-cart-drawer.changed.qty2.1440.png",
+    "evidence/graza/default/home/global-cart-drawer.filled.sizzle-qty1.1440.png",
+    "evidence/graza/default/home/global-cart-drawer.filled.sizzle-qty1.375.png",
+    "evidence/graza/default/home/global-cart-drawer.filled.sizzle-qty1.768.png",
+    "evidence/graza/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/graza/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/graza/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "Sağ panel. Boş: kedi tava illüstrasyonu, Looks like your ca(r)t has some issues, Shop Olive Oil.",
+  "delta": "Section #shopify-section-cart-drawer height 0 (fixed). Selector #cart-drawer. /cart sayfası stub — asıl sepet drawer.",
+  "captureMode": "viewport",
+  "prepareClick": "a[href='/cart']",
+  "capture": {
+    "url": "https://www.graza.co/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T17:32:02.851Z",
+    "prepareClick": "a[href='/cart']"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.graza.co/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[href='/cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Kedi tava illüstrasyonu; Looks like your ca(r)t has some issues"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.graza.co/products/sizzle",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#product-hero label.font-medium:has-text('One Time Purchase')",
+      "capture": false,
+      "not": "Abonelik yerine tek sefer"
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#product-hero button.add-to-cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a[href='/cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sizzle-qty1",
+      "not": "Drawer ATC sonrası açılmayabilir — cart link"
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#cart-drawer button[aria-label='Increase Quantity']",
+      "capture": false,
+      "not": "375/768 qty butonu drawer içinde viewport dışıydı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#cart-drawer button[aria-label='Increase Quantity']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "qty2",
+      "not": "QTY 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Cart(0); kedi+tava; Looks like your ca(r)t has some issues; Shop Olive Oil.",
+    "filled": "Cart(1) Sizzle 1 Bottle $16; QTY 1; Want to add upsell carousel; Subtotal $16; Checkout.",
+    "changed": "1440: Cart(2) QTY 2 Subtotal $32. 375/768 qty + viewport dışı — missing."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "375/768: Increase Quantity drawer içinde viewport dışı (scrollTo + 2. deneme). 1440 OK (QTY 2 / $32)."
+    }
+  ],
+  "interactionNote": "ATC One Time Purchase + #product-hero button.add-to-cart. Drawer bazen ATC ile açılıyor; filled adımı yine cart link tıklar."
+}
