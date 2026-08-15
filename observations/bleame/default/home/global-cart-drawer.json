@@ -1,0 +1,88 @@
+{
+  "observationId": "bleame.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "bleame",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://bleame.com/",
+  "selector": "#mini-cart",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/bleame/default/home/global-cart-drawer.filled.crystal-hair-eraser.1440.png",
+    "evidence/bleame/default/home/global-cart-drawer.filled.crystal-hair-eraser.375.png",
+    "evidence/bleame/default/home/global-cart-drawer.filled.crystal-hair-eraser.768.png",
+    "evidence/bleame/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/bleame/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/bleame/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "Focal cart-drawer#mini-cart. Sağ panel. Header a[aria-label=Cart] (href /cart).",
+  "delta": "Native /cart sayfası da var (cart-page-main). Drawer + page birlikte.",
+  "captureMode": "viewport",
+  "prepareClick": "a[aria-label='Cart']",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://bleame.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[aria-label='Cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş mini-cart"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://bleame.com/products/crystal-hair-eraser",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#shopify-section-template--19666883510447__main button.product-form__add-button.button--full",
+      "capture": false,
+      "not": "PDP ATC / CLAIM OFFER"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a[aria-label='Cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "crystal-hair-eraser",
+      "not": "ATC sonrası drawer; kapalıysa ikon"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your Cart / Your cart is empty / START SHOPPING. 1440 sağ 500px panel.",
+    "filled": "Excellent choice! You unlocked free shipping. Gleam Body Scrub $26 Free + Crystal Hair Eraser 2 Pack $53. Total $53. CONTINUE TO SAFE CHECKOUT."
+  },
+  "missingStates": [],
+  "interactionNote": "CLAIM OFFER 2-pack default. Checkout/kupon doldurulmadı. Adet changed yoklandı değil.",
+  "capture": {
+    "url": "https://bleame.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:14:32.215Z"
+  }
+}
