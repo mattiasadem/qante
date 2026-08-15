@@ -23,6 +23,7 @@
 | Motion · Motion / Satchel / Memo | [`motion.md`](./motion.md) | ✅ 69 obs · 213 kare · 0 yeni şema · WEAR/CARRY |
 | Symmetry · 5 preset | [`symmetry.md`](./symmetry.md) | ✅ 145 obs · 447 kare · 0 yeni şema · hotspot + FAQ |
 | Obvi (Platter custom) | [`obvi.md`](./obvi.md) | ✅ kapalı — 51 obs · community/team/FAQ/contact/policy · 404/scratch kayıtlı · **main'e merge yok** |
+| Bandit Running | [`bandit.md`](./bandit.md) | ✅ default — `bandit-ecomm/main` · DTC-69 #2 · statik 3vp + mega/search/cart/menu · 0 yeni şema |
 
 **Interact (discover sonrası derinlik):** [`interact.md`](./interact.md) — kapalı kare yalanı; Stretch + Cocoon/Balance shop-the-look kapandı.
 
