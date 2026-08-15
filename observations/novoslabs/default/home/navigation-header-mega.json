@@ -1,0 +1,44 @@
+{
+  "observationId": "novoslabs.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "novoslabs",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://novoslabs.com/",
+  "selector": "header.nv-nav",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Sticky 76px. Hamburger .nv-nav__toggle (aria Open menu). Logo NOVOS. Primary: Shop / Benefits / Ingredients / Science / Longevity / About (button → .nv-mega). Healthcare Providers /professionals/. Shop now /shop/. Product Finder /#finder. Account /my-account/. #nvSearchTrigger (Jetpack). #nvCartTrigger.",
+  "delta": "WordPress FSE NOVOS Blocks — Shopify mega değil. Dil seçici yok. 1440 mega hover; 375 hamburger #nvNavMobile.",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://novoslabs.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı sticky bar"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "header .nv-nav__item:first-child .nv-nav__link",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Shop hover → PRODUCTS + EXPLORE mega"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "open": ""
+  },
+  "missingStates": []
+}

@@ -1,0 +1,43 @@
+{
+  "observationId": "novoslabs.default.home.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "novoslabs",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://novoslabs.com/",
+  "selector": "#faq",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [],
+  "notlar": "Questions, answered. details.nv-faq__item name=nv-faq. İlk: What is NOVOS Core?",
+  "delta": "Split başlık sol / liste sağ (layout split). Kategori tab yok.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://novoslabs.com/",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#faq",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#faq details.nv-faq__item summary",
+      "capture": true,
+      "etiket": "ilk-soru",
+      "not": "What is NOVOS Core? açık"
+    }
+  ],
+  "stateFindings": {
+    "changed": ""
+  },
+  "missingStates": []
+}

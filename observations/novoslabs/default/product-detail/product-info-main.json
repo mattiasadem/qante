@@ -1,0 +1,43 @@
+{
+  "observationId": "novoslabs.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "novoslabs",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://novoslabs.com/product/novos-core/",
+  "selector": ".nv-pdp__top",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "CLINICALLY STUDIED LONGEVITY FORMULA. NOVOS Core. Flavor: Orange / Tropical Passion / Unflavored. Plan: Monthly 10% / Semi-Annually 15% / Annually 27%. Qty stepper. Add to cart. One-time $109. Boost upsell checkbox.",
+  "delta": "Woo + wp-block-novos-plan-selector. Breadcrumb aynı sarmalayıcıda. Subscription plan kartları şema varyantGosterim dışı — delta.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://novoslabs.com/product/novos-core/",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": ".nv-pdp__top",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button.nv-pdp-flavor:not(.is-active)",
+      "capture": true,
+      "etiket": "tropical-passion",
+      "not": "İkinci flavor (Tropical Passion) — swatch + fiyat"
+    }
+  ],
+  "stateFindings": {
+    "changed": ""
+  },
+  "missingStates": []
+}

@@ -1,0 +1,45 @@
+{
+  "observationId": "novoslabs.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "novoslabs",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://novoslabs.com/",
+  "selector": "#nvNavMobile",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "drawer.nv-mnav. Shop/Benefits/Ingredients/Science/Longevity/About + My Account + Healthcare Providers + FAQ + Contact. Alt ürün listeleri.",
+  "delta": "1440 hamburger gizli (0×0). 375 toggle 48×48. Click sonrası kutu 0×0 kalırsa forceOpen.",
+  "captureMode": "viewport",
+  "prepareClick": "button.nv-nav__toggle",
+  "prepareForceOpen": true,
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://novoslabs.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.nv-nav__toggle",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "375/768 mobil menü"
+    }
+  ],
+  "stateFindings": {
+    "open": ""
+  },
+  "missingStates": [],
+  "interactionNote": "1440 N/A. Drawer JS hydrate gecikirse forceOpen."
+}

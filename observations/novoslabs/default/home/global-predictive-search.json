@@ -1,0 +1,52 @@
+{
+  "observationId": "novoslabs.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "novoslabs",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://novoslabs.com/",
+  "selector": ".jetpack-instant-search__overlay",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "#nvSearchTrigger Jetpack Instant Search overlay açar. Popular: NMN, NOVOS Core, Subscriptions, Shipping, Ingredients. #nvSearchModal 0px (kullanılmıyor).",
+  "delta": "Tema native modal değil — Jetpack Instant Search. /?s= home’a düşer. /search/ 404.",
+  "captureMode": "viewport",
+  "prepareClick": "#nvSearchTrigger",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://novoslabs.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#nvSearchTrigger",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "jetpack-acik",
+      "not": "Overlay + popular results"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": ".jetpack-instant-search__box-input, .jetpack-instant-search input[type='search'], #nvSearchInput",
+      "value": "core",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "core",
+      "not": "katalogSorgu core"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "input": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Üçüncü parti Jetpack. Native #nvSearchModal 0px."
+}

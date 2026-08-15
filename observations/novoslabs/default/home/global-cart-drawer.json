@@ -1,0 +1,70 @@
+{
+  "observationId": "novoslabs.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "novoslabs",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://novoslabs.com/",
+  "selector": "#nvCartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Your Cart 0. Your cart is empty. Start your longevity protocol with NOVOS. Shop NOVOS.",
+  "delta": "Woo + custom @novos/cart. /cart sayfası da var (boş mesaj farklı).",
+  "captureMode": "viewport",
+  "prepareClick": "#nvCartTrigger",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://novoslabs.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#nvCartTrigger",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://novoslabs.com/product/novos-core/",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.nv-pdp-add, button[name='add-to-cart']",
+      "capture": false,
+      "not": "PDP Add to cart"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#nvCartTrigger",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "core-eklendi",
+      "not": "ATC sonrası drawer; kapalıysa ikon"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "filled": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout/kupon doldurulmadı. PII yok."
+}
