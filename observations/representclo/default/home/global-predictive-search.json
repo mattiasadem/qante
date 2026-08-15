@@ -5,13 +5,19 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://representclo.com/",
-  "selector": "header-navigation [x-ref='input_search']",
+  "selector": "#searchbox",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
-  "notlar": "Alpine $store.isSearchOpen. Mobilde input header'da görünür (x-show max-width 1023). Desktop overlay body.search_open / #searchbox 0px kaldı.",
-  "delta": "Tagalys. /search tam sayfa ayrı. Desktop toggle a[btn-search=toggle] Pandectes altında; mobil input birincil kanıt.",
+  "evidence": [
+    "evidence/representclo/default/home/global-predictive-search.initial.search-bos.1440.png",
+    "evidence/representclo/default/home/global-predictive-search.initial.search-bos.375.png",
+    "evidence/representclo/default/home/global-predictive-search.initial.search-bos.768.png",
+    "evidence/representclo/default/home/global-predictive-search.input.t-shirt.1440.png",
+    "evidence/representclo/default/home/global-predictive-search.input.t-shirt.375.png",
+    "evidence/representclo/default/home/global-predictive-search.input.t-shirt.768.png"
+  ],
+  "notlar": "Alpine $store.isSearchOpen + body.search_open. Desktop #searchbox header altında. Tagalys. /search tam sayfa ayrı.",
+  "delta": "1440: a[btn-search=toggle]:not(#mobile-search-toggle). 375/768: #mobile-search-toggle → aynı Tagalys overlay (Close + Search for...).",
   "captureMode": "viewport",
-  "prepareClick": "a[btn-search='toggle']:not(#mobile-search-toggle)",
   "interactionStates": [
     "initial",
     "input"
@@ -25,42 +31,69 @@
     },
     {
       "state": "initial",
+      "action": "forceOpen",
+      "selector": "header-navigation",
+      "capture": false
+    },
+    {
+      "state": "initial",
       "action": "click",
-      "selector": "#shopify-section-desktop-menu-header a[aria-label='Search']:not(#mobile-search-toggle)",
+      "selector": "a[btn-search='toggle']:not(#mobile-search-toggle)",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "search-bos",
+      "viewports": [
+        "1440"
+      ],
       "not": "Boş overlay Search for..."
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#mobile-search-toggle",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Mobil header input #searchbox"
     },
     {
       "state": "input",
       "action": "fill",
       "selector": "input[name='q'][placeholder='Search for...']",
       "value": "t-shirt",
-      "capture": false
-    },
-    {
-      "state": "input",
-      "action": "waitFor",
-      "value": 2000,
-      "capture": false
-    },
-    {
-      "state": "input",
-      "action": "click",
-      "selector": "input[name='q'][placeholder='Search for...']",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "t-shirt",
+      "viewports": [
+        "1440"
+      ],
       "not": "katalog: 247 DNA Oversized T-Shirt"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input[name='q'][placeholder='Search for...']",
+      "value": "t-shirt",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "t-shirt",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Mobil fill t-shirt"
     }
   ],
   "stateFindings": {
-    "initial": "Search for... alanı.",
-    "input": "t-shirt öneri/ürün."
+    "initial": "Search for...; POPULAR SEARCHES 'T-Shirts' 'Hoodies' 'Shorts' '247 Activewear'; ürün ızgarası (247 Noble Long Sleeve $115, Power Dry $110…). 375 Close + aynı liste.",
+    "input": "Sorgu t-shirt; View all results for 't-shirt'; SUGGESTIONS T-Shirts / Flat White / Jet Black / Stained Black T-Shirts; ızgara Printed Vest $120, Textured Overshirt $370…"
   },
   "missingStates": [],
-  "interactionNote": "İlk eşleşme mobile-search-toggle gizli — :not() şart.",
+  "interactionNote": "Tagalys. /search?q=t-shirt tam sayfa ayrı 3vp. Checkout/PII yok.",
   "capture": {
     "url": "https://representclo.com/",
     "viewports": [
@@ -69,8 +102,7 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-08-15T21:05:43.857Z",
-    "prepareClick": "#shopify-section-desktop-menu-header a[aria-label='Search']:not(#mobile-search-toggle)"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:37:02.004Z"
   }
 }

@@ -7,11 +7,13 @@
   "url": "https://representclo.com/",
   "selector": "mobile-menu",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
-  "notlar": "375 hamburger. Shop Represent / Shop 247 Activewear / Retail / Explore / Join loyalty / App / Prestige / Behind the Brand / Lookbooks / Client Services / country.",
-  "delta": "Section id mobile-menu-sliding. Kapalı 0px. 1440 hamburger de DOM'da (Open/Close Menu) ama mega birincil.",
+  "evidence": [
+    "evidence/representclo/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/representclo/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "375 hamburger. Shop Represent / Shop 247 Activewear / Retail / Explore / Join loyalty / App / Prestige / Behind the Brand / Lookbooks / Client Services / country. Tagalys arama bu panelde.",
+  "delta": "Section id mobile-menu-sliding (kapalı 0px). Açık: mobile-menu fixed inset-0 + body.mobile-nav-open. 1440 hamburger 0px.",
   "captureMode": "viewport",
-  "prepareClick": "button[aria-label='Open/Close Menu']",
   "interactionStates": [
     "open"
   ],
@@ -20,6 +22,12 @@
       "state": "open",
       "action": "goto",
       "value": "https://representclo.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "header-navigation",
       "capture": false
     },
     {
@@ -37,14 +45,15 @@
     }
   ],
   "stateFindings": {
-    "open": "375/768: Shop Represent, Shop 247, Retail, Explore, loyalty CTA."
+    "open": "375/768: Close; Search for...; Shop Represent; Shop 247 Activewear NEW; Retail NEW; Explore; REPRESENT PRESTIGE (10% / points / rewards, Join now / Log in); Represent App; Prestige Loyalty; Behind the Brand; Lookbooks; Client Services; US / $ / English."
   },
   "missingStates": [
     {
       "state": "open",
-      "sebep": "1440 mega birincil — hamburger N/A"
+      "sebep": "1440 hamburger 0px — mega birincil"
     }
   ],
+  "interactionNote": "Header forceOpen şart. Kapalı mobile-menu display:none. Shop Represent accordion leftover.",
   "capture": {
     "url": "https://representclo.com/",
     "viewports": [
@@ -53,8 +62,7 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-08-15T21:06:23.600Z",
-    "prepareClick": "button[aria-label='Open/Close Menu']"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:27:16.080Z"
   }
 }

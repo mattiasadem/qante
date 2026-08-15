@@ -7,9 +7,14 @@
   "url": "https://representclo.com/",
   "selector": "header-navigation",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
-  "notlar": "46px sticky bar. Shop + 247 expander; logo; Retail / The Vault / Loyalty; US/USD; wishlist; search; account; cart. Wisp notifications.",
-  "delta": "Tema represent-us/main (Shopify.theme.name). schema_name Blank Shopify Theme · theme_store_id null · custom. Mega ayrı section group desktop-menu-dropdowns; kapalı 0px. Locale US/USD buton.",
+  "evidence": [
+    "evidence/representclo/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/representclo/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/representclo/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/representclo/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
+  "notlar": "46px sticky bar (375: 63px). Shop + 247; REPRESENT; Retail / The Vault / Prestige; US/USD; bell; wishlist; search; account; cart.",
+  "delta": "Tema represent-us/main (Shopify.theme.name). schema_name Blank Shopify Theme · theme_store_id null · custom. Mega #menu-1_desktop-dropdown (hover; click kapatır). Official dismiss header-navigation'ı cookie sanır (textContent 'cookie') — forceOpen zorunlu.",
   "interactionStates": [
     "initial",
     "open"
@@ -19,6 +24,19 @@
       "state": "initial",
       "action": "goto",
       "value": "https://representclo.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "header-navigation",
+      "capture": false,
+      "not": "dismiss display:none — inline display kaldır"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 500,
       "capture": true,
       "etiket": "bar",
       "not": "Kapalı sticky bar"
@@ -29,19 +47,25 @@
       "selector": "button[aria-label='Expand Shop']",
       "capture": true,
       "captureMode": "viewport",
+      "captureSelector": "#menu-1_desktop-dropdown",
       "etiket": "shop-mega",
       "viewports": [
         "1440"
       ],
-      "not": "Shop hover → Clothing/Collections/Collaborations/Accessories/Womens kolonları"
+      "not": "Hover Shop — click kapatır. Clothing/Collections/Collaborations/Accessories/Womens"
     }
   ],
   "stateFindings": {
-    "initial": "Shop, 247, logo, Retail, The Vault, Loyalty, US/USD, wishlist, search, account, cart.",
-    "open": "1440 Shop hover — mega kolonları (All/T-Shirts/Hoodies…). 375/768 N/A."
+    "initial": "1440: Shop, 247⚡, REPRESENT, Retail, The Vault, Prestige, US/USD, bell, wishlist, search, account, cart. 375: hamburger, search, bell, REPRESENT, wishlist, account, cart.",
+    "open": "1440 Shop hover: New Arrivals / Bestsellers / Summer '26 / Restocked / Shop All / Prestige 2.0; SHOP Clothing, Collections, Collaborations, Footwear, Accessories, Womens, Gift Card, Outfits; EXPLORE Prestige Loyalty, Behind the brand, Lookbooks, Articles, Retail Stores, Owners Club Café; sağda model görseli."
   },
-  "missingStates": [],
-  "interactionNote": "Mega Alpine/CSS group. Hover Expand Shop. Click denemesi 0px kaldıysa leftover.",
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375/768 mega yok — hamburger ayrı global-menu-drawer"
+    }
+  ],
+  "interactionNote": "Hover Shop açar; click kapatır. Official dismiss header-navigation'ı cookie sanır (textContent cookie) — forceOpen zorunlu.",
   "capture": {
     "url": "https://representclo.com/",
     "viewports": [
@@ -50,7 +74,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T21:16:09.115Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:27:17.258Z"
   }
 }

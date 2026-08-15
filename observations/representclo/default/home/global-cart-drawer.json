@@ -5,13 +5,19 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://representclo.com/",
-  "selector": "#cart_content",
+  "selector": "#cart-drawer",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
-  "notlar": "Sağ 440px panel #cart-drawer / #cart_content. Boş + #cart-upsell carousel. /cart ayrı sayfa da var.",
-  "delta": "Cart Toggle /cart href ama drawer açıyor (URL home kalır). Upsell boş drawer'da da görünür.",
+  "evidence": [
+    "evidence/representclo/default/home/global-cart-drawer.filled.dna-tee-m.1440.png",
+    "evidence/representclo/default/home/global-cart-drawer.filled.dna-tee-m.375.png",
+    "evidence/representclo/default/home/global-cart-drawer.filled.dna-tee-m.768.png",
+    "evidence/representclo/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/representclo/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/representclo/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "Sağ panel #cart-drawer / #cart_content (~440px). Kapalı: visibility hidden + full-viewport kutu — viewport SS homepage olur. Açık: cartOpen + body.cart-opened.",
+  "delta": "Cart Toggle href=/cart ama drawer açıyor. Upsell boş drawer'da da var. /cart ayrı sayfa.",
   "captureMode": "viewport",
-  "prepareClick": "a[aria-label='Cart Toggle']",
   "interactionStates": [
     "initial",
     "filled"
@@ -22,6 +28,13 @@
       "action": "goto",
       "value": "https://representclo.com/",
       "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "header-navigation",
+      "capture": false,
+      "not": "Cart ikonu header'da — dismiss gizler"
     },
     {
       "state": "initial",
@@ -41,44 +54,46 @@
     {
       "state": "filled",
       "action": "click",
-      "selector": "button:has-text('M')",
+      "selector": "button.js-select-variant.sizeSelector:has-text('M')",
       "capture": false,
       "not": "Beden M"
     },
     {
       "state": "filled",
       "action": "waitFor",
-      "value": 400,
+      "value": 800,
       "capture": false
     },
     {
       "state": "filled",
       "action": "addToCart",
-      "selector": "button:has-text('ADD TO CART')",
-      "capture": false
+      "selector": "button.js-add-product[name='add']",
+      "capture": false,
+      "not": "UI ATC drawer'ı açar; ekstra cart tık kapatır"
     },
     {
       "state": "filled",
       "action": "waitFor",
-      "value": 1500,
-      "capture": false
+      "selector": "#cart_content",
+      "value": 8000,
+      "capture": false,
+      "not": "Açık panel — ikinci cart tık yok"
     },
     {
       "state": "filled",
-      "action": "click",
-      "selector": "a[aria-label='Cart Toggle']",
+      "action": "waitFor",
+      "value": 600,
       "capture": true,
       "captureMode": "viewport",
-      "etiket": "dna-tee-m",
-      "not": "ATC sonrası drawer; gerekirse cart toggle"
+      "etiket": "dna-tee-m"
     }
   ],
   "stateFindings": {
-    "initial": "Boş sepet + popular/upsell şerit.",
-    "filled": "247 DNA Oversized T-Shirt M satırı beklenir."
+    "initial": "Your Cart Is Empty.⁰; EXPLORE NEW ARRIVALS; POPULAR ITEMS Dodgers/LA caps $115 +; REPRESENT PRESTIGE Join now / Log in.",
+    "filled": "YOUR CART¹; You're $90 away from free standard shipping; 247 DNA Oversized T-Shirt M Jet Black $85 qty 1; OTHERS ALSO BOUGHT caps $115; SECURE CHECKOUT $95. ATC via UI."
   },
   "missingStates": [],
-  "interactionNote": "Beden seçilmeden ATC çalışmayabilir. /cart/add.js fallback varsa not.",
+  "interactionNote": "ATC button.js-add-product via ui (3vp). İlk deneme cart tık drawer'ı kapattı (PDP karesi). İkinci: ATC sonrası #cart_content bekle, tık yok. Qty +/- leftover. Checkout/kupon yok. Kapalı #cart-drawer viewport homepage.",
   "capture": {
     "url": "https://representclo.com/",
     "viewports": [
@@ -87,8 +102,7 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-08-15T21:17:14.569Z",
-    "prepareClick": "a[aria-label='Cart Toggle']"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:34:54.427Z"
   }
 }

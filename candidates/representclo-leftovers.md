@@ -63,6 +63,14 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: representclo-hero-parallax-clip  
+Gerekçe: `hero_parallax` (represent-home `RTdhRB`, 247-home aynı tip) resmi 3vp’de ya boş/beyaz (SHORTS/FOOTWEAR etiketi) ya komşu New Arrivals+product grid. Lazy/parallax; ikinci deneme yok.  
+Örnekler: https://representclo.com/pages/represent-home · https://representclo.com/pages/247-home  
+Öneri: leftover — kalite  
+Karar: onay bekliyor
+
+---
+
 ## Bilinçli atlananlar
 
 - `/account/login` · register · checkout — auth  
@@ -73,5 +81,8 @@ Karar: onay bekliyor
 - 247-home ve represent-home’daki tekrar hero/product_scroll kopyaları (ilk instance çekildi)  
 - Prestige Missions/App split kopyaları (ikinci split leftover)  
 - PLP Filter & Sort açık panel  
-- Cart qty changed  
-- 247 mega (Shop mega denendi)
+- Cart qty `changed` (filled drawer'da − / + var; tıklanmadı)  
+- 247 mega (`button[aria-label='Expand 247']`) — Shop mega çekildi  
+- `hero_parallax` represent-home / 247-home — 1440 seyrek (SHORTS/FOOTWEAR labels, görsel yüklenmedi) veya komşu New Arrivals+grid clip  
+- Blog list excerpt ham `<p>` (tema render)  
+- Official dismiss `header-navigation` cookie sanır — capture `forceOpen` ile aşıldı; script'e dokunulmadı

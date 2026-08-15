@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--16838462734545__prestige_split_content_Qfh9Nk",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/representclo/default/prestige/faq-collapsible-tabs.1440.png",
     "evidence/representclo/default/prestige/faq-collapsible-tabs.375.png",
     "evidence/representclo/default/prestige/faq-collapsible-tabs.768.png",
-    "evidence/representclo/default/prestige/faq-collapsible-tabs.1440.png"
+    "evidence/representclo/default/prestige/faq-collapsible-tabs.changed.what-is-prestige.1440.png",
+    "evidence/representclo/default/prestige/faq-collapsible-tabs.changed.what-is-prestige.375.png",
+    "evidence/representclo/default/prestige/faq-collapsible-tabs.changed.what-is-prestige.768.png",
+    "evidence/representclo/default/prestige/faq-collapsible-tabs.initial.faq-kapali.1440.png",
+    "evidence/representclo/default/prestige/faq-collapsible-tabs.initial.faq-kapali.375.png",
+    "evidence/representclo/default/prestige/faq-collapsible-tabs.initial.faq-kapali.768.png"
   ],
   "notlar": "HELP / Frequently Asked questions. details: What is Prestige? / How do I become a member? / redeem / pending / drop tier.",
   "delta": "FAQ split içerik + Sign up/Log in. details/summary. kategoriTab yok.",
@@ -35,17 +41,18 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": "details >> summary, details:has-text('What is Prestige?')",
+      "selector": "#shopify-section-template--16838462734545__prestige_split_content_Qfh9Nk details summary",
       "capture": true,
       "etiket": "what-is-prestige",
       "not": "İlk soru açık"
     }
   ],
   "stateFindings": {
-    "initial": "Sorular kapalı.",
-    "changed": "What is Prestige? cevap görünür."
+    "initial": "HELP / Frequently Asked questions; Sign up / Log in; beş soru + ile kapalı (What is Prestige? … drop tier).",
+    "changed": "What is Prestige? açık (—): Prestige Points, missions, flagship stores, tiers. Diğerleri +."
   },
   "missingStates": [],
+  "interactionNote": "details/summary. Diğer sorular leftover.",
   "capture": {
     "url": "https://representclo.com/pages/prestige",
     "viewports": [
@@ -54,7 +61,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T21:07:03.286Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:27:24.433Z"
   }
 }
