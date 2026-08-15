@@ -1,0 +1,104 @@
+{
+  "observationId": "vollebak.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "vollebak",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://vollebak.com/",
+  "selector": ".cart-drawer__dialog",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/vollebak/default/home/global-cart-drawer.1440.png",
+    "evidence/vollebak/default/home/global-cart-drawer.375.png",
+    "evidence/vollebak/default/home/global-cart-drawer.768.png",
+    "evidence/vollebak/default/home/global-cart-drawer.filled.fmj-qty1.1440.png",
+    "evidence/vollebak/default/home/global-cart-drawer.filled.fmj-qty1.375.png",
+    "evidence/vollebak/default/home/global-cart-drawer.filled.fmj-qty1.768.png",
+    "evidence/vollebak/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/vollebak/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/vollebak/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "Horizon cart-drawer-component. Boş: Your cart is empty; Have an account? Log in; Continue shopping → /collections/best-sellers.",
+  "delta": "Dialog sağ/alt sheet. /cart ayrı sayfa da var (cart-page-main). Account drawer ayrı dialog — dokunulmadı.",
+  "captureMode": "viewport",
+  "prepareClick": "header button[aria-label='Cart']",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://vollebak.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header button[aria-label='Cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://vollebak.com/products/full-metal-jacket-copper-edition",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "label[for='size-aaguvsjrjt1r2sejfwaigenblock7ed16detgwzqs-s']",
+      "capture": false,
+      "not": "Beden S — id boş kalırsa ATC varyant id yok"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 600,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.add-to-cart-button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "header button[aria-label='Cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "fmj-qty1",
+      "not": "ATC sonrası drawer; açılmazsa cart buton"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty; Have an account? Log in; Continue shopping.",
+    "filled": "My cart 1; Full Metal Jacket. Copper edition Size S; qty 1; £1,495; Total £1,495 GBP; Free shipping on orders over 200 USD/GBP/EUR. Header cart badge 1."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC UI: önce beden S (Horizon ai-size-picker). id hidden boşken fallback varyant id yok. Qty changed leftover. Checkout/login yok.",
+  "capture": {
+    "url": "https://vollebak.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:08:42.231Z",
+    "prepareClick": "header button[aria-label='Cart']"
+  }
+}

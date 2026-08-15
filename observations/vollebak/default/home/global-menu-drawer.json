@@ -1,0 +1,62 @@
+{
+  "observationId": "vollebak.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "vollebak",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://vollebak.com/",
+  "selector": "#Details-menu-drawer-container .menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/vollebak/default/home/global-menu-drawer.375.png",
+    "evidence/vollebak/default/home/global-menu-drawer.768.png",
+    "evidence/vollebak/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/vollebak/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "375/768 hamburger. Shop accordion + Spaceshop / About / Materials / Lab. 1440 hamburger 0px.",
+  "delta": "Horizon Details-menu-drawer-container. Masaüstü mega ayrı.",
+  "captureMode": "viewport",
+  "prepareClick": "header summary.header__icon--menu[aria-label='Menu']",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://vollebak.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header summary.header__icon--menu[aria-label='Menu']",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Mobil drawer"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: X + search, VOLLEBAK, account, cart. Shop + / Spaceshop + / About Us / Materials / Lab. Shop çocukları kapalı."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 N/A. Yazılı Shop <a> koleksiyona gider — accordion summary HeaderDrawer-shop.",
+  "capture": {
+    "url": "https://vollebak.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:05:42.471Z",
+    "prepareClick": "header summary.header__icon--menu[aria-label='Menu']"
+  }
+}
