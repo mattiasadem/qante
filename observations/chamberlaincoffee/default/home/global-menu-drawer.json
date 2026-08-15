@@ -1,0 +1,75 @@
+{
+  "observationId": "chamberlaincoffee.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "chamberlaincoffee",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://chamberlaincoffee.com/",
+  "selector": "nav.navMenu",
+  "evidenceSlug": "global-menu-drawer",
+  "captureMode": "viewport",
+  "prepareClick": "header button[aria-label='Menu']",
+  "evidence": [
+    "evidence/chamberlaincoffee/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/chamberlaincoffee/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "375/768 hamburger → nav.navMenu: Find us in stores, Account, koleksiyonlar, Chamberlain Cafe, Emma's Faves / Shop All kartları.",
+  "delta": "Hydrogen + Oxygen + Sanity (theme Store / Shopify.theme.name yok — uydurulmadı). shop chamberlaincoffee.myshopify.com. #shopify-section-* yok. 1440 hamburger yok (düz header).",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://chamberlaincoffee.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.klaviyo-close-form",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "capture": false,
+      "not": "Klaviyo — settle scroll sonrası 768/1440"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header button[aria-label='Menu']",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Mobil menü"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: Find us in stores, Account, Coffee Beans… Shop All, Chamberlain Cafe, Emma's Faves / Shop All kartları."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger yok — düz header. open yalnız 375/768."
+    }
+  ],
+  "interactionNote": "1440 N/A. 768 Klaviyo settle-scroll sonrası kapanmadan menü açılmıyor.",
+  "capture": {
+    "url": "https://chamberlaincoffee.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:31:07.594Z"
+  }
+}

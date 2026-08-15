@@ -1,0 +1,88 @@
+{
+  "observationId": "chamberlaincoffee.default.home.hero-slideshow",
+  "schemaId": "hero-slideshow",
+  "kaynak": "chamberlaincoffee",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://chamberlaincoffee.com/",
+  "selector": "[data-module=\"hero\"]",
+  "evidenceSlug": "hero-slideshow",
+  "evidence": [
+    "evidence/chamberlaincoffee/default/home/hero-slideshow.1440.png",
+    "evidence/chamberlaincoffee/default/home/hero-slideshow.375.png",
+    "evidence/chamberlaincoffee/default/home/hero-slideshow.768.png",
+    "evidence/chamberlaincoffee/default/home/hero-slideshow.changed.slayt2.1440.png",
+    "evidence/chamberlaincoffee/default/home/hero-slideshow.changed.slayt2.375.png",
+    "evidence/chamberlaincoffee/default/home/hero-slideshow.changed.slayt2.768.png",
+    "evidence/chamberlaincoffee/default/home/hero-slideshow.initial.slayt1.1440.png",
+    "evidence/chamberlaincoffee/default/home/hero-slideshow.initial.slayt1.375.png",
+    "evidence/chamberlaincoffee/default/home/hero-slideshow.initial.slayt1.768.png"
+  ],
+  "prepareClick": "button.klaviyo-close-form",
+  "notlar": "Sanity module.hero, 2 slayt. Slayt 1: Tastes like vacation / Coconut Cold Brew and Matcha are here / Shop summer. Slayt 2: Organic Coffee & Matcha / Crafted for your daily ritual / Meet your go-to. Embla prev/next 0×0; dots tıklanır. Autoplay var (375 statik slayt 2’ye kayabilir).",
+  "delta": "Hydrogen + Oxygen + Sanity (theme Store / Shopify.theme.name yok — uydurulmadı). shop chamberlaincoffee.myshopify.com. #shopify-section-* yok. İki slayt aynı module. Next görünür değil — changed = ikinci embla__dot.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://chamberlaincoffee.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.klaviyo-close-form",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "capture": false,
+      "not": "Klaviyo — settle scroll sonrası 768/1440"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "[data-module='hero'] .embla__dots button.embla__dot:first-child",
+      "value": 900,
+      "capture": true,
+      "etiket": "slayt1",
+      "not": "İlk nokta — Tastes like vacation (autoplay sıfırla)"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "[data-module='hero'] button.embla__dot:not(.embla__dot--selected)",
+      "value": 900,
+      "capture": true,
+      "etiket": "slayt2",
+      "not": "İkinci nokta — Organic Coffee & Matcha"
+    }
+  ],
+  "stateFindings": {
+    "initial": "3vp: Tastes like vacation / Coconut Cold Brew and Matcha are here / Shop summer; sol nokta dolu.",
+    "changed": "768/1440: Organic Coffee & Matcha / Crafted for your daily ritual / Meet your go-to; sağ nokta dolu."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "375 slayt2 karesi slayt1 ile aynı (Tastes like vacation). 768/1440 değişti. İkinci deneme yok — leftover."
+    }
+  ],
+  "interactionNote": "Next/Prev 0×0. Changed = embla__dot. Statik 375 autoplay bazen slayt 2. 375 changed piksel değişmedi.",
+  "capture": {
+    "url": "https://chamberlaincoffee.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:33:00.691Z",
+    "prepareClick": "button.klaviyo-close-form"
+  }
+}
