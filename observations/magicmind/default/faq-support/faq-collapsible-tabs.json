@@ -1,0 +1,63 @@
+{
+  "observationId": "magicmind.default.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "magicmind",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "url": "https://magicmind.com/pages/faq",
+  "selector": "[id$='__faq_block_G3JWE4']",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/magicmind/default/faq-support/faq-collapsible-tabs.1440.png",
+    "evidence/magicmind/default/faq-support/faq-collapsible-tabs.375.png",
+    "evidence/magicmind/default/faq-support/faq-collapsible-tabs.768.png",
+    "evidence/magicmind/default/faq-support/faq-collapsible-tabs.changed.order-ship.1440.png",
+    "evidence/magicmind/default/faq-support/faq-collapsible-tabs.changed.order-ship.375.png",
+    "evidence/magicmind/default/faq-support/faq-collapsible-tabs.changed.order-ship.768.png"
+  ],
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://magicmind.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "text=When will my order ship?",
+      "value": 1200,
+      "capture": true,
+      "etiket": "order-ship",
+      "not": "İlk Ordering sorusu + → cevap"
+    }
+  ],
+  "stateFindings": {
+    "changed": "When will my order ship? açık; cevap 1-2 iş günü kargo. + → −."
+  },
+  "missingStates": [],
+  "interactionNote": "PII yok. Diğer FAQ kategorileri leftover.",
+  "notlar": "Ordering kategorisi. Suffix faq_block_G3JWE4 sabit; template id değişiyor.",
+  "delta": "Diğer kategoriler aynı tip. Template id A/B.",
+  "capture": {
+    "url": "https://magicmind.com/pages/faq",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:06:47.158Z"
+  }
+}

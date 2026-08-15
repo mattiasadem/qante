@@ -1,0 +1,63 @@
+{
+  "observationId": "kizik.default.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "kizik",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "url": "https://kizik.com/pages/faqs",
+  "selector": "#shopify-section-template--21445585141917__main",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/kizik/default/faq-support/faq-collapsible-tabs.changed.true-to-size.1440.png",
+    "evidence/kizik/default/faq-support/faq-collapsible-tabs.changed.true-to-size.375.png",
+    "evidence/kizik/default/faq-support/faq-collapsible-tabs.changed.true-to-size.768.png",
+    "evidence/kizik/default/faq-support/faq-collapsible-tabs.initial.faq-kapali.1440.png",
+    "evidence/kizik/default/faq-support/faq-collapsible-tabs.initial.faq-kapali.375.png",
+    "evidence/kizik/default/faq-support/faq-collapsible-tabs.initial.faq-kapali.768.png"
+  ],
+  "notlar": "Kizik Frequently Asked Questions. PRODUCTS & FIT: Do Kiziks run true to size? …",
+  "delta": "Accordion değil — soru tık help-center makale sayfasına gider (Back + cevap).",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://kizik.com/pages/faqs",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21445585141917__main",
+      "capture": true,
+      "etiket": "faq-kapali"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--21445585141917__main :text('Do Kiziks run true to size?')",
+      "capture": true,
+      "etiket": "true-to-size"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Kizik Frequently Asked Questions; What can we help you with?; PRODUCTS & FIT / ORDERS / RETURNS listesi.",
+    "changed": "Makale: Do Kiziks run true to size? — Yes! Most styles run true… Back link. Accordion değil."
+  },
+  "missingStates": [],
+  "interactionNote": "Soru tık ayrı article view. PII yok.",
+  "capture": {
+    "url": "https://kizik.com/pages/faqs",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:52:00.106Z"
+  }
+}
