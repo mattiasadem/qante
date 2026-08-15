@@ -1,0 +1,58 @@
+{
+  "observationId": "onnit.default.home.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "onnit",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.onnit.com/",
+  "selector": "#shopify-section-template--27710152311074__collapsible_content_mmPH4f",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [],
+  "notlar": "FREQUENTLY ASKED QUESTIONS. Help Center / contact CTA. Accordion.",
+  "delta": "collapsible_content. Harici help.onnit.com leftover. Interact: ilk kapalı paneli aç.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.onnit.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--27710152311074__collapsible_content_mmPH4f",
+      "capture": true,
+      "etiket": "faq-kapali"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--27710152311074__collapsible_content_mmPH4f button, #shopify-section-template--27710152311074__collapsible_content_mmPH4f summary, #shopify-section-template--27710152311074__collapsible_content_mmPH4f [aria-expanded='false']",
+      "capture": true,
+      "etiket": "faq-acik",
+      "not": "İlk kapalı soruyu aç"
+    }
+  ],
+  "stateFindings": {
+    "initial": "FAQ başlık + Help Center satırı; paneller kapalı görünür.",
+    "changed": "Bir soru açıldı — cevap metni karede."
+  },
+  "missingStates": [],
+  "interactionNote": "Help Center harici. İlk görünür expander; yazılı Help Center <a> tıklanmadı."
+}

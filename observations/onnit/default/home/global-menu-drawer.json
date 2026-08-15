@@ -1,0 +1,61 @@
+{
+  "observationId": "onnit.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "onnit",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.onnit.com/",
+  "selector": ".header__nav-wrapper.mobile-slide",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "375 hamburger button.header__link--menu MAIN MENU. SHOP / LEARN tab + görsel kartlar.",
+  "delta": "1440 height 0 / N/A. Drawer header içinde.",
+  "captureMode": "viewport",
+  "prepareClick": "button.header__link--menu",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://www.onnit.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 400,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.header__link--menu",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "viewports": [
+        "375",
+        "768"
+      ]
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: SHOP / LEARN tab, Shop All / NMN / Best Sellers / kategori kartları."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 N/A. Yazılı Shop All <a> PLP’ye gider — tıklanmadı."
+}

@@ -1,0 +1,113 @@
+{
+  "observationId": "onnit.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "onnit",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.onnit.com/",
+  "selector": ".rebuy-cart__flyout",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Rebuy Smart Cart. Boş: YOUR CART IS EMPTY + $100 free shipping bar + similar products. /cart → /?viewcart=true.",
+  "delta": "body.smart-cart--enabled. Tema native cart sayfası yok. Powered by Rebuy.",
+  "captureMode": "viewport",
+  "prepareClick": "a.header__link--cart",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.onnit.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.header__link--cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.onnit.com/products/alpha-brain-60-ct",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.button--secondary[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a.header__link--cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "alpha-brain"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".rebuy-cart__flyout button[aria-label*='increase' i], .rebuy-cart__flyout .quantity-increase, .rebuy-cart__flyout button.rebuy-cart__quantity-up, .rebuy-cart__flyout [data-action='increase']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Rebuy drawer boş; $100 free shipping; Take The Quiz; similar Alpha BRAIN 90 / Total Human / Black Label.",
+    "filled": "Alpha BRAIN® satırı + ara toplam (subscribe veya one-time, karede görünen).",
+    "changed": "Adet arttı veya stepper yoksa missingStates."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC button.button--secondary[name=add] (ADD TO CART & SUBSCRIBE). Checkout / Login / promo PII yok. /cart sayfası yok."
+}

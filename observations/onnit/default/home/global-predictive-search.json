@@ -1,0 +1,68 @@
+{
+  "observationId": "onnit.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "onnit",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.onnit.com/",
+  "selector": ".iam-predictive-search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "button.search-box__toggle → overlay + #predictive-search-input-header placeholder Search our store.",
+  "delta": "iam-predictive-search. Sonuç listesi fill sonrası yoklandı; /search sayfası ayrı.",
+  "captureMode": "viewport",
+  "prepareClick": "button.search-box__toggle",
+  "interactionStates": [
+    "open",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://www.onnit.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 400,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.search-box__toggle",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#predictive-search-input-header",
+      "value": "alpha",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "alpha"
+    }
+  ],
+  "stateFindings": {
+    "open": "Arama overlay açık; Search our store / CLOSE SEARCH.",
+    "input": "alpha yazıldı; öneri listesi karede varsa yazılır, yoksa height 0 notu."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu=alpha (Alpha BRAIN). Submit / PII yok. Tam sonuç /search?q=alpha ayrı observation."
+}
