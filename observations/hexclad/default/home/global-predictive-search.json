@@ -1,0 +1,52 @@
+{
+  "observationId": "hexclad.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "hexclad",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://hexclad.com/",
+  "selector": ".mod_header_BIfLoG_Search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "button[aria-label='Open search modal'] → overlay. Placeholder Shop HexClad's Collection… Suggested: BEST SELLERS, 12\"/14\" pan, 6PC set. Input #search-nav-header.",
+  "delta": "Öneri statik link listesi; yazınca ürün kartı bu walk’ta yoklandı değil. /search tam sayfa ayrı.",
+  "captureMode": "viewport",
+  "prepareClick": "button[aria-label='Open search modal']",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hexclad.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button[aria-label='Open search modal']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "suggested",
+      "not": "Suggested linkler"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#search-nav-header",
+      "value": "pan",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "pan",
+      "not": "katalogSorgu pan"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Suggested BEST SELLERS + 12/14 pan + 6PC set.",
+    "input": "pan yazınca öneri değişimi capture’da."
+  },
+  "missingStates": [],
+  "interactionNote": "Boş sonuç (zzzzz) denenmedi."
+}
