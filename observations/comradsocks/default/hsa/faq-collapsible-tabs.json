@@ -1,0 +1,74 @@
+{
+  "observationId": "comradsocks.default.hsa.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "comradsocks",
+  "preset": "default",
+  "sayfa": "hsa",
+  "url": "https://www.comradsocks.com/pages/how-to-use-your-hsa-fsa-funds-at-comrad",
+  "selector": "#shopify-section-template--19922179621081__accordion_Bt9WyC",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/comradsocks/default/hsa/faq-collapsible-tabs.1440.png",
+    "evidence/comradsocks/default/hsa/faq-collapsible-tabs.375.png",
+    "evidence/comradsocks/default/hsa/faq-collapsible-tabs.768.png",
+    "evidence/comradsocks/default/hsa/faq-collapsible-tabs.changed.ilk-soru.1440.png",
+    "evidence/comradsocks/default/hsa/faq-collapsible-tabs.changed.ilk-soru.375.png",
+    "evidence/comradsocks/default/hsa/faq-collapsible-tabs.changed.ilk-soru.768.png",
+    "evidence/comradsocks/default/hsa/faq-collapsible-tabs.initial.kapali.1440.png",
+    "evidence/comradsocks/default/hsa/faq-collapsible-tabs.initial.kapali.375.png",
+    "evidence/comradsocks/default/hsa/faq-collapsible-tabs.initial.kapali.768.png"
+  ],
+  "notlar": "FAQ. What are FSA and HSA accounts? ve 6 kapalı soru.",
+  "delta": "İlk soru kapalı — interact adayı.",
+  "capture": {
+    "url": "https://www.comradsocks.com/pages/how-to-use-your-hsa-fsa-funds-at-comrad",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:31:32.566Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.comradsocks.com/pages/how-to-use-your-hsa-fsa-funds-at-comrad",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": "2500",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19922179621081__accordion_Bt9WyC",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "Hepsi kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--19922179621081__accordion_Bt9WyC button.accordion-trigger:has-text('What are FSA and HSA accounts?')",
+      "capture": true,
+      "etiket": "ilk-soru",
+      "not": "İlk soru aç"
+    }
+  ],
+  "stateFindings": {
+    "initial": "FAQ. Yedi soru kapalı.",
+    "changed": "What are FSA and HSA accounts? açık — HSA/FSA pre-tax healthcare. Diğer altı kapalı. URL HSA sayfasında kaldı."
+  },
+  "missingStates": [],
+  "interactionNote": "İlk accordion-trigger."
+}
