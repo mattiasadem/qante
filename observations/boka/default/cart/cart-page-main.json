@@ -1,0 +1,110 @@
+{
+  "observationId": "boka.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "boka",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://www.boka.com/cart",
+  "selector": "#shopify-section-template--26470592249899__main",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/boka/default/cart/cart-page-main.1440.png",
+    "evidence/boka/default/cart/cart-page-main.375.png",
+    "evidence/boka/default/cart/cart-page-main.768.png",
+    "evidence/boka/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/boka/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/boka/default/cart/cart-page-main.filled.sepete-eklendi.768.png"
+  ],
+  "notlar": "Boş: Your cart is empty / Continue shopping. Dolu interact.",
+  "delta": "Impact cart page. Drawer ayrı obs.",
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.boka.com/products/ela-mint-toothpaste",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": "8500",
+      "capture": false,
+      "not": "Klaviyo ~8s"
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.klaviyo-close-form[aria-label='Close dialog']",
+      "capture": false,
+      "not": "İlk sayfa — dialog var"
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--26470592839723__main button.button--xl:has-text('Add to cart')",
+      "capture": false,
+      "not": "Ela Mint ATC — button--xl"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.boka.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": "2000",
+      "capture": false,
+      "not": "İkinci goto: Klaviyo yok. Announcement tık koleksiyona kaçırır — tıklama yok"
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--26470592249899__main",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart sayfası"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "stateFindings": {
+    "initial": "Boş: Your cart is empty / Continue shopping (static 3vp).",
+    "filled": "Ela Mint satırı $9.88, 1 Pack, 2 month subscription 15%. Quantity 1, Remove. Spend $25.12 more free shipping. Subtotal $9.88, Order note, Checkout. Rozet 1. Checkout tıklanmadı."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "input",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "open",
+      "sebep": "Drawer ayrı"
+    },
+    {
+      "state": "changed",
+      "sebep": "Adet drawer'da denendi"
+    }
+  ],
+  "prepareClick": "button.klaviyo-close-form[aria-label='Close dialog']",
+  "interactionNote": "Klaviyo yalnız PDP goto. /cart'ta dialog yok; announcement fallback sayfa değiştirdi, kaldırıldı. Checkout tıklanmadı.",
+  "capture": {
+    "url": "https://www.boka.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:44:33.414Z",
+    "prepareClick": "button.klaviyo-close-form[aria-label='Close dialog']"
+  }
+}

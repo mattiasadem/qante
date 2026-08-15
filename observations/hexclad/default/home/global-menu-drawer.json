@@ -1,0 +1,62 @@
+{
+  "observationId": "hexclad.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "hexclad",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://hexclad.com/",
+  "selector": ".mod_drawer_menu_0Hwq1q_Nav__grid",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/hexclad/default/home/global-menu-drawer.375.png",
+    "evidence/hexclad/default/home/global-menu-drawer.768.png",
+    "evidence/hexclad/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/hexclad/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "375/768 hamburger Open menu. Tam ekran: X + logo + cart; search; TOP PICKS 12PC/6PC kartları; kategori ızgarası Hybrid/Specialty/Knives/Aprons/HexMills/Kitchen Tools/HexWear.",
+  "delta": "1440 hamburger hidden. Alt akordeon leftover.",
+  "captureMode": "viewport",
+  "prepareClick": "button[aria-label='Open menu']",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://hexclad.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button[aria-label='Open menu']",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Mobil drawer"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: search + Top Picks kartları + kategori ikon ızgarası."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 N/A. Hybrid alt akordeon açılmadı.",
+  "capture": {
+    "url": "https://hexclad.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:48:16.984Z",
+    "prepareClick": "button[aria-label='Open menu']"
+  }
+}

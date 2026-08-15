@@ -1,0 +1,81 @@
+{
+  "observationId": "primalqueen.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "primalqueen",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://primalqueen.com/cart",
+  "selector": "#shopify-section-template--22589197615381__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/primalqueen/default/cart/cart-page-main.1440.png",
+    "evidence/primalqueen/default/cart/cart-page-main.375.png",
+    "evidence/primalqueen/default/cart/cart-page-main.768.png",
+    "evidence/primalqueen/default/cart/cart-page-main.filled.dolu.1440.png",
+    "evidence/primalqueen/default/cart/cart-page-main.filled.dolu.375.png",
+    "evidence/primalqueen/default/cart/cart-page-main.filled.dolu.768.png",
+    "evidence/primalqueen/default/cart/cart-page-main.initial.bos.1440.png",
+    "evidence/primalqueen/default/cart/cart-page-main.initial.bos.375.png",
+    "evidence/primalqueen/default/cart/cart-page-main.initial.bos.768.png"
+  ],
+  "notlar": "Your cart is empty · Continue shopping (pembe). cart-footer section 0px boşken.",
+  "delta": "Native Sense cart page. Drawer yok; header bag → /cart. Title Your Shopping Cart.",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://primalqueen.com/cart",
+      "capture": true,
+      "etiket": "bos",
+      "not": "Boş sepet"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://primalqueen.com/collections/shop-all",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": ".product-options-selector__cta-button.js-cta-button",
+      "capture": false,
+      "not": "İlk Beef Organs ATC"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://primalqueen.com/cart",
+      "capture": true,
+      "etiket": "dolu",
+      "not": "Dolu cart sayfası"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + Continue shopping",
+    "filled": "Primal Queen Starter Kit (2 months + 1 month free) · $132→$78 · Deliver every 3 months · qty 1 · Flash Sale · bag badge 1. ATC UI (shop-all)."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart → ui (shop-all .js-cta-button). Checkout yok. Qty changed denenmedi.",
+  "capture": {
+    "url": "https://primalqueen.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:01:13.064Z"
+  }
+}
