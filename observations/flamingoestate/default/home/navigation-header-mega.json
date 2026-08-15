@@ -1,0 +1,68 @@
+{
+  "observationId": "flamingoestate.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "flamingoestate",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://flamingoestate.com/",
+  "selector": "#megamenu-v3",
+  "captureMode": "viewport",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/flamingoestate/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/flamingoestate/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/flamingoestate/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/flamingoestate/default/home/navigation-header-mega.open.shop-panel.1440.png"
+  ],
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://flamingoestate.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Kapalı header: Shop / The Estate / 21% Off Candles + search + cart"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "a.megamenu-v3-nav-main-link:has-text(\"Shop\")",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-panel",
+      "not": "Shop tık → sol flyout (hover piksel değiştirmedi)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Kapalı: search + Shop / The Estate / 21% Off Candles + FLAMINGO ESTATE + Sign In / Get $20 + bag. Mega yok.",
+    "open": "1440 Shop tık: sol flyout Shop All + X; Shop by Room >; Candles…Books; The Estate / Membership / Projects v / Recipes; Sign In. Hover aynı kare."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375/768 Shop hover/tık yok — hamburger global-menu-drawer."
+    }
+  ],
+  "interactionNote": "Hover Shop paneli x=-100’de bırakır. Click Shop 1440’ta sol flyout açar (Shop All + kategoriler). 375/768 hamburger aynı kart — global-menu-drawer.",
+  "notlar": "flamingo-estate-web/master · schema_name Prestige 8.3.0. Shop / The Estate / 21% Off Candles. Sign In + Get $20 + cart.",
+  "delta": "Hover mega değil — click sol flyout (aynı kart mobil hamburger). Oda görselleri kapalı header DOM’da; açık panelde metin listesi.",
+  "capture": {
+    "url": "https://flamingoestate.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:36:28.533Z"
+  }
+}

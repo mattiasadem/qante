@@ -1,0 +1,90 @@
+{
+  "observationId": "flamingoestate.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "flamingoestate",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://flamingoestate.com/",
+  "selector": ".rebuy-cart__flyout",
+  "captureMode": "viewport",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/flamingoestate/default/home/global-cart-drawer.filled.rosemary-qty1.1440.png",
+    "evidence/flamingoestate/default/home/global-cart-drawer.filled.rosemary-qty1.375.png",
+    "evidence/flamingoestate/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/flamingoestate/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/flamingoestate/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://flamingoestate.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.megamenu-cart-icon",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Your Basket is Empty + TRY NEW PLEASURES"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://flamingoestate.com/products/climbing-tuscan-rosemary-soy-wax-candle",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--17811497484456__main button[type='submit'], #shopify-section-template--17811497484456__main form[action*='/cart/add'] button",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a.megamenu-cart-icon",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "rosemary-qty1",
+      "not": "Dolu Rebuy basket — satır + toplam"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440/768 Rebuy: Your Basket is Empty + TRY NEW PLEASURES Jasmine $64 ADD. 375: LATEST RELEASE kartları (Summer Travel Set / Noir Fig / Three Sisters) — empty-cart-promos.",
+    "filled": "375+1440: Tuscan Rosemary Candle $57.60/$64, Delivery Every 4 Weeks, qty 1, $92.40 to FREE SHIPPING, TRY NEW PLEASURES, CHECKOUT. SMS checkbox."
+  },
+  "missingStates": [
+    {
+      "state": "filled",
+      "sebep": "768 iki deneme: addToCart UI+/cart/add.js reddetti (varyant id yok). 375/1440 UI doldu. Dur."
+    }
+  ],
+  "interactionNote": "/cart → /?viewcart=true. Rebuy .rebuy-cart__flyout. addToCart 375/1440 UI (subscribe default). 768 yok. Checkout tıklanmadı.",
+  "notlar": "Rebuy smart cart. Boş masaüstü: Your Basket is Empty. Mobil boş: LATEST RELEASE promos.",
+  "delta": "Prestige cart-drawer değil Rebuy. cart-page-main yok. 375 boş ≠ 1440 boş.",
+  "capture": {
+    "url": "https://flamingoestate.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:41:46.092Z"
+  }
+}
