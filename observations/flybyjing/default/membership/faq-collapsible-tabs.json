@@ -1,0 +1,44 @@
+{
+  "observationId": "flybyjing.default.membership.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "flybyjing",
+  "preset": "default",
+  "sayfa": "membership",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [],
+  "delta": "details yok; button accordion.",
+  "url": "https://flybyjing.com/pages/membership",
+  "selector": "#shopify-section-template--15468669501498__faq_JBM4ea",
+  "notlar": "FAQ butonları: HOW DO I JOIN… / ACCOUNT / BENEFITS / RECURRING…",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://flybyjing.com/pages/membership",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15468669501498__faq_JBM4ea",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "Sorular kapalı/özet"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--15468669501498__faq_JBM4ea button:has-text('HOW DO I JOIN THE TASTEMAKER CLUB?')",
+      "capture": true,
+      "etiket": "join",
+      "not": "İlk soru açık cevap"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": ""
+}

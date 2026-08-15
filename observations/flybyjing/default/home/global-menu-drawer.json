@@ -1,0 +1,53 @@
+{
+  "observationId": "flybyjing.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "flybyjing",
+  "preset": "default",
+  "sayfa": "home",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "delta": "1440 hamburger lg:hidden — drawer 0. Mega yok; masaüstü yatay linkler.",
+  "url": "https://flybyjing.com/",
+  "selector": "#left-drawer-slot",
+  "captureMode": "viewport",
+  "prepareClick": "[data-menu-drawer-toggle]",
+  "notlar": "375/768 hamburger [data-menu-drawer-toggle] → sol drawer: SHOP, STORE LOCATOR, OUR STORY, MEMBERSHIP, RECIPES, Log in, Create account, Search.",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://flybyjing.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "[data-menu-drawer-toggle]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "menu",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Sol Main Menu"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger hidden — N/A"
+    }
+  ],
+  "interactionNote": "1440 open yok."
+}

@@ -1,0 +1,87 @@
+{
+  "observationId": "flybyjing.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "flybyjing",
+  "preset": "default",
+  "sayfa": "home",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "delta": "Drawer #right-drawer-slot; kapalı 0px. ATC sonrası dolu kare. Checkout tıklanmadı.",
+  "url": "https://flybyjing.com/",
+  "selector": "#right-drawer-slot",
+  "captureMode": "viewport",
+  "notlar": "Shapes sağ drawer. Boş: YOUR CART / undefined items / Your cart is currently empty. #CartButton açar. /cart sayfası da var.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://flybyjing.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#CartButton",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://flybyjing.com/products/sichuan-chili-crisp",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.add-to-cart-btn",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#CartButton",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "chili-crisp",
+      "not": "ATC sonrası drawer; kapalıysa CartButton"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#right-drawer-slot button:has-text('+')",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "qty2",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Checkout / ödeme yok. addToCart UI; fallback /cart/add.js ise not düşülecek."
+}

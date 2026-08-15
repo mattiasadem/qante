@@ -1,0 +1,54 @@
+{
+  "observationId": "flybyjing.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "flybyjing",
+  "preset": "default",
+  "sayfa": "home",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "delta": "Shapes Alpine predictive. Overlay #predictiveSearchResults tam ekran. /search sayfası ayrı (search-results).",
+  "url": "https://flybyjing.com/",
+  "selector": "#predictiveSearchResults",
+  "captureMode": "viewport",
+  "notlar": "SEARCH link header input'u açar (#header-search). chili → PRODUCTS 5 kart + ARTICLES + PAGES + VIEW ALL RESULTS.",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://flybyjing.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.font-heading[href='/search']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bar",
+      "not": "Header search input açık; sonuç yok"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#header-search",
+      "value": "chili",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "chili",
+      "not": "PRODUCTS + ARTICLES + PAGES"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "katalogSorgu=chili (ürün adından)."
+}
