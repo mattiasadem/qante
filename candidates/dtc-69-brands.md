@@ -46,10 +46,10 @@ Durum: `done` = main'e merge · `in progress` = açık PR · boş = kuyrukta
 | 34 | done | vessi.com | https://vessi.com |
 | 35 | done | flamingoestate.com | https://flamingoestate.com |
 | 36 | done | flybyjing.com | https://flybyjing.com |
-| 37 | in progress | gruns.co | https://gruns.co |
+| 37 | done | gruns.co | https://gruns.co |
 | 38 | in progress | hollowsocks.com | https://hollowsocks.com |
 | 39 | in progress | representclo.com | https://representclo.com |
-| 40 | in progress | functionhealth.com | https://functionhealth.com |
+| 40 | done | functionhealth.com | https://functionhealth.com |
 | 41 | in progress | chamberlaincoffee.com | https://chamberlaincoffee.com |
 | 42 | | dukecannon.com | https://dukecannon.com |
 | 43 | | magicmind.com | https://magicmind.com |
