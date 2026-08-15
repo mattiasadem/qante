@@ -1,0 +1,75 @@
+{
+  "observationId": "kettleandfire.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "kettleandfire",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.kettleandfire.com/",
+  "selector": "#shopify-section-header-mobile",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/kettleandfire/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/kettleandfire/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "375 hamburger #mobileNavTrigger. Bundles / Find in Store / Monthly Deals / About / Loyalty / Shop Best Sellers.",
+  "delta": "wayfx header-mobile. 1440 height 0. Drawer içerik aynı section.",
+  "captureMode": "viewport",
+  "prepareClick": "#mobileNavTrigger",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://www.kettleandfire.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 400,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#mobileNavTrigger",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "viewports": [
+        "375",
+        "768"
+      ]
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 X + SHOP ›, BUNDLES, FIND IN STORE, MONTHLY DEALS 20% OFF, LEARN ›, ABOUT US, LOYALTY PROGRAM, ACCOUNT, kırmızı SHOP BEST SELLERS. Boost docked bar altta."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 N/A. Yazılı Shop All <a> PLP’ye gider — tıklanmadı.",
+  "capture": {
+    "url": "https://www.kettleandfire.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:20:46.828Z"
+  }
+}
