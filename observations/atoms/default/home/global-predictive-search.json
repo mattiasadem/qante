@@ -7,9 +7,16 @@
   "url": "https://atoms.com/",
   "selector": "form:has(input[name=\"q\"])",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/atoms/default/home/global-predictive-search.initial.search-bos.1440.png",
+    "evidence/atoms/default/home/global-predictive-search.initial.search-bos.375.png",
+    "evidence/atoms/default/home/global-predictive-search.initial.search-bos.768.png",
+    "evidence/atoms/default/home/global-predictive-search.input.black.1440.png",
+    "evidence/atoms/default/home/global-predictive-search.input.black.375.png",
+    "evidence/atoms/default/home/global-predictive-search.input.black.768.png"
+  ],
   "notlar": "Search butonu overlay açar. input[name=q] placeholder Search. Fill black → .search-query-suggestion chip (black, gray black…).",
-  "delta": "Kapalı input yok. Predictive ürün satırı bu fill'de görülmedi — query suggestion. /search?q=black ayrı sayfa 200; /search boş 500.",
+  "delta": "Kapalı input yok. Fill black: Suggestions + Products listesi + View all results. /search?q=black 200; /search boş 500.",
   "captureMode": "viewport",
   "prepareClick": "button:has-text(\"Search\")",
   "interactionStates": [
@@ -64,8 +71,19 @@
   ],
   "stateFindings": {
     "initial": "Search overlay + boş input.",
-    "input": "black → search-query-suggestion: black / gray black / red black / blue black / black white."
+    "input": "1440 black: Suggestions (gray black, red black…) + Products (000 Black $145, 000 B&W, 001 Black, 251 Low) + View all results."
   },
   "missingStates": [],
-  "interactionNote": "Ürün satırı overlay'de görülmedi. Enter/submit arama sayfasına gider. PII yok."
+  "interactionNote": "375/768 overlay de açıldı. PII yok.",
+  "capture": {
+    "url": "https://atoms.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:49:14.384Z"
+  }
 }
