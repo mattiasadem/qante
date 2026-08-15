@@ -1,0 +1,93 @@
+{
+  "observationId": "moonjuice.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "moonjuice",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://moonjuice.com/",
+  "selector": ".rebuy-cart__flyout",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/moonjuice/default/home/global-cart-drawer.1440.png",
+    "evidence/moonjuice/default/home/global-cart-drawer.375.png",
+    "evidence/moonjuice/default/home/global-cart-drawer.768.png",
+    "evidence/moonjuice/default/home/global-cart-drawer.filled.magnesiom.1440.png",
+    "evidence/moonjuice/default/home/global-cart-drawer.filled.magnesiom.375.png",
+    "evidence/moonjuice/default/home/global-cart-drawer.filled.magnesiom.768.png"
+  ],
+  "notlar": "Rebuy sağ panel. Boş: Your Cart Is Empty! Continue Shopping. Sarı SAVE 30% + FREE SHIPPING. $65 kargo eşiği. Customers Also Bought.",
+  "delta": "Shopify native cart-drawer yok. #rebuy-cart + Recharge #recharge-storefront-experiences__cart-drawer (0px). /cart home'a düşer. smart-cart--enabled.",
+  "prepareClick": "header a.action__cart",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://moonjuice.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header a.action__cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Rebuy boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://moonjuice.com/products/magnesi-om-magnesium-supplement",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button:has-text('ADD TO CART'), button:has-text('Add to cart')",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "header a.action__cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "magnesiom",
+      "not": "ATC sonrası Rebuy dolu"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your Cart Is Empty!; $65 free shipping; sarı SAVE 30% + FREE SHIPPING; Customers Also Bought Magnesi-Om / SuperYou / Mini Dew.",
+    "filled": "ATC UI: Magnesi-Om® Berry / Jar · Delivered every month · $30.80 (~~$44~~) · qty 1 · FREE SHIPPING unlocked · Subtotal $30.80 · Checkout. Upsell Collagen Protect / SuperYou / Mini Dew."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Rebuy qty +/− bir kez denenmedi — leftover"
+    }
+  ],
+  "interactionNote": "Rebuy widget. addToCart UI (Subscribe default). Checkout'a girilmedi.",
+  "capture": {
+    "url": "https://moonjuice.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:21:28.891Z",
+    "prepareClick": "header a.action__cart"
+  }
+}
