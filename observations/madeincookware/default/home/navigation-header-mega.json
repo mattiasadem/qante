@@ -1,0 +1,44 @@
+{
+  "observationId": "madeincookware.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "madeincookware",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://madeincookware.com/",
+  "selector": "#global-nav",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "1440 sticky #global-nav 122px. Logo; search; Learn dropdown; Log In; Cart; Shop All / Clean Cooking NEW / Save With Sets / Cookware / Tabletop / Knives / Bakeware / Accessories. Cookware mega: Shop All + Sets + Materials + Shapes + promo görselleri.",
+  "delta": "Custom headless (Shopify.theme yok; UUID section). Dil seçici yok. Account #nav-account PII — envanter dışı. Mega click ile açılıyor (hover Cookware <a> paneli 0px bırakabiliyor). Attentive overlay dismiss.",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://madeincookware.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı sticky bar"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#global-nav button:has-text('open dropdown for Cookware')",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cookware-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Cookware dropdown — Materials / Shapes / promo"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Logo, search, Learn, Log In, Cart, Shop All + kategori mega tetikleri.",
+    "open": "1440 Cookware click — Shop All Cookware, Sets, Materials (Stainless/Carbon/CeramiClad/Cast Iron), Shapes, promo kartları."
+  },
+  "missingStates": []
+}

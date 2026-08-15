@@ -1,0 +1,40 @@
+{
+  "observationId": "madeincookware.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "madeincookware",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://madeincookware.com/products/the-stainless-sets/10-piece",
+  "selector": "#product_details",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "Stainless Set 10-Piece. Breadcrumb Home/Sets/Stainless Clad. READY TO SHIP, MADE IN ITALY, 4.8 (4,995). $799 / $1,024 SAVE $225. Size 10/13/Complete Kitchen. Care add-on +$49. Add to Cart. Sticky ATC bar (Back to Top + Add to Cart).",
+  "delta": "Set varyantı size pill. Sticky ATC feature (şema sticky knob). Galeri solda.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://madeincookware.com/products/the-stainless-sets/10-piece",
+      "capture": true,
+      "etiket": "10-piece",
+      "not": "10-Piece $799"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#product_details :text('13-Piece')",
+      "capture": true,
+      "etiket": "13-piece",
+      "not": "13-Piece fiyat değişir mi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "10-Piece $799 $1,024 SAVE $225.",
+    "changed": "13-Piece seçimi — kareye bak."
+  },
+  "missingStates": []
+}

@@ -1,0 +1,46 @@
+{
+  "observationId": "madeincookware.default.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "madeincookware",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "url": "https://madeincookware.com/pages/help-center",
+  "selector": "main :text('General Order FAQs')",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [],
+  "notlar": "Help Center — General Order FAQs + malzeme grupları (Carbon Steel, Bakeware, CeramiClad…). İlk grup temsilci.",
+  "delta": "Çok gruplu FAQ; tek schemaId. Kategori başlıkları section değil grup.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://madeincookware.com/pages/help-center",
+      "capture": true,
+      "etiket": "genel",
+      "not": "General Order FAQs"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "main :text('General Order FAQs')",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[aria-expanded='false'], [aria-expanded='false']",
+      "capture": true,
+      "etiket": "ilk-soru",
+      "not": "İlk kapalı soru"
+    }
+  ],
+  "stateFindings": {
+    "initial": "General Order FAQs bloğu.",
+    "changed": "İlk soru — kareye bak."
+  },
+  "missingStates": []
+}

@@ -1,0 +1,70 @@
+{
+  "observationId": "madeincookware.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "madeincookware",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://madeincookware.com/",
+  "selector": "div.fixed.right-0.bottom-0.z-\\[9999\\]:has-text('Your Cart')",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Sağ Radix panel. Boş: Your cart is empty + Shop by Category slider (Sets/Cookware/Tabletop/Knives). /cart home'a düşer.",
+  "delta": "/cart → home. Sepet yalnız drawer. Radix id kararsız — class+text selector. Checkout'a girilmedi.",
+  "captureMode": "viewport",
+  "prepareClick": "#nav-cart",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://madeincookware.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#nav-cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş sepet + kategori slider"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://madeincookware.com/products/stainless-steel-frying-pan",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#product_details button:has-text('Add to Cart')",
+      "capture": false,
+      "not": "UI ATC; fallback /cart/add.js"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#nav-cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "frying-pan",
+      "not": "Dolu drawer"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty; Shop by Category Sets/Cookware/Tabletop/Knives.",
+    "filled": "ATC sonrası satır — capture karesine bak."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout/kupon/PII yok. /cart 302 home."
+}

@@ -1,0 +1,48 @@
+{
+  "observationId": "madeincookware.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "madeincookware",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://madeincookware.com/",
+  "selector": "div.fixed.right-0.bottom-0.z-\\[9999\\]:has-text('Close menu')",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "375/768 #global-nav-mobile + #mobile-menu. Açık panel: Shop All, Clean Cooking NEW, Save With Sets, Cookware… + Close menu. 1440 #global-nav, hamburger 0px.",
+  "delta": "Aynı Radix shell cart ile; metin 'Close menu' ayırır. 1440 N/A.",
+  "captureMode": "viewport",
+  "prepareClick": "#mobile-menu",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://madeincookware.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#mobile-menu",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "menu-acik",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Hamburger drawer"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 Menu — Shop All / Clean Cooking / Sets / Cookware accordion tetikleri."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger 0px — mega header"
+    }
+  ]
+}

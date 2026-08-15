@@ -1,0 +1,64 @@
+{
+  "observationId": "madeincookware.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "madeincookware",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://madeincookware.com/",
+  "selector": "#global-nav div.relative.h-full.w-\\[374px\\] > div[data-is-open]",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "Header #search placeholder 'What can we help you find?'. Açık panel: Popular Searches (Griddle, Saucier…) + Popular Categories + Help. Fill 'griddle' → Products (Carbon Steel Griddle $179, Lid, Bag, Set) + Learn yazıları.",
+  "delta": "Predictive panel header içinde absolute; 375'te #mobile-nav-search. Tema adı yok.",
+  "captureMode": "viewport",
+  "prepareClick": "#search",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://madeincookware.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "populer",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "not": "Popular Searches + Categories"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#search",
+      "value": "griddle",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "griddle",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "not": "Ürün kartları + Learn linkleri"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Popular Searches: Griddle/Saucier/Carbon Steel…; Categories Sets/Cookware/Knives/Tabletop.",
+    "input": "griddle → Carbon Steel Griddle $179, Lid $99, Utility Bag $99, Griddle Set + Learn yazıları."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "375 arama #mobile-nav-search — desktop #search 0px; mobil adım ayrı yoklandı değilse leftover"
+    }
+  ]
+}
