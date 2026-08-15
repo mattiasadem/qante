@@ -7,7 +7,17 @@
   "url": "https://www.dieuxskin.com/",
   "selector": ".cart-drawer.js-cart-drawer",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/dieux/default/home/global-cart-drawer.1440.png",
+    "evidence/dieux/default/home/global-cart-drawer.375.png",
+    "evidence/dieux/default/home/global-cart-drawer.768.png",
+    "evidence/dieux/default/home/global-cart-drawer.filled.instant-angel.1440.png",
+    "evidence/dieux/default/home/global-cart-drawer.filled.instant-angel.375.png",
+    "evidence/dieux/default/home/global-cart-drawer.filled.instant-angel.768.png",
+    "evidence/dieux/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/dieux/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/dieux/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
   "notlar": "Sağ panel. Boş: Your cart is empty + SHOP BESTSELLERS (Instant Angel / Deliverance) Add.",
   "delta": "/cart home'a 302. Sepet yalnız drawer. #shopify-section-cart-template kapalıyken height 0 — selector .cart-drawer. GWP JSON (Firm Revival + Deliverance 3mL) var; kupon alanı kapalı.",
   "captureMode": "viewport",
@@ -41,20 +51,21 @@
     {
       "state": "filled",
       "action": "click",
-      "selector": "#shopify-section-template--17652491255901__product-template label:has-text('One-time purchase'), #shopify-section-template--17652491255901__product-template :text('One-time purchase')",
+      "selector": "#shopify-section-template--17652491255901__product-template .js-product-wrapper :text('One-time purchase')",
       "capture": false,
       "not": "Abonelik yerine tek sefer — yoksa atlanır"
     },
     {
       "state": "filled",
-      "action": "addToCart",
-      "selector": "button.js-atc-pdp",
-      "capture": false
+      "action": "click",
+      "selector": "#shopify-section-template--17652491255901__product-template button.js-atc-pdp",
+      "capture": false,
+      "not": "UI ATC — /cart/add.js 1440'ta reddedildi"
     },
     {
       "state": "filled",
       "action": "waitFor",
-      "value": 1800,
+      "value": 2800,
       "capture": false
     },
     {
@@ -69,8 +80,20 @@
   ],
   "stateFindings": {
     "initial": "Cart 0 ITEMS; Your cart is empty; SHOP BESTSELLERS Instant Angel $45 / Deliverance $62.",
-    "filled": "Instant Angel satırı + adet/subtotal (karede doğrulanacak)."
+    "filled": "375/768/1440: Instant Angel 50ML $45 + FREE Squeeze Key; 2 ITEMS; $15 away from free US shipping; SUBTOTAL $45; Checkout. Frequently paired: Deliverance / Air Angel."
   },
   "missingStates": [],
-  "interactionNote": "Checkout'a girilmedi. Kupon doldurulmadı. Account drawer yok sayıldı."
+  "interactionNote": "Checkout'a girilmedi. Kupon doldurulmadı. Account drawer yok sayıldı.",
+  "capture": {
+    "url": "https://www.dieuxskin.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:27:00.081Z",
+    "prepareClick": "a.header--icon-cart.js-cart-toggle"
+  }
 }

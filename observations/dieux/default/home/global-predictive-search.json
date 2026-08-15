@@ -7,7 +7,13 @@
   "url": "https://www.dieuxskin.com/",
   "selector": ".header--search-form",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/dieux/default/home/global-predictive-search.1440.png",
+    "evidence/dieux/default/home/global-predictive-search.768.png",
+    "evidence/dieux/default/home/global-predictive-search.initial.bos.1440.png",
+    "evidence/dieux/default/home/global-predictive-search.input.angel.1440.png",
+    "evidence/dieux/default/home/global-predictive-search.input.angel.768.png"
+  ],
   "notlar": "Header büyüteç → .header--search-form + #search_text_header. Submit /search.",
   "delta": "Yazınca predictive liste bu yoklamada görünmedi (body header-dropdown-active, öneri kutusu yok). Sonuç /search sayfasında.",
   "captureMode": "viewport",
@@ -45,8 +51,29 @@
   ],
   "stateFindings": {
     "initial": "Arama input açık (header-dropdown-active).",
-    "input": "angel yazıldı; predictive satır yoksa leftover."
+    "input": "1440/768: 'angel' yazıldı; ürün/koleksiyon öneri listesi yok. 375 form header'da 0px (mobil menü içinde)."
   },
-  "missingStates": [],
-  "interactionNote": "Canlı öneri DOM'da yoktu. /search?q=angel ayrı observation."
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "375: header arama ikonu/form 0px — arama mobil menü drawer içinde (global-menu-drawer kanıtı). 768/1440 açık form var."
+    },
+    {
+      "state": "input",
+      "sebep": "375: .header--search-form 0px. 768/1440 'angel' yazıldı; ürün/koleksiyon öneri listesi DOM'da yok."
+    }
+  ],
+  "interactionNote": "Canlı öneri DOM'da yoktu. /search?q=angel ayrı observation.",
+  "capture": {
+    "url": "https://www.dieuxskin.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:16:38.695Z",
+    "prepareClick": ".js-header-search .header--icon-search, .header--icon-search"
+  }
 }

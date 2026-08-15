@@ -48,9 +48,9 @@ Karar: onay bekliyor
 ---
 
 ADAY: dieux-predictive-empty  
-Gerekçe: Header `#search_text_header` açılıyor; `angel` fill sonrası öneri listesi DOM’da yok. Sonuç `/search?q=angel` (11).  
+Gerekçe: Header `#search_text_header` 768/1440 açılıyor; `angel` fill sonrası öneri listesi DOM’da yok. Sonuç `/search?q=angel` (11). 375’te form header’da 0px — arama `global-menu-drawer` içinde.  
 Örnekler: https://www.dieuxskin.com/  
-Öneri: leftover — chrome/headless veya tema predictive kapalı  
+Öneri: leftover — tema predictive kapalı veya hydrate yok  
 Karar: onay bekliyor
 
 ---
@@ -73,11 +73,20 @@ Karar: onay bekliyor
 `/products` — `list-collections-template` (sekmeli Shop All; PLP’den farklı kabuk, leftover)  
 `/blogs/news` — aynı `blog-template` (eski yazılar)
 
+## Capture leftover (3vp / interact)
+
+- `global-menu-drawer` 1440 — hamburger 0px (beklenen)
+- `global-predictive-search` 375 — form header’da 0px; arama mobil menüde
+- Predictive öneri listesi — `angel` fill sonrası yok
+- Cart qty `changed` — doldurulmadı (filled 3vp yeterli)
+- Mega `open` yalnız 1440 (375/768 hamburger + drawer)
+
 ## Bilinçli atlananlar
 
 - `/account` — auth  
-- Checkout / e-posta form submit / waitlist submit  
+- Checkout / e-posta form submit / waitlist submit / newsletter Initiate Me  
 - Stamped “Write a Review”  
 - Cookie / accessibility overlay  
 - PDP height-0 `image_video` / boş UUID section  
 - `shopify-section-custom-liquid` height 0  
+- Cart kupon Apply — doldurulmadı  
