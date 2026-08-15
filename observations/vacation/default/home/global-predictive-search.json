@@ -10,6 +10,38 @@
   "evidence": [],
   "captureMode": "viewport",
   "prepareClick": "button[aria-label=\"Open search\"]",
-  "notlar": "1440 Open search; 375 Toggle search. Overlay `div.search` cream. Input placeholder Search...",
-  "delta": "Headless overlay. Öneri listesi yoklandı değil — interact adımında."
+  "notlar": "1440 `Open search`; 375 `Toggle search`. Overlay `div.search` cream 480px. Input placeholder Search...",
+  "delta": "Headless overlay. Fill `whip` resmi script CF yüzünden koşulamadı.",
+  "interactionStates": ["open"],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://vacation.inc/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button[aria-label=\"Open search\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik",
+      "viewports": ["1440"],
+      "not": "Cream overlay + Search... input"
+    }
+  ],
+  "stateFindings": {
+    "open": "1440 sağ cream overlay; input Search... Öneri listesi bu oturumda boş göründü."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "Fill resmi capture-interaction CF; stealth’te input var, öneri satırı görülmedi."
+    },
+    {
+      "state": "open",
+      "sebep": "375 Toggle search menü içinde — resmi 3vp yok."
+    }
+  ]
 }

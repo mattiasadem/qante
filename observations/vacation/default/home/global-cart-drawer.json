@@ -10,6 +10,34 @@
   "evidence": [],
   "captureMode": "viewport",
   "prepareClick": "button:has-text(\"Bag\")",
-  "notlar": "Sağ sarı panel. Boş: $45 Away From Free Shipping · Empty? Order while supplies last. + bestsellers ADD.",
-  "delta": "`?cart=true` query. `/cart` home+drawer. `cart-page-main` yok."
+  "notlar": "Sağ sarı `.cart`. Boş: $45 Away From Free Shipping · Empty? Order while supplies last. Bestsellers ADD.",
+  "delta": "`/cart` → `/?cart=true` home+drawer. `cart-page-main` yok.",
+  "interactionStates": ["initial"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://vacation.inc/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button:has-text(\"Bag\")",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş bag + bestsellers"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Bag boş; $45 away from free shipping; Empty? Order while supplies last; Orange Gelée Spray Oil / Grand Cuvée EDT / Whip Glow / Crystal Face ADD."
+  },
+  "missingStates": [
+    {
+      "state": "filled",
+      "sebep": "ATC + resmi interact CF Turnstile. Checkout/PII yok."
+    }
+  ],
+  "interactionNote": "Dolu sepet yoklandı değil. Kupon yok."
 }
