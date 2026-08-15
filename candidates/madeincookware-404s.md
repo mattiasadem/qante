@@ -10,6 +10,6 @@ ADAY: madeincookware-404
 Gerekçe: Olmayan sayfa HTTP 404, title “Made In”, `global-nav` / footer yok, section yok.  
 Örnekler:  
 - https://madeincookware.com/pages/this-page-does-not-exist-qante → 404  
-- https://madeincookware.com/pages/about → 404 (about asıl `/pages/about-us`)  
+- https://madeincookware.com/pages/about → 404 (about asıl `/pages/our-story`; eski `/pages/about-us` oraya yönlenir)  
 Öneri: ertele / candidate — `page-content-main` yazılmadı (boş chrome)  
 Karar: onay bekliyor

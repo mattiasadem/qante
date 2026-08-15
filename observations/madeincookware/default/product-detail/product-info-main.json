@@ -7,7 +7,17 @@
   "url": "https://madeincookware.com/products/the-stainless-sets/10-piece",
   "selector": "#product_details",
   "evidenceSlug": "product-info-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/madeincookware/default/product-detail/product-info-main.1440.png",
+    "evidence/madeincookware/default/product-detail/product-info-main.375.png",
+    "evidence/madeincookware/default/product-detail/product-info-main.768.png",
+    "evidence/madeincookware/default/product-detail/product-info-main.changed.13-piece.1440.png",
+    "evidence/madeincookware/default/product-detail/product-info-main.changed.13-piece.375.png",
+    "evidence/madeincookware/default/product-detail/product-info-main.changed.13-piece.768.png",
+    "evidence/madeincookware/default/product-detail/product-info-main.initial.10-piece.1440.png",
+    "evidence/madeincookware/default/product-detail/product-info-main.initial.10-piece.375.png",
+    "evidence/madeincookware/default/product-detail/product-info-main.initial.10-piece.768.png"
+  ],
   "notlar": "Stainless Set 10-Piece. Breadcrumb Home/Sets/Stainless Clad. READY TO SHIP, MADE IN ITALY, 4.8 (4,995). $799 / $1,024 SAVE $225. Size 10/13/Complete Kitchen. Care add-on +$49. Add to Cart. Sticky ATC bar (Back to Top + Add to Cart).",
   "delta": "Set varyantı size pill. Sticky ATC feature (şema sticky knob). Galeri solda.",
   "interactionStates": [
@@ -26,15 +36,32 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": "#product_details :text('13-Piece')",
+      "selector": "#product_details button:has-text('13-Piece')",
+      "value": 2500,
       "capture": true,
       "etiket": "13-piece",
-      "not": "13-Piece fiyat değişir mi"
+      "not": "13-Piece $1,199 — 375 önceki :text tıklaması pikseli değiştirmedi"
     }
   ],
   "stateFindings": {
     "initial": "10-Piece $799 $1,024 SAVE $225.",
-    "changed": "13-Piece seçimi — kareye bak."
+    "changed": "768/1440: 13-Piece seçili, $1,199 / $1,458 SAVE $259. 375 resmi kare initial ile byte-aynı ($799) — ikinci deneme de değişmedi."
   },
-  "missingStates": []
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "375: resmi capture-interaction iki koşuda da changed PNG = initial PNG (249417B). 768/1440 $1,199. Üçüncü deneme yok."
+    }
+  ],
+  "capture": {
+    "url": "https://madeincookware.com/products/the-stainless-sets/10-piece",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:50:27.446Z"
+  }
 }

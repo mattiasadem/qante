@@ -5,13 +5,20 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://madeincookware.com/",
-  "selector": "#global-nav div.relative.h-full.w-\\[374px\\] > div[data-is-open]",
+  "selector": "#global-nav, #global-nav-mobile",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
-  "notlar": "Header #search placeholder 'What can we help you find?'. Açık panel: Popular Searches (Griddle, Saucier…) + Popular Categories + Help. Fill 'griddle' → Products (Carbon Steel Griddle $179, Lid, Bag, Set) + Learn yazıları.",
-  "delta": "Predictive panel header içinde absolute; 375'te #mobile-nav-search. Tema adı yok.",
+  "evidence": [
+    "evidence/madeincookware/default/home/global-predictive-search.initial.populer.1440.png",
+    "evidence/madeincookware/default/home/global-predictive-search.initial.populer.375.png",
+    "evidence/madeincookware/default/home/global-predictive-search.initial.populer.768.png",
+    "evidence/madeincookware/default/home/global-predictive-search.input.griddle.1440.png",
+    "evidence/madeincookware/default/home/global-predictive-search.input.griddle.375.png",
+    "evidence/madeincookware/default/home/global-predictive-search.input.griddle.768.png"
+  ],
+  "notlar": "1440 header #search placeholder 'What can we help you find?'. 375/768 #mobile-nav-search → sağ Radix drawer, input placeholder 'Search' (aynı id=search, görünür olan). Açık: Popular Searches + Categories + Help. Fill 'griddle' → Products (Carbon Steel Griddle $179, Lid, Bag, Set) + Learn.",
+  "delta": "İki #search input (biri gizli). 375/768 drawer shell cart/menu ile aynı class. Tema adı yok. Capture viewport — selector chrome (panel 0px olmasın).",
   "captureMode": "viewport",
-  "prepareClick": "#search",
+  "prepareClick": "#mobile-nav-search, #search",
   "interactionStates": [
     "initial",
     "input"
@@ -26,15 +33,12 @@
     {
       "state": "initial",
       "action": "click",
-      "selector": "#search",
+      "selector": "#mobile-nav-search, #search",
       "capture": true,
       "captureMode": "viewport",
+      "captureSelector": "#global-nav, #global-nav-mobile",
       "etiket": "populer",
-      "viewports": [
-        "768",
-        "1440"
-      ],
-      "not": "Popular Searches + Categories"
+      "not": "Popular Searches + Categories — 1440 overlay / 375+768 drawer"
     },
     {
       "state": "input",
@@ -43,22 +47,25 @@
       "value": "griddle",
       "capture": true,
       "captureMode": "viewport",
+      "captureSelector": "#global-nav, #global-nav-mobile",
       "etiket": "griddle",
-      "viewports": [
-        "768",
-        "1440"
-      ],
-      "not": "Ürün kartları + Learn linkleri"
+      "not": "Ürün kartları + Learn — görünür #search"
     }
   ],
   "stateFindings": {
-    "initial": "Popular Searches: Griddle/Saucier/Carbon Steel…; Categories Sets/Cookware/Knives/Tabletop.",
-    "input": "griddle → Carbon Steel Griddle $179, Lid $99, Utility Bag $99, Griddle Set + Learn yazıları."
+    "initial": "375/768/1440 Popular Searches: Griddle, Saucier, Carbon Steel, Stainless Set, Complete Kitchen, Frying Pan, Dutch Oven, Ceramic. Categories Sets/Cookware/Knives (+Tabletop 1440). How Can We Help? Contact Us / Order Status / Help Center / Gift Cards.",
+    "input": "griddle → Carbon Steel Griddle $179, Griddle Lid $99, Utility Bag $99, Griddle Set $199. 1440 + Learn yazıları + Show All Results."
   },
-  "missingStates": [
-    {
-      "state": "input",
-      "sebep": "375 arama #mobile-nav-search — desktop #search 0px; mobil adım ayrı yoklandı değilse leftover"
-    }
-  ]
+  "missingStates": [],
+  "capture": {
+    "url": "https://madeincookware.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:47:55.070Z"
+  }
 }
