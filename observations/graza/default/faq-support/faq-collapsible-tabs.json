@@ -1,0 +1,61 @@
+{
+  "observationId": "graza.default.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "graza",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "url": "https://www.graza.co/pages/faqs",
+  "selector": "main > section.container",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/graza/default/faq-support/faq-collapsible-tabs.1440.png",
+    "evidence/graza/default/faq-support/faq-collapsible-tabs.375.png",
+    "evidence/graza/default/faq-support/faq-collapsible-tabs.768.png",
+    "evidence/graza/default/faq-support/faq-collapsible-tabs.changed.ilk-soru.1440.png",
+    "evidence/graza/default/faq-support/faq-collapsible-tabs.changed.ilk-soru.375.png",
+    "evidence/graza/default/faq-support/faq-collapsible-tabs.changed.ilk-soru.768.png",
+    "evidence/graza/default/faq-support/faq-collapsible-tabs.initial.kapali.1440.png",
+    "evidence/graza/default/faq-support/faq-collapsible-tabs.initial.kapali.375.png",
+    "evidence/graza/default/faq-support/faq-collapsible-tabs.initial.kapali.768.png"
+  ],
+  "notlar": "What's on your mind? Sol sticky: Olive Oil / Order Status and Shipping / Subscription / Careers / Mayo. Accordion sorular. hello@graza.co.",
+  "delta": "Shopify-section yok — Vue main. layout sidebar (1440) / stacked (375). Contact form yok.",
+  "capture": {
+    "url": "https://www.graza.co/pages/faqs",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T17:28:03.350Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.graza.co/pages/faqs",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "Accordion kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "main button:has-text('Where is your product made?')",
+      "capture": true,
+      "etiket": "ilk-soru",
+      "not": "İlk Olive Oil sorusu açılır"
+    }
+  ],
+  "stateFindings": {
+    "initial": "What's on your mind? Sol kategori + kapalı soru satırları.",
+    "changed": "Where is your product made? açık — cevap karede."
+  },
+  "missingStates": []
+}
