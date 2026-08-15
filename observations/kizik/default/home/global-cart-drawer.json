@@ -1,0 +1,105 @@
+{
+  "observationId": "kizik.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "kizik",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://kizik.com/",
+  "selector": "#cart-drawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/kizik/default/home/global-cart-drawer.filled.vegas-2.1440.png",
+    "evidence/kizik/default/home/global-cart-drawer.filled.vegas-2.375.png",
+    "evidence/kizik/default/home/global-cart-drawer.filled.vegas-2.768.png",
+    "evidence/kizik/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/kizik/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/kizik/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "Impact cart-drawer. Boş: Your cart is empty / CONTINUE SHOPPING. /cart ayrı sayfa da var.",
+  "delta": "Drawer + cart-page-main birlikte.",
+  "captureMode": "viewport",
+  "prepareClick": "a[aria-controls='cart-drawer']",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://kizik.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[aria-controls='cart-drawer']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://kizik.com/products/womens-vegas-2-bright-white",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#shopify-section-template--21445588615325__main label[for='option-value-9-template--21445588615325__main-product-form-8654488961181-template--21445588615325__main-option2-4484693000349']",
+      "capture": false,
+      "not": "Beden 9 (7 disabled); Select Size → Add to cart"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#shopify-section-template--21445588615325__main button:has-text('ADD TO CART')",
+      "capture": false,
+      "not": "Size 9 sonrası mavi ADD TO CART"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a[aria-controls='cart-drawer']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "vegas-2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty; CONTINUE SHOPPING.",
+    "filled": "Cart (1); Women's Vegas 2 - Bright White $139.95; Standard / 9; qty 1; Remove; Total $139.95; CHECKOUT. 375/768/1440."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC UI: beden 9 label[for=option-value-9-…] sonra ADD TO CART. İlk addToCart 1440 /cart/add.js reddetti; ikinci UI tık 1440 doldu. Checkout/kupon yok.",
+  "capture": {
+    "url": "https://kizik.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:02:38.502Z"
+  }
+}
