@@ -1,0 +1,106 @@
+{
+  "observationId": "hiyo.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "hiyo",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://drinkhiyo.com/",
+  "selector": "#search-drawer",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/hiyo/default/home/global-predictive-search.1440.png",
+    "evidence/hiyo/default/home/global-predictive-search.375.png",
+    "evidence/hiyo/default/home/global-predictive-search.768.png",
+    "evidence/hiyo/default/home/global-predictive-search.input.arama-sonucu.1440.png",
+    "evidence/hiyo/default/home/global-predictive-search.input.arama-sonucu.375.png",
+    "evidence/hiyo/default/home/global-predictive-search.input.arama-sonucu.768.png"
+  ],
+  "notlar": "Impact search-drawer. Kapalı yükseklik 0 — açık kare interact fill classic.",
+  "delta": "İki opener (gizli + sm:flex). a[href=/search] sayfa araması ayrı.",
+  "captureMode": "viewport",
+  "prepareClick": "a[aria-controls='search-drawer']",
+  "capture": {
+    "url": "https://drinkhiyo.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:26:49.928Z",
+    "prepareClick": "a[aria-controls='search-drawer']"
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://drinkhiyo.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cc-modal-reject-all",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "a[aria-controls='search-drawer']",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "capture": false,
+      "not": "clickVisible görünür sm:flex opener. :not(.hidden) class yüzünden eşleşmez."
+    },
+    {
+      "state": "input",
+      "action": "forceOpen",
+      "selector": "#search-drawer",
+      "viewports": [
+        "375"
+      ],
+      "capture": false,
+      "not": "375 header'da büyüteç yok — forceOpen bir retry."
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#search-drawer input[name='q']",
+      "value": "classic",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "katalogSorgu classic"
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Yazmadan sonuç yok"
+    },
+    {
+      "state": "filled",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "open",
+      "sebep": "Boş drawer statik 768/1440. 375 opener yok — statik 375 homepage + cookie (drawer açılmadı)."
+    },
+    {
+      "state": "changed",
+      "sebep": "products/suggestions tab tıklanmadı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "768/1440: sağdan/üstten boş drawer, placeholder search..., X. 375: header'da büyüteç yok; statik kare drawer değil.",
+    "input": "classic: products (aktif) / suggestions, classic pack $44.99 (375/768/1440). 375 forceOpen + fill; 768/1440 opener tık + fill."
+  },
+  "interactionNote": "İki opener: tap-area hidden + hidden sm:flex (sm:flex görünür ama class hidden durur — :not(.hidden) 768/1440'ı kırdı). 375 ikisi de hidden, menüde arama yok. 375 input forceOpen. a[href=/search] kullanılmadı."
+}
