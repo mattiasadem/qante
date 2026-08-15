@@ -9,7 +9,7 @@
 ---
 
 ADAY: lemme-listed-domain  
-Gerekçe: DTC-69 #53 `https://lemme.com` → 301 `https://www.epicbrokers.com/about/epic-companies/lemme/` (Epic Brokers sigorta sayfası, WordPress). Alt yollar Cloudflare 530 / 1016. Markanın Shopify vitrini `https://lemmelive.com`.  
+Gerekçe: DTC-69 #53 `https://lemme.com` → 301 `https://www.epicbrokers.com/about/epic-companies/lemme/` (Epic Brokers sigorta, WordPress). Alt yollar Cloudflare 530 / 1016. Shopify vitrin `https://lemmelive.com`.  
 Örnekler: https://lemme.com · https://www.lemme.com  
 Öneri: leftover — listed domain storefront değil  
 Karar: onay bekliyor
@@ -17,7 +17,7 @@ Karar: onay bekliyor
 ---
 
 ADAY: lemme-empty-search-page  
-Gerekçe: `/search?q=reset` title “Search: 7 results found” ama `#siteContent` 0px; sonuç ızgarası yok. Arama UX `#shopify-section-search-drawer`. `search-results` observation yazılmadı.  
+Gerekçe: `/search?q=reset` title “Search: 7 results found” ama `#siteContent` 0px; sonuç ızgarası yok. Asıl UX search drawer. `search-results` observation yazılmadı. Drawer input `reset` yazınca kategori pill kayboluyor; ürün listesi karede yok.  
 Örnekler: https://lemmelive.com/search?q=reset  
 Öneri: leftover  
 Karar: onay bekliyor
@@ -25,7 +25,7 @@ Karar: onay bekliyor
 ---
 
 ADAY: lemme-no-cart-page  
-Gerekçe: `/cart` → `/?cart_redirect` home. Sepet Rebuy `#rebuy-cart` + theme `ajax-cart`. `cart-page-main` yok.  
+Gerekçe: `/cart` → `/?cart_redirect` home. Görünür sepet Rebuy `.rebuy-cart__flyout`. Theme `ajax-cart` offscreen. `cart-page-main` yok.  
 Örnekler: https://lemmelive.com/cart  
 Öneri: leftover  
 Karar: onay bekliyor
@@ -56,14 +56,6 @@ Karar: onay bekliyor
 
 ---
 
-ADAY: lemme-hidden-promobar  
-Gerekçe: `#shopify-section-promobar` “EXTRA 20% OFF SUBSCRIPTION ORDERS & FIRST RENEWAL” metni var, kutu 0px. Görünür şerit `promo-banner`.  
-Örnekler: https://lemmelive.com/  
-Öneri: leftover — gizli section  
-Karar: onay bekliyor
-
----
-
 ADAY: lemme-404-pagetype  
 Gerekçe: `/pages/this-page-does-not-exist-qante` → 404 “lemme be honest... this page doesn’t exist”. Taksonomide 404 pageType yok. Observation `page-content-main` reuse.  
 Örnekler: https://lemmelive.com/pages/this-page-does-not-exist-qante  
@@ -77,6 +69,7 @@ Karar: onay bekliyor
 - `lemme.com` / `www.lemme.com` storefront değil
 - `/pages/about` 404
 - Home 0px: `quicklinks_xcdUMY`, `email-sms-popup` (PII), `ajaxcart` kapalı, `social`
+- `#shopify-section-promobar` wrapper 0px — görünür çocuk `.promobar` artık `promo-announcement-bar.2` (gizli değil)
 - PDP Reset: `section_navigation_6J6K77` (TIMELINE/COMPARE/CLINICAL), `clinical_results`, `capsule_info`, `ingredients`, seals, reviews
 - PDP Chill: marquee (home ile aynı), Notify-me, upsell bundle, Rebuy post-ATC modal
 - PLP marquee + “lemme get real results” (home tekrarı)
@@ -88,3 +81,4 @@ Karar: onay bekliyor
 - Clarip cookie + Do Not Sell
 - Newsletter / contact / account / loyalty JOIN — PII stop
 - ES / EN-CA / EN-AU / EN-GB locale kopyaları
+- Statik uzun crop’larda `dismiss-overlays` boş bag / SHOP mega açabiliyor (script’e dokunulmadı). Interact kareleri overlay kanıtı; eksik 3vp sayılmaz

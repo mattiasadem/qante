@@ -8,9 +8,20 @@
   "kaynak": "lemme",
   "preset": "default",
   "sayfa": "home",
-  "evidence": [],
+  "evidence": [
+    "evidence/lemme/default/home/navigation-header-mega.1440.png",
+    "evidence/lemme/default/home/navigation-header-mega.375.png",
+    "evidence/lemme/default/home/navigation-header-mega.768.png",
+    "evidence/lemme/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/lemme/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/lemme/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/lemme/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
   "evidenceSlug": "navigation-header-mega",
-  "interactionStates": ["initial", "open"],
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
   "interactionSteps": [
     {
       "state": "initial",
@@ -26,7 +37,9 @@
       "selector": "a.site-nav__title:has-text('SHOP')",
       "value": 2000,
       "capture": false,
-      "viewports": ["1440"],
+      "viewports": [
+        "1440"
+      ],
       "not": "SHOP hover — mega"
     },
     {
@@ -35,7 +48,9 @@
       "selector": "#mega_menu_1",
       "value": 5000,
       "capture": false,
-      "viewports": ["1440"]
+      "viewports": [
+        "1440"
+      ]
     },
     {
       "state": "open",
@@ -45,14 +60,27 @@
       "capture": true,
       "captureMode": "viewport",
       "etiket": "shop-mega",
-      "viewports": ["1440"],
+      "viewports": [
+        "1440"
+      ],
       "not": "SHOP mega panel"
     }
   ],
   "stateFindings": {
-    "initial": "",
-    "open": ""
+    "initial": "Siyah bar: SHOP + · BUILD YOUR BUNDLE · LOYALTY · lemmelive wordmark · EN · ACCOUNT · SEARCH · BAG 0. Altında lime EXTRA 20% marquee.",
+    "open": "1440 SHOP hover: 4 kolon — COLLECTIONS (SHOP ALL + Gummies/Capsules/Chews/Build Your Bundle daireler), SHOP BEST SELLERS (Reset / Purr / Debloat / Sleep / Burn pill), SHOP BY BENEFIT (WOMEN'S HEALTH / MOOD SLEEP ENERGY / WEIGHT MANAGEMENT / BEAUTY & DIGESTION), FEATURED (SHOP LEMME RESET™ + SHOP NAD+)."
   },
   "missingStates": [],
-  "interactionNote": "1440 SHOP mega. 375/768 hamburger ayrı observation."
+  "interactionNote": "1440 SHOP mega `#mega_menu_1`. 375/768 hamburger ayrı global-menu-drawer. ACCOUNT /login PII, tıklanmadı.",
+  "capture": {
+    "url": "https://lemmelive.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:38:10.583Z"
+  }
 }

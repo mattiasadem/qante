@@ -2,17 +2,30 @@
   "observationId": "lemme.default.home.global-cart-drawer",
   "schemaId": "global-cart-drawer",
   "url": "https://lemmelive.com/",
-  "selector": "#rebuy-cart",
+  "selector": ".rebuy-cart__flyout",
   "captureMode": "viewport",
   "prepareClick": "button.site-nav__title--cart",
-  "notlar": "BAG opener `button.site-nav__title--cart`. Rebuy `#rebuy-cart` (your bag / Free Lemme x Starface Gummy $55+). Theme `ajax-cart` de var (x=1440).",
-  "delta": "/cart → /?cart_redirect home. cart-page-main yok. İki sepet motoru (ajax-cart + Rebuy).",
+  "notlar": "BAG opener `button.site-nav__title--cart`. Görünür motor Rebuy `.rebuy-cart__flyout` (your bag). `#rebuy-cart` 0px. Theme `ajax-cart` de var (offscreen).",
+  "delta": "/cart → /?cart_redirect home. cart-page-main yok. İki sepet motoru (ajax-cart + Rebuy). dismiss-overlays bazı statik PDP/PLP/blog karelerinde boş bag'i açık bırakıyor — interact kareleri asıl kanıt.",
   "kaynak": "lemme",
   "preset": "default",
   "sayfa": "home",
-  "evidence": [],
+  "evidence": [
+    "evidence/lemme/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/lemme/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/lemme/default/home/global-cart-drawer.filled.chill.1440.png",
+    "evidence/lemme/default/home/global-cart-drawer.filled.chill.375.png",
+    "evidence/lemme/default/home/global-cart-drawer.filled.chill.768.png",
+    "evidence/lemme/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/lemme/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/lemme/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
   "evidenceSlug": "global-cart-drawer",
-  "interactionStates": ["initial", "filled", "changed"],
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
   "interactionSteps": [
     {
       "state": "initial",
@@ -65,19 +78,41 @@
     },
     {
       "state": "changed",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "changed",
       "action": "click",
-      "selector": "#rebuy-cart button[aria-label*='increase' i], #rebuy-cart [class*='plus'], ajax-cart button[name='plus']",
+      "selector": "button.rebuy-cart__flyout-item-quantity-widget-button[aria-label*='Increase']",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "adet-artti",
-      "not": "Adet +"
+      "not": "Yalnız Increase — virgüllü selector ilk görünür Decrease'e basıp satırı siliyordu"
     }
   ],
   "stateFindings": {
-    "initial": "",
-    "filled": "",
-    "changed": ""
+    "initial": "your bag, badge 0. Free Lemme x Starface Gummy $55+. Add $75 to unlock 1 Free Lemme Immunity Gummies Pack. Your cart is empty! Lime pills: Build Your Own Bundle / Shop Gummies / Shop Capsules / Shop Weight Management / Shop All. Win a $20,000 Luxury Trip + beach stamp.",
+    "filled": "Badge 1. LEMME CHILL GUMMIES $30 · 1 Pack · qty 1 · Remove · Subscribe & Save 15%. Progress Add $45 to unlock Immunity. SUBTOTAL $30 · CHECKOUT. 1440 ayrıca Rebuy “lemme toss these in…” Debloat $30 ADD TO BAG modal.",
+    "changed": "375/768: Increase sonrası badge 2, qty 2, SUBTOTAL $60, progress Add $15 to unlock Immunity. Checkout tıklanmadı."
   },
-  "missingStates": [],
-  "interactionNote": "Rebuy + ajax-cart. ATC UI tercih."
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "1440: ilk çekimde virgüllü qty selector Decrease'e basıp satırı sildi (boş bag). Tek düzeltmede addToCart 1440'ta varyant id bulamadı, Increase selector eşleşmedi. Üçüncü deneme yok. 375/768 changed doğrulandı."
+    }
+  ],
+  "interactionNote": "Rebuy + ajax-cart. ATC UI 375/768 yazdı; 1440 filled ilk koşudan (Chill satırı + Debloat modal). Qty Increase aria-label ile. Checkout / kupon yok.",
+  "capture": {
+    "url": "https://lemmelive.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:52:24.749Z"
+  }
 }

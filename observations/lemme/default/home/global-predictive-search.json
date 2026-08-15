@@ -2,7 +2,7 @@
   "observationId": "lemme.default.home.global-predictive-search",
   "schemaId": "global-predictive-search",
   "url": "https://lemmelive.com/",
-  "selector": "#shopify-section-search-drawer",
+  "selector": ".mod_search_drawer_Z7D_-W_Search",
   "captureMode": "viewport",
   "prepareClick": "button.search-trigger",
   "notlar": "1440 opener `button.search-trigger`. Drawer `.mod_search_drawer_Z7D_-W_Search` + input.js-search-input. Kapalıda x≈1915.",
@@ -10,9 +10,19 @@
   "kaynak": "lemme",
   "preset": "default",
   "sayfa": "home",
-  "evidence": [],
+  "evidence": [
+    "evidence/lemme/default/home/global-predictive-search.initial.arama-bos.1440.png",
+    "evidence/lemme/default/home/global-predictive-search.initial.arama-bos.375.png",
+    "evidence/lemme/default/home/global-predictive-search.initial.arama-bos.768.png",
+    "evidence/lemme/default/home/global-predictive-search.input.reset.1440.png",
+    "evidence/lemme/default/home/global-predictive-search.input.reset.375.png",
+    "evidence/lemme/default/home/global-predictive-search.input.reset.768.png"
+  ],
   "evidenceSlug": "global-predictive-search",
-  "interactionStates": ["initial", "input"],
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
   "interactionSteps": [
     {
       "state": "initial",
@@ -47,9 +57,20 @@
     }
   ],
   "stateFindings": {
-    "initial": "",
-    "input": ""
+    "initial": "Lavender overlay. Pill input placeholder Search Product + büyüteç. Altında mavi kategori pill: MOOD SLEEP & ENERGY · WEIGHT MANAGEMENT · CAPSULES · GUMMIES & CHEWS · BEAUTY & DIGESTION. Ürün listesi yok.",
+    "input": "Input'ta reset + sağda X. Kategori pill kayboldu. Ürün/öneri listesi bu karelerde yok (375/768/1440)."
   },
   "missingStates": [],
-  "interactionNote": "1440 search-trigger; 375/768 site-header__search-trigger. PII yok."
+  "interactionNote": "katalogSorgu reset (Lemme Reset). Predictive ürün listesi piksel olarak gelmedi — uydurulmadı. /search sayfası 0px leftover. PII yok.",
+  "capture": {
+    "url": "https://lemmelive.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:39:47.893Z"
+  }
 }
