@@ -1,0 +1,67 @@
+{
+  "observationId": "beardbrand.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "beardbrand",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://www.beardbrand.com/cart",
+  "selector": "#shopify-section-template--28367258124658__main",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Shopping Cart sayfa. Boş/dolu aynı şablon. Qty .qty-minus / input.qty / .qty-plus. Checkout’a girilmedi.",
+  "delta": "Tema (canlı, uydurulmadı): Split v1.0.3.7.4 [edp promo on PDPs]. schema_name Split, schema_version 3.1.0, theme_store_id 842, role main, theme.id 192727712114. Shop beardbrand.myshopify.com. Native cart drawer yok (site-cart-handle.no-overlay → /cart). Recharge #recharge-storefront-experiences__cart-drawer h=0 leftover.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.beardbrand.com/cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş sepet sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.beardbrand.com/products/norse-winter-beard-oil",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product--add-to-cart-button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.beardbrand.com/cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "norse-oil-qty1",
+      "not": "Dolu /cart — Norse Winter Beard Oil"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button.qty-plus",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "filled": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "ATC sonrası drawer açılmadı; /cart sayfa. Checkout/PII yok. Abonelik satırı görülebilir."
+}
