@@ -1,0 +1,92 @@
+{
+  "observationId": "novoslabs.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "novoslabs",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://novoslabs.com/",
+  "selector": "#nvCartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/novoslabs/default/home/global-cart-drawer.1440.png",
+    "evidence/novoslabs/default/home/global-cart-drawer.375.png",
+    "evidence/novoslabs/default/home/global-cart-drawer.768.png",
+    "evidence/novoslabs/default/home/global-cart-drawer.filled.core-eklendi.1440.png",
+    "evidence/novoslabs/default/home/global-cart-drawer.filled.core-eklendi.375.png",
+    "evidence/novoslabs/default/home/global-cart-drawer.filled.core-eklendi.768.png",
+    "evidence/novoslabs/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/novoslabs/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/novoslabs/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "Your Cart 0. Your cart is empty. Start your longevity protocol with NOVOS. Shop NOVOS.",
+  "delta": "Woo + custom @novos/cart. /cart sayfası da var (boş mesaj farklı).",
+  "captureMode": "viewport",
+  "prepareClick": "#nvCartTrigger",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://novoslabs.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#nvCartTrigger",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://novoslabs.com/product/novos-core/",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.nv-pdp-add, button[name='add-to-cart']",
+      "capture": false,
+      "not": "PDP Add to cart"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#nvCartTrigger",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "core-eklendi",
+      "not": "ATC sonrası drawer; kapalıysa ikon"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your Cart 0; Your cart is empty; Start your longevity protocol with NOVOS; Shop NOVOS. 375/768/1440.",
+    "filled": "Your Cart 1; NOVOS Core Subscription - Orange Flavor; You're saving 15%! 180 day supply / 6 boxes; $559.00; Change to Tropical Passion / Unflavored; qty 1; Get 1 year prepaid for 27% savings; SUBTOTAL $559.00; Proceed to Checkout. 375/768/1440."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC `button.nv-pdp-add` (Woo). Checkout/kupon doldurulmadı. PII yok.",
+  "capture": {
+    "url": "https://novoslabs.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:20:06.164Z",
+    "prepareClick": "#nvCartTrigger"
+  }
+}
