@@ -1,0 +1,74 @@
+{
+  "observationId": "motion.motion.home.product-showcase-tabs",
+  "schemaId": "product-showcase-tabs",
+  "kaynak": "motion",
+  "preset": "motion",
+  "sayfa": "home",
+  "url": "https://motion-theme-adventure.myshopify.com/",
+  "selector": "#shopify-section-template--19291126530099__featured-collection-switcher",
+  "evidenceSlug": "product-showcase-tabs",
+  "evidence": [
+    "evidence/motion/motion/home/product-showcase-tabs.1440.png",
+    "evidence/motion/motion/home/product-showcase-tabs.375.png",
+    "evidence/motion/motion/home/product-showcase-tabs.768.png",
+    "evidence/motion/motion/home/product-showcase-tabs.changed.carry.1440.png",
+    "evidence/motion/motion/home/product-showcase-tabs.changed.carry.375.png",
+    "evidence/motion/motion/home/product-showcase-tabs.changed.carry.768.png",
+    "evidence/motion/motion/home/product-showcase-tabs.initial.wear.1440.png",
+    "evidence/motion/motion/home/product-showcase-tabs.initial.wear.375.png",
+    "evidence/motion/motion/home/product-showcase-tabs.initial.wear.768.png"
+  ],
+  "notlar": "WEAR / CARRY sekmeli koleksiyon.",
+  "delta": "",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://motion-theme-adventure.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19291126530099__featured-collection-switcher",
+      "capture": true,
+      "etiket": "wear",
+      "not": "WEAR altı çizili. Quarter-Zip $110."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--19291126530099__featured-collection-switcher a.collection-switcher__trigger[aria-controls='collection2-template--19291126530099__featured-collection-switcher']",
+      "value": 800,
+      "capture": true,
+      "etiket": "carry",
+      "not": "CARRY: Hip Pack $52. URL home'da. href /collections/carry navigate etmez."
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "375'te WEAR/CARRY satırı karede yok; tık Quarter-Zip'te kaldı. 768/1440 Carry Hip Pack."
+    }
+  ],
+  "stateFindings": {
+    "initial": "WEAR altı çizili. Quarter-Zip $110, Hiking Pant $88, Hiking Crew Sock $22. 375'te sekme yazısı kesitte yok.",
+    "changed": "768/1440 CARRY altı çizili. Hip Pack Bloom/Contrast/Dusk $52. URL home'da. 375 değişmedi."
+  },
+  "interactionNote": "Carry <a href='/collections/carry'> ama js-no-transition; sayfa home'da kalır. 375 bir kez denendi, ikinci yok.",
+  "capture": {
+    "url": "https://motion-theme-adventure.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "method": "interaction-steps",
+    "mode": "section",
+    "updatedAt": "2026-08-15T12:18:52.667Z"
+  }
+}

@@ -4,7 +4,7 @@ Discover bitti. Bu dosya **yalnız kapalı kare yalanı** için: mega, arama, se
 
 Aynı chrome’u preset’te tekrar çekme (Allure drawer = diğer Prestige). Yeni şema yok. Şema uydurma / sürükleme / ödeme yok.
 
-**Şu anki odak:** Unique yalancı kuyruğu boş. Kalanlar chrome tekrarı / sürükleme / form.
+**Şu anki odak:** Motion üç preset envanter + WEAR/CARRY. Mega/arama/sepet Impulse tekrarı.
 
 ---
 
@@ -180,3 +180,8 @@ Temsilci tarandı. Şema uydurulmadı. Form / kupon / ülke seçimi gönderilmed
 - [x] Cocoon `media-lookbook-slider` — Vase $68 → Plica cushion From $79
 - [x] Balance `media-lookbook-slider` — Grace Bra €89 → Skye Leggings €89 (375'te liste zaten açık)
 - [x] Balance `product-info-tabs` — Sizing açık (size up, model M)
+
+## Motion · Motion / Satchel / Memo
+
+- [x] `product-showcase-tabs` — WEAR Quarter-Zip → CARRY Hip Pack (375 değişmedi)
+- [ ] mega / arama / sepet — Impulse chrome, bu turda yok

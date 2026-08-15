@@ -20,8 +20,11 @@
 | Impact · Balance | [`impact-balance.md`](./impact-balance.md) | ✅ delta — 4 obs · 24 kanıt · hotspot + PDP accordion |
 | Impact · Cocoon | [`impact-cocoon.md`](./impact-cocoon.md) | ✅ delta — 2 obs · 12 kanıt · hotspot interact |
 | Stretch · Snow / Sand / Diffuse | [`stretch.md`](./stretch.md) | Snow ✅ · Sand ✅ · Diffuse ✅ · 86 obs · 365 kare · 0 yeni şema · interact |
+| Motion · Motion / Satchel / Memo | [`motion.md`](./motion.md) | ✅ 69 obs · 213 kare · 0 yeni şema · WEAR/CARRY |
 
 **Interact (discover sonrası derinlik):** [`interact.md`](./interact.md) — kapalı kare yalanı; Stretch + Cocoon/Balance shop-the-look kapandı.
+
+**Bitince Vercel:** bir tema veya preset kapanınca `main`'e push → https://qante.vercel.app
 
 **QC / improvement backlog:** [`../improvements-qc.md`](../improvements-qc.md)
 
