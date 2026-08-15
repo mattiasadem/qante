@@ -9,34 +9,58 @@
 ---
 
 ADAY: vessi-404s  
-Gerekçe: Bilinçli 404 — `/this-page-does-not-exist-xyz` (404 template: THIS PAGE DOESN’T EXIST… Return Home). Yanlış tahmin URL’leri de 404: `/pages/about`, `/pages/stores`, `/pages/find-a-store`, `/blogs/blog`. `/pages/about-us` → `/pages/vegan`. `/pages/faq` ve `/pages/faqs` → `/a/faq`.  
+Gerekçe: Bilinçli 404 — `/this-page-does-not-exist-xyz` (Oops! THIS PAGE DOESN'T EXIST… Return Home). Yanlış tahmin URL’leri de 404: `/pages/about`, `/pages/stores`, `/pages/find-a-store`, `/blogs/blog`. `/pages/about-us` → `/pages/vegan`. `/pages/faq` ve `/pages/faqs` → `/a/faq`.  
 Örnekler: https://vessi.com/this-page-does-not-exist-xyz  
 Öneri: 404 gövde `page-content-main` parent obs  
 Karar: leftover + parent obs
 
 ---
 
+ADAY: vessi-announcement-dismiss  
+Gerekçe: Official `dismissAllOverlays` “Close announcement” tıklar → `announcement-bar--dismissed` (display:none). `forceOpen` class’ı silmez; 3vp 0px. Walk metni: Free shipping on orders $150 and over + Free exchanges.  
+Karar: leftover — üçüncü deneme yok
+
+---
+
+ADAY: vessi-men-tab  
+Gerekçe: Home `collection_carousel` Women\|Men. `text=Men` ve `a[role=tab]:has-text('Men')` tıklandı; Women tab + aynı 4 kart kaldı.  
+Karar: leftover — 2 deneme
+
+---
+
+ADAY: vessi-search-mobile  
+Gerekçe: 375/768 header’da `Open search` yok / `data-mobile-drawer-nav-trigger=search` viewport dışı. Arama ikonu `#mobile-menu-drawer` içinde. 1440 predictive OK.  
+Karar: leftover
+
+---
+
+ADAY: vessi-cart-375-toggle  
+Gerekçe: ATC UI drawer’ı açıyor; 375’te sonraki cart tık kapatıyor. filled.375 PNG = PDP + badge 1. 768/1440 drawer OK.  
+Karar: leftover — üçüncü deneme yok
+
+---
+
 ADAY: vessi-gorgias-faq-app  
-Gerekçe: `/a/faq` Shopify section gövdesi yok (yalnız chrome + footer). İlk dump’ta shopify main boş; ikinci istek 429. Contact’ta Gorgias chat iframe (`chat-button` 80×74). Overlay, section değil.  
+Gerekçe: `/a/faq` Shopify section gövdesi yok (yalnız chrome + footer). Contact Help Centre “Live Chat” + Gorgias `chat-button`. Overlay, section değil.  
 Karar: leftover — dismiss; şema yok
 
 ---
 
 ADAY: vessi-reviews-app  
-Gerekçe: PDP `#template--16074643898453__reviews_wrapper_zpPi8T` Customer reviews 4.67 / 25,182. Taksonomide reviews section yok.  
+Gerekçe: PDP `#template--16074643898453__reviews_wrapper_zpPi8T` Customer reviews ~4.67 / 25,184. Taksonomide reviews section yok.  
 Öneri: şema yok  
 Karar: leftover
 
 ---
 
 ADAY: vessi-store-locator  
-Gerekçe: PDP `stores` “FIND A STORE · BELLEVUE SQUARE, WASHINGTON” ~373px. `/pages/stores` ve `/pages/find-a-store` 404.  
+Gerekçe: PDP “Find a store”. `/pages/stores` ve `/pages/find-a-store` 404.  
 Karar: leftover — yeni şema yok
 
 ---
 
 ADAY: vessi-quick-add  
-Gerekçe: `#quick-add-drawer` / `#shopify-section-quick-add-drawer` DOM’da (empty, translateX off-screen). Size-guide-modal + product-size-guide-override 0px.  
+Gerekçe: Home carousel kart “QUICK ADD +” (hover 1440). `#quick-add-drawer` DOM’da. Size-guide-modal 0px.  
 Karar: leftover — `open` yoklandı değil
 
 ---
@@ -44,6 +68,12 @@ Karar: leftover — `open` yoklandı değil
 ADAY: vessi-cart-page  
 Gerekçe: `/cart` → `https://vessi.com/#cart`. Sepet yalnız `cart-drawer`. `cart-page-main` yok.  
 Karar: leftover
+
+---
+
+ADAY: vessi-header-dismiss  
+Gerekçe: Official dismiss `HEADER-V2`’yi tam ekran overlay sanıp `display:none`. Interact `forceOpen header-v2.header-v2` ile geri.  
+Karar: leftover — script tuzak; şema yok
 
 ---
 
@@ -72,7 +102,7 @@ Karar: leftover
 ---
 
 ADAY: vessi-rate-limit  
-Gerekçe: İlk walk’ta `/collections/sale`, `/collections/women`, `/a/faq` (2.), `/blogs/the-forecast` (2.) 429 “Just a moment…”. Women sonraki curl’de 200.  
+Gerekçe: İlk walk’ta `/collections/sale`, `/collections/women`, `/a/faq` (2.), `/blogs/the-forecast` (2.) 429. Women sonraki istekte 200.  
 Karar: leftover — capture aralıklı
 
 ---
@@ -85,9 +115,11 @@ Karar: leftover
 
 ## Bilinçli atlananlar
 
-- `/account` / login / checkout  
+- `/account` / login / checkout / Secure Checkout tık  
 - Newsletter Subscribe + warranty Start Claim + order tracking + ID.me + refer-a-friend (PII)  
 - Divider / 0px section’lar  
 - Blog related + ikinci forecast carousel  
 - Our-story kalan two_column / banner tekrarları  
-- Help-centre support_tiles (contact tiles ile aynı aile)
+- Help-centre support_tiles (contact tiles ile aynı aile)  
+- Mobile menu Women/Men/Support accordion `changed`  
+- Predictive search 375/768 (menü içi ikon; üçüncü deneme yok)

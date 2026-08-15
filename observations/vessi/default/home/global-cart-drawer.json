@@ -9,6 +9,9 @@
     "evidence/vessi/default/home/global-cart-drawer.1440.png",
     "evidence/vessi/default/home/global-cart-drawer.375.png",
     "evidence/vessi/default/home/global-cart-drawer.768.png",
+    "evidence/vessi/default/home/global-cart-drawer.filled.weekend-classic.1440.png",
+    "evidence/vessi/default/home/global-cart-drawer.filled.weekend-classic.375.png",
+    "evidence/vessi/default/home/global-cart-drawer.filled.weekend-classic.768.png",
     "evidence/vessi/default/home/global-cart-drawer.initial.cart-bos.1440.png",
     "evidence/vessi/default/home/global-cart-drawer.initial.cart-bos.375.png",
     "evidence/vessi/default/home/global-cart-drawer.initial.cart-bos.768.png"
@@ -93,15 +96,10 @@
   ],
   "stateFindings": {
     "initial": "Your cart is empty; Discover what life with dry socks is all about!; Free Standard Shipping $150+; Free 30 Day Returns; Stormburst Low Top $170 Men's + Weekend Classic $150 Women's; Shop Women / Shop Men.",
-    "filled": ""
+    "filled": "768/1440: Your cart (1); Weekend Classic Marble White Women's 6 $150 qty 1; All offers unlocked · Free Shipping · $25 off belt bag; STOCK UP socks 3-pack/7-pack; Secure Checkout $150. 375 PNG is PDP with cart badge 1 — ATC opened then cart click closed drawer."
   },
-  "missingStates": [
-    {
-      "state": "filled",
-      "sebep": "1. deneme: addToCart varyant id bulunamadı (beden seçilmeden ATC Select a size; form [name=id] boş). 2. deneme: size radio value=6 sonra addToCart."
-    }
-  ],
-  "interactionNote": "Checkout/kupon yok. /cart → /#cart. Beden radio label.product-main__selector--size; form shopify-product-form action=/cart/add.",
+  "missingStates": [],
+  "interactionNote": "ATC via UI after size radio 6 (not cart/add.js). 375 ikinci cart tık drawer'ı kapattı — üçüncü deneme yok. Checkout/kupon yok. /cart → /#cart.",
   "capture": {
     "url": "https://vessi.com/",
     "viewports": [
@@ -111,7 +109,7 @@
     ],
     "mode": "viewport",
     "method": "interaction-steps",
-    "updatedAt": "2026-08-15T20:57:17.889Z",
+    "updatedAt": "2026-08-15T21:13:51.540Z",
     "prepareClick": "button[aria-label='Open cart drawer']"
   }
 }
