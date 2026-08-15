@@ -52,7 +52,7 @@ Durum: `done` = main'e merge · `in progress` = açık PR · boş = kuyrukta
 | 40 | done | functionhealth.com | https://functionhealth.com |
 | 41 | done | chamberlaincoffee.com | https://chamberlaincoffee.com |
 | 42 | done | dukecannon.com | https://dukecannon.com |
-| 43 | in progress | magicmind.com | https://magicmind.com |
+| 43 | done | magicmind.com | https://magicmind.com |
 | 44 | done | atoms.com | https://atoms.com |
 | 45 | done | cymbiotika.com | https://cymbiotika.com |
 | 46 | done | greatjonesgoods.com | https://greatjonesgoods.com |
@@ -63,17 +63,17 @@ Durum: `done` = main'e merge · `in progress` = açık PR · boş = kuyrukta
 | 51 | done | vegamour.com | https://vegamour.com |
 | 52 | done | kizik.com | https://kizik.com |
 | 53 | done | lemme.com | https://lemme.com |
-| 54 | in progress | shinesty.com | https://shinesty.com |
+| 54 | done | shinesty.com | https://shinesty.com |
 | 55 | done | omsom.com | https://omsom.com |
 | 56 | in progress | desoi.com | https://desoi.com |
-| 57 | in progress | materialkitchen.com | https://materialkitchen.com |
+| 57 | done | materialkitchen.com | https://materialkitchen.com |
 | 58 | in progress | onnit.com | https://onnit.com |
 | 59 | in progress | buckmason.com | https://buckmason.com |
 | 60 | in progress | herocosmetics.com | https://herocosmetics.com |
 | 61 | in progress | magicspoon.com | https://magicspoon.com |
-| 62 | | takearecess.com | https://takearecess.com |
-| 63 | | vivobarefoot.com | https://vivobarefoot.com |
-| 64 | | moom.health | https://moom.health |
+| 62 | in progress | takearecess.com | https://takearecess.com |
+| 63 | in progress | vivobarefoot.com | https://vivobarefoot.com |
+| 64 | in progress | moom.health | https://moom.health |
 | 65 | | partakefoods.com | https://partakefoods.com |
 | 66 | | beardbrand.com | https://beardbrand.com |
 | 67 | | westernrise.com | https://westernrise.com |
