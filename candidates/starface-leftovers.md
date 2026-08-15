@@ -101,3 +101,35 @@ Gerekçe: `/blogs/news` H1 “news”, kart 0. SSS makaleleri `/blogs/faq`.
 Örnekler: https://starface.world/blogs/news  
 Öneri: observation yazıldı (boş kare)  
 Karar: onay bekliyor
+
+---
+
+ADAY: starface-blog-post-black-capture  
+Gerekçe: `/blogs/faq/what-are-hydro-stars` DOM’da makale metni var; resmi 3vp PNG neredeyse düz siyah (~2–3KB). Metin karede okunmuyor.  
+Örnekler: https://starface.world/blogs/faq/what-are-hydro-stars  
+Öneri: recapture / kontrast — şema yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: starface-menu-drawer-opener  
+Gerekçe: `header-drawer summary.header__icon--menu` her VP 0×44; Playwright click “outside of the viewport”. 2. deneme forceOpen `header-drawer details` — PNG’de koleksiyon listesi yok; 768/1440 Klaviyo “sign up!” modal, 375 kapalı home.  
+Örnekler: https://starface.world/  
+Öneri: leftover — menü listesi resmi karede yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: starface-predictive-search-hidden  
+Gerekçe: `#Search-In-Template` menü drawer içinde. Drawer görsel açılmadığı için input hidden; `hydro` fill 2 denemede timeout. Tam sayfa `/search?q=hydro` 3vp var.  
+Örnekler: https://starface.world/  
+Öneri: leftover overlay  
+Karar: onay bekliyor
+
+---
+
+ADAY: starface-klaviyo-signup-modal  
+Gerekçe: Home/PLP interact karelerinde “sign up!” / 10% off email modal (blast off!). PII — doldurulmadı.  
+Örnekler: https://starface.world/ · https://starface.world/collections/all  
+Öneri: üçüncü parti overlay  
+Karar: onay bekliyor

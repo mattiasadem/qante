@@ -8,8 +8,8 @@
   "selector": "predictive-search",
   "evidenceSlug": "global-predictive-search",
   "evidence": [],
-  "notlar": "#Search-In-Template #menu-drawer içinde. Kapalı sarı rayda arama yok. Hamburger → boş alan (initial) → hydro (input). katalogSorgu: hydro.",
-  "delta": "Ayrı search modal yok — predictive menü drawer içinde, her viewport. Forced global-predictive-search.",
+  "notlar": "#Search-In-Template #menu-drawer içinde. Kapalı sarı rayda yok. katalogSorgu hydro — fill denendi, input gizli kaldı.",
+  "delta": "Ayrı search modal yok. Predictive drawer içinde. Açık kare alınamadı.",
   "captureMode": "viewport",
   "interactionStates": [
     "initial",
@@ -24,12 +24,19 @@
     },
     {
       "state": "initial",
-      "action": "click",
-      "selector": "header-drawer summary.header__icon--menu",
+      "action": "forceOpen",
+      "selector": "header-drawer details",
+      "capture": false,
+      "not": "summary 0×44"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 800,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "arama-bos",
-      "not": "Drawer açık, arama boş"
+      "not": "Drawer/arama görünür olmalı"
     },
     {
       "state": "input",
@@ -39,13 +46,22 @@
       "capture": true,
       "captureMode": "viewport",
       "etiket": "hydro",
-      "not": "hydro → ürün önerileri"
+      "not": "hydro önerileri"
     }
   ],
   "stateFindings": {
     "initial": "",
     "input": ""
   },
-  "missingStates": [],
-  "interactionNote": "Hamburger önce (tüm VP). Form submit /search’e gider — fill sonrası click yok. input == initial ise missingStates."
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "2 deneme. summary click viewport dışı; forceOpen sonrası #Search-In-Template hidden (drawer görsel olarak açılmadı / sign-up modal)."
+    },
+    {
+      "state": "input",
+      "sebep": "Input görünür olmadığı için fill timeout. hydro öneri karesi yok."
+    }
+  ],
+  "interactionNote": "Menü opener 0×44. Search sayfası /search?q=hydro ayrı 3vp var. Overlay predictive leftover."
 }
