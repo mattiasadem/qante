@@ -8,8 +8,18 @@
   "selector": "#shopify-section-global-minicart",
   "captureMode": "viewport",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
-  "interactionStates": ["initial", "filled"],
+  "evidence": [
+    "evidence/bandit/default/home/global-cart-drawer.filled.stamina-qty1.1440.png",
+    "evidence/bandit/default/home/global-cart-drawer.filled.stamina-qty1.375.png",
+    "evidence/bandit/default/home/global-cart-drawer.filled.stamina-qty1.768.png",
+    "evidence/bandit/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/bandit/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/bandit/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
   "interactionSteps": [
     {
       "state": "initial",
@@ -35,7 +45,7 @@
     {
       "state": "filled",
       "action": "click",
-      "selector": "#shopify-section-template--19510635954326__main .c-item-variants__pills__item label:has-text(\"L\")",
+      "selector": "#shopify-section-template--19510635954326__main input.js-variant-selector[value=\"L\"]",
       "capture": false,
       "not": "XS–M çizgili; L stokta"
     },
@@ -61,9 +71,23 @@
       "not": "Dolu minicart — satır + toplam"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "YOUR CART IS SAD :( + best seller metni + WOMEN'S/MEN'S/ACCESSORIES/SHOP ALL. Badge 0.",
+    "filled": "Stamina-V 5\" short, SIZE L / COLOR BLACK, $88, adet 1. YOU ARE $87 FROM FREE SHIPPING. PAIR IT WITH upsell. SUBTOTAL $88. Save as a Member / JOIN NOW. CHECKOUT. Badge 1."
+  },
   "missingStates": [],
-  "interactionNote": "/cart homepage'e düşer; sepet yalnız global-minicart. addToCart fallback /cart/add.js olursa not düş.",
+  "interactionNote": "/cart homepage'e düşer; sepet yalnız global-minicart. addToCart 375/768/1440 UI (L input.js-variant-selector). Şema değişmedi — boş↔dolu state.",
   "notlar": "Boş metin: YOUR CART IS SAD :(",
-  "delta": "Boş state koleksiyon linkleri (Women’s/Men’s/Accessories/Shop All). /cart sayfası yok."
+  "delta": "Boş state koleksiyon linkleri (Women’s/Men’s/Accessories/Shop All). /cart sayfası yok.",
+  "capture": {
+    "url": "https://banditrunning.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T17:50:34.943Z"
+  }
 }

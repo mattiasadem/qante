@@ -23,3 +23,5 @@ Bu sayfalar 200 döner ama Shopify section gövdesi yok. İçerik **cross-origin
 - `/cart` → homepage. Sepet yalnız `global-minicart` drawer.
 - `global-header-lockdown` ("GET EARLY ACCESS") public walk'ta off-screen.
 - Blog article (`/blogs/the-b-mail/*`) Shopify section id taşımıyor; gövde `main#main` / `.article-hero` + `.article-content`.
+- FAQ accordion ve PLP ALL FILTERS paneli bu walk'ta açılmadı (statik kare + şerit var).
+- Mobil menü alt akordeon (Women's) açılmadı.

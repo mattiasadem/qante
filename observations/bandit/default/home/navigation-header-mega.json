@@ -5,11 +5,19 @@
   "preset": "default",
   "sayfa": "home",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
+  "evidence": [
+    "evidence/bandit/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/bandit/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/bandit/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/bandit/default/home/navigation-header-mega.open.womens-mega.1440.png"
+  ],
   "url": "https://banditrunning.com/",
   "selector": "#shopify-section-global-header .global-header:not(.is-lockdown-header)",
   "captureMode": "viewport",
-  "interactionStates": ["initial", "open"],
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
   "interactionSteps": [
     {
       "state": "initial",
@@ -23,17 +31,38 @@
     {
       "state": "open",
       "action": "hover",
-      "selector": "#shopify-section-global-header .primary-link-button:has-text(\"Women's\")",
-      "viewports": ["1440"],
+      "selector": "#shopify-section-global-header button.t-l-1.user-select-disable:has-text(\"Women's\")",
+      "viewports": [
+        "1440"
+      ],
       "capture": true,
       "captureMode": "viewport",
       "etiket": "womens-mega",
       "not": "WOMEN'S mega: Featured + Tops/Bottoms kolonları"
     }
   ],
-  "stateFindings": {},
-  "missingStates": [],
-  "interactionNote": "Mega yalnız 1440 hover. 375/768 hamburger → global-menu-drawer.",
+  "stateFindings": {
+    "initial": "Kapalı header: BANDIT + COLLECTIONS/WOMEN'S/MEN'S/ACCESSORIES + search + membership/everything/login + minicart 0 + 0.000 KM. Mega yok.",
+    "open": "1440 WOMEN'S hover: dört kolon (Featured / Tops / Bottoms / Lifestyle, All linkleri turuncu) + Summer 2026 ve Steady State görsel kartları. WOMEN'S ok yukarı."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375/768'de mega yok — hamburger global-menu-drawer."
+    }
+  ],
+  "interactionNote": "Hover hedefi görünür button.t-l-1.user-select-disable (primary-link-button gizli kopya). 1440 kare initial'dan farklı.",
   "notlar": "BANDIT wordmark; COLLECTIONS / WOMEN'S / MEN'S / ACCESSORIES mega; search; THE MEMBERSHIP; EVERYTHING; LOGIN; minicart; 0.000 KM tracker.",
-  "delta": "KM scroll tracker ve membership utility. Mega paneller DOM'da kapalı (y negatif). Lockdown header ayrı, public'te off-screen."
+  "delta": "KM scroll tracker ve membership utility. Mega paneller DOM'da kapalı (y negatif). Lockdown header ayrı, public'te off-screen.",
+  "capture": {
+    "url": "https://banditrunning.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T17:48:25.510Z"
+  }
 }

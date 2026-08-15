@@ -8,8 +8,13 @@
   "selector": ".js-mobile-menu",
   "captureMode": "viewport",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
-  "interactionStates": ["open"],
+  "evidence": [
+    "evidence/bandit/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/bandit/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "interactionStates": [
+    "open"
+  ],
   "interactionSteps": [
     {
       "state": "open",
@@ -21,21 +26,41 @@
       "state": "open",
       "action": "click",
       "selector": "button.mobile-menu-trigger.js-mobile-menu-toggle",
-      "viewports": ["375", "768"],
+      "viewports": [
+        "375",
+        "768"
+      ],
       "capture": true,
       "captureMode": "viewport",
       "etiket": "hamburger",
       "not": "tablet-down-only drawer; marquee + Collections/Women's/Men's…"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "open": "Sağdan beyaz drawer: CLOSE; dikey marquee FIND THE BALANCE / STAY TRUE / KEEP GOING; COLLECTIONS/WOMEN'S/MEN'S/ACCESSORIES/EVERYTHING okları; THE MEMBERSHIP + LOGIN; YouTube/IG/Facebook. Alt menü tıklanmadı."
+  },
   "missingStates": [
     {
       "state": "open",
-      "sebep": "1440 hamburger yok (desktop mega). Drawer kanıtı 375+768."
+      "sebep": "1440 hamburger yok (desktop mega)."
+    },
+    {
+      "state": "changed",
+      "sebep": "Collections/Women's akordeon tıklanmadı — üst seviye drawer yeterli."
     }
   ],
-  "interactionNote": "Opener: button.mobile-menu-trigger.js-mobile-menu-toggle. 1440 N/A.",
+  "interactionNote": "Opener: button.mobile-menu-trigger.js-mobile-menu-toggle. 1440 N/A. 375 ve 768 kareler kapalı sayfadan farklı.",
   "notlar": "Marquee: Find the balance → Stay true → Keep going.",
-  "delta": "İkincil submenu (Collections/Women's) akordeon; desktop mega ayrı observation."
+  "delta": "İkincil submenu (Collections/Women's) akordeon; desktop mega ayrı observation.",
+  "capture": {
+    "url": "https://banditrunning.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T17:42:47.382Z"
+  }
 }
