@@ -33,19 +33,19 @@ Durum: `done` = main'e merge · `in progress` = açık PR · boş = kuyrukta
 | 21 | done | xeroshoes.com | https://xeroshoes.com |
 | 22 | done | ghia.com | https://ghia.com |
 | 23 | done | madeincookware.com | https://madeincookware.com |
-| 24 | in progress | necessaire.com | https://necessaire.com |
+| 24 | done | necessaire.com | https://necessaire.com |
 | 25 | in progress | im8health.com | https://im8health.com |
 | 26 | done | comradsocks.com | https://comradsocks.com |
 | 27 | in progress | bachans.com | https://bachans.com |
 | 28 | in progress | vacation.inc | https://vacation.inc |
-| 29 | in progress | drink-trip.com | https://drink-trip.com |
+| 29 | done | drink-trip.com | https://drink-trip.com |
 | 30 | in progress | bleame.com | https://bleame.com |
 | 31 | in progress | tenthousand.cc | https://tenthousand.cc |
 | 32 | in progress | novoslabs.com | https://novoslabs.com |
 | 33 | in progress | davidprotein.com | https://davidprotein.com |
 | 34 | in progress | vessi.com | https://vessi.com |
-| 35 | | flamingoestate.com | https://flamingoestate.com |
-| 36 | | flybyjing.com | https://flybyjing.com |
+| 35 | in progress | flamingoestate.com | https://flamingoestate.com |
+| 36 | in progress | flybyjing.com | https://flybyjing.com |
 | 37 | | gruns.co | https://gruns.co |
 | 38 | | hollowsocks.com | https://hollowsocks.com |
 | 39 | | representclo.com | https://representclo.com |
