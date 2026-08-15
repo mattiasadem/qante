@@ -1,0 +1,86 @@
+{
+  "observationId": "desoi.default.landing-campaign.product-finder-quiz",
+  "schemaId": "product-finder-quiz",
+  "kaynak": "desoi",
+  "preset": "default",
+  "sayfa": "landing-campaign",
+  "url": "https://drinkdesoi.com/pages/find-your-de-soi",
+  "selector": "#shopify-section-template--26526042128751__main",
+  "evidenceSlug": "product-finder-quiz",
+  "evidence": [
+    "evidence/desoi/default/landing-campaign/product-finder-quiz.1440.png",
+    "evidence/desoi/default/landing-campaign/product-finder-quiz.375.png",
+    "evidence/desoi/default/landing-campaign/product-finder-quiz.768.png",
+    "evidence/desoi/default/landing-campaign/product-finder-quiz.changed.quiz-acik.375.png",
+    "evidence/desoi/default/landing-campaign/product-finder-quiz.changed.quiz-acik.768.png",
+    "evidence/desoi/default/landing-campaign/product-finder-quiz.initial.basla.1440.png",
+    "evidence/desoi/default/landing-campaign/product-finder-quiz.initial.basla.375.png",
+    "evidence/desoi/default/landing-campaign/product-finder-quiz.initial.basla.768.png"
+  ],
+  "notlar": "Find Your De Soi. Which De Soi suits your style? START QUIZ. PII dur.",
+  "delta": "Generic page main + quiz embed. product-finder-quiz. E-posta yok — dur.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://drinkdesoi.com/pages/find-your-de-soi",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--26526042128751__main",
+      "capture": true,
+      "etiket": "basla"
+    },
+    {
+      "state": "changed",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Rebuy Close Cart dismiss ile açılmış olabilir"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button:has-text('START QUIZ')",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "selector": "text=What kind of flavors",
+      "value": 12000,
+      "capture": true,
+      "etiket": "quiz-acik",
+      "not": "İlk soru; e-posta/SMS yok — PII dur"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Find Your De Soi / Which De Soi suits your style? + START QUIZ. 1440 karesinde Rebuy boş bag overlay açılabiliyor.",
+    "changed": "375/768: What kind of flavors are you drawn to? + 6 flavor button (Citrusy and sweet … Juicy and tart). E-posta/SMS yok."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "1440: START QUIZ tıklandı; 'What kind of flavors' 12s görünmedi (Rebuy overlay / dismiss Close Cart). 375/768 var. Üçüncü deneme yok."
+    }
+  ],
+  "interactionNote": "PII (email/SMS) dur — ilk soruda form yok. Checkout yok. 1440 changed PNG silindi (START QUIZ + açık cart yalan kareydi).",
+  "capture": {
+    "url": "https://drinkdesoi.com/pages/find-your-de-soi",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:36:49.040Z"
+  }
+}
