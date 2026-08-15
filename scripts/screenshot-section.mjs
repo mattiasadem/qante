@@ -40,31 +40,6 @@ export async function screenshotSectionWithPadding(
   await locator.scrollIntoViewIfNeeded();
   await page.waitForTimeout(300);
 
-  // Short bars (pills, filter, search header) land under position:sticky
-  // announcement+header. Nudge so the clip is the section, not chrome.
-  await locator.evaluate((el) => {
-    const r = el.getBoundingClientRect();
-    if (r.height > 320) return;
-    let coverBottom = 0;
-    for (const n of document.querySelectorAll(
-      "header, .global-header, .global-announcement, [class*='announcement']"
-    )) {
-      if (n === el || n.contains(el) || el.contains(n)) continue;
-      const s = getComputedStyle(n);
-      if (s.position !== "fixed" && s.position !== "sticky") continue;
-      const hr = n.getBoundingClientRect();
-      if (hr.height < 16) continue;
-      if (hr.bottom > r.top + 2 && hr.top < r.bottom - 2) {
-        coverBottom = Math.max(coverBottom, hr.bottom);
-      }
-    }
-    if (coverBottom > r.top) {
-      const delta = coverBottom - r.top + 8;
-      window.scrollBy(0, -Math.min(delta, window.scrollY));
-    }
-  });
-  await page.waitForTimeout(200);
-
   const metrics = await getSectionMarginBox(locator);
   const { borderBox, margins } = metrics;
   const vp = page.viewportSize() || { width: 1440, height: 900 };
@@ -94,13 +69,29 @@ export async function screenshotSectionWithPadding(
     };
   }
 
-  // Üst pad için scroll hizala
-  const absoluteTop =
-    (await locator.evaluate((el) => {
-      const r = el.getBoundingClientRect();
-      return r.top + window.scrollY;
-    })) - padT;
-  await page.evaluate((y) => window.scrollTo(0, Math.max(0, y)), absoluteTop);
+  // Üst pad için scroll hizala. Kısa şeritler sticky announcement+header
+  // altına oturmasın — clip chrome değil section olsun.
+  const chromeBottom = await page.evaluate(() => {
+    let bottom = 0;
+    for (const n of document.querySelectorAll(
+      "header, .global-header, .global-announcement, [class*='announcement']"
+    )) {
+      const s = getComputedStyle(n);
+      if (s.position !== "fixed" && s.position !== "sticky") continue;
+      const hr = n.getBoundingClientRect();
+      if (hr.height < 16 || hr.top > 160) continue;
+      bottom = Math.max(bottom, hr.bottom);
+    }
+    return Math.round(bottom);
+  });
+  const elementAbsTop = await locator.evaluate(
+    (el) => el.getBoundingClientRect().top + window.scrollY
+  );
+  const clearance = borderBox.height <= 320 ? chromeBottom : 0;
+  await page.evaluate(
+    ({ y, pad, chrome }) => window.scrollTo(0, Math.max(0, y - pad - chrome)),
+    { y: elementAbsTop, pad: padT, chrome: clearance }
+  );
   await page.waitForTimeout(200);
 
   const after = await getSectionMarginBox(locator);

@@ -42,19 +42,35 @@ export async function dismissAllOverlays(page, { rounds = 8 } = {}) {
       try {
         const el = page.locator(sel).first();
         if (await el.isVisible({ timeout: 400 })) {
-          const navigates = await el
+          const meta = await el
             .evaluate((n) => {
+              const cls = (n.className || "").toString();
+              const r = n.getBoundingClientRect();
               const a = n.closest("a") || (n.tagName === "A" ? n : null);
               const href = a?.getAttribute("href") || "";
-              return Boolean(
-                href &&
-                  !href.startsWith("#") &&
-                  !href.startsWith("javascript") &&
-                  href !== "/"
-              );
+              return {
+                chrome:
+                  /mobile-menu|minicart|js-search-toggle|leaderboard|global-overlay|js-global-overlay|raffle-popup-overlay/.test(
+                    cls
+                  ),
+                w: r.width,
+                h: r.height,
+                href,
+              };
             })
-            .catch(() => false);
-          if (navigates) continue;
+            .catch(() => null);
+          if (!meta) continue;
+          // Chrome toggles + full-viewport overlays: force-click opens menu
+          // or hits a promo (Bandit blog → /pages/bandit-world-tour-2026).
+          if (meta.chrome || meta.w > 200 || meta.h > 80) continue;
+          if (
+            meta.href &&
+            !meta.href.startsWith("#") &&
+            !meta.href.startsWith("javascript") &&
+            meta.href !== "/"
+          ) {
+            continue;
+          }
           await el.click({ force: true, timeout: 1000 });
           await page.waitForTimeout(250);
         }
