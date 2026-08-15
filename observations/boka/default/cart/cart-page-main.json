@@ -17,10 +17,16 @@
   "interactionSteps": [
     {
       "state": "filled",
+      "action": "goto",
+      "value": "https://www.boka.com/products/ela-mint-toothpaste",
+      "capture": false
+    },
+    {
+      "state": "filled",
       "action": "waitFor",
       "value": "8500",
       "capture": false,
-      "not": "Klaviyo 10% OFF dialog ~8s"
+      "not": "Klaviyo 10% OFF dialog ~8s — her yeni sayfada tekrarlar"
     },
     {
       "state": "filled",
@@ -31,21 +37,56 @@
     },
     {
       "state": "filled",
-      "action": "goto",
-      "value": "https://www.boka.com/products/ela-mint-toothpaste",
+      "action": "waitFor",
+      "value": "400",
       "capture": false
     },
     {
       "state": "filled",
+      "action": "click",
+      "selector": "button[aria-label='Close teaser'], button.klaviyo-close-form[aria-label='Close dialog']",
+      "capture": false,
+      "not": "Get 10% off teaser varsa kapat; yoksa gizli dialog close no-op"
+    },
+    {
+      "state": "filled",
       "action": "addToCart",
-      "selector": "#shopify-section-template--26470592839723__main button:has-text('Add to cart'), #shopify-section-template--26470592839723__main button[type='submit']",
-      "capture": false
+      "selector": "#shopify-section-template--26470592839723__main button.button--xl:has-text('Add to cart')",
+      "capture": false,
+      "not": "Ela Mint ATC — button--xl (ikincil submit var)"
     },
     {
       "state": "filled",
       "action": "goto",
       "value": "https://www.boka.com/cart",
       "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": "8500",
+      "capture": false,
+      "not": "Klaviyo 10% OFF dialog ~8s — her yeni sayfada tekrarlar"
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.klaviyo-close-form[aria-label='Close dialog']",
+      "capture": false,
+      "not": "Klaviyo dialog kapat — PII form gönderilmedi"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": "400",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button[aria-label='Close teaser'], button.klaviyo-close-form[aria-label='Close dialog']",
+      "capture": false,
+      "not": "Get 10% off teaser varsa kapat; yoksa gizli dialog close no-op"
     },
     {
       "state": "filled",
@@ -61,9 +102,26 @@
     "filled"
   ],
   "stateFindings": {},
-  "missingStates": [],
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "input",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "open",
+      "sebep": "Drawer ayrı"
+    },
+    {
+      "state": "changed",
+      "sebep": "Adet drawer'da ölçüldü"
+    }
+  ],
   "prepareClick": "button.klaviyo-close-form[aria-label='Close dialog']",
-  "interactionNote": "Klaviyo SIGN UP 10% OFF dialog kapatıldı; form doldurulmadı.",
+  "interactionNote": "Klaviyo her goto'da kapatıldı; form doldurulmadı. Boş cart = static initial. Checkout tıklanmadı.",
   "capture": {
     "url": "https://www.boka.com/cart",
     "viewports": [

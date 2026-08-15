@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--26470592839723__product_metafield_faq_kCUkCD",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/boka/default/product-detail/faq-collapsible-tabs.1440.png",
     "evidence/boka/default/product-detail/faq-collapsible-tabs.375.png",
     "evidence/boka/default/product-detail/faq-collapsible-tabs.768.png",
-    "evidence/boka/default/product-detail/faq-collapsible-tabs.1440.png"
+    "evidence/boka/default/product-detail/faq-collapsible-tabs.changed.ilk-soru.1440.png",
+    "evidence/boka/default/product-detail/faq-collapsible-tabs.changed.ilk-soru.375.png",
+    "evidence/boka/default/product-detail/faq-collapsible-tabs.changed.ilk-soru.768.png",
+    "evidence/boka/default/product-detail/faq-collapsible-tabs.initial.kapali.1440.png",
+    "evidence/boka/default/product-detail/faq-collapsible-tabs.initial.kapali.375.png",
+    "evidence/boka/default/product-detail/faq-collapsible-tabs.initial.kapali.768.png"
   ],
   "notlar": "PDP metafield FAQ. Cruelty-free / children / sensitive / how often.",
   "delta": "Metafield accordion; kategori tab yok.",
@@ -26,7 +32,7 @@
       "action": "waitFor",
       "value": "8500",
       "capture": false,
-      "not": "Klaviyo 10% OFF dialog ~8s"
+      "not": "Klaviyo 10% OFF dialog ~8s — her yeni sayfada tekrarlar"
     },
     {
       "state": "initial",
@@ -34,6 +40,19 @@
       "selector": "button.klaviyo-close-form[aria-label='Close dialog']",
       "capture": false,
       "not": "Klaviyo dialog kapat — PII form gönderilmedi"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": "400",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button[aria-label='Close teaser'], button.klaviyo-close-form[aria-label='Close dialog']",
+      "capture": false,
+      "not": "Get 10% off teaser varsa kapat; yoksa gizli dialog close no-op"
     },
     {
       "state": "initial",
@@ -46,10 +65,10 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": "#shopify-section-template--26470592839723__product_metafield_faq_kCUkCD details:first-of-type > summary, #shopify-section-template--26470592839723__product_metafield_faq_kCUkCD button:has-text('Is Boka toothpaste cruelty-free')",
+      "selector": "#shopify-section-template--26470592839723__product_metafield_faq_kCUkCD details:first-of-type > summary",
       "capture": true,
       "etiket": "ilk-soru",
-      "not": "İlk soru açık"
+      "not": "Is Boka toothpaste cruelty-free and vegan?"
     }
   ],
   "interactionStates": [
@@ -57,9 +76,26 @@
     "changed"
   ],
   "stateFindings": {},
-  "missingStates": [],
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "filled",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "input",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "open",
+      "sebep": "Akordeon changed"
+    }
+  ],
   "prepareClick": "button.klaviyo-close-form[aria-label='Close dialog']",
-  "interactionNote": "Klaviyo SIGN UP 10% OFF dialog kapatıldı; form doldurulmadı.",
+  "interactionNote": "Klaviyo dialog kapatıldı; form doldurulmadı.",
   "capture": {
     "url": "https://www.boka.com/products/ela-mint-toothpaste",
     "viewports": [
@@ -68,8 +104,8 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T18:17:12.230Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:27:02.280Z",
     "prepareClick": "button.klaviyo-close-form[aria-label='Close dialog']"
   }
 }

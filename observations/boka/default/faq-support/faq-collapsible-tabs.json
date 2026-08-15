@@ -26,7 +26,7 @@
       "action": "waitFor",
       "value": "8500",
       "capture": false,
-      "not": "Klaviyo 10% OFF dialog ~8s"
+      "not": "Klaviyo 10% OFF dialog ~8s — her yeni sayfada tekrarlar"
     },
     {
       "state": "initial",
@@ -34,6 +34,19 @@
       "selector": "button.klaviyo-close-form[aria-label='Close dialog']",
       "capture": false,
       "not": "Klaviyo dialog kapat — PII form gönderilmedi"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": "400",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button[aria-label='Close teaser'], button.klaviyo-close-form[aria-label='Close dialog']",
+      "capture": false,
+      "not": "Get 10% off teaser varsa kapat; yoksa gizli dialog close no-op"
     },
     {
       "state": "initial",
@@ -46,10 +59,10 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": "#shopify-section-template--26470592413739__accordion_boka details:first-of-type > summary, #shopify-section-template--26470592413739__accordion_boka button:has-text('heavy metals')",
+      "selector": "#shopify-section-template--26470592413739__accordion_boka details:first-of-type > summary",
       "capture": true,
       "etiket": "ilk-soru",
-      "not": "Do Boka products contain heavy metals?"
+      "not": "İlk soru açık"
     }
   ],
   "interactionStates": [
@@ -57,9 +70,26 @@
     "changed"
   ],
   "stateFindings": {},
-  "missingStates": [],
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "filled",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "input",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "open",
+      "sebep": "Akordeon changed"
+    }
+  ],
   "prepareClick": "button.klaviyo-close-form[aria-label='Close dialog']",
-  "interactionNote": "Klaviyo SIGN UP 10% OFF dialog kapatıldı; form doldurulmadı.",
+  "interactionNote": "Klaviyo dialog kapatıldı; form doldurulmadı.",
   "capture": {
     "url": "https://www.boka.com/pages/faq",
     "viewports": [

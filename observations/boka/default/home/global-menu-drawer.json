@@ -7,11 +7,14 @@
   "url": "https://www.boka.com/",
   "selector": "#header-sidebar-menu, navigation-drawer.navigation-drawer",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/boka/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/boka/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
   "notlar": "Impact hamburger → header-sidebar-menu. 1440 N/A (lg:hidden).",
   "delta": "Masaüstünde gizli. 375/768 open.",
   "captureMode": "viewport",
-  "prepareClick": "button[aria-controls='header-sidebar-menu']",
+  "prepareClick": "button.klaviyo-close-form[aria-label='Close dialog']",
   "interactionSteps": [
     {
       "state": "open",
@@ -24,7 +27,7 @@
       "action": "waitFor",
       "value": "8500",
       "capture": false,
-      "not": "Klaviyo 10% OFF dialog ~8s"
+      "not": "Klaviyo 10% OFF dialog ~8s — her yeni sayfada tekrarlar"
     },
     {
       "state": "open",
@@ -32,6 +35,19 @@
       "selector": "button.klaviyo-close-form[aria-label='Close dialog']",
       "capture": false,
       "not": "Klaviyo dialog kapat — PII form gönderilmedi"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": "400",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button[aria-label='Close teaser'], button.klaviyo-close-form[aria-label='Close dialog']",
+      "capture": false,
+      "not": "Get 10% off teaser varsa kapat; yoksa gizli dialog close no-op"
     },
     {
       "state": "open",
@@ -44,7 +60,7 @@
         "375",
         "768"
       ],
-      "not": "Mobil menü"
+      "not": "Mobil menü — 1440 N/A (lg:hidden)"
     }
   ],
   "interactionStates": [
@@ -67,7 +83,22 @@
     {
       "state": "input",
       "sebep": "Anlamsız"
+    },
+    {
+      "state": "changed",
+      "sebep": "Shop ok tıklanmadı — yazılı link sayfaya gider"
     }
   ],
-  "interactionNote": "Klaviyo SIGN UP 10% OFF dialog kapatıldı; form doldurulmadı."
+  "interactionNote": "Klaviyo dialog kapatıldı; form doldurulmadı. 1440 hamburger yok.",
+  "capture": {
+    "url": "https://www.boka.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:23:18.670Z"
+  }
 }

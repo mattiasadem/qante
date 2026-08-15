@@ -11,7 +11,7 @@
   "notlar": "Impact cart-drawer. Boş + Ela Mint doldurulacak.",
   "delta": "Recharge storefront cart-drawer host da var (h=0). Checkout tıklanmadı.",
   "captureMode": "viewport",
-  "prepareClick": "a[aria-controls='cart-drawer']",
+  "prepareClick": "button.klaviyo-close-form[aria-label='Close dialog']",
   "interactionSteps": [
     {
       "state": "initial",
@@ -24,7 +24,7 @@
       "action": "waitFor",
       "value": "8500",
       "capture": false,
-      "not": "Klaviyo 10% OFF dialog ~8s"
+      "not": "Klaviyo 10% OFF dialog ~8s — her yeni sayfada tekrarlar"
     },
     {
       "state": "initial",
@@ -32,6 +32,19 @@
       "selector": "button.klaviyo-close-form[aria-label='Close dialog']",
       "capture": false,
       "not": "Klaviyo dialog kapat — PII form gönderilmedi"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": "400",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button[aria-label='Close teaser'], button.klaviyo-close-form[aria-label='Close dialog']",
+      "capture": false,
+      "not": "Get 10% off teaser varsa kapat; yoksa gizli dialog close no-op"
     },
     {
       "state": "initial",
@@ -50,6 +63,33 @@
     },
     {
       "state": "filled",
+      "action": "waitFor",
+      "value": "8500",
+      "capture": false,
+      "not": "Klaviyo 10% OFF dialog ~8s — her yeni sayfada tekrarlar"
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.klaviyo-close-form[aria-label='Close dialog']",
+      "capture": false,
+      "not": "Klaviyo dialog kapat — PII form gönderilmedi"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": "400",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button[aria-label='Close teaser'], button.klaviyo-close-form[aria-label='Close dialog']",
+      "capture": false,
+      "not": "Get 10% off teaser varsa kapat; yoksa gizli dialog close no-op"
+    },
+    {
+      "state": "filled",
       "action": "addToCart",
       "selector": "#shopify-section-template--26470592839723__main button.button--xl:has-text('Add to cart')",
       "capture": false,
@@ -63,6 +103,33 @@
     },
     {
       "state": "filled",
+      "action": "waitFor",
+      "value": "8500",
+      "capture": false,
+      "not": "Klaviyo 10% OFF dialog ~8s — her yeni sayfada tekrarlar"
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.klaviyo-close-form[aria-label='Close dialog']",
+      "capture": false,
+      "not": "Klaviyo dialog kapat — PII form gönderilmedi"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": "400",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button[aria-label='Close teaser'], button.klaviyo-close-form[aria-label='Close dialog']",
+      "capture": false,
+      "not": "Get 10% off teaser varsa kapat; yoksa gizli dialog close no-op"
+    },
+    {
+      "state": "filled",
       "action": "click",
       "selector": "a[aria-controls='cart-drawer']",
       "capture": true,
@@ -73,9 +140,10 @@
     {
       "state": "changed",
       "action": "fill",
-      "selector": "#cart-drawer input.quantity-input, #cart-drawer input[name='updates[]']",
+      "selector": "#cart-drawer input.quantity-input",
       "value": "2",
-      "capture": false
+      "capture": false,
+      "not": "Görünür quantity-input"
     },
     {
       "state": "changed",
@@ -107,5 +175,5 @@
       "sebep": "Boş drawer initial"
     }
   ],
-  "interactionNote": "Klaviyo SIGN UP 10% OFF dialog kapatıldı; form doldurulmadı."
+  "interactionNote": "Klaviyo her goto'da kapatıldı; form doldurulmadı. Checkout tıklanmadı. Recharge host #recharge-storefront-experiences__cart-drawer h=0."
 }

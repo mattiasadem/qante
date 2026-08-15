@@ -11,24 +11,20 @@
   "notlar": "Impact search-drawer. katalogSorgu toothpaste.",
   "delta": "Yazınca Products/Pages/Blog posts sekmeleri (search sayfası ile aynı dil).",
   "captureMode": "viewport",
-  "prepareClick": "a[aria-controls='search-drawer']",
+  "prepareClick": "button.klaviyo-close-form[aria-label='Close dialog']",
   "interactionSteps": [
     {
       "state": "initial",
       "action": "goto",
       "value": "https://www.boka.com/",
-      "capture": true,
-      "captureMode": "viewport",
-      "captureSelector": "#shopify-section-sections--26470593003563__header",
-      "etiket": "arama-kapali",
-      "not": "Drawer kapalı — header büyüteç"
+      "capture": false
     },
     {
       "state": "initial",
       "action": "waitFor",
       "value": "8500",
       "capture": false,
-      "not": "Klaviyo 10% OFF dialog ~8s"
+      "not": "Klaviyo 10% OFF dialog ~8s — her yeni sayfada tekrarlar"
     },
     {
       "state": "initial",
@@ -38,10 +34,34 @@
       "not": "Klaviyo dialog kapat — PII form gönderilmedi"
     },
     {
+      "state": "initial",
+      "action": "waitFor",
+      "value": "400",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button[aria-label='Close teaser'], button.klaviyo-close-form[aria-label='Close dialog']",
+      "capture": false,
+      "not": "Get 10% off teaser varsa kapat; yoksa gizli dialog close no-op"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": "400",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#shopify-section-sections--26470593003563__header",
+      "etiket": "arama-kapali",
+      "not": "Drawer kapalı — header büyüteç. forceOpen kullanma."
+    },
+    {
       "state": "input",
       "action": "click",
       "selector": "a[aria-controls='search-drawer']",
-      "capture": false
+      "capture": false,
+      "not": "İki opener: sm:hidden / sm:block — clickVisible görünür olanı alır"
     },
     {
       "state": "input",
@@ -74,8 +94,8 @@
     },
     {
       "state": "changed",
-      "sebep": "Tab tıklanmadı"
+      "sebep": "Products/Suggestions/Pages tab tıklanmadı"
     }
   ],
-  "interactionNote": "Klaviyo SIGN UP 10% OFF dialog kapatıldı; form doldurulmadı."
+  "interactionNote": "Klaviyo dialog kapatıldı; form doldurulmadı. a[href=/search] sayfaya gider, kullanılmadı."
 }
