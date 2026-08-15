@@ -74,6 +74,66 @@ Karar: leftover
 
 ---
 
+ADAY: atoms-model-000-notify  
+Gerekçe: `/products/atoms-model-000-black` beden listesi Notify me. ATC disabled. Filled cart Classic Crew Socks ile alındı.  
+Karar: leftover — 2. deneme yok
+
+---
+
+ADAY: atoms-pdp-white-swatch  
+Gerekçe: `button[aria-label='White']` eşleşmedi (1 deneme). `changed` Sizing & Fit accordion ile alındı.  
+Karar: leftover
+
+---
+
+ADAY: atoms-home-features-accordion  
+Gerekçe: Home Innovation 6 satır +/−. FAQ accordion ayrı çekildi; home açık hâl yok.  
+Karar: leftover
+
+---
+
+ADAY: atoms-press-logo-tabs  
+Gerekçe: Home Vogue/Esquire/HONY nokta — logo tık quote değişir. `changed` yok.  
+Karar: leftover
+
+---
+
+ADAY: atoms-menu-accordion  
+Gerekçe: 375/768 Shop / Explore chevron. Alt accordion çekilmedi.  
+Karar: leftover
+
+---
+
+ADAY: atoms-other-megas  
+Gerekçe: 1440 Men mega alındı. Women / Kids / About / Support / Find Your Fit mega yok.  
+Karar: leftover
+
+---
+
+ADAY: atoms-why-press  
+Gerekçe: `/why-atoms` 200. `section.press-logos-bar` yok (eski about obs silindi). Temsilci: `/about` + `/tech`.  
+Karar: leftover
+
+---
+
+ADAY: atoms-vs-allbirds-stack  
+Gerekçe: Karşılaştırma tablosu obs var. Hero + press + reviews aynı URL’de leftover.  
+Karar: leftover
+
+---
+
+ADAY: atoms-csr-rest  
+Gerekçe: `/csr` giriş metni obs. Kalan CSR stack leftover.  
+Karar: leftover
+
+---
+
+ADAY: atoms-404-featured  
+Gerekçe: Custom 404 `page-content-main.3`. Featured Products product-showcase tekrarı.  
+Karar: leftover — parent obs var
+
+---
+
 ## Bilinçli atlananlar
 
 - `/account` / login / checkout  
@@ -83,3 +143,5 @@ Karar: leftover
 - Collabs ambassador apply  
 - Jobs / invest / hony / behind-the-lace / 8-reasons tam stack (temsilci + leftover)  
 - Playground 500  
+- Terms & Conditions (privacy temsilci)  
+- Women’s/Kids size-chart kardeş URL’ler  
