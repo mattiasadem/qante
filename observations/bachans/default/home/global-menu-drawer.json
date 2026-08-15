@@ -1,0 +1,79 @@
+{
+  "observationId": "bachans.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "bachans",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://bachans.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/bachans/default/home/global-menu-drawer.open.hamburger.375.png"
+  ],
+  "notlar": "375 hamburger (icon-hamburger SVG, summary box 0px). Shop / About / Recipes / Products.",
+  "delta": "header-drawer data-breakpoint=tablet. Kapalıda #menu-drawer x=-296. 1440 N/A. 768 masaüstü nav göründü — yoklanacak.",
+  "captureMode": "viewport",
+  "prepareClick": "header-drawer .icon-hamburger",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://bachans.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 400,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header-drawer .icon-hamburger",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "viewports": [
+        "375",
+        "768"
+      ]
+    }
+  ],
+  "stateFindings": {
+    "open": "375 sol krem drawer: SHOP / ABOUT / RECIPES / PRODUCTS / FIND A STORE / SIGN IN / REGISTER; X kapat. Shop/About/Products chevron."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "768: hamburger gizli — masaüstü nav (Shop/About/Recipes) görünür. 1440 N/A."
+    }
+  ],
+  "interactionNote": "summary box 0px; tık header-drawer .icon-hamburger. 768 desktop nav.",
+  "capture": {
+    "url": "https://bachans.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:18:36.221Z"
+  }
+}
