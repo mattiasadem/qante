@@ -1,0 +1,74 @@
+{
+  "observationId": "flamingoestate.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "flamingoestate",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://flamingoestate.com/",
+  "selector": "#megamenu-v3-search-field",
+  "captureMode": "viewport",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/flamingoestate/default/home/global-predictive-search.initial.bos.1440.png",
+    "evidence/flamingoestate/default/home/global-predictive-search.initial.bos.375.png",
+    "evidence/flamingoestate/default/home/global-predictive-search.initial.bos.768.png",
+    "evidence/flamingoestate/default/home/global-predictive-search.input.soap.1440.png",
+    "evidence/flamingoestate/default/home/global-predictive-search.input.soap.375.png",
+    "evidence/flamingoestate/default/home/global-predictive-search.input.soap.768.png"
+  ],
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://flamingoestate.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.megamenu-v3-nav-aux-search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bos",
+      "not": "Search for products, categories, content"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#megamenu-v3-search-field",
+      "value": "soap",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "soap",
+      "not": "katalogSorgu: soap (Peppermint Soap Brick)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Büyüteç tık: yeşil çerçeveli field, placeholder Search for products, categories, content. Öneri listesi yok.",
+    "input": "soap yazıldı. Dropdown/öneri yok — yalnız input metni değişti. Sonuç /search?q=soap sayfasında."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "Predictive ürün listesi DOM’da yok; 2.5s bekleme sonrası da boş. /search sayfa ayrı."
+    }
+  ],
+  "interactionNote": "Opener a.megamenu-v3-nav-aux-search. Input kapalıyken h=0. katalogSorgu soap (Peppermint Soap Brick).",
+  "notlar": "Placeholder: Search for products, categories, content.",
+  "delta": "Tam genişlik header search. Predictive overlay yok — submit /search.",
+  "capture": {
+    "url": "https://flamingoestate.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:34:41.080Z"
+  }
+}
