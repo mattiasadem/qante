@@ -1,0 +1,101 @@
+{
+  "observationId": "materialkitchen.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "materialkitchen",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://materialkitchen.com/",
+  "selector": "aside.cart.cart-slider",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/materialkitchen/default/home/global-cart-drawer.1440.png",
+    "evidence/materialkitchen/default/home/global-cart-drawer.375.png",
+    "evidence/materialkitchen/default/home/global-cart-drawer.768.png",
+    "evidence/materialkitchen/default/home/global-cart-drawer.filled.mk-board-qty1.1440.png",
+    "evidence/materialkitchen/default/home/global-cart-drawer.filled.mk-board-qty1.375.png",
+    "evidence/materialkitchen/default/home/global-cart-drawer.filled.mk-board-qty1.768.png",
+    "evidence/materialkitchen/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/materialkitchen/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/materialkitchen/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "1440 a.desktopCartBtn; 375 a.mobileCartBtn. Drawer 484×1000. Rebuy şablon script’te var, native slider kullanıldı.",
+  "delta": "Tema (canlı, uydurulmadı): 08/10 - RC Variant Change Asset [EDIT HERE]. schema_name Themekit template theme, schema_version 1.0.0, theme_store_id null, role main, theme.id 141671563326. Shop material-kitchen.myshopify.com. Native cart-slider + Rebuy app. /cart ayrı SCA free-gift sayfa. Qty changed yoklanır.",
+  "captureMode": "viewport",
+  "prepareClick": "a.nav__link.js-cart.desktopCartBtn, a.header__cart.mobileCartBtn",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://materialkitchen.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.nav__link.js-cart.desktopCartBtn, a.header__cart.mobileCartBtn",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş native cart-slider"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://materialkitchen.com/products/the-mk-free-board",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.main-add-to-cart-btn, button.btn--add.btn--secondary",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mk-board-qty1",
+      "not": "ATC sonrası drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], .cart__qty-plus, [class*='qty'] button, aside.cart button:has-text('+')",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "You have no items in your cart. Shop our collections. We recommend The Trio of Knives $225 (+ boş placeholder kartlar).",
+    "filled": "The MK Free Board Ocean; SUMMERSALE; Checkout $83 (qty 2 bu karede). Checkout’a girilmedi.",
+    "changed": "Plus selector eşleşmedi — leftover."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Dolu karede qty stepper (minus / 2 / plus) görünüyor; plus selector (name=plus / cart__qty-plus / has-text +) eşleşmedi. Native boş: “You have no items in your cart.” + We recommend."
+    }
+  ],
+  "interactionNote": "Native aside.cart.cart-slider. Rebuy widget home/PDP’de ayrı. /cart SCA #sca_fg_cart sayfa. Checkout/PII yok.",
+  "capture": {
+    "url": "https://materialkitchen.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "viewport",
+    "updatedAt": "2026-08-15T23:24:40.136Z",
+    "prepareClick": "a.nav__link.js-cart.desktopCartBtn, a.header__cart.mobileCartBtn"
+  }
+}
