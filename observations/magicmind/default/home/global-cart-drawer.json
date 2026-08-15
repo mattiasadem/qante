@@ -5,13 +5,19 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://magicmind.com/",
-  "selector": "#shopify-section-sections--19192801493126__main",
+  "selector": "main",
   "captureMode": "viewport",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/magicmind/default/home/global-cart-drawer.filled.original-eklendi.1440.png",
+    "evidence/magicmind/default/home/global-cart-drawer.filled.original-eklendi.375.png",
+    "evidence/magicmind/default/home/global-cart-drawer.filled.original-eklendi.768.png"
+  ],
   "notlar": "NS hybrid cart. /cart → /?cart=open. Opener button.cart-icon (görünür olan). Checkout tıklanmadı.",
   "delta": "Boş tıkta hybrid 0px kaldı. cart-page-main yok.",
-  "interactionStates": ["filled"],
+  "interactionStates": [
+    "filled"
+  ],
   "interactionSteps": [
     {
       "state": "filled",
@@ -45,18 +51,30 @@
       "value": 4000,
       "capture": true,
       "captureMode": "viewport",
+      "captureSelector": "main",
       "etiket": "original-eklendi",
-      "not": "ATC sonrası görünür cart-icon"
+      "not": "ATC sonrası viewport — hybrid 0px olduğu için main"
     }
   ],
   "stateFindings": {
-    "filled": "Henüz PNG bakılmadı."
+    "filled": "ATC UI sonrası sağ drawer: Cart (1), Original | Welcome 15 bottles, $44.63, FREE shipping, CHECKOUT (tıklanmadı)."
   },
   "missingStates": [
     {
       "state": "initial",
-      "sebep": "Boş cart-icon tıkı hybrid bölümü 0px bıraktı — görünür drawer yok"
+      "sebep": "Boş cart-icon tıkı görünür drawer açmadı (hybrid 0px)"
     }
   ],
-  "interactionNote": "NS hybrid hydrate yavaş olabilir. Checkout yok. PII yok."
+  "interactionNote": "addToCart via ui. Hybrid section 0px — capture main viewport. Checkout yok. PII yok.",
+  "capture": {
+    "url": "https://magicmind.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:12:02.524Z"
+  }
 }

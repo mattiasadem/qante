@@ -8,12 +8,16 @@
   "selector": "#shopify-section-new-header-v4",
   "evidenceSlug": "navigation-header-mega",
   "evidence": [
+    "evidence/magicmind/default/home/navigation-header-mega.1440.png",
     "evidence/magicmind/default/home/navigation-header-mega.375.png",
     "evidence/magicmind/default/home/navigation-header-mega.768.png",
-    "evidence/magicmind/default/home/navigation-header-mega.1440.png"
+    "evidence/magicmind/default/home/navigation-header-mega.hover.shop-mega.1440.png"
   ],
   "captureMode": "section",
-  "interactionStates": ["hover"],
+  "interactionStates": [
+    "initial",
+    "hover"
+  ],
   "interactionSteps": [
     {
       "state": "hover",
@@ -33,14 +37,17 @@
       "selector": "a.menu-link",
       "value": 1000,
       "capture": true,
-      "captureMode": "viewport",
+      "captureSelector": "#megamenu-shop",
+      "captureMode": "section",
       "etiket": "shop-mega",
-      "viewports": ["1440"],
-      "not": "Shop hover → #megamenu-shop 40→425, list 0→400"
+      "viewports": [
+        "1440"
+      ],
+      "not": "Shop hover → #megamenu-shop; viewport scroll mega’yı kapatıyor"
     }
   ],
   "stateFindings": {
-    "hover": "Henüz PNG bakılmadı."
+    "hover": "1440 Shop hover: #megamenu-shop 4 kart (Free 0mg / Original 55mg / MAXX 165mg / Sleep rise brighter). 375/768 hover yok."
   },
   "missingStates": [],
   "interactionNote": "375/768 Shop link w=0 — hover yalnız 1440. Predictive search yok.",
@@ -54,7 +61,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T22:09:26.850Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:10:23.167Z"
   }
 }

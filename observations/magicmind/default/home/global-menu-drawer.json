@@ -5,13 +5,17 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://magicmind.com/",
-  "selector": "#sidebar-menu",
+  "selector": ".new-header__mobile-menu",
   "captureMode": "viewport",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/magicmind/default/home/global-menu-drawer.open.menu.375.png"
+  ],
   "notlar": "sidebar-menu Drawer--fromLeft. Kapalı x=-310 aria-hidden. Opener .header__mob-btn / .hamburger-wrapper (375).",
   "delta": ".new-header__mobile-menu display:none. 1440 hamburger yok.",
-  "interactionStates": ["open"],
+  "interactionStates": [
+    "open"
+  ],
   "interactionSteps": [
     {
       "state": "open",
@@ -33,13 +37,32 @@
       "capture": true,
       "captureMode": "viewport",
       "etiket": "menu",
-      "viewports": ["375", "768"],
+      "viewports": [
+        "375",
+        "768"
+      ],
       "not": "Sol hamburger — drawer x=-310→0 beklenir"
     }
   ],
   "stateFindings": {
-    "open": "Henüz PNG bakılmadı."
+    "open": "375: hamburger Products listesi (Original/MAXX/FREE/Sleep) + Science/Blog/Reviews/Contact. #sidebar-menu değil."
   },
-  "missingStates": [],
-  "interactionNote": "İlk probe tık drawer’ı açmadı; resmi capture PNG ile doğrulanacak. 1440 yok."
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "768: .header__mob-btn hide-tablet — hamburger yok. 1440 yok."
+    }
+  ],
+  "interactionNote": "375 kare doğrulandı. 768/1440 drawer yok.",
+  "capture": {
+    "url": "https://magicmind.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:03:04.376Z"
+  }
 }

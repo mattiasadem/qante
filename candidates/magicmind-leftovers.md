@@ -113,3 +113,33 @@ ADAY: magicmind-pdp-custom-html
 Gerekçe: Original PDP `#…__custom_html_liquid_DQgkFC` ~1096px. FREE/MAXX template’te yok. İçerik yoklanmadı — leftover.  
 Öneri: editorial-custom-content zorlama yok  
 Karar: onay bekliyor
+
+---
+
+ADAY: magicmind-home-kit-b-only  
+Gerekçe: Kit B (`template--19128598626438`) walk’ta görüldü; bu koşunun canlı treatment’ı Kit A (`hm_v3_*`) verdi. 3vp alınamadı (selector yok = section yok, eksik capture değil).  
+Selector’lar (suffix): `__find_formula_nxh9MM` · `__section_science_G99GWx` · `__section_ingredients_7fxAgf` · `__section_featured_product_cards_W9WfFX` · `__section_members_Ggn7y3` · `__video_reviews_slider_KHiQgC`  
+Observation dosyaları boş evidence ile duruyor — claim yok.  
+Öneri: Kit B tekrar gelince resmi 3vp  
+Karar: onay bekliyor
+
+---
+
+ADAY: magicmind-science-article-lp  
+Gerekçe: `/blogs/news/science-backed-solutions-for-better-productivity-the-magic-mind®-approach` LP kit. Observation yalnız `article_hero` (`blog-post-main`). Kalan image+accordion / results / references aynı sayfada — ayrı 3vp yok.  
+Öneri: leftover  
+Karar: onay bekliyor
+
+---
+
+ADAY: magicmind-empty-cart-drawer  
+Gerekçe: Boş `button.cart-icon` tıkı NS hybrid 0px. Dolu drawer ATC UI sonrası 3vp var (`global-cart-drawer.filled`).  
+Öneri: leftover — boş hâl  
+Karar: onay bekliyor
+
+---
+
+ADAY: magicmind-pdp-pack-change  
+Gerekçe: 15→30 pack tıkı (label / MOST POPULAR span) görünür değil. Statik buy box 3vp var.  
+Öneri: leftover  
+Karar: onay bekliyor

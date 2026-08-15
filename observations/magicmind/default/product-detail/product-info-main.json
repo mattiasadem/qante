@@ -8,13 +8,17 @@
   "selector": "[id$='__main-product']",
   "evidenceSlug": "product-info-main",
   "evidence": [
+    "evidence/magicmind/default/product-detail/product-info-main.1440.png",
     "evidence/magicmind/default/product-detail/product-info-main.375.png",
     "evidence/magicmind/default/product-detail/product-info-main.768.png",
-    "evidence/magicmind/default/product-detail/product-info-main.1440.png"
+    "evidence/magicmind/default/product-detail/product-info-main.changed.30-bottles.768.png"
   ],
   "notlar": "Original buy box. Suffix __main-product; template id A/B.",
   "delta": "main-product-v2. Selling plan + varyant. HSA/FSA satırı. Frontrow sticker iframe leftover.",
-  "interactionStates": ["changed"],
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
   "interactionSteps": [
     {
       "state": "changed",
@@ -31,18 +35,21 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": "label[for='pack-size-30-bottles']",
+      "selector": "text=MOST POPULAR",
       "value": 1500,
       "capture": true,
       "etiket": "30-bottles",
       "not": "15→30 pack — fiyat/ATC değişmeli"
     }
   ],
-  "stateFindings": {
-    "changed": "Henüz PNG bakılmadı."
-  },
-  "missingStates": [],
-  "interactionNote": "label[for=pack-size-30-bottles] probe’da gizliydi; click force. Subscribe varsayılan.",
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "15/30 pack tıkı görünür değil (label sr-only; span.main-product-v2__most-popular gizli). Statik 3vp var."
+    }
+  ],
+  "interactionNote": "Pack değişimi denendi, piksel doğrulanamadı. Subscribe varsayılan. Checkout yok.",
   "capture": {
     "url": "https://magicmind.com/products/mental-performance-shot-original",
     "viewports": [
@@ -51,7 +58,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T22:39:01.127Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:13:08.013Z"
   }
 }
