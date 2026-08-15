@@ -1,0 +1,66 @@
+{
+  "observationId": "tenthousand.default.home.global-quick-view",
+  "schemaId": "global-quick-view",
+  "kaynak": "tenthousand",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.tenthousand.cc/",
+  "selector": "[class*='drawer-quickshop'] .js-offcanvas.is-expanded, [class*='quickshop'][class*='root'].is-expanded, .js-drawer-quickshop .js-offcanvas",
+  "evidenceSlug": "global-quick-view",
+  "evidence": [
+    "evidence/tenthousand/default/home/global-quick-view.open.quickshop.1440.png",
+    "evidence/tenthousand/default/home/global-quick-view.open.quickshop.375.png",
+    "evidence/tenthousand/default/home/global-quick-view.open.quickshop.768.png"
+  ],
+  "notlar": "QUICKSHOP drawer. Copy: Free Shipping on Orders $150+. QUICK ADD kartlardan açılır.",
+  "delta": "Shiro js-drawer-quickshop. Kapalı h=0. 'Quickshop Message Test' merchant metni.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://www.tenthousand.cc/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--18860560121943__products_carousel_PEhjE8",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#shopify-section-template--18860560121943__products_carousel_PEhjE8 button.tvg_react_product_card_-nKmNq_quickshop, #shopify-section-template--18860560121943__products_carousel_PEhjE8 :text('QUICK ADD')",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "quickshop",
+      "not": "Quickshop drawer"
+    }
+  ],
+  "stateFindings": {
+    "open": "QUICKSHOP: Interval Short Micro-X $88–$104; 14859 reviews; HIIT/HYBRID/METCON/RUN; Mineral lined 7\"; 1/10 galeri."
+  },
+  "missingStates": [],
+  "interactionNote": "QUICK ADD bestsellers kartından açıldı. Hover gerekmedi.",
+  "capture": {
+    "url": "https://www.tenthousand.cc/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:29:24.620Z"
+  }
+}

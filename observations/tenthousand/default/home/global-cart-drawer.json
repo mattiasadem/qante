@@ -1,0 +1,123 @@
+{
+  "observationId": "tenthousand.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "tenthousand",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.tenthousand.cc/",
+  "selector": ".tvg_drawer_cart_RCRvlW_root.is-expanded",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/tenthousand/default/home/global-cart-drawer.filled.interval-qty1.1440.png",
+    "evidence/tenthousand/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/tenthousand/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/tenthousand/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "MY BAG. Boş: YOUR BAG IS EMPTY / You haven’t added anything to your bag yet. / CONTINUE SHOPPING. Opener a.tvg_header_BIfLoG_Header__icon--cart.",
+  "delta": "Shiro tvg_drawer_cart_RCRvlW. Section wrapper h=0; kutu .is-expanded. /cart ayrı sayfa.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.tenthousand.cc/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header a[href='/cart']",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş bag"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.tenthousand.cc/products/interval-short",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": "button.tvg_react_product_form_AXZILa_option[aria-label='M']",
+      "value": 15000,
+      "capture": false,
+      "not": "React form hydrate"
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.tvg_react_product_form_AXZILa_option[aria-label='M']",
+      "capture": false,
+      "not": "Beden M"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 600,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.tvg_react_product_form_AXZILa_addtocart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "header a[href='/cart']",
+      "capture": false,
+      "not": "Drawer ATC sonrası kapalıysa aç"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "interval-qty1",
+      "not": "Dolu bag"
+    }
+  ],
+  "stateFindings": {
+    "initial": "MY BAG boş; CONTINUE SHOPPING.",
+    "filled": "1440 MY BAG [1]: Interval Short Black // M // Lined // 7-inch $98; spend $52 more; subtotal $98 + ship $10; Protected Checkout. 375/768 filled leftover."
+  },
+  "missingStates": [
+    {
+      "state": "filled",
+      "sebep": "375/768: ATC sonrası header cart ikonu viewport dışı. 1440 filled kanıtlı."
+    }
+  ],
+  "interactionNote": "addToCart UI (filled/addToCart → ui). 1440 drawer ATC ile açıldı. Checkout/PII yok.",
+  "capture": {
+    "url": "https://www.tenthousand.cc/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:27:04.704Z"
+  }
+}
