@@ -98,6 +98,21 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: materialkitchen-cart-qty  
+Gerekçe: Dolu drawer karesinde qty stepper (minus / 2 / plus) var. `button[name=plus]` / `.cart__qty-plus` / `has-text('+')` eşleşmedi — `changed` PNG yok. Native boş: “You have no items in your cart.” + We recommend.  
+Örnekler: aside.cart.cart-slider  
+Öneri: leftover — qty selector  
+Karar: onay bekliyor
+
+---
+
+ADAY: materialkitchen-cart-mobile-sca  
+Gerekçe: `/cart` `#sca_fg_cart` 1440 ~808px; 375/768 h=0 — sayfa native drawer’ı dolduruyor. Observation `#main-content` viewport.  
+Öneri: leftover — mobil cart sayfa = drawer  
+Karar: onay bekliyor
+
+---
+
 ## İnce / tekrar
 
 - Home Best Sellers Rebuy `#rebuy-widget-118304` — observation var; aynı widget id header/cart dump’ta da geçti.  
