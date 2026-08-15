@@ -24,7 +24,7 @@ Durum: `done` = main'e merge · `in progress` = açık PR · boş = kuyrukta
 | 12 | in progress | chomps.com | https://chomps.com |
 | 13 | done | vollebak.com | https://vollebak.com |
 | 14 | done | drinkhiyo.com | https://drinkhiyo.com |
-| 15 | in progress | boka.com | https://boka.com |
+| 15 | done | boka.com | https://boka.com |
 | 16 | in progress | hexclad.com | https://hexclad.com |
 | 17 | in progress | primalqueen.com | https://primalqueen.com |
 | 18 | in progress | cutsclothing.com | https://cutsclothing.com |
@@ -33,7 +33,7 @@ Durum: `done` = main'e merge · `in progress` = açık PR · boş = kuyrukta
 | 21 | in progress | xeroshoes.com | https://xeroshoes.com |
 | 22 | in progress | ghia.com | https://ghia.com |
 | 23 | in progress | madeincookware.com | https://madeincookware.com |
-| 24 | | necessaire.com | https://necessaire.com |
+| 24 | in progress | necessaire.com | https://necessaire.com |
 | 25 | | im8health.com | https://im8health.com |
 | 26 | | comradsocks.com | https://comradsocks.com |
 | 27 | | bachans.com | https://bachans.com |
