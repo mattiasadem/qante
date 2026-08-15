@@ -1,0 +1,134 @@
+{
+  "observationId": "kettleandfire.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "kettleandfire",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.kettleandfire.com/",
+  "selector": "#boostCartMain",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/kettleandfire/default/home/global-cart-drawer.changed.tallow-upsell.1440.png",
+    "evidence/kettleandfire/default/home/global-cart-drawer.changed.tallow-upsell.375.png",
+    "evidence/kettleandfire/default/home/global-cart-drawer.changed.tallow-upsell.768.png",
+    "evidence/kettleandfire/default/home/global-cart-drawer.filled.chicken-broth.1440.png",
+    "evidence/kettleandfire/default/home/global-cart-drawer.filled.chicken-broth.375.png",
+    "evidence/kettleandfire/default/home/global-cart-drawer.filled.chicken-broth.768.png",
+    "evidence/kettleandfire/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/kettleandfire/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/kettleandfire/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "Boost Commerce cart. Boş: Your cart is empty + best seller önerileri. Rewards: Free Shipping / 10% / 15% / 20%.",
+  "delta": "GrowAOV-Trigger #CartTrigger. /cart ayrıca .wfx-cart sayfası var. Powered by Boost.",
+  "captureMode": "viewport",
+  "prepareClick": "#CartTrigger",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.kettleandfire.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.wfx-header__cart-toggle",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.kettleandfire.com/products/chicken-bone-broth",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#AddToCart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a.wfx-header__cart-toggle",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "chicken-broth"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".boost-cart__product--add",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "tallow-upsell"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boost drawer boş; Start with our best sellers 2×2; Free Shipping / 10–20% off bar; Shop All Products.",
+    "filled": "Chicken Bone Broth 6-pack subscribe $40.74 (üstü $50.94); Add 6 more cartons; tallow upsell; Go to checkout.",
+    "changed": "Beef Tallow 14 oz $19.99 (qty 1, Subscribe & Save 20%) + Chicken 6-pack $40.74; subtotal $60.73; Add 5 more cartons. Adet stepper yok (qty=pack PDP)."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC #AddToCart UI (6-pack subscribe). Boost’ta plus/minus yok — changed = tallow upsell Add. Checkout tıklanmadı. Promo code PII.",
+  "capture": {
+    "url": "https://www.kettleandfire.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:36:59.837Z"
+  }
+}
