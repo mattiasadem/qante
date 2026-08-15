@@ -1,0 +1,115 @@
+{
+  "observationId": "vessi.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "vessi",
+  "preset": "default",
+  "sayfa": "home",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/vessi/default/home/global-cart-drawer.1440.png",
+    "evidence/vessi/default/home/global-cart-drawer.375.png",
+    "evidence/vessi/default/home/global-cart-drawer.768.png",
+    "evidence/vessi/default/home/global-cart-drawer.filled.weekend-classic.1440.png",
+    "evidence/vessi/default/home/global-cart-drawer.filled.weekend-classic.375.png",
+    "evidence/vessi/default/home/global-cart-drawer.filled.weekend-classic.768.png",
+    "evidence/vessi/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/vessi/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/vessi/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "url": "https://vessi.com/",
+  "selector": "#cart-drawer",
+  "captureMode": "viewport",
+  "prepareClick": "button[aria-label='Open cart drawer']",
+  "notlar": "Sağ cart-drawer. Boş: Your cart is empty; Discover what life with dry socks… FREE STANDARD SHIPPING. /cart → /#cart.",
+  "delta": "Ayrı cart sayfası yok. cart-page-main yok.",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://vessi.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "header-v2.header-v2",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button[aria-label='Open cart drawer']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://vessi.com/products/womens-weekend-classic-marble-white",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#shopify-section-template--16074643898453__main input[name='Size'][value='6']",
+      "capture": false,
+      "not": "Beden 6 radio — [name=id] dolsun"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--16074643898453__main button[name='add'], #shopify-section-template--16074643898453__main button[type='submit']",
+      "capture": false,
+      "not": "Weekend Classic ATC after size 6; fallback /cart/add.js"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "forceOpen",
+      "selector": "header-v2.header-v2",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button[aria-label='Open cart drawer']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "weekend-classic"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty; Discover what life with dry socks is all about!; Free Standard Shipping $150+; Free 30 Day Returns; Stormburst Low Top $170 Men's + Weekend Classic $150 Women's; Shop Women / Shop Men.",
+    "filled": "768/1440: Your cart (1); Weekend Classic Marble White Women's 6 $150 qty 1; All offers unlocked · Free Shipping · $25 off belt bag; STOCK UP socks 3-pack/7-pack; Secure Checkout $150. 375 PNG is PDP with cart badge 1 — ATC opened then cart click closed drawer."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC via UI after size radio 6 (not cart/add.js). 375 ikinci cart tık drawer'ı kapattı — üçüncü deneme yok. Checkout/kupon yok. /cart → /#cart.",
+  "capture": {
+    "url": "https://vessi.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:13:51.540Z",
+    "prepareClick": "button[aria-label='Open cart drawer']"
+  }
+}

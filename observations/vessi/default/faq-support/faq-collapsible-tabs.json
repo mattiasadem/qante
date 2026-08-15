@@ -1,0 +1,66 @@
+{
+  "observationId": "vessi.default.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "vessi",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/vessi/default/faq-support/faq-collapsible-tabs.1440.png",
+    "evidence/vessi/default/faq-support/faq-collapsible-tabs.375.png",
+    "evidence/vessi/default/faq-support/faq-collapsible-tabs.768.png",
+    "evidence/vessi/default/faq-support/faq-collapsible-tabs.changed.sizing-tab.1440.png",
+    "evidence/vessi/default/faq-support/faq-collapsible-tabs.changed.sizing-tab.375.png",
+    "evidence/vessi/default/faq-support/faq-collapsible-tabs.changed.sizing-tab.768.png",
+    "evidence/vessi/default/faq-support/faq-collapsible-tabs.initial.faq-kategoriler.1440.png",
+    "evidence/vessi/default/faq-support/faq-collapsible-tabs.initial.faq-kategoriler.375.png",
+    "evidence/vessi/default/faq-support/faq-collapsible-tabs.initial.faq-kategoriler.768.png"
+  ],
+  "url": "https://vessi.com/pages/help-centre",
+  "selector": "#shopify-section-template--16074584227925__faqs_8w3g3n",
+  "notlar": "Frequently Asked Questions · Materials & Care / Sizing / Shipping / Returns. ~1332px.",
+  "delta": "Kategori sekmeli FAQ.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://vessi.com/pages/help-centre",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16074584227925__faqs_8w3g3n",
+      "capture": true,
+      "etiket": "faq-kategoriler"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--16074584227925__faqs_8w3g3n >> text=Sizing",
+      "capture": true,
+      "etiket": "sizing-tab"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Materials & Care tab; How does the waterproof tech work? open (Dyma-tex). Other care Qs collapsed.",
+    "changed": "Sizing tab active; Qs: half sizes, men vs women size, wide/narrow, other brands, orthotics."
+  },
+  "missingStates": [],
+  "interactionNote": "Sizing tab. Header Sizing linkine kaçma — section scoped.",
+  "capture": {
+    "url": "https://vessi.com/pages/help-centre",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:59:52.751Z"
+  }
+}

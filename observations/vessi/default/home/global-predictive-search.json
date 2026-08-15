@@ -1,0 +1,86 @@
+{
+  "observationId": "vessi.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "vessi",
+  "preset": "default",
+  "sayfa": "home",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/vessi/default/home/global-predictive-search.initial.arama-acik.1440.png",
+    "evidence/vessi/default/home/global-predictive-search.input.weekend.1440.png"
+  ],
+  "url": "https://vessi.com/",
+  "selector": "[data-drawer-nav='search']",
+  "captureMode": "viewport",
+  "notlar": "Kapalıda header-search 0px + Top Suggestions (Weekend Classic). Açık: drawer input[name=q] placeholder Search.",
+  "delta": "Öneri listesi #predictive-search-default içinde; input header drawer'da (data-drawer-nav=search).",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://vessi.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "header-v2.header-v2",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button[aria-label='Open search']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik",
+      "viewports": [
+        "1440"
+      ]
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input.form__input[type='search'][name='q']",
+      "value": "weekend",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "weekend",
+      "not": "katalogSorgu weekend — Weekend Classic",
+      "viewports": [
+        "1440"
+      ]
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440 Search overlay; placeholder Search; Top Suggestions: Women's Weekend Classic Marble White, Men's Weekend Classic Asphalt Black, Women's Stormburst High Top Frost White.",
+    "input": "1440 query weekend; Products (8 results): Weekend Classic/Neo Venice, Shell/Sparrow, USA, Light Grey/White, Black/White."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "adım 2 (click button[aria-label='Open search']): locator.click: Element is outside of the viewport\nCall log:\n  - waiting for locator('button[aria-label=\\'Open search\\']').nth(1)\n    - locator resolved to <button aria-expanded=\"false\" aria-label=\"Open search\" data-mobile-drawer-nav-trigger=\"search\">…</button>\n  - attempting click action\n    - scrolling into view if needed\n    - done scrolling\n"
+    },
+    {
+      "state": "input",
+      "sebep": "capture (375): zero-size / eşleşmedi: [data-drawer-nav='search']"
+    }
+  ],
+  "interactionNote": "375/768 header search ikonu yok; arama mobil menü/off-canvas (x negatif). İkinci deneme yok — leftover. PII yok.",
+  "capture": {
+    "url": "https://vessi.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:55:44.836Z",
+    "prepareClick": "button[aria-label='Open search']"
+  }
+}
