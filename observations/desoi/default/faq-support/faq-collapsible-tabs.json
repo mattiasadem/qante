@@ -1,0 +1,44 @@
+{
+  "observationId": "desoi.default.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "desoi",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "url": "https://drinkdesoi.com/pages/faq",
+  "selector": "#shopify-section-template--26526041932143__collapsible_tabs_phAkEE",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [],
+  "notlar": "Product FAQ. What’s an apéritif? / What does De Soi mean? …",
+  "delta": "Hyper collapsible_tabs.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://drinkdesoi.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--26526041932143__collapsible_tabs_phAkEE",
+      "capture": true,
+      "etiket": "kapali"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--26526041932143__collapsible_tabs_phAkEE details summary, #shopify-section-template--26526041932143__collapsible_tabs_phAkEE .accordion-details__summary",
+      "capture": true,
+      "etiket": "ilk-soru"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Product FAQ başlıkları kapalı.",
+    "changed": "İlk soru cevabı açık."
+  },
+  "missingStates": []
+}

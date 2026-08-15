@@ -1,0 +1,52 @@
+{
+  "observationId": "desoi.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "desoi",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://drinkdesoi.com/",
+  "selector": "#shopify-section-sections--26526041637231__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Logo De Soi center. Nav: Shop (mega hover) / Build Your Own Bundle / Subscribe / Fun Stuff (dropdown). Account + Cart. Sticky always. Hamburger 375/768 → #MenuDrawer. Arama ikonu yok.",
+  "delta": "Hyper header. Mega #Mega-menu-item-sidebar_KKNXxk trigger=hover, data-link=/collections/all. Shop paneli Classic Cocktails ürün kartları. Dil seçici yok. Account PII. Alia promo popup hover'ı kesebiliyor.",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://drinkdesoi.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "selector": "body",
+      "value": "Escape",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Alia popup kapat; kapalı sticky bar"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Mega-menu-item-sidebar_KKNXxk > summary",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Shop hover → Classic Cocktails ürün kartları"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Shop / Bundle / Subscribe / Fun Stuff; Cart; logo ortada.",
+    "open": "1440 Shop mega — Classic Cocktails ürün görselleri (St. Moritz Mule, Haute Margarita, Spritz Italiano…)."
+  },
+  "missingStates": [],
+  "interactionNote": "Alia #alia-root-302414 promo dialog hover'ı keser; Escape ile kapatıldı. 375/768 mega yok — hamburger ayrı observation."
+}

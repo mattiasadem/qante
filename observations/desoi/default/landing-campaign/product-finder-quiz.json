@@ -1,0 +1,46 @@
+{
+  "observationId": "desoi.default.landing-campaign.product-finder-quiz",
+  "schemaId": "product-finder-quiz",
+  "kaynak": "desoi",
+  "preset": "default",
+  "sayfa": "landing-campaign",
+  "url": "https://drinkdesoi.com/pages/find-your-de-soi",
+  "selector": "#shopify-section-template--26526042128751__main",
+  "evidenceSlug": "product-finder-quiz",
+  "evidence": [],
+  "notlar": "Find Your De Soi. Which De Soi suits your style? START QUIZ. PII dur.",
+  "delta": "Generic page main + quiz embed. product-finder-quiz. E-posta yok — dur.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://drinkdesoi.com/pages/find-your-de-soi",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--26526042128751__main",
+      "capture": true,
+      "etiket": "basla"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button:has-text('START QUIZ'), a:has-text('START QUIZ')",
+      "capture": true,
+      "etiket": "quiz-acik",
+      "not": "İlk adım; e-posta/SMS yok — PII dur"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Find Your De Soi + START QUIZ.",
+    "changed": "Quiz ilk soru — e-posta istenirse dur."
+  },
+  "missingStates": [],
+  "interactionNote": "PII (email/SMS) yok. Checkout yok."
+}

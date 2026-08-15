@@ -1,0 +1,46 @@
+{
+  "observationId": "desoi.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "desoi",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://drinkdesoi.com/products/spritz-italiano-cocktail",
+  "selector": "#shopify-section-template--26526041964911__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "Spritz Italiano buy box. Galeri + selling_plan abonelik varsayılan (?selling_plan=). Choose Options / Add.",
+  "delta": "Hyper main-product. Subscribe selling plan URL'de. One-time vs subscribe interact.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://drinkdesoi.com/products/spritz-italiano-cocktail",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--26526041964911__main",
+      "capture": true,
+      "etiket": "subscribe"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "input[name='selling_plan'][value=''], label:has-text('One-time'), button:has-text('One-time'), [data-selling-plan-group] label",
+      "capture": true,
+      "etiket": "one-time",
+      "not": "One-time / selling plan değişimi — eşleşmezse missing"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Spritz Italiano buy box; subscribe selling plan seçili olabilir.",
+    "changed": "One-time seçimi piksel değişirse yazılacak."
+  },
+  "missingStates": [],
+  "interactionNote": "Selling plan selector Hyper/Recharge benzeri; yoklanır."
+}

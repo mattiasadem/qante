@@ -1,0 +1,69 @@
+{
+  "observationId": "desoi.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "desoi",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://drinkdesoi.com/",
+  "selector": "#rebuy-cart",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Rebuy Smart Cart. Opener a.cart-drawer-button aria-controls=CartDrawer href=/cart. Native #CartDrawer yok. /cart → /?viewcart=true. Body.rebuy-cart-visible.",
+  "delta": "Hyper CartDrawer yerine Rebuy #rebuy-cart / .rebuy-cart__flyout. global-cart-drawer'a map. Native cart page yok.",
+  "captureMode": "viewport",
+  "prepareClick": "a.cart-drawer-button",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://drinkdesoi.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.cart-drawer-button",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Rebuy empty flyout"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://drinkdesoi.com/products/spritz-italiano-cocktail",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[type='submit'], button[name='add']",
+      "capture": false,
+      "not": "Spritz Italiano ATC; abonelik varsayılan olabilir"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a.cart-drawer-button",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "spritz-italiano"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Rebuy empty cart flyout + progress bar (free shipping $60).",
+    "filled": "Spritz Italiano satırı beklenir; checkout tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "Rebuy Smart Cart 2.0. Native CartDrawer yok. Checkout/kupon yok. Qty changed yoklandıysa yazılacak."
+}

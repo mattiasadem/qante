@@ -1,0 +1,47 @@
+{
+  "observationId": "desoi.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "desoi",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://drinkdesoi.com/",
+  "selector": "#MenuDrawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "Opener .menu-drawer-button aria-controls=MenuDrawer. Shop / Bundle / Subscribe / Fun Stuff + Sign in + sosyal.",
+  "delta": "Hyper menu-drawer. 1440 hamburger lg:hidden.",
+  "captureMode": "viewport",
+  "prepareClick": ".menu-drawer-button",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://drinkdesoi.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": ".menu-drawer-button",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "viewports": [
+        "375",
+        "768"
+      ]
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: Shop / Build Your Own Bundle / Subscribe / Fun Stuff; Sign in/Register; sosyal."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger 0px — mega ayrı"
+    }
+  ]
+}
