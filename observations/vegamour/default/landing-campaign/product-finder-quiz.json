@@ -1,0 +1,62 @@
+{
+  "observationId": "vegamour.default.landing-campaign.product-finder-quiz",
+  "schemaId": "product-finder-quiz",
+  "kaynak": "vegamour",
+  "preset": "default",
+  "sayfa": "landing-campaign",
+  "url": "https://vegamour.com/pages/hair-quiz",
+  "selector": "#shopify-section-template--19977498165363__main",
+  "evidenceSlug": "product-finder-quiz",
+  "evidence": [
+    "evidence/vegamour/default/landing-campaign/product-finder-quiz.1440.png",
+    "evidence/vegamour/default/landing-campaign/product-finder-quiz.375.png",
+    "evidence/vegamour/default/landing-campaign/product-finder-quiz.768.png",
+    "evidence/vegamour/default/landing-campaign/product-finder-quiz.changed.thinning.1440.png",
+    "evidence/vegamour/default/landing-campaign/product-finder-quiz.changed.thinning.375.png",
+    "evidence/vegamour/default/landing-campaign/product-finder-quiz.changed.thinning.768.png",
+    "evidence/vegamour/default/landing-campaign/product-finder-quiz.initial.part.1440.png",
+    "evidence/vegamour/default/landing-campaign/product-finder-quiz.initial.part.375.png",
+    "evidence/vegamour/default/landing-campaign/product-finder-quiz.initial.part.768.png"
+  ],
+  "notlar": "Hair Quiz. Jebbit iframe https://vegamour.jebbit.com/6aai3j6i. Header yok.",
+  "delta": "Üçüncü parti Jebbit. Adımlar PII'den önce dur. iframe leftover.",
+  "capture": {
+    "url": "https://vegamour.com/pages/hair-quiz",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:39:02.907Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://vegamour.com/pages/hair-quiz",
+      "capture": true,
+      "etiket": "part",
+      "not": "Jebbit adım 1 — Full / Thinning / Sparse"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "iframe.jebbit-iframe >> text=Thinning",
+      "capture": true,
+      "etiket": "thinning",
+      "not": "İlk seçim; e-posta/PII dur"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Jebbit adım 1: Full / Thinning / Sparse part.",
+    "changed": "Thinning sonrası hormonal shifts / menopoz metni + citation. E-posta yok — PII dur."
+  },
+  "missingStates": [],
+  "interactionNote": "Jebbit cross-origin iframe. PII/e-posta gönderilmedi."
+}
