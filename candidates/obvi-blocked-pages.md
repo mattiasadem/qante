@@ -1,26 +1,26 @@
-# ADAY / BLOCKER: Obvi bundle builder & community join
+# ADAY / BLOCKER: Obvi kırık / 404 sayfalar
 
-**Kaynak:** Obvi (myobvi.com) · preset `default`
+**Kaynak:** Obvi (myobvi.com) · preset `default` · 2026-08-15
 
-## Bundle builder — blocked
-
-| URL | Durum | Not |
-|---|---|---|
-| `/pages/bundle-builder` | **Broken** | Sayfa başlığı "Something went wrong"; section yok. Mega SHOP: BUILD YOUR OWN BUNDLE. |
-| `/pages/bundler` | 404 | Footer alternatif link |
-
-**Öneri:** `commerce-tools-products-bundle` şeması mevcut; Obvi instance observation açılmadı — app/embed kırık. Yeniden erişilebilir olunca capture.
-
-## Community join — 404
+## Bundle builder — çalışıyor
 
 | URL | Durum | Not |
 |---|---|---|
-| `/pages/join-obvi-community` | **404** | Home community band "JOIN THE COMMUNITY" hedefi |
-| `/pages/community` | 200 | Community landing sayfası erişilebilir (ayrı observation gerekmez — learn/community içerik) |
+| `/pages/bundle-builder` | **200 public** | BUNDLE & SAVE + sticky YOUR BUNDLE. Observation: `bundle/commerce-tools-products-bundle` |
+| `/pages/bundler` | **404** | Footer/mega alternatif — şema yok |
 
-**Blocker:** JOIN CTA 404; community band observation delta'da not edildi.
+## 404 — todo only, şema yok
+
+| URL | Durum | Kaynak link |
+|---|---|---|
+| `/pages/join-obvi-community` | **404** | Home community band + footer "Join the Community" |
+| `/pages/bundler` | **404** | Bundle alternatif |
+| `/pages/wholesale-inquiries` | **404** | Footer |
+| `/pages/tracking` | **404** | Footer |
+
+`/pages/community` 200 (ayrı landing; join CTA değil).
 
 ## Karar
 
-- [ ] Bundle builder düzelince observation + capture
-- [ ] join-obvi-community redirect/404 çözülünce home community band retest
+- [x] Bundle builder observation (`commerce-tools-products-bundle`)
+- [ ] 404 URL'ler düzelince retest — şema icat etme

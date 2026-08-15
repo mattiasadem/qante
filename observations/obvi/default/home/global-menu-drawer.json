@@ -1,0 +1,45 @@
+{
+  "observationId": "obvi.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "obvi",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://myobvi.com/",
+  "selector": "[id*=\"modal_sidebar_menu\"] section.fixed",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "captureMode": "viewport",
+  "interactionStates": ["open"],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://myobvi.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "a[href=\"#megamenu--mobile\"]",
+      "viewports": ["375", "768"],
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "[id*=\"modal_sidebar_menu\"] section.fixed",
+      "etiket": "hamburger",
+      "not": "Sol drawer: Shop All, Weight Loss ›, Collagen Support ›, Daily Health ›, Build Your Bundle, Learn ›, quiz promo, ACCOUNT/FAQ/CONTACT, SHOP BEST SELLERS, free-shipping"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "open": "375/768 sol hamburger: Shop All, benefit akordeonlar, Build Your Bundle, Learn, quiz kartı, footer ACCOUNT/FAQ/CONTACT, SHOP BEST SELLERS, free-shipping notu. 1440 mega — drawer yok."
+  },
+  "interactionNote": "1440'ta hamburger yok (navigation-header-mega). Resmi 375 zorunlu; 768 aynı drawer.",
+  "notlar": "Platter modal_sidebar_menu — global-menu-drawer.",
+  "delta": "Quiz promo kart + Build Your Bundle birinci sınıf satır. Mega hover ayrı observation.",
+  "capture": {
+    "url": "https://myobvi.com/",
+    "viewports": ["375", "768", "1440"],
+    "mode": "viewport",
+    "method": "interaction-steps"
+  }
+}
