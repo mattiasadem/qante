@@ -79,3 +79,9 @@ Karar: leftover
 - Newsletter / track submit / retailer form / warranty claim — PII yok
 - Accessibility / community-guidelines / gift-cards help sayfaları — 429 veya temsilci yok
 - `/pages/this-page-does-not-exist-qante` 429
+- 1440 FEATURED mega bazı static section kırpımlarında açık (default/hover)
+- Cart filled 375/768: ATC sonrası `header a[href='/cart']` viewport dışı — 1440 dolu kanıtlı
+- Drawer Shopify-section wrapper h=0; capture inner `.is-expanded`
+- Help Center accordion (mobil menü +) açılmadı
+- PLP FILTER paneli açılmadı
+- Quiz NEXT / sonraki adımlar leftover (RUNNING yeterli)

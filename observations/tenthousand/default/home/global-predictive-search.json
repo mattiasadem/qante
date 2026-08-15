@@ -5,9 +5,12 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://www.tenthousand.cc/",
-  "selector": "#shopify-section-sections--18860560089175__drawer_search_FRP6Jk",
+  "selector": ".tvg_drawer_search_OD4XrG_root.is-expanded",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/tenthousand/default/home/global-predictive-search.initial.top-searches.1440.png",
+    "evidence/tenthousand/default/home/global-predictive-search.input.interval.1440.png"
+  ],
   "notlar": "Search ikon → drawer. TOP SEARCHES: INTERVAL, SHORTS, TACTICAL, SESSION. /search tam sayfa ayrı.",
   "delta": "Shiro drawer_search_FRP6Jk. Kapalı h=0.",
   "captureMode": "viewport",
@@ -25,7 +28,7 @@
     {
       "state": "initial",
       "action": "click",
-      "selector": "a.tvg_header_BIfLoG_Header__icon.js-offcanvas-trigger[href='/search']",
+      "selector": "header a[href='/search']",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "top-searches",
@@ -37,7 +40,7 @@
     {
       "state": "input",
       "action": "fill",
-      "selector": "#shopify-section-sections--18860560089175__drawer_search_FRP6Jk input[type='search'], #shopify-section-sections--18860560089175__drawer_search_FRP6Jk input[name='q'], .js-drawer-search-section input",
+      "selector": "input#q.js-react-search-input",
       "value": "interval",
       "capture": true,
       "captureMode": "viewport",
@@ -50,8 +53,19 @@
   ],
   "stateFindings": {
     "initial": "1440 SEARCH + TOP SEARCHES INTERVAL/SHORTS/TACTICAL/SESSION.",
-    "input": "interval yazıldı — öneri/ürün karesine bak."
+    "input": "INTERVAL yazıldı: DID YOU MEAN INTERVAL/SHORT/SHIRT/PANT + SUGGESTED PRODUCTS (Interval Pant $138, Short 7\" $88, Micro-X $88) + VIEW ALL RESULTS."
   },
   "missingStates": [],
-  "interactionNote": "375/768 arama menü drawer içinde olabilir. Fill piksel vermezse missingStates."
+  "interactionNote": "Section wrapper h=0; aside .tvg_drawer_search_OD4XrG_root.is-expanded. Input #q. 375/768 arama menü drawer’da.",
+  "capture": {
+    "url": "https://www.tenthousand.cc/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:22:33.387Z"
+  }
 }
