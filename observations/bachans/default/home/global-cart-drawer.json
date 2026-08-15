@@ -7,12 +7,26 @@
   "url": "https://bachans.com/",
   "selector": "cart-drawer",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/bachans/default/home/global-cart-drawer.changed.qty2.1440.png",
+    "evidence/bachans/default/home/global-cart-drawer.changed.qty2.375.png",
+    "evidence/bachans/default/home/global-cart-drawer.changed.qty2.768.png",
+    "evidence/bachans/default/home/global-cart-drawer.filled.original.1440.png",
+    "evidence/bachans/default/home/global-cart-drawer.filled.original.375.png",
+    "evidence/bachans/default/home/global-cart-drawer.filled.original.768.png",
+    "evidence/bachans/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/bachans/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/bachans/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
   "notlar": "Sağ cart-drawer. Boş + Original ATC + adet.",
   "delta": "Section #shopify-section-cart-drawer height 0; kutu cart-drawer. /cart ayrı sayfa var.",
   "captureMode": "viewport",
   "prepareClick": "#cart-icon-bubble",
-  "interactionStates": ["initial", "filled", "changed"],
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
   "interactionSteps": [
     {
       "state": "initial",
@@ -88,22 +102,119 @@
       "selector": "#cart-icon-bubble",
       "capture": true,
       "captureMode": "viewport",
-      "etiket": "original"
+      "etiket": "original",
+      "viewports": [
+        "1440",
+        "768"
+      ]
+    },
+    {
+      "state": "filled",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": false,
+      "viewports": [
+        "375"
+      ],
+      "not": "375'te ATC drawer açıp cart ikonu kapatıyor"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 600,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "original",
+      "viewports": [
+        "375"
+      ]
     },
     {
       "state": "changed",
       "action": "click",
-      "selector": "cart-drawer button[name='plus'], cart-drawer [name='plus'], cart-drawer button[aria-label*='Increase' i]",
+      "selector": "button[name='plus']",
       "capture": true,
       "captureMode": "viewport",
-      "etiket": "qty2"
+      "etiket": "qty2",
+      "viewports": [
+        "1440",
+        "768"
+      ]
+    },
+    {
+      "state": "changed",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "viewports": [
+        "375"
+      ]
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 400,
+      "capture": false,
+      "viewports": [
+        "375"
+      ]
+    },
+    {
+      "state": "changed",
+      "action": "addToCart",
+      "selector": "button[name='add']",
+      "capture": false,
+      "viewports": [
+        "375"
+      ],
+      "not": "375 drawer'da plus viewport dışı; ikinci ATC"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false,
+      "viewports": [
+        "375"
+      ]
+    },
+    {
+      "state": "changed",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": false,
+      "viewports": [
+        "375"
+      ]
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 600,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "qty2",
+      "viewports": [
+        "375"
+      ]
     }
   ],
   "stateFindings": {
-    "initial": "",
-    "filled": "",
-    "changed": ""
+    "initial": "YOUR CART IS EMPTY + Red Octo Pin $5 rec + SUBTOTAL $0.00 + CHECKOUT. 1440 sağ panel; 375 tam drawer.",
+    "filled": "THE ORIGINAL 1× $9.49, “$25.51 away from FREE shipping”, SUBTOTAL $9.49, Red Octo Pin rec.",
+    "changed": "Adet 2, SUBTOTAL $18.98, “$16.02 away from FREE shipping”. 375 ikinci ATC (plus viewport dışı)."
   },
   "missingStates": [],
-  "interactionNote": "Checkout tıklanmadı. ATC button[name=add]."
+  "interactionNote": "Checkout tıklanmadı. ATC button[name=add] via ui. 375 filled: ATC sonrası cart ikonu drawer'ı kapatıyor → forceOpen. 375 changed: plus viewport dışı → Escape + ikinci ATC + forceOpen.",
+  "capture": {
+    "url": "https://bachans.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:27:53.458Z"
+  }
 }

@@ -7,11 +7,19 @@
   "url": "https://bachans.com/",
   "selector": "fixed-header#spd_header",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
+  "evidence": [
+    "evidence/bachans/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/bachans/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/bachans/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/bachans/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
   "notlar": "Logo + Shop mega + About + Recipes + Products + Log in + Cart + Find A Store. 375: hamburger SVG + logo + cart.",
   "delta": "#shopify-section-header height 0; kutu fixed-header#spd_header. Arama ikonu yok.",
   "captureMode": "section",
-  "interactionStates": ["initial", "open"],
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
   "interactionSteps": [
     {
       "state": "initial",
@@ -47,23 +55,31 @@
     },
     {
       "state": "open",
-      "action": "click",
+      "action": "hover",
       "selector": "#Details-HeaderMenu-1 > summary",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "shop-mega",
-      "viewports": ["1440"]
+      "viewports": [
+        "1440"
+      ]
     }
   ],
   "stateFindings": {
-    "initial": "",
-    "open": ""
+    "initial": "Bar: BACHAN'S logo + Shop / About / Recipes / Products / Find A Store + account + cart. 375: hamburger + logo + cart. Arama ikonu yok.",
+    "open": "1440 Shop hover: sol bej kolon BARBECUE / HERITAGE / DIPPING / MERCH / GIFTS + Shop All; sağ ızgara ORIGINAL / HOT HONEY / ROASTED GARLIC / SWEET HONEY / SWEET PINEAPPLE / SWEET & SPICY / HELLA HOT + Mix & Match. Shop altı çizili."
   },
-  "missingStates": [
-    {
-      "state": "open",
-      "sebep": "375 mega yok — hamburger drawer (global-menu-drawer). 768 masaüstü nav göründü."
-    }
-  ],
-  "interactionNote": "Shop summary #Details-HeaderMenu-1. Arama yok."
+  "missingStates": [],
+  "interactionNote": "Shop summary #Details-HeaderMenu-1 hover (click /collections/shop'a gider). Arama yok. Mega yalnız 1440.",
+  "capture": {
+    "url": "https://bachans.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:17:45.195Z"
+  }
 }

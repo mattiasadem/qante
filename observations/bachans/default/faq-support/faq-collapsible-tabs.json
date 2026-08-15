@@ -7,10 +7,20 @@
   "url": "https://bachans.com/pages/faqs",
   "selector": "#shopify-section-template--17829507825844__6f82a22e-7312-4744-9cb3-697a429c4a68",
   "evidenceSlug": "faq-collapsible-tabs",
-  "evidence": [],
+  "evidence": [
+    "evidence/bachans/default/faq-support/faq-collapsible-tabs.changed.ilk-soru.1440.png",
+    "evidence/bachans/default/faq-support/faq-collapsible-tabs.changed.ilk-soru.375.png",
+    "evidence/bachans/default/faq-support/faq-collapsible-tabs.changed.ilk-soru.768.png",
+    "evidence/bachans/default/faq-support/faq-collapsible-tabs.initial.kapali.1440.png",
+    "evidence/bachans/default/faq-support/faq-collapsible-tabs.initial.kapali.375.png",
+    "evidence/bachans/default/faq-support/faq-collapsible-tabs.initial.kapali.768.png"
+  ],
   "notlar": "FREQUENTLY ASKED QUESTIONS — ALL / SAUCE / SHIPPING / ORDERS accordion.",
   "delta": "Kategori sekmeleri + details.",
-  "interactionStates": ["initial", "changed"],
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
   "interactionSteps": [
     {
       "state": "initial",
@@ -40,15 +50,26 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": "#shopify-section-template--17829507825844__6f82a22e-7312-4744-9cb3-697a429c4a68 details summary",
+      "selector": "spd-collapse-tab summary",
       "capture": true,
       "etiket": "ilk-soru"
     }
   ],
   "stateFindings": {
-    "initial": "",
-    "changed": ""
+    "initial": "ALL (dolu kırmızı) / SAUCE / SHIPPING / ORDERS. Tüm sorular + kapalı.",
+    "changed": "İlk SAUCE sorusu açık (—): “Is the sauce shelf-stable and what is the shelf life?” + cevap görünür. Diğerleri +."
   },
   "missingStates": [],
-  "interactionNote": "İlk details summary. Sekme ALL/SAUCE ayrıca yoklandı değil."
+  "interactionNote": "Tık spd-collapse-tab summary. ALL/SAUCE sekme değişimi yoklandı değil.",
+  "capture": {
+    "url": "https://bachans.com/pages/faqs",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:19:28.175Z"
+  }
 }

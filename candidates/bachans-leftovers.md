@@ -47,6 +47,14 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: bachans-lookbook-justin-text  
+Gerekçe: `/pages/look-for-the-octopus` `rs_text_block_ac4Urf` (“Justin and his wife Chanra…”). Kısa fold-altı şerit; resmi section crop `fixed-header` (announcement+nav, ~189px) verdi, metin yok. Viewport capture `scrollTo(0)` ile üste döner. Observation yazılmadı.  
+Örnekler: https://bachans.com/pages/look-for-the-octopus  
+Öneri: leftover — chrome crop  
+Karar: onay bekliyor
+
+---
+
 ## Diğer leftover (aday değil)
 
 - Speedopz iç kopya section’lar (`content_*`, UUID wrappers) — dış template alındı
@@ -61,3 +69,6 @@ Karar: onay bekliyor
 - Returns / terms aynı `page_CMeMx9` template (shipping alındı)
 - Newsletter / contact form gönderilmedi
 - Account login `/a/account/login` — dur
+- Home claim ikon şeridi (NON-GMO / COLD-FILLED / CLEAN / NO PRESERVATIVES / NOTHING ARTIFICIAL) — 113px `spd-slider`; resmi crop `fixed-header` altına oturdu, viewport capture `scrollTo(0)` ile fold üstüne döndü. Observation yazılmadı.
+- Menu drawer 768: hamburger gizli, masaüstü nav
+- FAQ ALL/SAUCE/SHIPPING/ORDERS sekme değişimi yoklandı değil (yalnız ilk accordion)
