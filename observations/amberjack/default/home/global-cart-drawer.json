@@ -1,0 +1,94 @@
+{
+  "observationId": "amberjack.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "amberjack",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.amberjack.shop/",
+  "selector": "#CartPopup",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/amberjack/default/home/global-cart-drawer.1440.png",
+    "evidence/amberjack/default/home/global-cart-drawer.375.png",
+    "evidence/amberjack/default/home/global-cart-drawer.768.png",
+    "evidence/amberjack/default/home/global-cart-drawer.filled.court-qty1.1440.png",
+    "evidence/amberjack/default/home/global-cart-drawer.filled.court-qty1.375.png",
+    "evidence/amberjack/default/home/global-cart-drawer.filled.court-qty1.768.png",
+    "evidence/amberjack/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/amberjack/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/amberjack/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "UpCart sağ panel (#CartPopup, 440px). Boş: Your Cart Is Empty / Find Your Next Pair / Browse By Style (Best Sellers, Dress, Sneakers, Loafers, Boots).",
+  "delta": "Tema enableCartDrawer:false; gerçek sepet UpCart app. Native /cart ayrı sayfa. Section #upcart_custom_empty_cart height 0.",
+  "capture": {
+    "url": "https://www.amberjack.shop/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:32:04.523Z",
+    "prepareClick": "a[href='/cart']"
+  },
+  "captureMode": "viewport",
+  "prepareClick": "a[href='/cart']",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.amberjack.shop/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[href='/cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "UpCart boş: Your Cart Is Empty"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.amberjack.shop/products/the-court-ivory",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "product-information input[name='size'][value='10']",
+      "value": 800,
+      "capture": false,
+      "not": "Beden 10 — ATC aktif olsun (label:text-is eşleşmedi)"
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "product-information form[action*='/cart/add'] button[type='submit']",
+      "capture": false,
+      "not": "tw:button-atc — UI veya /cart/add.js"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "court-qty1",
+      "not": "UpCart ATC sonrası otomatik açılır; cart ikonu drawer altında kalır"
+    }
+  ],
+  "stateFindings": {
+    "initial": "0 Cart; Your Cart Is Empty; Find Your Next Pair; Browse By Style kartları.",
+    "filled": "The Court (Ivory) Size 10 · qty 1 · $175; Customers Also Bought; Secure Checkout. addToCart via ui."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC önce beden 10 (input[name=size]). addToCart via ui (form submit). UpCart otomatik açılır; cart ikonu overlay altında. Native /cart ayrı observation."
+}
