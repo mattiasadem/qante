@@ -1,0 +1,49 @@
+{
+  "observationId": "materialkitchen.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "materialkitchen",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://materialkitchen.com/",
+  "selector": ".dropdown__inner",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "button.header__menu-toggle (24×24) 375/768. Açık: kategori listesi + Search/Bestsellers/Gallery/About.",
+  "delta": "Tema (canlı, uydurulmadı): 08/10 - RC Variant Change Asset [EDIT HERE]. schema_name Themekit template theme, schema_version 1.0.0, theme_store_id null, role main, theme.id 141671563326. Shop material-kitchen.myshopify.com. Mega ve mobil menü aynı dropdown DOM. 1440 toggle gizli.",
+  "captureMode": "viewport",
+  "prepareClick": "button.header__menu-toggle",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://materialkitchen.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.header__menu-toggle",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "navbar-open mobil menü"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 body.navbar-open: Shop all / Prepware / Knives / Sets / Tools / Tabletop / Ceramics / Storage + Care / Final Sale / Gift Card / Search / Bestsellers / Gallery / About."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger 0px — Shop mega ayrı observation"
+    }
+  ],
+  "interactionNote": "1440 N/A. Mega ile aynı .dropdown__inner DOM; mobil toggle ile açılır."
+}

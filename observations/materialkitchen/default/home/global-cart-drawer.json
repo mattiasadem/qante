@@ -1,0 +1,74 @@
+{
+  "observationId": "materialkitchen.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "materialkitchen",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://materialkitchen.com/",
+  "selector": "aside.cart.cart-slider",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "1440 a.desktopCartBtn; 375 a.mobileCartBtn. Drawer 484×1000. Rebuy şablon script’te var, native slider kullanıldı.",
+  "delta": "Tema (canlı, uydurulmadı): 08/10 - RC Variant Change Asset [EDIT HERE]. schema_name Themekit template theme, schema_version 1.0.0, theme_store_id null, role main, theme.id 141671563326. Shop material-kitchen.myshopify.com. Native cart-slider + Rebuy app. /cart ayrı SCA free-gift sayfa. Qty changed yoklanır.",
+  "captureMode": "viewport",
+  "prepareClick": "a.nav__link.js-cart.desktopCartBtn, a.header__cart.mobileCartBtn",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://materialkitchen.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.nav__link.js-cart.desktopCartBtn, a.header__cart.mobileCartBtn",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş native cart-slider"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://materialkitchen.com/products/the-mk-free-board",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.main-add-to-cart-btn, button.btn--add.btn--secondary",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mk-board-qty1",
+      "not": "ATC sonrası drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], .cart__qty-plus, [class*='qty'] button, aside.cart button:has-text('+')",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "aside.cart.cart-slider boş / $0 checkout bandı beklenir.",
+    "filled": "The MK Free Board ATC sonrası drawer. Checkout’a girilmedi.",
+    "changed": "Adet artır — ara toplam değişmeli."
+  },
+  "missingStates": [],
+  "interactionNote": "Native aside.cart.cart-slider. Rebuy widget home/PDP’de ayrı. /cart SCA #sca_fg_cart sayfa. Checkout/PII yok."
+}
