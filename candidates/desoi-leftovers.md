@@ -89,6 +89,14 @@ FAQ grup 2–5 (locator / shipping / sustainability / subscriptions) — 3vp var
 PDP Lemon Elderflower — Spritz Italiano ile aynı template  
 Blog `Welcome to our store` marquee (stories/recipes)
 
+ADAY: desoi-skio-selling-plan  
+Gerekçe: PDP `label.skio-group-label` Subscribe & Save 15% / One Time Purchase. Hidden `input[name=selling_plan]`. product-info-main observation + changed state. Ayrı şema yok.  
+Örnekler: https://drinkdesoi.com/products/spritz-italiano-cocktail  
+Öneri: leftover widget — mevcut buy box'a map  
+Karar: onay bekliyor
+
+---
+
 ## Capture leftover
 
 - `global-menu-drawer` 1440 — hamburger 0px (beklenen)  
@@ -98,7 +106,10 @@ Blog `Welcome to our store` marquee (stories/recipes)
 - Home spacer `spacer_6JzYPa` height 0  
 - `global-quick-view` height 0  
 - PDP Judge.me  
-- Newsletter / contact / quiz e-posta — PII
+- Newsletter / contact / quiz e-posta — PII  
+- Cart `filled` 375 — ikinci denemede boş bag (upsell "Social Spritz" waitFor false positive); 768/1440 Spritz Italiano var  
+- Quiz `changed` 1440 — START QUIZ sonrası soru görünmedi (Rebuy overlay); 375/768 flavor sorusu var  
+- dismiss-overlays `button:has-text("Close")` Rebuy **Close Cart** ile eşleşip flyout açabiliyor (script'e dokunulmadı)
 
 ## Bilinçli atlananlar
 
