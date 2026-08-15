@@ -1,0 +1,68 @@
+{
+  "observationId": "representclo.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "representclo",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://representclo.com/",
+  "selector": "mobile-menu",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/representclo/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/representclo/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "375 hamburger. Shop Represent / Shop 247 Activewear / Retail / Explore / Join loyalty / App / Prestige / Behind the Brand / Lookbooks / Client Services / country. Tagalys arama bu panelde.",
+  "delta": "Section id mobile-menu-sliding (kapalı 0px). Açık: mobile-menu fixed inset-0 + body.mobile-nav-open. 1440 hamburger 0px.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://representclo.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "header-navigation",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button[aria-label='Open/Close Menu']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Mobil kayan menü"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: Close; Search for...; Shop Represent; Shop 247 Activewear NEW; Retail NEW; Explore; REPRESENT PRESTIGE (10% / points / rewards, Join now / Log in); Represent App; Prestige Loyalty; Behind the Brand; Lookbooks; Client Services; US / $ / English."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger 0px — mega birincil"
+    }
+  ],
+  "interactionNote": "Header forceOpen şart. Kapalı mobile-menu display:none. Shop Represent accordion leftover.",
+  "capture": {
+    "url": "https://representclo.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:27:16.080Z"
+  }
+}
