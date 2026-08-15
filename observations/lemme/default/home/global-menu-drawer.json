@@ -1,0 +1,63 @@
+{
+  "observationId": "lemme.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "url": "https://lemmelive.com/",
+  "selector": "#main_nav",
+  "captureMode": "viewport",
+  "prepareClick": "button.site-header__menu-trigger",
+  "notlar": "375/768 hamburger `button.site-header__menu-trigger` (Open Mobile Nav). 1440 0px — mega.",
+  "delta": "Custom site-nav mobil panel. 1440 N/A.",
+  "kaynak": "lemme",
+  "preset": "default",
+  "sayfa": "home",
+  "evidence": [
+    "evidence/lemme/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/lemme/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "evidenceSlug": "global-menu-drawer",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://lemmelive.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.site-header__menu-trigger",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "viewports": [
+        "375",
+        "768"
+      ]
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 tam ekran: X + search + lemmelive + BAG 0. COLLECTIONS 2×2 daire (GUMMIES / CAPSULES / CHEWS / BUILD YOUR BUNDLE). SHOP BEST SELLERS + ve SHOP BY BENEFIT + akordeon. Siyah SHOP ALL. FREE SHIPPING ON ORDERS $50+."
+  },
+  "missingStates": [],
+  "interactionNote": "Yalnız 375/768. 1440 hamburger 0px — mega. Accordion + yazılı <a> sayfaya kaçmasın diye açılmadı (changed yok).",
+  "capture": {
+    "url": "https://lemmelive.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:38:16.340Z"
+  }
+}
