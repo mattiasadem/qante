@@ -1,0 +1,65 @@
+{
+  "observationId": "dukecannon.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "dukecannon",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://dukecannon.com/",
+  "selector": ".header-sticky-wrapper",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Sticky 76px: DUKE CANNON logo; SHOP ALL / NEW ARRIVALS / REWARDS / ABOUT; Search / Log in / Cart. Shopify-section-header h=0 (drawer'lar + sticky). 375 hamburger js-drawer-open-nav.",
+  "delta": "Tema (vitrinde): [Rollback] Production | Accenture 8.12.2026. schema_name Duke Cannon Shopify Theme 1.23.1, theme_store_id null, role main, id 147550273651. Shop duke-cannon.myshopify.com. Custom Duke Cannon theme (Impulse ailesi site-header/megamenu). SHOP ALL mega görselli koleksiyon kolonları. Locale yok. Mega #shopify-section-header içinde.",
+  "capture": {
+    "url": "https://dukecannon.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "margin-box+minPad8",
+    "updatedAt": ""
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://dukecannon.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı sticky bar"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "button#shop-all, button.site-nav__link--has-dropdown:has-text('Shop All'), .site-nav--is-megamenu > button, .site-nav--is-megamenu > a",
+      "capture": false,
+      "viewports": [
+        "1440"
+      ],
+      "not": "SHOP ALL mega"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 700,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-all-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Mega panel kolonları"
+    }
+  ],
+  "stateFindings": {
+    "initial": "76px bar: logo, SHOP ALL, NEW ARRIVALS, REWARDS, ABOUT, search, login, cart."
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 mega yok — hamburger ayrı global-menu-drawer. Mega selector walk sırasında yoklanacak."
+}

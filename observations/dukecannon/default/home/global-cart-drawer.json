@@ -1,0 +1,84 @@
+{
+  "observationId": "dukecannon.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "dukecannon",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://dukecannon.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Sağ cart drawer #CartDrawer. /cart → /?viewcart=true (home). GWP $65 Hunting Soap. Kapalı 0×0.",
+  "delta": "Tema (vitrinde): [Rollback] Production | Accenture 8.12.2026. schema_name Duke Cannon Shopify Theme 1.23.1, theme_store_id null, role main, id 147550273651. Shop duke-cannon.myshopify.com. Impulse-benzeri drawer--cart. cart-page-main yok. Boş/dolu interact.",
+  "capture": {
+    "url": "https://dukecannon.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "viewport",
+    "updatedAt": ""
+  },
+  "captureMode": "viewport",
+  "prepareClick": "a.js-drawer-open-cart",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://dukecannon.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.js-drawer-open-cart:visible",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş sepet drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://dukecannon.com/products/basic-ass-pumpkin-spice-latte-brick-of-soap",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "[data-add-to-cart], button[name=add], button[type=submit][name=add]",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a.js-drawer-open-cart:visible",
+      "capture": false,
+      "not": "ATC sonrası kapalıysa aç"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "psl-qty1",
+      "not": "Dolu drawer"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Checkout/PII yok. /cart home'a düşer."
+}

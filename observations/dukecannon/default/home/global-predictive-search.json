@@ -1,0 +1,60 @@
+{
+  "observationId": "dukecannon.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "dukecannon",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://dukecannon.com/",
+  "selector": ".site-header__search-container",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "Search ikon → header search overlay. Form #HeaderSearchForm / #main-search. data-default-search=best. Predictive instructions DOM'da. /search tam sayfa ayrı.",
+  "delta": "Tema (vitrinde): [Rollback] Production | Accenture 8.12.2026. schema_name Duke Cannon Shopify Theme 1.23.1, theme_store_id null, role main, id 147550273651. Shop duke-cannon.myshopify.com. Impulse site-header__search. Kapalı 0×0.",
+  "capture": {
+    "url": "https://dukecannon.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "viewport",
+    "updatedAt": ""
+  },
+  "captureMode": "viewport",
+  "prepareClick": "a.js-search-header",
+  "interactionStates": [
+    "open",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://dukecannon.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "a.js-search-header:visible",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik",
+      "not": "Boş/default search overlay"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#main-search",
+      "value": "soap",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "soap",
+      "not": "katalogSorgu soap — 90 sonuçlu /search ile aynı kelime"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "375/768 görünür search ikonu yoklanacak."
+}
