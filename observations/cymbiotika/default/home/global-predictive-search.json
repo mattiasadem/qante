@@ -1,0 +1,58 @@
+{
+  "observationId": "cymbiotika.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "cymbiotika",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://cymbiotika.com/",
+  "selector": "#drawer-search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "#drawer-search + input#Search placeholder Search. Kapalıda x≈2802. Opener #navbar__search.",
+  "delta": "Predictive overlay; /search sayfa ayrı (search-results).",
+  "captureMode": "viewport",
+  "prepareClick": "#navbar__search",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://cymbiotika.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#navbar__search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Boş search drawer"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#drawer-search input#Search, #drawer-search input[name='q']",
+      "value": "glutathione",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "glutathione",
+      "not": "katalogSorgu glutathione"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "input": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Sorgu mağaza ürünü: glutathione. PII yok."
+}

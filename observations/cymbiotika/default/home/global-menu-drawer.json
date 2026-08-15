@@ -1,0 +1,54 @@
+{
+  "observationId": "cymbiotika.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "cymbiotika",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://cymbiotika.com/",
+  "selector": "#shopify-section-layout-header",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "button.v3-hamburger / #v3-hamburger-right aria Open menu. 1440 görünmez. 375 resmi UA’da kutu 0px olabilir.",
+  "delta": "Ayrı #menu-drawer id yok; menü header içinde. 375/768 yoklanacak.",
+  "captureMode": "viewport",
+  "prepareClick": "button.v3-hamburger, #v3-hamburger-right, button[aria-label='Open menu']",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://cymbiotika.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button[aria-label='Open menu']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "viewports": [
+        "375",
+        "768"
+      ]
+    }
+  ],
+  "stateFindings": {
+    "open": ""
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 N/A — masaüstü mega."
+    }
+  ],
+  "interactionNote": "Resmi capture isMobile:false; 375 hamburger 0px ise leftover."
+}

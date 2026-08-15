@@ -1,0 +1,88 @@
+{
+  "observationId": "cymbiotika.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "cymbiotika",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://cymbiotika.com/",
+  "selector": "#drawer-cart",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Sabit sağ panel #drawer-cart (kapalıda x≈3072). /cart → /?cart= (sayfa yok). Boş: Back to cart / free-gift / You may also like.",
+  "delta": "cart-page-main yok. Görünür opener #navbar__cart (v3 buton gizli). ATC UI tercih; variant 39369057861679 fallback.",
+  "captureMode": "viewport",
+  "prepareClick": "#navbar__cart",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://cymbiotika.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#navbar__cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://cymbiotika.com/products/glutathione",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.add-to-cart-btn",
+      "capture": false,
+      "not": "PDP Add to Cart"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": "#drawer-cart",
+      "value": 8000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "glutathione",
+      "not": "Dolu drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#drawer-cart button[aria-label*='increase' i], #drawer-cart button[name='plus'], #drawer-cart [class*='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "filled": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Kapalı drawer off-screen. /cart sayfa yok. Qty selector yoklanır; olmazsa missingStates."
+}
