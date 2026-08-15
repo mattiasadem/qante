@@ -42,7 +42,7 @@ Karar: onay bekliyor
 ADAY: javy-gorgias-help-center  
 Gerekçe: `/support` ayrı Help Center (Javvy Help Center / FAQ / ARE YOU JAVVY NOW?). Store `header#navbar_container` yok. Native contact/FAQ sayfası yok.  
 Örnekler: https://javvycoffee.com/support  
-Öneri: ertele — policy observation yalnız privacy gövdesi  
+Öneri: ertele — privacy observation 375 izolasyon yüzünden silindi  
 Karar: onay bekliyor
 
 ---
@@ -74,4 +74,7 @@ Karar: onay bekliyor
 - `/blogs/news` — 500 “Oh no!”  
 - Theme Store adı — vitrinde yok, uydurulmadı  
 - `/support/privacy-policy` Gorgias Help Center — 375’te makale kutusu izole edilemedi; şema observation silindi  
-- PLP collection pills tık → `/collections/{handle}` navigate (aynı component `changed` değil)
+- PLP collection pills tık → `/collections/{handle}` navigate (aynı component `changed` değil)  
+- `a.sale-navbar` 375 sıfır kutu — resmi capture skip (768/1440 var; mobil metin header SS’te görünür)  
+- Mega `open` — Shop All düz `<a href="/collections/all">`; hover panel yok  
+- Newsletter / affiliate / giveaway form submit — PII, doldurulmadı
