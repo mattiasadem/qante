@@ -1,0 +1,87 @@
+{
+  "observationId": "chomps.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "chomps",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://chomps.com/",
+  "selector": ".mobile-nav",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/chomps/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/chomps/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "375/768 hamburger. Shop/Learn sekmeleri; Shop All, protein, Subscribe, Collections.",
+  "delta": "Kapalıda .hide ve 0px. Açık: .mobile-nav[data-mobile-nav] tam yükseklik. 1440 N/A.",
+  "captureMode": "viewport",
+  "prepareClick": "[data-mobile-nav-open]",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://chomps.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false,
+      "not": "Klaviyo gecikmeli"
+    },
+    {
+      "state": "open",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Klaviyo/modal kapat — selector fail yok"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "[data-mobile-nav-open]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "viewports": [
+        "375",
+        "768"
+      ]
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 hamburger: SHOP (altı çizili) / LEARN / WHERE TO BUY; SHOP ALL; BEEF…CHOMPLINGS; SUBSCRIBE & SAVE; COLLECTIONS Best Sellers / Variety Packs."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger yok — masaüstü mega (navigation-header-mega.open)"
+    },
+    {
+      "state": "initial",
+      "sebep": "Kapalı .mobile-nav 0px — claiming kare açık drawer"
+    }
+  ],
+  "interactionNote": "Klaviyo: 4s + Escape. 1440 N/A. GET 10% OFF tab + Gorgias bubble karede kaldı.",
+  "capture": {
+    "url": "https://chomps.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:41:03.814Z",
+    "prepareClick": "[data-mobile-nav-open]"
+  }
+}
