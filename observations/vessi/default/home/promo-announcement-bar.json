@@ -1,0 +1,66 @@
+{
+  "observationId": "vessi.default.home.promo-announcement-bar",
+  "schemaId": "promo-announcement-bar",
+  "kaynak": "vessi",
+  "preset": "default",
+  "sayfa": "home",
+  "evidenceSlug": "promo-announcement-bar",
+  "evidence": [],
+  "url": "https://vessi.com/",
+  "selector": "#shopify-section-sections--16074583736405__announcement-bar",
+  "notlar": "Free shipping on orders $150 and over + Free exchanges. 32px ince bar.",
+  "delta": "Tema vitrinde: vessi-storefront/main-us · schema_name Vessi 1.0.0 · theme_store_id null · shop vessi-footwear.myshopify.com · theme id 129927970901 · role main. Official dismiss HEADER-V2'yi overlay sanıp display:none yapıyor — forceOpen ile geri.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://vessi.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "header-v2.header-v2",
+      "capture": false,
+      "not": "dismiss HEADER-V2'yi kill ediyor"
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "announcement-bar",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 600,
+      "capture": true,
+      "etiket": "bar",
+      "not": "Duyuru barı geri"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Free shipping on orders $150 and over + Free exchanges."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "Official dismiss Close announcement → announcement-bar--dismissed (display:none). forceOpen class'ı silmez; 0px. 3vp yok — leftover."
+    }
+  ],
+  "interactionNote": "Bar metni walk'ta görüldü: Free shipping on orders $150 and over + Free exchanges. Official script kapatıyor; üçüncü deneme yok.",
+  "capture": {
+    "url": "https://vessi.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:53:16.586Z"
+  }
+}
