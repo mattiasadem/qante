@@ -1,0 +1,68 @@
+{
+  "observationId": "tenthousand.default.find-shorts.product-finder-quiz",
+  "schemaId": "product-finder-quiz",
+  "kaynak": "tenthousand",
+  "preset": "default",
+  "sayfa": "find-shorts",
+  "url": "https://www.tenthousand.cc/pages/find-your-perfect-shorts",
+  "selector": "#shopify-section-template--18860560613463__cartful_quiz_embed",
+  "evidenceSlug": "product-finder-quiz",
+  "evidence": [
+    "evidence/tenthousand/default/find-shorts/product-finder-quiz.1440.png",
+    "evidence/tenthousand/default/find-shorts/product-finder-quiz.375.png",
+    "evidence/tenthousand/default/find-shorts/product-finder-quiz.768.png",
+    "evidence/tenthousand/default/find-shorts/product-finder-quiz.changed.running.1440.png",
+    "evidence/tenthousand/default/find-shorts/product-finder-quiz.changed.running.375.png",
+    "evidence/tenthousand/default/find-shorts/product-finder-quiz.changed.running.768.png",
+    "evidence/tenthousand/default/find-shorts/product-finder-quiz.initial.adim1.1440.png",
+    "evidence/tenthousand/default/find-shorts/product-finder-quiz.initial.adim1.375.png",
+    "evidence/tenthousand/default/find-shorts/product-finder-quiz.initial.adim1.768.png"
+  ],
+  "notlar": "Cartful quiz embed (iframe yok bu dump'ta). How do you usually train? RUNNING / HIKING/ADVENTURE / BEACH/POOL / HIIT/INTERVALS / LIFTING + NEXT.",
+  "delta": "cartful_quiz_embed. Üçüncü parti quiz — mevcut product-finder-quiz. PII yok.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.tenthousand.cc/pages/find-your-perfect-shorts",
+      "capture": true,
+      "etiket": "adim1",
+      "not": "Eğitim tipi sorusu"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--18860560613463__cartful_quiz_embed :text('RUNNING')",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 600,
+      "capture": true,
+      "etiket": "running",
+      "not": "RUNNING seçili / sonraki adım"
+    }
+  ],
+  "stateFindings": {
+    "initial": "How do you usually train? 5 aktivite + NEXT.",
+    "changed": "RUNNING siyah seçili; lifestyle görsel gym → sahil koşu. Progress aynı adım."
+  },
+  "missingStates": [],
+  "interactionNote": "Cartful embed; iframe yok. RUNNING seçimi görsel+buton değiştirdi.",
+  "capture": {
+    "url": "https://www.tenthousand.cc/pages/find-your-perfect-shorts",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:28:29.243Z"
+  }
+}
