@@ -7,6 +7,14 @@
 
 ---
 
+ADAY: magicmind-home-ab  
+Gerekçe: Storefront `Shopify.theme.role` = **treatment**. İlk walk home kit `hm_v3_*` (banner Bg4L4w, img_text, pdp, faq absorption). Sonraki yüklemede home `template--19128598626438` (hero_nqRK8K, featured_product_cards, find_formula, ingredients, percentage_stats, video_reviews). Theme adı aynı. Kısmi 3vp ilk kitte kaldı; canlı selector’lar ikinci kite çekildi.  
+Örnekler: https://magicmind.com/  
+Öneri: A/B home — iki kit observation; şema yok  
+Karar: onay bekliyor
+
+---
+
 ADAY: magicmind-404  
 Gerekçe: `/pages/this-page-does-not-exist-qante-404` → 404 title “404 Not Found – Magic Mind”. Ana içerik shopify-section yok (yalnız header/footer). Taksonomide 404 pageType yok.  
 Örnekler: https://magicmind.com/pages/this-page-does-not-exist-qante-404  
