@@ -1,0 +1,53 @@
+{
+  "observationId": "kizik.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "kizik",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://kizik.com/",
+  "selector": "#shopify-section-sections--21445572821149__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Sticky Impact header. WOMEN / MEN / KIDS / SALE + logo + Search / Login / Cart. Mega tık drawer.",
+  "delta": "Hover mega değil — WOMEN button[aria-controls='navigation-drawer-mega_menu_tjdNtH'] tık drawer. Impact 6.5 custom.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://kizik.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bar",
+      "not": "Kapalı sticky bar"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button[aria-controls='navigation-drawer-mega_menu_tjdNtH']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "women-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "WOMEN tık → navigation-drawer mega (SHOP ALL WOMEN + kategoriler + best sellers)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Kizik wordmark; WOMEN MEN KIDS SALE; Search; Login; Cart 0. Announcement üstte.",
+    "open": "1440 WOMEN mega drawer — SHOP ALL WOMEN; SHOP SPORT/CASUAL/OUTDOOR; NEW ARRIVALS / SALE / WHITE SNEAKERS / ANIMAL PRINT; Vegas 2 / Monaco / Freedom Run."
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 mega yok — hamburger ayrı global-menu-drawer. WOMEN tık, hover değil."
+}

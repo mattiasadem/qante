@@ -1,0 +1,74 @@
+{
+  "observationId": "kizik.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "kizik",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://kizik.com/",
+  "selector": "#cart-drawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Impact cart-drawer. Boş: Your cart is empty / CONTINUE SHOPPING. /cart ayrı sayfa da var.",
+  "delta": "Drawer + cart-page-main birlikte.",
+  "captureMode": "viewport",
+  "prepareClick": "a[aria-controls='cart-drawer']",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://kizik.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[aria-controls='cart-drawer']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://kizik.com/products/womens-vegas-2-bright-white",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--21445588615325__main button[name='add'], #shopify-section-template--21445588615325__main button:has-text('Add to cart'), #shopify-section-template--21445588615325__main button[type='submit']",
+      "capture": false,
+      "not": "Vegas 2 ATC; beden gerekirse UI; fallback /cart/add.js"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a[aria-controls='cart-drawer']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "vegas-2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty; CONTINUE SHOPPING.",
+    "filled": "Capture sonrası yazılacak."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC UI tercih. Checkout/kupon yok. Beden zorunluysa missingStates."
+}

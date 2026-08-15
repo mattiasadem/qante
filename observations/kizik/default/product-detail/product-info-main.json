@@ -1,0 +1,46 @@
+{
+  "observationId": "kizik.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "kizik",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://kizik.com/products/womens-vegas-2-bright-white",
+  "selector": "#shopify-section-template--21445588615325__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "THE HANDS FREE WOMEN'S VEGAS 2; 8636 reviews; $139.95; WOMEN/MEN; Color Bright White; galeri + ATC.",
+  "delta": "Impact product main. Golf PDP'de 30-gün overlay var — Vegas'ta yok (leftover).",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://kizik.com/products/womens-vegas-2-bright-white",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21445588615325__main",
+      "capture": true,
+      "etiket": "ilk-hal"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--21445588615325__main a:has-text('MEN'), #shopify-section-template--21445588615325__main button:has-text('MEN')",
+      "capture": true,
+      "etiket": "men",
+      "not": "WOMEN → MEN varyant/cinsiyet"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Women's Vegas 2 Bright White $139.95; WOMEN seçili.",
+    "changed": "Capture sonrası yazılacak."
+  },
+  "missingStates": [],
+  "interactionNote": "MEN tık /products/mens-vegas-2… sayfasına gidebilir."
+}

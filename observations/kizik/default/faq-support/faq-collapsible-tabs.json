@@ -1,0 +1,45 @@
+{
+  "observationId": "kizik.default.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "kizik",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "url": "https://kizik.com/pages/faqs",
+  "selector": "#shopify-section-template--21445585141917__main",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [],
+  "notlar": "Kizik Frequently Asked Questions. PRODUCTS & FIT: Do Kiziks run true to size? …",
+  "delta": "Impact page main accordion; kategori başlıkları metinde.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://kizik.com/pages/faqs",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21445585141917__main",
+      "capture": true,
+      "etiket": "faq-kapali"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--21445585141917__main :text('Do Kiziks run true to size?')",
+      "capture": true,
+      "etiket": "true-to-size"
+    }
+  ],
+  "stateFindings": {
+    "initial": "FAQ listesi; sorular kapalı veya ilk açık.",
+    "changed": "True to size cevabı açık beklenir."
+  },
+  "missingStates": [],
+  "interactionNote": "İlk soru tık. Form/PII yok."
+}
