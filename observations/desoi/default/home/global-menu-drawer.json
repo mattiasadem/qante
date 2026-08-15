@@ -1,0 +1,61 @@
+{
+  "observationId": "desoi.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "desoi",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://drinkdesoi.com/",
+  "selector": "#MenuDrawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/desoi/default/home/global-menu-drawer.1440.png",
+    "evidence/desoi/default/home/global-menu-drawer.375.png",
+    "evidence/desoi/default/home/global-menu-drawer.768.png",
+    "evidence/desoi/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/desoi/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "Opener .menu-drawer-button aria-controls=MenuDrawer. Shop / Bundle / Subscribe / Fun Stuff + Sign in + sosyal.",
+  "delta": "Hyper menu-drawer. 1440 hamburger lg:hidden.",
+  "captureMode": "viewport",
+  "prepareClick": ".menu-drawer-button",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://drinkdesoi.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": ".menu-drawer-button",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "viewports": [
+        "375",
+        "768"
+      ]
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 hamburger: Shop > / Build Your Own Bundle / Subscribe / Fun Stuff >; Sign in/Register; sosyal. Arama yok. 1440 hamburger yok."
+  },
+  "missingStates": [],
+  "capture": {
+    "url": "https://drinkdesoi.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:24:08.614Z",
+    "prepareClick": ".menu-drawer-button"
+  }
+}
