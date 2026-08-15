@@ -1,0 +1,76 @@
+{
+  "observationId": "greatjonesgoods.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "greatjonesgoods",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://greatjonesgoods.com/",
+  "selector": "a.header__logo",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/greatjonesgoods/default/home/navigation-header-mega.1440.png",
+    "evidence/greatjonesgoods/default/home/navigation-header-mega.375.png",
+    "evidence/greatjonesgoods/default/home/navigation-header-mega.768.png",
+    "evidence/greatjonesgoods/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/greatjonesgoods/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/greatjonesgoods/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/greatjonesgoods/default/home/navigation-header-mega.open.shop-all-mega.1440.png"
+  ],
+  "notlar": "Sticky header (section h=0, çocuklar absolute). Logo + 1440: New Arrivals / Shop All / Sale + search/account/cart. Mega drawer nav-desktop ürün kartları (The Dutchess $205, Large Fry $105…). 375: Toggle Navigation + Open Search + Open Cart.",
+  "delta": "2025 BFCM THEME: Great Jones 4.2 | Edgemesh. schema_name Great Jones 0.1.0, theme_store_id null, role main. Shop great-jones-goods.myshopify.com. Custom header.js-header. Shopify section height 0 — kare viewport. Locale yok. Mega içerik drawer DOM’da; kapalı yükseklik ~57px.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://greatjonesgoods.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bar",
+      "not": "Kapalı sticky header"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.js-menuTogglePrimary",
+      "capture": false,
+      "viewports": [
+        "1440"
+      ],
+      "not": "Shop All mega"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 700,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-all-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Mega ürün kartları"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Logo + duyuru üstü; 1440 birincil/ikincil nav; 375 hamburger/search/cart.",
+    "open": "1440 Shop All tık: turuncu mega — Cookware / Bakeware / Tools & Accessories + The Dutchess $205, Large Fry $105, King Sear $125, Saucy $120. Shop All ×."
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 mega yok — hamburger ayrı observation. Hover yükseklik değiştirmedi; tık verdi. Recipes + mega yoklandı değil.",
+  "capture": {
+    "url": "https://greatjonesgoods.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:07:22.869Z"
+  }
+}
