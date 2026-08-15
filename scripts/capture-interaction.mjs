@@ -148,6 +148,32 @@ fs.mkdirSync(outDir, { recursive: true });
 const evidenceRel = (filename) =>
   `evidence/${obs.kaynak}/${obs.preset}/${obs.sayfa}/${filename}`;
 
+/**
+ * iframe[sel] >> inner  → frameLocator + in-frame locator
+ * iframe[sel]           → parent-page iframe host
+ * diğer                 → page.locator
+ *
+ * ">>" Playwright aynı-belge descendant'ı DEĞİL burada: ilk ">>"
+ * frame / iç sınırıdır. İç kısım frame içinde normal Playwright selector'dır
+ * (text=, css, role=, başka >> …).
+ */
+function splitIframeSelector(selector) {
+  if (!selector) return null;
+  const s = String(selector).trim();
+  if (!/^iframe\b/i.test(s)) return null;
+  const idx = s.indexOf(">>");
+  if (idx === -1) return { kind: "host", frameSel: s };
+  const frameSel = s.slice(0, idx).trim();
+  const inner = s.slice(idx + 2).trim();
+  if (!frameSel || !inner) return { kind: "host", frameSel: s };
+  return { kind: "inner", frameSel, inner };
+}
+
+function iframeHostSelector(selector) {
+  const parsed = splitIframeSelector(selector);
+  return parsed ? parsed.frameSel : null;
+}
+
 // ─── Sayfa hazırlığı (capture-observation.mjs ile aynı davranış) ───────────
 
 async function settle(page, url) {
@@ -181,41 +207,30 @@ async function settle(page, url) {
   await assertCleanForScreenshot(page);
   await page.waitForTimeout(800);
 
-  // Lazy section hydrate
-  await page.evaluate(async () => {
-    const step = Math.max(400, Math.floor(window.innerHeight * 0.85));
-    const max = Math.max(
-      document.body?.scrollHeight || 0,
-      document.documentElement?.scrollHeight || 0
-    );
-    for (let y = 0; y < max; y += step) {
-      window.scrollTo(0, y);
-      await new Promise((r) => setTimeout(r, 120));
+  const iframeHost = iframeHostSelector(obs.selector);
+  if (iframeHost) {
+    // Escape overlay dismiss lightbox'ı kapatabilir — ana içerik iframe ise geri yükle
+    const gone = (await page.locator(iframeHost).count()) === 0;
+    if (gone) {
+      await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
+      await page.waitForTimeout(4500);
     }
-    window.scrollTo(0, 0);
-  });
-  await page.waitForTimeout(400);
-}
-
-/**
- * iframe[sel] >> inner  → frameLocator + in-frame locator
- * iframe[sel]           → parent-page iframe host
- * diğer                 → page.locator
- *
- * ">>" Playwright aynı-belge descendant'ı DEĞİL burada: ilk ">>"
- * frame / iç sınırıdır. İç kısım frame içinde normal Playwright selector'dır
- * (text=, css, role=, başka >> …).
- */
-function splitIframeSelector(selector) {
-  if (!selector) return null;
-  const s = String(selector).trim();
-  if (!/^iframe\b/i.test(s)) return null;
-  const idx = s.indexOf(">>");
-  if (idx === -1) return { kind: "host", frameSel: s };
-  const frameSel = s.slice(0, idx).trim();
-  const inner = s.slice(idx + 2).trim();
-  if (!frameSel || !inner) return { kind: "host", frameSel: s };
-  return { kind: "inner", frameSel, inner };
+  } else {
+    // Lazy section hydrate (lightbox sayfasında kaydırma gerekmez)
+    await page.evaluate(async () => {
+      const step = Math.max(400, Math.floor(window.innerHeight * 0.85));
+      const max = Math.max(
+        document.body?.scrollHeight || 0,
+        document.documentElement?.scrollHeight || 0
+      );
+      for (let y = 0; y < max; y += step) {
+        window.scrollTo(0, y);
+        await new Promise((r) => setTimeout(r, 120));
+      }
+      window.scrollTo(0, 0);
+    });
+    await page.waitForTimeout(400);
+  }
 }
 
 function resolveLocator(page, selector) {
@@ -580,8 +595,11 @@ async function runStep(page, step) {
         if (parsed?.kind === "inner") {
           await waitForFrameReady(page, parsed.frameSel, timeout);
           await resolveLocator(page, sel).first().waitFor({ state: "visible", timeout });
+        } else if (parsed?.kind === "host") {
+          // Çıplak iframe: parent host — attached (visible 0-size/Escape sonrası yanıltır)
+          await page.locator(sel).first().waitFor({ state: "attached", timeout });
+          await waitForFrameReady(page, sel, timeout);
         } else {
-          // Çıplak iframe: parent sayfadaki host element
           await page.locator(sel).first().waitFor({ state: "visible", timeout });
         }
       } else {
