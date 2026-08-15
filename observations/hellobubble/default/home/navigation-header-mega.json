@@ -1,0 +1,68 @@
+{
+  "observationId": "hellobubble.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "hellobubble",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://hellobubble.myshopify.com/",
+  "selector": "#shopify-section-sections--19572856029337__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/hellobubble/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/hellobubble/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/hellobubble/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/hellobubble/default/home/navigation-header-mega.open.shop-panel.1440.png"
+  ],
+  "notlar": "Shop / Skin Concerns / New Arrivals / About + logo + Search + 0 items. Logo center, menu left.",
+  "delta": "Baseline header. Mega Shop BUTTON (a değil). 375 Menu hamburger ayrı kart.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hellobubble.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#shopify-section-sections--19572856029337__header button:has-text(\"Shop\")",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-panel",
+      "not": "Shop tık → kategori listesi / görseller"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Kapalı: Shop / Skin Concerns / New Arrivals / About + search + bag. Mega kapalı (alt linkler 0px).",
+    "open": "1440 Shop tık: sol kolon Shop All…Merch; ortada Bestsellers…Community Favorites; Collabs Bubble x e.l.f. / American Eagle / Olive & June; sağda New Arrivals + Community Favorites görseller. Shop chevron yukarı."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375/768 Shop mega yok — hamburger global-menu-drawer."
+    }
+  ],
+  "interactionNote": "Shop BUTTON click 1440. Hover yoklandı değil. Login PII tıklanmadı.",
+  "capture": {
+    "url": "https://hellobubble.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:05:29.918Z"
+  }
+}
