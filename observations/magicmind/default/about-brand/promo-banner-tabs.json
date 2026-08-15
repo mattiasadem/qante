@@ -1,0 +1,63 @@
+{
+  "observationId": "magicmind.default.about-brand.promo-banner-tabs",
+  "schemaId": "promo-banner-tabs",
+  "kaynak": "magicmind",
+  "preset": "default",
+  "sayfa": "about-brand",
+  "url": "https://magicmind.com/pages/learn",
+  "selector": "#shopify-section-learn-ingredients-tabs",
+  "evidenceSlug": "promo-banner-tabs",
+  "evidence": [
+    "evidence/magicmind/default/about-brand/promo-banner-tabs.1440.png",
+    "evidence/magicmind/default/about-brand/promo-banner-tabs.375.png",
+    "evidence/magicmind/default/about-brand/promo-banner-tabs.768.png",
+    "evidence/magicmind/default/about-brand/promo-banner-tabs.changed.sleep-tab.1440.png",
+    "evidence/magicmind/default/about-brand/promo-banner-tabs.changed.sleep-tab.375.png",
+    "evidence/magicmind/default/about-brand/promo-banner-tabs.changed.sleep-tab.768.png"
+  ],
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://magicmind.com/pages/learn",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "text=Sleep",
+      "value": 1200,
+      "capture": true,
+      "etiket": "sleep-tab",
+      "not": "Focus → Sleep toggle"
+    }
+  ],
+  "stateFindings": {
+    "changed": "Sleep seçili (mavi toggle). Şişe Sleep Elixir; malzeme Ashwagandha/Kava/Chamomile. Focus’tan farklı."
+  },
+  "missingStates": [],
+  "interactionNote": "Ingredient hover ayrıca; tab değişimi birincil.",
+  "notlar": "Magic properties. Real ingredients. Sekmeli malzeme.",
+  "delta": "Kampanya değil malzeme tab’ı; en yakın mevcut tip promo-banner-tabs.",
+  "capture": {
+    "url": "https://magicmind.com/pages/learn",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:07:56.770Z"
+  }
+}
