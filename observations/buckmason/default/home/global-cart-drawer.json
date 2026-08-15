@@ -1,0 +1,139 @@
+{
+  "observationId": "buckmason.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "buckmason",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.buckmason.com/",
+  "selector": "[class*='cart-module--cart']",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/buckmason/default/home/global-cart-drawer.1440.png",
+    "evidence/buckmason/default/home/global-cart-drawer.375.png",
+    "evidence/buckmason/default/home/global-cart-drawer.768.png",
+    "evidence/buckmason/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/buckmason/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/buckmason/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/buckmason/default/home/global-cart-drawer.filled.tee-qty1.1440.png",
+    "evidence/buckmason/default/home/global-cart-drawer.filled.tee-qty1.375.png",
+    "evidence/buckmason/default/home/global-cart-drawer.filled.tee-qty1.768.png",
+    "evidence/buckmason/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/buckmason/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/buckmason/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "Sağ dialog ~520px. Boş: Free shipping on orders over $150 / YOUR CART IS EMPTY LET'S CHANGE THAT / Men's + Women's Best Sellers kartları. /cart home’a yönlenir; cart.js 404.",
+  "delta": "Gatsby 5.15.0 (meta generator). Shopify.theme / schema_name / schema_version / theme_store_id yok (uydurulmadı). Shopify.shop yok; yalnız customerPrivacy + trackingConsent (@shopify/consent-tracking-api v0.1). Shop files CDN 1/0123/5065/2473. buckmason.myshopify.com 404. #shopify-section-* yok. Headless Gatsby cart-module. /cart sayfa yok. ATC drawer açar. Checkout Est Total — tıklanmadı.",
+  "captureMode": "viewport",
+  "prepareClick": "button[aria-label='Open cart dialog']",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.buckmason.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button[aria-label='Open cart dialog']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.buckmason.com/products/black-field-spec-cotton-vintage-surplus-heavy-tee",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "button[aria-label='Select size M']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button[aria-label='Select size M']",
+      "capture": false,
+      "not": "Beden M (aria-label)"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": "button[name='add']",
+      "value": 8000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button[name='add']",
+      "capture": false,
+      "not": "Gatsby UI ATC — cart.js yok"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": "[class*='cart-module--item']",
+      "value": 8000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "tee-qty1",
+      "not": "ATC drawer’ı açar"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button:has-text('View Cart')",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false,
+      "not": "375/768 ATC sonrası mini sheet → tam cart"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "selector": "button[aria-label='Increase quantity']",
+      "value": 8000,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[aria-label='Increase quantity']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Qty +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "YOUR CART IS EMPTY LET'S CHANGE THAT; Men's / Women's Best Sellers; free ship $150.",
+    "filled": "1440 tam drawer: Field-Spec Heavy Tee $62 Black M qty 1, $88 to free ship, People Also Bought. 375/768 üst sheet: aynı satır + VIEW CART (qty yok).",
+    "changed": "Qty 2 / $124 / $26 to free ship / Checkout Est Total $132. 375/768 önce VIEW CART."
+  },
+  "missingStates": [],
+  "interactionNote": "cart.js yok; beden M + button[name=add]. 375/768 ATC mini sheet → View Cart → Increase quantity. Checkout tıklanmadı.",
+  "capture": {
+    "url": "https://www.buckmason.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:42:26.466Z",
+    "prepareClick": "button[aria-label='Open cart dialog']"
+  }
+}
