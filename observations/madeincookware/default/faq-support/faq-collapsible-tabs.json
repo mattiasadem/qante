@@ -1,0 +1,62 @@
+{
+  "observationId": "madeincookware.default.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "madeincookware",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "url": "https://madeincookware.com/pages/help-center",
+  "selector": "main div.col-span-full.grid",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/madeincookware/default/faq-support/faq-collapsible-tabs.1440.png",
+    "evidence/madeincookware/default/faq-support/faq-collapsible-tabs.375.png",
+    "evidence/madeincookware/default/faq-support/faq-collapsible-tabs.768.png",
+    "evidence/madeincookware/default/faq-support/faq-collapsible-tabs.changed.ilk-soru.1440.png",
+    "evidence/madeincookware/default/faq-support/faq-collapsible-tabs.changed.ilk-soru.375.png",
+    "evidence/madeincookware/default/faq-support/faq-collapsible-tabs.changed.ilk-soru.768.png",
+    "evidence/madeincookware/default/faq-support/faq-collapsible-tabs.initial.genel.1440.png",
+    "evidence/madeincookware/default/faq-support/faq-collapsible-tabs.initial.genel.375.png",
+    "evidence/madeincookware/default/faq-support/faq-collapsible-tabs.initial.genel.768.png"
+  ],
+  "notlar": "Help Center — General Order FAQs + malzeme grupları (Carbon Steel, Bakeware, CeramiClad…). İlk grup temsilci.",
+  "delta": "Çok gruplu FAQ; tek schemaId. Kategori başlıkları section değil grup.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://madeincookware.com/pages/help-center",
+      "capture": true,
+      "etiket": "genel",
+      "not": "General Order FAQs"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "main div.col-span-full.grid button, main div.col-span-full.grid [aria-expanded='false']",
+      "value": 1800,
+      "capture": true,
+      "etiket": "ilk-soru",
+      "not": "İlk accordion soru"
+    }
+  ],
+  "stateFindings": {
+    "initial": "General Order FAQs listesi (sorular kapalı).",
+    "changed": "375/768/1440: “Where are Made In products made?” açık — Italy/USA/Sweden/France/Japan…"
+  },
+  "missingStates": [],
+  "capture": {
+    "url": "https://madeincookware.com/pages/help-center",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:51:14.343Z"
+  }
+}
