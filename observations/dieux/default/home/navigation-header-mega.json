@@ -1,0 +1,63 @@
+{
+  "observationId": "dieux.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "dieux",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.dieuxskin.com/",
+  "selector": "#shopify-section-header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/dieux/default/home/navigation-header-mega.1440.png",
+    "evidence/dieux/default/home/navigation-header-mega.375.png",
+    "evidence/dieux/default/home/navigation-header-mega.768.png",
+    "evidence/dieux/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/dieux/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/dieux/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/dieux/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
+  "notlar": "Ortalı DIEUX logo; sol SHOP / LEARN / SUNSCREEN DECODER; sağ arama, MY ACCOUNT, CART (0). Shop mega: koleksiyon linkleri + Featured ürün görselleri.",
+  "delta": "Sticky; hero üstünde şeffaf (scroll-at-top). Sunscreen Decoder düz link (mega değil). Dil seçici yok. Account sağ drawer (PII — envanter dışı). Mega .header--submenu.",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.dieuxskin.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı sticky bar"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "li.header--link-wrapper.nested:has(a[data-click-link-name='Shop'])",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Shop hover → koleksiyon linkleri + Featured ürün kartları"
+    }
+  ],
+  "stateFindings": {
+    "initial": "SHOP / LEARN / SUNSCREEN DECODER; arama; MY ACCOUNT; Cart (0).",
+    "open": "1440 Shop hover — Skincare/Eye Masks/Bundles/Shop All + Featured Firm Revival / Air Angel / Deliverance / Instant Angel."
+  },
+  "missingStates": [],
+  "capture": {
+    "url": "https://www.dieuxskin.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:15:57.245Z"
+  }
+}
