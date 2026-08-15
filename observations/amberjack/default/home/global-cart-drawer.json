@@ -1,0 +1,87 @@
+{
+  "observationId": "amberjack.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "amberjack",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.amberjack.shop/",
+  "selector": "#CartPopup",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "UpCart sağ panel (#CartPopup, 440px). Boş: Your Cart Is Empty / Find Your Next Pair / Browse By Style (Best Sellers, Dress, Sneakers, Loafers, Boots).",
+  "delta": "Tema enableCartDrawer:false; gerçek sepet UpCart app. Native /cart ayrı sayfa. Section #upcart_custom_empty_cart height 0.",
+  "capture": {
+    "url": "https://www.amberjack.shop/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "",
+    "updatedAt": ""
+  },
+  "captureMode": "viewport",
+  "prepareClick": "a[href='/cart']",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.amberjack.shop/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[href='/cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "UpCart boş: Your Cart Is Empty"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.amberjack.shop/products/the-court-ivory",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "product-information input[name='size'][value='10'], product-information label:has-text('10')",
+      "capture": false,
+      "not": "Beden 10 — ATC aktif olsun"
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "product-information button.button-atc, product-information button:has-text('Add To Cart')",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a[href='/cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "court-qty1",
+      "not": "Dolu UpCart — The Court satırı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "0 Cart; Your Cart Is Empty; Find Your Next Pair; Browse By Style kartları.",
+    "filled": "ATC sonrası The Court satırı (beden seçimi gerekti)."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC önce beden şart (Select a Size). Fallback /cart/add.js interactionNote'a yazılacak. Native /cart ayrı observation."
+}

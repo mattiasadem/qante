@@ -1,0 +1,51 @@
+{
+  "observationId": "amberjack.default.collection.product-showcase-grid-plp",
+  "schemaId": "product-showcase-grid-plp",
+  "kaynak": "amberjack",
+  "preset": "default",
+  "sayfa": "collection",
+  "url": "https://www.amberjack.shop/collections/all",
+  "selector": "[id*='__collection_grid_']",
+  "evidenceSlug": "product-showcase-grid-plp",
+  "evidence": [],
+  "notlar": "The Collection. Chip: Shop All / Dress Shoes / Sneakers / Boots / Loafers / Accessories. Show Filters (Size/Color/Material). Sort Recommended… 29 Items. Standard/Wide. Forbes satırı.",
+  "delta": "collection_grid tek section — tab+filtre+grid. collection-nav-tabs değil (hero+CTA yok). Filtre overlay.",
+  "capture": {
+    "url": "https://www.amberjack.shop/collections/all",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "",
+    "updatedAt": ""
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.amberjack.shop/collections/all",
+      "capture": true,
+      "etiket": "shop-all",
+      "not": "Shop All 29 items"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "[id*='__collection_grid_'] button:has-text('Dress Shoes')",
+      "capture": true,
+      "etiket": "dress-shoes",
+      "not": "Dress Shoes chip — grid değişmeli"
+    }
+  ],
+  "stateFindings": {
+    "initial": "The Collection / Shop All / 29 Items / Original+Court+Regent…",
+    "changed": "Dress Shoes seçili — grid kategorisi."
+  },
+  "missingStates": []
+}

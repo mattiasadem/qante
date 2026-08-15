@@ -1,0 +1,59 @@
+{
+  "observationId": "amberjack.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "amberjack",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.amberjack.shop/",
+  "selector": ".mobile-menu-container",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "375 hamburger .mobile-open → .mobile-menu-container: Dress/Sneakers/Loafers/Boots kartları + On Sale / Accessories / Wide Sizes / Shop All + Free Shipping şeridi.",
+  "delta": "1440'ta drawer kapalı (N/A). Desktop mega ayrı. #mobile_nav her viewport'ta DOM'da.",
+  "capture": {
+    "url": "https://www.amberjack.shop/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "",
+    "updatedAt": ""
+  },
+  "captureMode": "viewport",
+  "prepareClick": ".mobile-open",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://www.amberjack.shop/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": ".mobile-open",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Mobil menü kartları"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: Dress Shoes / Sneakers / Loafers / Boots + On Sale / Accessories / Wide / Shop All."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger yok — mega ayrı observation."
+    }
+  ]
+}
