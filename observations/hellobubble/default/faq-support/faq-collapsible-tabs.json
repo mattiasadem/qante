@@ -1,0 +1,59 @@
+{
+  "observationId": "hellobubble.default.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "hellobubble",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "url": "https://hellobubble.myshopify.com/pages/faq",
+  "selector": "#shopify-section-template--19572856389785__collapsible_rows_inwhEK",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/hellobubble/default/faq-support/faq-collapsible-tabs.1440.png",
+    "evidence/hellobubble/default/faq-support/faq-collapsible-tabs.375.png",
+    "evidence/hellobubble/default/faq-support/faq-collapsible-tabs.768.png",
+    "evidence/hellobubble/default/faq-support/faq-collapsible-tabs.changed.ship-to.1440.png",
+    "evidence/hellobubble/default/faq-support/faq-collapsible-tabs.changed.ship-to.375.png",
+    "evidence/hellobubble/default/faq-support/faq-collapsible-tabs.changed.ship-to.768.png"
+  ],
+  "notlar": "Shipping: 10 soru, hepsi kapalı chevron. 774px.",
+  "delta": "collapsible_rows. İlk soru statikte kapalı.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hellobubble.myshopify.com/pages/faq",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "Tüm Shipping soruları kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--19572856389785__collapsible_rows_inwhEK button:has-text(\"Where do you ship to?\")",
+      "capture": true,
+      "etiket": "ship-to",
+      "not": "İlk soru açık — cevap metni"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Shipping başlığı + 10 kapalı soru (Where do you ship to? … lost or stolen).",
+    "changed": "Where do you ship to? açık: US + PO/FBO/APO; 200+ ülke; uluslararası PO box yok. Chevron yukarı. Diğer 9 kapalı."
+  },
+  "missingStates": [],
+  "interactionNote": "Tek soru açıldı. PII yok.",
+  "capture": {
+    "url": "https://hellobubble.myshopify.com/pages/faq",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:10:52.012Z"
+  }
+}
