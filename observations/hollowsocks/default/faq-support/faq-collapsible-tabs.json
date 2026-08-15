@@ -9,5 +9,37 @@
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [],
   "notlar": "Kategoriler: Returns, Exchanges and Refunds · Best Sellers · Shipping & Delivery · Order Support · Product Information · Payments & Promotions · Sizing · Marketing Promotions · Care Instructions.",
-  "delta": "ds_faq native (Gorgias /pages/faqs değil)."
+  "delta": "ds_faq native (Gorgias /pages/faqs değil).",
+  "interactionStates": ["changed"],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://hollowsocks.com/pages/why-alpaca",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": "2500",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20352645169321__ds_faq_VaEMtk",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--20352645169321__ds_faq_VaEMtk [data-ds-accordion-trigger]",
+      "capture": true,
+      "etiket": "faq-acik",
+      "not": "İlk soru How do I initiate a return or exchange?"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "İlk akordeon; form/PII yok."
 }

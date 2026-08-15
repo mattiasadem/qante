@@ -8,11 +8,46 @@
   "selector": "#header__mobile-menu",
   "evidenceSlug": "global-menu-drawer",
   "evidence": [],
-  "notlar": "375/768: button[data-menu-trigger][aria-label='Menu'] (xl:hidden). Drawer #header__mobile-menu[data-menu-drawer]. Best Sellers görseli + Shop By Activity 2 kolon + header-search + Why Alpaca?/Reviews/Returns/FAQ/Contact. 1024+ CSS display:none.",
+  "notlar": "375/768: button[data-menu-trigger][aria-label='Menu'] (xl:hidden). Drawer #header__mobile-menu. BEST SELLERS + SHOP BY ACTIVITY (COMPRESSION / EVERYDAY / TRADES / 50% OFF BUNDLES / RUNNING / HUNTING) + WHY ALPACA? / REVIEWS / RETURNS & EXCHANGES / FAQ / CONTACT US. 1024+ CSS display:none.",
   "delta": "Shopify Theme Lab mobile drawer. 1440 N/A. Mega .ds-meganav ayrı; header linkleri data-meganav-ignore.",
   "captureMode": "viewport",
   "prepareClick": "button[data-menu-trigger][aria-label='Menu']",
   "capture": {
     "viewports": ["375", "768"]
-  }
+  },
+  "interactionStates": ["open"],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://hollowsocks.com/",
+      "capture": false,
+      "viewports": ["375", "768"]
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": "2500",
+      "capture": false,
+      "viewports": ["375", "768"]
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button[data-menu-trigger][aria-label='Menu']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "menu-acik",
+      "viewports": ["375", "768"],
+      "not": "Hamburger drawer"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger xl:hidden — drawer CSS display:none"
+    }
+  ],
+  "interactionNote": "Yalnız 375/768. 1440 N/A."
 }

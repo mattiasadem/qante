@@ -9,5 +9,37 @@
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [],
   "notlar": "YOUR QUESTIONS ANSWERED. İlk: WHY DOES ALPACA PERFORM BETTER? Hollow-core vs cotton/wool/synthetics.",
-  "delta": "ds_faq_media — medya + akordeon. Junip değil."
+  "delta": "ds_faq_media — medya + akordeon. Junip değil.",
+  "interactionStates": ["changed"],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://hollowsocks.com/products/crew-performance-alpaca-socks",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": "3000",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20352644251817__ds_faq_media_bHa68j",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--20352644251817__ds_faq_media_bHa68j [data-ds-accordion-trigger]",
+      "capture": true,
+      "etiket": "faq-acik",
+      "not": "İlk soru WHY DOES ALPACA PERFORM BETTER?"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "İlk [data-ds-accordion-trigger] tık. Statik 3vp overlay flake — retry."
 }

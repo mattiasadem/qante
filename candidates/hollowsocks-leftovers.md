@@ -33,8 +33,8 @@ Karar: onay bekliyor
 ---
 
 ADAY: hollowsocks-junip-reviews  
-Gerekçe: PDP `#…__ds_junip_reviews_y6GXqp` 4.77 / 3,782 reviews + histogram (Junip). `/pages/reviews` yalnız “REVIEWS” başlığı (209px); widget hydrate olmadı. `/pages/all-reviews` yoklandı değil. `testimonial-quote-carousel` zorlama (filtre/histogram).  
-Örnekler: https://hollowsocks.com/products/crew-performance-alpaca-socks · https://hollowsocks.com/pages/reviews  
+Gerekçe: PDP `#…__ds_junip_reviews_y6GXqp` 4.77 / 3,782 reviews + histogram (Junip). `/pages/reviews` yalnız “REVIEWS” (209px). `/pages/all-reviews` `ds_junip_reviews_P3pjga` 160px boş metin. `testimonial-quote-carousel` zorlama.  
+Örnekler: https://hollowsocks.com/products/crew-performance-alpaca-socks · https://hollowsocks.com/pages/reviews · https://hollowsocks.com/pages/all-reviews  
 Öneri: ertele / commerce-tools  
 Karar: onay bekliyor
 
@@ -56,17 +56,25 @@ Karar: onay bekliyor
 
 ---
 
-ADAY: hollowsocks-compression-pdp-template  
-Gerekçe: `/products/alpaca-compression-socks` ilk probe’da shopify-section olarak yalnız header/footer/social görüldü (orta blok map edilmedi). Crew PDP ayrı `ds_pdp_hero` şablonu.  
+ADAY: hollowsocks-compression-pdp-replo  
+Gerekçe: `/products/alpaca-compression-socks` Shopify section map’te yalnız chrome+social+footer. `main` 6678px `#replo-fullpage-element` (“Slide 1 of 7”, ALPACA COMPRESSION). Replo tam sayfa; Crew `ds_pdp_hero` değil. Şema uydurulmadı.  
 Örnekler: https://hollowsocks.com/products/alpaca-compression-socks  
-Öneri: leftover — ikinci PDP şablonu  
+Öneri: leftover — Replo LP/PDP  
 Karar: onay bekliyor
 
 ---
 
 ADAY: hollowsocks-quiz  
-Gerekçe: `/pages/compression-quiz-v1` sitemap’te. Form/PII riski; Start yoklandı değil.  
+Gerekçe: `/pages/compression-quiz-v1` 200, title “Find the Perfect Compression Socks…”. `.shopify-section` 0 — Start/form yoklandı değil (PII).  
 Örnekler: https://hollowsocks.com/pages/compression-quiz-v1  
+Öneri: leftover  
+Karar: onay bekliyor
+
+---
+
+ADAY: hollowsocks-store-locator  
+Gerekçe: `/pages/store-locator` `ds_store_locator_page_MahgQF` 737px, görünür metin “STORE LOCATOR” (harita hydrate belirsiz) + bestsellers marquee. `store-locator` şeması yok.  
+Örnekler: https://hollowsocks.com/pages/store-locator  
 Öneri: leftover  
 Karar: onay bekliyor
 

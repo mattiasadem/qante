@@ -8,8 +8,78 @@
   "selector": "[data-cart-drawer].ds-cart-drawer",
   "evidenceSlug": "global-cart-drawer",
   "evidence": [],
-  "notlar": "ds-cart-drawer custom element, panel [data-cart-panel] max-w-[600px] sağ. Opener button[data-cart-trigger]. /cart #main height 0 — asıl sepet drawer.",
+  "notlar": "ds-cart-drawer custom element, panel [data-cart-panel] max-w-[600px] sağ. Opener button[data-cart-trigger]. /cart #main height 0 — asıl sepet drawer. ATC sonrası drawer kendiliğinden açılabiliyor.",
   "delta": "Tema cart page stub. Checkout tıklanmadı.",
   "captureMode": "viewport",
-  "prepareClick": "button[data-cart-trigger][aria-label='Open cart']"
+  "prepareClick": "button[data-cart-trigger][aria-label='Open cart']",
+  "interactionStates": ["initial", "filled", "changed"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hollowsocks.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": "2500",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button[data-cart-trigger][aria-label='Open cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer: Your cart is empty / don’t get cold feet now"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://hollowsocks.com/products/crew-performance-alpaca-socks",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": "3000",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#product-form .js-atc-button",
+      "capture": false,
+      "not": "Crew ATC — drawer çoğu yüklemede kendiliğinden açılır"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": "2000",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button[data-cart-trigger][aria-label='Open cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu satır + B2G2 progress. Checkout tıklanmadı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button.qty-plus_cart-icon[aria-label='Increase quantity']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet + — B2G2 çubuğu / subtotal değişmeli"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Qty selector probe: button.qty-plus_cart-icon[aria-label='Increase quantity']. Checkout tıklanmadı."
 }

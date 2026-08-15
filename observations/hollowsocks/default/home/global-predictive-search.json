@@ -8,7 +8,17 @@
   "selector": "#shopify-section-sections--20352643530921__main-header nav form[action='/search']",
   "evidenceSlug": "global-predictive-search",
   "evidence": [],
-  "notlar": "1440: header nav form GET /search, placeholder SEARCH, input[name=q] 200×32. Shopify.features.predictiveSearch true ama UI düz form. Mobil arama #header__mobile-menu header-search içinde.",
+  "notlar": "1440: header nav form GET /search, placeholder SEARCH. Shopify.features.predictiveSearch true ama UI düz form. Fill 'crew' sonrası predictive DOM yok, URL home kaldı.",
   "delta": "Overlay yok; gömülü form. 375/768 nav.hidden — leftover menu-içi arama.",
-  "captureMode": "viewport"
+  "captureMode": "viewport",
+  "interactionStates": [],
+  "interactionSteps": [],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "Fill crew — öneri/dropdown yok; düz GET form. Piksel state yok."
+    }
+  ],
+  "interactionNote": "375/768 arama menu drawer içinde; ayrı overlay değil."
 }
