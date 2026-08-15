@@ -1,0 +1,93 @@
+{
+  "observationId": "bandit.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "bandit",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://banditrunning.com/",
+  "selector": "#shopify-section-global-minicart",
+  "captureMode": "viewport",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/bandit/default/home/global-cart-drawer.filled.stamina-qty1.1440.png",
+    "evidence/bandit/default/home/global-cart-drawer.filled.stamina-qty1.375.png",
+    "evidence/bandit/default/home/global-cart-drawer.filled.stamina-qty1.768.png",
+    "evidence/bandit/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/bandit/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/bandit/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://banditrunning.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.header-cart.minicart-open",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "YOUR CART IS SAD :( + WOMEN’S/MEN’S/ACCESSORIES/SHOP ALL"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://banditrunning.com/products/stamina-hw-5-compression-bottom-with-wavy-wb-black",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#shopify-section-template--19510635954326__main input.js-variant-selector[value=\"L\"]",
+      "capture": false,
+      "not": "XS–M çizgili; L stokta"
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--19510635954326__main button.js-form-submit",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.header-cart.minicart-open",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "stamina-qty1",
+      "not": "Dolu minicart — satır + toplam"
+    }
+  ],
+  "stateFindings": {
+    "initial": "YOUR CART IS SAD :( + best seller metni + WOMEN'S/MEN'S/ACCESSORIES/SHOP ALL. Badge 0.",
+    "filled": "Stamina-V 5\" short, SIZE L / COLOR BLACK, $88, adet 1. YOU ARE $87 FROM FREE SHIPPING. PAIR IT WITH upsell. SUBTOTAL $88. Save as a Member / JOIN NOW. CHECKOUT. Badge 1."
+  },
+  "missingStates": [],
+  "interactionNote": "/cart homepage'e düşer; sepet yalnız global-minicart. addToCart 375/768/1440 UI (L input.js-variant-selector). Şema değişmedi — boş↔dolu state.",
+  "notlar": "Boş metin: YOUR CART IS SAD :(",
+  "delta": "Boş state koleksiyon linkleri (Women’s/Men’s/Accessories/Shop All). /cart sayfası yok.",
+  "capture": {
+    "url": "https://banditrunning.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T17:50:34.943Z"
+  }
+}
