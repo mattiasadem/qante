@@ -1,0 +1,62 @@
+{
+  "observationId": "amberjack.default.collection.product-showcase-grid-plp",
+  "schemaId": "product-showcase-grid-plp",
+  "kaynak": "amberjack",
+  "preset": "default",
+  "sayfa": "collection",
+  "url": "https://www.amberjack.shop/collections/all",
+  "selector": "[id*='__collection_grid_']",
+  "evidenceSlug": "product-showcase-grid-plp",
+  "evidence": [
+    "evidence/amberjack/default/collection/product-showcase-grid-plp.1440.png",
+    "evidence/amberjack/default/collection/product-showcase-grid-plp.375.png",
+    "evidence/amberjack/default/collection/product-showcase-grid-plp.768.png",
+    "evidence/amberjack/default/collection/product-showcase-grid-plp.changed.dress-shoes.1440.png",
+    "evidence/amberjack/default/collection/product-showcase-grid-plp.changed.dress-shoes.375.png",
+    "evidence/amberjack/default/collection/product-showcase-grid-plp.changed.dress-shoes.768.png",
+    "evidence/amberjack/default/collection/product-showcase-grid-plp.initial.shop-all.1440.png",
+    "evidence/amberjack/default/collection/product-showcase-grid-plp.initial.shop-all.375.png",
+    "evidence/amberjack/default/collection/product-showcase-grid-plp.initial.shop-all.768.png"
+  ],
+  "notlar": "The Collection. Chip: Shop All / Dress Shoes / Sneakers / Boots / Loafers / Accessories. Show Filters (Size/Color/Material). Sort Recommended… 29 Items. Standard/Wide. Forbes satırı.",
+  "delta": "collection_grid tek section — tab+filtre+grid. collection-nav-tabs değil (hero+CTA yok). Filtre overlay.",
+  "capture": {
+    "url": "https://www.amberjack.shop/collections/all",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:32:50.141Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.amberjack.shop/collections/all",
+      "capture": true,
+      "etiket": "shop-all",
+      "not": "Shop All 29 items"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "[id*='__collection_grid_'] label:has-text('Dress Shoes')",
+      "value": 2200,
+      "capture": true,
+      "etiket": "dress-shoes",
+      "not": "Dress Shoes chip (label, button değil) — grid değişmeli"
+    }
+  ],
+  "stateFindings": {
+    "initial": "The Collection / Shop All / 29 Items / Original+Court+Regent…",
+    "changed": "Dress Shoes chip siyah; 8 Items; Original / Regent / Duke / Loafer / Slip-On / Cap-Toe / Whole Cut / Tux."
+  },
+  "missingStates": []
+}
