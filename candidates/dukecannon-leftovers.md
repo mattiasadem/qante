@@ -16,7 +16,7 @@ Karar: onay bekliyor
 ---
 
 ADAY: dukecannon-cart-redirect  
-Gerekçe: `/cart` 200 ama landed `/?viewcart=true` (home template). Sepet yalnız `#CartDrawer`. `cart-page-main` yok.  
+Gerekçe: `/cart` 200 ama landed `/?viewcart=true` (home template). Sepet yalnız Rebuy `.rebuy-cart__flyout`. Native `#CartDrawer` 0×0 / “currently empty”. `cart-page-main` yok.  
 Örnekler: https://dukecannon.com/cart  
 Öneri: leftover — drawer-only  
 Karar: leftover
@@ -32,7 +32,7 @@ Karar: leftover
 ---
 
 ADAY: dukecannon-yotpo-reviews-page  
-Gerekçe: `/pages/reviews` page template + Yotpo site reviews (4.8 / 11485). `testimonial-quote-carousel` home shoppable-reviews ayrı.  
+Gerekçe: `/pages/reviews` page template + Yotpo site reviews (4.8 / 11485). Home `shoppable-reviews` ayrı `testimonial-quote-carousel`.  
 Örnekler: https://dukecannon.com/pages/reviews  
 Öneri: ertele / commerce-tools tartışması  
 Karar: onay bekliyor
@@ -65,17 +65,26 @@ Karar: leftover
 
 ## Diğer leftover (aday değil)
 
+- Rebuy flyout PDP / PLP / search tall capture’larda otomatik açık (bleed). Home featured’da yok. Native CartDrawer kullanılmıyor.
 - Newsletter popup `#shopify-section-newsletter-popup` h=0 / `index-section--hidden` — PII yok
 - Footer Klaviyo `klaviyo-form-WmBuRG` — gönderilmedi
-- Gorgias chat / Help Center `duke-cannon.gorgias.help` — overlay
+- GET 20% OFF floating tab + Octane video widget (app.octaneai.com) — overlay
+- Gorgias chat / Help Center `duke-cannon.gorgias.help`
 - PDP empty `#shopify-section-template--20190452842611__57873c4ad41e4af2a5bd` (boş page-width)
+- PDP PRODUCT SPECS / INGREDIENTS accordion `product-info-main` içinde — `changed` açılmadı
 - PDP Yotpo yıldız buy box içinde — ayrı şema yok
-- Header `#shopify-section-header` h=0 (sticky + drawer host); kutu `.header-sticky-wrapper` / `section.announcement-bar`
+- FBT Rebuy (`rebuy-checkbox-label`) — `commerce-tools-products-bundle` çekildi
+- Header `#shopify-section-header` h=0; kutu `.header-sticky-wrapper` / `section.announcement-bar`
 - Toolbar `.toolbar.small--hide` h=0
 - Terms / accessibility aynı page template (privacy temsilci)
 - Promotions ikinci rich_text “20% OFF WELCOME OFFER” — birinci GWP temsilci
 - Veterans PAST PARTNERS 62px heading (logo-bar ayrı)
 - Heroes boş rich_text satırları (h=56 / 23)
 - BlackCrow `shopify-init.blackcrow.ai`
+- Bazaarvoice / Nice bundler / GovX script
 - Wholesale `dukecannonwholesale.com` / careers `applytojob.com` / Impact affiliate — dış origin
+- Mobil Shop All / About alt akordeon açılmadı
+- PLP filtre accordion (SCENT/PRICE) şerit var, panel derinliği yoklandı değil
+- Kart hover: home ATC zaten görünür; ikinci görsel bu walk’ta yoklandı değil
+- Rewards FAQ satır `changed` açılmadı
 - Email / SMS / hesap / kupon / checkout — PII yok

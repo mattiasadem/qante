@@ -5,11 +5,18 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://dukecannon.com/",
-  "selector": "#CartDrawer",
+  "selector": ".rebuy-cart__flyout",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
-  "notlar": "Sağ cart drawer #CartDrawer. /cart → /?viewcart=true (home). GWP $65 Hunting Soap. Kapalı 0×0.",
-  "delta": "Tema (vitrinde): [Rollback] Production | Accenture 8.12.2026. schema_name Duke Cannon Shopify Theme 1.23.1, theme_store_id null, role main, id 147550273651. Shop duke-cannon.myshopify.com. Impulse-benzeri drawer--cart. cart-page-main yok. Boş/dolu interact.",
+  "evidence": [
+    "evidence/dukecannon/default/home/global-cart-drawer.1440.png",
+    "evidence/dukecannon/default/home/global-cart-drawer.375.png",
+    "evidence/dukecannon/default/home/global-cart-drawer.768.png",
+    "evidence/dukecannon/default/home/global-cart-drawer.filled.psl-qty1.1440.png",
+    "evidence/dukecannon/default/home/global-cart-drawer.filled.psl-qty1.375.png",
+    "evidence/dukecannon/default/home/global-cart-drawer.filled.psl-qty1.768.png"
+  ],
+  "notlar": "Görünür sepet Rebuy `.rebuy-cart__flyout` (500px sağ). Native #CartDrawer 0×0 / 'currently empty'. /cart → /?viewcart=true. YOUR CART + LOGIN + $50 ship bar + empty copy + YOU MAY ALSO LIKE + DISCOUNT CODE. LOGIN/kupon/PII yok.",
+  "delta": "Tema (vitrinde): [Rollback] Production | Accenture 8.12.2026. schema_name Duke Cannon Shopify Theme 1.23.1, theme_store_id null, role main, id 147550273651. Shop duke-cannon.myshopify.com. Rebuy smart cart native CartDrawer'ı ezer. cart-page-main yok.",
   "capture": {
     "url": "https://dukecannon.com/",
     "viewports": [
@@ -18,8 +25,9 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": ""
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:27:49.184Z",
+    "prepareClick": "a.js-drawer-open-cart"
   },
   "captureMode": "viewport",
   "prepareClick": "a.js-drawer-open-cart",
@@ -52,7 +60,7 @@
     {
       "state": "filled",
       "action": "addToCart",
-      "selector": "[data-add-to-cart], button[name=add], button[type=submit][name=add]",
+      "selector": "button.add-to-cart[name=add]",
       "capture": false
     },
     {
@@ -78,7 +86,10 @@
       "not": "Dolu drawer"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "Rebuy YOUR CART boş; $50 ship bar; SHOP NOW; YOU MAY ALSO LIKE 3 soap; DISCOUNT CODE. Native #CartDrawer 0×0.",
+    "filled": "PSL Single Brick $9 qty1; $41 away from free ship; subtotal $9; CHECKOUT. Upsell Tactical Scrubber / Palomino / Tropic Drift. Checkout tıklanmadı."
+  },
   "missingStates": [],
-  "interactionNote": "Checkout/PII yok. /cart home'a düşer."
+  "interactionNote": "addToCart UI. Checkout/LOGIN/kupon PII yok. /cart home'a düşer."
 }

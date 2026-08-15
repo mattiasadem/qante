@@ -7,7 +7,17 @@
   "url": "https://dukecannon.com/",
   "selector": ".site-header__search-container",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/dukecannon/default/home/global-predictive-search.1440.png",
+    "evidence/dukecannon/default/home/global-predictive-search.375.png",
+    "evidence/dukecannon/default/home/global-predictive-search.768.png",
+    "evidence/dukecannon/default/home/global-predictive-search.input.soap.1440.png",
+    "evidence/dukecannon/default/home/global-predictive-search.input.soap.375.png",
+    "evidence/dukecannon/default/home/global-predictive-search.input.soap.768.png",
+    "evidence/dukecannon/default/home/global-predictive-search.open.arama-acik.1440.png",
+    "evidence/dukecannon/default/home/global-predictive-search.open.arama-acik.375.png",
+    "evidence/dukecannon/default/home/global-predictive-search.open.arama-acik.768.png"
+  ],
   "notlar": "Search ikon → header search overlay. Form #HeaderSearchForm / #main-search. data-default-search=best. Predictive instructions DOM'da. /search tam sayfa ayrı.",
   "delta": "Tema (vitrinde): [Rollback] Production | Accenture 8.12.2026. schema_name Duke Cannon Shopify Theme 1.23.1, theme_store_id null, role main, id 147550273651. Shop duke-cannon.myshopify.com. Impulse site-header__search. Kapalı 0×0.",
   "capture": {
@@ -18,14 +28,16 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": ""
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:25:39.396Z",
+    "prepareClick": "a.js-search-header"
   },
   "captureMode": "viewport",
   "prepareClick": "a.js-search-header",
   "interactionStates": [
-    "open",
-    "input"
+    "initial",
+    "input",
+    "open"
   ],
   "interactionSteps": [
     {
@@ -47,14 +59,24 @@
       "state": "input",
       "action": "fill",
       "selector": "#main-search",
-      "value": "soap",
+      "value": "soa",
+      "capture": false,
+      "not": "fill input event yetmez; son harf press"
+    },
+    {
+      "state": "input",
+      "action": "press",
+      "value": "p",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "soap",
-      "not": "katalogSorgu soap — 90 sonuçlu /search ile aynı kelime"
+      "not": "katalogSorgu soap — Brick of Soap sonuçları"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "open": "Overlay: placeholder Search our store; default/best: Best Damn Beard Balm/Wash/Oil + COLLECTIONS Best Smellers + fall-colors article + VIEW MORE.",
+    "input": "soap yazılınca: Sawtooth/Bourbon/Jeep American Legend/Midnight Swim bricks; COLLECTIONS Holiday Soap / Soap Bundles / Soap Pucks / Body Wash & Bar Soap; VIEW MORE."
+  },
   "missingStates": [],
   "interactionNote": "375/768 görünür search ikonu yoklanacak."
 }
