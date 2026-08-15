@@ -1,0 +1,41 @@
+{
+  "observationId": "moom.default.product-detail.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "moom",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://moom.health/products/mama-water",
+  "selector": "#shopify-section-template--22312819425493__section_faq_VjJWeC",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [],
+  "notlar": "FAQ: Mama Water vs Hydr-aid · prenatal · daily sachets · taste.",
+  "delta": "Kinetic section_faq. İlk soru changed.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://moom.health/products/mama-water",
+      "capture": true,
+      "etiket": "faq-kapali",
+      "not": "Kapalı soru listesi"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--22312819425493__section_faq_VjJWeC button, #shopify-section-template--22312819425493__section_faq_VjJWeC summary, #shopify-section-template--22312819425493__section_faq_VjJWeC [aria-expanded]",
+      "capture": true,
+      "etiket": "ilk-soru",
+      "not": "İlk soru açık"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Soru başlıkları kapalı.",
+    "changed": "İlk cevap görünür — karede bakılacak."
+  },
+  "missingStates": [],
+  "interactionNote": "İlk expander. İkincide olmazsa leftover."
+}

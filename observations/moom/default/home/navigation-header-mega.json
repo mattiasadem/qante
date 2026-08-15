@@ -1,0 +1,47 @@
+{
+  "observationId": "moom.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "moom",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://moom.health/",
+  "selector": "#shopify-section-sections--22312820408533__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Kinetic c__header: sol Shop + About/Quiz/Rewards; orta MOOM logo; sağ globe/search/account/cart. Shop hover .s_menu mega.",
+  "delta": "Impact header üzerine Kinetic nav. Mega details/summary değil — #id_shoplink hover + checkbox #id_hamburger. 375/768 hamburger label[for=id_hamburger] (40×40). Dil/ülke jsc-globe-trigger (EN / zh-TW / zh-CN · SG/AU…). Hesap /account — girilmedi.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://moom.health/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bar",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#id_shoplink",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "1440 Shop hover → .s_menu kolonları"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Shop About Quiz Rewards · MOOM · globe · search · account · cart 0.",
+    "open": "1440 Shop hover .s_menu: Shop All / New Arrivals / Bestsellers / Daily Powders / Curated Packs / Individual Supplements / Fast-Acting Remedies / Shop by Concern + Raise Day promo."
+  },
+  "missingStates": [],
+  "interactionNote": "Shop <a href=/collections/all>; tık PLP'ye gider. Mega hover. Mobil menü ayrı obs."
+}

@@ -1,0 +1,64 @@
+{
+  "observationId": "moom.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "moom",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://moom.health/",
+  "selector": ".s_menu",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "Kinetic checkbox hamburger label[for=id_hamburger]. Açık .s_menu: Shop All… + Raise Day + Account/Rewards + SGD/English.",
+  "delta": "Impact #header-sidebar-menu yok. CSS checkbox nav. 1440 mega ayrı obs. 375/768 open.",
+  "captureMode": "viewport",
+  "prepareClick": "label[for='id_hamburger']",
+  "interactionStates": [
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://moom.health/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "label[for='id_hamburger']",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Mobil menü açık"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='id_menuitem_2']",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "new-arrivals",
+      "not": "New Arrivals accordion — yazılı <a> değil"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: Shop All + kategori chevron + Raise Day kart + SGD/English.",
+    "changed": "New Arrivals alt linkler — karede bakılacak."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "Kapalı .s_menu 0 yükseklik — open karesi asıl kanıt"
+    }
+  ],
+  "interactionNote": "1440 N/A (Shop hover mega). Account tıklanmadı."
+}

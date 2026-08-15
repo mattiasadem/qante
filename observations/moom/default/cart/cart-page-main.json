@@ -1,0 +1,62 @@
+{
+  "observationId": "moom.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "moom",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://moom.health/cart",
+  "selector": "#shopify-section-template--22312812708053__main",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Boş: Your cart is empty · CONTINUE SHOPPING. Asıl sepet drawer.",
+  "delta": "Impact cart template. Drawer ayrı obs.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://moom.health/cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://moom.health/products/mama-water",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form.shopify-product-form button[type='submit']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://moom.health/cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "dolu",
+      "not": "Dolu cart sayfası — drawer açılırsa leftover"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty / CONTINUE SHOPPING.",
+    "filled": "Mama Water satırı veya drawer'a kaçış — karede bakılacak."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout yok."
+}

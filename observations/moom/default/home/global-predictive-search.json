@@ -1,0 +1,51 @@
+{
+  "observationId": "moom.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "moom",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://moom.health/",
+  "selector": "#search-drawer",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "Impact search-drawer. Opener a[aria-controls=search-drawer]. katalogSorgu hormones.",
+  "delta": "Form action=/search name=q. Predictive ürün/koleksiyon beklenir.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://moom.health/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[aria-controls='search-drawer']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-kapali",
+      "not": "Boş search drawer"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#search-drawer input[name='q']",
+      "value": "hormones",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hormones",
+      "not": "Predictive öneri"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Search drawer açık, input boş.",
+    "input": "hormones yazınca ürün önerisi — karede bakılacak."
+  },
+  "missingStates": [],
+  "interactionNote": "Submit ile /search sayfasına kaçırma. PII yok."
+}

@@ -1,0 +1,80 @@
+{
+  "observationId": "moom.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "moom",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://moom.health/",
+  "selector": "#cart-drawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Impact cart-drawer. Boş: Your cart is empty / CONTINUE SHOPPING. Dolu: Mama Water ATC.",
+  "delta": "Kinetic overlay-group. Checkout tıklanmadı. Qty +/− Impact quantity.",
+  "captureMode": "viewport",
+  "prepareClick": "a[aria-controls='cart-drawer']",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://moom.health/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[aria-controls='cart-drawer']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://moom.health/products/mama-water",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form.shopify-product-form button[type='submit']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a[aria-controls='cart-drawer']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mama-water",
+      "not": "ATC sonrası dolu drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#cart-drawer button[name='plus'], #cart-drawer button[name='increase'], #cart-drawer .quantity-selector button:last-child",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Qty +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boş cart-drawer beklenir.",
+    "filled": "Mama Water satırı + ara toplam — karede doğrulanacak.",
+    "changed": "Adet artışı — olmazsa leftover."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC UI tık; fallback /cart/add.js olursa not. Checkout yok."
+}

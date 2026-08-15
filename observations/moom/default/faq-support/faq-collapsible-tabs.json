@@ -1,0 +1,41 @@
+{
+  "observationId": "moom.default.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "moom",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "url": "https://moom.health/pages/faq",
+  "selector": "#shopify-section-template--22312815362261__d41d1ed3-a794-4fc3-ac34-cccd4d0c0559",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [],
+  "notlar": "Moom 101 accordion: What is Moom? How do I start? sachets · pricing.",
+  "delta": "Sayfada birden fazla FAQ grubu (Products / Subscription / de/bloat…). Bu ilk dolu grup. Diğerleri leftover aynı tip.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://moom.health/pages/faq",
+      "capture": true,
+      "etiket": "moom-101",
+      "not": "Moom 101 kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--22312815362261__d41d1ed3-a794-4fc3-ac34-cccd4d0c0559 button, #shopify-section-template--22312815362261__d41d1ed3-a794-4fc3-ac34-cccd4d0c0559 summary, #shopify-section-template--22312815362261__d41d1ed3-a794-4fc3-ac34-cccd4d0c0559 [aria-expanded]",
+      "capture": true,
+      "etiket": "q1",
+      "not": "İlk soru açık"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Moom 101 soru listesi.",
+    "changed": "İlk cevap açık — karede bakılacak."
+  },
+  "missingStates": [],
+  "interactionNote": "Üst FAQ TOC (Moom 101 / Products…) leftover page-anchor."
+}
