@@ -11,7 +11,7 @@ Durum: `done` = main'e merge · `in progress` = açık PR · boş = kuyrukta
 | # | Status | Domain | URL |
 |---|---|---|---|
 | 1 | done | myobvi.com | https://myobvi.com |
-| 2 | in progress | banditrunning.com | https://banditrunning.com |
+| 2 | done | banditrunning.com | https://banditrunning.com |
 | 3 | done | graza.co | https://graza.co |
 | 4 | done | cometeer.com | https://cometeer.com |
 | 5 | done | mytopicals.com | https://mytopicals.com |
@@ -24,7 +24,7 @@ Durum: `done` = main'e merge · `in progress` = açık PR · boş = kuyrukta
 | 12 | in progress | chomps.com | https://chomps.com |
 | 13 | in progress | vollebak.com | https://vollebak.com |
 | 14 | in progress | drinkhiyo.com | https://drinkhiyo.com |
-| 15 | | boka.com | https://boka.com |
+| 15 | in progress | boka.com | https://boka.com |
 | 16 | | hexclad.com | https://hexclad.com |
 | 17 | | primalqueen.com | https://primalqueen.com |
 | 18 | | cutsclothing.com | https://cutsclothing.com |
