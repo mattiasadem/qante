@@ -1,0 +1,83 @@
+{
+  "observationId": "chomps.default.about-brand.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "chomps",
+  "preset": "default",
+  "sayfa": "about-brand",
+  "url": "https://chomps.com/pages/our-mission",
+  "selector": "#shopify-section-template--21247586467909__faq_axXxUr",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/chomps/default/about-brand/faq-collapsible-tabs.changed.ilk-soru.1440.png",
+    "evidence/chomps/default/about-brand/faq-collapsible-tabs.changed.ilk-soru.375.png",
+    "evidence/chomps/default/about-brand/faq-collapsible-tabs.changed.ilk-soru.768.png",
+    "evidence/chomps/default/about-brand/faq-collapsible-tabs.initial.kapali.1440.png",
+    "evidence/chomps/default/about-brand/faq-collapsible-tabs.initial.kapali.375.png",
+    "evidence/chomps/default/about-brand/faq-collapsible-tabs.initial.kapali.768.png"
+  ],
+  "notlar": "Non-UPF Verified FAQs. Why is Non-UPF important to Chomps?",
+  "delta": "On-site FAQ (help.chomps.com değil). Kategori tab yok.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://chomps.com/pages/our-mission",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false,
+      "not": "Klaviyo gecikmeli"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Klaviyo/modal kapat — selector fail yok"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21247586467909__faq_axXxUr",
+      "capture": true,
+      "etiket": "kapali"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--21247586467909__faq_axXxUr button",
+      "capture": true,
+      "etiket": "ilk-soru"
+    }
+  ],
+  "stateFindings": {
+    "initial": "NON-UPF VERIFIED FAQS; 3 soru kapalı (+). İlk: Why is Non-UPF important to Chomps?",
+    "changed": "İlk soru açık (–); cevap Non-UPF / third-party certifications. Diğer ikisi +."
+  },
+  "missingStates": [],
+  "interactionNote": "Klaviyo: 4s + Escape. Site FAQ (help.chomps.com değil).",
+  "capture": {
+    "url": "https://chomps.com/pages/our-mission",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:48:04.074Z"
+  }
+}
