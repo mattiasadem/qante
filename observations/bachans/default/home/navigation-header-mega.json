@@ -1,0 +1,69 @@
+{
+  "observationId": "bachans.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "bachans",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://bachans.com/",
+  "selector": "fixed-header#spd_header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Logo + Shop mega + About + Recipes + Products + Log in + Cart + Find A Store. 375: hamburger SVG + logo + cart.",
+  "delta": "#shopify-section-header height 0; kutu fixed-header#spd_header. Arama ikonu yok.",
+  "captureMode": "section",
+  "interactionStates": ["initial", "open"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://bachans.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Find-a-store / cookie overlay"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "fixed-header#spd_header",
+      "capture": true,
+      "etiket": "bar"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-HeaderMenu-1 > summary",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "viewports": ["1440"]
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "open": ""
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375 mega yok — hamburger drawer (global-menu-drawer). 768 masaüstü nav göründü."
+    }
+  ],
+  "interactionNote": "Shop summary #Details-HeaderMenu-1. Arama yok."
+}

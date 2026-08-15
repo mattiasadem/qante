@@ -1,0 +1,61 @@
+{
+  "observationId": "bachans.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "bachans",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://bachans.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "375 hamburger (icon-hamburger SVG, summary box 0px). Shop / About / Recipes / Products.",
+  "delta": "header-drawer data-breakpoint=tablet. Kapalıda #menu-drawer x=-296. 1440 N/A. 768 masaüstü nav göründü — yoklanacak.",
+  "captureMode": "viewport",
+  "prepareClick": "header-drawer summary.header__icon--menu",
+  "interactionStates": ["open"],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://bachans.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 400,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header-drawer summary.header__icon--menu",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "viewports": ["375", "768"]
+    }
+  ],
+  "stateFindings": {
+    "open": ""
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger yok — mega (navigation-header-mega)"
+    }
+  ],
+  "interactionNote": "summary getBoundingClientRect 0; SVG görünür. force click gerekir."
+}

@@ -1,0 +1,54 @@
+{
+  "observationId": "bachans.default.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "bachans",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "url": "https://bachans.com/pages/faqs",
+  "selector": "#shopify-section-template--17829507825844__6f82a22e-7312-4744-9cb3-697a429c4a68",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [],
+  "notlar": "FREQUENTLY ASKED QUESTIONS — ALL / SAUCE / SHIPPING / ORDERS accordion.",
+  "delta": "Kategori sekmeleri + details.",
+  "interactionStates": ["initial", "changed"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://bachans.com/pages/faqs",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17829507825844__6f82a22e-7312-4744-9cb3-697a429c4a68",
+      "capture": true,
+      "etiket": "kapali"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--17829507825844__6f82a22e-7312-4744-9cb3-697a429c4a68 details summary",
+      "capture": true,
+      "etiket": "ilk-soru"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "İlk details summary. Sekme ALL/SAUCE ayrıca yoklandı değil."
+}
