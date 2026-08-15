@@ -42,19 +42,19 @@ Durum: `done` = main'e merge · `in progress` = açık PR · boş = kuyrukta
 | 30 | done | bleame.com | https://bleame.com |
 | 31 | done | tenthousand.cc | https://tenthousand.cc |
 | 32 | done | novoslabs.com | https://novoslabs.com |
-| 33 | in progress | davidprotein.com | https://davidprotein.com |
+| 33 | done | davidprotein.com | https://davidprotein.com |
 | 34 | done | vessi.com | https://vessi.com |
 | 35 | done | flamingoestate.com | https://flamingoestate.com |
 | 36 | done | flybyjing.com | https://flybyjing.com |
-| 37 | in progress | gruns.co | https://gruns.co |
+| 37 | done | gruns.co | https://gruns.co |
 | 38 | in progress | hollowsocks.com | https://hollowsocks.com |
-| 39 | in progress | representclo.com | https://representclo.com |
-| 40 | in progress | functionhealth.com | https://functionhealth.com |
-| 41 | in progress | chamberlaincoffee.com | https://chamberlaincoffee.com |
-| 42 | | dukecannon.com | https://dukecannon.com |
+| 39 | done | representclo.com | https://representclo.com |
+| 40 | done | functionhealth.com | https://functionhealth.com |
+| 41 | done | chamberlaincoffee.com | https://chamberlaincoffee.com |
+| 42 | done | dukecannon.com | https://dukecannon.com |
 | 43 | | magicmind.com | https://magicmind.com |
-| 44 | | atoms.com | https://atoms.com |
-| 45 | | cymbiotika.com | https://cymbiotika.com |
+| 44 | done | atoms.com | https://atoms.com |
+| 45 | done | cymbiotika.com | https://cymbiotika.com |
 | 46 | | greatjonesgoods.com | https://greatjonesgoods.com |
 | 47 | | hellobubble.com | https://hellobubble.com |
 | 48 | | pamos.com | https://pamos.com |

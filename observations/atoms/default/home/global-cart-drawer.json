@@ -1,0 +1,112 @@
+{
+  "observationId": "atoms.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "atoms",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://atoms.com/",
+  "selector": "div.fixed.inset-y-0.flex.max-w-full.right-0",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/atoms/default/home/global-cart-drawer.filled.crew-socks.1440.png",
+    "evidence/atoms/default/home/global-cart-drawer.filled.crew-socks.375.png",
+    "evidence/atoms/default/home/global-cart-drawer.filled.crew-socks.768.png",
+    "evidence/atoms/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/atoms/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/atoms/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "Sağ drawer Your Cart. Boş: haven’t added anything + Continue shopping + Shop Best Sellers kartları. /cart ayrı sayfa.",
+  "delta": "Hydrogen drawer; Liquid cart-drawer yok. Kapalı 0px. ATC size zorunlu.",
+  "captureMode": "viewport",
+  "prepareClick": "[data-component=\"desktop-header\"] button.relative.flex.h-8.w-8",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://atoms.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "[data-component=\"desktop-header\"] button.relative.flex.h-8.w-8",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "1440 bag 0 → boş drawer"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "[data-component=\"mobile-header\"] button:has-text(\"0\")",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "375/768 bag"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://atoms.com/products/atoms-classic-crew-socks",
+      "capture": false,
+      "not": "Model 000 Black bedenleri Notify me; çorap ATC açık"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button:has-text(\"Add to Cart\")",
+      "capture": false,
+      "not": "Hydrogen ATC; drawer açılır — bag tık 768'de kapatıyordu"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "body",
+      "etiket": "crew-socks",
+      "not": "ATC sonrası açık drawer (body viewport; drawer selector 768 0px)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your Cart boş + Continue shopping + Shop Best Sellers (mask, 001 Black, 000 B&W, 000 Black).",
+    "filled": "Classic Crew Socks $20 (White, One Size) + Total $20 + Checkout. 375/768/1440 ATC-open body viewport. Model 000 Black bedenleri Notify me — leftover."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı. addToCart /cart/add.js yok — UI tık. Size seçilmezse ATC disabled.",
+  "capture": {
+    "url": "https://atoms.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:03:45.861Z"
+  }
+}
