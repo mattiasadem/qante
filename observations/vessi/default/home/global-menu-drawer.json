@@ -7,11 +7,10 @@
   "evidenceSlug": "global-menu-drawer",
   "evidence": [],
   "url": "https://vessi.com/",
-  "selector": ".header-v2-drawer__content",
+  "selector": "#mobile-menu-drawer",
   "captureMode": "viewport",
-  "prepareClick": "#mobile-menu-trigger",
-  "notlar": "Mobil hamburger #mobile-menu-trigger. Drawer header-v2 içinde (ayrı shopify-section yok).",
-  "delta": "1440'ta hamburger lg_min:hidden — N/A beklenir.",
+  "notlar": "Mobil hamburger #mobile-menu-trigger → MOBILE-MENU-DRAWER #mobile-menu-drawer (Shop Women accordion). .header-v2-drawer__content 0px — Women mega host, mobil drawer değil.",
+  "delta": "1440'ta hamburger lg_min:hidden — N/A beklenir. Ayrı shopify-section yok.",
   "interactionStates": [
     "open"
   ],
@@ -20,6 +19,12 @@
       "state": "open",
       "action": "goto",
       "value": "https://vessi.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "header-v2.header-v2",
       "capture": false
     },
     {
@@ -38,6 +43,23 @@
   "stateFindings": {
     "open": ""
   },
-  "missingStates": [],
-  "interactionNote": "1440 N/A. Alt akordeon yoklandı değil."
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1. deneme: .header-v2-drawer__content 0px (Women mega host). 2. deneme: #mobile-menu-drawer + hamburger."
+    }
+  ],
+  "interactionNote": "1440 N/A. Official dismiss HEADER-V2 kill — forceOpen sonra hamburger. Alt Support accordion leftover.",
+  "capture": {
+    "url": "https://vessi.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:54:52.696Z",
+    "prepareClick": "#mobile-menu-trigger"
+  }
 }

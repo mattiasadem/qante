@@ -5,7 +5,12 @@
   "preset": "default",
   "sayfa": "home",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
+  "evidence": [
+    "evidence/vessi/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/vessi/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/vessi/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/vessi/default/home/navigation-header-mega.open.women-mega.1440.png"
+  ],
   "url": "https://vessi.com/",
   "selector": "#shopify-section-sections--16074583736405__header-v2",
   "notlar": "Sticky header-v2. Logo; Women / Men (drawer mega, href=#) · Best Sellers · Back to school · SALE. Search / cart / USD|EN. Mobil #mobile-menu-trigger.",
@@ -19,6 +24,19 @@
       "state": "initial",
       "action": "goto",
       "value": "https://vessi.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "header-v2.header-v2",
+      "capture": false,
+      "not": "dismiss HEADER-V2'yi overlay sanıp gizler"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 500,
       "capture": true,
       "etiket": "bar",
       "not": "Kapalı sticky bar"
@@ -37,9 +55,20 @@
     }
   ],
   "stateFindings": {
-    "initial": "VESSI logo; Women / Men / Best Sellers / Back to school / SALE; search; cart 0; USD | EN.",
-    "open": ""
+    "initial": "vessi wordmark; glass pill Women / Men / Best Sellers / Back to school / SALE (lime); account; search; cart (0); USD | EN.",
+    "open": "1440 Women mega full-screen: All women's shoes / Sneakers / Slip-ons / Flats / Boots / High-tops / Apparel & accessories / Best sellers / New arrivals / Sale; SUPPORT+; X close. Women pill highlighted."
   },
   "missingStates": [],
-  "interactionNote": "375/768 mega yok — hamburger ayrı global-menu-drawer. Hover Women panel açmadı; click."
+  "interactionNote": "375/768 mega yok — hamburger ayrı global-menu-drawer. Hover Women panel açmadı; click. Official dismiss HEADER-V2'yi overlay sanır — forceOpen zorunlu.",
+  "capture": {
+    "url": "https://vessi.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:54:05.203Z"
+  }
 }

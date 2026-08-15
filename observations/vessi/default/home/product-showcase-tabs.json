@@ -5,7 +5,17 @@
   "preset": "default",
   "sayfa": "home",
   "evidenceSlug": "product-showcase-tabs",
-  "evidence": [],
+  "evidence": [
+    "evidence/vessi/default/home/product-showcase-tabs.1440.png",
+    "evidence/vessi/default/home/product-showcase-tabs.375.png",
+    "evidence/vessi/default/home/product-showcase-tabs.768.png",
+    "evidence/vessi/default/home/product-showcase-tabs.changed.men-tab.1440.png",
+    "evidence/vessi/default/home/product-showcase-tabs.changed.men-tab.375.png",
+    "evidence/vessi/default/home/product-showcase-tabs.changed.men-tab.768.png",
+    "evidence/vessi/default/home/product-showcase-tabs.initial.women-tab.1440.png",
+    "evidence/vessi/default/home/product-showcase-tabs.initial.women-tab.375.png",
+    "evidence/vessi/default/home/product-showcase-tabs.initial.women-tab.768.png"
+  ],
   "url": "https://vessi.com/",
   "selector": "#shopify-section-template--16074611163221__collection_carousel_46ACQq",
   "notlar": "Women | Men sekmeli ürün karoseli. Waterproof shoes; Weekend Classic (25,182).",
@@ -32,16 +42,32 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": "#shopify-section-template--16074611163221__collection_carousel_46ACQq >> text=Men",
+      "selector": "#shopify-section-template--16074611163221__collection_carousel_46ACQq a[role='tab']:has-text('Men')",
       "capture": true,
       "etiket": "men-tab",
       "not": "Men sekmesi — Asphalt Black vb."
     }
   ],
   "stateFindings": {
-    "initial": "Women sekmesi; Weekend Classic Marble White (25,182).",
+    "initial": "Waterproof shoes; Women tab active; Weekend Classic USA $128 (was $165), Stormburst Low Top $170, Market Mary Jane $130, Weekend Classic Marble White $150.",
     "changed": ""
   },
-  "missingStates": [],
-  "interactionNote": "Men metni header'da da var — section-scoped selector."
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "1. deneme text=Men: Women tab hâlâ aktif, aynı 4 kart. 2. deneme a[role=tab] Men."
+    }
+  ],
+  "interactionNote": "Men metni header + kartlarda da var — role=tab şart.",
+  "capture": {
+    "url": "https://vessi.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:58:11.446Z"
+  }
 }

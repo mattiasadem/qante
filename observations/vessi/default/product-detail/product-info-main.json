@@ -5,7 +5,17 @@
   "preset": "default",
   "sayfa": "product-detail",
   "evidenceSlug": "product-info-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/vessi/default/product-detail/product-info-main.1440.png",
+    "evidence/vessi/default/product-detail/product-info-main.375.png",
+    "evidence/vessi/default/product-detail/product-info-main.768.png",
+    "evidence/vessi/default/product-detail/product-info-main.changed.beden-6.1440.png",
+    "evidence/vessi/default/product-detail/product-info-main.changed.beden-6.375.png",
+    "evidence/vessi/default/product-detail/product-info-main.changed.beden-6.768.png",
+    "evidence/vessi/default/product-detail/product-info-main.initial.marble-white.1440.png",
+    "evidence/vessi/default/product-detail/product-info-main.initial.marble-white.375.png",
+    "evidence/vessi/default/product-detail/product-info-main.initial.marble-white.768.png"
+  ],
   "url": "https://vessi.com/products/womens-weekend-classic-marble-white",
   "selector": "#shopify-section-template--16074643898453__main",
   "notlar": "Best Seller · Weekend Classic · $150 · (25,182). Galeri + buy box. ~1248px.",
@@ -31,16 +41,27 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": "#shopify-section-template--16074643898453__main [aria-label*='6' i], #shopify-section-template--16074643898453__main button:has-text('6')",
+      "selector": "#shopify-section-template--16074643898453__main input[name='Size'][value='6']",
       "capture": true,
       "etiket": "beden-6",
       "not": "Beden 6 — fiyat/ATC değişimi"
     }
   ],
   "stateFindings": {
-    "initial": "Marble White Weekend Classic $150; Best Seller; 25,182 reviews.",
-    "changed": ""
+    "initial": "Best Seller · Weekend Classic · $150 · 25,184 reviews; Marble White; sizes 5–11 unselected; CTA Select a size.",
+    "changed": "1. deneme: size 6 circle highlighted; CTA still Select a size (aria-label*='6' radio değil kesin). 2. deneme: input[name=Size][value=6]."
   },
   "missingStates": [],
-  "interactionNote": "Renk ailesi ayrı carousel section. Size guide modal leftover."
+  "interactionNote": "Size = label.product-main__selector--size + radio name=Size. Size guide + FIND A STORE leftover. Reviews sayısı buy box'ta.",
+  "capture": {
+    "url": "https://vessi.com/products/womens-weekend-classic-marble-white",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:00:46.230Z"
+  }
 }
