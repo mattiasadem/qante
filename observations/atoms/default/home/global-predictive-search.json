@@ -1,0 +1,89 @@
+{
+  "observationId": "atoms.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "atoms",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://atoms.com/",
+  "selector": "form:has(input[name=\"q\"])",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/atoms/default/home/global-predictive-search.initial.search-bos.1440.png",
+    "evidence/atoms/default/home/global-predictive-search.initial.search-bos.375.png",
+    "evidence/atoms/default/home/global-predictive-search.initial.search-bos.768.png",
+    "evidence/atoms/default/home/global-predictive-search.input.black.1440.png",
+    "evidence/atoms/default/home/global-predictive-search.input.black.375.png",
+    "evidence/atoms/default/home/global-predictive-search.input.black.768.png"
+  ],
+  "notlar": "Search butonu overlay açar. input[name=q] placeholder Search. Fill black → .search-query-suggestion chip (black, gray black…).",
+  "delta": "Kapalı input yok. Fill black: Suggestions + Products listesi + View all results. /search?q=black 200; /search boş 500.",
+  "captureMode": "viewport",
+  "prepareClick": "button:has-text(\"Search\")",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://atoms.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button:has-text(\"Search\")",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Boş search overlay"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input[name=\"q\"]",
+      "value": "black",
+      "capture": false,
+      "not": "katalog: Model 000 Black"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "input[name=\"q\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "black",
+      "not": "suggestion chip"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Search overlay + boş input.",
+    "input": "1440 black: Suggestions (gray black, red black…) + Products (000 Black $145, 000 B&W, 001 Black, 251 Low) + View all results."
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 overlay de açıldı. PII yok.",
+  "capture": {
+    "url": "https://atoms.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:49:14.384Z"
+  }
+}

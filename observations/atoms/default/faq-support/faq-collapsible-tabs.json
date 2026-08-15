@@ -1,0 +1,62 @@
+{
+  "observationId": "atoms.default.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "atoms",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "url": "https://atoms.com/faq251",
+  "selector": "#mainContent .page",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/atoms/default/faq-support/faq-collapsible-tabs.1440.png",
+    "evidence/atoms/default/faq-support/faq-collapsible-tabs.375.png",
+    "evidence/atoms/default/faq-support/faq-collapsible-tabs.768.png",
+    "evidence/atoms/default/faq-support/faq-collapsible-tabs.changed.ilk-soru.1440.png",
+    "evidence/atoms/default/faq-support/faq-collapsible-tabs.changed.ilk-soru.375.png",
+    "evidence/atoms/default/faq-support/faq-collapsible-tabs.changed.ilk-soru.768.png"
+  ],
+  "notlar": "FAQ – MKBHD x Atoms 251. Orders and Payment / Shipping accordion (3 soru).",
+  "delta": "Kampanya FAQ. Genel FAQ dış host. İlk soru changed interact.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://atoms.com/faq251",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button:has-text('Can I change/cancel my order?')",
+      "capture": true,
+      "etiket": "ilk-soru",
+      "not": "İlk accordion açık"
+    }
+  ],
+  "stateFindings": {
+    "changed": "Can I change/cancel my order? açık — cevap metni."
+  },
+  "missingStates": [],
+  "interactionNote": "Genel FAQ faq.atoms.com leftover.",
+  "capture": {
+    "url": "https://atoms.com/faq251",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:53:44.559Z"
+  }
+}
