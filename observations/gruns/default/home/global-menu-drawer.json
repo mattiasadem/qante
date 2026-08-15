@@ -1,0 +1,66 @@
+{
+  "observationId": "gruns.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "gruns",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://gruns.co/",
+  "selector": "#HeaderMenuDrawer-header_v2",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/gruns/default/home/global-menu-drawer.1440.png",
+    "evidence/gruns/default/home/global-menu-drawer.375.png",
+    "evidence/gruns/default/home/global-menu-drawer.768.png",
+    "evidence/gruns/default/home/global-menu-drawer.open.drawer-acik.1440.png",
+    "evidence/gruns/default/home/global-menu-drawer.open.drawer-acik.375.png",
+    "evidence/gruns/default/home/global-menu-drawer.open.drawer-acik.768.png"
+  ],
+  "notlar": "site-nav-drawer. 375/768/1440 hamburger. SHOP ALL + 4 ürün kartı + Account + Science / Store / Ü Snacks.",
+  "delta": "Masaüstünde de drawer — mega hover yok. 1440 N/A değil.",
+  "captureMode": "viewport",
+  "prepareClick": "button[aria-label='Open navigation menu']",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://gruns.co/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button[aria-label='Open navigation menu']",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "selector": "#HeaderMenuDrawer-header_v2",
+      "value": 5000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "drawer-acik"
+    }
+  ],
+  "stateFindings": {
+    "open": "358px (375'te 343) drawer: SHOP ALL + Adults/Kids/Minions kartları + Manage Your Account + Our Science / Find In Store / Ü Snacks."
+  },
+  "missingStates": [],
+  "interactionNote": "prepareClick + interaction aynı opener.",
+  "capture": {
+    "url": "https://gruns.co/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:23:10.200Z",
+    "prepareClick": "button[aria-label='Open navigation menu']"
+  }
+}

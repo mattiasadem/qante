@@ -1,0 +1,67 @@
+{
+  "observationId": "gruns.default.product-detail.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "gruns",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://gruns.co/products/gruns",
+  "selector": "#shopify-section-template--18534285574210__fto_faq_abQVa8",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/gruns/default/product-detail/faq-collapsible-tabs.1440.png",
+    "evidence/gruns/default/product-detail/faq-collapsible-tabs.375.png",
+    "evidence/gruns/default/product-detail/faq-collapsible-tabs.768.png",
+    "evidence/gruns/default/product-detail/faq-collapsible-tabs.changed.shipping-cevap.1440.png",
+    "evidence/gruns/default/product-detail/faq-collapsible-tabs.changed.shipping-cevap.375.png",
+    "evidence/gruns/default/product-detail/faq-collapsible-tabs.changed.shipping-cevap.768.png",
+    "evidence/gruns/default/product-detail/faq-collapsible-tabs.initial.ilk-soru.1440.png",
+    "evidence/gruns/default/product-detail/faq-collapsible-tabs.initial.ilk-soru.375.png",
+    "evidence/gruns/default/product-detail/faq-collapsible-tabs.initial.ilk-soru.768.png"
+  ],
+  "notlar": "Any last questions? Custom accordion (<details> yok). İlk soru Raspberry Lemonade permanent? Başlangıçta hepsi kapalı.",
+  "delta": "fto_faq button#trigger-… . <details> yok.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://gruns.co/products/gruns",
+      "capture": true,
+      "etiket": "ilk-soru"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#trigger-template--18534285574210__fto_faq_abQVa8-4",
+      "capture": false,
+      "not": "When will my gummies arrive?"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 500,
+      "capture": true,
+      "etiket": "shipping-cevap"
+    }
+  ],
+  "stateFindings": {
+    "initial": "7 soru hepsi kapalı (+). Cevap yok.",
+    "changed": "When will my gummies arrive? açık (−): 24h ship / ortalama 3-5 gün. Piksel değişti."
+  },
+  "missingStates": [],
+  "interactionNote": "button#trigger-…-4. <details> yok.",
+  "capture": {
+    "url": "https://gruns.co/products/gruns",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:26:14.518Z"
+  }
+}
