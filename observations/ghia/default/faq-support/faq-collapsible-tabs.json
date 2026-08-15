@@ -1,0 +1,61 @@
+{
+  "observationId": "ghia.default.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "ghia",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "url": "https://drinkghia.com/pages/faq",
+  "selector": "#shopify-section-template--17451696292074__faqs_DB8xQe",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/ghia/default/faq-support/faq-collapsible-tabs.1440.png",
+    "evidence/ghia/default/faq-support/faq-collapsible-tabs.375.png",
+    "evidence/ghia/default/faq-support/faq-collapsible-tabs.768.png",
+    "evidence/ghia/default/faq-support/faq-collapsible-tabs.changed.no-alcohol.1440.png",
+    "evidence/ghia/default/faq-support/faq-collapsible-tabs.changed.no-alcohol.375.png",
+    "evidence/ghia/default/faq-support/faq-collapsible-tabs.changed.no-alcohol.768.png",
+    "evidence/ghia/default/faq-support/faq-collapsible-tabs.initial.liste.1440.png",
+    "evidence/ghia/default/faq-support/faq-collapsible-tabs.initial.liste.375.png",
+    "evidence/ghia/default/faq-support/faq-collapsible-tabs.initial.liste.768.png"
+  ],
+  "notlar": "HELP & FAQS. Sol kategori: Product / Stockists / Orders, Shipping, Returns / Misc. / Subscriptions. Accordion +.",
+  "delta": "Kategori sidebar (cloud pill). Footer Shipping & Returns buraya. İlk cevaplar kapalı.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://drinkghia.com/pages/faq",
+      "capture": true,
+      "etiket": "liste",
+      "not": "HELP & FAQS"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--17451696292074__faqs_DB8xQe :text(\"There's Really No Alcohol?\"), #shopify-section-template--17451696292074__faqs_DB8xQe :text('There’s Really No Alcohol?')",
+      "capture": true,
+      "etiket": "no-alcohol",
+      "not": "İkinci soru açık"
+    }
+  ],
+  "stateFindings": {
+    "initial": "PRODUCT SSS; What’s Inside? cevap görünür.",
+    "changed": "There’s Really No Alcohol? açık."
+  },
+  "missingStates": [],
+  "capture": {
+    "url": "https://drinkghia.com/pages/faq",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:07:18.501Z"
+  }
+}
