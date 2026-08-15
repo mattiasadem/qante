@@ -5,11 +5,81 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://davidprotein.com/",
-  "selector": "predictive-search",
+  "selector": "dialog",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
-  "notlar": "İkon [data-search-toggle] (18px). Overlay: Start typing… + Products pills (Double Chocolate, Blueberry Pie…) + Company/Support/Partnerships kolonları.",
-  "delta": "Tam sayfa /search CF 429 görüldü — overlay birincil. input state interact.",
+  "evidence": [
+    "evidence/davidprotein/default/home/global-predictive-search.input.blueberry.1440.png",
+    "evidence/davidprotein/default/home/global-predictive-search.input.blueberry.375.png",
+    "evidence/davidprotein/default/home/global-predictive-search.input.blueberry.768.png",
+    "evidence/davidprotein/default/home/global-predictive-search.open.overlay-bos.1440.png",
+    "evidence/davidprotein/default/home/global-predictive-search.open.overlay-bos.375.png",
+    "evidence/davidprotein/default/home/global-predictive-search.open.overlay-bos.768.png"
+  ],
+  "notlar": "header [data-search-toggle] → dialog overlay. Start typing… + Products pills + Company/Support/Partnerships. predictive-search host bazen 0×0.",
+  "delta": "Native /search?q=blueberry ayrı. Overlay dialog.",
   "captureMode": "viewport",
-  "prepareClick": "[data-search-toggle]"
+  "prepareClick": "header [data-search-toggle]",
+  "interactionStates": [
+    "input",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://davidprotein.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": "6000",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Klaviyo 10% quiz — Escape; sonra search aç"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header [data-search-toggle]",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "dialog",
+      "etiket": "overlay-bos",
+      "not": "Start typing… + Products pills"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "dialog input[name='q']",
+      "value": "blueberry",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "dialog",
+      "etiket": "blueberry",
+      "not": "katalogSorgu blueberry"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "open": "Beyaz overlay. Start typing what you’re searching for. Products pills: Double Chocolate / Blueberry Pie / Cookie Dough Caramel Chocolate / Peanut Butter Chocolate Chunk. Kolonlar Company / Support / Partnerships.",
+    "input": "Sorgu blueberry. Suggested terms: blueberry · blueberry pie. Suggested results: Blueberry Pie Gold 4.7, Back in stock. See all results."
+  },
+  "capture": {
+    "url": "https://davidprotein.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:24:32.318Z"
+  }
 }

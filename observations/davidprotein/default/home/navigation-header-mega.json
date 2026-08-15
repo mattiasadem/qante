@@ -7,8 +7,68 @@
   "url": "https://davidprotein.com/",
   "selector": "#shopify-section-sections--21417469739175__main",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
+  "evidence": [
+    "evidence/davidprotein/default/home/navigation-header-mega.1440.png",
+    "evidence/davidprotein/default/home/navigation-header-mega.375.png",
+    "evidence/davidprotein/default/home/navigation-header-mega.768.png",
+    "evidence/davidprotein/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/davidprotein/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/davidprotein/default/home/navigation-header-mega.initial.bar.768.png"
+  ],
   "notlar": "1440: David logo · Shop all / Bars / Pints / Bundle / About · Store locator · Wholesale · search [data-search-toggle] · account · Cart 0 (#cart-icon-bubble). Mega IDs Details-HeaderMenu-* / header_mega_menu_*. Mobil: hamburger button.group/menutoggle + #mobile-menu-drawer. Sticky.",
   "delta": "schema_name David Protein 2.8.1. Locale yok. Mega panel + predictive-search header içinde. Dil seçici yok.",
-  "captureMode": "viewport"
+  "captureMode": "viewport",
+  "capture": {
+    "url": "https://davidprotein.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:32:18.863Z"
+  },
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://davidprotein.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": "6000",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Klaviyo 10% quiz — Escape"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": "400",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bar",
+      "not": "Kapalı header — Shop all gerçek link /collections/shop"
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "Shop all <a> gerçek link /collections/shop. LI hover #tabpanel class hidden 0×0. tab button viewport dışı. Mega panel piksel kanıtı yok."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Kapalı bar. Logo David · Shop all / Bars / Pints / Bundle / About · Store locator · Wholesale · search · account · Cart 0. Mega panel görünmüyor."
+  }
 }
