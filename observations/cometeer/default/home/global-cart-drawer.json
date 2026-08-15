@@ -1,0 +1,100 @@
+{
+  "observationId": "cometeer.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "cometeer",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://cometeer.com/",
+  "selector": "#sidecart [data-sidecart-target='sidecart']",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/cometeer/default/home/global-cart-drawer.1440.png",
+    "evidence/cometeer/default/home/global-cart-drawer.375.png",
+    "evidence/cometeer/default/home/global-cart-drawer.768.png",
+    "evidence/cometeer/default/home/global-cart-drawer.filled.mixed-roast.1440.png"
+  ],
+  "captureMode": "viewport",
+  "prepareClick": "button[aria-label='Open cart']",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://cometeer.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button[aria-label='Open cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#sidecart [data-sidecart-target='sidecart']",
+      "etiket": "cart-bos",
+      "not": "Nothing in your cart + öneriler"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://cometeer.com/products/mixed-roast-box",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "button:has-text('ONE TIME PURCHASE')",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button:has-text('ONE TIME PURCHASE')",
+      "capture": false,
+      "not": "375'te önce scroll — force-click fold altında item_count artırmadı"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button[aria-label='Open cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#sidecart [data-sidecart-target='sidecart']",
+      "etiket": "mixed-roast",
+      "not": "Dolu sidecart — roast 8-pack satırları"
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "filled",
+      "sebep": "adım 3 (scrollTo button:has-text('ONE TIME PURCHASE')): locator.waitFor: Timeout 12000ms exceeded.\nCall log:\n  - waiting for locator('button:has-text(\\'ONE TIME PURCHASE\\')').first()\n"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Cart / Nothing in your cart / Membership Benefits (+) / We think you'll love these (öneri grid) / Add More Items.",
+    "filled": "1440: Your Cometeer Box $105 — Dark 1 / Medium 3 / Light 1 (8-pack); Membership toggle off; free-shipping stepper (3 coffees away); Checkout • $105."
+  },
+  "interactionNote": "Gift card ATC PII (alıcı e-posta) — dokunulmadı. Merch ADD item_count artırmadı. 1440 Mixed Roast one-time doldurdu. 375/768 interact runner ONE TIME PURCHASE waitFor timeout (ikinci deneme) — filled kare yok.",
+  "notlar": "Sidecart sağ panel. #mini-cart alt 'View Cart' bar. Gifting bloğu boşken gizli.",
+  "delta": "/cart → /?sidecart=true. Öneriler boş state'te açık. Min-order/free-shipping stepper DOM'da.",
+  "capture": {
+    "url": "https://cometeer.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T17:37:49.516Z",
+    "prepareClick": "button[aria-label='Open cart']"
+  }
+}
