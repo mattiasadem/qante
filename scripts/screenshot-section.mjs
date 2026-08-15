@@ -40,6 +40,31 @@ export async function screenshotSectionWithPadding(
   await locator.scrollIntoViewIfNeeded();
   await page.waitForTimeout(300);
 
+  // Short bars (pills, filter, search header) land under position:sticky
+  // announcement+header. Nudge so the clip is the section, not chrome.
+  await locator.evaluate((el) => {
+    const r = el.getBoundingClientRect();
+    if (r.height > 320) return;
+    let coverBottom = 0;
+    for (const n of document.querySelectorAll(
+      "header, .global-header, .global-announcement, [class*='announcement']"
+    )) {
+      if (n === el || n.contains(el) || el.contains(n)) continue;
+      const s = getComputedStyle(n);
+      if (s.position !== "fixed" && s.position !== "sticky") continue;
+      const hr = n.getBoundingClientRect();
+      if (hr.height < 16) continue;
+      if (hr.bottom > r.top + 2 && hr.top < r.bottom - 2) {
+        coverBottom = Math.max(coverBottom, hr.bottom);
+      }
+    }
+    if (coverBottom > r.top) {
+      const delta = coverBottom - r.top + 8;
+      window.scrollBy(0, -Math.min(delta, window.scrollY));
+    }
+  });
+  await page.waitForTimeout(200);
+
   const metrics = await getSectionMarginBox(locator);
   const { borderBox, margins } = metrics;
   const vp = page.viewportSize() || { width: 1440, height: 900 };

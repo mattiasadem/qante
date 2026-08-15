@@ -42,6 +42,19 @@ export async function dismissAllOverlays(page, { rounds = 8 } = {}) {
       try {
         const el = page.locator(sel).first();
         if (await el.isVisible({ timeout: 400 })) {
+          const navigates = await el
+            .evaluate((n) => {
+              const a = n.closest("a") || (n.tagName === "A" ? n : null);
+              const href = a?.getAttribute("href") || "";
+              return Boolean(
+                href &&
+                  !href.startsWith("#") &&
+                  !href.startsWith("javascript") &&
+                  href !== "/"
+              );
+            })
+            .catch(() => false);
+          if (navigates) continue;
           await el.click({ force: true, timeout: 1000 });
           await page.waitForTimeout(250);
         }

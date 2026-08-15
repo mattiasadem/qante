@@ -124,10 +124,9 @@ try {
       await page.waitForTimeout(2500);
     }
 
-    await dismissAllOverlays(page);
-
-    // Overlay dismiss bazen collection link'ine tıklayabiliyor — geri al
-    {
+    // Overlay dismiss bazen CTA/link'e tıklayabiliyor — stabilize olana kadar geri al
+    for (let d = 0; d < 3; d++) {
+      await dismissAllOverlays(page);
       const afterDismiss = new URL(page.url());
       if (
         afterDismiss.origin === target.origin &&
@@ -139,8 +138,9 @@ try {
         );
         await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
         await page.waitForTimeout(2500);
-        await dismissAllOverlays(page);
+        continue;
       }
+      break;
     }
 
     await assertCleanForScreenshot(page);
