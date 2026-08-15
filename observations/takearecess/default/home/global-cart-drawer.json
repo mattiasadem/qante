@@ -1,0 +1,93 @@
+{
+  "observationId": "takearecess.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "takearecess",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://takearecess.com/",
+  "selector": "#cart",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "<dialog id=cart>. Boş: Nothing here but clouds. /cart ve /cart.js 404 — sepet yalnız dialog. Checkout Shopify origin (tıklanmadı).",
+  "delta": "Nuxt (Netlify) + Sanity CMS + Shopify Storefront API. window.Shopify / Shopify.theme / schema_name / schema_version / theme_store_id yok — uydurulmadı. shop takearecess.myshopify.com (API 2023-07). Sanity projectId umoebutk dataset production. #shopify-section-* yok. Custom Day Job / recess repo.",
+  "captureMode": "viewport",
+  "prepareClick": ".nav-item--cart-toggle",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://takearecess.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".nav-item--cart-toggle",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş cart dialog"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://takearecess.com/shop/recess-mood/blood-orange-mood",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": ".purchase-option:has-text('single purchase') .purchase-option__label",
+      "value": 400,
+      "capture": false,
+      "not": "Subscribe yerine single purchase"
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": ".add-to-cart button:has-text('ADD TO CART')",
+      "value": 2000,
+      "capture": false,
+      "not": "Nuxt UI ATC — /cart/add.js yok"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": ".nav-item--cart-toggle",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mood-qty1",
+      "not": "Dolu cart — blood orange Mood"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#cart button:has-text('+'), #cart [aria-label*='increase' i], #cart .quantity-input button:last-child",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "qty2",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Cart 0; Nothing here but clouds.",
+    "filled": "blood orange Mood satırı beklenir (qty 1).",
+    "changed": "qty 2 beklenir."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC UI (.add-to-cart). Shopify /cart/add.js takearecess.com'da 404. Checkout tıklanmadı. Gift note formu PII — açılmadı."
+}

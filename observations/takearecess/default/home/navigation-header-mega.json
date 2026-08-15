@@ -1,0 +1,48 @@
+{
+  "observationId": "takearecess.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "takearecess",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://takearecess.com/",
+  "selector": "header:has(.nav-item--cart-toggle)",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Sticky chrome. Logo Recess; shop (Invoker dialog #shop-nav-menu); subscribe & save; login (takearecess.myshopify.com/account — tıklanmadı); cart 0. 375: shop + logo + cart (subscribe/login shop dialog içinde).",
+  "delta": "Nuxt (Netlify) + Sanity CMS + Shopify Storefront API. window.Shopify / Shopify.theme / schema_name / schema_version / theme_store_id yok — uydurulmadı. shop takearecess.myshopify.com (API 2023-07). Sanity projectId umoebutk dataset production. #shopify-section-* yok. Custom Day Job / recess repo.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://takearecess.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bar",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": ".nav-item--menu-toggle",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-menu",
+      "viewports": [
+        "1440"
+      ],
+      "not": "1440 shop tık → #shop-nav-menu kategori listesi (Mood / Zero Proof / Recess / Powder)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Logo + shop + subscribe & save + login + cart 0. Mega kapalı.",
+    "open": "1440: #shop-nav-menu açık — shop all, Recess Mood, Zero Proof, Recess hemp, Mood Powder, jerseys, what's inside, where to buy, gift card."
+  },
+  "missingStates": [],
+  "interactionNote": "Hover mega yok. Shop = <dialog id=shop-nav-menu> Invoker command. Login Shopify account — PII, tıklanmadı."
+}

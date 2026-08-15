@@ -1,0 +1,42 @@
+{
+  "observationId": "takearecess.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "takearecess",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://takearecess.com/shop/recess-mood/blood-orange-mood",
+  "selector": ".grid-template-pdp",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "blood orange Mood buy box. Subscribe $29.67 / ~~$44.99~~ BEST VALUE + single $37.99. Qty −/+ ADD TO CART. Amazon CTA. Galeri sticky. Swatch yok — lezzet URL'de.",
+  "delta": "Nuxt (Netlify) + Sanity CMS + Shopify Storefront API. window.Shopify / Shopify.theme / schema_name / schema_version / theme_store_id yok — uydurulmadı. shop takearecess.myshopify.com (API 2023-07). Sanity projectId umoebutk dataset production. #shopify-section-* yok. Custom Day Job / recess repo.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://takearecess.com/shop/recess-mood/blood-orange-mood",
+      "capture": true,
+      "etiket": "subscribe",
+      "not": "Varsayılan 12 pack subscribe & save"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".purchase-option:has-text('single purchase') .purchase-option__label",
+      "value": 600,
+      "capture": true,
+      "etiket": "single",
+      "not": "12 pack single purchase $37.99"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Subscribe selected $29.67 / Delivered every 2 weeks.",
+    "changed": "Single purchase $37.99 selected."
+  },
+  "missingStates": [],
+  "interactionNote": "Lezzet swatch yok (ayrı PDP). Selling-plan 2/4/8 hafta combobox yoklandı leftover olabilir. Checkout/Amazon tıklanmadı."
+}
