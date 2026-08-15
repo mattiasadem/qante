@@ -5,23 +5,65 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://im8health.com/",
-  "selector": "#CartDrawer",
+  "selector": ".rebuy-cart__flyout",
   "evidenceSlug": "global-cart-drawer",
   "evidence": [],
   "captureMode": "viewport",
   "prepareClick": "#cart-icon-bubble",
-  "notlar": "Dawn cart-drawer + Rebuy smart-cart. Boş: Your cart is empty, but your goal is just a click away. /cart → /?viewcart=true (index).",
-  "delta": "cart-page-main yok. Native #CartDrawer height 0 kapalıyken. Rebuy intercept olabilir — leftover not.",
+  "notlar": "Rebuy #rebuy-cart / .rebuy-cart__flyout. YOUR CART · $150 from FREE SHIPPING · empty: Shop Now. Native #CartDrawer Dawn is-empty 0px.",
+  "delta": "/cart → /?viewcart=true (index). cart-page-main yok. Rebuy üçüncü parti; en yakın global-cart-drawer.",
+  "interactionStates": ["initial", "filled"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://im8health.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Rebuy empty flyout"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://im8health.com/products/the-beckham-stack-pro",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#ProductSubmitButton-template--20252015820967__main",
+      "capture": false,
+      "not": "SAVE 30% + FREE GIFTS ATC"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "beckham-stack",
+      "not": "ATC sonrası Rebuy dolu"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Checkout'a girilmedi. Native Dawn drawer kullanılmıyor.",
   "capture": {
     "url": "https://im8health.com/",
-    "viewports": [
-      "375",
-      "768",
-      "1440"
-    ],
-    "prepareClick": "#cart-icon-bubble",
-    "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-08-15T19:25:07.985Z"
+    "viewports": ["375", "768", "1440"],
+    "prepareClick": "#cart-icon-bubble"
   }
 }
