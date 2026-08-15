@@ -1,0 +1,60 @@
+{
+  "observationId": "primalqueen.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "primalqueen",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://primalqueen.com/",
+  "selector": ".img-header-pq__drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/primalqueen/default/home/global-menu-drawer.1440.png",
+    "evidence/primalqueen/default/home/global-menu-drawer.375.png",
+    "evidence/primalqueen/default/home/global-menu-drawer.768.png",
+    "evidence/primalqueen/default/home/global-menu-drawer.open.drawer.1440.png",
+    "evidence/primalqueen/default/home/global-menu-drawer.open.drawer.375.png",
+    "evidence/primalqueen/default/home/global-menu-drawer.open.drawer.768.png"
+  ],
+  "notlar": "Sol drawer: başlık Ancestral Solutions For The Modern Day Woman. Kartlar: Beef Organs, PQ7, Goddess Bites, Marrow, Build Your Own Bundle (görsel+strong+em). Linkler: Our Story #our_story, Reviews #stamped-main-widget, FAQ's #FAQ, Contact /pages/contact, Manage Subscription Loop.",
+  "delta": "Kapalıyken position:absolute, item x negatif (off-canvas). 1440'ta da hamburger — Sense mega değil. data-drawer=closed/open header'da.",
+  "prepareClick": ".header-pq__menu-toggle.js-toggle-drawer",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://primalqueen.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": ".header-pq__menu-toggle.js-toggle-drawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "drawer",
+      "not": "Açık ürün kartlı menü"
+    }
+  ],
+  "stateFindings": {
+    "open": "1440/768/375: X kapat + Ancestral Solutions başlık + 5 ürün kartı (Beef Organs/PQ7/Goddess/Marrow/Bundle) + Our Story/Reviews/FAQ's/Contact/Manage Subscription."
+  },
+  "missingStates": [],
+  "interactionNote": "DIV.header-pq__menu-toggle.js-toggle-drawer role=button. 1440+768+375 hamburger — mega hover yok.",
+  "capture": {
+    "url": "https://primalqueen.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:59:08.876Z",
+    "prepareClick": ".header-pq__menu-toggle.js-toggle-drawer"
+  }
+}
