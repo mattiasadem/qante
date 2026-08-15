@@ -18,8 +18,12 @@
 | `/pages/wholesale-inquiries` | **404** | Footer |
 | `/pages/tracking` | **404** | Footer |
 | `/pages/how-to-use` | **404** | How To Start kartı hedefi |
+| `/pages/career-opportunities` | **404** | Footer SUPPORT "Careers" |
 
 `/pages/community` 200 (ayrı landing; join CTA değil).
+Footer "Start a Return or Exchange" → `/pages/obvi-contact-us-form` (contact observation).
+Collagen 101 → `/blogs/diet-nutrition/what-are-super-collagen-peptides` (mevcut blog-post tipi).
+Policy → `/policies/privacy-policy` (ve refund/shipping/terms); Shopify native, `policy/page-content-main`.
 
 ## Karar
 
