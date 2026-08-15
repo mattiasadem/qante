@@ -1,0 +1,63 @@
+{
+  "observationId": "partakefoods.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "partakefoods",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://partakefoods.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "375/768 Dawn hamburger (#Details-menu-drawer-container > summary) → #menu-drawer. Products / About Us / FAQ / Blog + kategori listesi + Log in.",
+  "delta": "Kapalı 0px. 1440 N/A — masaüstü #HeaderMenu-menu mega. About Us 404.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://partakefoods.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary.header__icon--menu",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "viewports": [
+        "375",
+        "768"
+      ]
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 drawer: Products / About Us / FAQ / Blog; Cookies / Mini Cookies / Vanilla Wafers / Grahams / Teeny Tiny; Log in."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger 0px — mega navigation-header-mega.open"
+    },
+    {
+      "state": "initial",
+      "sebep": "Kapalı #menu-drawer 0px / visibility hidden"
+    }
+  ],
+  "interactionNote": "Desktop Menu ve mobil hamburger ayrı opener. PII Log in tıklanmadı."
+}

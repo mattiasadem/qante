@@ -1,0 +1,69 @@
+{
+  "observationId": "partakefoods.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "partakefoods",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://partakefoods.com/products/birthday-cake-cookies",
+  "selector": "#shopify-section-template--19018229776482__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "Crunchy Birthday Cake Cookies. Galeri + Classic Boxes / Mini Snack Packs / Teeny-Tiny Pouches tab + flavor kartları (başka PDP'ye link) + FIND NEAR YOU. Accordion: DESCRIPTION / INGREDIENTS / NUTRITION FACTS / CERTIFICATIONS. product-form / ATC yok.",
+  "delta": "Custom family picker. Shopify varyant 3/6 Boxes API'de var; UI'da ATC yok. CTA store locator. Cart drawer bağımlılığı bu vitrinde yok (şemaya dokunulmadı).",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://partakefoods.com/products/birthday-cake-cookies",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19018229776482__main",
+      "capture": true,
+      "etiket": "classic-boxes"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button.product-variants-tab:has-text('Mini Snack Packs')",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--19018229776482__main summary:has-text('INGREDIENTS')",
+      "capture": true,
+      "etiket": "mini-ingredients"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Classic Boxes tab; flavor kartları; FIND NEAR YOU; accordion kapalı.",
+    "changed": "Mini Snack Packs tab + INGREDIENTS açık — karede doğrulanacak."
+  },
+  "missingStates": [],
+  "interactionNote": "Flavor kartı <a> başka PDP'ye gider — tıklanmadı. ATC yok; addToCart denendi değil."
+}

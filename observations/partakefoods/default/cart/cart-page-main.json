@@ -1,0 +1,79 @@
+{
+  "observationId": "partakefoods.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "partakefoods",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://partakefoods.com/cart",
+  "selector": "#shopify-section-template--19018229940322__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Your cart / Your cart is empty + CONTINUE SHOPPING + Have an account? Cart-footer section 0px. ATC vitrinde yok.",
+  "delta": "Dawn cart-items. Drawer yok. Dolu/qty: /cart/add GET fallback (Classic Grahams 42123943542882) — UI ATC yok.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://partakefoods.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19018229940322__cart-items",
+      "capture": true,
+      "etiket": "bos"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://partakefoods.com/cart/add?id=42123943542882&quantity=1",
+      "capture": false,
+      "not": "UI ATC yok; Shopify GET add Classic Grahams"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19018229940322__cart-items",
+      "capture": true,
+      "etiket": "grahams"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], quantity-input button[name='plus']",
+      "capture": true,
+      "etiket": "adet-2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty; CONTINUE SHOPPING; Have an account?",
+    "filled": "Classic Grahams satırı — karede doğrulanacak (GET add fallback).",
+    "changed": "Adet 2 — karede doğrulanacak."
+  },
+  "missingStates": [],
+  "interactionNote": "PDP'de product-form yok. GET /cart/add fallback. Checkout tıklanmadı. Account PII yok."
+}

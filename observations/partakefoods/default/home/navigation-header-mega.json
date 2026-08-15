@@ -1,0 +1,67 @@
+{
+  "observationId": "partakefoods.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "partakefoods",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://partakefoods.com/",
+  "selector": "header.header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Sticky Dawn header: logo; 1440 Menu (#HeaderMenu-menu) + FIND IN STORE; arama details-modal; hesap; Cart. 375 hamburger (#Details-menu-drawer-container > summary). Logo görsel, metin yok.",
+  "delta": "Custom Partake (hasmerit.co) 1.0.0. Shopify-section wrapper home'da 0px (sticky-header position:fixed) — selector header.header. Mega #CustomMegaMenu-Content-1. Locale yok. Cart drawer yok (Dawn cart-notification + /cart).",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://partakefoods.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header.header",
+      "capture": true,
+      "etiket": "bar"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#HeaderMenu-menu",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mega-panel",
+      "viewports": [
+        "1440"
+      ]
+    }
+  ],
+  "stateFindings": {
+    "initial": "Bar: logo; 1440 Menu + FIND IN STORE; arama ikonu; hesap; Cart. 375 hamburger + arama + cart.",
+    "open": "1440 Menu → custom mega (#CustomMegaMenu-Content-1): Products / About Us / FAQ / Blog + Cookies / Mini Cookies / Vanilla Wafers / Grahams / Teeny Tiny."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375/768 mega yok — hamburger #menu-drawer (global-menu-drawer)"
+    }
+  ],
+  "interactionNote": "Terms bar DOM'da (ACKNOWLEDGE & VIEW / DISMISS) height 0. About Us → /pages/about 404."
+}
