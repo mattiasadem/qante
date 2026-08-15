@@ -1,0 +1,57 @@
+{
+  "observationId": "kettleandfire.default.loyalty.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "kettleandfire",
+  "preset": "default",
+  "sayfa": "loyalty",
+  "url": "https://www.kettleandfire.com/pages/loyalty",
+  "selector": "#shopify-section-page-loyalty-faq",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [],
+  "notlar": "Loyalty Program FAQs.",
+  "delta": "page-loyalty-faq. help.kettleandfire.com ayrı leftover.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.kettleandfire.com/pages/loyalty",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-page-loyalty-faq",
+      "capture": true,
+      "etiket": "kapali"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-page-loyalty-faq button, #shopify-section-page-loyalty-faq details summary, #shopify-section-page-loyalty-faq [class*='accordion']",
+      "capture": true,
+      "etiket": "ilk-soru"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Loyalty FAQ listesi; ilk soru Why is Kettle & Fire’s Loyalty Program so great?",
+    "changed": "İlk cevap açık — karede doğrulanacak."
+  },
+  "missingStates": [],
+  "interactionNote": "/pages/faq → boş/redirect leftover."
+}

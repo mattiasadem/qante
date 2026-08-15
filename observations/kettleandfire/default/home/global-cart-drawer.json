@@ -1,0 +1,113 @@
+{
+  "observationId": "kettleandfire.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "kettleandfire",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.kettleandfire.com/",
+  "selector": "#boostCartMain",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Boost Commerce cart. Boş: Your cart is empty + best seller önerileri. Rewards: Free Shipping / 10% / 15% / 20%.",
+  "delta": "GrowAOV-Trigger #CartTrigger. /cart ayrıca .wfx-cart sayfası var. Powered by Boost.",
+  "captureMode": "viewport",
+  "prepareClick": "#CartTrigger",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.kettleandfire.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#CartTrigger",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.kettleandfire.com/products/chicken-bone-broth",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#AddToCart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#CartTrigger",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "chicken-broth"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#boostCartMain button[aria-label*='Increase' i], #boostCartMain [class*='qty'] button:last-child, #boostCartMain [class*='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boost drawer boş; Start with our best sellers; Free Shipping / 10–20% off bar.",
+    "filled": "Chicken Bone Broth satırı — karede doğrulanacak.",
+    "changed": "Adet artışı — karede doğrulanacak."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC #AddToCart UI. Checkout tıklanmadı. Qty selector Boost class’ına göre düzeltilebilir."
+}

@@ -1,0 +1,57 @@
+{
+  "observationId": "kettleandfire.default.product-detail.product-info-tabs",
+  "schemaId": "product-info-tabs",
+  "kaynak": "kettleandfire",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://www.kettleandfire.com/products/chicken-bone-broth",
+  "selector": "#shopify-section-template--19561861284036__info_accordion",
+  "evidenceSlug": "product-info-tabs",
+  "evidence": [],
+  "notlar": "Nutritional Facts | Ingredients | How to Enjoy accordion.",
+  "delta": "wayfx info_accordion. Tabs değil accordion.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.kettleandfire.com/products/chicken-bone-broth",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19561861284036__info_accordion",
+      "capture": true,
+      "etiket": "kapali"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--19561861284036__info_accordion button, #shopify-section-template--19561861284036__info_accordion [class*='accordion']",
+      "capture": true,
+      "etiket": "ilk-panel"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Nutritional Facts / Ingredients / How to Enjoy başlıkları.",
+    "changed": "İlk panel açık — içerik karede doğrulanacak."
+  },
+  "missingStates": [],
+  "interactionNote": "İlk eşleşen accordion tetikleyici."
+}

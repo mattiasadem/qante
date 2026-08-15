@@ -1,0 +1,69 @@
+{
+  "observationId": "kettleandfire.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "kettleandfire",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://www.kettleandfire.com/products/chicken-bone-broth",
+  "selector": "#shopify-section-template--19561861284036__hero",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "Chicken Bone Broth. Flavor picker, Subscribe & Save / Order once, 1/6/18/24 pack, ADD TO CART. Bazaarvoice 4.8 (4119).",
+  "delta": "wayfx-product-hero. Qbrico purchase block (tema adı). Comparison/social_proof height 0 leftover. BV write-review PII yok.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.kettleandfire.com/products/chicken-bone-broth",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19561861284036__hero",
+      "capture": true,
+      "etiket": "subscribe-default"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#wfx_purchase-one-time",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='wfx_quantity_24'], #wfx_quantity_24",
+      "capture": true,
+      "etiket": "onetime-24pack"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Subscribe & Save varsayılan; pack seçenekleri; ADD TO CART fiyatı karede.",
+    "changed": "Order once + 24-Pack — fiyat değişimi karede doğrulanacak."
+  },
+  "missingStates": [],
+  "interactionNote": "Flavor picker #product-picker-trigger başka PDP’ye gider — tıklanmadı. Write a review PII."
+}

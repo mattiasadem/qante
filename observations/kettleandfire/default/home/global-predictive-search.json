@@ -1,0 +1,67 @@
+{
+  "observationId": "kettleandfire.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "kettleandfire",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.kettleandfire.com/",
+  "selector": "#wfx-header__search-results-desktop",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "Header search trigger + #productSearchDesktop placeholder Start typing...",
+  "delta": "wayfx-header__search-results. Mobil #productSearchMobile / #wfx-header__search-results-mobile.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://www.kettleandfire.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 400,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.wfx-header__search--trigger, #mobileSearchTrigger",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#productSearchDesktop, #productSearchMobile",
+      "value": "chicken",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "chicken"
+    }
+  ],
+  "stateFindings": {
+    "open": "Arama alanı açık; Start typing...; sonuç listesi boş (henüz yazılmadı).",
+    "input": "chicken yazıldı — öneri/ürün listesi karede doğrulanacak."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu=chicken (PDP/PLP ürün adı). Submit / PII yok."
+}

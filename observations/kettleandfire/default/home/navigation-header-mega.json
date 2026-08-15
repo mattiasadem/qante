@@ -1,0 +1,76 @@
+{
+  "observationId": "kettleandfire.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "kettleandfire",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.kettleandfire.com/",
+  "selector": "#shopify-section-header-desktop",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "SHOP / BESTSELLERS / BUNDLES / MONTHLY DEALS 20% OFF / LEARN / FIND IN STORE / LOYALTY + search + account + cart.",
+  "delta": "wayfx-header--desktop. Mega .wfx-nav__dropdown (Best Sellers + Categories). Locale yok. 375 ayrı header-mobile.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.kettleandfire.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false,
+      "not": "Cookiebot / hydrate"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Cookiebot/modal"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#shopify-section-header-desktop",
+      "capture": true,
+      "etiket": "bar"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#shopify-section-header-desktop .wfx-nav__link--has-dropdown > a",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "SHOP hover → Best Sellers + Categories kolonları"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Masaüstü bar: SHOP / BESTSELLERS / BUNDLES / MONTHLY DEALS 20% OFF / LEARN / FIND IN STORE / LOYALTY; arama; hesap; sepet.",
+    "open": "1440 SHOP hover — Best Sellers (Beef/Chicken/Venison/Low sodium/Tallow) + Categories (Bone Broths…Tallow) + Shop All."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375/768 mega yok — hamburger drawer (global-menu-drawer)"
+    }
+  ],
+  "interactionNote": "SHOP <a href=/a/collections/products> tık PLP’ye gider; hover ile panel. Cookiebot Escape."
+}

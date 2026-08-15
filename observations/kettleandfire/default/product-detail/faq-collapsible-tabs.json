@@ -1,0 +1,57 @@
+{
+  "observationId": "kettleandfire.default.product-detail.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "kettleandfire",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://www.kettleandfire.com/products/grass-fed-beef-bone-broth",
+  "selector": "#shopify-section-template--19561861284036__faq",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [],
+  "notlar": "Beef PDP Frequently Asked Questions (Chicken PDP’de bu section CTA-only 248px).",
+  "delta": "Aynı template; ürüne göre FAQ dolu/CTA. Chicken leftover CTA.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.kettleandfire.com/products/grass-fed-beef-bone-broth",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19561861284036__faq",
+      "capture": true,
+      "etiket": "kapali"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--19561861284036__faq button, #shopify-section-template--19561861284036__faq [class*='accordion'], #shopify-section-template--19561861284036__faq details summary",
+      "capture": true,
+      "etiket": "ilk-soru"
+    }
+  ],
+  "stateFindings": {
+    "initial": "FAQ başlık + ilk soru metni (How much bone broth…).",
+    "changed": "İlk cevap açık — karede doğrulanacak."
+  },
+  "missingStates": [],
+  "interactionNote": "Chicken PDP faq section CTA (See our FAQ / Contact us) — leftover."
+}
