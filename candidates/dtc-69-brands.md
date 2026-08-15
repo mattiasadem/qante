@@ -52,7 +52,7 @@ Durum: `done` = main'e merge · `in progress` = açık PR · boş = kuyrukta
 | 40 | done | functionhealth.com | https://functionhealth.com |
 | 41 | done | chamberlaincoffee.com | https://chamberlaincoffee.com |
 | 42 | done | dukecannon.com | https://dukecannon.com |
-| 43 | in progress | magicmind.com | https://magicmind.com |
+| 43 | done | magicmind.com | https://magicmind.com |
 | 44 | done | atoms.com | https://atoms.com |
 | 45 | done | cymbiotika.com | https://cymbiotika.com |
 | 46 | done | greatjonesgoods.com | https://greatjonesgoods.com |
@@ -71,7 +71,7 @@ Durum: `done` = main'e merge · `in progress` = açık PR · boş = kuyrukta
 | 59 | in progress | buckmason.com | https://buckmason.com |
 | 60 | in progress | herocosmetics.com | https://herocosmetics.com |
 | 61 | in progress | magicspoon.com | https://magicspoon.com |
-| 62 | | takearecess.com | https://takearecess.com |
+| 62 | in progress | takearecess.com | https://takearecess.com |
 | 63 | | vivobarefoot.com | https://vivobarefoot.com |
 | 64 | | moom.health | https://moom.health |
 | 65 | | partakefoods.com | https://partakefoods.com |
