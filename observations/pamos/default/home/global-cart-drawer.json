@@ -1,0 +1,118 @@
+{
+  "observationId": "pamos.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "pamos",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.pamos.com/",
+  "selector": "#fkcart-modal",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "FunnelKit #fkcart-modal. Boş: Your Cart is Empty. Dolu: Signature Spirit ATC UI (Shopify /cart/add.js yok).",
+  "delta": "Tema (vitrinde, uydurulmadı): WordPress Theme Name **Pamos** 11.0.1 (Sage/Roots, text domain pamos, /wp-content/themes/pamos/). Shopify.theme yok. WooCommerce 10.7.0. Age-gate cookie ageVerified. button.age-confirm = I AM 21+. FunnelKit mini-cart. WooCommerce — addToCart action kullanılmadı (cart.js Shopify).",
+  "prepareClick": "#fkcart-mini-toggler",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.pamos.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.age-confirm",
+      "capture": false,
+      "not": "age gate"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.cmplz-accept",
+      "capture": false,
+      "not": "cookie"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#fkcart-mini-toggler",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.pamos.com/product/signature-spirit-5mg-thc/",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.age-confirm",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 600,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.single_add_to_cart_button, button.alt",
+      "capture": false,
+      "not": "Woo ATC UI — addToCart/Shopify yok"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#fkcart-mini-toggler",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "signature"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your Cart is Empty + Fill your cart + Shop Now + discount + Subtotal $0.00.",
+    "filled": "ATC sonrası FunnelKit satır — bakılacak (Signature Spirit)."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart action yok — WooCommerce /cart.js değil. UI click button.single_add_to_cart_button. Checkout tıklanmadı. Kupon yazılmadı."
+}

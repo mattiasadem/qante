@@ -1,0 +1,64 @@
+{
+  "observationId": "pamos.default.collection.collection-nav-tabs",
+  "schemaId": "collection-nav-tabs",
+  "kaynak": "pamos",
+  "preset": "default",
+  "sayfa": "collection",
+  "url": "https://www.pamos.com/nationwide/",
+  "selector": "ul#myTab",
+  "evidenceSlug": "collection-nav-tabs",
+  "evidence": [],
+  "notlar": "All / SPIRITS / COCKTAILS 10MG / COCKTAILS 5MG / BUNDLES / MERCH. #myTab + #myTabContent.",
+  "delta": "Tema (vitrinde, uydurulmadı): WordPress Theme Name **Pamos** 11.0.1 (Sage/Roots, text domain pamos, /wp-content/themes/pamos/). Shopify.theme yok. WooCommerce 10.7.0. Age-gate cookie ageVerified. button.age-confirm = I AM 21+.",
+  "prepareClick": "button.age-confirm",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.pamos.com/nationwide/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.age-confirm",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "ul#myTab",
+      "capture": true,
+      "etiket": "all"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "ul#myTab a[href='#spiritsTab'], ul#myTab li:nth-child(2) a",
+      "capture": true,
+      "etiket": "spirits"
+    }
+  ],
+  "stateFindings": {
+    "initial": "All seçili; grid Vanilla / Wild Berry…",
+    "changed": "SPIRITS sekmesi — bakılacak."
+  },
+  "missingStates": [],
+  "interactionNote": "Sekme href #spiritsTab varsayıldı; yoksa li:nth-child(2)."
+}

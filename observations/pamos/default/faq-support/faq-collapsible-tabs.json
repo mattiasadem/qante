@@ -1,0 +1,64 @@
+{
+  "observationId": "pamos.default.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "pamos",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "url": "https://www.pamos.com/learn/",
+  "selector": ".theme-accordion",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [],
+  "notlar": "SHIPPING TIMES açık + IS HEMP-DERIVED THC LEGAL? / WHERE CAN I FIND PAMOS? … .theme-accordion / .accordion-section.",
+  "delta": "Tema (vitrinde, uydurulmadı): WordPress Theme Name **Pamos** 11.0.1 (Sage/Roots, text domain pamos, /wp-content/themes/pamos/). Shopify.theme yok. WooCommerce 10.7.0. Age-gate cookie ageVerified. button.age-confirm = I AM 21+.",
+  "prepareClick": "button.age-confirm",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.pamos.com/learn/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.age-confirm",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": ".theme-accordion",
+      "capture": true,
+      "etiket": "ilk-acik"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".theme-accordion .accordion-header:nth-of-type(2), .theme-accordion [data-toggle]:nth-of-type(2), .accordion-section button:nth-of-type(2)",
+      "capture": true,
+      "etiket": "legal"
+    }
+  ],
+  "stateFindings": {
+    "initial": "SHIPPING TIMES cevabı görünür; diğer sorular kapalı.",
+    "changed": "İkinci soru (legal) — bakılacak."
+  },
+  "missingStates": [],
+  "interactionNote": "İlk soru varsayılan açık. İkinci başlık tık."
+}
