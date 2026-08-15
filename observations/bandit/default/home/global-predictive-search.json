@@ -1,0 +1,76 @@
+{
+  "observationId": "bandit.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "bandit",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://banditrunning.com/",
+  "selector": "#shopify-section-global-search",
+  "captureMode": "viewport",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/bandit/default/home/global-predictive-search.input.tights.1440.png",
+    "evidence/bandit/default/home/global-predictive-search.input.tights.375.png",
+    "evidence/bandit/default/home/global-predictive-search.input.tights.768.png",
+    "evidence/bandit/default/home/global-predictive-search.open.popular.1440.png",
+    "evidence/bandit/default/home/global-predictive-search.open.popular.375.png",
+    "evidence/bandit/default/home/global-predictive-search.open.popular.768.png"
+  ],
+  "interactionStates": [
+    "input",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://banditrunning.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.js-search-toggle",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "popular",
+      "not": "CLOSE + POPULAR SEARCHES (TIGHTS/SHORTS/SINGLETS) + SUGGESTED PRODUCTS"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input.js-search-input",
+      "value": "tights",
+      "capture": false,
+      "not": "katalogSorgu: tights (popular chip + mağaza ürünü)"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "tights",
+      "not": "Sonuç grid'inin dolmasını bekle"
+    }
+  ],
+  "stateFindings": {
+    "open": "CLOSE + Search alanı + POPULAR SEARCHES (TIGHTS/SHORTS/SINGLETS) + SUGGESTED PRODUCTS (best seller / Steady State kartları, üye fiyatı).",
+    "input": "Sorgu tights. DID YOU MEAN? chip'leri (half/quarter tights) + PRODUCT RESULTS grid + quick-add +. Popular chips kayboldu."
+  },
+  "missingStates": [],
+  "interactionNote": "Overlay kapalıyken opacity 0 + translateY(-50). PII yok. input karesi open'dan farklı (375'te de ürün grid doldu).",
+  "notlar": "",
+  "delta": "Popular searches + suggested products (best seller) boş sorguda da DOM'da.",
+  "capture": {
+    "url": "https://banditrunning.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T17:51:49.543Z"
+  }
+}
