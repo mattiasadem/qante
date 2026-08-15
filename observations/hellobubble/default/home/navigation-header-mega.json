@@ -1,0 +1,52 @@
+{
+  "observationId": "hellobubble.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "hellobubble",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://hellobubble.myshopify.com/",
+  "selector": "#shopify-section-sections--19572856029337__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Shop / Skin Concerns / New Arrivals / About + logo + Search + 0 items. Logo center, menu left.",
+  "delta": "Baseline header. Mega Shop BUTTON (a değil). 375 Menu hamburger ayrı kart.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hellobubble.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#shopify-section-sections--19572856029337__header button:has-text(\"Shop\")",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-panel",
+      "not": "Shop tık → kategori listesi / görseller"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Kapalı: Shop / Skin Concerns / New Arrivals / About + search + bag. Mega kapalı (alt linkler 0px).",
+    "open": ""
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375/768 Shop mega yok — hamburger global-menu-drawer."
+    }
+  ],
+  "interactionNote": "Shop BUTTON. Hover yoklandı değil; click 1440. Login PII tıklanmadı."
+}

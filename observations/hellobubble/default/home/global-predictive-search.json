@@ -1,0 +1,68 @@
+{
+  "observationId": "hellobubble.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "hellobubble",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://hellobubble.myshopify.com/",
+  "selector": "form.predictive-search-form",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "Header Search link overlay açar (URL home kalır). Input placeholder: Search products, ingredients, or skin concerns...",
+  "delta": "İki form (desktop/mobile). Tam sayfa /search ayrı observation.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hellobubble.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[href='/search']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Boş overlay form"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#search-logo_center_menu_left-desktop",
+      "value": "slam",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "slam",
+      "viewports": [
+        "1440"
+      ],
+      "not": "katalog: Slam Dunk"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#search-logo_center_menu_left-mobile",
+      "value": "slam",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "slam",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Mobil fill slam"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "input": ""
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu slam (Slam Dunk). a[href=/search] overlay; sayfa kayarsa leftover."
+}
