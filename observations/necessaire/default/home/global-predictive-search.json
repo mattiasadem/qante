@@ -1,0 +1,80 @@
+{
+  "observationId": "necessaire.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "url": "https://necessaire.com/",
+  "selector": ".drawer.drawer--top",
+  "captureMode": "viewport",
+  "notlar": "Üst drawer. input#Search name=q placeholder Search.",
+  "delta": "drawer--top. Predictive liste yoksa dürüst yazılacak.",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://necessaire.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[data-search-toggle]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search",
+      "value": "retinol",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "retinol",
+      "not": "katalogSorgu: The Body Retinol"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Üst siyah drawer; placeholder Search; X kapat.",
+    "input": "retinol → Search Suggestions (Body retinol, Retinol, Hand retinol…) + Product Matches (The Body Retinol şişe + tüpler). 375/768/1440."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu retinol (The Body Retinol). Chat bubble karede kalabilir.",
+  "kaynak": "necessaire",
+  "preset": "default",
+  "sayfa": "home",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/necessaire/default/home/global-predictive-search.initial.arama-acik.1440.png",
+    "evidence/necessaire/default/home/global-predictive-search.initial.arama-acik.375.png",
+    "evidence/necessaire/default/home/global-predictive-search.initial.arama-acik.768.png",
+    "evidence/necessaire/default/home/global-predictive-search.input.retinol.1440.png",
+    "evidence/necessaire/default/home/global-predictive-search.input.retinol.375.png",
+    "evidence/necessaire/default/home/global-predictive-search.input.retinol.768.png"
+  ],
+  "capture": {
+    "url": "https://necessaire.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:36:59.824Z"
+  }
+}
