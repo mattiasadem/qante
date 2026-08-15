@@ -1,0 +1,58 @@
+{
+  "observationId": "boka.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "boka",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.boka.com/",
+  "selector": "#header-sidebar-menu, navigation-drawer.navigation-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "Impact hamburger → header-sidebar-menu. 1440 N/A (lg:hidden).",
+  "delta": "Masaüstünde gizli. 375/768 open.",
+  "captureMode": "viewport",
+  "prepareClick": "button[aria-controls='header-sidebar-menu']",
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://www.boka.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button[aria-controls='header-sidebar-menu']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Mobil menü"
+    }
+  ],
+  "interactionStates": [
+    "open"
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "Kapalı drawer 0px — header obs"
+    },
+    {
+      "state": "hover",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "filled",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "input",
+      "sebep": "Anlamsız"
+    }
+  ]
+}

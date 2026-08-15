@@ -1,0 +1,43 @@
+{
+  "observationId": "boka.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "boka",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://www.boka.com/products/ela-mint-toothpaste",
+  "selector": "#shopify-section-template--26470592839723__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "Ela Mint Nano-hydroxyapatite Toothpaste. 4.8 / 3884 reviews. Galeri Zoom. Fluoride-free copy. ATC.",
+  "delta": "Impact product main. Selling plan / Subscribe görünürse delta. Gift card ayrı instance.",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.boka.com/products/ela-mint-toothpaste",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--26470592839723__main",
+      "capture": true,
+      "etiket": "ela-mint",
+      "not": "Buy box"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--26470592839723__main button:has-text('Subscribe'), #shopify-section-template--26470592839723__main label:has-text('Subscribe'), #shopify-section-template--26470592839723__main [data-option]:has-text('Subscribe')",
+      "capture": true,
+      "etiket": "subscribe",
+      "not": "Subscribe seçeneği varsa piksel değişir; yoksa missing"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "stateFindings": {},
+  "missingStates": []
+}

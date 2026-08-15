@@ -1,0 +1,43 @@
+{
+  "observationId": "boka.default.product-detail.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "boka",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://www.boka.com/products/ela-mint-toothpaste",
+  "selector": "#shopify-section-template--26470592839723__product_metafield_faq_kCUkCD",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [],
+  "notlar": "PDP metafield FAQ. Cruelty-free / children / sensitive / how often.",
+  "delta": "Metafield accordion; kategori tab yok.",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.boka.com/products/ela-mint-toothpaste",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--26470592839723__product_metafield_faq_kCUkCD",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "Sorular kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--26470592839723__product_metafield_faq_kCUkCD details:first-of-type > summary, #shopify-section-template--26470592839723__product_metafield_faq_kCUkCD button:has-text('Is Boka toothpaste cruelty-free')",
+      "capture": true,
+      "etiket": "ilk-soru",
+      "not": "İlk soru açık"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "stateFindings": {},
+  "missingStates": []
+}

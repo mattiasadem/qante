@@ -1,0 +1,96 @@
+{
+  "observationId": "boka.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "boka",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.boka.com/",
+  "selector": "#cart-drawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Impact cart-drawer. Boş + Ela Mint doldurulacak.",
+  "delta": "Recharge storefront cart-drawer host da var (h=0). Checkout tıklanmadı.",
+  "captureMode": "viewport",
+  "prepareClick": "a[aria-controls='cart-drawer']",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.boka.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[aria-controls='cart-drawer']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.boka.com/products/ela-mint-toothpaste",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--26470592839723__main button:has-text('Add to cart'), #shopify-section-template--26470592839723__main button[type='submit']",
+      "capture": false,
+      "not": "Ela Mint ATC"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.boka.com/",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a[aria-controls='cart-drawer']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu satır"
+    },
+    {
+      "state": "changed",
+      "action": "fill",
+      "selector": "#cart-drawer input.quantity-input, #cart-drawer input[name='updates[]']",
+      "value": "2",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "press",
+      "value": "Enter",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 2"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "input",
+      "sebep": "Adet changed"
+    },
+    {
+      "state": "open",
+      "sebep": "Boş drawer initial"
+    }
+  ]
+}

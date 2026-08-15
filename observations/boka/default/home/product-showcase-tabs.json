@@ -1,0 +1,43 @@
+{
+  "observationId": "boka.default.home.product-showcase-tabs",
+  "schemaId": "product-showcase-tabs",
+  "kaynak": "boka",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.boka.com/",
+  "selector": "#shopify-section-template--26470592643115__homepage_selected_collection_VV8N3z",
+  "evidenceSlug": "product-showcase-tabs",
+  "evidence": [],
+  "notlar": "Shop by Category. Sekmeler: Best Sellers / Toothpaste / Whitening / Kids / Mouthwash / Accessories. Kart grid + Add to cart / View options.",
+  "delta": "Custom boka-selected-products; Impact featured collection değil. Üst link Shop Best Sellers. Sekme değişince panel değişir.",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.boka.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--26470592643115__homepage_selected_collection_VV8N3z",
+      "capture": true,
+      "etiket": "best-sellers",
+      "not": "Best Sellers paneli"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--26470592643115__homepage_selected_collection_VV8N3z button.boka-selected-products__tab:has-text('Kids')",
+      "capture": true,
+      "etiket": "kids-tab",
+      "not": "Kids sekmesi — piksel değişirse ürün seti değişir"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "stateFindings": {},
+  "missingStates": []
+}

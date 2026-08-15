@@ -1,0 +1,56 @@
+{
+  "observationId": "boka.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "boka",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.boka.com/",
+  "selector": "#shopify-section-sections--26470593003563__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Impact header: Shop / Subscribe & Save / Best Sellers · logo Boka · Find In Store / Dental Pros / About · Search · Login · Cart 0. Mega #mega-menu-mega_menu_Ax9Qet DOM'da.",
+  "delta": "Custom Boka mega (boka-mega-menu-custom) + promo carousel. Locale switcher yok. Tema Impact 7.0.1.",
+  "captureMode": "viewport",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.boka.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bar",
+      "not": "Kapalı sticky header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#shopify-section-sections--26470593003563__header a:has-text('Shop'), #shopify-section-sections--26470593003563__header button:has-text('Shop'), #shopify-section-sections--26470593003563__header summary:has-text('Shop')",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "1440 Shop → mega-menu-mega_menu_Ax9Qet"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "open ile ölçüldü"
+    },
+    {
+      "state": "filled",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "input",
+      "sebep": "Arama ayrı component"
+    }
+  ]
+}

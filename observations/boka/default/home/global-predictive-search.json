@@ -1,0 +1,66 @@
+{
+  "observationId": "boka.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "boka",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.boka.com/",
+  "selector": "#search-drawer",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "Impact search-drawer. katalogSorgu toothpaste.",
+  "delta": "Yazınca Products/Pages/Blog posts sekmeleri (search sayfası ile aynı dil).",
+  "captureMode": "viewport",
+  "prepareClick": "a[aria-controls='search-drawer']",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.boka.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#shopify-section-sections--26470593003563__header",
+      "etiket": "arama-kapali",
+      "not": "Drawer kapalı — header büyüteç"
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "a[aria-controls='search-drawer']",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input[name='q']",
+      "value": "toothpaste",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "katalogSorgu toothpaste"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Yazmadan sonuç yok"
+    },
+    {
+      "state": "filled",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "open",
+      "sebep": "Boş drawer ayrı kare değil"
+    },
+    {
+      "state": "changed",
+      "sebep": "Tab tıklanmadı"
+    }
+  ]
+}

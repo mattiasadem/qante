@@ -1,0 +1,43 @@
+{
+  "observationId": "boka.default.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "boka",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "url": "https://www.boka.com/pages/faq",
+  "selector": "#shopify-section-template--26470592413739__accordion_boka",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [],
+  "notlar": "Frequently Asked Questions — ürün soruları.",
+  "delta": "Impact accordion. Üç ayrı accordion section.",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.boka.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--26470592413739__accordion_boka",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "İlk grup kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--26470592413739__accordion_boka details:first-of-type > summary, #shopify-section-template--26470592413739__accordion_boka button:has-text('heavy metals')",
+      "capture": true,
+      "etiket": "ilk-soru",
+      "not": "Do Boka products contain heavy metals?"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "stateFindings": {},
+  "missingStates": []
+}
