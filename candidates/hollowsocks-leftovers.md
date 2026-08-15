@@ -94,8 +94,12 @@ Karar: onay bekliyor
 - Home `intro_reveal_Eqqjhj` height 0
 - PLP `plp_callout_BNgx8J` height 0
 - Search filters section (`SHOW FILTER + SORT` / VIEW AS MODEL|PRODUCT) — ayrı 3vp yok
+- PLP `/collections/all` ve `/collections/best-sellers` resmi 3vp yok: `dismiss-overlays` `ds-quick-view` içindeki opacity-0 `aria-label=Close` butonuna force-click → `/products/compression-bundle?variant=…`. Orphan `evidence/hollowsocks/default/collection/product-showcase-grid-plp.375.png` (2 kolon + Labor Day mid-grid banner) — observation `evidence[]` boş, claim yok. Script’e dokunulmadı.
 - Sub-nav görsel şerit yalnız <640 (`sm:h-0`)
-- Header mega drawer DOM (`.ds-meganav`) — nav `data-meganav-ignore`
-- Freegifts / BOGOS / Recart overlay (PII yok)
+- Header mega drawer DOM (`.ds-meganav`) — nav `data-meganav-ignore`; hover panel getirmedi
+- Freegifts / BOGOS / Recart overlay (doldurulmadı)
 - Newsletter footer — doldurulmadı
 - Native `/policies/*` stub (pages/privacy-policy observation var)
+- About `features-slider-multicolumn` ok/perk değişimi interact edilmedi (statik 3vp var)
+- Cart drawer Checkout / + SELECT NOW tıklanmadı
+- Home trust-line resmi kare 21k/1M/90-day; sonraki viewport karelerinde siyah şerit 27k/4M/99-day (canlı kopya)

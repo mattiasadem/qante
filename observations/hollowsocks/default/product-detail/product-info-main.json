@@ -8,13 +8,19 @@
   "selector": "#shopify-section-template--20352644251817__ds_pdp_hero_AzFhV3",
   "evidenceSlug": "product-info-main",
   "evidence": [
+    "evidence/hollowsocks/default/product-detail/product-info-main.1440.png",
     "evidence/hollowsocks/default/product-detail/product-info-main.375.png",
     "evidence/hollowsocks/default/product-detail/product-info-main.768.png",
-    "evidence/hollowsocks/default/product-detail/product-info-main.1440.png"
+    "evidence/hollowsocks/default/product-detail/product-info-main.changed.beden-medium.1440.png",
+    "evidence/hollowsocks/default/product-detail/product-info-main.changed.beden-medium.375.png",
+    "evidence/hollowsocks/default/product-detail/product-info-main.changed.beden-medium.768.png"
   ],
   "notlar": "CREW SOCKS. Galeri + BEST SELLER + B2G2 mühür. COLOR Gray/Black/White. SIZE Medium/Large/X-Large + SIZE GUIDE. Paket: 1 PAIR $44.99 · BUY 2 GET 2 $89.98 MOST POPULAR · BUY 3 GET 3. ATC kırmızı. PRODUCT DETAILS açık (FIT/CUSHION/MATERIALS). Sticky header clip'e sızıyor.",
   "delta": "ds_pdp_hero — galeri+buy box tek blok. Bundle radio + akordeon aynı section.",
-  "interactionStates": ["changed"],
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
   "interactionSteps": [
     {
       "state": "changed",
@@ -43,9 +49,12 @@
       "not": "İlk size swatch MEDIUM — Large varsayılanı değişmeli"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "SIZE: LARGE seçili (Men 9.5-12 / Women 10-13, bej). COLOR: GRAY. 1 PAIR $44.99. ATC kırmızı.",
+    "changed": "SIZE: MEDIUM seçili (Men 6-9 / Women 7-9.5). LARGE artık seçili değil. Galeri/fiyat/ATC aynı. Piksel değişti."
+  },
   "missingStates": [],
-  "interactionNote": "İlk .js-pdp-swatch size picker'da MEDIUM (Men 6-9). Checkout/ATC interact cart drawer'da.",
+  "interactionNote": "İlk #ds-block-size_picker_GPxY8Q .js-pdp-swatch = MEDIUM. ATC/checkout cart drawer'da.",
   "capture": {
     "url": "https://hollowsocks.com/products/crew-performance-alpaca-socks",
     "viewports": [
@@ -54,7 +63,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T21:08:56.437Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:31:33.959Z"
   }
 }

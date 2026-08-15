@@ -7,12 +7,26 @@
   "url": "https://hollowsocks.com/",
   "selector": "[data-cart-drawer].ds-cart-drawer",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/hollowsocks/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/hollowsocks/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/hollowsocks/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/hollowsocks/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/hollowsocks/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/hollowsocks/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/hollowsocks/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/hollowsocks/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/hollowsocks/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
   "notlar": "ds-cart-drawer custom element, panel [data-cart-panel] max-w-[600px] sağ. Opener button[data-cart-trigger]. /cart #main height 0 — asıl sepet drawer. ATC sonrası drawer kendiliğinden açılabiliyor.",
   "delta": "Tema cart page stub. Checkout tıklanmadı.",
   "captureMode": "viewport",
   "prepareClick": "button[data-cart-trigger][aria-label='Open cart']",
-  "interactionStates": ["initial", "filled", "changed"],
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
   "interactionSteps": [
     {
       "state": "initial",
@@ -79,7 +93,23 @@
       "not": "Adet + — B2G2 çubuğu / subtotal değişmeli"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "CART (0) · BUY 2 GET 2 FREE şerit · YOUR CART IS EMPTY / DON'T GET COLD FEET NOW · SHOP PRODUCTS. 1440 reco QUICK ADD (COMPRESSION SOCKS $44.99, COMPRESSION BUNDLE $84.98 BEST SELLER); 375'te reco kart yok (buton altı beyaz).",
+    "filled": "CART (1) · ADD 1 PAIR MORE TO UNLOCK 2 FREE PAIRS (IN CART / ADD 1 / FREE / FREE) · CREW SOCKS COLOR: GRAY | SIZE: L · $44.99 · qty 1 · REMOVE · SUBTOTAL 1 ITEM $44.99 · SHIPPING CALCULATED AT CHECKOUT · SECURE CHECKOUT · 27,000+ 5-STAR / 99-DAY. Checkout tıklanmadı.",
+    "changed": "CART (2) · YOU'VE EARNED 2 FREE PAIRS. ADD 2 MORE PAIRS · qty 2 · $89.98 · YOU EARNED 2 FREE PAIRS! + FREE SHIPPING · + SELECT NOW · SUBTOTAL 2 ITEMS $89.98 · FREE SHIPPING · SECURE CHECKOUT. Checkout tıklanmadı."
+  },
   "missingStates": [],
-  "interactionNote": "Qty selector probe: button.qty-plus_cart-icon[aria-label='Increase quantity']. Checkout tıklanmadı."
+  "interactionNote": "Qty + via button.qty-plus_cart-icon. Checkout / SELECT NOW tıklanmadı. 375 empty reco kart göstermiyor.",
+  "capture": {
+    "url": "https://hollowsocks.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:30:32.871Z",
+    "prepareClick": "button[data-cart-trigger][aria-label='Open cart']"
+  }
 }
