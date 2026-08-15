@@ -62,12 +62,12 @@ Durum: `done` = main'e merge · `in progress` = açık PR · boş = kuyrukta
 | 50 | done | kettleandfire.com | https://kettleandfire.com |
 | 51 | done | vegamour.com | https://vegamour.com |
 | 52 | in progress | kizik.com | https://kizik.com |
-| 53 | in progress | lemme.com | https://lemme.com |
+| 53 | done | lemme.com | https://lemme.com |
 | 54 | in progress | shinesty.com | https://shinesty.com |
 | 55 | in progress | omsom.com | https://omsom.com |
 | 56 | in progress | desoi.com | https://desoi.com |
 | 57 | in progress | materialkitchen.com | https://materialkitchen.com |
-| 58 | | onnit.com | https://onnit.com |
+| 58 | in progress | onnit.com | https://onnit.com |
 | 59 | | buckmason.com | https://buckmason.com |
 | 60 | | herocosmetics.com | https://herocosmetics.com |
 | 61 | | magicspoon.com | https://magicspoon.com |
