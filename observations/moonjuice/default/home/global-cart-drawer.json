@@ -7,7 +7,14 @@
   "url": "https://moonjuice.com/",
   "selector": ".rebuy-cart__flyout",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/moonjuice/default/home/global-cart-drawer.1440.png",
+    "evidence/moonjuice/default/home/global-cart-drawer.375.png",
+    "evidence/moonjuice/default/home/global-cart-drawer.768.png",
+    "evidence/moonjuice/default/home/global-cart-drawer.filled.magnesiom.1440.png",
+    "evidence/moonjuice/default/home/global-cart-drawer.filled.magnesiom.375.png",
+    "evidence/moonjuice/default/home/global-cart-drawer.filled.magnesiom.768.png"
+  ],
   "notlar": "Rebuy sağ panel. Boş: Your Cart Is Empty! Continue Shopping. Sarı SAVE 30% + FREE SHIPPING. $65 kargo eşiği. Customers Also Bought.",
   "delta": "Shopify native cart-drawer yok. #rebuy-cart + Recharge #recharge-storefront-experiences__cart-drawer (0px). /cart home'a düşer. smart-cart--enabled.",
   "prepareClick": "header a.action__cart",
@@ -61,9 +68,26 @@
     }
   ],
   "stateFindings": {
-    "initial": "Your Cart empty; $65 free shipping; Customers Also Bought Magnesi-Om / SuperYou / Mini Dew.",
-    "filled": "ATC sonrası satır beklenir — karede doğrula."
+    "initial": "Your Cart Is Empty!; $65 free shipping; sarı SAVE 30% + FREE SHIPPING; Customers Also Bought Magnesi-Om / SuperYou / Mini Dew.",
+    "filled": "ATC UI: Magnesi-Om® Berry / Jar · Delivered every month · $30.80 (~~$44~~) · qty 1 · FREE SHIPPING unlocked · Subtotal $30.80 · Checkout. Upsell Collagen Protect / SuperYou / Mini Dew."
   },
-  "missingStates": [],
-  "interactionNote": "Rebuy widget. addToCart UI tık; fallback /cart/add.js. Checkout'a girilmedi. Qty changed yoklandıysa not."
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Rebuy qty +/− bir kez denenmedi — leftover"
+    }
+  ],
+  "interactionNote": "Rebuy widget. addToCart UI (Subscribe default). Checkout'a girilmedi.",
+  "capture": {
+    "url": "https://moonjuice.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:21:28.891Z",
+    "prepareClick": "header a.action__cart"
+  }
 }

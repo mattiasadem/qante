@@ -5,12 +5,19 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://moonjuice.com/",
-  "selector": "#search-modal",
+  "selector": "#search-modal dialog",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
-  "notlar": "dialog-component#search-modal + predictive-search-component. Kapalı height 0. Opener: search-button.search-action--hidden-on-drawer (44px).",
-  "delta": "Horizon search-modal. Drawer içi ikinci search-button hidden-on-menu. Klaviyo e-posta popup aramayı kesebilir — dismiss.",
-  "prepareClick": "search-button.search-action--hidden-on-drawer",
+  "evidence": [
+    "evidence/moonjuice/default/home/global-predictive-search.1440.png",
+    "evidence/moonjuice/default/home/global-predictive-search.375.png",
+    "evidence/moonjuice/default/home/global-predictive-search.768.png",
+    "evidence/moonjuice/default/home/global-predictive-search.input.magnesium.1440.png",
+    "evidence/moonjuice/default/home/global-predictive-search.input.magnesium.375.png",
+    "evidence/moonjuice/default/home/global-predictive-search.input.magnesium.768.png"
+  ],
+  "notlar": "dialog-component#search-modal içindeki dialog.search-modal__content. Host height 0. Opener: button[aria-label=Search] (1440/768 hidden-on-drawer; 375 hidden-on-menu).",
+  "delta": "Horizon search-modal. search-button wrapper tıkı 1440/768'de dialog açmadı — iç button[aria-label=Search] + showDialog. Predictive ürünler (Magnesi-Om ailesi) modal açıkken default öneri.",
+  "prepareClick": "button[aria-label=\"Search\"]",
   "captureMode": "viewport",
   "interactionStates": [
     "initial",
@@ -26,7 +33,7 @@
     {
       "state": "initial",
       "action": "click",
-      "selector": "search-button.search-action--hidden-on-drawer",
+      "selector": "button[aria-label=\"Search\"]",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "modal-acik",
@@ -35,7 +42,7 @@
     {
       "state": "input",
       "action": "fill",
-      "selector": "#search-modal input[name='q'], input[type='search'][name='q']",
+      "selector": "#search-modal dialog input[name='q']",
       "value": "magnesium",
       "capture": true,
       "captureMode": "viewport",
@@ -44,9 +51,21 @@
     }
   ],
   "stateFindings": {
-    "initial": "Search modal açık; input placeholder Search.",
-    "input": "magnesium önerileri — karede doğrula."
+    "initial": "Modal açık; placeholder Search; Intelligent Self Care® + Magnesi-Om / Sleepy / Neuro / SuperYou.",
+    "input": "magnesium yazılınca öneri pill'leri (magnesium / magnesium om / sleepy magnesium) + Products: AM/PM Magnesium Stack $98 + Blog posts + VIEW ALL. Default 4-ürün rail değişti."
   },
   "missingStates": [],
-  "interactionNote": "Klaviyo 30% OFF e-posta modal PII — doldurulmadı, Escape/dismiss."
+  "interactionNote": "Klaviyo 30% OFF e-posta modal PII — doldurulmadı, Escape/dismiss.",
+  "capture": {
+    "url": "https://moonjuice.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:19:12.980Z",
+    "prepareClick": "search-button.search-action--hidden-on-drawer"
+  }
 }

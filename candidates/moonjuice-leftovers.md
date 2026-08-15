@@ -85,6 +85,28 @@ Karar: onay bekliyor
 `/pages/shops-quiz` → `/pages/quiz`  
 `/this-page-does-not-exist-qante` → 404
 
+ADAY: moonjuice-rebuy-overlay-on-tall-sections  
+Gerekçe: Resmi `capture-observation` tall `main` element screenshot’ı Rebuy `.rebuy-cart__flyout` (position:fixed) piksellerini PLP/search/bazı PDP karelerinin sağına boyuyor. Probe’da kapalı flyout x=2370; yine de 1440 kırpımda “Your Cart” görünüyor. Script’e dokunulmadı. İçerik (filtre + grid + tablo) okunur; sepet kendi obs’unda.  
+Örnekler: collection/search `product-showcase-grid-plp` / `search-results` 1440; PDP compare 1440 sağ kenar  
+Öneri: leftover — dismiss/script değişikliği ayrı iş  
+Karar: onay bekliyor
+
+---
+
+ADAY: moonjuice-menu-768  
+Gerekçe: 768’de `header summary[aria-label=Menu]` DOM’da var, kutu 0×0. Desktop `header-menu` görünür. 375 hamburger + 1440 mega yakalandı.  
+Öneri: leftover  
+Karar: onay bekliyor
+
+---
+
+ADAY: moonjuice-cart-qty  
+Gerekçe: Rebuy filled satırında − / + var. `changed` qty bir kez denenmedi.  
+Öneri: leftover  
+Karar: onay bekliyor
+
+---
+
 ## Bilinçli atlananlar
 
 - `/account/login` — auth  
