@@ -1,0 +1,51 @@
+{
+  "observationId": "tenthousand.default.home.global-quick-view",
+  "schemaId": "global-quick-view",
+  "kaynak": "tenthousand",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.tenthousand.cc/",
+  "selector": "#shopify-section-sections--18860560056407__drawer-quickshop",
+  "evidenceSlug": "global-quick-view",
+  "evidence": [],
+  "notlar": "QUICKSHOP drawer. Copy: Free Shipping on Orders $150+. QUICK ADD kartlardan açılır.",
+  "delta": "Shiro js-drawer-quickshop. Kapalı h=0. 'Quickshop Message Test' merchant metni.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://www.tenthousand.cc/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--18860560121943__products_carousel_PEhjE8",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#shopify-section-template--18860560121943__products_carousel_PEhjE8 button.tvg_react_product_card_-nKmNq_quickshop, #shopify-section-template--18860560121943__products_carousel_PEhjE8 :text('QUICK ADD')",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "quickshop",
+      "not": "Quickshop drawer"
+    }
+  ],
+  "stateFindings": {
+    "open": "QUICKSHOP paneli (kanıt karesine bak)."
+  },
+  "missingStates": [],
+  "interactionNote": "Hover gerekebilir. Açılmazsa leftover."
+}
