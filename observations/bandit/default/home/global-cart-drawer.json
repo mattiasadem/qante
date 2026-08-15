@@ -1,0 +1,62 @@
+{
+  "observationId": "bandit.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "bandit",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://banditrunning.com/",
+  "selector": "#shopify-section-global-minicart",
+  "captureMode": "viewport",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "interactionStates": ["initial", "filled"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://banditrunning.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.header-cart.minicart-open",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "YOUR CART IS SAD :( + WOMEN’S/MEN’S/ACCESSORIES/SHOP ALL"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://banditrunning.com/products/stamina-hw-5-compression-bottom-with-wavy-wb-black",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button:has-text(\"ADD TO CART\")",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.header-cart.minicart-open",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "stamina-qty1",
+      "not": "Dolu minicart — satır + toplam"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "/cart homepage'e düşer; sepet yalnız global-minicart. addToCart fallback /cart/add.js olursa not düş.",
+  "notlar": "Boş metin: YOUR CART IS SAD :(",
+  "delta": "Boş state koleksiyon linkleri (Women’s/Men’s/Accessories/Shop All). /cart sayfası yok."
+}

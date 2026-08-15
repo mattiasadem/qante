@@ -1,0 +1,41 @@
+{
+  "observationId": "bandit.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "bandit",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://banditrunning.com/",
+  "selector": ".js-mobile-menu",
+  "captureMode": "viewport",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "interactionStates": ["open"],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://banditrunning.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.mobile-menu-trigger.js-mobile-menu-toggle",
+      "viewports": ["375", "768"],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "tablet-down-only drawer; marquee + Collections/Women's/Men's…"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger yok (desktop mega). Drawer kanıtı 375+768."
+    }
+  ],
+  "interactionNote": "Opener: button.mobile-menu-trigger.js-mobile-menu-toggle. 1440 N/A.",
+  "notlar": "Marquee: Find the balance → Stay true → Keep going.",
+  "delta": "İkincil submenu (Collections/Women's) akordeon; desktop mega ayrı observation."
+}

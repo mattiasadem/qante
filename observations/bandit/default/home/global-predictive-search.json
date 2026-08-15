@@ -1,0 +1,45 @@
+{
+  "observationId": "bandit.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "bandit",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://banditrunning.com/",
+  "selector": "#shopify-section-global-search",
+  "captureMode": "viewport",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "interactionStates": ["open", "input"],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://banditrunning.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.js-search-toggle",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "popular",
+      "not": "CLOSE + POPULAR SEARCHES (TIGHTS/SHORTS/SINGLETS) + SUGGESTED PRODUCTS"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input.js-search-input",
+      "value": "tights",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "tights",
+      "not": "katalogSorgu: tights (popular chip + mağaza ürünü)"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Overlay kapalıyken opacity 0 + translateY(-50). PII yok.",
+  "notlar": "",
+  "delta": "Popular searches + suggested products (best seller) boş sorguda da DOM'da."
+}

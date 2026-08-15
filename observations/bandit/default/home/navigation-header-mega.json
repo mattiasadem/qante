@@ -1,0 +1,39 @@
+{
+  "observationId": "bandit.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "bandit",
+  "preset": "default",
+  "sayfa": "home",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "url": "https://banditrunning.com/",
+  "selector": "#shopify-section-global-header .global-header:not(.is-lockdown-header)",
+  "captureMode": "viewport",
+  "interactionStates": ["initial", "open"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://banditrunning.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Kapalı header + announcement + hero üstü"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#shopify-section-global-header a:has-text(\"WOMEN'S\"), #shopify-section-global-header button:has-text(\"WOMEN'S\")",
+      "viewports": ["1440"],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "womens-mega",
+      "not": "WOMEN'S mega: Featured + Tops/Bottoms kolonları"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Mega yalnız 1440 hover. 375/768 hamburger → global-menu-drawer.",
+  "notlar": "BANDIT wordmark; COLLECTIONS / WOMEN'S / MEN'S / ACCESSORIES mega; search; THE MEMBERSHIP; EVERYTHING; LOGIN; minicart; 0.000 KM tracker.",
+  "delta": "KM scroll tracker ve membership utility. Mega paneller DOM'da kapalı (y negatif). Lockdown header ayrı, public'te off-screen."
+}
