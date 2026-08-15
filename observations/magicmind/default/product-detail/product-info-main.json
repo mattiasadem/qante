@@ -1,0 +1,64 @@
+{
+  "observationId": "magicmind.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "magicmind",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://magicmind.com/products/mental-performance-shot-original",
+  "selector": "[id$='__main-product']",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/magicmind/default/product-detail/product-info-main.1440.png",
+    "evidence/magicmind/default/product-detail/product-info-main.375.png",
+    "evidence/magicmind/default/product-detail/product-info-main.768.png",
+    "evidence/magicmind/default/product-detail/product-info-main.changed.30-bottles.768.png"
+  ],
+  "notlar": "Original buy box. Suffix __main-product; template id A/B.",
+  "delta": "main-product-v2. Selling plan + varyant. HSA/FSA satırı. Frontrow sticker iframe leftover.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://magicmind.com/products/mental-performance-shot-original",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "text=MOST POPULAR",
+      "value": 1500,
+      "capture": true,
+      "etiket": "30-bottles",
+      "not": "15→30 pack — fiyat/ATC değişmeli"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "15/30 pack tıkı görünür değil (label sr-only; span.main-product-v2__most-popular gizli). Statik 3vp var."
+    }
+  ],
+  "interactionNote": "Pack değişimi denendi, piksel doğrulanamadı. Subscribe varsayılan. Checkout yok.",
+  "capture": {
+    "url": "https://magicmind.com/products/mental-performance-shot-original",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:13:08.013Z"
+  }
+}
