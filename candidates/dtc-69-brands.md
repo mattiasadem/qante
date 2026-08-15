@@ -43,7 +43,7 @@ Durum: `done` = main'e merge · `in progress` = açık PR · boş = kuyrukta
 | 31 | done | tenthousand.cc | https://tenthousand.cc |
 | 32 | done | novoslabs.com | https://novoslabs.com |
 | 33 | in progress | davidprotein.com | https://davidprotein.com |
-| 34 | in progress | vessi.com | https://vessi.com |
+| 34 | done | vessi.com | https://vessi.com |
 | 35 | done | flamingoestate.com | https://flamingoestate.com |
 | 36 | done | flybyjing.com | https://flybyjing.com |
 | 37 | in progress | gruns.co | https://gruns.co |
