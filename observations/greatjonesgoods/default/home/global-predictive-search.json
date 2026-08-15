@@ -1,0 +1,74 @@
+{
+  "observationId": "greatjonesgoods.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "greatjonesgoods",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://greatjonesgoods.com/",
+  "selector": ".search__inner",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/greatjonesgoods/default/home/global-predictive-search.1440.png",
+    "evidence/greatjonesgoods/default/home/global-predictive-search.375.png",
+    "evidence/greatjonesgoods/default/home/global-predictive-search.768.png",
+    "evidence/greatjonesgoods/default/home/global-predictive-search.initial.oneriler.1440.png",
+    "evidence/greatjonesgoods/default/home/global-predictive-search.initial.oneriler.375.png",
+    "evidence/greatjonesgoods/default/home/global-predictive-search.initial.oneriler.768.png",
+    "evidence/greatjonesgoods/default/home/global-predictive-search.input.dutchess.1440.png",
+    "evidence/greatjonesgoods/default/home/global-predictive-search.input.dutchess.375.png",
+    "evidence/greatjonesgoods/default/home/global-predictive-search.input.dutchess.768.png"
+  ],
+  "notlar": "Open Search → overlay. Suggestions: Dutch oven, Sheet pan, Nonstick, Pink. Are you looking for… ürün kartları (Holy Sheet $45, Fellow kettle $195, Dutch Baby $165).",
+  "delta": "2025 BFCM THEME: Great Jones 4.2 | Edgemesh. schema_name Great Jones 0.1.0, theme_store_id null, role main. Shop great-jones-goods.myshopify.com. Custom search.js-search / #shopify-section-header-search. Overlay her zaman DOM’da. /search tam sayfa ayrı.",
+  "captureMode": "viewport",
+  "prepareClick": "button.js-searchOpen",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://greatjonesgoods.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.js-searchOpen",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "oneriler",
+      "not": "Statik öneri + ürün"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input[name='q'][type='search']",
+      "value": "Dutchess",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "dutchess",
+      "not": "katalogSorgu The Dutchess"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Suggestions Dutch oven / Sheet pan / Nonstick / Pink + ürün kartları.",
+    "input": "3vp: input 'Dutchess' yazıyor. Suggestions ve Are you looking for… kartları (Holy Sheet / Fellow kettle / Dutch Baby) aynı kaldı — canlı ürün listesi değişmedi."
+  },
+  "missingStates": [],
+  "interactionNote": "Fill input metnini değiştirdi; öneri/ürün ızgarası statik. zzzzz denenmedi. PII yok.",
+  "capture": {
+    "url": "https://greatjonesgoods.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:07:31.525Z",
+    "prepareClick": "button.js-searchOpen"
+  }
+}

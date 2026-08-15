@@ -1,0 +1,85 @@
+{
+  "observationId": "greatjonesgoods.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "greatjonesgoods",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://greatjonesgoods.com/",
+  "selector": ".rebuy-cart__flyout",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/greatjonesgoods/default/home/global-cart-drawer.1440.png",
+    "evidence/greatjonesgoods/default/home/global-cart-drawer.375.png",
+    "evidence/greatjonesgoods/default/home/global-cart-drawer.768.png",
+    "evidence/greatjonesgoods/default/home/global-cart-drawer.filled.holy-sheet-qty1.1440.png",
+    "evidence/greatjonesgoods/default/home/global-cart-drawer.filled.holy-sheet-qty1.375.png",
+    "evidence/greatjonesgoods/default/home/global-cart-drawer.filled.holy-sheet-qty1.768.png",
+    "evidence/greatjonesgoods/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/greatjonesgoods/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/greatjonesgoods/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "header__cart → Rebuy flyout (#rebuy-cart). Native .cart-drawer 0×0. Boş: Your Cart / empty. /cart → /#cart (ayrı sayfa yok).",
+  "delta": "2025 BFCM THEME: Great Jones 4.2 | Edgemesh. schema_name Great Jones 0.1.0, theme_store_id null, role main. Shop great-jones-goods.myshopify.com. Rebuy cart overlay. Native cart-drawer boş. Checkout’a girilmedi. Qty changed leftover.",
+  "captureMode": "viewport",
+  "prepareClick": "button.header__cart.js-cartToggle",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://greatjonesgoods.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.header__cart.js-cartToggle",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş Rebuy drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://greatjonesgoods.com/products/holy-sheet",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'], button:has-text('Add to Cart')",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "holy-sheet-qty1",
+      "not": "ATC sonrası Rebuy"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your Cart empty / 0.",
+    "filled": "Holy Sheet Broccoli $45 qty 1; You're $55.00 away from FREE SHIPPING; Add Gift Note; Subtotal $45; Checkout. ATC UI (3vp)."
+  },
+  "missingStates": [],
+  "interactionNote": "Native cart-drawer 0×0 — Rebuy flyout. ATC UI. Checkout/PII yok. Qty changed leftover.",
+  "capture": {
+    "url": "https://greatjonesgoods.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:09:35.691Z",
+    "prepareClick": "button.header__cart.js-cartToggle"
+  }
+}
