@@ -8,45 +8,37 @@
   "selector": "#search-drawer",
   "evidenceSlug": "global-predictive-search",
   "evidence": [],
-  "notlar": "predictive-search-drawer#search-drawer. Header a[aria-label=Search] href=/search.",
-  "delta": "Öneri listesi yoklandıktan sonra yazılacak.",
+  "notlar": "predictive-search-drawer#search-drawer DOM'da var. Header Search ikonu 375/768/1440 görünür listede yok (hidden-desk / 0px).",
+  "delta": "Opener görünür değil — /search sayfası envanterlendi. Drawer forceOpen ile yoklandı.",
   "captureMode": "viewport",
-  "prepareClick": "a[aria-label='Search']",
   "interactionStates": [
-    "initial",
-    "input"
+    "open"
   ],
   "interactionSteps": [
     {
-      "state": "initial",
+      "state": "open",
       "action": "goto",
       "value": "https://bleame.com/",
       "capture": false
     },
     {
-      "state": "initial",
-      "action": "click",
-      "selector": "a[aria-label='Search']",
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#search-drawer",
       "capture": true,
       "captureMode": "viewport",
-      "etiket": "arama-acik",
-      "not": "Boş predictive drawer"
-    },
-    {
-      "state": "input",
-      "action": "fill",
-      "selector": "#search-drawer input[type='search'], #search-drawer input[name='q']",
-      "value": "crystal",
-      "capture": true,
-      "captureMode": "viewport",
-      "etiket": "crystal",
-      "not": "katalogSorgu crystal — öneri beklenir"
+      "etiket": "force-open",
+      "not": "Görünür opener yok; drawer JS force"
     }
   ],
   "stateFindings": {
-    "initial": "(capture sonrası)",
-    "input": "(capture sonrası)"
+    "open": "(capture sonrası)"
   },
-  "missingStates": [],
-  "interactionNote": "Sorgu mağaza ürün adından: crystal."
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "Search ikonu 3vp'de görünür değil; fill denendi değil"
+    }
+  ],
+  "interactionNote": "katalogSorgu crystal. Opener hidden — leftover."
 }

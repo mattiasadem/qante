@@ -7,7 +7,53 @@
   "url": "https://bleame.com/",
   "selector": "#shopify-section-template--19666882920623__faq_V9VT6k",
   "evidenceSlug": "faq-collapsible-tabs",
-  "evidence": [],
+  "evidence": [
+    "evidence/bleame/default/home/faq-collapsible-tabs.375.png",
+    "evidence/bleame/default/home/faq-collapsible-tabs.768.png",
+    "evidence/bleame/default/home/faq-collapsible-tabs.1440.png"
+  ],
   "notlar": "Frequently Asked Questions. İlk soru açık (Where can I use…). Diğerleri kapalı buton.",
-  "delta": "Kategori tab yok. openFirst görünür."
+  "delta": "Kategori tab yok. openFirst görünür.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://bleame.com/",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19666882920623__faq_V9VT6k",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--19666882920623__faq_V9VT6k button.faq-question:has-text('Does the friction cause darkness?')",
+      "capture": true,
+      "etiket": "friction",
+      "not": "İkinci soru açık"
+    }
+  ],
+  "stateFindings": {
+    "initial": "İlk soru (Where can I use) açık.",
+    "changed": "(capture sonrası)"
+  },
+  "missingStates": [],
+  "capture": {
+    "url": "https://bleame.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "margin-box+minPad8",
+    "updatedAt": "2026-08-15T19:53:33.043Z"
+  }
 }
