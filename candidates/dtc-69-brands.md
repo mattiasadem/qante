@@ -57,20 +57,20 @@ Durum: `done` = main'e merge · `in progress` = açık PR · boş = kuyrukta
 | 45 | done | cymbiotika.com | https://cymbiotika.com |
 | 46 | done | greatjonesgoods.com | https://greatjonesgoods.com |
 | 47 | done | hellobubble.com | https://hellobubble.com |
-| 48 | in progress | pamos.com | https://pamos.com |
+| 48 | done | pamos.com | https://pamos.com |
 | 49 | done | rhone.com | https://rhone.com |
 | 50 | done | kettleandfire.com | https://kettleandfire.com |
 | 51 | done | vegamour.com | https://vegamour.com |
-| 52 | in progress | kizik.com | https://kizik.com |
-| 53 | in progress | lemme.com | https://lemme.com |
+| 52 | done | kizik.com | https://kizik.com |
+| 53 | done | lemme.com | https://lemme.com |
 | 54 | in progress | shinesty.com | https://shinesty.com |
-| 55 | in progress | omsom.com | https://omsom.com |
+| 55 | done | omsom.com | https://omsom.com |
 | 56 | in progress | desoi.com | https://desoi.com |
 | 57 | in progress | materialkitchen.com | https://materialkitchen.com |
-| 58 | | onnit.com | https://onnit.com |
-| 59 | | buckmason.com | https://buckmason.com |
-| 60 | | herocosmetics.com | https://herocosmetics.com |
-| 61 | | magicspoon.com | https://magicspoon.com |
+| 58 | in progress | onnit.com | https://onnit.com |
+| 59 | in progress | buckmason.com | https://buckmason.com |
+| 60 | in progress | herocosmetics.com | https://herocosmetics.com |
+| 61 | in progress | magicspoon.com | https://magicspoon.com |
 | 62 | | takearecess.com | https://takearecess.com |
 | 63 | | vivobarefoot.com | https://vivobarefoot.com |
 | 64 | | moom.health | https://moom.health |
