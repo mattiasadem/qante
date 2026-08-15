@@ -1,0 +1,103 @@
+{
+  "observationId": "hexclad.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "hexclad",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://hexclad.com/",
+  "selector": ".CartDrawerV2-inner",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/hexclad/default/home/global-cart-drawer.filled.pan-qty1.1440.png",
+    "evidence/hexclad/default/home/global-cart-drawer.filled.pan-qty1.375.png",
+    "evidence/hexclad/default/home/global-cart-drawer.filled.pan-qty1.768.png",
+    "evidence/hexclad/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/hexclad/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/hexclad/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "header button[aria-label='Go to cart'] → sağ offcanvas. Boş: Your cart is empty; See Our Best Sellers; trust chip. ATC drawer’ı kendisi açar — ikinci cart tık kapatır.",
+  "delta": "CartDrawerV2 + js-offcanvas--cart. Kapalıyken kutu x=2090 (off-screen) → Playwright boundingBox null. /cart ayrı sayfa. Checkout/login yok.",
+  "captureMode": "viewport",
+  "prepareClick": "header button[aria-label='Go to cart']",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hexclad.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": ".js-offcanvas--cart",
+      "capture": false,
+      "not": "dismiss-overlays aside'ı display:none yapıyor — geri al"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button[data-drawer-name='cart']",
+      "value": 1600,
+      "capture": false,
+      "not": "is-expanded kaydır"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://hexclad.com/products/12-hexclad-pan-with-lid",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "forceOpen",
+      "selector": ".js-offcanvas--cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.js-product-form-submit[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "pan-qty1",
+      "not": "ATC drawer’ı açar; tekrar cart tıkla yok"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your Cart 0; empty copy; See Our Best Sellers; warranty/shipping/return; 1440 FBT kolon.",
+    "filled": "Your Cart 1; Hybrid Fry Pan with Lid 12\" $199; qty 1; free shipping banner; Checkout."
+  },
+  "missingStates": [],
+  "interactionNote": "dismiss-overlays tam ekran aside'ı display:none yapıyor; forceOpen geri alıyor. ATC UI. İkinci cart tık kapatır. Qty changed leftover. PII/checkout yok.",
+  "capture": {
+    "url": "https://hexclad.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:57:00.203Z",
+    "prepareClick": "button[aria-label='Go to cart']"
+  }
+}
