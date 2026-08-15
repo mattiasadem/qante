@@ -1,0 +1,88 @@
+{
+  "observationId": "rhone.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "rhone",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://www.rhone.com/products/mens-origin-tee-slim-fit/",
+  "selector": ".product-detail",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/rhone/default/product-detail/product-info-main.1440.png",
+    "evidence/rhone/default/product-detail/product-info-main.375.png",
+    "evidence/rhone/default/product-detail/product-info-main.768.png",
+    "evidence/rhone/default/product-detail/product-info-main.changed.renk.1440.png",
+    "evidence/rhone/default/product-detail/product-info-main.changed.renk.375.png",
+    "evidence/rhone/default/product-detail/product-info-main.changed.renk.768.png",
+    "evidence/rhone/default/product-detail/product-info-main.initial.buybox.1440.png",
+    "evidence/rhone/default/product-detail/product-info-main.initial.buybox.375.png",
+    "evidence/rhone/default/product-detail/product-info-main.initial.buybox.768.png"
+  ],
+  "notlar": "Origin Tee - Slim. Sol galeri + Pairs well with. Sağ: $64, BV 4.6 (18), Color swatch, Style Short Sleeve, Fit Slim, size, Add to bag / Save to favorites. Accordion: Size & fit / Fabric & care / Features / Description (buy box içi — ayrı section değil).",
+  "delta": "Tema Store / Shopify.theme.name / schema_name yok (Shopify.theme boş nesne; uydurulmadı). Shop rhone.myshopify.com. Vitrin custom Nuxt (#__nuxt, /_nuxt/*.js) + Nacelle (nacelle class) + Shopify backend. #shopify-section-* yok. Accordion buy box içinde (product-info-tabs ayrı çekilmedi). Bazaarvoice yıldız. sticky-atc. Nacelle PDP.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.rhone.com/products/mens-origin-tee-slim-fit/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "[aria-label=\"Close dialog\"], #globalHeader",
+      "capture": false,
+      "not": "15% modal varsa kapat"
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": ".product-detail",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "selector": ".product-detail",
+      "value": 8000,
+      "capture": true,
+      "etiket": "buybox",
+      "not": "İlk varyant White Onyx/True Navy Stripe"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button.swatch-option--color[aria-label=\"Vintage Indigo color option\"]",
+      "capture": true,
+      "etiket": "renk",
+      "not": "Vintage Indigo — galeri/etiket değişiyor mu"
+    }
+  ],
+  "stateFindings": {
+    "initial": "White Onyx/True Navy Stripe · $64 (375: Loading Price…) · Slim · Short Sleeve.",
+    "changed": "768/1440: Vintage Indigo · $54 · galeri mavi tee. 375 kare hâlâ White Onyx."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "375: Vintage Indigo tık sonrası kare hâlâ White Onyx (Loading Price). 768/1440 değişti."
+    }
+  ],
+  "interactionNote": "Yalnız renk. Recapture button.swatch-option--color[aria-label='Vintage Indigo color option']. Beden ATC cart drawer'da.",
+  "prepareClick": "[aria-label=\"Close dialog\"]",
+  "capture": {
+    "url": "https://www.rhone.com/products/mens-origin-tee-slim-fit/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:44:23.834Z"
+  }
+}

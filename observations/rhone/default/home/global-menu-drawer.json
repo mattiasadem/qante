@@ -1,0 +1,73 @@
+{
+  "observationId": "rhone.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "rhone",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.rhone.com/",
+  "selector": ".nav-flyout",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/rhone/default/home/global-menu-drawer.open.menu-acik.375.png",
+    "evidence/rhone/default/home/global-menu-drawer.open.menu-acik.768.png"
+  ],
+  "notlar": "375/768 hamburger button.mobile-burger aria=menu. Açık .nav-flyout: New/Men/Women/Resale/Mental Fitness + Search + utility (Take 15% off, Help, Gift cards, Find a store, Styling assistant, United States).",
+  "delta": "Tema Store / Shopify.theme.name / schema_name yok (Shopify.theme boş nesne; uydurulmadı). Shop rhone.myshopify.com. Vitrin custom Nuxt (#__nuxt, /_nuxt/*.js) + Nacelle (nacelle class) + Shopify backend. #shopify-section-* yok. 1440 mega; drawer kapalı 0×0. Nacelle burger. .full-image-drawer ayrı featured şerit, menü değil.",
+  "captureMode": "viewport",
+  "prepareClick": "button.mobile-burger",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://www.rhone.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "[aria-label=\"Close dialog\"], #globalHeader",
+      "capture": false,
+      "not": "15% modal varsa kapat; yoksa header (adım patlamasın)"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.mobile-burger",
+      "capture": false,
+      "not": "Hamburger"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "selector": ".nav-flyout",
+      "value": 8000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "menu-acik",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Açık flyout — New/Men/Women + utility"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: Search + New/Men/Women (chevron) + Resale + Mental Fitness + utility (Take 15% off, Help, Gift cards, Find a store, Styling assistant, United States). X kapatır."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 hamburger gizli (mega). 375/768 open kareleri var. Önceki .full-image-drawer 0×0 idi.",
+  "capture": {
+    "url": "https://www.rhone.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:42:58.724Z"
+  }
+}
