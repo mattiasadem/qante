@@ -73,9 +73,9 @@ Karar: onay bekliyor
 ---
 
 ADAY: gruns-zero-px-sticky  
-Gerekçe: Home `usnacks_anchor_target_*` 0px. PDP sticky CTA 0px (scroll sonrası görünebilir). Claiming yok.  
+Gerekçe: Home `usnacks_anchor_target_*` 0px. PDP sticky CTA (`Save 55% + Free Shipping`) statik bounding box 0; buybox'a scroll / interact karelerinde görünür. Claiming yok.  
 Örnekler: https://gruns.co/ · https://gruns.co/products/gruns  
-Öneri: ertele  
+Öneri: ertele — scroll-dependent feature  
 Karar: onay bekliyor
 
 ---
