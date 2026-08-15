@@ -32,9 +32,9 @@ Karar: onay bekliyor
 ---
 
 ADAY: javy-store-locator-map  
-Gerekçe: `/store-locator` başlık + “Find Javvy near you” + ürün chip; iframe/harita height kanıtı yok.  
+Gerekçe: `/store-locator` başlık + chip + postcode arama + mağaza listesi + küme haritası (Mapbox benzeri). Taksonomide locator yok; `page-content-main` gözlem var.  
 Örnekler: https://javvycoffee.com/store-locator  
-Öneri: `page-content-main` gözlem var; widget aday  
+Öneri: map / locator ailesi  
 Karar: onay bekliyor
 
 ---
@@ -72,4 +72,6 @@ Karar: onay bekliyor
 - `/products/gift-card` — `/collections/all`  
 - `/pages/our-impact` (About Us) — client home  
 - `/blogs/news` — 500 “Oh no!”  
-- Theme Store adı — vitrinde yok, uydurulmadı
+- Theme Store adı — vitrinde yok, uydurulmadı  
+- `/support/privacy-policy` Gorgias Help Center — 375’te makale kutusu izole edilemedi; şema observation silindi  
+- PLP collection pills tık → `/collections/{handle}` navigate (aynı component `changed` değil)

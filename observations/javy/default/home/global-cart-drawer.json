@@ -7,9 +7,86 @@
   "url": "https://javvycoffee.com/?openCart=true",
   "selector": ".cart-drawer_inner",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/javy/default/home/global-cart-drawer.375.png",
+    "evidence/javy/default/home/global-cart-drawer.768.png",
+    "evidence/javy/default/home/global-cart-drawer.1440.png"
+  ],
   "notlar": "/cart → /?openCart=true. Boş: Your cart is empty + Shop Concentrate/Protein/… kartları. Alia scratch (#alia-root) ayrı overlay — PII/scratch yoklandı değil.",
   "delta": "Sayfa yok; Radix sağ panel ~600px. Predictive search yok.",
   "captureMode": "viewport",
-  "prepareClick": "button[aria-label='Open Cart']"
+  "prepareClick": "button[aria-label='Open Cart']",
+  "capture": {
+    "url": "https://javvycoffee.com/?openCart=true",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "viewport",
+    "updatedAt": "2026-08-15T18:53:54.064Z",
+    "prepareClick": "button[aria-label='Open Cart']"
+  },
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://javvycoffee.com/?openCart=true",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button[aria-label='Open Cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": ".cart-drawer_inner",
+      "etiket": "cart-bos",
+      "not": "Boş sepet + Shop kartları"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://javvycoffee.com/products/protein-coffee",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": ".flavor_add-btn",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": ".flavor_add-btn",
+      "capture": false,
+      "not": "İlk görünür lezzet Add + (bundle)"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button[aria-label='Open Cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": ".cart-drawer_inner",
+      "etiket": "protein-eklendi",
+      "not": "Dolu drawer"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your Cart 0 / empty + Shop Concentrate/Protein/Refreshers/Creamer/Syrups + SHOP ALL PRODUCTS."
+  },
+  "interactionNote": "Alia scratch kapatıldı/dismiss. Bundle Add +; standart /cart/add.js gerekirse missingStates."
 }

@@ -5,9 +5,53 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://javvycoffee.com/",
-  "selector": "section:has-text('Delicious Javvy Recipes')",
+  "selector": ".page-wrapper > div > section:nth-of-type(4)",
   "evidenceSlug": "blog-list-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/javy/default/home/blog-list-main.375.png",
+    "evidence/javy/default/home/blog-list-main.768.png",
+    "evidence/javy/default/home/blog-list-main.1440.png"
+  ],
   "notlar": "Delicious Javvy Recipes 😋 + sekmeler Coffee Concentrate / Protein Coffee / Syrups + tarif kartları.",
-  "delta": "DataSource.blogList değil — tarif CMS. kategoriTabGoster açık."
+  "delta": "DataSource.blogList değil — tarif CMS. kategoriTabGoster açık.",
+  "capture": {
+    "url": "https://javvycoffee.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "margin-box+minPad8",
+    "updatedAt": "2026-08-15T18:53:53.027Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://javvycoffee.com/",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": ".page-wrapper > div > section:nth-of-type(4)",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "p.r-product-tab-txt:has-text('Protein Coffee')",
+      "capture": true,
+      "etiket": "protein-tab",
+      "not": "Protein Coffee tarif sekmesi — kartlar değişmeli"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Coffee Concentrate sekmesi sarı; White Chocolate Pumpkin Latte vb."
+  }
 }

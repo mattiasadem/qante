@@ -5,9 +5,50 @@
   "preset": "default",
   "sayfa": "landing-campaign",
   "url": "https://javvycoffee.com/pages/subscription",
-  "selector": "main.subscription-main > section:has-text('Frequently Asked Questions')",
+  "selector": "main.subscription-main > section:nth-of-type(5)",
   "evidenceSlug": "faq-collapsible-tabs",
-  "evidence": [],
+  "evidence": [
+    "evidence/javy/default/landing-campaign/faq-collapsible-tabs.375.png",
+    "evidence/javy/default/landing-campaign/faq-collapsible-tabs.768.png",
+    "evidence/javy/default/landing-campaign/faq-collapsible-tabs.1440.png"
+  ],
   "notlar": "What does it mean to subscribe? accordion.",
-  "delta": ""
+  "delta": "",
+  "capture": {
+    "url": "https://javvycoffee.com/pages/subscription",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "margin-box+minPad8",
+    "updatedAt": "2026-08-15T19:09:35.714Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://javvycoffee.com/pages/subscription",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "main.subscription-main > section:nth-of-type(5)",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "text=What does it mean to subscribe?",
+      "capture": true,
+      "etiket": "subscribe-soru",
+      "not": "İlk subscribe FAQ"
+    }
+  ]
 }

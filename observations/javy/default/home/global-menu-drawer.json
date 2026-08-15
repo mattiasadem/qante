@@ -7,9 +7,60 @@
   "url": "https://javvycoffee.com/",
   "selector": ".navbar-mobile-menu",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/javy/default/home/global-menu-drawer.375.png",
+    "evidence/javy/default/home/global-menu-drawer.768.png"
+  ],
   "notlar": "375/768 hamburger. Shop All + ürünler, SHOP BY COLLECTION kartları, Manage Subscriptions / Recipes / Blog / Reviews / About Us / Support / Find a Store.",
   "delta": "1440 hamburger gizli (düz nav). About Us → /pages/our-impact home'a düşer.",
   "captureMode": "viewport",
-  "prepareClick": "button[aria-label='Open menu']"
+  "prepareClick": "button[aria-label='Open menu']",
+  "capture": {
+    "url": "https://javvycoffee.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "viewport",
+    "updatedAt": "2026-08-15T18:55:05.180Z",
+    "prepareClick": "button[aria-label='Open menu']"
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://javvycoffee.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button[aria-label='Open menu']",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "375/768 tam ekran menü"
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger yok — düz nav. Statik 1440 skip."
+    }
+  ],
+  "stateFindings": {
+    "initial": "375/768 hamburger kapalı. 1440 düz linkler.",
+    "open": "375/768: X + logo + sepet; Shop All…Refreshers; SHOP BY COLLECTION kartları; Manage Subscriptions / Recipes / Blog."
+  },
+  "interactionNote": "1440 N/A. Shop All tık sayfaya gider — hover mega yok."
 }
