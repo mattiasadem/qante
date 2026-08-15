@@ -1,0 +1,49 @@
+{
+  "observationId": "cuts.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "cuts",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.cutsclothing.com/",
+  "selector": "body",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "375 hamburger: X + CUTS + search/cart; Men/Women pill; Featured/Tops/Bottoms/Accessories/Shop By Activity/Fabrics accordion; Shop All.",
+  "delta": "1440 hamburger yok (mega). Drawer header altı panel; arka planda sayfa görünür.",
+  "captureMode": "viewport",
+  "prepareClick": "button[aria-label='Open mobile menu']",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://www.cutsclothing.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button[aria-label='Open mobile menu']",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Mobil menü"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: Men seçili, kategori akordeon, Shop All. 1440 N/A."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger yok — mega."
+    }
+  ],
+  "interactionNote": "1440 N/A. Alt akordeon (Featured) leftover."
+}

@@ -1,0 +1,37 @@
+{
+  "observationId": "cuts.default.rewards.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "cuts",
+  "preset": "default",
+  "sayfa": "rewards",
+  "url": "https://www.cutsclothing.com/pages/cuts-club",
+  "selector": "#mainContent > div > section:nth-of-type(6)",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [],
+  "notlar": "Frequently Asked Questions. WHAT IS CUTS CLUB? açık metin; diğerleri Open accordion. Site-wide FAQ Kustomer’da (dış).",
+  "delta": "openFirst ilk soru metni görünür. Kategori tab yok.",
+  "interactionStates": [
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://www.cutsclothing.com/pages/cuts-club",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button:has-text('What are the benefits of CUTS CLUB?'), button[aria-label*='benefits' i]",
+      "capture": true,
+      "etiket": "benefits-open",
+      "not": "İkinci soru açılınca cevap"
+    }
+  ],
+  "stateFindings": {
+    "changed": "Benefits accordion — interact karesinde."
+  },
+  "missingStates": [],
+  "interactionNote": "Site FAQ Kustomer — bu sayfa yalnız Club SSS."
+}

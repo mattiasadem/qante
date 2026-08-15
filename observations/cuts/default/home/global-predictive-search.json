@@ -1,0 +1,65 @@
+{
+  "observationId": "cuts.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "cuts",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.cutsclothing.com/",
+  "selector": "aside[class*='max-w-[615px]']",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "Sağ 615px overlay. Search / Search here / Top search terms (AO Curve-Hem Tee, Hyperloop, Henley…). Searchspring PUBLIC_SEARCHSPRING_SITE_ID.",
+  "delta": "Kapalı 0px. Headless UI dialog-panel. Predictive ürün satırı fill sonrası.",
+  "captureMode": "viewport",
+  "prepareClick": "button[aria-label='Open search']",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.cutsclothing.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button[aria-label='Open search']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Boş overlay + top terms"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input[placeholder='Search here']",
+      "value": "tee",
+      "capture": false,
+      "not": "katalog: AO Curve-Hem Tee / Tomboy Tee"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "input[placeholder='Search here']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "tee",
+      "not": "tee yazınca öneri/ürün"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Search overlay: Search here + Top search terms listesi. Ürün kartı yok.",
+    "input": "tee fill — sonuç interact karesinde."
+  },
+  "missingStates": [],
+  "interactionNote": "Sorgu mağaza ürünü: tee. PII yok."
+}

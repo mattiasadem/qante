@@ -1,0 +1,82 @@
+{
+  "observationId": "cuts.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "cuts",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.cutsclothing.com/",
+  "selector": "aside[class*='--drawer-width']",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Sağ drawer. Boş: Back to Shopping / Your cart is empty / Continue Shopping. /cart ayrı sayfa da var.",
+  "delta": "Headless UI aside. Kapalı 0px. Instagram eapps popup aynı anda DOM’da — aside seç.",
+  "captureMode": "viewport",
+  "prepareClick": "button[aria-label='Open cart']",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.cutsclothing.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button[aria-label='Open cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.cutsclothing.com/products/white-crew-curve-hem",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button:has-text('M'), label:has-text('M')",
+      "capture": false,
+      "not": "Beden M — Select Size ATC öncesi"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 600,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button:has-text('Add'), button:has-text('Add To Cart'), button:has-text('Add to Cart')",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button[aria-label='Open cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "tee-qty1",
+      "not": "ATC sonrası drawer"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty; Continue Shopping; badge 0.",
+    "filled": "Dolu kare interact’te doğrulanacak — beden + ATC."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC önce beden (Select Size pasif). Checkout/login yok. Qty changed leftover."
+}

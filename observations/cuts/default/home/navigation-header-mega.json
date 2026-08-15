@@ -1,0 +1,50 @@
+{
+  "observationId": "cuts.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "cuts",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.cutsclothing.com/",
+  "selector": "header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Sticky bar: Men / Women; ortada CUTS X logo; sağda Open search, account, Cart (0). 1440 Men hover → FEATURED/TOPS/BOTTOMS/ACCESSORIES/SHOP BY ACTIVITY/FABRICS + New Releases promo kartı + Shop All.",
+  "delta": "Tema adı vitrinde yok. powered-by: Shopify, Oxygen, Hydrogen, Hydrogen + Pack Digital. shop cuts-clothing.myshopify.com. Locale header’da yok (footer United States). Mega header içi absolute panel; ayrı dialog değil.",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.cutsclothing.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı sticky bar + promo"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "header a[aria-label='Men']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "men-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Men hover → kolonlu mega + New Releases kart"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Men / Women + CUTS + search / account / Cart (0). Mega kapalı.",
+    "open": "1440 Men: FEATURED (Best Sellers…Anniversary) + TOPS + BOTTOMS + ACCESSORIES + SHOP BY ACTIVITY + FABRICS + sağda New Releases görsel/Shop Now."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375/768 mega yok — hamburger global-menu-drawer."
+    }
+  ],
+  "interactionNote": "375/768 mega yok. Women hover leftover. Account/login yok."
+}
