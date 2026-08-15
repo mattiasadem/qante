@@ -1,0 +1,66 @@
+{
+  "observationId": "starface.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "starface",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://starface.world/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/starface/default/home/global-menu-drawer.open.menu-acik.1440.png",
+    "evidence/starface/default/home/global-menu-drawer.open.menu-acik.375.png",
+    "evidence/starface/default/home/global-menu-drawer.open.menu-acik.768.png"
+  ],
+  "notlar": "Dawn #menu-drawer. Kapalı header yalnız hamburger + wordmark + smiley. Açık: All / Bestsellers / Hydro-Stars / Star balm / Skincare / Bundles + search + Log in + sosyal.",
+  "delta": "1440 de overlay drawer (sidebar her zaman açık değil). summary 0×44 — görünür SVG var.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://starface.world/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "header-drawer details",
+      "capture": false,
+      "not": "summary 0×44 — Playwright click viewport dışı; details.open"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "menu-acik",
+      "not": "Drawer açık: search + koleksiyon linkleri"
+    }
+  ],
+  "stateFindings": {
+    "open": "375: kapalı home (çipler + super sal acid bundle) — menü listesi yok. 768/1440: Klaviyo “sign up!” modal (email, blast off!) menünün üstünde; koleksiyon linkleri karede yok."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "2 deneme. 1) summary click: 0×44, Playwright outside viewport. 2) forceOpen header-drawer details: PNG’de nav listesi değil, sign-up modal / kapalı home."
+    }
+  ],
+  "interactionNote": "Hamburger SVG kutu var ama summary hit-target 0. Sign-up modal PII — doldurulmadı. Menü listesi resmi karede kanıtlanmadı.",
+  "capture": {
+    "url": "https://starface.world/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:14:11.514Z"
+  }
+}
