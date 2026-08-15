@@ -1,0 +1,44 @@
+{
+  "observationId": "dieux.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "dieux",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.dieuxskin.com/",
+  "selector": "#shopify-section-header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Logo; Shop + Learn mega; arama ikonu; My Account; CART (0). Shop mega: Skincare / Forever Eye Masks / Bundles / Shop All + Featured ürün görselleri.",
+  "delta": "Sticky; hero üstünde şeffaf (scroll-at-top). Dil seçici yok. Account sağ drawer (PII — envanter dışı). Mega .header--submenu, ayrı shopify-section değil.",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.dieuxskin.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı sticky bar"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "li.header--link-wrapper.nested:has(a[data-click-link-name='Shop'])",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Shop hover → koleksiyon linkleri + Featured ürün kartları"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Shop / Learn; arama; hesap; Cart (0).",
+    "open": "1440 Shop hover — Skincare/Eye Masks/Bundles/Shop All + Featured Firm Revival / Air Angel / Deliverance / Instant Angel."
+  },
+  "missingStates": []
+}

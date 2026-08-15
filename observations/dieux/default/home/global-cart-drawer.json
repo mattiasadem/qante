@@ -1,0 +1,76 @@
+{
+  "observationId": "dieux.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "dieux",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.dieuxskin.com/",
+  "selector": ".cart-drawer.js-cart-drawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Sağ panel. Boş: Your cart is empty + SHOP BESTSELLERS (Instant Angel / Deliverance) Add.",
+  "delta": "/cart home'a 302. Sepet yalnız drawer. #shopify-section-cart-template kapalıyken height 0 — selector .cart-drawer. GWP JSON (Firm Revival + Deliverance 3mL) var; kupon alanı kapalı.",
+  "captureMode": "viewport",
+  "prepareClick": "a.header--icon-cart.js-cart-toggle",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.dieuxskin.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.header--icon-cart.js-cart-toggle",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Your cart is empty + bestsellers"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.dieuxskin.com/products/instant-angel",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#shopify-section-template--17652491255901__product-template label:has-text('One-time purchase'), #shopify-section-template--17652491255901__product-template :text('One-time purchase')",
+      "capture": false,
+      "not": "Abonelik yerine tek sefer — yoksa atlanır"
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.js-atc-pdp",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a.header--icon-cart.js-cart-toggle",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "instant-angel",
+      "not": "ATC sonrası drawer; açılmazsa cart ikon"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Cart 0 ITEMS; Your cart is empty; SHOP BESTSELLERS Instant Angel $45 / Deliverance $62.",
+    "filled": "Instant Angel satırı + adet/subtotal (karede doğrulanacak)."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout'a girilmedi. Kupon doldurulmadı. Account drawer yok sayıldı."
+}

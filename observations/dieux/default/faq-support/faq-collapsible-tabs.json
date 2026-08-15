@@ -1,0 +1,40 @@
+{
+  "observationId": "dieux.default.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "dieux",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "url": "https://www.dieuxskin.com/pages/faqs",
+  "selector": "#shopify-section-faq-template",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [],
+  "notlar": "FAQ Topics: General / U.S. Shipping / International / Refunds / Discounts / Subscriptions / TYB / Brand Ethos. Accordion.",
+  "delta": "Kategori tab + accordion (layout sidebar/split karede). Contact form yok.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.dieuxskin.com/pages/faqs",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "General listesi"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-faq-template .js-accordion-header, #shopify-section-faq-template :text('Where can I find Dieux products?')",
+      "capture": true,
+      "etiket": "ilk-soru",
+      "not": "Where can I find Dieux products? açılır"
+    }
+  ],
+  "stateFindings": {
+    "initial": "FAQ Topics + General kapalı sorular.",
+    "changed": "İlk soru cevabı açık."
+  },
+  "missingStates": []
+}

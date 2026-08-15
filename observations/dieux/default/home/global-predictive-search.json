@@ -1,0 +1,52 @@
+{
+  "observationId": "dieux.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "dieux",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.dieuxskin.com/",
+  "selector": ".header--search-form",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "Header büyüteç → .header--search-form + #search_text_header. Submit /search.",
+  "delta": "Yazınca predictive liste bu yoklamada görünmedi (body header-dropdown-active, öneri kutusu yok). Sonuç /search sayfasında.",
+  "captureMode": "viewport",
+  "prepareClick": ".js-header-search .header--icon-search, .header--icon-search",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.dieuxskin.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".js-header-search .header--icon-search, .header--icon-search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bos",
+      "not": "Açık arama formu"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#search_text_header",
+      "value": "angel",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "angel",
+      "not": "katalogSorgu angel — öneri listesi beklenir; yoksa leftover"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Arama input açık (header-dropdown-active).",
+    "input": "angel yazıldı; predictive satır yoksa leftover."
+  },
+  "missingStates": [],
+  "interactionNote": "Canlı öneri DOM'da yoktu. /search?q=angel ayrı observation."
+}

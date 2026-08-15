@@ -1,0 +1,46 @@
+{
+  "observationId": "dieux.default.home.social-proof-brand-logos",
+  "schemaId": "social-proof-brand-logos",
+  "kaynak": "dieux",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.dieuxskin.com/",
+  "selector": "#shopify-section-template--20482328559709__press_strip_37mYze",
+  "evidenceSlug": "social-proof-brand-logos",
+  "evidence": [],
+  "notlar": "AS SEEN IN + Byrdie / Cosmopolitan / Vogue logoları + basın alıntıları. .press-strip.",
+  "delta": "Logo + quote hibrit (press-logo-item active quote değiştirir). Ayrı testimonial section değil — aynı şerit.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.dieuxskin.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20482328559709__press_strip_37mYze",
+      "capture": true,
+      "etiket": "byrdie",
+      "not": "İlk aktif logo/alıntı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--20482328559709__press_strip_37mYze .press-logo-item[data-slide-index='1'], #shopify-section-template--20482328559709__press_strip_37mYze img[alt='Cosmopolitan']",
+      "capture": true,
+      "etiket": "cosmo",
+      "not": "İkinci basın logosu — alıntı değişmeli"
+    }
+  ],
+  "stateFindings": {
+    "initial": "AS SEEN IN + Byrdie aktif alıntı.",
+    "changed": "Cosmopolitan/Vogue seçiliyse alıntı değişir."
+  },
+  "missingStates": []
+}

@@ -1,0 +1,41 @@
+{
+  "observationId": "dieux.default.landing-campaign.product-finder-quiz",
+  "schemaId": "product-finder-quiz",
+  "kaynak": "dieux",
+  "preset": "default",
+  "sayfa": "landing-campaign",
+  "url": "https://www.dieuxskin.com/pages/moisturizer-finder",
+  "selector": "#octane-quiz-outer-wrapper, .octane-ai-quiz-rendered",
+  "evidenceSlug": "product-finder-quiz",
+  "evidence": [],
+  "notlar": "Meet your moisturizer match — Octane AI. Let's Go. #octane-quiz-outer-wrapper same-origin (iframe yok).",
+  "delta": "Custom liquid section. E-posta adımına girilmedi. Obvi Octane ile aynı aile.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.dieuxskin.com/pages/moisturizer-finder",
+      "capture": true,
+      "etiket": "intro",
+      "not": "Let's Go intro"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".oct-quiz-btn--primary, button:has-text(\"Let's Go\")",
+      "capture": true,
+      "etiket": "adim1",
+      "not": "İlk soru — e-posta/PII yoksa dur"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Meet your moisturizer match + Let's Go.",
+    "changed": "İlk quiz sorusu (karede)."
+  },
+  "missingStates": [],
+  "interactionNote": "PII/e-posta adımında dur. iframe yok; contentFrame gerekmedi."
+}

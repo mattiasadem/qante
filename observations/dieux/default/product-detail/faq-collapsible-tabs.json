@@ -1,0 +1,46 @@
+{
+  "observationId": "dieux.default.product-detail.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "dieux",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://www.dieuxskin.com/products/instant-angel",
+  "selector": "#shopify-section-template--17652491255901__1654194007771a4695",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [],
+  "notlar": "FAQ: aluminum tube, non-comedogenic, pregnancy safe, rich cream…",
+  "delta": "Kategori tab yok; ürün SSS. Accordion + ikon.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.dieuxskin.com/products/instant-angel",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17652491255901__1654194007771a4695",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "SSS kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--17652491255901__1654194007771a4695 .js-accordion-header",
+      "capture": true,
+      "etiket": "ilk-soru",
+      "not": "İlk soru açılır"
+    }
+  ],
+  "stateFindings": {
+    "initial": "FAQ başlık + kapalı sorular.",
+    "changed": "İlk cevap açık."
+  },
+  "missingStates": []
+}
