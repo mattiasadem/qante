@@ -7,7 +7,63 @@
   "url": "https://www.functionhealth.com/",
   "selector": "#faqs",
   "evidenceSlug": "faq-collapsible-tabs",
-  "evidence": [],
+  "evidence": [
+    "evidence/functionhealth/default/home/faq-collapsible-tabs.1440.png",
+    "evidence/functionhealth/default/home/faq-collapsible-tabs.375.png",
+    "evidence/functionhealth/default/home/faq-collapsible-tabs.768.png",
+    "evidence/functionhealth/default/home/faq-collapsible-tabs.changed.soru-2-acik.1440.png",
+    "evidence/functionhealth/default/home/faq-collapsible-tabs.changed.soru-2-acik.375.png",
+    "evidence/functionhealth/default/home/faq-collapsible-tabs.changed.soru-2-acik.768.png"
+  ],
   "notlar": "What is Function? Why was Function created? Will my results include explanations? Do biomarkers change over time? How often do I test? See all → /faq.",
-  "delta": "Kısa accordion + See all. kategoriTab yok. openFirst karede bakılacak."
+  "delta": "Kısa accordion + See all. kategoriTab yok. İlk karede hepsi kapalı.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://www.functionhealth.com/",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#faqs",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#faqs details.faq_item:nth-of-type(2) summary.faq_question",
+      "capture": false,
+      "not": "Why was Function created?"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 600,
+      "capture": true,
+      "etiket": "soru-2-acik",
+      "not": "İkinci soru açık mı"
+    }
+  ],
+  "stateFindings": {
+    "changed": "İkinci soru Why was Function created? açık (x ikon). Cevap: 160+ lab tests, imaging, top doctors. Diğerleri + kapalı. 375/768/1440 aynı."
+  },
+  "missingStates": [],
+  "interactionNote": "Svelte details.faq_item. İlk karede hepsi kapalı göründü.",
+  "capture": {
+    "url": "https://www.functionhealth.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:30:38.838Z"
+  }
 }

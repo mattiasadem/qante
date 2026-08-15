@@ -7,12 +7,18 @@
   "url": "https://www.functionhealth.com/",
   "selector": ".header_menu-mobile-surface",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/functionhealth/default/home/global-menu-drawer.375.png",
+    "evidence/functionhealth/default/home/global-menu-drawer.768.png",
+    "evidence/functionhealth/default/home/global-menu-drawer.open.menu-acik.375.png",
+    "evidence/functionhealth/default/home/global-menu-drawer.open.menu-acik.768.png"
+  ],
   "notlar": "header_hamburger Open menu. html.has-mobile-menu-open. How it works / What we test / Imaging / FAQ / About / Start testing / Log in / Gift Function / For Employers / Pricing / Contact us.",
   "delta": "Mega değil düz liste. 1440 hamburger 0px beklenir.",
   "captureMode": "viewport",
   "prepareClick": "button.header_hamburger",
   "interactionStates": [
+    "initial",
     "open"
   ],
   "interactionSteps": [
@@ -51,13 +57,22 @@
     }
   ],
   "stateFindings": {
-    "open": ""
+    "open": "375/768: krem drawer sağdan overlay. Üstte search ikonu + X. Liste: How it works, What we test, Imaging, FAQ, About. CTA: Start testing (dolu), Log in (outline). Ayırıcı altında Gift Function, For Employers, Pricing. Altta Contact us (zarf). Mega/akordeon yok — düz <a>. 1440: surface 0×0, drawer açılmadı."
   },
   "missingStates": [
-    {
-      "state": "open",
-      "sebep": "1440 hamburger yok — mega/düz header."
-    }
+    "1440: header'da hamburger ikonu duruyor ama .header_menu-mobile-surface 0×0 — desktop drawer yok (leftover)"
   ],
-  "interactionNote": "1440 N/A. Yazılı <a> sayfaya gider — alt akordeon yoklandıysa yazılacak."
+  "interactionNote": "prepareClick + open.menu-acik yalnız 375/768. 1440 resmi 3vp yok (0px). Alt menü yok; linkler sayfaya gider. Signup/login PII — girilmedi.",
+  "capture": {
+    "url": "https://www.functionhealth.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:28:40.235Z",
+    "prepareClick": "button.header_hamburger"
+  }
 }

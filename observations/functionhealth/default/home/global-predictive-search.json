@@ -7,7 +7,17 @@
   "url": "https://www.functionhealth.com/",
   "selector": ".fh-search-modal",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/functionhealth/default/home/global-predictive-search.1440.png",
+    "evidence/functionhealth/default/home/global-predictive-search.375.png",
+    "evidence/functionhealth/default/home/global-predictive-search.768.png",
+    "evidence/functionhealth/default/home/global-predictive-search.initial.overlay-bos.1440.png",
+    "evidence/functionhealth/default/home/global-predictive-search.initial.overlay-bos.375.png",
+    "evidence/functionhealth/default/home/global-predictive-search.initial.overlay-bos.768.png",
+    "evidence/functionhealth/default/home/global-predictive-search.input.ferritin.1440.png",
+    "evidence/functionhealth/default/home/global-predictive-search.input.ferritin.375.png",
+    "evidence/functionhealth/default/home/global-predictive-search.input.ferritin.768.png"
+  ],
   "notlar": "SearchModal.astro. header_icon Search. Overlay .fh-search-modal. Tab: All / Biomarkers / Articles / FAQs / Testimonials. URL ?search=. Featured biomarkers. /search 404.",
   "delta": "Sayfa araması değil overlay. Ürün önerisi yok — biomarker/article/FAQ. search-results sayfası yok.",
   "captureMode": "viewport",
@@ -44,9 +54,21 @@
     }
   ],
   "stateFindings": {
-    "initial": "",
-    "input": ""
+    "initial": "375/768/1440 overlay açık: Search placeholder, Featured Content biomarker listesi (ABO, ALT, Albumin…). 1440 tab: All / Biomarkers / Articles / FAQs / Testimonials. 375'te Testimonials tabı satır dışı kalabilir. Hero arkada dim.",
+    "input": "ferritin: All (8) · Biomarkers (2) · Articles (2) · FAQs (0). Sonuçlarda BIOMARKERS Ferritin + TESTIMONIAL + ARTICLE. 1440'ta Testimonials tabı da var (4). 3vp'de liste değişti."
   },
   "missingStates": [],
-  "interactionNote": "375'te header_icon gizliyse leftover. Checkout/login yok. /search 404."
+  "interactionNote": "header_icon 3vp'de açıldı. /search 404. Checkout/login yok. Tab tıklanmadı (aynı overlay; sayı zaten input'ta değişti).",
+  "capture": {
+    "url": "https://www.functionhealth.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:27:08.076Z",
+    "prepareClick": "header.header button.header_icon[aria-label='Search']"
+  }
 }
