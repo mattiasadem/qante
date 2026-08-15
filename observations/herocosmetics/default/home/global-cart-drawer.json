@@ -1,0 +1,84 @@
+{
+  "observationId": "herocosmetics.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "herocosmetics",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.herocosmetics.us/",
+  "selector": "#mocart",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "mocart drawer. Boş: Your cart is empty + Rewards teaser. /cart → /?cart=true (sayfa yok).",
+  "delta": "cart-page-main yok. Checkout tıklanmadı. Sign Up/In PII.",
+  "captureMode": "viewport",
+  "interactionStates": ["initial", "filled", "changed"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.herocosmetics.us/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#header-menu-cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş mocart"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.herocosmetics.us/products/mighty-patch-original",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form.pdp-form button[type='submit'], form.pdp-form [type='submit']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.herocosmetics.us/",
+      "capture": false,
+      "not": "Home'da drawer hydrate"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#header-menu-cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mighty-patch-qty1",
+      "not": "Dolu drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#mocart button[name='plus'], #mocart [class*='plus'], #mocart button:has-text('+')",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +1"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "UI ATC fail olursa addToCart /cart/add.js. Checkout tıklanmadı."
+}

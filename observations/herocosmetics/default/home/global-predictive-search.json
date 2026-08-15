@@ -1,0 +1,68 @@
+{
+  "observationId": "herocosmetics.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "herocosmetics",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.herocosmetics.us/",
+  "selector": "#predictive-search-results",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "Header search ikon #header-menu-search-d / -m. Placeholder: Search for products, collections, or blog articles.",
+  "delta": "İki input (d/m). Tam sayfa /search ayrı observation.",
+  "captureMode": "viewport",
+  "interactionStates": ["initial", "input"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.herocosmetics.us/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#header-menu-search-d",
+      "viewports": ["1440"],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Boş overlay 1440"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#header-menu-search-m",
+      "viewports": ["375", "768"],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Boş overlay mobil"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#menu-search-d-input",
+      "value": "patch",
+      "viewports": ["1440"],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "patch",
+      "not": "katalog: Mighty Patch"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#menu-search-m-input",
+      "value": "patch",
+      "viewports": ["375", "768"],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "patch",
+      "not": "Mobil fill patch"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "katalogSorgu patch (Mighty Patch). Tam sayfa /search ayrı."
+}
