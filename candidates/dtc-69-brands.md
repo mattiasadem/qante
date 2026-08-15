@@ -53,8 +53,8 @@ Durum: `done` = main'e merge · `in progress` = açık PR · boş = kuyrukta
 | 41 | done | chamberlaincoffee.com | https://chamberlaincoffee.com |
 | 42 | done | dukecannon.com | https://dukecannon.com |
 | 43 | | magicmind.com | https://magicmind.com |
-| 44 | | atoms.com | https://atoms.com |
-| 45 | | cymbiotika.com | https://cymbiotika.com |
+| 44 | done | atoms.com | https://atoms.com |
+| 45 | done | cymbiotika.com | https://cymbiotika.com |
 | 46 | | greatjonesgoods.com | https://greatjonesgoods.com |
 | 47 | | hellobubble.com | https://hellobubble.com |
 | 48 | | pamos.com | https://pamos.com |
