@@ -1,0 +1,117 @@
+{
+  "observationId": "necessaire.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "url": "https://necessaire.com/",
+  "selector": ".rebuy-cart__flyout",
+  "captureMode": "viewport",
+  "notlar": "Rebuy #rebuy-cart. Boş: $75 free shipping + Start Here / Shop Bestsellers + Recommended. /cart → /?mini-cart=open.",
+  "delta": "Ayrı cart sayfası yok. Rebuy app flyout. Wrapper #rebuy-cart height 0; kutu .rebuy-cart__flyout.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://necessaire.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header a[href='/cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://necessaire.com/products/the-body-retinol",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.g-add-to-cart-btn",
+      "capture": false,
+      "not": "375/768 ATC çoğu zaman /cart/add.js; Rebuy handleCartChangeEvent flyout'u açar. ATC sonrası goto yok — settle overlay kapatır."
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "retinol",
+      "not": "Rebuy .rebuy-cart.is-visible; cart ikonuna basma (açıkken toggle/gizli)"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button.rebuy-cart__flyout-item-quantity-widget-button[aria-label*='Increase']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "qty2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Rebuy boş: $75.00 To Qualify For Free Shipping; Start Here / Shop Bestsellers; Recommended (The Body Retinol $65, Fragrance-Free / 150 ml + Add).",
+    "filled": "The Body Retinol | 0.1% Retinol ×1 $65.00; $10.00 To Qualify For Free Shipping; REMOVE / ONE-TIME DELIVERY; Upgrade to Subscription & Save 15%; Recommended The Deodorant | Mandelic Acid $24; Proceed To Checkout - $65.00.",
+    "changed": "Adet 2; Your Order Qualifies For Free Shipping; Proceed To Checkout - $130.00. 375/768/1440."
+  },
+  "missingStates": [],
+  "interactionNote": "Rebuy. /cart sayfa yok — /?mini-cart=open. Checkout tıklanmadı. 375/768 ATC /cart/add.js (UI buton görünür değil); 1440 UI button.g-add-to-cart-btn. ATC sonrası goto yok (settle drawer'ı kapatır). Cart ikonuna ATC sonrası basılmadı.",
+  "kaynak": "necessaire",
+  "preset": "default",
+  "sayfa": "home",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/necessaire/default/home/global-cart-drawer.changed.qty2.1440.png",
+    "evidence/necessaire/default/home/global-cart-drawer.changed.qty2.375.png",
+    "evidence/necessaire/default/home/global-cart-drawer.changed.qty2.768.png",
+    "evidence/necessaire/default/home/global-cart-drawer.filled.retinol.1440.png",
+    "evidence/necessaire/default/home/global-cart-drawer.filled.retinol.375.png",
+    "evidence/necessaire/default/home/global-cart-drawer.filled.retinol.768.png",
+    "evidence/necessaire/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/necessaire/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/necessaire/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "capture": {
+    "url": "https://necessaire.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:57:38.669Z"
+  }
+}
