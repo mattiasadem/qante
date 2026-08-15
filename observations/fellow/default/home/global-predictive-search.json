@@ -5,15 +5,20 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://fellowproducts.com/",
-  "selector": "#predictive-search-dialog",
+  "selector": "details[id^='predictive-search-dialog']",
   "evidenceSlug": "global-predictive-search",
   "evidence": [
-    "evidence/fellow/default/home/global-predictive-search.1440.png"
+    "evidence/fellow/default/home/global-predictive-search.1440.png",
+    "evidence/fellow/default/home/global-predictive-search.375.png",
+    "evidence/fellow/default/home/global-predictive-search.768.png",
+    "evidence/fellow/default/home/global-predictive-search.input.ode.1440.png",
+    "evidence/fellow/default/home/global-predictive-search.input.ode.375.png",
+    "evidence/fellow/default/home/global-predictive-search.input.ode.768.png"
   ],
-  "notlar": "details#predictive-search-dialog (1440, max-lg:hidden) + #predictive-search-dialog-mobile. Kapalı 16px ikon.",
-  "delta": "Kapalı kare yanıltır. #searchInput. katalogSorgu: ode.",
+  "notlar": "İki details: desktop #predictive-search-dialog (max-lg:hidden) + mobile #predictive-search-dialog-mobile. Input id = details id (duplicate). #searchInput yok. Kapalı details kutusu 0×0 — viewport + header captureSelector.",
+  "delta": "Kapalı kare yanıltır. Fill: details[open] input[name=q]. katalogSorgu: ode.",
   "captureMode": "viewport",
-  "prepareClick": "#predictive-search-dialog > summary",
+  "prepareClick": "details[id^='predictive-search-dialog'] > summary",
   "interactionStates": [
     "initial",
     "input"
@@ -28,14 +33,14 @@
     {
       "state": "input",
       "action": "click",
-      "selector": "#predictive-search-dialog > summary, #predictive-search-dialog-mobile summary",
+      "selector": "details[id^='predictive-search-dialog'] > summary",
       "capture": false,
-      "not": "1440 desktop details; 375/768 mobile details"
+      "not": "Görünür summary (1440 desktop / 375-768 mobile)"
     },
     {
       "state": "input",
       "action": "fill",
-      "selector": "#searchInput",
+      "selector": "details[open] input[name='q']",
       "value": "ode",
       "capture": false,
       "not": "katalog: Ode Brew Grinder"
@@ -49,19 +54,20 @@
     {
       "state": "input",
       "action": "click",
-      "selector": "#searchInput",
+      "selector": "details[open] input[name='q']",
       "capture": true,
       "captureMode": "viewport",
+      "captureSelector": "header",
       "etiket": "ode",
-      "not": "Öneri/ürün satırı"
+      "not": "Öneri/ürün satırı — capture host header (details kutu 0 olabiliyor)"
     }
   ],
   "stateFindings": {
-    "initial": "16px search ikon; overlay kapalı.",
-    "input": "ode fill — karede öneri/ürün."
+    "initial": "prepareClick 3vp: boş Search çubuğu + → + X. 375/768 chip: Best Sellers / Espresso Machine / Coffee Maker. Ürün/koleksiyon satırı yok.",
+    "input": "ode: Collections Ode Brew Grinder + Ode Gen 2; Products Ode Gen 2 $399.95 (swatch) + Ode Replacement Brush $5; Articles 4 başlık; Show All Results. 1440 sol kolon + sağ ürün grid."
   },
   "missingStates": [],
-  "interactionNote": "İki details (desktop/mobile). Submit /search sayfası ayrı observation.",
+  "interactionNote": "1. deneme #searchInput yok. 2. deneme fill details[open] input[name=q] + captureSelector header. details.group/search capture 0×0. Submit /search ayrı observation. Statik 3vp header host (details kapalı 0×0).",
   "capture": {
     "url": "https://fellowproducts.com/",
     "viewports": [
@@ -70,8 +76,8 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-08-15T18:03:35.754Z",
-    "prepareClick": "#predictive-search-dialog > summary"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:35:00.000Z",
+    "prepareClick": "details[id^='predictive-search-dialog'] > summary"
   }
 }

@@ -5,11 +5,16 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://fellowproducts.com/",
-  "selector": "#mobile-menu-drawer",
+  "selector": "#menu-drawer",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
-  "notlar": "375/768 Menu → #mobile-menu-drawer / #menu-drawer. 1440 hamburger yok.",
-  "delta": "modal-dialog; mega ayrı. 1440 N/A.",
+  "evidence": [
+    "evidence/fellow/default/home/global-menu-drawer.375.png",
+    "evidence/fellow/default/home/global-menu-drawer.768.png",
+    "evidence/fellow/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/fellow/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "375/768 Menu → görünür kutu #menu-drawer (~375×740). Host #mobile-menu-drawer 0×0. 1440 hamburger yok.",
+  "delta": "modal-dialog host 0×0; görünür panel #menu-drawer. Mega ayrı. 1440 N/A.",
   "captureMode": "viewport",
   "prepareClick": "button[aria-controls='mobile-menu-drawer']",
   "interactionStates": [
@@ -37,15 +42,15 @@
     }
   ],
   "stateFindings": {
-    "open": "375/768 drawer açık — Featured/Espresso… akordeon."
+    "open": "375 tam genişlik / 768 ~%80 sol panel: FELLOW + X. Satırlar Featured…Academy (her biri >). Altta Search + Account ikonları. Chevron alt menü bu koşuda açılmadı."
   },
   "missingStates": [
     {
       "state": "open",
-      "sebep": "1440 hamburger yok (mega)."
+      "sebep": "1440 hamburger yok — mega navigation-header-mega."
     }
   ],
-  "interactionNote": "Yazılı <a> koleksiyona gider; yalnız Menu butonu.",
+  "interactionNote": "1. deneme #mobile-menu-drawer 0×0. 2. deneme selector #menu-drawer. Yazılı <a> koleksiyona gider; yalnız Menu butonu. Chevron changed leftover.",
   "capture": {
     "url": "https://fellowproducts.com/",
     "viewports": [
@@ -55,7 +60,7 @@
     ],
     "mode": "viewport",
     "method": "viewport",
-    "updatedAt": "2026-08-15T18:02:31.737Z",
+    "updatedAt": "2026-08-15T18:33:14.242Z",
     "prepareClick": "button[aria-controls='mobile-menu-drawer']"
   }
 }

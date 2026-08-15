@@ -82,4 +82,5 @@ Karar: onay bekliyor
 - `recently_viewed` height 0  
 - PLP Filter & Sort açık panel (interact leftover)  
 - Cart adet `changed`  
+- Mobil menü chevron `changed` (Featured… alt liste) — yalnız açık liste çekildi  
 - Country/currency footer (`United States $`) — token/platform
