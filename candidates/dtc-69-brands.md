@@ -32,7 +32,7 @@ Durum: `done` = main'e merge · `in progress` = açık PR · boş = kuyrukta
 | 20 | done | javycoffee.com | https://javycoffee.com |
 | 21 | done | xeroshoes.com | https://xeroshoes.com |
 | 22 | done | ghia.com | https://ghia.com |
-| 23 | in progress | madeincookware.com | https://madeincookware.com |
+| 23 | done | madeincookware.com | https://madeincookware.com |
 | 24 | in progress | necessaire.com | https://necessaire.com |
 | 25 | in progress | im8health.com | https://im8health.com |
 | 26 | done | comradsocks.com | https://comradsocks.com |
@@ -43,7 +43,7 @@ Durum: `done` = main'e merge · `in progress` = açık PR · boş = kuyrukta
 | 31 | in progress | tenthousand.cc | https://tenthousand.cc |
 | 32 | in progress | novoslabs.com | https://novoslabs.com |
 | 33 | in progress | davidprotein.com | https://davidprotein.com |
-| 34 | | vessi.com | https://vessi.com |
+| 34 | in progress | vessi.com | https://vessi.com |
 | 35 | | flamingoestate.com | https://flamingoestate.com |
 | 36 | | flybyjing.com | https://flybyjing.com |
 | 37 | | gruns.co | https://gruns.co |
