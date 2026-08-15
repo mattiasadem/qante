@@ -17,7 +17,7 @@ Karar: onay bekliyor
 ---
 
 ADAY: chamberlaincoffee-search-page-empty  
-Gerekçe: `/search?q=matcha` headless title/body boş (html ~118). Canlı arama `nav.searchMenu` overlay (home observation). Overlay `vanilla`/`coffee`/`cold`/`tote` → “Can't find what you're looking for? / ALL PRODUCTS” — ürün satırı yok.  
+Gerekçe: `/search?q=matcha` headless title/body boş (html ~118). Canlı arama `nav.searchMenu` overlay (home observation, 3vp). Overlay `vanilla` → “Can't find what you're looking for? / ALL PRODUCTS” — ürün satırı yok.  
 Örnekler: https://chamberlaincoffee.com/search?q=matcha  
 Öneri: leftover — overlay çalışıyor, sayfa hydrate yok  
 Karar: onay bekliyor
@@ -25,7 +25,7 @@ Karar: onay bekliyor
 ---
 
 ADAY: chamberlaincoffee-cart-page-missing  
-Gerekçe: `/cart` → `/?viewcart=true` home. Sepet `.cart-drawer`. `cart-page-main` yok.  
+Gerekçe: `/cart` → `/?viewcart=true` home. Sepet `.cart-drawer` (empty/filled/qty 3vp alındı). `cart-page-main` yok.  
 Örnekler: https://chamberlaincoffee.com/cart  
 Öneri: leftover  
 Karar: onay bekliyor
@@ -56,7 +56,7 @@ Karar: onay bekliyor
 ---
 
 ADAY: chamberlaincoffee-cafe-extra-multicolumns  
-Gerekçe: Cafe’de Our Story / Our Approach / Designed Like Home / More Than a Café / mediaCarousel aynı `module.multiColumn` ailesi. 3vp yalnız Locations + hero + intro.  
+Gerekçe: Cafe’de Our Story / Our Approach / Designed Like Home / More Than a Café aynı `module.multiColumn` ailesi. 3vp: Locations + hero + intro + mediaCarousel. Extra kolonlar aynı tip.  
 Öneri: leftover — aynı tip  
 Karar: onay bekliyor
 
@@ -77,7 +77,7 @@ Karar: onay bekliyor
 ---
 
 ADAY: chamberlaincoffee-newsletter-pii  
-Gerekçe: Footer “Get 5% off” e-posta. PII — doldurulmadı/gönderilmedi. CookieYes Accept All dismiss. UserWay a11y iframe 0×0.  
+Gerekçe: Footer “Get 5% off” e-posta. PII — doldurulmadı/gönderilmedi. CookieYes Accept All dismiss. UserWay a11y iframe 0×0. Klaviyo “Get 5% off” popup kapatıldı, form doldurulmadı.  
 Öneri: leftover  
 Karar: onay bekliyor
 
@@ -100,4 +100,11 @@ Karar: onay bekliyor
 ADAY: chamberlaincoffee-returns-redirect  
 Gerekçe: `/pages/returns` → home. Asıl metin `/pages/shipping-returns`.  
 Öneri: leftover  
+Karar: onay bekliyor
+
+---
+
+ADAY: chamberlaincoffee-hero-375-changed  
+Gerekçe: Home hero `changed.slayt2.375` karesi `initial.slayt1.375` ile aynı (Tastes like vacation). 768/1440 ikinci slayt (Organic Coffee & Matcha) doğrulandı. Embla Next 0×0; dots tık.  
+Öneri: leftover — 375 autoplay/dot piksel değişmedi  
 Karar: onay bekliyor

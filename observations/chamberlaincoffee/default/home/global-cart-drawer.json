@@ -1,6 +1,4 @@
 {
-  "evidence": [],
-  "delta": "Hydrogen + Oxygen + Sanity (theme Store / Shopify.theme.name yok — uydurulmadı). shop chamberlaincoffee.myshopify.com. #shopify-section-* yok. cart-page-main yok. Native Hydrogen .cart-drawer.",
   "observationId": "chamberlaincoffee.default.home.global-cart-drawer",
   "schemaId": "global-cart-drawer",
   "kaynak": "chamberlaincoffee",
@@ -10,8 +8,20 @@
   "selector": ".cart-drawer",
   "evidenceSlug": "global-cart-drawer",
   "captureMode": "viewport",
-  "prepareClick": "header button.focus\\:ring-primary\\/5",
-  "notlar": "Sağ .cart-drawer. Boş: Your cart is empty / Start Shopping. /cart → /?viewcart=true home.",
+  "prepareClick": "header.h-nav button.focus\\:ring-primary\\/5",
+  "evidence": [
+    "evidence/chamberlaincoffee/default/home/global-cart-drawer.changed.qty2.1440.png",
+    "evidence/chamberlaincoffee/default/home/global-cart-drawer.changed.qty2.375.png",
+    "evidence/chamberlaincoffee/default/home/global-cart-drawer.changed.qty2.768.png",
+    "evidence/chamberlaincoffee/default/home/global-cart-drawer.filled.vanilla-qty1.1440.png",
+    "evidence/chamberlaincoffee/default/home/global-cart-drawer.filled.vanilla-qty1.375.png",
+    "evidence/chamberlaincoffee/default/home/global-cart-drawer.filled.vanilla-qty1.768.png",
+    "evidence/chamberlaincoffee/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/chamberlaincoffee/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/chamberlaincoffee/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "Sağ .cart-drawer. Boş: Your cart is empty / Start Shopping. /cart → /?viewcart=true home. Kapalıyken DOM’da yok.",
+  "delta": "Hydrogen + Oxygen + Sanity (theme Store / Shopify.theme.name yok — uydurulmadı). shop chamberlaincoffee.myshopify.com. #shopify-section-* yok. cart-page-main yok. Native Hydrogen .cart-drawer. addToCart/cart.js yok.",
   "interactionStates": [
     "initial",
     "filled",
@@ -26,18 +36,24 @@
     },
     {
       "state": "initial",
-      "action": "waitFor",
-      "value": 2500,
-      "capture": false
+      "action": "click",
+      "selector": "button.klaviyo-close-form",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "capture": false,
+      "not": "Klaviyo — settle scroll sonrası 768/1440"
     },
     {
       "state": "initial",
       "action": "click",
-      "selector": "header button.focus\\:ring-primary\\/5",
+      "selector": "header.h-nav button.focus\\:ring-primary\\/5",
+      "value": 2000,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "cart-bos",
-      "not": "Boş drawer"
+      "not": "Boş drawer — görünür header cart (text 0)"
     },
     {
       "state": "filled",
@@ -47,35 +63,27 @@
     },
     {
       "state": "filled",
-      "action": "waitFor",
-      "value": 3000,
-      "capture": false
-    },
-    {
-      "state": "filled",
-      "action": "addToCart",
-      "selector": ".product-details button:has-text(\"Add to cart\")",
-      "capture": false
-    },
-    {
-      "state": "filled",
-      "action": "waitFor",
-      "value": 2000,
-      "capture": false
-    },
-    {
-      "state": "filled",
       "action": "click",
-      "selector": "header button.focus\\:ring-primary\\/5",
+      "selector": ".product-details button.g-add-to-cart-btn",
+      "value": 2800,
+      "capture": false,
+      "not": "Hydrogen — addToCart/cart.js yok; UI tık, drawer kendisi açar"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": ".cart-drawer",
+      "value": 8000,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "vanilla-qty1",
-      "not": "ATC sonrası drawer"
+      "not": "ATC sonrası dolu drawer"
     },
     {
       "state": "changed",
       "action": "click",
-      "selector": ".cart-drawer button:has-text(\"+\"), .cart-drawer button[aria-label*='Increase'], .cart-drawer button[aria-label*='increase']",
+      "selector": ".cart-drawer button[aria-label='increase quantity']",
+      "value": 1600,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "qty2",
@@ -83,10 +91,21 @@
     }
   ],
   "stateFindings": {
-    "initial": "Your cart is empty; Start Shopping.",
-    "filled": "Vanilla Matcha satırı beklenen (karede doğrulanacak).",
-    "changed": "Adet 2 beklenen (karede doğrulanacak)."
+    "initial": "3vp: your cart / Your cart is empty / Start Shopping.",
+    "filled": "3vp: Ceremonial Vanilla Matcha · Subscribe and Save 10% · qty 1 · $27 ~~$30~~ · Delivery every 30 days · Subtotal (1 item) $27 · free domestic shipping · go to checkout (tıklanmadı).",
+    "changed": "3vp: qty 2 · $54 ~~$60~~ · Subtotal (2 items) $54."
   },
   "missingStates": [],
-  "interactionNote": "Checkout’a girilmedi. Qty + selector kareye göre düzeltilebilir."
+  "interactionNote": "Checkout / SMS / e-posta yok. Hydrogen UI ATC (.g-add-to-cart-btn); /cart.js yok. Sepet butonu aria-label Cart değil — sayaç 0. SMS kutusu sitede işaretli geldi, dokunulmadı.",
+  "capture": {
+    "url": "https://chamberlaincoffee.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:41:09.151Z"
+  }
 }
