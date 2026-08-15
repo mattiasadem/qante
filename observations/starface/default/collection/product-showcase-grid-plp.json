@@ -1,0 +1,56 @@
+{
+  "observationId": "starface.default.collection.product-showcase-grid-plp",
+  "schemaId": "product-showcase-grid-plp",
+  "kaynak": "starface",
+  "preset": "default",
+  "sayfa": "collection",
+  "url": "https://starface.world/collections/all",
+  "selector": "#shopify-section-template--18852408983623__product-grid",
+  "evidenceSlug": "product-showcase-grid-plp",
+  "evidence": [
+    "evidence/starface/default/collection/product-showcase-grid-plp.1440.png",
+    "evidence/starface/default/collection/product-showcase-grid-plp.375.png",
+    "evidence/starface/default/collection/product-showcase-grid-plp.768.png",
+    "evidence/starface/default/collection/product-showcase-grid-plp.open.filtre-acik.1440.png",
+    "evidence/starface/default/collection/product-showcase-grid-plp.open.filtre-acik.375.png",
+    "evidence/starface/default/collection/product-showcase-grid-plp.open.filtre-acik.768.png"
+  ],
+  "notlar": "meet the family. Koleksiyon çipleri: all / best sellers / hydro-stars / star balm / skincare / bundles. Kart: görsel + rozet + add to bag — $ + kalp. 1440 3 kolon. Filter & sort interact (açık panel).",
+  "delta": "Ayrı collection-banner yok — başlık grid içinde. Filter details#Details-*-product-grid. Infinite scroll kanıtlanmadı.",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://starface.world/collections/all",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "summary:has-text('filter & sort'), menu-drawer summary",
+      "capture": true,
+      "etiket": "filtre-acik",
+      "not": "Filter & sort panel"
+    }
+  ],
+  "stateFindings": {
+    "open": "1440: filter & sort drawer — sort by / product type (15) / spot type (12) / color (13). Üstte Klaviyo “sign up!” 10% off modal (PII doldurulmadı). 375 uzun clip; dosya boyutu statikten farklı."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 panel açık kanıtlı. Email modal PII değil.",
+  "capture": {
+    "url": "https://starface.world/collections/all",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:10:22.744Z"
+  }
+}
