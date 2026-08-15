@@ -1,0 +1,45 @@
+{
+  "observationId": "vollebak.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "vollebak",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://vollebak.com/",
+  "selector": "#shopify-section-sections--22487239786585__header_section",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Sticky 66px bar: logo Vollebak; Shop / Spaceshop / About Us / Materials / Lab; arama; hesap; Cart (0). 1440 Shop altında #submenu-1 mega (koleksiyon linkleri + FWAHBL / gift card). 375 hamburger summary[aria-label=Menu].",
+  "delta": "Tema adı vitrinde: Vollebak [LIVE]. schema_name Horizon 3.1.0, theme_store_id 2481. Locale switcher header’da yok (footer Country). Mega Horizon menu-list__submenu; kapalı karede submenu kutusu var, metin hover’da.",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://vollebak.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı sticky bar"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "header nav a.menu-list__link[href='/collections/all']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Shop hover → #submenu-1 mega koleksiyonlar"
+    }
+  ],
+  "stateFindings": {
+    "initial": "66px bar: Vollebak, Shop, Spaceshop, About Us, Materials, Lab, search, account, Cart 0.",
+    "open": "1440 Shop hover beklenen: Best Sellers / Coats+Jackets / … / View All + FWAHBL + gift card."
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 mega yok — hamburger ayrı observation (global-menu-drawer)."
+}

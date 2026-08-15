@@ -1,0 +1,49 @@
+{
+  "observationId": "vollebak.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "vollebak",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://vollebak.com/",
+  "selector": "#Details-menu-drawer-container .menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "375/768 hamburger. Shop accordion + Spaceshop / About / Materials / Lab. 1440 hamburger 0px.",
+  "delta": "Horizon Details-menu-drawer-container. Masaüstü mega ayrı.",
+  "captureMode": "viewport",
+  "prepareClick": "header summary.header__icon--menu[aria-label='Menu']",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://vollebak.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header summary.header__icon--menu[aria-label='Menu']",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Mobil drawer"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 hamburger açık beklenen: Shop çocuk linkleri + Spaceshop/About/Materials/Lab."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger hidden — mega navigation-header-mega."
+    }
+  ],
+  "interactionNote": "1440 N/A. Yazılı Shop <a> koleksiyona gider — accordion summary HeaderDrawer-shop."
+}

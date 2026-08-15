@@ -1,0 +1,62 @@
+{
+  "observationId": "vollebak.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "vollebak",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://vollebak.com/",
+  "selector": "#search-modal",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "dialog-component#search-modal + predictive-search-component. Kapalı 0 yükseklik. Search ikon tık → overlay.",
+  "delta": "Horizon predictive-search-form. View all. Kapalı kare yanıltır.",
+  "captureMode": "viewport",
+  "prepareClick": "header button.search-modal__button[aria-label='Search']",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "input",
+      "action": "goto",
+      "value": "https://vollebak.com/",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "header button.search-modal__button[aria-label='Search']",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#search-modal input[type='search'], #search-modal input[name='q'], predictive-search-component input",
+      "value": "jacket",
+      "capture": false,
+      "not": "katalog: Full Metal Jacket / FWAHBL Jacket"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "#search-modal input[type='search'], #search-modal input[name='q'], predictive-search-component input",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "jacket",
+      "not": "Öneri listesi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Kapalı search-modal 0px — kapalı kare yanıltır.",
+    "input": "jacket fill sonrası öneri beklenen (capture sonrası yazılacak)."
+  },
+  "missingStates": [],
+  "interactionNote": "Sorgu mağaza ürünü: jacket. PII yok."
+}

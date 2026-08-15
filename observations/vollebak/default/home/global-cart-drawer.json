@@ -1,0 +1,69 @@
+{
+  "observationId": "vollebak.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "vollebak",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://vollebak.com/",
+  "selector": ".cart-drawer__dialog",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Horizon cart-drawer-component. Boş: Your cart is empty; Have an account? Log in; Continue shopping → /collections/best-sellers.",
+  "delta": "Dialog sağ/alt sheet. /cart ayrı sayfa da var (cart-page-main). Account drawer ayrı dialog — dokunulmadı.",
+  "captureMode": "viewport",
+  "prepareClick": "header button[aria-label='Cart']",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://vollebak.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header button[aria-label='Cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://vollebak.com/products/full-metal-jacket-copper-edition",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'], product-form-component button[type='submit'], .product-information button[type='submit']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "header button[aria-label='Cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "fmj-qty1",
+      "not": "ATC sonrası drawer; açılmazsa cart buton"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Cart 0; Your cart is empty; Log in; Continue shopping.",
+    "filled": "FMJ Copper satırı beklenen (ATC kanıtı capture sonrası yazılacak)."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout/login yok. Qty changed yoklandıktan sonra eklenecek veya leftover."
+}
