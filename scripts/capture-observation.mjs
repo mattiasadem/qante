@@ -146,13 +146,15 @@ try {
     await assertCleanForScreenshot(page);
     await page.waitForTimeout(800);
 
-    // Lazy section hydrate: kısa scroll pass, sonra hedefe in
+    // Lazy section hydrate: kısa scroll pass, sonra hedefe in.
+    // Infinite-scroll PLP (50k+ px) taranırsa sayfa ölür — tavan 4 viewport.
     await page.evaluate(async () => {
       const step = Math.max(400, Math.floor(window.innerHeight * 0.85));
-      const max = Math.max(
+      const docMax = Math.max(
         document.body?.scrollHeight || 0,
         document.documentElement?.scrollHeight || 0
       );
+      const max = Math.min(docMax, window.innerHeight * 4);
       for (let y = 0; y < max; y += step) {
         window.scrollTo(0, y);
         await new Promise((r) => setTimeout(r, 120));
