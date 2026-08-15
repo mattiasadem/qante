@@ -1,7 +1,7 @@
 # Primal Queen leftovers / adaylar
 
 *Store:* https://primalqueen.com · *Tema (görülen):* Dev By Vasta - Main · schema_name Sense 11.0.0 · custom (`theme_store_id` null) · shop `3be06b-2.myshopify.com`  
-*Tarih:* 2026-08-15
+*Tarih:* 2026-08-15 · 38 obs · resmi 3vp
 
 Şema icat edilmedi. En yakın mevcut tipe observation yazıldıysa burada tekrarlanmaz.
 
@@ -84,8 +84,16 @@ Karar: onay bekliyor
 ---
 
 ADAY: primalqueen-advertorial-lps  
-Gerekçe: Onlarca pages.json advertorial (adv, 7-myths, beef-organs-lander, pq7-quiz, mid-year-reset…). PQ7 `video_reviews` ~18k px; Marrow `body` ~12k px; Goddess devamı. Tip yok / aynı long-form tekrar.  
-Öneri: leftover — hero/buy/faq observation yazılanlar hariç  
+Gerekçe: Onlarca pages.json advertorial (adv, 7-myths, beef-organs-lander, pq7-quiz, mid-year-reset…). PQ7 `video_reviews` ~18k px; Goddess devamı. Tip yok / aynı long-form tekrar.  
+Öneri: leftover — hero/buy observation yazılanlar hariç  
+Karar: onay bekliyor
+
+---
+
+ADAY: primalqueen-marrow-redirect  
+Gerekçe: `/pages/marrow` artık sabit şablon değil — 1440/375 `/pages/marrow-5-point-test` (marrow_lp4 0px), 768 `whennothingworked.com/marrow-5-point-test` (off-site). İlk walk’taki buy_box/faq id’leri yok. Observation silindi.  
+Örnekler: https://primalqueen.com/pages/marrow  
+Öneri: leftover — A/B / harici LP  
 Karar: onay bekliyor
 
 ---
@@ -99,6 +107,20 @@ Karar: onay bekliyor
 
 ADAY: primalqueen-partnership-form  
 Gerekçe: `/pages/referal-signup-form` affiliate. PII.  
+Öneri: leftover  
+Karar: onay bekliyor
+
+---
+
+ADAY: primalqueen-sale-ticker  
+Gerekçe: Hero/buy-box karelerinde “Anniversary Sale: 35% Off + 4 Free Gifts” kayan şerit. Ayrı shopify-section id yok; overlay/ticker. `promo-scrolling-marquee` zorlanmadı.  
+Öneri: leftover  
+Karar: onay bekliyor
+
+---
+
+ADAY: primalqueen-merch-filter-mobile  
+Gerekçe: `/collections/merch` Hoodies pill 1440’ta grid’i 2 karta indirdi. 375/768 `button[data-merch-filter=hoodies]` DOM’da 0×0 / not visible.  
 Öneri: leftover  
 Karar: onay bekliyor
 

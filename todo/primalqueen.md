@@ -3,8 +3,8 @@
 *Kaynak:* https://primalqueen.com · *Preset:* `default`  
 *Tema (storefront):* **Dev By Vasta - Main** · `schema_name`: Sense · `schema_version`: 11.0.0 · `theme_store_id`: null (custom) · shop `3be06b-2.myshopify.com` · theme id `167597408533` · role `main`
 
-**Durum:** Mod A walk yazıldı — resmi 3vp / interact sırada  
-**PR:** draft · **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact (piksel değişenler) bitti  
+**PR:** https://github.com/mattiasadem/qante/pull/28 (draft · **main'e merge yok**)
 
 ---
 
@@ -15,10 +15,10 @@
 | Evidence kökü | `evidence/primalqueen/default/` |
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
-| Parallel | yalnız `observations/primalqueen/`, `evidence/primalqueen/`, `todo/primalqueen.md`, `candidates/primalqueen-*.md` |
+| Parallel | yalnız primalqueen paths |
 
 **Kapsam satırı:**  
-`Primal Queen · default · Dev By Vasta - Main / Sense 11.0.0 custom · home→PDP→PLP merch→shop-all→search→cart page→content→footer→mobile · 40 obs · 0 yeni şema · leftover: Stamped, sticky CTA, advertorial LPs, Gorgias, 404, empty terms/retail, no predictive search`
+`Primal Queen · default · Dev By Vasta - Main / Sense 11.0.0 custom · home→PDP→PLP merch→shop-all→search→cart page→content→footer→mobile · 38 obs · resmi 3vp + menu/cart/FAQ/PDP/merch1440 interact · leftover: Stamped, sticky CTA, ticker, advertorial LPs, Marrow A/B, Gorgias, 404, empty terms/retail/blog, no predictive search, merch 375/768 filter`
 
 ---
 
@@ -26,17 +26,18 @@
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home + countdown/header/footer/FAQ | [x] JSON | [ ] capture |
-| Menu drawer (1440+768+375 hamburger) | [x] JSON | [ ] interact |
-| PDP `/products/primal-queen-superfood-organs` | [x] JSON | [ ] + 1 Month |
-| PLP `/collections/merch` banner + grid | [x] JSON | [ ] + Hoodies |
-| Shop-all `/collections/shop-all` (all redirect) | [x] JSON | [ ] |
-| Search `/search?q=beef` | [x] JSON | [ ] |
-| Cart `/cart` empty + filled | [x] JSON | [ ] interact |
-| Contact Gorgias iframe | [x] host JSON | [ ] · PII yok |
-| Clinical study | [x] 3 JSON | [ ] |
-| PQ7 / Goddess / Marrow / Bundle LPs | [x] hero/buy/faq | [ ] rest leftover |
-| 404 | [x] JSON | [ ] candidate |
+| Home + countdown/header/footer/FAQ | [x] | [x] |
+| Menu drawer (1440+768+375 hamburger) | [x] | [x] |
+| PDP `/products/primal-queen-superfood-organs` | [x] + 1 Month | [x] |
+| PLP `/collections/merch` banner + grid | [x] Hoodies 1440 | [x] · 375/768 filter leftover |
+| Shop-all `/collections/shop-all` | [x] | [x] |
+| Search `/search?q=beef` | [x] | [x] |
+| Cart `/cart` empty + filled | [x] UI ATC | [x] |
+| Contact Gorgias iframe | [x] host | [x] · PII yok |
+| Clinical study | [x] 3 | [x] |
+| PQ7 / Goddess / Bundle LPs | [x] | [x] · A/B suffix selector |
+| Marrow `/pages/marrow` | ⛔ A/B redirect | leftover |
+| 404 | [x] | [x] candidate |
 | Terms / privacy / retail / reviews / blog | ⛔ leftover | — |
 | Predictive search | ⛔ yok | — |
 | Cart drawer | ⛔ yok — sayfa | — |
@@ -47,36 +48,18 @@
 
 | # | id | sayfa | Screenshot | Not | JSON | Done |
 |---|---|---|---|---|---|---|
-| 1 | promo-announcement-bar | home | [ ] | [x] | reuse | [ ] |
-| 2 | navigation-header-mega | home | [ ] | [x] | reuse | [ ] |
-| 3 | global-menu-drawer | home | [ ] | [x] | reuse | [ ] |
-| 4 | hero-slideshow | home | [ ] | [x] | reuse | [ ] |
-| 5 | editorial-image-with-text | home | [ ] | [x] | reuse | [ ] |
-| 6 | editorial-rich-text | home | [ ] | [x] | reuse | [ ] |
-| 7 | editorial-timeline | home | [ ] | [x] | reuse | [ ] |
-| 8 | features-multicolumn | home | [ ] | [x] | reuse | [ ] |
-| 9 | features-multicolumn-2 | home | [ ] | [x] | reuse | [ ] |
-| 10 | editorial-rich-text-2 | home | [ ] | [x] | reuse | [ ] |
-| 11 | testimonial-quote-carousel | home | [ ] | [x] | reuse | [ ] |
-| 12–14 | founder / founder2 / overlay | home | [ ] | [x] | reuse | [ ] |
-| 15 | trust-icon-row | home | [ ] | [x] | reuse | [ ] |
-| 16 | commerce-tools-products-bundle | home | [ ] | [x] | reuse | [ ] |
-| 17 | faq-collapsible-tabs | home | [ ] | [x] | reuse | [ ] |
-| 18 | footer-columns-newsletter | home | [ ] | [x] | reuse | [ ] |
-| 19 | product-info-main | product-detail | [ ] | [x] | reuse | [ ] |
-| 20 | comparison-quick-table | product-detail | [ ] | [x] | reuse | [ ] |
-| 21–22 | who-is / not-for | product-detail | [ ] | [x] | reuse | [ ] |
-| 23–24 | collection-banner + grid-plp | collection | [ ] | [x] | reuse | [ ] |
-| 25–26 | shop-all featured + compare | shop-all | [ ] | [x] | reuse | [ ] |
-| 27 | search-results | search | [ ] | [x] | reuse | [ ] |
-| 28 | cart-page-main | cart | [ ] | [x] | reuse | [ ] |
-| 29 | page-content-main | contact | [ ] | [x] | reuse | [ ] |
-| 30–32 | clinical (3) | clinical-study | [ ] | [x] | reuse | [ ] |
-| 33–34 | pq7 trust + buy | landing-pq7 | [ ] | [x] | reuse | [ ] |
-| 35–36 | goddess hero + founder | landing-goddess | [ ] | [x] | reuse | [ ] |
-| 37–38 | marrow buy + faq | landing-marrow | [ ] | [x] | reuse | [ ] |
-| 39 | bundle builder | landing-bundle | [ ] | [x] | reuse | [ ] |
-| 40 | page-content-main | not-found | [ ] | [x] | reuse | [ ] |
+| 1–18 | home chrome + long-form | home | [x] | [x] | reuse | [x] |
+| 19–22 | PDP main/compare/who/not-for | product-detail | [x] | [x] | reuse | [x] |
+| 23–24 | merch banner + grid | collection | [x] | [x] | reuse | [x] |
+| 25–26 | shop-all featured + compare | shop-all | [x] | [x] | reuse | [x] |
+| 27 | search-results | search | [x] | [x] | reuse | [x] |
+| 28 | cart-page-main | cart | [x] | [x] | reuse | [x] |
+| 29 | page-content-main | contact | [x] | [x] | reuse | [x] |
+| 30–32 | clinical (3) | clinical-study | [x] | [x] | reuse | [x] |
+| 33–34 | pq7 trust + buy | landing-pq7 | [x] | [x] | reuse | [x] |
+| 35–36 | goddess hero + founder | landing-goddess | [x] | [x] | reuse | [x] |
+| 37 | bundle builder | landing-bundle | [x] | [x] | reuse | [x] |
+| 38 | page-content-main | not-found | [x] | [x] | reuse | [x] |
 
 ---
 
@@ -84,11 +67,11 @@
 
 | Bileşen | State | Not |
 |---|---|---|
-| navigation-header-mega / global-menu-drawer | open | hamburger 375+768+1440 |
-| cart-page-main | filled | shop-all ATC → /cart |
-| product-info-main | changed | 1 Month Supply |
-| product-showcase-grid-plp | changed | Hoodies pill |
-| faq-collapsible-tabs home | changed | soru tık |
+| navigation-header-mega / global-menu-drawer | open | [x] 375+768+1440 |
+| cart-page-main | filled | [x] Starter Kit $78 · ATC ui |
+| product-info-main | changed | [x] Delivered monthly → $39 ATC |
+| product-showcase-grid-plp | changed | [x] 1440 Hoodies 2 kart · 375/768 leftover |
+| faq-collapsible-tabs home | changed | [x] 3rd party lab tested açık |
 
 ---
 
@@ -100,6 +83,8 @@
 
 ## Evidence backlog
 
-- [ ] Claiming obs resmi 3vp
-- [ ] Menu / cart / FAQ / variant / merch filter interact
-- [ ] Newsletter / Gorgias / Loop / partnership — **PII yok**
+- [x] Claiming obs resmi 3vp (38)
+- [x] Menu / cart / FAQ / 1-month / merch 1440
+- [ ] Merch Hoodies 375/768
+- [ ] Cart qty `changed`
+- [ ] Newsletter / Gorgias / Loop / partnership — **PII yok / yapılmayacak**

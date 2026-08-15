@@ -7,7 +7,17 @@
   "url": "https://primalqueen.com/",
   "selector": "#shopify-section-template--22589197910293__faq_TwUTGi",
   "evidenceSlug": "faq-collapsible-tabs",
-  "evidence": [],
+  "evidence": [
+    "evidence/primalqueen/default/home/faq-collapsible-tabs.1440.png",
+    "evidence/primalqueen/default/home/faq-collapsible-tabs.375.png",
+    "evidence/primalqueen/default/home/faq-collapsible-tabs.768.png",
+    "evidence/primalqueen/default/home/faq-collapsible-tabs.changed.lab-tested.1440.png",
+    "evidence/primalqueen/default/home/faq-collapsible-tabs.changed.lab-tested.375.png",
+    "evidence/primalqueen/default/home/faq-collapsible-tabs.changed.lab-tested.768.png",
+    "evidence/primalqueen/default/home/faq-collapsible-tabs.initial.kapali.1440.png",
+    "evidence/primalqueen/default/home/faq-collapsible-tabs.initial.kapali.375.png",
+    "evidence/primalqueen/default/home/faq-collapsible-tabs.initial.kapali.768.png"
+  ],
   "notlar": "Frequently Asked Questions. İlk: Does this replace my multi-vitamins? Cevap statikte görünür. id=FAQ. ~1866px.",
   "delta": "Custom faq. Kategori tab yok. Accordion + ilk cevap açık gibi.",
   "interactionStates": [
@@ -25,17 +35,34 @@
     },
     {
       "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--22589197910293__faq_TwUTGi",
+      "capture": false
+    },
+    {
+      "state": "changed",
       "action": "click",
-      "selector": "#shopify-section-template--22589197910293__faq_TwUTGi [class*='faq'] >> nth=1, #shopify-section-template--22589197910293__faq_TwUTGi button, #shopify-section-template--22589197910293__faq_TwUTGi summary",
+      "selector": "#shopify-section-template--22589197910293__faq_TwUTGi .faq__button:has-text('3rd party')",
       "capture": true,
-      "etiket": "soru",
-      "not": "İkinci/ilk soru tık — piksel değişirse changed"
+      "etiket": "lab-tested",
+      "not": "İkinci soru (3rd party lab) — cevap açılır mı"
     }
   ],
   "stateFindings": {
     "initial": "SSS başlık + sorular",
-    "changed": "Henüz yoklandı değil"
+    "changed": "Is this 3rd party lab tested? sarı highlight + X; cevap 3rd party lab tested + latest results link. İlk soru kapandı."
   },
   "missingStates": [],
-  "interactionNote": "Interact yalnız piksel değişirse. İkinci denemede olmazsa missingStates."
+  "interactionNote": ".faq__button DIV (button değil). Sticky CTA kareye boyanabiliyor.",
+  "capture": {
+    "url": "https://primalqueen.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:03:56.727Z"
+  }
 }

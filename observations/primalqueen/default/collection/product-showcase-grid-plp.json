@@ -7,7 +7,15 @@
   "url": "https://primalqueen.com/collections/merch",
   "selector": "#shopify-section-template--23539505692949__merch_main_page_gXD9br",
   "evidenceSlug": "product-showcase-grid-plp",
-  "evidence": [],
+  "evidence": [
+    "evidence/primalqueen/default/collection/product-showcase-grid-plp.1440.png",
+    "evidence/primalqueen/default/collection/product-showcase-grid-plp.375.png",
+    "evidence/primalqueen/default/collection/product-showcase-grid-plp.768.png",
+    "evidence/primalqueen/default/collection/product-showcase-grid-plp.changed.hoodies.1440.png",
+    "evidence/primalqueen/default/collection/product-showcase-grid-plp.initial.see-all.1440.png",
+    "evidence/primalqueen/default/collection/product-showcase-grid-plp.initial.see-all.375.png",
+    "evidence/primalqueen/default/collection/product-showcase-grid-plp.initial.see-all.768.png"
+  ],
   "notlar": "Pills See All / Hoodies / Tops / Bottoms / Accessories · Sort By Position. 1440 3 kolon merch kartları (hoodie, tee, sweatpants). ~1699px.",
   "delta": "Custom merch_main_page. Filtre pill + sort. Quick view yoklandı değil.",
   "interactionStates": [
@@ -25,8 +33,14 @@
     },
     {
       "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--23539505692949__merch_main_page_gXD9br",
+      "capture": false
+    },
+    {
+      "state": "changed",
       "action": "click",
-      "selector": "text=Hoodies",
+      "selector": "button.merch-main-page__filter-btn[data-merch-filter='hoodies']",
       "capture": true,
       "etiket": "hoodies",
       "not": "Hoodies pill — grid değişir mi"
@@ -34,8 +48,24 @@
   ],
   "stateFindings": {
     "initial": "See All merch grid",
-    "changed": "Henüz yoklandı değil"
+    "changed": "1440 Hoodies: 2 kart (Cozy Fleece Zip-Up $50.31, PQ Hoodie $40.63). 375/768 pill 0×0."
   },
-  "missingStates": [],
-  "interactionNote": "Piksel değişmezse missingStates."
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "375/768 Hoodies pill DOM'da ama 0×0 / not visible. 1440 değişti — üçüncü deneme yok."
+    }
+  ],
+  "interactionNote": "1440 Hoodies grid 2 karta düştü. Mobil filtre leftover.",
+  "capture": {
+    "url": "https://primalqueen.com/collections/merch",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:08:28.542Z"
+  }
 }
