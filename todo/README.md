@@ -21,7 +21,7 @@
 | Impact · Cocoon | [`impact-cocoon.md`](./impact-cocoon.md) | ✅ delta — 2 obs · 12 kanıt · hotspot interact |
 | Stretch · Snow / Sand / Diffuse | [`stretch.md`](./stretch.md) | Snow ✅ · Sand ✅ · Diffuse ✅ · 86 obs · 365 kare · 0 yeni şema · interact |
 | Motion · Motion / Satchel / Memo | [`motion.md`](./motion.md) | ✅ 69 obs · 213 kare · 0 yeni şema · WEAR/CARRY |
-| Symmetry · 5 preset | [`symmetry.md`](./symmetry.md) | ⬜ default ✅ · Salt Yard ✅ · Beatnik ✅ · Duke sırada |
+| Symmetry · 5 preset | [`symmetry.md`](./symmetry.md) | ⬜ default ✅ · Salt Yard ✅ · Beatnik ✅ · Duke ✅ · Amara sırada |
 
 **Interact (discover sonrası derinlik):** [`interact.md`](./interact.md) — kapalı kare yalanı; Stretch + Cocoon/Balance shop-the-look kapandı.
 
