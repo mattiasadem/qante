@@ -1,0 +1,65 @@
+{
+  "observationId": "novoslabs.default.product-detail.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "novoslabs",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://novoslabs.com/product/novos-core/",
+  "selector": "#faq",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/novoslabs/default/product-detail/faq-collapsible-tabs.1440.png",
+    "evidence/novoslabs/default/product-detail/faq-collapsible-tabs.375.png",
+    "evidence/novoslabs/default/product-detail/faq-collapsible-tabs.768.png",
+    "evidence/novoslabs/default/product-detail/faq-collapsible-tabs.changed.ilk-soru.1440.png",
+    "evidence/novoslabs/default/product-detail/faq-collapsible-tabs.changed.ilk-soru.375.png",
+    "evidence/novoslabs/default/product-detail/faq-collapsible-tabs.changed.ilk-soru.768.png"
+  ],
+  "notlar": "Questions, answered. .nv-faq--pdp. Home ile aynı iskelet.",
+  "delta": "PDP kopyası. Reamaze /frequently-asked-questions/ ayrı leftover.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://novoslabs.com/product/novos-core/",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#faq",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#faq details.nv-faq__item summary",
+      "capture": true,
+      "etiket": "ilk-soru",
+      "not": "İlk FAQ açık"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "2 deneme: 375/768/1440 changed hâlâ `+` — açık cevap paneli yok. Accordion-open doğrulanamadı."
+    }
+  ],
+  "interactionNote": "PDP soruları (When will I feel results? / What’s in NOVOS Core? …) collapsed kaldı. Üçüncü deneme yok.",
+  "capture": {
+    "url": "https://novoslabs.com/product/novos-core/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:16:02.456Z"
+  }
+}
