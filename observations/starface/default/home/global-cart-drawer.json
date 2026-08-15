@@ -1,0 +1,95 @@
+{
+  "observationId": "starface.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "starface",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://starface.world/",
+  "selector": "cart-drawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/starface/default/home/global-cart-drawer.filled.strips-qty1.1440.png",
+    "evidence/starface/default/home/global-cart-drawer.filled.strips-qty1.375.png",
+    "evidence/starface/default/home/global-cart-drawer.filled.strips-qty1.768.png",
+    "evidence/starface/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/starface/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/starface/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "Dawn cart-drawer. Opener #cart-icon-bubble → /cart da var (tam sayfa ayrı). Boş drawer + filled star-strips.",
+  "delta": "Hem drawer hem /cart sayfa şablonu var. Bag etiketi. Checkout’a girilmedi.",
+  "captureMode": "viewport",
+  "prepareClick": "#cart-icon-bubble",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://starface.world/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş bag drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://starface.world/products/star-strips",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'], form[action*='/cart/add'] button[type='submit']",
+      "capture": false,
+      "not": "star strips™ Add to bag"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": false,
+      "not": "375 #cart-icon-bubble 0-width / viewport dışı"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "strips-qty1",
+      "not": "Dolu bag drawer"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boş bag: you’re $25.00 away from free shipping, your bag is empty, checkout • $0.00 usd. 1440 sol sarı drawer + arkada home grid.",
+    "filled": "375: star strips™ $5.94 qty 1 (subscribe fiyat), $19.06 to free shipping, checkout • $5.94 usd. 768/1440: hydro-star® clear $12.99 qty 1, $12.01 to free shipping, checkout • $12.99 usd (ATC ilk görünür add)."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout/PII yok. addToCart UI. 375 filled: ikon tık patladı, forceOpen cart-drawer. 768/1440 ilk turda ikon tık çalıştı.",
+  "capture": {
+    "url": "https://starface.world/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:16:54.999Z"
+  }
+}
