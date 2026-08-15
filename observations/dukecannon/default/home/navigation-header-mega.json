@@ -1,0 +1,74 @@
+{
+  "observationId": "dukecannon.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "dukecannon",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://dukecannon.com/",
+  "selector": ".header-sticky-wrapper",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/dukecannon/default/home/navigation-header-mega.1440.png",
+    "evidence/dukecannon/default/home/navigation-header-mega.375.png",
+    "evidence/dukecannon/default/home/navigation-header-mega.768.png",
+    "evidence/dukecannon/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/dukecannon/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/dukecannon/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/dukecannon/default/home/navigation-header-mega.open.shop-all-mega.1440.png"
+  ],
+  "notlar": "Sticky 76px: DUKE CANNON logo; SHOP ALL / NEW ARRIVALS / REWARDS / ABOUT; Search / Log in / Cart. Shopify-section-header h=0 (drawer'lar + sticky). 375 hamburger js-drawer-open-nav.",
+  "delta": "Tema (vitrinde): [Rollback] Production | Accenture 8.12.2026. schema_name Duke Cannon Shopify Theme 1.23.1, theme_store_id null, role main, id 147550273651. Shop duke-cannon.myshopify.com. Custom Duke Cannon theme (Impulse ailesi site-header/megamenu). SHOP ALL mega görselli koleksiyon kolonları. Locale yok. Mega #shopify-section-header içinde.",
+  "capture": {
+    "url": "https://dukecannon.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:24:44.819Z"
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://dukecannon.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı sticky bar"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button#shop-all",
+      "capture": false,
+      "viewports": [
+        "1440"
+      ],
+      "not": "SHOP ALL mega — tık (hover kutu büyütmedi)"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 700,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-all-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Mega panel kolonları"
+    }
+  ],
+  "stateFindings": {
+    "initial": "76px bar: logo, SHOP ALL, NEW ARRIVALS, REWARDS, ABOUT, search, login, cart.",
+    "open": "1440 SHOP ALL mega 5×2 görselli kart: New & Featured, Body Wash & Bar Soap, Deodorant, Cologne, Face Care, Beard & Shaving, Hair, Everyday Carry, Bundles & Gifts, Limited Edition (Jeep/Thermos)."
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 mega yok — hamburger ayrı global-menu-drawer. Tık button#shop-all; hover kutu büyütmedi."
+}
