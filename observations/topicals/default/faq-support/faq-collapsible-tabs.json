@@ -1,0 +1,57 @@
+{
+  "observationId": "topicals.default.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "topicals",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "url": "https://mytopicals.com/pages/faq",
+  "selector": "main#main > section:nth-of-type(1)",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/topicals/default/faq-support/faq-collapsible-tabs.1440.png",
+    "evidence/topicals/default/faq-support/faq-collapsible-tabs.375.png",
+    "evidence/topicals/default/faq-support/faq-collapsible-tabs.768.png",
+    "evidence/topicals/default/faq-support/faq-collapsible-tabs.changed.ilk-soru.1440.png",
+    "evidence/topicals/default/faq-support/faq-collapsible-tabs.changed.ilk-soru.375.png",
+    "evidence/topicals/default/faq-support/faq-collapsible-tabs.changed.ilk-soru.768.png"
+  ],
+  "notlar": "FAQs + kategori (INGREDIENTS / PRODUCTS / SHIPPING / DISCOUNTS / SUBSCRIPTION / PASSPORT / ORDERS).",
+  "delta": "kategoriTabGoster açık. Görsel slot var.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://mytopicals.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "[data-slot='accordion-trigger']",
+      "capture": true,
+      "etiket": "ilk-soru",
+      "not": "İlk accordion açık — cevap görünür mü"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Sol kategori (INGREDIENTS altı çizili) + görsel; sağda tüm sorular + ile kapalı.",
+    "changed": "İlk accordion açık: Are Topicals products gluten-free? → Yes, all Topicals products are gluten-free! Minus ikon. Sol tarafta ORDERS & PAYMENTS altı çizili göründü (scroll/focus); cevap Ingredients altında."
+  },
+  "missingStates": [],
+  "interactionNote": "Kategori tık (SHIPPING vb.) yoklandı değil — leftover. İlk trigger tık cevap metnini açtı.",
+  "capture": {
+    "url": "https://mytopicals.com/pages/faq",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T17:18:41.244Z"
+  }
+}

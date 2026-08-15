@@ -1,0 +1,83 @@
+{
+  "observationId": "topicals.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "topicals",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://mytopicals.com/",
+  "selector": "header",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/topicals/default/home/global-predictive-search.1440.png",
+    "evidence/topicals/default/home/global-predictive-search.375.png",
+    "evidence/topicals/default/home/global-predictive-search.768.png",
+    "evidence/topicals/default/home/global-predictive-search.input.faded.1440.png",
+    "evidence/topicals/default/home/global-predictive-search.input.faded.375.png",
+    "evidence/topicals/default/home/global-predictive-search.input.faded.768.png"
+  ],
+  "notlar": "SEARCH tıklanınca header genişler; trending + yazınca öneri. Placeholder: What are you looking for?",
+  "delta": "Ayrı modal/dialog yok — header içi overlay. Kapalı kare yanıltır; interact fill şart.",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "input",
+      "action": "goto",
+      "value": "https://mytopicals.com/",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "header button:has-text(\"SEARCH\"), button[aria-label='Open menu']",
+      "capture": false,
+      "not": "1440 SEARCH; 375 menü açıkken arama alanı zaten var"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input[placeholder='What are you looking for?']",
+      "value": "faded",
+      "capture": false,
+      "not": "katalog kelimesi: Faded ürün ailesi"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false,
+      "not": "375/768 öneri hydrate için bekle"
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "input[placeholder='What are you looking for?']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "faded",
+      "not": "fill sonrası overlay; 1440 ürün listesi, 375/768 chip olabilir"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Kapalı header: SEARCH yazısı. Overlay yok — kapalı kare yanıltır.",
+    "input": "1440: faded yazınca ürün satırları (Faded Brightening Cleansing Bar, Faded Starter Kit…) + Search for 'faded' →. 375/768: aynı fill sonrası öneri chip’leri (Clearly Acne Mist, Slather…) — ürün listesi bu karede hydrate olmadı (2. deneme + 2.5s wait)."
+  },
+  "missingStates": [],
+  "interactionNote": "Ayrı dialog yok — header overlay. 375’te SEARCH yok; hamburger açıkken input zaten var. prepareClick yalnız kapalı/yanıltıcı kare verdi. Asıl kanıt fill. 375/768 ürün satırı ikinci denemede de gelmedi.",
+  "captureMode": "viewport",
+  "prepareClick": "header button:has-text(\"SEARCH\")",
+  "capture": {
+    "url": "https://mytopicals.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T17:25:54.070Z",
+    "prepareClick": "header button:has-text(\"SEARCH\")"
+  }
+}
