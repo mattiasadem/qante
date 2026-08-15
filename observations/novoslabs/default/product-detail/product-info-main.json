@@ -1,0 +1,62 @@
+{
+  "observationId": "novoslabs.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "novoslabs",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://novoslabs.com/product/novos-core/",
+  "selector": ".nv-pdp__top",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/novoslabs/default/product-detail/product-info-main.1440.png",
+    "evidence/novoslabs/default/product-detail/product-info-main.375.png",
+    "evidence/novoslabs/default/product-detail/product-info-main.768.png",
+    "evidence/novoslabs/default/product-detail/product-info-main.changed.tropical-passion.1440.png",
+    "evidence/novoslabs/default/product-detail/product-info-main.changed.tropical-passion.375.png",
+    "evidence/novoslabs/default/product-detail/product-info-main.changed.tropical-passion.768.png"
+  ],
+  "notlar": "CLINICALLY STUDIED LONGEVITY FORMULA. NOVOS Core. Flavor: Orange / Tropical Passion / Unflavored. Plan: Monthly 10% / Semi-Annually 15% / Annually 27%. Qty stepper. Add to cart. One-time $109. Boost upsell checkbox.",
+  "delta": "Woo + wp-block-novos-plan-selector. Breadcrumb aynı sarmalayıcıda. Subscription plan kartları şema varyantGosterim dışı — delta.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://novoslabs.com/product/novos-core/",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": ".nv-pdp__top",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button.nv-pdp-flavor:not(.is-active)",
+      "capture": true,
+      "etiket": "tropical-passion",
+      "not": "İkinci flavor (Tropical Passion) — swatch + fiyat"
+    }
+  ],
+  "stateFindings": {
+    "changed": "375 Tropical Passion Flavor seçili (şeftali zemin + turuncu çerçeve); Orange/Unflavored seçili değil. Semi-Annually plan duruyor. 768/1440 karede flavor farkı belirsiz — 375 kanıt."
+  },
+  "missingStates": [],
+  "interactionNote": "Flavor `button.nv-pdp-flavor:not(.is-active)`. Plan Monthly 10% / Semi-Annually 15% / Annually 27% statik 3vp. ATC `button.nv-pdp-add`.",
+  "capture": {
+    "url": "https://novoslabs.com/product/novos-core/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:15:10.822Z"
+  }
+}
