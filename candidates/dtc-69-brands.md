@@ -36,21 +36,21 @@ Durum: `done` = main'e merge · `in progress` = açık PR · boş = kuyrukta
 | 24 | done | necessaire.com | https://necessaire.com |
 | 25 | done | im8health.com | https://im8health.com |
 | 26 | done | comradsocks.com | https://comradsocks.com |
-| 27 | in progress | bachans.com | https://bachans.com |
+| 27 | done | bachans.com | https://bachans.com |
 | 28 | in progress | vacation.inc | https://vacation.inc |
 | 29 | done | drink-trip.com | https://drink-trip.com |
-| 30 | in progress | bleame.com | https://bleame.com |
-| 31 | in progress | tenthousand.cc | https://tenthousand.cc |
-| 32 | in progress | novoslabs.com | https://novoslabs.com |
+| 30 | done | bleame.com | https://bleame.com |
+| 31 | done | tenthousand.cc | https://tenthousand.cc |
+| 32 | done | novoslabs.com | https://novoslabs.com |
 | 33 | in progress | davidprotein.com | https://davidprotein.com |
 | 34 | in progress | vessi.com | https://vessi.com |
 | 35 | in progress | flamingoestate.com | https://flamingoestate.com |
 | 36 | in progress | flybyjing.com | https://flybyjing.com |
 | 37 | in progress | gruns.co | https://gruns.co |
-| 38 | | hollowsocks.com | https://hollowsocks.com |
-| 39 | | representclo.com | https://representclo.com |
-| 40 | | functionhealth.com | https://functionhealth.com |
-| 41 | | chamberlaincoffee.com | https://chamberlaincoffee.com |
+| 38 | in progress | hollowsocks.com | https://hollowsocks.com |
+| 39 | in progress | representclo.com | https://representclo.com |
+| 40 | in progress | functionhealth.com | https://functionhealth.com |
+| 41 | in progress | chamberlaincoffee.com | https://chamberlaincoffee.com |
 | 42 | | dukecannon.com | https://dukecannon.com |
 | 43 | | magicmind.com | https://magicmind.com |
 | 44 | | atoms.com | https://atoms.com |
