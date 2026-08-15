@@ -34,38 +34,62 @@
     {
       "state": "initial",
       "action": "waitFor",
-      "selector": "iframe[id^=\"lightbox-iframe-\"]",
-      "value": 15000,
+      "selector": "iframe[id^=\"lightbox-iframe-\"] >> #button3",
+      "value": 20000,
       "capture": true,
       "etiket": "goal-screen",
-      "not": "Ekran 1: What is your ultimate health and beauty goal?"
+      "not": "Ekran 1 hazır: #button3 Lose Weight (aynı-origin about:blank, JS-enjekte)"
     },
     {
       "state": "changed",
       "action": "click",
-      "selector": "iframe[id^=\"lightbox-iframe-\"] >> text=Lose Weight",
+      "selector": "iframe[id^=\"lightbox-iframe-\"] >> #button3",
       "value": 2000,
+      "capture": false,
+      "not": "Lose Weight — #button3 (text= yedek; id daha stabil)"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "selector": "iframe[id^=\"lightbox-iframe-\"] >> #ep10text1",
+      "value": 12000,
       "capture": true,
       "etiket": "weightloss-struggle",
-      "not": "frameLocator: Lose Weight iframe içinde — ekran 2"
+      "not": "Ekran 2: What do you struggle with in your weightloss journey?"
     },
     {
       "state": "open",
       "action": "click",
-      "selector": "iframe[id^=\"lightbox-iframe-\"] >> text=Next",
+      "selector": "iframe[id^=\"lightbox-iframe-\"] >> #ep10button3",
+      "value": 800,
+      "capture": false,
+      "not": "Seeing slow progress — seçilince ep10button3_hover"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "iframe[id^=\"lightbox-iframe-\"] >> #ep10button1",
       "value": 2000,
+      "capture": false,
+      "not": "Next — PII yok"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "selector": "iframe[id^=\"lightbox-iframe-\"] >> text=How often do you currently exercise?",
+      "value": 12000,
       "capture": true,
       "etiket": "exercise-frequency",
-      "not": "Next PII'siz ilerledi — bir ek gerçek ekran; dur"
+      "not": "Ekran 3 gerçek piksel değişimi; e-posta/isim/telefon yok — dur"
     }
   ],
   "missingStates": [],
   "stateFindings": {
-    "initial": "Ekran 1: What is your ultimate health and beauty goal? Dört ikon: Lose Weight, Boost my energy, Detox and gut cleanse, Look youthful and radiant.",
-    "changed": "Lose Weight tıklanınca ekran 2: What do you struggle with in your weightloss journey? (Select all that apply) — Seeing slow progress; Curbing unhealthy cravings; Dealing with low energy; Balancing diet and exercise. Progress/Back/Next.",
-    "open": "Next (seçim zorunlu değil) → How often do you currently exercise? Rarely or never / 1-2 times a week / At least 3 times a week. E-posta/isim/telefon yok."
+    "initial": "Ekran 1: What is your ultimate health and beauty goal? #button3 Lose Weight · #button4 Boost my energy · #button5 Detox and gut cleanse · #button6 Look youthful and radiant. #button1/#button2 boş placeholder.",
+    "changed": "Lose Weight (#button3) → ekran 2 prefix ep10: #ep10text1 struggle sorusu, #ep10text2 (Select all that apply), #ep10button3–6 seçenekler, #ep10button1 Next, #ep10button2 Back, div.progressBarFill.",
+    "open": "Seeing slow progress (#ep10button3) + Next (#ep10button1) → How often do you currently exercise? Rarely or never / 1-2 times a week / At least 3 times a week + Back. E-posta/isim/telefon yok."
   },
-  "interactionNote": "Octane lightbox iframe src=about:blank (standalone public URL yok; contentFrame ile tıklanır). capture-interaction frameLocator: iframe[…] >> inner. Home quiz bandı ayrı CTA (editorial-image-with-text-2), ikinci quiz şeması değil. Ekran 4+ yoklandı değil — PII duvarına gelmeden duruldu.",
+  "interactionNote": "Canlı probe: iframe[id^=\"lightbox-iframe-\"] (ör. lightbox-iframe-89c6d696-…, class box-276164). src=about:blank, srcdoc yok, ~139KB JS-enjekte DOM, same-origin, contentDocument okunur, shadow DOM yok. Standalone Octane/app-proxy URL yok — iframe src açılmaz. Tracker/web-pixel iframe yok sayıldı. Tıklama: contentFrame() + #button3 / #ep10*. Cross-origin / piercing başarısız değildi — o dil yanlıştı. Home quiz bandı editorial-image-with-text-2 CTA; ikinci quiz şeması değil. Ekran 4+ yoklandı değil.",
   "capture": {
     "url": "https://myobvi.com/pages/supplement-quiz",
     "viewports": [
@@ -75,8 +99,8 @@
     ],
     "mode": "section",
     "method": "interaction-steps",
-    "updatedAt": "2026-08-15T15:16:22.933Z"
+    "updatedAt": "2026-08-15T16:01:33.424Z"
   },
-  "notlar": "Octane/lightbox iframe; src about:blank.",
+  "notlar": "Octane lightbox; same-origin about:blank; #button3 / ep10* ile pierce.",
   "delta": "Third-party iframe quiz. Home FIND YOUR PERFECT MATCH bandı product-finder-quiz değil, editorial-image-with-text CTA."
 }

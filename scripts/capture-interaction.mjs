@@ -21,13 +21,15 @@
  *   { "state": "filled", "action": "click", "selector": "...", "value": null,
  *     "capture": true, "captureMode": "viewport", "not": "..." }
  *
- * iframe içi (cross-origin dahil — Playwright frameLocator):
- *   selector "iframe…" ile başlar ve " >> " içerirse sol taraf frame,
- *   sağ taraf frame içi locator'dır:
+ * iframe içi — `iframe[sel] >> inner` (ilk ">>" frame / iç sınırıdır):
+ *   Sol: parent'taki iframe host. Sağ: frame-içi Playwright selector.
+ *     iframe[id^="lightbox-iframe-"] >> #button3
  *     iframe[id^="lightbox-iframe-"] >> text=Lose Weight
- *     iframe[id^="lightbox-iframe-"] >> button.next
- *   Çıplak iframe selector ( >> yok) parent sayfadaki iframe elementidir
- *   (waitFor / capture kutu SS).
+ *   Aynı-origin about:blank (Obvi Octane lightbox): src=about:blank, içerik
+ *   JS ile enjekte; srcdoc yok; standalone URL yok. contentDocument okunur
+ *   → contentFrame() birincil, frameLocator yedek. Tracker / web-pixel
+ *   about:blank frame'lerine dokunma — yalnız host selector'daki iframe.
+ *   Çıplak iframe ( >> yok) parent host'tur (waitFor / capture kutu).
  */
 
 import { chromium } from "playwright";
@@ -149,13 +151,13 @@ const evidenceRel = (filename) =>
   `evidence/${obs.kaynak}/${obs.preset}/${obs.sayfa}/${filename}`;
 
 /**
- * iframe[sel] >> inner  → frameLocator + in-frame locator
+ * iframe[sel] >> inner  → contentFrame (aynı-origin) veya frameLocator
  * iframe[sel]           → parent-page iframe host
  * diğer                 → page.locator
  *
- * ">>" Playwright aynı-belge descendant'ı DEĞİL burada: ilk ">>"
- * frame / iç sınırıdır. İç kısım frame içinde normal Playwright selector'dır
- * (text=, css, role=, başka >> …).
+ * ">>" burada Playwright aynı-belge descendant'ı DEĞİL: ilk ">>"
+ * frame / iç sınırıdır. İç kısım frame içinde normal selector
+ * (css #id, text=, role=, başka >> …).
  */
 function splitIframeSelector(selector) {
   if (!selector) return null;
@@ -239,6 +241,26 @@ function resolveLocator(page, selector) {
   return page.frameLocator(parsed.frameSel).locator(parsed.inner);
 }
 
+/** JS-enjekte about:blank quiz: boş body yetmez, #button3 / ep* veya dolu DOM. */
+async function frameHasInjectedDom(frame) {
+  return frame
+    .evaluate(() => {
+      const body = document.body;
+      if (!body) return false;
+      if (body.querySelector("#button3, [id^='ep'][id*='button'], [id^='ep'][id*='text']")) {
+        return true;
+      }
+      const html = body.innerHTML || "";
+      const text = (body.innerText || "").trim();
+      return html.length > 4000 && text.length > 20;
+    })
+    .catch(() => false);
+}
+
+/**
+ * Host iframe'in contentFrame'i (aynı-origin about:blank).
+ * page.frames() taranmaz — tracker / web-pixel about:blank karışmasın.
+ */
 async function waitForFrameReady(page, frameSel, timeout = 15000) {
   const host = page.locator(frameSel).first();
   await host.waitFor({ state: "attached", timeout });
@@ -246,44 +268,54 @@ async function waitForFrameReady(page, frameSel, timeout = 15000) {
   while (Date.now() < deadline) {
     const handle = await host.elementHandle().catch(() => null);
     const frame = handle ? await handle.contentFrame().catch(() => null) : null;
-    if (frame) {
-      const ready = await frame
-        .evaluate(() => Boolean(document.body && document.body.innerText.trim().length > 0))
-        .catch(() => false);
-      if (ready) return frame;
-    }
+    if (frame && (await frameHasInjectedDom(frame))) return frame;
     await page.waitForTimeout(250);
   }
   return null;
 }
 
+/** Aynı-origin: contentFrame.locator. Değilse frameLocator. */
+async function locateInFrame(page, parsed, timeout = 15000) {
+  const frame = await waitForFrameReady(page, parsed.frameSel, timeout);
+  if (frame) return { loc: frame.locator(parsed.inner), frame };
+  return {
+    loc: page.frameLocator(parsed.frameSel).locator(parsed.inner),
+    frame: null,
+  };
+}
+
 async function clickInFrameFallback(page, parsed) {
-  const frameLoc = page.frameLocator(parsed.frameSel);
   const text = parsed.inner.startsWith("text=")
     ? parsed.inner.slice(5).trim()
     : null;
   if (!text) return false;
 
-  const candidates = [
-    frameLoc.getByRole("button", { name: text }),
-    frameLoc.getByRole("link", { name: text }),
-    frameLoc.getByText(text, { exact: false }),
-  ];
-  for (const loc of candidates) {
-    const n = await loc.count().catch(() => 0);
-    for (let i = 0; i < n; i++) {
-      const el = loc.nth(i);
-      if (await el.isVisible().catch(() => false)) {
-        await el.click({ force: true });
-        return true;
+  const frame = await waitForFrameReady(page, parsed.frameSel);
+  const roots = [];
+  if (frame) roots.push(frame);
+  roots.push(page.frameLocator(parsed.frameSel));
+
+  for (const root of roots) {
+    const candidates = [
+      root.getByRole("button", { name: text }),
+      root.getByRole("link", { name: text }),
+      root.getByText(text, { exact: false }),
+    ];
+    for (const loc of candidates) {
+      const n = await loc.count().catch(() => 0);
+      for (let i = 0; i < n; i++) {
+        const el = loc.nth(i);
+        if (await el.isVisible().catch(() => false)) {
+          await el.click({ force: true });
+          return true;
+        }
       }
     }
-  }
-
-  const box = await frameLoc.getByText(text).first().boundingBox().catch(() => null);
-  if (box && box.width >= 4 && box.height >= 4) {
-    await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2);
-    return true;
+    const box = await root.getByText(text).first().boundingBox().catch(() => null);
+    if (box && box.width >= 4 && box.height >= 4) {
+      await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2);
+      return true;
+    }
   }
   return false;
 }
@@ -291,11 +323,9 @@ async function clickInFrameFallback(page, parsed) {
 // Görünür olanı tercih eden tıklama — gizli close/overlay .first() tuzağı
 async function clickVisible(page, selector) {
   const parsed = splitIframeSelector(selector);
-  if (parsed?.kind === "inner") {
-    await waitForFrameReady(page, parsed.frameSel);
-  }
-
-  const nodes = resolveLocator(page, selector);
+  const nodes = parsed?.kind === "inner"
+    ? (await locateInFrame(page, parsed)).loc
+    : resolveLocator(page, selector);
   await nodes.first().waitFor({ state: "attached", timeout: 12000 }).catch(() => {});
   const n = await nodes.count().catch(() => 0);
   if (!n) {
@@ -492,7 +522,7 @@ async function capture(page, step, vp) {
     await forceOpen(page, selector);
     ({ loc, box } = await bestLocator(page, selector));
   }
-  // In-frame node tiny/missing → parent iframe kutu (cross-origin pikseller boyalı)
+  // In-frame node tiny/missing → parent iframe host kutusu (lightbox pikselleri)
   if ((!box || box.width < 8 || box.height < 8) && parsed?.kind === "inner") {
     ({ loc, box } = await bestLocator(page, parsed.frameSel));
   }
@@ -531,8 +561,10 @@ async function runStep(page, step) {
       return null;
     case "scrollTo": {
       const parsed = splitIframeSelector(sel);
-      if (parsed?.kind === "inner") await waitForFrameReady(page, parsed.frameSel);
-      const el = resolveLocator(page, sel).first();
+      const el = (parsed?.kind === "inner"
+        ? (await locateInFrame(page, parsed)).loc
+        : resolveLocator(page, sel)
+      ).first();
       await el.waitFor({ state: "attached", timeout: 12000 });
       await el.scrollIntoViewIfNeeded();
       await page.waitForTimeout(500);
@@ -544,8 +576,10 @@ async function runStep(page, step) {
       return null;
     case "hover": {
       const parsed = splitIframeSelector(sel);
-      if (parsed?.kind === "inner") await waitForFrameReady(page, parsed.frameSel);
-      const el = resolveLocator(page, sel).first();
+      const el = (parsed?.kind === "inner"
+        ? (await locateInFrame(page, parsed)).loc
+        : resolveLocator(page, sel)
+      ).first();
       await el.waitFor({ state: "visible", timeout: 12000 });
       await el.scrollIntoViewIfNeeded().catch(() => {});
       await el.hover({ force: true });
@@ -554,8 +588,9 @@ async function runStep(page, step) {
     }
     case "fill": {
       const parsed = splitIframeSelector(sel);
-      if (parsed?.kind === "inner") await waitForFrameReady(page, parsed.frameSel);
-      const nodes = resolveLocator(page, sel);
+      const nodes = parsed?.kind === "inner"
+        ? (await locateInFrame(page, parsed)).loc
+        : resolveLocator(page, sel);
       await nodes.first().waitFor({ state: "attached", timeout: 12000 }).catch(() => {});
       const n = await nodes.count();
       if (!n) throw new Error(`selector eşleşmedi: ${sel}`);
@@ -577,8 +612,10 @@ async function runStep(page, step) {
     }
     case "select": {
       const parsed = splitIframeSelector(sel);
-      if (parsed?.kind === "inner") await waitForFrameReady(page, parsed.frameSel);
-      const el = resolveLocator(page, sel).first();
+      const el = (parsed?.kind === "inner"
+        ? (await locateInFrame(page, parsed)).loc
+        : resolveLocator(page, sel)
+      ).first();
       await el.waitFor({ state: "attached", timeout: 12000 });
       await el.selectOption(String(step.value));
       await page.waitForTimeout(1400);
@@ -593,8 +630,8 @@ async function runStep(page, step) {
         const parsed = splitIframeSelector(sel);
         const timeout = Number(step.value) || 15000;
         if (parsed?.kind === "inner") {
-          await waitForFrameReady(page, parsed.frameSel, timeout);
-          await resolveLocator(page, sel).first().waitFor({ state: "visible", timeout });
+          const { loc } = await locateInFrame(page, parsed, timeout);
+          await loc.first().waitFor({ state: "visible", timeout });
         } else if (parsed?.kind === "host") {
           // Çıplak iframe: parent host — attached (visible 0-size/Escape sonrası yanıltır)
           await page.locator(sel).first().waitFor({ state: "attached", timeout });
