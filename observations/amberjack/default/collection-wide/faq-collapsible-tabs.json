@@ -8,13 +8,22 @@
   "selector": "[id*='__faq_']",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/amberjack/default/collection-wide/faq-collapsible-tabs.1440.png",
     "evidence/amberjack/default/collection-wide/faq-collapsible-tabs.375.png",
     "evidence/amberjack/default/collection-wide/faq-collapsible-tabs.768.png",
-    "evidence/amberjack/default/collection-wide/faq-collapsible-tabs.1440.png"
+    "evidence/amberjack/default/collection-wide/faq-collapsible-tabs.changed.ilk-soru.1440.png",
+    "evidence/amberjack/default/collection-wide/faq-collapsible-tabs.changed.ilk-soru.375.png",
+    "evidence/amberjack/default/collection-wide/faq-collapsible-tabs.changed.ilk-soru.768.png",
+    "evidence/amberjack/default/collection-wide/faq-collapsible-tabs.initial.kapali.1440.png",
+    "evidence/amberjack/default/collection-wide/faq-collapsible-tabs.initial.kapali.375.png",
+    "evidence/amberjack/default/collection-wide/faq-collapsible-tabs.initial.kapali.768.png"
   ],
   "notlar": "Frequently Asked Questions. İki soru, sağda + accordion.",
-  "delta": "Wide PLP altı. + ikon; details elementi yok — button accordion.",
-  "interactionStates": ["initial", "changed"],
+  "delta": "Wide PLP altı. + ikon; details/button yok — .faq-block__question div accordion.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
   "interactionSteps": [
     {
       "state": "initial",
@@ -27,7 +36,8 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": "[id*='__faq_'] button:has-text('Does Amberjack offer wide size dress shoes')",
+      "selector": "[id*='__faq_'] .faq-block__question",
+      "value": 800,
       "capture": true,
       "etiket": "ilk-soru",
       "not": "İlk soru açık — wide sizing cevabı"
@@ -37,7 +47,7 @@
     "initial": "FAQ başlık; iki soru + ile kapalı.",
     "changed": "İlk soru açık — wide size dress shoes cevabı."
   },
-  "missingStates": []
+  "missingStates": [],
   "capture": {
     "url": "https://www.amberjack.shop/collections/wide-dress-shoes",
     "viewports": [
@@ -46,7 +56,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T17:57:54.367Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:33:34.173Z"
   }
 }
