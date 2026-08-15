@@ -1,0 +1,51 @@
+{
+  "observationId": "magicspoon.default.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "magicspoon",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "url": "https://magicspoon.com/pages/faq",
+  "selector": "#shopify-section-faq",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [],
+  "notlar": "WE GOT ANSWERS. Category buttons Product / Shipping / International / Orders / General. Long accordion lists under PRODUCT:/SHIPPING:…",
+  "delta": "Dedicated #shopify-section-faq. kategoriTabGoster live. h1 WE GOT ANSWERS outside or in section.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://magicspoon.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-faq",
+      "capture": true,
+      "etiket": "product-tab"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-faq button.has_animate:has-text('Shipping')",
+      "capture": true,
+      "etiket": "shipping-tab"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Product tab. PRODUCT: questions listed.",
+    "changed": "Shipping tab — US shipping partners / expedited / damaged…"
+  },
+  "missingStates": [],
+  "interactionNote": "Category buttons button.has_animate."
+}

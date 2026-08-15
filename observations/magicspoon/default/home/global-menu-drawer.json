@@ -1,0 +1,54 @@
+{
+  "observationId": "magicspoon.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "magicspoon",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://magicspoon.com/",
+  "selector": "#mobile-slides",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "Full-screen mobile slides: CEREAL OATMEAL PASTRIES TREATS GRANOLA, BUILD YOUR OWN BUNDLE, About Us / Contact / FAQS.",
+  "delta": "#mobile-slides / #mobile-slides-content. Opener button.btn-toggle. Not a side drawer. 1440 N/A.",
+  "captureMode": "viewport",
+  "prepareClick": "button.btn-toggle",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://magicspoon.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.btn-toggle",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "viewports": [
+        "375",
+        "768"
+      ]
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 full-screen #mobile-slides: category list + bundle + about/contact/faq."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 N/A — masaüstü mega."
+    }
+  ],
+  "interactionNote": "button.btn-toggle; body class did not change on open."
+}

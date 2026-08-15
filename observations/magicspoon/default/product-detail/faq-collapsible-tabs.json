@@ -1,0 +1,51 @@
+{
+  "observationId": "magicspoon.default.product-detail.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "magicspoon",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://magicspoon.com/products/cocoa-cereal-case",
+  "selector": "#shopify-section-template--17018679984190__faq_new_NhfBda",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [],
+  "notlar": "FREQUENTLY ASKED QUESTIONS. What kind of sorcery… / net carbs / …",
+  "delta": "faq_new on PDP. Category tabs not in this kare (page FAQ has Product/Shipping/…). Accordion.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://magicspoon.com/products/cocoa-cereal-case",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17018679984190__faq_new_NhfBda",
+      "capture": true,
+      "etiket": "faq-kapali"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--17018679984190__faq_new_NhfBda [class*='question'], #shopify-section-template--17018679984190__faq_new_NhfBda button, #shopify-section-template--17018679984190__faq_new_NhfBda dt, #shopify-section-template--17018679984190__faq_new_NhfBda h3",
+      "capture": true,
+      "etiket": "soru-acik"
+    }
+  ],
+  "stateFindings": {
+    "initial": "FAQ list collapsed or first closed.",
+    "changed": "First question toggled if accordion."
+  },
+  "missingStates": [],
+  "interactionNote": "First matching question control."
+}

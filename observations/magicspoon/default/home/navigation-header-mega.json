@@ -1,0 +1,68 @@
+{
+  "observationId": "magicspoon.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "magicspoon",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://magicspoon.com/",
+  "selector": "nav.ms21-header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "CEREAL / OATMEAL / TREATS / GRANOLA / PASTRIES / ABOUT US + BUILD YOUR BUNDLE. Logo, account, cart. No search control.",
+  "delta": "nav.ms21-header.ms90b. Shopify section #…__ms21-navigation box 0. Mega .ms21-dropdown (FEATURED FLAVORS + product image cards). No locale. No header search — predictive leftover. Cart a.js-cart-empty[aria-label=Open cart] → Rebuy.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://magicspoon.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "nav.ms21-header",
+      "capture": true,
+      "etiket": "bar"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "a.ms21-link--cereal",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cereal-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "CEREAL hover → FEATURED FLAVORS + product cards"
+    }
+  ],
+  "stateFindings": {
+    "initial": "375/768: promo + hamburger (.btn-toggle) + logo + account + cart. 1440: CEREAL OATMEAL TREATS GRANOLA PASTRIES ABOUT US + BUILD YOUR BUNDLE CTA + account + cart. Search yok.",
+    "open": "1440 CEREAL hover — FEATURED FLAVORS: Original Protein Variety Pack, Protein Cereal + Marshmallows, Protein + Fiber, Shop All Cereal. Image cards ~250px."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375/768 mega yok — #mobile-slides hamburger ayrı observation."
+    }
+  ],
+  "interactionNote": "CEREAL <a href=/collections/shop-all?filter=cereal> tık PLP’ye gider; panel hover. 1440 only."
+}

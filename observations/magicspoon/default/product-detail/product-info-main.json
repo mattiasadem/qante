@@ -1,0 +1,58 @@
+{
+  "observationId": "magicspoon.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "magicspoon",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://magicspoon.com/products/cocoa-cereal-case",
+  "selector": "#shopify-section-template--17018679984190__cereal_hero_TRpxWr",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "COCOA PROTEIN CEREAL - 4 BOX CASE. Gallery swiper, variant tabs Classic Protein / Protein + Fiber / Marshmallows, flavor grid (Fruity Cocoa Peanut Butter…), Subscribe vs One-time radios. See Nutritional Facts.",
+  "delta": "cereal_hero. Flavor cells are <a.variant-grid-product-link> to other PDPs. Subscribe default (selling_plan in URL). Rebuy upsell popup section 0px leftover.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://magicspoon.com/products/cocoa-cereal-case",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17018679984190__cereal_hero_TRpxWr",
+      "capture": true,
+      "etiket": "subscribe-cocoa"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='purchaseTypeOneTime-1'], #purchaseTypeOneTime-1",
+      "capture": true,
+      "etiket": "onetime",
+      "not": "Subscribe → one-time radio"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Subscribe selected (URL selling_plan). Cocoa swatch current-gradient.",
+    "changed": "One-time purchase radio selected — price/CTA should flip."
+  },
+  "missingStates": [],
+  "interactionNote": "Flavor <a> navigates to another product — not clicked. Protein + Fiber tab is type=submit — not clicked (URL risk)."
+}

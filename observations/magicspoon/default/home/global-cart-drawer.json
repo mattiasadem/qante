@@ -1,0 +1,115 @@
+{
+  "observationId": "magicspoon.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "magicspoon",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://magicspoon.com/",
+  "selector": ".rebuy-cart__flyout",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Rebuy Smart Cart. Empty: Your cart is empty! + Shop Cereal / Treats / Granola / Build Your Own Bundle / Shop All.",
+  "delta": "#rebuy-cart / .rebuy-cart__flyout (closed x≈2380). Body smart-cart--enabled. /cart is separate SCA empty page.",
+  "captureMode": "viewport",
+  "prepareClick": "nav.ms21-header a.js-cart-empty[aria-label='Open cart']",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://magicspoon.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "nav.ms21-header a.js-cart-empty[aria-label='Open cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://magicspoon.com/products/cocoa-cereal-case",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'], button[type='submit']:has-text('Add'), button:has-text('Add to Cart'), button:has-text('SUBSCRIBE')",
+      "capture": false,
+      "not": "Cocoa PDP ATC — UI click then /cart/add.js fallback"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://magicspoon.com/",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "nav.ms21-header a[aria-label='Open cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cocoa-dolu"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".rebuy-cart__flyout button[aria-label*='increase' i], .rebuy-cart__flyout button[class*='plus'], .rebuy-cart__flyout [class*='quantity'] button:last-child",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Qty plus if present"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boş Rebuy flyout: Your cart is empty + category shortcuts.",
+    "filled": "Cocoa line expected after ATC.",
+    "changed": "Qty plus if stepper exists."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout button visible in flyout — not clicked (checkout stop). addToCart fallback /cart/add.js if UI miss."
+}

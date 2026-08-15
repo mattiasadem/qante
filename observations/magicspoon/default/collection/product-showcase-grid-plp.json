@@ -1,0 +1,51 @@
+{
+  "observationId": "magicspoon.default.collection.product-showcase-grid-plp",
+  "schemaId": "product-showcase-grid-plp",
+  "kaynak": "magicspoon",
+  "preset": "default",
+  "sayfa": "collection",
+  "url": "https://magicspoon.com/collections/shop-all",
+  "selector": "#shopify-section-template--17552104456254__main",
+  "evidenceSlug": "product-showcase-grid-plp",
+  "evidence": [],
+  "notlar": "EXPLORE OUR PRODUCTS. Filters SHOP ALL / CEREAL / OATMEAL / TREATS / GRANOLA / PASTRIES. Cards All Star Mix, Cereal Variety 6/4, Oatmeal, Banana Bread… SHOP NOW / GET STARTED.",
+  "delta": "shop-all-template #page.shop-all. Category pills .js-filter-item (not facet filters). Quick-buy modal #quick-buy-modal-container leftover. Heading+filters+grid one Shopify section.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://magicspoon.com/collections/shop-all",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17552104456254__main",
+      "capture": true,
+      "etiket": "shop-all"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button.js-filter-item:has-text('CEREAL')",
+      "capture": true,
+      "etiket": "filter-cereal"
+    }
+  ],
+  "stateFindings": {
+    "initial": "SHOP ALL active. Mixed cereal/oatmeal/treats/granola/pastries.",
+    "changed": "CEREAL pill active — grid should filter."
+  },
+  "missingStates": [],
+  "interactionNote": "Filter is in-page JS, not a new URL required. ?filter=cereal also exists from nav."
+}
