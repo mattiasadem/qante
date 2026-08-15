@@ -48,6 +48,14 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: ghia-predictive-empty  
+Gerekçe: Header `.toggle-search` → `.header-search` açılıyor; `spritz` fill sonrası öneri listesi yok. Sonuç `/search?q=spritz` (karede 30).  
+Örnekler: https://drinkghia.com/  
+Öneri: leftover — tema predictive kapalı veya hydrate yok  
+Karar: onay bekliyor
+
+---
+
 ADAY: ghia-referral  
 Gerekçe: `/pages/referral` GIVE $20, GET $20 e-posta formu (PII). Altında clover product list.  
 Örnekler: https://drinkghia.com/pages/referral  
@@ -95,9 +103,10 @@ Diğer 50+ ürün / mevsimsel koleksiyon
 ## Capture leftover
 
 - `global-menu-drawer` 1440 — hamburger 0px (beklenen)
-- Cart qty `changed` — doldurulmayacak (filled 3vp hedef)
-- Predictive öneri — yoklanacak
+- Cart qty `changed` — doldurulmadı (filled 3vp yeterli)
+- Predictive öneri listesi — `spritz` fill sonrası yok
 - Cookbook tour / Hue reviews / stockists — şema yok
+- Custom bundle slot fill — yoklandı değil
 
 ## Bilinçli atlananlar
 

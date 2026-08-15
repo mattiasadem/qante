@@ -7,9 +7,16 @@
   "url": "https://drinkghia.com/",
   "selector": ".header-search",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
-  "notlar": "Header büyüteç .toggle-search → .header-search input[name=q] placeholder Search for products.",
-  "delta": "Öneri listesi yoklandıktan sonra yazılacak. Submit /search.",
+  "evidence": [
+    "evidence/ghia/default/home/global-predictive-search.initial.bos.1440.png",
+    "evidence/ghia/default/home/global-predictive-search.initial.bos.375.png",
+    "evidence/ghia/default/home/global-predictive-search.initial.bos.768.png",
+    "evidence/ghia/default/home/global-predictive-search.input.spritz.1440.png",
+    "evidence/ghia/default/home/global-predictive-search.input.spritz.375.png",
+    "evidence/ghia/default/home/global-predictive-search.input.spritz.768.png"
+  ],
+  "notlar": "Header büyüteç .toggle-search → .header-search. Placeholder Search for products. Fill `spritz` header input'ta durur.",
+  "delta": "Predictive öneri listesi yok (Dieux benzeri). Sonuç /search?q=spritz.",
   "captureMode": "viewport",
   "prepareClick": ".toggle-search",
   "interactionStates": [
@@ -44,8 +51,19 @@
     }
   ],
   "stateFindings": {
-    "initial": "Header içi Search for products.",
-    "input": "Yakalanacak."
+    "initial": "Header Search for products; öneri yok.",
+    "input": "spritz yazılı; dropdown/öneri listesi yok. Hero hâlâ görünür."
   },
-  "missingStates": []
+  "missingStates": [],
+  "capture": {
+    "url": "https://drinkghia.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:03:09.524Z"
+  }
 }
