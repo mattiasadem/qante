@@ -1,0 +1,79 @@
+{
+  "observationId": "hexclad.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "hexclad",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://hexclad.com/",
+  "selector": ".mod_header_BIfLoG_Search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/hexclad/default/home/global-predictive-search.1440.png",
+    "evidence/hexclad/default/home/global-predictive-search.initial.suggested.1440.png",
+    "evidence/hexclad/default/home/global-predictive-search.input.pan.1440.png"
+  ],
+  "notlar": "button[aria-label='Open search modal'] → overlay. Placeholder Shop HexClad's Collection… Suggested: BEST SELLERS, 12\"/14\" pan, 6PC set. Input #search-nav-header.",
+  "delta": "Öneri statik link listesi; yazınca ürün kartı bu walk’ta yoklandı değil. /search tam sayfa ayrı.",
+  "captureMode": "viewport",
+  "prepareClick": "button[aria-label='Open search modal']",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hexclad.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button[aria-label='Open search modal']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "suggested",
+      "viewports": ["1440"],
+      "not": "Suggested linkler"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#search-nav-header",
+      "value": "pan",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "pan",
+      "viewports": ["1440"],
+      "not": "katalogSorgu pan"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440 overlay: Shop HexClad's Collection… Suggested BEST SELLERS + 12/14 pan + 6PC set.",
+    "input": "pan yazıldı; öneri listesi aynı statik linkler — canlı ürün kartı yok."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "375/768 Open search modal gizli; arama mobil menü drawer içinde"
+    },
+    {
+      "state": "input",
+      "sebep": "375/768 #search-nav-header hidden — desktop overlay"
+    }
+  ],
+  "interactionNote": "375/768 arama menü drawer’da. Fill piksel değişimi zayıf (statik suggested). zzzzz denenmedi.",
+  "capture": {
+    "url": "https://hexclad.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:47:34.099Z",
+    "prepareClick": "button[aria-label='Open search modal']"
+  }
+}
