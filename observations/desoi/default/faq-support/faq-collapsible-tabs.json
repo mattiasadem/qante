@@ -1,0 +1,65 @@
+{
+  "observationId": "desoi.default.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "desoi",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "url": "https://drinkdesoi.com/pages/faq",
+  "selector": "#shopify-section-template--26526041932143__collapsible_tabs_phAkEE",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/desoi/default/faq-support/faq-collapsible-tabs.1440.png",
+    "evidence/desoi/default/faq-support/faq-collapsible-tabs.375.png",
+    "evidence/desoi/default/faq-support/faq-collapsible-tabs.768.png",
+    "evidence/desoi/default/faq-support/faq-collapsible-tabs.changed.ilk-soru.1440.png",
+    "evidence/desoi/default/faq-support/faq-collapsible-tabs.changed.ilk-soru.375.png",
+    "evidence/desoi/default/faq-support/faq-collapsible-tabs.changed.ilk-soru.768.png",
+    "evidence/desoi/default/faq-support/faq-collapsible-tabs.initial.kapali.1440.png",
+    "evidence/desoi/default/faq-support/faq-collapsible-tabs.initial.kapali.375.png",
+    "evidence/desoi/default/faq-support/faq-collapsible-tabs.initial.kapali.768.png"
+  ],
+  "notlar": "Product FAQ. What’s an apéritif? / What does De Soi mean? …",
+  "delta": "Hyper collapsible_tabs.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://drinkdesoi.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--26526041932143__collapsible_tabs_phAkEE",
+      "capture": true,
+      "etiket": "kapali"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--26526041932143__collapsible_tabs_phAkEE details summary, #shopify-section-template--26526041932143__collapsible_tabs_phAkEE .accordion-details__summary",
+      "capture": true,
+      "etiket": "ilk-soru"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Product FAQ — 10 soru kapalı (+). İlk: What's an apéritif?",
+    "changed": "What's an apéritif? açık (−) — botanical pre-dinner sip cevabı görünür; diğerleri kapalı."
+  },
+  "missingStates": [],
+  "capture": {
+    "url": "https://drinkdesoi.com/pages/faq",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:23:09.981Z"
+  }
+}

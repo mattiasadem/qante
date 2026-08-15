@@ -1,0 +1,74 @@
+{
+  "observationId": "desoi.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "desoi",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://drinkdesoi.com/products/spritz-italiano-cocktail",
+  "selector": "#shopify-section-template--26526041964911__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/desoi/default/product-detail/product-info-main.1440.png",
+    "evidence/desoi/default/product-detail/product-info-main.375.png",
+    "evidence/desoi/default/product-detail/product-info-main.768.png",
+    "evidence/desoi/default/product-detail/product-info-main.changed.one-time.1440.png",
+    "evidence/desoi/default/product-detail/product-info-main.changed.one-time.375.png",
+    "evidence/desoi/default/product-detail/product-info-main.changed.one-time.768.png",
+    "evidence/desoi/default/product-detail/product-info-main.initial.subscribe.1440.png",
+    "evidence/desoi/default/product-detail/product-info-main.initial.subscribe.375.png",
+    "evidence/desoi/default/product-detail/product-info-main.initial.subscribe.768.png"
+  ],
+  "notlar": "Spritz Italiano buy box. Galeri + selling_plan abonelik varsayılan (?selling_plan=). Choose Options / Add.",
+  "delta": "Hyper main-product. Subscribe selling plan URL'de. One-time vs subscribe interact.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://drinkdesoi.com/products/spritz-italiano-cocktail",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--26526041964911__main",
+      "capture": true,
+      "etiket": "subscribe"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label.skio-group-label:has-text('One Time Purchase')",
+      "value": 1500,
+      "capture": true,
+      "etiket": "one-time",
+      "not": "Skio One Time Purchase — Subscribe varsayılan"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Spritz Italiano buy box; Skio Subscribe & Save 15% seçili + Delivery every 4 weeks. 12 cans. Rebuy boş bag overlay 1440'ta açık kalabiliyor.",
+    "changed": "Skio One Time Purchase seçili ($60). Subscribe işareti kalkıyor. 375/768/1440."
+  },
+  "missingStates": [],
+  "interactionNote": "Selling plan Skio (label.skio-group-label), hidden input[name=selling_plan]. İlk selector One-time eşleşmedi; ikinci deneme One Time Purchase. Rebuy overlay dismiss Close Cart tuzağı. Checkout yok.",
+  "capture": {
+    "url": "https://drinkdesoi.com/products/spritz-italiano-cocktail",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:37:46.895Z"
+  }
+}
