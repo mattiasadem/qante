@@ -48,7 +48,7 @@ Durum: `done` = main'e merge · `in progress` = açık PR · boş = kuyrukta
 | 36 | done | flybyjing.com | https://flybyjing.com |
 | 37 | done | gruns.co | https://gruns.co |
 | 38 | in progress | hollowsocks.com | https://hollowsocks.com |
-| 39 | in progress | representclo.com | https://representclo.com |
+| 39 | done | representclo.com | https://representclo.com |
 | 40 | done | functionhealth.com | https://functionhealth.com |
 | 41 | in progress | chamberlaincoffee.com | https://chamberlaincoffee.com |
 | 42 | | dukecannon.com | https://dukecannon.com |
