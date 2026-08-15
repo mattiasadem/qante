@@ -1,0 +1,41 @@
+{
+  "observationId": "primalqueen.default.home.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "primalqueen",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://primalqueen.com/",
+  "selector": "#shopify-section-template--22589197910293__faq_TwUTGi",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [],
+  "notlar": "Frequently Asked Questions. İlk: Does this replace my multi-vitamins? Cevap statikte görünür. id=FAQ. ~1866px.",
+  "delta": "Custom faq. Kategori tab yok. Accordion + ilk cevap açık gibi.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://primalqueen.com/",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "FAQ listesi"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--22589197910293__faq_TwUTGi [class*='faq'] >> nth=1, #shopify-section-template--22589197910293__faq_TwUTGi button, #shopify-section-template--22589197910293__faq_TwUTGi summary",
+      "capture": true,
+      "etiket": "soru",
+      "not": "İkinci/ilk soru tık — piksel değişirse changed"
+    }
+  ],
+  "stateFindings": {
+    "initial": "SSS başlık + sorular",
+    "changed": "Henüz yoklandı değil"
+  },
+  "missingStates": [],
+  "interactionNote": "Interact yalnız piksel değişirse. İkinci denemede olmazsa missingStates."
+}

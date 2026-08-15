@@ -1,0 +1,60 @@
+{
+  "observationId": "primalqueen.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "primalqueen",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://primalqueen.com/cart",
+  "selector": "#shopify-section-template--22589197615381__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Your cart is empty · Continue shopping (pembe). cart-footer section 0px boşken.",
+  "delta": "Native Sense cart page. Drawer yok; header bag → /cart. Title Your Shopping Cart.",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://primalqueen.com/cart",
+      "capture": true,
+      "etiket": "bos",
+      "not": "Boş sepet"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://primalqueen.com/collections/shop-all",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": ".product-options-selector__cta-button.js-cta-button",
+      "capture": false,
+      "not": "İlk Beef Organs ATC"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://primalqueen.com/cart",
+      "capture": true,
+      "etiket": "dolu",
+      "not": "Dolu cart sayfası"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + Continue shopping",
+    "filled": "Henüz yoklandı değil"
+  },
+  "missingStates": [],
+  "interactionNote": "ATC JS button (form action yok). Fallback /cart/add.js olursa not. Checkout yok."
+}
