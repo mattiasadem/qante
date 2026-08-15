@@ -1,0 +1,68 @@
+{
+  "observationId": "magicmind.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "magicmind",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://magicmind.com/",
+  "selector": ".new-header__mobile-menu",
+  "captureMode": "viewport",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/magicmind/default/home/global-menu-drawer.open.menu.375.png"
+  ],
+  "notlar": "sidebar-menu Drawer--fromLeft. Kapalı x=-310 aria-hidden. Opener .header__mob-btn / .hamburger-wrapper (375).",
+  "delta": ".new-header__mobile-menu display:none. 1440 hamburger yok.",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://magicmind.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": ".header__mob-btn",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "menu",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Sol hamburger — drawer x=-310→0 beklenir"
+    }
+  ],
+  "stateFindings": {
+    "open": "375: hamburger Products listesi (Original/MAXX/FREE/Sleep) + Science/Blog/Reviews/Contact. #sidebar-menu değil."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "768: .header__mob-btn hide-tablet — hamburger yok. 1440 yok."
+    }
+  ],
+  "interactionNote": "375 kare doğrulandı. 768/1440 drawer yok.",
+  "capture": {
+    "url": "https://magicmind.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:03:04.376Z"
+  }
+}
