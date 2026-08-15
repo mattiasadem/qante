@@ -1,0 +1,52 @@
+{
+  "observationId": "bleame.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "bleame",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://bleame.com/",
+  "selector": "#search-drawer",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "predictive-search-drawer#search-drawer. Header a[aria-label=Search] href=/search.",
+  "delta": "Öneri listesi yoklandıktan sonra yazılacak.",
+  "captureMode": "viewport",
+  "prepareClick": "a[aria-label='Search']",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://bleame.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[aria-label='Search']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik",
+      "not": "Boş predictive drawer"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#search-drawer input[type='search'], #search-drawer input[name='q']",
+      "value": "crystal",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "crystal",
+      "not": "katalogSorgu crystal — öneri beklenir"
+    }
+  ],
+  "stateFindings": {
+    "initial": "(capture sonrası)",
+    "input": "(capture sonrası)"
+  },
+  "missingStates": [],
+  "interactionNote": "Sorgu mağaza ürün adından: crystal."
+}

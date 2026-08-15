@@ -1,0 +1,70 @@
+{
+  "observationId": "bleame.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "bleame",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://bleame.com/",
+  "selector": "#mini-cart",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Focal cart-drawer#mini-cart. Sağ panel. Header a[aria-label=Cart] (href /cart).",
+  "delta": "Native /cart sayfası da var (cart-page-main). Drawer + page birlikte.",
+  "captureMode": "viewport",
+  "prepareClick": "a[aria-label='Cart']",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://bleame.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[aria-label='Cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş mini-cart"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://bleame.com/products/crystal-hair-eraser",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#shopify-section-template--19666883510447__main button[name='add'], #shopify-section-template--19666883510447__main button[type='submit'], #shopify-section-template--19666883510447__main button:has-text('CLAIM OFFER'), #shopify-section-template--19666883510447__main button:has-text('ADD')",
+      "capture": false,
+      "not": "PDP ATC / CLAIM OFFER"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a[aria-label='Cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "crystal-hair-eraser",
+      "not": "ATC sonrası drawer; kapalıysa ikon"
+    }
+  ],
+  "stateFindings": {
+    "initial": "(capture sonrası doldurulacak)",
+    "filled": "(capture sonrası doldurulacak)"
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout/kupon doldurulmadı."
+}
