@@ -1,0 +1,62 @@
+{
+  "observationId": "bleame.default.home.promo-banner-tabs",
+  "schemaId": "promo-banner-tabs",
+  "kaynak": "bleame",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://bleame.com/",
+  "selector": "#shopify-section-template--19666882920623__pro_tab_section_hBwRq4",
+  "evidenceSlug": "promo-banner-tabs",
+  "evidence": [
+    "evidence/bleame/default/home/promo-banner-tabs.1440.png",
+    "evidence/bleame/default/home/promo-banner-tabs.375.png",
+    "evidence/bleame/default/home/promo-banner-tabs.768.png",
+    "evidence/bleame/default/home/promo-banner-tabs.changed.leg.1440.png",
+    "evidence/bleame/default/home/promo-banner-tabs.changed.leg.375.png",
+    "evidence/bleame/default/home/promo-banner-tabs.changed.leg.768.png"
+  ],
+  "notlar": "See it in action. Sekmeler Bikini / Leg / Arm / Back. Her sekmede Shopify video.",
+  "delta": "Custom pro_tab_section. CTA yok; sekme videosu. Kampanya banner değil — kullanım demosu.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://bleame.com/",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19666882920623__pro_tab_section_hBwRq4",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--19666882920623__pro_tab_section_hBwRq4 a.tablink[href='#tab2']",
+      "capture": true,
+      "etiket": "leg",
+      "not": "Leg sekmesi — medya değişmeli"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Bikini aktif; bacak/kalça görseli.",
+    "changed": "Leg aktif (mor pill). Bornoz + kalça/bacak üzerinde eraser. Bikini karesinden farklı medya."
+  },
+  "missingStates": [],
+  "capture": {
+    "url": "https://bleame.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:15:53.482Z"
+  }
+}
