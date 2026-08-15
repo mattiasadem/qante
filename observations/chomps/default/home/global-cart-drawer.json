@@ -1,0 +1,80 @@
+{
+  "observationId": "chomps.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "chomps",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://chomps.com/",
+  "selector": "#cart-popover",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Sağ Vue #cart-popover. Boş: Your Cart is Empty + SHOP NOW + YOU MAY ALSO LIKE. Free shipping $30 tracker.",
+  "delta": "/cart → /?viewcart=true (ayrı cart sayfası yok). Section #shopify-section-cart-popover height 0; kutu #cart-popover.",
+  "captureMode": "viewport",
+  "prepareClick": "#cartButton",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://chomps.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cartButton",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş sepet + upsell"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://chomps.com/products/gluten-free-snack-beef-jerky-stick-original",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[type='submit'], button:has-text('ADD TO CART')",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#cartButton",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "original-beef",
+      "not": "Dolu drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#cart-popover button[aria-label*='Increase'], #cart-popover button:has-text('+')",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "qty2",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "YOUR CART; $30 away from free shipping; empty; SHOP NOW; You may also like.",
+    "filled": "Original Beef satırı (karede doğrulanacak).",
+    "changed": "Adet artışı (karede doğrulanacak)."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC PDP ADD TO CART. /cart sayfası yok. Checkout/PII yok."
+}

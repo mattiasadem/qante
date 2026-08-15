@@ -1,0 +1,49 @@
+{
+  "observationId": "chomps.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "chomps",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://chomps.com/",
+  "selector": ".mobile-nav",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "375/768 hamburger. Shop/Learn sekmeleri; Shop All, protein, Subscribe, Collections.",
+  "delta": "Kapalıda .hide ve 0px. Açık: .mobile-nav[data-mobile-nav] tam yükseklik. 1440 N/A.",
+  "captureMode": "viewport",
+  "prepareClick": "[data-mobile-nav-open]",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://chomps.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "[data-mobile-nav-open]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Mobil menü"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: SHOP/LEARN/WHERE TO BUY; Shop All; Beef…Chomplings; Subscribe & Save; Best Sellers; Variety Packs."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger yok — mega header."
+    }
+  ],
+  "interactionNote": "prepareClick [data-mobile-nav-open]. 1440 çekilmez."
+}

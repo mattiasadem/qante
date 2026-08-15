@@ -1,0 +1,65 @@
+{
+  "observationId": "chomps.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "chomps",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://chomps.com/",
+  "selector": "#search-modal",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "Arama ikonu → #search-modal; input #searchForm[name=q]. Ürün + yazı araması.",
+  "delta": "Ayrı overlay (hidden class). Kapalı kare yanıltır. Predictive fill katalog kelimesi beef.",
+  "captureMode": "viewport",
+  "prepareClick": "header button[data-open-modal='search']",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://chomps.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header button[data-open-modal='search']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "modal-bos",
+      "not": "Boş search modal"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#searchForm",
+      "value": "beef",
+      "capture": false,
+      "not": "katalog: Original Beef"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "#searchForm",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "beef",
+      "not": "Öneri/sonuç"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Search modal açık; boş input.",
+    "input": "beef yazınca ürün/yazı önerisi (karede doğrulanacak)."
+  },
+  "missingStates": [],
+  "interactionNote": "375 opener lg:tw-hidden; 1440 lg:tw-flex. Aynı data-open-modal=search. Form submit yok — yalnız fill."
+}

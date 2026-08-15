@@ -1,0 +1,46 @@
+{
+  "observationId": "chomps.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "chomps",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://chomps.com/",
+  "selector": "header.site-header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Sticky bar: SHOP / LEARN / MISSION / WHERE TO BUY / SUBSCRIBE & SAVE + arama + hesap + #cartButton. Logo Chomps.",
+  "delta": "Custom theme. Mega #shop-label → .nav__dropdown (ürün/koleksiyon blokları). Locale yok. 375 hamburger [data-mobile-nav-open].",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://chomps.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı sticky bar"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#shop-label",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Shop dropdown: protein türleri + chomplings + packs"
+    }
+  ],
+  "stateFindings": {
+    "initial": "SHOP LEARN MISSION WHERE TO BUY SUBSCRIBE & SAVE; arama; hesap; Cart 0.",
+    "open": "1440 Shop tık → dropdown (Beef/Chicken/Turkey/Venison/Chomplings/Best Sellers/Variety Packs)."
+  },
+  "missingStates": [],
+  "interactionNote": "Mega yalnız 1440. 375/768 hamburger ayrı observation (global-menu-drawer)."
+}
