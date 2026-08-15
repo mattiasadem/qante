@@ -3,7 +3,7 @@
 *Kaynak:* https://cometeer.com · *Preset:* default  
 *Tema (storefront):* **Cometeer Theme** (`Shopify.theme.name`) · `schema_name`: **Shiro** · `theme_store_id`: null
 
-**Durum:** ✅ chrome walk + resmi 3vp · interact (mega / melt Hot / cart filled 1440) · draft PR, **main'e merge yok**
+**Durum:** ✅ chrome walk + resmi 3vp · interact (mega / melt Hot / cart filled 1440) · draft [PR #8](https://github.com/mattiasadem/qante/pull/8), **main'e merge yok**
 
 ---
 
@@ -16,7 +16,7 @@
 | Gözlem / kanıt | 52 obs · 161 PNG |
 | Şema | 0 yeni — mevcut tipler + delta |
 | Validate | `npm run validate` → 65 temiz · 0 error · 0 warn |
-| PR | draft — **main'e merge yok** |
+| PR | draft [#8](https://github.com/mattiasadem/qante/pull/8) (`cursor/cometeer-qante-walk-e854`) — **main'e merge yok**. Eski [#4](https://github.com/mattiasadem/qante/pull/4) uzak dalı diğer envanterlerle karıştı; bu dal Cometeer-only. |
 | Yazma sınırı | `observations/cometeer/` · `evidence/cometeer/` · `todo/cometeer.md` · `candidates/cometeer-*.md` |
 
 **Kapsam satırı:** Cometeer · default · home/PDP/bundle/coffee-menu/search/sidecart/content/footer/mobile-menu · 52 obs · 161 kare · 0 yeni şema · Shiro custom
