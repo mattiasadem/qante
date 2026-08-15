@@ -1,0 +1,75 @@
+{
+  "observationId": "necessaire.default.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "url": "https://necessaire.com/pages/faq",
+  "selector": "#shopify-section-template--19863516512369__page-faq",
+  "notlar": "FAQs. Kategori: Concierge / Orders / Subscription / Shipping / Returns / Products.",
+  "delta": "kategoriTabGoster kanıtı. page-faq.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://necessaire.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19863516512369__page-faq",
+      "capture": true,
+      "etiket": "faq-kategori"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--19863516512369__page-faq a:has-text('Orders'), #shopify-section-template--19863516512369__page-faq button:has-text('Orders')",
+      "capture": true,
+      "etiket": "orders"
+    }
+  ],
+  "stateFindings": {
+    "initial": "FAQs; Concierge / Orders / Subscription / Shipping / Returns / Products — hepsi +.",
+    "changed": "Orders − ve açık Q&A (delivery time, payment, tracking, cancel, address, promo…). URL değişmedi."
+  },
+  "missingStates": [],
+  "interactionNote": "Kategori in-page accordion. Checkout/form yok.",
+  "kaynak": "necessaire",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/necessaire/default/faq-support/faq-collapsible-tabs.changed.orders.1440.png",
+    "evidence/necessaire/default/faq-support/faq-collapsible-tabs.changed.orders.375.png",
+    "evidence/necessaire/default/faq-support/faq-collapsible-tabs.changed.orders.768.png",
+    "evidence/necessaire/default/faq-support/faq-collapsible-tabs.initial.faq-kategori.1440.png",
+    "evidence/necessaire/default/faq-support/faq-collapsible-tabs.initial.faq-kategori.375.png",
+    "evidence/necessaire/default/faq-support/faq-collapsible-tabs.initial.faq-kategori.768.png"
+  ],
+  "capture": {
+    "url": "https://necessaire.com/pages/faq",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:42:33.732Z"
+  }
+}
