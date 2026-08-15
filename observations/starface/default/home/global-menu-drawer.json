@@ -1,0 +1,53 @@
+{
+  "observationId": "starface.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "starface",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://starface.world/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "Dawn #menu-drawer. 1440 sidebar zaten açık (hamburger 0×44). 375/768: Menu summary → search + koleksiyon linkleri.",
+  "delta": "Masaüstü drawer = sol nav (ayrı overlay değil). Mobil opener width 0 görüldü — ikinci denemede summary force-click.",
+  "captureMode": "viewport",
+  "prepareClick": "header-drawer summary, .header__icon--menu, summary[aria-label='Menu']",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://starface.world/",
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ]
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header-drawer summary, .header__icon--menu",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "menu-acik",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Mobil hamburger"
+    }
+  ],
+  "stateFindings": {
+    "open": ""
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger yok — sidebar navigation-header-mega."
+    }
+  ],
+  "interactionNote": "1440 N/A. 375 summary 0×44 — tık görünür değilse leftover."
+}

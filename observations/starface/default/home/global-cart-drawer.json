@@ -1,0 +1,70 @@
+{
+  "observationId": "starface.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "starface",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://starface.world/",
+  "selector": "cart-drawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Dawn cart-drawer. Opener #cart-icon-bubble → /cart da var (tam sayfa ayrı). Boş drawer + filled star-strips.",
+  "delta": "Hem drawer hem /cart sayfa şablonu var. Bag etiketi. Checkout’a girilmedi.",
+  "captureMode": "viewport",
+  "prepareClick": "#cart-icon-bubble",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://starface.world/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş bag drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://starface.world/products/star-strips",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'], form[action*='/cart/add'] button[type='submit']",
+      "capture": false,
+      "not": "star strips™ Add to bag"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "strips-qty1",
+      "not": "ATC sonrası drawer açılmazsa Bag ikon"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "filled": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout/PII yok. addToCart UI tık; fallback /cart/add.js."
+}

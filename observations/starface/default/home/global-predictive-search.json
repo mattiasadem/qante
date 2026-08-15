@@ -1,0 +1,45 @@
+{
+  "observationId": "starface.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "starface",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://starface.world/",
+  "selector": "predictive-search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "Dawn predictive-search. 1440 sol şeritte #Search-In-Template her zaman görünür (overlay değil). katalogSorgu: hydro.",
+  "delta": "Ayrı search modal yok — input nav içinde. 375 input menu-drawer akışında (y=85).",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://starface.world/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Boş predictive (sidebar/input)"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Template",
+      "value": "hydro",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hydro",
+      "not": "hydro → ürün önerileri"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "input": ""
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu hydro (hydro-stars ailesi). Form submit /search sayfasına gider — fill sonrası click yok."
+}
