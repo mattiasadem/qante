@@ -7,10 +7,28 @@
   "url": "https://www.boka.com/cart",
   "selector": "#shopify-section-template--26470592249899__main",
   "evidenceSlug": "cart-page-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/boka/default/cart/cart-page-main.375.png",
+    "evidence/boka/default/cart/cart-page-main.768.png",
+    "evidence/boka/default/cart/cart-page-main.1440.png"
+  ],
   "notlar": "Boş: Your cart is empty / Continue shopping. Dolu interact.",
   "delta": "Impact cart page. Drawer ayrı obs.",
   "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": "8500",
+      "capture": false,
+      "not": "Klaviyo 10% OFF dialog ~8s"
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.klaviyo-close-form[aria-label='Close dialog']",
+      "capture": false,
+      "not": "Klaviyo dialog kapat — PII form gönderilmedi"
+    },
     {
       "state": "filled",
       "action": "goto",
@@ -43,5 +61,19 @@
     "filled"
   ],
   "stateFindings": {},
-  "missingStates": []
+  "missingStates": [],
+  "prepareClick": "button.klaviyo-close-form[aria-label='Close dialog']",
+  "interactionNote": "Klaviyo SIGN UP 10% OFF dialog kapatıldı; form doldurulmadı.",
+  "capture": {
+    "url": "https://www.boka.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "margin-box+minPad8",
+    "updatedAt": "2026-08-15T18:11:12.989Z",
+    "prepareClick": "button.klaviyo-close-form[aria-label='Close dialog']"
+  }
 }

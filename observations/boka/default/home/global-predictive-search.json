@@ -24,6 +24,20 @@
       "not": "Drawer kapalı — header büyüteç"
     },
     {
+      "state": "initial",
+      "action": "waitFor",
+      "value": "8500",
+      "capture": false,
+      "not": "Klaviyo 10% OFF dialog ~8s"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.klaviyo-close-form[aria-label='Close dialog']",
+      "capture": false,
+      "not": "Klaviyo dialog kapat — PII form gönderilmedi"
+    },
+    {
       "state": "input",
       "action": "click",
       "selector": "a[aria-controls='search-drawer']",
@@ -62,5 +76,6 @@
       "state": "changed",
       "sebep": "Tab tıklanmadı"
     }
-  ]
+  ],
+  "interactionNote": "Klaviyo SIGN UP 10% OFF dialog kapatıldı; form doldurulmadı."
 }

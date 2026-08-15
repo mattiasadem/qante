@@ -7,7 +7,11 @@
   "url": "https://www.boka.com/products/ela-mint-toothpaste",
   "selector": "#shopify-section-template--26470592839723__main",
   "evidenceSlug": "product-info-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/boka/default/product-detail/product-info-main.375.png",
+    "evidence/boka/default/product-detail/product-info-main.768.png",
+    "evidence/boka/default/product-detail/product-info-main.1440.png"
+  ],
   "notlar": "Ela Mint Nano-hydroxyapatite Toothpaste. 4.8 / 3884 reviews. Galeri Zoom. Fluoride-free copy. ATC.",
   "delta": "Impact product main. Selling plan / Subscribe görünürse delta. Gift card ayrı instance.",
   "interactionSteps": [
@@ -16,6 +20,20 @@
       "action": "goto",
       "value": "https://www.boka.com/products/ela-mint-toothpaste",
       "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": "8500",
+      "capture": false,
+      "not": "Klaviyo 10% OFF dialog ~8s"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.klaviyo-close-form[aria-label='Close dialog']",
+      "capture": false,
+      "not": "Klaviyo dialog kapat — PII form gönderilmedi"
     },
     {
       "state": "initial",
@@ -28,10 +46,10 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": "#shopify-section-template--26470592839723__main button:has-text('Subscribe'), #shopify-section-template--26470592839723__main label:has-text('Subscribe'), #shopify-section-template--26470592839723__main [data-option]:has-text('Subscribe')",
+      "selector": "#shopify-section-template--26470592839723__main button.boka-purchase-options__card--onetime, #shopify-section-template--26470592839723__main label.block-swatch:has-text('2 Pack')",
       "capture": true,
-      "etiket": "subscribe",
-      "not": "Subscribe seçeneği varsa piksel değişir; yoksa missing"
+      "etiket": "one-time",
+      "not": "Default Subscribe & Save; One-time purchase tık — fiyat/rozet değişir"
     }
   ],
   "interactionStates": [
@@ -39,5 +57,19 @@
     "changed"
   ],
   "stateFindings": {},
-  "missingStates": []
+  "missingStates": [],
+  "prepareClick": "button.klaviyo-close-form[aria-label='Close dialog']",
+  "interactionNote": "Klaviyo SIGN UP 10% OFF dialog kapatıldı; form doldurulmadı.",
+  "capture": {
+    "url": "https://www.boka.com/products/ela-mint-toothpaste",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "margin-box+minPad8",
+    "updatedAt": "2026-08-15T18:18:00.821Z",
+    "prepareClick": "button.klaviyo-close-form[aria-label='Close dialog']"
+  }
 }

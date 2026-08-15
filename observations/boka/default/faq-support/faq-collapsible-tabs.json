@@ -7,7 +7,11 @@
   "url": "https://www.boka.com/pages/faq",
   "selector": "#shopify-section-template--26470592413739__accordion_boka",
   "evidenceSlug": "faq-collapsible-tabs",
-  "evidence": [],
+  "evidence": [
+    "evidence/boka/default/faq-support/faq-collapsible-tabs.375.png",
+    "evidence/boka/default/faq-support/faq-collapsible-tabs.768.png",
+    "evidence/boka/default/faq-support/faq-collapsible-tabs.1440.png"
+  ],
   "notlar": "Frequently Asked Questions — ürün soruları.",
   "delta": "Impact accordion. Üç ayrı accordion section.",
   "interactionSteps": [
@@ -16,6 +20,20 @@
       "action": "goto",
       "value": "https://www.boka.com/pages/faq",
       "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": "8500",
+      "capture": false,
+      "not": "Klaviyo 10% OFF dialog ~8s"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.klaviyo-close-form[aria-label='Close dialog']",
+      "capture": false,
+      "not": "Klaviyo dialog kapat — PII form gönderilmedi"
     },
     {
       "state": "initial",
@@ -39,5 +57,19 @@
     "changed"
   ],
   "stateFindings": {},
-  "missingStates": []
+  "missingStates": [],
+  "prepareClick": "button.klaviyo-close-form[aria-label='Close dialog']",
+  "interactionNote": "Klaviyo SIGN UP 10% OFF dialog kapatıldı; form doldurulmadı.",
+  "capture": {
+    "url": "https://www.boka.com/pages/faq",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "margin-box+minPad8",
+    "updatedAt": "2026-08-15T18:13:52.397Z",
+    "prepareClick": "button.klaviyo-close-form[aria-label='Close dialog']"
+  }
 }

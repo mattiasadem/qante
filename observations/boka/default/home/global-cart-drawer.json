@@ -21,6 +21,20 @@
     },
     {
       "state": "initial",
+      "action": "waitFor",
+      "value": "8500",
+      "capture": false,
+      "not": "Klaviyo 10% OFF dialog ~8s"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.klaviyo-close-form[aria-label='Close dialog']",
+      "capture": false,
+      "not": "Klaviyo dialog kapat — PII form gönderilmedi"
+    },
+    {
+      "state": "initial",
       "action": "click",
       "selector": "a[aria-controls='cart-drawer']",
       "capture": true,
@@ -37,7 +51,7 @@
     {
       "state": "filled",
       "action": "addToCart",
-      "selector": "#shopify-section-template--26470592839723__main button:has-text('Add to cart'), #shopify-section-template--26470592839723__main button[type='submit']",
+      "selector": "#shopify-section-template--26470592839723__main button.button--xl:has-text('Add to cart')",
       "capture": false,
       "not": "Ela Mint ATC"
     },
@@ -92,5 +106,6 @@
       "state": "open",
       "sebep": "Boş drawer initial"
     }
-  ]
+  ],
+  "interactionNote": "Klaviyo SIGN UP 10% OFF dialog kapatıldı; form doldurulmadı."
 }

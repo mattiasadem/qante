@@ -21,6 +21,20 @@
     },
     {
       "state": "open",
+      "action": "waitFor",
+      "value": "8500",
+      "capture": false,
+      "not": "Klaviyo 10% OFF dialog ~8s"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.klaviyo-close-form[aria-label='Close dialog']",
+      "capture": false,
+      "not": "Klaviyo dialog kapat — PII form gönderilmedi"
+    },
+    {
+      "state": "open",
       "action": "click",
       "selector": "button[aria-controls='header-sidebar-menu']",
       "capture": true,
@@ -54,5 +68,6 @@
       "state": "input",
       "sebep": "Anlamsız"
     }
-  ]
+  ],
+  "interactionNote": "Klaviyo SIGN UP 10% OFF dialog kapatıldı; form doldurulmadı."
 }

@@ -7,7 +7,11 @@
   "url": "https://www.boka.com/",
   "selector": "#shopify-section-template--26470592643115__homepage_selected_collection_VV8N3z",
   "evidenceSlug": "product-showcase-tabs",
-  "evidence": [],
+  "evidence": [
+    "evidence/boka/default/home/product-showcase-tabs.375.png",
+    "evidence/boka/default/home/product-showcase-tabs.768.png",
+    "evidence/boka/default/home/product-showcase-tabs.1440.png"
+  ],
   "notlar": "Shop by Category. Sekmeler: Best Sellers / Toothpaste / Whitening / Kids / Mouthwash / Accessories. Kart grid + Add to cart / View options.",
   "delta": "Custom boka-selected-products; Impact featured collection değil. Üst link Shop Best Sellers. Sekme değişince panel değişir.",
   "interactionSteps": [
@@ -16,6 +20,20 @@
       "action": "goto",
       "value": "https://www.boka.com/",
       "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": "8500",
+      "capture": false,
+      "not": "Klaviyo 10% OFF dialog ~8s"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.klaviyo-close-form[aria-label='Close dialog']",
+      "capture": false,
+      "not": "Klaviyo dialog kapat — PII form gönderilmedi"
     },
     {
       "state": "initial",
@@ -39,5 +57,19 @@
     "changed"
   ],
   "stateFindings": {},
-  "missingStates": []
+  "missingStates": [],
+  "prepareClick": "button.klaviyo-close-form[aria-label='Close dialog']",
+  "interactionNote": "Klaviyo SIGN UP 10% OFF dialog kapatıldı; form doldurulmadı.",
+  "capture": {
+    "url": "https://www.boka.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "margin-box+minPad8",
+    "updatedAt": "2026-08-15T18:16:01.094Z",
+    "prepareClick": "button.klaviyo-close-form[aria-label='Close dialog']"
+  }
 }

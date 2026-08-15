@@ -7,7 +7,11 @@
   "url": "https://www.boka.com/",
   "selector": "#shopify-section-sections--26470593003563__header",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
+  "evidence": [
+    "evidence/boka/default/home/navigation-header-mega.375.png",
+    "evidence/boka/default/home/navigation-header-mega.768.png",
+    "evidence/boka/default/home/navigation-header-mega.1440.png"
+  ],
   "notlar": "Impact header: Shop / Subscribe & Save / Best Sellers · logo Boka · Find In Store / Dental Pros / About · Search · Login · Cart 0. Mega #mega-menu-mega_menu_Ax9Qet DOM'da.",
   "delta": "Custom Boka mega (boka-mega-menu-custom) + promo carousel. Locale switcher yok. Tema Impact 7.0.1.",
   "captureMode": "viewport",
@@ -22,16 +26,30 @@
       "not": "Kapalı sticky header"
     },
     {
+      "state": "initial",
+      "action": "waitFor",
+      "value": "8500",
+      "capture": false,
+      "not": "Klaviyo 10% OFF dialog ~8s"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.klaviyo-close-form[aria-label='Close dialog']",
+      "capture": false,
+      "not": "Klaviyo dialog kapat — PII form gönderilmedi"
+    },
+    {
       "state": "open",
-      "action": "hover",
-      "selector": "#shopify-section-sections--26470593003563__header a:has-text('Shop'), #shopify-section-sections--26470593003563__header button:has-text('Shop'), #shopify-section-sections--26470593003563__header summary:has-text('Shop')",
+      "action": "click",
+      "selector": "#shopify-section-sections--26470593003563__header details > summary:has-text('Shop')",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "shop-mega",
       "viewports": [
         "1440"
       ],
-      "not": "1440 Shop → mega-menu-mega_menu_Ax9Qet"
+      "not": "1440 Shop summary tık → details open + mega-menu-mega_menu_Ax9Qet"
     }
   ],
   "interactionStates": [
@@ -52,5 +70,19 @@
       "state": "input",
       "sebep": "Arama ayrı component"
     }
-  ]
+  ],
+  "prepareClick": "button.klaviyo-close-form[aria-label='Close dialog']",
+  "interactionNote": "Klaviyo SIGN UP 10% OFF dialog kapatıldı; form doldurulmadı.",
+  "capture": {
+    "url": "https://www.boka.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "viewport",
+    "updatedAt": "2026-08-15T18:15:50.932Z",
+    "prepareClick": "button.klaviyo-close-form[aria-label='Close dialog']"
+  }
 }
