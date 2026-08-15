@@ -1,0 +1,50 @@
+{
+  "observationId": "fellow.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "fellow",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://fellowproducts.com/",
+  "selector": "#shopify-section-sections--22412323094628__main_header_EJCjrm",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Logo + Featured / Espresso / Coffee Makers / Grinders / Kettles / Drinkware / Accessories / Bundle + Save / Coffee + Tea / Academy. Search summary, Log in, #cart-icon-bubble. 375: Menu + logo + search + cart + yatay chip şeridi.",
+  "delta": "Mega #MegaMenu-Content-* hover; linkler koleksiyona gider — open için hover (click sayfa kaçırır). 375 hamburger button[aria-controls=mobile-menu-drawer]. Locale yok (footer country).",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://fellowproducts.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı sticky header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#HeaderMenu-AMDRUV1RXM1VLcjltU__header_mega_menu_Hx7Kw6-1",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "featured-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Featured mega panel — click /collections/all-products'a gider"
+    }
+  ],
+  "stateFindings": {
+    "initial": "64px bar (1440) / 100px (375 chip şeridi). Featured…Academy + search + cart.",
+    "open": "1440 Featured hover → mega kolonlar + featured ürün kartları (Best Sellers, New Arrivals, bundles)."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375/768 mega yok — hamburger ayrı observation (global-menu-drawer)."
+    }
+  ],
+  "interactionNote": "Featured <a href=/collections/all-products> — yalnız hover. Click yasak."
+}

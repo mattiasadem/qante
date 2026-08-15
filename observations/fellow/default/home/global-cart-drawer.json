@@ -1,0 +1,70 @@
+{
+  "observationId": "fellow.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "fellow",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://fellowproducts.com/",
+  "selector": "cart-sections",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "/cart → /?modals=cart-drawer-dialog. Boş: Your cart is currently empty. We can help you with that. Continue shopping. Why Not Add cross-sell.",
+  "delta": "Ayrı cart page yok. #cart-drawer-dialog 0×0 host; görünür kutu cart-sections ~420×850 sağ panel.",
+  "captureMode": "viewport",
+  "prepareClick": "#cart-icon-bubble",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://fellowproducts.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer + Why Not Add"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://fellowproducts.com/products/ode-brew-grinder-gen-2",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'].btn.normal-case.min-w-0",
+      "capture": false,
+      "not": "Ode Pre-order | Ships Late August (name=add)"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "ode-qty1",
+      "not": "ATC sonrası drawer açılmazsa cart ikon"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boş: empty copy + Continue shopping + Why Not Add ürünleri.",
+    "filled": "Ode satırı beklenir — kanıt karesine bak."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout/PII yok. /cart sayfa şablonu yok — leftover. addToCart UI tık; fallback /cart/add.js."
+}

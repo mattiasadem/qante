@@ -1,0 +1,63 @@
+{
+  "observationId": "fellow.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "fellow",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://fellowproducts.com/",
+  "selector": "#predictive-search-dialog",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "details#predictive-search-dialog (1440, max-lg:hidden) + #predictive-search-dialog-mobile. Kapalı 16px ikon.",
+  "delta": "Kapalı kare yanıltır. #searchInput. katalogSorgu: ode.",
+  "captureMode": "viewport",
+  "prepareClick": "#predictive-search-dialog > summary",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "input",
+      "action": "goto",
+      "value": "https://fellowproducts.com/",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "#predictive-search-dialog > summary, #predictive-search-dialog-mobile summary",
+      "capture": false,
+      "not": "1440 desktop details; 375/768 mobile details"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#searchInput",
+      "value": "ode",
+      "capture": false,
+      "not": "katalog: Ode Brew Grinder"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "#searchInput",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "ode",
+      "not": "Öneri/ürün satırı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "16px search ikon; overlay kapalı.",
+    "input": "ode fill — karede öneri/ürün."
+  },
+  "missingStates": [],
+  "interactionNote": "İki details (desktop/mobile). Submit /search sayfası ayrı observation."
+}

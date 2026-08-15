@@ -1,0 +1,49 @@
+{
+  "observationId": "fellow.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "fellow",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://fellowproducts.com/",
+  "selector": "#mobile-menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "375/768 Menu → #mobile-menu-drawer / #menu-drawer. 1440 hamburger yok.",
+  "delta": "modal-dialog; mega ayrı. 1440 N/A.",
+  "captureMode": "viewport",
+  "prepareClick": "button[aria-controls='mobile-menu-drawer']",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://fellowproducts.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button[aria-controls='mobile-menu-drawer']",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Mobil menü"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 drawer açık — Featured/Espresso… akordeon."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger yok (mega)."
+    }
+  ],
+  "interactionNote": "Yazılı <a> koleksiyona gider; yalnız Menu butonu."
+}
