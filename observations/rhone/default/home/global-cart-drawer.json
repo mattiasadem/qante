@@ -1,0 +1,96 @@
+{
+  "observationId": "rhone.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "rhone",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.rhone.com/",
+  "selector": ".mini-cart",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Sağ 448px Shopping bag. Boş: $125 away from free standard shipping / Your shopping bag is currently empty / Continue shopping / Recommended for you. Checkout $0.",
+  "delta": "Tema Store / Shopify.theme.name / schema_name yok (Shopify.theme boş nesne; uydurulmadı). Shop rhone.myshopify.com. Vitrin custom Nuxt (#__nuxt, /_nuxt/*.js) + Nacelle (nacelle class) + Shopify backend. #shopify-section-* yok. Nacelle mini-cart. /cart/ ayrı tam sayfa da var.",
+  "captureMode": "viewport",
+  "prepareClick": "button.main__nav__cart",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.rhone.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.main__nav__cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.rhone.com/products/mens-origin-tee-slim-fit/",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "#pdp-add-to-cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": ".product-details-right :has-text('M')",
+      "capture": false,
+      "not": "Beden M — yoksa addToCart fallback"
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#pdp-add-to-cart button",
+      "capture": false,
+      "not": "Add to bag; olmazsa /cart/add.js"
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.main__nav__cart",
+      "capture": false,
+      "not": "Drawer açılmadıysa cart ikon"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": ".mini-cart",
+      "value": 8000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "tee-qty1",
+      "not": "Dolu bag"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".mini-cart button[aria-label*='increase' i], .mini-cart button[aria-label*='plus' i], .mini-cart [class*='qty'] button:last-child",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-2",
+      "not": "Adet + "
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boş bag + $125 kargo eşiği + Recommended for you.",
+    "filled": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Nacelle ATC. addToCart/cart.js fallback gerekirse not. Checkout/login yok. Promo code PII yok."
+}

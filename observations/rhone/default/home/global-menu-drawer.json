@@ -1,0 +1,49 @@
+{
+  "observationId": "rhone.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "rhone",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.rhone.com/",
+  "selector": ".full-image-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "375/768 hamburger button.burger.mobile-burger aria=menu. Açık: New/Men/Women/Resale + featured (reRhone Resale, AI Styling assistant, Sale).",
+  "delta": "Tema Store / Shopify.theme.name / schema_name yok (Shopify.theme boş nesne; uydurulmadı). Shop rhone.myshopify.com. Vitrin custom Nuxt (#__nuxt, /_nuxt/*.js) + Nacelle (nacelle class) + Shopify backend. #shopify-section-* yok. 1440 mega; drawer 0×0 kapalı. Nacelle burger.",
+  "captureMode": "viewport",
+  "prepareClick": "button.mobile-burger",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://www.rhone.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.mobile-burger",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "menu-acik",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Hamburger → full-image-drawer"
+    }
+  ],
+  "stateFindings": {
+    "open": ""
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 N/A — mega ayrı observation."
+    }
+  ],
+  "interactionNote": "1440 hamburger yok."
+}

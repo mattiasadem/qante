@@ -1,0 +1,47 @@
+{
+  "observationId": "rhone.default.home.product-showcase-tabs",
+  "schemaId": "product-showcase-tabs",
+  "kaynak": "rhone",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.rhone.com/",
+  "selector": "#dy-recommendations-1358312",
+  "evidenceSlug": "product-showcase-tabs",
+  "evidence": [],
+  "notlar": "For him / For her sekmeler + Shop new arrivals. Swiper ürün kartları, Quick shop, New rozeti, renk swatch. Dynamic Yield #dy-recommendations-1358312.",
+  "delta": "Tema Store / Shopify.theme.name / schema_name yok (Shopify.theme boş nesne; uydurulmadı). Shop rhone.myshopify.com. Vitrin custom Nuxt (#__nuxt, /_nuxt/*.js) + Nacelle (nacelle class) + Shopify backend. #shopify-section-* yok. DY recs widget; sekmeler For him/For her. Şema tabPozisyon top.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.rhone.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#dy-recommendations-1358312",
+      "capture": true,
+      "etiket": "for-him",
+      "not": "For him aktif"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#dy-recommendations-1358312 :has-text('For her')",
+      "capture": true,
+      "etiket": "for-her",
+      "not": "For her sekmesi — ürünler değişiyor mu"
+    }
+  ],
+  "stateFindings": {
+    "initial": "For him + Shop new arrivals + erkek ürün swiper.",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "For her tık seçicisi capture sırasında doğrulanacak. DY hydrate gecikebilir."
+}
