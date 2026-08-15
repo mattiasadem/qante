@@ -55,6 +55,13 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: flybyjing-predictive-mobile  
+Gerekçe: 375/768 header `a[href='/search']` gizli. Menü drawer `#Search` dolduruldu; `#predictiveSearchResults` 0px. Overlay yalnız 1440 (chili PRODUCTS/ARTICLES/PAGES).  
+Öneri: leftover — ikinci deneme yok  
+Karar: onay bekliyor
+
+---
+
 ADAY: flybyjing-osano-cookie  
 Gerekçe: Osano bar: Close (X) + Manage Preferences — Accept All metni yok. `dismiss-overlays` Accept’e bakıyor; viewport karelerinde 92px bar kalabilir.  
 Öneri: chrome leftover  

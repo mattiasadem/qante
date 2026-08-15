@@ -5,7 +5,17 @@
   "preset": "default",
   "sayfa": "home",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/flybyjing/default/home/global-cart-drawer.changed.qty2.1440.png",
+    "evidence/flybyjing/default/home/global-cart-drawer.changed.qty2.375.png",
+    "evidence/flybyjing/default/home/global-cart-drawer.changed.qty2.768.png",
+    "evidence/flybyjing/default/home/global-cart-drawer.filled.chili-crisp.1440.png",
+    "evidence/flybyjing/default/home/global-cart-drawer.filled.chili-crisp.375.png",
+    "evidence/flybyjing/default/home/global-cart-drawer.filled.chili-crisp.768.png",
+    "evidence/flybyjing/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/flybyjing/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/flybyjing/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
   "delta": "Drawer #right-drawer-slot; kapalı 0px. ATC sonrası dolu kare. Checkout tıklanmadı.",
   "url": "https://flybyjing.com/",
   "selector": "#right-drawer-slot",
@@ -59,7 +69,20 @@
     {
       "state": "filled",
       "action": "waitFor",
-      "value": 2000,
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://flybyjing.com/",
+      "capture": false,
+      "not": "PDP'de CartButton 1440 boş drawer açtı; home'da hydrate"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
       "capture": false
     },
     {
@@ -69,19 +92,34 @@
       "capture": true,
       "captureMode": "viewport",
       "etiket": "chili-crisp",
-      "not": "ATC sonrası drawer; kapalıysa CartButton"
+      "not": "Home CartButton — Chili Crisp 2-Pack $30"
     },
     {
       "state": "changed",
       "action": "click",
-      "selector": "#right-drawer-slot button:has-text('+')",
+      "selector": "#right-drawer-slot button[aria-label='+']",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "qty2",
-      "not": "Adet +"
+      "not": "Adet + aria-label"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "Boş drawer: YOUR CART / Your cart is currently empty.",
+    "filled": "Original Sichuan Chili Crisp 2-Pack $30; Spend another $45 free shipping; gift message; CHECK OUT.",
+    "changed": "Adet 2; satır $60; Spend another $15.00 and get free shipping. 375/768/1440."
+  },
   "missingStates": [],
-  "interactionNote": "Checkout / ödeme yok. addToCart UI; fallback /cart/add.js ise not düşülecek."
+  "interactionNote": "Checkout tıklanmadı. 1440 ATC sonrası home'a dönülmeden CartButton boş drawer açtı; filled adımı home hydrate.",
+  "capture": {
+    "url": "https://flybyjing.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:48:20.210Z"
+  }
 }
