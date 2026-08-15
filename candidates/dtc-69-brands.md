@@ -13,17 +13,17 @@ Durum: `done` = main'e merge · `in progress` = açık PR · boş = kuyrukta
 | 1 | done | myobvi.com | https://myobvi.com |
 | 2 | in progress | banditrunning.com | https://banditrunning.com |
 | 3 | done | graza.co | https://graza.co |
-| 4 | in progress | cometeer.com | https://cometeer.com |
+| 4 | done | cometeer.com | https://cometeer.com |
 | 5 | done | mytopicals.com | https://mytopicals.com |
-| 6 | | drinkbrez.com | https://drinkbrez.com |
-| 7 | | amberjack.shop | https://amberjack.shop |
-| 8 | | moonjuice.com | https://moonjuice.com |
-| 9 | | fellowproducts.com | https://fellowproducts.com |
-| 10 | | waterboy.com | https://waterboy.com |
-| 11 | | dieuxskin.com | https://dieuxskin.com |
-| 12 | | chomps.com | https://chomps.com |
-| 13 | | vollebak.com | https://vollebak.com |
-| 14 | | drinkhiyo.com | https://drinkhiyo.com |
+| 6 | in progress | drinkbrez.com | https://drinkbrez.com |
+| 7 | in progress | amberjack.shop | https://amberjack.shop |
+| 8 | in progress | moonjuice.com | https://moonjuice.com |
+| 9 | in progress | fellowproducts.com | https://fellowproducts.com |
+| 10 | in progress | waterboy.com | https://waterboy.com |
+| 11 | in progress | dieuxskin.com | https://dieuxskin.com |
+| 12 | in progress | chomps.com | https://chomps.com |
+| 13 | in progress | vollebak.com | https://vollebak.com |
+| 14 | in progress | drinkhiyo.com | https://drinkhiyo.com |
 | 15 | | boka.com | https://boka.com |
 | 16 | | hexclad.com | https://hexclad.com |
 | 17 | | primalqueen.com | https://primalqueen.com |
