@@ -1,0 +1,88 @@
+{
+  "observationId": "chomps.default.search.search-results",
+  "schemaId": "search-results",
+  "kaynak": "chomps",
+  "preset": "default",
+  "sayfa": "search",
+  "url": "https://chomps.com/search?q=beef",
+  "selector": "#shopify-section-template--21247592923205__main",
+  "evidenceSlug": "search-results",
+  "evidence": [
+    "evidence/chomps/default/search/search-results.1440.png",
+    "evidence/chomps/default/search/search-results.375.png",
+    "evidence/chomps/default/search/search-results.768.png",
+    "evidence/chomps/default/search/search-results.changed.articles.1440.png",
+    "evidence/chomps/default/search/search-results.changed.articles.375.png",
+    "evidence/chomps/default/search/search-results.changed.articles.768.png",
+    "evidence/chomps/default/search/search-results.initial.products.1440.png",
+    "evidence/chomps/default/search/search-results.initial.products.375.png",
+    "evidence/chomps/default/search/search-results.initial.products.768.png"
+  ],
+  "notlar": "30 results for \"beef\". PRODUCTS / ARTICLES sekmeleri + arama alanı.",
+  "delta": "Canlı overlay ayrı (global-predictive-search). Bu tam sonuç sayfası.",
+  "prepareClick": "button.klaviyo-close-form",
+  "capture": {
+    "url": "https://chomps.com/search?q=beef",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:49:07.128Z",
+    "prepareClick": "button.klaviyo-close-form"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://chomps.com/search?q=beef",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false,
+      "not": "Klaviyo gecikmeli"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Klaviyo/modal kapat — selector fail yok"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21247592923205__main",
+      "capture": true,
+      "etiket": "products"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button:has-text('ARTICLES'), a:has-text('ARTICLES')",
+      "capture": true,
+      "etiket": "articles"
+    }
+  ],
+  "stateFindings": {
+    "initial": "30 RESULTS FOR \"BEEF\"; PRODUCTS sekmesi kırmızı; ürün ızgarası + QUICK SHOP.",
+    "changed": "ARTICLES sekmesi kırmızı; blog kartı (Are you eating good-for-you beef…); ürün ızgarası yok."
+  },
+  "missingStates": [],
+  "interactionNote": "Klaviyo: 4s + Escape. GET 10% OFF + Gorgias karede kaldı."
+}
