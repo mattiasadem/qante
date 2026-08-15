@@ -1,0 +1,67 @@
+{
+  "observationId": "davidprotein.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "davidprotein",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://davidprotein.com/?modals=mobile-menu-drawer",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/davidprotein/default/home/global-menu-drawer.375.png",
+    "evidence/davidprotein/default/home/global-menu-drawer.768.png"
+  ],
+  "notlar": "375/768 hamburger → /?modals=mobile-menu-drawer. #menu-drawer: Shop all/Bars/Pints/Bundle/About + Sign in + Store Locator/Wholesale/Contact us + sosyal. #mobile-menu-drawer host 0×0.",
+  "delta": "1440 N/A (hamburger lg:hidden). Desktop mega ayrı.",
+  "captureMode": "viewport",
+  "prepareClick": "header [class*=\"menutoggle\"]",
+  "capture": {
+    "url": "https://davidprotein.com/?modals=mobile-menu-drawer",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "viewport",
+    "updatedAt": "2026-08-15T21:04:46.037Z",
+    "prepareClick": "button.group\\/menutoggle"
+  },
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://davidprotein.com/?modals=mobile-menu-drawer",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": "3000",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header [class*=\"menutoggle\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#menu-drawer",
+      "etiket": "hamburger-acik",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Mobil menü: Shop all… + Sign in + utility"
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger yok (lg:hidden) — mega ayrı"
+    }
+  ]
+}

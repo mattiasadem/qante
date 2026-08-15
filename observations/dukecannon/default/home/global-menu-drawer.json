@@ -1,0 +1,62 @@
+{
+  "observationId": "dukecannon.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "dukecannon",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://dukecannon.com/",
+  "selector": "#NavDrawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/dukecannon/default/home/global-menu-drawer.375.png",
+    "evidence/dukecannon/default/home/global-menu-drawer.768.png",
+    "evidence/dukecannon/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/dukecannon/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "375/768 hamburger → #NavDrawer sağ. Shop All + alt akordeon (New & Featured, Body Wash, Deodorant…). 1440 N/A.",
+  "delta": "Tema (vitrinde): [Rollback] Production | Accenture 8.12.2026. schema_name Duke Cannon Shopify Theme 1.23.1, theme_store_id null, role main, id 147550273651. Shop duke-cannon.myshopify.com. drawer--right NavDrawer. 1440 hamburger large-up--hide.",
+  "capture": {
+    "url": "https://dukecannon.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:28:50.710Z",
+    "prepareClick": "button.js-drawer-open-nav"
+  },
+  "captureMode": "viewport",
+  "prepareClick": "button.js-drawer-open-nav",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://dukecannon.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.js-drawer-open-nav:visible",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Mobil menü"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 sağ drawer: SHOP ALL (chevron), NEW ARRIVALS, REWARDS, ABOUT (chevron), Log In, FB/X/IG/TikTok. 1440 N/A."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 hamburger large-up--hide. Shop All alt akordeon açılmadı."
+}

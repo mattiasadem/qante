@@ -1,0 +1,76 @@
+{
+  "observationId": "davidprotein.default.home.promo-banner-tabs",
+  "schemaId": "promo-banner-tabs",
+  "kaynak": "davidprotein",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://davidprotein.com/",
+  "selector": "#shopify-section-template--21417470132391__tabs_with_media_tgakf",
+  "evidenceSlug": "promo-banner-tabs",
+  "evidence": [
+    "evidence/davidprotein/default/home/promo-banner-tabs.1440.png",
+    "evidence/davidprotein/default/home/promo-banner-tabs.375.png",
+    "evidence/davidprotein/default/home/promo-banner-tabs.768.png",
+    "evidence/davidprotein/default/home/promo-banner-tabs.changed.pints-sekme.1440.png",
+    "evidence/davidprotein/default/home/promo-banner-tabs.changed.pints-sekme.375.png",
+    "evidence/davidprotein/default/home/promo-banner-tabs.changed.pints-sekme.768.png"
+  ],
+  "notlar": "Bars / Pints pill sekmeler. Bars: More protein, more value. Bundle bars. Buy 4 get 1 / Free shipping / Free gift. CTA Build my bundle. Pints: Customize your 6-pack.",
+  "delta": "Ürün grid değil; sekme başına görsel+metin+CTA. tab_with_media.",
+  "capture": {
+    "url": "https://davidprotein.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:21:30.985Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://davidprotein.com/",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": "6000",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Klaviyo 10% quiz (Close dialog / No thanks) — Escape kapatır; yoksa no-op"
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21417470132391__tabs_with_media_tgakf",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--21417470132391__tabs_with_media_tgakf button:has-text('Pints')",
+      "value": 1200,
+      "capture": true,
+      "etiket": "pints-sekme",
+      "not": "Pints: Customize your 6-pack beklenir"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Bars sekmesi seçili. Sol: bar ısırığı foto. Sağ: More protein, more value. / Bundle bars. / Buy 4 cartons, get 1 free · Free shipping · Free gift. CTA Build my bundle.",
+    "changed": "Pints sekmesi seçili (beyaz çerçeve). Sol: waffle külah + dondurma. Sağ: Don't settle for less. / Customize your 6-pack. / 30g Protein · Free 2-day shipping · Protected frozen delivery. CTA Customize my 6-pack."
+  }
+}
