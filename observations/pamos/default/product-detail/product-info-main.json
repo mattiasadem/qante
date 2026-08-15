@@ -7,8 +7,83 @@
   "url": "https://www.pamos.com/product/signature-spirit-5mg-thc/",
   "selector": "#product-1925",
   "evidenceSlug": "product-info-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/pamos/default/product-detail/product-info-main.1440.png",
+    "evidence/pamos/default/product-detail/product-info-main.375.png",
+    "evidence/pamos/default/product-detail/product-info-main.768.png",
+    "evidence/pamos/default/product-detail/product-info-main.changed.case.1440.png",
+    "evidence/pamos/default/product-detail/product-info-main.changed.case.375.png",
+    "evidence/pamos/default/product-detail/product-info-main.changed.case.768.png"
+  ],
   "notlar": "SIGNATURE SPIRIT 750ml + citrus/stone fruit metin + ADD TO CART. Galeri + buy box tek hero-sec.product.",
   "delta": "Tema (vitrinde, uydurulmadı): WordPress Theme Name **Pamos** 11.0.1 (Sage/Roots, text domain pamos, /wp-content/themes/pamos/). Shopify.theme yok. WooCommerce 10.7.0. Age-gate cookie ageVerified. button.age-confirm = I AM 21+.",
-  "prepareClick": "button.age-confirm"
+  "prepareClick": "button.age-confirm",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.pamos.com/product/signature-spirit-5mg-thc/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "selector": "#age-gate button.age-confirm",
+      "value": 12000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#age-gate button.age-confirm",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#product-1925",
+      "capture": true,
+      "etiket": "single"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button:has-text('1 CASE'), label:has-text('1 CASE'), [class*='variation']:has-text('CASE')",
+      "capture": true,
+      "etiket": "case"
+    }
+  ],
+  "stateFindings": {
+    "initial": "SINGLE BOTTLE seçili $45.00, One-time purchase, ADD TO CART.",
+    "changed": "1 CASE (6 BOTTLES) seçili (checkmark), fiyat $225.00."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "adım 2 (click button.age-confirm): locator.click: Element is not visible\nCall log:\n  - waiting for locator('button.age-confirm').first()\n    - locator resolved to <button title=\"I am 21+\" class=\"theme-btn age-confirm white mb-sm-0 mb-2 sm w-100\">I am 21+</button>\n  - attempting click action\n    - scrolling into view if needed\n"
+    }
+  ],
+  "interactionNote": "Varyant SINGLE BOTTLE ↔ 1 CASE. Statik 3vp zaten var; interact ek kare.",
+  "capture": {
+    "url": "https://www.pamos.com/product/signature-spirit-5mg-thc/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:39:36.418Z",
+    "prepareClick": "button.age-confirm"
+  }
 }

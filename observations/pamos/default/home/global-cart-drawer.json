@@ -7,9 +7,16 @@
   "url": "https://www.pamos.com/",
   "selector": "#fkcart-modal",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
-  "notlar": "FunnelKit #fkcart-modal. Boş: Your Cart is Empty. Dolu: Signature Spirit ATC UI (Shopify /cart/add.js yok).",
-  "delta": "Tema (vitrinde, uydurulmadı): WordPress Theme Name **Pamos** 11.0.1 (Sage/Roots, text domain pamos, /wp-content/themes/pamos/). Shopify.theme yok. WooCommerce 10.7.0. Age-gate cookie ageVerified. button.age-confirm = I AM 21+. FunnelKit mini-cart. WooCommerce — addToCart action kullanılmadı (cart.js Shopify).",
+  "evidence": [
+    "evidence/pamos/default/home/global-cart-drawer.filled.signature.1440.png",
+    "evidence/pamos/default/home/global-cart-drawer.filled.signature.375.png",
+    "evidence/pamos/default/home/global-cart-drawer.filled.signature.768.png",
+    "evidence/pamos/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/pamos/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/pamos/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "FunnelKit #fkcart-modal. Boş + Signature Spirit ATC UI. Shopify /cart/add.js yok.",
+  "delta": "Tema (vitrinde, uydurulmadı): WordPress Theme Name **Pamos** 11.0.1 (Sage/Roots). Shopify.theme yok. WooCommerce + FunnelKit. goto=settle age'i kapatıyor; ayrı age click yok.",
   "prepareClick": "#fkcart-mini-toggler",
   "captureMode": "viewport",
   "interactionStates": [
@@ -26,33 +33,7 @@
     {
       "state": "initial",
       "action": "waitFor",
-      "value": 2500,
-      "capture": false
-    },
-    {
-      "state": "initial",
-      "action": "click",
-      "selector": "button.age-confirm",
-      "capture": false,
-      "not": "age gate"
-    },
-    {
-      "state": "initial",
-      "action": "waitFor",
       "value": 800,
-      "capture": false
-    },
-    {
-      "state": "initial",
-      "action": "click",
-      "selector": "button.cmplz-accept",
-      "capture": false,
-      "not": "cookie"
-    },
-    {
-      "state": "initial",
-      "action": "waitFor",
-      "value": 400,
       "capture": false
     },
     {
@@ -72,47 +53,58 @@
     {
       "state": "filled",
       "action": "waitFor",
-      "value": 2500,
+      "value": 800,
       "capture": false
     },
     {
       "state": "filled",
       "action": "click",
-      "selector": "button.age-confirm",
-      "capture": false
-    },
-    {
-      "state": "filled",
-      "action": "waitFor",
-      "value": 600,
-      "capture": false
-    },
-    {
-      "state": "filled",
-      "action": "click",
-      "selector": "button.single_add_to_cart_button, button.alt",
+      "selector": "button.single_add_to_cart_button",
       "capture": false,
-      "not": "Woo ATC UI — addToCart/Shopify yok"
+      "not": "Woo ATC UI"
     },
     {
       "state": "filled",
       "action": "waitFor",
       "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "forceOpen",
+      "selector": "#fkcart-modal",
       "capture": false
     },
     {
       "state": "filled",
       "action": "click",
       "selector": "#fkcart-mini-toggler",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 600,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "signature"
     }
   ],
   "stateFindings": {
-    "initial": "Your Cart is Empty + Fill your cart + Shop Now + discount + Subtotal $0.00.",
-    "filled": "ATC sonrası FunnelKit satır — bakılacak (Signature Spirit)."
+    "initial": "Sağ drawer: Your Cart is Empty + Fill your cart with amazing items + SHOP NOW. 375 tam ekran.",
+    "filled": "Review Your Cart (1) SIGNATURE SPIRIT 1× $45.00 + Remove item + Subtotal $45.00 + View My Cart + CHECKOUT. Qty −/1/+ göründü, changed çekilmedi."
   },
   "missingStates": [],
-  "interactionNote": "addToCart action yok — WooCommerce /cart.js değil. UI click button.single_add_to_cart_button. Checkout tıklanmadı. Kupon yazılmadı."
+  "interactionNote": "addToCart action yok (WooCommerce). Qty plus yoklandı değil. Checkout yok. Kupon yok.",
+  "capture": {
+    "url": "https://www.pamos.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:54:54.649Z"
+  }
 }

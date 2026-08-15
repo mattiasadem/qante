@@ -7,7 +7,11 @@
   "url": "https://www.pamos.com/learn/",
   "selector": ".theme-accordion",
   "evidenceSlug": "faq-collapsible-tabs",
-  "evidence": [],
+  "evidence": [
+    "evidence/pamos/default/faq-support/faq-collapsible-tabs.375.png",
+    "evidence/pamos/default/faq-support/faq-collapsible-tabs.768.png",
+    "evidence/pamos/default/faq-support/faq-collapsible-tabs.1440.png"
+  ],
   "notlar": "SHIPPING TIMES açık + IS HEMP-DERIVED THC LEGAL? / WHERE CAN I FIND PAMOS? … .theme-accordion / .accordion-section.",
   "delta": "Tema (vitrinde, uydurulmadı): WordPress Theme Name **Pamos** 11.0.1 (Sage/Roots, text domain pamos, /wp-content/themes/pamos/). Shopify.theme yok. WooCommerce 10.7.0. Age-gate cookie ageVerified. button.age-confirm = I AM 21+.",
   "prepareClick": "button.age-confirm",
@@ -25,13 +29,14 @@
     {
       "state": "initial",
       "action": "waitFor",
-      "value": 2500,
+      "selector": "#age-gate button.age-confirm",
+      "value": 12000,
       "capture": false
     },
     {
       "state": "initial",
       "action": "click",
-      "selector": "button.age-confirm",
+      "selector": "#age-gate button.age-confirm",
       "capture": false
     },
     {
@@ -50,15 +55,32 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": ".theme-accordion .accordion-header:nth-of-type(2), .theme-accordion [data-toggle]:nth-of-type(2), .accordion-section button:nth-of-type(2)",
+      "selector": ".theme-accordion a[href='#acc-2']",
       "capture": true,
       "etiket": "legal"
     }
   ],
   "stateFindings": {
-    "initial": "SHIPPING TIMES cevabı görünür; diğer sorular kapalı.",
-    "changed": "İkinci soru (legal) — bakılacak."
+    "initial": "SHIPPING TIMES açık (−) 2 business days / 6-9 days. Diğerleri +.",
+    "changed": "IS HEMP-DERIVED THC LEGAL? açık: Yes! Products infused with THC derived from hemp are legal. SHIPPING TIMES kapalı."
   },
-  "missingStates": [],
-  "interactionNote": "İlk soru varsayılan açık. İkinci başlık tık."
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "adım 1 (waitFor #age-gate button.age-confirm): locator.waitFor: Timeout 12000ms exceeded.\nCall log:\n  - waiting for locator('#age-gate button.age-confirm').first() to be visible\n    28 × locator resolved to hidden <button title=\"I am 21+\" class=\"theme-btn age-confirm white mb-sm-0 mb-2 sm w-100\">I am 21+</button>\n"
+    }
+  ],
+  "interactionNote": "İlk soru varsayılan açık. İkinci başlık tık.",
+  "capture": {
+    "url": "https://www.pamos.com/learn/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "margin-box+minPad8",
+    "updatedAt": "2026-08-15T22:59:41.100Z",
+    "prepareClick": "button.age-confirm"
+  }
 }

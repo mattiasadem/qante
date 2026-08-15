@@ -75,13 +75,14 @@ Karar: onay bekliyor
 
 ## Diğer leftover (aday değil)
 
-- FunnelKit cart (`#fkcart-modal`) — `global-cart-drawer` olarak alındı; Shopify `/cart.js` yok, ATC yalnız UI
+- FunnelKit cart (`#fkcart-modal`) — `global-cart-drawer` boş+dolu alındı; Shopify `/cart.js` yok, ATC yalnız UI. Qty +/− drawer’da göründü, `changed` çekilmedi.
 - WooCommerce Blocks `/cart/` boş sayfa alındı; dolu hâl drawer
 - Nationwide All ızgara ~8913px — resmi crop viewport tavanı
 - Privacy ~15321px — viewport clip
 - `/terms-of-use/` 404; `/terms-of-services/` WP error; gerçek `/terms/`
 - `/product-category/spirits/` 404; kategori `/product-category/premium-spirit/`
 - `/shop/` → `/nationwide/`
+- Footer WHY PAMOS `/cannabis` → `/twist/` “COCKTAILS WITH A TWIST” (about-brand alındı)
 - Contact `/contact-us/` form observation var, submit yok
 - Newsletter Klaviyo submit yok
 - Account `/login` — dur
