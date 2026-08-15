@@ -13,7 +13,7 @@
 | Evidence kökü | `evidence/obvi/default/` |
 | Capture | resmi `capture-observation.mjs` + `capture-interaction.mjs` |
 | Validate | `npm run validate` → 65 temiz · 0 error · 0 warn |
-| Gözlem / kanıt | 50 obs + policy JSON · 166 PNG; policy 3vp sırada |
+| Gözlem / kanıt | 51 obs · 169 PNG |
 | PR | https://github.com/mattiasadem/qante/pull/2 (review-ready, **main'e merge yok**) |
 | PR #1 | merged (quiz iframe piercing) |
 
@@ -41,7 +41,7 @@
 | Meet the Team | ✅ `page-content-main` + slider (team cards) | ✅ |
 | FAQ | ✅ `faq-collapsible-tabs` | ✅ |
 | Contact + Return/Exchange CTA | ✅ `lead-capture-form` (gönderilmedi; Return aynı form) | ✅ |
-| Policy `/policies/*` | ✅ `policy/page-content-main` (Shopify native; yeni şema yok) | ⏳ capture |
+| Policy `/policies/*` | ✅ `policy/page-content-main` (Shopify native; yeni şema yok) | ✅ |
 | 404'ler | ⛔ kayıtlı | — |
 | Scratch-card | ⛔ candidate (görülmedi) | — |
 | Sitemap ad LPs (burn-elite, weight-loss-v*, GLP-1…) | ⛔ chrome dışı; şema icat yok | — |
@@ -56,4 +56,4 @@
 
 ## Açık iş
 
-*Yok — checklist kapalı. Policy 3vp bu turda resmi script ile.* Scratch-card ve 404'ler blocker/aday.
+*Yok — checklist kapalı.* Scratch-card ve 404'ler blocker/aday.
