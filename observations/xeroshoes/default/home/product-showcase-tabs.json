@@ -1,0 +1,62 @@
+{
+  "observationId": "xeroshoes.default.home.product-showcase-tabs",
+  "schemaId": "product-showcase-tabs",
+  "kaynak": "xeroshoes",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://xeroshoes.com/",
+  "selector": "#shopify-section-template--20200623243442__global_product_tabs_i4VVnU",
+  "evidenceSlug": "product-showcase-tabs",
+  "evidence": [
+    "evidence/xeroshoes/default/home/product-showcase-tabs.1440.png",
+    "evidence/xeroshoes/default/home/product-showcase-tabs.375.png",
+    "evidence/xeroshoes/default/home/product-showcase-tabs.768.png",
+    "evidence/xeroshoes/default/home/product-showcase-tabs.changed.best-sellers.1440.png",
+    "evidence/xeroshoes/default/home/product-showcase-tabs.changed.best-sellers.375.png",
+    "evidence/xeroshoes/default/home/product-showcase-tabs.changed.best-sellers.768.png",
+    "evidence/xeroshoes/default/home/product-showcase-tabs.initial.new-arrivals.1440.png",
+    "evidence/xeroshoes/default/home/product-showcase-tabs.initial.new-arrivals.375.png",
+    "evidence/xeroshoes/default/home/product-showcase-tabs.initial.new-arrivals.768.png"
+  ],
+  "notlar": "NEW ARRIVALS / BEST SELLERS sekmeleri; Shop All New Arrivals; kartlarda Quick Add, NEW STYLE, fiyat.",
+  "delta": "custom-tabs. İnaktif tab panelleri DOM'da yükseklik tutuyor (~9933px kutu) — görünür ızgara daha kısa. Quick Add → #quickshop-drawer (global-quick-view).",
+  "capture": {
+    "url": "https://xeroshoes.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:03:32.673Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://xeroshoes.com/",
+      "capture": true,
+      "etiket": "new-arrivals",
+      "not": "NEW ARRIVALS aktif"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--20200623243442__global_product_tabs_i4VVnU :text('BEST SELLERS')",
+      "capture": true,
+      "etiket": "best-sellers",
+      "not": "BEST SELLERS sekmesi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "NEW ARRIVALS aktif; Coast Suede / Mesa Summit kartları; Shop All New Arrivals.",
+    "changed": "BEST SELLERS aktif; Genesis Sandal Men/Women $49.99 + Prio Men/Women; Shop All Best Sellers; Quick Add beden ızgarası."
+  },
+  "missingStates": [],
+  "interactionNote": "Sekme tık sayfa değiştirmezse changed."
+}
