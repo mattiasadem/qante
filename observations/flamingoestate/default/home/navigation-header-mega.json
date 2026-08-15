@@ -1,0 +1,42 @@
+{
+  "observationId": "flamingoestate.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "flamingoestate",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://flamingoestate.com/",
+  "selector": "#megamenu-v3",
+  "captureMode": "viewport",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "interactionStates": ["initial", "open"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://flamingoestate.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Kapalı header: Shop / The Estate / 21% Off Candles + search + cart"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "a.megamenu-v3-nav-main-link:has-text(\"Shop\")",
+      "viewports": ["1440"],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "Shop mega: Shop All / Most Loved / odalar + görsel kartlar"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "open": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Custom megamenu-v3 (Prestige fork). 375/768 mega yok — hamburger global-menu-drawer.",
+  "notlar": "flamingo-estate-web/master · schema_name Prestige 8.3.0. Shop / The Estate / 21% Off Candles. Sign In + Get $20 + cart.",
+  "delta": "Üç birincil link + custom mega kart (odalar görselleri). KM/tracker yok. Lockdown yok."
+}

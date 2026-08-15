@@ -1,0 +1,48 @@
+{
+  "observationId": "flamingoestate.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "flamingoestate",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://flamingoestate.com/",
+  "selector": "#megamenu-v3-search-field",
+  "captureMode": "viewport",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "interactionStates": ["initial", "input"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://flamingoestate.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.megamenu-v3-nav-aux-search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bos",
+      "not": "Search for products, categories, content"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#megamenu-v3-search-field",
+      "value": "soap",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "soap",
+      "not": "katalogSorgu: soap (Peppermint Soap Brick)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "input": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Opener a.megamenu-v3-nav-aux-search. Input kapalıyken h=0. /search?q=soap ayrı sayfa observation.",
+  "notlar": "Placeholder: Search for products, categories, content.",
+  "delta": "Mega içi tam genişlik search field. Predictive liste yoklandıktan sonra yazılacak."
+}

@@ -1,0 +1,43 @@
+{
+  "observationId": "flamingoestate.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "flamingoestate",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://flamingoestate.com/",
+  "selector": ".megamenu-v3-menu-card",
+  "captureMode": "viewport",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "interactionStates": ["open"],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://flamingoestate.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "a.megamenu-v3-nav-main-hamburger-icon",
+      "viewports": ["375", "768"],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Shop All / Most Loved / koleksiyonlar"
+    }
+  ],
+  "stateFindings": {
+    "open": ""
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger display:none — mega navigation-header-mega."
+    }
+  ],
+  "interactionNote": "Aynı megamenu-v3 kartı mobil drawer. Alt akordeon bu walk’ta yoklandı değil.",
+  "notlar": "375/768 a.megamenu-v3-nav-main-hamburger-icon → .megamenu-v3-menu-card.",
+  "delta": "Prestige menu-drawer değil; mega kartı mobil tam ekran."
+}

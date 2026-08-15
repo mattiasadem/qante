@@ -1,0 +1,65 @@
+{
+  "observationId": "flamingoestate.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "flamingoestate",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://flamingoestate.com/",
+  "selector": ".rebuy-cart__flyout",
+  "captureMode": "viewport",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "interactionStates": ["initial", "filled"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://flamingoestate.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.megamenu-cart-icon",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Your Basket is Empty + TRY NEW PLEASURES"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://flamingoestate.com/products/climbing-tuscan-rosemary-soy-wax-candle",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--17811497484456__main button[type='submit'], #shopify-section-template--17811497484456__main form[action*='/cart/add'] button",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a.megamenu-cart-icon",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "rosemary-qty1",
+      "not": "Dolu Rebuy basket — satır + toplam"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "filled": ""
+  },
+  "missingStates": [],
+  "interactionNote": "/cart → /?viewcart=true homepage. Sepet Rebuy #rebuy-cart. İlk megamenu-cart-icon 0px; clickVisible görüneni alır. AJAX fallback varsa not.",
+  "notlar": "Rebuy smart cart. Boş: Your Basket is Empty. TRY NEW PLEASURES.",
+  "delta": "Prestige cart-drawer değil Rebuy overlay. empty-cart-promos section merchandising. cart-page-main yok."
+}
