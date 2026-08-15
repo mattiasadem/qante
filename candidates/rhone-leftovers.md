@@ -92,6 +92,13 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: rhone-plp-dy-related  
+Gerekçe: `#dy-recommendations-656481` “We think you'd like” yalnız derin scroll sonrası DOM’a giriyor. `capture-observation` 4vp tavanına sığmıyor (selector 1440 eşleşmedi). Aynı tip PDP’de 3vp var.  
+Öneri: leftover — recapture tavanı yetmedi, şema uydurulmadı  
+Karar: leftover
+
+---
+
 ADAY: rhone-plp-filters  
 Gerekçe: PLP Filter by / Sort by. Panel `changed` çekilmedi. In-grid promo “The finishing touches” grid kabında.  
 Öneri: leftover  

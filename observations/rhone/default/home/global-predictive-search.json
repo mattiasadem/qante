@@ -7,7 +7,10 @@
   "url": "https://www.rhone.com/",
   "selector": ".searchbox.results-container",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/rhone/default/home/global-predictive-search.initial.arama-acik.1440.png",
+    "evidence/rhone/default/home/global-predictive-search.input.origin-tee.1440.png"
+  ],
   "notlar": "Desktop Search input. Kapalı kutu 0×0; Trending searches (Commuter, DreamGlow, Golf, Tennis) + Popular products DOM’da.",
   "delta": "Tema Store / Shopify.theme.name / schema_name yok (Shopify.theme boş nesne; uydurulmadı). Shop rhone.myshopify.com. Vitrin custom Nuxt (#__nuxt, /_nuxt/*.js) + Nacelle (nacelle class) + Shopify backend. #shopify-section-* yok. Algolia user token cookie (rhone_algolia_user_token). Kapalı kare yalan.",
   "captureMode": "viewport",
@@ -46,6 +49,27 @@
     "initial": "",
     "input": ""
   },
-  "missingStates": [],
-  "interactionNote": "375 search ikon → overlay. PII yok."
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "adım 1 (click .desktop-search-wrapper input[type='search'], .search-wrapper.desktop-search input): locator.click: Element is not visible\nCall log:\n  - waiting for locator('.desktop-search-wrapper input[type=\\'search\\'], .search-wrapper.desktop-search input').first()\n    - locator resolved to <input value=\"\" type=\"search\" class=\"input\" data-v-30574210=\"\" placeholder=\"Search\"/>\n  - attempting click action\n    - scrolling into view if needed\n"
+    },
+    {
+      "state": "input",
+      "sebep": "adım 2 (fill .desktop-search-wrapper input[type='search'], .search-wrapper.desktop-search input): locator.waitFor: Timeout 12000ms exceeded.\nCall log:\n  - waiting for locator('.desktop-search-wrapper input[type=\\'search\\'], .search-wrapper.desktop-search input').first() to be visible\n    28 × locator resolved to hidden <input value=\"\" type=\"search\" class=\"input\" data-v-30574210=\"\" placeholder=\"Search\"/>\n"
+    }
+  ],
+  "interactionNote": "375 search ikon → overlay. PII yok.",
+  "prepareClick": "[aria-label=\"Close dialog\"]",
+  "capture": {
+    "url": "https://www.rhone.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:29:44.214Z"
+  }
 }
