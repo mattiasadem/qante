@@ -1,0 +1,68 @@
+{
+  "observationId": "kizik.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "kizik",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://kizik.com/",
+  "selector": "#search-drawer",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/kizik/default/home/global-predictive-search.initial.arama-acik.1440.png",
+    "evidence/kizik/default/home/global-predictive-search.initial.arama-acik.375.png",
+    "evidence/kizik/default/home/global-predictive-search.initial.arama-acik.768.png",
+    "evidence/kizik/default/home/global-predictive-search.input.vegas.1440.png",
+    "evidence/kizik/default/home/global-predictive-search.input.vegas.375.png",
+    "evidence/kizik/default/home/global-predictive-search.input.vegas.768.png"
+  ],
+  "notlar": "Impact search-drawer. Idle: Freedom Run link. Input name=q.",
+  "delta": "Desktop opener a.hidden.sm:block; mobil a.sm:hidden.",
+  "captureMode": "viewport",
+  "prepareClick": "a[aria-controls='search-drawer']",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://kizik.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[aria-controls='search-drawer']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#search-drawer input[name='q']",
+      "value": "vegas",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "vegas"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Açık drawer: Search for...; idle link Freedom Run.",
+    "input": "vegas — Products sekmesi; Women's/Men's Vegas 2 satırları $139.95. Suggestions sekmesi gri."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu vegas (Women's Vegas 2). a[href=/search] sayfaya gider — aria-controls kullan.",
+  "capture": {
+    "url": "https://kizik.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:50:25.517Z"
+  }
+}
