@@ -12,6 +12,7 @@
     "evidence/hiyo/default/home/global-predictive-search.375.png",
     "evidence/hiyo/default/home/global-predictive-search.768.png",
     "evidence/hiyo/default/home/global-predictive-search.input.arama-sonucu.1440.png",
+    "evidence/hiyo/default/home/global-predictive-search.input.arama-sonucu.375.png",
     "evidence/hiyo/default/home/global-predictive-search.input.arama-sonucu.768.png"
   ],
   "notlar": "Impact search-drawer. Kapalı yükseklik 0 — açık kare interact fill classic.",
@@ -27,7 +28,7 @@
     ],
     "mode": "viewport",
     "method": "interaction-steps",
-    "updatedAt": "2026-08-15T18:18:10.725Z",
+    "updatedAt": "2026-08-15T18:26:49.928Z",
     "prepareClick": "a[aria-controls='search-drawer']"
   },
   "interactionStates": [
@@ -51,8 +52,22 @@
       "state": "input",
       "action": "click",
       "selector": "a[aria-controls='search-drawer']",
+      "viewports": [
+        "768",
+        "1440"
+      ],
       "capture": false,
-      "not": "Görünür opener (sm:flex / gizli çift)."
+      "not": "clickVisible görünür sm:flex opener. :not(.hidden) class yüzünden eşleşmez."
+    },
+    {
+      "state": "input",
+      "action": "forceOpen",
+      "selector": "#search-drawer",
+      "viewports": [
+        "375"
+      ],
+      "capture": false,
+      "not": "375 header'da büyüteç yok — forceOpen bir retry."
     },
     {
       "state": "input",
@@ -62,18 +77,30 @@
       "capture": true,
       "captureMode": "viewport",
       "etiket": "arama-sonucu",
-      "not": "katalogSorgu classic — ürün önerisi beklenir"
+      "not": "katalogSorgu classic"
     }
   ],
   "missingStates": [
     {
-      "state": "input",
-      "sebep": "adım 2 (click a[aria-controls='search-drawer']): locator.click: Element is not visible\nCall log:\n  - waiting for locator('a[aria-controls=\\'search-drawer\\']').first()\n    - locator resolved to <a href=\"/search\" class=\"tap-area hidden\" aria-controls=\"search-drawer\">…</a>\n  - attempting click action\n    - scrolling into view if needed\n"
+      "state": "hover",
+      "sebep": "Yazmadan sonuç yok"
+    },
+    {
+      "state": "filled",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "open",
+      "sebep": "Boş drawer statik 768/1440. 375 opener yok — statik 375 homepage + cookie (drawer açılmadı)."
+    },
+    {
+      "state": "changed",
+      "sebep": "products/suggestions tab tıklanmadı"
     }
   ],
   "stateFindings": {
-    "initial": "Drawer kapalı / boş arama kutusu (statik kare).",
-    "input": "classic yazılınca öneri listesi (doğrulanacak)."
+    "initial": "768/1440: sağdan/üstten boş drawer, placeholder search..., X. 375: header'da büyüteç yok; statik kare drawer değil.",
+    "input": "classic: products (aktif) / suggestions, classic pack $44.99 (375/768/1440). 375 forceOpen + fill; 768/1440 opener tık + fill."
   },
-  "interactionNote": "Cookie reject sonra opener. a[href=/search] kullanılmadı."
+  "interactionNote": "İki opener: tap-area hidden + hidden sm:flex (sm:flex görünür ama class hidden durur — :not(.hidden) 768/1440'ı kırdı). 375 ikisi de hidden, menüde arama yok. 375 input forceOpen. a[href=/search] kullanılmadı."
 }

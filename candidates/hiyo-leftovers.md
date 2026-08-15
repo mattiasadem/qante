@@ -68,3 +68,11 @@ Gerekçe: `/pages/tracking` apps section “track your package / SEARCH”. Sipa
 Örnekler: https://drinkhiyo.com/pages/tracking  
 Öneri: kargo-takip widget — yeni şema yok  
 Karar: onay bekliyor
+
+---
+
+ADAY: hiyo-375-search-opener  
+Gerekçe: 375 header’da büyüteç yok (yalnız hamburger + sepet). İki `a[aria-controls=search-drawer]` de `hidden`. Menüde arama yok. Statik 375 search karesi drawer değil (homepage + cookie). Input 375 `forceOpen` + fill ile alındı.  
+Örnekler: https://drinkhiyo.com/  
+Öneri: leftover — şema yok; 768/1440 opener yeterli  
+Karar: onay bekliyor

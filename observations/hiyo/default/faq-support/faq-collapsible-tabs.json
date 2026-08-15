@@ -8,9 +8,12 @@
   "selector": "#shopify-section-template--21702815711452__faq_yhEgCN",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/hiyo/default/faq-support/faq-collapsible-tabs.1440.png",
     "evidence/hiyo/default/faq-support/faq-collapsible-tabs.375.png",
     "evidence/hiyo/default/faq-support/faq-collapsible-tabs.768.png",
-    "evidence/hiyo/default/faq-support/faq-collapsible-tabs.1440.png"
+    "evidence/hiyo/default/faq-support/faq-collapsible-tabs.changed.ilk-soru-acik.1440.png",
+    "evidence/hiyo/default/faq-support/faq-collapsible-tabs.changed.ilk-soru-acik.375.png",
+    "evidence/hiyo/default/faq-support/faq-collapsible-tabs.changed.ilk-soru-acik.768.png"
   ],
   "notlar": "general: WHAT IS HIYO? / HEALTHY / ADAPTOGENS / NOOTROPICS / BOTANICALS.",
   "delta": "Impact faq. Dört kategori bloğu ayrı section — ayrı observation.",
@@ -23,8 +26,8 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T17:58:16.105Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:29:32.160Z",
     "prepareClick": "#cc-modal-reject-all"
   },
   "interactionStates": [
@@ -46,18 +49,41 @@
     },
     {
       "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21702815711452__faq_yhEgCN details",
+      "capture": false
+    },
+    {
+      "state": "changed",
       "action": "click",
-      "selector": "#shopify-section-template--21702815711452__faq_yhEgCN details >> summary",
-      "value": 600,
+      "selector": "#shopify-section-template--21702815711452__faq_yhEgCN details summary",
+      "value": 800,
       "capture": true,
       "etiket": "ilk-soru-acik",
-      "not": "WHAT IS HIYO? İlk details summary. Cevap beklenir."
+      "not": "WHAT IS HIYO? İlk details summary. Cevap beklenir. >> yok — iframe değil."
     }
   ],
-  "missingStates": [],
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Anlamsız — hover ikon rengi token"
+    },
+    {
+      "state": "filled",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "input",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "open",
+      "sebep": "Akordeon changed"
+    }
+  ],
   "stateFindings": {
-    "initial": "general sorular kapalı (statik).",
-    "changed": "WHAT IS HIYO? açık (doğrulanacak)."
+    "initial": "general: 11 soru kapalı, daire ok aşağı.",
+    "changed": "WHAT IS HIYO? açık: organic social tonic / adaptogens metni + 6 flavor; ok yukarı. Diğerleri kapalı."
   },
-  "interactionNote": "details id yok. İlk summary."
+  "interactionNote": "details id yok. İlk summary. Diğer 3 FAQ grubu yalnız statik."
 }

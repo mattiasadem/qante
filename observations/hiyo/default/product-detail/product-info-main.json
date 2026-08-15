@@ -8,9 +8,12 @@
   "selector": "#shopify-section-template--21702815645916__main",
   "evidenceSlug": "product-info-main",
   "evidence": [
+    "evidence/hiyo/default/product-detail/product-info-main.1440.png",
     "evidence/hiyo/default/product-detail/product-info-main.375.png",
     "evidence/hiyo/default/product-detail/product-info-main.768.png",
-    "evidence/hiyo/default/product-detail/product-info-main.1440.png"
+    "evidence/hiyo/default/product-detail/product-info-main.changed.24-pack.1440.png",
+    "evidence/hiyo/default/product-detail/product-info-main.changed.24-pack.375.png",
+    "evidence/hiyo/default/product-detail/product-info-main.changed.24-pack.768.png"
   ],
   "notlar": "classic pack buy box: galeri zoom, (8248) review, flavor/pack linkleri, fiyat, ADD TO CART.",
   "delta": "Impact main-product. Subscribe plan bu karede ayrıca yoklandıktan sonra interact'e yazılacak.",
@@ -23,8 +26,8 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T18:03:50.281Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:30:17.724Z",
     "prepareClick": "#cc-modal-reject-all"
   },
   "interactionStates": [
@@ -46,12 +49,18 @@
     },
     {
       "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21702815645916__main label.product-quantity-size-selectors__label:has-text('24-pack')",
+      "capture": false
+    },
+    {
+      "state": "changed",
       "action": "click",
       "selector": "#shopify-section-template--21702815645916__main label.product-quantity-size-selectors__label:has-text('24-pack')",
-      "value": 1200,
+      "value": 1500,
       "capture": true,
       "etiket": "24-pack",
-      "not": "12-pack → 24-pack SAVE $5. Fiyat/can değişmeli."
+      "not": "12-pack → 24-pack SAVE $5. Fiyat değişmeli. 1440'ta y≈976."
     }
   ],
   "missingStates": [
@@ -66,11 +75,15 @@
     {
       "state": "input",
       "sebep": "Anlamsız"
+    },
+    {
+      "state": "open",
+      "sebep": "Anlamsız"
     }
   ],
   "stateFindings": {
-    "initial": "12-pack + SUBSCRIBE $38.25 (statik).",
-    "changed": "24-pack seçili (doğrulanacak)."
+    "initial": "classic pack, 12-pack seçili ($3.19/can), SUBSCRIBE + SAVE 15% $38.25 / ~~$44.99~~. Flavor thumb + 24/48 SAVE rozetleri.",
+    "changed": "24-pack seçili (SAVE $5, $2.98/can). Subscribe $71.50 / ~~$89.88~~ (375'te $89.98). One-time 375'te $84.98 görünür, tıklanmadı."
   },
-  "interactionNote": "Subscribe varsayılan. One-time tıklanmadı."
+  "interactionNote": "Subscribe varsayılan. One-time ve flavor thumb tıklanmadı. 48-pack yoklandıktan sonra tıklanmadı."
 }
