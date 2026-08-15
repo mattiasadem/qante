@@ -1,0 +1,117 @@
+{
+  "observationId": "hiyo.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "hiyo",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://drinkhiyo.com/",
+  "selector": "#cart-drawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/hiyo/default/home/global-cart-drawer.1440.png",
+    "evidence/hiyo/default/home/global-cart-drawer.375.png",
+    "evidence/hiyo/default/home/global-cart-drawer.768.png",
+    "evidence/hiyo/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/hiyo/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/hiyo/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/hiyo/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/hiyo/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/hiyo/default/home/global-cart-drawer.filled.sepete-eklendi.768.png"
+  ],
+  "notlar": "Impact cart-drawer overlay. İlk kare boş drawer (prepareClick).",
+  "delta": "Sağ drawer. Dolu/adet interact ayrı.",
+  "captureMode": "viewport",
+  "prepareClick": "a[aria-controls='cart-drawer']",
+  "capture": {
+    "url": "https://drinkhiyo.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:33:50.569Z",
+    "prepareClick": "a[aria-controls='cart-drawer']"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://drinkhiyo.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cc-modal-reject-all",
+      "capture": false,
+      "not": "İlk sayfa cookie. PDP'de tekrar tıklama filled'ı kırıyordu."
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://drinkhiyo.com/products/variety-pack",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--21702815645916__main button.button--xl:has-text('ADD TO CART')",
+      "capture": false,
+      "not": "classic pack ADD TO CART (subscribe default $38.25). ATC UI."
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://drinkhiyo.com/",
+      "capture": false,
+      "not": "Sepet kalır; drawer kapanır. Opener ile tekrar aç (Impact deseni). ATC-open waitFor first() gizli butona takıldı."
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a[aria-controls='cart-drawer']",
+      "value": 1600,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu satır + toplam beklenir."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#cart-drawer button[aria-label='increase quantity']",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Görünür plus — first() gizli kopya var. clickVisible görünürü alır."
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "input",
+      "sebep": "Adet changed ile"
+    },
+    {
+      "state": "open",
+      "sebep": "Boş drawer statik 3vp (cookie altta kalabilir)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boş drawer: rozet 0, your cart is empty, CONTINUE SHOPPING. Cookie notice altta (statik).",
+    "filled": "Rozet 1. YOU ARE ELIGIBLE FOR FREE SHIPPING. classic pack satırı $38.25 / ~~$44.99~~, every 30 days, adet 1, remove. you may also like tropical pack SOLD OUT. total $38.25 usd. CHECKOUT (tıklanmadı).",
+    "changed": "Rozet 2, adet 2, satır $71.50 / ~~$89.98~~, BUY 2 SAVE $5 (-$5.00), total $71.50 usd."
+  },
+  "interactionNote": "ATC UI (fallback yok). İlk deneme waitFor first() gizli increase'e takıldı. Retry: ATC → home → opener. İki increase butonu (biri gizli). Checkout tıklanmadı."
+}
