@@ -1,0 +1,45 @@
+{
+  "observationId": "representclo.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "representclo",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://representclo.com/",
+  "selector": "#shopify-section-desktop-menu-header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "46px sticky bar. Shop + 247 expander; logo; Retail / The Vault / Loyalty; US/USD; wishlist; search; account; cart. Wisp notifications.",
+  "delta": "Tema represent-us/main (Shopify.theme.name). schema_name Blank Shopify Theme · theme_store_id null · custom. Mega ayrı section group desktop-menu-dropdowns; kapalı 0px. Locale US/USD buton.",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://representclo.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı sticky bar"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "button[aria-label='Expand Shop']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Shop hover → Clothing/Collections/Collaborations/Accessories/Womens kolonları"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Shop, 247, logo, Retail, The Vault, Loyalty, US/USD, wishlist, search, account, cart.",
+    "open": "1440 Shop hover — mega kolonları (All/T-Shirts/Hoodies…). 375/768 N/A."
+  },
+  "missingStates": [],
+  "interactionNote": "Mega Alpine/CSS group. Hover Expand Shop. Click denemesi 0px kaldıysa leftover."
+}

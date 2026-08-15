@@ -1,0 +1,82 @@
+{
+  "observationId": "representclo.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "representclo",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://representclo.com/",
+  "selector": "#cart-drawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Sağ 440px panel #cart-drawer / #cart_content. Boş + #cart-upsell carousel. /cart ayrı sayfa da var.",
+  "delta": "Cart Toggle /cart href ama drawer açıyor (URL home kalır). Upsell boş drawer'da da görünür.",
+  "captureMode": "viewport",
+  "prepareClick": "a[aria-label='Cart Toggle']",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://representclo.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[aria-label='Cart Toggle']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer + upsell"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://representclo.com/products/247-dna-oversized-t-shirt-jet-black-26",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button:has-text('M')",
+      "capture": false,
+      "not": "Beden M"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 400,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button:has-text('ADD TO CART')",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a[aria-label='Cart Toggle']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "dna-tee-m",
+      "not": "ATC sonrası drawer; gerekirse cart toggle"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boş sepet + popular/upsell şerit.",
+    "filled": "247 DNA Oversized T-Shirt M satırı beklenir."
+  },
+  "missingStates": [],
+  "interactionNote": "Beden seçilmeden ATC çalışmayabilir. /cart/add.js fallback varsa not."
+}

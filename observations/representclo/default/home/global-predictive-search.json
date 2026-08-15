@@ -1,0 +1,64 @@
+{
+  "observationId": "representclo.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "representclo",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://representclo.com/",
+  "selector": "#searchbox",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "Tagalys/mm-search. input[name=q] placeholder Search for…. #searchbox + .mm-search-dropdown. Kapalı 0px.",
+  "delta": "Desktop search #mobile-search-toggle değil. body.search_open. /search tam sayfa ayrı observation.",
+  "captureMode": "viewport",
+  "prepareClick": "#shopify-section-desktop-menu-header a[aria-label='Search']:not(#mobile-search-toggle)",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://representclo.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#shopify-section-desktop-menu-header a[aria-label='Search']:not(#mobile-search-toggle)",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Boş overlay Search for..."
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input[name='q'][placeholder='Search for...']",
+      "value": "t-shirt",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "input[name='q'][placeholder='Search for...']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "t-shirt",
+      "not": "katalog: 247 DNA Oversized T-Shirt"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Search for... alanı.",
+    "input": "t-shirt öneri/ürün."
+  },
+  "missingStates": [],
+  "interactionNote": "İlk eşleşme mobile-search-toggle gizli — :not() şart."
+}

@@ -1,0 +1,48 @@
+{
+  "observationId": "representclo.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "representclo",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://representclo.com/",
+  "selector": "#shopify-section-sections--16862798053585__mobile-menu-sliding",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "375 hamburger. Shop Represent / Shop 247 Activewear / Retail / Explore / Join loyalty / App / Prestige / Behind the Brand / Lookbooks / Client Services / country.",
+  "delta": "Section id mobile-menu-sliding. Kapalı 0px. 1440 hamburger de DOM'da (Open/Close Menu) ama mega birincil.",
+  "captureMode": "viewport",
+  "prepareClick": "button[aria-label='Open/Close Menu']",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://representclo.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button[aria-label='Open/Close Menu']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Mobil kayan menü"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: Shop Represent, Shop 247, Retail, Explore, loyalty CTA."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 mega birincil — hamburger N/A"
+    }
+  ]
+}
