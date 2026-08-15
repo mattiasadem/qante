@@ -7,9 +7,37 @@
   "url": "https://www.amberjack.shop/collections/wide-dress-shoes",
   "selector": "[id*='__faq_']",
   "evidenceSlug": "faq-collapsible-tabs",
-  "evidence": [],
-  "notlar": "Frequently Asked Questions. Does Amberjack offer wide size dress shoes? + What should you look for…",
-  "delta": "details/accordion yoklandı — details boş döndü. Statik Soru-cevap olabilir; açık/kapalı kanıt yoksa missing.",
+  "evidence": [
+    "evidence/amberjack/default/collection-wide/faq-collapsible-tabs.375.png",
+    "evidence/amberjack/default/collection-wide/faq-collapsible-tabs.768.png",
+    "evidence/amberjack/default/collection-wide/faq-collapsible-tabs.1440.png"
+  ],
+  "notlar": "Frequently Asked Questions. İki soru, sağda + accordion.",
+  "delta": "Wide PLP altı. + ikon; details elementi yok — button accordion.",
+  "interactionStates": ["initial", "changed"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.amberjack.shop/collections/wide-dress-shoes",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "İki soru kapalı +"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "[id*='__faq_'] button:has-text('Does Amberjack offer wide size dress shoes')",
+      "capture": true,
+      "etiket": "ilk-soru",
+      "not": "İlk soru açık — wide sizing cevabı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "FAQ başlık; iki soru + ile kapalı.",
+    "changed": "İlk soru açık — wide size dress shoes cevabı."
+  },
+  "missingStates": []
   "capture": {
     "url": "https://www.amberjack.shop/collections/wide-dress-shoes",
     "viewports": [
@@ -18,7 +46,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "",
-    "updatedAt": ""
+    "method": "margin-box+minPad8",
+    "updatedAt": "2026-08-15T17:57:54.367Z"
   }
 }

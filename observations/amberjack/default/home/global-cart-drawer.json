@@ -7,7 +7,11 @@
   "url": "https://www.amberjack.shop/",
   "selector": "#CartPopup",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/amberjack/default/home/global-cart-drawer.375.png",
+    "evidence/amberjack/default/home/global-cart-drawer.768.png",
+    "evidence/amberjack/default/home/global-cart-drawer.1440.png"
+  ],
   "notlar": "UpCart sağ panel (#CartPopup, 440px). Boş: Your Cart Is Empty / Find Your Next Pair / Browse By Style (Best Sellers, Dress, Sneakers, Loafers, Boots).",
   "delta": "Tema enableCartDrawer:false; gerçek sepet UpCart app. Native /cart ayrı sayfa. Section #upcart_custom_empty_cart height 0.",
   "capture": {
@@ -18,8 +22,9 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "",
-    "updatedAt": ""
+    "method": "viewport",
+    "updatedAt": "2026-08-15T17:59:57.579Z",
+    "prepareClick": "a[href='/cart']"
   },
   "captureMode": "viewport",
   "prepareClick": "a[href='/cart']",
@@ -52,7 +57,7 @@
     {
       "state": "filled",
       "action": "click",
-      "selector": "product-information input[name='size'][value='10'], product-information label:has-text('10')",
+      "selector": "product-information label:text-is('10')",
       "capture": false,
       "not": "Beden 10 — ATC aktif olsun"
     },
