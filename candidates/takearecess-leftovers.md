@@ -26,7 +26,7 @@ Karar: onay bekliyor
 ---
 
 ADAY: takearecess-search-absent  
-Gerekçe: Header’da search ikonu / predictive overlay yok. `/search?q=mood` marka 404. `global-predictive-search` / `search-results` observation yazılmadı.  
+Gerekçe: Header’da search ikonu / `aria-label` / predictive overlay yok (probe boş). `/search?q=mood` marka 404. `global-predictive-search` / `search-results` observation yazılmadı.  
 Örnekler: https://takearecess.com/search?q=mood  
 Öneri: leftover  
 Karar: onay bekliyor

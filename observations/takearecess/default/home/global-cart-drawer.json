@@ -7,7 +7,20 @@
   "url": "https://takearecess.com/",
   "selector": "#cart",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/takearecess/default/home/global-cart-drawer.1440.png",
+    "evidence/takearecess/default/home/global-cart-drawer.375.png",
+    "evidence/takearecess/default/home/global-cart-drawer.768.png",
+    "evidence/takearecess/default/home/global-cart-drawer.changed.qty2.1440.png",
+    "evidence/takearecess/default/home/global-cart-drawer.changed.qty2.375.png",
+    "evidence/takearecess/default/home/global-cart-drawer.changed.qty2.768.png",
+    "evidence/takearecess/default/home/global-cart-drawer.filled.mood-qty1.1440.png",
+    "evidence/takearecess/default/home/global-cart-drawer.filled.mood-qty1.375.png",
+    "evidence/takearecess/default/home/global-cart-drawer.filled.mood-qty1.768.png",
+    "evidence/takearecess/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/takearecess/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/takearecess/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
   "notlar": "<dialog id=cart>. Boş: Nothing here but clouds. /cart ve /cart.js 404 — sepet yalnız dialog. Checkout Shopify origin (tıklanmadı).",
   "delta": "Nuxt (Netlify) + Sanity CMS + Shopify Storefront API. window.Shopify / Shopify.theme / schema_name / schema_version / theme_store_id yok — uydurulmadı. shop takearecess.myshopify.com (API 2023-07). Sanity projectId umoebutk dataset production. #shopify-section-* yok. Custom Day Job / recess repo.",
   "captureMode": "viewport",
@@ -75,7 +88,7 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": "#cart button:has-text('+'), #cart [aria-label*='increase' i], #cart .quantity-input button:last-child",
+      "selector": "#cart .line button:has-text('+')",
       "value": 800,
       "capture": true,
       "captureMode": "viewport",
@@ -84,10 +97,22 @@
     }
   ],
   "stateFindings": {
-    "initial": "Cart 0; Nothing here but clouds.",
-    "filled": "blood orange Mood satırı beklenir (qty 1).",
-    "changed": "qty 2 beklenir."
+    "initial": "3vp: CLOSE / CART; Nothing here but clouds + 3D bulutlar.",
+    "filled": "3vp: Recess Mood Blood Orange 12 pack $37.99 QTY 1; you'll also love (Zero Proof Sampler / The Sampler / Mood Powder Sampler); is this a gift? add a digital note (açılmadı).",
+    "changed": "3vp: QTY 2 (1440/768 sayı görüldü; 375 qty kontrolü odaklı). Checkout görünür — tıklanmadı."
   },
   "missingStates": [],
-  "interactionNote": "ATC UI (.add-to-cart). Shopify /cart/add.js takearecess.com'da 404. Checkout tıklanmadı. Gift note formu PII — açılmadı."
+  "interactionNote": "ATC UI (.add-to-cart + single purchase). /cart/add.js 404. İlk changed denemesi #cart .quantity-input yok; ikinci #cart .line button:has-text('+') 3vp yazdı. Gift note / checkout PII — duruldu.",
+  "capture": {
+    "url": "https://takearecess.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:45:12.153Z",
+    "prepareClick": ".nav-item--cart-toggle"
+  }
 }
