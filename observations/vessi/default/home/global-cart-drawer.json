@@ -1,0 +1,68 @@
+{
+  "observationId": "vessi.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "vessi",
+  "preset": "default",
+  "sayfa": "home",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "url": "https://vessi.com/",
+  "selector": "#cart-drawer",
+  "captureMode": "viewport",
+  "prepareClick": "button[aria-label='Open cart drawer']",
+  "notlar": "Sağ cart-drawer. Boş: Your cart is empty; Discover what life with dry socks… FREE STANDARD SHIPPING. /cart → /#cart.",
+  "delta": "Ayrı cart sayfası yok. cart-page-main yok.",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://vessi.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button[aria-label='Open cart drawer']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://vessi.com/products/womens-weekend-classic-marble-white",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--16074643898453__main button[name='add'], #shopify-section-template--16074643898453__main button[type='submit']",
+      "capture": false,
+      "not": "Weekend Classic ATC — beden gerekebilir; fallback /cart/add.js variant 40774880133205"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button[aria-label='Open cart drawer']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "weekend-classic"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty; dry socks copy; free standard shipping.",
+    "filled": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout/kupon yok. Beden zorunluysa addToCart fallback."
+}

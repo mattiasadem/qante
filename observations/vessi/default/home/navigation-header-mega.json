@@ -1,0 +1,45 @@
+{
+  "observationId": "vessi.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "vessi",
+  "preset": "default",
+  "sayfa": "home",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "url": "https://vessi.com/",
+  "selector": "#shopify-section-sections--16074583736405__header-v2",
+  "notlar": "Sticky header-v2. Logo; Women / Men (drawer mega, href=#) · Best Sellers · Back to school · SALE. Search / cart / USD|EN. Mobil #mobile-menu-trigger.",
+  "delta": "Mega hover değil — Women/Men tık drawer (.header-v2-drawer). Dil/para localization butonu var. Dil seçici schema knob'u değil, leftover.",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://vessi.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı sticky bar"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "a.header-v2__nav-link[aria-controls='drawer-nav-women']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "women-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Women tık → drawer mega (koleksiyon kolonları)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "VESSI logo; Women / Men / Best Sellers / Back to school / SALE; search; cart 0; USD | EN.",
+    "open": ""
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 mega yok — hamburger ayrı global-menu-drawer. Hover Women panel açmadı; click."
+}

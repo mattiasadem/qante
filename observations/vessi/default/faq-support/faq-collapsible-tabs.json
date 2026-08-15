@@ -1,0 +1,45 @@
+{
+  "observationId": "vessi.default.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "vessi",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [],
+  "url": "https://vessi.com/pages/help-centre",
+  "selector": "#shopify-section-template--16074584227925__faqs_8w3g3n",
+  "notlar": "Frequently Asked Questions · Materials & Care / Sizing / Shipping / Returns. ~1332px.",
+  "delta": "Kategori sekmeli FAQ.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://vessi.com/pages/help-centre",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16074584227925__faqs_8w3g3n",
+      "capture": true,
+      "etiket": "faq-kategoriler"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--16074584227925__faqs_8w3g3n >> text=Sizing",
+      "capture": true,
+      "etiket": "sizing-tab"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Materials & Care / Sizing / Shipping / Returns sekmeleri.",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Sizing tab. Header Sizing linkine kaçma — section scoped."
+}

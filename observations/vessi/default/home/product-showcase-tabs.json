@@ -1,0 +1,47 @@
+{
+  "observationId": "vessi.default.home.product-showcase-tabs",
+  "schemaId": "product-showcase-tabs",
+  "kaynak": "vessi",
+  "preset": "default",
+  "sayfa": "home",
+  "evidenceSlug": "product-showcase-tabs",
+  "evidence": [],
+  "url": "https://vessi.com/",
+  "selector": "#shopify-section-template--16074611163221__collection_carousel_46ACQq",
+  "notlar": "Women | Men sekmeli ürün karoseli. Waterproof shoes; Weekend Classic (25,182).",
+  "delta": "collection_carousel — tab + slider. Başlık yok, sekme etiketleri Women/Men.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://vessi.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16074611163221__collection_carousel_46ACQq",
+      "capture": true,
+      "etiket": "women-tab",
+      "not": "Women sekmesi varsayılan"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--16074611163221__collection_carousel_46ACQq >> text=Men",
+      "capture": true,
+      "etiket": "men-tab",
+      "not": "Men sekmesi — Asphalt Black vb."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Women sekmesi; Weekend Classic Marble White (25,182).",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Men metni header'da da var — section-scoped selector."
+}

@@ -1,0 +1,46 @@
+{
+  "observationId": "vessi.default.home.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "vessi",
+  "preset": "default",
+  "sayfa": "home",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [],
+  "url": "https://vessi.com/",
+  "selector": "#shopify-section-template--16074611163221__faqs_t9YmNT",
+  "notlar": "FAQs · Are Vessi shoes really waterproof? Cevap bu dump'ta önizlemede açık. ~738px.",
+  "delta": "Cevaplar statikte kısmen görünür; accordion changed yoklandı.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://vessi.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16074611163221__faqs_t9YmNT",
+      "capture": true,
+      "etiket": "faq-kapali"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--16074611163221__faqs_t9YmNT button.ac-trigger",
+      "capture": true,
+      "etiket": "waterproof-acik",
+      "not": "İlk soru toggle"
+    }
+  ],
+  "stateFindings": {
+    "initial": "FAQs listesi; waterproof sorusu görünür.",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "İlk ac-trigger. Piksel değişmezse missingStates."
+}

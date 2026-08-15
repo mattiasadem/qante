@@ -1,0 +1,51 @@
+{
+  "observationId": "vessi.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "vessi",
+  "preset": "default",
+  "sayfa": "home",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "url": "https://vessi.com/",
+  "selector": "#shopify-section-sections--16074583736405__header-search",
+  "captureMode": "viewport",
+  "prepareClick": "button[aria-label='Open search']",
+  "notlar": "Kapalıda header-search 0px + Top Suggestions (Weekend Classic). Açık: drawer input[name=q] placeholder Search.",
+  "delta": "Öneri listesi #predictive-search-default içinde; input header drawer'da (data-drawer-nav=search).",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://vessi.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button[aria-label='Open search']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input.form__input[type='search'][name='q']",
+      "value": "weekend",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "weekend",
+      "not": "katalogSorgu weekend — Weekend Classic"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Search drawer; Top Suggestions Weekend Classic.",
+    "input": ""
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 #search-drawer-mobile-trigger. PII yok."
+}
