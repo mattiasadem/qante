@@ -1,0 +1,64 @@
+{
+  "observationId": "im8health.default.product-detail.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "im8health",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://im8health.com/products/the-beckham-stack-pro",
+  "selector": "#shopify-section-template--20252015820967__index_faq_accordion_lists_new_xzUqLB",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/im8health/default/product-detail/faq-collapsible-tabs.1440.png",
+    "evidence/im8health/default/product-detail/faq-collapsible-tabs.375.png",
+    "evidence/im8health/default/product-detail/faq-collapsible-tabs.768.png"
+  ],
+  "notlar": "FAQs · What is IM8? · Beckham involvement · SAB · benefits · taste · shipping · EXPLORE ALL FAQS.",
+  "delta": "Accordion; kategori tab yok. İlk soru açık göründü.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://im8health.com/products/the-beckham-stack-pro",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20252015820967__index_faq_accordion_lists_new_xzUqLB",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--20252015820967__index_faq_accordion_lists_new_xzUqLB details:nth-of-type(2) > summary",
+      "capture": true,
+      "etiket": "ikinci-soru",
+      "not": "İkinci FAQ açılırsa piksel değişir"
+    }
+  ],
+  "stateFindings": {
+    "changed": "Alınamadı — native <details> yok. 3vp zaten ilk soru açık (What is IM8? −)."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "İkinci soru selector details:nth-of-type(2)>summary eşleşmedi (custom accordion, Dawn details değil). 3vp'de ilk soru zaten açık."
+    }
+  ],
+  "interactionNote": "İlk soru varsayılan açık — piksel değişimi 3vp'de görünür. İkinci soru tıklanamadı.",
+  "capture": {
+    "url": "https://im8health.com/products/the-beckham-stack-pro",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:11:48.261Z"
+  }
+}
