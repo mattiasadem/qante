@@ -1,0 +1,101 @@
+{
+  "observationId": "chomps.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "chomps",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://chomps.com/",
+  "selector": "#search-modal",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/chomps/default/home/global-predictive-search.initial.modal-bos.1440.png",
+    "evidence/chomps/default/home/global-predictive-search.initial.modal-bos.375.png",
+    "evidence/chomps/default/home/global-predictive-search.initial.modal-bos.768.png",
+    "evidence/chomps/default/home/global-predictive-search.input.beef.1440.png",
+    "evidence/chomps/default/home/global-predictive-search.input.beef.375.png",
+    "evidence/chomps/default/home/global-predictive-search.input.beef.768.png"
+  ],
+  "notlar": "Arama ikonu → #search-modal; input #searchForm[name=q]. Ürün + yazı araması.",
+  "delta": "Ayrı overlay (hidden class). Kapalı kare yanıltır. Predictive fill katalog kelimesi beef.",
+  "captureMode": "viewport",
+  "prepareClick": "header button[data-open-modal='search']",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://chomps.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false,
+      "not": "Klaviyo gecikmeli"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Klaviyo/modal kapat — selector fail yok"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header button[data-open-modal='search']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "modal-bos"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#searchForm",
+      "value": "beef",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "#searchForm",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "beef"
+    }
+  ],
+  "stateFindings": {
+    "initial": "SEARCH modal; boş input (Search *); öneri listesi yok.",
+    "input": "#searchForm = beef; hâlâ öneri/ürün listesi yok — yalnız input metni değişti. Tam sonuç /search?q=beef."
+  },
+  "missingStates": [],
+  "interactionNote": "Klaviyo: 4s + Escape. Overlay predictive değil. Form submit yok. GET 10% OFF + Gorgias karede kaldı.",
+  "capture": {
+    "url": "https://chomps.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:42:24.455Z",
+    "prepareClick": "header button[data-open-modal='search']"
+  }
+}
