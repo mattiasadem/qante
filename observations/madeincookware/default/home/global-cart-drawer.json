@@ -1,0 +1,88 @@
+{
+  "observationId": "madeincookware.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "madeincookware",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://madeincookware.com/",
+  "selector": "div.fixed.right-0.bottom-0.overflow-hidden",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/madeincookware/default/home/global-cart-drawer.filled.frying-pan.1440.png",
+    "evidence/madeincookware/default/home/global-cart-drawer.filled.frying-pan.375.png",
+    "evidence/madeincookware/default/home/global-cart-drawer.filled.frying-pan.768.png",
+    "evidence/madeincookware/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/madeincookware/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/madeincookware/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "Sağ Radix panel. 1440 #nav-cart; 375/768 #mobile-nav-cart. Boş: Your cart is empty + Shop by Category. Dolu: UI ATC (frying pan) — /cart.js ve /cart/add.js HTML döner (headless), addToCart fallback işe yaramaz.",
+  "delta": "/cart → home. Sepet yalnız drawer. Checkout'a girilmedi.",
+  "captureMode": "viewport",
+  "prepareClick": "#nav-cart, #mobile-nav-cart",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://madeincookware.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#nav-cart, #mobile-nav-cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş sepet + kategori slider"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://madeincookware.com/products/stainless-steel-frying-pan",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#product_details button:has-text('Add to Cart')",
+      "capture": false,
+      "not": "UI ATC — /cart/add.js headless HTML, kullanma"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2800,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#nav-cart, #mobile-nav-cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "frying-pan",
+      "not": "Dolu drawer — ATC drawer'ı kendiliğinden açmıyor"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty; Shop by Category Sets/Cookware (375+768+1440).",
+    "filled": "375/768/1440: Stainless Clad Frying Pan $99 · Items (1) · Checkout; Complete Your Cart upsell. 1440 satır 6\"; 375 satır 8\" (varsayılan boyut viewport'a göre)."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout/kupon/PII yok. /cart home. /cart.js HTML.",
+  "capture": {
+    "url": "https://madeincookware.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:49:34.605Z"
+  }
+}
