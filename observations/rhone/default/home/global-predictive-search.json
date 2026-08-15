@@ -1,0 +1,75 @@
+{
+  "observationId": "rhone.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "rhone",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.rhone.com/",
+  "selector": ".searchbox.results-container",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/rhone/default/home/global-predictive-search.initial.arama-acik.1440.png",
+    "evidence/rhone/default/home/global-predictive-search.input.origin-tee.1440.png"
+  ],
+  "notlar": "Desktop Search input. Kapalı kutu 0×0; Trending searches (Commuter, DreamGlow, Golf, Tennis) + Popular products DOM’da.",
+  "delta": "Tema Store / Shopify.theme.name / schema_name yok (Shopify.theme boş nesne; uydurulmadı). Shop rhone.myshopify.com. Vitrin custom Nuxt (#__nuxt, /_nuxt/*.js) + Nacelle (nacelle class) + Shopify backend. #shopify-section-* yok. Algolia user token cookie (rhone_algolia_user_token). Kapalı kare yalan.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.rhone.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".desktop-search-wrapper input[type='search'], .search-wrapper.desktop-search input",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik",
+      "not": "Input tık — trending?"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": ".desktop-search-wrapper input[type='search'], .search-wrapper.desktop-search input",
+      "value": "Origin Tee",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "origin-tee",
+      "not": "katalogSorgu Origin Tee"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440: Trending searches (Commuter®, DreamGlow®, Golf, Tennis) + Popular products iskelet kartlar.",
+    "input": "1440 Origin Tee: sol öneriler (origin tee slim fit/white/bone) + View all (20) + Top suggestions ürün kartları ($54/$64)."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "375/768 masaüstü search input gizli. 1440 kare var. Mobil arama .nav-flyout içinde — leftover."
+    },
+    {
+      "state": "input",
+      "sebep": "375/768 masaüstü input gizli. 1440 Origin Tee kare var."
+    }
+  ],
+  "interactionNote": "375/768 desktop input hidden. Mobil Search .nav-flyout satırında; ayrı 3vp çekilmedi. PII yok.",
+  "prepareClick": "[aria-label=\"Close dialog\"]",
+  "capture": {
+    "url": "https://www.rhone.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:29:44.214Z"
+  }
+}
