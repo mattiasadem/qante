@@ -1,0 +1,141 @@
+{
+  "observationId": "boka.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "boka",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.boka.com/",
+  "selector": "#cart-drawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/boka/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/boka/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/boka/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/boka/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/boka/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/boka/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "Impact cart-drawer. Boş + Ela Mint doldurulacak.",
+  "delta": "Recharge storefront cart-drawer host da var (h=0). Checkout tıklanmadı.",
+  "captureMode": "viewport",
+  "prepareClick": "button.klaviyo-close-form[aria-label='Close dialog']",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.boka.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": "8500",
+      "capture": false,
+      "not": "Klaviyo ~8s"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.klaviyo-close-form[aria-label='Close dialog']",
+      "capture": false,
+      "not": "İlk sayfa — dialog var"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[aria-controls='cart-drawer']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.boka.com/products/ela-mint-toothpaste",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": "2500",
+      "capture": false,
+      "not": "PDP — dialog genelde yok; announcement tıklama"
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--26470592839723__main button.button--xl:has-text('Add to cart')",
+      "capture": false,
+      "not": "Ela Mint ATC"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.boka.com/",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": "2000",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a[aria-controls='cart-drawer']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu satır"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#cart-drawer button[name='plus'], #cart-drawer button[aria-label*='Increase' i], #cart-drawer button:has-text('+')",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "quantity-input gizli; görünür + / plus (ikinci deneme)"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "stateFindings": {
+    "initial": "Sağdan drawer: Your cart (0), Your cart is empty!, Continue shopping. Satır yok.",
+    "filled": "Your cart (1). Ela Mint, 1 Pack, 2 month subscription 15%, $9.88 (üstü $11.62). Görsel − 1 + stepper + çöp. Delivery frequency. Complete Your Routine (floss + Add). Discount + Apply. Subtotal $9.88. Checkout. Checkout tıklanmadı."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "İki deneme: quantity-input gizli; button:has-text('+') gizli quick-buy Add'e düştü. Recharge stepper (− 1 +) karede var ama native plus/input tıklanmadı. Üçüncü yok."
+    },
+    {
+      "state": "hover",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "input",
+      "sebep": "Adet changed denendi, olmadı"
+    },
+    {
+      "state": "open",
+      "sebep": "Boş drawer initial"
+    }
+  ],
+  "interactionNote": "Klaviyo yalnız ilk home goto. ATC ui (Subscribe). Checkout tıklanmadı. Recharge host #recharge-storefront-experiences__cart-drawer boşken h=0; dolu karede Recharge stepper görünür.",
+  "capture": {
+    "url": "https://www.boka.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:52:48.551Z"
+  }
+}
