@@ -1,0 +1,69 @@
+{
+  "observationId": "topicals.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "topicals",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://mytopicals.com/",
+  "selector": "div.sticky.top-0.pointer-events-auto.overflow-hidden",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/topicals/default/home/global-menu-drawer.1440.png",
+    "evidence/topicals/default/home/global-menu-drawer.375.png",
+    "evidence/topicals/default/home/global-menu-drawer.768.png",
+    "evidence/topicals/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/topicals/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "375 hamburger: Sign in, USD, SHOP akordeon, Shop By Concern, Learn/Watch. Tam yükseklik sticky panel.",
+  "delta": "1440 hamburger yok (mega). Drawer ayrı dialog değil — sticky header genişlemesi.",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://mytopicals.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button[aria-label='Open menu']",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Sticky tam yükseklik menü"
+    }
+  ],
+  "stateFindings": {
+    "initial": "375/768: hamburger kapalı (Open menu). 1440 statik PNG kapalı hero — hamburger yok.",
+    "open": "375/768: X + TOPICALS + sepet, arama placeholder, Shop/Learn/Watch tab (Shop altı çizili), SHOP linkleri, SHOP BY CONCERN, FEATURED kartlar, Sign in + USD."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger yok (mega). Statik 1440 PNG kapalı hero — N/A."
+    }
+  ],
+  "interactionNote": "1440 N/A — mega navigation-header-mega. Drawer ayrı dialog değil; sticky header tam yükseklik genişlemesi.",
+  "captureMode": "viewport",
+  "prepareClick": "button[aria-label=\"Open menu\"]",
+  "capture": {
+    "url": "https://mytopicals.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T17:17:57.306Z",
+    "prepareClick": "button[aria-label=\"Open menu\"]"
+  }
+}
