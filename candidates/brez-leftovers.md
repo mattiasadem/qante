@@ -8,15 +8,15 @@
 ---
 
 ADAY: brez-age-gate  
-Gerekçe: `agecheckerVsARddsz9` / `#agp_row` — “Please confirm your age / Are you at least 21 Years Old?”. Taksonomide age-gate yok. Capture `dismissAllOverlays` merkez overlay olarak gizliyor; cookie set edilmedi.  
+Gerekçe: `agecheckerVsARddsz9` / `#agp_row` — “Please confirm your age / Are you at least 21 Years Old?”. Taksonomide age-gate yok. Capture `dismissAllOverlays` merkez overlay olarak gizliyor.  
 Örnekler: her sayfa  
 Öneri: ertele / feature (section değil)  
 Karar: onay bekliyor
 
 ---
 
-ADAY: brez-okendo-reviews  
-Gerekçe: Home `#okendo_reviews_carousel` + PDP Judge.me/`1681950726974b5d80` tam reviews widget (~1814px). Reviews şeması yok. Home carousel `testimonial-quote-carousel` ile map edildi; PDP widget observation yazılmadı.  
+ADAY: brez-okendo-judgeme-reviews  
+Gerekçe: Home Okendo carousel `testimonial-quote-carousel` ile map edildi. PDP Judge.me/`1681950726974b5d80` tam reviews widget (~1814px) observation yazılmadı — reviews şeması yok.  
 Örnekler: https://www.drinkbrez.com/ · https://www.drinkbrez.com/products/og  
 Öneri: yeni kategori veya testimonial varyant  
 Karar: onay bekliyor
@@ -24,7 +24,7 @@ Karar: onay bekliyor
 ---
 
 ADAY: brez-rebuy-smart-cart  
-Gerekçe: Rebuy flyout (`#rebuy-cart`, `.rebuy-cart__flyout`) kargo eşiği + You may also like. Dawn `cart-drawer` 0px. `global-cart-drawer` observation + delta.  
+Gerekçe: Rebuy flyout (`#rebuy-cart`) kargo eşiği + You may also like + Checkout+. Dawn `cart-drawer` 0px. `global-cart-drawer` observation + interact (boş / OG qty1 / qty2). PLP/search/bundle statik karelerde flyout bazen binebiliyor (localStorage open).  
 Örnekler: cart icon  
 Öneri: map (mevcut global)  
 Karar: onay bekliyor
@@ -32,15 +32,15 @@ Karar: onay bekliyor
 ---
 
 ADAY: brez-store-locator-stockist  
-Gerekçe: `/pages/storelocator` custom liquid + Stockist.co widget. İlk taramada iframe/harita hydrate olmadı (yalnız başlık + call-ahead).  
+Gerekçe: `/pages/storelocator` Stockist.co widget — harita + filtre (THC-INFUSED / FUNCTIONAL) + mağaza listesi (Ohio civarı bu oturumda). Taksonomide locator yok. `page-content-main` ile yakalandı.  
 Örnekler: https://www.drinkbrez.com/pages/storelocator  
-Öneri: ertele — harita kanıtı zayıf  
+Öneri: yeni varyant veya ertele  
 Karar: onay bekliyor
 
 ---
 
 ADAY: brez-gorgias-contact  
-Gerekçe: `/pages/contact` form `iframe[title="Gorgias Contact Form"]` (`contact.gorgias.help`). `lead-capture-form` parent section. Gönderilmedi.  
+Gerekçe: `/pages/contact` form `iframe[title="Gorgias Contact Form"]` (`contact.gorgias.help`). Parent section `lead-capture-form` 3vp aldı (iframe pikselleri). Gönderilmedi.  
 Örnekler: https://www.drinkbrez.com/pages/contact  
 Öneri: map + iframe notu  
 Karar: onay bekliyor
@@ -50,7 +50,7 @@ Karar: onay bekliyor
 ADAY: brez-404-region  
 Gerekçe: `/pages/this-page-does-not-exist-xyz` ve `/blogs/news` → Dawn 404 “Page not found / Continue shopping”. Title: “This product or page is not available in your region”. Taksonomide 404 pageType yok.  
 Örnekler: https://www.drinkbrez.com/blogs/news  
-Öneri: ertele / candidate — `page-content-main` zorlama (yine de 404 karesi alındı)  
+Öneri: ertele / candidate  
 Karar: onay bekliyor
 
 ---
@@ -63,8 +63,15 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: brez-search-no-predictive  
+Gerekçe: Header search ikonu 0px. forceOpen Dawn üst bar; `og` fill öneri listesi üretmedi. Asıl sonuç `/search?q=og` (18 results).  
+Öneri: leftover — predictive yok  
+Karar: onay bekliyor
+
+---
+
 ADAY: brez-rivo-account  
-Gerekçe: Header/footer “Log in” / “My account” → `#rivo` (Rivo loyalty/account). Auth/PII — yoklandı değil.  
+Gerekçe: Header/footer “Log in” / “My account” → `#rivo`. Auth/PII — yoklandı değil.  
 Öneri: envanter dışı  
 Karar: atlandı
 
@@ -79,6 +86,6 @@ Karar: atlandı
 
 - `/account/login` ve Rivo login — auth  
 - Newsletter Submit / Gorgias form submit / checkout  
-- Age-gate “Yes” ile cookie (dismiss yeterli)  
+- Strength 10mg (`/products/og-extra-strength`) — sayfa değişir  
 - Wholesale `wholesale.drinkbrez.com` (ayrı vitrin)  
-- Referrals, manufacturer-information, accessibility — policy-benzeri, öncelik düşük  
+- Referrals, manufacturer-information, accessibility — policy-benzeri  

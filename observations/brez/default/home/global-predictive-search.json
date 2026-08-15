@@ -5,11 +5,68 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://www.drinkbrez.com/",
-  "selector": "details-modal.header__search",
+  "selector": ".search-modal",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
-  "notlar": "Dawn details-modal arama. Kapalı kare ikon; açık modal + input.",
-  "delta": "predictive-search custom element kapalı DOM'da yok. Sonuç için interact fill.",
+  "evidence": [
+    "evidence/brez/default/home/global-predictive-search.initial.bar-acik.1440.png",
+    "evidence/brez/default/home/global-predictive-search.initial.bar-acik.375.png",
+    "evidence/brez/default/home/global-predictive-search.initial.bar-acik.768.png",
+    "evidence/brez/default/home/global-predictive-search.input.og.1440.png",
+    "evidence/brez/default/home/global-predictive-search.input.og.375.png",
+    "evidence/brez/default/home/global-predictive-search.input.og.768.png"
+  ],
+  "notlar": "Arama ikonu header'da 0px (gizli). Dawn .search-modal forceOpen ile üst bar: Search input + büyüteç + X.",
+  "delta": "predictive-search custom element yok. İkon görünmez; forceOpen üst bar. /search sayfası asıl sonuç ızgarası.",
   "captureMode": "viewport",
-  "prepareClick": "details-modal.header__search summary"
+  "prepareClick": null,
+  "capture": {
+    "url": "https://www.drinkbrez.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:26:12.403Z",
+    "prepareClick": "details-modal.header__search summary"
+  },
+  "prepareForceOpen": true,
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.drinkbrez.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "details-modal.header__search details",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bar-acik",
+      "not": "İkon gizli — details forceOpen. Üst Search bar."
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "og",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "og",
+      "not": "katalogSorgu og — öneri/sonuç çıkarsa yaz"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Force-open üst Search bar; placeholder Search; büyüteç + X.",
+    "input": "og yazıldı; öneri/ürün listesi yok — Dawn üst bar submit. Asıl sonuç /search?q=og."
+  },
+  "missingStates": [],
+  "interactionNote": "Header search ikonu 0px; prepareClick görünür değil. forceOpen kullanıldı. Predictive liste yok (2. deneme yok — /search sayfası var)."
 }

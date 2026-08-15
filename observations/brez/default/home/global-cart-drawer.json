@@ -7,9 +7,109 @@
   "url": "https://www.drinkbrez.com/",
   "selector": ".rebuy-cart__flyout",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
-  "notlar": "Rebuy sağ flyout. Boş: Your cart, Login, kargo eşiği $125, You may also like (Shots/OG Extra/OG) Add, Checkout. 21+ certify metni.",
-  "delta": "Dawn cart-drawer da var; body smart-cart--enabled — canlı sepet Rebuy. Native #CartDrawer 0px.",
+  "evidence": [
+    "evidence/brez/default/home/global-cart-drawer.changed.qty2.1440.png",
+    "evidence/brez/default/home/global-cart-drawer.changed.qty2.375.png",
+    "evidence/brez/default/home/global-cart-drawer.changed.qty2.768.png",
+    "evidence/brez/default/home/global-cart-drawer.filled.og-qty1.1440.png",
+    "evidence/brez/default/home/global-cart-drawer.filled.og-qty1.375.png",
+    "evidence/brez/default/home/global-cart-drawer.filled.og-qty1.768.png",
+    "evidence/brez/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/brez/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/brez/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "Rebuy sağ flyout. Boş: Your cart, Login, kargo eşiği $125, You may also like, Checkout, 21+ certify.",
+  "delta": "Dawn cart-drawer 0px. Rebuy script yarışıyor (768 bazen yok). smart-cart--enabled.",
   "captureMode": "viewport",
-  "prepareClick": "#cart-icon-bubble"
+  "prepareClick": "#cart-icon-bubble",
+  "warmupUrl": "https://www.drinkbrez.com/",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.drinkbrez.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false,
+      "not": "Rebuy hydrate"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş Rebuy: eşik $125 + You may also like"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.drinkbrez.com/products/og",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "og-qty1",
+      "not": "ATC sonrası drawer açılmazsa cart ikon"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".rebuy-cart__flyout button[aria-label*='Increase'], .rebuy-cart__flyout [class*='quantity'] button:last-child, .rebuy-cart__flyout button:has-text('+')",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "qty2",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Rebuy boş; You are $125.00 away from FREE SHIPPING; You may also like Shots $24 / OG Extra $28 / OG $48.",
+    "filled": "OG 8 pack qty 1; $38.40 (üstü $48); Monthly; $86.60 to free shipping; Checkout+ $41.95.",
+    "changed": "qty 2; subtotal $71.80 (üstü $96); $53.20 to free shipping; Checkout+ $75.55."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart UI (button.product-form__submit). 375/768/1440 üç state alındı.",
+  "capture": {
+    "url": "https://www.drinkbrez.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:30:35.888Z"
+  }
 }
