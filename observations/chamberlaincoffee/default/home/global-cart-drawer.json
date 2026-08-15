@@ -1,0 +1,92 @@
+{
+  "evidence": [],
+  "delta": "Hydrogen + Oxygen + Sanity (theme Store / Shopify.theme.name yok — uydurulmadı). shop chamberlaincoffee.myshopify.com. #shopify-section-* yok. cart-page-main yok. Native Hydrogen .cart-drawer.",
+  "observationId": "chamberlaincoffee.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "chamberlaincoffee",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://chamberlaincoffee.com/",
+  "selector": ".cart-drawer",
+  "evidenceSlug": "global-cart-drawer",
+  "captureMode": "viewport",
+  "prepareClick": "header button.focus\\:ring-primary\\/5",
+  "notlar": "Sağ .cart-drawer. Boş: Your cart is empty / Start Shopping. /cart → /?viewcart=true home.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://chamberlaincoffee.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header button.focus\\:ring-primary\\/5",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://chamberlaincoffee.com/products/vanilla-matcha-green-tea-powder",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": ".product-details button:has-text(\"Add to cart\")",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "header button.focus\\:ring-primary\\/5",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "vanilla-qty1",
+      "not": "ATC sonrası drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".cart-drawer button:has-text(\"+\"), .cart-drawer button[aria-label*='Increase'], .cart-drawer button[aria-label*='increase']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "qty2",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty; Start Shopping.",
+    "filled": "Vanilla Matcha satırı beklenen (karede doğrulanacak).",
+    "changed": "Adet 2 beklenen (karede doğrulanacak)."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout’a girilmedi. Qty + selector kareye göre düzeltilebilir."
+}

@@ -1,0 +1,41 @@
+{
+  "evidence": [],
+  "delta": "Hydrogen + Oxygen + Sanity (theme Store / Shopify.theme.name yok — uydurulmadı). shop chamberlaincoffee.myshopify.com. #shopify-section-* yok. İki h1 aynı module’de.",
+  "observationId": "chamberlaincoffee.default.home.hero-slideshow",
+  "schemaId": "hero-slideshow",
+  "kaynak": "chamberlaincoffee",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://chamberlaincoffee.com/",
+  "selector": "main .module:has(h1:text-is(\"Tastes like vacation\"))",
+  "evidenceSlug": "hero-slideshow",
+  "notlar": "Sanity module.hero, 2 slayt. Slayt 1: Tastes like vacation / Coconut Cold Brew and Matcha are here / Shop summer. Slayt 2 başlığı DOM’da Organic Coffee & Matcha. Embla prev/next + dots.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://chamberlaincoffee.com/",
+      "capture": true,
+      "etiket": "slayt1",
+      "not": "Tastes like vacation"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "main .module:has(h1:text-is(\"Tastes like vacation\")) .embla__button--next",
+      "capture": true,
+      "etiket": "slayt2",
+      "not": "Next Slide"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Tastes like vacation; Coconut Cold Brew and Matcha are here; Shop summer.",
+    "changed": "Next → ikinci slayt (Organic Coffee & Matcha beklenen)."
+  },
+  "missingStates": [],
+  "interactionNote": "Embla ok. İkinci slayt karede doğrulanacak."
+}

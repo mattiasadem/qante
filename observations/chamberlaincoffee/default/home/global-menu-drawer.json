@@ -1,0 +1,49 @@
+{
+  "evidence": [],
+  "delta": "Hydrogen + Oxygen + Sanity (theme Store / Shopify.theme.name yok — uydurulmadı). shop chamberlaincoffee.myshopify.com. #shopify-section-* yok. 1440 hamburger yok (düz header).",
+  "observationId": "chamberlaincoffee.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "chamberlaincoffee",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://chamberlaincoffee.com/",
+  "selector": "nav.navMenu",
+  "evidenceSlug": "global-menu-drawer",
+  "captureMode": "viewport",
+  "prepareClick": "header button[aria-label='Menu']",
+  "notlar": "375/768 hamburger → nav.navMenu: Find us in stores, Account, koleksiyonlar, Chamberlain Cafe, Emma's Faves.",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://chamberlaincoffee.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header button[aria-label='Menu']",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Mobil menü"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: Find us in stores, Account, Coffee Beans… Shop All, Chamberlain Cafe, Emma's Faves."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger yok — navigation-header-mega."
+    }
+  ],
+  "interactionNote": "1440 N/A."
+}
