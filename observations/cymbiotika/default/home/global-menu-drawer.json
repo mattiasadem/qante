@@ -1,0 +1,68 @@
+{
+  "observationId": "cymbiotika.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "cymbiotika",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://cymbiotika.com/",
+  "selector": "#navpanel",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/cymbiotika/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/cymbiotika/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "375 görünür hamburger: #shopify-section-layout-header button.spt-h-full.spt-pl-1.5. Drawer #navpanel (kapalı x=-375, açık x=0). Take the Quiz / Create Bundle / Shop All / Best Sellers.",
+  "delta": "Sprout #navpanel. v3-hamburger 0px. 1440 hamburger yok — mega.",
+  "captureMode": "viewport",
+  "prepareClick": "#shopify-section-layout-header button.spt-h-full.spt-pl-1\\.5",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://cymbiotika.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#shopify-section-layout-header button.spt-h-full.spt-pl-1\\.5",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "viewports": [
+        "375",
+        "768"
+      ]
+    }
+  ],
+  "stateFindings": {
+    "open": "375 tam ekran: Take the Quiz / Create Bundle / Shop All / Shop Best Sellers / Shop By Benefit / Learn. 768 sol panel + karartılmış home. X kapat."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 N/A — masaüstü mega."
+    }
+  ],
+  "interactionNote": "Opener #shopify-section-layout-header button.spt-h-full.spt-pl-1.5 (aria yok). v3-hamburger 0px.",
+  "capture": {
+    "url": "https://cymbiotika.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:04:02.912Z"
+  }
+}
