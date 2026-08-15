@@ -6,12 +6,12 @@
 | Preset | Demo | Durum |
 |---|---|---|
 | symmetry | https://chantilly.myshopify.com/ | ✅ 55 obs · 177 kare · hotspot + FAQ |
-| salt-yard | https://salt-yard.myshopify.com/ | ⬜ |
+| salt-yard | https://salt-yard.myshopify.com/ | ✅ 29 obs · 87 kare |
 | beatnik | https://beatnik-5.myshopify.com/ | ⬜ |
 | duke | https://duke-16.myshopify.com/ | ⬜ |
 | amara | https://symmetry-amara.myshopify.com/ | ⬜ |
 
-**Şu anki odak:** Salt Yard delta
+**Şu anki odak:** Beatnik delta
 
 ---
 
