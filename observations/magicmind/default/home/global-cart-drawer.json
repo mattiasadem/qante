@@ -1,0 +1,77 @@
+{
+  "observationId": "magicmind.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "magicmind",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://magicmind.com/",
+  "selector": "#shopify-section-sections--19192801493126__main",
+  "captureMode": "viewport",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "NS hybrid cart. /cart → /?cart=open (sayfa yok). Opener button.cart-icon. Checkout tıklanmadı.",
+  "delta": "Drawer kapalı 0px. cart-page-main yok.",
+  "interactionStates": ["initial", "filled"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://magicmind.com/?cart=open",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.cart-icon",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş hybrid cart — selector capture sonrası doğrulanacak"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://magicmind.com/products/mental-performance-shot-original",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'], button.add-to-cart, [type='submit']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.cart-icon",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "original-eklendi",
+      "not": "ATC sonrası drawer"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Henüz çekilmedi.",
+    "filled": "Henüz çekilmedi."
+  },
+  "missingStates": [],
+  "interactionNote": "Adımlar ilk hipotez; PNG bakılmadan şema güncellenmedi. Checkout yok."
+}
