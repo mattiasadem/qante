@@ -1,0 +1,42 @@
+{
+  "observationId": "xeroshoes.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "xeroshoes",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://xeroshoes.com/",
+  "selector": "#shopify-section-sections--20200620851378__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Sticky header. Logo; New Arrivals / Men / Women / Kids / Clearance / Explore / Find Your Shoe. Masaüstü predictive search + cart. Men/Women megamenu (koleksiyon kolonları + ürün kartı).",
+  "delta": "Tema adı vitrinde: xeroshoes-com-theme/main · schema_name Feel the World 1.2.0 · theme_store_id null. Dil seçici yok. #mobile-menu 1440'ta 0px. Mega li.nav-item.dropdown.megamenu.",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://xeroshoes.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı sticky bar"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "li.nav-item.dropdown.megamenu:has(a[aria-label='Men'])",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "men-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Men hover → Shop All / Footwear / By Activity + Coast Suede kartı"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "375/768 mega yok — hamburger ayrı observation."
+}
