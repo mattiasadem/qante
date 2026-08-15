@@ -20,6 +20,14 @@
  * Adım biçimi (observations/_template-interaction.json):
  *   { "state": "filled", "action": "click", "selector": "...", "value": null,
  *     "capture": true, "captureMode": "viewport", "not": "..." }
+ *
+ * iframe içi (cross-origin dahil — Playwright frameLocator):
+ *   selector "iframe…" ile başlar ve " >> " içerirse sol taraf frame,
+ *   sağ taraf frame içi locator'dır:
+ *     iframe[id^="lightbox-iframe-"] >> text=Lose Weight
+ *     iframe[id^="lightbox-iframe-"] >> button.next
+ *   Çıplak iframe selector ( >> yok) parent sayfadaki iframe elementidir
+ *   (waitFor / capture kutu SS).
  */
 
 import { chromium } from "playwright";
@@ -140,6 +148,32 @@ fs.mkdirSync(outDir, { recursive: true });
 const evidenceRel = (filename) =>
   `evidence/${obs.kaynak}/${obs.preset}/${obs.sayfa}/${filename}`;
 
+/**
+ * iframe[sel] >> inner  → frameLocator + in-frame locator
+ * iframe[sel]           → parent-page iframe host
+ * diğer                 → page.locator
+ *
+ * ">>" Playwright aynı-belge descendant'ı DEĞİL burada: ilk ">>"
+ * frame / iç sınırıdır. İç kısım frame içinde normal Playwright selector'dır
+ * (text=, css, role=, başka >> …).
+ */
+function splitIframeSelector(selector) {
+  if (!selector) return null;
+  const s = String(selector).trim();
+  if (!/^iframe\b/i.test(s)) return null;
+  const idx = s.indexOf(">>");
+  if (idx === -1) return { kind: "host", frameSel: s };
+  const frameSel = s.slice(0, idx).trim();
+  const inner = s.slice(idx + 2).trim();
+  if (!frameSel || !inner) return { kind: "host", frameSel: s };
+  return { kind: "inner", frameSel, inner };
+}
+
+function iframeHostSelector(selector) {
+  const parsed = splitIframeSelector(selector);
+  return parsed ? parsed.frameSel : null;
+}
+
 // ─── Sayfa hazırlığı (capture-observation.mjs ile aynı davranış) ───────────
 
 async function settle(page, url) {
@@ -173,28 +207,101 @@ async function settle(page, url) {
   await assertCleanForScreenshot(page);
   await page.waitForTimeout(800);
 
-  // Lazy section hydrate
-  await page.evaluate(async () => {
-    const step = Math.max(400, Math.floor(window.innerHeight * 0.85));
-    const max = Math.max(
-      document.body?.scrollHeight || 0,
-      document.documentElement?.scrollHeight || 0
-    );
-    for (let y = 0; y < max; y += step) {
-      window.scrollTo(0, y);
-      await new Promise((r) => setTimeout(r, 120));
+  const iframeHost = iframeHostSelector(obs.selector);
+  if (iframeHost) {
+    // Escape overlay dismiss lightbox'ı kapatabilir — ana içerik iframe ise geri yükle
+    const gone = (await page.locator(iframeHost).count()) === 0;
+    if (gone) {
+      await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
+      await page.waitForTimeout(4500);
     }
-    window.scrollTo(0, 0);
-  });
-  await page.waitForTimeout(400);
+  } else {
+    // Lazy section hydrate (lightbox sayfasında kaydırma gerekmez)
+    await page.evaluate(async () => {
+      const step = Math.max(400, Math.floor(window.innerHeight * 0.85));
+      const max = Math.max(
+        document.body?.scrollHeight || 0,
+        document.documentElement?.scrollHeight || 0
+      );
+      for (let y = 0; y < max; y += step) {
+        window.scrollTo(0, y);
+        await new Promise((r) => setTimeout(r, 120));
+      }
+      window.scrollTo(0, 0);
+    });
+    await page.waitForTimeout(400);
+  }
+}
+
+function resolveLocator(page, selector) {
+  const parsed = splitIframeSelector(selector);
+  if (!parsed || parsed.kind === "host") return page.locator(selector);
+  return page.frameLocator(parsed.frameSel).locator(parsed.inner);
+}
+
+async function waitForFrameReady(page, frameSel, timeout = 15000) {
+  const host = page.locator(frameSel).first();
+  await host.waitFor({ state: "attached", timeout });
+  const deadline = Date.now() + timeout;
+  while (Date.now() < deadline) {
+    const handle = await host.elementHandle().catch(() => null);
+    const frame = handle ? await handle.contentFrame().catch(() => null) : null;
+    if (frame) {
+      const ready = await frame
+        .evaluate(() => Boolean(document.body && document.body.innerText.trim().length > 0))
+        .catch(() => false);
+      if (ready) return frame;
+    }
+    await page.waitForTimeout(250);
+  }
+  return null;
+}
+
+async function clickInFrameFallback(page, parsed) {
+  const frameLoc = page.frameLocator(parsed.frameSel);
+  const text = parsed.inner.startsWith("text=")
+    ? parsed.inner.slice(5).trim()
+    : null;
+  if (!text) return false;
+
+  const candidates = [
+    frameLoc.getByRole("button", { name: text }),
+    frameLoc.getByRole("link", { name: text }),
+    frameLoc.getByText(text, { exact: false }),
+  ];
+  for (const loc of candidates) {
+    const n = await loc.count().catch(() => 0);
+    for (let i = 0; i < n; i++) {
+      const el = loc.nth(i);
+      if (await el.isVisible().catch(() => false)) {
+        await el.click({ force: true });
+        return true;
+      }
+    }
+  }
+
+  const box = await frameLoc.getByText(text).first().boundingBox().catch(() => null);
+  if (box && box.width >= 4 && box.height >= 4) {
+    await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2);
+    return true;
+  }
+  return false;
 }
 
 // Görünür olanı tercih eden tıklama — gizli close/overlay .first() tuzağı
 async function clickVisible(page, selector) {
-  const nodes = page.locator(selector);
+  const parsed = splitIframeSelector(selector);
+  if (parsed?.kind === "inner") {
+    await waitForFrameReady(page, parsed.frameSel);
+  }
+
+  const nodes = resolveLocator(page, selector);
   await nodes.first().waitFor({ state: "attached", timeout: 12000 }).catch(() => {});
-  const n = await nodes.count();
-  if (!n) throw new Error(`selector eşleşmedi: ${selector}`);
+  const n = await nodes.count().catch(() => 0);
+  if (!n) {
+    if (parsed?.kind === "inner" && (await clickInFrameFallback(page, parsed))) return;
+    throw new Error(`selector eşleşmedi: ${selector}`);
+  }
   for (let i = 0; i < n; i++) {
     const el = nodes.nth(i);
     if (await el.isVisible().catch(() => false)) {
@@ -202,32 +309,52 @@ async function clickVisible(page, selector) {
       return;
     }
   }
-  await nodes.first().click({ force: true });
+  try {
+    await nodes.first().click({ force: true });
+  } catch (err) {
+    if (parsed?.kind === "inner" && (await clickInFrameFallback(page, parsed))) return;
+    throw err;
+  }
+}
+
+async function forceOpenInDocument(sel) {
+  for (const el of document.querySelectorAll(sel)) {
+    el.hidden = false;
+    el.removeAttribute("hidden");
+    el.style.removeProperty("display");
+    el.classList.add("active", "open", "is-open");
+    el.classList.remove("drawer--loading", "loading", "is-loading");
+    el.setAttribute("open", "");
+    el.setAttribute("aria-hidden", "false");
+    if (typeof el.show === "function") el.show();
+    if (typeof el.open === "function" && el.open.length === 0) {
+      try {
+        el.open();
+      } catch {}
+    }
+  }
+  document.documentElement.classList.add(
+    "overflow-hidden",
+    "drawer-open",
+    "modal-showing"
+  );
 }
 
 async function forceOpen(page, selector) {
-  await page.evaluate((sel) => {
-    for (const el of document.querySelectorAll(sel)) {
-      el.hidden = false;
-      el.removeAttribute("hidden");
-      el.style.removeProperty("display");
-      el.classList.add("active", "open", "is-open");
-      el.classList.remove("drawer--loading", "loading", "is-loading");
-      el.setAttribute("open", "");
-      el.setAttribute("aria-hidden", "false");
-      if (typeof el.show === "function") el.show();
-      if (typeof el.open === "function" && el.open.length === 0) {
-        try {
-          el.open();
-        } catch {}
-      }
+  const parsed = splitIframeSelector(selector);
+  if (parsed?.kind === "inner") {
+    const cssLike =
+      !/^(text=|role=|internal:)/.test(parsed.inner) && !parsed.inner.startsWith("text=");
+    if (cssLike) {
+      const frame = await waitForFrameReady(page, parsed.frameSel);
+      if (!frame) throw new Error(`iframe contentFrame yok: ${parsed.frameSel}`);
+      await frame.evaluate(forceOpenInDocument, parsed.inner);
     }
-    document.documentElement.classList.add(
-      "overflow-hidden",
-      "drawer-open",
-      "modal-showing"
-    );
-  }, selector);
+    await page.waitForTimeout(800);
+    return;
+  }
+
+  await page.evaluate(forceOpenInDocument, selector);
   await page.waitForTimeout(800);
 }
 
@@ -333,8 +460,8 @@ async function cleanLoaders(page, selector) {
 
 // En büyük görünür kutuyu seç (çoklu host tuzağı)
 async function bestLocator(page, selector) {
-  const all = page.locator(selector);
-  const count = await all.count();
+  const all = resolveLocator(page, selector);
+  const count = await all.count().catch(() => 0);
   if (!count) return { loc: null, box: null };
   let loc = all.first();
   let box = null;
@@ -356,12 +483,18 @@ async function capture(page, step, vp) {
   const selector = step.captureSelector || obs.selector;
   if (!selector) throw new Error("capture için selector yok (obs.selector veya step.captureSelector)");
 
-  await cleanLoaders(page, selector);
+  const parsed = splitIframeSelector(selector);
+  const hostSel = parsed ? parsed.frameSel : selector;
+  await cleanLoaders(page, hostSel);
 
   let { loc, box } = await bestLocator(page, selector);
   if (!box) {
     await forceOpen(page, selector);
     ({ loc, box } = await bestLocator(page, selector));
+  }
+  // In-frame node tiny/missing → parent iframe kutu (cross-origin pikseller boyalı)
+  if ((!box || box.width < 8 || box.height < 8) && parsed?.kind === "inner") {
+    ({ loc, box } = await bestLocator(page, parsed.frameSel));
   }
   if (!box || box.width < 8 || box.height < 8) {
     throw new Error(`zero-size / eşleşmedi: ${selector}`);
@@ -397,7 +530,9 @@ async function runStep(page, step) {
       await settle(page, step.value || baseUrl);
       return null;
     case "scrollTo": {
-      const el = page.locator(sel).first();
+      const parsed = splitIframeSelector(sel);
+      if (parsed?.kind === "inner") await waitForFrameReady(page, parsed.frameSel);
+      const el = resolveLocator(page, sel).first();
       await el.waitFor({ state: "attached", timeout: 12000 });
       await el.scrollIntoViewIfNeeded();
       await page.waitForTimeout(500);
@@ -408,7 +543,9 @@ async function runStep(page, step) {
       await page.waitForTimeout(Number(step.value) || 1400);
       return null;
     case "hover": {
-      const el = page.locator(sel).first();
+      const parsed = splitIframeSelector(sel);
+      if (parsed?.kind === "inner") await waitForFrameReady(page, parsed.frameSel);
+      const el = resolveLocator(page, sel).first();
       await el.waitFor({ state: "visible", timeout: 12000 });
       await el.scrollIntoViewIfNeeded().catch(() => {});
       await el.hover({ force: true });
@@ -416,7 +553,9 @@ async function runStep(page, step) {
       return null;
     }
     case "fill": {
-      const nodes = page.locator(sel);
+      const parsed = splitIframeSelector(sel);
+      if (parsed?.kind === "inner") await waitForFrameReady(page, parsed.frameSel);
+      const nodes = resolveLocator(page, sel);
       await nodes.first().waitFor({ state: "attached", timeout: 12000 }).catch(() => {});
       const n = await nodes.count();
       if (!n) throw new Error(`selector eşleşmedi: ${sel}`);
@@ -437,7 +576,9 @@ async function runStep(page, step) {
       return null;
     }
     case "select": {
-      const el = page.locator(sel).first();
+      const parsed = splitIframeSelector(sel);
+      if (parsed?.kind === "inner") await waitForFrameReady(page, parsed.frameSel);
+      const el = resolveLocator(page, sel).first();
       await el.waitFor({ state: "attached", timeout: 12000 });
       await el.selectOption(String(step.value));
       await page.waitForTimeout(1400);
@@ -449,7 +590,18 @@ async function runStep(page, step) {
       return null;
     case "waitFor":
       if (sel) {
-        await page.locator(sel).first().waitFor({ state: "visible", timeout: 15000 });
+        const parsed = splitIframeSelector(sel);
+        const timeout = Number(step.value) || 15000;
+        if (parsed?.kind === "inner") {
+          await waitForFrameReady(page, parsed.frameSel, timeout);
+          await resolveLocator(page, sel).first().waitFor({ state: "visible", timeout });
+        } else if (parsed?.kind === "host") {
+          // Çıplak iframe: parent host — attached (visible 0-size/Escape sonrası yanıltır)
+          await page.locator(sel).first().waitFor({ state: "attached", timeout });
+          await waitForFrameReady(page, sel, timeout);
+        } else {
+          await page.locator(sel).first().waitFor({ state: "visible", timeout });
+        }
       } else {
         await page.waitForTimeout(Number(step.value) || 1000);
       }

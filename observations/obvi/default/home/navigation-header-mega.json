@@ -1,0 +1,97 @@
+{
+  "observationId": "obvi.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "obvi",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://myobvi.com/",
+  "selector": "#shopify-section-sections--14239256543493__navigation-bar",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/obvi/default/home/navigation-header-mega.changed.learn-mega.1440.png",
+    "evidence/obvi/default/home/navigation-header-mega.open.mobil-menu.375.png",
+    "evidence/obvi/default/home/navigation-header-mega.open.mobil-menu.768.png",
+    "evidence/obvi/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://myobvi.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "header a:has-text(\"SHOP\")",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "[id=\"Desktop Megamenu\"]",
+      "etiket": "shop-mega",
+      "not": "SHOP hover mega — BY BENEFIT + promo kutuları"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "a[href=\"#megamenu--mobile\"]",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "[id*=\"modal_sidebar_menu\"] section.fixed",
+      "etiket": "mobil-menu",
+      "not": "375/768 hamburger sidebar"
+    },
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://myobvi.com/",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "hover",
+      "selector": "header a:has-text(\"LEARN\")",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "[id=\"Desktop Megamenu\"]",
+      "etiket": "learn-mega",
+      "not": "LEARN panel: Our Story, How To Start, Community, Blog, Recipes"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "open": "1440 SHOP mega: BY BENEFIT, SHOP ALL, BUILD YOUR OWN BUNDLE, New Arrivals/Best Sellers/Quiz kutuları. 375/768: Main Menu sidebar, Shop All + benefit linkleri.",
+    "changed": "1440 LEARN mega: Our Story, How To Start, Community, Blog, Recipes — SHOP panelinden farklı."
+  },
+  "interactionNote": "SHOP tıklanırsa /collections/shop-all'a gider; yalnız hover. Header'da TAKE THE QUIZ birinci sınıf CTA.",
+  "capture": {
+    "url": "https://myobvi.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T15:02:05.303Z"
+  },
+  "notlar": "Floating pill header.",
+  "delta": "Utility'de TAKE THE QUIZ pill CTA. Mega paneller menü öğesine göre farklı içerik (SHOP vs LEARN)."
+}

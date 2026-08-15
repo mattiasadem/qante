@@ -1,0 +1,112 @@
+{
+  "observationId": "obvi.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "obvi",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://myobvi.com/",
+  "selector": "[id*=\"modal_cart_drawer\"] div.max-w-md",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/obvi/default/home/global-cart-drawer.changed.qty2.1440.png",
+    "evidence/obvi/default/home/global-cart-drawer.changed.qty2.375.png",
+    "evidence/obvi/default/home/global-cart-drawer.changed.qty2.768.png",
+    "evidence/obvi/default/home/global-cart-drawer.filled.detox-qty1.1440.png",
+    "evidence/obvi/default/home/global-cart-drawer.filled.detox-qty1.375.png",
+    "evidence/obvi/default/home/global-cart-drawer.filled.detox-qty1.768.png",
+    "evidence/obvi/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/obvi/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/obvi/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://myobvi.com/",
+      "capture": false,
+      "not": "Sepet capture öncesi /cart/clear.js ile boşaltılır"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[href=\"/#modal--cart-drawer\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "[id*=\"modal_cart_drawer\"] div.max-w-md",
+      "etiket": "cart-bos",
+      "not": "YOUR CART (0); goal kartları + TAKE OUR QUIZ"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://myobvi.com/products/detox-collagen",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button:has-text(\"ADD TO CART\")",
+      "capture": false,
+      "not": "Detox subscribe default"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://myobvi.com/",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a[href=\"/#modal--cart-drawer\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "[id*=\"modal_cart_drawer\"] div.max-w-md",
+      "etiket": "detox-qty1",
+      "not": "YOUR CART (1); DELIVERED EVERY 4 WEEKS; COMPLETE YOUR SET"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "[id*=\"modal_cart_drawer\"] button[aria-label=\"Increase quantity\"]",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "[id*=\"modal_cart_drawer\"] div.max-w-md",
+      "etiket": "qty2",
+      "not": "YOUR CART (2)"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "ADD $74.99 FOR FREE SHIPPING!; YOUR CART (0); goal kartları Weight Loss/Collagen/Daily Health + TAKE OUR QUIZ + SHOP ALL.",
+    "filled": "YOUR CART (1) Detox $33.99; satırda abonelik dropdown; COMPLETE YOUR SET upsell.",
+    "changed": "YOUR CART (2); qty 2; subtotal güncellendi."
+  },
+  "interactionNote": "initial state öncesi sepet /cart/clear.js ile boşaltılır (run-obvi-captures.mjs).",
+  "capture": {
+    "url": "https://myobvi.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T15:04:43.224Z"
+  },
+  "notlar": "",
+  "delta": "Satır bazında abonelik sıklığı dropdown — DataSource.cart satır meta. onerilerBasligi: COMPLETE YOUR SET. bosSepetKoleksiyonlari: goal kartları."
+}
