@@ -5,7 +5,7 @@
 *Sayfa:* `data-template="password"` · `pageType` password · `/` **302** → `/password`
 
 **Durum:** Mod A walk kapandı — store closed. 1 obs · resmi 3vp · interact yok (piksel değişecek kontrol yok) · leftover kayıtlı  
-**PR:** draft · **main'e merge yok**
+**PR:** https://github.com/mattiasadem/qante/pull/117 (draft · **main'e merge yok**)
 
 ---
 
@@ -19,7 +19,7 @@
 | Parallel | yalnız `observations/westernrise/`, `evidence/westernrise/`, `todo/westernrise.md`, `candidates/westernrise-*.md` |
 
 **Kapsam satırı:**  
-`Western Rise · default · Impact 4.4.0 (theme_store_id 1190) · store closed password · 1 obs · 3 PNG · 0 yeni şema · leftover: walk gated / no chrome / no 404 template / mailto PII`
+`Western Rise · default · Impact 4.4.0 (theme_store_id 1190) · store closed password · 1 obs · 3 PNG · 0 yeni şema · leftover: walk gated / no chrome / no 404 template / Gorgias / mailto PII`
 
 ---
 
@@ -69,5 +69,5 @@
 
 - [x] Claiming obs resmi 3vp (1 × 3vp)
 - [x] Interact yoklandı — kontrol yok, PNG yok
-- [x] `npm run validate`
+- [x] `npm run validate` — 65 temiz · 0 error · 0 warn
 - [ ] Newsletter / account / checkout / mailto — **yapılmayacak** (PII / yok)

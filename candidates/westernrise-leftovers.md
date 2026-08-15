@@ -49,6 +49,14 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: westernrise-gorgias-chat  
+Gerekçe: Resmi 3vp’de sağ alt dairesel chat FAB. DOM: `#gorgias-chat-bundle` + iframe `chat-button` “Gorgias live chat messenger” (~80×74). Açılmadı (PII). Shopify section değil.  
+Örnekler: https://westernrise.com/password  
+Öneri: leftover — üçüncü parti overlay  
+Karar: onay bekliyor
+
+---
+
 ADAY: westernrise-dormant-apps  
 Gerekçe: Head’de Okendo reviews settings + Klaviyo comment + gizli `#countdown-template`. Password sayfasında widget/section olarak render yok.  
 Örnekler: https://westernrise.com/password  
