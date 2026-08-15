@@ -1,0 +1,76 @@
+{
+  "observationId": "davidprotein.default.home.comparison-quick-table",
+  "schemaId": "comparison-quick-table",
+  "kaynak": "davidprotein",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://davidprotein.com/",
+  "selector": "#shopify-section-template--21417470132391__interactive_chart_kGbQqx",
+  "evidenceSlug": "comparison-quick-table",
+  "evidence": [
+    "evidence/davidprotein/default/home/comparison-quick-table.1440.png",
+    "evidence/davidprotein/default/home/comparison-quick-table.375.png",
+    "evidence/davidprotein/default/home/comparison-quick-table.768.png",
+    "evidence/davidprotein/default/home/comparison-quick-table.changed.macros.1440.png",
+    "evidence/davidprotein/default/home/comparison-quick-table.changed.macros.375.png",
+    "evidence/davidprotein/default/home/comparison-quick-table.changed.macros.768.png"
+  ],
+  "notlar": "A lot of protein, not a lot of calories. Sekmeler Calories from protein / Macros. Protein|Sugar. David Gold vs Built/Barebells/Quest dipnotu.",
+  "delta": "Ürün kolon tablosu değil — interaktif makro grafik. ATC/QV yok. leftover adayı da candidates/davidprotein-leftovers.md.",
+  "capture": {
+    "url": "https://davidprotein.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:22:42.672Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://davidprotein.com/",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": "6000",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Klaviyo 10% quiz — Escape"
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21417470132391__interactive_chart_kGbQqx",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--21417470132391__interactive_chart_kGbQqx button:has-text('Macros')",
+      "value": 1200,
+      "capture": true,
+      "etiket": "macros",
+      "not": "Macros sekmesi — grafik değişmeli"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Calories from protein sekmesi. Sol çubuk grafik: David Gold ~75% / Bronze ~53% / Built / Quest / Barebells. Sağ: Designed for protein efficiency.",
+    "changed": "Macros sekmesi. Tablo satırları PROTEIN / CALORIES / SUGAR. Kolonlar David Gold 28g·150·0g, Bronze 20g·150·0g, rakip (Built Puff 17g·140·6g). Altta Toggle brand with David (Built/Quest/Barebells)."
+  }
+}

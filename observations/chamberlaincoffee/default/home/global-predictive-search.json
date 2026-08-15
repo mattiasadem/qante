@@ -1,0 +1,82 @@
+{
+  "observationId": "chamberlaincoffee.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "chamberlaincoffee",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://chamberlaincoffee.com/",
+  "selector": "nav.searchMenu",
+  "evidenceSlug": "global-predictive-search",
+  "captureMode": "viewport",
+  "prepareClick": "header button[aria-label='Search']",
+  "evidence": [
+    "evidence/chamberlaincoffee/default/home/global-predictive-search.initial.bos.1440.png",
+    "evidence/chamberlaincoffee/default/home/global-predictive-search.initial.bos.375.png",
+    "evidence/chamberlaincoffee/default/home/global-predictive-search.initial.bos.768.png",
+    "evidence/chamberlaincoffee/default/home/global-predictive-search.input.vanilla.1440.png",
+    "evidence/chamberlaincoffee/default/home/global-predictive-search.input.vanilla.375.png",
+    "evidence/chamberlaincoffee/default/home/global-predictive-search.input.vanilla.768.png"
+  ],
+  "notlar": "Header Search → body.search-open + nav.searchMenu. Placeholder Search for...",
+  "delta": "Hydrogen + Oxygen + Sanity (theme Store / Shopify.theme.name yok — uydurulmadı). shop chamberlaincoffee.myshopify.com. #shopify-section-* yok. /search?q=matcha headless boş (html ~118). Overlay vanilla → Can't find what you're looking for? + ALL PRODUCTS.",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://chamberlaincoffee.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.klaviyo-close-form",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "capture": false,
+      "not": "Klaviyo — settle scroll sonrası 768/1440"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header button[aria-label='Search']",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bos",
+      "not": "Açık arama — clickVisible görünür Search (gizli xl header atlanır)"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input[placeholder='Search for...']",
+      "value": "vanilla",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "vanilla",
+      "not": "katalogSorgu vanilla (ürün adı)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "3vp: Search for...; sonuç listesi yok.",
+    "input": "3vp: vanilla → Can't find what you're looking for? Try searching for something else. ALL PRODUCTS (ürün satırı yok)."
+  },
+  "missingStates": [],
+  "interactionNote": "Ürün önerisi bu koşuda gelmedi. /search sayfası leftover.",
+  "capture": {
+    "url": "https://chamberlaincoffee.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:32:02.674Z"
+  }
+}
