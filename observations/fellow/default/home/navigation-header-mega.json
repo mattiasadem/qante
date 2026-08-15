@@ -1,0 +1,92 @@
+{
+  "observationId": "fellow.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "fellow",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://fellowproducts.com/",
+  "selector": "#shopify-section-sections--22412323094628__main_header_EJCjrm",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/fellow/default/home/navigation-header-mega.1440.png",
+    "evidence/fellow/default/home/navigation-header-mega.375.png",
+    "evidence/fellow/default/home/navigation-header-mega.768.png",
+    "evidence/fellow/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/fellow/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/fellow/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/fellow/default/home/navigation-header-mega.open.featured-mega.1440.png"
+  ],
+  "notlar": "Logo + Featured / Espresso / Coffee Makers / Grinders / Kettles / Drinkware / Accessories / Bundle + Save / Coffee + Tea / Academy. Search summary, Log in, #cart-icon-bubble. 375: Menu + logo + search + cart + yatay chip şeridi.",
+  "delta": "Mega #MegaMenu-Content-* hover; linkler koleksiyona gider — open için hover (click sayfa kaçırır). 375 hamburger button[aria-controls=mobile-menu-drawer]. Locale yok (footer country).",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://fellowproducts.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı sticky header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#HeaderMenu-AMDRUV1RXM1VLcjltU__header_mega_menu_Hx7Kw6-1",
+      "value": 2000,
+      "capture": false,
+      "viewports": [
+        "1440"
+      ],
+      "not": "Featured <a> — click /collections/all-products'a gider; yalnız hover"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "selector": "#MegaMenu-Content-AMDRUV1RXM1VLcjltU__header_mega_menu_Hx7Kw6-1",
+      "value": 5000,
+      "capture": false,
+      "viewports": [
+        "1440"
+      ],
+      "not": "Panel görünür olmalı (Best Sellers / Featured kartlar)"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#MegaMenu-Content-AMDRUV1RXM1VLcjltU__header_mega_menu_Hx7Kw6-1",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "featured-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "İmleç panelde kalsın — 1. deneme homepage karesi (mega kapalı)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Kapalı bar: FELLOW + Featured…Academy + search/account/cart. Mega yok.",
+    "open": "1440 Featured hover: sol kolon Best Sellers / New Arrivals (New Items) / Bundle + Save (New Deals) / Refurbished Gear / Last Chance / Digital Gift Cards + Join Fellow Drops görseli. Sağda Featured kartlar: Espresso Series 1 (+$25 Coffee Credit), Matcha Set, The Aiden + Grinder Kit (17% off), Stagg EKG, Ode Gen 2."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375/768 mega yok — hamburger global-menu-drawer."
+    }
+  ],
+  "interactionNote": "Featured <a href=/collections/all-products> — yalnız hover. 1. deneme viewport karesi mega kapalıydı; 2. deneme hover+waitFor+#MegaMenu-Content hover ile panel göründü.",
+  "capture": {
+    "url": "https://fellowproducts.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:28:19.135Z"
+  }
+}
