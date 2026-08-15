@@ -7,9 +7,16 @@
   "url": "https://kizik.com/",
   "selector": "#shopify-section-template--21445584191645__featured_collections_hrwdy8",
   "evidenceSlug": "product-showcase-tabs",
-  "evidence": [],
-  "notlar": "Every style, hands-free. Sekmeler WOMEN / MEN / NEW. Vegas 2 $139.95, Camden, Siena.",
-  "delta": "Impact featured_collections + tab. NEW rozeti kartta.",
+  "evidence": [
+    "evidence/kizik/default/home/product-showcase-tabs.changed.men-tab.1440.png",
+    "evidence/kizik/default/home/product-showcase-tabs.changed.men-tab.375.png",
+    "evidence/kizik/default/home/product-showcase-tabs.changed.men-tab.768.png",
+    "evidence/kizik/default/home/product-showcase-tabs.initial.women-tab.1440.png",
+    "evidence/kizik/default/home/product-showcase-tabs.initial.women-tab.375.png",
+    "evidence/kizik/default/home/product-showcase-tabs.initial.women-tab.768.png"
+  ],
+  "notlar": "Every style, hands-free. Sekmeler WOMEN / MEN (button.product-group-toggle). NEW kart rozeti, üçüncü tab değil.",
+  "delta": "Impact featured_collections + tab. Slider ok + progress bar.",
   "interactionStates": [
     "initial",
     "changed"
@@ -31,7 +38,7 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": "#shopify-section-template--21445584191645__featured_collections_hrwdy8 button:has-text('MEN'), #shopify-section-template--21445584191645__featured_collections_hrwdy8 :text('MEN')",
+      "selector": "#shopify-section-template--21445584191645__featured_collections_hrwdy8 button.product-group-toggle:text-is('MEN')",
       "capture": true,
       "etiket": "men-tab",
       "not": "MEN sekmesi — kartlar değişmeli"
@@ -39,8 +46,19 @@
   ],
   "stateFindings": {
     "initial": "WOMEN tab; Vegas 2 / Camden / Siena kartları.",
-    "changed": "MEN tab tıklandı — kart değişimi capture sonrası yazılacak."
+    "changed": "MEN seçili; Men's Lima 2 $119.95 / Athens 2 $139.95 / Freedom Trail $149.95 / Freedom Run $149.95."
   },
   "missingStates": [],
-  "interactionNote": "MEN yazılı <a> koleksiyona kaçırmasın — section scoped button tercih."
+  "interactionNote": "İlk deneme :text('MEN') WOMEN'da kaldı. İkinci: button.product-group-toggle:text-is('MEN') — kartlar değişti.",
+  "capture": {
+    "url": "https://kizik.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:54:36.576Z"
+  }
 }

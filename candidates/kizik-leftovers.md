@@ -70,6 +70,7 @@ Karar: onay bekliyor
 - Shipping `/pages/kizik-shipping-information-v2` — page main, FAQ ile aynı template
 - Accessibility `/pages/accessibility/`
 - HSA/FSA `/pages/hsa-fsa-eligibility-kizik-shoes` — 429 bot-wall
+- FAQ `/pages/faqs` soru tık → help-center makale (accordion değil); observation `faq-collapsible-tabs` reuse
 - Tracking `/pages/tracking`
 - Newsletter / contact submit / account — PII stop
 - Gift card PDP
