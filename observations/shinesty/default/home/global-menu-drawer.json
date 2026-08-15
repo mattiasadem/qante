@@ -1,0 +1,62 @@
+{
+  "observationId": "shinesty.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "shinesty",
+  "preset": "default",
+  "sayfa": "home",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/shinesty/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/shinesty/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "url": "https://www.shinesty.com/",
+  "selector": "body",
+  "captureMode": "viewport",
+  "notlar": "375/768 hamburger img[alt=Menu]. Drawer içeriği interact.",
+  "delta": "Masaüstü mega ayrı; mobil drawer global-menu-drawer.",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://www.shinesty.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button:has(img[alt=\"Menu\"])",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Mobil menü drawer"
+    }
+  ],
+  "stateFindings": {
+    "open": "375 tam ekran / 768 sol-orta drawer: Featured > / Men's > / Women's > / Subscription > / Couple's Matching > / Sale > / 3/$33 Socks; US locale; HELP; SIGN IN. X kapat."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger yok — mega birincil."
+    }
+  ],
+  "interactionNote": "SIGN IN / account PII tıklanmadı. Accordion (Featured >) açılmadı.",
+  "capture": {
+    "url": "https://www.shinesty.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:09:56.999Z"
+  }
+}
