@@ -1,0 +1,62 @@
+{
+  "observationId": "amberjack.default.collection-wide.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "amberjack",
+  "preset": "default",
+  "sayfa": "collection-wide",
+  "url": "https://www.amberjack.shop/collections/wide-dress-shoes",
+  "selector": "[id*='__faq_']",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/amberjack/default/collection-wide/faq-collapsible-tabs.1440.png",
+    "evidence/amberjack/default/collection-wide/faq-collapsible-tabs.375.png",
+    "evidence/amberjack/default/collection-wide/faq-collapsible-tabs.768.png",
+    "evidence/amberjack/default/collection-wide/faq-collapsible-tabs.changed.ilk-soru.1440.png",
+    "evidence/amberjack/default/collection-wide/faq-collapsible-tabs.changed.ilk-soru.375.png",
+    "evidence/amberjack/default/collection-wide/faq-collapsible-tabs.changed.ilk-soru.768.png",
+    "evidence/amberjack/default/collection-wide/faq-collapsible-tabs.initial.kapali.1440.png",
+    "evidence/amberjack/default/collection-wide/faq-collapsible-tabs.initial.kapali.375.png",
+    "evidence/amberjack/default/collection-wide/faq-collapsible-tabs.initial.kapali.768.png"
+  ],
+  "notlar": "Frequently Asked Questions. İki soru, sağda + accordion.",
+  "delta": "Wide PLP altı. + ikon; details/button yok — .faq-block__question div accordion.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.amberjack.shop/collections/wide-dress-shoes",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "İki soru kapalı +"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "[id*='__faq_'] .faq-block__question",
+      "value": 800,
+      "capture": true,
+      "etiket": "ilk-soru",
+      "not": "İlk soru açık — wide sizing cevabı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "FAQ başlık; iki soru + ile kapalı.",
+    "changed": "İlk soru açık — wide size dress shoes cevabı."
+  },
+  "missingStates": [],
+  "capture": {
+    "url": "https://www.amberjack.shop/collections/wide-dress-shoes",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:33:34.173Z"
+  }
+}
