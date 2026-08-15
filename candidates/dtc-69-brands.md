@@ -16,9 +16,9 @@ Durum: `done` = main'e merge · `in progress` = açık PR · boş = kuyrukta
 | 4 | done | cometeer.com | https://cometeer.com |
 | 5 | done | mytopicals.com | https://mytopicals.com |
 | 6 | in progress | drinkbrez.com | https://drinkbrez.com |
-| 7 | in progress | amberjack.shop | https://amberjack.shop |
+| 7 | done | amberjack.shop | https://amberjack.shop |
 | 8 | done | moonjuice.com | https://moonjuice.com |
-| 9 | in progress | fellowproducts.com | https://fellowproducts.com |
+| 9 | done | fellowproducts.com | https://fellowproducts.com |
 | 10 | in progress | waterboy.com | https://waterboy.com |
 | 11 | done | dieuxskin.com | https://dieuxskin.com |
 | 12 | in progress | chomps.com | https://chomps.com |
@@ -28,8 +28,8 @@ Durum: `done` = main'e merge · `in progress` = açık PR · boş = kuyrukta
 | 16 | in progress | hexclad.com | https://hexclad.com |
 | 17 | in progress | primalqueen.com | https://primalqueen.com |
 | 18 | in progress | cutsclothing.com | https://cutsclothing.com |
-| 19 | | starface.world | https://starface.world |
-| 20 | | javycoffee.com | https://javycoffee.com |
+| 19 | in progress | starface.world | https://starface.world |
+| 20 | in progress | javycoffee.com | https://javycoffee.com |
 | 21 | | xeroshoes.com | https://xeroshoes.com |
 | 22 | | ghia.com | https://ghia.com |
 | 23 | | madeincookware.com | https://madeincookware.com |
