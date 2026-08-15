@@ -1,0 +1,67 @@
+{
+  "observationId": "brez.default.home.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "brez",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.drinkbrez.com/",
+  "selector": "#shopify-section-template--25694594040105__new_info_2_WKCgnT",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/brez/default/home/faq-collapsible-tabs.1440.png",
+    "evidence/brez/default/home/faq-collapsible-tabs.375.png",
+    "evidence/brez/default/home/faq-collapsible-tabs.768.png",
+    "evidence/brez/default/home/faq-collapsible-tabs.changed.feel-like.1440.png",
+    "evidence/brez/default/home/faq-collapsible-tabs.changed.feel-like.375.png",
+    "evidence/brez/default/home/faq-collapsible-tabs.changed.feel-like.768.png",
+    "evidence/brez/default/home/faq-collapsible-tabs.initial.kapali.1440.png",
+    "evidence/brez/default/home/faq-collapsible-tabs.initial.kapali.375.png",
+    "evidence/brez/default/home/faq-collapsible-tabs.initial.kapali.768.png"
+  ],
+  "notlar": "6 pill accordion 2×3: Will I actually feel it? / What do they feel like? / anxious / edible / legal / ship.",
+  "delta": "Sekme yok; pill grid accordion. İlk soru DOM'da açık metin taşıyor.",
+  "capture": {
+    "url": "https://www.drinkbrez.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:27:02.464Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.drinkbrez.com/",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "6 pill grid"
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--25694594040105__new_info_2_WKCgnT",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--25694594040105__new_info_2_WKCgnT button:has-text('What do they feel like?')",
+      "capture": true,
+      "etiket": "feel-like",
+      "not": "İkinci soru açılmalı — cevap metni"
+    }
+  ],
+  "stateFindings": {
+    "initial": "6 pill accordion, hepsi chevron aşağı.",
+    "changed": "What do they feel like? açık: micronized extracts, 5 minutes, 1.5 hours. Chevron yukarı."
+  },
+  "missingStates": []
+}

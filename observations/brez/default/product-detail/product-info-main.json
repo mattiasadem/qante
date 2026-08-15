@@ -1,0 +1,67 @@
+{
+  "observationId": "brez.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "brez",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://www.drinkbrez.com/products/og",
+  "selector": "#shopify-section-template--25694593483049__ctr_main_product_YfjFfb",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/brez/default/product-detail/product-info-main.1440.png",
+    "evidence/brez/default/product-detail/product-info-main.375.png",
+    "evidence/brez/default/product-detail/product-info-main.768.png",
+    "evidence/brez/default/product-detail/product-info-main.changed.one-time.1440.png",
+    "evidence/brez/default/product-detail/product-info-main.changed.one-time.375.png",
+    "evidence/brez/default/product-detail/product-info-main.changed.one-time.768.png",
+    "evidence/brez/default/product-detail/product-info-main.initial.5mg.1440.png",
+    "evidence/brez/default/product-detail/product-info-main.initial.5mg.375.png",
+    "evidence/brez/default/product-detail/product-info-main.initial.5mg.768.png"
+  ],
+  "notlar": "OG buy box. Galeri + 4.9/9475 reviews. Strength 2.5/5/10/LE. Bundle save eşikleri. Pack 8–96. Subscribe 20% vs One Time. ADD TO CART. What to expect / Full Ingredients accordion.",
+  "delta": "ctr_main_product. Selling plan URL'ye yazılıyor. Strength görsel swatch.",
+  "capture": {
+    "url": "https://www.drinkbrez.com/products/og",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:36:35.489Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.drinkbrez.com/products/og",
+      "capture": true,
+      "etiket": "5mg",
+      "not": "OG 5mg seçili (default)"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label:has-text('One Time Purchase')",
+      "capture": true,
+      "etiket": "one-time",
+      "not": "Subscribe → One Time — fiyat $48 / ATC yazısı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "OG 5mg; Subscribe $38.40 / 8 pack; ADD TO CART $38.40.",
+    "changed": "One Time Purchase seçili; CTA SOLD OUT $48.00 (8 pack one-time stok yok)."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Strength 10mg ayrı PDP /products/og-extra-strength (sayfa değişir). Selling-plan toggle yakalandı."
+    }
+  ],
+  "interactionNote": "10mg Extra Strength link-out. One Time 8-pack SOLD OUT; subscribe ATC çalışıyor (cart filled)."
+}
