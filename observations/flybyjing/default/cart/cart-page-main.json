@@ -1,0 +1,77 @@
+{
+  "observationId": "flybyjing.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "flybyjing",
+  "preset": "default",
+  "sayfa": "cart",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/flybyjing/default/cart/cart-page-main.filled.chili-crisp.1440.png",
+    "evidence/flybyjing/default/cart/cart-page-main.filled.chili-crisp.375.png",
+    "evidence/flybyjing/default/cart/cart-page-main.filled.chili-crisp.768.png",
+    "evidence/flybyjing/default/cart/cart-page-main.initial.bos.1440.png",
+    "evidence/flybyjing/default/cart/cart-page-main.initial.bos.375.png",
+    "evidence/flybyjing/default/cart/cart-page-main.initial.bos.768.png"
+  ],
+  "delta": "Tam sayfa cart var (drawer yanında). Dolu hâl interact.",
+  "url": "https://flybyjing.com/cart",
+  "selector": "#shopify-section-template--15468669009978__cart",
+  "notlar": "YOUR CART. Boş: Your cart is currently empty. Drawer ile aynı kopya.",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://flybyjing.com/cart",
+      "capture": true,
+      "etiket": "bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://flybyjing.com/products/sichuan-chili-crisp",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.add-to-cart-btn",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://flybyjing.com/cart",
+      "capture": true,
+      "etiket": "chili-crisp",
+      "not": "Dolu cart sayfası"
+    }
+  ],
+  "stateFindings": {
+    "initial": "YOUR CART / Your cart is currently empty.",
+    "filled": "Original Sichuan Chili Crisp 2-Pack $30; qty 1; Spend another $45 free shipping; CHECK OUT + Shop Pay / Amazon / G Pay."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı.",
+  "capture": {
+    "url": "https://flybyjing.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:43:18.565Z"
+  }
+}

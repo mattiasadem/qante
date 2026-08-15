@@ -1,0 +1,65 @@
+{
+  "observationId": "flybyjing.default.membership.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "flybyjing",
+  "preset": "default",
+  "sayfa": "membership",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/flybyjing/default/membership/faq-collapsible-tabs.changed.join.1440.png",
+    "evidence/flybyjing/default/membership/faq-collapsible-tabs.changed.join.375.png",
+    "evidence/flybyjing/default/membership/faq-collapsible-tabs.changed.join.768.png",
+    "evidence/flybyjing/default/membership/faq-collapsible-tabs.initial.kapali.1440.png",
+    "evidence/flybyjing/default/membership/faq-collapsible-tabs.initial.kapali.375.png",
+    "evidence/flybyjing/default/membership/faq-collapsible-tabs.initial.kapali.768.png"
+  ],
+  "delta": "details yok; button accordion.",
+  "url": "https://flybyjing.com/pages/membership",
+  "selector": "#shopify-section-template--15468669501498__faq_JBM4ea",
+  "notlar": "FAQ butonları: HOW DO I JOIN… / ACCOUNT / BENEFITS / RECURRING…",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://flybyjing.com/pages/membership",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15468669501498__faq_JBM4ea",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "Sorular kapalı/özet"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--15468669501498__faq_JBM4ea button:has-text('HOW DO I JOIN THE TASTEMAKER CLUB?')",
+      "capture": true,
+      "etiket": "join",
+      "not": "İlk soru açık cevap"
+    }
+  ],
+  "stateFindings": {
+    "initial": "FAQ listesi kapalı; chevron aşağı.",
+    "changed": "HOW DO I JOIN THE TASTEMAKER CLUB? açık — Add the Tastemaker Club membership to your cart…"
+  },
+  "missingStates": [],
+  "interactionNote": "",
+  "capture": {
+    "url": "https://flybyjing.com/pages/membership",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:38:50.676Z"
+  }
+}
