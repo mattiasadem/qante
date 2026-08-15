@@ -7,7 +7,56 @@
   "url": "https://cometeer.com/",
   "selector": "#shopify-section-replo_how_to_melt_section_3a6t3J",
   "evidenceSlug": "editorial-custom-content",
-  "evidence": [],
-  "notlar": "How to melt: Iced/Hot toggle + 1–2–3 adımlar (thaw, peel, pour). Replo adlı section; iframe yok, native butonlar.",
-  "delta": "Yeni how-to-steps tipi değil — en yakın editorial-custom-content. Iced/Hot içerik değişimi interact adayı. Aday: candidates/cometeer-how-to-melt.md"
+  "evidence": [
+    "evidence/cometeer/default/home/editorial-custom-content.1440.png",
+    "evidence/cometeer/default/home/editorial-custom-content.375.png",
+    "evidence/cometeer/default/home/editorial-custom-content.768.png",
+    "evidence/cometeer/default/home/editorial-custom-content.changed.hot-adimlar.1440.png",
+    "evidence/cometeer/default/home/editorial-custom-content.changed.hot-adimlar.375.png",
+    "evidence/cometeer/default/home/editorial-custom-content.changed.hot-adimlar.768.png"
+  ],
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://cometeer.com/",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-replo_how_to_melt_section_3a6t3J",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-replo_how_to_melt_section_3a6t3J button:has-text('Hot')",
+      "capture": true,
+      "etiket": "hot-adimlar",
+      "not": "Hot: freezer → peel + pop puck → 6-8 oz hot water"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "changed": "Hot adımları Iced'ten farklı: frozen puck pop-out + hot water. Iced: thaw fridge/water → peel → pour into liquid."
+  },
+  "interactionNote": "Iced varsayılan (initial 3vp). iframe yok.",
+  "notlar": "How to melt: Iced/Hot toggle + 3 adım. Replo section, native DOM.",
+  "delta": "editorial-custom-content. Ayrı how-to şeması yok — candidates/cometeer-how-to-melt.md",
+  "capture": {
+    "url": "https://cometeer.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T17:33:15.260Z"
+  }
 }

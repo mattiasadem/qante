@@ -1,8 +1,9 @@
 # Todo — Cometeer
 
-*Kaynak:* https://cometeer.com · *Preset:* default · *Tema (storefront):* **Cometeer Theme** (`Shopify.theme.name`) · `schema_name`: **Shiro** · `theme_store_id`: null (Theme Store değil)
+*Kaynak:* https://cometeer.com · *Preset:* default  
+*Tema (storefront):* **Cometeer Theme** (`Shopify.theme.name`) · `schema_name`: **Shiro** · `theme_store_id`: null
 
-**Durum:** ⬜ yürüyüş + resmi 3vp — draft PR, **main'e merge yok**
+**Durum:** ✅ chrome walk + resmi 3vp · interact (mega / melt Hot / cart filled 1440) · draft PR, **main'e merge yok**
 
 ---
 
@@ -12,11 +13,13 @@
 |---|---|
 | Evidence kökü | `evidence/cometeer/default/` |
 | Capture | resmi `capture-observation.mjs` + `capture-interaction.mjs` |
+| Gözlem / kanıt | 52 obs · 161 PNG |
+| Şema | 0 yeni — mevcut tipler + delta |
+| Validate | `npm run validate` → 65 temiz · 0 error · 0 warn |
+| PR | draft — **main'e merge yok** |
 | Yazma sınırı | `observations/cometeer/` · `evidence/cometeer/` · `todo/cometeer.md` · `candidates/cometeer-*.md` |
-| Şema | mevcut tiplere observation + delta; `sections/*.json` **dokunulmadı** |
-| Validate | `npm run validate` — mevcut şemalar; yeni şema yok |
 
-**Kapsam satırı (hedef):** Cometeer · default · home/PDP/bundle/coffee-menu/search/cart-drawer/content/footer/mobile-menu · mevcut şemalar · Shiro custom · `/cart` yok
+**Kapsam satırı:** Cometeer · default · home/PDP/bundle/coffee-menu/search/sidecart/content/footer/mobile-menu · 52 obs · 161 kare · 0 yeni şema · Shiro custom
 
 ---
 
@@ -24,76 +27,78 @@
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home (section kit + header/footer) | ⬜ observation yazıldı | ⬜ |
-| PDP Mixed Roast Box | ⬜ | ⬜ |
-| PDP Gift Card | ⬜ | ⬜ |
-| Bundle `/products/build-your-own-box` | ⬜ | ⬜ |
-| Coffee menu `/pages/coffee-menu` (müşteri PLP) | ⬜ | ⬜ |
-| Search `/search?q=coffee` | ⬜ | ⬜ |
-| Cart drawer (sidecart) + mini-cart bar | ⬜ | ⬜ |
-| Mobile 375/768 hamburger | ⬜ | ⬜ |
-| How It Works | ⬜ | ⬜ |
-| Our Story & Mission | ⬜ | ⬜ |
-| Blog list + August 2026 post | ⬜ | ⬜ |
-| Contact Us (form yok) | ⬜ | ⬜ |
-| Policy privacy | ⬜ | ⬜ |
-| Gifts landing (splash + 1 card + FAQ) | ⬜ | ⬜ |
-| Stellar / merch / world-mug / roasting-partners | ⛔ roster — tekrarlayan splash/card; ayrı 3vp yok | — |
-| `/collections/all` | ⛔ test SKU (KH Test) — aday | — |
+| Home section kit + header/footer | ✅ mevcut şemalar | ✅ |
+| PDP Mixed Roast + Gift Card | ✅ `product-info-main` + compare/FAQ | ✅ |
+| Bundle `/products/build-your-own-box` | ✅ `commerce-tools-products-bundle` | ✅ |
+| Coffee menu `/pages/coffee-menu` (müşteri katalog) | ✅ aynı bundle motor | ✅ |
+| Search `/search?q=coffee` | ✅ `search-results` (native liste) | ✅ |
+| Sidecart empty + filled 1440 | ✅ `global-cart-drawer` | ✅ empty 3vp · filled 1440 |
+| Mobile hamburger 375/768 | ✅ `global-menu-drawer` | ✅ 375+768 (1440 N/A) |
+| How It Works | ✅ | ✅ |
+| Our Story & Mission | ✅ | ✅ |
+| Blog list + August 2026 | ✅ | ✅ |
+| Contact Us (form yok) | ✅ hours/chat/email + FAQ | ✅ |
+| Policy privacy | ✅ native `page-content-main` | ✅ |
+| Gifts landing | ✅ splash + 1 card + FAQ | ✅ |
+| Stellar / merch / world-mug / roasting-partners | ⛔ roster — tekrarlayan kit | — |
+| Store locator / accessibility / CCPA | ⛔ 200; ayrı 3vp yok | — |
+| `/collections/all` | ⛔ test SKU | — |
 | Predictive search | ⛔ header'da yok | — |
-| `/cart` sayfa | ⛔ redirect `/?sidecart=true` | — |
+| `/cart` sayfa | ⛔ `/?sidecart=true` | — |
 | 404'ler | ⛔ aday | — |
 
 ---
 
 ## Home roster
 
-| # | Bileşen / id | scope | Screenshot | JSON | Done |
-|---|---|---|---|---|---|
-| 1 | navigation-header-mega | global | [ ] | [x] | [ ] |
-| 2 | hero-slideshow (`sol_splash`) | instance | [ ] | [x] | [ ] |
-| 3 | features-multicolumn (4 fayda) | instance | [ ] | [x] | [ ] |
-| 4 | product-showcase-featured (World Mug) | instance | [ ] | [x] | [ ] |
-| 5 | editorial-image-with-text (tasting) | instance | [ ] | [x] | [ ] |
-| 6 | faq-collapsible-tabs | instance | [ ] | [x] | [ ] |
-| 7 | editorial-custom-content (how-to-melt) | instance | [ ] | [x] | [ ] |
-| 8 | media-video-hero (5 tarif) | instance | [ ] | [x] | [ ] |
-| 9 | media-shop-the-feed (Tolstoy) | instance | [ ] | [x] | [ ] |
-| 10 | collection-nav-image-cards (roasters) | instance | [ ] | [x] | [ ] |
-| 11 | blog-list-main | instance | [ ] | [x] | [ ] |
-| 12 | features-multicolumn-2 (sustain) | instance | [ ] | [x] | [ ] |
-| 13 | testimonial-quote-carousel | instance | [ ] | [x] | [ ] |
-| 14 | editorial-image-with-text-2 (who we are) | instance | [ ] | [x] | [ ] |
-| 15 | footer-columns-newsletter | global | [ ] | [x] | [ ] |
-| 16 | global-cart-drawer | global | [ ] | [x] | [ ] |
-| 17 | global-menu-drawer | global | [ ] | [x] | [ ] |
-
-`#shopify-section-global-banner` height 0 — duyuru yok, observation yok.
+| # | Bileşen | 3vp | Done |
+|---|---|---|---|
+| 1 | navigation-header-mega (+ mega open 1440) | ✅ | [x] |
+| 2 | hero-slideshow (1440 BtLFNm / 375 zd8WGL) | ✅ | [x] |
+| 3 | features-multicolumn (4 fayda) | ✅ | [x] |
+| 4 | product-showcase-featured (World Mug) | ✅ | [x] |
+| 5 | editorial-image-with-text (tasting) | ✅ | [x] |
+| 6 | faq-collapsible-tabs | ✅ | [x] |
+| 7 | editorial-custom-content (melt + Hot changed) | ✅ | [x] |
+| 8 | media-video-hero (5 tarif) | ✅ | [x] |
+| 9 | media-shop-the-feed (Tolstoy) | ✅ | [x] |
+| 10 | social-proof-brand-logos (roasters) | ✅ | [x] |
+| 11 | blog-list-main | ✅ | [x] |
+| 12 | features-multicolumn-2 (sustain) | ✅ | [x] |
+| 13 | testimonial-quote-carousel | ✅ | [x] |
+| 14 | editorial-image-with-text-2 (who we are) | ✅ | [x] |
+| 15 | footer-columns-newsletter | ✅ | [x] |
+| 16 | global-cart-drawer | ✅ | [x] |
+| 17 | global-menu-drawer | ✅ | [x] |
 
 ---
 
-## Interact (piksel değişince)
+## Interact
 
-- [ ] Header mega hover (1440) — kapalı kare 118px; panel açılırsa `capture-interaction`
-- [ ] Hamburger open 375/768
-- [ ] Sidecart empty → add (gift card veya merch) → filled; adet changed
-- [ ] How-to-melt Iced ↔ Hot
-- [ ] Recipe video tab
-- [ ] Predictive search — **yok**; zorlama
-
----
-
-## Aday / şemaya sığmayan
-
-- [`candidates/cometeer-blocked-pages.md`](../candidates/cometeer-blocked-pages.md) — 404 + test collection
-- [`candidates/cometeer-how-to-melt.md`](../candidates/cometeer-how-to-melt.md) — Iced/Hot how-to
-- [`candidates/cometeer-subscription-plans.md`](../candidates/cometeer-subscription-plans.md) — Replo plans
-- Header'da arama yok; `/search` native sonuç sayfası var
+- [x] 1440 Shop All Coffee mega (`open.shop-all-mega`)
+- [x] How-to-melt Iced → Hot (`changed.hot-adimlar` 3vp)
+- [x] Sidecart empty 3vp
+- [x] Sidecart filled 1440 (Mixed Roast one-time → Dark/Medium/Light 8-pack)
+- [ ] Filled 375/768 — interact runner `ONE TIME PURCHASE` waitFor timeout (2. deneme; üçüncü yok)
+- [ ] Recipe video tab — zorunlu değil; melt yeterli
+- [x] Predictive search yok — zorlanmadı
 
 ---
 
-## Evidence backlog
+## Aday
 
-- [ ] Resmi 3vp tüm claiming observation'lar
-- [ ] Interact yalnız piksel değişenler
-- [ ] Validator (0 yeni şema → mevcut temiz kalmalı)
+- [`candidates/cometeer-blocked-pages.md`](../candidates/cometeer-blocked-pages.md)
+- [`candidates/cometeer-how-to-melt.md`](../candidates/cometeer-how-to-melt.md)
+- [`candidates/cometeer-subscription-plans.md`](../candidates/cometeer-subscription-plans.md)
+
+---
+
+## Açık iş / leftover
+
+- Stellar, merch (çoklu product-card), world-mug, roasting-partners — home/gifts kit tekrarı
+- Store locator, accessibility, CCPA opt-out — 200, envanterlenmedi
+- `/collections/all` test SKU
+- 404 şablon (`Sorry there's no coffee here.`) — şema icat yok
+- Contact native form yok (Kustomer/Hark chat)
+- Gift card ATC alıcı e-posta ister — PII, doldurulmadı
+- Bazı uzun section kırpımlarında `#mini-cart` View Cart bar sızıyor (fixed overlay)

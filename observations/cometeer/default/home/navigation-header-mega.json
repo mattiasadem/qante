@@ -7,7 +7,59 @@
   "url": "https://cometeer.com/",
   "selector": "#shopify-section-moondust-header",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
-  "notlar": "Moondust header: logo, hesap, sepet; birincil 4 madde (Shop All Coffee / Curated Boxes / Give a Gift / How It Works) + alt çip şeridi (Shop Gifts, Stellar, roast seviyeleri). Tema adı storefront'ta Cometeer Theme (schema_name Shiro).",
-  "delta": "Mega kartlar DOM'da (Coffee Menu / Stellar / Merch). Header kökünde Tailwind `hidden` + override `display:block`. Header'da arama ikonu yok. Sticky görüldü."
+  "evidence": [
+    "evidence/cometeer/default/home/navigation-header-mega.1440.png",
+    "evidence/cometeer/default/home/navigation-header-mega.375.png",
+    "evidence/cometeer/default/home/navigation-header-mega.768.png",
+    "evidence/cometeer/default/home/navigation-header-mega.open.shop-all-mega.1440.png"
+  ],
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://cometeer.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "button[aria-label='Toggle Shop All Coffee submenu']",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#shopify-section-moondust-header [class*='top-navbar-height']",
+      "etiket": "shop-all-mega",
+      "not": "1440 Shop All Coffee mega: Build Your Box + Coffee Menu / Stellar / Merch kartları"
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375/768 mega yok — hamburger global-menu-drawer. Kapalı header ayrı 3vp."
+    }
+  ],
+  "stateFindings": {
+    "open": "1440 hover: Build Your Box + SHOP ALL COFFEES + Coffee Menu / Limited Stellar Series / Shop All Merch kartları (absolute panel, header 118px)."
+  },
+  "interactionNote": "Hover hedefi görünür `button[aria-label='Toggle Shop All Coffee submenu']` — `a[href='/pages/coffee-menu']` 1440'ta hidden kopya.",
+  "notlar": "Moondust header: logo, hesap, sepet; 4 birincil madde + alt çip şeridi. Tema: Cometeer Theme / Shiro. Arama ikonu yok.",
+  "delta": "Mega absolute `top-navbar-height`. Header Tailwind `hidden` + display:block override. Sticky. Predictive search yok.",
+  "capture": {
+    "url": "https://cometeer.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T17:32:31.339Z"
+  }
 }
