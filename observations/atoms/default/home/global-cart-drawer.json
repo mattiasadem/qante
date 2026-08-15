@@ -1,0 +1,124 @@
+{
+  "observationId": "atoms.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "atoms",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://atoms.com/",
+  "selector": "div.fixed.inset-y-0.flex.max-w-full.right-0",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Sağ drawer Your Cart. Boş: haven’t added anything + Continue shopping + Shop Best Sellers kartları. /cart ayrı sayfa.",
+  "delta": "Hydrogen drawer; Liquid cart-drawer yok. Kapalı 0px. ATC size zorunlu.",
+  "captureMode": "viewport",
+  "prepareClick": "[data-component=\"desktop-header\"] button.relative.flex.h-8.w-8",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://atoms.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "[data-component=\"desktop-header\"] button.relative.flex.h-8.w-8",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "1440 bag 0 → boş drawer"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "[data-component=\"mobile-header\"] button:has-text(\"0\")",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "375/768 bag"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://atoms.com/products/atoms-model-000-black",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button:has-text(\"Select a size\")",
+      "capture": false,
+      "not": "Beden seçici aç"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button:has-text(\"9\")",
+      "capture": false,
+      "not": "US 9 — katalog beden"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button:has-text(\"Add to bag\")",
+      "capture": false,
+      "not": "Hydrogen ATC; cart.js yok"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.relative.flex.h-8.w-8",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "model-000",
+      "not": "Dolu drawer Model 000"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your Cart boş + Continue shopping + Shop Best Sellers (mask, 001 Black, 000 B&W, 000 Black).",
+    "filled": "ATC size seçilmeden pasif; size 9 sonrası Add to bag. Dolu kare interact'te doğrulanacak."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı. addToCart /cart/add.js yok — UI tık. Size seçilmezse ATC disabled."
+}

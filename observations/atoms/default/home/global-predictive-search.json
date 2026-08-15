@@ -1,0 +1,71 @@
+{
+  "observationId": "atoms.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "atoms",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://atoms.com/",
+  "selector": "form:has(input[name=\"q\"])",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "Search butonu overlay açar. input[name=q] placeholder Search. Fill black → .search-query-suggestion chip (black, gray black…).",
+  "delta": "Kapalı input yok. Predictive ürün satırı bu fill'de görülmedi — query suggestion. /search?q=black ayrı sayfa 200; /search boş 500.",
+  "captureMode": "viewport",
+  "prepareClick": "button:has-text(\"Search\")",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://atoms.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button:has-text(\"Search\")",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Boş search overlay"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input[name=\"q\"]",
+      "value": "black",
+      "capture": false,
+      "not": "katalog: Model 000 Black"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "input[name=\"q\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "black",
+      "not": "suggestion chip"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Search overlay + boş input.",
+    "input": "black → search-query-suggestion: black / gray black / red black / blue black / black white."
+  },
+  "missingStates": [],
+  "interactionNote": "Ürün satırı overlay'de görülmedi. Enter/submit arama sayfasına gider. PII yok."
+}
