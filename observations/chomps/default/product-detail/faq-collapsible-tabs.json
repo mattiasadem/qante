@@ -7,7 +7,14 @@
   "url": "https://chomps.com/products/gluten-free-snack-beef-jerky-stick-original",
   "selector": "#shopify-section-template--21247592595525__e8524ce5-e7f5-490b-a067-5a9e2bc41609",
   "evidenceSlug": "faq-collapsible-tabs",
-  "evidence": [],
+  "evidence": [
+    "evidence/chomps/default/product-detail/faq-collapsible-tabs.changed.ilk-soru.1440.png",
+    "evidence/chomps/default/product-detail/faq-collapsible-tabs.changed.ilk-soru.375.png",
+    "evidence/chomps/default/product-detail/faq-collapsible-tabs.changed.ilk-soru.768.png",
+    "evidence/chomps/default/product-detail/faq-collapsible-tabs.initial.kapali.1440.png",
+    "evidence/chomps/default/product-detail/faq-collapsible-tabs.initial.kapali.375.png",
+    "evidence/chomps/default/product-detail/faq-collapsible-tabs.initial.kapali.768.png"
+  ],
   "notlar": "FAQ — What flavor is Chomps Original Beef sticks? Accordion.",
   "delta": "Kategori tab yok. Site FAQ help.chomps.com (harici).",
   "interactionStates": [
@@ -19,22 +26,58 @@
       "state": "initial",
       "action": "goto",
       "value": "https://chomps.com/products/gluten-free-snack-beef-jerky-stick-original",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false,
+      "not": "Klaviyo gecikmeli"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Klaviyo/modal kapat — selector fail yok"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21247592595525__e8524ce5-e7f5-490b-a067-5a9e2bc41609",
       "capture": true,
-      "etiket": "kapali",
-      "not": "Accordion"
+      "etiket": "kapali"
     },
     {
       "state": "changed",
       "action": "click",
-      "selector": "#shopify-section-template--21247592595525__e8524ce5-e7f5-490b-a067-5a9e2bc41609 button, #shopify-section-template--21247592595525__e8524ce5-e7f5-490b-a067-5a9e2bc41609 [aria-expanded]",
+      "selector": "#shopify-section-template--21247592595525__e8524ce5-e7f5-490b-a067-5a9e2bc41609 button",
       "capture": true,
-      "etiket": "ilk-soru",
-      "not": "İlk soru açık"
+      "etiket": "ilk-soru"
     }
   ],
   "stateFindings": {
-    "initial": "FAQ başlık + kapalı sorular (veya ilki açık — kare).",
-    "changed": "İlk soru cevabı görünür."
+    "initial": "9 soru kapalı (+). İlk: What flavor is Chomps Original Beef sticks?",
+    "changed": "İlk soru açık (–); cevap grass-fed/grass-finished beef. Diğerleri +."
   },
-  "missingStates": []
+  "missingStates": [],
+  "interactionNote": "Klaviyo: 4s + Escape. Sticky ATC bar + GET 10% OFF + Gorgias kareye taştı (section+viewport).",
+  "capture": {
+    "url": "https://chomps.com/products/gluten-free-snack-beef-jerky-stick-original",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:47:01.259Z"
+  }
 }

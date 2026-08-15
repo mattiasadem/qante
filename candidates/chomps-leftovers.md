@@ -63,6 +63,22 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: chomps-plp-quick-view  
+Gerekçe: PLP kartlarında QUICK VIEW / QUICK SHOP — overlay/modal piksel değiştirir. Bu koşuda static ızgara 3vp alındı; modal interact yok (aynı aile PDP buybox + cart drawer’da kanıtlandı).  
+Örnekler: https://chomps.com/collections/chomps  
+Öneri: leftover — ayrı schemaId yok; `product-showcase-grid-plp` delta  
+Karar: onay bekliyor
+
+---
+
+ADAY: chomps-subscribe-faq-accordion  
+Gerekçe: `/pages/subscribe-and-save` FAQ static 3vp. Accordion interact PDP + mission’da alındı; burada tekrar koşulmadı.  
+Örnekler: https://chomps.com/pages/subscribe-and-save  
+Öneri: leftover — aynı `faq-collapsible-tabs`  
+Karar: onay bekliyor
+
+---
+
 ## 404 / harici / rate-limit
 
 - `/pages/this-page-does-not-exist-qante` — 404 (yukarı)  
@@ -81,6 +97,8 @@ Karar: onay bekliyor
 - Recipes / Chompians blog list — `blog-list-main` aynı template  
 - Product Guarantee / Terms / Accessibility — `page-content-main` aynı page template  
 - Careers / 4ocean / B-Corp / Press / Studentbeans / Recall — kampanya/HR; envanter dışı veya aynı editorial  
-- Gorgias chat iframe (`chat-input` / `chat-button`) — PII  
+- Gorgias chat iframe (`chat-input` / `chat-button`) — PII; birçok karede bubble kaldı  
+- Swell/Klaviyo turuncu **GET 10% OFF** tab — birçok karede kaldı; form doldurulmadı  
+- Klaviyo “SIGN UP AND SAVE 10%” gecikmeli hydrate — `dismiss-overlays` sonrası; interact’te 4s + Escape (No Thanks tıkı state kırıyordu)  
 - Visually.io / Loomi A/B anti-flicker — tema değil  
 - Web-pixel sandbox iframe’leri — tracker, dokunulmadı

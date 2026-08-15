@@ -7,7 +7,12 @@
   "url": "https://chomps.com/",
   "selector": "header.site-header",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
+  "evidence": [
+    "evidence/chomps/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/chomps/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/chomps/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/chomps/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
   "notlar": "Sticky bar: SHOP / LEARN / MISSION / WHERE TO BUY / SUBSCRIBE & SAVE + arama + hesap + #cartButton. Logo Chomps.",
   "delta": "Custom theme. Mega #shop-label → .nav__dropdown (ürün/koleksiyon blokları). Locale yok. 375 hamburger [data-mobile-nav-open].",
   "captureMode": "section",
@@ -20,9 +25,34 @@
       "state": "initial",
       "action": "goto",
       "value": "https://chomps.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false,
+      "not": "Klaviyo gecikmeli"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Klaviyo/modal kapat — selector fail yok"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header.site-header",
       "capture": true,
-      "etiket": "bar",
-      "not": "Kapalı sticky bar"
+      "etiket": "bar"
     },
     {
       "state": "open",
@@ -33,14 +63,29 @@
       "etiket": "shop-mega",
       "viewports": [
         "1440"
-      ],
-      "not": "Shop dropdown: protein türleri + chomplings + packs"
+      ]
     }
   ],
   "stateFindings": {
-    "initial": "SHOP LEARN MISSION WHERE TO BUY SUBSCRIBE & SAVE; arama; hesap; Cart 0.",
-    "open": "1440 Shop tık → dropdown (Beef/Chicken/Turkey/Venison/Chomplings/Best Sellers/Variety Packs)."
+    "initial": "Kırmızı bar: SHOP / LEARN / MISSION / WHERE TO BUY / SUBSCRIBE & SAVE; arama; hesap; Cart 0.",
+    "open": "1440 SHOP → mega: SHOP BY PROTEIN (Beef…Chomplings) + COLLECTIONS + SHOP ALL + 3×3 flavor kartları (Original Beef…Sea Salt Beef)."
   },
-  "missingStates": [],
-  "interactionNote": "Mega yalnız 1440. 375/768 hamburger ayrı observation (global-menu-drawer)."
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375/768 mega yok — o genişlikte hamburger drawer (global-menu-drawer)"
+    }
+  ],
+  "interactionNote": "Klaviyo: 4s + Escape (No Thanks tıkı state'i kırıyordu). Mega yalnız 1440. GET 10% OFF tab + Gorgias bubble karede kaldı (PII yok, doldurulmadı).",
+  "capture": {
+    "url": "https://chomps.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:39:49.176Z"
+  }
 }

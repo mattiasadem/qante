@@ -7,7 +7,17 @@
   "url": "https://chomps.com/",
   "selector": "#cart-popover",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/chomps/default/home/global-cart-drawer.changed.qty2.1440.png",
+    "evidence/chomps/default/home/global-cart-drawer.changed.qty2.375.png",
+    "evidence/chomps/default/home/global-cart-drawer.changed.qty2.768.png",
+    "evidence/chomps/default/home/global-cart-drawer.filled.original-beef.1440.png",
+    "evidence/chomps/default/home/global-cart-drawer.filled.original-beef.375.png",
+    "evidence/chomps/default/home/global-cart-drawer.filled.original-beef.768.png",
+    "evidence/chomps/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/chomps/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/chomps/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
   "notlar": "Sağ Vue #cart-popover. Boş: Your Cart is Empty + SHOP NOW + YOU MAY ALSO LIKE. Free shipping $30 tracker.",
   "delta": "/cart → /?viewcart=true (ayrı cart sayfası yok). Section #shopify-section-cart-popover height 0; kutu #cart-popover.",
   "captureMode": "viewport",
@@ -26,12 +36,31 @@
     },
     {
       "state": "initial",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false,
+      "not": "Klaviyo gecikmeli"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Klaviyo/modal kapat — selector fail yok"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 500,
+      "capture": false
+    },
+    {
+      "state": "initial",
       "action": "click",
       "selector": "#cartButton",
       "capture": true,
       "captureMode": "viewport",
-      "etiket": "cart-bos",
-      "not": "Boş sepet + upsell"
+      "etiket": "cart-bos"
     },
     {
       "state": "filled",
@@ -41,14 +70,34 @@
     },
     {
       "state": "filled",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false,
+      "not": "Klaviyo gecikmeli"
+    },
+    {
+      "state": "filled",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Klaviyo/modal kapat — selector fail yok"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 500,
+      "capture": false
+    },
+    {
+      "state": "filled",
       "action": "addToCart",
-      "selector": "form[action*='/cart/add'] button[type='submit'], button:has-text('ADD TO CART')",
+      "selector": "button:has-text('ADD TO CART')",
       "capture": false
     },
     {
       "state": "filled",
       "action": "waitFor",
-      "value": 1500,
+      "value": 2000,
       "capture": false
     },
     {
@@ -57,24 +106,34 @@
       "selector": "#cartButton",
       "capture": true,
       "captureMode": "viewport",
-      "etiket": "original-beef",
-      "not": "Dolu drawer"
+      "etiket": "original-beef"
     },
     {
       "state": "changed",
       "action": "click",
-      "selector": "#cart-popover button[aria-label*='Increase'], #cart-popover button:has-text('+')",
+      "selector": "#cart-popover button[aria-label*='Increase' i]",
       "capture": true,
       "captureMode": "viewport",
-      "etiket": "qty2",
-      "not": "Adet +"
+      "etiket": "qty2"
     }
   ],
   "stateFindings": {
-    "initial": "YOUR CART; $30 away from free shipping; empty; SHOP NOW; You may also like.",
-    "filled": "Original Beef satırı (karede doğrulanacak).",
-    "changed": "Adet artışı (karede doğrulanacak)."
+    "initial": "YOUR CART boş; $30.00 away from free shipping; SHOP NOW; YOU MAY ALSO LIKE (Chomplings 6ct).",
+    "filled": "ORIGINAL BEEF 10 PACK ×1 $25.60; $4.40 away from free shipping; UPGRADE TO SUBSCRIPTION; YOU MAY ALSO LIKE.",
+    "changed": "qty 2 → $51.20; CONGRATS free shipping; SubTotal (2 Items) $51.20; CHECKOUT."
   },
   "missingStates": [],
-  "interactionNote": "ATC PDP ADD TO CART. /cart sayfası yok. Checkout/PII yok."
+  "interactionNote": "Klaviyo: 4s + Escape. ATC UI (ADD TO CART). /cart sayfası yok. GET 10% OFF + Gorgias karede kaldı. Checkout tıklanmadı.",
+  "capture": {
+    "url": "https://chomps.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:44:48.463Z",
+    "prepareClick": "#cartButton"
+  }
 }

@@ -7,7 +7,14 @@
   "url": "https://chomps.com/products/gluten-free-snack-beef-jerky-stick-original",
   "selector": "#shopify-section-template--21247592595525__main",
   "evidenceSlug": "product-info-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/chomps/default/product-detail/product-info-main.changed.24-pack.1440.png",
+    "evidence/chomps/default/product-detail/product-info-main.changed.24-pack.375.png",
+    "evidence/chomps/default/product-detail/product-info-main.changed.24-pack.768.png",
+    "evidence/chomps/default/product-detail/product-info-main.initial.buybox.1440.png",
+    "evidence/chomps/default/product-detail/product-info-main.initial.buybox.375.png",
+    "evidence/chomps/default/product-detail/product-info-main.initial.buybox.768.png"
+  ],
   "notlar": "Original Beef buy box: Best Seller, 4.9/2730, breadcrumb, 10/24 pack, subscribe 30 days, ADD TO CART.",
   "delta": "Breadcrumb buy box içinde (ayrı navigation-breadcrumbs section yok). Abonelik + one-time aynı blok.",
   "interactionStates": [
@@ -19,23 +26,58 @@
       "state": "initial",
       "action": "goto",
       "value": "https://chomps.com/products/gluten-free-snack-beef-jerky-stick-original",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false,
+      "not": "Klaviyo gecikmeli"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Klaviyo/modal kapat — selector fail yok"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#shopify-section-template--21247592595525__main",
       "capture": true,
-      "etiket": "buybox",
-      "not": "10 pack default"
+      "etiket": "buybox"
     },
     {
       "state": "changed",
       "action": "click",
-      "selector": "label:has-text('24'), button:has-text('24 PACK'), [data-pack]:has-text('24')",
+      "selector": "text=24 PACK",
       "capture": true,
-      "etiket": "24-pack",
-      "not": "24 pack fiyat değişimi"
+      "etiket": "24-pack"
     }
   ],
   "stateFindings": {
-    "initial": "Original Beef; ADD TO CART ~$25.60; 10 pack.",
-    "changed": "24 pack seçimi (karede doğrulanacak)."
+    "initial": "ORIGINAL BEEF; 10 PACK seçili ($2.56/stick); one-time $25.60; ADD TO CART - $25.60; 2730 reviews.",
+    "changed": "24 PACK seçili ($2.29/stick); one-time $54.99; Subscribe $49.49; ADD TO CART - $54.99."
   },
   "missingStates": [],
-  "interactionNote": "24 pack selector kareye bakarak düzeltilebilir. Checkout yok."
+  "interactionNote": "Klaviyo: 4s + Escape. 24 PACK metin tık piksel değiştirdi. GET 10% OFF + Gorgias karede kaldı.",
+  "capture": {
+    "url": "https://chomps.com/products/gluten-free-snack-beef-jerky-stick-original",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:45:56.779Z"
+  }
 }
