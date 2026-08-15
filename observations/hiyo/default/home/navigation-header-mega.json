@@ -7,8 +7,63 @@
   "url": "https://drinkhiyo.com/",
   "selector": "#shopify-section-sections--21702814957788__header",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
+  "evidence": [
+    "evidence/hiyo/default/home/navigation-header-mega.1440.png",
+    "evidence/hiyo/default/home/navigation-header-mega.375.png",
+    "evidence/hiyo/default/home/navigation-header-mega.768.png",
+    "evidence/hiyo/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
   "notlar": "Logo hiyo; SHOP / LEARN (details>summary) + MERCH + FIND US; arama, hesap, sepet. Mobil hamburger aria-controls=header-sidebar-menu.",
   "delta": "Impact header. SHOP/LEARN details mega (ürün kartları + linkler). Locale switcher yok. Mega drawer değil — details panel.",
-  "captureMode": "section"
+  "captureMode": "section",
+  "prepareClick": "#cc-modal-reject-all",
+  "capture": {
+    "url": "https://drinkhiyo.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:17:15.941Z",
+    "prepareClick": "#cc-modal-reject-all"
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://drinkhiyo.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cc-modal-reject-all",
+      "capture": false,
+      "not": "Captain Compliance shadow #cc-modal-reject-all"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#shopify-section-sections--21702814957788__header summary.header__main-link",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "Hover SHOP (ilk summary) → #mega-menu-mega_menu_products_tRPxnf ürün şeridi. Tık kapatır."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Kapalı header: hiyo + SHOP/LEARN/MERCH/FIND US + arama/hesap/sepet.",
+    "open": "1440 SHOP hover → mega ürün şeridi (classic/tropical/flavors) + GET A TASTE."
+  },
+  "interactionNote": "SHOP details hover açar, tık kapatır. Mega #mega-menu-mega_menu_products_tRPxnf header kutusunun dışında — viewport."
 }

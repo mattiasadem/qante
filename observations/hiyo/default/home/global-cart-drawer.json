@@ -7,9 +7,98 @@
   "url": "https://drinkhiyo.com/",
   "selector": "#cart-drawer",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/hiyo/default/home/global-cart-drawer.1440.png",
+    "evidence/hiyo/default/home/global-cart-drawer.375.png",
+    "evidence/hiyo/default/home/global-cart-drawer.768.png"
+  ],
   "notlar": "Impact cart-drawer overlay. İlk kare boş drawer (prepareClick).",
   "delta": "Sağ drawer. Dolu/adet interact ayrı.",
   "captureMode": "viewport",
-  "prepareClick": "a[aria-controls='cart-drawer']"
+  "prepareClick": "a[aria-controls='cart-drawer']",
+  "capture": {
+    "url": "https://drinkhiyo.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:20:04.217Z",
+    "prepareClick": "a[aria-controls='cart-drawer']"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://drinkhiyo.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cc-modal-reject-all",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://drinkhiyo.com/products/variety-pack",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#cc-modal-reject-all",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--21702815645916__main button.button--xl:has-text('ADD TO CART')",
+      "capture": false,
+      "not": "classic pack ADD TO CART (subscribe default $38.25)"
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a[aria-controls='cart-drawer']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Drawer ATC ile açılmazsa opener. Satır + toplam beklenir."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#cart-drawer button[aria-label='increase quantity']",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 2 → ara toplam"
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "filled",
+      "sebep": "adım 3 (click #cc-modal-reject-all): locator.click: Element is not visible\nCall log:\n  - waiting for locator('#cc-modal-reject-all').first()\n    - locator resolved to <div type=\"button\" id=\"cc-modal-reject-all\" class=\"captain-compliance-modal-bn-body_content_actions_button captain-compliance-modal-bn-body_content_actions_button_primary\"> Reject </div>\n  - attempting click action\n    - scrolling into view if needed\n"
+    },
+    {
+      "state": "changed",
+      "sebep": "adım 6 (click #cart-drawer button[aria-label='increase quantity']): selector eşleşmedi: #cart-drawer button[aria-label='increase quantity']"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boş drawer: 0 / your cart is empty / CONTINUE SHOPPING.",
+    "filled": "classic pack satırı (doğrulanacak).",
+    "changed": "Adet 2 (doğrulanacak)."
+  },
+  "interactionNote": "Checkout tıklanmadı. Cookie shadow reject. ATC görünür buton."
 }

@@ -7,7 +7,57 @@
   "url": "https://drinkhiyo.com/pages/faqs",
   "selector": "#shopify-section-template--21702815711452__faq_yhEgCN",
   "evidenceSlug": "faq-collapsible-tabs",
-  "evidence": [],
+  "evidence": [
+    "evidence/hiyo/default/faq-support/faq-collapsible-tabs.375.png",
+    "evidence/hiyo/default/faq-support/faq-collapsible-tabs.768.png",
+    "evidence/hiyo/default/faq-support/faq-collapsible-tabs.1440.png"
+  ],
   "notlar": "general: WHAT IS HIYO? / HEALTHY / ADAPTOGENS / NOOTROPICS / BOTANICALS.",
-  "delta": "Impact faq. Dört kategori bloğu ayrı section — ayrı observation."
+  "delta": "Impact faq. Dört kategori bloğu ayrı section — ayrı observation.",
+  "prepareClick": "#cc-modal-reject-all",
+  "capture": {
+    "url": "https://drinkhiyo.com/pages/faqs",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "margin-box+minPad8",
+    "updatedAt": "2026-08-15T17:58:16.105Z",
+    "prepareClick": "#cc-modal-reject-all"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://drinkhiyo.com/pages/faqs",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cc-modal-reject-all",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--21702815711452__faq_yhEgCN details >> summary",
+      "value": 600,
+      "capture": true,
+      "etiket": "ilk-soru-acik",
+      "not": "WHAT IS HIYO? İlk details summary. Cevap beklenir."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "general sorular kapalı (statik).",
+    "changed": "WHAT IS HIYO? açık (doğrulanacak)."
+  },
+  "interactionNote": "details id yok. İlk summary."
 }

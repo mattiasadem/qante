@@ -7,9 +7,75 @@
   "url": "https://drinkhiyo.com/",
   "selector": "#header-sidebar-menu",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/hiyo/default/home/global-menu-drawer.375.png",
+    "evidence/hiyo/default/home/global-menu-drawer.768.png",
+    "evidence/hiyo/default/home/global-menu-drawer.changed.mobil-shop-acik.375.png",
+    "evidence/hiyo/default/home/global-menu-drawer.changed.mobil-shop-acik.768.png"
+  ],
   "notlar": "Mobil hamburger → header-sidebar-menu. 1440'ta opener lg:hidden.",
   "delta": "Impact sidebar. Shop/Learn drill butonları (yazılı <a> değil).",
   "captureMode": "viewport",
-  "prepareClick": "button[aria-controls='header-sidebar-menu']"
+  "prepareClick": "button[aria-controls='header-sidebar-menu']",
+  "capture": {
+    "url": "https://drinkhiyo.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:20:57.942Z",
+    "prepareClick": "button[aria-controls='header-sidebar-menu']"
+  },
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://drinkhiyo.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#cc-modal-reject-all",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button[aria-controls='header-sidebar-menu']",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false,
+      "not": "Hamburger. 1440 N/A."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#header-sidebar-menu button.navigation-drawer__next:has-text('shop')",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mobil-shop-acik",
+      "not": "Boş ok / next — yazılı merch/find-us <a> değil."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "open": "375/768 hamburger: SHOP/LEARN ok + MERCH + FIND US (statik).",
+    "changed": "SHOP next → ürün listesi (doğrulanacak)."
+  },
+  "interactionNote": "1440 hamburger lg:hidden — zero-size statik."
 }

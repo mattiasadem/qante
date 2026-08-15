@@ -7,7 +7,70 @@
   "url": "https://drinkhiyo.com/products/variety-pack",
   "selector": "#shopify-section-template--21702815645916__main",
   "evidenceSlug": "product-info-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/hiyo/default/product-detail/product-info-main.375.png",
+    "evidence/hiyo/default/product-detail/product-info-main.768.png",
+    "evidence/hiyo/default/product-detail/product-info-main.1440.png"
+  ],
   "notlar": "classic pack buy box: galeri zoom, (8248) review, flavor/pack linkleri, fiyat, ADD TO CART.",
-  "delta": "Impact main-product. Subscribe plan bu karede ayrıca yoklandıktan sonra interact'e yazılacak."
+  "delta": "Impact main-product. Subscribe plan bu karede ayrıca yoklandıktan sonra interact'e yazılacak.",
+  "prepareClick": "#cc-modal-reject-all",
+  "capture": {
+    "url": "https://drinkhiyo.com/products/variety-pack",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "margin-box+minPad8",
+    "updatedAt": "2026-08-15T18:03:50.281Z",
+    "prepareClick": "#cc-modal-reject-all"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://drinkhiyo.com/products/variety-pack",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cc-modal-reject-all",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--21702815645916__main label.product-quantity-size-selectors__label:has-text('24-pack')",
+      "value": 1200,
+      "capture": true,
+      "etiket": "24-pack",
+      "not": "12-pack → 24-pack SAVE $5. Fiyat/can değişmeli."
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "filled",
+      "sebep": "Sepet drawer ayrı"
+    },
+    {
+      "state": "input",
+      "sebep": "Anlamsız"
+    }
+  ],
+  "stateFindings": {
+    "initial": "12-pack + SUBSCRIBE $38.25 (statik).",
+    "changed": "24-pack seçili (doğrulanacak)."
+  },
+  "interactionNote": "Subscribe varsayılan. One-time tıklanmadı."
 }
