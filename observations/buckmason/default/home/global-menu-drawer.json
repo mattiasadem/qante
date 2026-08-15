@@ -5,14 +5,22 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://www.buckmason.com/",
-  "selector": "[class*='n25-mobile-menu-module--menu']",
+  "selector": "body",
+  "_selectorNote": "1440 hamburger yok; body + viewport. 375/768 prepareClick menüyü açar.",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/buckmason/default/home/global-menu-drawer.1440.png",
+    "evidence/buckmason/default/home/global-menu-drawer.375.png",
+    "evidence/buckmason/default/home/global-menu-drawer.768.png",
+    "evidence/buckmason/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/buckmason/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
   "notlar": "375/768 hamburger (icon-hamberger). Panel: MEN WOMEN MADE IN USA THE JOURNAL / Our Stores / Gift Cards / Account.",
   "delta": "Gatsby 5.15.0 (meta generator). Shopify.theme / schema_name / schema_version / theme_store_id yok (uydurulmadı). Shopify.shop yok; yalnız customerPrivacy + trackingConsent (@shopify/consent-tracking-api v0.1). Shop files CDN 1/0123/5065/2473. buckmason.myshopify.com 404. #shopify-section-* yok. n25-mobile-menu. 1440 hamburger yok (mega). Account dış host.",
   "captureMode": "viewport",
   "prepareClick": "button[aria-label='Open Main Menu dialog']",
   "interactionStates": [
+    "initial",
     "open"
   ],
   "interactionSteps": [
@@ -39,11 +47,18 @@
   "stateFindings": {
     "open": "375/768: MEN WOMEN MADE IN USA THE JOURNAL + Our Stores / Gift Cards / Account."
   },
-  "missingStates": [
-    {
-      "state": "open",
-      "sebep": "1440 hamburger yok — mega. open yalnız 375/768."
-    }
-  ],
-  "interactionNote": "1440 N/A. Men alt akordeon leftover. Account tıklanmadı."
+  "missingStates": [],
+  "interactionNote": "1440 N/A. Men alt akordeon leftover. Account tıklanmadı.",
+  "capture": {
+    "url": "https://www.buckmason.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:33:08.705Z",
+    "prepareClick": "button[aria-label='Open Main Menu dialog']"
+  }
 }

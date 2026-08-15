@@ -21,10 +21,10 @@ Karar: leftover — kanıtsız şema yok
 
 ---
 
-ADAY: buckmason-search-query-url  
-Gerekçe: `/search?q=shirt` popular-searches iskeleti (ALL/MEN'S/WOMEN'S + Popular Men's/Women's). Sonuç grid yok. Overlay fill ilk yoklamada 2s’de ürün getirmedi; Enter home’a kaçtı.  
+ADAY: buckmason-search-no-predictive  
+Gerekçe: Overlay `chambray` yazıldı (3vp); öneri/ürün satırı gelmedi (sonuç 0px). Enter home’a (`/?g=men`) kaçıyor. `/search?q=shirt` popular-searches iskeleti, sonuç grid yok.  
 Örnekler: https://www.buckmason.com/search?q=shirt  
-Karar: leftover — overlay interact’e bırakıldı
+Karar: leftover — input karesi var, liste yok
 
 ---
 
