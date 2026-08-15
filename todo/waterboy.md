@@ -3,8 +3,8 @@
 *Kaynak:* https://www.waterboy.com · *Preset:* `default`  
 *Tema (vitrinde görülen):* **Waterboy/prod** · `schema_name`: Refresh · `theme_store_id`: null (custom Refresh) · shop `waterboycan.myshopify.com`
 
-**Durum:** Mod A walk yazıldı — resmi 3vp + interact sırada / kısmi  
-**PR:** draft · **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact bitti  
+**PR:** draft https://github.com/mattiasadem/qante/pull/14 · **main'e merge yok**
 
 ---
 
@@ -15,10 +15,11 @@
 | Evidence kökü | `evidence/waterboy/default/` |
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
+| PNG | **149** (`evidence/waterboy/`) |
 | Parallel | yalnız `observations/waterboy/`, `evidence/waterboy/`, `todo/waterboy.md`, `candidates/waterboy-*.md` |
 
 **Kapsam satırı:**  
-`Waterboy · default · Waterboy/prod (Refresh custom) · home→PDP→PLP→search→cart→content→footer→mobile · obs yazıldı · 0 yeni şema · leftover: Gorgias/Stockist/SMS/Growi/reviews`
+`Waterboy · default · Waterboy/prod (Refresh custom) · home→PDP→PLP→search→cart→content→footer→mobile · 41 obs · 0 yeni şema · 149 PNG · leftover: Gorgias/Stockist/SMS/Growi/reviews/404/cta-band`
 
 ---
 
@@ -26,26 +27,26 @@
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home + header/footer/brag/tabs/compare/ugc | ✅ roster | ⬜ capture |
+| Home + header/footer/brag/tabs/compare/ugc | ✅ | [x] |
 | Mega | ⛔ yok (düz link) | — |
-| Search overlay | ✅ interact adımları | ⬜ |
-| Cart notification (drawer yok) | ✅ interact adımları | ⬜ |
-| Mobile menu 375/768 | ✅ interact adımları | ⬜ |
-| PDP `/products/daily-hydration` | ✅ + pack `changed` | ⬜ |
-| PLP hydration (formül kartları) | ✅ | ⬜ |
-| PLP merch (ürün grid) | ✅ | ⬜ |
-| Search `?q=hydration` | ✅ | ⬜ |
-| Cart `/cart` boş + dolu | ✅ interact | ⬜ |
-| About `/pages/our-story` | ✅ | ⬜ |
-| Learn `/pages/thirsty-thoughts` | ✅ hub | ⬜ |
-| Help / Contact (Gorgias) | ⛔ aday + obs parent | ⬜ |
-| Policy privacy | ✅ | ⬜ |
-| Blog Daily Drip + article | ✅ | ⬜ |
-| Store locator 2.0 | ⛔ aday + obs | ⬜ |
-| Subscribe SMS | ⛔ PII yok — obs | ⬜ |
-| Wholesale ince sayfa | ⛔ leftover | ⬜ |
-| 404 | ⛔ aday + obs | ⬜ |
-| Footer | ✅ | ⬜ |
+| Search overlay | ✅ boş + `daily` (öneri yok) | [x] |
+| Cart drawer (merch ATC) | ✅ Your Cart · 1 | [x] filled |
+| Mobile menu 375/768 | ✅ | [x] open; 1440 N/A |
+| PDP `/products/daily-hydration` | ✅; 30 sticks `missingStates` | [x] |
+| PLP hydration (formül kartları) | ✅ | [x] |
+| PLP merch (ürün grid) | ✅ | [x] |
+| Search `?q=hydration` | ✅ | [x] |
+| Cart `/cart` boş + dolu | ✅ GET `/cart/add` | [x] |
+| About `/pages/our-story` | ✅ | [x] |
+| Learn `/pages/thirsty-thoughts` | ✅ hub | [x] |
+| Help / Contact (Gorgias) | ⛔ aday + parent obs | [x] parent |
+| Policy privacy | ✅ | [x] |
+| Blog Daily Drip + article | ✅ | [x] |
+| Store locator 2.0 | ⛔ aday + obs | [x] |
+| Subscribe SMS | ⛔ PII yok — obs | [x] |
+| Wholesale Typeform | ⛔ leftover + obs | [x] |
+| 404 | ⛔ aday + obs | [x] |
+| Footer | ✅ CONTACT US, e-posta yok | [x] |
 
 ---
 
@@ -53,59 +54,59 @@
 
 | # | id | sayfa | Screenshot | Not | JSON | Done |
 |---|---|---|---|---|---|---|
-| 1 | promo-announcement-bar | home | [ ] | [x] | reuse | [ ] |
-| 2 | navigation-header-mega | home | [ ] | [x] | reuse | [ ] |
-| 3 | editorial-image-with-text | home | [ ] | [x] | reuse | [ ] |
-| 4 | social-proof-brand-logos | home | [ ] | [x] | reuse | [ ] |
-| 5 | promo-banner-tabs | home | [ ] | [x] | reuse + changed | [ ] |
-| 6 | comparison-quick-table | home | [ ] | [x] | reuse + changed | [ ] |
-| 7 | testimonial-quote-carousel | home | [ ] | [x] | reuse | [ ] |
-| 8 | product-showcase-grid-featured | home | [ ] | [x] | reuse | [ ] |
-| 9 | media-shop-the-feed | home | [ ] | [x] | reuse | [ ] |
-| 10 | product-showcase-grid-featured.2 | home | [ ] | [x] | reuse | [ ] |
-| 11 | editorial-image-with-text.2 | home | [ ] | [x] | reuse | [ ] |
-| 12 | footer-columns-newsletter | home | [ ] | [x] | reuse | [ ] |
-| 13 | global-predictive-search | home | [ ] | [x] | reuse + input | [ ] |
-| 14 | global-menu-drawer | home | [ ] | [x] | reuse 375/768 | [ ] |
-| 15 | global-cart-drawer | home/PDP | [ ] | [x] | notification | [ ] |
-| 16 | product-info-main | product-detail | [ ] | [x] | reuse + 30 sticks | [ ] |
-| 17 | promo-banner-tabs | product-detail | [ ] | [x] | reuse | [ ] |
-| 18 | comparison-quick-table | product-detail | [ ] | [x] | reuse | [ ] |
-| 19 | testimonial-quote-carousel | product-detail | [ ] | [x] | reuse | [ ] |
-| 20 | faq-collapsible-tabs | product-detail | [ ] | [x] | reuse + changed | [ ] |
-| 21 | collection-banner | collection | [ ] | [x] | reuse | [ ] |
-| 22 | collection-nav-cards | collection | [ ] | [x] | reuse | [ ] |
-| 23 | collection-banner | merch | [ ] | [x] | reuse | [ ] |
-| 24 | product-showcase-grid-plp | merch | [ ] | [x] | reuse | [ ] |
-| 25 | search-results | search | [ ] | [x] | reuse | [ ] |
-| 26 | lead-capture-newsletter-band | search | [ ] | [x] | reuse | [ ] |
-| 27 | cart-page-main | cart | [ ] | [x] | reuse + filled | [ ] |
-| 28 | product-showcase-grid-featured | cart | [ ] | [x] | reuse | [ ] |
-| 29 | page-content-main | about-brand | [ ] | [x] | reuse | [ ] |
-| 30–33 | thirsty-thoughts (4) | thirsty-thoughts | [ ] | [x] | reuse | [ ] |
-| 34 | page-content-main | policy | [ ] | [x] | reuse | [ ] |
-| 35 | blog-list-main | blog-list | [ ] | [x] | reuse | [ ] |
-| 36 | blog-post-main | blog-post | [ ] | [x] | reuse | [ ] |
-| 37 | page-content-main | faq-support | [ ] | [x] | Gorgias | [ ] |
-| 38 | page-content-main | store-locator | [ ] | [x] | Stockist | [ ] |
-| 39 | lead-capture-form | subscribe | [ ] | [x] | SMS PII yok | [ ] |
-| 40 | page-content-main | not-found | [ ] | [x] | 404 aday | [ ] |
-| 41 | page-content-main | wholesale | [ ] | [x] | ince | [ ] |
+| 1 | promo-announcement-bar | home | [x] | [x] | reuse | [x] |
+| 2 | navigation-header-mega | home | [x] | [x] | reuse (mega yok) | [x] |
+| 3 | editorial-image-with-text | home | [x] | [x] | reuse | [x] |
+| 4 | social-proof-brand-logos | home | [x] | [x] | reuse | [x] |
+| 5 | promo-banner-tabs | home | [x] | [x] | reuse + DAILY changed | [x] |
+| 6 | comparison-quick-table | home | [x] | [x] | reuse + Daily kolon toggle | [x] |
+| 7 | testimonial-quote-carousel | home | [x] | [x] | reuse | [x] |
+| 8 | product-showcase-grid-featured | home | [x] | [x] | reuse | [x] |
+| 9 | media-shop-the-feed | home | [x] | [x] | reuse | [x] |
+| 10 | product-showcase-grid-featured.2 | home | [x] | [x] | reuse | [x] |
+| 11 | editorial-image-with-text.2 | home | [x] | [x] | reuse | [x] |
+| 12 | footer-columns-newsletter | home | [x] | [x] | reuse | [x] |
+| 13 | global-predictive-search | home | [x] | [x] | overlay; öneri yok | [x] |
+| 14 | global-menu-drawer | home | [x] | [x] | 375/768 open | [x] |
+| 15 | global-cart-drawer | merch PDP | [x] | [x] | merch ATC drawer | [x] |
+| 16 | product-info-main | product-detail | [x] | [x] | 30 sticks missing | [x] |
+| 17 | promo-banner-tabs | product-detail | [x] | [x] | reuse | [x] |
+| 18 | comparison-quick-table | product-detail | [x] | [x] | reuse | [x] |
+| 19 | testimonial-quote-carousel | product-detail | [x] | [x] | reuse | [x] |
+| 20 | faq-collapsible-tabs | product-detail | [x] | [x] | safe-soru changed | [x] |
+| 21 | collection-banner | collection | [x] | [x] | reuse | [x] |
+| 22 | collection-nav-cards | collection | [x] | [x] | reuse | [x] |
+| 23 | collection-banner | merch | [x] | [x] | reuse | [x] |
+| 24 | product-showcase-grid-plp | merch | [x] | [x] | reuse | [x] |
+| 25 | search-results | search | [x] | [x] | reuse | [x] |
+| 26 | lead-capture-newsletter-band | search | [x] | [x] | e-posta yok | [x] |
+| 27 | cart-page-main | cart | [x] | [x] | boş + Daily satır | [x] |
+| 28 | product-showcase-grid-featured | cart | [x] | [x] | reuse | [x] |
+| 29 | page-content-main | about-brand | [x] | [x] | reuse | [x] |
+| 30–33 | thirsty-thoughts (4) | thirsty-thoughts | [x] | [x] | reuse | [x] |
+| 34 | page-content-main | policy | [x] | [x] | reuse | [x] |
+| 35 | blog-list-main | blog-list | [x] | [x] | reuse | [x] |
+| 36 | blog-post-main | blog-post | [x] | [x] | reuse | [x] |
+| 37 | page-content-main | faq-support | [x] | [x] | Gorgias parent | [x] |
+| 38 | page-content-main | store-locator | [x] | [x] | Stockist | [x] |
+| 39 | lead-capture-form | subscribe | [x] | [x] | SMS PII yok | [x] |
+| 40 | page-content-main | not-found | [x] | [x] | 404 aday | [x] |
+| 41 | page-content-main | wholesale | [x] | [x] | Typeform | [x] |
 
 ---
 
-## Interact (piksel değişen)
+## Interact (piksel değişen / olmayan)
 
-| Bileşen | State | Not |
+| Bileşen | State | Sonuç |
 |---|---|---|
-| promo-banner-tabs | changed | WEEKENDS → DAILY |
-| comparison-quick-table | changed | Daily satırı |
-| global-predictive-search | input | `daily` |
-| global-menu-drawer | open | 375/768 hamburger |
-| global-cart-drawer | filled | Add+ → ADD TO CART → `#cart-notification` |
-| product-info-main | changed | 30 sticks |
-| faq-collapsible-tabs | changed | Is Waterboy safe? |
-| cart-page-main | filled | `/cart/add.js` fallback serbest |
+| promo-banner-tabs | changed | DAILY kırmızı panel + SHOP DAILY HYDRATION |
+| comparison-quick-table | changed | DAILY tık Daily kolonunu kapattı (odak değil) |
+| global-predictive-search | input | `daily` yazıldı; öneri listesi yok |
+| global-menu-drawer | open | 375/768 liste; 1440 hamburger yok |
+| global-cart-drawer | filled | merch baby-tee UI ATC → sağ drawer |
+| product-info-main | changed | **missing** — 30 sticks tık kareyi değiştirmedi |
+| faq-collapsible-tabs | changed | Is Waterboy safe? Absolutely… |
+| cart-page-main | filled | GET `/cart/add` Daily Cucumber Citrus + SAVE15 |
 
 ---
 
@@ -117,9 +118,9 @@
 
 ## Evidence backlog
 
-- [ ] Claiming obs resmi 3vp
-- [ ] Overlay / tab / pack / FAQ interact
-- [ ] PDP Judge.me/reviews app (şema yok)
-- [ ] Thirsty Thoughts alt grid ×2 (sweat/recovery — aynı tip)
+- [x] Claiming obs resmi 3vp
+- [x] Overlay / tab / compare / search / menu / FAQ / cart interact
+- [ ] PDP june 30-sticks (2 deneme, kare aynı)
+- [ ] PDP reviews app (şema yok)
 - [ ] `/blogs/news` 0 article
-- [ ] Newsletter / SMS / Gorgias / chat submit — **yapılmayacak** (PII)
+- [ ] Newsletter / SMS / Gorgias / chat / Typeform / Growi submit — **yapılmayacak** (PII)

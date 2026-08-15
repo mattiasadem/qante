@@ -10,10 +10,13 @@
   "evidence": [
     "evidence/waterboy/default/home/global-cart-drawer.1440.png",
     "evidence/waterboy/default/home/global-cart-drawer.375.png",
-    "evidence/waterboy/default/home/global-cart-drawer.768.png"
+    "evidence/waterboy/default/home/global-cart-drawer.768.png",
+    "evidence/waterboy/default/home/global-cart-drawer.filled.tee-eklendi.1440.png",
+    "evidence/waterboy/default/home/global-cart-drawer.filled.tee-eklendi.375.png",
+    "evidence/waterboy/default/home/global-cart-drawer.filled.tee-eklendi.768.png"
   ],
-  "notlar": "Refresh cart-notification dialog (Item added to your cart). Yan drawer yok; Cart ikonu /cart sayfasına gider.",
-  "delta": "global-cart-drawer şemasına en yakın overlay — bildirim popup, sağ çekmece değil. Boş halde 0-size. Dolu için ATC şart.",
+  "notlar": "Statik kare Daily PDP (boş #cart-notification, 0-size). Merch ATC sonrası sağ drawer: Your Cart · 1.",
+  "delta": "Daily june form id yok, bildirim/drawer üretmedi. Merch standart ADD TO CART sağ çekmece açar (kargo bar + upsell + Checkout). Cart ikonu ayrıca /cart.",
   "captureMode": "viewport",
   "interactionStates": [
     "initial",
@@ -44,12 +47,12 @@
     }
   ],
   "stateFindings": {
-    "filled": "İkinci çekim karesine bakılacak."
+    "filled": "Sağ drawer Your Cart · 1. Hydration is Hot Tee / Size XS / $25. You’re $10.99 away for free shipping. All Hydration Variety $24.99 toggle. Checkout · $25 + Shop Pay + PayPal. Checkout’a girilmedi."
   },
   "missingStates": [],
-  "interactionNote": "Drawer yok. Daily june ATC form id vermedi (1. deneme). Retry merch /products/baby-tee standart ADD TO CART.",
+  "interactionNote": "1. deneme Daily june: varyant id yok. 2. merch baby-tee addToCart via ui. Statik 3vp Daily PDP — kapalı kare yanıltır.",
   "capture": {
-    "url": "https://www.waterboy.com/products/daily-hydration",
+    "url": "https://www.waterboy.com/products/baby-tee",
     "viewports": [
       "375",
       "768",
@@ -57,6 +60,6 @@
     ],
     "mode": "viewport",
     "method": "interaction-steps",
-    "updatedAt": "2026-08-15T18:19:31.281Z"
+    "updatedAt": "2026-08-15T18:33:44.025Z"
   }
 }

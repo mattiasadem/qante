@@ -85,3 +85,6 @@ Karar: onay bekliyor
 - Custom liquid height 0 (home + PDP)  
 - Accessibility widget (UserWay/eşit)  
 - Partnerships → `app.onbrand.com` (dış)  
+- PDP june `30 sticks` tık — iki resmi denemede kare değişmedi (`missingStates`)  
+- Daily june UI ATC — form `[name=id]` yok; sepet GET `/cart/add` + merch drawer ile alındı  
+
