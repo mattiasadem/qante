@@ -16,7 +16,7 @@ Karar: onay bekliyor
 ---
 
 ADAY: cymbiotika-store-locator  
-Gerekçe: `/pages/store-locator` Stockist/Leaflet (`stockist-element-14`, retailer: Sprouts / Target / Raley's / Ulta / Whole Foods). Taksonomide store-locator yok.  
+Gerekçe: `/pages/store-locator` Stockist/Leaflet (`stockist-element-14`, Sprouts / Target / Raley's / Ulta / Whole Foods). Taksonomide store-locator yok.  
 Örnekler: https://cymbiotika.com/pages/store-locator  
 Öneri: ertele — üçüncü parti locator  
 Karar: onay bekliyor
@@ -24,7 +24,7 @@ Karar: onay bekliyor
 ---
 
 ADAY: cymbiotika-frontrow-reviews  
-Gerekçe: PDP `#shopify-section-template--15656904687663__16678545464cb73fbb` 4.9 + iframe `#frontrow-testimonials` (~1096px). Native testimonial değil.  
+Gerekçe: PDP `#…__16678545464cb73fbb` 4.9 + iframe `#frontrow-testimonials`. Observation `testimonial-quote-carousel` reuse; widget üçüncü parti.  
 Örnekler: https://cymbiotika.com/products/glutathione  
 Öneri: ertele / commerce-tools  
 Karar: onay bekliyor
@@ -32,7 +32,7 @@ Karar: onay bekliyor
 ---
 
 ADAY: cymbiotika-firework  
-Gerekçe: Home “Invest in yourself” `fw-player-deck` / `fw-storyblock` (Firework). PDP `product-firework-playlist`. Observation `media-shop-the-feed` reuse; player iframe.  
+Gerekçe: Home “Invest in yourself” Firework `fw-player-deck` / `fw-storyblock`. PDP `product-firework-playlist`. Observation `media-shop-the-feed` reuse.  
 Örnekler: https://cymbiotika.com/ · https://cymbiotika.com/products/glutathione  
 Öneri: leftover — üçüncü parti UGC  
 Karar: onay bekliyor
@@ -48,9 +48,17 @@ Karar: onay bekliyor
 ---
 
 ADAY: cymbiotika-vue-landings  
-Gerekçe: `/pages/liposomal-delivery` (liposomes), `/pages/brecka-protocol`, `/pages/quiz` — `#layout-main` custom/Vue, shopify-section yok. Quiz observation denendi; adımlar PII ise dur.  
-Örnekler: https://cymbiotika.com/pages/liposomal-delivery · https://cymbiotika.com/pages/brecka-protocol · https://cymbiotika.com/pages/quiz  
+Gerekçe: `/pages/liposomal-delivery`, `/pages/brecka-protocol` — `#layout-main` custom/Vue, shopify-section yok. Quiz landing observation yazıldı; adımlar PII.  
+Örnekler: https://cymbiotika.com/pages/liposomal-delivery · https://cymbiotika.com/pages/brecka-protocol  
 Öneri: leftover  
+Karar: onay bekliyor
+
+---
+
+ADAY: cymbiotika-pdp-seals-chrome  
+Gerekçe: PDP `product-seals` (Gluten Free / GMP / Keto / Made In USA, 88px). Resmi section crop sticky header’a oturdu (1440 = yalnız nav). Observation yazılmadı.  
+Örnekler: https://cymbiotika.com/products/glutathione  
+Öneri: leftover — chrome crop  
 Karar: onay bekliyor
 
 ---
@@ -61,9 +69,12 @@ Karar: onay bekliyor
 - PDP 0px: `product-image-left`, `product-specific-2`, `pdp-video-faq` (~1px), `product-liposomal`, `product-specific`
 - `/blogs/articles` (Press) + `/blogs/recipes` — news ile aynı `template--15656900821039__main`
 - `/pages/contact-us-new` — contact kardeşi
-- Privacy ~18839px — resmi crop dener; olmazsa yükseklik leftover
-- FAQ ~6880px — resmi crop dener
-- Geo `shop-redirect-popup` (CA/UK/AE/AU) — overlay, envanter değil
-- Newsletter / contact / account — PII stop
-- Wholesale `wholesale.cymbiotika.com`, Arise rewards, create-your-bundle, knowledge-center, supplement-guide, livestreams, careers, gift-card-balance
-- UserWay a11y + Cym chatbot
+- Collection `banner` 103px — resmi crop header + “All Products” sızıntısı
+- Predictive `input` (glutathione yazısı) piksel değiştirmedi — açık drawer popular+recommended alındı
+- Cart filled/changed **375** — `/cart.js` bot-wall + ATC UI eklemedi; 768/1440 UI ATC + qty 2 doğrulandı
+- Geo `shop-redirect-popup` (CA/UK/AE/AU)
+- Cookie GOT IT + Cym chatbot birçok karede (dismiss main-içinde atlıyor)
+- Newsletter / contact / account / quiz adımları — PII stop
+- Wholesale, Arise, create-your-bundle, knowledge-center, supplement-guide, livestreams, careers, gift-card-balance
+- UserWay a11y
+- Shop by Benefit / Learn mega bu turda yoklandı değil

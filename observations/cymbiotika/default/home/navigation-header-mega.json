@@ -7,7 +7,15 @@
   "url": "https://cymbiotika.com/",
   "selector": "#shopify-section-layout-header",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
+  "evidence": [
+    "evidence/cymbiotika/default/home/navigation-header-mega.1440.png",
+    "evidence/cymbiotika/default/home/navigation-header-mega.375.png",
+    "evidence/cymbiotika/default/home/navigation-header-mega.768.png",
+    "evidence/cymbiotika/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/cymbiotika/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/cymbiotika/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/cymbiotika/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
   "notlar": "Logo; Shop Best Sellers / Shop by Benefit / Learn / Subscribe and Save / Shop All / Take the Quiz. Sağ: hesap, #navbar__search, #navbar__cart (0). 1440 hamburger yok.",
   "delta": "Sprout v3 header. İki navbar DOM’da (#navbar-wrapper görünür; #navbar-wrapper-v3 0px). Mega Shop hover → .bestsellers-submenu-wrapper (Customer Favorites + ürün kartları). Account /login PII. Geo shop-redirect ayrı overlay.",
   "interactionStates": [
@@ -59,14 +67,25 @@
     }
   ],
   "stateFindings": {
-    "initial": "",
-    "open": ""
+    "initial": "Kapalı bar: CYMBIOTIKA + Shop Best Sellers / Shop by Benefit / Learn / Subscribe and Save + Shop All / Take the Quiz + search/account/cart 0. Mega yok.",
+    "open": "1440 Shop Best Sellers hover: Customer Favorites + Shop Best Sellers CTA + Shilajit Liquid Complex / Liposomal Vitamin C / Liposomal Glutathione kartları. Hero slayt arkada duruyor."
   },
   "missingStates": [
     {
       "state": "open",
-      "sebep": "375/768 mega yok — hamburger adayı global-menu-drawer. Shop by Benefit / Learn bu turda yoklandı değil."
+      "sebep": "375/768 mega yok — hamburger #navpanel. Shop by Benefit / Learn bu turda yoklandı değil."
     }
   ],
-  "interactionNote": "Görünür tetikleyici metin Shop Best Sellers. v3-nav-item__trigger Shop gizli navbar’da olabilir."
+  "interactionNote": "Görünür tetikleyici metin Shop Best Sellers.",
+  "capture": {
+    "url": "https://cymbiotika.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:01:45.827Z"
+  }
 }

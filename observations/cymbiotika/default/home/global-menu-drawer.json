@@ -5,13 +5,16 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://cymbiotika.com/",
-  "selector": "#shopify-section-layout-header",
+  "selector": "#navpanel",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
-  "notlar": "button.v3-hamburger / #v3-hamburger-right aria Open menu. 1440 görünmez. 375 resmi UA’da kutu 0px olabilir.",
-  "delta": "Ayrı #menu-drawer id yok; menü header içinde. 375/768 yoklanacak.",
+  "evidence": [
+    "evidence/cymbiotika/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/cymbiotika/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "375 görünür hamburger: #shopify-section-layout-header button.spt-h-full.spt-pl-1.5. Drawer #navpanel (kapalı x=-375, açık x=0). Take the Quiz / Create Bundle / Shop All / Best Sellers.",
+  "delta": "Sprout #navpanel. v3-hamburger 0px. 1440 hamburger yok — mega.",
   "captureMode": "viewport",
-  "prepareClick": "button.v3-hamburger, #v3-hamburger-right, button[aria-label='Open menu']",
+  "prepareClick": "#shopify-section-layout-header button.spt-h-full.spt-pl-1\\.5",
   "interactionStates": [
     "open"
   ],
@@ -31,7 +34,7 @@
     {
       "state": "open",
       "action": "click",
-      "selector": "button[aria-label='Open menu']",
+      "selector": "#shopify-section-layout-header button.spt-h-full.spt-pl-1\\.5",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "hamburger",
@@ -42,7 +45,7 @@
     }
   ],
   "stateFindings": {
-    "open": ""
+    "open": "375 tam ekran: Take the Quiz / Create Bundle / Shop All / Shop Best Sellers / Shop By Benefit / Learn. 768 sol panel + karartılmış home. X kapat."
   },
   "missingStates": [
     {
@@ -50,5 +53,16 @@
       "sebep": "1440 N/A — masaüstü mega."
     }
   ],
-  "interactionNote": "Resmi capture isMobile:false; 375 hamburger 0px ise leftover."
+  "interactionNote": "Opener #shopify-section-layout-header button.spt-h-full.spt-pl-1.5 (aria yok). v3-hamburger 0px.",
+  "capture": {
+    "url": "https://cymbiotika.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:04:02.912Z"
+  }
 }

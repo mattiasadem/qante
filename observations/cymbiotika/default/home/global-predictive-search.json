@@ -7,7 +7,14 @@
   "url": "https://cymbiotika.com/",
   "selector": "#drawer-search",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/cymbiotika/default/home/global-predictive-search.initial.arama-bos.1440.png",
+    "evidence/cymbiotika/default/home/global-predictive-search.initial.arama-bos.375.png",
+    "evidence/cymbiotika/default/home/global-predictive-search.initial.arama-bos.768.png",
+    "evidence/cymbiotika/default/home/global-predictive-search.input.glutathione.1440.png",
+    "evidence/cymbiotika/default/home/global-predictive-search.input.glutathione.375.png",
+    "evidence/cymbiotika/default/home/global-predictive-search.input.glutathione.768.png"
+  ],
   "notlar": "#drawer-search + input#Search placeholder Search. Kapalıda x≈2802. Opener #navbar__search.",
   "delta": "Predictive overlay; /search sayfa ayrı (search-results).",
   "captureMode": "viewport",
@@ -50,9 +57,25 @@
     }
   ],
   "stateFindings": {
-    "initial": "",
-    "input": ""
+    "initial": "Açık drawer: Popular searches (magnesium, glutathione, shilajit…) + Recommended products carousel (Magnesium / Glutathione / NAD+ / Hydrogen / CoQ10).",
+    "input": "768/1440 kare initial ile aynı byte — fill görünür sonuç üretmedi. 375 de Popular searches; yazılan glutathione görünmedi."
   },
-  "missingStates": [],
-  "interactionNote": "Sorgu mağaza ürünü: glutathione. PII yok."
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "fill glutathione piksel değiştirmedi (768/1440 aynı dosya boyutu). Predictive sonuç listesi yoklandı değil."
+    }
+  ],
+  "interactionNote": "Açık boş drawer = asıl kanıt (popular + recommended). Yazılan sorgu UI’da doğrulanamadı. PII yok.",
+  "capture": {
+    "url": "https://cymbiotika.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:02:02.071Z"
+  }
 }
