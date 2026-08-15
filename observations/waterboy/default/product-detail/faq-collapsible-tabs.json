@@ -1,0 +1,62 @@
+{
+  "observationId": "waterboy.default.product-detail.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "waterboy",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://www.waterboy.com/products/daily-hydration",
+  "selector": "#shopify-section-template--22761846341880__hoox_pdp_faq_section_Vpn8Jf",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/waterboy/default/product-detail/faq-collapsible-tabs.1440.png",
+    "evidence/waterboy/default/product-detail/faq-collapsible-tabs.375.png",
+    "evidence/waterboy/default/product-detail/faq-collapsible-tabs.768.png",
+    "evidence/waterboy/default/product-detail/faq-collapsible-tabs.changed.safe-soru.1440.png",
+    "evidence/waterboy/default/product-detail/faq-collapsible-tabs.changed.safe-soru.375.png",
+    "evidence/waterboy/default/product-detail/faq-collapsible-tabs.changed.safe-soru.768.png"
+  ],
+  "notlar": "FAQ AROUND AND FIND OUT. İlk soru (What makes Waterboy different?) gövdede açık. Sonraki: Is Waterboy safe? / international shipping…",
+  "delta": "Kategori tab yok. Accordion .c-accordion; details değil. İlk öğe openFirst.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://www.waterboy.com/products/daily-hydration",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--22761846341880__hoox_pdp_faq_section_Vpn8Jf",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".c-accordion__header:has-text('Is Waterboy safe?')",
+      "capture": true,
+      "etiket": "safe-soru",
+      "not": "İkinci soru açılınca Absolutely… görünür"
+    }
+  ],
+  "stateFindings": {
+    "initial": "FAQ AROUND AND FIND OUT; yedi soru. Statik 1440 karede hepsi + (gövde yok).",
+    "changed": "Is Waterboy safe? açık (−): Absolutely. But for legal reasons, please consult with a doctor. Diğerleri +."
+  },
+  "missingStates": [],
+  "capture": {
+    "url": "https://www.waterboy.com/products/daily-hydration",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:21:00.326Z"
+  }
+}
