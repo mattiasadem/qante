@@ -27,5 +27,77 @@
     "method": "viewport",
     "updatedAt": "2026-08-15T16:56:08.654Z",
     "prepareClick": "a[href='/cart']"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.graza.co/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[href='/cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Kedi tava illüstrasyonu; Looks like your ca(r)t has some issues"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.graza.co/products/sizzle",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#product-hero label.font-medium:has-text('One Time Purchase')",
+      "capture": false,
+      "not": "Abonelik yerine tek sefer"
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#product-hero button.add-to-cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a[href='/cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sizzle-qty1",
+      "not": "Drawer ATC sonrası açılmayabilir — cart link"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#cart-drawer button[aria-label='Increase Quantity']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "qty2",
+      "not": "QTY 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Cart(0); kedi+tava; Looks like your ca(r)t has some issues; Shop Olive Oil.",
+    "filled": "Cart(1) Sizzle 1 Bottle $16; QTY 1; Want to add Glass/Frizzle/Refill upsell.",
+    "changed": "Increase Quantity → QTY 2 (karede doğrulanacak)."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC One Time Purchase + #product-hero button.add-to-cart. Drawer bazen ATC ile açılıyor; filled adımı yine cart link tıklar."
 }

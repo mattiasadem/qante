@@ -27,5 +27,42 @@
     "method": "viewport",
     "updatedAt": "2026-08-15T16:58:01.851Z",
     "prepareClick": "#header-search-button"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.graza.co/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#header-search-button",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bos",
+      "not": "Watcha lookin' for??"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#search-input",
+      "value": "drizzle",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "drizzle",
+      "not": "Here's what we found for drizzle + Add butonları"
+    }
+  ],
+  "stateFindings": {
+    "initial": "SEARCH overlay; placeholder Watcha lookin' for??",
+    "input": "drizzle → 14 items; Drizzle Squeeze / Duo / Duo Glass / Refill + Add."
+  },
+  "missingStates": [],
+  "interactionNote": "/search sayfa Vue hydrate headless boş; canlı arama bu overlay."
 }

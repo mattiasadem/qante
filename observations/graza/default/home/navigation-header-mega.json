@@ -24,5 +24,41 @@
     "mode": "section",
     "method": "margin-box+minPad8",
     "updatedAt": "2026-08-15T16:59:56.680Z"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.graza.co/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı sticky bar"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#header-bar button.font-medium:has-text('Shop')",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Lime mega: SHOP OLIVE OIL + collections + featured video kartları"
+    }
+  ],
+  "stateFindings": {
+    "initial": "60px sticky bar: GRAZA, Shop, Get Refills, About, Glog, search, account, Cart [0].",
+    "open": "1440 Shop tık → lime panel: The Duo Glass / Trio / Starter Kit / Subscribe; Olive Oil / Mayo / Chips / Shop All; Featured mayo+set kartları."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375/768 Shop mega yok — hamburger #header-mobile-menu (ayrı obs)."
+    }
+  ]
 }
