@@ -7,12 +7,19 @@
   "url": "https://www.cutsclothing.com/",
   "selector": "body",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
-  "notlar": "375 hamburger: X + CUTS + search/cart; Men/Women pill; Featured/Tops/Bottoms/Accessories/Shop By Activity/Fabrics accordion; Shop All.",
-  "delta": "1440 hamburger yok (mega). Drawer header altı panel; arka planda sayfa görünür.",
+  "evidence": [
+    "evidence/cuts/default/home/global-menu-drawer.1440.png",
+    "evidence/cuts/default/home/global-menu-drawer.375.png",
+    "evidence/cuts/default/home/global-menu-drawer.768.png",
+    "evidence/cuts/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/cuts/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "375/768 hamburger: X + CUTS + search/cart; Men/Women pill; Featured/Tops/Bottoms/Accessories/Shop By Activity/Fabrics accordion; Shop All.",
+  "delta": "1440 hamburger yok (mega). 1440 unsuffixed PNG kapalı home (prepareClick no-op). Drawer header altı panel; arka planda sayfa görünür.",
   "captureMode": "viewport",
   "prepareClick": "button[aria-label='Open mobile menu']",
   "interactionStates": [
+    "initial",
     "open"
   ],
   "interactionSteps": [
@@ -42,8 +49,20 @@
   "missingStates": [
     {
       "state": "open",
-      "sebep": "1440 hamburger yok — mega."
+      "sebep": "1440 hamburger yok — mega. open yalnız 375/768."
     }
   ],
-  "interactionNote": "1440 N/A. Alt akordeon (Featured) leftover."
+  "interactionNote": "1440 N/A. Alt akordeon (Featured) leftover.",
+  "capture": {
+    "url": "https://www.cutsclothing.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:03:00.363Z",
+    "prepareClick": "button[aria-label='Open mobile menu']"
+  }
 }

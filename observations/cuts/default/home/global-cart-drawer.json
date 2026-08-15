@@ -7,7 +7,17 @@
   "url": "https://www.cutsclothing.com/",
   "selector": "aside[class*='--drawer-width']",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/cuts/default/home/global-cart-drawer.1440.png",
+    "evidence/cuts/default/home/global-cart-drawer.375.png",
+    "evidence/cuts/default/home/global-cart-drawer.768.png",
+    "evidence/cuts/default/home/global-cart-drawer.filled.tee-qty1.1440.png",
+    "evidence/cuts/default/home/global-cart-drawer.filled.tee-qty1.375.png",
+    "evidence/cuts/default/home/global-cart-drawer.filled.tee-qty1.768.png",
+    "evidence/cuts/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/cuts/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/cuts/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
   "notlar": "Sağ drawer. Boş: Back to Shopping / Your cart is empty / Continue Shopping. /cart ayrı sayfa da var.",
   "delta": "Headless UI aside. Kapalı 0px. Instagram eapps popup aynı anda DOM’da — aside seç.",
   "captureMode": "viewport",
@@ -40,43 +50,58 @@
     },
     {
       "state": "filled",
+      "action": "scrollTo",
+      "selector": "button[aria-label='M']",
+      "capture": false
+    },
+    {
+      "state": "filled",
       "action": "click",
-      "selector": "button:has-text('M'), label:has-text('M')",
+      "selector": "button[aria-label='M']",
       "capture": false,
-      "not": "Beden M — Select Size ATC öncesi"
+      "not": "Beden M (aria-label exact) — Select Size ATC öncesi"
     },
     {
       "state": "filled",
       "action": "waitFor",
-      "value": 600,
-      "capture": false
-    },
-    {
-      "state": "filled",
-      "action": "addToCart",
-      "selector": "button:has-text('Add'), button:has-text('Add To Cart'), button:has-text('Add to Cart')",
-      "capture": false
-    },
-    {
-      "state": "filled",
-      "action": "waitFor",
-      "value": 1500,
+      "selector": "button[aria-label='Add To Cart']",
+      "value": 8000,
       "capture": false
     },
     {
       "state": "filled",
       "action": "click",
-      "selector": "button[aria-label='Open cart']",
+      "selector": "button[aria-label='Add To Cart']",
+      "capture": false,
+      "not": "Hydrogen — addToCart/cart.js yok; UI tık"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": "aside[class*='--drawer-width']",
+      "value": 8000,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "tee-qty1",
-      "not": "ATC sonrası drawer"
+      "not": "ATC drawer’ı kendisi açar — Open cart tekrar tıklanmaz (toggle kapatır)"
     }
   ],
   "stateFindings": {
     "initial": "Your cart is empty; Continue Shopping; badge 0.",
-    "filled": "Dolu kare interact’te doğrulanacak — beden + ATC."
+    "filled": "AO Curve-Hem Tee White / M · qty 1 · $38 ~~$54~~ · 30% SAVED · Checkout · Add 1 more to unlock 40% off. ATC drawer’ı açar."
   },
   "missingStates": [],
-  "interactionNote": "ATC önce beden (Select Size pasif). Checkout/login yok. Qty changed leftover."
+  "interactionNote": "Hydrogen — addToCart/cart.js yok; beden M + Add To Cart UI. Checkout/login yok. Qty changed leftover.",
+  "capture": {
+    "url": "https://www.cutsclothing.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:07:56.554Z",
+    "prepareClick": "button[aria-label='Open cart']"
+  }
 }
