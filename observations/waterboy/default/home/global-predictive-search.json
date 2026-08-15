@@ -1,0 +1,52 @@
+{
+  "observationId": "waterboy.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "waterboy",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.waterboy.com/",
+  "selector": "details-modal.header__search .search-modal",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "Refresh details-modal.header__search. İkon tık → .search-modal + #Search-In-Modal. predictive-search custom element yok.",
+  "delta": "Kapalı kare yanıltır. Overlay modal, ayrı sayfa değil. <predictive-search> yok — Refresh search-modal.",
+  "captureMode": "viewport",
+  "prepareClick": ".header__icon--search",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.waterboy.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".header__icon--search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "modal-bos",
+      "not": "Boş search modal"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "daily",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "daily",
+      "not": "katalog: Daily Hydration"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Search ikonu; overlay kapalı.",
+    "input": "Kanıt karesine bakılacak — daily önerisi."
+  },
+  "missingStates": [],
+  "interactionNote": "predictive-search elementi yok. Fill sonrası ürün satırı gelmezse missingStates."
+}

@@ -1,0 +1,52 @@
+{
+  "observationId": "waterboy.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "waterboy",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://www.waterboy.com/cart",
+  "selector": "#shopify-section-template--19929780617464__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Boş: Your cart is empty, CONTINUE SHOPPING, Have an account? Log in. cart-footer boşken height 0.",
+  "delta": "Refresh cart. Drawer yok — asıl sepet bu sayfa. Dolu hâl interact.",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.waterboy.com/cart",
+      "capture": true,
+      "etiket": "bos"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.waterboy.com/products/daily-hydration",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button:has-text('ADD TO CART'), .pdp-june-flavor__add",
+      "capture": false,
+      "not": "UI veya /cart/add.js — Daily Cucumber Citrus"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.waterboy.com/cart",
+      "capture": true,
+      "etiket": "daily-satir"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boş sepet + Continue shopping.",
+    "filled": "Kanıt karesine bakılacak."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart fallback variant 45613885292792. Checkout'a girilmedi."
+}

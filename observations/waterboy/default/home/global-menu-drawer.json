@@ -1,0 +1,48 @@
+{
+  "observationId": "waterboy.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "waterboy",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.waterboy.com/",
+  "selector": "#Details-menu-drawer-container .menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "375 hamburger → .menu-drawer: DAILY WEEKEND WORKOUT MERCH LEARN STORE LOCATOR, LOG IN, Instagram, TikTok.",
+  "delta": "1440 hamburger gizli (Refresh large-up). Mega yok; düz liste. 1440 open N/A.",
+  "captureMode": "viewport",
+  "prepareClick": ".header__icon--menu",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://www.waterboy.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": ".header__icon--menu",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Drawer açık; 1440 hamburger yok"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: DAILY…STORE LOCATOR + Log in + sosyal."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger yok — beklenen"
+    }
+  ]
+}

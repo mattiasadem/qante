@@ -1,0 +1,78 @@
+{
+  "observationId": "waterboy.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "waterboy",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.waterboy.com/products/daily-hydration",
+  "selector": "#cart-notification",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Refresh cart-notification dialog (Item added to your cart). Yan drawer yok; Cart ikonu /cart sayfasına gider.",
+  "delta": "global-cart-drawer şemasına en yakın overlay — bildirim popup, sağ çekmece değil. Boş halde 0-size. Dolu için ATC şart.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.waterboy.com/products/daily-hydration",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": ".pdp-june-flavor__add",
+      "capture": false,
+      "not": "İlk aroma Add + — builder'da ADD TO CART çıkar"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button:has-text('ADD TO CART'), button:has-text('Add to cart')",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button:has-text('ADD TO CART')",
+      "capture": false,
+      "not": "UI tık olmazsa /cart/add.js fallback — variant Daily Cucumber Citrus 45613885292792"
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": false,
+      "not": "Notification görünmezse cart ikonu — /cart'a kaçabilir"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "daily-eklendi",
+      "not": "cart-notification veya /cart dolu"
+    }
+  ],
+  "stateFindings": {
+    "filled": "Kanıt karesine bakılacak."
+  },
+  "missingStates": [],
+  "interactionNote": "Drawer yok. Add+ tek başına sepete yazmıyor; ADD TO CART sonrası notification. addToCart fallback variant 45613885292792."
+}

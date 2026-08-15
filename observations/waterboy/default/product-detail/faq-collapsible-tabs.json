@@ -1,0 +1,44 @@
+{
+  "observationId": "waterboy.default.product-detail.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "waterboy",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://www.waterboy.com/products/daily-hydration",
+  "selector": "#shopify-section-template--22761846341880__hoox_pdp_faq_section_Vpn8Jf",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [],
+  "notlar": "FAQ AROUND AND FIND OUT. İlk soru (What makes Waterboy different?) gövdede açık. Sonraki: Is Waterboy safe? / international shipping…",
+  "delta": "Kategori tab yok. Accordion .c-accordion; details değil. İlk öğe openFirst.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://www.waterboy.com/products/daily-hydration",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--22761846341880__hoox_pdp_faq_section_Vpn8Jf",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".c-accordion__header:has-text('Is Waterboy safe?')",
+      "capture": true,
+      "etiket": "safe-soru",
+      "not": "İkinci soru açılınca Absolutely… görünür"
+    }
+  ],
+  "stateFindings": {
+    "initial": "İlk soru açık: sugar-free / 3x electrolytes.",
+    "changed": "Kanıt karesine bakılacak."
+  },
+  "missingStates": []
+}
