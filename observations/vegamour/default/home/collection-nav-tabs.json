@@ -1,0 +1,61 @@
+{
+  "observationId": "vegamour.default.home.collection-nav-tabs",
+  "schemaId": "collection-nav-tabs",
+  "kaynak": "vegamour",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://vegamour.com/",
+  "selector": "#shopify-section-template--19977497935987__tab_cards_7qKWXM",
+  "evidenceSlug": "collection-nav-tabs",
+  "evidence": [
+    "evidence/vegamour/default/home/collection-nav-tabs.1440.png",
+    "evidence/vegamour/default/home/collection-nav-tabs.375.png",
+    "evidence/vegamour/default/home/collection-nav-tabs.768.png",
+    "evidence/vegamour/default/home/collection-nav-tabs.changed.concern.1440.png",
+    "evidence/vegamour/default/home/collection-nav-tabs.changed.concern.375.png",
+    "evidence/vegamour/default/home/collection-nav-tabs.changed.concern.768.png",
+    "evidence/vegamour/default/home/collection-nav-tabs.initial.category.1440.png",
+    "evidence/vegamour/default/home/collection-nav-tabs.initial.category.375.png",
+    "evidence/vegamour/default/home/collection-nav-tabs.initial.category.768.png"
+  ],
+  "notlar": "Shop by Category / Shop by Concern. Kartlar: Scalp Serums, Supplements, Cleanse & Condition, Lash & Brow…",
+  "delta": "tab-cards: sekme + görsel kart grid. Şema büyük tek görsel+yan liste değil — kart ızgarası.",
+  "capture": {
+    "url": "https://vegamour.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:32:32.161Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://vegamour.com/",
+      "capture": true,
+      "etiket": "category",
+      "not": "Shop by Category kartları"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--19977497935987__tab_cards_7qKWXM :text('Shop by Concern')",
+      "capture": true,
+      "etiket": "concern",
+      "not": "Concern kartları (Shedding / Volume / …)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Shop by Category — Scalp Serums / Supplements / Cleanse & Condition.",
+    "changed": "Shop by Concern — Hair Shedding / Volume / Dryness & Damage kartları."
+  },
+  "missingStates": []
+}
