@@ -1,0 +1,58 @@
+{
+  "observationId": "necessaire.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "url": "https://necessaire.com/products/the-body-retinol",
+  "selector": "#shopify-section-template--19863517757553__product",
+  "notlar": "The Body Retinol | 0.1% Retinol. BESTSELLER. 4.4 stars. One Time $65 / Subscribe + Save 15% $55.25. Add to Cart.",
+  "delta": "Galeri carousel + dots. Recharge selling-plan. Breadcrumb HOME | THE BODY RETINOL section içinde. ATC .g-add-to-cart-btn → Rebuy drawer.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://necessaire.com/products/the-body-retinol",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19863517757553__product",
+      "capture": true,
+      "etiket": "onetime"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label.rc_widget__option__label:has-text('Subscribe'), .rc-option__subsave label, .rc_widget__option--subsave label",
+      "capture": true,
+      "etiket": "subscribe",
+      "not": "Subscribe + Save 15% — fiyat $65 → $55.25"
+    }
+  ],
+  "stateFindings": {
+    "initial": "One Time Delivery $65.00; BESTSELLER; Add to Cart.",
+    "changed": "Subscribe + Save 15% $55.25 — karede doğrulanacak."
+  },
+  "missingStates": [],
+  "interactionNote": "Recharge widget. Checkout/form yok.",
+  "kaynak": "necessaire",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "evidenceSlug": "product-info-main",
+  "evidence": []
+}

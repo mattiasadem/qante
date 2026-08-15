@@ -1,0 +1,62 @@
+{
+  "observationId": "necessaire.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "url": "https://necessaire.com/",
+  "selector": ".drawer.drawer--top",
+  "captureMode": "viewport",
+  "notlar": "Üst drawer. input#Search name=q placeholder Search.",
+  "delta": "drawer--top. Predictive liste yoksa dürüst yazılacak.",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://necessaire.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[data-search-toggle]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search",
+      "value": "retinol",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "retinol",
+      "not": "katalogSorgu: The Body Retinol"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Üst search drawer açık; placeholder Search.",
+    "input": "retinol yazıldı — öneri listesi karede doğrulanacak."
+  },
+  "missingStates": [],
+  "interactionNote": "Öneri yoksa missing değil, dürüst stateFindings.",
+  "kaynak": "necessaire",
+  "preset": "default",
+  "sayfa": "home",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": []
+}

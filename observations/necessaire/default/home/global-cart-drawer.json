@@ -1,0 +1,100 @@
+{
+  "observationId": "necessaire.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "url": "https://necessaire.com/",
+  "selector": ".rebuy-cart__flyout",
+  "captureMode": "viewport",
+  "notlar": "Rebuy #rebuy-cart. Boş: $75 free shipping + Start Here / Shop Bestsellers + Recommended. /cart → /?mini-cart=open.",
+  "delta": "Ayrı cart sayfası yok. Rebuy app flyout. Wrapper #rebuy-cart height 0; kutu .rebuy-cart__flyout.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://necessaire.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header a[href='/cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://necessaire.com/products/the-body-retinol",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.g-add-to-cart-btn",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "header a[href='/cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "retinol"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".rebuy-cart__flyout button[aria-label*='Increase' i], .rebuy-cart__flyout [class*='quantity-increase'], .rebuy-cart__flyout [class*='qty-up']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "qty2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Rebuy boş: $75.00 To Qualify For Free Shipping; Start Here / Shop Bestsellers; Recommended (Retinol, Sex Gel, Body Wash).",
+    "filled": "The Body Retinol eklendi — karede doğrulanacak.",
+    "changed": "Adet 2 — karede doğrulanacak."
+  },
+  "missingStates": [],
+  "interactionNote": "Rebuy. /cart sayfa yok. Checkout tıklanmadı. ATC UI button.g-add-to-cart-btn.",
+  "kaynak": "necessaire",
+  "preset": "default",
+  "sayfa": "home",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": []
+}
