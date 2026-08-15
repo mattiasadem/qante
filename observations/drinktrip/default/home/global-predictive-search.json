@@ -1,0 +1,52 @@
+{
+  "observationId": "drinktrip.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "drinktrip",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://drink-trip.com/",
+  "selector": "#search-drawer",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "PREDICTIVE-SEARCH-DRAWER#search-drawer sağ 500px. Kapalı x=1440. Input .predictive-search__input.",
+  "delta": "Focal predictive-search drawer. 1440 opener hidden-pocket; 375 opener hidden-desk. Native /search sayfası ayrı obs.",
+  "captureMode": "viewport",
+  "prepareClick": "a[aria-label=\"Search\"][aria-controls=\"search-drawer\"].hidden-pocket",
+  "interactionStates": [
+    "open",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://drink-trip.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "a[aria-label=\"Search\"][aria-controls=\"search-drawer\"]:visible",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "drawer-acik",
+      "not": "Boş predictive drawer"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#search-drawer input.predictive-search__input",
+      "value": "mango",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mango",
+      "not": "katalogSorgu mango — Tropical Mango"
+    }
+  ],
+  "stateFindings": {
+    "open": "Sağ drawer açık; input boş (metin yoklandı boş).",
+    "input": "mango → PRODUCTS / SUGGESTIONS / Tropical Mango £24.00 / VIEW ALL RESULTS."
+  },
+  "missingStates": [],
+  "interactionNote": "375 opener a.hidden-desk. :visible her vp’de doğru ikonu seçer."
+}

@@ -1,0 +1,92 @@
+{
+  "observationId": "drinktrip.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "drinktrip",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://drink-trip.com/",
+  "selector": ".rebuy-cart__flyout",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Rebuy sağ flyout. Boş: YOUR CART, £30 FREE SHIPPING (UK Mainland Only), Your cart is empty!, SHOP NOW, Why not try something new? Dream Gummies / Dream Powder / Pomegranate powder ADD.",
+  "delta": "Focal CART-DRAWER#mini-cart 0×0. /cart → /?viewcart=true home + rebuy-cart-visible. smart-cart--enabled. cart-page-main yok.",
+  "captureMode": "viewport",
+  "prepareClick": "a[aria-label=\"Cart\"][href=\"/cart\"]",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://drink-trip.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[aria-label=\"Cart\"][href=\"/cart\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş Rebuy"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://drink-trip.com/products/variety-pack-value",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-highlight__btn",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a[aria-label=\"Cart\"][href=\"/cart\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "variety-qty1",
+      "not": "ATC sonrası Rebuy"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".rebuy-cart__flyout button[aria-label*='Increase'], .rebuy-cart__flyout [class*='quantity'] button:last-child, .rebuy-cart__flyout button:has-text('+')",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "qty2",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "YOUR CART; £30.00 away from FREE SHIPPING; empty + SHOP NOW; upsell Dream Gummies £28 / Dream Powder £29.99 / Pomegranate powder £35.",
+    "filled": "ATC sonrası satır — karede doğrulanacak.",
+    "changed": "qty + — karede doğrulanacak."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart UI button.product-highlight__btn (Subscribe & Save 50%). Checkout’a girilmedi."
+}

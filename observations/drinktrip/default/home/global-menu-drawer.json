@@ -1,0 +1,49 @@
+{
+  "observationId": "drinktrip.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "drinktrip",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://drink-trip.com/",
+  "selector": "#mobile-menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "MOBILE-NAVIGATION#mobile-menu-drawer drawer--from-left. Kapalı x=-450. 1440 hamburger yok.",
+  "delta": "Focal mobile-navigation. 1440 mega; opener hidden-desk.",
+  "captureMode": "viewport",
+  "prepareClick": "[aria-controls=\"mobile-menu-drawer\"]",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://drink-trip.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "[aria-controls=\"mobile-menu-drawer\"]",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Mobil menü"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 drawer — metin capture sonrası yazılacak."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger yok (mega)."
+    }
+  ],
+  "interactionNote": "Yazılı SHOP PLP’ye gider; accordion zorlanmadı."
+}

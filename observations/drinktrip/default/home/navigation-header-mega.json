@@ -1,0 +1,52 @@
+{
+  "observationId": "drinktrip.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "drinktrip",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://drink-trip.com/",
+  "selector": "#shopify-section-sections--24793841893762__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Focal store-header sticky+transparent. Sol SHOP/LEARN mega; logo TRIP; PICK & MIX; Newsletter; search; cart 0. 375 hamburger + search + cart.",
+  "delta": "Tema adı Trip-UK/main · schema Focal 10.2.0 custom (theme_store_id null). Mega #desktop-menu-1/#desktop-menu-2. Native #mini-cart 0px — Rebuy flyout.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://drink-trip.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Kapalı header + announcement"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "a.header__linklist-link[aria-controls=\"desktop-menu-1\"]",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "SHOP hover → #desktop-menu-1"
+    }
+  ],
+  "stateFindings": {
+    "initial": "SHOP LEARN SUBSCRIBE & SAVE 50% REFER A FRIEND · TRIP logo · PICK & MIX · Newsletter · search · cart 0.",
+    "open": "1440 SHOP mega: SHOP BY FUNCTION / BESTSELLERS / MAGNESIUM DRINKS / GUMMIES / OIL / POWDERS / SHOP ALL + Everyday Calm / Alcohol Alternative / Night Time Calm / Calm & Hydrate görsel kartları."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375/768 mega yok — #mobile-menu-drawer."
+    }
+  ],
+  "interactionNote": "SHOP <a href=/collections/all-products> — tıklama PLP. Hover. LEARN mega ayrı (#desktop-menu-2) leftover."
+}
