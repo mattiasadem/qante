@@ -1,0 +1,64 @@
+{
+  "observationId": "amberjack.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "amberjack",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.amberjack.shop/",
+  "selector": "#nav, .mobile_wrapper",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/amberjack/default/home/navigation-header-mega.1440.png",
+    "evidence/amberjack/default/home/navigation-header-mega.375.png",
+    "evidence/amberjack/default/home/navigation-header-mega.768.png",
+    "evidence/amberjack/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/amberjack/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/amberjack/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/amberjack/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
+  "notlar": "Sticky bar: logo; Shop (chevron); SHOP ALL SHOES; SHOPPING CART 0. Header arama yok.",
+  "delta": "Mega .header-block-mega: görsel kartlar (Dress Shoes / Sneakers / Loafers / Boots) + On Sale / Accessories / Wide Sizes + Shop All. Locale yok. Predictive search header'da yok — şema bagimliliklar'da var, bu vitrinde yok.",
+  "capture": {
+    "url": "https://www.amberjack.shop/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:30:26.395Z"
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.amberjack.shop/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı sticky bar"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": ".shop-button",
+      "value": 1600,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Shop click → görsel mega kartlar (hover piksel değiştirmedi)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Logo, Shop, SHOP ALL SHOES, SHOPPING CART 0. Arama yok.",
+    "open": "1440 Shop click → Dress/Sneakers/Loafers/Boots görsel kartları + yan linkler."
+  },
+  "missingStates": []
+}

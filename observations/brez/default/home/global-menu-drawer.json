@@ -1,0 +1,61 @@
+{
+  "observationId": "brez.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "brez",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.drinkbrez.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/brez/default/home/global-menu-drawer.375.png",
+    "evidence/brez/default/home/global-menu-drawer.768.png",
+    "evidence/brez/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/brez/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "header-drawer data-breakpoint=tablet. Hamburger 375/768. Shop / Bundle / Recipes / Locator / hesap.",
+  "delta": "1440 hamburger gizli beklenir (tablet breakpoint).",
+  "captureMode": "viewport",
+  "prepareClick": "header-drawer summary.header__icon--menu",
+  "capture": {
+    "url": "https://www.drinkbrez.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:25:20.381Z",
+    "prepareClick": "header-drawer summary.header__icon--menu"
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://www.drinkbrez.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header-drawer summary.header__icon--menu",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "THC-INFUSED / FUNCTIONAL ürün ızgarası + SHOP ALL…"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: THC-INFUSED + FUNCTIONAL kartlar; SHOP ALL / BUNDLE / RECIPES / GIFT / LOCATOR. 1440 hamburger yok."
+  },
+  "missingStates": []
+}

@@ -1,0 +1,61 @@
+{
+  "observationId": "amberjack.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "amberjack",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://www.amberjack.shop/products/the-court-ivory",
+  "selector": "product-information",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/amberjack/default/product-detail/product-info-main.1440.png",
+    "evidence/amberjack/default/product-detail/product-info-main.375.png",
+    "evidence/amberjack/default/product-detail/product-info-main.768.png",
+    "evidence/amberjack/default/product-detail/product-info-main.changed.sizing-acik.1440.png",
+    "evidence/amberjack/default/product-detail/product-info-main.changed.sizing-acik.375.png",
+    "evidence/amberjack/default/product-detail/product-info-main.changed.sizing-acik.768.png",
+    "evidence/amberjack/default/product-detail/product-info-main.initial.ivory.1440.png",
+    "evidence/amberjack/default/product-detail/product-info-main.initial.ivory.375.png",
+    "evidence/amberjack/default/product-detail/product-info-main.initial.ivory.768.png"
+  ],
+  "notlar": "The Court. Breadcrumb All › Sneakers ›. 4.86 / Real Reviews. Renk swatch (Ivory/Onyx/Walnut/Cobalt — ayrı URL). Width Standard. Size 8–14. Size Guide. ATC Select a Size. Accordion: Details / Sizing Guidance / FAQ.",
+  "delta": "Custom element product-information. Renk başka handle'a gider (varyant değil). Sticky ATC (sticky-add-to-cart) alt şerit. Judge.me puan buy box'ta.",
+  "capture": {
+    "url": "https://www.amberjack.shop/products/the-court-ivory",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:22:29.253Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.amberjack.shop/products/the-court-ivory",
+      "capture": true,
+      "etiket": "ivory",
+      "not": "Ivory, accordion kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "product-information button:has-text('Sizing Guidance')",
+      "capture": true,
+      "etiket": "sizing-acik",
+      "not": "Sizing Guidance accordion — Details statikte zaten açık"
+    }
+  ],
+  "stateFindings": {
+    "initial": "The Court Ivory $175; size grid; Select a Size; Details/Sizing/FAQ kapalı.",
+    "changed": "Sizing Guidance açık — beden metni görünür."
+  },
+  "missingStates": []
+}
