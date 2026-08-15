@@ -1,0 +1,104 @@
+{
+  "observationId": "davidprotein.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "davidprotein",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://davidprotein.com/?modals=cart-drawer-dialog",
+  "selector": "cart-sections",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/davidprotein/default/home/global-cart-drawer.1440.png",
+    "evidence/davidprotein/default/home/global-cart-drawer.375.png",
+    "evidence/davidprotein/default/home/global-cart-drawer.768.png",
+    "evidence/davidprotein/default/home/global-cart-drawer.filled.spb-eklendi.1440.png",
+    "evidence/davidprotein/default/home/global-cart-drawer.filled.spb-eklendi.375.png",
+    "evidence/davidprotein/default/home/global-cart-drawer.filled.spb-eklendi.768.png"
+  ],
+  "notlar": "URL ?modals=cart-drawer-dialog. Boş: Your cart · Empty cart, full potential. · Shop now. Sağ panel ~500px.",
+  "delta": "/cart home'a yönlendirir — drawer birincil. Dolu hâl: ATC + #cart-icon-bubble (ikinci goto settle Escape ile drawer kapatır).",
+  "captureMode": "viewport",
+  "prepareClick": "#cart-icon-bubble",
+  "capture": {
+    "url": "https://davidprotein.com/?modals=cart-drawer-dialog",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:35:06.526Z",
+    "prepareClick": "#cart-icon-bubble"
+  },
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://davidprotein.com/?modals=cart-drawer-dialog",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": "2500",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": "400",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "cart-sections",
+      "etiket": "cart-bos",
+      "not": "Empty cart, full potential."
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://davidprotein.com/products/salted-peanut-butter",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": "6000",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Klaviyo — Escape; drawer henüz yok"
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button:has-text('Add to cart')",
+      "capture": false,
+      "not": "UI tık + /cart/add.js fallback. Playwright cart-sections.first() gizli kalabiliyor."
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "value": 2500,
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "cart-sections",
+      "etiket": "spb-eklendi",
+      "not": "ATC sonrası ikon — drawer aç"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Your cart. Empty cart, full potential. Shop now. Sağ panel ~500px, arka plan karartılı hero.",
+    "filled": "Your cart (2). Progress: Free Shipping açık (2 Cartons). Satır 1 Salted Peanut Butter Gold $35.10 ~~$39~~ · Subscription every 4 weeks. Satır 2 Gold Mystery Pack $0.00 ~~$25~~ free gift. Checkout $35.10. Subscribe to your cart & save."
+  }
+}
