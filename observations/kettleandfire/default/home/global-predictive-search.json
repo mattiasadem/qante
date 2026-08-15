@@ -5,15 +5,22 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://www.kettleandfire.com/",
-  "selector": "#wfx-header__search-results-desktop",
+  "selector": ".wfx-header__search--wrapper, .wfx-header--mobile__search--wrapper",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
-  "notlar": "Header search trigger + #productSearchDesktop placeholder Start typing...",
-  "delta": "wayfx-header__search-results. Mobil #productSearchMobile / #wfx-header__search-results-mobile.",
+  "evidence": [
+    "evidence/kettleandfire/default/home/global-predictive-search.input.chicken.1440.png",
+    "evidence/kettleandfire/default/home/global-predictive-search.input.chicken.375.png",
+    "evidence/kettleandfire/default/home/global-predictive-search.input.chicken.768.png",
+    "evidence/kettleandfire/default/home/global-predictive-search.open.arama-acik.1440.png",
+    "evidence/kettleandfire/default/home/global-predictive-search.open.arama-acik.375.png",
+    "evidence/kettleandfire/default/home/global-predictive-search.open.arama-acik.768.png"
+  ],
+  "notlar": "Header search trigger + #productSearchDesktop / #productSearchMobile placeholder Start typing...",
+  "delta": "Öneri listesi (#wfx-header__search-results-*) fill sonrası height 0 — predictive yok, /search sayfası ayrı.",
   "captureMode": "viewport",
   "interactionStates": [
-    "open",
-    "input"
+    "input",
+    "open"
   ],
   "interactionSteps": [
     {
@@ -59,9 +66,20 @@
     }
   ],
   "stateFindings": {
-    "open": "Arama alanı açık; Start typing...; sonuç listesi boş (henüz yazılmadı).",
-    "input": "chicken yazıldı — öneri/ürün listesi karede doğrulanacak."
+    "open": "Arama alanı açık; Start typing...",
+    "input": "chicken yazıldı; öneri/ürün dropdown yok (height 0)."
   },
   "missingStates": [],
-  "interactionNote": "katalogSorgu=chicken (PDP/PLP ürün adı). Submit / PII yok."
+  "interactionNote": "katalogSorgu=chicken. Predictive sonuç listesi yok — yalnız input. Submit / PII yok.",
+  "capture": {
+    "url": "https://www.kettleandfire.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:28:09.568Z"
+  }
 }

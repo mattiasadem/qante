@@ -5,9 +5,15 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://www.kettleandfire.com/",
-  "selector": "#shopify-section-header-desktop",
+  "selector": "#shopify-section-header-desktop, #shopify-section-header-mobile",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
+  "evidence": [
+    "evidence/kettleandfire/default/home/navigation-header-mega.375.png",
+    "evidence/kettleandfire/default/home/navigation-header-mega.768.png",
+    "evidence/kettleandfire/default/home/navigation-header-mega.1440.png",
+    "evidence/kettleandfire/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/kettleandfire/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
   "notlar": "SHOP / BESTSELLERS / BUNDLES / MONTHLY DEALS 20% OFF / LEARN / FIND IN STORE / LOYALTY + search + account + cart.",
   "delta": "wayfx-header--desktop. Mega .wfx-nav__dropdown (Best Sellers + Categories). Locale yok. 375 ayrı header-mobile.",
   "captureMode": "section",
@@ -44,8 +50,8 @@
     },
     {
       "state": "initial",
-      "action": "click",
-      "selector": "#shopify-section-header-desktop",
+      "action": "scrollTo",
+      "selector": "#shopify-section-header-desktop, #shopify-section-header-mobile",
       "capture": true,
       "etiket": "bar"
     },
@@ -63,14 +69,25 @@
     }
   ],
   "stateFindings": {
-    "initial": "Masaüstü bar: SHOP / BESTSELLERS / BUNDLES / MONTHLY DEALS 20% OFF / LEARN / FIND IN STORE / LOYALTY; arama; hesap; sepet.",
-    "open": "1440 SHOP hover — Best Sellers (Beef/Chicken/Venison/Low sodium/Tallow) + Categories (Bone Broths…Tallow) + Shop All."
+    "initial": "375/768: hamburger + search + logo + account + cart. 1440 bar: SHOP / BESTSELLERS / BUNDLES / MONTHLY DEALS 20% OFF / LEARN / FIND IN STORE / LOYALTY + search/account/cart.",
+    "open": "1440 SHOP hover — BEST SELLERS (Beef / Chicken / Maui Nui Venison / Reduced Sodium Chicken / Beef Tallow / SHOP ALL PRODUCTS) + CATEGORIES (Bone Broths, Keto, Low Sodium, Tallow NEW, Soups, Cooking Broths, Regeneratively Made NEW)."
   },
   "missingStates": [
     {
       "state": "open",
-      "sebep": "375/768 mega yok — hamburger drawer (global-menu-drawer)"
+      "sebep": "375/768 mega yok — hamburger drawer ayrı observation. Yalnız 1440 SHOP hover."
     }
   ],
-  "interactionNote": "SHOP <a href=/a/collections/products> tık PLP’ye gider; hover ile panel. Cookiebot Escape."
+  "interactionNote": "SHOP <a href=/a/collections/products> tık PLP’ye gider; panel hover ile. Cookiebot Escape. 375/768 header-desktop gizli — selector virgüllü mobile+desktop.",
+  "capture": {
+    "url": "https://www.kettleandfire.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "margin-box+minPad8",
+    "updatedAt": "2026-08-15T22:19:36.510Z"
+  }
 }

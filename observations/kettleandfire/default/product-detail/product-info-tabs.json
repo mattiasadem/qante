@@ -7,7 +7,14 @@
   "url": "https://www.kettleandfire.com/products/chicken-bone-broth",
   "selector": "#shopify-section-template--19561861284036__info_accordion",
   "evidenceSlug": "product-info-tabs",
-  "evidence": [],
+  "evidence": [
+    "evidence/kettleandfire/default/product-detail/product-info-tabs.changed.ingredients.1440.png",
+    "evidence/kettleandfire/default/product-detail/product-info-tabs.changed.ingredients.375.png",
+    "evidence/kettleandfire/default/product-detail/product-info-tabs.changed.ingredients.768.png",
+    "evidence/kettleandfire/default/product-detail/product-info-tabs.initial.kapali.1440.png",
+    "evidence/kettleandfire/default/product-detail/product-info-tabs.initial.kapali.375.png",
+    "evidence/kettleandfire/default/product-detail/product-info-tabs.initial.kapali.768.png"
+  ],
   "notlar": "Nutritional Facts | Ingredients | How to Enjoy accordion.",
   "delta": "wayfx info_accordion. Tabs değil accordion.",
   "interactionStates": [
@@ -43,15 +50,26 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": "#shopify-section-template--19561861284036__info_accordion button, #shopify-section-template--19561861284036__info_accordion [class*='accordion']",
+      "selector": "#shopify-section-template--19561861284036__info_accordion .wayfx-accordion__trigger:has-text('Ingredients')",
       "capture": true,
-      "etiket": "ilk-panel"
+      "etiket": "ingredients"
     }
   ],
   "stateFindings": {
-    "initial": "Nutritional Facts / Ingredients / How to Enjoy başlıkları.",
-    "changed": "İlk panel açık — içerik karede doğrulanacak."
+    "initial": "Nutritional Facts açık (80 cal / 19g protein / 640mg sodium); Ingredients + How to Enjoy kapalı.",
+    "changed": "Ingredients da açık (organic chicken bones, vegetables, sea salt); How to Enjoy hâlâ +. allowMultipleOpen."
   },
   "missingStates": [],
-  "interactionNote": "İlk eşleşen accordion tetikleyici."
+  "interactionNote": "openFirst = Nutritional Facts. İlk trigger tık o paneli kapatır — changed = Ingredients tık (her iki panel açık).",
+  "capture": {
+    "url": "https://www.kettleandfire.com/products/chicken-bone-broth",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:32:23.942Z"
+  }
 }

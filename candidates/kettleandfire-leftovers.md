@@ -74,7 +74,7 @@ Karar: onay bekliyor
 ADAY: kettleandfire-qbrico-plp  
 Gerekçe: Tüm `/collections/*` → `/a/collections/products` (Qbrico Nuxt `#__nuxt` / hashed `s0Bv8R8y8K`). Observation `main` ile alındı; hash class kırılgan.  
 Örnekler: https://www.kettleandfire.com/a/collections/products  
-Öneri: leftover not — capture denendi  
+Öneri: leftover not — resmi 3vp `main` ile alındı; hash class kırılgan  
 Karar: onay bekliyor
 
 ---
@@ -90,7 +90,9 @@ Karar: onay bekliyor
 - Amazon offer pages, master-template, metafields-test, sections-components-library
 - Regenerative / sustainability (sustainability shopify-section yok)
 - Bone broth benefits ~5.4k + cookbook email (PII)
-- What-is-bone-broth ~4k — capture denenecek; olmazsa leftover
+- What-is-bone-broth ~4k — resmi 3vp alındı (`editorial-rich-text.2`)
 - Loyalty refer section height 0
 - Newsletter / coupon form gönderilmedi
 - Flavor picker `#product-picker-trigger` başka PDP’ye gider — interact değil
+- Boost docked bar birçok karede (PLP/search dahil); tam cart modal değil
+- PDP accordion ilk-trigger tık Nutritional Facts’i kapatır — changed = Ingredients (stale ilk-panel silindi)
