@@ -1,0 +1,86 @@
+{
+  "observationId": "pamos.default.collection.collection-nav-tabs",
+  "schemaId": "collection-nav-tabs",
+  "kaynak": "pamos",
+  "preset": "default",
+  "sayfa": "collection",
+  "url": "https://www.pamos.com/nationwide/",
+  "selector": "ul#myTab",
+  "evidenceSlug": "collection-nav-tabs",
+  "evidence": [
+    "evidence/pamos/default/collection/collection-nav-tabs.375.png",
+    "evidence/pamos/default/collection/collection-nav-tabs.768.png",
+    "evidence/pamos/default/collection/collection-nav-tabs.1440.png"
+  ],
+  "notlar": "All / SPIRITS / COCKTAILS 10MG / COCKTAILS 5MG / BUNDLES / MERCH. #myTab + #myTabContent.",
+  "delta": "Tema (vitrinde, uydurulmadı): WordPress Theme Name **Pamos** 11.0.1 (Sage/Roots, text domain pamos, /wp-content/themes/pamos/). Shopify.theme yok. WooCommerce 10.7.0. Age-gate cookie ageVerified. button.age-confirm = I AM 21+.",
+  "prepareClick": "button.age-confirm",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.pamos.com/nationwide/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "selector": "#age-gate button.age-confirm",
+      "value": 12000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#age-gate button.age-confirm",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "ul#myTab",
+      "capture": true,
+      "etiket": "all"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "ul#myTab a[data-category-slug='premium-spirit']",
+      "capture": true,
+      "etiket": "spirits"
+    }
+  ],
+  "stateFindings": {
+    "initial": "All / SPIRITS / COCKTAILS 10MG / COCKTAILS 5MG / BUNDLES / MERCH. All varsayılan.",
+    "changed": "SPIRITS terracotta underline; diğer sekmeler düz."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "adım 1 (waitFor #age-gate button.age-confirm): locator.waitFor: Timeout 12000ms exceeded.\nCall log:\n  - waiting for locator('#age-gate button.age-confirm').first() to be visible\n    28 × locator resolved to hidden <button title=\"I am 21+\" class=\"theme-btn age-confirm white mb-sm-0 mb-2 sm w-100\">I am 21+</button>\n"
+    }
+  ],
+  "interactionNote": "Sekme JS filter href=# ; SPIRITS = a[data-category-slug=premium-spirit].",
+  "capture": {
+    "url": "https://www.pamos.com/nationwide/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "margin-box+minPad8",
+    "updatedAt": "2026-08-15T22:58:50.527Z",
+    "prepareClick": "button.age-confirm"
+  }
+}
