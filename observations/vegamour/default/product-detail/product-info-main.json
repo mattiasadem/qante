@@ -1,0 +1,76 @@
+{
+  "observationId": "vegamour.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "vegamour",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://vegamour.com/products/gro-hair-serum",
+  "selector": "#shopify-section-template--19977499312243__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/vegamour/default/product-detail/product-info-main.1440.png",
+    "evidence/vegamour/default/product-detail/product-info-main.375.png",
+    "evidence/vegamour/default/product-detail/product-info-main.768.png",
+    "evidence/vegamour/default/product-detail/product-info-main.changed.3-month.1440.png",
+    "evidence/vegamour/default/product-detail/product-info-main.changed.3-month.375.png",
+    "evidence/vegamour/default/product-detail/product-info-main.changed.3-month.768.png",
+    "evidence/vegamour/default/product-detail/product-info-main.initial.buy-box.1440.png",
+    "evidence/vegamour/default/product-detail/product-info-main.initial.buy-box.375.png",
+    "evidence/vegamour/default/product-detail/product-info-main.initial.buy-box.768.png"
+  ],
+  "notlar": "GRO Hair Serum. 5725 reviews 4.4. Choose Your Supply: 1-Month $49 / 3-Month $139 Subscribe & Save. ADD TO BAG (.pfv5-add-bag).",
+  "delta": "Pivotmade product. Supply 1/3 ay StayAI pfv5 overlay (şema değil — leftover). Galeri See 6 more images. ATC .pfv5-trigger → drawer.",
+  "capture": {
+    "url": "https://vegamour.com/products/gro-hair-serum",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:36:35.612Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://vegamour.com/products/gro-hair-serum",
+      "capture": true,
+      "etiket": "buy-box",
+      "not": "Galeri + ADD TO BAG; supply pfv5 içinde"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button.pfv5-trigger",
+      "capture": false,
+      "not": "Purchase drawer aç"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1000,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".pfv5-card:has-text('3-Month')",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "3-month",
+      "not": "3-Month Supply $139 — fiyat/plan değişmeli"
+    }
+  ],
+  "stateFindings": {
+    "initial": "GRO Hair Serum; 5725 / 4.4; ADD TO BAG; Benefits açık.",
+    "changed": "pfv5 drawer: 3-Month Supply $139 seçili (kırmızı çerçeve); Subscribe & Save 34%; ADD TO BAG."
+  },
+  "missingStates": [],
+  "interactionNote": "Supply seçimi buy box'ta değil StayAI .pfv5-drawer içinde."
+}
