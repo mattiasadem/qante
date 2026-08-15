@@ -61,8 +61,34 @@ Karar: leftover — temsilciler (about/warranty/returns/sizing/stores/circle) ye
 
 ---
 
+ADAY: xeroshoes-help-center-gorgias  
+Gerekçe: `/pages/help-center` Shopify `main` metinsiz; içerik `iframe#lmtkceil` (gorgias.help embed). Parent obs `page-content-main.2` viewport.  
+Öneri: yeni FAQ şeması yok  
+Karar: leftover + parent 3vp
+
+---
+
+ADAY: xeroshoes-quickshop  
+Gerekçe: `#quickshop-drawer` DOM'da. Statik prepareClick drawer açmadı. BEST SELLERS hover Quick Add beden ızgarası kart üzerinde (drawer değil).  
+Karar: leftover — `open` missing
+
+---
+
+ADAY: xeroshoes-teaser-375  
+Gerekçe: Coast Suede teaser 375'te zero-size (bu koşu). 768/1440 çekildi.  
+Karar: leftover
+
+---
+
+ADAY: xeroshoes-15-off-tab  
+Gerekçe: Sabit “GET 15% OFF!” tab (Attentive/popup). Overlay; section değil.  
+Karar: leftover — şema yok
+
+---
+
 ## Bilinçli atlananlar
 
 - `/account` / login / checkout  
 - Newsletter Sign up + warranty claim + Circle form (PII)  
 - Divider / 0px section'lar  
+- Quiz Next sonrası (e-posta riski)  

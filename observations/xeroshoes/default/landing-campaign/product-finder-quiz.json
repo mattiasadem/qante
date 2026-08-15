@@ -7,12 +7,20 @@
   "url": "https://xeroshoes.com/pages/shoe-finder",
   "selector": "iframe[id^='lightbox-iframe-']",
   "evidenceSlug": "product-finder-quiz",
-  "evidence": [],
+  "evidence": [
+    "evidence/xeroshoes/default/landing-campaign/product-finder-quiz.1440.png",
+    "evidence/xeroshoes/default/landing-campaign/product-finder-quiz.375.png",
+    "evidence/xeroshoes/default/landing-campaign/product-finder-quiz.768.png",
+    "evidence/xeroshoes/default/landing-campaign/product-finder-quiz.changed.beginner.1440.png",
+    "evidence/xeroshoes/default/landing-campaign/product-finder-quiz.changed.beginner.375.png",
+    "evidence/xeroshoes/default/landing-campaign/product-finder-quiz.changed.beginner.768.png"
+  ],
   "notlar": "Digioh quiz lightbox iframe (about:blank, 750×1440). Template suffix digioh-quiz. Shopify section yok.",
   "delta": "Aynı-origin about:blank → contentFrame. PII dur — ilk adım dışında form yok.",
   "captureMode": "viewport",
   "interactionStates": [
-    "initial"
+    "initial",
+    "changed"
   ],
   "interactionSteps": [
     {
@@ -23,9 +31,32 @@
       "captureMode": "viewport",
       "etiket": "digioh-intro",
       "not": "Quiz intro; PII yok"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "iframe[id^='lightbox-iframe-'] >> text=Beginner",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "beginner",
+      "not": "Experience Beginner — e-posta yoksa dur"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "What level of experience… Beginner / Intermediate / Advanced + Next. E-posta yok.",
+    "changed": "Beginner seçili (koyu kutu) + transition tavsiyesi. Next durdu — PII yok."
+  },
   "missingStates": [],
-  "interactionNote": "İleri adımlar e-posta isteyebilir — dur."
+  "interactionNote": "PII (e-posta) görülürse dur. contentFrame/frameLocator.",
+  "capture": {
+    "url": "https://xeroshoes.com/pages/shoe-finder",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:05:35.097Z"
+  }
 }
