@@ -9,9 +9,9 @@
 | salt-yard | https://salt-yard.myshopify.com/ | ✅ 29 obs · 87 kare |
 | beatnik | https://beatnik-5.myshopify.com/ | ✅ 21 obs · 63 kare |
 | duke | https://duke-16.myshopify.com/ | ✅ 18 obs · 54 kare |
-| amara | https://symmetry-amara.myshopify.com/ | ⬜ |
+| amara | https://symmetry-amara.myshopify.com/ | ✅ 22 obs · 66 kare |
 
-**Şu anki odak:** Amara delta
+**Şu anki odak:** ✅ beş resmi preset — 145 obs · 447 kare · 0 yeni şema
 
 ---
 
@@ -20,13 +20,13 @@
 | | |
 |---|---|
 | Evidence kökü | `evidence/symmetry/{symmetry,salt-yard,beatnik,duke,amara}/` |
-| Observation | default **55** · salt-yard **29** · beatnik **21** · duke **18** |
-| Evidence PNG | default **177** · salt-yard **87** · beatnik **63** · duke **54** |
+| Observation | **145** |
+| Evidence PNG | **447** |
 | Yeni şema | **0** |
-| Atlandı | newsletter-popup · theme-features 503 · `/pages/about` 404 (`/pages/our-story`) · `/pages/faq` düz RTE · `/blogs/journal` boş · mega/arama/sepet chrome |
+| Atlandı | newsletter-popup · theme-features · mega/arama/sepet chrome · `/pages/contact` 404 (default) · Duke `/pages/contact` 404 · Beatnik `/pages/faq` 404 |
 
 **Kapsam satırı:**  
-`Symmetry · default (chantilly) · 12 sayfa · 55 gözlem · 177 kanıt · 0 yeni şema · hotspot + FAQ interact`
+`Symmetry · 5 preset · 145 gözlem · 447 kanıt · 0 yeni şema · hotspot + FAQ interact`
 
 ---
 
@@ -40,8 +40,8 @@
 
 ## Faz — salt-yard / beatnik / duke / amara
 
-- [ ] Delta only; chrome tekrarı yok
-- [ ] Her preset bitince `main` push → Vercel
+- [x] Delta only; chrome tekrarı yok
+- [x] Her preset bitince `main` push → Vercel
 
 ---
 

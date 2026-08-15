@@ -4,7 +4,7 @@ Discover bitti. Bu dosya **yalnız kapalı kare yalanı** için: mega, arama, se
 
 Aynı chrome’u preset’te tekrar çekme (Allure drawer = diğer Prestige). Yeni şema yok. Şema uydurma / sürükleme / ödeme yok.
 
-**Şu anki odak:** Symmetry default kapandı (hotspot + FAQ). Mega/arama/sepet Impulse tekrarı.
+**Şu anki odak:** Symmetry beş preset kapandı. Mega/arama/sepet Impulse tekrarı.
 
 ---
 

@@ -25,7 +25,7 @@
 | 3 | **Stretch** | Maestrooo | ~$380 | Fashion · visual / editorial | [stretch](https://themes.shopify.com/themes/stretch) |
 | 4 | **Impulse** | Archetype | ~$380 | Büyük katalog · multi-category | [impulse](https://themes.shopify.com/themes/impulse) |
 | 5 | **Motion** | Archetype | ~$420 | Lifestyle · video-first DTC | [motion](https://themes.shopify.com/themes/motion) | ✅ QANTE Motion/Satchel/Memo |
-| 6 | **Symmetry** | Clean Canvas | ~$420 | Mobile-first · fashion / lifestyle | [symmetry](https://themes.shopify.com/themes/symmetry) | ⬜ default ✅ · 4 preset sırada |
+| 6 | **Symmetry** | Clean Canvas | ~$420 | Mobile-first · fashion / lifestyle | [symmetry](https://themes.shopify.com/themes/symmetry) | ✅ QANTE 5 preset (chantilly / salt-yard / beatnik / duke / amara) |
 | 7 | **Canopy** | — | ~$280 | Beauty · wellness · home | [canopy](https://themes.shopify.com/themes/canopy) |
 | 8 | **Taiga** | — | ~$320 | Content-led · sports / outdoor | [taiga](https://themes.shopify.com/themes/taiga) |
 | 9 | **Focal** | — | ~$320 | Tech · visual DTC | [focal](https://themes.shopify.com/themes/focal) |
