@@ -1,0 +1,58 @@
+{
+  "observationId": "lemme.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "url": "https://lemmelive.com/",
+  "selector": ".site-header",
+  "notlar": "Sabit bar 80px: SHOP / BUILD YOUR BUNDLE / LOYALTY · logo lemmelive · EN/ES · ACCOUNT · search-trigger · BAG 0. Section wrapper `#shopify-section-header` 0px (fixed child).",
+  "delta": "Custom header. Mega `#mega_menu_1.site-nav__dropdown` (SHOP). 1440 hamburger 0px. Account /login PII.",
+  "kaynak": "lemme",
+  "preset": "default",
+  "sayfa": "home",
+  "evidence": [],
+  "evidenceSlug": "navigation-header-mega",
+  "interactionStates": ["initial", "open"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://lemmelive.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "a.site-nav__title:has-text('SHOP')",
+      "value": 2000,
+      "capture": false,
+      "viewports": ["1440"],
+      "not": "SHOP hover — mega"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "selector": "#mega_menu_1",
+      "value": 5000,
+      "capture": false,
+      "viewports": ["1440"]
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#mega_menu_1",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "viewports": ["1440"],
+      "not": "SHOP mega panel"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "open": ""
+  },
+  "missingStates": [],
+  "interactionNote": "1440 SHOP mega. 375/768 hamburger ayrı observation."
+}

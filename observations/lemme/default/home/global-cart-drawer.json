@@ -1,0 +1,83 @@
+{
+  "observationId": "lemme.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "url": "https://lemmelive.com/",
+  "selector": "#rebuy-cart",
+  "captureMode": "viewport",
+  "prepareClick": "button.site-nav__title--cart",
+  "notlar": "BAG opener `button.site-nav__title--cart`. Rebuy `#rebuy-cart` (your bag / Free Lemme x Starface Gummy $55+). Theme `ajax-cart` de var (x=1440).",
+  "delta": "/cart → /?cart_redirect home. cart-page-main yok. İki sepet motoru (ajax-cart + Rebuy).",
+  "kaynak": "lemme",
+  "preset": "default",
+  "sayfa": "home",
+  "evidence": [],
+  "evidenceSlug": "global-cart-drawer",
+  "interactionStates": ["initial", "filled", "changed"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://lemmelive.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.site-nav__title--cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş bag"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://lemmelive.com/products/chill",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form.shopify-product-form button.product__submit[name='add']",
+      "capture": false,
+      "not": "Chill 1 Pack UI ATC; fallback variant 43829584855254"
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.site-nav__title--cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "chill",
+      "not": "Dolu bag"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#rebuy-cart button[aria-label*='increase' i], #rebuy-cart [class*='plus'], ajax-cart button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "filled": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Rebuy + ajax-cart. ATC UI tercih."
+}

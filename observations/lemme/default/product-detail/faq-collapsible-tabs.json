@@ -1,0 +1,38 @@
+{
+  "observationId": "lemme.default.product-detail.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "url": "https://lemmelive.com/products/chill",
+  "selector": "#shopify-section-template--22542861074646__1659570174071edf47",
+  "notlar": "answers to all your questions · READ ALL FAQS · Are these gummies vegetarian? 1440 446px (kapalı).",
+  "delta": "Accordion. İlk soru interact’te açılacak.",
+  "kaynak": "lemme",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "evidence": [],
+  "evidenceSlug": "faq-collapsible-tabs",
+  "interactionStates": ["initial", "changed"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://lemmelive.com/products/chill",
+      "capture": true,
+      "etiket": "faq-kapali",
+      "not": "Kapalı accordion"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--22542861074646__1659570174071edf47 button, #shopify-section-template--22542861074646__1659570174071edf47 [aria-expanded='false']",
+      "capture": true,
+      "etiket": "ilk-soru",
+      "not": "İlk soru açık"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "İlk accordion. Piksel değişmezse missingStates."
+}

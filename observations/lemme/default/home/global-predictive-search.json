@@ -1,0 +1,55 @@
+{
+  "observationId": "lemme.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "url": "https://lemmelive.com/",
+  "selector": "#shopify-section-search-drawer",
+  "captureMode": "viewport",
+  "prepareClick": "button.search-trigger",
+  "notlar": "1440 opener `button.search-trigger`. Drawer `.mod_search_drawer_Z7D_-W_Search` + input.js-search-input. Kapalıda x≈1915.",
+  "delta": "/search?q=reset title 7 results ama #siteContent 0px — arama sayfası boş leftover. Asıl UX drawer.",
+  "kaynak": "lemme",
+  "preset": "default",
+  "sayfa": "home",
+  "evidence": [],
+  "evidenceSlug": "global-predictive-search",
+  "interactionStates": ["initial", "input"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://lemmelive.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.search-trigger, button.site-header__search-trigger",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Boş search drawer"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input.js-search-input",
+      "value": "reset",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "reset",
+      "not": "katalogSorgu reset (Lemme Reset)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "input": ""
+  },
+  "missingStates": [],
+  "interactionNote": "1440 search-trigger; 375/768 site-header__search-trigger. PII yok."
+}

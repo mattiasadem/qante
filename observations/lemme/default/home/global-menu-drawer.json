@@ -1,0 +1,49 @@
+{
+  "observationId": "lemme.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "url": "https://lemmelive.com/",
+  "selector": "#main_nav",
+  "captureMode": "viewport",
+  "prepareClick": "button.site-header__menu-trigger",
+  "notlar": "375/768 hamburger `button.site-header__menu-trigger` (Open Mobile Nav). 1440 0px — mega.",
+  "delta": "Custom site-nav mobil panel. 1440 N/A.",
+  "kaynak": "lemme",
+  "preset": "default",
+  "sayfa": "home",
+  "evidence": [],
+  "evidenceSlug": "global-menu-drawer",
+  "interactionStates": ["open"],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://lemmelive.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.site-header__menu-trigger",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "viewports": ["375", "768"]
+    }
+  ],
+  "stateFindings": {
+    "open": ""
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 N/A — masaüstü mega."
+    }
+  ],
+  "interactionNote": "Opener button.site-header__menu-trigger."
+}
