@@ -1,0 +1,59 @@
+{
+  "observationId": "drinktrip.default.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "drinktrip",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "url": "https://drink-trip.com/pages/faqs",
+  "selector": "#shopify-section-template--24793843564930__faq_4WyCHa",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/drinktrip/default/faq-support/faq-collapsible-tabs.1440.png",
+    "evidence/drinktrip/default/faq-support/faq-collapsible-tabs.375.png",
+    "evidence/drinktrip/default/faq-support/faq-collapsible-tabs.768.png",
+    "evidence/drinktrip/default/faq-support/faq-collapsible-tabs.changed.when-drink.1440.png",
+    "evidence/drinktrip/default/faq-support/faq-collapsible-tabs.changed.when-drink.375.png",
+    "evidence/drinktrip/default/faq-support/faq-collapsible-tabs.changed.when-drink.768.png"
+  ],
+  "notlar": "FAQs. hello@drink-trip.com. Gruplar About TRIP / Subscriptions / Shipping. + accordion.",
+  "delta": "Focal shopify-section--faq. 1440 statikte Rebuy sağa binebiliyor.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://drink-trip.com/pages/faqs",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "FAQ kapalı liste"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--24793843564930__faq_4WyCHa button:has-text(\"When should I drink TRIP?\"), #shopify-section-template--24793843564930__faq_4WyCHa [class*='accordion']:has-text(\"When should I drink TRIP?\")",
+      "capture": true,
+      "etiket": "when-drink",
+      "not": "İlk soru açık"
+    }
+  ],
+  "stateFindings": {
+    "initial": "FAQs + About TRIP / Subscriptions / Shipping soru listesi; cevaplar kapalı.",
+    "changed": "When should I drink TRIP? açık — cevap paragrafı görünür. Diğer sorular kapalı."
+  },
+  "missingStates": [],
+  "interactionNote": "Form/PII yok. Rebuy overlay leftover.",
+  "capture": {
+    "url": "https://drink-trip.com/pages/faqs",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:07:52.760Z"
+  }
+}
