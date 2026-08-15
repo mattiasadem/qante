@@ -1,0 +1,63 @@
+{
+  "observationId": "pamos.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "pamos",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.pamos.com/",
+  "selector": "header#head",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/pamos/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/pamos/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "375 hamburger button.toggle-menu → body.header-open + header.site-header.on. 1440 N/A.",
+  "delta": "Tema (vitrinde, uydurulmadı): WordPress Theme Name **Pamos** 11.0.1. Ayrı drawer düğümü yok; açık menü header#head.on. goto=settle.",
+  "prepareClick": "button.toggle-menu",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://www.pamos.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.toggle-menu",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "viewports": [
+        "375",
+        "768"
+      ]
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 tam ekran: PAMOS + X + ORDER NOW / LOCATIONS / RECIPES / WHOLESALE / MENU CART. 1440 N/A."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 N/A — toggle-menu gizli. goto=settle age'i kapatır.",
+  "capture": {
+    "url": "https://www.pamos.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:56:15.296Z"
+  }
+}
