@@ -1,0 +1,62 @@
+{
+  "observationId": "javy.default.product-detail.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "javy",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://javvycoffee.com/products/protein-coffee",
+  "selector": "main.pdp-margin-desktop > section:nth-of-type(10)",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/javy/default/product-detail/faq-collapsible-tabs.1440.png",
+    "evidence/javy/default/product-detail/faq-collapsible-tabs.375.png",
+    "evidence/javy/default/product-detail/faq-collapsible-tabs.768.png",
+    "evidence/javy/default/product-detail/faq-collapsible-tabs.changed.ilk-soru.1440.png",
+    "evidence/javy/default/product-detail/faq-collapsible-tabs.changed.ilk-soru.375.png",
+    "evidence/javy/default/product-detail/faq-collapsible-tabs.changed.ilk-soru.768.png"
+  ],
+  "notlar": "Questions & Answers accordion.",
+  "delta": "Okendo reviews (#customer-reviews) bu section değil — leftover.",
+  "capture": {
+    "url": "https://javvycoffee.com/products/protein-coffee",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:25:36.166Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://javvycoffee.com/products/protein-coffee",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "main.pdp-margin-desktop > section:nth-of-type(10)",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "text=What is Protein Coffee?",
+      "capture": true,
+      "etiket": "ilk-soru",
+      "not": "İlk FAQ açılmalı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "18 soru, hepsi + kapalı.",
+    "changed": "What is Protein Coffee? açık (−); cevap metni görünür. Diğer 17 + kapalı."
+  },
+  "missingStates": []
+}
