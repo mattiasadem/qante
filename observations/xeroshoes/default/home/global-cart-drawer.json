@@ -1,0 +1,92 @@
+{
+  "observationId": "xeroshoes.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "xeroshoes",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://xeroshoes.com/",
+  "selector": "custom-drawer.cart-drawer#component-cart-drawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/xeroshoes/default/home/global-cart-drawer.1440.png",
+    "evidence/xeroshoes/default/home/global-cart-drawer.375.png",
+    "evidence/xeroshoes/default/home/global-cart-drawer.768.png",
+    "evidence/xeroshoes/default/home/global-cart-drawer.filled.prio-men.1440.png",
+    "evidence/xeroshoes/default/home/global-cart-drawer.filled.prio-men.375.png",
+    "evidence/xeroshoes/default/home/global-cart-drawer.filled.prio-men.768.png",
+    "evidence/xeroshoes/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/xeroshoes/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/xeroshoes/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "Sağ drawer. Boş: Your Cart (0); Looks like your cart is empty; Women's/Men's Shop Best Sellers.",
+  "delta": "/cart ayrı sayfa da var (cart-page-main). Opener #cart-icon-desktop (href=/cart, JS drawer).",
+  "prepareClick": "#cart-icon-desktop",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://xeroshoes.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-desktop",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://xeroshoes.com/products/prio-men",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--20200621867186__main button[name='add'], #shopify-section-template--20200621867186__main button[type='submit']",
+      "capture": false,
+      "not": "Prio ATC — beden gerekebilir; fallback /cart/add.js"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#cart-icon-desktop",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "prio-men",
+      "not": "ATC sonrası drawer"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your Cart (0); Looks like your cart is empty; Women's / Men's Shop Best Sellers.",
+    "filled": "Prio - Men $99.99 · Vintage Indigo · Size 6.5; Nice! You've earned free shipping; Subtotal $99.99; Checkout. Recommended: Charm Good Vibes / Coastal Treasures. ATC via UI."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout/kupon yok. Beden zorunluysa addToCart fallback.",
+  "capture": {
+    "url": "https://xeroshoes.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:04:35.294Z",
+    "prepareClick": "#cart-icon-desktop"
+  }
+}
