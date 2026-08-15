@@ -1,0 +1,75 @@
+{
+  "observationId": "kettleandfire.default.loyalty.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "kettleandfire",
+  "preset": "default",
+  "sayfa": "loyalty",
+  "url": "https://www.kettleandfire.com/pages/loyalty",
+  "selector": "#shopify-section-page-loyalty-faq",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/kettleandfire/default/loyalty/faq-collapsible-tabs.changed.ilk-soru.1440.png",
+    "evidence/kettleandfire/default/loyalty/faq-collapsible-tabs.changed.ilk-soru.375.png",
+    "evidence/kettleandfire/default/loyalty/faq-collapsible-tabs.changed.ilk-soru.768.png",
+    "evidence/kettleandfire/default/loyalty/faq-collapsible-tabs.initial.kapali.1440.png",
+    "evidence/kettleandfire/default/loyalty/faq-collapsible-tabs.initial.kapali.375.png",
+    "evidence/kettleandfire/default/loyalty/faq-collapsible-tabs.initial.kapali.768.png"
+  ],
+  "notlar": "Loyalty Program FAQs.",
+  "delta": "page-loyalty-faq. help.kettleandfire.com ayrı leftover.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.kettleandfire.com/pages/loyalty",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-page-loyalty-faq",
+      "capture": true,
+      "etiket": "kapali"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-page-loyalty-faq button, #shopify-section-page-loyalty-faq details summary, #shopify-section-page-loyalty-faq [class*='accordion']",
+      "capture": true,
+      "etiket": "ilk-soru"
+    }
+  ],
+  "stateFindings": {
+    "initial": "5 soru kapalı: Why so great? / fee to join? / points expire? / Personal Shopper? / still have questions?",
+    "changed": "Q3 Will my loyalty points expire? açık — 365 gün / son siparişten; her sipariş tarihi uzatır. Q1–Q2 kapalı."
+  },
+  "missingStates": [],
+  "interactionNote": "İlk eşleşen tetikleyici Q3’ü açtı (Q1 değil). /pages/faq boş leftover.",
+  "capture": {
+    "url": "https://www.kettleandfire.com/pages/loyalty",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:34:30.380Z"
+  }
+}
