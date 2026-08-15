@@ -7,7 +7,54 @@
   "url": "https://hellobubble.myshopify.com/products/slam-dunk-hydrating-moisturizer",
   "selector": "#shopify-section-template--19572856520857__main",
   "evidenceSlug": "product-info-main",
-  "evidence": [],
-  "notlar": "Slam Dunk. 4.9 / 10606. Previous/Next gallery. ADD TO CART. sticky_add_to_cart height 0.",
-  "delta": "Baseline product main. Shade/varyant bu üründe yok (tek SKU). Yotpo yıldız overlay."
+  "evidence": [
+    "evidence/hellobubble/default/product-detail/product-info-main.1440.png",
+    "evidence/hellobubble/default/product-detail/product-info-main.375.png",
+    "evidence/hellobubble/default/product-detail/product-info-main.768.png",
+    "evidence/hellobubble/default/product-detail/product-info-main.changed.mini-size.1440.png",
+    "evidence/hellobubble/default/product-detail/product-info-main.changed.mini-size.375.png",
+    "evidence/hellobubble/default/product-detail/product-info-main.changed.mini-size.768.png"
+  ],
+  "notlar": "Slam Dunk. 4.9 / 10606. Full 1.7 / Mini 1.0. Stay.ai one-time vs subscribe. Pairs best with Soft Launch. sticky ATC 0px.",
+  "delta": "Baseline product main + Stay.ai purchaseType. Yotpo yıldız. Size radio değişince fiyat/seçim.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hellobubble.myshopify.com/products/slam-dunk-hydrating-moisturizer",
+      "capture": true,
+      "etiket": "full-size",
+      "not": "Full (1.7 FL OZ) + $16 one-time"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label:has-text(\"Mini (1.0 FL OZ)\")",
+      "capture": true,
+      "etiket": "mini-size",
+      "not": "Mini seçimi — fiyat/outline değişmeli"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Full (1.7 FL OZ) seçili, $16, One-Time Purchase, ADD TO CART, Pairs best with Soft Launch.",
+    "changed": "Mini (1.0 FL OZ) outline seçili. Üst fiyat $10 (Full karede $16). Stay.ai one-time hâlâ $16.00 gösterebilir."
+  },
+  "missingStates": [],
+  "interactionNote": "Stay.ai subscribe tıklanmadı. Checkout yok.",
+  "capture": {
+    "url": "https://hellobubble.myshopify.com/products/slam-dunk-hydrating-moisturizer",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:10:56.277Z"
+  }
 }

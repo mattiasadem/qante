@@ -25,8 +25,8 @@ Karar: onay bekliyor
 
 ---
 
-ADAY: hellobubble-contact-iframe  
-Gerekçe: `/pages/contact-us` main 796px, `innerText` boş — Gorgias/üçüncü parti form. PII doldurulmadı, iframe pierce yok.  
+ADAY: hellobubble-contact-gorgias  
+Gerekçe: `/pages/contact-us` main karede Gorgias formu (Full name / Email / Subject / Message / Attach Files / Send + reCAPTCHA). DOM `innerText` boştu. PII doldurulmadı.  
 Örnekler: https://hellobubble.myshopify.com/pages/contact-us  
 Öneri: üçüncü parti form  
 Karar: onay bekliyor
@@ -101,4 +101,44 @@ ADAY: hellobubble-instagram-feed
 Gerekçe: `instagram_feed` home + about. Üçüncü parti ızgara olabilir; pierce yok. `media-shop-the-feed` yazıldı.  
 Örnekler: https://hellobubble.myshopify.com/  
 Öneri: app leftover  
+Karar: onay bekliyor
+
+---
+
+ADAY: hellobubble-stayai-subscribe  
+Gerekçe: PDP Stay.ai `purchaseType` One-Time / Subscribe & Save 10%. UI ADD TO CART sepete yazmadı; `/cart/add.js` doldurdu. Mini seçince üst fiyat $10, Stay.ai kutusu $16 kalabilir.  
+Örnekler: https://hellobubble.myshopify.com/products/slam-dunk-hydrating-moisturizer  
+Öneri: üçüncü parti subscription  
+Karar: onay bekliyor
+
+---
+
+ADAY: hellobubble-get-15-off  
+Gerekçe: Interact karelerinde sol alt yeşil “GET 15% OFF” tab. Email/PII — doldurulmadı.  
+Örnekler: home / PDP overlay  
+Öneri: üçüncü parti overlay  
+Karar: onay bekliyor
+
+---
+
+ADAY: hellobubble-footer-no-newsletter  
+Gerekçe: custom-footer 3vp’de email input yok (yalnız kolon + sosyal + legal). `footer-columns-newsletter` zorlandı.  
+Örnekler: https://hellobubble.myshopify.com/  
+Öneri: delta — newsletter yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: hellobubble-community-anchor-mobile  
+Gerekçe: Community `anchor_nav` 375/768 resmi capture zero-size. 1440 pill 3vp’den biri.  
+Örnekler: https://hellobubble.myshopify.com/pages/community-page  
+Öneri: responsive gizleme — recapture değil  
+Karar: onay bekliyor
+
+---
+
+ADAY: hellobubble-menu-accordion  
+Gerekçe: Mobil drawer Shop > / Skin Concerns > chevron var; alt liste açılmadı (2 deneme).  
+Örnekler: 375/768 menu drawer  
+Öneri: leftover accordion  
 Karar: onay bekliyor

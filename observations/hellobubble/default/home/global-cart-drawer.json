@@ -7,7 +7,14 @@
   "url": "https://hellobubble.myshopify.com/",
   "selector": "#right-drawer-slot",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/hellobubble/default/home/global-cart-drawer.filled.waterslide-qty1.1440.png",
+    "evidence/hellobubble/default/home/global-cart-drawer.filled.waterslide-qty1.375.png",
+    "evidence/hellobubble/default/home/global-cart-drawer.filled.waterslide-qty1.768.png",
+    "evidence/hellobubble/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/hellobubble/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/hellobubble/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
   "notlar": "Baseline right-drawer-slot. Boş: Your cart is currently empty. /cart sayfa da var.",
   "delta": "Drawer + cart-page-main ikisi de var. Checkout tıklanmadı.",
   "captureMode": "viewport",
@@ -46,7 +53,20 @@
     {
       "state": "filled",
       "action": "waitFor",
-      "value": 2500,
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://hellobubble.myshopify.com/",
+      "capture": false,
+      "not": "Drawer PDP'de stale kalıyor — home'da hydrate"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
       "capture": false
     },
     {
@@ -56,13 +76,24 @@
       "capture": true,
       "captureMode": "viewport",
       "etiket": "waterslide-qty1",
-      "not": "Dolu drawer"
+      "not": "Dolu drawer — Water Slide satırı"
     }
   ],
   "stateFindings": {
-    "initial": "",
-    "filled": ""
+    "initial": "Your cart - 0 items. Your cart is currently empty. Continue shopping →",
+    "filled": "Your cart - 1 item. Spend another $22 and get free shipping. Water Slide Hydration Boosting Serum $17 qty 1 Remove. Subtotal $17.00 USD. Shop Pay over $35. CHECK OUT."
   },
   "missingStates": [],
-  "interactionNote": "addToCart Water Slide. /cart.js fallback varsa not. Checkout yok."
+  "interactionNote": "UI ADD TO CART sepete yazmadı (Stay.ai). addToCart → /cart/add.js. Drawer PDP'de stale; home goto sonrası dolu. Checkout tıklanmadı.",
+  "capture": {
+    "url": "https://hellobubble.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:12:29.727Z"
+  }
 }
