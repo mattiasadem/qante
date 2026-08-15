@@ -1,0 +1,60 @@
+{
+  "observationId": "madeincookware.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "madeincookware",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://madeincookware.com/",
+  "selector": "#global-nav, #global-nav-mobile",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/madeincookware/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/madeincookware/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/madeincookware/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/madeincookware/default/home/navigation-header-mega.open.cookware-mega.1440.png"
+  ],
+  "notlar": "1440 #global-nav 122px: logo, #search, Learn, Log In, Cart, Shop All / Clean Cooking NEW / Save With Sets / Cookware / Tabletop / Knives / Bakeware / Accessories. 375/768 #global-nav-mobile 105px: logo + #mobile-nav-search / #mobile-nav-cart / #mobile-menu. Cookware mega (1440 click): Shop All + Sets + Materials + Shapes + promo görselleri.",
+  "delta": "Custom headless (Shopify.theme yok; UUID section). Dil seçici yok. Account #nav-account PII — envanter dışı. Mega click ile açılıyor. 375/768 hamburger ayrı observation (global-menu-drawer). Attentive overlay dismiss.",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://madeincookware.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı sticky bar — 1440 desktop / 375+768 mobile"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#global-nav button:has-text('open dropdown for Cookware')",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cookware-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Cookware dropdown — Materials / Shapes / promo"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440: Logo, search, Learn, Log In, Cart, Shop All + kategori mega tetikleri. 375/768: logo + Search/Cart/Menu ikonları.",
+    "open": "1440 Cookware click — Shop All Cookware, Sets, Materials (Stainless/Carbon/CeramiClad/Cast Iron), Shapes, promo kartları. 375/768 N/A (mega yok; hamburger)."
+  },
+  "missingStates": [],
+  "capture": {
+    "url": "https://madeincookware.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:47:05.209Z"
+  }
+}
