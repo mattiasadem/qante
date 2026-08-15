@@ -1,0 +1,50 @@
+{
+  "observationId": "moonjuice.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "moonjuice",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://moonjuice.com/",
+  "selector": "#shopify-section-sections--20552723333203__header_section",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Sol Shop / Learn / Subscribe / Take the Quiz; orta Moon Juice logo; sağ USD + search-button + account + cart-icon. header-component.",
+  "delta": "Horizon header-menu. Shop → #submenu-1 mega (aria-controls). Dil yerine para birimi USD (drawer-localization). Mega metin evaluate'de boş — görsel kolonlar. 375 hamburger summary[aria-label=Menu].",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://moonjuice.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "header-menu a.menu-list__link[aria-controls=\"submenu-1\"]",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "Shop hover → #submenu-1 mega grid"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Shop Learn Subscribe Take the Quiz · logo · USD · search · account · cart 0.",
+    "open": "1440 Shop hover: mega-menu kolonları (#submenu-1). 375/768 hamburger ayrı obs."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375/768 mega yok — global-menu-drawer.open.hamburger"
+    }
+  ],
+  "interactionNote": "Shop link collections/all; hover activate. Tıklama PLP'ye gider."
+}

@@ -1,0 +1,52 @@
+{
+  "observationId": "moonjuice.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "moonjuice",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://moonjuice.com/",
+  "selector": "#search-modal",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "dialog-component#search-modal + predictive-search-component. Kapalı height 0. Opener: search-button.search-action--hidden-on-drawer (44px).",
+  "delta": "Horizon search-modal. Drawer içi ikinci search-button hidden-on-menu. Klaviyo e-posta popup aramayı kesebilir — dismiss.",
+  "prepareClick": "search-button.search-action--hidden-on-drawer",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://moonjuice.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "search-button.search-action--hidden-on-drawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "modal-acik",
+      "not": "Boş search modal"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#search-modal input[name='q'], input[type='search'][name='q']",
+      "value": "magnesium",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "magnesium",
+      "not": "katalogSorgu magnesium — Magnesi-Om ailesi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Search modal açık; input placeholder Search.",
+    "input": "magnesium önerileri — karede doğrula."
+  },
+  "missingStates": [],
+  "interactionNote": "Klaviyo 30% OFF e-posta modal PII — doldurulmadı, Escape/dismiss."
+}

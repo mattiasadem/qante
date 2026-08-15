@@ -1,0 +1,49 @@
+{
+  "observationId": "moonjuice.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "moonjuice",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://moonjuice.com/",
+  "selector": ".menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "Horizon header-drawer / #Details-menu-drawer-container. Shop All, Best Sellers accordion, Shop by Benefit/Category, Bundle & Save, Subscribe, Take Our Quiz.",
+  "delta": "1440 hamburger 0px. 375/768 summary[aria-label=Menu].",
+  "prepareClick": "header summary[aria-label=\"Menu\"]",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://moonjuice.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header summary[aria-label=\"Menu\"]",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Mobil menü drawer"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 hamburger: Shop All / Best Sellers / Shop by Benefit / Category / Bundle / Subscribe / Quiz."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger yok — mega navigation-header-mega"
+    }
+  ],
+  "interactionNote": "Yazılı Shop All PLP'ye gider; accordion summary kullan."
+}

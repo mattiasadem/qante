@@ -1,0 +1,46 @@
+{
+  "observationId": "moonjuice.default.product-detail.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "moonjuice",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://moonjuice.com/products/magnesi-om-magnesium-supplement",
+  "selector": "#shopify-section-template--20552723169363__section_9iYkLx",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [],
+  "notlar": "FAQs: What is magnesium powder used for / best form / powder vs / when / signs of low / every day / actives…",
+  "delta": "PDP FAQ; kategori tab yok. accordion-custom.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://moonjuice.com/products/magnesi-om-magnesium-supplement",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20552723169363__section_9iYkLx",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "FAQ kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--20552723169363__section_9iYkLx :text('What is magnesium powder used for')",
+      "capture": true,
+      "etiket": "ilk-soru",
+      "not": "İlk soru açık"
+    }
+  ],
+  "stateFindings": {
+    "initial": "FAQ başlıkları kapalı.",
+    "changed": "İlk soru cevap — karede doğrula."
+  },
+  "missingStates": []
+}

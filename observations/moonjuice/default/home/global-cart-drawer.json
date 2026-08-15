@@ -1,0 +1,69 @@
+{
+  "observationId": "moonjuice.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "moonjuice",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://moonjuice.com/",
+  "selector": ".rebuy-cart__flyout",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Rebuy sağ panel. Boş: Your Cart Is Empty! Continue Shopping. Sarı SAVE 30% + FREE SHIPPING. $65 kargo eşiği. Customers Also Bought.",
+  "delta": "Shopify native cart-drawer yok. #rebuy-cart + Recharge #recharge-storefront-experiences__cart-drawer (0px). /cart home'a düşer. smart-cart--enabled.",
+  "prepareClick": "header a.action__cart",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://moonjuice.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header a.action__cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Rebuy boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://moonjuice.com/products/magnesi-om-magnesium-supplement",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button:has-text('ADD TO CART'), button:has-text('Add to cart')",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "header a.action__cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "magnesiom",
+      "not": "ATC sonrası Rebuy dolu"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your Cart empty; $65 free shipping; Customers Also Bought Magnesi-Om / SuperYou / Mini Dew.",
+    "filled": "ATC sonrası satır beklenir — karede doğrula."
+  },
+  "missingStates": [],
+  "interactionNote": "Rebuy widget. addToCart UI tık; fallback /cart/add.js. Checkout'a girilmedi. Qty changed yoklandıysa not."
+}
