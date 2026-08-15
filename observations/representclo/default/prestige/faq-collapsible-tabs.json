@@ -1,0 +1,67 @@
+{
+  "observationId": "representclo.default.prestige.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "representclo",
+  "preset": "default",
+  "sayfa": "prestige",
+  "url": "https://representclo.com/pages/prestige",
+  "selector": "#shopify-section-template--16838462734545__prestige_split_content_Qfh9Nk",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/representclo/default/prestige/faq-collapsible-tabs.1440.png",
+    "evidence/representclo/default/prestige/faq-collapsible-tabs.375.png",
+    "evidence/representclo/default/prestige/faq-collapsible-tabs.768.png",
+    "evidence/representclo/default/prestige/faq-collapsible-tabs.changed.what-is-prestige.1440.png",
+    "evidence/representclo/default/prestige/faq-collapsible-tabs.changed.what-is-prestige.375.png",
+    "evidence/representclo/default/prestige/faq-collapsible-tabs.changed.what-is-prestige.768.png",
+    "evidence/representclo/default/prestige/faq-collapsible-tabs.initial.faq-kapali.1440.png",
+    "evidence/representclo/default/prestige/faq-collapsible-tabs.initial.faq-kapali.375.png",
+    "evidence/representclo/default/prestige/faq-collapsible-tabs.initial.faq-kapali.768.png"
+  ],
+  "notlar": "HELP / Frequently Asked questions. details: What is Prestige? / How do I become a member? / redeem / pending / drop tier.",
+  "delta": "FAQ split içerik + Sign up/Log in. details/summary. kategoriTab yok.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://representclo.com/pages/prestige",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16838462734545__prestige_split_content_Qfh9Nk",
+      "capture": true,
+      "etiket": "faq-kapali"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--16838462734545__prestige_split_content_Qfh9Nk details summary",
+      "capture": true,
+      "etiket": "what-is-prestige",
+      "not": "İlk soru açık"
+    }
+  ],
+  "stateFindings": {
+    "initial": "HELP / Frequently Asked questions; Sign up / Log in; beş soru + ile kapalı (What is Prestige? … drop tier).",
+    "changed": "What is Prestige? açık (—): Prestige Points, missions, flagship stores, tiers. Diğerleri +."
+  },
+  "missingStates": [],
+  "interactionNote": "details/summary. Diğer sorular leftover.",
+  "capture": {
+    "url": "https://representclo.com/pages/prestige",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:27:24.433Z"
+  }
+}

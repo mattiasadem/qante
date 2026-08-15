@@ -1,0 +1,108 @@
+{
+  "observationId": "representclo.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "representclo",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://representclo.com/",
+  "selector": "#cart-drawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/representclo/default/home/global-cart-drawer.filled.dna-tee-m.1440.png",
+    "evidence/representclo/default/home/global-cart-drawer.filled.dna-tee-m.375.png",
+    "evidence/representclo/default/home/global-cart-drawer.filled.dna-tee-m.768.png",
+    "evidence/representclo/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/representclo/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/representclo/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "Sağ panel #cart-drawer / #cart_content (~440px). Kapalı: visibility hidden + full-viewport kutu — viewport SS homepage olur. Açık: cartOpen + body.cart-opened.",
+  "delta": "Cart Toggle href=/cart ama drawer açıyor. Upsell boş drawer'da da var. /cart ayrı sayfa.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://representclo.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "header-navigation",
+      "capture": false,
+      "not": "Cart ikonu header'da — dismiss gizler"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[aria-label='Cart Toggle']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer + upsell"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://representclo.com/products/247-dna-oversized-t-shirt-jet-black-26",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.js-select-variant.sizeSelector:has-text('M')",
+      "capture": false,
+      "not": "Beden M"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.js-add-product[name='add']",
+      "capture": false,
+      "not": "UI ATC drawer'ı açar; ekstra cart tık kapatır"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": "#cart_content",
+      "value": 8000,
+      "capture": false,
+      "not": "Açık panel — ikinci cart tık yok"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 600,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "dna-tee-m"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your Cart Is Empty.⁰; EXPLORE NEW ARRIVALS; POPULAR ITEMS Dodgers/LA caps $115 +; REPRESENT PRESTIGE Join now / Log in.",
+    "filled": "YOUR CART¹; You're $90 away from free standard shipping; 247 DNA Oversized T-Shirt M Jet Black $85 qty 1; OTHERS ALSO BOUGHT caps $115; SECURE CHECKOUT $95. ATC via UI."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC button.js-add-product via ui (3vp). İlk deneme cart tık drawer'ı kapattı (PDP karesi). İkinci: ATC sonrası #cart_content bekle, tık yok. Qty +/- leftover. Checkout/kupon yok. Kapalı #cart-drawer viewport homepage.",
+  "capture": {
+    "url": "https://representclo.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T21:34:54.427Z"
+  }
+}
