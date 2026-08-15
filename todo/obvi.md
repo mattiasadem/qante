@@ -28,7 +28,7 @@
 | PLP shop-all / weight-loss / collagen / Daily Health | ✅ grid + tabs (Daily Health aynı tip) | ✅ |
 | Search `/search?q=collagen` | ✅ `search-results` | ✅ |
 | Cart + drawer | ✅ `cart-page-main` + `global-cart-drawer` | ✅ |
-| Quiz `/pages/supplement-quiz` | ✅ `product-finder-quiz` (iframe pierce) | ✅ |
+| Quiz `/pages/supplement-quiz` | ✅ `product-finder-quiz` (same-origin about:blank · `#button3` / ep10*) | ✅ |
 | Blog list `/blogs/news` + `/pages/blogs` | ✅ `blog-list-main` | ✅ |
 | Article news + weightloss + Collagen 101 | ✅ `blog-post-main` (+ overlay news) | ✅ |
 | Recipes list + post | ✅ aynı blog şemaları | ✅ |
