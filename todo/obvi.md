@@ -1,8 +1,8 @@
 # Todo — Obvi (myobvi.com)
 
-*Kaynak:* https://myobvi.com · *Preset:* default · *Tema:* Platter custom (Theme Store skin değil)
+*Kaynak:* https://myobvi.com · *Preset:* default · *Tema:* Platter custom
 
-**Durum:** ✅ **KAPALI** — tam envanter + quiz iframe piercing
+**Durum:** ✅ kalan canlı şablonlar kapandı (bundle public; 404'ler kayıtlı)
 
 ---
 
@@ -11,103 +11,66 @@
 | | |
 |---|---|
 | Evidence kökü | `evidence/obvi/default/` |
-| Capture yöntemi | Resmi `capture-observation.mjs` + `capture-interaction.mjs` (375 / 768 / 1440) |
-| Batch script | `scripts/run-obvi-captures.mjs` |
-| Kapsam | Obvi · default · 12 sayfa tipi · 33 obs · 1 yeni şema (`product-finder-quiz`) |
+| Capture | `capture-observation.mjs` + `capture-interaction.mjs` (375 / 768 / 1440) |
+| Yeni batch | `scripts/run-obvi-remaining.mjs` |
 | Validate | `npm run validate` → **65 temiz · 0 error · 0 warn** |
-| PR | https://github.com/mattiasadem/qante/pull/1 (draft, merge yok) |
+| PR #1 | merged (quiz iframe) — bu tur ayrı draft, **main'e merge yok** |
 
 ---
 
-## Sayfa tipi checklist (definition of done)
+## Kalan şablon checklist (2026-08-15 walk)
 
-| # | Sayfa tipi | Durum | Observation(s) | Not |
-|---|---|---|---|---|
-| 1 | **Home** — tüm section'lar | ✅ done | 21 obs | Marquee → footer newsletter |
-| 2 | **PDP** — Detox + farklı şablon | ✅ done | `product-info-main`, `product-info-main-2`, `before-after-slider` | Burn PDP'de before/after slider |
-| 3 | **PLP** — shop-all + benefit | ✅ done | `collection-nav-tabs`, `product-showcase-grid-plp`, `*-2` (weight-loss) | |
-| 4 | **Search results** — `collagen` tam sayfa | ✅ done | `search/search-results` | Overlay değil `/search?q=collagen` |
-| 5 | **Cart** — `/cart` + drawer boş + dolu | ✅ done | `cart/cart-page-main`, `home/global-cart-drawer` | initial + filled + changed (qty2) 3vp |
-| 6 | **Quiz** — ekran 1–3 | ✅ done | `quiz/product-finder-quiz` | iframe **pierced** — 3vp × 3 state |
-| 7 | **Blog** — liste + post | ✅ done | `blog-list/blog-list-main`, `blog-post/blog-post-main` | |
-| 8 | **Recipes** — liste + post | ✅ done | `blog-list/blog-list-main-2`, `blog-post/blog-post-main-2` | |
-| 9 | **Learn** — Our Story + How To Start | ✅ done | `about-brand/*` | `/pages/our-story` 404; Our Story = `/pages/about-us-1` |
-| 10 | **Bundle builder** | ⛔ blocked | — | `/pages/bundle-builder` broken |
-| 11 | **Mobile menu** — 375 hamburger | ✅ done | `home/navigation-header-mega` · `open.mobil-menu` 375+768 | LEARN mega yalnız 1440 |
-| 12 | **Community join 404** | ⛔ blocked | delta only | `/pages/join-obvi-community` → 404 |
-
----
-
-## Quiz — iframe piercing (2026-08-15)
-
-**Bug:** `page.locator('iframe >> text=…')` aynı belgede kalır; Octane içeriği görünmezdi.
-
-**Fix:** `scripts/capture-interaction.mjs` — `iframe[sel] >> inner` → `page.frameLocator(sel).locator(inner)`. Escape overlay dismiss lightbox'ı kapatırsa settle iframe'i yeniden yükler.
-
-| State | Ekran | 375 | 768 | 1440 |
-|---|---|---|---|---|
-| `initial` · goal-screen | What is your ultimate health and beauty goal? | ✅ | ✅ | ✅ |
-| `changed` · weightloss-struggle | What do you struggle with in your weightloss journey? (multi-select + Next/Back) | ✅ | ✅ | ✅ |
-| `open` · exercise-frequency | How often do you currently exercise? (Next, no PII) | ✅ | ✅ | ✅ |
-
-- iframe `src` = **about:blank** (standalone public quiz URL yok; in-page lightbox yakalandı)
-- Next seçim zorunlu olmadan ilerledi; e-posta/isim/telefon yok
-- **Duruldu** — ekran 4+ yoklanmadı (PII duvarına gelmeden)
-- Home FIND YOUR PERFECT MATCH bandı ayrı CTA (`editorial-image-with-text-2`), ikinci quiz şeması değil
+| # | Şablon | URL | Durum | Observation | 3vp |
+|---|---|---|---|---|---|
+| 1 | Search results | `/search?q=collagen` | ✅ | `search/search-results` | ✅ mevcut |
+| 2 | Blog list | `/blogs/news` | ✅ | `blog-list/blog-list-main-3` | ✅ yeni |
+| 3 | Article | `/blogs/news/benefits-of-using-a-detox-supplement-…` | ✅ | `blog-post-main-3` + overlay hero | ✅ yeni |
+| 4 | Recipes list | `/blogs/recipes` | ✅ | `blog-list-main-2` (aynı şablon) | ✅ mevcut |
+| 5 | Recipe post | `/blogs/recipes/dark-chocolate-sea-salt-collagen-bites` | ✅ | `blog-post-main-2` | ✅ mevcut |
+| 6 | Our Story | `/pages/about-us-1` | ✅ | editorial + marquee + polaroids | ✅ |
+| 7 | How To Start | `/pages/how-to-start` | ✅ | `page-content-main` + cards | ✅ |
+| 8 | Bundle builder | `/pages/bundle-builder` | ✅ public | `bundle/commerce-tools-products-bundle` | ✅ yeni |
+| 9 | Collagen PLP | `/collections/collagen-protein-powder` | ✅ | `product-showcase-grid-plp-3` + tabs-3 | ✅ yeni |
+| 10 | Mobile 375 drawer | home hamburger | ✅ | `home/global-menu-drawer` | ✅ 375+768 (1440 N/A) |
+| 11 | Rewards | `/pages/obvis-rewards-program` | 🟡 candidate | `candidates/obvi-rewards-loyalty.md` | embed — şema yok |
+| 12 | 404'ler | aşağıda | ⛔ | todo only | — |
 
 ---
 
-## Home section checklist (21 obs)
+## 404 blockers (şema yok)
 
-| Section | schemaId | obs dosyası | 3vp | Done |
-|---|---|---|---|---|
-| Promo bar | promo-announcement-bar | home/promo-announcement-bar | ✅ | ✅ |
-| Header + mega + mobil menu | navigation-header-mega | home/navigation-header-mega | ✅ | ✅ |
-| Hero slideshow | hero-slideshow | home/hero-slideshow | ✅ | ✅ |
-| Predictive search overlay | global-predictive-search | home/global-predictive-search | ✅ | ✅ |
-| Marquee | promo-scrolling-marquee | home/promo-scrolling-marquee | ✅ | ✅ |
-| Category tiles (benefit) | collection-nav-slider | home/collection-nav-slider | ✅ | ✅ |
-| Category tiles 2 | collection-nav-slider | home/collection-nav-slider-2 | ✅ | ✅ |
-| Product tabs | product-showcase-tabs | home/product-showcase-tabs | ✅ | ✅ |
-| Image+text | editorial-image-with-text | home/editorial-image-with-text | ✅ | ✅ |
-| Quiz CTA band | editorial-image-with-text | home/editorial-image-with-text-2 | ✅ | ✅ (CTA, ikinci quiz şeması değil) |
-| Trust icons | trust-icon-row | home/trust-icon-row | ✅ | ✅ |
-| Community band | editorial-image-with-text | home/editorial-image-with-text-3 | ✅ | ✅ (CTA 404) |
-| Subscribe & save | editorial-image-with-text | home/editorial-image-with-text-4 | ✅ | ✅ |
-| UGC feed | media-shop-the-feed | home/media-shop-the-feed | ✅ | ✅ |
-| Blog teaser | editorial-image-with-text | home/editorial-image-with-text-5 | ✅ | ✅ |
-| Cart drawer | global-cart-drawer | home/global-cart-drawer | ✅ | ✅ |
-| Footer newsletter | footer-columns-newsletter | home/footer-columns-newsletter | ✅ | ✅ |
+| URL | Durum |
+|---|---|
+| `/pages/join-obvi-community` | 404 |
+| `/pages/bundler` | 404 (çalışan bundle: `/pages/bundle-builder`) |
+| `/pages/wholesale-inquiries` | 404 |
+| `/pages/tracking` | 404 |
 
 ---
 
-## Blocker kayıtları (honest — icat edilmedi)
+## Şema kararları
 
-| Blocker | Kayıt | Durum |
-|---|---|---|
-| Quiz iframe click | ~~missingStates.changed~~ | **Çözüldü** — frameLocator; 9/9 kare |
-| Quiz ekran 4+ / e-posta gate | `interactionNote` | Duruldu; PII yoklandı değil |
-| Bundle builder | `candidates/obvi-blocked-pages.md` | `/pages/bundle-builder` broken |
-| Community join 404 | `editorial-image-with-text-3` + candidates | `/pages/join-obvi-community` 404 |
-| Scratch-card popup | `candidates/obvi-gamified-offer.md` | Hâlâ yok; şema açılmadı |
-
----
-
-## Yeni şema
-
-| schemaId | Dosya | Gerekçe |
-|---|---|---|
-| product-finder-quiz | `sections/instance/product-finder-quiz.json` | Octane/lightbox quiz — mevcut şemalara sığmıyor |
+| Soru | Karar |
+|---|---|
+| Bundle yeni tip mi? | **Hayır** — `commerce-tools-products-bundle` uyuyor. Sticky tray + progress = delta. |
+| Our Story page-content-main? | **Hayır tutmaz** — hero + ticker + polaroids mevcut editorial/marquee. |
+| Recipe ayrı şema? | **Hayır** — blog-post-main; ingredients gövde kopyası. |
+| Rewards points engine? | **İcat etme** — candidate. |
 
 ---
 
-## Evidence özeti
+## Yeni şema (tüm Obvi)
 
-- Quiz: **9 PNG** (3 state × 3 vp) — `missingStates` boş
-- `capture-interaction.mjs` iframe sözleşmesi: `iframe[…] >> inner`
+| schemaId | Not |
+|---|---|
+| product-finder-quiz | Önceki tur (quiz iframe) |
+
+Bu tur: **0 yeni şema**.
 
 ---
 
 ## Açık iş
 
-*Quiz iframe kapandı. Kalan blocker'lar: bundle builder, community 404, scratch-card (aday).*
+- Rewards embed — candidate
+- Scratch-card — hâlâ yok
+- 404 URL'ler düzelince retest
