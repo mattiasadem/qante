@@ -7,9 +7,73 @@
   "url": "https://vegamour.com/",
   "selector": "searchanise-menu.search-menu",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/vegamour/default/home/global-predictive-search.1440.png",
+    "evidence/vegamour/default/home/global-predictive-search.375.png",
+    "evidence/vegamour/default/home/global-predictive-search.768.png",
+    "evidence/vegamour/default/home/global-predictive-search.initial.arama-acik.1440.png",
+    "evidence/vegamour/default/home/global-predictive-search.initial.arama-acik.375.png",
+    "evidence/vegamour/default/home/global-predictive-search.initial.arama-acik.768.png",
+    "evidence/vegamour/default/home/global-predictive-search.input.serum.1440.png",
+    "evidence/vegamour/default/home/global-predictive-search.input.serum.375.png",
+    "evidence/vegamour/default/home/global-predictive-search.input.serum.768.png"
+  ],
   "notlar": "Searchanise (snize). #header-search-input. Opener a[aria-label=Search VEGAMOUR].",
-  "delta": "Shopify predictive değil — Searchanise overlay. Öneri listesi fill sonrası yoklanacak.",
+  "delta": "Shopify predictive değil — Searchanise overlay. Öneri listesi fill sonrası görünmedi.",
   "captureMode": "viewport",
-  "prepareClick": "a[aria-label='Search VEGAMOUR']"
+  "prepareClick": "a[aria-label='Search VEGAMOUR']",
+  "capture": {
+    "url": "https://vegamour.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:35:39.353Z",
+    "prepareClick": "a[aria-label='Search VEGAMOUR']"
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://vegamour.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[aria-label='Search VEGAMOUR']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik",
+      "not": "Search Here overlay"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#header-search-input",
+      "value": "serum",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "serum",
+      "not": "Searchanise öneri — katalog kelimesi serum"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Search Here overlay + backdrop; öneri yok.",
+    "input": "375/768/1440: input 'serum'. Searchanise öneri listesi / ürün kartı görünmedi."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "serum yazıldı; öneri dropdown hydrate olmadı (Searchanise leftover)"
+    }
+  ],
+  "interactionNote": "Searchanise (snize). Öneri listesi yoklandı, karede yok. Sonuç /search?q=serum (27)."
 }

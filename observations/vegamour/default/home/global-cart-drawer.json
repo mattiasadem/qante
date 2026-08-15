@@ -7,9 +7,105 @@
   "url": "https://vegamour.com/",
   "selector": "#CartDrawer",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/vegamour/default/home/global-cart-drawer.1440.png",
+    "evidence/vegamour/default/home/global-cart-drawer.375.png",
+    "evidence/vegamour/default/home/global-cart-drawer.768.png",
+    "evidence/vegamour/default/home/global-cart-drawer.filled.gro-serum.1440.png",
+    "evidence/vegamour/default/home/global-cart-drawer.filled.gro-serum.375.png",
+    "evidence/vegamour/default/home/global-cart-drawer.filled.gro-serum.768.png",
+    "evidence/vegamour/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/vegamour/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/vegamour/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
   "notlar": "cart-drawer#cartDrawer + #CartDrawer + #cartDrawerInner. İkon #cart-icon-bubble href=/cart. /cart sayfası da var.",
   "delta": "Hem drawer hem cart-page. İkon /cart'a gider; tema click'te drawer açıyor olabilir. Boş: is-empty.",
   "captureMode": "viewport",
-  "prepareClick": "#cart-icon-bubble"
+  "prepareClick": "#cart-icon-bubble",
+  "capture": {
+    "url": "https://vegamour.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T22:38:23.837Z",
+    "prepareClick": "#cart-icon-bubble"
+  },
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://vegamour.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Your cart is empty + Best Sellers"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://vegamour.com/products/gro-hair-serum",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.pfv5-trigger",
+      "capture": false,
+      "not": "StayAI pfv5 purchase drawer"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": ".pfv5-plan-onetime",
+      "capture": false,
+      "not": "One-Time Purchase — abonelik checkbox'ından kaçın"
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.pfv5-add-bag",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2800,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "gro-serum",
+      "not": "ATC sonrası drawer; açılmazsa cart ikon"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your Bag empty; Continue shopping; Best Sellers + Add.",
+    "filled": "GRO Hair Serum One Time Purchase · 1-Month Supply $64; 1 Item; Complete Your Routine; discount code; CHECKOUT $64."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC StayAI pfv5 → One-Time → ADD TO BAG. Checkout/kupon doldurulmadı. Qty changed yok."
 }

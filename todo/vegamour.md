@@ -3,8 +3,8 @@
 *Kaynak:* https://vegamour.com · *Preset:* `default`  
 *Tema (storefront, uydurulmadı):* **`Collection Layout v2 | Scalp | StayAi`** · `schema_name`: **Pivotmade theme** · `schema_version`: **2026-07-30-1** · `theme_store_id`: **null** (custom) · theme id `146867650675` · role `main` · shop `vegalash.myshopify.com`
 
-**Durum:** Mod A walk — observation yazıldı; resmi 3vp + interact sırada  
-**PR:** draft · **main'e merge yok**
+**Durum:** Mod A walk kapandı — 45 obs · resmi 3vp · interact piksel değişenlerde · leftover kayıtlı  
+**PR:** https://github.com/mattiasadem/qante/pull/90 (draft · **main'e merge yok**)
 
 ---
 
@@ -18,7 +18,7 @@
 | Parallel | yalnız `observations/vegamour/`, `evidence/vegamour/`, `todo/vegamour.md`, `candidates/vegamour-*.md` |
 
 **Kapsam satırı:**  
-`VEGAMOUR · default · Collection Layout v2 | Scalp | StayAi / schema_name Pivotmade theme 2026-07-30-1 · custom Shopify · home→PDP→PLP→search→cart→content→footer→mobile · 45 obs · 0 yeni şema`
+`VEGAMOUR · default · Collection Layout v2 | Scalp | StayAi / schema_name Pivotmade theme 2026-07-30-1 · custom Shopify · home→PDP→PLP→search→cart→content→footer→mobile · 45 obs · 186 PNG · 0 yeni şema · leftover: Okendo / StayAI pfv5 / Jebbit / Gorgias / Searchanise empty / 404`
 
 ---
 
@@ -26,20 +26,20 @@
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home + header/footer/announcement | [x] obs | [ ] |
-| Mega / search / cart drawer / mobile menu | [x] obs | [ ] interact |
-| PDP `/products/gro-hair-serum` | [x] obs | [ ] + supply changed |
-| PLP `/collections/best-sellers` | [x] obs | [ ] |
-| Search `/search?q=serum` | [x] obs | [ ] |
-| Cart `/cart` + drawer | [x] obs | [ ] empty + filled |
-| About `/pages/our-story` | [x] obs | [ ] (header yok) |
-| Quiz `/pages/hair-quiz` Jebbit | [x] obs | [ ] PII dur |
-| Reset LP `/pages/hair-wellness-reset` | [x] obs | [ ] |
-| Reviews `/pages/reviews` | [x] obs | [ ] Okendo leftover |
-| Blog list + GRO vs GRO+ | [x] obs | [ ] |
-| Contact `/pages/contact-us` | [x] obs | [ ] Gorgias PII |
-| Returns + privacy | [x] obs | [ ] |
-| 404 | [x] obs | [ ] leftover |
+| Home + header/footer/announcement | ✅ | ✅ |
+| Mega / search / cart drawer / mobile menu | ✅ interact | ✅ (menu 1440 N/A · search öneri yok) |
+| PDP `/products/gro-hair-serum` | ✅ + 3-Month pfv5 | ✅ |
+| PLP `/collections/best-sellers` | ✅ | ✅ |
+| Search `/search?q=serum` | ✅ 27 sonuç | ✅ |
+| Cart `/cart` + drawer | ✅ empty + filled | ✅ |
+| About `/pages/our-story` | ✅ header yok | ✅ |
+| Quiz `/pages/hair-quiz` Jebbit | ✅ Thinning; **PII dur** | ✅ |
+| Reset LP `/pages/hair-wellness-reset` | ✅ + FAQ | ✅ |
+| Reviews `/pages/reviews` | ✅ Okendo leftover | ✅ |
+| Blog list + GRO vs GRO+ | ✅ | ✅ |
+| Contact `/pages/contact-us` | ✅ Gorgias **gönderilmedi** | ✅ |
+| Returns + privacy | ✅ | ✅ |
+| 404 | ⛔ aday + `page-content-main` | ✅ |
 | `/pages/science` | ⛔ → our-story | — |
 | `/pages/faq` | ⛔ 404 | leftover |
 
@@ -49,64 +49,77 @@
 
 | # | id | sayfa | Screenshot | Not | JSON | Done |
 |---|---|---|---|---|---|---|
-| 1 | promo-announcement-bar | home | [ ] | [x] | reuse | [ ] |
-| 2 | navigation-header-mega | home | [ ] | [x] | reuse | [ ] |
-| 3 | global-cart-drawer | home | [ ] | [x] | reuse | [ ] |
-| 4 | global-predictive-search | home | [ ] | [x] | reuse | [ ] |
-| 5 | global-menu-drawer | home | [ ] | [x] | reuse | [ ] |
-| 6 | hero-slideshow | home | [ ] | [x] | reuse | [ ] |
-| 7 | product-showcase-grid-featured | home | [ ] | [x] | reuse | [ ] |
-| 8 | collection-nav-tabs | home | [ ] | [x] | reuse | [ ] |
-| 9–10 | editorial-image-with-text ×2 | home | [ ] | [x] | reuse | [ ] |
-| 11 | promo-scrolling-marquee | home | [ ] | [x] | reuse | [ ] |
-| 12 | before-after-slider | home | [ ] | [x] | reuse | [ ] |
-| 13–14 | product-showcase-tabs ×2 | home | [ ] | [x] | reuse | [ ] |
-| 15 | features-multicolumn | home | [ ] | [x] | reuse | [ ] |
-| 16 | hero-slideshow-2 quiz CTA | home | [ ] | [x] | reuse | [ ] |
-| 17 | footer-columns-newsletter | home | [ ] | [x] | reuse | [ ] |
-| 18 | product-info-main | product-detail | [ ] | [x] | reuse | [ ] |
-| 19 | features-multicolumn | product-detail | [ ] | [x] | reuse | [ ] |
-| 20 | promo-scrolling-marquee | product-detail | [ ] | [x] | reuse | [ ] |
-| 21 | product-showcase-related | product-detail | [ ] | [x] | reuse | [ ] |
-| 22 | faq-collapsible-tabs | product-detail | [ ] | [x] | reuse | [ ] |
-| 23 | product-showcase-grid-plp | collection | [ ] | [x] | reuse | [ ] |
-| 24 | hero-slideshow | collection | [ ] | [x] | reuse | [ ] |
-| 25 | search-results | search | [ ] | [x] | reuse | [ ] |
-| 26 | cart-page-main | cart | [ ] | [x] | reuse | [ ] |
-| 27–30 | about (4) | about-brand | [ ] | [x] | reuse | [ ] |
-| 31 | product-finder-quiz | landing-campaign | [ ] | [x] | reuse | [ ] |
-| 32–36 | reset LP (5) | landing-campaign | [ ] | [x] | reuse | [ ] |
-| 37–39 | reviews LP (3) | landing-campaign | [ ] | [x] | reuse | [ ] |
-| 40–41 | blog list + post | blog-* | [ ] | [x] | reuse | [ ] |
-| 42 | features-multicolumn | contact | [ ] | [x] | reuse | [ ] |
-| 43–44 | returns + privacy | policy | [ ] | [x] | reuse | [ ] |
-| 45 | page-content-main | not-found | [ ] | [x] | reuse | [ ] |
+| 1 | promo-announcement-bar | home | [x] | [x] | reuse | [x] |
+| 2 | navigation-header-mega | home | [x] | [x] | reuse | [x] |
+| 3 | global-cart-drawer | home | [x] | [x] | reuse | [x] |
+| 4 | global-predictive-search | home | [x] | [x] | reuse | [x] leftover |
+| 5 | global-menu-drawer | home | [x] 375+768 | [x] | reuse | [x] |
+| 6 | hero-slideshow | home | [x] | [x] | reuse | [x] |
+| 7 | product-showcase-grid-featured | home | [x] | [x] | reuse | [x] |
+| 8 | collection-nav-tabs | home | [x] + Concern | [x] | reuse | [x] |
+| 9–10 | editorial-image-with-text ×2 | home | [x] | [x] | reuse | [x] |
+| 11 | promo-scrolling-marquee | home | [x] | [x] | reuse | [x] |
+| 12 | before-after-slider | home | [x] | [x] | reuse | [x] |
+| 13–14 | product-showcase-tabs ×2 | home | [x] + Volume | [x] | reuse | [x] |
+| 15 | features-multicolumn | home | [x] | [x] | reuse | [x] |
+| 16 | hero-slideshow-2 quiz CTA | home | [x] | [x] | reuse | [x] |
+| 17 | footer-columns-newsletter | home | [x] | [x] | reuse | [x] |
+| 18 | product-info-main | product-detail | [x] + 3-Month | [x] | reuse | [x] |
+| 19 | features-multicolumn | product-detail | [x] | [x] | reuse | [x] |
+| 20 | promo-scrolling-marquee | product-detail | [x] | [x] | reuse | [x] |
+| 21 | product-showcase-related | product-detail | [x] | [x] | reuse | [x] |
+| 22 | faq-collapsible-tabs | product-detail | [x] + ilk soru | [x] | reuse | [x] |
+| 23 | product-showcase-grid-plp | collection | [x] | [x] | reuse | [x] |
+| 24 | hero-slideshow | collection | [x] | [x] | reuse | [x] |
+| 25 | search-results | search | [x] | [x] | reuse | [x] |
+| 26 | cart-page-main | cart | [x] | [x] | reuse | [x] |
+| 27–30 | about (4) | about-brand | [x] | [x] | reuse | [x] |
+| 31 | product-finder-quiz | landing-campaign | [x] + Thinning | [x] | reuse | [x] leftover iframe |
+| 32–36 | reset LP (5) | landing-campaign | [x] + FAQ | [x] | reuse | [x] |
+| 37–39 | reviews LP (3) | landing-campaign | [x] | [x] | reuse | [x] |
+| 40–41 | blog list + post | blog-* | [x] | [x] | reuse | [x] |
+| 42 | features-multicolumn | contact | [x] | [x] | reuse | [x] leftover form |
+| 43–44 | returns + privacy | policy | [x] | [x] | reuse | [x] |
+| 45 | page-content-main | not-found | [x] | [x] | reuse | [x] leftover |
 
 ---
 
-## Interact (piksel değişince)
+## Interact (piksel doğrulandı)
 
 | Bileşen | State | Not |
 |---|---|---|
-| navigation-header-mega | open | 1440 Shop All hover — Featured / Category / Concern |
-| global-predictive-search | input | Searchanise `serum` — öneri listesi yoklanacak |
-| global-cart-drawer | initial, filled | GRO Hair Serum ATC; /cart de var |
-| global-menu-drawer | open | 375/768 hamburger |
-| product-info-main | changed | 3-Month Supply |
-| faq-collapsible-tabs | changed | ilk soru |
-| collection-nav-tabs | changed | Shop by Concern |
-| product-finder-quiz | changed | Jebbit ilk adım; **PII dur** |
+| navigation-header-mega | initial, open | 1440 Shop All — Featured / Category / Concern + görseller |
+| global-predictive-search | initial, input | `serum` yazıldı; öneri listesi yok (leftover) |
+| global-cart-drawer | initial, filled | GRO Hair Serum 1-Month One-Time $64; CHECKOUT |
+| global-menu-drawer | open | 375/768 hamburger (1440 N/A) |
+| collection-nav-tabs | changed | Shop by Concern — Shedding / Volume / Dryness |
+| product-showcase-tabs | changed | Volume + UPLIFT foam |
+| product-info-main | changed | pfv5 3-Month $139 seçili |
+| faq-collapsible-tabs (PDP) | changed | 3–4 months cevabı |
+| faq-collapsible-tabs (Reset) | changed | 90-Day Reset cevabı |
+| product-finder-quiz | changed | Thinning → hormonal metin; **PII dur** |
 
 ---
 
 ## Aday / leftover
 
-[`candidates/vegamour-leftovers.md`](../candidates/vegamour-leftovers.md) — capture sonrası doldurulacak.
+[`candidates/vegamour-leftovers.md`](../candidates/vegamour-leftovers.md)
+
+- Okendo reviews (şema yok)
+- StayAI pfv5 purchase drawer
+- Jebbit quiz iframe
+- Gorgias contact (PII)
+- Searchanise öneri listesi yok
+- 404 / `/pages/faq` / `/pages/science` 302
+- Cart qty `changed` yok
 
 ---
 
 ## Evidence backlog
 
-- [ ] Claiming obs resmi 3vp
-- [ ] Overlay / mega / cart / search / menu / supply interact
+- [x] Claiming obs resmi 3vp — **186 PNG** (static + interact)
+- [x] Overlay / mega / cart / menu / supply / FAQ / quiz / tabs
+- [x] Predictive suggest yoklandı — liste yok (leftover)
+- [ ] Cart qty `changed` (doldurulmadı)
+- [ ] Okendo reviews (şema yok)
 - [ ] Newsletter / contact / quiz email — **yapılmayacak** (PII)
