@@ -1,0 +1,63 @@
+{
+  "observationId": "xeroshoes.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "xeroshoes",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://xeroshoes.com/",
+  "selector": "custom-drawer.mobile-nav-drawer#mobile-nav-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/xeroshoes/default/home/global-menu-drawer.1440.png",
+    "evidence/xeroshoes/default/home/global-menu-drawer.375.png",
+    "evidence/xeroshoes/default/home/global-menu-drawer.768.png",
+    "evidence/xeroshoes/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/xeroshoes/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "Sol mobile-nav-drawer. Hamburger #mobile-menu (d-lg-none).",
+  "delta": "1440'ta opener 0px. 375/768 open.",
+  "prepareClick": "#mobile-menu",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://xeroshoes.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#mobile-menu",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Mobil menü açık"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 hamburger — New Arrivals/Men/Women/Kids/Clearance/Explore chevron; Find Your Shoe; Track/About/Contact/Circle/Sizing/Warranty/Loyalty. 1440 N/A."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 N/A.",
+  "capture": {
+    "url": "https://xeroshoes.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T19:03:24.118Z",
+    "prepareClick": "#mobile-menu"
+  }
+}
