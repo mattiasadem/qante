@@ -1,0 +1,64 @@
+{
+  "observationId": "moonjuice.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "moonjuice",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://moonjuice.com/",
+  "selector": "#shopify-section-sections--20552723333203__header_section",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/moonjuice/default/home/navigation-header-mega.1440.png",
+    "evidence/moonjuice/default/home/navigation-header-mega.375.png",
+    "evidence/moonjuice/default/home/navigation-header-mega.768.png",
+    "evidence/moonjuice/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/moonjuice/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/moonjuice/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/moonjuice/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
+  "notlar": "Sol Shop / Learn / Subscribe / Take the Quiz; orta Moon Juice logo; sağ USD + search-button + account + cart-icon. header-component.",
+  "delta": "Horizon header-menu. Shop → #submenu-1 mega (aria-controls). Dil yerine para birimi USD (drawer-localization). Mega metin evaluate'de boş — görsel kolonlar. 375 hamburger summary[aria-label=Menu].",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://moonjuice.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "header-menu li.menu-list__list-item:has(a[aria-controls=\"submenu-1\"])",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "Shop hover → #submenu-1 mega grid"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Shop Learn Subscribe Take the Quiz · logo · USD · search · account · cart.",
+    "open": "1440 Shop hover #submenu-1: Best Sellers (Neuro/Magnesi-Om/Sleepy…) · Shop by Benefit · Shop by Category · Bundle & Save. 375 hamburger ayrı obs; 768 hamburger 0×0."
+  },
+  "missingStates": [],
+  "interactionNote": "Shop link collections/all; hover activate. Tıklama PLP'ye gider.",
+  "capture": {
+    "url": "https://moonjuice.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:09:51.368Z"
+  }
+}
