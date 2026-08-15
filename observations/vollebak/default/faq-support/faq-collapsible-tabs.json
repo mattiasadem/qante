@@ -1,0 +1,55 @@
+{
+  "observationId": "vollebak.default.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "vollebak",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "url": "https://vollebak.com/pages/faqs",
+  "selector": "#shopify-section-template--22487216685145__section_FLcpLg",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/vollebak/default/faq-support/faq-collapsible-tabs.1440.png",
+    "evidence/vollebak/default/faq-support/faq-collapsible-tabs.375.png",
+    "evidence/vollebak/default/faq-support/faq-collapsible-tabs.768.png",
+    "evidence/vollebak/default/faq-support/faq-collapsible-tabs.changed.countries.1440.png",
+    "evidence/vollebak/default/faq-support/faq-collapsible-tabs.changed.countries.375.png",
+    "evidence/vollebak/default/faq-support/faq-collapsible-tabs.changed.countries.768.png"
+  ],
+  "notlar": "FAQS + intro. Accordion: newsletter, countries, payment, returns, change order… Sizing FAQ ayrı /pages/size-guide.",
+  "delta": "Kategori tab yok. Hydrate'de ilk soru açık olabiliyor; changed ikinci soru (countries).",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://vollebak.com/pages/faqs",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--22487216685145__section_FLcpLg button.faq-trigger:has-text('Which countries do you deliver to?')",
+      "capture": true,
+      "etiket": "countries",
+      "not": "İkinci soru — ilk hydrate'de açık olabiliyor"
+    }
+  ],
+  "stateFindings": {
+    "changed": "Which countries do you deliver to? açık (—): We deliver to most destinations worldwide… checkout address. Diğerleri +."
+  },
+  "missingStates": [],
+  "capture": {
+    "url": "https://vollebak.com/pages/faqs",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:06:26.108Z"
+  }
+}
