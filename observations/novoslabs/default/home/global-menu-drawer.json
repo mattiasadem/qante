@@ -7,13 +7,20 @@
   "url": "https://novoslabs.com/",
   "selector": "#nvNavMobile",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/novoslabs/default/home/global-menu-drawer.1440.png",
+    "evidence/novoslabs/default/home/global-menu-drawer.375.png",
+    "evidence/novoslabs/default/home/global-menu-drawer.768.png",
+    "evidence/novoslabs/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/novoslabs/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
   "notlar": "drawer.nv-mnav. Shop/Benefits/Ingredients/Science/Longevity/About + My Account + Healthcare Providers + FAQ + Contact. Alt ürün listeleri.",
   "delta": "1440 hamburger gizli (0×0). 375 toggle 48×48. Click sonrası kutu 0×0 kalırsa forceOpen.",
   "captureMode": "viewport",
   "prepareClick": "button.nv-nav__toggle",
   "prepareForceOpen": true,
   "interactionStates": [
+    "initial",
     "open"
   ],
   "interactionSteps": [
@@ -38,8 +45,25 @@
     }
   ],
   "stateFindings": {
-    "open": ""
+    "open": "768: X + novos logo; Shop/Benefits/Ingredients/Science/Longevity/About (chevron); My Account / Healthcare Providers / FAQ / Contact; Shop now + Product Finder. 375: kare hâlâ hero (drawer yok). 1440 N/A."
   },
-  "missingStates": [],
-  "interactionNote": "1440 N/A. Drawer JS hydrate gecikirse forceOpen."
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375: 2 deneme hamburger tıklandı; kare hero'da kaldı, menü listesi boyanmadı. 768 open WORKS."
+    }
+  ],
+  "interactionNote": "1440 hamburger 0×0 — N/A (desktop mega). Statik 1440 Klaviyo 10% popup, menü değil.",
+  "capture": {
+    "url": "https://novoslabs.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:21:59.455Z",
+    "prepareClick": "button.nv-nav__toggle"
+  }
 }

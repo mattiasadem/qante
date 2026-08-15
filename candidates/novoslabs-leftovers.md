@@ -96,6 +96,14 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: novoslabs-klaviyo-10-off  
+Gerekçe: Zamanlı “Get 10% off your first month’s subscription” modal (email + Yes, I Want In). Home comparison / protocol / scientists / clinicians / servings / FAQ / CTA / footer / menu-static-1440 karelerini örttü. Recapture sonrası da durdu. Form doldurulmadı (PII).  
+Örnekler: https://novoslabs.com/  
+Öneri: leftover — Klaviyo popup  
+Karar: onay bekliyor
+
+---
+
 ADAY: novoslabs-cookie-notice  
 Gerekçe: Cookie Notice eklentisi (`cookie-notice/v1`). Overlay dismiss. Şema değil.  
 Örnekler: https://novoslabs.com/  
@@ -108,4 +116,36 @@ ADAY: novoslabs-userway
 Gerekçe: UserWay a11y widget (“Enable accessibility for low vision”). REST `userway/v1`.  
 Örnekler: https://novoslabs.com/product/novos-core/  
 Öneri: ignore  
+Karar: onay bekliyor
+
+---
+
+ADAY: novoslabs-reamaze-chat  
+Gerekçe: Sağ alt siyah daire chat launcher (Reamaze). Help archive ayrı leftover. Widget tıklanmadı.  
+Örnekler: https://novoslabs.com/  
+Öneri: ignore  
+Karar: onay bekliyor
+
+---
+
+ADAY: novoslabs-faq-accordion-open  
+Gerekçe: Home + PDP `#faq` `details.nv-faq__item` — 2 interact denemesi. Changed karelerde tüm sorular hâlâ `+`; açık panel yok. Home 768/1440 changed Klaviyo örtüsü.  
+Örnekler: https://novoslabs.com/ · https://novoslabs.com/product/novos-core/  
+Öneri: leftover — accordion-open doğrulanamadı  
+Karar: onay bekliyor
+
+---
+
+ADAY: novoslabs-menu-drawer-375  
+Gerekçe: `button.nv-nav__toggle` 375’te 2 deneme; open kare hâlâ hero. 768 open WORKS (X + Shop… + Shop now / Product Finder).  
+Örnekler: https://novoslabs.com/  
+Öneri: leftover — 375 menü listesi boyanmadı  
+Karar: onay bekliyor
+
+---
+
+ADAY: novoslabs-search-375  
+Gerekçe: Jetpack overlay 375 initial kare hero; input `#nvSearchInput` hidden (timeout). 768/1440 initial + `core` (334 results) WORKS.  
+Örnekler: https://novoslabs.com/  
+Öneri: leftover — 375 overlay  
 Karar: onay bekliyor

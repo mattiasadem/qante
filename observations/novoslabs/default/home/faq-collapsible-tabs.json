@@ -7,9 +7,16 @@
   "url": "https://novoslabs.com/",
   "selector": "#faq",
   "evidenceSlug": "faq-collapsible-tabs",
-  "evidence": [],
+  "evidence": [
+    "evidence/novoslabs/default/home/faq-collapsible-tabs.1440.png",
+    "evidence/novoslabs/default/home/faq-collapsible-tabs.375.png",
+    "evidence/novoslabs/default/home/faq-collapsible-tabs.768.png",
+    "evidence/novoslabs/default/home/faq-collapsible-tabs.changed.ilk-soru.1440.png",
+    "evidence/novoslabs/default/home/faq-collapsible-tabs.changed.ilk-soru.375.png",
+    "evidence/novoslabs/default/home/faq-collapsible-tabs.changed.ilk-soru.768.png"
+  ],
   "notlar": "Questions, answered. details.nv-faq__item name=nv-faq. İlk: What is NOVOS Core?",
-  "delta": "Split başlık sol / liste sağ (layout split). Kategori tab yok.",
+  "delta": "Split başlık sol / liste sağ (layout split). Kategori tab yok. Statik 375 + changed 768/1440 Klaviyo örtüsü.",
   "interactionStates": [
     "initial",
     "changed"
@@ -36,8 +43,23 @@
       "not": "What is NOVOS Core? açık"
     }
   ],
-  "stateFindings": {
-    "changed": ""
-  },
-  "missingStates": []
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "2 deneme: 375 changed hâlâ tüm sorular `+` (açık panel yok). 768/1440 Klaviyo 10% popup FAQ'yu örttü. Accordion-open doğrulanamadı."
+    }
+  ],
+  "interactionNote": "details/summary. Statik 375 de Klaviyo örtüsü. Üçüncü deneme yok.",
+  "capture": {
+    "url": "https://novoslabs.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T20:15:47.134Z"
+  }
 }
