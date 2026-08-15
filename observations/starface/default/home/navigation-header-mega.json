@@ -7,17 +7,32 @@
   "url": "https://starface.world/",
   "selector": "#shopify-section-header",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
-  "notlar": "1440: sol 11rem dikey şerit — logo, #Search-In-Template, All / Bestsellers / Hydro-Stars / Star balm / Skincare / Bundles, account, sosyal, #cart-icon-bubble Bag. 375: üst bar logo + Bag (~84px). Mega panel yok; linkler koleksiyona gider.",
-  "delta": "Dawn header custom: masaüstü sidebar (grid-template-areas navigation|main). Mega hover yok. Predictive search şeritte her zaman açık. Locale yok (footer CA/UK). sticky-header.",
+  "evidence": [
+    "evidence/starface/default/home/navigation-header-mega.375.png",
+    "evidence/starface/default/home/navigation-header-mega.768.png",
+    "evidence/starface/default/home/navigation-header-mega.1440.png"
+  ],
+  "notlar": "Kapalı header sarı şerit. 1440: ~110px sol ray — hamburger, dikey STARFACE, yıldız-göz smiley (#cart-icon-bubble). 375/768: ~84px üst bar — hamburger | STARFACE | smiley. Koleksiyon linkleri ve #Search-In-Template DOM’da #menu-drawer içinde; kapalı 3vp karede görünmüyor. Mega panel yok. Tema: Starface Live (schema Dawn 7.0.0, custom).",
+  "delta": "Klasik Dawn yatay mega değil. Kapalı piksel = sarı ray/bar. Nav + arama hamburger sonrası — global-menu-drawer. En yakın header tipi navigation-header-mega.",
   "interactionStates": [
     "initial"
   ],
   "missingStates": [
     {
       "state": "open",
-      "sebep": "1440 mega yok — düz koleksiyon <a>. 375 hamburger 0×44; menü global-menu-drawer."
+      "sebep": "Kapalı karede mega yok. Hamburger açılımı global-menu-drawer (375/768/1440)."
     }
   ],
-  "interactionNote": "Click yasak (koleksiyon sayfasına kaçar). Sidebar = kapalı mega değil, her zaman görünen dikey nav."
+  "interactionNote": "Kapalı karede tıklama yok (koleksiyona kaçar). Açık menü ayrı observation.",
+  "capture": {
+    "url": "https://starface.world/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "margin-box+minPad8",
+    "updatedAt": "2026-08-15T18:47:02.999Z"
+  }
 }

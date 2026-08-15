@@ -8,10 +8,10 @@
   "selector": "#menu-drawer",
   "evidenceSlug": "global-menu-drawer",
   "evidence": [],
-  "notlar": "Dawn #menu-drawer. 1440 sidebar zaten açık (hamburger 0×44). 375/768: Menu summary → search + koleksiyon linkleri.",
-  "delta": "Masaüstü drawer = sol nav (ayrı overlay değil). Mobil opener width 0 görüldü — ikinci denemede summary force-click.",
+  "notlar": "Dawn #menu-drawer. Kapalı header yalnız hamburger + wordmark + smiley — koleksiyon linkleri ve arama drawer açılınca. 1440 sol ray hamburgeri de drawer açar (sidebar her zaman açık değil).",
+  "delta": "Masaüstü de overlay drawer. Kapalı 3vp’de nav görünmez. Opener: header-drawer summary.header__icon--menu.",
   "captureMode": "viewport",
-  "prepareClick": "header-drawer summary, .header__icon--menu, summary[aria-label='Menu']",
+  "prepareClick": "header-drawer summary.header__icon--menu",
   "interactionStates": [
     "open"
   ],
@@ -20,34 +20,21 @@
       "state": "open",
       "action": "goto",
       "value": "https://starface.world/",
-      "capture": false,
-      "viewports": [
-        "375",
-        "768"
-      ]
+      "capture": false
     },
     {
       "state": "open",
       "action": "click",
-      "selector": "header-drawer summary, .header__icon--menu",
+      "selector": "header-drawer summary.header__icon--menu",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "menu-acik",
-      "viewports": [
-        "375",
-        "768"
-      ],
-      "not": "Mobil hamburger"
+      "not": "Hamburger — 375/768/1440 drawer"
     }
   ],
   "stateFindings": {
     "open": ""
   },
-  "missingStates": [
-    {
-      "state": "open",
-      "sebep": "1440 hamburger yok — sidebar navigation-header-mega."
-    }
-  ],
-  "interactionNote": "1440 N/A. 375 summary 0×44 — tık görünür değilse leftover."
+  "missingStates": [],
+  "interactionNote": "1440 N/A değil — kapalı karede nav yok, hamburger her VP’de. PNG’de menü açılmazsa leftover."
 }

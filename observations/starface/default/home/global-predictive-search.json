@@ -8,8 +8,8 @@
   "selector": "predictive-search",
   "evidenceSlug": "global-predictive-search",
   "evidence": [],
-  "notlar": "Dawn predictive-search. 1440 sol şeritte #Search-In-Template her zaman görünür (overlay değil). katalogSorgu: hydro.",
-  "delta": "Ayrı search modal yok — input nav içinde. 375 input menu-drawer akışında (y=85).",
+  "notlar": "#Search-In-Template #menu-drawer içinde. Kapalı sarı rayda arama yok. Hamburger → boş alan (initial) → hydro (input). katalogSorgu: hydro.",
+  "delta": "Ayrı search modal yok — predictive menü drawer içinde, her viewport. Forced global-predictive-search.",
   "captureMode": "viewport",
   "interactionStates": [
     "initial",
@@ -20,10 +20,16 @@
       "state": "initial",
       "action": "goto",
       "value": "https://starface.world/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header-drawer summary.header__icon--menu",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "arama-bos",
-      "not": "Boş predictive (sidebar/input)"
+      "not": "Drawer açık, arama boş"
     },
     {
       "state": "input",
@@ -41,5 +47,5 @@
     "input": ""
   },
   "missingStates": [],
-  "interactionNote": "katalogSorgu hydro (hydro-stars ailesi). Form submit /search sayfasına gider — fill sonrası click yok."
+  "interactionNote": "Hamburger önce (tüm VP). Form submit /search’e gider — fill sonrası click yok. input == initial ise missingStates."
 }
