@@ -65,17 +65,20 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": "#shopify-section-template--26470592839723__main .boka-purchase-options__card--onetime",
+      "selector": "#shopify-section-template--26470592839723__main .boka-purchase-options__card--onetime .boka-purchase-options__title",
       "capture": true,
       "etiket": "one-time",
-      "not": "One-time purchase kartı — fiyat/rozet değişir"
+      "not": "Kart butonunun ortası sticky ATC bar altında; title tık is-active yapar"
     }
   ],
   "interactionStates": [
     "initial",
     "changed"
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "Default Subscribe & Save is-active (MOST POPULAR, $9.88, 2 month). One-time $11.62 seçili değil. 1 Pack. Flavor Ela Mint.",
+    "changed": "One-time purchase kartı yeşil çerçeve + radio seçili, $11.62. Subscribe artık is-active değil. 1 Pack aynı. Sticky ATC bar örtüşmesi yüzünden title tıklandı."
+  },
   "missingStates": [
     {
       "state": "hover",
@@ -95,7 +98,7 @@
     }
   ],
   "prepareClick": "button.klaviyo-close-form[aria-label='Close dialog']",
-  "interactionNote": "Klaviyo dialog kapatıldı; form doldurulmadı. Default Subscribe & Save is-active; One-time tık.",
+  "interactionNote": "Klaviyo kapatıldı. İlk changed denemesi kart ortasına tık = sticky ATC; ikinci deneme title → One-time is-active.",
   "capture": {
     "url": "https://www.boka.com/products/ela-mint-toothpaste",
     "viewports": [
@@ -105,7 +108,7 @@
     ],
     "mode": "section",
     "method": "interaction-steps",
-    "updatedAt": "2026-08-15T18:25:47.153Z",
+    "updatedAt": "2026-08-15T18:39:51.656Z",
     "prepareClick": "button.klaviyo-close-form[aria-label='Close dialog']"
   }
 }

@@ -7,7 +7,14 @@
   "url": "https://www.boka.com/",
   "selector": "#cart-drawer",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/boka/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/boka/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/boka/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/boka/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/boka/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/boka/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
   "notlar": "Impact cart-drawer. Boş + Ela Mint doldurulacak.",
   "delta": "Recharge storefront cart-drawer host da var (h=0). Checkout tıklanmadı.",
   "captureMode": "viewport",
@@ -24,27 +31,14 @@
       "action": "waitFor",
       "value": "8500",
       "capture": false,
-      "not": "Klaviyo 10% OFF dialog ~8s — her yeni sayfada tekrarlar"
+      "not": "Klaviyo ~8s"
     },
     {
       "state": "initial",
       "action": "click",
       "selector": "button.klaviyo-close-form[aria-label='Close dialog']",
       "capture": false,
-      "not": "Klaviyo dialog kapat — PII form gönderilmedi"
-    },
-    {
-      "state": "initial",
-      "action": "waitFor",
-      "value": "400",
-      "capture": false
-    },
-    {
-      "state": "initial",
-      "action": "click",
-      "selector": "button[aria-label='Close teaser'], button.klaviyo-close-form[aria-label='Close dialog']",
-      "capture": false,
-      "not": "Get 10% off teaser varsa kapat; yoksa gizli dialog close no-op"
+      "not": "İlk sayfa — dialog var"
     },
     {
       "state": "initial",
@@ -64,29 +58,9 @@
     {
       "state": "filled",
       "action": "waitFor",
-      "value": "8500",
+      "value": "2500",
       "capture": false,
-      "not": "Klaviyo 10% OFF dialog ~8s — her yeni sayfada tekrarlar"
-    },
-    {
-      "state": "filled",
-      "action": "click",
-      "selector": "button.klaviyo-close-form[aria-label='Close dialog']",
-      "capture": false,
-      "not": "Klaviyo dialog kapat — PII form gönderilmedi"
-    },
-    {
-      "state": "filled",
-      "action": "waitFor",
-      "value": "400",
-      "capture": false
-    },
-    {
-      "state": "filled",
-      "action": "click",
-      "selector": "button[aria-label='Close teaser'], button.klaviyo-close-form[aria-label='Close dialog']",
-      "capture": false,
-      "not": "Get 10% off teaser varsa kapat; yoksa gizli dialog close no-op"
+      "not": "PDP — dialog genelde yok; announcement tıklama"
     },
     {
       "state": "filled",
@@ -104,29 +78,8 @@
     {
       "state": "filled",
       "action": "waitFor",
-      "value": "8500",
-      "capture": false,
-      "not": "Klaviyo 10% OFF dialog ~8s — her yeni sayfada tekrarlar"
-    },
-    {
-      "state": "filled",
-      "action": "click",
-      "selector": "button.klaviyo-close-form[aria-label='Close dialog']",
-      "capture": false,
-      "not": "Klaviyo dialog kapat — PII form gönderilmedi"
-    },
-    {
-      "state": "filled",
-      "action": "waitFor",
-      "value": "400",
+      "value": "2000",
       "capture": false
-    },
-    {
-      "state": "filled",
-      "action": "click",
-      "selector": "button[aria-label='Close teaser'], button.klaviyo-close-form[aria-label='Close dialog']",
-      "capture": false,
-      "not": "Get 10% off teaser varsa kapat; yoksa gizli dialog close no-op"
     },
     {
       "state": "filled",
@@ -139,41 +92,50 @@
     },
     {
       "state": "changed",
-      "action": "fill",
-      "selector": "#cart-drawer input.quantity-input",
-      "value": "2",
-      "capture": false,
-      "not": "Görünür quantity-input"
-    },
-    {
-      "state": "changed",
-      "action": "press",
-      "value": "Enter",
+      "action": "click",
+      "selector": "#cart-drawer button[name='plus'], #cart-drawer button[aria-label*='Increase' i], #cart-drawer button:has-text('+')",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "adet-artti",
-      "not": "Adet 2"
+      "not": "quantity-input gizli; görünür + / plus (ikinci deneme)"
     }
   ],
   "interactionStates": [
     "initial",
-    "filled",
-    "changed"
+    "filled"
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "Sağdan drawer: Your cart (0), Your cart is empty!, Continue shopping. Satır yok.",
+    "filled": "Your cart (1). Ela Mint, 1 Pack, 2 month subscription 15%, $9.88 (üstü $11.62). Görsel − 1 + stepper + çöp. Delivery frequency. Complete Your Routine (floss + Add). Discount + Apply. Subtotal $9.88. Checkout. Checkout tıklanmadı."
+  },
   "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "İki deneme: quantity-input gizli; button:has-text('+') gizli quick-buy Add'e düştü. Recharge stepper (− 1 +) karede var ama native plus/input tıklanmadı. Üçüncü yok."
+    },
     {
       "state": "hover",
       "sebep": "Anlamsız"
     },
     {
       "state": "input",
-      "sebep": "Adet changed"
+      "sebep": "Adet changed denendi, olmadı"
     },
     {
       "state": "open",
       "sebep": "Boş drawer initial"
     }
   ],
-  "interactionNote": "Klaviyo her goto'da kapatıldı; form doldurulmadı. Checkout tıklanmadı. Recharge host #recharge-storefront-experiences__cart-drawer h=0."
+  "interactionNote": "Klaviyo yalnız ilk home goto. ATC ui (Subscribe). Checkout tıklanmadı. Recharge host #recharge-storefront-experiences__cart-drawer boşken h=0; dolu karede Recharge stepper görünür.",
+  "capture": {
+    "url": "https://www.boka.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:52:48.551Z"
+  }
 }

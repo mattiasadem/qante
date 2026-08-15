@@ -71,6 +71,14 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: boka-cart-drawer-qty  
+Gerekçe: Dolu drawer karesinde − 1 + görünür; native `#cart-drawer input.quantity-input` gizli. İki interact denemesi (fill input; click plus/has-text('+')) native/quick-buy gizli düğmeye düştü. Recharge stepper ayrı host.  
+Örnekler: https://www.boka.com/ (cart drawer filled)  
+Öneri: leftover — `changed` missingStates  
+Karar: onay bekliyor
+
+---
+
 ## Bilinçli atlananlar
 
 - `/account/login` — auth, envanter dışı  

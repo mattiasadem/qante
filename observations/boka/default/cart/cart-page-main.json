@@ -8,9 +8,12 @@
   "selector": "#shopify-section-template--26470592249899__main",
   "evidenceSlug": "cart-page-main",
   "evidence": [
+    "evidence/boka/default/cart/cart-page-main.1440.png",
     "evidence/boka/default/cart/cart-page-main.375.png",
     "evidence/boka/default/cart/cart-page-main.768.png",
-    "evidence/boka/default/cart/cart-page-main.1440.png"
+    "evidence/boka/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/boka/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/boka/default/cart/cart-page-main.filled.sepete-eklendi.768.png"
   ],
   "notlar": "Boş: Your cart is empty / Continue shopping. Dolu interact.",
   "delta": "Impact cart page. Drawer ayrı obs.",
@@ -26,34 +29,21 @@
       "action": "waitFor",
       "value": "8500",
       "capture": false,
-      "not": "Klaviyo 10% OFF dialog ~8s — her yeni sayfada tekrarlar"
+      "not": "Klaviyo ~8s"
     },
     {
       "state": "filled",
       "action": "click",
       "selector": "button.klaviyo-close-form[aria-label='Close dialog']",
       "capture": false,
-      "not": "Klaviyo dialog kapat — PII form gönderilmedi"
-    },
-    {
-      "state": "filled",
-      "action": "waitFor",
-      "value": "400",
-      "capture": false
-    },
-    {
-      "state": "filled",
-      "action": "click",
-      "selector": "button[aria-label='Close teaser'], button.klaviyo-close-form[aria-label='Close dialog']",
-      "capture": false,
-      "not": "Get 10% off teaser varsa kapat; yoksa gizli dialog close no-op"
+      "not": "İlk sayfa — dialog var"
     },
     {
       "state": "filled",
       "action": "addToCart",
       "selector": "#shopify-section-template--26470592839723__main button.button--xl:has-text('Add to cart')",
       "capture": false,
-      "not": "Ela Mint ATC — button--xl (ikincil submit var)"
+      "not": "Ela Mint ATC — button--xl"
     },
     {
       "state": "filled",
@@ -64,29 +54,9 @@
     {
       "state": "filled",
       "action": "waitFor",
-      "value": "8500",
+      "value": "2000",
       "capture": false,
-      "not": "Klaviyo 10% OFF dialog ~8s — her yeni sayfada tekrarlar"
-    },
-    {
-      "state": "filled",
-      "action": "click",
-      "selector": "button.klaviyo-close-form[aria-label='Close dialog']",
-      "capture": false,
-      "not": "Klaviyo dialog kapat — PII form gönderilmedi"
-    },
-    {
-      "state": "filled",
-      "action": "waitFor",
-      "value": "400",
-      "capture": false
-    },
-    {
-      "state": "filled",
-      "action": "click",
-      "selector": "button[aria-label='Close teaser'], button.klaviyo-close-form[aria-label='Close dialog']",
-      "capture": false,
-      "not": "Get 10% off teaser varsa kapat; yoksa gizli dialog close no-op"
+      "not": "İkinci goto: Klaviyo yok. Announcement tık koleksiyona kaçırır — tıklama yok"
     },
     {
       "state": "filled",
@@ -101,7 +71,10 @@
     "initial",
     "filled"
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "Boş: Your cart is empty / Continue shopping (static 3vp).",
+    "filled": "Ela Mint satırı $9.88, 1 Pack, 2 month subscription 15%. Quantity 1, Remove. Spend $25.12 more free shipping. Subtotal $9.88, Order note, Checkout. Rozet 1. Checkout tıklanmadı."
+  },
   "missingStates": [
     {
       "state": "hover",
@@ -117,11 +90,11 @@
     },
     {
       "state": "changed",
-      "sebep": "Adet drawer'da ölçüldü"
+      "sebep": "Adet drawer'da denendi"
     }
   ],
   "prepareClick": "button.klaviyo-close-form[aria-label='Close dialog']",
-  "interactionNote": "Klaviyo her goto'da kapatıldı; form doldurulmadı. Boş cart = static initial. Checkout tıklanmadı.",
+  "interactionNote": "Klaviyo yalnız PDP goto. /cart'ta dialog yok; announcement fallback sayfa değiştirdi, kaldırıldı. Checkout tıklanmadı.",
   "capture": {
     "url": "https://www.boka.com/cart",
     "viewports": [
@@ -130,8 +103,8 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T18:11:12.989Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T18:44:33.414Z",
     "prepareClick": "button.klaviyo-close-form[aria-label='Close dialog']"
   }
 }
