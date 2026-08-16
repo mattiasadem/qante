@@ -1,0 +1,64 @@
+{
+  "observationId": "trueclassictees.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "trueclassictees",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.trueclassictees.com/",
+  "selector": "#shopify-section-sections--14616111120456__nested_nav_menus",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "375/768: US EN account X; Search; We Made Too Much %60; Men|Women|Kids tab; Short Sleeves…Variety Packs chevron; Flash Deals. 1440 hamburger yok.",
+  "delta": "Shopify.theme.name true-classic/main · id 122041106504 · schema_name True Classic Custom Theme · schema_version 2.5.1 · theme_store_id null · role main · shop trueclassictees-com.myshopify.com. Custom (Theme Store değil). nested_nav_menus. Masaüstü hover mega değil — mobil drawer.",
+  "captureMode": "viewport",
+  "prepareClick": "#open-nav-trigger",
+  "interactionStates": [
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://www.trueclassictees.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#open-nav-trigger",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Mobil menü"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "details summary:has-text('Short Sleeves'), .nested-nav-menus details summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "short-sleeves",
+      "not": "Short Sleeves expander — yazılı <a> değil"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: Men altı çizili + kategori listesi + clearance banner.",
+    "changed": "Short Sleeves alt linkler (Crew/V-Neck…) — kareye bak."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger yok — header mega. open yalnız 375/768."
+    }
+  ],
+  "interactionNote": "1440 N/A. Yazılı Shop All tıklanmaz (sayfa kaçar)."
+}

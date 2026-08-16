@@ -1,0 +1,96 @@
+{
+  "observationId": "trueclassictees.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "trueclassictees",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.trueclassictees.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Sağ drawer. Boş: Your cart is currently empty. + Shop Now. /cart → /?cart-open=1 (ayrı cart sayfası yok).",
+  "delta": "Shopify.theme.name true-classic/main · id 122041106504 · schema_name True Classic Custom Theme · schema_version 2.5.1 · theme_store_id null · role main · shop trueclassictees-com.myshopify.com. Custom (Theme Store değil). #CartDrawer .drawer__inner. /cart sayfa template yok.",
+  "captureMode": "viewport",
+  "prepareClick": "#cart-icon-bubble",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.trueclassictees.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.trueclassictees.com/products/white-crew-neck-tee",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "fieldset.liquid-pdp__variant-selector-buttons",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "fieldset.liquid-pdp__variant-selector-buttons button:has-text(\"M\")",
+      "capture": false,
+      "not": "Beden M — ATC öncesi Select A Size"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": "#ProductSubmitButton-template--15597015433288__liquid_pdp_dpP4hj",
+      "value": 8000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#ProductSubmitButton-template--15597015433288__liquid_pdp_dpP4hj",
+      "capture": false,
+      "not": "ATC UI"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": "#CartDrawer",
+      "value": 8000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "tee-qty1",
+      "not": "Dolu drawer qty 1"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus'], #CartDrawer [name='plus'], #CartDrawer button[aria-label*='increase' i]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-2",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is currently empty. Shop Now.",
+    "filled": "White Crew Neck eklendiyse satır + qty 1 (kareye bak).",
+    "changed": "Adet 2 — kareye bak; olmazsa missing."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC UI (Select A Size → beden M). /cart.js fallback yoklandıysa not. Checkout/PII yok."
+}

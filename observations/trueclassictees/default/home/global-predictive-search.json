@@ -1,0 +1,85 @@
+{
+  "observationId": "trueclassictees.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "trueclassictees",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.trueclassictees.com/",
+  "selector": "search-bar.search-bar",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "1440 #nav__tab--search overlay. Placeholder: Search hundreds of tees, jeans, and more. Fill crew → 10 results + Pima/Crew Necks/V-Necks/Polos chip + ürün kartları. 375 #mobile-open-search / #NestedNavSearch.",
+  "delta": "Shopify.theme.name true-classic/main · id 122041106504 · schema_name True Classic Custom Theme · schema_version 2.5.1 · theme_store_id null · role main · shop trueclassictees-com.myshopify.com. Custom (Theme Store değil). search-bar.js + predictive-search.css. Kapalı h=0.",
+  "captureMode": "viewport",
+  "prepareClick": "#nav__tab--search",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.trueclassictees.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#nav__tab--search",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Boş overlay"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#mobile-open-search",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Mobil search opener"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#searchbar__input",
+      "value": "crew",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "crew",
+      "not": "katalog: Short Sleeve Classic Crew"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#NestedNavSearch, #searchbar__input",
+      "value": "crew",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "crew",
+      "not": "Mobil predictive"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440: arama kutusu + Clear/X. 375: drawer içi Search.",
+    "input": "crew: 10 results + chip + Short Sleeve Classic Crew vb."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu crew (Classic Crew). Rivo Plinko popup dismiss. PII yok."
+}
