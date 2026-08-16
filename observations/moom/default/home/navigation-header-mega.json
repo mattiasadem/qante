@@ -7,13 +7,19 @@
   "url": "https://moom.health/",
   "selector": "#shopify-section-sections--22312820408533__header",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
-  "notlar": "Kinetic c__header: sol Shop + About/Quiz/Rewards; orta MOOM logo; sağ globe/search/account/cart. Shop hover .s_menu mega.",
-  "delta": "Impact header üzerine Kinetic nav. Mega details/summary değil — #id_shoplink hover + checkbox #id_hamburger. 375/768 hamburger label[for=id_hamburger] (40×40). Dil/ülke jsc-globe-trigger (EN / zh-TW / zh-CN · SG/AU…). Hesap /account — girilmedi.",
+  "evidence": [
+    "evidence/moom/default/home/navigation-header-mega.1440.png",
+    "evidence/moom/default/home/navigation-header-mega.375.png",
+    "evidence/moom/default/home/navigation-header-mega.768.png",
+    "evidence/moom/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/moom/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/moom/default/home/navigation-header-mega.initial.bar.768.png"
+  ],
+  "notlar": "Kinetic c__header: sol Shop + About/Quiz/Rewards; orta MOOM logo; sağ globe/search/account/cart. Shop #id_shoplink → /collections/all.",
+  "delta": "Impact header üzerine Kinetic nav. Mega details/summary değil — checkbox #id_hamburger:checked .s_menu'yu indirir (fixed, transform). 375/768 hamburger label[for=id_hamburger] görünür (ayrı obs). 1440 label/checkbox display:none. Dil/ülke jsc-globe-trigger (EN / zh-TW / zh-CN · SG/AU…). Hesap /account — girilmedi.",
   "captureMode": "viewport",
   "interactionStates": [
-    "initial",
-    "open"
+    "initial"
   ],
   "interactionSteps": [
     {
@@ -32,16 +38,30 @@
       "viewports": [
         "1440"
       ],
-      "capture": true,
-      "captureMode": "viewport",
+      "capture": false,
       "etiket": "shop-mega",
-      "not": "1440 Shop hover → .s_menu kolonları"
+      "not": "Shop hover no-js'te transform değiştirmez; resmi open kare yok"
     }
   ],
   "stateFindings": {
-    "initial": "Shop About Quiz Rewards · MOOM · globe · search · account · cart 0.",
-    "open": "1440 Shop hover .s_menu: Shop All / New Arrivals / Bestsellers / Daily Powders / Curated Packs / Individual Supplements / Fast-Acting Remedies / Shop by Concern + Raise Day promo."
+    "initial": "Shop About Quiz Rewards · MOOM · globe · search · account · cart. 1440 viewport kareleri kapalı bar + hero (no-js slaytlar üst üste)."
   },
-  "missingStates": [],
-  "interactionNote": "Shop <a href=/collections/all>; tık PLP'ye gider. Mega hover. Mobil menü ayrı obs."
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "html.no-js. .s_menu her zaman DOM'da (1440×307, Shop All… + Raise Day + Mama Water GWP) ama position:fixed + translate(0,-461) ile y=-367. Açmak #id_hamburger:checked ister. 1440'ta checkbox ve label[for=id_hamburger] display:none / boundingBox null; Playwright click({force:true}) ve check() 'Element is not visible'. #id_shoplink hover transform'u değiştirmez (JS hover). forceOpen checked set etmez. Boş 2065B PNG silindi — resmi open kare yok."
+    }
+  ],
+  "interactionNote": "Shop <a href=/collections/all>; tık PLP'ye gider. Mobil menü ayrı obs. Locale form submit edilmedi.",
+  "capture": {
+    "url": "https://moom.health/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:45:00.000Z"
+  }
 }

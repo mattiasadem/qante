@@ -8,14 +8,11 @@
   "selector": "#cart-drawer",
   "evidenceSlug": "global-cart-drawer",
   "evidence": [],
-  "notlar": "Impact cart-drawer. Boş: Your cart is empty / CONTINUE SHOPPING. Dolu: Mama Water ATC.",
-  "delta": "Kinetic overlay-group. Checkout tıklanmadı. Qty +/− Impact quantity.",
+  "notlar": "Impact cart-drawer overlay-group. Opener a[aria-controls=cart-drawer] no-js'te /cart sayfasına gider.",
+  "delta": "html.no-js — drawer JS açılmıyor. Dolu sepet cart-page-main'de. forceOpen denenir.",
   "captureMode": "viewport",
-  "prepareClick": "a[aria-controls='cart-drawer']",
   "interactionStates": [
-    "initial",
-    "filled",
-    "changed"
+    "initial"
   ],
   "interactionSteps": [
     {
@@ -26,55 +23,41 @@
     },
     {
       "state": "initial",
-      "action": "click",
-      "selector": "a[aria-controls='cart-drawer']",
+      "action": "forceOpen",
+      "selector": "#cart-drawer",
       "capture": true,
       "captureMode": "viewport",
-      "etiket": "cart-bos",
-      "not": "Boş drawer"
-    },
-    {
-      "state": "filled",
-      "action": "goto",
-      "value": "https://moom.health/products/mama-water",
-      "capture": false
-    },
-    {
-      "state": "filled",
-      "action": "addToCart",
-      "selector": "form.shopify-product-form button[type='submit']",
-      "capture": false
-    },
-    {
-      "state": "filled",
-      "action": "waitFor",
-      "value": 2000,
-      "capture": false
-    },
-    {
-      "state": "filled",
-      "action": "click",
-      "selector": "a[aria-controls='cart-drawer']",
-      "capture": true,
-      "captureMode": "viewport",
-      "etiket": "mama-water",
-      "not": "ATC sonrası dolu drawer"
-    },
-    {
-      "state": "changed",
-      "action": "click",
-      "selector": "#cart-drawer button[name='plus'], #cart-drawer button[name='increase'], #cart-drawer .quantity-selector button:last-child",
-      "capture": true,
-      "captureMode": "viewport",
-      "etiket": "adet-artti",
-      "not": "Qty +"
+      "etiket": "force-open",
+      "not": "Theme JS yok — forceOpen drawer"
     }
   ],
   "stateFindings": {
-    "initial": "Boş cart-drawer beklenir.",
-    "filled": "Mama Water satırı + ara toplam — karede doğrulanacak.",
-    "changed": "Adet artışı — olmazsa leftover."
+    "initial": "forceOpen #cart-drawer 0×0. Tık /cart sayfasına gider."
   },
-  "missingStates": [],
-  "interactionNote": "ATC UI tık; fallback /cart/add.js olursa not. Checkout yok."
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "forceOpen #cart-drawer 0×0; opener /cart sayfasına gider"
+    },
+    {
+      "state": "filled",
+      "sebep": "Drawer JS yok; dolu sepet cart-page-main"
+    },
+    {
+      "state": "changed",
+      "sebep": "Qty drawer'da yok"
+    }
+  ],
+  "interactionNote": "html.no-js. Checkout yok.",
+  "capture": {
+    "url": "https://moom.health/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:24:46.539Z"
+  }
 }

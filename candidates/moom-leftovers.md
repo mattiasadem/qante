@@ -1,9 +1,34 @@
 # Moom Health leftovers / adaylar
 
 *Store:* https://moom.health · *Tema (görülen, uydurulmadı):* **[20260801] Moom x Kinetic (SG)** · `schema_name` Impact · `schema_version` 4.4.1 · `theme_store_id` null · shop `moomhealth.myshopify.com` · theme id `160979845333`  
-*Tarih:* 2026-08-15
+*Tarih:* 2026-08-16
 
-Şema icat edilmedi. En yakın mevcut tipe observation yazıldıysa burada tekrarlanmaz.
+Şema icat edilmedi. En yakın mevcut tipe observation yazıldıysa burada tekrarlanmaz.  
+Eksik resmi 3vp (script koşulmadı) leftover değildir — aşağıdakiler koşuldu / denendi.
+
+---
+
+ADAY: moom-desktop-mega-1440  
+Gerekçe: Shop mega `.s_menu` DOM'da tam (Shop All / New Arrivals / Bestsellers / Daily Powders / Curated Packs / Individual Supplements / Fast-Acting Remedies / Shop by Concern + Raise Day + Mama Water GWP). `position:fixed` + `translate(0,-461)` → y=-367. Açmak `#id_hamburger:checked` ister. 1440'ta checkbox ve `label[for=id_hamburger]` `display:none`; Playwright `click({force:true})` / `check()` "Element is not visible". `#id_shoplink` hover transform değiştirmez (Kinetic JS). `forceOpen` `checked` set etmez. Boş 2065B PNG silindi. Mobil open 375/768 resmi karede var.  
+Örnekler: https://moom.health/  
+Öneri: leftover — resmi open 1440 yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: moom-drawers-nojs  
+Gerekçe: Playwright storefront `html.no-js` kalır; `window.Shopify` / `Shopify.theme` null (inline `Shopify.theme` HTML'de var). `#search-drawer` / `#cart-drawer` 0×0. Opener `a[aria-controls=search-drawer]` → `/search`; `a[aria-controls=cart-drawer]` → `/cart`. `forceOpen` kutu büyütmedi. Search/cart **sayfa** obs + 3vp var.  
+Örnekler: https://moom.health/  
+Öneri: leftover — overlay PNG yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: moom-cart-qty  
+Gerekçe: Dolu `/cart` satırında `button.qty-plus` / `qty-minus` / `input.quantity-input` (görünür 10×27). Resmi ilk `name=plus` eşleşmedi. Probe tık adeti 1'de bıraktı (qty AJAX tema JS). Sahte changed PNG yazılmadı. `/cart/VARIANT:1` checkout'a kaçar — kullanılmadı.  
+Örnekler: https://moom.health/cart  
+Öneri: leftover  
+Karar: onay bekliyor
 
 ---
 
@@ -79,8 +104,15 @@ Karar: onay bekliyor
 ---
 
 ADAY: moom-privacy-banner  
-Gerekçe: `privacy-bar` overlay-group, `hidden`, h=0.  
+Gerekçe: `privacy-bar` overlay-group, çoğu karede h=0 / hidden. Cart probe'da Close/Accept/Decline göründü — form gönderilmedi.  
 Öneri: leftover  
+Karar: onay bekliyor
+
+---
+
+ADAY: moom-hero-nojs-stack  
+Gerekçe: Home `hero_custom_banner` no-js'te slaytları tek section kutusunda üst üste basar (metin bindirmesi). Resmi 3vp bu hâli kaydetti.  
+Öneri: leftover — JS slayt ayrı kare değil  
 Karar: onay bekliyor
 
 ---
@@ -91,7 +123,8 @@ Karar: onay bekliyor
 `/blogs/news` → 404  
 `/blogs/moom-u` → 404  
 `/this-page-does-not-exist-qante` → 404 (obs: `not-found/page-content-main`)  
-`/policies/privacy-policy` → native policy; gövde zayıf, footer var. Metin `/pages/privacy-policy`
+`/policies/privacy-policy` → native policy; gövde zayıf, footer var. Metin `/pages/privacy-policy`  
+`/cart/54095299674325:1` → Checkout (PII — envanterde yok)
 
 ---
 
@@ -104,3 +137,4 @@ Karar: onay bekliyor
 - `/collections/all` (bestsellers yürüdü; all ~6.7k px aynı main)  
 - Happy Hormones / de-bloat / pack PDP (Mama Water stack yeterli)  
 - Locale/currency form submit  
+- Newsletter footer input  
