@@ -1,0 +1,54 @@
+{
+  "observationId": "onnit.default.product-detail.comparison-quick-table",
+  "schemaId": "comparison-quick-table",
+  "kaynak": "onnit",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://www.onnit.com/products/alpha-brain-60-ct",
+  "selector": "#shopify-section-template--27710153883938__compare_block_FKjn6z",
+  "evidenceSlug": "comparison-quick-table",
+  "evidence": [
+    "evidence/onnit/default/product-detail/comparison-quick-table.375.png",
+    "evidence/onnit/default/product-detail/comparison-quick-table.768.png"
+  ],
+  "notlar": "COMPARE PRODUCT: format / dosage / key benefit / caffeine / flavors. Alpha BRAIN 60 COUNT $57.95 + karde\u015f SKU.",
+  "delta": "compare_block. NMN PDP\u2019de height 0 leftover. Alpha\u2019da ~1517px.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.onnit.com/products/alpha-brain-60-ct",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 12000,
+      "capture": false,
+      "not": "CF challenge / section hydrate after dismiss Account bounce"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--27710153883938__compare_block_FKjn6z",
+      "capture": true,
+      "etiket": "pdp-blok"
+    }
+  ],
+  "interactionNote": " 1440 dismiss Account'a t\u0131klar; uzun wait CF sonras\u0131 section'\u0131 bekler. 1440 dismiss\u2192Account\u2192CF; 375/768 resmi capture-observation."
+}
