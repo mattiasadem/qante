@@ -1,0 +1,76 @@
+{
+  "observationId": "beardbrand.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "beardbrand",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.beardbrand.com/",
+  "selector": "#site-header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/beardbrand/default/home/navigation-header-mega.1440.png",
+    "evidence/beardbrand/default/home/navigation-header-mega.375.png",
+    "evidence/beardbrand/default/home/navigation-header-mega.768.png",
+    "evidence/beardbrand/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/beardbrand/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/beardbrand/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/beardbrand/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
+  "notlar": "main-header#site-header 1440 ~96px. Logo + SHOP / DEALS / BEARD / HAIR / BODY / FRAGRANCES + search + cart. Shop mega #SiteNavLabel-shop-classic.",
+  "delta": "Tema (canlı, uydurulmadı): Split v1.0.3.7.4 [edp promo on PDPs]. schema_name Split, schema_version 3.1.0, theme_store_id 842, role main, theme.id 192727712114. Shop beardbrand.myshopify.com. #shopify-section-header h=0 (absolute çocuklar). Görünür bar #site-header. Mega UL.submenu.mega-menu. Locale/currency footer’da. Account sidebar’da.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.beardbrand.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bar",
+      "not": "Kapalı header + duyuru"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "nav.primary-menu #menu-item-collections > a.menu-link",
+      "capture": false,
+      "viewports": [
+        "1440"
+      ],
+      "not": "Shop mega hover"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 700,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "CONDITION / CLEANSE / FRAGRANCE / STYLE / TOOLS & GEAR kolonları"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Duyuru + logo. 1440: SHOP DEALS BEARD HAIR BODY FRAGRANCES + search + cart. 375/768: logo + search + cart + hamburger.",
+    "open": "1440 Shop hover: #SiteNavLabel-shop-classic — CONDITION (Beard Oil / Balm / Softener) · CLEANSE (Wash / Bar Soap) · FRAGRANCE (Cologne / Deodorant) · STYLE (Paste / Sea Salt / Wax) · TOOLS & GEAR (Trimmer / Combs / Alliance)."
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 Shop mega yok — hamburger ayrı global-menu-drawer. #menu-item-collections desktop primary-menu.",
+  "capture": {
+    "url": "https://www.beardbrand.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:09:51.187Z"
+  }
+}
