@@ -1,0 +1,62 @@
+{
+  "preset": "default",
+  "kaynak": "onceuponafarm",
+  "evidence": [
+    "evidence/onceuponafarm/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/onceuponafarm/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/onceuponafarm/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/onceuponafarm/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
+  "schemaId": "navigation-header-mega",
+  "sayfa": "home",
+  "url": "https://onceuponafarmorganics.com/",
+  "selector": "#shopify-section-sections--16652756910162__header_section",
+  "evidenceSlug": "navigation-header-mega",
+  "captureMode": "viewport",
+  "notlar": "74px sticky: logo Once Upon a Farm; Shop All / Starter Boxes / Build a Box / Quiz / Stores / About; search; cart. 1440 Shop All → #submenu-1 mega (Shop By Category + Shop By Age + promo kart).",
+  "delta": "Shopify.theme.name `[ 1.0.1 ]` · id 131083763794 · schema_name Horizon · schema_version 1.0.0 · theme_store_id null · role main · shop uponafarm-manufactur.myshopify.com. Horizon header-component sticky=always. Locale yok. Account ikonu header sağda (login tıklanmadı). 375 hamburger summary[aria-label=Menu].",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://onceuponafarmorganics.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı sticky bar"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "header a.menu-list__link[href='/collections/all']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Shop All hover → #submenu-1 mega"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Sticky bar: logo; Shop All / Starter Boxes / Build a Box / Quiz / Stores / About; Search + Account (shopify-account) + Cart. Mega kapalı.",
+    "open": "1440 Shop All hover: Shop By Category + Shop By Age + Starter Boxes / Build a Box promo kart."
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 mega yok — hamburger global-menu-drawer. İlk /collections/all linki mega içinde gizli; opener menu-list__link.",
+  "observationId": "onceuponafarm.default.home.navigation-header-mega",
+  "capture": {
+    "url": "https://onceuponafarmorganics.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:15:32.925Z"
+  }
+}
