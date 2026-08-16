@@ -1,0 +1,81 @@
+{
+  "observationId": "beardbrand.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "beardbrand",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.beardbrand.com/",
+  "selector": "#site-search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/beardbrand/default/home/global-predictive-search.1440.png",
+    "evidence/beardbrand/default/home/global-predictive-search.375.png",
+    "evidence/beardbrand/default/home/global-predictive-search.768.png",
+    "evidence/beardbrand/default/home/global-predictive-search.initial.drawer-bos.1440.png",
+    "evidence/beardbrand/default/home/global-predictive-search.initial.drawer-bos.375.png",
+    "evidence/beardbrand/default/home/global-predictive-search.initial.drawer-bos.768.png",
+    "evidence/beardbrand/default/home/global-predictive-search.input.beard-oil.1440.png",
+    "evidence/beardbrand/default/home/global-predictive-search.input.beard-oil.375.png",
+    "evidence/beardbrand/default/home/global-predictive-search.input.beard-oil.768.png"
+  ],
+  "notlar": "button#site-search-handle → sidebar-drawer#site-search (açık 480×1000). input#search-form-sidebar name=q. .search-results.predictive-search.",
+  "delta": "Tema (canlı, uydurulmadı): Split v1.0.3.7.4 [edp promo on PDPs]. schema_name Split, schema_version 3.1.0, theme_store_id 842, role main, theme.id 192727712114. Shop beardbrand.myshopify.com. Split sidebar-drawer search. Predictive #search-results.predictive-search. Tam sayfa /search ayrı observation.",
+  "captureMode": "viewport",
+  "prepareClick": "#site-search-handle",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.beardbrand.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#site-search-handle",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "drawer-bos",
+      "not": "Arama çekmecesi açık, boş"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#search-form-sidebar",
+      "value": "beard oil",
+      "capture": false,
+      "not": "katalogSorgu beard oil"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "beard-oil",
+      "not": "Predictive sonuç bekle"
+    }
+  ],
+  "stateFindings": {
+    "initial": "sidebar-drawer#site-search sağ panel: SEARCH + Enter a keyword. Ürün listesi yok.",
+    "input": "fill 'beard oil' + 2.5s wait: metin yazıldı; .search-results boş siyah. Canlı ürün kartı yok. İkinci deneme aynı."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu 'beard oil'. Predictive sonuç gelmedi — leftover. Tam sayfa /search?q=beard 68 sonuç ayrı. Newsletter formuna dokunulmadı.",
+  "capture": {
+    "url": "https://www.beardbrand.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:13:15.185Z",
+    "prepareClick": "#site-search-handle"
+  }
+}
