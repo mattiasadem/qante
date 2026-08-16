@@ -55,6 +55,14 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: magicspoon-rebuy-autopen  
+Gerekçe: Rebuy Smart Cart 768/1440’ta PDP / about / FAQ / comparison / MS78 / search karelerinde açık geliyor. `.rebuy-cart__flyout-close` kapalıyken x≈2380 (off-viewport) — resmi script ile kapatılamadı. 375 kareler temiz. Drawer’ın kendisi 3vp yakalandı.  
+Örnekler: https://magicspoon.com/products/cocoa-cereal-case  
+Öneri: leftover — app overlay  
+Karar: onay bekliyor
+
+---
+
 ## Diğer leftover (aday değil)
 
 - Home `sections--17552461267006__1764479205f91d6f4c` + `__1764459177dfa00bb0` 0px (app/helper)

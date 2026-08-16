@@ -7,11 +7,21 @@
   "url": "https://magicspoon.com/",
   "selector": ".rebuy-cart__flyout",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/magicspoon/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/magicspoon/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/magicspoon/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/magicspoon/default/home/global-cart-drawer.filled.cocoa-dolu.1440.png",
+    "evidence/magicspoon/default/home/global-cart-drawer.filled.cocoa-dolu.375.png",
+    "evidence/magicspoon/default/home/global-cart-drawer.filled.cocoa-dolu.768.png",
+    "evidence/magicspoon/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/magicspoon/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/magicspoon/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
   "notlar": "Rebuy Smart Cart. Empty: Your cart is empty! + Shop Cereal / Treats / Granola / Build Your Own Bundle / Shop All.",
   "delta": "#rebuy-cart / .rebuy-cart__flyout (closed x≈2380). Body smart-cart--enabled. /cart is separate SCA empty page.",
   "captureMode": "viewport",
-  "prepareClick": "nav.ms21-header a.js-cart-empty[aria-label='Open cart']",
+  "prepareClick": "a.js-cart-empty[aria-label='Open cart']",
   "interactionStates": [
     "initial",
     "filled",
@@ -39,7 +49,7 @@
     {
       "state": "initial",
       "action": "click",
-      "selector": "nav.ms21-header a.js-cart-empty[aria-label='Open cart']",
+      "selector": "a.js-cart-empty[aria-label='Open cart']",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "cart-bos"
@@ -90,7 +100,7 @@
     {
       "state": "filled",
       "action": "click",
-      "selector": "nav.ms21-header a[aria-label='Open cart']",
+      "selector": "a.js-cart-empty[aria-label='Open cart'], a[aria-label='Open cart']",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "cocoa-dolu"
@@ -106,10 +116,21 @@
     }
   ],
   "stateFindings": {
-    "initial": "Boş Rebuy flyout: Your cart is empty + category shortcuts.",
-    "filled": "Cocoa line expected after ATC.",
-    "changed": "Qty plus if stepper exists."
+    "initial": "3vp boş Rebuy: Your cart is empty + Shop Cereal/Treats/Granola/Bundle/Shop All.",
+    "filled": "Cocoa - 1 Case (4 Boxes) $39 + MORE FOR YOUR BOWL + SUBSCRIBE AND SAVE 20%.",
+    "changed": "1440 qty 2 / SUBTOTAL $78. 375/768 stepper de yakalandı."
   },
   "missingStates": [],
-  "interactionNote": "Checkout button visible in flyout — not clicked (checkout stop). addToCart fallback /cart/add.js if UI miss."
+  "interactionNote": "375/768 opener a.js-cart-empty (nav.ms21-header gizli). Checkout tıklanmadı. 1440 filled/changed kanıtlı.",
+  "capture": {
+    "url": "https://magicspoon.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:54:24.463Z"
+  }
 }
