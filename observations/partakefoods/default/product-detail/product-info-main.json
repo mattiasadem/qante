@@ -1,0 +1,87 @@
+{
+  "observationId": "partakefoods.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "partakefoods",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://partakefoods.com/products/birthday-cake-cookies",
+  "selector": "#shopify-section-template--19018229776482__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/partakefoods/default/product-detail/product-info-main.changed.mini-ingredients.1440.png",
+    "evidence/partakefoods/default/product-detail/product-info-main.changed.mini-ingredients.375.png",
+    "evidence/partakefoods/default/product-detail/product-info-main.changed.mini-ingredients.768.png",
+    "evidence/partakefoods/default/product-detail/product-info-main.initial.classic-boxes.1440.png",
+    "evidence/partakefoods/default/product-detail/product-info-main.initial.classic-boxes.375.png",
+    "evidence/partakefoods/default/product-detail/product-info-main.initial.classic-boxes.768.png"
+  ],
+  "notlar": "Crunchy Birthday Cake Cookies. Galeri + Classic Boxes / Mini Snack Packs / Teeny-Tiny Pouches tab + flavor kartları (başka PDP'ye link) + FIND NEAR YOU. Accordion: DESCRIPTION / INGREDIENTS / NUTRITION FACTS / CERTIFICATIONS. product-form / ATC yok.",
+  "delta": "Custom family picker. Shopify varyant 3/6 Boxes API'de var; UI'da ATC yok. CTA store locator. Cart drawer bağımlılığı bu vitrinde yok (şemaya dokunulmadı).",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://partakefoods.com/products/birthday-cake-cookies",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "etiket": "classic-boxes"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button.tab-button:has-text('MINI SNACKS PACKS')",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--19018229776482__main summary:has-text('INGREDIENTS')",
+      "capture": true,
+      "etiket": "mini-ingredients"
+    }
+  ],
+  "stateFindings": {
+    "initial": "CLASSIC BOXES seçili; flavor kartları (Vanilla Wafers…Ginger Snap) <a> ile başka PDP; DESCRIPTION/INGREDIENTS/NUTRITION/CERTIFICATIONS kapalı (+); FIND NEAR YOU; ATC yok.",
+    "changed": "MINI SNACKS PACKS seçili; Mini Confetti kartı vurgulu; INGREDIENTS açık (−); FIND NEAR YOU duruyor."
+  },
+  "missingStates": [],
+  "interactionNote": "Flavor kartı <a> başka PDP'ye gider — tıklanmadı. ATC yok; addToCart denendi değil.",
+  "capture": {
+    "url": "https://partakefoods.com/products/birthday-cake-cookies",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:30:24.059Z"
+  }
+}

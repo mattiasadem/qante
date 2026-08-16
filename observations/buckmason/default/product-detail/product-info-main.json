@@ -1,0 +1,68 @@
+{
+  "observationId": "buckmason.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "buckmason",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://www.buckmason.com/products/black-field-spec-cotton-vintage-surplus-heavy-tee",
+  "selector": "[class*='pdp25-module--content']",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/buckmason/default/product-detail/product-info-main.1440.png",
+    "evidence/buckmason/default/product-detail/product-info-main.375.png",
+    "evidence/buckmason/default/product-detail/product-info-main.768.png",
+    "evidence/buckmason/default/product-detail/product-info-main.changed.beden-l.1440.png",
+    "evidence/buckmason/default/product-detail/product-info-main.changed.beden-l.375.png",
+    "evidence/buckmason/default/product-detail/product-info-main.changed.beden-l.768.png",
+    "evidence/buckmason/default/product-detail/product-info-main.initial.ilk-hal.1440.png",
+    "evidence/buckmason/default/product-detail/product-info-main.initial.ilk-hal.375.png",
+    "evidence/buckmason/default/product-detail/product-info-main.initial.ilk-hal.768.png"
+  ],
+  "notlar": "Field-Spec Cotton Heavy Tee $62. Sol buy box: BACK IN STOCK / BEST SELLER, color swatch (black + dress navy…), LENGTH Standard/Tall, SIZE XS–XXL + Size/Fit Guide, Add to Cart$62. Sağ galeri. ATC beden seçilmeden pasif.",
+  "delta": "Gatsby 5.15.0 (meta generator). Shopify.theme / schema_name / schema_version / theme_store_id yok (uydurulmadı). Shopify.shop yok; yalnız customerPrivacy + trackingConsent (@shopify/consent-tracking-api v0.1). Shop files CDN 1/0123/5065/2473. buckmason.myshopify.com 404. #shopify-section-* yok. pdp25. Renk çoğu zaman ayrı ürün URL’si (<a> swatch). Qty stepper buy box’ta yok (drawer’da). Accord FIT/FABRIC/RETURNS aynı side’da — ayrı observation.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.buckmason.com/products/black-field-spec-cotton-vintage-surplus-heavy-tee",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Black / size seçilmemiş"
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "button[aria-label='Select size L']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[aria-label='Select size L']",
+      "capture": true,
+      "etiket": "beden-l",
+      "not": "Beden L — ATC aktifleşmeli"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Black seçili; SIZE seçilmemiş; SELECT SIZE TO ADD TO BAG / Add to Cart pasif.",
+    "changed": "L seçili; Add to Cart$62 aktif."
+  },
+  "missingStates": [],
+  "interactionNote": "Renk swatch <a> başka PDP’ye gidebilir — leftover. Tall length leftover.",
+  "capture": {
+    "url": "https://www.buckmason.com/products/black-field-spec-cotton-vintage-surplus-heavy-tee",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:39:22.091Z"
+  }
+}
