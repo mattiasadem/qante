@@ -74,7 +74,7 @@ Durum: `done` = main'e merge · `in progress` = açık PR · boş = kuyrukta
 | 62 | done | takearecess.com | https://takearecess.com |
 | 63 | in progress | vivobarefoot.com | https://vivobarefoot.com |
 | 64 | in progress | moom.health | https://moom.health |
-| 65 | in progress | partakefoods.com | https://partakefoods.com |
+| 65 | done | partakefoods.com | https://partakefoods.com |
 | 66 | done | beardbrand.com | https://beardbrand.com |
 | 67 | done | westernrise.com | https://westernrise.com |
 | 68 | done | onceuponafarm.com | https://onceuponafarm.com |
