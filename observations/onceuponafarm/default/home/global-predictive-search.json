@@ -1,14 +1,21 @@
 {
   "preset": "default",
   "kaynak": "onceuponafarm",
-  "evidence": [],
+  "evidence": [
+    "evidence/onceuponafarm/default/home/global-predictive-search.initial.search-bos.1440.png",
+    "evidence/onceuponafarm/default/home/global-predictive-search.initial.search-bos.375.png",
+    "evidence/onceuponafarm/default/home/global-predictive-search.initial.search-bos.768.png",
+    "evidence/onceuponafarm/default/home/global-predictive-search.input.pouch.1440.png",
+    "evidence/onceuponafarm/default/home/global-predictive-search.input.pouch.375.png",
+    "evidence/onceuponafarm/default/home/global-predictive-search.input.pouch.768.png"
+  ],
   "schemaId": "global-predictive-search",
   "sayfa": "home",
   "url": "https://onceuponafarmorganics.com/",
   "selector": "dialog.search-modal__content",
   "evidenceSlug": "global-predictive-search",
   "captureMode": "viewport",
-  "prepareClick": "header button.header-actions__action[aria-label='Search']",
+  "prepareClick": "search-button.search-action--hidden-on-drawer button[aria-label='Search']",
   "notlar": "dialog-component#search-modal + predictive-search-component. Input #cmdk-input. Kapalı 0 yükseklik.",
   "delta": "Horizon predictive-search-form. katalogSorgu: pouch (90 sonuç sayfa; overlay ürün beklenir).",
   "interactionStates": [
@@ -25,11 +32,37 @@
     {
       "state": "initial",
       "action": "click",
-      "selector": "header button.header-actions__action[aria-label='Search']",
+      "selector": "header summary.header__icon--menu[aria-label='Menu']",
+      "viewports": [
+        "375"
+      ],
+      "capture": false,
+      "not": "375 search drawer içinde"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "search-button.search-action--hidden-on-menu button[aria-label='Search']",
+      "viewports": [
+        "375"
+      ],
       "capture": true,
       "captureMode": "viewport",
       "etiket": "search-bos",
-      "not": "Boş overlay"
+      "not": "375 drawer Search"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "search-button.search-action--hidden-on-drawer button[aria-label='Search']",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Header Search"
     },
     {
       "state": "input",
@@ -56,10 +89,21 @@
     }
   ],
   "stateFindings": {
-    "initial": "Search overlay açık, boş input.",
-    "input": "pouch yazınca ürün/öneri — kareye bak."
+    "initial": "Overlay açık, placeholder Search. Products: Meat & Legume / Farmer's Finest / Baby Meals Best Sellers / Summertime (öneri, sorgu yok).",
+    "input": "pouch + Clear; chips pouch / choomee pouch / pasta pouch variety; Products: Pouch Cooler $23.98, Overnight Oats, VIEW ALL."
   },
   "missingStates": [],
-  "interactionNote": "İki Search butonu var; görünür header-actions__action. PII yok.",
-  "observationId": "onceuponafarm.default.home.global-predictive-search"
+  "interactionNote": "375 Search header’da yok (search-action--hidden-on-menu, drawer içi). 768/1440 header Search. PII yok.",
+  "observationId": "onceuponafarm.default.home.global-predictive-search",
+  "capture": {
+    "url": "https://onceuponafarmorganics.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:25:19.113Z"
+  }
 }

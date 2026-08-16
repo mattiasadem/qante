@@ -121,6 +121,22 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: onceuponafarm-menu-768  
+Gerekçe: 768 `summary[aria-label=Menu]` 0×0. Header desktop nav: Shop All / Starter Boxes / More + Search/Account/Cart. Hamburger yalnız 375. Mega 1440.  
+Örnekler: https://onceuponafarmorganics.com/  
+Öneri: leftover — 768 drawer yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: onceuponafarm-cart-qty  
+Gerekçe: Dolu drawer Baby Starter Box bundle (24 Pack / 4 Weeks). `button[name=plus]` ve quantity-selector yok. Tek deneme.  
+Örnekler: https://onceuponafarmorganics.com/  
+Öneri: leftover — qty changed yok  
+Karar: onay bekliyor
+
+---
+
 ## Diğer leftover (aday değil)
 
 - Klaviyo popup — dismiss; form gönderilmedi (PII)

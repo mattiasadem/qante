@@ -1,7 +1,14 @@
 {
   "preset": "default",
   "kaynak": "onceuponafarm",
-  "evidence": [],
+  "evidence": [
+    "evidence/onceuponafarm/default/home/global-cart-drawer.filled.starter-qty1.1440.png",
+    "evidence/onceuponafarm/default/home/global-cart-drawer.filled.starter-qty1.375.png",
+    "evidence/onceuponafarm/default/home/global-cart-drawer.filled.starter-qty1.768.png",
+    "evidence/onceuponafarm/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/onceuponafarm/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/onceuponafarm/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
   "schemaId": "global-cart-drawer",
   "sayfa": "home",
   "url": "https://onceuponafarmorganics.com/",
@@ -70,29 +77,35 @@
     },
     {
       "state": "filled",
-      "action": "forceOpen",
-      "selector": ".cart-drawer__dialog",
+      "action": "waitFor",
+      "value": 800,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "starter-qty1",
-      "not": "ATC sonrası drawer — cart ikon toggle kapamasın"
-    },
-    {
-      "state": "changed",
-      "action": "click",
-      "selector": ".cart-drawer button[name='plus'], .cart-drawer [name='plus'], quantity-selector-component button:last-of-type",
-      "capture": true,
-      "captureMode": "viewport",
-      "etiket": "adet-artti",
-      "not": "Adet +"
+      "not": "ATC drawer'ı kendisi açar — forceOpen modal'da patlar"
     }
   ],
   "stateFindings": {
-    "initial": "Your cart is empty; Log in; CONTINUE SHOPPING.",
-    "filled": "Baby Starter Box satırı beklenir (16 Pack). Capture sonrası bak.",
-    "changed": "Adet artınca ara toplam değişir mi — kareye bak."
+    "initial": "Your cart is empty; Have an account? Log in; CONTINUE SHOPPING.",
+    "filled": "Cart 1 · Baby Starter Box $74.88 · 12 çeşit x2 (24 Pack) · 4 Weeks · Discount + · Estimated total $74.88 · CHECK OUT / Shop Pay / G Pay (tıklanmadı). Qty stepper yok."
   },
-  "missingStates": [],
-  "interactionNote": "ATC UI: button.bundle-builder__atc (ADD TO CART $74.88). Native form/id yok — /cart/add.js fallback çalışmaz. Drawer ATC sonrası açılır; cart ikon toggle riski yüzünden forceOpen. Checkout/login yok. Qty yoksa changed leftover.",
-  "observationId": "onceuponafarm.default.home.global-cart-drawer"
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Bundle satırında button[name=plus] / quantity-selector yok. Tek deneme; leftover."
+    }
+  ],
+  "interactionNote": "ATC UI 375/768/1440: button.bundle-builder__atc (addToCart → ui). Native form/id yok. Drawer ATC ile açılır. Checkout/login/kupon tıklanmadı.",
+  "observationId": "onceuponafarm.default.home.global-cart-drawer",
+  "capture": {
+    "url": "https://onceuponafarmorganics.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:29:36.368Z"
+  }
 }

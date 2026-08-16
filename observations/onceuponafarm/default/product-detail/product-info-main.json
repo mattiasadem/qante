@@ -1,7 +1,14 @@
 {
   "preset": "default",
   "kaynak": "onceuponafarm",
-  "evidence": [],
+  "evidence": [
+    "evidence/onceuponafarm/default/product-detail/product-info-main.changed.24-pack.1440.png",
+    "evidence/onceuponafarm/default/product-detail/product-info-main.changed.24-pack.375.png",
+    "evidence/onceuponafarm/default/product-detail/product-info-main.changed.24-pack.768.png",
+    "evidence/onceuponafarm/default/product-detail/product-info-main.initial.16-pack.1440.png",
+    "evidence/onceuponafarm/default/product-detail/product-info-main.initial.16-pack.375.png",
+    "evidence/onceuponafarm/default/product-detail/product-info-main.initial.16-pack.768.png"
+  ],
   "schemaId": "product-info-main",
   "sayfa": "product-detail",
   "url": "https://onceuponafarmorganics.com/products/baby-starter-box",
@@ -18,24 +25,54 @@
       "state": "initial",
       "action": "goto",
       "value": "https://onceuponafarmorganics.com/products/baby-starter-box",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "label.variant-option__button-label:has-text('16 Pack')",
+      "capture": false,
+      "not": "Canlı varsayılan 24 Pack — 16'ya al"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 800,
       "capture": true,
       "etiket": "16-pack",
-      "not": "16 Pack"
+      "not": "16 Pack seçili"
     },
     {
       "state": "changed",
       "action": "click",
       "selector": "label.variant-option__button-label:has-text('24 Pack')",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 800,
       "capture": true,
       "etiket": "24-pack",
       "not": "24 Pack Best Value"
     }
   ],
   "stateFindings": {
-    "initial": "16 Pack; Subscribe $74.88; BABY tab.",
-    "changed": "24 Pack seçili — fiyat/rozet değişir mi kareye bak."
+    "initial": "16 Pack yeşil; Subscribe $65.60 → $58.40; BABY tab.",
+    "changed": "24 Pack yeşil + BEST VALUE; Subscribe $93.60 → $74.88."
   },
   "missingStates": [],
   "interactionNote": "Age tab (TODDLER/KID) tıklanmadı — pack size yeterli. Checkout yok.",
-  "observationId": "onceuponafarm.default.product-detail.product-info-main"
+  "observationId": "onceuponafarm.default.product-detail.product-info-main",
+  "capture": {
+    "url": "https://onceuponafarmorganics.com/products/baby-starter-box",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:31:31.693Z"
+  }
 }
