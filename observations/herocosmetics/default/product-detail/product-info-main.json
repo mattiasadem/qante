@@ -1,0 +1,78 @@
+{
+  "observationId": "herocosmetics.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "herocosmetics",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://www.herocosmetics.us/products/mighty-patch-original",
+  "selector": "#shopify-section-template--20497234362410__header",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/herocosmetics/default/product-detail/product-info-main.changed.count-72.1440.png",
+    "evidence/herocosmetics/default/product-detail/product-info-main.changed.count-72.375.png",
+    "evidence/herocosmetics/default/product-detail/product-info-main.changed.count-72.768.png",
+    "evidence/herocosmetics/default/product-detail/product-info-main.initial.count-36.1440.png",
+    "evidence/herocosmetics/default/product-detail/product-info-main.initial.count-36.375.png",
+    "evidence/herocosmetics/default/product-detail/product-info-main.initial.count-36.768.png"
+  ],
+  "notlar": "Mighty Patch Original. Galeri + how-to steps + buy box. Patch Count 36/72. Recharge One-time $12.99 / Subscribe 20% $10.39. 5198 Reviews. ATC.",
+  "delta": "Recharge widget + sticky nav. Count buton (swatch değil). Quick view yok. Yotpo yorum ayrı leftover.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.herocosmetics.us/products/mighty-patch-original",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 10000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Attentive kapat"
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20497234362410__header",
+      "capture": true,
+      "etiket": "count-36",
+      "not": "36 Patches seçili"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "fieldset.product-header__variant-fields label:has-text(\"72\"), fieldset.product-header__variant-fields button:has-text(\"72\")",
+      "capture": true,
+      "etiket": "count-72",
+      "not": "72 count — fiyat/seçim değişmeli"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Mighty Patch Original patch. 36 selected / 72 unselected. Subtitle 36 Patches (12mm). $12.99 one-time (Subscribe $10.39 20% not clicked). ATC $12.99. 5198 Reviews. 375/768/1440.",
+    "changed": "72 selected (red border). Subtitle 72 Patches (12mm). One-time $21.99 / Subscribe $17.59. ATC $21.99. Gallery 72-count box. 375/768/1440."
+  },
+  "missingStates": [],
+  "interactionNote": "Subscribe radio tıklanmadı (Recharge). Checkout yok.",
+  "capture": {
+    "url": "https://www.herocosmetics.us/products/mighty-patch-original",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:13:23.790Z"
+  }
+}

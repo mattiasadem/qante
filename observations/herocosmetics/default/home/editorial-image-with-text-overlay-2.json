@@ -1,0 +1,71 @@
+{
+  "observationId": "herocosmetics.default.home.editorial-image-with-text-overlay.2",
+  "schemaId": "editorial-image-with-text-overlay",
+  "kaynak": "herocosmetics",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.herocosmetics.us/",
+  "selector": "#shopify-section-template--20497229742122__homepage_hero_mobile_stacked_w4cjzW",
+  "evidenceSlug": "editorial-image-with-text-overlay-2",
+  "evidence": [
+    "evidence/herocosmetics/default/home/editorial-image-with-text-overlay-2.initial.bolum.375.png"
+  ],
+  "notlar": "homepage_hero_mobile_stacked. 1440'ta 0px. 375/768 stacked hero beklenir.",
+  "delta": "Masaüstü kardeş section ayrı observation. Bu blok desktop'ta gizli.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.herocosmetics.us/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 10000,
+      "capture": false,
+      "not": "Attentive gecikmeli gelir"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Attentive 10% email kapat — PII yok"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20497229742122__homepage_hero_mobile_stacked_w4cjzW",
+      "capture": true,
+      "etiket": "bolum",
+      "not": "Attentive kapalı section"
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "capture (768): zero-size / eşleşmedi: #shopify-section-template--20497229742122__homepage_hero_mobile_stacked_w4cjzW"
+    }
+  ],
+  "capture": {
+    "url": "https://www.herocosmetics.us/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:52:57.888Z"
+  }
+}

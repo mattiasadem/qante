@@ -1,0 +1,68 @@
+{
+  "observationId": "herocosmetics.default.home.footer-columns-newsletter",
+  "schemaId": "footer-columns-newsletter",
+  "kaynak": "herocosmetics",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.herocosmetics.us/",
+  "selector": "#shopify-section-footer",
+  "evidenceSlug": "footer-columns-newsletter",
+  "evidence": [
+    "evidence/herocosmetics/default/home/footer-columns-newsletter.initial.bolum.1440.png",
+    "evidence/herocosmetics/default/home/footer-columns-newsletter.initial.bolum.375.png",
+    "evidence/herocosmetics/default/home/footer-columns-newsletter.initial.bolum.768.png"
+  ],
+  "notlar": "Stay in touch… + email + Shop/Hero/Support kolonları + sosyal. 516px.",
+  "delta": "Newsletter input var; gönderilmedi (PII).",
+  "capture": {
+    "url": "https://www.herocosmetics.us/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:54:18.789Z"
+  },
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.herocosmetics.us/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 10000,
+      "capture": false,
+      "not": "Attentive gecikmeli gelir"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Attentive 10% email kapat — PII yok"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-footer",
+      "capture": true,
+      "etiket": "bolum",
+      "not": "Attentive kapalı section"
+    }
+  ],
+  "missingStates": []
+}
