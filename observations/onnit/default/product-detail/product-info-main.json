@@ -1,0 +1,102 @@
+{
+  "observationId": "onnit.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "onnit",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://www.onnit.com/products/alpha-brain-60-ct",
+  "selector": "#shopify-section-template--27710153883938__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/onnit/default/product-detail/product-info-main.changed.90-count.375.png",
+    "evidence/onnit/default/product-detail/product-info-main.changed.90-count.768.png",
+    "evidence/onnit/default/product-detail/product-info-main.initial.subscribe-60.375.png",
+    "evidence/onnit/default/product-detail/product-info-main.initial.subscribe-60.768.png"
+  ],
+  "notlar": "Alpha BRAIN® (60 ct). Galeri + BEST SELLER + 3.8/12380. Dosage 1/2 capsule, size 30/60/90, Subscribe 15% $49.26 vs one-time $57.95, qty dropdown, ADD TO CART & SUBSCRIBE.",
+  "delta": "product-form-v2. Size ayrı PDP handle (60-ct URL). Compare/related ayrı section. BV özet buy box’ta; tam feed leftover.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.onnit.com/products/alpha-brain-60-ct",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 20000
+      "capture": false,
+      "not": "CF/hydrate"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--27710153883938__main",
+      "capture": true,
+      "etiket": "subscribe-60"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".js-pfbv-capsule",
+      "capture": false,
+      "not": "İlk görünür 1 CAPSULE / DAY"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button:has-text('90 Count'), label:has-text('90 Count'), [class*='size']:has-text('90 Count')",
+      "capture": true,
+      "etiket": "90-count"
+    }
+  ],
+  "stateFindings": {
+    "initial": "375/768: 60 CT şerit, galeri, Subscribe. Rebuy boş drawer dismiss bleed.",
+    "changed": "375: 1 CAPSULE / DAY + 90 CT şerit (BEST VALUE). 1440 CF/Account sonrası section yok."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "1440: dismiss Account → CF; section timeout. 375/768 alındı."
+    },
+    {
+      "state": "changed",
+      "sebep": "1440 aynı. 375/768 90 Count alındı."
+    }
+  ],
+  "interactionNote": "1 CAPSULE / DAY sonra 90 Count. Write a review PII. Dismiss Rebuy/Account bleed.",
+  "capture": {
+    "url": "https://www.onnit.com/products/alpha-brain-60-ct",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:50:18.432Z"
+  }
+}

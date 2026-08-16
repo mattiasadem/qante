@@ -1,0 +1,93 @@
+{
+  "observationId": "onnit.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "onnit",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.onnit.com/",
+  "selector": ".iam-predictive-search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/onnit/default/home/global-predictive-search.input.alpha.1440.png",
+    "evidence/onnit/default/home/global-predictive-search.input.alpha.375.png",
+    "evidence/onnit/default/home/global-predictive-search.input.alpha.768.png",
+    "evidence/onnit/default/home/global-predictive-search.open.arama-acik.1440.png",
+    "evidence/onnit/default/home/global-predictive-search.open.arama-acik.375.png",
+    "evidence/onnit/default/home/global-predictive-search.open.arama-acik.768.png"
+  ],
+  "notlar": "button.search-box__toggle → overlay + #predictive-search-input-header placeholder Search our store.",
+  "delta": "iam-predictive-search. Sonuç listesi fill sonrası yoklandı; /search sayfası ayrı.",
+  "captureMode": "viewport",
+  "prepareClick": "button.search-box__toggle",
+  "interactionStates": [
+    "input",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://www.onnit.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 8000,
+      "capture": false,
+      "not": "CF/hydrate"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 400,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.search-box__toggle",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#predictive-search-input-header",
+      "value": "alpha",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "alpha"
+    }
+  ],
+  "stateFindings": {
+    "open": "SEARCH OUR STORE + CLOSE / SEARCH. Overlay, öneri yok.",
+    "input": "alpha: PAGES (Total Human + Alpha BRAIN Bundle) + ARTICLES + ürün kartları (Alpha BRAIN $79.95 BEST SELLER) + SEE ALL RESULTS MATCHING ALPHA."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu=alpha (Alpha BRAIN). Submit / PII yok. Tam sonuç /search?q=alpha ayrı observation.",
+  "capture": {
+    "url": "https://www.onnit.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:36:25.049Z"
+  }
+}
