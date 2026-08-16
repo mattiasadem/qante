@@ -1,0 +1,91 @@
+{
+  "observationId": "beardbrand.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "beardbrand",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://www.beardbrand.com/cart",
+  "selector": "#shopify-section-template--28367258124658__main",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/beardbrand/default/cart/cart-page-main.1440.png",
+    "evidence/beardbrand/default/cart/cart-page-main.375.png",
+    "evidence/beardbrand/default/cart/cart-page-main.768.png",
+    "evidence/beardbrand/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/beardbrand/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/beardbrand/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/beardbrand/default/cart/cart-page-main.filled.norse-oil-qty1.1440.png",
+    "evidence/beardbrand/default/cart/cart-page-main.filled.norse-oil-qty1.375.png",
+    "evidence/beardbrand/default/cart/cart-page-main.filled.norse-oil-qty1.768.png",
+    "evidence/beardbrand/default/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/beardbrand/default/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/beardbrand/default/cart/cart-page-main.initial.cart-bos.768.png"
+  ],
+  "notlar": "Shopping Cart sayfa. Boş/dolu aynı şablon. Qty .qty-minus / input.qty / .qty-plus. Checkout’a girilmedi.",
+  "delta": "Tema (canlı, uydurulmadı): Split v1.0.3.7.4 [edp promo on PDPs]. schema_name Split, schema_version 3.1.0, theme_store_id 842, role main, theme.id 192727712114. Shop beardbrand.myshopify.com. Native cart drawer yok (site-cart-handle.no-overlay → /cart). Recharge #recharge-storefront-experiences__cart-drawer h=0 leftover.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.beardbrand.com/cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş sepet sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.beardbrand.com/products/norse-winter-beard-oil",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product--add-to-cart-button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.beardbrand.com/cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "norse-oil-qty1",
+      "not": "Dolu /cart — Norse Winter Beard Oil"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button.qty-plus",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is currently empty. START SHOPPING. Sepet rozeti 0.",
+    "filled": "Norse Winter Beard Oil $26.56 · 1.7 fl oz. / Norse Winter · Ships every 3 months (SUBSCRIPTION) · qty 1 · Total $26.56. Rozet 1. CHECKOUT’a girilmedi.",
+    "changed": "qty-plus → qty 2 · satır $53.12 · Total $53.12 · rozet 2."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC sonrası drawer açılmadı; /cart sayfa. Checkout/PII yok. Abonelik satırı görülebilir.",
+  "capture": {
+    "url": "https://www.beardbrand.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:11:10.243Z"
+  }
+}
