@@ -1,0 +1,71 @@
+{
+  "observationId": "herocosmetics.default.blog-list.blog-list-main.2",
+  "schemaId": "blog-list-main",
+  "kaynak": "herocosmetics",
+  "preset": "default",
+  "sayfa": "blog-list",
+  "url": "https://www.herocosmetics.us/blogs/news",
+  "selector": "#shopify-section-skin-school-popular",
+  "evidenceSlug": "blog-list-main-2",
+  "evidence": [
+    "evidence/herocosmetics/default/blog-list/blog-list-main-2.1440.png",
+    "evidence/herocosmetics/default/blog-list/blog-list-main-2.375.png",
+    "evidence/herocosmetics/default/blog-list/blog-list-main-2.768.png",
+    "evidence/herocosmetics/default/blog-list/blog-list-main-2.initial.bolum.1440.png",
+    "evidence/herocosmetics/default/blog-list/blog-list-main-2.initial.bolum.768.png"
+  ],
+  "notlar": "Popular Reads / Skincare kartları. 359px.",
+  "delta": "İkinci blog list bloğu.",
+  "capture": {
+    "url": "https://www.herocosmetics.us/blogs/news",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "margin-box+minPad8",
+    "updatedAt": "2026-08-16T01:02:55.921Z"
+  },
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.herocosmetics.us/blogs/news",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 10000,
+      "capture": false,
+      "not": "Attentive gecikmeli gelir"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Attentive 10% email kapat — PII yok"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-skin-school-popular",
+      "capture": true,
+      "etiket": "bolum",
+      "not": "Attentive kapalı section"
+    }
+  ],
+  "missingStates": [],
+  "interactionNote": "375 resmi capture-observation.mjs (dismiss 375'te PDP/yazıya kaçıyor; script geri alıyor). 768/1440 interaction + observation."
+}

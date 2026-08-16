@@ -1,0 +1,68 @@
+{
+  "observationId": "herocosmetics.default.rewards.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "herocosmetics",
+  "preset": "default",
+  "sayfa": "rewards",
+  "url": "https://www.herocosmetics.us/pages/rewards",
+  "selector": "#shopify-section-template--20497231839274__9d0ee095-1d7c-44e5-9d1b-199977d2cff7",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/herocosmetics/default/rewards/faq-collapsible-tabs.initial.bolum.1440.png",
+    "evidence/herocosmetics/default/rewards/faq-collapsible-tabs.initial.bolum.375.png",
+    "evidence/herocosmetics/default/rewards/faq-collapsible-tabs.initial.bolum.768.png"
+  ],
+  "notlar": "Rewards FAQ (sign up, who can join, earn/redeem). 1636px.",
+  "delta": "Uzun accordion.",
+  "capture": {
+    "url": "https://www.herocosmetics.us/pages/rewards",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:16:46.256Z"
+  },
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.herocosmetics.us/pages/rewards",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 10000,
+      "capture": false,
+      "not": "Attentive gecikmeli gelir"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Attentive 10% email kapat — PII yok"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20497231839274__9d0ee095-1d7c-44e5-9d1b-199977d2cff7",
+      "capture": true,
+      "etiket": "bolum",
+      "not": "Attentive kapalı section"
+    }
+  ],
+  "missingStates": []
+}
