@@ -16,7 +16,7 @@ Karar: onay bekliyor
 ---
 
 ADAY: magicspoon-predictive-search  
-Gerekçe: Header’da search control yok (scan 0). `/search?q=cocoa` 30 sonuç (`#main .searchresults`) var; overlay / `global-predictive-search` yok.  
+Gerekçe: Header’da search control yok (scan 0). `/search?q=cocoa` 30 sonuç (`#searchresults`) var; overlay / `global-predictive-search` yok.  
 Örnekler: https://magicspoon.com/search?q=cocoa  
 Öneri: leftover — header search yok  
 Karar: onay bekliyor
