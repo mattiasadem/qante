@@ -1,0 +1,81 @@
+{
+  "observationId": "magicspoon.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "magicspoon",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://magicspoon.com/products/cocoa-cereal-case",
+  "selector": "#shopify-section-template--17018679984190__cereal_hero_TRpxWr",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/magicspoon/default/product-detail/product-info-main.changed.onetime.1440.png",
+    "evidence/magicspoon/default/product-detail/product-info-main.changed.onetime.375.png",
+    "evidence/magicspoon/default/product-detail/product-info-main.changed.onetime.768.png",
+    "evidence/magicspoon/default/product-detail/product-info-main.initial.subscribe-cocoa.1440.png",
+    "evidence/magicspoon/default/product-detail/product-info-main.initial.subscribe-cocoa.375.png",
+    "evidence/magicspoon/default/product-detail/product-info-main.initial.subscribe-cocoa.768.png"
+  ],
+  "notlar": "COCOA PROTEIN CEREAL - 4 BOX CASE. Gallery swiper, variant tabs Classic Protein / Protein + Fiber / Marshmallows, flavor grid (Fruity Cocoa Peanut Butter…), Subscribe vs One-time radios. See Nutritional Facts.",
+  "delta": "cereal_hero. Flavor cells are <a.variant-grid-product-link> to other PDPs. Subscribe default (selling_plan in URL). Rebuy upsell popup section 0px leftover. Rebuy 768/1440 auto-open — close before capture.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://magicspoon.com/products/cocoa-cereal-case",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17018679984190__cereal_hero_TRpxWr",
+      "capture": true,
+      "etiket": "subscribe-cocoa"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='purchaseTypeOneTime-1'], #purchaseTypeOneTime-1",
+      "capture": true,
+      "etiket": "onetime",
+      "not": "Subscribe → one-time radio"
+    }
+  ],
+  "stateFindings": {
+    "initial": "375 Subscribe & Save 20% ($31.20) seçili, Cocoa swatch. 1440/768 Rebuy overlay.",
+    "changed": "375 ONE-TIME PURCHASE $39.00 seçili. Flavor grid + ADD TO CART duruyor."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "Rebuy flyout 768/1440 bazı şablonlarda açık geliyor; .rebuy-cart__flyout-close off-viewport (closed x≈2380) — scripted close kırıyor. 375 kareler temiz. Bleed leftover."
+    }
+  ],
+  "interactionNote": "Flavor <a> navigates to another product — not clicked. Protein + Fiber tab is type=submit — not clicked (URL risk). Rebuy flyout 768/1440 bazı şablonlarda açık geliyor; .rebuy-cart__flyout-close off-viewport (closed x≈2380) — scripted close kırıyor. 375 kareler temiz. Bleed leftover.",
+  "capture": {
+    "url": "https://magicspoon.com/products/cocoa-cereal-case",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:55:20.461Z"
+  }
+}

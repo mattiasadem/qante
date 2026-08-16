@@ -1,0 +1,54 @@
+{
+  "observationId": "onnit.default.product-detail.product-showcase-related",
+  "schemaId": "product-showcase-related",
+  "kaynak": "onnit",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://www.onnit.com/products/alpha-brain-60-ct",
+  "selector": "#shopify-section-template--27710153883938__related_products_fmMJpB",
+  "evidenceSlug": "product-showcase-related",
+  "evidence": [
+    "evidence/onnit/default/product-detail/product-showcase-related.375.png",
+    "evidence/onnit/default/product-detail/product-showcase-related.768.png"
+  ],
+  "notlar": "CUSTOMERS ALSO BOUGHT. Prev/Next. Neuro Gummies vb. + ADD TO CART.",
+  "delta": "related_products. Quick-add kartta.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.onnit.com/products/alpha-brain-60-ct",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 12000,
+      "capture": false,
+      "not": "CF challenge / section hydrate after dismiss Account bounce"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--27710153883938__related_products_fmMJpB",
+      "capture": true,
+      "etiket": "pdp-blok"
+    }
+  ],
+  "interactionNote": " 1440 dismiss Account'a t\u0131klar; uzun wait CF sonras\u0131 section'\u0131 bekler. 1440 dismiss\u2192Account\u2192CF; 375/768 resmi capture-observation."
+}

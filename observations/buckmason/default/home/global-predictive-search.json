@@ -1,0 +1,87 @@
+{
+  "observationId": "buckmason.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "buckmason",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.buckmason.com/",
+  "selector": "[class*='search-module--searchmodal']",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/buckmason/default/home/global-predictive-search.1440.png",
+    "evidence/buckmason/default/home/global-predictive-search.375.png",
+    "evidence/buckmason/default/home/global-predictive-search.768.png",
+    "evidence/buckmason/default/home/global-predictive-search.initial.arama-acik.1440.png",
+    "evidence/buckmason/default/home/global-predictive-search.initial.arama-acik.375.png",
+    "evidence/buckmason/default/home/global-predictive-search.initial.arama-acik.768.png",
+    "evidence/buckmason/default/home/global-predictive-search.input.chambray.1440.png",
+    "evidence/buckmason/default/home/global-predictive-search.input.chambray.375.png",
+    "evidence/buckmason/default/home/global-predictive-search.input.chambray.768.png"
+  ],
+  "notlar": "Tam ekran modal. Input placeholder Search our store; ALL / MEN'S / WOMEN'S. Kapalı sonuç şeridi 0px. /search ayrı popular-searches sayfası.",
+  "delta": "Gatsby 5.15.0 (meta generator). Shopify.theme / schema_name / schema_version / theme_store_id yok (uydurulmadı). Shopify.shop yok; yalnız customerPrivacy + trackingConsent (@shopify/consent-tracking-api v0.1). Shop files CDN 1/0123/5065/2473. buckmason.myshopify.com 404. #shopify-section-* yok. search-module--searchmodal. ?q= URL sonuç doldurmaz. Enter home’a kaçabilir.",
+  "captureMode": "viewport",
+  "prepareClick": "button[aria-label='Open Search dialog']",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.buckmason.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button[aria-label='Open Search dialog']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik",
+      "not": "Boş modal"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input[name='q'][type='search']",
+      "value": "chambray",
+      "capture": false,
+      "not": "katalogSorgu Japanese Chambray"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "selector": "[class*='search-module--searchmodal']",
+      "value": 4000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "chambray",
+      "not": "Öneri/ürün beklenir"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Search our store + ALL/MEN'S/WOMEN'S; sonuç kutusu boş (no_results).",
+    "input": "chambray yazıldı; öneri/ürün satırı yok — yalnız input metni + ALL/MEN'S/WOMEN'S."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "4s sonra predictive ürün/koleksiyon listesi gelmedi. Enter home’a kaçıyor. /search?q= de popular-only."
+    }
+  ],
+  "interactionNote": "Modal açılıyor ve yazı görünüyor; canlı öneri yoklandı, piksel değişmedi (sonuç şeridi 0px). leftover.",
+  "capture": {
+    "url": "https://www.buckmason.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:30:05.951Z",
+    "prepareClick": "button[aria-label='Open Search dialog']"
+  }
+}
