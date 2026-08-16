@@ -7,7 +7,14 @@
   "url": "https://partakefoods.com/pages/faq",
   "selector": "#shopify-section-template--19018229645410__collapsible_content_YHWxVa",
   "evidenceSlug": "faq-collapsible-tabs",
-  "evidence": [],
+  "evidence": [
+    "evidence/partakefoods/default/faq-support/faq-collapsible-tabs.changed.suppliers-acik.1440.png",
+    "evidence/partakefoods/default/faq-support/faq-collapsible-tabs.changed.suppliers-acik.375.png",
+    "evidence/partakefoods/default/faq-support/faq-collapsible-tabs.changed.suppliers-acik.768.png",
+    "evidence/partakefoods/default/faq-support/faq-collapsible-tabs.initial.allergy-kapali.1440.png",
+    "evidence/partakefoods/default/faq-support/faq-collapsible-tabs.initial.allergy-kapali.375.png",
+    "evidence/partakefoods/default/faq-support/faq-collapsible-tabs.initial.allergy-kapali.768.png"
+  ],
   "notlar": "Allergy-Friendly, Inside & Out. Sorular: facility Top 9, suppliers, coconut, corn, oats, buckwheat. İlk cevap DOM'da açık göründü.",
   "delta": "Custom collapsible_content. Anchor chip leftover (in-page TOC).",
   "interactionStates": [
@@ -35,8 +42,8 @@
     },
     {
       "state": "initial",
-      "action": "scrollTo",
-      "selector": "#shopify-section-template--19018229645410__collapsible_content_YHWxVa",
+      "action": "waitFor",
+      "value": 400,
       "capture": true,
       "etiket": "allergy-kapali"
     },
@@ -49,9 +56,20 @@
     }
   ],
   "stateFindings": {
-    "initial": "Allergy-Friendly başlık; ilk soru facility görünür.",
-    "changed": "Suppliers sorusu açık — karede doğrulanacak."
+    "initial": "Allergy-Friendly, Inside & Out. Q1 facility varsayılan açık (−); Q2–Q6 +.",
+    "changed": "Q1 açık kalır + Q2 suppliers “Yup, 100% nut-free.” (allowMultipleOpen)."
   },
   "missingStates": [],
-  "interactionNote": "İki diğer FAQ bloğu static 3vp; accordion interact yalnız bu instance."
+  "interactionNote": "İki diğer FAQ bloğu static 3vp; accordion interact yalnız bu instance.",
+  "capture": {
+    "url": "https://partakefoods.com/pages/faq",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:22:08.192Z"
+  }
 }

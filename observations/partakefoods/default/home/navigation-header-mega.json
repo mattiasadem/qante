@@ -5,11 +5,16 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://partakefoods.com/",
-  "selector": "header.header",
+  "selector": "sticky-header",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
+  "evidence": [
+    "evidence/partakefoods/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/partakefoods/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/partakefoods/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/partakefoods/default/home/navigation-header-mega.open.mega-panel.1440.png"
+  ],
   "notlar": "Sticky Dawn header: logo; 1440 Menu (#HeaderMenu-menu) + FIND IN STORE; arama details-modal; hesap; Cart. 375 hamburger (#Details-menu-drawer-container > summary). Logo görsel, metin yok.",
-  "delta": "Custom Partake (hasmerit.co) 1.0.0. Shopify-section wrapper home'da 0px (sticky-header position:fixed) — selector header.header. Mega #CustomMegaMenu-Content-1. Locale yok. Cart drawer yok (Dawn cart-notification + /cart).",
+  "delta": "Custom Partake (hasmerit.co) 1.0.0. Shopify-section wrapper home'da 0px (sticky-header position:fixed) — selector sticky-header. Mega #CustomMegaMenu-Content-1. Locale yok. Cart drawer yok (Dawn cart-notification + /cart).",
   "captureMode": "section",
   "interactionStates": [
     "initial",
@@ -36,15 +41,24 @@
     },
     {
       "state": "initial",
-      "action": "click",
-      "selector": "header.header",
+      "action": "waitFor",
+      "value": 400,
       "capture": true,
       "etiket": "bar"
     },
     {
       "state": "open",
-      "action": "click",
-      "selector": "#HeaderMenu-menu",
+      "action": "forceOpen",
+      "selector": "details:has(#HeaderMenu-menu)",
+      "capture": false,
+      "viewports": [
+        "1440"
+      ]
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 700,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "mega-panel",
@@ -54,14 +68,25 @@
     }
   ],
   "stateFindings": {
-    "initial": "Bar: logo; 1440 Menu + FIND IN STORE; arama ikonu; hesap; Cart. 375 hamburger + arama + cart.",
-    "open": "1440 Menu → custom mega (#CustomMegaMenu-Content-1): Products / About Us / FAQ / Blog + Cookies / Mini Cookies / Vanilla Wafers / Grahams / Teeny Tiny."
+    "initial": "Bar: PARTAKE logo; Menu (hamburger/X karesi); FIND IN STORE; arama. 375/768 aynı ikon seti (mega yok).",
+    "open": "1440 Menu → #CustomMegaMenu-Content-1: PRODUCTS / ABOUT US / FAQ / BLOG + COOKIES / MINI COOKIES / VANILLA WAFERS / GRAHAMS / TEENY TINY kartları. Stay in touch sekmesi altta."
   },
   "missingStates": [
     {
       "state": "open",
-      "sebep": "375/768 mega yok — hamburger #menu-drawer (global-menu-drawer)"
+      "sebep": "375/768 mega yok — hamburger global-menu-drawer."
     }
   ],
-  "interactionNote": "Terms bar DOM'da (ACKNOWLEDGE & VIEW / DISMISS) height 0. About Us → /pages/about 404."
+  "interactionNote": "dismissAllOverlays sticky-header'ı overlay sanıp display:none ediyor — forceOpen details:has(#HeaderMenu-menu). About Us → /pages/about 404. Account/cart PII/checkout yok.",
+  "capture": {
+    "url": "https://partakefoods.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:12:01.544Z"
+  }
 }

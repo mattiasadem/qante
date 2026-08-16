@@ -72,10 +72,26 @@ Karar: onay bekliyor
 
 ---
 
-ADAY: partakefoods-shopify-policies-empty  
-Gerekçe: `/policies/privacy-policy`, `/policies/terms-of-service`, `/policies/refund-policy`, `/policies/shipping-policy` 200 ama main gövde yok (yalnız header + footer marquee). Asıl metin `/pages/privacy-policy` ve `/pages/terms-of-service`.  
-Örnekler: https://partakefoods.com/policies/privacy-policy  
-Öneri: leftover — aynı page template observation privacy’de  
+ADAY: partakefoods-shopify-policies-empty
+Gerekçe: `/policies/privacy-policy`, `/policies/terms-of-service`, `/policies/refund-policy`, `/policies/shipping-policy` 200 ama main gövde yok (yalnız header + footer marquee). Asıl metin `/pages/privacy-policy` ve `/pages/terms-of-service`.
+Örnekler: https://partakefoods.com/policies/privacy-policy
+Öneri: leftover — aynı page template observation privacy’de
+Karar: onay bekliyor
+
+---
+
+ADAY: partakefoods-stay-in-touch
+Gerekçe: Sabit sol “Stay in touch” sekmesi (e-posta/PII). Birçok resmi 3vp karesinde görünür; form doldurulmadı, şema yazılmadı.
+Örnekler: https://partakefoods.com/
+Öneri: leftover — lead-capture / newsletter PII
+Karar: onay bekliyor
+
+---
+
+ADAY: partakefoods-cart-permalink-checkout
+Gerekçe: `/cart/42123943542882:1` → 302 `shop.app/checkout/…` (Shop Pay). Envanter checkout’a girmedi. Dolu sepet GET `/cart/add?id=…` ile alındı.
+Örnekler: https://partakefoods.com/cart
+Öneri: leftover — checkout / PII sınırı
 Karar: onay bekliyor
 
 ---

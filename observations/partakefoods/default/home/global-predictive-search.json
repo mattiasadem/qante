@@ -5,11 +5,18 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://partakefoods.com/",
-  "selector": "details-modal.header__search",
+  "selector": ".search-modal",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
-  "notlar": "Header arama ikonu → details-modal.header__search; input #Search-In-Modal (name=q). Dawn <predictive-search>.",
-  "delta": "Kapalı kare 0 genişlik. Overlay; tam sonuç /search?q=cookie ayrı (search-results).",
+  "evidence": [
+    "evidence/partakefoods/default/home/global-predictive-search.initial.modal-bos.1440.png",
+    "evidence/partakefoods/default/home/global-predictive-search.initial.modal-bos.375.png",
+    "evidence/partakefoods/default/home/global-predictive-search.initial.modal-bos.768.png",
+    "evidence/partakefoods/default/home/global-predictive-search.input.graham.1440.png",
+    "evidence/partakefoods/default/home/global-predictive-search.input.graham.375.png",
+    "evidence/partakefoods/default/home/global-predictive-search.input.graham.768.png"
+  ],
+  "notlar": "Header arama ikonu (summary.header__icon--search, 44×44) → .search-modal; input #Search-In-Modal.",
+  "delta": "Kapalı kare küçük/0. Overlay; tam sonuç /search?q=cookie ayrı.",
   "captureMode": "viewport",
   "interactionStates": [
     "initial",
@@ -36,8 +43,21 @@
     },
     {
       "state": "initial",
+      "action": "forceOpen",
+      "selector": "sticky-header",
+      "capture": false,
+      "not": "dismiss sticky-header display:none — geri aç"
+    },
+    {
+      "state": "initial",
       "action": "click",
-      "selector": "details-modal.header__search summary.header__icon--search",
+      "selector": "summary.header__icon--search",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 800,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "modal-bos"
@@ -53,21 +73,26 @@
       "state": "input",
       "action": "waitFor",
       "value": 1800,
-      "capture": false
-    },
-    {
-      "state": "input",
-      "action": "click",
-      "selector": "#Search-In-Modal",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "graham"
     }
   ],
   "stateFindings": {
-    "initial": "Arama modal açık; boş input.",
-    "input": "graham yazıldı — öneri listesi karede doğrulanacak."
+    "initial": "Arama modal açık; boş SEARCH alanı; öneri listesi yok. Sağda mavi overlay.",
+    "input": "graham → SUGGESTIONS: GRAHAMS (çift satır) / CLASSIC GRAHAMS + “Search for 'graham'”. Form submit yok."
   },
   "missingStates": [],
-  "interactionNote": "katalogSorgu graham (Classic Grahams). Form submit yok. PII yok."
+  "interactionNote": "katalogSorgu graham. Opener 44×44. Form submit yok.",
+  "capture": {
+    "url": "https://partakefoods.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:20:21.984Z"
+  }
 }

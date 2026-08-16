@@ -7,9 +7,12 @@
   "url": "https://partakefoods.com/",
   "selector": "#menu-drawer",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
-  "notlar": "375/768 Dawn hamburger (#Details-menu-drawer-container > summary) → #menu-drawer. Products / About Us / FAQ / Blog + kategori listesi + Log in.",
-  "delta": "Kapalı 0px. 1440 N/A — masaüstü #HeaderMenu-menu mega. About Us 404.",
+  "evidence": [
+    "evidence/partakefoods/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/partakefoods/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "375/768 Dawn hamburger → #menu-drawer. PRODUCTS / ABOUT US / FAQ / BLOG + kategori kartları + LOG IN.",
+  "delta": "Kapalı 0px. 1440 N/A — mega. About Us 404.",
   "captureMode": "viewport",
   "interactionStates": [
     "open"
@@ -35,8 +38,25 @@
     },
     {
       "state": "open",
+      "action": "forceOpen",
+      "selector": "sticky-header",
+      "capture": false,
+      "not": "dismissAllOverlays sticky-header'ı display:none yapıyor"
+    },
+    {
+      "state": "open",
       "action": "click",
       "selector": "#Details-menu-drawer-container > summary.header__icon--menu",
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ]
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 800,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "hamburger",
@@ -47,17 +67,24 @@
     }
   ],
   "stateFindings": {
-    "open": "375/768 drawer: Products / About Us / FAQ / Blog; Cookies / Mini Cookies / Vanilla Wafers / Grahams / Teeny Tiny; Log in."
+    "open": "375/768 #menu-drawer: PRODUCTS / ABOUT US / FAQ / BLOG; COOKIES / MINI COOKIES / VANILLA WAFERS / GRAHAMS / TEENY-TINY COOKIES kartları. Stay in touch altta bindiriyor."
   },
   "missingStates": [
     {
       "state": "open",
-      "sebep": "1440 hamburger 0px — mega navigation-header-mega.open"
-    },
-    {
-      "state": "initial",
-      "sebep": "Kapalı #menu-drawer 0px / visibility hidden"
+      "sebep": "1440 N/A — desktop mega (#CustomMegaMenu-Content-1)."
     }
   ],
-  "interactionNote": "Desktop Menu ve mobil hamburger ayrı opener. PII Log in tıklanmadı."
+  "interactionNote": "dismiss sticky-header'ı overlay sanıp display:none ediyor (fixed, header sarmalayıcı). forceOpen sticky-header geri açar. LOG IN / account PII tıklanmadı.",
+  "capture": {
+    "url": "https://partakefoods.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:19:12.260Z"
+  }
 }
