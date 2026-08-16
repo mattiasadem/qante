@@ -1,0 +1,111 @@
+{
+  "preset": "default",
+  "kaynak": "onceuponafarm",
+  "evidence": [
+    "evidence/onceuponafarm/default/home/global-cart-drawer.filled.starter-qty1.1440.png",
+    "evidence/onceuponafarm/default/home/global-cart-drawer.filled.starter-qty1.375.png",
+    "evidence/onceuponafarm/default/home/global-cart-drawer.filled.starter-qty1.768.png",
+    "evidence/onceuponafarm/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/onceuponafarm/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/onceuponafarm/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "schemaId": "global-cart-drawer",
+  "sayfa": "home",
+  "url": "https://onceuponafarmorganics.com/",
+  "selector": ".cart-drawer__dialog",
+  "evidenceSlug": "global-cart-drawer",
+  "captureMode": "viewport",
+  "prepareClick": "header button[aria-label='Cart']",
+  "notlar": "Horizon cart-drawer-component. Boş: Your cart is empty; Have an account? Log in; CONTINUE SHOPPING → /collections/all.",
+  "delta": "/cart ayrı sayfa da var (cart-page-main). Checkout/login tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://onceuponafarmorganics.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header button[aria-label='Cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://onceuponafarmorganics.com/products/baby-starter-box",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false,
+      "not": "bundle-builder hydrate"
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "button.bundle-builder__atc",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.bundle-builder__atc",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "starter-qty1",
+      "not": "ATC drawer'ı kendisi açar — forceOpen modal'da patlar"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty; Have an account? Log in; CONTINUE SHOPPING.",
+    "filled": "Cart 1 · Baby Starter Box $74.88 · 12 çeşit x2 (24 Pack) · 4 Weeks · Discount + · Estimated total $74.88 · CHECK OUT / Shop Pay / G Pay (tıklanmadı). Qty stepper yok."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Bundle satırında button[name=plus] / quantity-selector yok. Tek deneme; leftover."
+    }
+  ],
+  "interactionNote": "ATC UI 375/768/1440: button.bundle-builder__atc (addToCart → ui). Native form/id yok. Drawer ATC ile açılır. Checkout/login/kupon tıklanmadı.",
+  "observationId": "onceuponafarm.default.home.global-cart-drawer",
+  "capture": {
+    "url": "https://onceuponafarmorganics.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:29:36.368Z"
+  }
+}
