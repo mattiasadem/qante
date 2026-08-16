@@ -1,0 +1,114 @@
+{
+  "observationId": "herocosmetics.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "herocosmetics",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.herocosmetics.us/",
+  "selector": ".menu-search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/herocosmetics/default/home/global-predictive-search.initial.search-bos.1440.png",
+    "evidence/herocosmetics/default/home/global-predictive-search.initial.search-bos.375.png",
+    "evidence/herocosmetics/default/home/global-predictive-search.initial.search-bos.768.png",
+    "evidence/herocosmetics/default/home/global-predictive-search.input.patch.1440.png",
+    "evidence/herocosmetics/default/home/global-predictive-search.input.patch.375.png",
+    "evidence/herocosmetics/default/home/global-predictive-search.input.patch.768.png"
+  ],
+  "notlar": "Header search ikon #header-menu-search-d / -m. Placeholder: Search for products, collections, or blog articles.",
+  "delta": "İki input (d/m). Tam sayfa /search ayrı observation. Selector .menu-search (overlay); #predictive-search-results kapalı 0px.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.herocosmetics.us/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 10000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#header-menu-search-d",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Boş overlay 1440"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#header-menu-search-m",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Boş overlay 375 (m-two hamburger içi, 768'de d ikonu)"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#menu-search-d-input",
+      "value": "patch",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "patch",
+      "not": "katalog: Mighty Patch"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#menu-search-m-input",
+      "value": "patch",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "patch",
+      "not": "Mobil fill patch"
+    }
+  ],
+  "stateFindings": {
+    "initial": "375/768/1440: overlay açık, placeholder Search for products, collections, or blog articles. Popular Searches: Pimple Care + Aftercare, Dark Spots, Best Sellers. Popular Products: Mighty Patch Original / Nose / Pore Release. Cancel.",
+    "input": "query patch. Products: Mighty Patch Original (nighttime), Invisible+ (daytime), Nose. Blog: Mighty Patch Original is the #1 Acne Patch; 3 Genius Mighty Patch Hacks. See All Results. 375/768/1440."
+  },
+  "missingStates": [],
+  "interactionNote": "768 desktop ikon #header-menu-search-d (m-two hamburger içinde x=-464). katalogSorgu patch. Tam sayfa /search ayrı.",
+  "capture": {
+    "url": "https://www.herocosmetics.us/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:57:17.861Z"
+  }
+}

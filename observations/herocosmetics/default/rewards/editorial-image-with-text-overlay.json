@@ -1,0 +1,68 @@
+{
+  "observationId": "herocosmetics.default.rewards.editorial-image-with-text-overlay",
+  "schemaId": "editorial-image-with-text-overlay",
+  "kaynak": "herocosmetics",
+  "preset": "default",
+  "sayfa": "rewards",
+  "url": "https://www.herocosmetics.us/pages/rewards",
+  "selector": "#shopify-section-template--20497231839274__full_width_header_EqBrwi",
+  "evidenceSlug": "editorial-image-with-text-overlay",
+  "evidence": [
+    "evidence/herocosmetics/default/rewards/editorial-image-with-text-overlay.initial.bolum.1440.png",
+    "evidence/herocosmetics/default/rewards/editorial-image-with-text-overlay.initial.bolum.375.png",
+    "evidence/herocosmetics/default/rewards/editorial-image-with-text-overlay.initial.bolum.768.png"
+  ],
+  "notlar": "Welcome to Hero Rewards Program / Join Now. 704px. Join/Sign in PII tıklanmadı.",
+  "delta": "Loyalty hero.",
+  "capture": {
+    "url": "https://www.herocosmetics.us/pages/rewards",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:16:06.674Z"
+  },
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.herocosmetics.us/pages/rewards",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 10000,
+      "capture": false,
+      "not": "Attentive gecikmeli gelir"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Attentive 10% email kapat — PII yok"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20497231839274__full_width_header_EqBrwi",
+      "capture": true,
+      "etiket": "bolum",
+      "not": "Attentive kapalı section"
+    }
+  ],
+  "missingStates": []
+}

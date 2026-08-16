@@ -1,0 +1,71 @@
+{
+  "observationId": "herocosmetics.default.collection.product-showcase-grid-plp",
+  "schemaId": "product-showcase-grid-plp",
+  "kaynak": "herocosmetics",
+  "preset": "default",
+  "sayfa": "collection",
+  "url": "https://www.herocosmetics.us/collections/best-sellers",
+  "selector": "#shopify-section-template--20497229185066__plp_collection_category_9yaxay",
+  "evidenceSlug": "product-showcase-grid-plp",
+  "evidence": [
+    "evidence/herocosmetics/default/collection/product-showcase-grid-plp.1440.png",
+    "evidence/herocosmetics/default/collection/product-showcase-grid-plp.375.png",
+    "evidence/herocosmetics/default/collection/product-showcase-grid-plp.768.png",
+    "evidence/herocosmetics/default/collection/product-showcase-grid-plp.initial.bolum.1440.png",
+    "evidence/herocosmetics/default/collection/product-showcase-grid-plp.initial.bolum.768.png"
+  ],
+  "notlar": "Best Sellers başlık + ürün kartları (Original, Rescue Balm…). 1544px. Filtre/sort yok.",
+  "delta": "filtreGoster/sortGoster bu karede yok. ATC kartta.",
+  "capture": {
+    "url": "https://www.herocosmetics.us/collections/best-sellers",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "margin-box+minPad8",
+    "updatedAt": "2026-08-16T01:03:59.434Z"
+  },
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.herocosmetics.us/collections/best-sellers",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 10000,
+      "capture": false,
+      "not": "Attentive gecikmeli gelir"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Attentive 10% email kapat — PII yok"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20497229185066__plp_collection_category_9yaxay",
+      "capture": true,
+      "etiket": "bolum",
+      "not": "Attentive kapalı section"
+    }
+  ],
+  "missingStates": [],
+  "interactionNote": "375 resmi capture-observation.mjs (dismiss 375'te PDP/yazıya kaçıyor; script geri alıyor). 768/1440 interaction + observation."
+}
