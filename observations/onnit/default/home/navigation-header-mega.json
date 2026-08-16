@@ -1,0 +1,92 @@
+{
+  "observationId": "onnit.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "onnit",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.onnit.com/",
+  "selector": "#shopify-section-header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/onnit/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/onnit/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/onnit/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/onnit/default/home/navigation-header-mega.open.shop-all-mega.1440.png"
+  ],
+  "notlar": "1440: Shop All / New / Best Sellers / Alpha BRAIN® / Total Human® / Fitness & Performance / Cognition & Focus / Sleep & Mood + Search / Quiz / Learn / Account / Cart. 375: logo + search + cart + MAIN MENU + quick-nav şerit.",
+  "delta": "Onnit Shopify Theme 1.10.0 custom. Mega #shop-all-menu / #learn-menu (is-mega, görsel kart). Locale yok. Announcement 0px. Account PII — tıklanmadı.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.onnit.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 8000,
+      "capture": false,
+      "not": "CF/hydrate"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-header",
+      "capture": true,
+      "etiket": "bar"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "a.header-menu__link[href='/collections/shop-all']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-all-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Shop All hover → #shop-all-menu görsel kartlar"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440 bar: Shop All / New / Best Sellers / Alpha BRAIN® / Total Human® / kategori linkleri + Search / Quiz / Learn / Account / Cart. 375/768: logo + search + cart + hamburger + alt quick-nav.",
+    "open": "1440 Shop All mega — kartlar: Shop All, NMN + Creatine, Best Sellers, Fitness & Performance, Cognition & Focus, Sleep/Mood."
+  },
+  "missingStates": [],
+  "interactionNote": "Shop All <a href=/collections/shop-all> tık PLP’ye gider; panel hover. Learn mega #learn-menu (Ingredients / Our Story / The Edge) ayrıca yoklandı, kare Shop All.",
+  "capture": {
+    "url": "https://www.onnit.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:34:27.949Z"
+  }
+}
