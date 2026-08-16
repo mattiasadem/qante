@@ -99,6 +99,7 @@ Karar: onay bekliyor
 
 ## Diğer leftover (aday değil)
 
+- Cart qty is a `<select>` (not plus). Official changed state set value=2; line total in the crop stayed $34.99 (recalc lag). Checkout not clicked.
 - Privacy `data_requests_button` (Request Data Deletion) — PII / yasal form
 - Quick-add modal / dynamic-modal / mobile-bottom-bar — kapalı overlay
 - Women / Kids / clearance landing (`/pages/womens-clothing` vb.) — Men mega yok; ayrı walk değil

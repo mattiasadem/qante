@@ -7,7 +7,20 @@
   "url": "https://www.trueclassictees.com/",
   "selector": "#CartDrawer",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/trueclassictees/default/home/global-cart-drawer.1440.png",
+    "evidence/trueclassictees/default/home/global-cart-drawer.375.png",
+    "evidence/trueclassictees/default/home/global-cart-drawer.768.png",
+    "evidence/trueclassictees/default/home/global-cart-drawer.changed.adet-2.1440.png",
+    "evidence/trueclassictees/default/home/global-cart-drawer.changed.adet-2.375.png",
+    "evidence/trueclassictees/default/home/global-cart-drawer.changed.adet-2.768.png",
+    "evidence/trueclassictees/default/home/global-cart-drawer.filled.tee-qty1.1440.png",
+    "evidence/trueclassictees/default/home/global-cart-drawer.filled.tee-qty1.375.png",
+    "evidence/trueclassictees/default/home/global-cart-drawer.filled.tee-qty1.768.png",
+    "evidence/trueclassictees/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/trueclassictees/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/trueclassictees/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
   "notlar": "Sağ drawer. Boş: Your cart is currently empty. + Shop Now. /cart → /?cart-open=1 (ayrı cart sayfası yok).",
   "delta": "Shopify.theme.name true-classic/main · id 122041106504 · schema_name True Classic Custom Theme · schema_version 2.5.1 · theme_store_id null · role main · shop trueclassictees-com.myshopify.com. Custom (Theme Store değil). #CartDrawer .drawer__inner. /cart sayfa template yok.",
   "captureMode": "viewport",
@@ -41,6 +54,13 @@
     },
     {
       "state": "filled",
+      "action": "waitFor",
+      "selector": "fieldset.liquid-pdp__variant-selector-buttons",
+      "value": 20000,
+      "capture": false
+    },
+    {
+      "state": "filled",
       "action": "scrollTo",
       "selector": "fieldset.liquid-pdp__variant-selector-buttons",
       "capture": false
@@ -48,7 +68,7 @@
     {
       "state": "filled",
       "action": "click",
-      "selector": "fieldset.liquid-pdp__variant-selector-buttons button:has-text(\"M\")",
+      "selector": "fieldset.liquid-pdp__variant-selector-buttons label:has(input[value='M'])",
       "capture": false,
       "not": "Beden M — ATC öncesi Select A Size"
     },
@@ -78,19 +98,39 @@
     },
     {
       "state": "changed",
-      "action": "click",
-      "selector": "#CartDrawer button[name='plus'], #CartDrawer [name='plus'], #CartDrawer button[aria-label*='increase' i]",
+      "action": "waitFor",
+      "selector": "#CartDrawer select, #CartDrawer .cart-item__quantity select",
+      "value": 8000,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "select",
+      "selector": "#CartDrawer select, #CartDrawer .cart-item__quantity select",
+      "value": "2",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "adet-2",
-      "not": "Adet +"
+      "not": "Adet dropdown 2"
     }
   ],
   "stateFindings": {
-    "initial": "Your cart is currently empty. Shop Now.",
-    "filled": "White Crew Neck eklendiyse satır + qty 1 (kareye bak).",
-    "changed": "Adet 2 — kareye bak; olmazsa missing."
+    "initial": "Boş drawer: 'Your cart is currently empty.' + Shop Now. Rozet 0.",
+    "filled": "Satır: White Classic Crew Neck, Medium, $34.99, adet dropdown 1. Toplam $34.99. Protected Checkout görünür (tıklanmadı).",
+    "changed": "Adet <select> (plus yok). Dropdown 2 gösteriyor; satır hâlâ White Classic Crew Neck Medium. Toplam karede $34.99 kaldı (yeniden hesap gecikmesi). Checkout tıklanmadı."
   },
   "missingStates": [],
-  "interactionNote": "ATC UI (Select A Size → beden M). /cart.js fallback yoklandıysa not. Checkout/PII yok."
+  "interactionNote": "ATC UI (Select A Size → beden M). /cart.js fallback yoklandıysa not. Checkout/PII yok.",
+  "capture": {
+    "url": "https://www.trueclassictees.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:41:31.290Z",
+    "prepareClick": "#cart-icon-bubble"
+  }
 }

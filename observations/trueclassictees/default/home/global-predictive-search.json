@@ -7,7 +7,17 @@
   "url": "https://www.trueclassictees.com/",
   "selector": "search-bar.search-bar",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/trueclassictees/default/home/global-predictive-search.1440.png",
+    "evidence/trueclassictees/default/home/global-predictive-search.375.png",
+    "evidence/trueclassictees/default/home/global-predictive-search.768.png",
+    "evidence/trueclassictees/default/home/global-predictive-search.initial.search-bos.1440.png",
+    "evidence/trueclassictees/default/home/global-predictive-search.initial.search-bos.375.png",
+    "evidence/trueclassictees/default/home/global-predictive-search.initial.search-bos.768.png",
+    "evidence/trueclassictees/default/home/global-predictive-search.input.crew.1440.png",
+    "evidence/trueclassictees/default/home/global-predictive-search.input.crew.375.png",
+    "evidence/trueclassictees/default/home/global-predictive-search.input.crew.768.png"
+  ],
   "notlar": "1440 #nav__tab--search overlay. Placeholder: Search hundreds of tees, jeans, and more. Fill crew → 10 results + Pima/Crew Necks/V-Necks/Polos chip + ürün kartları. 375 #mobile-open-search / #NestedNavSearch.",
   "delta": "Shopify.theme.name true-classic/main · id 122041106504 · schema_name True Classic Custom Theme · schema_version 2.5.1 · theme_store_id null · role main · shop trueclassictees-com.myshopify.com. Custom (Theme Store değil). search-bar.js + predictive-search.css. Kapalı h=0.",
   "captureMode": "viewport",
@@ -56,16 +66,56 @@
       "viewports": [
         "1440"
       ],
-      "capture": true,
-      "captureMode": "viewport",
-      "etiket": "crew",
+      "capture": false,
       "not": "katalog: Short Sleeve Classic Crew"
     },
     {
       "state": "input",
+      "action": "waitFor",
+      "value": 2500,
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "#searchbar__input",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "crew",
+      "not": "crew yazınca ürün listesi"
+    },
+    {
+      "state": "input",
       "action": "fill",
-      "selector": "#NestedNavSearch, #searchbar__input",
+      "selector": "#searchbar__input",
       "value": "crew",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false,
+      "not": "Mobil predictive"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2500,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "#searchbar__input",
       "viewports": [
         "375",
         "768"
@@ -73,13 +123,25 @@
       "capture": true,
       "captureMode": "viewport",
       "etiket": "crew",
-      "not": "Mobil predictive"
+      "not": "Mobil sonuç"
     }
   ],
   "stateFindings": {
-    "initial": "1440: arama kutusu + Clear/X. 375: drawer içi Search.",
-    "input": "crew: 10 results + chip + Short Sleeve Classic Crew vb."
+    "initial": "Boş overlay: placeholder 'Search hundreds of tees, jeans, and more' + chip'ler Pima / Crew Necks / V-Necks / Polos. Ürün satırı yok.",
+    "input": "375/768: 'crew' yazınca '10 results for crew' + ürün satırları (Short Sleeve Classic Crew, Active Crew Socks, …). 1440: aynı chip şeridi; ürün listesi karede yok (aşağıda kalabilir)."
   },
   "missingStates": [],
-  "interactionNote": "katalogSorgu crew (Classic Crew). Rivo Plinko popup dismiss. PII yok."
+  "interactionNote": "katalogSorgu crew (Classic Crew). Rivo Plinko popup dismiss. PII yok.",
+  "capture": {
+    "url": "https://www.trueclassictees.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:34:25.234Z",
+    "prepareClick": "#nav__tab--search"
+  }
 }
