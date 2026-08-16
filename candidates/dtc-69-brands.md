@@ -76,8 +76,8 @@ Durum: `done` = main'e merge · `in progress` = açık PR · boş = kuyrukta
 | 64 | in progress | moom.health | https://moom.health |
 | 65 | in progress | partakefoods.com | https://partakefoods.com |
 | 66 | in progress | beardbrand.com | https://beardbrand.com |
-| 67 | in progress | westernrise.com | https://westernrise.com |
-| 68 | | onceuponafarm.com | https://onceuponafarm.com |
+| 67 | done | westernrise.com | https://westernrise.com |
+| 68 | in progress | onceuponafarm.com | https://onceuponafarm.com |
 | 69 | | trueclassictees.com | https://trueclassictees.com |
 
 ## Düz URL listesi
