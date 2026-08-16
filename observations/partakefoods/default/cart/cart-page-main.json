@@ -1,0 +1,112 @@
+{
+  "observationId": "partakefoods.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "partakefoods",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://partakefoods.com/cart",
+  "selector": "#shopify-section-template--19018229940322__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/partakefoods/default/cart/cart-page-main.changed.adet-2.1440.png",
+    "evidence/partakefoods/default/cart/cart-page-main.changed.adet-2.375.png",
+    "evidence/partakefoods/default/cart/cart-page-main.changed.adet-2.768.png",
+    "evidence/partakefoods/default/cart/cart-page-main.filled.grahams.1440.png",
+    "evidence/partakefoods/default/cart/cart-page-main.filled.grahams.375.png",
+    "evidence/partakefoods/default/cart/cart-page-main.filled.grahams.768.png",
+    "evidence/partakefoods/default/cart/cart-page-main.initial.bos.1440.png",
+    "evidence/partakefoods/default/cart/cart-page-main.initial.bos.375.png",
+    "evidence/partakefoods/default/cart/cart-page-main.initial.bos.768.png"
+  ],
+  "notlar": "Your cart / Your cart is empty + CONTINUE SHOPPING + Have an account? Cart-footer section 0px. ATC vitrinde yok.",
+  "delta": "Dawn cart-items. Drawer yok. Dolu/qty: /cart/add GET fallback (Classic Grahams 42123943542882) — UI ATC yok.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://partakefoods.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "etiket": "bos"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://partakefoods.com/cart/add?id=42123943542882&quantity=1",
+      "capture": false,
+      "not": "UI ATC yok; Shopify GET add Classic Grahams. 1440 yalnız — settle /cart/add→/cart networkidle 375/768'i tekrar şişirmesin.",
+      "viewports": [
+        "1440"
+      ]
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false,
+      "viewports": [
+        "1440"
+      ]
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "etiket": "grahams",
+      "viewports": [
+        "1440"
+      ]
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], quantity-input button[name='plus']",
+      "capture": true,
+      "etiket": "adet-2",
+      "viewports": [
+        "1440"
+      ]
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty; CONTINUE SHOPPING; Have an account? LOG IN (tıklanmadı).",
+    "filled": "CLASSIC GRAHAMS $16.99 satırı + qty stepper + trash. 375/768/1440 karelerinde adet 4 / $67.96 — settle() /cart/add→/cart yönlendirmesini networkidle ile tekrarlıyor, GET add birden fazla kez işliyor. UI ATC yok.",
+    "changed": "Plus → adet 5 / $84.95 (etiket adet-2; gerçek artış +1). Checkout tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "PDP'de product-form yok. GET /cart/add?id=42123943542882 fallback. 1440 filled/changed viewports filtresi (settle retry 375/768'i şişirmesin). /cart/VARIANT:1 shop.app checkout'a 302 — kullanılmadı. Account PII yok.",
+  "capture": {
+    "url": "https://partakefoods.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:36:12.285Z"
+  }
+}

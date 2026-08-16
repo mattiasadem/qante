@@ -1,0 +1,63 @@
+{
+  "observationId": "moom.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "moom",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://moom.health/",
+  "selector": "#cart-drawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Impact cart-drawer overlay-group. Opener a[aria-controls=cart-drawer] no-js'te /cart sayfasına gider.",
+  "delta": "html.no-js — drawer JS açılmıyor. Dolu sepet cart-page-main'de. forceOpen denenir.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://moom.health/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "#cart-drawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "force-open",
+      "not": "Theme JS yok — forceOpen drawer"
+    }
+  ],
+  "stateFindings": {
+    "initial": "forceOpen #cart-drawer 0×0. Tık /cart sayfasına gider."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "forceOpen #cart-drawer 0×0; opener /cart sayfasına gider"
+    },
+    {
+      "state": "filled",
+      "sebep": "Drawer JS yok; dolu sepet cart-page-main"
+    },
+    {
+      "state": "changed",
+      "sebep": "Qty drawer'da yok"
+    }
+  ],
+  "interactionNote": "html.no-js. Checkout yok.",
+  "capture": {
+    "url": "https://moom.health/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:24:46.539Z"
+  }
+}

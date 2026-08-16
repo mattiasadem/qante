@@ -1,0 +1,66 @@
+{
+  "observationId": "magicspoon.default.about-brand.editorial-rich-text",
+  "schemaId": "editorial-rich-text",
+  "kaynak": "magicspoon",
+  "preset": "default",
+  "sayfa": "about-brand",
+  "url": "https://magicspoon.com/pages/our-story",
+  "selector": "#journey-content",
+  "evidenceSlug": "editorial-rich-text",
+  "evidence": [
+    "evidence/magicspoon/default/about-brand/editorial-rich-text.1440.png",
+    "evidence/magicspoon/default/about-brand/editorial-rich-text.375.png",
+    "evidence/magicspoon/default/about-brand/editorial-rich-text.768.png",
+    "evidence/magicspoon/default/about-brand/editorial-rich-text.initial.hikaye.375.png"
+  ],
+  "notlar": "Our Story. Hi, we’re Greg and Gabi, co-founders… college / cereal entrepreneurs / Saturday-morning-cartoon cereal.",
+  "delta": "No Shopify section for story. #journey-content + .journey-bg.bg-baby-blue. Guarantee #footer-banner + #footer-links also on page (same as home footer family).",
+  "capture": {
+    "url": "https://magicspoon.com/pages/our-story",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:57:06.747Z"
+  },
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://magicspoon.com/pages/our-story",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#journey-content",
+      "capture": true,
+      "etiket": "hikaye"
+    }
+  ],
+  "interactionNote": "Rebuy close 768/1440 before SS. Rebuy flyout 768/1440 bazı şablonlarda açık geliyor; .rebuy-cart__flyout-close off-viewport (closed x≈2380) — scripted close kırıyor. 375 kareler temiz. Bleed leftover.",
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "Rebuy flyout 768/1440 bazı şablonlarda açık geliyor; .rebuy-cart__flyout-close off-viewport (closed x≈2380) — scripted close kırıyor. 375 kareler temiz. Bleed leftover."
+    }
+  ]
+}

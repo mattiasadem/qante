@@ -1,0 +1,67 @@
+{
+  "observationId": "desoi.default.home.promo-banner-tabs",
+  "schemaId": "promo-banner-tabs",
+  "kaynak": "desoi",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://drinkdesoi.com/",
+  "selector": "#shopify-section-template--26526042325359__tabs_content_4Xkz3q",
+  "evidenceSlug": "promo-banner-tabs",
+  "evidence": [
+    "evidence/desoi/default/home/promo-banner-tabs.1440.png",
+    "evidence/desoi/default/home/promo-banner-tabs.375.png",
+    "evidence/desoi/default/home/promo-banner-tabs.768.png",
+    "evidence/desoi/default/home/promo-banner-tabs.changed.classic-cocktails.1440.png",
+    "evidence/desoi/default/home/promo-banner-tabs.changed.classic-cocktails.375.png",
+    "evidence/desoi/default/home/promo-banner-tabs.changed.classic-cocktails.768.png",
+    "evidence/desoi/default/home/promo-banner-tabs.initial.social-spritz.1440.png",
+    "evidence/desoi/default/home/promo-banner-tabs.initial.social-spritz.375.png",
+    "evidence/desoi/default/home/promo-banner-tabs.initial.social-spritz.768.png"
+  ],
+  "notlar": "Social Spritz | Classic Cocktails sekmeleri. Her sekme image-with-text + CTA (Shop Social Spritz).",
+  "delta": "Hyper tabs_content (image_with_text panelleri). promo-banner-tabs'a map.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://drinkdesoi.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--26526042325359__tabs_content_4Xkz3q",
+      "capture": true,
+      "etiket": "social-spritz",
+      "not": "Social Spritz paneli"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#image_with_text_zDxxBV",
+      "capture": true,
+      "etiket": "classic-cocktails",
+      "not": "Classic Cocktails sekmesi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Social Spritz sekmesi aktif — Light, lively, lifted + Shop Social Spritz + 3 checkmark.",
+    "changed": "Classic Cocktails sekmesi aktif — Rich, refined, relaxing + Shop Classic Cocktails + 3 checkmark."
+  },
+  "missingStates": [],
+  "capture": {
+    "url": "https://drinkdesoi.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:21:27.883Z"
+  }
+}

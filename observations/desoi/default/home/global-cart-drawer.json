@@ -1,0 +1,103 @@
+{
+  "observationId": "desoi.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "desoi",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://drinkdesoi.com/",
+  "selector": ".rebuy-cart__flyout",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/desoi/default/home/global-cart-drawer.1440.png",
+    "evidence/desoi/default/home/global-cart-drawer.375.png",
+    "evidence/desoi/default/home/global-cart-drawer.768.png",
+    "evidence/desoi/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/desoi/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/desoi/default/home/global-cart-drawer.initial.cart-bos.768.png",
+    "evidence/desoi/default/home/global-cart-drawer.filled.spritz-italiano.1440.png",
+    "evidence/desoi/default/home/global-cart-drawer.filled.spritz-italiano.768.png"
+  ],
+  "notlar": "Rebuy Smart Cart. Opener a.cart-drawer-button aria-controls=CartDrawer href=/cart. Native #CartDrawer yok. /cart → /?viewcart=true. Body.rebuy-cart-visible.",
+  "delta": "Hyper CartDrawer yerine Rebuy #rebuy-cart / .rebuy-cart__flyout. global-cart-drawer'a map. Native cart page yok.",
+  "captureMode": "viewport",
+  "prepareClick": "a.cart-drawer-button",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://drinkdesoi.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.cart-drawer-button",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Rebuy empty flyout"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://drinkdesoi.com/products/spritz-italiano-cocktail",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--26526041964911__main button.product-form__submit[name='add']",
+      "capture": false,
+      "not": "PDP Spritz Italiano ATC (kart ATC değil)"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a.cart-drawer-button",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": ".rebuy-cart__flyout >> text=Spritz",
+      "value": 10000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "spritz-italiano",
+      "not": "Rebuy satırında Spritz görünene kadar bekle"
+    }
+  ],
+  "stateFindings": {
+    "initial": "YOUR BAG boş; You are $60.00 away from FREE SHIPPING; SHOP NOW; You may also like (Mixed Party Pack / Social Spritz Variety Pack / Lemon Elderflower).",
+    "filled": "768/1440: Spritz Italiano 12 cans satırı + CHECKOUT / Shop Pay. 1440'ta FREE SHIPPING unlocked; 768'de Subscribe $51 / Every 4 Weeks. Checkout tıklanmadı."
+  },
+  "missingStates": [
+    {
+      "state": "filled",
+      "sebep": "375 karesi ikinci denemede de boş bag. waitFor text=Spritz upsell 'Social Spritz Variety Pack' ile eşleşti; satır yok. Üçüncü deneme yok."
+    }
+  ],
+  "interactionNote": "Rebuy Smart Cart 2.0. Native CartDrawer yok. addToCart UI (PDP product-form__submit). Checkout/kupon/qty yok. dismiss-overlays button:has-text(Close) Rebuy Close Cart'a da uyuyor — overlay açılabiliyor.",
+  "capture": {
+    "url": "https://drinkdesoi.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "viewport",
+    "updatedAt": "2026-08-15T23:38:27.336Z",
+    "prepareClick": "a.cart-drawer-button"
+  }
+}

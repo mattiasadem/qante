@@ -1,0 +1,94 @@
+{
+  "observationId": "moom.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "moom",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://moom.health/cart",
+  "selector": "#shopify-section-template--22312812708053__main",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/moom/default/cart/cart-page-main.filled.dolu.1440.png",
+    "evidence/moom/default/cart/cart-page-main.filled.dolu.375.png",
+    "evidence/moom/default/cart/cart-page-main.filled.dolu.768.png",
+    "evidence/moom/default/cart/cart-page-main.initial.bos.1440.png",
+    "evidence/moom/default/cart/cart-page-main.initial.bos.375.png",
+    "evidence/moom/default/cart/cart-page-main.initial.bos.768.png"
+  ],
+  "notlar": "Boş: Your cart is empty · CONTINUE SHOPPING. Dolu kare: cramp/less BOTTLE $43.90 (resmi addToCart ilk form id 47103871320277). Mama Water id 54095299674325 ikinci formda. Qty: button.qty-plus / qty-minus.",
+  "delta": "Impact cart template. Drawer no-js'te açılmıyor — bu sayfa asıl sepet. /cart/VARIANT:1 checkout'a kaçar (PII, kullanılmadı).",
+  "captureMode": "viewport",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://moom.health/cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://moom.health/products/mama-water",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "capture": false,
+      "not": "UI ATC /cart/add sayfasına kaçar (no-js). AJAX fallback ilk name=id = 47103871320277 (cramp/less), Mama Water değil"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://moom.health/cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "dolu",
+      "not": "Dolu cart sayfası"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button.qty-plus",
+      "capture": false,
+      "etiket": "adet-artti",
+      "not": "qty-plus DOM'da (10×27) ama no-js tık adeti 1'de bırakır — changed kare yok"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty / CONTINUE SHOPPING.",
+    "filled": "cramp/less BOTTLE $43.90 · Qty − 1 + · trial sachet upsell · CHECKOUT (tıklanmadı)."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "button.qty-plus / qty-minus / input.quantity-input cart sayfasında var. Resmi ilk koşu name=plus eşleşmedi. Probe: görünür qty-plus tıklandı, input 1 kaldı (tema JS yok). Sahte changed PNG yazılmadı."
+    }
+  ],
+  "interactionNote": "Dolu kare addToCart → /cart/add.js ilk id 47103871320277. Mama Water 54095299674325 ikinci form (button.button--xl). Checkout / e-posta yok.",
+  "capture": {
+    "url": "https://moom.health/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:33:23.314Z"
+  }
+}
