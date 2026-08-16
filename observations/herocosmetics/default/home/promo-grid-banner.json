@@ -7,7 +7,62 @@
   "url": "https://www.herocosmetics.us/",
   "selector": "#shopify-section-template--20497229742122__promotions",
   "evidenceSlug": "promo-grid-banner",
-  "evidence": [],
+  "evidence": [
+    "evidence/herocosmetics/default/home/promo-grid-banner.initial.bolum.1440.png",
+    "evidence/herocosmetics/default/home/promo-grid-banner.initial.bolum.375.png",
+    "evidence/herocosmetics/default/home/promo-grid-banner.initial.bolum.768.png"
+  ],
   "notlar": "2 kart: Earn points, reap rewards / Learn More · 2 minutes to a new routine / Take the Quiz. 658px.",
-  "delta": "İki promo kart, tab yok."
+  "delta": "İki promo kart, tab yok.",
+  "capture": {
+    "url": "https://www.herocosmetics.us/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:02:02.498Z"
+  },
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.herocosmetics.us/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 10000,
+      "capture": false,
+      "not": "Attentive gecikmeli gelir"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Attentive 10% email kapat — PII yok"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20497229742122__promotions",
+      "capture": true,
+      "etiket": "bolum",
+      "not": "Attentive kapalı section"
+    }
+  ],
+  "missingStates": []
 }

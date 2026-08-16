@@ -7,7 +7,62 @@
   "url": "https://www.herocosmetics.us/",
   "selector": "#shopify-section-template--20497229742122__homepage_product_grid_6y3bhd",
   "evidenceSlug": "product-showcase-grid-featured-2",
-  "evidence": [],
+  "evidence": [
+    "evidence/herocosmetics/default/home/product-showcase-grid-featured-2.initial.bolum.1440.png",
+    "evidence/herocosmetics/default/home/product-showcase-grid-featured-2.initial.bolum.375.png",
+    "evidence/herocosmetics/default/home/product-showcase-grid-featured-2.initial.bolum.768.png"
+  ],
   "notlar": "Bestselling Patches / Shop All. Original + Invisible+ kartlar, 36/72 count, Add to Cart.",
-  "delta": "İkinci home grid. Count varyant kartta."
+  "delta": "İkinci home grid. Count varyant kartta.",
+  "capture": {
+    "url": "https://www.herocosmetics.us/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:59:20.567Z"
+  },
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.herocosmetics.us/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 10000,
+      "capture": false,
+      "not": "Attentive gecikmeli gelir"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Attentive 10% email kapat — PII yok"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20497229742122__homepage_product_grid_6y3bhd",
+      "capture": true,
+      "etiket": "bolum",
+      "not": "Attentive kapalı section"
+    }
+  ],
+  "missingStates": []
 }

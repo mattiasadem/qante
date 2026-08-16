@@ -7,7 +7,62 @@
   "url": "https://www.herocosmetics.us/",
   "selector": "#shopify-section-announcement-bar",
   "evidenceSlug": "promo-announcement-bar",
-  "evidence": [],
-  "notlar": "32px marquee: Free patch case with any order $45+. Aynı metin tekrarlıyor.",
-  "delta": "Tek mesaj, timer yok. Link /collections/best-sellers. layout marquee."
+  "evidence": [
+    "evidence/herocosmetics/default/home/promo-announcement-bar.initial.bolum.1440.png",
+    "evidence/herocosmetics/default/home/promo-announcement-bar.initial.bolum.375.png",
+    "evidence/herocosmetics/default/home/promo-announcement-bar.initial.bolum.768.png"
+  ],
+  "notlar": "32px marquee: Build your own bundle and save up to 25% (tekrarlı). Karede Free patch case yok.",
+  "delta": "Tek mesaj, timer yok. Link /collections/best-sellers. layout marquee.",
+  "capture": {
+    "url": "https://www.herocosmetics.us/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:01:12.145Z"
+  },
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.herocosmetics.us/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 10000,
+      "capture": false,
+      "not": "Attentive gecikmeli gelir"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Attentive 10% email kapat — PII yok"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-announcement-bar",
+      "capture": true,
+      "etiket": "bolum",
+      "not": "Attentive kapalı section"
+    }
+  ],
+  "missingStates": []
 }

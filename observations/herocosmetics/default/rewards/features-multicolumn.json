@@ -7,7 +7,62 @@
   "url": "https://www.herocosmetics.us/pages/rewards",
   "selector": "#shopify-section-template--20497231839274__16636193137ca3bb14",
   "evidenceSlug": "features-multicolumn",
-  "evidence": [],
+  "evidence": [
+    "evidence/herocosmetics/default/rewards/features-multicolumn.initial.bolum.1440.png",
+    "evidence/herocosmetics/default/rewards/features-multicolumn.initial.bolum.375.png",
+    "evidence/herocosmetics/default/rewards/features-multicolumn.initial.bolum.768.png"
+  ],
   "notlar": "How the program works: Sign up / Earn points / Redeem. 775px.",
-  "delta": "3 adım ikon+metin."
+  "delta": "3 adım ikon+metin.",
+  "capture": {
+    "url": "https://www.herocosmetics.us/pages/rewards",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:17:29.161Z"
+  },
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.herocosmetics.us/pages/rewards",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 10000,
+      "capture": false,
+      "not": "Attentive gecikmeli gelir"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Attentive 10% email kapat — PII yok"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20497231839274__16636193137ca3bb14",
+      "capture": true,
+      "etiket": "bolum",
+      "not": "Attentive kapalı section"
+    }
+  ],
+  "missingStates": []
 }

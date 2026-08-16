@@ -7,7 +7,66 @@
   "url": "https://www.herocosmetics.us/",
   "selector": "#shopify-section-template--20497229742122__homepage_hero_desktop_full_width_xfeqXr",
   "evidenceSlug": "editorial-image-with-text-overlay",
-  "evidence": [],
+  "evidence": [
+    "evidence/herocosmetics/default/home/editorial-image-with-text-overlay.initial.bolum.1440.png",
+    "evidence/herocosmetics/default/home/editorial-image-with-text-overlay.initial.bolum.768.png"
+  ],
   "notlar": "homepage_hero_desktop_full_width 765px. Meet your dream cleansing lineup / For acne, for pores, for sensitive skin. / Learn More.",
-  "delta": "Tek kare hero — slideshow ok/nokta yok. Mobil kardeş section 1440'ta 0px (leftover)."
+  "delta": "Tek kare hero — slideshow ok/nokta yok. Mobil kardeş section 1440'ta 0px (leftover).",
+  "capture": {
+    "url": "https://www.herocosmetics.us/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:53:59.320Z"
+  },
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.herocosmetics.us/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 10000,
+      "capture": false,
+      "not": "Attentive gecikmeli gelir"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Attentive 10% email kapat — PII yok"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20497229742122__homepage_hero_desktop_full_width_xfeqXr",
+      "capture": true,
+      "etiket": "bolum",
+      "not": "Attentive kapalı section"
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "capture (375): zero-size / eşleşmedi: #shopify-section-template--20497229742122__homepage_hero_desktop_full_width_xfeqXr"
+    }
+  ]
 }

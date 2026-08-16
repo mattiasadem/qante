@@ -7,7 +7,62 @@
   "url": "https://www.herocosmetics.us/pages/careers",
   "selector": "#shopify-section-template--20497229774890__careers",
   "evidenceSlug": "page-content-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/herocosmetics/default/careers/page-content-main.initial.bolum.1440.png",
+    "evidence/herocosmetics/default/careers/page-content-main.initial.bolum.375.png",
+    "evidence/herocosmetics/default/careers/page-content-main.initial.bolum.768.png"
+  ],
   "notlar": "Open Jobs / No new jobs at the moment. 101px.",
-  "delta": "Boş iş listesi."
+  "delta": "Boş iş listesi.",
+  "capture": {
+    "url": "https://www.herocosmetics.us/pages/careers",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:45:34.232Z"
+  },
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.herocosmetics.us/pages/careers",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 10000,
+      "capture": false,
+      "not": "Attentive gecikmeli gelir"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Attentive 10% email kapat — PII yok"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20497229774890__careers",
+      "capture": true,
+      "etiket": "bolum",
+      "not": "Attentive kapalı section"
+    }
+  ],
+  "missingStates": []
 }

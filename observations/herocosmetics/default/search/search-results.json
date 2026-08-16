@@ -7,7 +7,65 @@
   "url": "https://www.herocosmetics.us/search?q=patch",
   "selector": "#pageContainer .search-results",
   "evidenceSlug": "search-results",
-  "evidence": [],
+  "evidence": [
+    "evidence/herocosmetics/default/search/search-results.1440.png",
+    "evidence/herocosmetics/default/search/search-results.375.png",
+    "evidence/herocosmetics/default/search/search-results.768.png",
+    "evidence/herocosmetics/default/search/search-results.initial.bolum.1440.png",
+    "evidence/herocosmetics/default/search/search-results.initial.bolum.768.png"
+  ],
   "notlar": "Search results for \"patch\" / 35 results found / Filter + ürün kartları + yazılar. 1253px.",
-  "delta": "Shopify section yok — .search-results. Quick view yok. Overlay #predictive-search-results ayrı."
+  "delta": "Shopify section yok — .search-results. Quick view yok. Overlay #predictive-search-results ayrı.",
+  "capture": {
+    "url": "https://www.herocosmetics.us/search?q=patch",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "margin-box+minPad8",
+    "updatedAt": "2026-08-16T01:05:04.106Z"
+  },
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.herocosmetics.us/search?q=patch",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 10000,
+      "capture": false,
+      "not": "Attentive gecikmeli gelir"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Attentive 10% email kapat — PII yok"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#pageContainer .search-results",
+      "capture": true,
+      "etiket": "bolum",
+      "not": "Attentive kapalı section"
+    }
+  ],
+  "missingStates": [],
+  "interactionNote": "375 resmi capture-observation.mjs (dismiss 375'te PDP/yazıya kaçıyor; script geri alıyor). 768/1440 interaction + observation."
 }

@@ -7,7 +7,62 @@
   "url": "https://www.herocosmetics.us/pages/terms-conditions",
   "selector": "#pageContainer .content-container",
   "evidenceSlug": "page-content-main-2",
-  "evidence": [],
+  "evidence": [
+    "evidence/herocosmetics/default/policy/page-content-main-2.initial.bolum.1440.png",
+    "evidence/herocosmetics/default/policy/page-content-main-2.initial.bolum.375.png",
+    "evidence/herocosmetics/default/policy/page-content-main-2.initial.bolum.768.png"
+  ],
   "notlar": "Terms and Conditions / Terms of Service 04/12/2023. Church & Dwight. Shopify section yok.",
-  "delta": "page-template hero+content. Native /policies/terms-of-service bakılmadı ayrı."
+  "delta": "page-template hero+content. Native /policies/terms-of-service bakılmadı ayrı.",
+  "capture": {
+    "url": "https://www.herocosmetics.us/pages/terms-conditions",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:07:50.367Z"
+  },
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.herocosmetics.us/pages/terms-conditions",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 10000,
+      "capture": false,
+      "not": "Attentive gecikmeli gelir"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Attentive 10% email kapat — PII yok"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#pageContainer .content-container",
+      "capture": true,
+      "etiket": "bolum",
+      "not": "Attentive kapalı section"
+    }
+  ],
+  "missingStates": []
 }

@@ -7,16 +7,44 @@
   "url": "https://www.herocosmetics.us/",
   "selector": "#shopify-section-header",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
+  "evidence": [
+    "evidence/herocosmetics/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/herocosmetics/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/herocosmetics/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/herocosmetics/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
   "notlar": "Shop / Bundle Builder / Take the Quiz / Rewards / Reviews / Skin School / About / Join Skin Squad + search + cart. 48px compact.",
   "delta": "Custom Hero header. Shop BUTTON #d_cat_shop mega (3 kolon + promo). Dil switcher yok. 375 hamburger.",
   "captureMode": "viewport",
-  "interactionStates": ["initial", "open"],
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
   "interactionSteps": [
     {
       "state": "initial",
       "action": "goto",
       "value": "https://www.herocosmetics.us/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 10000,
+      "capture": false,
+      "not": "Attentive gecikmeli"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Attentive 10% email kapat — PII yok"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "kapali",
@@ -26,19 +54,30 @@
       "state": "open",
       "action": "hover",
       "selector": "#d_cat_shop",
-      "viewports": ["1440"],
+      "viewports": [
+        "1440"
+      ],
       "capture": true,
       "captureMode": "viewport",
       "etiket": "shop-mega",
       "not": "Shop hover → kolonlar + promo"
     }
   ],
-  "stateFindings": {},
-  "missingStates": [
-    {
-      "state": "open",
-      "sebep": "375/768 Shop mega yok — hamburger global-menu-drawer."
-    }
-  ],
-  "interactionNote": "1440 Shop hover. Click yedek değil (sayfa kaçmasın). Login/Skin Squad PII tıklanmadı."
+  "stateFindings": {
+    "initial": "375/768: hamburger + Hero. logo + search/account/cart. 1440: Shop (chevron), Bundle Builder (lavender pill), Take the Quiz (chevron), Rewards, Reviews, Skin School, About, Join Skin Squad, search, account, cart. Announcement: Build your own bundle and save up to 25%.",
+    "open": "1440 Shop hover: 3 kolon — Shop (Shop All, Best Sellers, New Arrivals, Perfect Pairings, Offers); Shop by Concern (Pimple Care + Aftercare, Sensitive Skin, Blackheads + Pores, Dark Spots, Under Eye Care); Shop by Category (Patches, Targeted Solutions, Cleansers, Sunscreens, Bundles + Kits, Merch). Sağ promo Rescue Balm +Red Correct / Go green to even post-blemish redness / Shop Now. 375/768 open hamburger ayrı global-menu-drawer."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 Shop hover. Attentive Escape. Login/Skin Squad PII tıklanmadı. Mega kolonlar kareden: Shop / Concern / Category + Rescue Balm promo.",
+  "capture": {
+    "url": "https://www.herocosmetics.us/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:58:30.670Z"
+  }
 }

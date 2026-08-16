@@ -7,7 +7,62 @@
   "url": "https://www.herocosmetics.us/pages/cleansers-quiz",
   "selector": "#shopify-section-template--20497230233642__cleansers_quiz_LRGJfY",
   "evidenceSlug": "product-finder-quiz-2",
-  "evidence": [],
+  "evidence": [
+    "evidence/herocosmetics/default/landing-campaign/product-finder-quiz-2.initial.bolum.1440.png",
+    "evidence/herocosmetics/default/landing-campaign/product-finder-quiz-2.initial.bolum.375.png",
+    "evidence/herocosmetics/default/landing-campaign/product-finder-quiz-2.initial.bolum.768.png"
+  ],
   "notlar": "Discover your dream cleanser / Start / Skip for now. 920px. Start tıklanmadı.",
-  "delta": "İkinci quiz intro."
+  "delta": "İkinci quiz intro.",
+  "capture": {
+    "url": "https://www.herocosmetics.us/pages/cleansers-quiz",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:03:50.988Z"
+  },
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.herocosmetics.us/pages/cleansers-quiz",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 10000,
+      "capture": false,
+      "not": "Attentive gecikmeli gelir"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Attentive 10% email kapat — PII yok"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20497230233642__cleansers_quiz_LRGJfY",
+      "capture": true,
+      "etiket": "bolum",
+      "not": "Attentive kapalı section"
+    }
+  ],
+  "missingStates": []
 }

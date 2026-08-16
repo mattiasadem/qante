@@ -7,7 +7,62 @@
   "url": "https://www.herocosmetics.us/pages/store-locator",
   "selector": "#shopify-section-retailers",
   "evidenceSlug": "page-content-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/herocosmetics/default/store-locator/page-content-main.initial.bolum.1440.png",
+    "evidence/herocosmetics/default/store-locator/page-content-main.initial.bolum.375.png",
+    "evidence/herocosmetics/default/store-locator/page-content-main.initial.bolum.768.png"
+  ],
   "notlar": "Authorized Retailers + uyarı (eBay alma). 1320px. Harita/locator widget yok.",
-  "delta": "Logo/liste; store-locator tipi yok — page-content zorlandı."
+  "delta": "Logo/liste; store-locator tipi yok — page-content zorlandı.",
+  "capture": {
+    "url": "https://www.herocosmetics.us/pages/store-locator",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:18:50.195Z"
+  },
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.herocosmetics.us/pages/store-locator",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 10000,
+      "capture": false,
+      "not": "Attentive gecikmeli gelir"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Attentive 10% email kapat — PII yok"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-retailers",
+      "capture": true,
+      "etiket": "bolum",
+      "not": "Attentive kapalı section"
+    }
+  ],
+  "missingStates": []
 }

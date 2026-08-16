@@ -7,11 +7,16 @@
   "url": "https://www.herocosmetics.us/",
   "selector": "#shopify-section-header",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
-  "notlar": "375 .hamburger 23px. Ayrı drawer id yok — header içi.",
+  "evidence": [
+    "evidence/herocosmetics/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/herocosmetics/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "375 button.hamburger. Ayrı drawer id yok — header içi.",
   "delta": "1440 hamburger 0px — mega birincil.",
   "captureMode": "viewport",
-  "interactionStates": ["open"],
+  "interactionStates": [
+    "open"
+  ],
   "interactionSteps": [
     {
       "state": "open",
@@ -21,21 +26,53 @@
     },
     {
       "state": "open",
+      "action": "waitFor",
+      "value": 10000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "open",
       "action": "click",
       "selector": "button.hamburger",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "hamburger",
-      "viewports": ["375", "768"],
+      "viewports": [
+        "375",
+        "768"
+      ],
       "not": "Mobil menü"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "open": "375/768: search + logo + X. Üst promo Rescue Balm +Red Correct / Go green… / Shop Now. Shop All; Shop by Concern +; Shop by Category +. Quiz kartları: Discover your dream cleanser Start; The skin care quiz Start. Bundle Builder. Best Sellers kesik. 1440 hamburger 0px — mega."
+  },
   "missingStates": [
     {
+      "state": "changed",
+      "sebep": "Shop by Concern/Category + akordeon açılmadı (leftover)"
+    },
+    {
       "state": "open",
-      "sebep": "1440 hamburger 0px — mega birincil."
+      "sebep": "open@1440 — masaüstü header-mega-dropdown; hamburger 0px"
     }
   ],
-  "interactionNote": "İlk yoklamada hamburger search overlay açmış olabilir — PNG'ye bak. Login PII tıklanmadı."
+  "interactionNote": "Attentive Escape. Quiz Start / login PII tıklanmadı.",
+  "capture": {
+    "url": "https://www.herocosmetics.us/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:55:35.593Z"
+  }
 }

@@ -7,7 +7,62 @@
   "url": "https://www.herocosmetics.us/",
   "selector": "#shopify-section-template--20497229742122__homepage_product_grid_jUQYjN",
   "evidenceSlug": "product-showcase-grid-featured",
-  "evidence": [],
+  "evidence": [
+    "evidence/herocosmetics/default/home/product-showcase-grid-featured.initial.bolum.1440.png",
+    "evidence/herocosmetics/default/home/product-showcase-grid-featured.initial.bolum.375.png",
+    "evidence/herocosmetics/default/home/product-showcase-grid-featured.initial.bolum.768.png"
+  ],
   "notlar": "Cleansers / Three new cleansers. Zero guesswork. / Take the Quiz + Mighty/Pore/Sensitive kartlar + Add to Cart.",
-  "delta": "3 kart + quiz CTA. Quick view yok; kart ATC js-mocart-trigger."
+  "delta": "3 kart + quiz CTA. Quick view yok; kart ATC js-mocart-trigger.",
+  "capture": {
+    "url": "https://www.herocosmetics.us/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:00:41.544Z"
+  },
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.herocosmetics.us/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 10000,
+      "capture": false,
+      "not": "Attentive gecikmeli gelir"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Attentive 10% email kapat — PII yok"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20497229742122__homepage_product_grid_jUQYjN",
+      "capture": true,
+      "etiket": "bolum",
+      "not": "Attentive kapalı section"
+    }
+  ],
+  "missingStates": []
 }

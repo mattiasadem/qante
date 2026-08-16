@@ -7,7 +7,65 @@
   "url": "https://www.herocosmetics.us/pages/collaborations",
   "selector": "#shopify-section-template--20497230299178__g_p_intro_header_Bh4qFX",
   "evidenceSlug": "editorial-rich-text",
-  "evidence": [],
+  "evidence": [
+    "evidence/herocosmetics/default/collaborations/editorial-rich-text.1440.png",
+    "evidence/herocosmetics/default/collaborations/editorial-rich-text.375.png",
+    "evidence/herocosmetics/default/collaborations/editorial-rich-text.768.png",
+    "evidence/herocosmetics/default/collaborations/editorial-rich-text.initial.bolum.1440.png",
+    "evidence/herocosmetics/default/collaborations/editorial-rich-text.initial.bolum.768.png"
+  ],
   "notlar": "Collaborations / past collabs. 267px.",
-  "delta": "Intro."
+  "delta": "Intro.",
+  "capture": {
+    "url": "https://www.herocosmetics.us/pages/collaborations",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "margin-box+minPad8",
+    "updatedAt": "2026-08-16T01:09:19.196Z"
+  },
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.herocosmetics.us/pages/collaborations",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 10000,
+      "capture": false,
+      "not": "Attentive gecikmeli gelir"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Attentive 10% email kapat — PII yok"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20497230299178__g_p_intro_header_Bh4qFX",
+      "capture": true,
+      "etiket": "bolum",
+      "not": "Attentive kapalı section"
+    }
+  ],
+  "missingStates": [],
+  "interactionNote": "375 resmi capture-observation.mjs (dismiss 375'te PDP/yazıya kaçıyor; script geri alıyor). 768/1440 interaction + observation."
 }

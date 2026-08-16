@@ -7,7 +7,62 @@
   "url": "https://www.herocosmetics.us/pages/contact-us",
   "selector": "#shopify-section-template--20497229840426__big_hero_headline_simple_GbrCUx",
   "evidenceSlug": "editorial-rich-text",
-  "evidence": [],
+  "evidence": [
+    "evidence/herocosmetics/default/contact/editorial-rich-text.initial.bolum.1440.png",
+    "evidence/herocosmetics/default/contact/editorial-rich-text.initial.bolum.375.png",
+    "evidence/herocosmetics/default/contact/editorial-rich-text.initial.bolum.768.png"
+  ],
   "notlar": "Contact Us başlık. 52px.",
-  "delta": "Yalnız headline."
+  "delta": "Yalnız headline.",
+  "capture": {
+    "url": "https://www.herocosmetics.us/pages/contact-us",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:48:36.495Z"
+  },
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.herocosmetics.us/pages/contact-us",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 10000,
+      "capture": false,
+      "not": "Attentive gecikmeli gelir"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Attentive 10% email kapat — PII yok"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20497229840426__big_hero_headline_simple_GbrCUx",
+      "capture": true,
+      "etiket": "bolum",
+      "not": "Attentive kapalı section"
+    }
+  ],
+  "missingStates": []
 }

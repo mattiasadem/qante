@@ -7,7 +7,62 @@
   "url": "https://www.herocosmetics.us/pages/faq",
   "selector": "#shopify-section-template--20497230626858__faq_accordion_Hp4TTb",
   "evidenceSlug": "faq-collapsible-tabs",
-  "evidence": [],
+  "evidence": [
+    "evidence/herocosmetics/default/faq-support/faq-collapsible-tabs.initial.bolum.1440.png",
+    "evidence/herocosmetics/default/faq-support/faq-collapsible-tabs.initial.bolum.375.png",
+    "evidence/herocosmetics/default/faq-support/faq-collapsible-tabs.initial.bolum.768.png"
+  ],
   "notlar": "FAQ's accordion. İlk: What is your return policy? 30 day. 985px.",
-  "delta": "Tek accordion, kategori tab yok."
+  "delta": "Tek accordion, kategori tab yok.",
+  "capture": {
+    "url": "https://www.herocosmetics.us/pages/faq",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:50:14.500Z"
+  },
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.herocosmetics.us/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 10000,
+      "capture": false,
+      "not": "Attentive gecikmeli gelir"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Attentive 10% email kapat — PII yok"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20497230626858__faq_accordion_Hp4TTb",
+      "capture": true,
+      "etiket": "bolum",
+      "not": "Attentive kapalı section"
+    }
+  ],
+  "missingStates": []
 }

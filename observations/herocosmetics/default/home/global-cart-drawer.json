@@ -7,17 +7,44 @@
   "url": "https://www.herocosmetics.us/",
   "selector": "#mocart",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/herocosmetics/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/herocosmetics/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/herocosmetics/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/herocosmetics/default/home/global-cart-drawer.filled.mighty-patch-qty1.1440.png",
+    "evidence/herocosmetics/default/home/global-cart-drawer.filled.mighty-patch-qty1.375.png",
+    "evidence/herocosmetics/default/home/global-cart-drawer.filled.mighty-patch-qty1.768.png",
+    "evidence/herocosmetics/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/herocosmetics/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/herocosmetics/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
   "notlar": "mocart drawer. Boş: Your cart is empty + Rewards teaser. /cart → /?cart=true (sayfa yok).",
   "delta": "cart-page-main yok. Checkout tıklanmadı. Sign Up/In PII.",
   "captureMode": "viewport",
-  "interactionStates": ["initial", "filled", "changed"],
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
   "interactionSteps": [
     {
       "state": "initial",
       "action": "goto",
       "value": "https://www.herocosmetics.us/",
       "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 10000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Attentive kapat"
     },
     {
       "state": "initial",
@@ -36,6 +63,18 @@
     },
     {
       "state": "filled",
+      "action": "waitFor",
+      "value": 10000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "filled",
       "action": "addToCart",
       "selector": "form.pdp-form button[type='submit'], form.pdp-form [type='submit']",
       "capture": false
@@ -50,13 +89,18 @@
       "state": "filled",
       "action": "goto",
       "value": "https://www.herocosmetics.us/",
-      "capture": false,
-      "not": "Home'da drawer hydrate"
+      "capture": false
     },
     {
       "state": "filled",
       "action": "waitFor",
-      "value": 1500,
+      "value": 10000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "press",
+      "value": "Escape",
       "capture": false
     },
     {
@@ -78,7 +122,22 @@
       "not": "Adet +1"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "Your Cart · 0 items | $0.00 · Your cart is empty. Rewards teaser This could be yours + Sign Up / Sign In. Recommended for you (Pore Release). 375/768/1440.",
+    "filled": "1 items | $12.99. You're $22.01 away from free shipping. Mighty Patch Original patch 36 Count $12.99 qty 1. Free samples + Rewards Sign Up/In. I'm Ready to Checkout $12.99. 375/768/1440.",
+    "changed": "2 items | $25.98. You're $9.02 away from free shipping. Qty 2 · line $25.98. Checkout $25.98. 375/768/1440."
+  },
   "missingStates": [],
-  "interactionNote": "UI ATC fail olursa addToCart /cart/add.js. Checkout tıklanmadı."
+  "interactionNote": "UI ATC; fallback /cart/add.js. Checkout tıklanmadı. Attentive Escape. Get 10% Off tab karede görüldü, form açılmadı.",
+  "capture": {
+    "url": "https://www.herocosmetics.us/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:39:22.718Z"
+  }
 }
