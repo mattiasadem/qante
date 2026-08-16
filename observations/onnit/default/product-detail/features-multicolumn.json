@@ -7,7 +7,48 @@
   "url": "https://www.onnit.com/products/alpha-brain-60-ct",
   "selector": "#shopify-section-template--27710153883938__featured_ingredients_pdp_nEi7NW",
   "evidenceSlug": "features-multicolumn",
-  "evidence": [],
-  "notlar": "SCIENCE-DRIVEN INGREDIENTS. Huperzia Serrata Extract + diğer malzemeler.",
-  "delta": "featured_ingredients_pdp. Kart = malzeme, ürün grid değil."
+  "evidence": [
+    "evidence/onnit/default/product-detail/features-multicolumn.375.png",
+    "evidence/onnit/default/product-detail/features-multicolumn.768.png"
+  ],
+  "notlar": "SCIENCE-DRIVEN INGREDIENTS. Huperzia Serrata Extract + di\u011fer malzemeler.",
+  "delta": "featured_ingredients_pdp. Kart = malzeme, \u00fcr\u00fcn grid de\u011fil.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.onnit.com/products/alpha-brain-60-ct",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 12000,
+      "capture": false,
+      "not": "CF challenge / section hydrate after dismiss Account bounce"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--27710153883938__featured_ingredients_pdp_nEi7NW",
+      "capture": true,
+      "etiket": "pdp-blok"
+    }
+  ],
+  "interactionNote": " 1440 dismiss Account'a t\u0131klar; uzun wait CF sonras\u0131 section'\u0131 bekler. 1440 dismiss\u2192Account\u2192CF; 375/768 resmi capture-observation."
 }

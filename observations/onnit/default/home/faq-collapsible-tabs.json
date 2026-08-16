@@ -7,7 +7,17 @@
   "url": "https://www.onnit.com/",
   "selector": "#shopify-section-template--27710152311074__collapsible_content_mmPH4f",
   "evidenceSlug": "faq-collapsible-tabs",
-  "evidence": [],
+  "evidence": [
+    "evidence/onnit/default/home/faq-collapsible-tabs.changed.faq-acik.1440.png",
+    "evidence/onnit/default/home/faq-collapsible-tabs.changed.faq-acik.375.png",
+    "evidence/onnit/default/home/faq-collapsible-tabs.changed.faq-acik.768.png",
+    "evidence/onnit/default/home/faq-collapsible-tabs.changed.faq-q2.1440.png",
+    "evidence/onnit/default/home/faq-collapsible-tabs.changed.faq-q2.375.png",
+    "evidence/onnit/default/home/faq-collapsible-tabs.changed.faq-q2.768.png",
+    "evidence/onnit/default/home/faq-collapsible-tabs.initial.faq-kapali.1440.png",
+    "evidence/onnit/default/home/faq-collapsible-tabs.initial.faq-kapali.375.png",
+    "evidence/onnit/default/home/faq-collapsible-tabs.initial.faq-kapali.768.png"
+  ],
   "notlar": "FREQUENTLY ASKED QUESTIONS. Help Center / contact CTA. Accordion.",
   "delta": "collapsible_content. Harici help.onnit.com leftover. Interact: ilk kapalı paneli aç.",
   "interactionStates": [
@@ -20,6 +30,13 @@
       "action": "goto",
       "value": "https://www.onnit.com/",
       "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 8000,
+      "capture": false,
+      "not": "CF/hydrate"
     },
     {
       "state": "initial",
@@ -43,16 +60,27 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": "#shopify-section-template--27710152311074__collapsible_content_mmPH4f button, #shopify-section-template--27710152311074__collapsible_content_mmPH4f summary, #shopify-section-template--27710152311074__collapsible_content_mmPH4f [aria-expanded='false']",
+      "selector": "#shopify-section-template--27710152311074__collapsible_content_mmPH4f button:has-text('IS ALPHA BRAIN')",
       "capture": true,
-      "etiket": "faq-acik",
-      "not": "İlk kapalı soruyu aç"
+      "etiket": "faq-q2",
+      "not": "Q1 openFirst; Q2 (men/women/children) aç"
     }
   ],
   "stateFindings": {
-    "initial": "FAQ başlık + Help Center satırı; paneller kapalı görünür.",
-    "changed": "Bir soru açıldı — cevap metni karede."
+    "initial": "Q1 WHICH ALPHA BRAIN® IS RIGHT FOR ME? açık (openFirst); CONTACT US / HELP CENTER.",
+    "changed": "Q1 + Q2 açık (allowMultipleOpen). Q2: men and women over 18."
   },
   "missingStates": [],
-  "interactionNote": "Help Center harici. İlk görünür expander; yazılı Help Center <a> tıklanmadı."
+  "interactionNote": "Help Center harici. İlk görünür expander; yazılı Help Center <a> tıklanmadı.",
+  "capture": {
+    "url": "https://www.onnit.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:52:34.831Z"
+  }
 }

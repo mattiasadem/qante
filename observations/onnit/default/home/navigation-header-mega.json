@@ -7,7 +7,12 @@
   "url": "https://www.onnit.com/",
   "selector": "#shopify-section-header",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
+  "evidence": [
+    "evidence/onnit/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/onnit/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/onnit/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/onnit/default/home/navigation-header-mega.open.shop-all-mega.1440.png"
+  ],
   "notlar": "1440: Shop All / New / Best Sellers / Alpha BRAIN® / Total Human® / Fitness & Performance / Cognition & Focus / Sleep & Mood + Search / Quiz / Learn / Account / Cart. 375: logo + search + cart + MAIN MENU + quick-nav şerit.",
   "delta": "Onnit Shopify Theme 1.10.0 custom. Mega #shop-all-menu / #learn-menu (is-mega, görsel kart). Locale yok. Announcement 0px. Account PII — tıklanmadı.",
   "captureMode": "section",
@@ -21,6 +26,13 @@
       "action": "goto",
       "value": "https://www.onnit.com/",
       "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 8000,
+      "capture": false,
+      "not": "CF/hydrate"
     },
     {
       "state": "initial",
@@ -64,11 +76,17 @@
     "initial": "1440 bar: Shop All / New / Best Sellers / Alpha BRAIN® / Total Human® / kategori linkleri + Search / Quiz / Learn / Account / Cart. 375/768: logo + search + cart + hamburger + alt quick-nav.",
     "open": "1440 Shop All mega — kartlar: Shop All, NMN + Creatine, Best Sellers, Fitness & Performance, Cognition & Focus, Sleep/Mood."
   },
-  "missingStates": [
-    {
-      "state": "open",
-      "sebep": "375/768 mega yok — hamburger drawer ayrı observation. Yalnız 1440 Shop All hover."
-    }
-  ],
-  "interactionNote": "Shop All <a href=/collections/shop-all> tık PLP’ye gider; panel hover. Learn mega #learn-menu (Ingredients / Our Story / The Edge) ayrıca yoklandı, kare Shop All."
+  "missingStates": [],
+  "interactionNote": "Shop All <a href=/collections/shop-all> tık PLP’ye gider; panel hover. Learn mega #learn-menu (Ingredients / Our Story / The Edge) ayrıca yoklandı, kare Shop All.",
+  "capture": {
+    "url": "https://www.onnit.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:34:27.949Z"
+  }
 }

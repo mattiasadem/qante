@@ -7,7 +7,10 @@
   "url": "https://www.onnit.com/",
   "selector": ".header__nav-wrapper.mobile-slide",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/onnit/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/onnit/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
   "notlar": "375 hamburger button.header__link--menu MAIN MENU. SHOP / LEARN tab + görsel kartlar.",
   "delta": "1440 height 0 / N/A. Drawer header içinde.",
   "captureMode": "viewport",
@@ -21,6 +24,13 @@
       "action": "goto",
       "value": "https://www.onnit.com/",
       "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 8000,
+      "capture": false,
+      "not": "CF/hydrate"
     },
     {
       "state": "open",
@@ -57,5 +67,16 @@
     "open": "375/768: SHOP / LEARN tab, Shop All / NMN / Best Sellers / kategori kartları."
   },
   "missingStates": [],
-  "interactionNote": "1440 N/A. Yazılı Shop All <a> PLP’ye gider — tıklanmadı."
+  "interactionNote": "1440 N/A. Yazılı Shop All <a> PLP’ye gider — tıklanmadı.",
+  "capture": {
+    "url": "https://www.onnit.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:32:46.033Z"
+  }
 }

@@ -7,7 +7,11 @@
   "url": "https://www.onnit.com/",
   "selector": ".rebuy-cart__flyout",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/onnit/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/onnit/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/onnit/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
   "notlar": "Rebuy Smart Cart. Boş: YOUR CART IS EMPTY + $100 free shipping bar + similar products. /cart → /?viewcart=true.",
   "delta": "body.smart-cart--enabled. Tema native cart sayfası yok. Powered by Rebuy.",
   "captureMode": "viewport",
@@ -23,6 +27,13 @@
       "action": "goto",
       "value": "https://www.onnit.com/",
       "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 8000,
+      "capture": false,
+      "not": "CF/hydrate"
     },
     {
       "state": "initial",
@@ -59,6 +70,13 @@
     {
       "state": "filled",
       "action": "waitFor",
+      "value": 8000,
+      "capture": false,
+      "not": "CF/hydrate"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
       "value": 4000,
       "capture": false
     },
@@ -77,7 +95,7 @@
     {
       "state": "filled",
       "action": "addToCart",
-      "selector": "button.button--secondary[name='add']",
+      "selector": "#product_form_9749076410658 button[name='add']",
       "capture": false
     },
     {
@@ -97,7 +115,7 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": ".rebuy-cart__flyout button[aria-label*='increase' i], .rebuy-cart__flyout .quantity-increase, .rebuy-cart__flyout button.rebuy-cart__quantity-up, .rebuy-cart__flyout [data-action='increase']",
+      "selector": ".rebuy-cart__flyout button[aria-label*='Increase quantity']",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "adet-artti"
@@ -105,9 +123,29 @@
   ],
   "stateFindings": {
     "initial": "Rebuy drawer boş; $100 free shipping; Take The Quiz; similar Alpha BRAIN 90 / Total Human / Black Label.",
-    "filled": "Alpha BRAIN® satırı + ara toplam (subscribe veya one-time, karede görünen).",
-    "changed": "Adet arttı veya stepper yoksa missingStates."
+    "filled": "Alınamadı — ATC UI 375/768 notu var; flyout capture 0px (auto-open sonra cart tık kapatıyor olabilir). 1440 CF/variant id yok.",
+    "changed": "Alınamadı — filled flyout açılmadığı için Increase quantity yok."
   },
-  "missingStates": [],
-  "interactionNote": "ATC button.button--secondary[name=add] (ADD TO CART & SUBSCRIBE). Checkout / Login / promo PII yok. /cart sayfası yok."
+  "missingStates": [
+    {
+      "state": "filled",
+      "sebep": "capture (375): zero-size / eşleşmedi: .rebuy-cart__flyout"
+    },
+    {
+      "state": "changed",
+      "sebep": "adım 14 (click .rebuy-cart__flyout button[aria-label*='Increase quantity']): selector eşleşmedi: .rebuy-cart__flyout button[aria-label*='Increase quantity']"
+    }
+  ],
+  "interactionNote": "Boş drawer 3vp alındı. Filled/changed 3 deneme: ATC bazen UI, Rebuy flyout 0px; 1440 dismiss Account/CF. Qty button aria-label Increase quantity (yoklamada görüldü). Checkout/Login PII yok.",
+  "capture": {
+    "url": "https://www.onnit.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:01:13.428Z"
+  }
 }

@@ -87,3 +87,6 @@ Karar: onay bekliyor
 - Clarip/Adchoices, cookie
 - Newsletter / account / checkout / loyalty JOIN — PII stop
 - TrueMed HSA/FSA, Ordergroove subscribe modal (Cancel/Add) — checkout-adjacent, tıklanmadı
+- Cart filled/changed: 3 resmi deneme; ATC bazen UI, Rebuy `.rebuy-cart__flyout` capture 0px (toggle). Boş drawer 3vp var. Yoklamada Increase quantity + satır $49.26 görüldü, kare yazılmadı
+- PDP 1440 extras + product-info 1440: dismiss `SPAN.header-menu__title` Account → CF challenge; 375/768 resmi PNG var
+- PLP / PDP karelerinde Rebuy boş drawer bleed (dismiss cart ikonuna tık)
