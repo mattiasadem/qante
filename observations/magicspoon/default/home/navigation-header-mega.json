@@ -1,0 +1,84 @@
+{
+  "observationId": "magicspoon.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "magicspoon",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://magicspoon.com/",
+  "selector": "nav.ms21-header, header#header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/magicspoon/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/magicspoon/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/magicspoon/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/magicspoon/default/home/navigation-header-mega.open.cereal-mega.1440.png"
+  ],
+  "notlar": "CEREAL / OATMEAL / TREATS / GRANOLA / PASTRIES / ABOUT US + BUILD YOUR BUNDLE. Logo, account, cart. No search control.",
+  "delta": "nav.ms21-header.ms90b. Shopify section #…__ms21-navigation box 0. Mega .ms21-dropdown (FEATURED FLAVORS + product image cards). No locale. No header search — predictive leftover. Cart a.js-cart-empty[aria-label=Open cart] → Rebuy. 375/768 header#header (nav.ms21-header gizli).",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://magicspoon.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "nav.ms21-header, header#header",
+      "capture": true,
+      "etiket": "bar"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "a.ms21-link--cereal",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cereal-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "CEREAL hover → FEATURED FLAVORS + product cards"
+    }
+  ],
+  "stateFindings": {
+    "initial": "375/768 header#header: hamburger + logo + account + cart. 1440 nav.ms21-header: CEREAL…ABOUT US + BUILD YOUR BUNDLE.",
+    "open": "1440 CEREAL hover — FEATURED FLAVORS image cards."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375/768 mega yok — #mobile-slides hamburger ayrı observation."
+    }
+  ],
+  "interactionNote": "CEREAL <a href=/collections/shop-all?filter=cereal> tık PLP’ye gider; panel hover. 1440 only.",
+  "capture": {
+    "url": "https://magicspoon.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:51:05.757Z"
+  }
+}
