@@ -39,42 +39,48 @@
     },
     {
       "state": "filled",
-      "action": "click",
-      "selector": "label.variant-option__button-label:has-text('16 Pack')",
+      "action": "waitFor",
+      "value": 4000,
       "capture": false,
-      "not": "16 Pack"
+      "not": "bundle-builder hydrate"
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "button.bundle-builder__atc",
+      "capture": false
     },
     {
       "state": "filled",
       "action": "waitFor",
-      "value": 600,
+      "value": 800,
       "capture": false
     },
     {
       "state": "filled",
       "action": "addToCart",
-      "selector": "button.add-to-cart-button[name='add'], button[name='add']",
+      "selector": "button.bundle-builder__atc",
       "capture": false
     },
     {
       "state": "filled",
       "action": "waitFor",
-      "value": 2000,
+      "value": 2500,
       "capture": false
     },
     {
       "state": "filled",
-      "action": "click",
-      "selector": "header button[aria-label='Cart']",
+      "action": "forceOpen",
+      "selector": ".cart-drawer__dialog",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "starter-qty1",
-      "not": "ATC sonrası drawer"
+      "not": "ATC sonrası drawer — cart ikon toggle kapamasın"
     },
     {
       "state": "changed",
       "action": "click",
-      "selector": ".cart-drawer button[name='plus'], .cart-drawer [name='plus'], .quantity-selector button:has-text('+')",
+      "selector": ".cart-drawer button[name='plus'], .cart-drawer [name='plus'], quantity-selector-component button:last-of-type",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "adet-artti",
@@ -87,6 +93,6 @@
     "changed": "Adet artınca ara toplam değişir mi — kareye bak."
   },
   "missingStates": [],
-  "interactionNote": "ATC UI: Horizon button[name=add]. Fallback /cart/add.js olursa not. Checkout yok. Qty selector yoksa changed leftover.",
+  "interactionNote": "ATC UI: button.bundle-builder__atc (ADD TO CART $74.88). Native form/id yok — /cart/add.js fallback çalışmaz. Drawer ATC sonrası açılır; cart ikon toggle riski yüzünden forceOpen. Checkout/login yok. Qty yoksa changed leftover.",
   "observationId": "onceuponafarm.default.home.global-cart-drawer"
 }
