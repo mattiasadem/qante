@@ -1,0 +1,71 @@
+{
+  "observationId": "moom.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "moom",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://moom.health/",
+  "selector": "#search-drawer",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "Impact search-drawer DOM'da. Opener a[aria-controls=search-drawer] no-js ortamda /search sayfasına gider.",
+  "delta": "html.no-js kalıyor (Shopify.theme hydrate olmuyor). Tık /search. forceOpen denenir.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://moom.health/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "#search-drawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "force-open",
+      "not": "Theme JS yok — forceOpen drawer"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#search-drawer input[name='q']",
+      "value": "hormones",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hormones",
+      "not": "Predictive — drawer açılmazsa leftover"
+    }
+  ],
+  "stateFindings": {
+    "initial": "forceOpen 0×0. Opener /search'e gider.",
+    "input": "Input hidden kaldı."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "capture (375): zero-size / eşleşmedi: #search-drawer"
+    },
+    {
+      "state": "input",
+      "sebep": "adım 2 (fill #search-drawer input[name='q']): locator.waitFor: Timeout 12000ms exceeded.\nCall log:\n  - waiting for locator('#search-drawer input[name=\\'q\\']').first() to be visible\n    28 × locator resolved to hidden <input name=\"q\" type=\"search\" autocorrect=\"off\" autocomplete=\"off\" spellcheck=\"false\" aria-label=\"Search\" autocapitalize=\"off\" placeholder=\"SEARCH FOR...\"/>\n"
+    }
+  ],
+  "interactionNote": "html.no-js; Shopify.theme 10s sonra da null. /search sayfası ayrı obs.",
+  "capture": {
+    "url": "https://moom.health/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:24:06.533Z"
+  }
+}

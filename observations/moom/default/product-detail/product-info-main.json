@@ -1,0 +1,59 @@
+{
+  "observationId": "moom.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "moom",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://moom.health/products/mama-water",
+  "selector": "#shopify-section-template--22312819425493__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/moom/default/product-detail/product-info-main.changed.results-timeline.1440.png",
+    "evidence/moom/default/product-detail/product-info-main.changed.results-timeline.375.png",
+    "evidence/moom/default/product-detail/product-info-main.changed.results-timeline.768.png",
+    "evidence/moom/default/product-detail/product-info-main.initial.mama-water.1440.png",
+    "evidence/moom/default/product-detail/product-info-main.initial.mama-water.375.png",
+    "evidence/moom/default/product-detail/product-info-main.initial.mama-water.768.png"
+  ],
+  "notlar": "Mama Water · 4.9 (21 Reviews) · $39.90 · ADD TO CART. GWP Mini Shopper. Accordion: DESCRIPTION / RESULTS TIMELINE / HOW TO USE / INGREDIENTS. Pairs well with.",
+  "delta": "Impact product main + Kinetic buy box. variant-picker DOM'da yok (tek SKU). Happy Hormones swatch h=0 leftover. Accordion changed.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://moom.health/products/mama-water",
+      "capture": true,
+      "etiket": "mama-water",
+      "not": "Galeri + buy box"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='id_additional_2']",
+      "capture": true,
+      "etiket": "results-timeline",
+      "not": "RESULTS TIMELINE accordion açık"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Mama Water $39.90 ATC; galeri + Mini Shopper GWP + DESCRIPTION / RESULTS TIMELINE / HOW TO USE / INGREDIENTS.",
+    "changed": "label[for=id_additional_2] tık. 1440 karede DESCRIPTION ve RESULTS TIMELINE ikisi de açık (no-js checkbox accordion)."
+  },
+  "missingStates": [],
+  "interactionNote": "Swatch yok bu PDP. Checkout yok.",
+  "capture": {
+    "url": "https://moom.health/products/mama-water",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:14:12.578Z"
+  }
+}
