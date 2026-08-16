@@ -1,0 +1,49 @@
+{
+  "preset": "default",
+  "kaynak": "onceuponafarm",
+  "evidence": [],
+  "schemaId": "global-menu-drawer",
+  "sayfa": "home",
+  "url": "https://onceuponafarmorganics.com/",
+  "selector": "#Details-menu-drawer-container .menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "captureMode": "viewport",
+  "prepareClick": "header summary.header__icon--menu[aria-label='Menu']",
+  "notlar": "375/768 hamburger. Horizon header-drawer.",
+  "delta": "Masaüstü mega ayrı. 1440 hamburger 0px beklenir.",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://onceuponafarmorganics.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header summary.header__icon--menu[aria-label='Menu']",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Mobil drawer"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: Shop All / Starter Boxes / Build a Box / Quiz / Stores / About."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger yok (desktop mega)."
+    }
+  ],
+  "interactionNote": "1440 N/A. Alt akordeon tıklanmadı.",
+  "observationId": "onceuponafarm.default.home.global-menu-drawer"
+}

@@ -1,0 +1,65 @@
+{
+  "preset": "default",
+  "kaynak": "onceuponafarm",
+  "evidence": [],
+  "schemaId": "global-predictive-search",
+  "sayfa": "home",
+  "url": "https://onceuponafarmorganics.com/",
+  "selector": "dialog.search-modal__content",
+  "evidenceSlug": "global-predictive-search",
+  "captureMode": "viewport",
+  "prepareClick": "header button.header-actions__action[aria-label='Search']",
+  "notlar": "dialog-component#search-modal + predictive-search-component. Input #cmdk-input. Kapalı 0 yükseklik.",
+  "delta": "Horizon predictive-search-form. katalogSorgu: pouch (90 sonuç sayfa; overlay ürün beklenir).",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://onceuponafarmorganics.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header button.header-actions__action[aria-label='Search']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Boş overlay"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "dialog.search-modal__content input[name='q'], #cmdk-input",
+      "value": "pouch",
+      "capture": false,
+      "not": "katalog: refrigerated pouches"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "dialog.search-modal__content input[name='q'], #cmdk-input",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "pouch",
+      "not": "Öneri/ürün listesi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Search overlay açık, boş input.",
+    "input": "pouch yazınca ürün/öneri — kareye bak."
+  },
+  "missingStates": [],
+  "interactionNote": "İki Search butonu var; görünür header-actions__action. PII yok.",
+  "observationId": "onceuponafarm.default.home.global-predictive-search"
+}
