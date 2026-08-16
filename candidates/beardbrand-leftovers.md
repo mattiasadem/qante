@@ -112,6 +112,20 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: beardbrand-predictive-empty  
+Gerekçe: `#site-search` fill `beard oil` + 2.5s wait — input yazıldı, `.search-results` boş siyah. İkinci çekim aynı. Tam sayfa `/search?q=beard` 68 sonuç (observation var).  
+Öneri: leftover — predictive ürün kartı yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: beardbrand-plp-faq-already-open  
+Gerekçe: PLP FAQ `changed` karesi initial ile aynı (COMMON QUESTIONS minus, yargılar açık). Pixel değişmedi.  
+Öneri: leftover — toggle doğrulanamadı  
+Karar: onay bekliyor
+
+---
+
 ADAY: beardbrand-pdp-featured-in  
 Gerekçe: PDP/PLP “FEATURED IN…” custom_liquid ~109px (yayın logoları). social-proof-brand-logos adayı; bu walk’ta claim edilmedi.  
 Öneri: leftover — ince logo band  
