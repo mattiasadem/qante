@@ -1,0 +1,61 @@
+{
+  "preset": "default",
+  "kaynak": "onceuponafarm",
+  "evidence": [
+    "evidence/onceuponafarm/default/home/global-menu-drawer.open.hamburger.375.png"
+  ],
+  "schemaId": "global-menu-drawer",
+  "sayfa": "home",
+  "url": "https://onceuponafarmorganics.com/",
+  "selector": "#Details-menu-drawer-container .menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "captureMode": "viewport",
+  "prepareClick": "header summary.header__icon--menu[aria-label='Menu']",
+  "notlar": "375 hamburger drawer. Horizon header-drawer.",
+  "delta": "768 hamburger 0px — header Shop All / Starter Boxes / More (desktop nav). 1440 mega ayrı.",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://onceuponafarmorganics.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header summary.header__icon--menu[aria-label='Menu']",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Mobil drawer"
+    }
+  ],
+  "stateFindings": {
+    "open": "375: Search (yeşil daire) + X; Starter Boxes / Build a Box / Quiz; SHOP BY CATEGORY; SHOP BY AGE; LOG IN."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "768 hamburger 0px — desktop nav (Shop All / Starter Boxes / More). 1440 hamburger yok."
+    }
+  ],
+  "interactionNote": "768/1440 N/A. Alt akordeon tıklanmadı. LOG IN görüldü, tıklanmadı.",
+  "observationId": "onceuponafarm.default.home.global-menu-drawer",
+  "capture": {
+    "url": "https://onceuponafarmorganics.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:21:30.412Z"
+  }
+}
