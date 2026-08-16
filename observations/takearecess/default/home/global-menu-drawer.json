@@ -1,0 +1,82 @@
+{
+  "observationId": "takearecess.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "takearecess",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://takearecess.com/",
+  "selector": "#shop-nav-menu",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/takearecess/default/home/global-menu-drawer.1440.png",
+    "evidence/takearecess/default/home/global-menu-drawer.375.png",
+    "evidence/takearecess/default/home/global-menu-drawer.768.png",
+    "evidence/takearecess/default/home/global-menu-drawer.changed.mood-submenu.375.png",
+    "evidence/takearecess/default/home/global-menu-drawer.changed.mood-submenu.768.png",
+    "evidence/takearecess/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/takearecess/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "Aynı #shop-nav-menu dialog 375/768 tam ekran. Recess Mood / Zero Proof / Recess / Mood Powder expander + shop all. 1440 mega olarak header obs'ta.",
+  "delta": "Nuxt (Netlify) + Sanity CMS + Shopify Storefront API. window.Shopify / Shopify.theme / schema_name / schema_version / theme_store_id yok — uydurulmadı. shop takearecess.myshopify.com (API 2023-07). Sanity projectId umoebutk dataset production. #shopify-section-* yok. Custom Day Job / recess repo.",
+  "captureMode": "viewport",
+  "prepareClick": ".nav-item--menu-toggle",
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://takearecess.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": ".nav-item--menu-toggle",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "375/768 shop → tam ekran menu drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shop-nav-menu .menu-item:has-text('Recess Mood')",
+      "value": 600,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mood-submenu",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Recess Mood expander — lezzet listesi"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 tam ekran: shop × + logo; shop all; Mood / Zero Proof / Recess / Mood Powder; jerseys; what's inside; where to buy; gift card; subscribe & save; login.",
+    "changed": "375/768 Recess Mood expander: < back + shop all + pink lemonade … black cherry + jersey."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 hamburger yok — mega header obs. Yazılı shop-all <a> koleksiyona gider, tıklanmadı.",
+  "capture": {
+    "url": "https://takearecess.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:41:31.150Z",
+    "prepareClick": ".nav-item--menu-toggle"
+  }
+}
