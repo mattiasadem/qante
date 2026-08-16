@@ -67,18 +67,18 @@ Durum: `done` = main'e merge · `in progress` = açık PR · boş = kuyrukta
 | 55 | done | omsom.com | https://omsom.com |
 | 56 | done | desoi.com | https://desoi.com |
 | 57 | done | materialkitchen.com | https://materialkitchen.com |
-| 58 | in progress | onnit.com | https://onnit.com |
+| 58 | done | onnit.com | https://onnit.com |
 | 59 | done | buckmason.com | https://buckmason.com |
 | 60 | in progress | herocosmetics.com | https://herocosmetics.com |
-| 61 | in progress | magicspoon.com | https://magicspoon.com |
+| 61 | done | magicspoon.com | https://magicspoon.com |
 | 62 | done | takearecess.com | https://takearecess.com |
 | 63 | in progress | vivobarefoot.com | https://vivobarefoot.com |
 | 64 | in progress | moom.health | https://moom.health |
 | 65 | in progress | partakefoods.com | https://partakefoods.com |
 | 66 | in progress | beardbrand.com | https://beardbrand.com |
-| 67 | in progress | westernrise.com | https://westernrise.com |
-| 68 | | onceuponafarm.com | https://onceuponafarm.com |
-| 69 | | trueclassictees.com | https://trueclassictees.com |
+| 67 | done | westernrise.com | https://westernrise.com |
+| 68 | in progress | onceuponafarm.com | https://onceuponafarm.com |
+| 69 | in progress | trueclassictees.com | https://trueclassictees.com |
 
 ## Düz URL listesi
 

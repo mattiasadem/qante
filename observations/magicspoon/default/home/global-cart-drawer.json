@@ -1,0 +1,136 @@
+{
+  "observationId": "magicspoon.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "magicspoon",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://magicspoon.com/",
+  "selector": ".rebuy-cart__flyout",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/magicspoon/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/magicspoon/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/magicspoon/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/magicspoon/default/home/global-cart-drawer.filled.cocoa-dolu.1440.png",
+    "evidence/magicspoon/default/home/global-cart-drawer.filled.cocoa-dolu.375.png",
+    "evidence/magicspoon/default/home/global-cart-drawer.filled.cocoa-dolu.768.png",
+    "evidence/magicspoon/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/magicspoon/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/magicspoon/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "Rebuy Smart Cart. Empty: Your cart is empty! + Shop Cereal / Treats / Granola / Build Your Own Bundle / Shop All.",
+  "delta": "#rebuy-cart / .rebuy-cart__flyout (closed x≈2380). Body smart-cart--enabled. /cart is separate SCA empty page.",
+  "captureMode": "viewport",
+  "prepareClick": "a.js-cart-empty[aria-label='Open cart']",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://magicspoon.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.js-cart-empty[aria-label='Open cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://magicspoon.com/products/cocoa-cereal-case",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'], button[type='submit']:has-text('Add'), button:has-text('Add to Cart'), button:has-text('SUBSCRIBE')",
+      "capture": false,
+      "not": "Cocoa PDP ATC — UI click then /cart/add.js fallback"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://magicspoon.com/",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a.js-cart-empty[aria-label='Open cart'], a[aria-label='Open cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cocoa-dolu"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".rebuy-cart__flyout button[aria-label*='increase' i], .rebuy-cart__flyout button[class*='plus'], .rebuy-cart__flyout [class*='quantity'] button:last-child",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Qty plus if present"
+    }
+  ],
+  "stateFindings": {
+    "initial": "3vp boş Rebuy: Your cart is empty + Shop Cereal/Treats/Granola/Bundle/Shop All.",
+    "filled": "Cocoa - 1 Case (4 Boxes) $39 + MORE FOR YOUR BOWL + SUBSCRIBE AND SAVE 20%.",
+    "changed": "1440 qty 2 / SUBTOTAL $78. 375/768 stepper de yakalandı."
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 opener a.js-cart-empty (nav.ms21-header gizli). Checkout tıklanmadı. 1440 filled/changed kanıtlı.",
+  "capture": {
+    "url": "https://magicspoon.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:54:24.463Z"
+  }
+}
