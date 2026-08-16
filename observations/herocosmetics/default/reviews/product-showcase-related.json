@@ -1,0 +1,68 @@
+{
+  "observationId": "herocosmetics.default.reviews.product-showcase-related",
+  "schemaId": "product-showcase-related",
+  "kaynak": "herocosmetics",
+  "preset": "default",
+  "sayfa": "reviews",
+  "url": "https://www.herocosmetics.us/pages/reviews",
+  "selector": "#shopify-section-page-related-products",
+  "evidenceSlug": "product-showcase-related",
+  "evidence": [
+    "evidence/herocosmetics/default/reviews/product-showcase-related.initial.bolum.1440.png",
+    "evidence/herocosmetics/default/reviews/product-showcase-related.initial.bolum.375.png",
+    "evidence/herocosmetics/default/reviews/product-showcase-related.initial.bolum.768.png"
+  ],
+  "notlar": "Start shopping / See All Products + kartlar. 540px.",
+  "delta": "Sayfa altı related.",
+  "capture": {
+    "url": "https://www.herocosmetics.us/pages/reviews",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:14:44.370Z"
+  },
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.herocosmetics.us/pages/reviews",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 10000,
+      "capture": false,
+      "not": "Attentive gecikmeli gelir"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Attentive 10% email kapat — PII yok"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-page-related-products",
+      "capture": true,
+      "etiket": "bolum",
+      "not": "Attentive kapalı section"
+    }
+  ],
+  "missingStates": []
+}

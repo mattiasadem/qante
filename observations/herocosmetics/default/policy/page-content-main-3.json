@@ -1,0 +1,68 @@
+{
+  "observationId": "herocosmetics.default.policy.page-content-main.3",
+  "schemaId": "page-content-main",
+  "kaynak": "herocosmetics",
+  "preset": "default",
+  "sayfa": "policy",
+  "url": "https://www.herocosmetics.us/pages/faq-returns",
+  "selector": "#pageContainer .content-container",
+  "evidenceSlug": "page-content-main-3",
+  "evidence": [
+    "evidence/herocosmetics/default/policy/page-content-main-3.initial.bolum.1440.png",
+    "evidence/herocosmetics/default/policy/page-content-main-3.initial.bolum.375.png",
+    "evidence/herocosmetics/default/policy/page-content-main-3.initial.bolum.768.png"
+  ],
+  "notlar": "Returns: 30 day policy / exchange / refund. Statik liste, accordion değil.",
+  "delta": "FAQ sayfası değil page template. /pages/returns aynı içerik.",
+  "capture": {
+    "url": "https://www.herocosmetics.us/pages/faq-returns",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-16T00:08:34.034Z"
+  },
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.herocosmetics.us/pages/faq-returns",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 10000,
+      "capture": false,
+      "not": "Attentive gecikmeli gelir"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Attentive 10% email kapat — PII yok"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#pageContainer .content-container",
+      "capture": true,
+      "etiket": "bolum",
+      "not": "Attentive kapalı section"
+    }
+  ],
+  "missingStates": []
+}
