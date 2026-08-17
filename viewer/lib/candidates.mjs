@@ -1,15 +1,23 @@
 /**
- * candidates/ klasörünü okur — aday kategoriler + sığmayanlar.
+ * candidates/ klasörünü okur — aday kategoriler + sığmayanlar + skor listeleri.
  * Markdown dosyalarından hafif yapı çıkarır (bağımlılıksız).
+ *
+ * Status sütunlu tablolar (shopify-themes.md, dtc-69-brands.md) `lists` olur;
+ * Aday sekmesi yalnız ADAY + sığmayanlar kullanır.
  */
 
 import fs from "fs";
 import path from "path";
 
+const LIST_GROUP_BY_FILE = {
+  "shopify-themes.md": "Shopify temalar",
+  "dtc-69-brands.md": "DTC-69",
+};
+
 export function loadCandidates(root) {
   const dir = path.join(root, "candidates");
   if (!fs.existsSync(dir)) {
-    return { generatedAt: new Date().toISOString(), candidates: [], misfits: [], files: [] };
+    return { generatedAt: new Date().toISOString(), candidates: [], misfits: [], lists: [], files: [] };
   }
 
   const files = fs
@@ -19,6 +27,7 @@ export function loadCandidates(root) {
 
   const candidates = [];
   const misfits = [];
+  const lists = [];
   const docs = [];
 
   for (const name of files) {
@@ -30,7 +39,8 @@ export function loadCandidates(root) {
       (raw.match(/^#\s*ADAY:\s*([^\s]+)/im) || [])[1] ||
       name.replace(/\.md$/, "");
 
-    const tableRows = parseMdTable(raw);
+    const tables = parseAllMdTables(raw);
+    const tableRows = tables[0]?.rows || [];
     const isMisfitDoc =
       /sığmayan|sigmayan/i.test(name) || /sığmayan/i.test(title);
 
@@ -76,6 +86,22 @@ export function loadCandidates(root) {
       continue;
     }
 
+    const statusTables = tables.filter((t) => t.headers.includes("status"));
+    if (statusTables.length) {
+      const group = LIST_GROUP_BY_FILE[name] || title;
+      let added = 0;
+      for (const table of statusTables) {
+        for (const row of table.rows) {
+          const item = listRowFromCells(row, { rel, title, group, slug, index: lists.length });
+          if (!item) continue;
+          lists.push(item);
+          added++;
+        }
+      }
+      docs.push({ path: rel, title, kind: "list-doc", group, rowCount: added });
+      continue;
+    }
+
     docs.push({ path: rel, title, kind: "doc", raw });
   }
 
@@ -83,13 +109,80 @@ export function loadCandidates(root) {
     generatedAt: new Date().toISOString(),
     candidates,
     misfits,
+    lists,
     files: docs,
     counts: {
       candidates: candidates.length,
       misfits: misfits.length,
+      lists: lists.length,
       files: docs.length,
     },
   };
+}
+
+function listRowFromCells(row, { rel, title, group, slug, index }) {
+  const num = cell(row, ["#", "no", "num"]);
+  const status = normalizeListStatus(cell(row, ["status", "durum"]));
+  const theme = stripMd(cell(row, ["theme", "tema"]));
+  const domain = stripMd(cell(row, ["domain", "site"]));
+  const name = theme || domain || stripMd(cell(row, ["name", "ad"]));
+  if (!name || name === "#" || /^[-—–]+$/.test(name)) return null;
+
+  const walkUrl =
+    firstUrl(cell(row, ["walk url", "walk", "demo"])) ||
+    firstUrl(cell(row, ["url"]));
+  const notes = cell(row, ["notes", "not", "notlar"]);
+  const itemSlug = cell(row, ["slug"]) || kebab(name);
+
+  return {
+    id: `list:${slug}:${num || index + 1}`,
+    kind: "list",
+    group,
+    sourceFile: rel,
+    sourceTitle: title,
+    num: num || String(index + 1),
+    status,
+    title: name,
+    theme: theme || "",
+    domain: domain || "",
+    developer: stripMd(cell(row, ["developer", "geliştirici", "gelistirici"])),
+    price: cell(row, ["price", "fiyat"]),
+    walkUrl,
+    slug: itemSlug,
+    notes,
+    storeUrl: firstUrl(cell(row, ["theme"])) || firstUrl(notes),
+  };
+}
+
+function normalizeListStatus(raw) {
+  const s = String(raw || "")
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, " ");
+  if (s === "done") return "done";
+  if (s === "in progress" || s === "in-progress") return "in progress";
+  return "";
+}
+
+function kebab(s) {
+  return String(s || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+function stripMd(s) {
+  return String(s || "")
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+    .replace(/\*\*(.+?)\*\*/g, "$1")
+    .trim();
+}
+
+function firstUrl(s) {
+  const md = String(s || "").match(/\((https?:\/\/[^)\s]+)\)/);
+  if (md) return md[1];
+  const bare = String(s || "").match(/https?:\/\/[^\s)|]+/);
+  return bare ? bare[0] : "";
 }
 
 function meta(raw, label) {
@@ -107,13 +200,21 @@ function sectionBody(raw, heading) {
   return m ? m[1].trim() : "";
 }
 
-function parseMdTable(raw) {
+function parseAllMdTables(raw) {
   const lines = raw.split(/\r?\n/);
-  const rows = [];
+  const tables = [];
   let headers = null;
+  let rows = [];
+
+  const flush = () => {
+    if (headers) tables.push({ headers, rows });
+    headers = null;
+    rows = [];
+  };
+
   for (const line of lines) {
     if (!/^\|.+\|$/.test(line.trim())) {
-      if (headers) break;
+      if (headers) flush();
       continue;
     }
     const cells = line
@@ -133,7 +234,8 @@ function parseMdTable(raw) {
     });
     rows.push(obj);
   }
-  return rows;
+  flush();
+  return tables;
 }
 
 function cell(row, keys) {

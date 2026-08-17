@@ -30,6 +30,7 @@ viewer/
 |---|---|
 | **Envanter** | Sol listede gruplanmış şema + gözlem kayıtları, sağda evidence |
 | **Aday & sığmayanlar** | `candidates/` — aday kategoriler + şemaya sığmayanlar |
+| **Listeler** | Theme Store + DTC-69 skor tabloları (`done` / `in progress` / kuyruk) |
 | **Kapsama** | Satır = şema, kolon = tema/preset. Yeşil 3/3, sarı kısmi, kırmızı SS yok, nokta hiç gözlem yok |
 | **Sağlık** | Hata/uyarı/bilgi bulguları + düzeltme komutu (tıkla → kopyalanır) |
 
@@ -57,7 +58,7 @@ Tüm filtre + seçim + viewport durumu URL'de: link paylaşılabilir, F5 dayanı
 | `/api/schema/:id` | tek şema + bağlı gözlemler (tam JSON) |
 | `/api/observation?id=` | tek gözlem (tam JSON) |
 | `/api/coverage` | şema × tema matrisi |
-| `/api/candidates` | aday kategoriler + sığmayanlar (`candidates/*.md`) |
+| `/api/candidates` | aday kategoriler + sığmayanlar + Status tablolu listeler (`candidates/*.md`) |
 | `/api/health` | tutarsızlık listesi |
 
 Liste endpoint'i tam JSON gövdesi taşımaz; detay ayrı istekle gelir — binlerce kayıtta da hafif kalır.

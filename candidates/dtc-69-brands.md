@@ -8,6 +8,8 @@
 
 Durum: `done` = main'e merge · `in progress` = açık PR · boş = kuyrukta
 
+Tema skoru: [`shopify-themes.md`](./shopify-themes.md) · viewer **Listeler** sekmesi.
+
 | # | Status | Domain | URL |
 |---|---|---|---|
 | 1 | done | myobvi.com | https://myobvi.com |
