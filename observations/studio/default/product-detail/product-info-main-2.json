@@ -1,0 +1,52 @@
+{
+  "observationId": "studio.default.product-detail.product-info-main.2",
+  "schemaId": "product-info-main",
+  "kaynak": "studio",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://theme-studio-demo.myshopify.com/products/gift-card",
+  "selector": "#shopify-section-template--17836821643432__main",
+  "evidenceSlug": "product-info-main-2",
+  "evidence": [],
+  "notlar": "Gift Card. Amount $50–$500 radios. Interact: $50 → $100.",
+  "delta": "varyantGosterim=swatch/pill (Amount). Tek varyant ekseni.",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-studio-demo.myshopify.com/products/gift-card",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17836821643432__main",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Amount $50 seçili"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='template--17836821643432__main-1-1']",
+      "value": 2000,
+      "capture": false,
+      "not": "$100 radio"
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17836821643432__main",
+      "capture": true,
+      "etiket": "amount-100",
+      "not": "$100 seçili"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Buy it now / checkout tıklanmadı. Rhyme'da varyant yok; option change gift card."
+}

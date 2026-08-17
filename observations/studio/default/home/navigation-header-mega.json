@@ -1,0 +1,84 @@
+{
+  "observationId": "studio.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "studio",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-studio-demo.myshopify.com/",
+  "selector": "#shopify-section-header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Sticky header. Logo Ninth Editions. Nav: Prints / Originals / Art Objects / Shop by Artist (dropdown) / Gift Cards / About (dropdown). Arama ikonu + sepet /cart. Mega yok.",
+  "delta": "Mega panel yok — Dawn details-disclosure dropdown (header__submenu). theme_store_id null; schema_name Dawn 3.0.0; Shopify.theme.name '[Studio] Theme Store demo (latest)'.",
+  "captureMode": "viewport",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-studio-demo.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali-header",
+      "not": "Dropdown kapalı"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-HeaderMenu-4 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "artist-dropdown-acik",
+      "not": "Shop by Artist — mega değil, dikey submenu"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "summary.header__icon--menu",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mobil-menu-acik",
+      "not": "Hamburger → #menu-drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-menu-drawer-menu-item-4 > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mobil-akordeon-acik",
+      "not": "Shop by Artist akordeon"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Mega yok; 1440 dropdown click ile open"
+    },
+    {
+      "state": "filled",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "input",
+      "sebep": "Arama ayrı (global-predictive-search)"
+    }
+  ],
+  "interactionNote": "Mega yok. Hover submenu yüksekliği vardı ama details.open false; click open=true. 375/768 desktop summary gizli."
+}

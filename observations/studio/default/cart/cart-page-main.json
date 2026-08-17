@@ -1,0 +1,79 @@
+{
+  "observationId": "studio.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "studio",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://theme-studio-demo.myshopify.com/cart",
+  "selector": "#shopify-section-template--17836821119144__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Boş: Your cart is empty + Continue shopping. Dolu: satır + adet. Sibling cart-footer (Subtotal + Check out) ayrı section — leftover.",
+  "delta": "Dawn cart-items + cart-footer ayrık. Drawer yok; header #cart-icon-bubble → /cart. cart-notification popup leftover.",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-studio-demo.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17836821119144__cart-items",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş cart-items"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-studio-demo.myshopify.com/products/rhyme",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add']",
+      "capture": false,
+      "not": "Rhyme Add to cart"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-studio-demo.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17836821119144__cart-items",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Rhyme satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--17836821119144__cart-items button[name='plus']",
+      "capture": false,
+      "not": "Adet 1→2"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet ve toplam"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı. cart-footer sibling leftover."
+}
