@@ -8,6 +8,40 @@
   "selector": "#shopify-section-template--27353604325654__cart-upsell",
   "evidenceSlug": "product-showcase-grid-featured",
   "evidence": [],
-  "notlar": "You'll love this too. Freeze-Dried Meat Mix for Cats + diğerleri.",
-  "delta": "cart-upsell."
+  "notlar": "You'll love this too. Freeze-Dried Meat Mix for Cats + diğerleri. Boş cart'ta h=0.",
+  "delta": "cart-upsell yalnız dolu sepetle görünür.",
+  "interactionStates": ["filled"],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://eurus-breath-demo.myshopify.com/products/eco-friendly-natural-rubber-chew-toy",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://eurus-breath-demo.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--27353604325654__cart-upsell",
+      "capture": true,
+      "etiket": "upsell",
+      "not": "Dolu cart upsell"
+    }
+  ],
+  "stateFindings": {
+    "filled": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Boş /cart'ta section h=0 — static capture atlandı."
 }
