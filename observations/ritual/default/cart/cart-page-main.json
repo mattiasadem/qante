@@ -1,0 +1,85 @@
+{
+  "observationId": "ritual.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "ritual",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://theme-ritual-demo.myshopify.com/cart",
+  "selector": "#shopify-section-template--20531863748797__cart-section",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/ritual/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/ritual/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/ritual/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/ritual/default/cart/cart-page-main.filled.sepet-dolu.1440.png",
+    "evidence/ritual/default/cart/cart-page-main.filled.sepet-dolu.375.png",
+    "evidence/ritual/default/cart/cart-page-main.filled.sepet-dolu.768.png",
+    "evidence/ritual/default/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/ritual/default/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/ritual/default/cart/cart-page-main.initial.cart-bos.768.png"
+  ],
+  "notlar": "Boş: YOUR CART IS EMPTY · Have an account? Log in · Continue shopping.",
+  "delta": "Horizon cart-section. Login tıklanmadı. Checkout yok.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-ritual-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş sayfa"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-ritual-demo.myshopify.com/products/rose-11-bag-1",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#BuyButtons-ProductSubmitButton-AVVJJTGY5TXZTMnJ4c__add-to-cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-ritual-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepet-dolu",
+      "not": "Rose 11. Bag satır"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--20531863748797__cart-section button.quantity-plus[name='plus']",
+      "value": "1500",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "YOUR CART IS EMPTY + Log in + Continue shopping.",
+    "filled": "CART [1]. Rose 11. Bag Red $6,500 adet 1 + çöp. Estimated total $6,500.00 USD. Check out (tıklanmadı).",
+    "changed": "CART [2]. Adet 2, satır $13,000, estimated total $13,000.00 USD."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart → ui. Checkout / login / Discount yok.",
+  "capture": {
+    "url": "https://theme-ritual-demo.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:33:00.456Z"
+  }
+}
