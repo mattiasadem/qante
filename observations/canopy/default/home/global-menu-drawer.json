@@ -1,0 +1,75 @@
+{
+  "observationId": "canopy.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "canopy",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://canopy-theme-natural.myshopify.com/",
+  "selector": "#main-menu-content",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/canopy/default/home/global-menu-drawer.changed.groceries-drill.375.png",
+    "evidence/canopy/default/home/global-menu-drawer.changed.groceries-drill.768.png",
+    "evidence/canopy/default/home/global-menu-drawer.open.menu-acik.375.png",
+    "evidence/canopy/default/home/global-menu-drawer.open.menu-acik.768.png"
+  ],
+  "notlar": "button.main-menu__toggle aria-label=Menu. 375 ve 768 44×44. 1440 md:hidden 0×0.",
+  "delta": "#main-menu-content is-open. Soldan/full. Groceries js-toggle drill.",
+  "captureMode": "viewport",
+  "prepareClick": "button.main-menu__toggle",
+  "interactionStates": [
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://canopy-theme-natural.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.main-menu__toggle",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "menu-acik",
+      "not": "Hamburger → Groceries/Offers/About Us/Inspiration/Presets + locale"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[aria-label='Toggle Groceries submenu']",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "groceries-drill",
+      "not": "Boş ok — yazılı Groceries <a> değil"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: X + Canopy + Groceries / Offers (kırmızı) / About Us / Inspiration & Recipes / Presets + In season now! + United States (USD $) / English.",
+    "changed": "375/768 Groceries ok: Back + Groceries + Fruit & Vegetables / Meat & Fish / Store Cupboard / The Bakery / Cheese & Dairy (dairesel thumb)."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 hamburger 0×0 leftover. Yazılı <a> tıklanmadı.",
+  "capture": {
+    "url": "https://canopy-theme-natural.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T20:59:54.206Z"
+  }
+}
