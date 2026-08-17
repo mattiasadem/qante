@@ -1,0 +1,113 @@
+{
+  "observationId": "showcase.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "showcase",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://betty-theme.myshopify.com/",
+  "selector": "#page-menu",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/showcase/default/home/global-menu-drawer.changed.shop-alt.1440.png",
+    "evidence/showcase/default/home/global-menu-drawer.changed.shop-alt.375.png",
+    "evidence/showcase/default/home/global-menu-drawer.changed.shop-alt.768.png",
+    "evidence/showcase/default/home/global-menu-drawer.open.hamburger.1440.png",
+    "evidence/showcase/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/showcase/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "Tam ekran koyu overlay (yan drawer değil). Home / Shop> / Our Story / Blog / FAQs / Presets> + English.",
+  "delta": "1440 hamburger de var (inline desktop nav yok). Kapalı #page-menu nav — dismiss overlay dokunmaz.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://betty-theme.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "a.menu[href='#page-menu']",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 700,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "viewports": [
+        "375",
+        "768",
+        "1440"
+      ],
+      "not": "Hamburger menü listesi — 1440 da hamburger (inline nav yok)"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#page-menu .main-nav > ul > li.has-children > a",
+      "capture": false,
+      "viewports": [
+        "375",
+        "768",
+        "1440"
+      ],
+      "not": "Shop alt menü"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 700,
+      "capture": false,
+      "viewports": [
+        "375",
+        "768",
+        "1440"
+      ]
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-alt",
+      "viewports": [
+        "375",
+        "768",
+        "1440"
+      ],
+      "not": "375 list; 768/1440 two-column mega + promo cards"
+    }
+  ],
+  "stateFindings": {
+    "open": "Koyu overlay. Home / Shop> / Our Story / Blog / FAQs / Presets> + English.",
+    "changed": "375: Shop drill-down Silicone + Leather Like. 768/1440: aynı kolon + Gift Cards / Like Leather SHOP kartları."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 hamburger resmi de çekildi; Shop mega ayrıca navigation-header-mega.open. Account tıklanmadı.",
+  "capture": {
+    "url": "https://betty-theme.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T20:59:55.186Z"
+  }
+}
