@@ -17,6 +17,30 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: vessel-account-icon  
+Gerekçe: Header’da person ikonu var. Login/account tıklanmadı (PII).  
+Örnekler: header sağ ikonlar  
+Öneri: PII stop  
+Karar: onay bekliyor
+
+---
+
+ADAY: vessel-cart-drawer-qty  
+Gerekçe: Drawer plus 375/1440 adet 2 yapmadı. Qty 1→2 `/cart` sayfasında doğrulandı.  
+Örnekler: global-cart-drawer changed  
+Öneri: leftover — drawer qty  
+Karar: onay bekliyor
+
+---
+
+ADAY: vessel-plp-filter-375  
+Gerekçe: 375 `facets-toggle__button` Filter. Desktop `#Facet-Details-…` gizli. 768/1440 AVAILABILITY → In stock 67→62.  
+Örnekler: `/collections/coffee-tea` 375  
+Öneri: leftover — mobil facet  
+Karar: onay bekliyor
+
+---
+
 ADAY: vessel-hamburger-768  
 Gerekçe: 375’te `summary[aria-label=Menu]` 46×46. 768/1440 hamburger 0×0; 768 inline nav + More overflow (ACCENTS).  
 Örnekler: 768 home header  

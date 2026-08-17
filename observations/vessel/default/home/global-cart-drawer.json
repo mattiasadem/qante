@@ -7,7 +7,17 @@
   "url": "https://theme-vessel-demo.myshopify.com/",
   "selector": ".cart-drawer__dialog",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/vessel/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/vessel/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/vessel/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/vessel/default/home/global-cart-drawer.filled.canister-qty1.1440.png",
+    "evidence/vessel/default/home/global-cart-drawer.filled.canister-qty1.375.png",
+    "evidence/vessel/default/home/global-cart-drawer.filled.canister-qty1.768.png",
+    "evidence/vessel/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/vessel/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/vessel/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
   "notlar": "Horizon cart-drawer-component. Boş: Your cart is empty; Have an account? Log in; Continue shopping.",
   "delta": "Shopify.theme.name `Updated copy of Vessel demo store 3.2.0` · id 159183306809 · schema_name Vessel · schema_version 3.4.0 · theme_store_id 3628 · role main · shop horizon-vessel.myshopify.com. Horizon nested theme-blocks: header-component / product-card / slideshow-component / variant-picker / cart-drawer-component / predictive-search-component / facets-form-component (shopify-block custom element yok). Slide-out drawer (Dawn notification değil). /cart ayrı sayfa. Login tıklanmadı.",
   "captureMode": "viewport",
@@ -53,36 +63,63 @@
     },
     {
       "state": "filled",
-      "action": "addToCart",
-      "selector": "#BuyButtons-ProductSubmitButton-AYzdvK2VXMkVMTVBJU__add-to-cart, button.add-to-cart-button[name='add'], button.add-to-cart-button",
+      "action": "scrollTo",
+      "selector": "#BuyButtons-ProductSubmitButton-AYzdvK2VXMkVMTVBJU__add-to-cart",
       "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#BuyButtons-ProductSubmitButton-AYzdvK2VXMkVMTVBJU__add-to-cart",
+      "capture": false,
+      "not": "UI ATC — drawer açılır"
     },
     {
       "state": "filled",
       "action": "waitFor",
-      "value": 1500,
-      "capture": false
-    },
-    {
-      "state": "filled",
-      "action": "click",
-      "selector": "header button[aria-label='Cart']",
+      "value": 2800,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "canister-qty1",
-      "not": "ATC sonrası drawer"
+      "not": "ATC sonrası drawer; dialog Playwright’ta hidden kalabilir"
     },
     {
       "state": "changed",
       "action": "click",
-      "selector": "button[name='plus'], .quantity-selector button[name='increase'], button[aria-label='Increase quantity']",
+      "selector": ".cart-drawer__dialog button.quantity-plus",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "adet-artti",
-      "not": "Adet +1"
+      "not": "Drawer plus"
     }
   ],
-  "stateFindings": {},
-  "missingStates": [],
-  "interactionNote": "Checkout / login yok. Qty selector yoklanır."
+  "stateFindings": {
+    "initial": "Boş drawer: Your cart is empty; Have an account? Log in; Continue shopping. 1440 sağ sheet; 375 tam ekran.",
+    "filled": "UI ATC sonrası. 375/768: Cart 1 + Baum Neu Canister $25 Size 450ml. 1440 sepet rozeti 1; sağ panel ince (PDP baskın).",
+    "changed": "Drawer plus 375/1440 adet 2 yapmadı (rozet 1). Qty kanıtı cart-page-main."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Drawer içi plus piksel değişmedi (adet 1 kaldı). /cart sayfasında 1→2 doğrulandı."
+    }
+  ],
+  "interactionNote": "UI ATC drawer’ı açar; cart/add.js drawer DOM’unu doldurmuyor. Checkout/login yok.",
+  "capture": {
+    "url": "https://theme-vessel-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:44:16.987Z"
+  }
 }

@@ -6,8 +6,8 @@
 *Tema (storefront, uydurulmadı):* **Updated copy of Vessel demo store 3.2.0** · `schema_name`: **Vessel** · `schema_version`: **3.4.0** · `theme_store_id`: **3628** · role `main` · id `159183306809`  
 *Shop:* `horizon-vessel.myshopify.com`
 
-**Durum:** Mod A walk + resmi 3vp + interact (devam)  
-**PR:** draft · **main'e merge yok**
+**Durum:** ✅ Mod A walk + resmi 3vp + interact + validate  
+**PR:** draft https://github.com/mattiasadem/qante/pull/146 · **main'e merge yok**
 
 ---
 
@@ -18,10 +18,12 @@
 | Evidence kökü | `evidence/vessel/default/` |
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
+| Observation | **30** |
+| Evidence PNG | **111** |
 | Parallel | yalnız `observations/vessel/`, `evidence/vessel/`, `todo/vessel.md`, `candidates/vessel-*.md` |
 
 **Kapsam satırı:**  
-`Vessel · default · Updated copy of Vessel demo store 3.2.0 / schema_name Vessel 3.4.0 · theme_store_id 3628 · home→PDP→PLP→collections→search→cart→about/contact→journal→404 · 30 obs · 0 yeni şema · Horizon nested theme-blocks`
+`Vessel · default · Updated copy of Vessel demo store 3.2.0 / schema_name Vessel 3.4.0 · theme_store_id 3628 · home→PDP→PLP→collections→search→cart→about/contact→journal→404 · 30 obs · 0 yeni şema · Horizon nested theme-blocks · leftover: mega yok / hamburger 768 / drawer qty / PLP filter 375`
 
 ---
 
@@ -29,52 +31,35 @@
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home + hero / bestsellers / featured×2 / essentials / collection-list / footer | [x] obs | [ ] capture |
-| Header kapalı + NEW IN hover 1440 | [x] obs | [ ] interact |
-| Predictive search `mug` | [x] obs | [ ] interact 375/768/1440 |
-| Cart drawer empty + filled + qty | [x] obs | [ ] interact |
-| Mobile hamburger 375 (+768 yoklanacak) | [x] obs | [ ] interact |
-| PDP Baum Neu Canister Size 450ml→800ml | [x] obs | [ ] interact |
-| PLP `/collections/coffee-tea` + AVAILABILITY | [x] obs | [ ] interact |
-| Collections index `/collections` | [x] obs | [ ] capture |
-| Search `/search?q=mug` | [x] obs | [ ] capture |
-| Cart `/cart` empty + filled + qty | [x] obs | [ ] interact |
-| About `/pages/about-our-brand` | [x] obs | [ ] capture |
-| Contact form (Submit yok) | [x] obs | [ ] capture |
-| Journal `/blogs/news` + Discovering donabes | [x] obs | [ ] capture |
-| 404 | [x] obs | [ ] capture |
+| Home + hero / bestsellers / featured×2 / essentials / collection-list / footer | [x] | [x] |
+| Header kapalı + NEW IN hover 1440 | [x] | [x] mega yok |
+| Predictive search `mug` | [x] | [x] 375/768/1440 |
+| Cart drawer empty + filled | [x] | [x] qty leftover |
+| Mobile hamburger 375 | [x] | [x] 768/1440 N/A |
+| PDP Baum Neu Canister Size 450ml→800ml | [x] | [x] $25→$27.50 |
+| PLP `/collections/coffee-tea` + AVAILABILITY | [x] | [x] 768/1440; 375 leftover |
+| Collections index `/collections` | [x] | [x] |
+| Search `/search?q=mug` | [x] | [x] 91 ITEMS |
+| Cart `/cart` empty + filled + qty | [x] | [x] 1→2 · $25→$50 |
+| About `/pages/about-our-brand` | [x] | [x] |
+| Contact form (Submit yok) | [x] | [x] |
+| Journal `/blogs/news` + Discovering donabes | [x] | [x] |
+| 404 | [x] | [x] |
 | Email / account / checkout / newsletter submit | ⛔ PII | — |
 
 ---
 
-## Bileşen roster
+## Interact (pixel-checked)
 
-30 observation. 0 yeni şema.
-
-| # | id | sayfa | Screenshot | Not | JSON | Done |
-|---|---|---|---|---|---|---|
-| 1 | navigation-header-mega | home | [ ] | [x] | reuse | [ ] |
-| 2 | hero-slideshow | home | [ ] | [x] | reuse | [ ] |
-| 3 | product-showcase-grid-featured | home | [ ] | [x] | reuse | [ ] |
-| 4–5 | product-showcase-featured ×2 | home | [ ] | [x] | reuse | [ ] |
-| 6 | product-showcase-grid-featured.2 | home | [ ] | [x] | reuse | [ ] |
-| 7 | collection-nav-image-cards | home | [ ] | [x] | reuse | [ ] |
-| 8 | footer-columns-newsletter | home | [ ] | [x] | reuse | [ ] |
-| 9 | global-predictive-search | home | [ ] | [x] | reuse | [ ] |
-| 10 | global-menu-drawer | home | [ ] | [x] | reuse | [ ] |
-| 11 | global-cart-drawer | home | [ ] | [x] | reuse | [ ] |
-| 12 | product-info-main | product-detail | [ ] | [x] | reuse | [ ] |
-| 13 | editorial-image-with-text | product-detail | [ ] | [x] | reuse | [ ] |
-| 14 | product-showcase-related | product-detail | [ ] | [x] | reuse | [ ] |
-| 15 | collection-banner | collection | [ ] | [x] | reuse | [ ] |
-| 16 | product-showcase-grid-plp | collection | [ ] | [x] | reuse | [ ] |
-| 17 | collection-nav-image-cards | collections | [ ] | [x] | reuse | [ ] |
-| 18 | search-results | search | [ ] | [x] | reuse | [ ] |
-| 19–20 | cart-page-main + featured | cart | [ ] | [x] | reuse | [ ] |
-| 21–24 | about rich-text / IWT×2 / links | about-brand | [ ] | [x] | reuse | [ ] |
-| 25–26 | page-content + form | contact | [ ] | [x] | reuse | [ ] |
-| 27–28 | blog-list + blog-post | journal | [ ] | [x] | reuse | [ ] |
-| 29–30 | 404 + discover grid | not-found | [ ] | [x] | reuse | [ ] |
+| Bileşen | State | Sonuç |
+|---|---|---|
+| navigation-header-mega | initial / open | Mega yok — düz nav. Account ikonu var, tıklanmadı |
+| global-predictive-search | initial / input | Boş: 4 öneri. `mug`: Nest/Oct/Terra + View all |
+| global-menu-drawer | open | 375 liste + ürün kart. 768/1440 hamburger 0px |
+| global-cart-drawer | initial / filled | Boş sheet. Filled 375/768 Cart 1 Canister $25. Qty leftover |
+| cart-page-main | initial / filled / changed | Boş → qty1 $25 → qty2 $50 |
+| product-info-main | initial / changed | 450ml $25 → 800ml $27.50 |
+| product-showcase-grid-plp | open / changed | 768/1440 In stock 67→62. 375 leftover |
 
 ---
 
@@ -100,7 +85,7 @@ Canlı HTML’de `<shopify-block>` yok. Section sarmalayıcı + iç web componen
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact mega / search / cart / menu / PDP Size / PLP filter
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate`
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact mega / search / cart / menu / PDP Size / PLP filter
+- [x] PNG bak → stateFindings
+- [x] `npm run validate`
