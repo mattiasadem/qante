@@ -1,0 +1,69 @@
+{
+  "observationId": "empire.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "empire",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://empire-demo.myshopify.com/cart",
+  "selector": "#shopify-section-static-cart",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Tam sayfa sepet. Drawer yok. Boş: Your cart is empty + Continue shopping. Dolu: Super Pen satır + qty + Checkout.",
+  "delta": "static-cart. Calculate Shipping var; form doldurulmadı. Checkout tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://empire-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş sayfa"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://empire-demo.myshopify.com/products/super-pen",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": ".product-form--atc-button",
+      "capture": false,
+      "not": "Super Pen red varsayılan"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://empire-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepet-dolu",
+      "not": "Super Pen satır + subtotal"
+    },
+    {
+      "state": "changed",
+      "action": "select",
+      "selector": "#shopify-section-static-cart select.form-field-select",
+      "value": "2",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet 1→2, subtotal güncellenmeli"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Your cart + Continue shopping + Your cart is empty.",
+    "filled": "Electronic Super Pen Color red, $15.85, adet 1, Subtotal $15.85, Checkout.",
+    "changed": "Adet 2 seçildi — subtotal iki kat beklenir (çekimde bakılacak)."
+  },
+  "interactionNote": "ATC sayfada kalır (drawer yok). Qty native select 1–10+. Checkout yok.",
+  "capture": {
+    "url": "https://empire-demo.myshopify.com/cart",
+    "viewports": ["375", "768", "1440"]
+  }
+}

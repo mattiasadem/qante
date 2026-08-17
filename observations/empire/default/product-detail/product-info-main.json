@@ -1,0 +1,52 @@
+{
+  "observationId": "empire.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "empire",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://empire-demo.myshopify.com/products/super-pen",
+  "selector": "#shopify-section-static-product",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "Electronic Super Pen. by Empire Demo. Color <select> red/blue. Quantity 1–10+. Add to cart. Share Facebook/Twitter/Google+/Pinterest. Sticky ATC yok.",
+  "delta": "static-product tek section. Related/tabs/low-stock/countdown yok. Varyant dropdown (swatch yok).",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://empire-demo.myshopify.com/products/super-pen",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-static-product",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Color red, $15.85 USD"
+    },
+    {
+      "state": "changed",
+      "action": "select",
+      "selector": "#shopify-section-static-product select.form-field-select",
+      "value": "blue",
+      "capture": true,
+      "etiket": "renk-blue",
+      "not": "Color blue — fiyat $18.01 olmalı"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Color red seçili, $15.85 USD, Electronic Pen, adet 1, Add to cart.",
+    "changed": "Color blue, URL ?variant=13951966969901, fiyat $18.01 USD."
+  },
+  "interactionNote": "İlk form-field-select Color (red/blue); ikincisi Quantity. select .first() Color. Oak PDP aynı şablon — ayrı obs yok. Checkout yok.",
+  "capture": {
+    "url": "https://empire-demo.myshopify.com/products/super-pen",
+    "viewports": ["375", "768", "1440"]
+  }
+}

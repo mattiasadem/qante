@@ -1,0 +1,56 @@
+{
+  "observationId": "empire.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "empire",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://empire-demo.myshopify.com/",
+  "selector": ".search-flydown",
+  "captureMode": "viewport",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "live_search.enable true + görsel + içerik. katalogSorgu: pen (Electronic Super Pen).",
+  "delta": "Flydown: ürün + Pages & Posts. 375/768 input görünür (ikinci satır).",
+  "interactionStates": [
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "input",
+      "action": "goto",
+      "value": "https://empire-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input.site-header-search-form-field[name='q']",
+      "value": "pen",
+      "capture": false,
+      "not": "katalog: pen"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": "2000",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "Flydown: Super Pen + Pages & Posts boş + View all results"
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "Ayrı boş modal yok; input her zaman header’da. Öneri fill ile geldi."
+    }
+  ],
+  "stateFindings": {
+    "input": "q=pen: Electronic Super Pen $15.85 USD + Pages & Posts No results. + View all results."
+  },
+  "interactionNote": "Kapalı kare .search-flydown placeholder href=#. Fill sonrası gerçek ürün. Boş sonuç denenmedi (zzzzz).",
+  "capture": {
+    "url": "https://empire-demo.myshopify.com/",
+    "viewports": ["375", "768", "1440"]
+  }
+}
