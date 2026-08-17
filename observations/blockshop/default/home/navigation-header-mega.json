@@ -1,0 +1,84 @@
+{
+  "observationId": "blockshop.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "blockshop",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://blockshop-theme-beauty.myshopify.com/",
+  "selector": ".layout--viewport",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/blockshop/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/blockshop/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/blockshop/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/blockshop/default/home/navigation-header-mega.open.shop-accordion.1440.png",
+    "evidence/blockshop/default/home/navigation-header-mega.open.shop-accordion.768.png"
+  ],
+  "notlar": "data-layout=sidebar. 768/1440: aside.layout--sidebar 244px — SHOP (details) / NEW / TRENDING / ABOUT US + ENGLISH/CANADA + BAG/SEARCH/ACCOUNT. 375: header-element 54px hamburger+search+logo+account+bag. Klasik mega panel yok.",
+  "delta": "Shopify.theme.name `Copy of design [do not delete]` · id 134976438327 · schema_name Blockshop · schema_version 13.2.0 · theme_store_id null · role main · shop blockshop-theme-beauty.myshopify.com. Header shopify-section 1440/768'de 0px (element-relocator → sidebar). Shop <details> accordion: SHOP ALL / SKIN CARE / MAKE UP / HAIR CARE. Account tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://blockshop-theme-beauty.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.layout--close[aria-label='close']",
+      "capture": false,
+      "not": "JOIN THE GLOW CLUB kapat (PII)"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bar",
+      "not": "375 üst bar; 768/1440 sol sidebar"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "aside.layout--sidebar summary.y-menu--details-toggle",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-accordion",
+      "not": "SHOP details açık — SHOP ALL / SKIN CARE / MAKE UP / HAIR CARE"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440/768 sol sticky sidebar: logo + SHOP/NEW/TRENDING/ABOUT US + locale + BAG/SEARCH/ACCOUNT. 375 üst bar ikonları. Mega kolon/promo yok.",
+    "open": "768/1440 SHOP accordion: SHOP ALL, SKIN CARE, MAKE UP, HAIR CARE. Klasik mega görsel panel yok."
+  },
+  "missingStates": [],
+  "interactionNote": "375 hamburger ayrı global-menu-drawer. 768 hamburger display:none (sidebar). Account/login yok. Glow Club popup kapatıldı.",
+  "capture": {
+    "url": "https://blockshop-theme-beauty.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T20:52:24.177Z"
+  }
+}
