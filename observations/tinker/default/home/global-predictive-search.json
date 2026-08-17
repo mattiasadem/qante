@@ -1,0 +1,99 @@
+{
+  "observationId": "tinker.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "tinker",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-tinker-demo.myshopify.com/",
+  "selector": "dialog.search-modal__content",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/tinker/default/home/global-predictive-search.initial.search-bos.1440.png",
+    "evidence/tinker/default/home/global-predictive-search.initial.search-bos.375.png",
+    "evidence/tinker/default/home/global-predictive-search.initial.search-bos.768.png",
+    "evidence/tinker/default/home/global-predictive-search.input.tray.1440.png",
+    "evidence/tinker/default/home/global-predictive-search.input.tray.375.png",
+    "evidence/tinker/default/home/global-predictive-search.input.tray.768.png"
+  ],
+  "notlar": "dialog-component#search-modal + predictive-search-component. Input #cmdk-input. Kapalı 0 yükseklik.",
+  "delta": "Horizon cmdk search. katalogSorgu: tray (12 sonuç).",
+  "captureMode": "viewport",
+  "prepareClick": "search-button.search-action--hidden-on-drawer button[aria-label='Search']",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-tinker-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "search-button.search-action--hidden-on-menu button[aria-label='Search']",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "375 header Search (hidden-on-menu)"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "search-button.search-action--hidden-on-drawer button[aria-label='Search']",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "768/1440 header Search"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#cmdk-input",
+      "value": "tray",
+      "capture": false,
+      "not": "katalog: Valet/Gather tray"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "#cmdk-input",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "tray",
+      "not": "12 sonuç + View all"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Modal açık, placeholder Search. Bestsellers: Gather MagSafe $89, Analog Premium Starter Kit $118→$99, Valet Tray $95 / $79.",
+    "input": "tray + Clear; chips tray / gather zigzag tray; Products: Valet/Gather Tray $59–$95; View all."
+  },
+  "missingStates": [],
+  "interactionNote": "375 search header’da (hidden-on-menu). 768/1440 hidden-on-drawer. PII yok.",
+  "capture": {
+    "url": "https://theme-tinker-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:21:00.865Z"
+  }
+}
