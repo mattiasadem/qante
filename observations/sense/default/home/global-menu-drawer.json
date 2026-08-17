@@ -1,0 +1,62 @@
+{
+  "observationId": "sense.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "sense",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-sense-demo.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/sense/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/sense/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "375 hamburger → #menu-drawer. Skin Care / Hair Care / Body Care / Nail Polish / Blog / About Us.",
+  "delta": "1440 hamburger gizli (Dawn large-up inline). Mega yok.",
+  "captureMode": "viewport",
+  "prepareClick": "summary.header__icon--menu",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://theme-sense-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "summary.header__icon--menu",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Drawer açık; 1440 hamburger yok"
+    }
+  ],
+  "stateFindings": {
+    "open": "375: sol drawer Skin Care / Hair Care / Body Care / Nail Polish / Blog / About Us + altta Twitter/Facebook/Pinterest/Instagram/TikTok; header X. 768: aynı liste, drawer ~yarı, sağda hero görünür."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger yok (Dawn large-up inline) — beklenen"
+    }
+  ],
+  "capture": {
+    "url": "https://theme-sense-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:28:31.648Z"
+  }
+}

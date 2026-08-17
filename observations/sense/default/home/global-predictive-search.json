@@ -1,0 +1,87 @@
+{
+  "observationId": "sense.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "sense",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-sense-demo.myshopify.com/",
+  "selector": "details-modal.header__search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/sense/default/home/global-predictive-search.initial.modal-bos.1440.png",
+    "evidence/sense/default/home/global-predictive-search.initial.modal-bos.375.png",
+    "evidence/sense/default/home/global-predictive-search.initial.modal-bos.768.png",
+    "evidence/sense/default/home/global-predictive-search.input.oil.1440.png",
+    "evidence/sense/default/home/global-predictive-search.input.oil.375.png",
+    "evidence/sense/default/home/global-predictive-search.input.oil.768.png"
+  ],
+  "notlar": "Dawn details-modal + <predictive-search>. Input #Search-In-Modal / #Search-In-Modal-1.",
+  "delta": "Kapalı kare yanıltır. Overlay modal.",
+  "captureMode": "viewport",
+  "prepareClick": ".header__icon--search",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-sense-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".header__icon--search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "modal-bos",
+      "not": "Boş search modal"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "oil",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "oil",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "375/768 modal input #Search-In-Modal"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal-1",
+      "value": "oil",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "oil",
+      "viewports": [
+        "1440"
+      ],
+      "not": "1440 görünür input #Search-In-Modal-1; #Search-In-Modal gizli"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Search ikonu tık → üstte Search alanı + X. Ürün/koleksiyon önerisi yok.",
+    "input": "Alana oil yazıldı. Tek satır: Search for 'oil' →. Ürün kartı/koleksiyon önerisi yok (375/768/1440 aynı)."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu oil. 1440 görünür input #Search-In-Modal-1; #Search-In-Modal gizli (1. deneme timeout). Ürün önerisi üretilmedi — yalnız 'Search for oil' linki.",
+  "capture": {
+    "url": "https://theme-sense-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:35:25.211Z"
+  }
+}
