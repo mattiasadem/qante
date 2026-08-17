@@ -7,14 +7,21 @@
   "url": "https://theme-refresh-demo.myshopify.com/",
   "selector": "predictive-search.search-modal__form",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
-  "notlar": "Arama ikonu details-modal.header__search → #Search-In-Modal-1. katalogSorgu soap (8 sonuçlu arama).",
+  "evidence": [
+    "evidence/refresh/default/home/global-predictive-search.input.arama-sonucu.1440.png",
+    "evidence/refresh/default/home/global-predictive-search.input.arama-sonucu.375.png",
+    "evidence/refresh/default/home/global-predictive-search.input.arama-sonucu.768.png",
+    "evidence/refresh/default/home/global-predictive-search.open.arama-modal.1440.png",
+    "evidence/refresh/default/home/global-predictive-search.open.arama-modal.375.png",
+    "evidence/refresh/default/home/global-predictive-search.open.arama-modal.768.png"
+  ],
+  "notlar": "Arama ikonu details-modal.header__search. katalogSorgu soap. 1440: PRODUCTS Bar Soap 2 Pack.",
   "delta": "İkon-önce modal; satır içi arama kutusu yok.",
   "captureMode": "viewport",
   "interactionStates": [
     "initial",
-    "open",
-    "input"
+    "input",
+    "open"
   ],
   "interactionSteps": [
     {
@@ -35,23 +42,29 @@
     {
       "state": "input",
       "action": "fill",
-      "selector": "#Search-In-Modal-1",
+      "selector": "input.search__input[name='q']",
       "value": "soap",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "arama-sonucu",
-      "not": "soap yaz → öneri. Submit yok."
+      "not": "Görünür search input. 375/768 #Search-In-Modal; 1440 #Search-In-Modal-1. soap yaz → öneri. Submit yok."
     }
   ],
   "stateFindings": {
-    "open": "Search modal açık, boş input, sonuç listesi yok.",
-    "input": "soap yazınca ürün önerileri (Bar Soap vb.)."
+    "open": "Search modal açık, boş Search kutusu. 375 header içi input + X. Sonuç listesi yok.",
+    "input": "soap → PRODUCTS Bar Soap 2 Pack + Search for “soap”. 375/768/1440 aynı öneri."
   },
-  "missingStates": [
-    {
-      "state": "initial",
-      "sebep": "Kapalı hâl yalnız ikon; header karesinde."
-    }
-  ],
-  "interactionNote": "İki input var; görünür olan #Search-In-Modal-1. chair yok — katalog soap."
+  "missingStates": [],
+  "interactionNote": "İki input: masaüstü #Search-In-Modal-1, mobil #Search-In-Modal. fill görünür input.search__input[name=q]. katalog soap.",
+  "capture": {
+    "url": "https://theme-refresh-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:13:59.949Z"
+  }
 }
