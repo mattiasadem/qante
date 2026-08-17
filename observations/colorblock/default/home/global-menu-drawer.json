@@ -7,8 +7,51 @@
   "url": "https://theme-colorblock-demo.myshopify.com/",
   "selector": "#Details-menu-drawer-container",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/colorblock/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/colorblock/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
   "captureMode": "viewport",
   "notlar": "375/768 hamburger summary.aria-label=Menu. Shop / Clothing / Features / Accessories / Homeware akordeon.",
-  "delta": "1440 hamburger var ama mega birincil. Kapalı drawer 0px — viewport + prepareClick."
+  "delta": "1440 hamburger var ama mega birincil. Kapalı drawer 0px — viewport + click.",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://theme-colorblock-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Mobil menü drawer"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: Shop →, Magazine, About + Twitter/Facebook/Instagram/TikTok/YouTube. 1440 N/A."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 N/A (mega). Shop alt akordeon leftover.",
+  "capture": {
+    "url": "https://theme-colorblock-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:19:10.670Z"
+  }
 }

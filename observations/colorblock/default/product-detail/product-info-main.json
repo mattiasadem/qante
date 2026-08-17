@@ -7,7 +7,57 @@
   "url": "https://theme-colorblock-demo.myshopify.com/products/pocket-cardi-purple",
   "selector": "#shopify-section-template--22715895742486__main",
   "evidenceSlug": "product-info-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/colorblock/default/product-detail/product-info-main.1440.png",
+    "evidence/colorblock/default/product-detail/product-info-main.375.png",
+    "evidence/colorblock/default/product-detail/product-info-main.768.png",
+    "evidence/colorblock/default/product-detail/product-info-main.changed.renk-purple.1440.png",
+    "evidence/colorblock/default/product-detail/product-info-main.changed.renk-purple.375.png",
+    "evidence/colorblock/default/product-detail/product-info-main.changed.renk-purple.768.png",
+    "evidence/colorblock/default/product-detail/product-info-main.initial.ilk-hal.1440.png",
+    "evidence/colorblock/default/product-detail/product-info-main.initial.ilk-hal.375.png",
+    "evidence/colorblock/default/product-detail/product-info-main.initial.ilk-hal.768.png"
+  ],
   "notlar": "Pocket Cardi $245 CAD. Galeri + Size S–XL dropdown + Color Green/Charcoal/Purple/Blue/Tartan Green dropdown + qty stepper + Add to cart + Size chart + View full details.",
-  "delta": "varyantGosterim dropdown (swatch yok). cart-drawer yok — ATC cart-notification. Pickup-availability var."
+  "delta": "varyantGosterim dropdown (swatch yok). cart-drawer yok — ATC cart-notification. Pickup-availability var.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-colorblock-demo.myshopify.com/products/pocket-cardi-purple",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Color Green varsayılan"
+    },
+    {
+      "state": "changed",
+      "action": "select",
+      "selector": "#Option-template--22715895742486__main-1",
+      "value": "Purple",
+      "capture": true,
+      "etiket": "renk-purple",
+      "not": "Color Green → Purple; galeri/fiyat değişiyor mu"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Color Green, yeşil cardigan, $245 CAD, Size S.",
+    "changed": "Color Purple, ana görsel mor cardigan. Alt lifestyle thumbs hâlâ yeşil. Fiyat aynı."
+  },
+  "missingStates": [],
+  "interactionNote": "Size chart / ATC / checkout tıklanmadı. Tek option: Color dropdown.",
+  "capture": {
+    "url": "https://theme-colorblock-demo.myshopify.com/products/pocket-cardi-purple",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:19:50.962Z"
+  }
 }
