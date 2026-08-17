@@ -8,7 +8,7 @@
 
 Durum: `done` = main'e merge · `in progress` = açık PR · boş = kuyrukta
 
-Tema skoru: [`shopify-themes.md`](./shopify-themes.md) · viewer **Listeler** sekmesi.
+Tema listesi: [`shopify-themes.md`](./shopify-themes.md) · viewer **Listeler** sekmesi.
 
 | # | Status | Domain | URL |
 |---|---|---|---|

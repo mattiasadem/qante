@@ -30,7 +30,7 @@ viewer/
 |---|---|
 | **Envanter** | Sol listede gruplanmış şema + gözlem kayıtları, sağda evidence |
 | **Aday & sığmayanlar** | `candidates/` — aday kategoriler + şemaya sığmayanlar |
-| **Listeler** | Theme Store + DTC-69 skor tabloları (`done` / `in progress` / kuyruk) |
+| **Listeler** | Theme Store + DTC-69 listeleri (yapılmış / yapılıyor / kuyruk) |
 | **Kapsama** | Satır = şema, kolon = tema/preset. Yeşil 3/3, sarı kısmi, kırmızı SS yok, nokta hiç gözlem yok |
 | **Sağlık** | Hata/uyarı/bilgi bulguları + düzeltme komutu (tıkla → kopyalanır) |
 

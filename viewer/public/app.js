@@ -983,11 +983,11 @@ function wireCandLinks() {
   });
 }
 
-/* ---------------- listeler (tema / DTC skor) ---------------- */
+/* ---------------- listeler (tema / DTC takip) ---------------- */
 
 const LIST_STATUS_LABEL = {
-  done: "done",
-  "in progress": "in progress",
+  done: "yapılmış",
+  "in progress": "yapılıyor",
   "": "kuyruk",
 };
 
@@ -1020,7 +1020,7 @@ function listCounts(rows) {
 }
 
 function listCountLabel(c) {
-  return `${c.done} done · ${c.progress} in progress · ${c.queued} kuyruk`;
+  return `${c.done} yapılmış · ${c.progress} yapılıyor · ${c.queued} kuyruk`;
 }
 
 function listsFlat() {
@@ -1081,7 +1081,7 @@ function renderListsSidebar() {
       <span class="list-head-count">${esc(listCountLabel(all))}</span>
     </div>
     <p class="amac" style="padding:.55rem .85rem;margin:0;font-size:.78rem">
-      Theme Store + DTC-69 skor: done / in progress / kuyruk.
+      Shopify temaları ve DTC-69 siteleri — yapılmış / yapılıyor / kuyruk.
       Kaynak: <code>candidates/shopify-themes.md</code>, <code>candidates/dtc-69-brands.md</code>
     </p>
     ${groupsHtml || `<p class="empty">Liste kaydı yok</p>`}

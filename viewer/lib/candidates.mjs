@@ -1,5 +1,5 @@
 /**
- * candidates/ klasörünü okur — aday kategoriler + sığmayanlar + skor listeleri.
+ * candidates/ klasörünü okur — aday kategoriler + sığmayanlar + takip listeleri.
  * Markdown dosyalarından hafif yapı çıkarır (bağımlılıksız).
  *
  * Status sütunlu tablolar (shopify-themes.md, dtc-69-brands.md) `lists` olur;

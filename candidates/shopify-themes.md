@@ -1,7 +1,7 @@
-# Shopify Theme Store — skor tablosu
+# Shopify Theme Store — liste
 
 QANTE Theme Store takibi: hangi resmi demo / canlı mağaza walk edildi.  
-Durum: `done` = main’de resmi 3vp · `in progress` = açık PR / cloud agent · boş = kuyruk.  
+Durum: `done` = yapılmış (main’de resmi 3vp) · `in progress` = yapılıyor (açık PR / cloud agent) · boş = kuyruk.  
 *Kesim:* 17 Ağustos 2026 (Berlin). Viewer: **Listeler** sekmesi.
 
 DTC marka listesi: [`dtc-69-brands.md`](./dtc-69-brands.md)
