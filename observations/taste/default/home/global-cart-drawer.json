@@ -1,0 +1,82 @@
+{
+  "observationId": "taste.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "taste",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-taste-demo.myshopify.com/",
+  "selector": "#cart-notification",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/taste/default/home/global-cart-drawer.filled.fiery-ginger-eklendi.1440.png",
+    "evidence/taste/default/home/global-cart-drawer.filled.fiery-ginger-eklendi.375.png",
+    "evidence/taste/default/home/global-cart-drawer.filled.fiery-ginger-eklendi.768.png"
+  ],
+  "notlar": "Dawn cart-notification (slide-out drawer yok). ATC sonrası: Item added + View my cart + Check out + Continue shopping.",
+  "delta": "Drawer değil; header popup #cart-notification. Boş hâl gösterilmiyor — boş sepet /cart sayfası. Checkout tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-taste-demo.myshopify.com/products/fiery-ginger-booster",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'], form[action*='/cart/add'] button[type='submit']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": "#cart-notification",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "fiery-ginger-eklendi",
+      "not": "Notification dolu"
+    }
+  ],
+  "stateFindings": {
+    "filled": "Item added to your cart. Fiery Ginger Booster Size: 60 mL. View my cart (1) · Check out · Continue shopping. Cart badge 1. 375 bildirim header altında; 1440 sağ üst popup. Checkout tıklanmadı."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "Boş notification yok; Dawn yalnız ATC sonrası açıyor"
+    },
+    {
+      "state": "changed",
+      "sebep": "Adet notification'da yok — cart-page-main changed"
+    }
+  ],
+  "interactionNote": "addToCart via ui (3 vp). Checkout tıklanmadı.",
+  "capture": {
+    "url": "https://theme-taste-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:14:49.635Z"
+  }
+}
