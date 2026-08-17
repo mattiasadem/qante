@@ -1,0 +1,40 @@
+{
+  "observationId": "crave.default.product-detail-crewneck.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "crave",
+  "preset": "default",
+  "sayfa": "product-detail-crewneck",
+  "url": "https://theme-crave-demo.myshopify.com/products/the-omsom-crewneck",
+  "selector": "#shopify-section-template--17357908803818__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "The Omsom Crewneck $59.00 CAD. Sold out. variant-radios Size XS–XXL. Qty stepper.",
+  "delta": "Apparel şablonu (meal-starter PDP'den farklı template id). ATC disabled. Öneri section h=0.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-crave-demo.myshopify.com/products/the-omsom-crewneck",
+      "capture": true,
+      "etiket": "xs",
+      "not": "İlk beden XS seçili"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='template--17357908803818__main-1-2']",
+      "capture": true,
+      "etiket": "beden-m",
+      "not": "Size M radio. Sold out kalır; seçim değişmeli."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Size XS işaretli; Sold out; $59 CAD.",
+    "changed": "Size M seçimi (pixel-check sonrası)."
+  },
+  "missingStates": []
+}

@@ -1,0 +1,65 @@
+{
+  "observationId": "crave.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "crave",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://theme-crave-demo.myshopify.com/cart",
+  "selector": "#shopify-section-template--17357908148458__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Boş: Your cart is empty + Continue shopping. Dolu hâl interact. Sibling cart-footer (subtotal) boşken h=0.",
+  "delta": "Dawn cart page; drawer yok. Add-to-cart sonrası cart-notification popup (aday). Checkout tıklanmaz.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-crave-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "bos",
+      "not": "Boş sepet"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-crave-demo.myshopify.com/products/thai-larb-starter-pack",
+      "capture": false,
+      "not": "Larb ATC (stokta)"
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[type='submit']",
+      "capture": false,
+      "not": "Add to cart — Larb Starter 3-Pack"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-crave-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "dolu",
+      "not": "Dolu /cart satır + footer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty / Continue shopping.",
+    "filled": "Larb satırı (pixel-check).",
+    "changed": "Adet artışı (pixel-check)."
+  },
+  "missingStates": [],
+  "interactionNote": "Drawer yok. cart-notification add-to-cart sonrası header popup — leftover. Checkout/PII yok."
+}

@@ -1,0 +1,51 @@
+{
+  "observationId": "crave.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "crave",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-crave-demo.myshopify.com/",
+  "selector": "details-modal.header__search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "Header büyüteç → details-modal. Input #Search-In-Modal placeholder Search. predictive-search.search-modal__form.",
+  "delta": "Dawn predictive overlay. /search ayrı şablon (search-results).",
+  "captureMode": "viewport",
+  "prepareClick": "details-modal.header__search summary.header__icon--search",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-crave-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "details-modal.header__search summary.header__icon--search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bos",
+      "not": "Boş arama modalı"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "larb",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "larb",
+      "not": "katalogSorgu larb — Larb Starter beklenir"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Arama modalı açık; placeholder Search.",
+    "input": "larb yazılınca öneri/ürün listesi (pixel-check sonrası doldurulacak)."
+  },
+  "missingStates": []
+}

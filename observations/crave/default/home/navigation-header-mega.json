@@ -1,0 +1,44 @@
+{
+  "observationId": "crave.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "crave",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-crave-demo.myshopify.com/",
+  "selector": "#shopify-section-header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Logo theme-crave-demo; Shop (details#Details-HeaderMenu-1); Meet us; Recipes; Contact; arama ikonu; #cart-icon-bubble → /cart. Sticky.",
+  "delta": "Dawn dropdown, görsel mega yok. Shop = 3 koleksiyon linki (Meal starters / Combo packs / Other goodies). Sepet drawer yok — cart-notification + /cart. Locale header'da yok (footer country).",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-crave-demo.myshopify.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-HeaderMenu-1 > summary",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-dropdown",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Shop details — 3 koleksiyon. 375/768 hamburger'de."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Header: Shop, Meet us, Recipes, Contact, arama, sepet. Announcement üstte.",
+    "open": "1440 Shop tık → Meal starters / Combo packs / Other goodies listesi. Görsel/promo kart yok."
+  },
+  "missingStates": []
+}

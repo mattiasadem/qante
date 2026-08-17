@@ -1,0 +1,49 @@
+{
+  "observationId": "crave.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "crave",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-crave-demo.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "375/768 hamburger summary.aria-controls=menu-drawer. Shop akordeon + Meet us / Recipes / Contact + sosyal.",
+  "delta": "1440'ta hamburger gizlenir — drawer N/A. Masaüstü Shop ayrı details.",
+  "captureMode": "viewport",
+  "prepareClick": "#Details-menu-drawer-container > summary.header__icon--menu",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-crave-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary.header__icon--menu",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "menu-acik",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Mobil menü. Shop yazılı <a> koleksiyona kaçar — tıklanmaz."
+    }
+  ],
+  "stateFindings": {
+    "open": "Sol drawer: Shop, Meet us, Recipes, Contact, sosyal ikonlar."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Shop alt akordeon bu turda yoklandı değil — yazılı link sayfaya gider"
+    }
+  ]
+}
