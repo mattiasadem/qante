@@ -1,0 +1,103 @@
+{
+  "observationId": "ritual.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "ritual",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-ritual-demo.myshopify.com/",
+  "selector": ".cart-drawer__dialog",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/ritual/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/ritual/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/ritual/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/ritual/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/ritual/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/ritual/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/ritual/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/ritual/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/ritual/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "Horizon cart-drawer-component. Boş: Your cart is empty; Have an account? Log in; Continue shopping.",
+  "delta": "/cart ayrı sayfa (cart-page-main). Checkout/login tıklanmadı.",
+  "captureMode": "viewport",
+  "prepareClick": "header button[aria-label='Cart']",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-ritual-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header button[aria-label='Cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-ritual-demo.myshopify.com/products/rose-11-bag-1",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#BuyButtons-ProductSubmitButton-AVVJJTGY5TXZTMnJ4c__add-to-cart",
+      "capture": false,
+      "not": "Rose 11. Bag Add to cart — drawer kendini açmayabilir"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": "1500",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "header button[aria-label='Cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer (ATC sonrası ikon)"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".cart-drawer__dialog button.quantity-plus[name='plus']",
+      "value": "1500",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Sağ drawer: YOUR CART IS EMPTY + Have an account? Log in + Continue shopping. Arkada home terracotta/RITUAL.",
+    "filled": "CART [1]. Rose 11. Bag Red $6,500 adet 1 + çöp. Estimated total $6,500.00 USD. Discount + / Check out (tıklanmadı).",
+    "changed": "CART [2]. Adet 2, satır $13,000, estimated total $13,000.00 USD. 375/768/1440 aynı fark."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart → ui; drawer ATC sonrası ikon tıkı. Checkout / login / kupon yok.",
+  "capture": {
+    "url": "https://theme-ritual-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:31:09.934Z"
+  }
+}
