@@ -7,8 +7,17 @@
   "url": "https://theme-studio-demo.myshopify.com/",
   "selector": "#shopify-section-header",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
-  "notlar": "Sticky header. Logo Ninth Editions. Nav: Prints / Originals / Art Objects / Shop by Artist (dropdown) / Gift Cards / About (dropdown). Arama ikonu + sepet /cart. Mega yok.",
+  "evidence": [
+    "evidence/studio/default/home/navigation-header-mega.changed.mobil-akordeon-acik.375.png",
+    "evidence/studio/default/home/navigation-header-mega.changed.mobil-akordeon-acik.768.png",
+    "evidence/studio/default/home/navigation-header-mega.initial.kapali-header.1440.png",
+    "evidence/studio/default/home/navigation-header-mega.initial.kapali-header.375.png",
+    "evidence/studio/default/home/navigation-header-mega.initial.kapali-header.768.png",
+    "evidence/studio/default/home/navigation-header-mega.open.artist-dropdown-acik.1440.png",
+    "evidence/studio/default/home/navigation-header-mega.open.mobil-menu-acik.375.png",
+    "evidence/studio/default/home/navigation-header-mega.open.mobil-menu-acik.768.png"
+  ],
+  "notlar": "Sticky header. Logo script 'Studio'. Nav: Prints / Originals / Art Objects / Shop by Artist (dropdown) / Gift Cards / About (dropdown). Sol arama, sağ sepet /cart. Mega yok.",
   "delta": "Mega panel yok — Dawn details-disclosure dropdown (header__submenu). theme_store_id null; schema_name Dawn 3.0.0; Shopify.theme.name '[Studio] Theme Store demo (latest)'.",
   "captureMode": "viewport",
   "interactionSteps": [
@@ -65,20 +74,27 @@
     "open",
     "changed"
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "1440: announcement + ortalı Studio logo + Prints/Originals/Art Objects/Shop by Artist/Gift Cards/About. Dropdown kapalı. 375/768: hamburger + logo + arama + sepet.",
+    "open": "1440: Shop by Artist tık → dikey beyaz liste (Eryn Lougheed, Leia Bryans, Sid Hicks, Misbah Ahmed, Rachel Crummey, Melanie Keay). Kolon/görsel/promo yok. 375/768: sol drawer — Prints/Originals/Art Objects/Shop by Artist →/Gift Cards/About →; arkada karartı.",
+    "changed": "375/768: Shop by Artist → iç panel: geri oku + aynı 6 sanatçı. In-place + accordion değil, Dawn nested menu."
+  },
   "missingStates": [
     {
       "state": "hover",
       "sebep": "Mega yok; 1440 dropdown click ile open"
-    },
-    {
-      "state": "filled",
-      "sebep": "Anlamsız"
-    },
-    {
-      "state": "input",
-      "sebep": "Arama ayrı (global-predictive-search)"
     }
   ],
-  "interactionNote": "Mega yok. Hover submenu yüksekliği vardı ama details.open false; click open=true. 375/768 desktop summary gizli."
+  "interactionNote": "Mega yok. Hover submenu yüksekliği vardı ama details.open false; click open=true. 375/768 desktop summary gizli.",
+  "capture": {
+    "url": "https://theme-studio-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:16:57.258Z"
+  }
 }

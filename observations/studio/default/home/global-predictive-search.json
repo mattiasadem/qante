@@ -7,7 +7,14 @@
   "url": "https://theme-studio-demo.myshopify.com/",
   "selector": "details-modal.header__search",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/studio/default/home/global-predictive-search.initial.arama-kapali.1440.png",
+    "evidence/studio/default/home/global-predictive-search.initial.arama-kapali.375.png",
+    "evidence/studio/default/home/global-predictive-search.initial.arama-kapali.768.png",
+    "evidence/studio/default/home/global-predictive-search.input.arama-sonucu.1440.png",
+    "evidence/studio/default/home/global-predictive-search.input.arama-sonucu.375.png",
+    "evidence/studio/default/home/global-predictive-search.input.arama-sonucu.768.png"
+  ],
   "notlar": "İki details-modal.header__search (Search-In-Modal-1 / Search-In-Modal). Yazınca PRODUCTS + Search for “q”.",
   "delta": "Öneri yalnız ürün; koleksiyon/sayfa başlığı bu karede yok.",
   "captureMode": "viewport",
@@ -43,20 +50,26 @@
     "initial",
     "input"
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "Arama overlay kapalı. Header'da büyüteç. Sonuç listesi yok.",
+    "input": "vessel: PRODUCTS — Vessel (Spiral), Mur Vessel 8, Mur Vessel 2, Mur Vessel 6 + Search for “vessel” 4 results. Koleksiyon/sayfa grubu yok."
+  },
   "missingStates": [
     {
-      "state": "hover",
-      "sebep": "Yazmadan gizli"
-    },
-    {
-      "state": "filled",
-      "sebep": "Anlamsız"
-    },
-    {
       "state": "open",
-      "sebep": "input ile ölçüldü"
+      "sebep": "Boş overlay ayrı çekilmedi; input ile ölçüldü"
     }
   ],
-  "interactionNote": "İki modal; fill görünür input.search__input. Submit/PII yok."
+  "interactionNote": "İki modal; fill input.search__input. Submit/PII yok. katalogSorgu=vessel.",
+  "capture": {
+    "url": "https://theme-studio-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:16:57.368Z"
+  }
 }

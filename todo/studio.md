@@ -20,7 +20,7 @@
 | Parallel | yalnız `observations/studio/`, `evidence/studio/`, `todo/studio.md`, `candidates/studio-*.md` |
 
 **Kapsam satırı:**  
-`Studio · default · [Studio] Theme Store demo (latest) / schema_name Dawn 3.0.0 (theme_store_id null) · home→PDP Rhyme+Gift Card→PLP prints→search vessel→cart page→about-us→contact→journal→404 · 43 obs · 0 yeni şema · leftover: theme_store_id / no mega / cart-notification / cart-footer / no collection-banner / 404 routes`
+`Studio · default · [Studio] Theme Store demo (latest) / schema_name Dawn 3.0.0 (theme_store_id null) · home→PDP Rhyme+Gift Card→PLP prints→search vessel→cart page→about-us→contact→journal→404 · 43 obs · 145 PNG · 0 yeni şema · leftover: theme_store_id / no mega / cart-notification / cart-footer / cart qty AJAX / no collection-banner / 404 routes`
 
 ---
 
@@ -28,26 +28,26 @@
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home + announcement/rich-text/slideshow/featured/IWT/artists/newsletter/footer | [x] | [ ] capture |
-| Header kapalı + Shop by Artist dropdown 1440 | [x] | [ ] interact |
-| Predictive search `vessel` | [x] | [ ] interact |
-| Mobile hamburger 375+768 + Shop by Artist accordion | [x] | [ ] interact |
-| PDP Rhyme (varyant yok) | [x] | [ ] capture |
-| Gift Card Amount $50→$100 | [x] | [ ] interact |
-| PLP `/collections/prints` | [x] | [ ] capture |
-| Search `/search?q=vessel` | [x] | [ ] capture |
-| Cart `/cart` empty + filled + qty | [x] | [ ] interact |
+| Home + announcement/rich-text/slideshow/featured/IWT/artists/newsletter/footer | [x] | [x] |
+| Header kapalı + Shop by Artist dropdown 1440 | [x] | [x] (mega yok) |
+| Predictive search `vessel` | [x] | [x] |
+| Mobile hamburger 375+768 + Shop by Artist nested | [x] | [x] (1440 menu-drawer 0px) |
+| PDP Rhyme (varyant yok) | [x] | [x] |
+| Gift Card Amount $50→$100 | [x] | [x] |
+| PLP `/collections/prints` | [x] | [x] |
+| Search `/search?q=vessel` | [x] | [x] |
+| Cart `/cart` empty + filled + qty | [x] | [x] (qty 2; toplam AJAX hata) |
 | Cart drawer | ⛔ cart-notification leftover | — |
-| About `/pages/about-us` | [x] | [ ] capture |
-| Contact form | [x] | [ ] PII yok |
-| Journal list + Rachel Crummey | [x] | [ ] capture |
-| 404 | [x] | [ ] capture |
+| About `/pages/about-us` | [x] | [x] |
+| Contact form | [x] | [x] PII yok |
+| Journal list + Rachel Crummey | [x] | [x] |
+| 404 | [x] | [x] |
 
 ---
 
 ## Bileşen roster
 
-43 observation. 0 yeni şema.
+43 observation (38 static 3vp + 4 interact + menu-drawer 375/768). 0 yeni şema.
 
 ---
 
@@ -59,7 +59,7 @@
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact header / search / cart / menu / gift Amount
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate`
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact header / search / cart / menu / gift Amount
+- [x] PNG bak → stateFindings
+- [x] `npm run validate`

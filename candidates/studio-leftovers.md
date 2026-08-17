@@ -34,6 +34,14 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: studio-cart-qty-ajax-error  
+Gerekçe: `/cart` plus: `#Quantity-1` 1→2 oldu; satır/footer toplam $230 kaldı; “There was an error while updating your cart.” Checkout tıklanmadı.  
+Örnekler: https://theme-studio-demo.myshopify.com/cart  
+Öneri: leftover — tema AJAX  
+Karar: onay bekliyor
+
+---
+
 ADAY: studio-cart-footer-split  
 Gerekçe: Dawn `#…__cart-items` + `#…__cart-footer` ayrı section. Boşken footer h=0; doluyken Subtotal + Check out. `cart-page-main` yalnız cart-items.  
 Örnekler: https://theme-studio-demo.myshopify.com/cart  
