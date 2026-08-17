@@ -1,0 +1,99 @@
+{
+  "observationId": "pipeline.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "pipeline",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pipeline-theme-fashion.myshopify.com/",
+  "selector": "#drawer-cart .drawer__content",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/pipeline/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/pipeline/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/pipeline/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/pipeline/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/pipeline/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/pipeline/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/pipeline/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/pipeline/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/pipeline/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "#drawer-cart .drawer__content fixed 450×1000 sağ panel. Boş: CART / Your cart is empty. / CONTINUE BROWSING. Checkout butonu $0.00 (tıklanmadı).",
+  "delta": "Shopify.theme.name Pipeline 8.2.0 · id 162762195160 · schema_name Pipeline · schema_version 8.2.0 · theme_store_id null · role main · shop pipeline-theme-fashion.myshopify.com. Preset folder default = Fashion / Theme Store official preview (document title suffix Pipeline Clean). Sibling pipeline-theme.myshopify.com (Bright) not walked. Overlay group section __cart. Kargo eşiği metni drawer HTML'de var (Spend $200).",
+  "captureMode": "viewport",
+  "prepareClick": "a[data-drawer-toggle='drawer-cart']",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pipeline-theme-fashion.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[data-drawer-toggle='drawer-cart'], a.header__mobile__button[href='/cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://pipeline-theme-fashion.myshopify.com/products/andre-luxe-cashmere-set",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.btn--add-to-cart[name='add']",
+      "capture": false,
+      "not": "Andre Luxe Cashmere Set XS $698"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://pipeline-theme-fashion.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a[data-drawer-toggle='drawer-cart'], a.header__mobile__button[href='/cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#drawer-cart .quantity__button--plus, #drawer-cart button.quantity__button--plus",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Sağ panel CART + X. Your cart is empty. + CONTINUE BROWSING + sepet ikonu. 375/768/1440 aynı boş hâl.",
+    "filled": "Andre Luxe Cashmere Set XS $698 qty 1. Congratulations! Your order qualifies for free shipping. Special instructions / Estimate shipping. CHECK OUT • $698.00 USD.",
+    "changed": "qty 2 · CHECK OUT • $1,396.00 USD. 375/768/1440 aynı."
+  },
+  "missingStates": [],
+  "interactionNote": "375 opener a[data-drawer-toggle=drawer-cart] (navlink 0px). Checkout tıklanmadı. addToCart UI.",
+  "capture": {
+    "url": "https://pipeline-theme-fashion.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T20:58:51.786Z"
+  }
+}
