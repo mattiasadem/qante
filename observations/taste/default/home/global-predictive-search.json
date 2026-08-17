@@ -1,0 +1,57 @@
+{
+  "observationId": "taste.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "taste",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-taste-demo.myshopify.com/",
+  "selector": "details-modal.header__search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "Header search ikon → details-modal. Input #Search-In-Modal placeholder Search. predictive-search var.",
+  "delta": "Dawn search modal; tam sayfa /search ayrı observation.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-taste-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "details-modal.header__search > details > summary, .header__icon--search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Boş search modal"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "ginger",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "ginger",
+      "not": "katalogSorgu: Fiery Ginger / Ginger Turmeric"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "input": ""
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu ginger (Fiery Ginger Booster, Ginger Turmeric Kombucha). Submit /search ayrı."
+}

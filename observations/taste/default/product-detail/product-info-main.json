@@ -1,0 +1,41 @@
+{
+  "observationId": "taste.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "taste",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://theme-taste-demo.myshopify.com/products/fiery-ginger-booster",
+  "selector": "#shopify-section-template--22715887419414__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "Fiery Ginger Booster $3.95 CAD. variant-radios Size: 60 mL / Six Pack / Twelve Pack. Adet stepper + Add to cart.",
+  "delta": "Dawn main-product. Pickup/sticky ATC bu karede ayrı değil.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-taste-demo.myshopify.com/products/fiery-ginger-booster",
+      "capture": true,
+      "etiket": "60ml",
+      "not": "Default Size 60 mL $3.95"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "variant-radios label:has-text('Six Pack'), fieldset label:has-text('Six Pack')",
+      "capture": true,
+      "etiket": "six-pack",
+      "not": "Size Six Pack — fiyat/görsel"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Tek option Size. Checkout/Buy it now tıklanmadı."
+}

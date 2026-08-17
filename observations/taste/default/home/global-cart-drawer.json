@@ -1,0 +1,67 @@
+{
+  "observationId": "taste.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "taste",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-taste-demo.myshopify.com/",
+  "selector": "#cart-notification",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Dawn cart-notification (slide-out drawer yok). ATC sonrası: Item added + View my cart + Check out + Continue shopping.",
+  "delta": "Drawer değil; header popup #cart-notification. Boş hâl gösterilmiyor — boş sepet /cart sayfası. Checkout tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-taste-demo.myshopify.com/products/fiery-ginger-booster",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'], form[action*='/cart/add'] button[type='submit']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": "#cart-notification",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "fiery-ginger-eklendi",
+      "not": "Notification dolu"
+    }
+  ],
+  "stateFindings": {
+    "filled": ""
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "Boş notification yok; Dawn yalnız ATC sonrası açıyor"
+    },
+    {
+      "state": "changed",
+      "sebep": "Adet notification'da yok — cart-page-main changed"
+    }
+  ],
+  "interactionNote": "UI ATC; fallback /cart/add.js olursa not. Checkout tıklanmadı."
+}
