@@ -9,9 +9,11 @@
   "evidenceSlug": "global-menu-drawer",
   "evidence": [],
   "captureMode": "viewport",
-  "notlar": "375/768 modern icon .mobile-navigation-modern-icon-bg. Drawer MENU + Collections/Shop/Templates. 1440 N/A (mega).",
-  "delta": "Kapalı drawer 0px / -translate-x-full. section-mobile-navigation. details hamburger yok.",
-  "interactionStates": ["open"],
+  "notlar": "375/768 .mobile-navigation-modern-icon-bg (id=mobile-navigation, ikon). Drawer .menu-drawer.fixed.z-[9999] aynı id. 1440 N/A (mega).",
+  "delta": "Kapalı drawer -translate-x-full ama kutu boyu var; viewport karesi drawer açılmazsa homepage olur. Yazılı Collections <a> sayfaya gider.",
+  "interactionStates": [
+    "open"
+  ],
   "interactionSteps": [
     {
       "state": "open",
@@ -21,18 +23,32 @@
     },
     {
       "state": "open",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "open",
       "action": "click",
       "selector": ".mobile-navigation-modern-icon-bg",
+      "viewports": ["375", "768"],
+      "capture": false,
+      "not": "Hamburger ikon"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 1500,
       "viewports": ["375", "768"],
       "capture": true,
       "captureMode": "viewport",
       "etiket": "hamburger",
-      "not": "Mobil menü drawer"
+      "not": "Açık MENU drawer"
     }
   ],
   "stateFindings": {
     "open": ""
   },
   "missingStates": [],
-  "interactionNote": "1440 N/A (mega birincil). Yazılı Collections <a> sayfaya gider — tıklanmadı."
+  "interactionNote": "1440 N/A (mega birincil). İki #mobile-navigation (ikon + drawer). Yazılı Collections tıklanmadı."
 }

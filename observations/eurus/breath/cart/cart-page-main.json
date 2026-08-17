@@ -8,11 +8,11 @@
   "selector": "#shopify-section-template--27353604325654__cart-items",
   "evidenceSlug": "cart-page-main",
   "evidence": [
+    "evidence/eurus/breath/cart/cart-page-main.1440.png",
     "evidence/eurus/breath/cart/cart-page-main.375.png",
-    "evidence/eurus/breath/cart/cart-page-main.768.png",
-    "evidence/eurus/breath/cart/cart-page-main.1440.png"
+    "evidence/eurus/breath/cart/cart-page-main.768.png"
   ],
-  "notlar": "Boş/dolu cart-items. Dolu: reserved timer, free-shipping bar, Product/Price/Quantity/Total.",
+  "notlar": "Boş/dolu cart-items. Dolu: reserved timer, free-shipping bar, Product/Price/Quantity/Total. Qty aria-label=button-plus.",
   "delta": "cart-footer (Estimate shipping) ayrı section — leftover. Checkout tıklanmadı.",
   "interactionStates": [
     "initial",
@@ -29,8 +29,20 @@
     },
     {
       "state": "initial",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "initial",
       "action": "goto",
       "value": "https://eurus-breath-demo.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
       "capture": true,
       "etiket": "cart-bos",
       "not": "Boş sepet sayfası"
@@ -43,6 +55,12 @@
     },
     {
       "state": "filled",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "filled",
       "action": "addToCart",
       "selector": "button[name='add']",
       "capture": false
@@ -51,6 +69,12 @@
       "state": "filled",
       "action": "goto",
       "value": "https://eurus-breath-demo.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
       "capture": true,
       "etiket": "sepete-eklendi",
       "not": "Dolu cart-items satırı"
@@ -58,10 +82,17 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": "#shopify-section-template--27353604325654__cart-items button[name='plus'], [aria-label*='Increase' i], button.quantity-plus",
+      "selector": "[aria-label='button-plus']",
+      "capture": false,
+      "not": "Adet +"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1200,
       "capture": true,
       "etiket": "adet-artti",
-      "not": "Adet + "
+      "not": "Qty 2"
     }
   ],
   "stateFindings": {
@@ -70,16 +101,5 @@
     "changed": ""
   },
   "missingStates": [],
-  "interactionNote": "Checkout tıklanmadı. Qty selector yoklanır.",
-  "capture": {
-    "url": "https://eurus-breath-demo.myshopify.com/cart",
-    "viewports": [
-      "375",
-      "768",
-      "1440"
-    ],
-    "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T19:18:35.938Z"
-  }
+  "interactionNote": "Checkout tıklanmadı. Qty aria-label=button-plus."
 }

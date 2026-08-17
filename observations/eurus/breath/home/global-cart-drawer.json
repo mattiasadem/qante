@@ -9,11 +9,27 @@
   "evidenceSlug": "global-cart-drawer",
   "evidence": [],
   "captureMode": "viewport",
-  "prepareClick": "#cart-icon",
-  "notlar": "ATC sonrası sağ drawer. Your cart + reserved timer + free-shipping bar + satır + You'll love this too. #CartDrawer-Form / #CartDrawer-CartItems.",
-  "delta": "Boş: #cart-icon tık. Dolu: Eco-Friendly Natural Rubber Chew Toy $25. Checkout tıklanmadı.",
-  "interactionStates": ["initial", "filled", "changed"],
+  "prepareClick": "a#cart-icon",
+  "notlar": "ATC sonrası drawer. Your cart + reserved timer + free-shipping bar + satır + You'll love this too. Qty aria-label=button-plus.",
+  "delta": "Boş: görünür a#cart-icon. Dolu: Eco-Friendly Natural Rubber Chew Toy $25; ATC drawer'ı açar, ikinci cart-icon tık yok. Checkout tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
   "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eurus-breath-demo.myshopify.com/cart/clear",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
     {
       "state": "initial",
       "action": "goto",
@@ -22,8 +38,21 @@
     },
     {
       "state": "initial",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "initial",
       "action": "click",
-      "selector": "#cart-icon",
+      "selector": "a#cart-icon",
+      "capture": false,
+      "not": "Görünür cart ikon"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 1200,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "cart-bos",
@@ -37,6 +66,12 @@
     },
     {
       "state": "filled",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "filled",
       "action": "addToCart",
       "selector": "button[name='add']",
       "capture": false,
@@ -45,26 +80,27 @@
     {
       "state": "filled",
       "action": "waitFor",
-      "value": 1500,
-      "capture": false
-    },
-    {
-      "state": "filled",
-      "action": "click",
-      "selector": "#cart-icon",
+      "value": 2000,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "sepete-eklendi",
-      "not": "Dolu drawer satırı"
+      "not": "Dolu drawer (ikinci cart-icon yok)"
     },
     {
       "state": "changed",
       "action": "click",
-      "selector": "#CartDrawer-CartItems button[name='plus'], .drawer.typeDrawer button[name='plus'], .drawer.typeDrawer [aria-label*='Increase' i]",
+      "selector": "[aria-label='button-plus']",
+      "capture": false,
+      "not": "Adet 1→2"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1200,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "adet-artti",
-      "not": "Adet 1→2"
+      "not": "Qty 2"
     }
   ],
   "stateFindings": {
@@ -73,5 +109,5 @@
     "changed": ""
   },
   "missingStates": [],
-  "interactionNote": "ATC UI. Checkout / Discount / Share cart tıklanmadı."
+  "interactionNote": "Qty aria-label button-plus / button-minus (name=plus yok). Checkout / Discount / Share cart tıklanmadı."
 }

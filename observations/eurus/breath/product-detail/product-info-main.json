@@ -8,11 +8,11 @@
   "selector": "#shopify-section-template--27353606947094__main",
   "evidenceSlug": "product-info-main",
   "evidence": [
+    "evidence/eurus/breath/product-detail/product-info-main.1440.png",
     "evidence/eurus/breath/product-detail/product-info-main.375.png",
-    "evidence/eurus/breath/product-detail/product-info-main.768.png",
-    "evidence/eurus/breath/product-detail/product-info-main.1440.png"
+    "evidence/eurus/breath/product-detail/product-info-main.768.png"
   ],
-  "notlar": "Superfood Blend Powder $95. Weight 300g/400g/500g. Style Blend/Protein/Enzyme. 100 in stock. Sticky ATC #sticky-add-to-cart-template--27353606947094__main.",
+  "notlar": "Superfood Blend Powder $95. Weight 300g/400g/500g. Style Blend/Protein/Enzyme. Sticky ATC #sticky-add-to-cart-template--27353606947094__main (scroll sonrası; viewport capture scrollTo(0) gizler).",
   "delta": "varyantGosterim swatch (Weight) + sibling Style. Sticky ATC feature, yeni şema değil. Buy it now tıklanmadı.",
   "interactionStates": [
     "initial",
@@ -23,6 +23,12 @@
       "state": "initial",
       "action": "goto",
       "value": "https://eurus-breath-demo.myshopify.com/products/superfood-blend-powder-for-optimal-health",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3500,
       "capture": true,
       "etiket": "ilk-hal",
       "not": "Weight 300g varsayılan"
@@ -30,19 +36,27 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": "label:has-text('400g'), input[value='400g']",
+      "selector": "label[for='template--27353606947094__main-1-1']",
       "capture": true,
       "etiket": "weight-400g",
-      "not": "Weight 300g → 400g"
+      "not": "Weight 300g → 400g (quick-view label değil)"
     },
     {
       "state": "changed",
       "action": "scrollTo",
-      "selector": "#sticky-add-to-cart-template--27353606947094__main",
+      "selector": "#shopify-section-template--27353606947094__faq_yJqcc4",
+      "capture": false,
+      "not": "Aşağı kaydır — sticky ATC görünür"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 800,
       "capture": true,
-      "captureMode": "viewport",
+      "captureMode": "section",
+      "captureSelector": "#sticky-add-to-cart-template--27353606947094__main",
       "etiket": "sticky-atc",
-      "not": "Sticky ATC bar: ad + fiyat + 300/400/500 + Add to cart"
+      "not": "Sticky bar (section; viewport scrollTo(0) gizler)"
     }
   ],
   "stateFindings": {
@@ -50,16 +64,5 @@
     "changed": ""
   },
   "missingStates": [],
-  "interactionNote": "Style Blend/Protein/Enzyme sibling; Weight birincil varyant. Checkout yok.",
-  "capture": {
-    "url": "https://eurus-breath-demo.myshopify.com/products/superfood-blend-powder-for-optimal-health",
-    "viewports": [
-      "375",
-      "768",
-      "1440"
-    ],
-    "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T19:32:55.496Z"
-  }
+  "interactionNote": "400g = label[for=template--27353606947094__main-1-1]. Sticky section-mode. Checkout yok."
 }

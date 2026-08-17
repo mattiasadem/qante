@@ -9,9 +9,12 @@
   "evidenceSlug": "global-predictive-search",
   "evidence": [],
   "captureMode": "viewport",
-  "notlar": "SearchOpen ikon #search-in-modal (1440) / #search-in-modal-mobile (375) açar. #search-result + #suggest-search. Katalog: food.",
-  "delta": "Kapalı kare 0px. Alpine x-search-popup. Submit /search sayfasına gider — interact'te Enter yok.",
-  "interactionStates": ["initial", "input"],
+  "notlar": "a#SearchOpen açar. 375/768: #FormSearch popup + #search-in-modal-mobile. 1440: inline #search-in-modal (FormSearch 0px). Katalog: food.",
+  "delta": "Kapalı kare 0px. Alpine x-search-popup. 1440 popup-hidden; arama header içinde. Submit /search — interact'te Enter yok.",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
   "interactionSteps": [
     {
       "state": "initial",
@@ -21,21 +24,44 @@
     },
     {
       "state": "initial",
-      "action": "click",
-      "selector": "#SearchOpen",
-      "capture": true,
-      "captureMode": "viewport",
-      "etiket": "search-bos",
-      "not": "Boş search popup"
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
     },
     {
-      "state": "input",
-      "action": "fill",
-      "selector": "#search-in-modal",
-      "value": "food",
-      "viewports": ["1440"],
+      "state": "initial",
+      "action": "click",
+      "selector": "a#SearchOpen",
       "capture": false,
-      "not": "1440 görünür input"
+      "not": "İlk görünür SearchOpen (375/768 [0], 1440 [1])"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 200,
+      "viewports": ["375", "768"],
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#FormSearch",
+      "etiket": "search-bos",
+      "not": "375/768 boş search popup"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 200,
+      "viewports": ["1440"],
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#search-in-modal",
+      "etiket": "search-bos",
+      "not": "1440 inline input (FormSearch 0px)"
     },
     {
       "state": "input",
@@ -48,18 +74,40 @@
     },
     {
       "state": "input",
+      "action": "fill",
+      "selector": "#search-in-modal",
+      "value": "food",
+      "viewports": ["1440"],
+      "capture": false,
+      "not": "1440 masaüstü input"
+    },
+    {
+      "state": "input",
       "action": "waitFor",
-      "value": 1800,
+      "value": 2800,
       "capture": false
     },
     {
       "state": "input",
-      "action": "click",
-      "selector": "#search-in-modal, #search-in-modal-mobile",
+      "action": "waitFor",
+      "value": 200,
+      "viewports": ["375", "768"],
       "capture": true,
       "captureMode": "viewport",
+      "captureSelector": "#FormSearch",
       "etiket": "food",
-      "not": "Öneri/ürün listesi"
+      "not": "Öneri listesi"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 200,
+      "viewports": ["1440"],
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#search-in-modal",
+      "etiket": "food",
+      "not": "1440 öneri"
     }
   ],
   "stateFindings": {
@@ -67,5 +115,5 @@
     "input": ""
   },
   "missingStates": [],
-  "interactionNote": "1440 #search-in-modal; 375/768 #search-in-modal-mobile. Enter/submit yok."
+  "interactionNote": "İki a#SearchOpen; clickVisible görünür olanı seçer. 1440 #FormSearch popup-hidden. Enter/submit yok."
 }
