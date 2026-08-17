@@ -7,13 +7,20 @@
   "url": "https://theme-ritual-demo.myshopify.com/",
   "selector": "dialog.search-modal__content",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/ritual/default/home/global-predictive-search.input.arama-sonucu.1440.png",
+    "evidence/ritual/default/home/global-predictive-search.input.arama-sonucu.375.png",
+    "evidence/ritual/default/home/global-predictive-search.input.arama-sonucu.768.png",
+    "evidence/ritual/default/home/global-predictive-search.open.arama-acik.1440.png",
+    "evidence/ritual/default/home/global-predictive-search.open.arama-acik.375.png",
+    "evidence/ritual/default/home/global-predictive-search.open.arama-acik.768.png"
+  ],
   "notlar": "dialog-component#search-modal + predictive-search-component. Input #cmdk-input. katalogSorgu: tee (17 sonuç sayfa).",
   "delta": "Horizon predictive-search-form. 1440/768 opener search-action--hidden-on-drawer. 375 opener search-action--hidden-on-menu (header’da, drawer değil). Kapalı dialog 0px.",
   "captureMode": "viewport",
   "interactionStates": [
-    "open",
-    "input"
+    "input",
+    "open"
   ],
   "interactionSteps": [
     {
@@ -65,7 +72,21 @@
       "not": "Öneri/ürün listesi"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "open": "Beyaz modal: Search input + X. Products önerisi (sorgu yok): Air Sculpted Bubble Skirt ×2, Altered Dreamwear T-shirt, Becoming a White Swan T-Shirt.",
+    "input": "q=tee + Clear. Chip: tee / chaos fitted tee. Products: Blooming Belle Fitted Tee $1,800 + Pearls in Chaos Fitted Tee $1,800 + View all. 375/768/1440 aynı fark."
+  },
   "missingStates": [],
-  "interactionNote": "Boş açıkta Products önerisi (Air Sculpted Bubble Skirt…) görüldü. PII yok."
+  "interactionNote": "Boş açıkta Products önerisi (Air Sculpted Bubble Skirt…) görüldü. PII yok.",
+  "capture": {
+    "url": "https://theme-ritual-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:28:46.376Z"
+  }
 }

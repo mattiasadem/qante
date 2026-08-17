@@ -89,6 +89,30 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: ritual-account-icon  
+Gerekçe: Header’da Account (kişi) ikonu 375/768/1440 görünür. Tıklanmadı (hesap/PII).  
+Örnekler: https://theme-ritual-demo.myshopify.com/  
+Öneri: leftover — PII  
+Karar: onay bekliyor
+
+---
+
+ADAY: ritual-buy-it-now  
+Gerekçe: PDP `Buy it now` + drawer/page `Check out` görüldü, tıklanmadı.  
+Örnekler: https://theme-ritual-demo.myshopify.com/products/rose-11-bag-1  
+Öneri: leftover — checkout  
+Karar: onay bekliyor
+
+---
+
+ADAY: ritual-typographic-hero  
+Gerekçe: Home `section_wYkR44` foto değil — terracotta + kopya + dev RITUAL wordmark. `editorial-image-with-text-overlay` reuse; ayrı tip yok.  
+Örnekler: https://theme-ritual-demo.myshopify.com/  
+Öneri: leftover — tipografi hero  
+Karar: onay bekliyor
+
+---
+
 ADAY: ritual-pii-stopped  
 Gerekçe: Contact Submit, account/login, checkout, newsletter (form yok) duruldu.  
 Örnekler: https://theme-ritual-demo.myshopify.com/pages/contact  
