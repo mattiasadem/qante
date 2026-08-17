@@ -1,0 +1,43 @@
+{
+  "observationId": "flow.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "flow",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://eight-nourish-demo.myshopify.com/",
+  "selector": "#shopify-section-sections--20936733884486__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "84px. Shop / About / Theme Features + USD + Account. Logo. Search + cart ikon. Don't miss today's offers! 1440 Shop mega (koleksiyon + ürün + promo kart). Account tıklanmadı.",
+  "delta": "Shopify.theme.name `Flow R1 — design base` · id 150685581382 · schema_name Flow · schema_version 42.0.0 · theme_store_id null · role main · shop flow-queenstown.myshopify.com. Official walk eight-nourish-demo.myshopify.com (Nourish). flow-demo.myshopify.com = Debut, kullanılmadı. flow-theme.myshopify.com password, kullanılmadı.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eight-nourish-demo.myshopify.com/",
+      "capture": true,
+      "etiket": "kapali-header",
+      "not": "Mega kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "header a.site-nav__link[href='/collections/all-smoothies']",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "Shop hover — tıklama /collections/all-smoothies'e gider"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Shop <a href=/collections/all-smoothies> — yalnız hover. Account/PII yok."
+}
