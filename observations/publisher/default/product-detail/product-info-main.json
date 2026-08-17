@@ -7,7 +7,62 @@
   "url": "https://theme-publisher-demo.myshopify.com/products/shop-short-sleeve",
   "selector": "#shopify-section-template--23705064177973__main",
   "evidenceSlug": "product-info-main",
-  "evidence": [],
-  "notlar": "Shop Short Sleeve: galeri, $53/$34 Sale, Size SM–XXL variant-radios, quantity-input, Add to cart, Buy it now. Similar products slideshow section içinde. Interact: size değişimi.",
-  "delta": "Dawn main-product. Similar products + share-button aynı section içinde (ayrı related section de var). Buy it now tıklanmadı."
+  "evidence": [
+    "evidence/publisher/default/product-detail/product-info-main.1440.png",
+    "evidence/publisher/default/product-detail/product-info-main.375.png",
+    "evidence/publisher/default/product-detail/product-info-main.768.png",
+    "evidence/publisher/default/product-detail/product-info-main.changed.beden-lg.1440.png",
+    "evidence/publisher/default/product-detail/product-info-main.changed.beden-lg.375.png",
+    "evidence/publisher/default/product-detail/product-info-main.changed.beden-lg.768.png",
+    "evidence/publisher/default/product-detail/product-info-main.initial.ilk-hal.1440.png",
+    "evidence/publisher/default/product-detail/product-info-main.initial.ilk-hal.375.png",
+    "evidence/publisher/default/product-detail/product-info-main.initial.ilk-hal.768.png"
+  ],
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-publisher-demo.myshopify.com/products/shop-short-sleeve",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--23705064177973__main",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Default Size MD seçili"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='template--23705064177973__main-1-2']",
+      "capture": true,
+      "etiket": "beden-lg",
+      "not": "Size LG label (radio gizli; hap label tıklanır)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Shop Short Sleeve $53/$34 Sale, Size MD hap siyah, qty 1, Add to cart + Buy it now, Similar products CCTV Socks.",
+    "changed": "Label tık sonrası LG hap siyah (MD beyaz). Fiyat $34 ve gömlek görseli aynı — beden-only varyant."
+  },
+  "missingStates": [],
+  "interactionNote": "SM sold-out metni label'da visually-hidden; MD default. Buy it now tıklanmadı.",
+  "notlar": "Shop Short Sleeve PDP. Interact: Size MD → LG.",
+  "delta": "Dawn main-product. Similar products aynı section. Buy it now tıklanmadı.",
+  "capture": {
+    "url": "https://theme-publisher-demo.myshopify.com/products/shop-short-sleeve",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:23:10.205Z"
+  }
 }

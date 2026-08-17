@@ -7,7 +7,89 @@
   "url": "https://theme-publisher-demo.myshopify.com/cart",
   "selector": "#shopify-section-template--23705063653685__cart-items",
   "evidenceSlug": "cart-page-main",
-  "evidence": [],
-  "notlar": "Boş: Your cart is empty + Continue shopping. cart-footer kardeş section boşken h=0. Interact: dolu satır + adet.",
-  "delta": "Dawn cart-items / cart-footer iki section. Boş footer gizlendi. Checkout tıklanmadı."
+  "evidence": [
+    "evidence/publisher/default/cart/cart-page-main.1440.png",
+    "evidence/publisher/default/cart/cart-page-main.375.png",
+    "evidence/publisher/default/cart/cart-page-main.768.png",
+    "evidence/publisher/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/publisher/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/publisher/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/publisher/default/cart/cart-page-main.filled.sepet-dolu.1440.png",
+    "evidence/publisher/default/cart/cart-page-main.filled.sepet-dolu.375.png",
+    "evidence/publisher/default/cart/cart-page-main.filled.sepet-dolu.768.png",
+    "evidence/publisher/default/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/publisher/default/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/publisher/default/cart/cart-page-main.initial.cart-bos.768.png"
+  ],
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-publisher-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-publisher-demo.myshopify.com/products/shop-short-sleeve",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-publisher-demo.myshopify.com/cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-dolu",
+      "not": "Dolu satır + footer subtotal (viewport: cart-footer ayrı section)"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 2, subtotal güncellendi mi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + Continue shopping. cart-footer h=0.",
+    "filled": "Your cart: Shop Short Sleeve Size MD $34, qty 1, Subtotal $34.00 USD, Check out. Header çanta rozeti 1. Altta You might like these.",
+    "changed": "qty 2, satır $68.00, Subtotal $68.00 USD, çanta rozeti 2."
+  },
+  "missingStates": [],
+  "interactionNote": "Dolu/changed viewport — cart-items + cart-footer kardeş. Checkout tıklanmadı.",
+  "notlar": "Boş + dolu + adet. Dawn cart-items / cart-footer iki section.",
+  "delta": "Boş footer gizli. Checkout tıklanmadı.",
+  "capture": {
+    "url": "https://theme-publisher-demo.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:21:46.886Z"
+  }
 }

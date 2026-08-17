@@ -6,10 +6,103 @@
   "sayfa": "cart-drawer",
   "url": "https://theme-publisher-demo.myshopify.com/",
   "selector": "cart-drawer #CartDrawer",
-  "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
-  "notlar": "Dawn cart-drawer. Boş: 'Your cart is empty' + Continue shopping. Interact: boş / Shop Short Sleeve ekle / adet+.",
-  "delta": "Boş state koleksiyon kartı yok — yalnız metin + Continue shopping. Cross-sell drawer'da görülmedi (cart sayfasında featured-collection var).",
   "captureMode": "viewport",
-  "prepareClick": "a.header__icon--cart"
+  "prepareClick": "a.header__icon--cart",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/publisher/default/cart-drawer/global-cart-drawer.1440.png",
+    "evidence/publisher/default/cart-drawer/global-cart-drawer.375.png",
+    "evidence/publisher/default/cart-drawer/global-cart-drawer.768.png",
+    "evidence/publisher/default/cart-drawer/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/publisher/default/cart-drawer/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/publisher/default/cart-drawer/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/publisher/default/cart-drawer/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/publisher/default/cart-drawer/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/publisher/default/cart-drawer/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/publisher/default/cart-drawer/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/publisher/default/cart-drawer/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/publisher/default/cart-drawer/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-publisher-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.header__icon--cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer: Your cart is empty + Continue shopping"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-publisher-demo.myshopify.com/products/shop-short-sleeve",
+      "capture": false,
+      "not": "PDP — Shop Short Sleeve"
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add']",
+      "capture": false,
+      "not": "Add to cart — Dawn drawer animate active açılıyor"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu: Shop Short Sleeve Size MD $34 + qty + Check out"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": false,
+      "not": "Adet 1 → 2"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet ve subtotal güncellendi mi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boş: Your cart is empty + Continue shopping. Koleksiyon kartı / kargo barı yok.",
+    "filled": "Your cart: Shop Short Sleeve, Size MD, $34.00, qty 1, Subtotal $34.00 USD, Check out. Cross-sell yok.",
+    "changed": "qty 2, satır toplam $68.00, Subtotal $68.00 USD. Drawer açık kaldı."
+  },
+  "missingStates": [],
+  "interactionNote": "Add to cart UI drawer'ı açtı (cart-notification değil). Checkout tıklanmadı.",
+  "notlar": "Dawn cart-drawer. Boş + dolu + adet.",
+  "delta": "Boş state koleksiyon kartı yok. Cross-sell drawer'da yok (cart sayfasında featured-collection).",
+  "capture": {
+    "url": "https://theme-publisher-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:19:49.865Z",
+    "prepareClick": "a.header__icon--cart"
+  }
 }

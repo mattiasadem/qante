@@ -3,9 +3,9 @@
 *Kaynak:* https://theme-publisher-demo.myshopify.com  
 *Preset:* `default` · Theme Store: https://themes.shopify.com/themes/publisher  
 *Gözlenen tema:* `[Publisher] Theme Store demo (latest)` · `schema_name` Dawn 7.0.1 · `theme.id` 173430341941 · `role` main  
-*`Shopify.theme.theme_store_id`:* `null` (canlı JS). Theme Store sayfası: **Publisher · by Shopify · Free**. 1380 sayısal id bu demoda / Theme Store HTML’de okunmadı.
+*`Shopify.theme.theme_store_id`:* `null` (canlı JS). Theme Store: **Publisher · by Shopify · Free**. Sayısal 1380 demo/Theme Store HTML’de okunmadı.
 
-**Şu anki odak:** Mod A walk — observations yazıldı; 3vp capture + interact sırada
+**Şu anki odak:** ✅ Mod A walk kapandı — 33 obs · 123 PNG · 0 yeni şema · interact pixel-check
 
 ---
 
@@ -15,7 +15,7 @@
 |---|---|
 | Evidence kökü | `evidence/publisher/default/` |
 | Walkthrough / not | Official Publisher demo · blog + commerce |
-| Kapsam satırı (bitince) | Publisher · default · 11 sayfa · 33 obs · 0 yeni şema · leftovers 404/announcement |
+| Kapsam satırı | Publisher · default · 11 sayfa · 33 obs · 123 PNG · 0 yeni şema · leftovers 404/announcement |
 
 ---
 
@@ -23,9 +23,9 @@
 
 - [x] F0 Tema kimliği + sitemap + section haritası
 - [x] F1 Observation JSON (33) — şema yok, mevcut tipler
-- [ ] F2 3vp `capture-observation.mjs`
-- [ ] F3 Interact: predictive search · cart empty/filled/qty · PDP size · mega/menu yok
-- [ ] F4 `npm run validate`
+- [x] F2 3vp `capture-observation.mjs` (33/33 script OK; predictive 375/768 zero-size)
+- [x] F3 Interact: predictive search 1440 · cart empty/filled/qty · PDP Size MD→LG · mega/menu yok
+- [x] F4 `npm run validate` — 65 şema · 0 error · 0 warn
 
 ---
 
@@ -44,7 +44,7 @@
 | policy | `/pages/shipping-and-returns` |
 | blog-list | `/blogs/news` |
 | blog-post | `/blogs/news/fresh-launch-new-merch-collection` |
-| 404 leftover | `/pages/this-does-not-exist-xyz` → HTTP 404 “Page not found” |
+| 404 leftover | `/pages/this-does-not-exist-xyz` → HTTP 404 |
 
 Koleksiyonlar: books · apparel · merch · accessories · all  
 Sayfalar: about · contact · shipping-and-returns
@@ -56,25 +56,25 @@ Sayfalar: about · contact · shipping-and-returns
 - rich-text intro → `editorial-rich-text`
 - collage Books / Apparel → `editorial-custom-content` (+ `-2`)
 - 🌀 NEWEST ARRIVALS → `editorial-rich-text-2` (marquee değil)
-- featured_collection slider → `product-showcase-grid-featured`
+- featured_collection slider 5 kolon + 1/5 ok → `product-showcase-grid-featured`
 - featured-product Gift Card → `product-showcase-featured`
 - FREE SHIPPING bant → `editorial-rich-text-3`
 - image-banner iki yarım görsel + studio CTA → `editorial-image-with-text-overlay`
 - header logo+search+cart, mega/hamburger yok → `navigation-header-mega` + delta
 - footer = birincil nav + newsletter → `footer-columns-newsletter`
 
-Tekrarlayan şablon blokları (shipping bant + studio banner) home’da çekildi; collection/PDP/about/blog kopyaları ayrı observation değil.
+Tekrarlayan shipping bant + studio banner home’da bir kez.
 
 ---
 
-## Interact
+## Interact (pixel-check)
 
-- [ ] `global-predictive-search` — search ikon → `book` (katalog)
-- [ ] `global-cart-drawer` — boş / Shop Short Sleeve / adet+
-- [ ] `cart-page-main` — boş + dolu
-- [ ] `product-info-main` — Size SM → MD
-- [x] mega — **yok** (CSS yüklenir, panel/nav yok)
-- [x] mobile menu — **yok** (375/768 hamburger yok; nav footer)
+- [x] `global-predictive-search` — 1440: book → PRODUCTS (Celestino, Braulio, Shoplifters, Mary Obering). 375/768 search ikonu yok
+- [x] `global-cart-drawer` — boş / Shop Short Sleeve MD $34 / qty 2 → $68 (UI addToCart, drawer açıldı)
+- [x] `cart-page-main` — boş + dolu $34 + qty 2 $68, çanta rozeti 1→2
+- [x] `product-info-main` — Size MD → LG (label tık; fiyat/görsel aynı)
+- [x] mega — **yok**
+- [x] mobile menu — **yok** (nav footer)
 
 Stop: email / account / checkout / newsletter submit / contact Send / PII
 
@@ -88,5 +88,5 @@ Stop: email / account / checkout / newsletter submit / contact Send / PII
 
 ## Evidence backlog
 
-- [ ] 33 observation × 3vp
-- [ ] Interact PNG’leri (search / cart / PDP)
+- [x] 33 observation 3vp (predictive 375/768 kare yok — ikon gizli)
+- [x] Interact PNG: search 1440 · cart drawer 3 state · cart page 3 state · PDP size
