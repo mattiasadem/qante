@@ -1,0 +1,69 @@
+{
+  "observationId": "warehouse.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "warehouse",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://warehouse-theme-metal.myshopify.com/cart",
+  "selector": "#shopify-section-template--16536532222003__main",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "cart template. Boş: Your cart is empty + $80 kargo eşiği. Dolu + adet interact.",
+  "delta": "Tam sayfa sepet; mini-cart ayrı. Checkout tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://warehouse-theme-metal.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş sepet sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://warehouse-theme-metal.myshopify.com/products/jbl-charge-3-portable-bluetooth-speaker",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": ".product-form__add-button",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://warehouse-theme-metal.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepet-dolu",
+      "not": "Charge 3 satır"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--16536532222003__main [data-action='increase-picker-quantity']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + Spend $80.00 more + Shop our products.",
+    "filled": "JBL Charge 3 satır + subtotal (Beklenen $99.95).",
+    "changed": "Adet 2, subtotal güncellenmeli."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout / shipping calculator doldurulmadı."
+}

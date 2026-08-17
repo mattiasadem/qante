@@ -1,0 +1,52 @@
+{
+  "observationId": "warehouse.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "warehouse",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://warehouse-theme-metal.myshopify.com/",
+  "selector": "#mobile-menu",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "375/768 hamburger [data-action=toggle-menu] → #mobile-menu. All Products panel + Need help.",
+  "delta": "1440 hamburger 0×0. Kapalı #mobile-menu 0px.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://warehouse-theme-metal.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "[data-action='toggle-menu']",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Mobil menü drawer"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: All Products / New Arrivals / Sales / All Collections / Brands / Information / Presets. NEED HELP 1-800-663-4040 + sosyal."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger gizli; yatay nav-bar + mega."
+    },
+    {
+      "state": "changed",
+      "sebep": "All Products akordeon (open-panel) yoklandı değil — leftover."
+    }
+  ],
+  "interactionNote": "Account yok menüde. info@ tıklanmadı. All Products chevron tıklanmadı (kaçış riski)."
+}

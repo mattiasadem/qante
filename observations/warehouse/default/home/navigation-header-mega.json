@@ -1,0 +1,51 @@
+{
+  "observationId": "warehouse.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "warehouse",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://warehouse-theme-metal.myshopify.com/",
+  "selector": "#shopify-section-header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "header + nav-bar. Logo Warehouse - Metal. Search expanded. All Products mega. 375/768 hamburger.",
+  "delta": "All Products href=/collections — tıklama sayfaya gider; mega hover. Account / currency leftover.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://warehouse-theme-metal.myshopify.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header + nav-bar"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "a.nav-bar__link[aria-controls='desktop-menu-0-1']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "all-products-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "All Products hover → #desktop-menu-0-1 Audio/Hi-Fi/TV kolonları. <a> tıklanmadı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Logo + arama + Cart 0 + nav: All Products / New Arrivals / Sales / All Collections / Brands / Information / Presets.",
+    "open": "1440 All Products mega: Audio / Hi-Fi / TV & Entertainment / Our Selection + New JBL Portable Speakers From $39.95."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375/768 mega yok — hamburger (global-menu-drawer)."
+    }
+  ],
+  "interactionNote": "All Products href=/collections. Yalnız hover. Presets mega walk dışı leftover. Currency/account tıklanmadı."
+}

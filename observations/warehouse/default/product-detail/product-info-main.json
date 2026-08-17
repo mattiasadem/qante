@@ -1,0 +1,47 @@
+{
+  "observationId": "warehouse.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "warehouse",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://warehouse-theme-metal.myshopify.com/products/jbl-charge-3-portable-bluetooth-speaker",
+  "selector": "#shopify-section-template--16536532877363__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "product. JBL Charge 3 $99.95. Color swatch Black/Blue/Camo/Red/Teal/Grey. Qty stepper. Add to cart + Buy it now.",
+  "delta": "Buy it now / checkout tıklanmadı. Sticky ATC yoklandı değil.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://warehouse-theme-metal.myshopify.com/products/jbl-charge-3-portable-bluetooth-speaker",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16536532877363__main",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Color Black $99.95"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--16536532877363__main input.color-swatch__radio[value='Blue']",
+      "capture": true,
+      "etiket": "renk-blue",
+      "not": "Color Blue — görsel/etiket değişmeli"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Color: Black, Sale $99.95, In stock (56), Add to cart.",
+    "changed": "Color: Blue seçili (görsel/swatch). Fiyat aynı kalabilir."
+  },
+  "missingStates": [],
+  "interactionNote": "Buy it now duruldu. Description / Shipping accordion leftover."
+}

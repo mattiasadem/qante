@@ -1,0 +1,86 @@
+{
+  "observationId": "warehouse.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "warehouse",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://warehouse-theme-metal.myshopify.com/",
+  "selector": "#mini-cart",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "form#mini-cart. Header Cart toggle [data-action=toggle-mini-cart] href=/cart.",
+  "delta": "Mini-cart overlay (drawer değil tam sayfa). Boş + dolu + adet.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://warehouse-theme-metal.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "[data-action='toggle-mini-cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş mini-cart"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://warehouse-theme-metal.myshopify.com/products/jbl-charge-3-portable-bluetooth-speaker",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": ".product-form__add-button",
+      "capture": false,
+      "not": "JBL Charge 3 Black $99.95"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "[data-action='toggle-mini-cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu mini-cart"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#mini-cart [data-action='increase-picker-quantity']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + Spend $80.00 more and get free shipping! + Shop our products.",
+    "filled": "JBL Charge 3 satır (Beklenen). Checkout görünürse tıklanmadı.",
+    "changed": "Adet 2, ara toplam güncellenmeli."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı. ATC UI; fallback /cart/add.js olursa not güncellenecek."
+}
