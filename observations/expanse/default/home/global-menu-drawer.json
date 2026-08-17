@@ -1,0 +1,57 @@
+{
+  "observationId": "expanse.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "expanse",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://expanse-theme-furniture.myshopify.com/",
+  "selector": "header-drawer.site-header__mobile-nav",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/expanse/default/home/global-menu-drawer.open.mobil-menu-acik.375.png",
+    "evidence/expanse/default/home/global-menu-drawer.open.mobil-menu-acik.768.png"
+  ],
+  "notlar": "Expanse mobile nav header drawer, Impulse #NavDrawer değil.",
+  "delta": "header-drawer custom element. Expand submenu akordeon yoklandı değil (changed leftover).",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://expanse-theme-furniture.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.mobile-nav-trigger",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mobil-menu-acik",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "button.mobile-nav-trigger aria-controls=MobileNav"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: Homestyle/Lifestyle/Kids/Brands/Sale thumb + chevron; Blog/Locations/Theme features chevron; About us / Customer support. 768 ayrıca Get in touch / Follow us / We accept / USD. 1440 hamburger yok."
+  },
+  "missingStates": [],
+  "interactionNote": "Drawer = header-drawer.site-header__mobile-nav.is-active. 1440 adım yok.",
+  "capture": {
+    "url": "https://expanse-theme-furniture.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T21:03:34.241Z"
+  }
+}
