@@ -1,0 +1,109 @@
+{
+  "observationId": "palo-alto.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "palo-alto",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://palo-alto-theme-main.myshopify.com/cart",
+  "selector": "#shopify-section-template--21945700450492__main",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/palo-alto/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/palo-alto/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/palo-alto/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/palo-alto/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/palo-alto/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/palo-alto/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/palo-alto/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/palo-alto/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/palo-alto/default/cart/cart-page-main.initial.sepet-bos.768.png"
+  ],
+  "notlar": "cart-template. Boş: Find your new wardrobe / Your cart is currently empty + koleksiyon hapları.",
+  "delta": "Boş↔dolu aynı şema. Checkout tıklanmadı.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://palo-alto-theme-main.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepet-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://palo-alto-theme-main.myshopify.com/products/exclesa-dress-scacchi-black-ivory",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "#AddToCart--template--21945700909244__main-8877227802812",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#AddToCart--template--21945700909244__main-8877227802812",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://palo-alto-theme-main.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart sayfası"
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": ".cart__item__quantity-plus",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".cart__item__quantity-plus",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Find your new wardrobe. Your cart is currently empty. 2×2 New Arrivals / Staff Picks / Bestselling / Sale + SHOP ALL. FREE SHIPPING ON ORDERS OVER $100.",
+    "filled": "Cart (1 item) + SHOP ALL. Revive Dress Size XS Color Checkered $150 qty 1. SUBTOTAL $150.00 USD. Buy It With Classic Trench QUICK BUY. Add order notes / gift note / Calculate shipping. WELCOME10. CHECKOUT — tıklanmadı.",
+    "changed": "Cart (2 items). qty 2. SUBTOTAL $300.00 USD. CHECKOUT — tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout / kupon / QUICK BUY yok. ATC sonrası /cart (drawer değil).",
+  "capture": {
+    "url": "https://palo-alto-theme-main.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T21:05:37.279Z"
+  }
+}
