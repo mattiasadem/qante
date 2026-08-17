@@ -1,0 +1,47 @@
+{
+  "observationId": "taiga.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "taiga",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://taiga-demo-sage.myshopify.com/products/jaakari-m-desert-brown",
+  "selector": "#shopify-section-template--21784396890350__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "Jääkäri M – Desert Brown €193,95. NEW rozet. Color sibling: Olive Green / Desert Brown / Eclipse Black / M05 Woodland. Qty + Add to cart + A few left in stock! product-buy-bar.",
+  "delta": "Taiga product main. Renk kardeş ürün linki (ayrı handle). Backpack 202’de variant-selects Color radio leftover. Shopify.theme: name **Taiga / LIVE update** · schema_name **Taiga** · schema_version **8.1.0** · theme_store_id **null** · role main · id 159278366958 · shop taiga-demo-sage.myshopify.com",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://taiga-demo-sage.myshopify.com/products/jaakari-m-desert-brown",
+      "capture": true,
+      "etiket": "desert-brown",
+      "not": "Desert Brown PDP"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--21784396890350__main a[href='/products/jaakari-m-olive-green']",
+      "capture": true,
+      "etiket": "olive-green",
+      "not": "Olive Green kardeş ürün"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Jääkäri M Desert Brown €193,95 · Color Desert Brown · Add to cart · low stock.",
+    "changed": "Olive Green kardeş PDP / swatch seçimi — görsel+başlık değişir."
+  },
+  "missingStates": [],
+  "interactionNote": "Renk ayrı ürün handle. Checkout yok. Backpack 202 Color radio leftover."
+}

@@ -1,0 +1,69 @@
+{
+  "observationId": "taiga.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "taiga",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://taiga-demo-sage.myshopify.com/cart",
+  "selector": "#shopify-section-template--21784160469230__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Shopping cart / Continue shopping / Your cart is empty. cart-items + cart-recommendations.",
+  "delta": "Drawer ayrı. Checkout tıklanmadı. Shopify.theme: name **Taiga / LIVE update** · schema_name **Taiga** · schema_version **8.1.0** · theme_store_id **null** · role main · id 159278366958 · shop taiga-demo-sage.myshopify.com",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://taiga-demo-sage.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://taiga-demo-sage.myshopify.com/products/backpack-202-black",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://taiga-demo-sage.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--21784160469230__cart-items button[name='plus'], #shopify-section-template--21784160469230__cart-items button[aria-label*='Increase'], quantity-input button:last-of-type",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Shopping cart · Your cart is empty · Continue shopping.",
+    "filled": "Backpack 202 — Black · €61,95 · adet 1.",
+    "changed": "Adet 2; toplam güncellenir."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı."
+}

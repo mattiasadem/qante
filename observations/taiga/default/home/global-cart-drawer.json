@@ -1,0 +1,105 @@
+{
+  "observationId": "taiga.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "taiga",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://taiga-demo-sage.myshopify.com/",
+  "selector": "drawer-cart#drawer-cart",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "drawer-cart#drawer-cart. Boş: Cart / Your cart is empty.",
+  "delta": "/cart ayrı sayfa. Checkout tıklanmadı. Shopify.theme: name **Taiga / LIVE update** · schema_name **Taiga** · schema_version **8.1.0** · theme_store_id **null** · role main · id 159278366958 · shop taiga-demo-sage.myshopify.com",
+  "captureMode": "viewport",
+  "prepareClick": "a[href='#drawer-cart']",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://taiga-demo-sage.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[href='#drawer-cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://taiga-demo-sage.myshopify.com/products/backpack-202-black",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit[name='add']",
+      "capture": false,
+      "not": "ATC UI; fallback /cart/add.js"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a[href='#drawer-cart']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "drawer-cart#drawer-cart button[name='plus'], drawer-cart#drawer-cart button[aria-label*='Increase'], drawer-cart#drawer-cart .quantity-input button:last-of-type",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Sağ/geniş drawer: Cart · Your cart is empty. Satır yok.",
+    "filled": "Backpack 202 — Black satırı + adet 1 + €61,95.",
+    "changed": "Adet 2; ara toplam güncellenir."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout/login tıklanmadı. Qty selector capture sonrası doğrulanacak."
+}

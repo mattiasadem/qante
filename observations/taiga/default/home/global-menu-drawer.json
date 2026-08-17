@@ -1,0 +1,50 @@
+{
+  "observationId": "taiga.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "taiga",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://taiga-demo-sage.myshopify.com/",
+  "selector": "drawer-menu#drawer-menu",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "Hamburger 375 ve 768’de 48×48 görünür. 1440’ta da Menu link var.",
+  "delta": "Taiga drawer-menu. 768 hamburger var (Horizon’dan farklı). Shopify.theme: name **Taiga / LIVE update** · schema_name **Taiga** · schema_version **8.1.0** · theme_store_id **null** · role main · id 159278366958 · shop taiga-demo-sage.myshopify.com",
+  "captureMode": "viewport",
+  "prepareClick": "a[aria-label='Open menu drawer']",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://taiga-demo-sage.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "a[aria-label='Open menu drawer']",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "menu-acik",
+      "not": "375/768 hamburger drawer"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 drawer: New / Shop / About / Blog / Theme features + Finland."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 Shop mega ayrı observation. Nested Shop drilldown bu walk’ta tıklanmadı."
+}
