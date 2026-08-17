@@ -1,0 +1,82 @@
+{
+  "observationId": "warehouse.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "warehouse",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://warehouse-theme-metal.myshopify.com/",
+  "selector": ".search-bar",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/warehouse/default/home/global-predictive-search.initial.search-bos.1440.png",
+    "evidence/warehouse/default/home/global-predictive-search.initial.search-bos.375.png",
+    "evidence/warehouse/default/home/global-predictive-search.initial.search-bos.768.png",
+    "evidence/warehouse/default/home/global-predictive-search.input.jbl.1440.png",
+    "evidence/warehouse/default/home/global-predictive-search.input.jbl.375.png",
+    "evidence/warehouse/default/home/global-predictive-search.input.jbl.768.png"
+  ],
+  "notlar": "header search-bar__input. 375/768/1440 görünür (ikon-only değil). Katalog: jbl.",
+  "delta": "Predictive .search-bar__results. Submit /search sayfası ayrı observation.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://warehouse-theme-metal.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header.header input.search-bar__input",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Boş arama odağı"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "header.header input.search-bar__input",
+      "value": "jbl",
+      "capture": false,
+      "not": "katalog jbl"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "header.header input.search-bar__input",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "jbl",
+      "not": "PRODUCTS öneri listesi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Search bar boş / All categories. 375 Close overlay.",
+    "input": "jbl → PRODUCTS: Stage A125C $249.95, Stage A135C $249.95, Charge 3 $99.95 + View all results."
+  },
+  "missingStates": [],
+  "interactionNote": "Enter/submit yok. metal de sonuç verdi; katalog jbl (marka). 375 input görünür (285×44).",
+  "capture": {
+    "url": "https://warehouse-theme-metal.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T20:45:39.253Z"
+  }
+}

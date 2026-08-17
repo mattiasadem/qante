@@ -1,0 +1,114 @@
+{
+  "observationId": "flow.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "flow",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://eight-nourish-demo.myshopify.com/",
+  "selector": "cart-drawer.global-drawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/flow/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/flow/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/flow/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/flow/default/home/global-cart-drawer.filled.almond-qty1.1440.png",
+    "evidence/flow/default/home/global-cart-drawer.filled.almond-qty1.375.png",
+    "evidence/flow/default/home/global-cart-drawer.filled.almond-qty1.768.png",
+    "evidence/flow/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/flow/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/flow/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "cart-drawer.global-drawer. Boş: Cart (0) Your cart is currently empty. ALL SMOOTHIES. a.site-header__cart-toggle.js-drawer-open-right-link.",
+  "delta": "Shopify.theme.name `Flow R1 — design base` · id 150685581382 · schema_name Flow · schema_version 42.0.0 · theme_store_id null · role main · shop flow-queenstown.myshopify.com. Official walk eight-nourish-demo.myshopify.com (Nourish). flow-demo.myshopify.com = Debut, kullanılmadı. flow-theme.myshopify.com password, kullanılmadı.",
+  "captureMode": "viewport",
+  "prepareClick": "a.js-drawer-open-right-link[aria-label='Cart']",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eight-nourish-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.js-drawer-open-right-link[aria-label='Cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer — 375/768 görünür site-nav__link; desktop cart-toggle 0px"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://eight-nourish-demo.myshopify.com/products/almond-banana",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.product--add-to-cart-button[name='add']",
+      "capture": false,
+      "not": "UI ATC"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "almond-qty1",
+      "not": "ATC sonrası drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "cart-drawer button.js-qty__adjust--plus, cart-drawer button[name='plus']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Drawer plus"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Cart (0) · Your cart is currently empty. · ALL SMOOTHIES. 1440 sağ sheet. 375 tam drawer.",
+    "filled": "Almond & Banana Size 500ml · adet 1 · ~~$5.99~~ $3.00. Cart (1). Don't forget these… VIEW CART + CHECKOUT tıklanmadı.",
+    "changed": "Plus → Cart (2) · adet 2 · subtotal ~~$11.98~~ $6.00. CHECKOUT tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 opener a.js-drawer-open-right-link (desktop cart-toggle 0px). Checkout/login/BUY IT NOW yok.",
+  "capture": {
+    "url": "https://eight-nourish-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T20:52:30.651Z"
+  }
+}
