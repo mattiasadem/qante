@@ -1,0 +1,101 @@
+{
+  "observationId": "savor.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "savor",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://savor-theme-demo.myshopify.com/",
+  "selector": "dialog.cart-drawer__dialog",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/savor/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/savor/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/savor/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/savor/default/home/global-cart-drawer.filled.urun-eklendi.1440.png",
+    "evidence/savor/default/home/global-cart-drawer.filled.urun-eklendi.375.png",
+    "evidence/savor/default/home/global-cart-drawer.filled.urun-eklendi.768.png",
+    "evidence/savor/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/savor/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/savor/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "captureMode": "viewport",
+  "prepareClick": "button.header-actions__action[aria-label='Cart']",
+  "notlar": "Horizon cart-drawer-component. Boş: YOUR CART IS EMPTY + Log in to check out faster + CONTINUE SHOPPING. 400×900 sağ panel.",
+  "delta": "ATC drawer’ı otomatik açmaz — cart ikonuna ikinci tık. /cart ayrı sayfa. Checkout/login tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://savor-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.header-actions__action[aria-label='Cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://savor-theme-demo.myshopify.com/products/the-original-japanese-barbecue-sauce",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.header-actions__action[aria-label='Cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "urun-eklendi",
+      "not": "Dolu drawer — ATC kendisi açmaz"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "dialog.cart-drawer__dialog[open] button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Sağ panel: YOUR CART IS EMPTY; Have an account? Log in to check out faster.; kırmızı CONTINUE SHOPPING.",
+    "filled": "CART (1). The Original · 1 Bottle · $9.49 CAD · adet 1 · çöp. Discount + · Estimated total $9.49 · CHECK OUT (tıklanmadı).",
+    "changed": "CART (2). Adet 2. Satır + estimated total $18.98 CAD."
+  },
+  "missingStates": [],
+  "interactionNote": "Login / Checkout / Shop Pay tıklanmadı. Qty drawer açıkken plus.",
+  "capture": {
+    "url": "https://savor-theme-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:30:26.711Z"
+  }
+}
