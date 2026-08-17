@@ -30,7 +30,7 @@
 | PLP countdown (`__53849aa3-…`) | yalnız 12 DAYS sayaç; home/PDP countdown zaten envanterde |
 | Quick shop / `#QuickShopModal` | kart + lookbook overlay. Interact listesinde yok; leftover |
 | Hotspot tık | Shop the look + → Quick shop. Overlay leftover |
-| Mobile submenu `changed` | Expand submenu görüldü; akordeon açılmadı |
+| Mobile submenu `changed` | 375/768 chevron expander görüldü; alt menü açılmadı |
 | Map “View map” | lokasyon kartı; map şeması yok |
 
 ## Aday (yeni şema yok)
@@ -48,4 +48,6 @@
 - Predictive: katalog `chair` (OH Chair $75). Üç `input#Search`; fill görünür olanı alır.
 - Cart: `#HeaderCartTrigger` → header dropdown. ATC sonrası otomatik açılır. Qty `.js-qty__adjust--plus`.
 - 1440 hamburger yok (masaüstü nav). 375/768 `button.mobile-nav-trigger` resmi.
-- PDP Size: Small $25 → X-Large $40 (Save $10, Low stock 4).
+- PDP Size: Small $35→$25 (Low stock 1) → X-Large $50→$40 (Low stock 4).
+- Homestyle mega 1440: 4 kolon + iBed SALE promo (from $25 / $35 Save $10).
+- Search `/search?q=chair`: 5 sonuç (predictive 3 ürün + Suggestions).

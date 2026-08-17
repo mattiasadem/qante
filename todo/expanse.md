@@ -11,8 +11,8 @@
 `theme_store_id` = **null** (canlıda yok; uydurulmadı)  
 shop `expanse-theme-furniture.myshopify.com`
 
-**Durum:** Mod A walk + resmi 3vp + interact + validate  
-**PR:** draft — **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti** (0 error)  
+**PR:** draft https://github.com/mattiasadem/qante/pull/155 — **main'e merge yok**
 
 ---
 
@@ -26,7 +26,7 @@ shop `expanse-theme-furniture.myshopify.com`
 | Parallel | yalnız `observations/expanse/`, `evidence/expanse/`, `todo/expanse.md`, `candidates/expanse-leftovers.md` |
 
 **Kapsam satırı:**  
-`Expanse · default (Furniture) · expanse/classic/production · schema_name Expanse 6.1.0 · theme_store_id null · home→PDP→PLP→collections→search→cart→our-story/contact-us→faq→blog→404 · 0 yeni şema · leftover: candidates/expanse-leftovers.md`
+`Expanse · default (Furniture) · expanse/classic/production · schema_name Expanse 6.1.0 · theme_store_id null · home→PDP→PLP→collections→search→cart→our-story/contact-us→faq→blog→404 · 46 obs · 156 PNG · 0 yeni şema · leftover: candidates/expanse-leftovers.md`
 
 ---
 
@@ -34,22 +34,22 @@ shop `expanse-theme-furniture.myshopify.com`
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home + announcement/header/footer + conversion blocks | roster | [ ] capture |
-| Mega Homestyle 1440 | interact | [ ] |
-| Predictive search `chair` | interact 3vp | [ ] |
-| Mobile menu 375 | interact | [ ] |
-| Mobile menu 768 | interact | [ ] |
-| Cart drawer empty + filled + qty | interact 3vp | [ ] |
-| PDP iBed Size Small→X-Large | interact 3vp | [ ] |
-| PLP `/collections/decor` | roster | [ ] capture |
-| Collections index `/collections` | roster | [ ] capture |
-| Search `/search?q=chair` | roster | [ ] capture |
-| Cart page empty + filled + qty | interact 3vp | [ ] |
-| About `/pages/our-story` (`/pages/about` 404) | roster | [ ] capture |
-| Contact `/pages/contact-us` (submit yok) | roster | [ ] capture |
-| FAQ `/pages/faq` | roster | [ ] capture |
-| News + article | roster | [ ] capture |
-| 404 leftover | roster | [ ] capture |
+| Home + announcement/header/footer + conversion blocks | roster + capture | [x] |
+| Mega Homestyle 1440 | interact | [x] |
+| Predictive search `chair` | interact 3vp | [x] |
+| Mobile menu 375 | interact | [x] |
+| Mobile menu 768 | interact | [x] |
+| Cart drawer empty + filled + qty | interact 3vp | [x] |
+| PDP iBed Size Small→X-Large | interact 3vp | [x] |
+| PLP `/collections/decor` | roster + capture | [x] |
+| Collections index `/collections` | roster + capture | [x] |
+| Search `/search?q=chair` | roster + capture | [x] |
+| Cart page empty + filled + qty | interact 3vp | [x] |
+| About `/pages/our-story` (`/pages/about` 404) | roster + capture | [x] |
+| Contact `/pages/contact-us` (submit yok) | roster + capture | [x] |
+| FAQ `/pages/faq` | roster + capture | [x] |
+| News + article | roster + capture | [x] |
+| 404 leftover | roster + capture | [x] |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -87,12 +87,12 @@ shop `expanse-theme-furniture.myshopify.com`
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | open | Homestyle hover 1440 — Decor/Kitchen/Tabletop/More |
-| global-predictive-search | input | `chair` — OH Chair $75 + Eames pen + Fantasy Animals |
-| global-menu-drawer | open | 375/768 header-drawer. 1440 hamburger yok |
-| global-cart-drawer | filled + changed | empty → iBed Small $25 → qty |
-| cart-page-main | filled + changed | empty → iBed $25 → qty |
-| product-info-main | changed | Small $25 → X-Large $40 (Save $10, low stock 4) |
+| navigation-header-mega | open | Homestyle hover 1440 — 4 kolon + iBed SALE promo |
+| global-predictive-search | input | `chair` 3vp — OH Chair $75 + Eames pen + Fantasy Animals |
+| global-menu-drawer | open | 375/768 header-drawer + thumb. 1440 hamburger yok |
+| global-cart-drawer | filled + changed | empty → X-Large $40 qty1 → qty2 $80 |
+| cart-page-main | filled + changed | empty → X-Large $40 qty1 → qty2 $80 |
+| product-info-main | changed | Small $25 (1 left) → X-Large $40 (4 left) |
 
 ---
 
@@ -104,7 +104,7 @@ shop `expanse-theme-furniture.myshopify.com`
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact mega / search / cart / menu / PDP Size
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate` — 0 error
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact mega / search / cart / menu / PDP Size
+- [x] PNG bak → stateFindings
+- [x] `npm run validate` — 0 error

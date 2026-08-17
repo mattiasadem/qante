@@ -7,7 +7,17 @@
   "url": "https://expanse-theme-furniture.myshopify.com/cart",
   "selector": "#shopify-section-template--17354735780037__main",
   "evidenceSlug": "cart-page-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/expanse/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/expanse/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/expanse/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/expanse/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/expanse/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/expanse/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/expanse/default/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/expanse/default/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/expanse/default/cart/cart-page-main.initial.cart-bos.768.png"
+  ],
   "notlar": "Boş + dolu + qty.",
   "delta": "Popular picks yok (404'te var).",
   "interactionStates": [
@@ -32,6 +42,14 @@
     },
     {
       "state": "filled",
+      "action": "click",
+      "selector": "label.variant__button-label[for$='-1-1']",
+      "value": 1200,
+      "capture": false,
+      "not": "X-Large — Small stok 1"
+    },
+    {
+      "state": "filled",
       "action": "addToCart",
       "selector": "form[action*='/cart/add'] button[name='add']",
       "capture": false
@@ -42,22 +60,41 @@
       "value": "https://expanse-theme-furniture.myshopify.com/cart",
       "capture": true,
       "etiket": "sepete-eklendi",
-      "not": "Dolu cart satırı"
+      "not": "Dolu cart satırı X-Large $40"
+    },
+    {
+      "state": "changed",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Newsletter popup plus'ı kesmesin"
     },
     {
       "state": "changed",
       "action": "click",
-      "selector": "#shopify-section-template--17354735780037__main .js-qty__adjust--plus",
+      "selector": ".cart__item .js-qty__adjust--plus",
+      "value": 2500,
       "capture": true,
       "etiket": "adet-artti",
-      "not": "Adet +"
+      "not": "Adet 1→2"
     }
   ],
   "stateFindings": {
     "initial": "Cart. Your cart is currently empty. Continue shopping.",
-    "filled": "iBed Lap Desk Small $25 qty 1.",
-    "changed": "Beklenen qty 2 / $50."
+    "filled": "iBed Lap Desk Size X-Large qty 1 $40. Goes great with 4 card case. Subtotal $40. Check out + Continue shopping.",
+    "changed": "qty 2. Subtotal $80."
   },
   "missingStates": [],
-  "interactionNote": "Checkout tıklanmadı. recently-viewed 0px leftover."
+  "interactionNote": "Checkout tıklanmadı. Small stok 1 — qty için X-Large. recently-viewed 0px leftover.",
+  "capture": {
+    "url": "https://expanse-theme-furniture.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T21:16:25.853Z"
+  }
 }

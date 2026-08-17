@@ -7,7 +7,17 @@
   "url": "https://expanse-theme-furniture.myshopify.com/",
   "selector": ".site-header__drawer.site-header__cart",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/expanse/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/expanse/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/expanse/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/expanse/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/expanse/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/expanse/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/expanse/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/expanse/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/expanse/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
   "notlar": "#HeaderCartTrigger href=/cart aria-controls=HeaderCart.",
   "delta": "Header dropdown + Goes great with cross-sell. Impulse yan drawer değil.",
   "captureMode": "viewport",
@@ -40,10 +50,18 @@
     },
     {
       "state": "filled",
+      "action": "click",
+      "selector": "label.variant__button-label[for$='-1-1']",
+      "value": 1200,
+      "capture": false,
+      "not": "X-Large — Small stok 1, qty artmaz"
+    },
+    {
+      "state": "filled",
       "action": "addToCart",
       "selector": "form[action*='/cart/add'] button[name='add']",
       "capture": false,
-      "not": "iBed Small $25 — ATC drawer'ı otomatik açar"
+      "not": "iBed X-Large $40 — ATC drawer otomatik açar"
     },
     {
       "state": "filled",
@@ -52,14 +70,15 @@
       "capture": true,
       "captureMode": "viewport",
       "etiket": "sepete-eklendi",
-      "not": "Dolu drawer: satır + Goes great with + Subtotal + Check out (tıklanmadı)"
+      "not": "Dolu drawer: X-Large $40 + Goes great with + Check out (tıklanmadı). Escape drawer'ı kapatır — kullanılmadı."
     },
     {
       "state": "changed",
       "action": "click",
-      "selector": ".site-header__cart .js-qty__adjust--plus",
+      "selector": ".cart__item .js-qty__adjust--plus",
+      "value": 2500,
       "capture": false,
-      "not": "Adet 1→2"
+      "not": "Adet 1→2 X-Large. force click (newsletter popup kesebilir; Subscribe tıklanmaz)"
     },
     {
       "state": "changed",
@@ -72,10 +91,21 @@
     }
   ],
   "stateFindings": {
-    "initial": "Your cart is currently empty. 450px header dropdown.",
-    "filled": "iBed Lap Desk Size Small qty1 $25. Goes great with card cases. Subtotal $25. Check out (tıklanmadı).",
-    "changed": "Beklenen: qty 2 / Subtotal $50."
+    "initial": "Your cart is currently empty. Header sağ dropdown (~450px).",
+    "filled": "iBed Lap Desk Size X-Large qty 1 $40. Goes great with 3 card case. Subtotal $40. Check out (tıklanmadı).",
+    "changed": "qty 2. Subtotal $80. Satır fiyatı $40 kaldı."
   },
   "missingStates": [],
-  "interactionNote": "Header dropdown cart (.site-header__cart), yan drawer değil. Check out tıklanmadı. ATC sonrası otomatik açılır."
+  "interactionNote": "Header dropdown (.site-header__cart), yan drawer değil. Small stok 1 — qty için X-Large. Check out tıklanmadı. Newsletter popup Subscribe tıklanmadı.",
+  "capture": {
+    "url": "https://expanse-theme-furniture.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T21:20:58.612Z"
+  }
 }
