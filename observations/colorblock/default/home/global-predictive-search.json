@@ -1,0 +1,97 @@
+{
+  "observationId": "colorblock.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "colorblock",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-colorblock-demo.myshopify.com/",
+  "selector": "predictive-search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/colorblock/default/home/global-predictive-search.initial.search-bos.1440.png",
+    "evidence/colorblock/default/home/global-predictive-search.initial.search-bos.375.png",
+    "evidence/colorblock/default/home/global-predictive-search.initial.search-bos.768.png",
+    "evidence/colorblock/default/home/global-predictive-search.input.cardi.1440.png",
+    "evidence/colorblock/default/home/global-predictive-search.input.cardi.375.png",
+    "evidence/colorblock/default/home/global-predictive-search.input.cardi.768.png"
+  ],
+  "captureMode": "viewport",
+  "notlar": "Search ikon details-modal açar. Input #Search-In-Modal-1 placeholder Search. Katalog: cardi.",
+  "delta": "Kapalı kare boş. Dawn predictive-search header içinde. Submit /search sayfasına gider — interact'te submit yok.",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-colorblock-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "details-modal.header__search summary[aria-label='Search']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Boş search modal"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "cardi",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false,
+      "not": "375/768 görünür input #Search-In-Modal"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal-1",
+      "value": "cardi",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "1440 görünür input #Search-In-Modal-1"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "predictive-search input[name='q']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cardi",
+      "not": "Öneri/ürün listesi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Search modal + boş input + X. Ürün listesi yok.",
+    "input": "cardi → PRODUCTS: Patchwork Cardi, Pocket Cardi, Quarter-Back Cardi, Intarsia Cable Cardi + Search for 'cardi'."
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 input #Search-In-Modal; 1440 #Search-In-Modal-1. Enter/submit yok.",
+  "capture": {
+    "url": "https://theme-colorblock-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:23:34.846Z"
+  }
+}
