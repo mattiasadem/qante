@@ -1,0 +1,41 @@
+{
+  "observationId": "showcase.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "showcase",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://betty-theme.myshopify.com/products/city-all-black",
+  "selector": "#shopify-section-template--19324544057397__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "City - All Black $89/$69. Size COMPACT/MIDI/GRANDE. Qty −/+. ADD TO CART. Trust ikon + accordion + Pairs well with aynı template.",
+  "delta": "Tek section-product-template. Tabs/related ayrı shopify-section değil. Pickup Ottawa — tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://betty-theme.myshopify.com/products/city-all-black",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Size COMPACT varsayılan"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label.opt-label[for='product-form-template--19324544057397__main-4854274621493-1-opt-1']",
+      "capture": true,
+      "etiket": "size-midi",
+      "not": "COMPACT → MIDI"
+    }
+  ],
+  "stateFindings": {
+    "initial": "COMPACT. $89/$69. 13 in stock. ADD TO CART.",
+    "changed": "MIDI. Fiyat aynı $89/$69. 10 in stock."
+  },
+  "missingStates": [],
+  "interactionNote": "Fiyat size ile değişmedi; stok 13→10. Checkout / More payment options duruldu."
+}

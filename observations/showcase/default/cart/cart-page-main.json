@@ -1,0 +1,76 @@
+{
+  "observationId": "showcase.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "showcase",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://betty-theme.myshopify.com/cart",
+  "selector": "#shopify-section-template--19324471574581__main",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Boş: Your cart is currently empty. Dolu: satır + FLASH SALE 5% + Subtotal.",
+  "delta": "Cart drawer yok — /cart sayfa. Checkout tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://betty-theme.myshopify.com/cart/clear",
+      "capture": false,
+      "not": "Viewport başına sepet temizle"
+    },
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://betty-theme.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş sepet"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://betty-theme.myshopify.com/products/city-malibu",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.button.alt[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://betty-theme.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "City - Malibu COMPACT $89"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "a.plus.quantity-up",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Shopping cart. Your cart is currently empty. Continue shopping.",
+    "filled": "City - Malibu COMPACT $89. FLASH SALE 5% OFF. Subtotal $84.55. ADD A NOTE.",
+    "changed": "qty + sonrası ara toplam — karede bakılacak."
+  },
+  "missingStates": [],
+  "interactionNote": "Drawer yok. Checkout / note / kupon duruldu. Qty: a.plus.quantity-up."
+}

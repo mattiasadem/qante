@@ -1,0 +1,91 @@
+{
+  "observationId": "showcase.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "showcase",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://betty-theme.myshopify.com/",
+  "selector": "#page-menu",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "Tam ekran koyu overlay (yan drawer değil). Home / Shop> / Our Story / Blog / FAQs / Presets> + English.",
+  "delta": "1440 hamburger de var. Kapalı #page-menu nav — dismiss overlay dokunmaz.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://betty-theme.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "a.menu[href='#page-menu']",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 700,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Mobil/tablet menü listesi"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#page-menu .main-nav > ul > li.has-children > a",
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Shop alt menü"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 700,
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ]
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-alt",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "375/768 Shop çocukları"
+    }
+  ],
+  "stateFindings": {
+    "open": "Koyu overlay. Home / Shop> / Our Story / Blog / FAQs / Presets> + English.",
+    "changed": "Shop: Silicone + Leather Like linkleri. Promo kart 375'te ayrı bakılacak."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 mega navigation-header-mega.open. Account tıklanmadı."
+}

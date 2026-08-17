@@ -1,0 +1,72 @@
+{
+  "observationId": "showcase.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "showcase",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://betty-theme.myshopify.com/",
+  "selector": "#shopify-section-sections--19324473212981__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Hamburger + search + SHOWCASE logo + account + cart(0). 1440'ta da hamburger — inline desktop nav yok. Shop mega #page-menu içinde.",
+  "delta": "Clean Canvas Showcase: mega hover-bar yok. Account görüldü, tıklanmadı. Dil seçici menü overlay'de.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://betty-theme.myshopify.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header şeridi"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "a.menu[href='#page-menu']",
+      "capture": false,
+      "not": "Hamburger → #page-menu"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 700,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#page-menu .main-nav > ul > li.has-children > a",
+      "capture": false,
+      "not": "Shop (ilk has-children). Presets tıklanmadı."
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 700,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Shop mega: Silicone + Leather Like kolon + Gift Cards / Like Leather promo"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Şerit: hamburger, search, SHOWCASE, account, cart 0. Hero üstünde şeffaf.",
+    "open": "1440 Shop: Silicone Collection (Tote/Shoulder/Straps/Purses/Backpacks) + Leather Like + Gift Cards / Like Leather SHOP kartları."
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 Shop mega header-mega'da değil — global-menu-drawer changed. Account / Presets / checkout duruldu."
+}

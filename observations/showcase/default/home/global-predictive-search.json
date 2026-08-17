@@ -1,0 +1,82 @@
+{
+  "observationId": "showcase.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "showcase",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://betty-theme.myshopify.com/",
+  "selector": "#search-modal",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "Fullscreen #search-modal. Placeholder Type to search. Katalog: tote (shirt 0 sonuç).",
+  "delta": "Canlı öneri listesi belirmadi — modal input + ok submit. dismiss #search-modal'ı gizleyebilir → forceOpen.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://betty-theme.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.nav-search[data-modal-toggle='#search-modal']",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "#search-modal",
+      "capture": false,
+      "not": "dismiss display:none geri alınır"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Boş arama modalı"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#search-modal input[name='q']",
+      "value": "tote",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "tote",
+      "not": "Yazılı tote — öneri var mı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Koyu fullscreen. Ortada çizgi input. Sağ üst X.",
+    "input": "tote yazılı + ok. Ürün/koleksiyon önerisi yok."
+  },
+  "missingStates": [],
+  "interactionNote": "Predictive dropdown yoklandı, belirmadi. Enter/submit yok. shirt → No search results."
+}
