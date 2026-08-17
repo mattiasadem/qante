@@ -1,0 +1,68 @@
+{
+  "observationId": "blockshop.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "blockshop",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://blockshop-theme-beauty.myshopify.com/",
+  "selector": ".drawer--root",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/blockshop/default/home/global-menu-drawer.open.menu-acik.375.png"
+  ],
+  "notlar": "375 button.header--drawer-toggle → sol drawer. SHOP / NEW / TRENDING / ABOUT US + locale. 768 hamburger 0×0.",
+  "delta": "Shopify.theme.name `Copy of design [do not delete]` · id 134976438327 · schema_name Blockshop · schema_version 13.2.0 · theme_store_id null · role main · shop blockshop-theme-beauty.myshopify.com. y-menu mobile-nav. 768 leftover (sidebar, hamburger yok).",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://blockshop-theme-beauty.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.layout--close[aria-label='close']",
+      "capture": false,
+      "not": "Glow Club kapat"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.header--drawer-toggle",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "menu-acik",
+      "not": "Sol drawer SHOP/NEW/TRENDING/ABOUT US"
+    }
+  ],
+  "stateFindings": {
+    "open": "375 sol drawer: SHOP / NEW / TRENDING / ABOUT US. Üst sağ account + X + bag. Alt ENGLISH / CANADA. Shop accordion drawer içinde açılmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "Yalnız 375 resmi. 768 hamburger display:none (sidebar) — leftover, eksik çekim değil. Account tıklanmadı.",
+  "capture": {
+    "url": "https://blockshop-theme-beauty.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T20:52:17.685Z"
+  }
+}
