@@ -5,8 +5,7 @@
 
 ## Tema kimliği
 
-- Canlı `Shopify.theme.theme_store_id` **null**. Theme Store id uydurulmadı.
-- `schema_name` **Showcase** · name `showcase-v10.2.0` · theme id `145737646133` · role `main`.
+- Canlı `Shopify.theme` (vitrinde yeniden okundu, uydurulmadı): `name` **showcase-v10.2.0** · `schema_name` **Showcase** · `schema_version` **10.2.0** · `theme_store_id` **null** · theme id `145737646133` · `role` `main` · shop `betty-theme.myshopify.com`.
 - Resmi walk: **betty-theme.myshopify.com** only. `showcase-theme.myshopify.com` / `showcase-demo.myshopify.com` kullanılmadı.
 
 ## Yok / gitmedi
@@ -14,14 +13,14 @@
 | Madde | Ne oldu |
 |---|---|
 | Cart drawer | Header cart `href=/cart`. `cart-drawer` / mini-cart yok. |
-| Desktop inline mega | 1440 hamburger görünür. Mega `#page-menu` overlay içinde (Shop çocuk + promo kart). |
+| Desktop inline mega | 1440 hamburger görünür. Mega `#page-menu` overlay içinde (Shop çocuk + promo kart). Hover-on-bar yok. |
 | Predictive öneri listesi | `#search-modal` açıldı, `tote` yazıldı; ürün/koleksiyon dropdown belirmadi. Submit `/search`. |
 | Announcement bar | Header CSS `.cc-announcement` var; vitrinde şerit yok (h=0 / görünmez). |
 | `/pages/about`, `/pages/contact` | 404. Yaşayan: `/pages/about-us`, `/pages/contact-us`, `/pages/story-page`. |
 | `/blogs/blog`, `/blogs/journal` | 404. Resmi blog: `/blogs/fablou-blog`. `/blogs/news` 200 ama nav değil. |
 | Newsletter popup (`section-popup` / `cc-popup-modal`) | Overlay; dismiss. Submit / e-posta yok. |
 | Account | Header `shopify-account` — dur. |
-| Checkout | Cart `checkout-btn` — tıklanmadı. |
+| Checkout | Cart `CHECK OUT` / Shop Pay / G Pay — tıklanmadı. |
 | Newsletter JOIN / contact Send / blog comment | PII — dur. |
 | Presets nav | Aria / Mila / Drake / Ava Theme Store affiliate — walk dışı leftover. |
 | Language switcher | Menü + footer English — değiştirilmedi. |
@@ -40,8 +39,9 @@
 ## Interact notları
 
 - Shop mega: önce `a.menu[href='#page-menu']`, sonra `#page-menu .main-nav > ul > li.has-children > a` (Shop). Presets tıklanmadı.
-- Search: `dismiss-overlays` `#search-modal`'ı `display:none` yapabiliyor — `forceOpen` ile geri.
-- Katalog `tote` (shirt = No search results).
-- Cart qty: `a.plus.quantity-up` / `a.quantity-down.minus`. FLASH SALE 5% OFF satırda.
-- PDP MIDI: fiyat $89/$69 aynı kaldı; stok 13→10.
-- 375/768 hamburger resmi; 1440 hamburger de var (mega header-mega.open).
+- `global-menu-drawer` ve `navigation-header-mega` aynı `#page-menu`. Menu-drawer: hamburger + Shop 375/768/1440. Mega: kapalı bar 3vp + Shop mega 1440.
+- Search: `dismiss-overlays` `#search-modal`'ı `display:none` yapabiliyor — `forceOpen` + opener. Opener flake: `a.nav-search[data-modal-toggle='#search-modal']` 375/1440; 768 için `a[aria-label='Search']`. 6 resmi PNG birleşik koşulardan.
+- Katalog `tote` (shirt = No search results). Canlı öneri 3vp yoklandı, belirmadi.
+- Cart qty: `a.plus.quantity-up`. FLASH SALE 5% OFF. Boş → Malibu COMPACT $89 / Subtotal $84.55 → qty 2 / Subtotal $169.10.
+- PDP MIDI: fiyat $69/$89 aynı kaldı; stok **13→30** (demo envanter; daha erken yoklamada 10 görüldü). Galeri değişmedi.
+- Hero `#slideshow_Y8dKTc` autoplay: resmi 3vp kare **Tote-ally Amazing** (orta slayt). Walk'ta COLORFUL ADVENTURE da görüldü.
