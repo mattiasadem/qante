@@ -1,0 +1,69 @@
+{
+  "observationId": "origin.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "origin",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://theme-origin-demo.myshopify.com/products/2unfold-bag-copy",
+  "selector": "#shopify-section-template--22715923693590__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/origin/default/product-detail/product-info-main.1440.png",
+    "evidence/origin/default/product-detail/product-info-main.375.png",
+    "evidence/origin/default/product-detail/product-info-main.768.png",
+    "evidence/origin/default/product-detail/product-info-main.changed.renk-gray.1440.png",
+    "evidence/origin/default/product-detail/product-info-main.changed.renk-gray.375.png",
+    "evidence/origin/default/product-detail/product-info-main.changed.renk-gray.768.png",
+    "evidence/origin/default/product-detail/product-info-main.initial.ilk-hal.1440.png",
+    "evidence/origin/default/product-detail/product-info-main.initial.ilk-hal.375.png",
+    "evidence/origin/default/product-detail/product-info-main.initial.ilk-hal.768.png"
+  ],
+  "notlar": "2Unfold Bag $995 CAD. Galeri + buy box. Color Brown/Gray/Chestnut. Quantity stepper. Add to cart. Buy it now tıklanmadı.",
+  "delta": "Dawn main-product. Related-products boş leftover. Stuff it case aynı şablon leftover.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-origin-demo.myshopify.com/products/2unfold-bag-copy",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--22715923693590__main",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Color: Brown seçili, tan çanta"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label.swatch-input__label[title='Gray']",
+      "value": "1500",
+      "capture": true,
+      "etiket": "renk-gray",
+      "not": "Color Gray — görsel/etiket değişmeli"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Color: Brown, tan 2Unfold ana görsel, Brown swatch halkalı. $995 CAD, adet 1.",
+    "changed": "Color: Gray, ana görsel gri çanta, Gray swatch çift halka. Fiyat aynı. Galeri thumb'ları çoğunlukla tan kaldı."
+  },
+  "interactionNote": "ATC drawer ayrı. Checkout / Buy it now yok.",
+  "capture": {
+    "url": "https://theme-origin-demo.myshopify.com/products/2unfold-bag-copy",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:12:54.558Z"
+  }
+}
