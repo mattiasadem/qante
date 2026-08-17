@@ -1,0 +1,67 @@
+{
+  "observationId": "refresh.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "refresh",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-refresh-demo.myshopify.com/",
+  "selector": "#shopify-section-header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/refresh/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/refresh/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/refresh/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/refresh/default/home/navigation-header-mega.open.about-dropdown.1440.png"
+  ],
+  "notlar": "sticky-header header--top-center: logo, Hair/Body/Face/Kits, About caret, arama ikonu, sepet. 1440 inline menü. About = details#Details-HeaderMenu-5.",
+  "delta": "Çok kolonlu mega yok. About basit dropdown (Our story / Blog / Contact). Arama ikon → modal. Hesap ikonu bu karede yok.",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-refresh-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-header",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "details#Details-HeaderMenu-5 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "about-dropdown",
+      "not": "1440 About caret → Our story / Blog / Contact. Çok kolon/görsel yok."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Kapalı: Hair Body Face Kits About + arama + sepet. Mega panel yok.",
+    "open": "1440 About açık: koyu popup, Our story / Blog / Contact. Kolon/görsel/promo kartı yok. Logo REFRESH. ortada."
+  },
+  "missingStates": [],
+  "interactionNote": "Dawn details dropdown, hover değil click. 375/768 hamburger ayrı observation (global-menu-drawer).",
+  "capture": {
+    "url": "https://theme-refresh-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:11:15.884Z"
+  }
+}
