@@ -1,0 +1,76 @@
+{
+  "observationId": "eurus.breath.cart.product-showcase-grid-featured",
+  "schemaId": "product-showcase-grid-featured",
+  "kaynak": "eurus",
+  "preset": "breath",
+  "sayfa": "cart",
+  "url": "https://eurus-breath-demo.myshopify.com/cart",
+  "selector": "#shopify-section-template--27353604325654__cart-upsell",
+  "evidenceSlug": "product-showcase-grid-featured",
+  "evidence": [
+    "evidence/eurus/breath/cart/product-showcase-grid-featured.filled.upsell.1440.png",
+    "evidence/eurus/breath/cart/product-showcase-grid-featured.filled.upsell.375.png",
+    "evidence/eurus/breath/cart/product-showcase-grid-featured.filled.upsell.768.png"
+  ],
+  "notlar": "You'll love this too. Freeze-Dried Meat Mix for Cats + diğerleri. Boş cart'ta h=0.",
+  "delta": "cart-upsell yalnız dolu sepetle görünür.",
+  "interactionStates": [
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://eurus-breath-demo.myshopify.com/products/eco-friendly-natural-rubber-chew-toy",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://eurus-breath-demo.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--27353604325654__cart-upsell",
+      "capture": true,
+      "etiket": "upsell",
+      "not": "Dolu cart upsell"
+    }
+  ],
+  "stateFindings": {
+    "filled": "You'll love this too. Kartlar: Freeze-Dried Meat Mix for Cats $124, High-Protein Crunchy Bites $45, High-Protein Raw Cat Cuisine $136, Digestive Support Powder $45. Add to cart / Choose options. Quick-view büyüteç."
+  },
+  "missingStates": [],
+  "interactionNote": "Boş /cart'ta section h=0 — static 3vp yok; dolu 3vp interact resmi. 375 addToCart bir koşuda 429; PNG 3vp duruyor.",
+  "capture": {
+    "url": "https://eurus-breath-demo.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T20:29:23.973Z"
+  }
+}
