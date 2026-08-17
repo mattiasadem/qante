@@ -58,16 +58,32 @@ Karar: onay bekliyor
 ---
 
 ADAY: venue-cart-drawer-atc  
-Gerekçe: `#modal-cart` DOM’da (Shopping Cart 0 items). ATC Tucker Wallet sonrası drawer açılmadı; URL PDP’de kaldı. Header cart `href=/cart`.  
+Gerekçe: `#modal-cart` DOM’da. ATC Tucker Wallet sonrası drawer otomatik açılmadı. `a[data-a11y-dialog-show=modal-cart]` ile açıldı.  
 Örnekler: `/products/tucker-wallet` ATC  
-Öneri: leftover — ATC→drawer kapalı olabilir  
+Öneri: leftover — ATC→drawer kapalı  
+Karar: onay bekliyor
+
+---
+
+ADAY: venue-cart-drawer-filled-768  
+Gerekçe: 768 filled click `a[data-a11y-dialog-show=modal-cart]` viewport dışı. filled.768 PNG yok. changed.768 qty 2 / $140.  
+Örnekler: global-cart-drawer 768  
+Öneri: leftover — tablet filled kare  
+Karar: onay bekliyor
+
+---
+
+ADAY: venue-cart-gift-wrap-coupon  
+Gerekçe: Boş cart/drawer END OF SEASON SALE + SEASON15. Dolu: Gift wrap $5? + You may also like Quick view. Kupon/gift/QV/checkout tıklanmadı.  
+Örnekler: `#modal-cart` · `/cart`  
+Öneri: leftover — PII/checkout + upsell  
 Karar: onay bekliyor
 
 ---
 
 ADAY: venue-account  
-Gerekçe: Header’da account/login ikonu görülmedi. `/account/login` duruldu (PII).  
-Örnekler: header  
+Gerekçe: Header sağda person ikonu + 375 menu drawer’da account. `/account/login` tıklanmadı (PII).  
+Örnekler: header#top · #modal-main-menu  
 Öneri: PII stop  
 Karar: onay bekliyor
 
