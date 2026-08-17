@@ -7,19 +7,26 @@
   "url": "https://theme-origin-demo.myshopify.com/",
   "selector": "predictive-search.search-modal__form",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
-  "notlar": "details-modal.header__search + predictive-search. 1440 opener 44×44. 375/768 opener 0×0. Placeholder Search. katalogSorgu: bag.",
-  "delta": "İki details-modal kopyası (Dawn). Mobilde opener yok — leftover.",
+  "evidence": [
+    "evidence/origin/default/home/global-predictive-search.input.arama-sonucu.1440.png",
+    "evidence/origin/default/home/global-predictive-search.open.arama-acik.1440.png"
+  ],
+  "notlar": "details-modal.header__search + predictive-search. katalogSorgu: bag (2Unfold Bag / Stuff it case).",
+  "delta": "İki details-modal kopyası. 375/768 opener 0×0.",
   "captureMode": "viewport",
+  "interactionStates": [
+    "input",
+    "open"
+  ],
   "interactionSteps": [
     {
-      "state": "initial",
+      "state": "open",
       "action": "goto",
       "value": "https://theme-origin-demo.myshopify.com/",
       "capture": false
     },
     {
-      "state": "initial",
+      "state": "open",
       "action": "click",
       "selector": "details-modal.header__search summary.header__icon--search",
       "viewports": [
@@ -28,21 +35,56 @@
       "capture": true,
       "captureMode": "viewport",
       "etiket": "arama-acik",
-      "not": "1440: boş search modal"
+      "not": "1440: boş Search modal, input placeholder Search"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "predictive-search input[name='q']",
+      "value": "bag",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "katalog: bag"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": "2000",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "Öneri/ürün listesi beklenir"
     }
-  ],
-  "interactionStates": [
-    "initial"
   ],
   "missingStates": [
     {
-      "state": "input",
-      "sebep": "Henüz çekilmedi — fill bag."
+      "state": "open",
+      "sebep": "375/768 search summary 0×0 — opener yok, kare yok"
     },
     {
-      "state": "open",
-      "sebep": "375/768 opener 0×0; 1440 input ile birleşir."
+      "state": "input",
+      "sebep": "375/768 opener yok; fill yalnız 1440"
     }
   ],
-  "interactionNote": "375/768 arama ikonu görünmüyor. Yalnız 1440 fill denenecek."
+  "stateFindings": {
+    "open": "1440: tam genişlik Search input (placeholder Search) + kapat X. Öneri listesi yok.",
+    "input": "q=bag: SUGGESTIONS 'bag' + PRODUCTS 2Unfold Bag thumbnail + Search for \"bag\" linki."
+  },
+  "interactionNote": "375/768 büyüteç yok. Mobil menü yok — leftover. Stuff it case öneride bu sorguda görünmedi.",
+  "capture": {
+    "url": "https://theme-origin-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:12:51.323Z"
+  }
 }

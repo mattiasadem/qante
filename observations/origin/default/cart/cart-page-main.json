@@ -7,16 +7,68 @@
   "url": "https://theme-origin-demo.myshopify.com/cart",
   "selector": "#shopify-section-template--22715923202070__cart-items",
   "evidenceSlug": "cart-page-main",
-  "evidence": [],
-  "notlar": "Boş: Your cart is empty + Continue shopping. cart-footer 0px boşken. Dolu hâl interact.",
-  "delta": "Dawn cart-items + cart-footer. Checkout yok.",
-  "interactionStates": [
-    "initial"
+  "evidence": [
+    "evidence/origin/default/cart/cart-page-main.1440.png",
+    "evidence/origin/default/cart/cart-page-main.375.png",
+    "evidence/origin/default/cart/cart-page-main.768.png",
+    "evidence/origin/default/cart/cart-page-main.filled.sepet-dolu.1440.png",
+    "evidence/origin/default/cart/cart-page-main.filled.sepet-dolu.375.png",
+    "evidence/origin/default/cart/cart-page-main.filled.sepet-dolu.768.png",
+    "evidence/origin/default/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/origin/default/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/origin/default/cart/cart-page-main.initial.cart-bos.768.png"
   ],
-  "missingStates": [
+  "notlar": "Boş: Your cart is empty + Continue shopping. Dolu: 2Unfold satır + özet.",
+  "delta": "Dawn cart-items. cart-footer boşken 0px. Checkout yok.",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-origin-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş sayfa"
+    },
     {
       "state": "filled",
-      "sebep": "Henüz çekilmedi."
+      "action": "goto",
+      "value": "https://theme-origin-demo.myshopify.com/products/2unfold-bag-copy",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--22715923693590__main",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-origin-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepet-dolu",
+      "not": "2Unfold satır + estimated total"
     }
-  ]
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Your cart is empty + Continue shopping.",
+    "filled": "Your cart + Continue shopping. Satır: ORIGIN 2Unfold Bag $995 Color: Brown, adet 1, çöp, TOTAL $995. cart-items kutusu; footer özet bu selector dışında."
+  },
+  "interactionNote": "Checkout yok. Adet 1→2 drawer’da doğrulandı.",
+  "capture": {
+    "url": "https://theme-origin-demo.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:13:54.182Z"
+  }
 }

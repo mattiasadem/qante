@@ -32,6 +32,12 @@
 
 - 404 `template-404` → `page-content-main` reuse; `pageType` 404 listede yok.
 
+## Interact doğrulandı
+
+- Predictive search 1440: `bag` → SUGGESTIONS + 2Unfold Bag. 375/768 kare yok.
+- Cart drawer: boş / dolu $995 / adet 2 = $1,990. Checkout yok.
+- PDP Color Brown → Gray: ana görsel + etiket değişti.
+
 ## Açık soru
 
 - Theme Store kimliği: canlı `theme_store_id` **1841**, görev metni 2291. Hangisi güncel listing?
