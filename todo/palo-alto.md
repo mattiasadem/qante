@@ -12,7 +12,7 @@
 shop `palo-alto-theme-main.myshopify.com`
 
 **Durum:** ✅ Mod A walk + resmi 3vp + interact + validate  
-**PR:** draft — **main'e merge yok**
+**PR:** draft https://github.com/mattiasadem/qante/pull/152 · **main'e merge yok**
 
 ---
 
