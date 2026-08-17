@@ -1,0 +1,92 @@
+{
+  "observationId": "empire.default.collection.product-showcase-grid-plp",
+  "schemaId": "product-showcase-grid-plp",
+  "kaynak": "empire",
+  "preset": "default",
+  "sayfa": "collection",
+  "url": "https://empire-demo.myshopify.com/collections/all",
+  "selector": "#shopify-section-static-collection",
+  "evidenceSlug": "product-showcase-grid-plp",
+  "evidence": [
+    "evidence/empire/default/collection/product-showcase-grid-plp.changed.fiyat-artan.1440.png",
+    "evidence/empire/default/collection/product-showcase-grid-plp.changed.fiyat-artan.375.png",
+    "evidence/empire/default/collection/product-showcase-grid-plp.changed.fiyat-artan.768.png",
+    "evidence/empire/default/collection/product-showcase-grid-plp.initial.ilk-hal.1440.png",
+    "evidence/empire/default/collection/product-showcase-grid-plp.initial.ilk-hal.375.png",
+    "evidence/empire/default/collection/product-showcase-grid-plp.initial.ilk-hal.768.png",
+    "evidence/empire/default/collection/product-showcase-grid-plp.open.sort-modal.375.png",
+    "evidence/empire/default/collection/product-showcase-grid-plp.open.sort-modal.768.png"
+  ],
+  "notlar": "Products. Sort + Show 24/36/48. 2 kart: Electronic Super Pen from $15.85, Oak Phone Charging Desk Organizer $10.81. Facet yok.",
+  "delta": "static-collection tek section: breadcrumb + başlık + sort + grid. collection-banner ayrı değil. Filtre yok.",
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://empire-demo.myshopify.com/collections/all",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Sort + 2 kart"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.utils-sortby-button",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sort-modal",
+      "not": "375/768 Sort by → modal"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".modal--productgrid-sort button.utils-sortby--modal-button:has-text('Price: Low to High')",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "etiket": "fiyat-artan",
+      "not": "Modalden Price: Low to High"
+    },
+    {
+      "state": "changed",
+      "action": "select",
+      "selector": "#product_grid_sort",
+      "value": "price-ascending",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "fiyat-artan",
+      "not": "1440 native select"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "2 kart. 1440 Featured/A-Z: Super Pen solda from $15.85, Oak sağda $10.81. Show 24 36 48. Facet yok.",
+    "open": "375/768 modal Sort by: Featured, Price Low/High, A-Z (teal aktif), Z-A, Oldest/Newest, Best Selling.",
+    "changed": "Price: Low to High. 375 ve 1440: Oak $10.81 solda, Super Pen from $15.85 sağda."
+  },
+  "interactionNote": "Facet yok. 375/768 #product_grid_sort gizli; utils-sortby-button + modal. Organizers aynı şablon leftover.",
+  "capture": {
+    "url": "https://empire-demo.myshopify.com/collections/all",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:31:36.185Z"
+  }
+}
