@@ -7,7 +7,17 @@
   "url": "https://theme-horizon-demo.myshopify.com/",
   "selector": "dialog.cart-drawer__dialog",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/horizon/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/horizon/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/horizon/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/horizon/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/horizon/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/horizon/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/horizon/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/horizon/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/horizon/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
   "notlar": "Horizon cart-drawer-component. Boş: Your cart is empty; Have an account? Log in; Continue shopping.",
   "delta": "/cart ayrı sayfa (cart-page-main). Checkout/login tıklanmadı.",
   "captureMode": "viewport",
@@ -61,22 +71,29 @@
     {
       "state": "filled",
       "action": "waitFor",
-      "value": 2000,
+      "value": 1500,
       "capture": false
     },
     {
       "state": "filled",
+      "action": "click",
+      "selector": "header button[aria-label='Cart']",
+      "capture": false,
+      "not": "ATC sonrası drawer tam açılsın"
+    },
+    {
+      "state": "filled",
       "action": "waitFor",
-      "value": 400,
+      "value": 800,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "sepete-eklendi",
-      "not": "ATC drawer açar"
+      "not": "Dolu drawer satırı"
     },
     {
       "state": "changed",
       "action": "click",
-      "selector": "dialog.cart-drawer__dialog button[name='plus'], cart-drawer-component button.quantity-plus",
+      "selector": "dialog.cart-drawer__dialog button.quantity-plus, dialog.cart-drawer__dialog button[name='plus']",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "adet-artti",
@@ -84,8 +101,21 @@
     }
   ],
   "stateFindings": {
-    "initial": "Your cart is empty; Have an account? Log in; Continue shopping."
+    "initial": "Sağ drawer açık: Your cart is empty; Have an account? Log in to check out faster; Continue shopping. Satır yok.",
+    "filled": "Cart rozet 1. Michael Shaggy Wool Cardigan · Pumice, XS · $282.00 · adet 1. Discount +; Estimated total $282.00 CAD; Check out; Shop Pay; G Pay.",
+    "changed": "Rozet 2; adet 2; satır $564.00; Estimated total $564.00 CAD. Aynı drawer iskeleti."
   },
   "missingStates": [],
-  "interactionNote": "Checkout/login tıklanmadı. Qty selector drawer’da yoksa changed leftover."
+  "interactionNote": "ATC sonrası header Cart tıklanınca tam dialog açıldı (ilk ATC-only kare yalnız header overlay’di). Checkout/login tıklanmadı.",
+  "capture": {
+    "url": "https://theme-horizon-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:27:53.645Z"
+  }
 }

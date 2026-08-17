@@ -6,7 +6,7 @@
 *Tema (storefront, uydurulmadı):* **Horizon demo store 3.2.0** · `schema_name`: **Horizon** · `schema_version`: **3.2.0** · `theme_store_id`: **2481** · role `main` · id `182785212737`  
 *Shop:* `se-horizon1-en-fk7v.myshopify.com`
 
-**Durum:** Mod A walk + resmi 3vp + interact + validate (yazılıyor)  
+**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti** (0 error)  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -18,6 +18,8 @@
 | Evidence kökü | `evidence/horizon/default/` |
 | Capture | resmi `capture-observation.mjs` + `capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
+| Observation | **23** |
+| Evidence PNG | **86** |
 | Parallel | yalnız `observations/horizon/`, `evidence/horizon/`, `todo/horizon.md`, `candidates/horizon-*` |
 
 **Kapsam satırı:**  
@@ -29,21 +31,21 @@
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home + hero / featured product-list / footer newsletter | [x] obs | [ ] capture |
-| Header kapalı + Shop hover 1440 (mega yok) | [x] obs | [ ] interact |
-| Predictive search `wool` | [x] obs | [ ] interact 375/768/1440 |
-| Mobile hamburger 375 | [x] obs | [ ] interact (768 leftover) |
-| Cart drawer empty + filled + qty | [x] obs | [ ] interact |
-| PDP Michael Shaggy Wool Cardigan Color Pumice→Black | [x] obs | [ ] interact |
-| PLP `/collections/all` | [x] obs | [ ] capture |
-| Collections index `/collections` | [x] obs | [ ] capture |
-| Search `/search?q=wool` | [x] obs | [ ] capture |
-| Cart `/cart` empty + filled + qty | [x] obs | [ ] interact |
-| About `/pages/about` | [x] obs | [ ] capture |
-| Contact form (submit yok) | [x] obs | [ ] capture |
-| News list + Our flagship store | [x] obs | [ ] capture |
-| Privacy policy (native) | [x] obs | [ ] capture |
-| 404 leftover | [x] obs | [ ] capture |
+| Home + hero / featured product-list / footer newsletter | [x] obs | [x] capture |
+| Header kapalı + Shop hover 1440 (mega yok) | [x] obs | [x] interact |
+| Predictive search `wool` | [x] obs | [x] interact 375/768/1440 |
+| Mobile hamburger 375 | [x] obs | [x] interact (768 leftover) |
+| Cart drawer empty + filled + qty | [x] obs | [x] interact |
+| PDP Michael Shaggy Wool Cardigan Color Pumice→Black | [x] obs | [x] interact |
+| PLP `/collections/all` | [x] obs | [x] capture |
+| Collections index `/collections` | [x] obs | [x] capture |
+| Search `/search?q=wool` | [x] obs | [x] capture |
+| Cart `/cart` empty + filled + qty | [x] obs | [x] interact |
+| About `/pages/about` | [x] obs | [x] capture |
+| Contact form (submit yok) | [x] obs | [x] capture |
+| News list + Our flagship store | [x] obs | [x] capture |
+| Privacy policy (native) | [x] obs | [x] capture |
+| 404 leftover | [x] obs | [x] capture |
 
 ---
 
@@ -65,14 +67,14 @@
 
 ---
 
-## Interact (pixel-check hedef)
+## Interact (pixel-check)
 
-- Header 1440 Shop hover — mega yok (dürüst)
-- Hamburger 375: Shop + Contact + resource-card
-- Predictive `wool`: sonuç listesi
-- Cart drawer: empty → Michael Cardigan → qty
-- Cart page: empty → filled → qty
-- PDP Color: Pumice → Black
+- Header 1440 Shop hover — mega yok (shop-hover ≡ kapalı) — dürüst leftover
+- Hamburger 375: Shop + Contact + ürün şeridi — OK; 768 hamburger 0px leftover
+- Predictive `wool`: boş Products öneri → wool + chip + View all — OK
+- Cart drawer: empty → Michael Cardigan qty 1 $282 → qty 2 $564 — OK (ATC sonrası Cart tık)
+- Cart page: empty → filled → qty — OK
+- PDP Color: Pumice → Black (galeri önde Black) — OK
 
 ---
 
@@ -84,7 +86,7 @@
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact header / search / cart / menu / PDP Color
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate` — 0 error
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact header / search / cart / menu / PDP Color
+- [x] PNG bak → stateFindings
+- [x] `npm run validate` — 0 error

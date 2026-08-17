@@ -50,9 +50,17 @@ Karar: onay bekliyor
 ---
 
 ADAY: horizon-search-zero-chair  
-Gerekçe: `/search?q=chair` başlık 0 results; `__main` yine ürün ızgarası gösterdi. Yazılan sorgu `wool` (39).  
+Gerekçe: `/search?q=chair` başlık 0 results; `__main` yine ürün ızgarası gösterdi. Yazılan sorgu `wool` (39). Predictive modal `wool` 1440’ta ~8 kart + View all (tam sayfa 39).  
 Örnekler: https://theme-horizon-demo.myshopify.com/search?q=chair  
 Öneri: leftover — boş sonuç karesi ayrıca çekilmedi  
+Karar: onay bekliyor
+
+---
+
+ADAY: horizon-404-featured-prices  
+Gerekçe: 404 “Discover something new” aynı SKU’ları home featured’dan farklı fiyatta gösterdi (Michael $200 vs $282). Şema değil; katalog/market.  
+Örnekler: `not-found/product-showcase-grid-featured` vs `home/product-showcase-grid-featured`  
+Öneri: leftover — fiyat sapması not edildi  
 Karar: onay bekliyor
 
 ---
