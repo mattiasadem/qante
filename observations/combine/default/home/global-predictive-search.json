@@ -7,7 +7,14 @@
   "url": "https://combine-theme-main.myshopify.com/",
   "selector": "#site-search-sidebar",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/combine/default/home/global-predictive-search.initial.arama-acik.1440.png",
+    "evidence/combine/default/home/global-predictive-search.initial.arama-acik.375.png",
+    "evidence/combine/default/home/global-predictive-search.initial.arama-acik.768.png",
+    "evidence/combine/default/home/global-predictive-search.input.carafe.1440.png",
+    "evidence/combine/default/home/global-predictive-search.input.carafe.375.png",
+    "evidence/combine/default/home/global-predictive-search.input.carafe.768.png"
+  ],
   "notlar": "a.area--search href=/search. Sidebar #search-form-sidebar + #search-results.predictive-search. Sorgu: carafe.",
   "delta": "href /search; JS sidebar beklenir. Navigasyon olursa leftover.",
   "captureMode": "viewport",
@@ -42,13 +49,39 @@
       "action": "fill",
       "selector": "#search-form-sidebar, input[name='q'][type='search']",
       "value": "carafe",
+      "capture": false,
+      "not": "katalogSorgu carafe"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2500,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "carafe",
-      "not": "Predictive carafe"
+      "not": "Predictive sonuç bekle"
     }
   ],
-  "stateFindings": {},
-  "missingStates": [],
-  "interactionNote": "katalogSorgu carafe (Carafe 1.2Ltr). Checkout/account yok."
+  "stateFindings": {
+    "initial": "375 tam ekran SEARCH + X + Type a keyword... 768/1440 sağ drawer SEARCH + boş input; solda hero.",
+    "input": "Input 'carafe'. Sonuç listesi / ürün kartı yok (2.5s wait + ikinci çekim). Tam sayfa /search?q=bundle 10 sonuç ayrı observation."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "carafe yazıldı; predictive ürün listesi karede boş. İkinci çekim + wait aynı. Leftover."
+    }
+  ],
+  "interactionNote": "katalogSorgu carafe. Sidebar açıldı (sayfa /search'e kaçmadı). Sonuç kartı görünmedi.",
+  "capture": {
+    "url": "https://combine-theme-main.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:30:58.519Z"
+  }
 }

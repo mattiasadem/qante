@@ -114,6 +114,22 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: combine-predictive-empty  
+Gerekçe: Search drawer açıldı, `carafe` yazıldı, 2.5s wait + ikinci çekim. Ürün/koleksiyon öneri listesi karede yok. Tam sayfa `/search?q=bundle` 10 sonuç yazıldı.  
+Örnekler: `#site-search-sidebar` · `#search-form-sidebar`  
+Öneri: leftover — predictive sonuç boş  
+Karar: onay bekliyor
+
+---
+
+ADAY: combine-bundle-min-two  
+Gerekçe: Build Your Set min 2 ürün. Bir Add to bundle çekildi (Boulder Bookend slot 1, ATC disabled). İkinci ürün / %30 apply karesi yok.  
+Örnekler: https://combine-theme-main.myshopify.com/pages/build-your-set  
+Öneri: leftover — yarım bundle  
+Karar: onay bekliyor
+
+---
+
 ADAY: combine-pii-stop  
 Gerekçe: Footer newsletter + contact Submit + checkout + Log in/Create Account tıklanmadı.  
 Örnekler: footer · `/pages/contact` · cart  
