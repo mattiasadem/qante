@@ -1,0 +1,53 @@
+{
+  "observationId": "blockshop.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "blockshop",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://blockshop-theme-beauty.myshopify.com/products/brightening-serum",
+  "selector": "#shopify-section-template--17329881972791__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "TIPTOE BRIGHTENING SERUM 70.00 CAD. HURRY, ONLY 4 ITEMS LEFT. SIZE 75ML / 200ML. ADD TO BAG + BUY IT NOW (tıklanmadı). Pickup 822 Victoria Street. Accordion INGREDIENTS / CUSTOMER RESULTS / SHIPPING INFORMATION.",
+  "delta": "Shopify.theme.name `Copy of design [do not delete]` · id 134976438327 · schema_name Blockshop · schema_version 13.2.0 · theme_store_id null · role main · shop blockshop-theme-beauty.myshopify.com. main-product. Bright Blush Powder aynı şablon varyantsız — leftover. Buy it now yok.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://blockshop-theme-beauty.myshopify.com/products/brightening-serum",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17329881972791__main",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "SIZE 75ML seçili"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label.radios--value-button:has-text('200ML')",
+      "capture": true,
+      "etiket": "size-200ml",
+      "not": "SIZE 200ML"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Brightening Serum 70.00 CAD. SIZE 75ML seçili, 200ML boş. Low-stock 4 items.",
+    "changed": "200ML tık — fiyat/görsel kareye bakılacak."
+  },
+  "missingStates": [],
+  "interactionNote": "Buy it now / checkout yok."
+}

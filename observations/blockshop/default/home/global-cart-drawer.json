@@ -1,0 +1,92 @@
+{
+  "observationId": "blockshop.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "blockshop",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://blockshop-theme-beauty.myshopify.com/",
+  "selector": ".drawer--root",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "a.header--cart aria-label=Bag data-drawer-view=cart-drawer. Boş: YOUR BAG / YOUR BAG IS CURRENTLY EMPTY / CLICK HERE TO CONTINUE SHOPPING.",
+  "delta": "Shopify.theme.name `Copy of design [do not delete]` · id 134976438327 · schema_name Blockshop · schema_version 13.2.0 · theme_store_id null · role main · shop blockshop-theme-beauty.myshopify.com. Sağ drawer. /cart ayrı sayfa. Checkout tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://blockshop-theme-beauty.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.header--cart[aria-label='Bag']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş bag drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://blockshop-theme-beauty.myshopify.com/products/brightening-serum",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.product-buy-buttons--primary",
+      "capture": false,
+      "not": "ADD TO BAG — drawer açılır"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "serum-qty1",
+      "not": "Brightening Serum satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".drawer--root button[name='plus'], .drawer--root [aria-label*='increase' i], .drawer--root [aria-label*='Increase' i], .drawer--root .quantity--plus, .drawer--root button.quantity-plus",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +1"
+    }
+  ],
+  "stateFindings": {
+    "initial": "YOUR BAG / YOUR BAG IS CURRENTLY EMPTY / CLICK HERE TO CONTINUE SHOPPING.",
+    "filled": "ATC sonrası drawer — Brightening Serum beklenir.",
+    "changed": "Adet artışı — kareye bakılacak."
+  },
+  "missingStates": [],
+  "interactionNote": "BUY IT NOW / checkout yok. Qty selector yoklanırsa leftover."
+}

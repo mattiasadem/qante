@@ -1,0 +1,69 @@
+{
+  "observationId": "blockshop.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "blockshop",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://blockshop-theme-beauty.myshopify.com/cart",
+  "selector": "#shopify-section-template--17329881219127__main",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "YOUR BAG. Boş: YOUR BAG IS CURRENTLY EMPTY + CLICK HERE TO CONTINUE SHOPPING.",
+  "delta": "Shopify.theme.name `Copy of design [do not delete]` · id 134976438327 · schema_name Blockshop · schema_version 13.2.0 · theme_store_id null · role main · shop blockshop-theme-beauty.myshopify.com. Drawer ayrı. Checkout tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://blockshop-theme-beauty.myshopify.com/cart",
+      "capture": true,
+      "etiket": "bos-sepet",
+      "not": "Boş bag"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://blockshop-theme-beauty.myshopify.com/products/brightening-serum",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-buy-buttons--primary",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://blockshop-theme-beauty.myshopify.com/cart",
+      "capture": true,
+      "etiket": "dolu-sepet",
+      "not": "Serum satırı. Checkout yok."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], button[aria-label*='Increase' i], button[aria-label*='increase' i], .quantity--plus",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet +1"
+    }
+  ],
+  "stateFindings": {
+    "initial": "YOUR BAG IS CURRENTLY EMPTY. CLICK HERE TO CONTINUE SHOPPING.",
+    "filled": "Brightening Serum satırı beklenir.",
+    "changed": "Adet 2 beklenir."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart UI veya /cart/add.js. Checkout yok."
+}

@@ -1,0 +1,53 @@
+{
+  "observationId": "blockshop.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "blockshop",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://blockshop-theme-beauty.myshopify.com/",
+  "selector": ".drawer--root",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "375 button.header--drawer-toggle → sol drawer. SHOP / NEW / TRENDING / ABOUT US + locale. 768 hamburger 0×0.",
+  "delta": "Shopify.theme.name `Copy of design [do not delete]` · id 134976438327 · schema_name Blockshop · schema_version 13.2.0 · theme_store_id null · role main · shop blockshop-theme-beauty.myshopify.com. y-menu mobile-nav. 768 leftover (sidebar, hamburger yok).",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://blockshop-theme-beauty.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.header--drawer-toggle",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "menu-acik",
+      "not": "Sol drawer SHOP/NEW/TRENDING/ABOUT US"
+    }
+  ],
+  "stateFindings": {
+    "open": "375: .drawer--root sol 300px — SHOP / NEW / TRENDING / ABOUT US + ENGLISH / CANADA."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "768/1440 hamburger display:none; nav sidebar. 768 menü leftover, eksik çekim değil."
+    }
+  ],
+  "interactionNote": "Yalnız 375. Shop accordion drawer içinde yoklandı değil (yazılı link riski)."
+}
