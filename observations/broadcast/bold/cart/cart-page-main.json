@@ -1,0 +1,90 @@
+{
+  "observationId": "broadcast.bold.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "broadcast",
+  "preset": "bold",
+  "sayfa": "cart",
+  "url": "https://broadcast-bold.myshopify.com/cart",
+  "selector": "#shopify-section-template--15449277005888__main",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/broadcast/bold/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/broadcast/bold/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/broadcast/bold/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/broadcast/bold/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/broadcast/bold/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/broadcast/bold/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/broadcast/bold/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/broadcast/bold/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/broadcast/bold/cart/cart-page-main.initial.cart-bos.768.png"
+  ],
+  "notlar": "Boş: Your Cart is Empty + HOME NEWS CONTACT. Drawer ayrı.",
+  "delta": "Broadcast cart template.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://broadcast-bold.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş sepet sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://broadcast-bold.myshopify.com/products/multivitamin-18",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#AddToCart--template--15449277792320__main",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://broadcast-bold.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--15449277005888__main button[name='increase']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "CART. Your Cart is Empty + HOME / NEWS / CONTACT hapları.",
+    "filled": "CART (1). CONTINUE SHOPPING. Multivitamin 18+ Type Bottle $50 qty 1. SUBTOTAL $50.00 USD.",
+    "changed": "CART (2). qty 2. SUBTOTAL $100.00 USD."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout / kupon tıklanmadı. Qty: button[name='increase'] (.cart__quantity-plus).",
+  "capture": {
+    "url": "https://broadcast-bold.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:31:18.875Z"
+  }
+}
