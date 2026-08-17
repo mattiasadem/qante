@@ -28,6 +28,7 @@
 | SIZE GUIDE popup | PDP buton görüldü; açılmadı |
 | QUICK BUY / shop-the-look QV | Kartta yazı var; overlay yoklandı değil |
 | Recently viewed (PDP sekme) | “You may also like / Recently viewed” etiketi; sekme değiştirilmedi |
+| global-menu-drawer 1440 | Hamburger yok — mega var. 1440 PNG yok (N/A) |
 
 ## Aday (yeni şema yok)
 
@@ -43,8 +44,9 @@
 
 ## Interact notları
 
-- Apparel mega: `hover-disclosure.menu__item.grandparent.kids-3` — tıklama `/collections/all`; yalnız hover
-- Predictive: `shirt` öneri (koleksiyon adları). 1440/768 `#searchInput-desktop`; 375 `#searchInput-mobile`. İlk `summary.search-popdown__toggle` gizli
-- 375 **ve** 768 hamburger `button.mobile-menu__button--burger` 44×44 — ikisi de resmi
-- Cart drawer: `cart-items#cart-drawer` açıkken ~400×900; host overlay section 0px
-- PDP: Revive Dress (handle `exclesa-dress-scacchi-black-ivory`) Color Checkered → Black
+- Apparel mega: `hover-disclosure.menu__item.grandparent.kids-3 > a.navlink--toplevel` — Playwright hover custom element’te açılmadı; inner `<a>` ile açıldı. Tıklama `/collections/all`.
+- Predictive: `shirt` → Suggestions + 4 ürün. 1440 `#searchInput-desktop`; 375/768 `#searchInput-desktop-compress`. `#searchInput-mobile` 0×0. Enter/submit yok.
+- 375 **ve** 768 hamburger `button.mobile-menu__button--burger` 44×44 — ikisi de resmi. 1440 N/A.
+- Cart drawer: ATC `cart-drawer is-open` (375 tam ekran; 768/1440 ~400px). `a.cart__toggle` açıkken kapatır — filled’da tıklanmadı. qty 1→2 / $150→$300 3vp.
+- Cart sayfa: `.cart__item__quantity-plus` 375/768/1440. qty 1→2 / SUBTOTAL $150→$300.
+- PDP: Revive Dress (handle `exclesa-dress-scacchi-black-ivory`) Color Checkered → Black. Fiyat $150 kaldı.

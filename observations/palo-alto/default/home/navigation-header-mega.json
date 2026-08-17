@@ -7,7 +7,12 @@
   "url": "https://palo-alto-theme-main.myshopify.com/",
   "selector": "#shopify-section-sections--21945691340988__header",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
+  "evidence": [
+    "evidence/palo-alto/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/palo-alto/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/palo-alto/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/palo-alto/default/home/navigation-header-mega.open.apparel-mega.1440.png"
+  ],
   "notlar": "Logo + APPAREL / NEW / SALE 15% OFF / ABOUT / THEME FEATURES + search + account + cart. 1440 hover-disclosure mega (Apparel kids-3 + 2 görsel).",
   "delta": "APPAREL <a href=/collections/all> — tıklama PLP'ye gider; mega yalnız hover. MY ACCOUNT duruldu.",
   "captureMode": "section",
@@ -27,20 +32,31 @@
     {
       "state": "open",
       "action": "hover",
-      "selector": "hover-disclosure.menu__item.grandparent.kids-3",
+      "selector": "hover-disclosure.menu__item.grandparent.kids-3 > a.navlink--toplevel",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "apparel-mega",
       "viewports": [
         "1440"
       ],
-      "not": "Apparel hover → header__dropdown 3 kolon + 2 görsel. Apparel <a> tıklanmadı."
+      "not": "Apparel <a.navlink--toplevel> hover → header__dropdown. Apparel tıklanmadı (href /collections/all)."
     }
   ],
   "stateFindings": {
     "initial": "APPAREL / NEW / SALE 15% OFF / ABOUT / THEME FEATURES + search + account + cart. Mega kapalı.",
-    "open": "1440 Apparel mega: Clothing / Featured / Shop all kolonları + 2 görsel (hover-disclosure.kids-3 images-2)."
+    "open": "1440 Apparel mega açık (APPAREL altında nokta). Clothing: Tops / Bottoms / Dresses / Tanks / Skirts / Swim. Featured: Trending / Essentials / Vacation Mode / Prints & Patterns / Outerwear / Linen. Shop All: New Arrivals / Best Sellers / Staff Picks / Sale 15% OFF. Sağda Knitwear + Fall looks görselleri."
   },
   "missingStates": [],
-  "interactionNote": "375/768 mega yok (hamburger). Apparel href /collections/all — yalnız hover."
+  "interactionNote": "375/768 mega yok (hamburger). Apparel href /collections/all — yalnız hover.",
+  "capture": {
+    "url": "https://palo-alto-theme-main.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T21:01:27.388Z"
+  }
 }
