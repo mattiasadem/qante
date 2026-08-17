@@ -1,0 +1,82 @@
+{
+  "observationId": "atelier.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "atelier",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-atelier-demo.myshopify.com/",
+  "selector": "#Details-menu-drawer-container",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/atelier/default/home/global-menu-drawer.changed.bags-drill.375.png",
+    "evidence/atelier/default/home/global-menu-drawer.open.hamburger.375.png"
+  ],
+  "notlar": "375 hamburger header-drawer. New in / Bags / Shoes / Accessories accordion.",
+  "delta": "768 hamburger 0px — header-menu NEW IN BAGS SHOES MORE. 1440 mega ayrı.",
+  "captureMode": "viewport",
+  "prepareClick": "header summary.header__icon--menu[aria-label='Menu']",
+  "interactionStates": [
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://theme-atelier-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header summary.header__icon--menu[aria-label='Menu']",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Mobil drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "summary#HeaderDrawer-bags",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bags-drill",
+      "not": "Bags accordion"
+    }
+  ],
+  "stateFindings": {
+    "open": "375: X; NEW IN / BAGS / SHOES / ACCESSORIES (chevron); altta Monolit $475 kartlar.",
+    "changed": "375 Bags drill: TYPE Mini/Shoulder/Tote/Crossbody/Clutches; COLLECTIONS Sera Mia/Neo/Pandora/Atlas; GIFTS; altta Business Bag $720."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "768 hamburger 0px — header-menu NEW IN BAGS SHOES MORE. 1440 hamburger yok."
+    }
+  ],
+  "interactionNote": "768/1440 N/A. Account/login tıklanmadı.",
+  "capture": {
+    "url": "https://theme-atelier-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:26:47.075Z"
+  }
+}
