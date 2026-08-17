@@ -1,0 +1,66 @@
+{
+  "observationId": "refresh.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "refresh",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://theme-refresh-demo.myshopify.com/products/bar-soap-2-pack-2",
+  "selector": "#shopify-section-template--16044338479356__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/refresh/default/product-detail/product-info-main.changed.scent-sandalwood.1440.png",
+    "evidence/refresh/default/product-detail/product-info-main.changed.scent-sandalwood.375.png",
+    "evidence/refresh/default/product-detail/product-info-main.changed.scent-sandalwood.768.png",
+    "evidence/refresh/default/product-detail/product-info-main.initial.ilk-hal.1440.png",
+    "evidence/refresh/default/product-detail/product-info-main.initial.ilk-hal.375.png",
+    "evidence/refresh/default/product-detail/product-info-main.initial.ilk-hal.768.png"
+  ],
+  "notlar": "Bar Soap 2 Pack. Galeri thumbnail_slider + buy box. Sale $16→$15. Scent Original/Sandalwood. Quantity stepper. ATC + Buy it now (tıklanmadı).",
+  "delta": "Dawn product--small. Pickup/complementary bu karede yok.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-refresh-demo.myshopify.com/products/bar-soap-2-pack-2",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16044338479356__main",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Scent Original seçili"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='template--16044338479356__main-1-1']",
+      "value": 2000,
+      "capture": true,
+      "etiket": "scent-sandalwood",
+      "not": "Scent Sandalwood. Buy it now yok."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Bar Soap 2 Pack, $16 çizili $15 Sale, Scent Original dolu hap. Quantity 1. ATC + Buy it now.",
+    "changed": "Scent Sandalwood dolu hap, Original boş. Başlık ve fiyat aynı. Galeri aynı kare."
+  },
+  "missingStates": [],
+  "interactionNote": "Radio label. Gift Card Amount leftover — bu PDP scent.",
+  "capture": {
+    "url": "https://theme-refresh-demo.myshopify.com/products/bar-soap-2-pack-2",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:11:21.102Z"
+  }
+}
