@@ -1,0 +1,90 @@
+{
+  "observationId": "warehouse.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "warehouse",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://warehouse-theme-metal.myshopify.com/cart",
+  "selector": "#shopify-section-template--16536532222003__main",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/warehouse/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/warehouse/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/warehouse/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/warehouse/default/cart/cart-page-main.filled.sepet-dolu.1440.png",
+    "evidence/warehouse/default/cart/cart-page-main.filled.sepet-dolu.375.png",
+    "evidence/warehouse/default/cart/cart-page-main.filled.sepet-dolu.768.png",
+    "evidence/warehouse/default/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/warehouse/default/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/warehouse/default/cart/cart-page-main.initial.cart-bos.768.png"
+  ],
+  "notlar": "cart template. Boş: Your cart is empty + $80 kargo eşiği. Dolu + adet interact.",
+  "delta": "Tam sayfa sepet; mini-cart ayrı. Checkout tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://warehouse-theme-metal.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş sepet sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://warehouse-theme-metal.myshopify.com/products/jbl-charge-3-portable-bluetooth-speaker",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": ".product-form__add-button",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://warehouse-theme-metal.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepet-dolu",
+      "not": "Charge 3 satır"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--16536532222003__main [data-action='increase-quantity']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + Spend $80.00 more + Shop our products.",
+    "filled": "My cart. Charge 3 Black $99.95 qty 1. Total $99.95 USD. Gift wrap $2.50 (tıklanmadı).",
+    "changed": "Qty 2, satır $199.90, Total $199.90 USD."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout / shipping calculator doldurulmadı.",
+  "capture": {
+    "url": "https://warehouse-theme-metal.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T20:52:51.969Z"
+  }
+}
