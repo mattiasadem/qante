@@ -1,0 +1,100 @@
+{
+  "observationId": "origin.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "origin",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-origin-demo.myshopify.com/",
+  "selector": "cart-drawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/origin/default/home/global-cart-drawer.1440.png",
+    "evidence/origin/default/home/global-cart-drawer.375.png",
+    "evidence/origin/default/home/global-cart-drawer.768.png",
+    "evidence/origin/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/origin/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/origin/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/origin/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/origin/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/origin/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/origin/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/origin/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/origin/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "Dawn cart-drawer. Boş: Your cart is empty + Continue shopping. ATC sonrası 2Unfold Bag $995 Color Brown. Checkout tıklanmadı.",
+  "delta": "Drawer + /cart sayfa. Checkout yok.",
+  "captureMode": "viewport",
+  "prepareClick": "#cart-icon-bubble",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-origin-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş sağ drawer: Your cart is empty + Continue shopping"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-origin-demo.myshopify.com/products/2unfold-bag-copy",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--22715923693590__main",
+      "capture": false,
+      "not": "Add to cart — Dawn drawer kendini açar"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": "1800",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu: 2Unfold Bag $995 Color Brown adet 1"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "cart-drawer button.quantity__button[name='plus']",
+      "value": "1500",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2, toplam $995→$1990"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Sağ drawer: Your cart is empty + Continue shopping (kahverengi). Arkada home featured-product karartılı.",
+    "filled": "2Unfold Bag ORIGIN $995 Color: Brown, adet 1, çöp ikonu. Estimated total $995.00 CAD. Order special instructions akordeon. Check out (tıklanmadı).",
+    "changed": "Adet 2, satır toplamı ve estimated total $1,990.00 CAD. 375/768/1440 aynı fark."
+  },
+  "interactionNote": "addToCart → ui (fallback yok). Checkout yok. Statik 3vp de prepareClick ile boş drawer.",
+  "capture": {
+    "url": "https://theme-origin-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:13:45.519Z"
+  }
+}
