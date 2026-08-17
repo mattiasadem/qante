@@ -4,6 +4,7 @@ QANTE Theme Store takibi: hangi resmi demo / canlı mağaza walk edildi.
 Durum: `done` = yapılmış (main’de resmi 3vp) · `in progress` = yapılıyor (açık PR / cloud agent) · boş = kuyruk.  
 *Kesim:* 17 Ağustos 2026 (Berlin). Viewer: **Listeler** sekmesi.
 
+Paid batch 10/10 complete (Warehouse, Flow, Venue, Showcase, Pipeline, Palo Alto, Blockshop, Taiga, Canopy, Expanse).  
 Next 10 after Expanse (open demos): Stiletto, Concept, Be Yours, Wonder, Sleek, Pebble, District, Woodstock, Minion, Rise.
 
 DTC marka listesi: [`dtc-69-brands.md`](./dtc-69-brands.md)
@@ -50,7 +51,7 @@ DTC marka listesi: [`dtc-69-brands.md`](./dtc-69-brands.md)
 | 38 | done | [Blockshop](https://themes.shopify.com/themes/blockshop) | Troop Themes | ~premium | https://blockshop-theme-beauty.myshopify.com/ | blockshop | Resmi Beauty preset. |
 | 39 | done | [Taiga](https://themes.shopify.com/themes/taiga) | Woolman | ~$320 | https://taiga-demo-sage.myshopify.com/ | taiga | Resmi Sage preset. |
 | 40 | done | [Canopy](https://themes.shopify.com/themes/canopy) | Clean Canvas | ~$280 | https://canopy-theme-natural.myshopify.com/ | canopy | Resmi Natural preset. |
-| 41 | in progress | [Expanse](https://themes.shopify.com/themes/expanse) | Archetype | ~premium | https://expanse-theme-furniture.myshopify.com/ | expanse | PR #155 hâlâ walking. Furniture preset. |
+| 41 | done | [Expanse](https://themes.shopify.com/themes/expanse) | Archetype | ~premium | https://expanse-theme-furniture.myshopify.com/ | expanse | Resmi Furniture preset. Expanse 6.1.0 · 46 obs · 156 PNG. PR #155 squash `3b98299a`. Paid batch 10/10. |
 | 42 |  | [Stiletto](https://themes.shopify.com/themes/stiletto) | Fluorescent | $380 | https://stiletto-theme-vogue.myshopify.com/ | stiletto | Açık demo · next 10 (Expanse sonrası). |
 | 43 |  | [Concept](https://themes.shopify.com/themes/concept) | RoarTheme | $400 | https://concept-theme.myshopify.com/ | concept | Açık demo · next 10 (Expanse sonrası). |
 | 44 |  | [Be Yours](https://themes.shopify.com/themes/be-yours) | RoarTheme | $350 | https://beyours-theme.myshopify.com/ | be-yours | Açık demo · next 10 (Expanse sonrası). |
