@@ -1,0 +1,63 @@
+{
+  "observationId": "savor.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "savor",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://savor-theme-demo.myshopify.com/cart",
+  "selector": "#shopify-section-template--18561684373555__cart-section",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Boş: YOUR CART IS EMPTY + Log in to check out faster + CONTINUE SHOPPING.",
+  "delta": "Horizon cart-section. Login tıklanmadı. Dolu + qty interact.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://savor-theme-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "bos-sepet",
+      "not": "Boş sayfa"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://savor-theme-demo.myshopify.com/products/the-original-japanese-barbecue-sauce",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://savor-theme-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "dolu-sepet",
+      "not": "The Original satırı. Checkout yok."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet +1"
+    }
+  ],
+  "stateFindings": {
+    "initial": "YOUR CART IS EMPTY + CONTINUE SHOPPING. Satır yok.",
+    "filled": "The Original satırı beklenir — kareye bakılacak.",
+    "changed": "Adet 2 beklenir — kareye bakılacak."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout / Shop Pay / login tıklanmadı."
+}

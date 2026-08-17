@@ -1,0 +1,80 @@
+{
+  "observationId": "savor.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "savor",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://savor-theme-demo.myshopify.com/",
+  "selector": "dialog.cart-drawer__dialog",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "captureMode": "viewport",
+  "prepareClick": "button.header-actions__action[aria-label='Cart']",
+  "notlar": "Horizon cart-drawer-component. Boş: YOUR CART IS EMPTY + Log in to check out faster + CONTINUE SHOPPING. 400×900 sağ panel.",
+  "delta": "ATC drawer’ı otomatik açmaz — cart ikonuna ikinci tık. /cart ayrı sayfa. Checkout/login tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://savor-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.header-actions__action[aria-label='Cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://savor-theme-demo.myshopify.com/products/the-original-japanese-barbecue-sauce",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.header-actions__action[aria-label='Cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "urun-eklendi",
+      "not": "Dolu drawer — ATC kendisi açmaz"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "dialog.cart-drawer__dialog[open] button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "YOUR CART IS EMPTY; Have an account? Log in to check out faster.; CONTINUE SHOPPING.",
+    "filled": "The Original satırı beklenir (1 Bottle $9.49). Checkout tıklanmadı.",
+    "changed": "Adet 2 beklenir — kareye bakılacak."
+  },
+  "missingStates": [],
+  "interactionNote": "Login / Checkout / Shop Pay tıklanmadı. Qty drawer açıkken plus."
+}

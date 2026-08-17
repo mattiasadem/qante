@@ -1,0 +1,41 @@
+{
+  "observationId": "savor.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "savor",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://savor-theme-demo.myshopify.com/products/the-original-japanese-barbecue-sauce",
+  "selector": "#shopify-section-template--18561684504627__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "THE ORIGINAL. Bottle Pack Size 1/2/3/6 Bottles. $9.49 CAD. ADD TO CART + BUY IT NOW. Horizon product-form-component.",
+  "delta": "Nested add-to-cart-component / product-price / variant radio. Buy it now tıklanmadı. Campfire Tee Size leftover (claiming pack size).",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://savor-theme-demo.myshopify.com/products/the-original-japanese-barbecue-sauce",
+      "capture": true,
+      "etiket": "1-bottle",
+      "not": "Default 1 Bottle $9.49"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label:has-text('2 Bottles')",
+      "capture": true,
+      "etiket": "2-bottles",
+      "not": "2 Bottles — fiyat $18.98"
+    }
+  ],
+  "stateFindings": {
+    "initial": "THE ORIGINAL. Bottle Pack Size 1 Bottle seçili. $9.49 CAD. ADD TO CART + BUY IT NOW.",
+    "changed": "2 Bottles seçili. $18.98 CAD. Galeri aynı küme."
+  },
+  "missingStates": [],
+  "interactionNote": "Buy it now / checkout yok. Pack size yeterli."
+}

@@ -1,0 +1,65 @@
+{
+  "observationId": "savor.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "savor",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://savor-theme-demo.myshopify.com/",
+  "selector": "dialog.search-modal__content",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "captureMode": "viewport",
+  "prepareClick": "search-button.search-action--hidden-on-drawer button[aria-label='Search']",
+  "notlar": "dialog-component#search-modal + predictive-search-component. Input #cmdk-input. Kapalı 0 yükseklik.",
+  "delta": "Horizon predictive-search-form. katalogSorgu: sauce (31 sonuç sayfa). 375 header Search görünür (hidden-on-drawer).",
+  "interactionStates": [
+    "open",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://savor-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button[aria-label='Search']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik",
+      "not": "Görünür Search — boş/öneri"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#cmdk-input",
+      "value": "sauce",
+      "capture": false,
+      "not": "katalog: Japanese barbecue sauce"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "#cmdk-input",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sauce",
+      "not": "13 search results found for sauce"
+    }
+  ],
+  "stateFindings": {
+    "open": "SEARCH overlay. Placeholder Search. Products öneri: BBQ Mix & Match / Campfire Tee / Cruisin Tee / Dip & Drizzle Box.",
+    "input": "sauce + Clear; 13 search results found for \"sauce\"; Products: The Original $9.49 / Gluten-Free / Mini Bottle / Sweet Pineapple…"
+  },
+  "missingStates": [],
+  "interactionNote": "İki Search butonu: hidden-on-menu (gizli) + hidden-on-drawer (görünür). clickVisible ilk görünürü alır. Submit/Enter yok. PII yok."
+}
