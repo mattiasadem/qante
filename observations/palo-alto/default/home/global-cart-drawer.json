@@ -1,0 +1,87 @@
+{
+  "observationId": "palo-alto.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "palo-alto",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://palo-alto-theme-main.myshopify.com/",
+  "selector": "#cart-drawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "cart-items#cart-drawer. Header a.cart__toggle drawer açar (href /cart da var).",
+  "delta": "Boş: Cart 0 items + koleksiyon hapları. Dolu + adet interact.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://palo-alto-theme-main.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.cart__toggle",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://palo-alto-theme-main.myshopify.com/products/exclesa-dress-scacchi-black-ivory",
+      "capture": false,
+      "not": "Revive Dress ATC"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#AddToCart--template--21945700909244__main-8877227802812",
+      "capture": false,
+      "not": "ADD TO CART $150.00"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a.cart__toggle",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#cart-drawer .quantity__btn--increase",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Cart 0 items. Your cart is currently empty. New Arrivals / Staff Picks / Bestselling / Sale + SHOP ALL. WELCOME10 metni.",
+    "filled": "Revive Dress satırı qty 1 ~$150. Checkout görünür — tıklanmadı.",
+    "changed": "qty 2; ara toplam güncellenir."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout / kupon uygulanmadı. Host overlay section 0px — kutu #cart-drawer açıkken ~400×900."
+}

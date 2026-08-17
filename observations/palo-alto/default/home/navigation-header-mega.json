@@ -1,0 +1,46 @@
+{
+  "observationId": "palo-alto.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "palo-alto",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://palo-alto-theme-main.myshopify.com/",
+  "selector": "#shopify-section-sections--21945691340988__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Logo + APPAREL / NEW / SALE 15% OFF / ABOUT / THEME FEATURES + search + account + cart. 1440 hover-disclosure mega (Apparel kids-3 + 2 görsel).",
+  "delta": "APPAREL <a href=/collections/all> — tıklama PLP'ye gider; mega yalnız hover. MY ACCOUNT duruldu.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://palo-alto-theme-main.myshopify.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "hover-disclosure.menu__item.grandparent.kids-3",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "apparel-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Apparel hover → header__dropdown 3 kolon + 2 görsel. Apparel <a> tıklanmadı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "APPAREL / NEW / SALE 15% OFF / ABOUT / THEME FEATURES + search + account + cart. Mega kapalı.",
+    "open": "1440 Apparel mega: Clothing / Featured / Shop all kolonları + 2 görsel (hover-disclosure.kids-3 images-2)."
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 mega yok (hamburger). Apparel href /collections/all — yalnız hover."
+}
