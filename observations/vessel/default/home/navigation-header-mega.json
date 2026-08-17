@@ -1,0 +1,68 @@
+{
+  "observationId": "vessel.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "vessel",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-vessel-demo.myshopify.com/",
+  "selector": "#header-component",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/vessel/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/vessel/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/vessel/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/vessel/default/home/navigation-header-mega.open.new-in-hover.1440.png"
+  ],
+  "notlar": "66px sticky scroll-up bar. Logo Vessel (kase ikon). 1440 düz nav: NEW IN / COFFEE & TEA / DRINKWARE / KITCHENWARE / ACCENTS. Search + Account + Cart. 375 hamburger. Account tıklanmadı.",
+  "delta": "Shopify.theme.name `Updated copy of Vessel demo store 3.2.0` · id 159183306809 · schema_name Vessel · schema_version 3.4.0 · theme_store_id 3628 · role main · shop horizon-vessel.myshopify.com. Horizon nested theme-blocks: header-component / product-card / slideshow-component / variant-picker / cart-drawer-component / predictive-search-component / facets-form-component (shopify-block custom element yok). Mega panel yok — düz menu-list__link. Hover NEW IN submenu açmadı. Theme Store ‘Mega menu’ özelliği bu demoda kapalı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-vessel-demo.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bar",
+      "not": "Kapalı sticky bar"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "header a.menu-list__link[href='/collections/all']",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "new-in-hover",
+      "not": "NEW IN hover — mega beklenirse kolonlar"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440: şeffaf bar hero üstünde — kase logo; NEW IN / COFFEE & TEA / DRINKWARE / KITCHENWARE / ACCENTS; search / account / cart. 375 hamburger + search + logo + account + cart. Mega yok.",
+    "open": "1440 NEW IN hover: kolon/promo panel yok — aynı düz link satırı."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "Mega panel yok. Theme Store ‘Mega menu’ bu demoda kapalı. Hover karesi initial ile aynı."
+    }
+  ],
+  "interactionNote": "375/768 mega yok — hamburger ayrı observation. Account/login tıklanmadı.",
+  "capture": {
+    "url": "https://theme-vessel-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:27:19.240Z"
+  }
+}
