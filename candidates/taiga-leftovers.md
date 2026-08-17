@@ -122,6 +122,14 @@ Karar: observation yazıldı
 
 ---
 
+ADAY: taiga-qty-375-zero  
+Gerekçe: 375 cart drawer + cart page `button[name=plus]` 0×0 (qty hapı yalnız rakam). İki deneme (doğrudan + / input odak) görünür tık vermedi. 768/1440 adet 1→2 €61,95→€123,90 kanıtlı.  
+Örnekler: `drawer-cart quantity-input` · `/cart`  
+Öneri: leftover — 375 changed PNG yok  
+Karar: onay bekliyor
+
+---
+
 ## Bilinçli atlananlar
 
 - `/account` — auth

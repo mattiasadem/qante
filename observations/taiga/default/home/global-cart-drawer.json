@@ -7,7 +7,16 @@
   "url": "https://taiga-demo-sage.myshopify.com/",
   "selector": "drawer-cart#drawer-cart",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/taiga/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/taiga/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/taiga/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/taiga/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/taiga/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/taiga/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/taiga/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/taiga/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
   "notlar": "drawer-cart#drawer-cart. Boş: Cart / Your cart is empty.",
   "delta": "/cart ayrı sayfa. Checkout tıklanmadı. Shopify.theme: name **Taiga / LIVE update** · schema_name **Taiga** · schema_version **8.1.0** · theme_store_id **null** · role main · id 159278366958 · shop taiga-demo-sage.myshopify.com",
   "captureMode": "viewport",
@@ -88,7 +97,20 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": "drawer-cart#drawer-cart button[name='plus'], drawer-cart#drawer-cart button[aria-label*='Increase'], drawer-cart#drawer-cart .quantity-input button:last-of-type",
+      "selector": "drawer-cart#drawer-cart .quantity__input, drawer-cart#drawer-cart input[name='updates[]']",
+      "capture": false,
+      "not": "375’te plus 0×0 — önce qty input odak"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 400,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "drawer-cart#drawer-cart button[name='plus']",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "adet-artti",
@@ -96,10 +118,26 @@
     }
   ],
   "stateFindings": {
-    "initial": "Sağ/geniş drawer: Cart · Your cart is empty. Satır yok.",
-    "filled": "Backpack 202 — Black satırı + adet 1 + €61,95.",
-    "changed": "Adet 2; ara toplam güncellenir."
+    "initial": "Sağ drawer: Cart + X. Ortada Your cart is empty. Satır yok.",
+    "filled": "Backpack 202 — Black · Color Black · adet 1 · €61,95. YOU MIGHT ALSO LIKE (cover / Jääkäri…). Subtotal €61,95 EUR + Checkout.",
+    "changed": "768/1440: adet 2 · satır €123,90 · Subtotal €123,90 EUR. Aynı drawer + öneriler."
   },
-  "missingStates": [],
-  "interactionNote": "Checkout/login tıklanmadı. Qty selector capture sonrası doğrulanacak."
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "375’te button[name=plus] 0×0 (qty hapı yalnız rakam). İki deneme (doğrudan + / önce input odak) görünür tık vermedi. 768/1440 adet 1→2 kanıtlı."
+    }
+  ],
+  "interactionNote": "ATC UI (addToCart → ui). Checkout tıklanmadı. 375 qty leftover.",
+  "capture": {
+    "url": "https://taiga-demo-sage.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T21:13:09.471Z"
+  }
 }

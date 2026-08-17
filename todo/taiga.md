@@ -10,7 +10,7 @@
 `theme_store_id` = **null** (canlı JS; uydurulmadı)  
 shop `taiga-demo-sage.myshopify.com`
 
-**Durum:** Mod A walk + resmi 3vp + interact + validate (devam)  
+**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti** (0 error)  
 **PR:** draft — **main'e merge yok**
 
 ---
@@ -23,10 +23,11 @@ shop `taiga-demo-sage.myshopify.com`
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **38** |
+| Evidence PNG | **130** |
 | Parallel | yalnız `observations/taiga/`, `evidence/taiga/`, `todo/taiga.md`, `candidates/taiga-leftovers.md` |
 
 **Kapsam satırı:**  
-`Taiga · default · Taiga / LIVE update / schema_name Taiga 8.1.0 · theme_store_id null · home→PDP→PLP→collections→search→cart→about/contact→blog→404 · 38 obs · 0 yeni şema · leftover: candidates/taiga-leftovers.md`
+`Taiga · default · Taiga / LIVE update / schema_name Taiga 8.1.0 · theme_store_id null · home→PDP→PLP→collections→search→cart→about/contact→blog→404 · 38 obs · 130 PNG · 0 yeni şema · leftover: candidates/taiga-leftovers.md`
 
 ---
 
@@ -34,55 +35,34 @@ shop `taiga-demo-sage.myshopify.com`
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home + announcement/hero/collections/featured×3/hotspots/marquee/look/countdown/video/footer | obs | capture |
-| Header overlay + Shop mega 1440 | interact | capture |
-| Predictive search `backpack` | interact 3vp | capture |
-| Mobile menu 375 + 768 | interact | capture |
-| Cart drawer empty + filled + qty | interact 3vp | capture |
-| PDP Jääkäri M Desert Brown → Olive Green | interact | capture |
-| PLP `/collections/all` | obs | capture |
-| Collections index `/collections` | obs | capture |
-| Search `/search?q=backpack` | obs | capture |
-| Cart `/cart` empty + filled + qty | interact 3vp | capture |
-| About `/pages/about` | obs | capture |
-| Contact form (submit yok) | obs | capture |
-| Journal + article | obs | capture |
-| 404 leftover | obs | capture |
+| Home + announcement/hero/collections/featured×3/hotspots/marquee/look/countdown/video/footer | [x] | [x] |
+| Header overlay + Shop drawer-mega 1440 | [x] | [x] |
+| Predictive search `backpack` | [x] | [x] 375/768/1440 |
+| Mobile menu 375 + 768 | [x] | [x] |
+| Cart drawer empty + filled + qty | [x] | [x] (375 qty leftover) |
+| PDP Jääkäri M Desert Brown → Olive Green | [x] | [x] |
+| PLP `/collections/all` | [x] | [x] |
+| Collections index `/collections` | [x] | [x] |
+| Search `/search?q=backpack` (42) | [x] | [x] |
+| Cart `/cart` empty + filled + qty | [x] | [x] (375 qty leftover) |
+| About `/pages/about` | [x] | [x] |
+| Contact form (Send yok) | [x] | [x] |
+| Journal + article | [x] | [x] |
+| 404 leftover | [x] | [x] |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
-
----
-
-## Home remap (kanıt)
-
-- announcements-bar → `promo-announcement-bar`
-- header overlay + Shop drawer mega → `navigation-header-mega`
-- hero Savotta Jääkäri → `hero-slideshow`
-- collection cards Backpacks/Duffel/Stoves/Accessories → `collection-nav-image-cards`
-- Savotta copy + CTAs → `editorial-rich-text`
-- THE JÄÄKÄRI LINEUP → `product-showcase-grid-featured`
-- image-with-hotspots Genius Features → `media-lookbook-banner`
-- sliding_text Modern/Elegant → `promo-scrolling-marquee`
-- featured_look Go EXTREME → `media-lookbook-banner-2`
-- countdown 50% off → `promo-banner-countdown`
-- featured-collection-2 → `product-showcase-grid-featured-2`
-- the-rich-text Keikka → `editorial-rich-text-2`
-- hero-2 video → `media-video-hero`
-- harness grid → `product-showcase-grid-featured-3`
-- footer + newsletter (submit yok) → `footer-columns-newsletter`
-- drawer-menu → `global-menu-drawer`
-- #drawer-search → `global-predictive-search`
-- drawer-cart → `global-cart-drawer`
 
 ---
 
 ## Interact (pixel-check)
 
-- [ ] `navigation-header-mega` — 1440 Shop tık mega
-- [ ] `global-predictive-search` — `backpack` 375/768/1440
-- [ ] `global-menu-drawer` — 375 + 768 hamburger
-- [ ] `global-cart-drawer` — boş / Backpack 202 qty 1 / qty 2
-- [ ] `cart-page-main` — boş + dolu + qty
-- [ ] `product-info-main` — Desert Brown → Olive Green
+| Bileşen | State | Sonuç |
+|---|---|---|
+| navigation-header-mega | open | [x] 1440 Shop → iki panelli drawer (Backpacks…All products). Görsel kolon yok |
+| global-predictive-search | input | [x] 3vp `backpack` — SUGGESTIONS + PRODUCTS + Search for 'backpack' |
+| global-menu-drawer | open | [x] 375 + 768 hamburger |
+| global-cart-drawer | filled + changed | [x] boş → €61,95 (1) → €123,90 (2) · 375 plus 0×0 leftover |
+| cart-page-main | filled + changed | [x] aynı fiyatlar · 375 leftover |
+| product-info-main | changed | [x] Desert Brown low-stock → Olive Green In stock |
 
 Stop: email / account / checkout / newsletter submit / contact Send / PII
 
@@ -96,8 +76,8 @@ Stop: email / account / checkout / newsletter submit / contact Send / PII
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact mega / search / menu 375+768 / cart / PDP color
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate` — 0 error
-- [ ] Newsletter / account / checkout — **yapılmayacak** (PII)
+- [x] Official 3vp static (`capture-observation.mjs`) — 32/32
+- [x] Interact mega / search / menu 375+768 / cart / PDP color
+- [x] PNG bak → stateFindings
+- [x] `npm run validate` — 0 error
+- [x] Newsletter / account / checkout — **yapılmayacak**

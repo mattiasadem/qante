@@ -7,7 +7,14 @@
   "url": "https://taiga-demo-sage.myshopify.com/",
   "selector": "#drawer-search",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/taiga/default/home/global-predictive-search.initial.search-bos.1440.png",
+    "evidence/taiga/default/home/global-predictive-search.initial.search-bos.375.png",
+    "evidence/taiga/default/home/global-predictive-search.initial.search-bos.768.png",
+    "evidence/taiga/default/home/global-predictive-search.input.backpack.1440.png",
+    "evidence/taiga/default/home/global-predictive-search.input.backpack.375.png",
+    "evidence/taiga/default/home/global-predictive-search.input.backpack.768.png"
+  ],
   "notlar": "Search #drawer-search + #drawerSearchInput[name=q] placeholder Search. predictive-search.",
   "delta": "Taiga search drawer. Submit /search sayfası ayrı observation. Shopify.theme: name **Taiga / LIVE update** · schema_name **Taiga** · schema_version **8.1.0** · theme_store_id **null** · role main · id 159278366958 · shop taiga-demo-sage.myshopify.com",
   "captureMode": "viewport",
@@ -62,9 +69,20 @@
     }
   ],
   "stateFindings": {
-    "initial": "Search drawer açık; input placeholder Search; öneri listesi boş/öneri chip.",
-    "input": "backpack yazınca ürün/öneri (katalog kelimesi backpack)."
+    "initial": "Sağ Search drawer: Commonly searched — Jääkäri L Desert Brown / Jääkäri S M05 / Happy stove + Backpacks / Accessories / Refund Policy / Terms of Service.",
+    "input": "backpack: SUGGESTIONS (backpack, keikka backpack harness, Backpacks, Backpack accesories) + PRODUCTS (Backpack cover, Backpack 202 Black/Green/M05…) + sarı Search for 'backpack' butonu. 375/768/1440 aynı iskelet."
   },
   "missingStates": [],
-  "interactionNote": "Katalog sorgu: backpack (30 sonuçlu arama). chair 0 sonuç leftover. Submit yok."
+  "interactionNote": "Katalog sorgu: backpack. Tam sayfa /search?q=backpack 42 sonuç. chair 0 leftover. Submit tıklanmadı.",
+  "capture": {
+    "url": "https://taiga-demo-sage.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T21:03:36.630Z"
+  }
 }
