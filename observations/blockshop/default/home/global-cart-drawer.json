@@ -25,18 +25,12 @@
     },
     {
       "state": "initial",
-      "action": "waitFor",
-      "value": 2500,
-      "capture": false
-    },
-    {
-      "state": "initial",
       "action": "click",
       "selector": "a.header--cart[aria-label='Bag']",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "cart-bos",
-      "not": "Boş bag drawer"
+      "not": "Boş bag drawer — settle overlay kapatır"
     },
     {
       "state": "filled",
@@ -46,21 +40,21 @@
     },
     {
       "state": "filled",
-      "action": "waitFor",
-      "value": 2500,
+      "action": "addToCart",
+      "selector": "button.product-buy-buttons--primary",
+      "capture": false,
+      "not": "ADD TO BAG"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://blockshop-theme-beauty.myshopify.com/",
       "capture": false
     },
     {
       "state": "filled",
       "action": "click",
-      "selector": "button.product-buy-buttons--primary",
-      "capture": false,
-      "not": "ADD TO BAG — drawer açılır"
-    },
-    {
-      "state": "filled",
-      "action": "waitFor",
-      "value": 2500,
+      "selector": "a.header--cart[aria-label='Bag']",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "serum-qty1",
@@ -69,7 +63,7 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": ".drawer--root button[name='plus'], .drawer--root [aria-label*='increase' i], .drawer--root [aria-label*='Increase' i], .drawer--root .quantity--plus, .drawer--root button.quantity-plus",
+      "selector": ".drawer--root button.quantity-selector--plus[aria-label='Plus']",
       "capture": false
     },
     {
@@ -88,5 +82,5 @@
     "changed": "Adet artışı — kareye bakılacak."
   },
   "missingStates": [],
-  "interactionNote": "BUY IT NOW / checkout yok. Qty selector yoklanırsa leftover."
+  "interactionNote": "BUY IT NOW / checkout yok. Glow Club settle ile kapatılır, submit yok. ATC sonrası home'a dönüp bag açılır (drawer toggle kapanmasın)."
 }

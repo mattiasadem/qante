@@ -7,7 +7,14 @@
   "url": "https://blockshop-theme-beauty.myshopify.com/",
   "selector": ".drawer--root",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/blockshop/default/home/global-predictive-search.initial.search-bos.1440.png",
+    "evidence/blockshop/default/home/global-predictive-search.initial.search-bos.375.png",
+    "evidence/blockshop/default/home/global-predictive-search.initial.search-bos.768.png",
+    "evidence/blockshop/default/home/global-predictive-search.input.cream.1440.png",
+    "evidence/blockshop/default/home/global-predictive-search.input.cream.375.png",
+    "evidence/blockshop/default/home/global-predictive-search.input.cream.768.png"
+  ],
   "notlar": "button.header--search → üst drawer. #search_input SEARCH HERE… + CANCEL. Boş: POPULAR PRODUCTS. cream: SUGGESTIONS + PRODUCTS.",
   "delta": "Shopify.theme.name `Copy of design [do not delete]` · id 134976438327 · schema_name Blockshop · schema_version 13.2.0 · theme_store_id null · role main · shop blockshop-theme-beauty.myshopify.com. data-drawer-view=search. Submit/PII yok.",
   "captureMode": "viewport",
@@ -25,8 +32,15 @@
     {
       "state": "initial",
       "action": "waitFor",
-      "value": 2500,
+      "value": 4000,
       "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.layout--close[aria-label='close']",
+      "capture": false,
+      "not": "Glow Club kapat"
     },
     {
       "state": "initial",
@@ -60,5 +74,16 @@
     "input": "cream → SUGGESTIONS CREAM / JUNIPER HAND CREAM. PRODUCTS Hydrogel 48.00 / Luxe Face Cream 36.00 / Oat and Juniper 28.00 + VIEW ALL."
   },
   "missingStates": [],
-  "interactionNote": "katalogSorgu=cream (7 /search sonuç). Submit yok."
+  "interactionNote": "katalogSorgu=cream (7 /search sonuç). Submit yok.",
+  "capture": {
+    "url": "https://blockshop-theme-beauty.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T20:52:35.437Z"
+  }
 }

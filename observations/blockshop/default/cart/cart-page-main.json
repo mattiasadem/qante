@@ -7,7 +7,13 @@
   "url": "https://blockshop-theme-beauty.myshopify.com/cart",
   "selector": "#shopify-section-template--17329881219127__main",
   "evidenceSlug": "cart-page-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/blockshop/default/cart/cart-page-main.filled.dolu-sepet.1440.png",
+    "evidence/blockshop/default/cart/cart-page-main.filled.dolu-sepet.375.png",
+    "evidence/blockshop/default/cart/cart-page-main.filled.dolu-sepet.768.png",
+    "evidence/blockshop/default/cart/cart-page-main.initial.bos-sepet.1440.png",
+    "evidence/blockshop/default/cart/cart-page-main.initial.bos-sepet.768.png"
+  ],
   "notlar": "YOUR BAG. Boş: YOUR BAG IS CURRENTLY EMPTY + CLICK HERE TO CONTINUE SHOPPING.",
   "delta": "Shopify.theme.name `Copy of design [do not delete]` · id 134976438327 · schema_name Blockshop · schema_version 13.2.0 · theme_store_id null · role main · shop blockshop-theme-beauty.myshopify.com. Drawer ayrı. Checkout tıklanmadı.",
   "interactionStates": [
@@ -16,14 +22,14 @@
     "changed"
   ],
   "interactionSteps": [
-    {
-      "state": "initial",
-      "action": "goto",
-      "value": "https://blockshop-theme-beauty.myshopify.com/cart",
-      "capture": true,
-      "etiket": "bos-sepet",
-      "not": "Boş bag"
-    },
+      {
+        "state": "initial",
+        "action": "goto",
+        "value": "https://blockshop-theme-beauty.myshopify.com/cart",
+        "capture": true,
+        "etiket": "bos-sepet",
+        "not": "Boş bag"
+      },
     {
       "state": "filled",
       "action": "goto",
@@ -53,7 +59,7 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": "button[name='plus'], button[aria-label*='Increase' i], button[aria-label*='increase' i], .quantity--plus",
+      "selector": "button.quantity-selector--plus[aria-label='Plus']",
       "capture": true,
       "etiket": "adet-artti",
       "not": "Adet +1"
@@ -65,5 +71,16 @@
     "changed": "Adet 2 beklenir."
   },
   "missingStates": [],
-  "interactionNote": "addToCart UI veya /cart/add.js. Checkout yok."
+  "interactionNote": "addToCart UI veya /cart/add.js. Checkout yok.",
+  "capture": {
+    "url": "https://blockshop-theme-beauty.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T20:55:46.815Z"
+  }
 }

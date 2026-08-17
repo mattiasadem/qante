@@ -7,7 +7,9 @@
   "url": "https://blockshop-theme-beauty.myshopify.com/",
   "selector": ".drawer--root",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/blockshop/default/home/global-menu-drawer.open.menu-acik.375.png"
+  ],
   "notlar": "375 button.header--drawer-toggle → sol drawer. SHOP / NEW / TRENDING / ABOUT US + locale. 768 hamburger 0×0.",
   "delta": "Shopify.theme.name `Copy of design [do not delete]` · id 134976438327 · schema_name Blockshop · schema_version 13.2.0 · theme_store_id null · role main · shop blockshop-theme-beauty.myshopify.com. y-menu mobile-nav. 768 leftover (sidebar, hamburger yok).",
   "captureMode": "viewport",
@@ -24,8 +26,15 @@
     {
       "state": "open",
       "action": "waitFor",
-      "value": 2500,
+      "value": 4000,
       "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.layout--close[aria-label='close']",
+      "capture": false,
+      "not": "Glow Club kapat"
     },
     {
       "state": "open",
@@ -43,11 +52,17 @@
   "stateFindings": {
     "open": "375: .drawer--root sol 300px — SHOP / NEW / TRENDING / ABOUT US + ENGLISH / CANADA."
   },
-  "missingStates": [
-    {
-      "state": "open",
-      "sebep": "768/1440 hamburger display:none; nav sidebar. 768 menü leftover, eksik çekim değil."
-    }
-  ],
-  "interactionNote": "Yalnız 375. Shop accordion drawer içinde yoklandı değil (yazılı link riski)."
+  "missingStates": [],
+  "interactionNote": "Yalnız 375. Shop accordion drawer içinde yoklandı değil (yazılı link riski).",
+  "capture": {
+    "url": "https://blockshop-theme-beauty.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T20:52:17.685Z"
+  }
 }
