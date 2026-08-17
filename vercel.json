@@ -1,13 +1,22 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
+  "buildCommand": "node scripts/vercel-prepare.mjs",
   "functions": {
     "api/index.mjs": {
       "includeFiles": "{sections,observations,taxonomy,candidates,viewer}/**",
-      "excludeFiles": "{evidence/**}",
+      "excludeFiles": "{evidence/**,public/evidence/**}",
       "maxDuration": 30
     }
   },
+  "headers": [
+    {
+      "source": "/evidence/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600" }
+      ]
+    }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/api" }
   ]
