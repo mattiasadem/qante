@@ -1,0 +1,86 @@
+{
+  "observationId": "empire.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "empire",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://empire-demo.myshopify.com/cart",
+  "selector": "#shopify-section-static-cart",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/empire/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/empire/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/empire/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/empire/default/cart/cart-page-main.filled.sepet-dolu.1440.png",
+    "evidence/empire/default/cart/cart-page-main.filled.sepet-dolu.375.png",
+    "evidence/empire/default/cart/cart-page-main.filled.sepet-dolu.768.png",
+    "evidence/empire/default/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/empire/default/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/empire/default/cart/cart-page-main.initial.cart-bos.768.png"
+  ],
+  "notlar": "Tam sayfa sepet. Drawer yok. Boş: Your cart is empty + Continue shopping. Dolu: Super Pen satır + qty + Checkout.",
+  "delta": "static-cart. Calculate Shipping var; form doldurulmadı. Checkout tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://empire-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş sayfa"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://empire-demo.myshopify.com/products/super-pen",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": ".product-form--atc-button",
+      "capture": false,
+      "not": "Super Pen red varsayılan"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://empire-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepet-dolu",
+      "not": "Super Pen satır + subtotal"
+    },
+    {
+      "state": "changed",
+      "action": "select",
+      "selector": "#shopify-section-static-cart select.form-field-select",
+      "value": "2",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet 1→2, subtotal güncellenmeli"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Your cart + Continue shopping + Your cart is empty.",
+    "filled": "Electronic Super Pen Color red, $15.85, adet 1, Subtotal $15.85, Checkout.",
+    "changed": "Adet 2, satır ve Subtotal $31.70 USD (1× $15.85)."
+  },
+  "interactionNote": "ATC sayfada kalır (drawer yok). Qty native select 1–10+. Checkout yok.",
+  "capture": {
+    "url": "https://empire-demo.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:27:02.534Z"
+  }
+}
