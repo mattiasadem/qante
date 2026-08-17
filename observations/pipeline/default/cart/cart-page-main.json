@@ -1,0 +1,60 @@
+{
+  "observationId": "pipeline.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "pipeline",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://pipeline-theme-fashion.myshopify.com/cart",
+  "selector": "#shopify-section-template--22817365983448__main",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Boş: Your cart is empty. CONTINUE BROWSING. .cart__template",
+  "delta": "Shopify.theme.name Pipeline 8.2.0 · id 162762195160 · schema_name Pipeline · schema_version 8.2.0 · theme_store_id null · role main · shop pipeline-theme-fashion.myshopify.com. Preset folder default = Fashion / Theme Store official preview (document title suffix Pipeline Clean). Sibling pipeline-theme.myshopify.com (Bright) not walked. Dolu + qty interact.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pipeline-theme-fashion.myshopify.com/cart",
+      "capture": true,
+      "etiket": "bos"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://pipeline-theme-fashion.myshopify.com/products/andre-luxe-cashmere-set",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.btn--add-to-cart[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://pipeline-theme-fashion.myshopify.com/cart",
+      "capture": true,
+      "etiket": "dolu"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".cart__template .quantity__button--plus, .quantity__button--plus",
+      "capture": true,
+      "etiket": "adet-2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "filled": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı."
+}

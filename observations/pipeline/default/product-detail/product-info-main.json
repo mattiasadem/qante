@@ -1,0 +1,52 @@
+{
+  "observationId": "pipeline.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "pipeline",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://pipeline-theme-fashion.myshopify.com/products/andre-luxe-cashmere-set",
+  "selector": "#shopify-section-template--22817366835416__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "The Andre Luxe Cashmere Set. Galeri zoom. Size popout XS/S/M/L (.select-popout__toggle). Qty stepper. Add to Cart • $698. Only 14 left in stock.",
+  "delta": "Shopify.theme.name Pipeline 8.2.0 · id 162762195160 · schema_name Pipeline · schema_version 8.2.0 · theme_store_id null · role main · shop pipeline-theme-fashion.myshopify.com. Preset folder default = Fashion / Theme Store official preview (document title suffix Pipeline Clean). Sibling pipeline-theme.myshopify.com (Bright) not walked. varyantGosterim dropdown (swatch değil). Low-stock countdown.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pipeline-theme-fashion.myshopify.com/products/andre-luxe-cashmere-set",
+      "capture": true,
+      "etiket": "xs-698"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".product-section .select-popout__toggle",
+      "capture": false,
+      "not": "Size popout aç"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".product-section li.select-popout__item:nth-child(2) a.select-popout__option",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": true,
+      "etiket": "size-s"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Size XS→S. Fiyat değişmezse ($698 tek fiyat) changed yine popout kapalı S seçili olmalı."
+}

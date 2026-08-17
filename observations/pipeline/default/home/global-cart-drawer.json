@@ -1,0 +1,78 @@
+{
+  "observationId": "pipeline.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "pipeline",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pipeline-theme-fashion.myshopify.com/",
+  "selector": "#drawer-cart .drawer__content",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "#drawer-cart .drawer__content fixed 450×1000 sağ panel. Boş: CART / Your cart is empty. / CONTINUE BROWSING. Checkout butonu $0.00 (tıklanmadı).",
+  "delta": "Shopify.theme.name Pipeline 8.2.0 · id 162762195160 · schema_name Pipeline · schema_version 8.2.0 · theme_store_id null · role main · shop pipeline-theme-fashion.myshopify.com. Preset folder default = Fashion / Theme Store official preview (document title suffix Pipeline Clean). Sibling pipeline-theme.myshopify.com (Bright) not walked. Overlay group section __cart. Kargo eşiği metni drawer HTML'de var (Spend $200).",
+  "captureMode": "viewport",
+  "prepareClick": "a.navlink.navlink--cart",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pipeline-theme-fashion.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.navlink.navlink--cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://pipeline-theme-fashion.myshopify.com/products/andre-luxe-cashmere-set",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.btn--add-to-cart[name='add']",
+      "capture": false,
+      "not": "Andre Luxe Cashmere Set XS $698"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://pipeline-theme-fashion.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a.navlink.navlink--cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#drawer-cart .quantity__button--plus, #drawer-cart button.quantity__button--plus",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "filled": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı. addToCart UI; fallback /cart/add.js olursa not."
+}

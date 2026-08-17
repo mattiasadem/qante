@@ -1,0 +1,112 @@
+{
+  "observationId": "pipeline.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "pipeline",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pipeline-theme-fashion.myshopify.com/",
+  "selector": "#search-popdown",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "Desktop #search-popdown.search__predictive (açık 1440×95). Opener a.navlink[aria-controls=search-popdown]. Input placeholder Search... · aria-controls=predictive-search-results. Mobil #search-drawer ayrı host.",
+  "delta": "Shopify.theme.name Pipeline 8.2.0 · id 162762195160 · schema_name Pipeline · schema_version 8.2.0 · theme_store_id null · role main · shop pipeline-theme-fashion.myshopify.com. Preset folder default = Fashion / Theme Store official preview (document title suffix Pipeline Clean). Sibling pipeline-theme.myshopify.com (Bright) not walked. Predictive custom element <predictive-search>. Katalog sorgu dress (57 /search).",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pipeline-theme-fashion.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.navlink[aria-controls='search-popdown']",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Boş popdown bar"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#search-popdown input[name='q']",
+      "value": "dress",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1800,
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "dress",
+      "not": "dress önerileri"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.header__mobile__button[aria-label='Open menu']",
+      "viewports": [
+        "375"
+      ],
+      "capture": false,
+      "not": "375 search drawer menü içinde"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#header-menu input[name='q'], .drawer__search input[name='q']",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "375 drawer search boş"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#header-menu input[name='q'], .drawer__search input[name='q'], #search-drawer input[name='q']",
+      "value": "dress",
+      "viewports": [
+        "375"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1800,
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "dress"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "input": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Submit yok. 375 path menü içi input — popdown 1440/768."
+}
