@@ -1,0 +1,70 @@
+{
+  "observationId": "venue.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "venue",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://venue-theme-morning.myshopify.com/",
+  "selector": "#modal-search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "search-modal#modal-search. Input #modal-search-input placeholder Search our store… 1440 opener a.secondary-nav__link--search; 375 a.header-trigger__link--search.",
+  "delta": "Shopify.theme.name venue-18-2-1 · id 142511603760 · schema_name Venue · schema_version 18.2.1 · theme_store_id null · role main · shop venue-theme-morning.myshopify.com Predictive: SUGGESTIONS + PRODUCTS. Submit yok.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://venue-theme-morning.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.secondary-nav__link--search, a.header-trigger__link--search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Boş/öneri overlay"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#modal-search-input",
+      "value": "tee",
+      "capture": false,
+      "not": "katalogSorgu tee (Home Tee / Clubber Tee / Skipper Tee)"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "#modal-search-input",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "tee",
+      "not": "tee önerileri"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Search our store… Recent/öneri. Input üst bant.",
+    "input": "tee → SUGGESTIONS tee / Tees & Knits / Long Sleeve Tees / Short Sleeve Tees + PRODUCTS Home Tee $18/$36, Clubber Tee $36, Skipper Tee $36, Over The Mountains Tee, Hat Trick Henley."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu=tee (12 /search sonuç). Submit/PII yok. chair 0 sonuç — kullanılmadı."
+}

@@ -1,0 +1,69 @@
+{
+  "observationId": "venue.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "venue",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://venue-theme-morning.myshopify.com/cart",
+  "selector": "#shopify-section-template--19058349768752__main",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "js-section__cart-page. Boş: Your cart is currently empty + Shop now.",
+  "delta": "Shopify.theme.name venue-18-2-1 · id 142511603760 · schema_name Venue · schema_version 18.2.1 · theme_store_id null · role main · shop venue-theme-morning.myshopify.com Tam sayfa sepet. Drawer ayrı (#modal-cart).",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://venue-theme-morning.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş sepet"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://venue-theme-morning.myshopify.com/products/tucker-wallet",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://venue-theme-morning.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu satır"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--19058349768752__main button[name='plus'], #shopify-section-template--19058349768752__main [name='plus'], #shopify-section-template--19058349768752__main .js-qty-plus, #shopify-section-template--19058349768752__main button[aria-label*='Increase' i]",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Shopping Cart. Your cart is currently empty + Shop now.",
+    "filled": "Tucker Wallet $70 qty 1 beklenir.",
+    "changed": "qty 2 / $140 beklenir."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout / kupon tıklanmadı."
+}

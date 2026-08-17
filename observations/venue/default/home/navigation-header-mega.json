@@ -1,0 +1,51 @@
+{
+  "observationId": "venue.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "venue",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://venue-theme-morning.myshopify.com/",
+  "selector": "header#top",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "header#top (section display:contents → 0 kutu). Sticky/transparent. STORE/COLLECTIONS/BLOG/THEME FEATURES/DEMOS/SALE + locale + search + cart. Logo ortada.",
+  "delta": "Shopify.theme.name venue-18-2-1 · id 142511603760 · schema_name Venue · schema_version 18.2.1 · theme_store_id null · role main · shop venue-theme-morning.myshopify.com Mega var (STORE hover). Cart ikon href /cart; #modal-cart DOM’da. Account ikonu yok. 768 hamburger yok — inline nav.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://venue-theme-morning.myshopify.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "details#Details-HeaderMenu-1 > summary.primary-nav__summary",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "store-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "STORE hover → mega-panel ACCESSORIES / TEES & KNITS / HEADWEAR + ON SALE / NEW ARRIVALS görseller"
+    }
+  ],
+  "stateFindings": {
+    "initial": "STORE / COLLECTIONS / BLOG / THEME FEATURES / DEMOS / SALE + USD + search + cart 0. Mega kapalı.",
+    "open": "1440 STORE mega: ACCESSORIES / TEES & KNITS / HEADWEAR kolonları + ON SALE / NEW ARRIVALS görseller."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375 hamburger (ayrı global-menu-drawer). 768 inline nav — mega hover denendi ama hamburger yok."
+    }
+  ],
+  "interactionNote": "STORE summary hover. STORE <a href=/collections/all> tıklanmadı. DEMOS Theme Store preset linkleri tıklanmadı (sunset sibling)."
+}
