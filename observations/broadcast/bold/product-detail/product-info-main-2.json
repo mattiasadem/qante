@@ -10,6 +10,39 @@
   "evidence": [],
   "notlar": "Sticky cart-bar: ürün adı + $50 + CONFIGURE (buy box'a kaydır). Conversion bar.",
   "delta": "Ayrı overlay değil — PDP sticky ATC/configure şeridi. Şema aynı product-info-main.",
-  "captureMode": "viewport",
-  "prepareScroll": "#cart-bar"
+  "interactionStates": ["changed"],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://broadcast-bold.myshopify.com/products/multivitamin-18",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15449277792320__related",
+      "capture": false,
+      "not": "Buy box'tan aşağı kaydır → sticky bar"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "selector": "#cart-bar",
+      "capture": true,
+      "etiket": "sticky-configure",
+      "not": "#cart-bar şeridi"
+    }
+  ],
+  "stateFindings": {
+    "changed": "Sticky bar CONFIGURE (kareye bakılacak)."
+  },
+  "missingStates": [],
+  "interactionNote": "Bar buy box görünürken gizlenebilir; related'a kaydırınca çıktı."
 }
