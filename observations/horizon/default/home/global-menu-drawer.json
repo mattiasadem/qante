@@ -1,0 +1,61 @@
+{
+  "observationId": "horizon.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "horizon",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-horizon-demo.myshopify.com/",
+  "selector": "#Details-menu-drawer-container .menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/horizon/default/home/global-menu-drawer.open.hamburger.375.png"
+  ],
+  "notlar": "375 hamburger. Shop + Contact + resource-card ürün şeridi (1Tuck / Alex Polo / Allied Blouson).",
+  "delta": "Horizon header-drawer. 768/1440 hamburger 0px — desktop Shop/Contact. Nested resource-card (theme-block ürün kartı) drawer içinde.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://theme-horizon-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary[aria-label='Menu']",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "375 drawer"
+    }
+  ],
+  "stateFindings": {
+    "open": "375 sol drawer: X; Shop; Contact; altta ürün şeridi (1Tuck Tapered Pants $205, Alex Merino… $205). Sağda karartılmış home."
+  },
+  "missingStates": [],
+  "interactionNote": "768/1440 hamburger 0px — open karesi yok (desktop Shop/Contact). Account drawer ayrı; tıklanmadı.",
+  "capture": {
+    "url": "https://theme-horizon-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:21:24.525Z"
+  }
+}
