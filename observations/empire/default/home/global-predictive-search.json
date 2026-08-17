@@ -8,9 +8,13 @@
   "selector": ".search-flydown",
   "captureMode": "viewport",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
-  "notlar": "live_search.enable true + görsel + içerik. katalogSorgu: pen (Electronic Super Pen).",
-  "delta": "Flydown: ürün + Pages & Posts. 375/768 input görünür (ikinci satır).",
+  "evidence": [
+    "evidence/empire/default/home/global-predictive-search.input.arama-sonucu.1440.png",
+    "evidence/empire/default/home/global-predictive-search.input.arama-sonucu.375.png",
+    "evidence/empire/default/home/global-predictive-search.input.arama-sonucu.768.png"
+  ],
+  "notlar": "live_search.enable true. katalogSorgu: pen (Electronic Super Pen). Playwright fill flydown açmaz; p-e-n press gerekir.",
+  "delta": "Flydown: ürün + Pages & Posts. 375/768 input ikinci satırda görünür.",
   "interactionStates": [
     "input"
   ],
@@ -23,11 +27,28 @@
     },
     {
       "state": "input",
-      "action": "fill",
+      "action": "click",
       "selector": "input.site-header-search-form-field[name='q']",
-      "value": "pen",
       "capture": false,
-      "not": "katalog: pen"
+      "not": "Input odak"
+    },
+    {
+      "state": "input",
+      "action": "press",
+      "value": "p",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "press",
+      "value": "e",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "press",
+      "value": "n",
+      "capture": false
     },
     {
       "state": "input",
@@ -42,15 +63,22 @@
   "missingStates": [
     {
       "state": "open",
-      "sebep": "Ayrı boş modal yok; input her zaman header’da. Öneri fill ile geldi."
+      "sebep": "Ayrı boş modal yok. Öneri yazınca gelir."
     }
   ],
   "stateFindings": {
-    "input": "q=pen: Electronic Super Pen $15.85 USD + Pages & Posts No results. + View all results."
+    "input": "375: tam ekran arama — pen + Cancel + Super Pen (Pen sarı vurgu) $15.85 + View all results. 1440: flydown Super Pen $15.85 + Pages & Posts No results. + View all results. Mosaic arkada."
   },
-  "interactionNote": "Kapalı kare .search-flydown placeholder href=#. Fill sonrası gerçek ürün. Boş sonuç denenmedi (zzzzz).",
+  "interactionNote": "fill() live-search tetiklemedi (flydown 0×0). press p/e/n. 375 overlay, 1440 flydown. zzzzz denenmedi.",
   "capture": {
     "url": "https://empire-demo.myshopify.com/",
-    "viewports": ["375", "768", "1440"]
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:30:52.439Z"
   }
 }

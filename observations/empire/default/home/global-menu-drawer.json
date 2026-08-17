@@ -8,7 +8,10 @@
   "selector": ".mobile-nav-panel",
   "captureMode": "viewport",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/empire/default/home/global-menu-drawer.open.mobil-menu-acik.375.png",
+    "evidence/empire/default/home/global-menu-drawer.open.mobil-menu-acik.768.png"
+  ],
   "notlar": "#site-mobile-nav + .mobile-nav-panel. 375/768 hamburger .site-header-menu-toggle--button. 1440 toggle x=-30 (gizli).",
   "delta": "Sol panel: Login, para listesi, Close, Home, Catalog. Mega kolon yok.",
   "interactionStates": [
@@ -25,7 +28,10 @@
       "state": "open",
       "action": "click",
       "selector": ".site-header-menu-toggle--button",
-      "viewports": ["375", "768"],
+      "viewports": [
+        "375",
+        "768"
+      ],
       "capture": true,
       "captureMode": "viewport",
       "etiket": "mobil-menu-acik",
@@ -35,19 +41,26 @@
   "missingStates": [
     {
       "state": "open",
-      "sebep": "1440 hamburger off-canvas (x=-30); masaüstü yatay nav. Kare yok."
+      "sebep": "1440 hamburger off-canvas; yatay Home/Catalog. Kare yok."
     },
     {
       "state": "changed",
-      "sebep": "Catalog düz link; boş chevron/akordeon yok. Tıklanınca /collections/all."
+      "sebep": "Catalog düz link; akordeon yok."
     }
   ],
   "stateFindings": {
-    "open": "375/768: sol ~325px panel, Login, CAD/INR/GBP/USD/AUD/EUR/JPY, Close, Home, Catalog. Overlay tam viewport."
+    "open": "375/768: sol beyaz panel — Login, USD chevron, Close, Home, Catalog. Teal header + arama arkada. 1440 hamburger yok."
   },
   "interactionNote": "Açık kutu .mobile-nav-panel (325×800). #site-mobile-nav açıkken yükseklik 0 — selector panel.",
   "capture": {
     "url": "https://empire-demo.myshopify.com/",
-    "viewports": ["375", "768", "1440"]
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:22:15.788Z"
   }
 }
