@@ -1,0 +1,86 @@
+{
+  "observationId": "tinker.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "tinker",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-tinker-demo.myshopify.com/",
+  "selector": "dialog.cart-drawer__dialog",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Horizon cart-drawer-component. Boş sınıf cart-drawer--empty.",
+  "delta": "/cart ayrı sayfa (cart-page-main). Checkout tıklanmadı.",
+  "captureMode": "viewport",
+  "prepareClick": "header button[aria-label='Cart']",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-tinker-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header button[aria-label='Cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-tinker-demo.myshopify.com/products/craighill-desk-knife-brass",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'], product-form-component button[type='submit'], add-to-cart-component button",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bıcak-qty1",
+      "not": "ATC drawer açar"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], quantity-selector button[name='plus'], .quantity-selector__button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +1"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boş cart drawer (cart-drawer--empty).",
+    "filled": "Craighill Desk Knife satırı beklenir (ATC sonrası).",
+    "changed": "Adet artışı beklenir."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout / Shop Pay tıklanmadı. Qty selector Horizon’da yoksa leftover."
+}

@@ -1,0 +1,48 @@
+{
+  "observationId": "tinker.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "tinker",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-tinker-demo.myshopify.com/",
+  "selector": "#Details-menu-drawer-container",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "375 hamburger. Organizers/Productivity/Chargers/Decor + nested product cards (Gather MagSafe/Note Tray/Small Tray).",
+  "delta": "Horizon header-drawer + nested resource-card theme-blocks. 768 hamburger 0px — leftover.",
+  "captureMode": "viewport",
+  "prepareClick": "header summary.header__icon--menu[aria-label='Menu']",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://theme-tinker-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header summary.header__icon--menu[aria-label='Menu']",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "375 drawer + bento ürün kartları"
+    }
+  ],
+  "stateFindings": {
+    "open": "375: Organizers / Productivity / Chargers / Decor + Gather MagSafe $89 / Note Tray $39 / Small Tray $49 kartları."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "768 hamburger 0px — desktop nav (Organizers…Decor). 1440 hamburger yok."
+    }
+  ],
+  "interactionNote": "768/1440 N/A. Nested product link tıklanmadı (sayfa kaçar)."
+}

@@ -1,0 +1,70 @@
+{
+  "observationId": "tinker.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "tinker",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://theme-tinker-demo.myshopify.com/products/craighill-desk-knife-brass",
+  "selector": "#shopify-section-template--26058348953903__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "Craighill Desk Knife. Handle color Brass / Black Steel. Qty + Add to cart. Variant change interact.",
+  "delta": "Horizon product-information + sticky-add-to-cart. Buy it now / checkout tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-tinker-demo.myshopify.com/products/craighill-desk-knife-brass",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--26058348953903__main",
+      "capture": true,
+      "etiket": "brass",
+      "not": "Handle color Brass"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "fieldset.variant-option label, .variant-option--buttons label, input[type='radio'][value*='Black'] + label, label[for*='black' i]",
+      "capture": true,
+      "etiket": "black-steel",
+      "not": "Handle color → Black Steel"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Craighill Desk Knife · Brass seçili beklenir.",
+    "changed": "Black Steel seçimi beklenir."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "open",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "filled",
+      "sebep": "Sepet drawer/sayfada"
+    },
+    {
+      "state": "input",
+      "sebep": "Anlamsız"
+    }
+  ],
+  "interactionNote": "Tek option change. Checkout yok. Selector yoklamadan sonra daraltılabilir."
+}
