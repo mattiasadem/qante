@@ -1,0 +1,73 @@
+{
+  "observationId": "canopy.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "canopy",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://canopy-theme-natural.myshopify.com/",
+  "selector": "predictive-search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "Header içi her zaman görünür #header-search. Product type All. katalogSorgu: cheese (42 sonuç sayfası).",
+  "delta": "Modal/drawer değil; inline + .predictive-search dropdown. Host 1440 ~45px; sonuç kutusu ~657×611.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://canopy-theme-natural.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Boş header search"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#header-search",
+      "value": "cheese",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-cheese",
+      "not": "cheese → Suggestions + Products/Collections (Smoked/Cottage/Swiss/Blue Cheese)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "input": ""
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "Input her zaman görünür; ayrı opener yok"
+    },
+    {
+      "state": "hover",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "filled",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "changed",
+      "sebep": "Tek sorgu"
+    }
+  ],
+  "interactionNote": "Enter/submit yok. Product type All açılmadı.",
+  "capture": {
+    "url": "https://canopy-theme-natural.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": ""
+  }
+}

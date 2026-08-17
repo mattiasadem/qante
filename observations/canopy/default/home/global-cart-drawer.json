@@ -1,0 +1,116 @@
+{
+  "observationId": "canopy.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "canopy",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://canopy-theme-natural.myshopify.com/",
+  "selector": "#cart-drawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "cart-drawer. 1440 body.cart-drawer-docked sağ panel 360px (her zaman). 375/768 #cart-icon drawer açar (sayfa değişmez).",
+  "delta": "Docked desktop + overlay mobile. Promoted products + Eat Fresh! medya. Qty drawer'da var.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://canopy-theme-natural.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bos-cekmece",
+      "not": "Boş drawer: Your cart is empty + Start shopping + Don't miss these deals"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "selector": "#cart-drawer",
+      "value": 3000,
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bos-docked",
+      "not": "1440 #cart-icon /cart'a gider — tıklanmaz. Docked boş panel."
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://canopy-theme-natural.myshopify.com/products/soured-cream",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--18143730139336__main button[name='add']",
+      "capture": false,
+      "not": "Soured Cream 7.5oz Add to cart"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": "#cart-drawer",
+      "value": 8000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "soured-cream",
+      "not": "Soured Cream 7.5 oz $300 qty1. Checkout tıklanmaz."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#cart-drawer button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Drawer adet +1"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "filled": "",
+    "changed": ""
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "open",
+      "sebep": "Açılma initial/filled ile aynı drawer"
+    },
+    {
+      "state": "input",
+      "sebep": "Anlamsız"
+    }
+  ],
+  "interactionNote": "1440 cart ikonu /cart. Checkout / Shop Pay yok. Fiyat ekranda $300 (3.00).",
+  "capture": {
+    "url": "https://canopy-theme-natural.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": ""
+  }
+}

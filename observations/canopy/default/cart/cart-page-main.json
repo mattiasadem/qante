@@ -1,0 +1,87 @@
+{
+  "observationId": "canopy.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "canopy",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://canopy-theme-natural.myshopify.com/cart",
+  "selector": "#shopify-section-template--18143729680584__main",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Boş: Your cart is empty + Start shopping. Dolu: Soured Cream 7.5 oz $300 + free shipping bar.",
+  "delta": "Cart page + You may also like içeride. Checkout tıklanmaz.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://canopy-theme-natural.myshopify.com/cart",
+      "capture": true,
+      "etiket": "bos-sepet",
+      "not": "Your cart is empty"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://canopy-theme-natural.myshopify.com/products/soured-cream",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--18143730139336__main button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://canopy-theme-natural.myshopify.com/cart",
+      "capture": true,
+      "etiket": "dolu-sepet",
+      "not": "Soured Cream 7.5 oz qty1 $300. Checkout yok."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--18143729680584__main button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Satır adet +1 — featured collection plus değil"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "filled": "",
+    "changed": ""
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "open",
+      "sebep": "Sayfa, drawer değil"
+    },
+    {
+      "state": "input",
+      "sebep": "Anlamsız"
+    }
+  ],
+  "interactionNote": "Checkout tıklanmadı. Qty selector main section first plus.",
+  "capture": {
+    "url": "https://canopy-theme-natural.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": ""
+  }
+}
