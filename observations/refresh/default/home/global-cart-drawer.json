@@ -1,0 +1,75 @@
+{
+  "observationId": "refresh.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "refresh",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-refresh-demo.myshopify.com/",
+  "selector": "cart-drawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "cart-drawer.drawer.is-empty. İkon #cart-icon-bubble href=/cart; Dawn JS drawer açar. Checkout tıklanmaz.",
+  "delta": "Boş: Your cart is empty + Continue shopping. Pair Well With / koleksiyon kartı bu boş karede yok.",
+  "captureMode": "viewport",
+  "prepareClick": "#cart-icon-bubble",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-refresh-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-refresh-demo.myshopify.com/products/bar-soap-2-pack-2",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add']",
+      "capture": false,
+      "not": "Bar Soap Original ATC. Buy it now yok."
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer: satır + adet + subtotal"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "cart-drawer button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boş drawer: Your cart is empty + Continue shopping.",
+    "filled": "Bar Soap satırı, adet 1, ara toplam.",
+    "changed": "Adet 2, ara toplam güncellenir."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC gerçek tık; olmazsa /cart/add.js fallback notu. Checkout/email yok."
+}

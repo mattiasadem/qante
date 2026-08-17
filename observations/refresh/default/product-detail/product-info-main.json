@@ -1,0 +1,48 @@
+{
+  "observationId": "refresh.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "refresh",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://theme-refresh-demo.myshopify.com/products/bar-soap-2-pack-2",
+  "selector": "#shopify-section-template--16044338479356__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "Bar Soap 2 Pack. Galeri thumbnail_slider + buy box. Sale $16→$15. Scent Original/Sandalwood. Quantity stepper. ATC + Buy it now (tıklanmadı).",
+  "delta": "Dawn product--small. Pickup/complementary bu karede yok.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-refresh-demo.myshopify.com/products/bar-soap-2-pack-2",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16044338479356__main",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Scent Original seçili"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='template--16044338479356__main-1-1']",
+      "value": 2000,
+      "capture": true,
+      "etiket": "scent-sandalwood",
+      "not": "Scent Sandalwood. Buy it now yok."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Bar Soap 2 Pack, Sale, Scent Original çerçeveli.",
+    "changed": "Scent Sandalwood seçili. Başlık Bar Soap 2 Pack kalır. URL ?variant=."
+  },
+  "missingStates": [],
+  "interactionNote": "Radio label. Gift Card Amount leftover — bu PDP scent."
+}

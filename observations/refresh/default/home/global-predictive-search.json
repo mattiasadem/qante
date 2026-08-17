@@ -1,0 +1,57 @@
+{
+  "observationId": "refresh.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "refresh",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-refresh-demo.myshopify.com/",
+  "selector": "predictive-search.search-modal__form",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "Arama ikonu details-modal.header__search → #Search-In-Modal-1. katalogSorgu soap (8 sonuçlu arama).",
+  "delta": "İkon-önce modal; satır içi arama kutusu yok.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://theme-refresh-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "details-modal.header__search summary",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-modal",
+      "not": "Arama ikonu → modal + boş input"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal-1",
+      "value": "soap",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "soap yaz → öneri. Submit yok."
+    }
+  ],
+  "stateFindings": {
+    "open": "Search modal açık, boş input, sonuç listesi yok.",
+    "input": "soap yazınca ürün önerileri (Bar Soap vb.)."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "Kapalı hâl yalnız ikon; header karesinde."
+    }
+  ],
+  "interactionNote": "İki input var; görünür olan #Search-In-Modal-1. chair yok — katalog soap."
+}
