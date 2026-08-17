@@ -161,6 +161,14 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: canopy-predictive-search-375-768-crop  
+Gerekçe: Resmi 3vp input PNG var. 1440 `.predictive-search__results` cheese listesini gösteriyor (Smoked/Cottage/Swiss/Blue Cheese + Suggestions). 375×489 ve 768×427 input kareleri hero/homepage (A licence to grill!) — panel yok. `capture-interaction` viewport `scrollTo(0,0)` ve section `scrollIntoView` overlay’i kapatıyor; script’e dokunulmadı.  
+Örnekler: evidence/canopy/default/home/global-predictive-search.input.arama-cheese.375.png  
+Öneri: leftover — resmi kare var, panel 375/768’de görünmüyor  
+Karar: onay bekliyor
+
+---
+
 ADAY: canopy-pii-stop  
 Gerekçe: Newsletter Subscribe, contact Send, account, checkout, Buy it now, comment Post — tıklanmadı.  
 Örnekler: https://canopy-theme-natural.myshopify.com/pages/contact-us  

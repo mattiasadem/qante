@@ -4,13 +4,13 @@
 *Preset:* `default` (Natural) · *Slug:* `canopy`  
 *Theme Store:* https://themes.shopify.com/themes/canopy · Clean Canvas
 
-**Tema (storefront, uydurulmadı):**  
+**Tema (storefront, yeniden okundu, uydurulmadı):**  
 `Shopify.theme.name` = **canopy-v7.3.0**  
 `schema_name` = **Canopy** · `schema_version` = **7.3.0** · `role` = **main** · theme id `142543028424`  
 `theme_store_id` = **null**  
 shop `canopy-theme-natural.myshopify.com`
 
-**Durum:** Mod A walk + resmi 3vp + interact  
+**Durum:** Mod A walk + resmi 3vp + interact + validate  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -25,7 +25,7 @@ shop `canopy-theme-natural.myshopify.com`
 | Parallel | yalnız `observations/canopy/`, `evidence/canopy/`, `todo/canopy.md`, `candidates/canopy-*.md` |
 
 **Kapsam satırı:**  
-`Canopy · default (Natural) · canopy-v7.3.0 / schema_name Canopy 7.3.0 · theme_store_id null · home→PDP→PLP→collections→search→cart→about/contact→faq→blog→404 · 65 obs · 0 yeni şema · leftover: candidates/canopy-leftovers.md`
+`Canopy · default (Natural) · canopy-v7.3.0 / schema_name Canopy 7.3.0 · theme_store_id null · home→PDP→PLP→collections→search→cart→about/contact→faq→blog→404 · 65 obs · 215 PNG · 0 yeni şema · leftover: candidates/canopy-leftovers.md`
 
 ---
 
@@ -33,35 +33,35 @@ shop `canopy-theme-natural.myshopify.com`
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home + announcement/header/promo/slideshow/icons/collections/offers/featured/countdown/quotes/mosaic/IWT/columns/banner/newsletter/footer | [x] | [ ] capture |
-| Mega Groceries 1440 | interact | [ ] |
-| Predictive search `cheese` | interact 3vp | [ ] |
-| Mobile menu 375+768 | interact | [ ] 1440 hamburger 0×0 leftover |
-| Cart drawer empty + filled + qty | interact | [ ] 1440 docked; ikon /cart |
-| PDP Soured Cream Weight 7.5oz→15.0oz | interact | [ ] |
-| PLP `/collections/fruit-vegetables` | [x] | [ ] |
-| Collections index `/collections` | [x] | [ ] |
-| Search `/search?q=fresh` | [x] | [ ] |
-| Cart `/cart` empty + filled + qty | interact | [ ] |
-| About `/pages/about-us` | [x] | [ ] |
-| Contact form (Send yok) | [x] | [ ] |
-| FAQs `/pages/faqs` | [x] | [ ] |
-| Inspiration list + Buying Fresh post | [x] | [ ] |
-| 404 | [x] | [ ] |
+| Home + announcement/header/promo/slideshow/icons/collections/offers/featured/countdown/quotes/mosaic/IWT/columns/banner/newsletter/footer | [x] | [x] |
+| Mega Groceries 1440 | interact | [x] |
+| Predictive search `cheese` | interact 3vp | [x] 1440 panel; 375/768 crop leftover |
+| Mobile menu 375+768 | interact | [x] 1440 hamburger 0×0 leftover |
+| Cart drawer empty + filled + qty | interact | [x] 1440 docked; ikon /cart |
+| PDP Soured Cream Weight 7.5oz→15.0oz | interact | [x] |
+| PLP `/collections/fruit-vegetables` | [x] | [x] |
+| Collections index `/collections` | [x] | [x] |
+| Search `/search?q=fresh` | [x] | [x] |
+| Cart `/cart` empty + filled + qty | interact | [x] |
+| About `/pages/about-us` | [x] | [x] |
+| Contact form (Send yok) | [x] | [x] |
+| FAQs `/pages/faqs` | [x] | [x] |
+| Inspiration list + Buying Fresh post | [x] | [x] |
+| 404 | [x] | [x] |
 | Email / account / checkout / newsletter submit | ⛔ PII | — |
 
 ---
 
 ## Interact (pixel-check)
 
-| Bileşen | State | Beklenen |
+| Bileşen | State | Karede |
 |---|---|---|
 | navigation-header-mega | initial / open | 1440 Groceries hover → sidebar mega (görsel+kolon) |
-| global-predictive-search | initial / input | `cheese` → Suggestions + Products/Collections |
+| global-predictive-search | initial / input | 1440 `cheese` → Products + Suggestions; 375/768 crop leftover |
 | global-menu-drawer | open / changed | 375/768 hamburger + Groceries ok |
-| global-cart-drawer | initial / filled / changed | 375/768 overlay; 1440 docked; qty plus |
-| cart-page-main | initial / filled / changed | boş → Soured Cream $300 → adet 2 |
-| product-info-main | initial / changed | 7.5oz $300 → 15.0oz |
+| global-cart-drawer | initial / filled / changed | 375/768 overlay; 1440 docked; qty plus $3→$6 |
+| cart-page-main | initial / filled / changed | boş → Soured Cream $3.00 → adet 2 $6.00 |
+| product-info-main | initial / changed | 7.5oz $3.00 → 15.0oz $5.00 + backorder |
 
 ---
 
@@ -73,7 +73,7 @@ shop `canopy-theme-natural.myshopify.com`
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact mega · search · menu · cart · PDP weight
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate` — 0 error
+- [x] Official 3vp static (`capture-observation.mjs`) — 59 × 3
+- [x] Interact mega · search · menu · cart · PDP weight
+- [x] PNG bak → stateFindings
+- [x] `npm run validate` — 0 error

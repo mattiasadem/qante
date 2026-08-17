@@ -5,11 +5,18 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://canopy-theme-natural.myshopify.com/",
-  "selector": "predictive-search",
+  "selector": "#header-search",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
-  "notlar": "Header içi her zaman görünür #header-search. Product type All. katalogSorgu: cheese (42 sonuç sayfası).",
-  "delta": "Modal/drawer değil; inline + .predictive-search dropdown. Host 1440 ~45px; sonuç kutusu ~657×611.",
+  "evidence": [
+    "evidence/canopy/default/home/global-predictive-search.initial.arama-bos.1440.png",
+    "evidence/canopy/default/home/global-predictive-search.initial.arama-bos.375.png",
+    "evidence/canopy/default/home/global-predictive-search.initial.arama-bos.768.png",
+    "evidence/canopy/default/home/global-predictive-search.input.arama-cheese.1440.png",
+    "evidence/canopy/default/home/global-predictive-search.input.arama-cheese.375.png",
+    "evidence/canopy/default/home/global-predictive-search.input.arama-cheese.768.png"
+  ],
+  "notlar": "1440 satır içi #header-search (All + Search for fruit…). 375/768 header’da büyüteç; input DOM’da. katalogSorgu: cheese.",
+  "delta": "Modal değil; #header-search + .predictive-search dropdown. Host <predictive-search> 375/768 0px. Viewport/section scroll overlay’i 375/768’de kapatır.",
   "captureMode": "viewport",
   "interactionStates": [
     "initial",
@@ -30,35 +37,32 @@
       "action": "fill",
       "selector": "#header-search",
       "value": "cheese",
+      "capture": false,
+      "not": "cheese yaz"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "selector": ".predictive-search__results",
+      "value": 8000,
       "capture": true,
-      "captureMode": "viewport",
+      "captureMode": "section",
+      "captureSelector": ".predictive-search__results",
       "etiket": "arama-cheese",
-      "not": "cheese → Suggestions + Products/Collections (Smoked/Cottage/Swiss/Blue Cheese)"
+      "not": "Ürün/öneri listesi. Viewport scroll overlay kapatır."
     }
   ],
   "stateFindings": {
-    "initial": "",
-    "input": ""
+    "initial": "375/768: büyüteç ikonu, yazılmış sorgu yok. 1440: boş satır içi Search for fruit… + All; dropdown kapalı.",
+    "input": "1440 section crop: Products (altı çizili) / Collections; Smoked Cheese $4.24 ($5.24 üstü çizili) · Cottage Cheese $3.50 · Swiss Cheese From $3.00 · Blue Cheese $3.68; View all search results; Suggestions: cheese."
   },
   "missingStates": [
     {
-      "state": "open",
-      "sebep": "Input her zaman görünür; ayrı opener yok"
-    },
-    {
-      "state": "hover",
-      "sebep": "Anlamsız"
-    },
-    {
-      "state": "filled",
-      "sebep": "Anlamsız"
-    },
-    {
-      "state": "changed",
-      "sebep": "Tek sorgu"
+      "state": "input",
+      "sebep": "375/768 resmi input PNG var (375×489, 768×427) ama kare hero/homepage (BBQ's made easy / A licence to grill!) — cheese listesi yok. Capture scroll overlay’i kapatıyor; 1440 panel duruyor. Enter yok."
     }
   ],
-  "interactionNote": "Enter/submit yok. Product type All açılmadı.",
+  "interactionNote": "Enter/submit yok. Product type All açılmadı. 375/768 input karesi leftover — candidates/canopy-leftovers.md.",
   "capture": {
     "url": "https://canopy-theme-natural.myshopify.com/",
     "viewports": [
@@ -68,6 +72,6 @@
     ],
     "mode": "viewport",
     "method": "interaction-steps",
-    "updatedAt": ""
+    "updatedAt": "2026-08-17T21:11:18.670Z"
   }
 }
