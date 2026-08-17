@@ -1,0 +1,86 @@
+{
+  "observationId": "horizon.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "horizon",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-horizon-demo.myshopify.com/",
+  "selector": "dialog.search-modal__content",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "dialog-component#search-modal + predictive-search-component. Input #cmdk-input placeholder Search. Katalog: wool.",
+  "delta": "Horizon predictive-search. Kapalı 0 yükseklik. Açık: Recently viewed + Products. search-button.mobile:hidden (768/1440); 375 desktop:hidden.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-horizon-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "search-button.desktop\\:hidden button[aria-label='Search']",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "375 Search"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "search-button.mobile\\:hidden button[aria-label='Search']",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "768/1440 Search"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#cmdk-input",
+      "value": "wool",
+      "capture": false,
+      "not": "katalog: wool (39 sonuç sayfa)"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "#cmdk-input",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "wool",
+      "not": "Öneri/ürün listesi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Search overlay + boş input. Recently viewed / Products öneri (sorgu yok).",
+    "input": "wool → 11 search results; Michael Shaggy Wool Cardigan $282, Wool Saxony 2Tuck Slacks $212, Lightweight Wool Walk Shorts $134…"
+  },
+  "missingStates": [],
+  "interactionNote": "375 opener search-button.desktop:hidden; 768/1440 search-button.mobile:hidden. Enter/submit yok. PII yok."
+}
