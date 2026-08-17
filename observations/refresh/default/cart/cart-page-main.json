@@ -1,0 +1,83 @@
+{
+  "observationId": "refresh.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "refresh",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://theme-refresh-demo.myshopify.com/cart",
+  "selector": "#shopify-section-template--16044338217212__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/refresh/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/refresh/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/refresh/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/refresh/default/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/refresh/default/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/refresh/default/cart/cart-page-main.initial.cart-bos.768.png"
+  ],
+  "notlar": "Boş: Your cart is empty + Continue shopping. cart-footer boşken h=0. Checkout tıklanmaz.",
+  "delta": "",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-refresh-demo.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16044338217212__cart-items",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-refresh-demo.myshopify.com/products/bar-soap-2-pack-2",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-refresh-demo.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16044338217212__cart-items",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu satır + özet. Check out yok."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + Continue shopping (pill).",
+    "filled": "Your cart + Continue shopping link. Bar Soap 2 Pack, Scent Original, adet 1, $15. Checkout footer bu selector kırpında yok."
+  },
+  "missingStates": [],
+  "interactionNote": "cart-footer ayrı section; doluyken görünür. Checkout yok.",
+  "capture": {
+    "url": "https://theme-refresh-demo.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:17:22.884Z"
+  }
+}
