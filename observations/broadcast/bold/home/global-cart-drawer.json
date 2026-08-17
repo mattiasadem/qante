@@ -1,0 +1,108 @@
+{
+  "observationId": "broadcast.bold.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "broadcast",
+  "preset": "bold",
+  "sayfa": "home",
+  "url": "https://broadcast-bold.myshopify.com/",
+  "selector": "#cart-drawer .drawer__inner",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/broadcast/bold/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/broadcast/bold/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/broadcast/bold/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/broadcast/bold/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/broadcast/bold/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/broadcast/bold/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/broadcast/bold/home/global-cart-drawer.initial.sepet-bos.1440.png",
+    "evidence/broadcast/bold/home/global-cart-drawer.initial.sepet-bos.375.png",
+    "evidence/broadcast/bold/home/global-cart-drawer.initial.sepet-bos.768.png"
+  ],
+  "notlar": "cart-drawer#cart-drawer. Header Cart ikon drawer açar (href /cart da var).",
+  "delta": "Boş: Your Cart 0. Dolu + adet interact.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://broadcast-bold.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.navlink--cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://broadcast-bold.myshopify.com/products/multivitamin-18",
+      "capture": false,
+      "not": "Multivitamin 18+ ATC"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#AddToCart--template--15449277792320__main",
+      "capture": false,
+      "not": "ADD TO CART $50.00"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a.navlink--cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#cart-drawer button[name='increase']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "YOUR CART (0). Your Cart is Empty + HOME / NEWS / CONTACT hapları.",
+    "filled": "YOUR CART (1). WELCOME10 metni. $150 away from free shipping. Multivitamin 18+ Type Bottle $50 qty 1. SUBTOTAL $50.00 USD. CHECKOUT görünür — tıklanmadı.",
+    "changed": "YOUR CART (2). $100 away from free shipping. qty 2. SUBTOTAL $100.00 USD."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout / kupon uygulanmadı. Qty: button[name='increase']. Host #cart-drawer açıkken 0×0 — kutu #cart-drawer .drawer__inner.",
+  "capture": {
+    "url": "https://broadcast-bold.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:31:07.648Z"
+  }
+}
