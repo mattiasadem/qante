@@ -1,0 +1,83 @@
+{
+  "observationId": "flow.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "flow",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://eight-nourish-demo.myshopify.com/",
+  "selector": "predictive-search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/flow/default/home/global-predictive-search.initial.search-bos.1440.png",
+    "evidence/flow/default/home/global-predictive-search.initial.search-bos.375.png",
+    "evidence/flow/default/home/global-predictive-search.initial.search-bos.768.png",
+    "evidence/flow/default/home/global-predictive-search.input.mango.1440.png",
+    "evidence/flow/default/home/global-predictive-search.input.mango.375.png",
+    "evidence/flow/default/home/global-predictive-search.input.mango.768.png"
+  ],
+  "notlar": "a.search-button → predictive-search overlay. Input.predictive-search__input placeholder Search our smoothies... katalogSorgu=mango.",
+  "delta": "Shopify.theme.name `Flow R1 — design base` · id 150685581382 · schema_name Flow · schema_version 42.0.0 · theme_store_id null · role main · shop flow-queenstown.myshopify.com. Official walk eight-nourish-demo.myshopify.com (Nourish). flow-demo.myshopify.com = Debut, kullanılmadı. flow-theme.myshopify.com password, kullanılmadı.",
+  "captureMode": "viewport",
+  "prepareClick": "a.search-button[aria-label='Search']",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eight-nourish-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.search-button[aria-label='Search']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Boş overlay"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input.predictive-search__input",
+      "value": "mango",
+      "capture": false,
+      "not": "katalogSorgu mango"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mango",
+      "not": "Avocado & Mango / Mango & Coconut"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Overlay açık, input boş (Search our smoothies...). 1440: Popular categories Super Detox / Energy Boosting / Super Green + Best sellers ızgara. 375 dar overlay.",
+    "input": "mango. Suggestions: mango + View all. Products: Avocado & Mango From $2.99 (5.0) · Mango & Coconut From $2.99 (4.8). 375 Products/Other tab. Submit yok."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu=mango. Submit/PII yok. /search?q=mango ayrı sayfa.",
+  "capture": {
+    "url": "https://eight-nourish-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T20:44:48.204Z"
+  }
+}
