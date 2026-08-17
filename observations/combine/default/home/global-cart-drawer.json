@@ -1,0 +1,87 @@
+{
+  "observationId": "combine.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "combine",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://combine-theme-main.myshopify.com/",
+  "selector": "#site-cart-sidebar",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "a.area--cart Open cart. #site-cart-sidebar + #mini-cart-popup. Gift wrapping / discount codes drawer içinde.",
+  "delta": "Sidebar drawer, Dawn notification değil.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://combine-theme-main.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.area--cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://combine-theme-main.myshopify.com/products/carafe-1-2ltr",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.add-to-cart.button--product, form[action*='/cart/add'] button[type='submit']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a.area--cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "carafe-qty1",
+      "not": "Dolu drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#site-cart-sidebar button[name='plus'], #AjaxCartForm button[name='plus'], #site-cart-sidebar [data-qty-plus], #site-cart-sidebar button[aria-label*='Increase' i]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Drawer adet +"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı. Qty selector canlıya göre düzeltilebilir."
+}

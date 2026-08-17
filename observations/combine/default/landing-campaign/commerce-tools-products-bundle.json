@@ -1,0 +1,50 @@
+{
+  "observationId": "combine.default.landing-campaign.commerce-tools-products-bundle",
+  "schemaId": "commerce-tools-products-bundle",
+  "kaynak": "combine",
+  "preset": "default",
+  "sayfa": "landing-campaign",
+  "url": "https://combine-theme-main.myshopify.com/pages/build-your-set",
+  "selector": "#shopify-section-template--21976061051113__166434587223c52fdf",
+  "evidenceSlug": "commerce-tools-products-bundle",
+  "evidence": [],
+  "notlar": "Build Your Set · Buy 2+ items & save 30%. Add to bundle. Kit discount will be applied.",
+  "delta": "Asıl bundle builder sayfası. Home'daki .2 ile aynı tip.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://combine-theme-main.myshopify.com/pages/build-your-set",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21976061051113__166434587223c52fdf",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Boş bundle + ürün grid"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--21976061051113__166434587223c52fdf button.add-to-cart:has-text('Add to bundle')",
+      "capture": true,
+      "etiket": "bir-urun",
+      "not": "İlk Add to bundle"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Checkout yok. 3. ürüne kadar tıklanmadı — leftover olabilir."
+}

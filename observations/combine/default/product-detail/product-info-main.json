@@ -1,0 +1,47 @@
+{
+  "observationId": "combine.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "combine",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://combine-theme-main.myshopify.com/products/carafe-1-2ltr",
+  "selector": "#shopify-section-template--21976060199145__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "Carafe 1.2Ltr. $55. Color Clear/Amber/Moss swatch. ADD TO CART. Sticky ATC: Choose options / $55.",
+  "delta": "Sticky ATC feature (ayrı şema değil). Rec section 0px leftover.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://combine-theme-main.myshopify.com/products/carafe-1-2ltr",
+      "capture": true,
+      "etiket": "clear",
+      "not": "Default Color Clear $55"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='carafe-1-2ltr-option-color-2-template--21976060199145__main']",
+      "capture": true,
+      "etiket": "amber",
+      "not": "Color Amber"
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": ".sticky-add-to-cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sticky-atc",
+      "not": "Sticky ATC bar"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Buy it now / checkout tıklanmadı."
+}

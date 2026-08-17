@@ -1,0 +1,99 @@
+{
+  "observationId": "combine.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "combine",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://combine-theme-main.myshopify.com/cart",
+  "selector": "#shopify-section-template--21976060788969__main",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Your cart is currently empty. Continue browsing. Recommendations section 0px.",
+  "delta": "Checkout tıklanmadı. Discount codes accordion.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://combine-theme-main.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://combine-theme-main.myshopify.com/products/carafe-1-2ltr",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.add-to-cart.button--product, form[action*='/cart/add'] button[type='submit']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://combine-theme-main.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "carafe-qty1",
+      "not": "Dolu cart"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], [data-qty-plus], button[aria-label*='Increase' i]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +1"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı."
+}
