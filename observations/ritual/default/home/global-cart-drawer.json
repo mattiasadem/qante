@@ -1,0 +1,72 @@
+{
+  "observationId": "ritual.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "ritual",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-ritual-demo.myshopify.com/",
+  "selector": ".cart-drawer__dialog",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Horizon cart-drawer-component. Boş: Your cart is empty; Have an account? Log in; Continue shopping.",
+  "delta": "/cart ayrı sayfa (cart-page-main). Checkout/login tıklanmadı.",
+  "captureMode": "viewport",
+  "prepareClick": "header button[aria-label='Cart']",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-ritual-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header button[aria-label='Cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-ritual-demo.myshopify.com/products/rose-11-bag-1",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#BuyButtons-ProductSubmitButton-AVVJJTGY5TXZTMnJ4c__add-to-cart",
+      "capture": false,
+      "not": "Rose 11. Bag Add to cart"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": "1800",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".cart-drawer__dialog button[name='plus'], .cart-drawer quantity-selector button[name='plus']",
+      "value": "1500",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Checkout / login yok. Qty selector capture sonrası doğrulanacak."
+}

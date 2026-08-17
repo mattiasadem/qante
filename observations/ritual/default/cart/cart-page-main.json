@@ -1,0 +1,60 @@
+{
+  "observationId": "ritual.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "ritual",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://theme-ritual-demo.myshopify.com/cart",
+  "selector": "#shopify-section-template--20531863748797__cart-section",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Boş: YOUR CART IS EMPTY · Have an account? Log in · Continue shopping.",
+  "delta": "Horizon cart-section. Login tıklanmadı. Checkout yok.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-ritual-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş sayfa"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-ritual-demo.myshopify.com/products/rose-11-bag-1",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#BuyButtons-ProductSubmitButton-AVVJJTGY5TXZTMnJ4c__add-to-cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-ritual-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepet-dolu",
+      "not": "Rose 11. Bag satır"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--20531863748797__cart-section button[name='plus']",
+      "value": "1500",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Checkout / login yok."
+}
