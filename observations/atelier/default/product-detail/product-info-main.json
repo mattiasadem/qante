@@ -1,0 +1,53 @@
+{
+  "observationId": "atelier.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "atelier",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://theme-atelier-demo.myshopify.com/products/louise-slide-sandal-south-america",
+  "selector": "#shopify-section-template--26420035879210__main .product-details",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "Louise Slide Sandal $415. Size 35–41. ADD TO CART + BUY IT NOW. Buy box ~605px.",
+  "delta": "Horizon product-information nested theme-blocks: media-gallery (Louise ~2.6k / Sera Mia ~10k px) leftover. Color ayrı ürün (sera-mia-black vs earth). Sticky ATC 0px.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-atelier-demo.myshopify.com/products/louise-slide-sandal-south-america",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--26420035879210__main .product-details",
+      "capture": true,
+      "etiket": "size-35",
+      "not": "Default Size 35 $415"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".product-details label.variant-option__button-label:has-text('36')",
+      "capture": true,
+      "etiket": "size-36",
+      "not": "Size 36"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Yazılacak — capture sonrası",
+    "changed": "Yazılacak — capture sonrası"
+  },
+  "missingStates": [],
+  "interactionNote": "Buy it now / checkout tıklanmadı. Sera Mia renk ayrı PDP leftover."
+}

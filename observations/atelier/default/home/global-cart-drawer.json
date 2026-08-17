@@ -1,0 +1,93 @@
+{
+  "observationId": "atelier.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "atelier",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-atelier-demo.myshopify.com/",
+  "selector": "dialog.cart-drawer__dialog",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Horizon cart-drawer-component. Boş: Your cart is empty. Dolu: Louise satır + adet.",
+  "delta": "/cart ayrı sayfa (cart-page-main). Checkout/login tıklanmadı.",
+  "captureMode": "viewport",
+  "prepareClick": "header button[aria-label='Cart']",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-atelier-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header button[aria-label='Cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-atelier-demo.myshopify.com/products/louise-slide-sandal-south-america",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'], .product-details button.add-to-cart-button",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": "dialog.cart-drawer__dialog",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "louise-qty1",
+      "not": "ATC drawer açar"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "dialog.cart-drawer__dialog button[name='plus'], cart-items-component button[name='plus'], button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Yazılacak — capture sonrası",
+    "filled": "Yazılacak — capture sonrası",
+    "changed": "Yazılacak — capture sonrası"
+  },
+  "missingStates": [],
+  "interactionNote": "ATC UI button[name=add]. Checkout/login tıklanmadı."
+}

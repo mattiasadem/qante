@@ -1,0 +1,71 @@
+{
+  "observationId": "atelier.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "atelier",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-atelier-demo.myshopify.com/",
+  "selector": "dialog.search-modal__content",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "dialog-component#search-modal + predictive-search-component. Input #cmdk-input.",
+  "delta": "Horizon predictive-search-form. katalogSorgu bag (241 sonuç sayfa).",
+  "captureMode": "viewport",
+  "prepareClick": "search-button.search-action--hidden-on-drawer button[aria-label='Search']",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-atelier-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "search-button.search-action--hidden-on-drawer button[aria-label='Search']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Boş search modal"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#cmdk-input, dialog.search-modal__content input[name='q']",
+      "value": "bag",
+      "capture": false,
+      "not": "katalog: Mini Louise / Flex / Business Bag"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "#cmdk-input, dialog.search-modal__content input[name='q']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bag",
+      "not": "Öneri/ürün listesi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Yazılacak — capture sonrası",
+    "input": "Yazılacak — capture sonrası"
+  },
+  "missingStates": [],
+  "interactionNote": "375/768/1440 header Search (search-action--hidden-on-drawer 44×44). Submit /search ayrı. PII yok."
+}

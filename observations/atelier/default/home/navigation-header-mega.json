@@ -1,0 +1,64 @@
+{
+  "observationId": "atelier.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "atelier",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-atelier-demo.myshopify.com/",
+  "selector": "#shopify-section-sections--26420036043050__header_section",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Atelier wordmark. 1440/768: NEW IN · BAGS · SHOES · ACCESSORIES (768’de MORE). Search + Cart. Home’da overlay (section h=0). /collections/all’da 74px.",
+  "delta": "Shopify.theme.name Updated copy of Atelier demo store 3.2.0 · id 184916082986 · schema_name Atelier · schema_version 3.4.0 · theme_store_id 3621 · role main · shop se-horizon4-en-umir.myshopify.com. Horizon header-component. Account (shopify-account) tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-atelier-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bar",
+      "not": "Kapalı bar + overlay hero"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "header-menu a.menu-list__link[href='/collections/whats-new']",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "new-in-mega",
+      "not": "NEW IN hover → mega SERA MIA / MONOLIT / NEO + ürün kartları"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Yazılacak — capture sonrası",
+    "open": "Yazılacak — capture sonrası"
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375 hamburger ayrı global-menu-drawer. 768 hamburger 0px — header-menu NEW IN BAGS SHOES MORE."
+    }
+  ],
+  "interactionNote": "Mega 1440 NEW IN. 768 mega hover yoklandı değil (MORE overflow). Account/login tıklanmadı."
+}
