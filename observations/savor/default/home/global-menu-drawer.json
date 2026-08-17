@@ -1,0 +1,56 @@
+{
+  "observationId": "savor.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "savor",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://savor-theme-demo.myshopify.com/",
+  "selector": "#Details-menu-drawer-container .menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/savor/default/home/global-menu-drawer.open.hamburger.375.png"
+  ],
+  "captureMode": "viewport",
+  "prepareClick": "#Details-menu-drawer-container > summary[aria-label='Menu']",
+  "notlar": "375 hamburger. Horizon header-drawer. SHOP + BARBECUE/DIPPING/GIFTS/MERCH + ABOUT + RECIPES + All Products kart.",
+  "delta": "768 hamburger 0×0 — desktop Shop/About/Recipes. 1440 hamburger yok. Nested child list düz (akordeon drill yok).",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://savor-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary[aria-label='Menu']",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "375 drawer"
+    }
+  ],
+  "stateFindings": {
+    "open": "375 soldan beyaz drawer + X. SHOP altında BARBECUE / DIPPING / GIFTS / MERCH; sonra ABOUT / RECIPES. Altta ALL PRODUCTS görsel kart. Sağda kırmızı hero şeridi görünür."
+  },
+  "missingStates": [],
+  "interactionNote": "768/1440 N/A. Account/login drawer’da yoklandı değil.",
+  "capture": {
+    "url": "https://savor-theme-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:28:51.656Z"
+  }
+}
