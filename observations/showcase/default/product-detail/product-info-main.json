@@ -1,0 +1,59 @@
+{
+  "observationId": "showcase.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "showcase",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://betty-theme.myshopify.com/products/city-all-black",
+  "selector": "#shopify-section-template--19324544057397__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/showcase/default/product-detail/product-info-main.changed.size-midi.1440.png",
+    "evidence/showcase/default/product-detail/product-info-main.changed.size-midi.375.png",
+    "evidence/showcase/default/product-detail/product-info-main.changed.size-midi.768.png",
+    "evidence/showcase/default/product-detail/product-info-main.initial.ilk-hal.1440.png",
+    "evidence/showcase/default/product-detail/product-info-main.initial.ilk-hal.375.png",
+    "evidence/showcase/default/product-detail/product-info-main.initial.ilk-hal.768.png"
+  ],
+  "notlar": "City - All Black $89/$69. Size COMPACT/MIDI/GRANDE. Qty −/+. ADD TO CART. Trust ikon + accordion + Pairs well with aynı template.",
+  "delta": "Tek section-product-template. Tabs/related ayrı shopify-section değil. Pickup Ottawa — tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://betty-theme.myshopify.com/products/city-all-black",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Size COMPACT varsayılan"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label.opt-label[for='product-form-template--19324544057397__main-4854274621493-1-opt-1']",
+      "capture": true,
+      "etiket": "size-midi",
+      "not": "COMPACT → MIDI"
+    }
+  ],
+  "stateFindings": {
+    "initial": "COMPACT seçili. $69 / $89. 13 in stock. ADD TO CART. Accordion + Pairs well with.",
+    "changed": "MIDI altı çizili. Fiyat aynı $69/$89. Stok 13→30. Galeri aynı."
+  },
+  "missingStates": [],
+  "interactionNote": "Fiyat size ile değişmedi; stok sayısı değişti. Checkout / Shop Pay / More payment options duruldu.",
+  "capture": {
+    "url": "https://betty-theme.myshopify.com/products/city-all-black",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T20:48:05.367Z"
+  }
+}
