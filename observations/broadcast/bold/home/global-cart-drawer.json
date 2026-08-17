@@ -1,0 +1,87 @@
+{
+  "observationId": "broadcast.bold.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "broadcast",
+  "preset": "bold",
+  "sayfa": "home",
+  "url": "https://broadcast-bold.myshopify.com/",
+  "selector": "#cart-drawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "cart-drawer#cart-drawer. Header Cart ikon drawer açar (href /cart da var).",
+  "delta": "Boş: Your Cart 0. Dolu + adet interact.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://broadcast-bold.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.navlink--cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://broadcast-bold.myshopify.com/products/multivitamin-18",
+      "capture": false,
+      "not": "Multivitamin 18+ ATC"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#AddToCart--template--15449277792320__main",
+      "capture": false,
+      "not": "ADD TO CART $50.00"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a.navlink--cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#cart-drawer button[name='plus'], #cart-drawer [data-qty-increase], #cart-drawer .qty__adjust--plus",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boş Your Cart.",
+    "filled": "Multivitamin 18+ satırı (kareye bakılacak).",
+    "changed": "Adet artışı (kareye bakılacak)."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı. Qty selector yoklanırsa missingStates."
+}

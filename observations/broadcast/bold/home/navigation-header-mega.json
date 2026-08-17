@@ -1,0 +1,46 @@
+{
+  "observationId": "broadcast.bold.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "broadcast",
+  "preset": "bold",
+  "sayfa": "home",
+  "url": "https://broadcast-bold.myshopify.com/",
+  "selector": "header.theme__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "logo_center_menu_left. Shop / About / FAQ / Learn + SHOP SALE. Search summary + Account + Cart. 1440 Shop hover-disclosure mega.",
+  "delta": "Shop <a href=/collections/all> — tıklama sayfaya gider; mega hover. Account duruldu.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://broadcast-bold.myshopify.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "hover-disclosure.menu__item.grandparent > a.navlink--toplevel",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Shop hover → header__dropdown 3 kolon + 2 görsel. Shop <a> tıklanmadı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Shop About FAQ Learn + logo + search + account + cart. Mega kapalı.",
+    "open": "1440 Shop mega: kolonlar + görseller (kareye bakılacak)."
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 mega yok (hamburger). Shop href /collections/all — yalnız hover."
+}

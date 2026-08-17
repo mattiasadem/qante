@@ -1,0 +1,41 @@
+{
+  "observationId": "broadcast.bold.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "broadcast",
+  "preset": "bold",
+  "sayfa": "product-detail",
+  "url": "https://broadcast-bold.myshopify.com/products/multivitamin-18",
+  "selector": "#shopify-section-template--15449277792320__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "Multivitamin 18+ $50. Type Bottle/Refill swatch. ADD TO CART. Sticky #cart-bar CONFIGURE ayrı obs.",
+  "delta": "varyantGosterim swatch (Bottle/Refill). Sold-out notify form PII — dur.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://broadcast-bold.myshopify.com/products/multivitamin-18",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Type Bottle varsayılan"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='template--15449277792320__mainproduct-6732831948864--type-refill-2'], #template--15449277792320__mainproduct-6732831948864--type-refill-2",
+      "capture": true,
+      "etiket": "tip-refill",
+      "not": "Type Bottle → Refill; görsel/fiyat değişiyor mu"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Type Bottle, $50.00, ADD TO CART.",
+    "changed": "Type Refill (kareye bakılacak)."
+  },
+  "missingStates": [],
+  "interactionNote": "Notify Me / checkout tıklanmadı. Tek option: Type."
+}

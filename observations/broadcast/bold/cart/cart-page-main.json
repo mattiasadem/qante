@@ -1,0 +1,69 @@
+{
+  "observationId": "broadcast.bold.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "broadcast",
+  "preset": "bold",
+  "sayfa": "cart",
+  "url": "https://broadcast-bold.myshopify.com/cart",
+  "selector": "#shopify-section-template--15449277005888__main",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Boş: Your Cart is Empty + HOME NEWS CONTACT. Drawer ayrı.",
+  "delta": "Broadcast cart template.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://broadcast-bold.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş sepet sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://broadcast-bold.myshopify.com/products/multivitamin-18",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#AddToCart--template--15449277792320__main",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://broadcast-bold.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], [data-qty-increase], .qty__adjust--plus",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your Cart is Empty + HOME NEWS CONTACT.",
+    "filled": "Multivitamin 18+ satırı (kareye bakılacak).",
+    "changed": "Adet artışı (kareye bakılacak)."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı."
+}
