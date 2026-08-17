@@ -171,9 +171,17 @@ Karar: onay bekliyor
 ---
 
 ADAY: flow-hamburger-1440  
-Gerekçe: 1440 `button.hamburger-nav-button` 0×0. 375/768 44×44.  
+Gerekçe: 1440 `button.hamburger-nav-button` 0×0. 375/768 44×44. Menu drawer observation 2 PNG (375/768).  
 Örnekler: home 1440  
 Öneri: leftover — masaüstü hamburger yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: flow-cart-page-qty-ajax  
+Gerekçe: `/cart` plus adet 2 yaptı; satır/subtotal $3.00 kaldı. UPDATE CART tıklanmadı. Drawer plus Cart (2) + $6.00.  
+Örnekler: cart-page-main changed  
+Öneri: leftover — sayfa qty AJAX  
 Karar: onay bekliyor
 
 ---

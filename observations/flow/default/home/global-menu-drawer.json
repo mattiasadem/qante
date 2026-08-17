@@ -7,7 +7,10 @@
   "url": "https://eight-nourish-demo.myshopify.com/",
   "selector": ".mobile-nav-grid-container",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/flow/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/flow/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
   "notlar": "375/768 hamburger-nav-button.js-drawer-open-left-link (44×44, aria=Navigation). 1440 hamburger 0×0. Drawer: Shop / About / Theme Features + para birimi.",
   "delta": "Shopify.theme.name `Flow R1 — design base` · id 150685581382 · schema_name Flow · schema_version 42.0.0 · theme_store_id null · role main · shop flow-queenstown.myshopify.com. Official walk eight-nourish-demo.myshopify.com (Nourish). flow-demo.myshopify.com = Debut, kullanılmadı. flow-theme.myshopify.com password, kullanılmadı.",
   "captureMode": "viewport",
@@ -42,7 +45,29 @@
       "not": "Mobil/tablet drawer"
     }
   ],
-  "stateFindings": {},
-  "missingStates": [],
-  "interactionNote": "1440 hamburger 0px. Shop yazılı <a> koleksiyona gider — expander yoklandı."
+  "stateFindings": {
+    "open": "375/768 sol drawer: X + Shop (chevron) / About (chevron) / Theme Features + United States (USD $) + Account. Arka plan karartılı."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger-nav-button 0×0 — inline Shop/About/Theme Features. 3vp open yok."
+    },
+    {
+      "state": "changed",
+      "sebep": "Shop chevron yoklandı değil — yazılı Shop <a> koleksiyona gider."
+    }
+  ],
+  "interactionNote": "1440 hamburger 0px leftover. Account tıklanmadı.",
+  "capture": {
+    "url": "https://eight-nourish-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T20:45:36.226Z"
+  }
 }

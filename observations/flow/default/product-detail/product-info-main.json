@@ -7,7 +7,14 @@
   "url": "https://eight-nourish-demo.myshopify.com/products/almond-banana",
   "selector": "#shopify-section-template--20936734670918__product-form",
   "evidenceSlug": "product-info-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/flow/default/product-detail/product-info-main.changed.size-330ml.1440.png",
+    "evidence/flow/default/product-detail/product-info-main.changed.size-330ml.375.png",
+    "evidence/flow/default/product-detail/product-info-main.changed.size-330ml.768.png",
+    "evidence/flow/default/product-detail/product-info-main.initial.ilk-hal.1440.png",
+    "evidence/flow/default/product-detail/product-info-main.initial.ilk-hal.375.png",
+    "evidence/flow/default/product-detail/product-info-main.initial.ilk-hal.768.png"
+  ],
   "notlar": "Almond & Banana. -50% BEST SELLER. Sale $5.99 / Regular $3.00 (vitrinde böyle). Size 500ml/330ml/250ml swatch. Quantity stepper. ADD TO CART. BUY IT NOW tıklanmadı.",
   "delta": "Shopify.theme.name `Flow R1 — design base` · id 150685581382 · schema_name Flow · schema_version 42.0.0 · theme_store_id null · role main · shop flow-queenstown.myshopify.com. Official walk eight-nourish-demo.myshopify.com (Nourish). flow-demo.myshopify.com = Debut, kullanılmadı. flow-theme.myshopify.com password, kullanılmadı.",
   "interactionStates": [
@@ -38,13 +45,27 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": ".swatch-element.variant-swatch.330ml label, .swatch-element.variant-swatch[data-value='330ml'] label, label:has-text('330ml')",
+      "selector": ".swatch-element.variant-swatch:has-text('330ml')",
       "capture": true,
       "etiket": "size-330ml",
-      "not": "Size 330ml"
+      "not": "Size 330ml — .330ml class CSS geçersiz"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "Almond & Banana. -50% + BEST SELLER. Size 500ml seçili. Sale ~~$5.99~~ $3.00. ADD TO CART + BUY IT NOW.",
+    "changed": "330ml hap dolu. Fiyat ~~$3.99~~ $2.00. Galeri thumb değişti."
+  },
   "missingStates": [],
-  "interactionNote": "BUY IT NOW / checkout yok. Mango & Coconut aynı product-form şablon — ayrı obs yok."
+  "interactionNote": "BUY IT NOW / checkout yok. Swatch :has-text('330ml'). Mango & Coconut aynı şablon.",
+  "capture": {
+    "url": "https://eight-nourish-demo.myshopify.com/products/almond-banana",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T20:51:31.024Z"
+  }
 }
