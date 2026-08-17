@@ -4,11 +4,16 @@
   "kaynak": "atelier",
   "preset": "default",
   "sayfa": "home",
-  "url": "https://theme-atelier-demo.myshopify.com/",
-  "selector": "#shopify-section-sections--26420036043050__header_section",
+  "url": "https://theme-atelier-demo.myshopify.com/collections/all",
+  "selector": "#header-component",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
-  "notlar": "Atelier wordmark. 1440/768: NEW IN · BAGS · SHOES · ACCESSORIES (768’de MORE). Search + Cart. Home’da overlay (section h=0). /collections/all’da 74px.",
+  "evidence": [
+    "evidence/atelier/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/atelier/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/atelier/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/atelier/default/home/navigation-header-mega.open.new-in-mega.1440.png"
+  ],
+  "notlar": "Atelier wordmark. 1440/768: NEW IN · BAGS · SHOES · ACCESSORIES (768’de MORE). Search + Cart. Home overlay header h=0 — capture /collections/all (74px).",
   "delta": "Shopify.theme.name Updated copy of Atelier demo store 3.2.0 · id 184916082986 · schema_name Atelier · schema_version 3.4.0 · theme_store_id 3621 · role main · shop se-horizon4-en-umir.myshopify.com. Horizon header-component. Account (shopify-account) tıklanmadı.",
   "captureMode": "viewport",
   "interactionStates": [
@@ -19,7 +24,7 @@
     {
       "state": "initial",
       "action": "goto",
-      "value": "https://theme-atelier-demo.myshopify.com/",
+      "value": "https://theme-atelier-demo.myshopify.com/collections/all",
       "capture": false
     },
     {
@@ -35,7 +40,7 @@
       "capture": true,
       "captureMode": "viewport",
       "etiket": "bar",
-      "not": "Kapalı bar + overlay hero"
+      "not": "Kapalı bar — /collections/all (home overlay header h=0)"
     },
     {
       "state": "open",
@@ -51,14 +56,20 @@
     }
   ],
   "stateFindings": {
-    "initial": "Yazılacak — capture sonrası",
-    "open": "Yazılacak — capture sonrası"
+    "initial": "1440/768: NEW IN BAGS SHOES ACCESSORIES (768 MORE); ATELIER serif; Search + Account + Cart. 375: hamburger + Search sol; logo; Account + Cart. Mega kapalı. Home overlay h=0 — kare /collections/all.",
+    "open": "1440 NEW IN hover: SERA MIA / MONOLIT / NEO + 3 Monolit kart $475. 375/768 mega yok."
   },
-  "missingStates": [
-    {
-      "state": "open",
-      "sebep": "375 hamburger ayrı global-menu-drawer. 768 hamburger 0px — header-menu NEW IN BAGS SHOES MORE."
-    }
-  ],
-  "interactionNote": "Mega 1440 NEW IN. 768 mega hover yoklandı değil (MORE overflow). Account/login tıklanmadı."
+  "missingStates": [],
+  "interactionNote": "Mega 1440 NEW IN. 768 mega hover yoklandı değil (MORE overflow). Account/login tıklanmadı.",
+  "capture": {
+    "url": "https://theme-atelier-demo.myshopify.com/collections/all",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:35:48.686Z"
+  }
 }

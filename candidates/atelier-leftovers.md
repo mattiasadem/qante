@@ -137,10 +137,18 @@ Karar: onay bekliyor
 
 ---
 
-## Interact not (capture sonrası güncellenecek)
+## Interact (kareye bakıldı)
 
-- Mega 1440 NEW IN: SERA MIA / MONOLIT / NEO + Monolit kartları (hover probe).
-- 375 hamburger: New in / Bags / Shoes / Accessories.
-- Search `#cmdk-input` + `bag`.
-- Cart drawer `dialog.cart-drawer__dialog`.
-- PDP Size 35 → 36 Louise $415.
+- Mega 1440 NEW IN: SERA MIA / MONOLIT / NEO + 3 Monolit $475.
+- 375 hamburger: NEW IN / BAGS / SHOES / ACCESSORIES + Monolit kart; Bags drill TYPE/COLLECTIONS/GIFTS + Business Bag $720.
+- Predictive `bag`: pills + Mini Flex / Mini Louise + VIEW ALL. 375 opener `search-action--hidden-on-menu`.
+- Cart drawer: ATC drawer açmaz — header Cart. Boş → Louise $415 adet 1 → adet 2 / $830. Checkout yok.
+- PDP Louise Size 35 → 36 (fiyat aynı $415).
+
+---
+
+ADAY: atelier-home-collection-links-not-equal-cards  
+Gerekçe: Home `collection_links` 4 eşit kart değil — sol serif liste (Shoulder/Tote/Crossbody/Clutches + adet) + sağ tek görsel. `collection-nav-image-cards` + delta.  
+Örnekler: home `#…__collection_links_Ut4aMz`  
+Öneri: leftover — Horizon collection-links  
+Karar: onay bekliyor

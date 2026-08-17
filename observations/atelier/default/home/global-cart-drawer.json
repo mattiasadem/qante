@@ -7,7 +7,17 @@
   "url": "https://theme-atelier-demo.myshopify.com/",
   "selector": "dialog.cart-drawer__dialog",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/atelier/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/atelier/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/atelier/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/atelier/default/home/global-cart-drawer.filled.louise-qty1.1440.png",
+    "evidence/atelier/default/home/global-cart-drawer.filled.louise-qty1.375.png",
+    "evidence/atelier/default/home/global-cart-drawer.filled.louise-qty1.768.png",
+    "evidence/atelier/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/atelier/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/atelier/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
   "notlar": "Horizon cart-drawer-component. Boş: Your cart is empty. Dolu: Louise satır + adet.",
   "delta": "/cart ayrı sayfa (cart-page-main). Checkout/login tıklanmadı.",
   "captureMode": "viewport",
@@ -54,7 +64,7 @@
     {
       "state": "filled",
       "action": "addToCart",
-      "selector": "button[name='add'], .product-details button.add-to-cart-button",
+      "selector": ".product-details button[name='add']",
       "capture": false
     },
     {
@@ -65,13 +75,19 @@
     },
     {
       "state": "filled",
+      "action": "click",
+      "selector": "header button[aria-label='Cart']",
+      "capture": false,
+      "not": "ATC drawer'ı otomatik açmıyor — cart ikon"
+    },
+    {
+      "state": "filled",
       "action": "waitFor",
-      "selector": "dialog.cart-drawer__dialog",
-      "value": 2000,
+      "value": 1200,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "louise-qty1",
-      "not": "ATC drawer açar"
+      "not": "Dolu drawer Louise $415"
     },
     {
       "state": "changed",
@@ -84,10 +100,21 @@
     }
   ],
   "stateFindings": {
-    "initial": "Yazılacak — capture sonrası",
-    "filled": "Yazılacak — capture sonrası",
-    "changed": "Yazılacak — capture sonrası"
+    "initial": "Your cart is empty; Have an account? Log in; CONTINUE SHOPPING. 375 tam ekran; 1440 sağ drawer.",
+    "filled": "Cart 1. LOUISE SLIDE SANDAL Size 35 $415.00 · adet 1 · Estimated total $415.00 CAD. CHECK OUT (tıklanmadı).",
+    "changed": "Cart 2. Adet 2 · satır $830.00 CAD · Estimated total $830.00 CAD. Checkout tıklanmadı."
   },
   "missingStates": [],
-  "interactionNote": "ATC UI button[name=add]. Checkout/login tıklanmadı."
+  "interactionNote": "ATC .product-details button[name=add] drawer açmaz; header Cart tıklanınca açılır. Checkout/login tıklanmadı.",
+  "capture": {
+    "url": "https://theme-atelier-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:38:47.805Z"
+  }
 }

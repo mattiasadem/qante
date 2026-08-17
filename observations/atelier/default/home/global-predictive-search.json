@@ -7,7 +7,14 @@
   "url": "https://theme-atelier-demo.myshopify.com/",
   "selector": "dialog.search-modal__content",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/atelier/default/home/global-predictive-search.initial.search-bos.1440.png",
+    "evidence/atelier/default/home/global-predictive-search.initial.search-bos.375.png",
+    "evidence/atelier/default/home/global-predictive-search.initial.search-bos.768.png",
+    "evidence/atelier/default/home/global-predictive-search.input.bag.1440.png",
+    "evidence/atelier/default/home/global-predictive-search.input.bag.375.png",
+    "evidence/atelier/default/home/global-predictive-search.input.bag.768.png"
+  ],
   "notlar": "dialog-component#search-modal + predictive-search-component. Input #cmdk-input.",
   "delta": "Horizon predictive-search-form. katalogSorgu bag (241 sonuç sayfa).",
   "captureMode": "viewport",
@@ -32,11 +39,27 @@
     {
       "state": "initial",
       "action": "click",
-      "selector": "search-button.search-action--hidden-on-drawer button[aria-label='Search']",
+      "selector": "search-button.search-action--hidden-on-menu button[aria-label='Search']",
+      "viewports": [
+        "375"
+      ],
       "capture": true,
       "captureMode": "viewport",
       "etiket": "search-bos",
-      "not": "Boş search modal"
+      "not": "375 header Search (hidden-on-menu)"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "search-button.search-action--hidden-on-drawer button[aria-label='Search']",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "768/1440 header Search"
     },
     {
       "state": "input",
@@ -63,9 +86,20 @@
     }
   ],
   "stateFindings": {
-    "initial": "Yazılacak — capture sonrası",
-    "input": "Yazılacak — capture sonrası"
+    "initial": "Modal açık, placeholder Search + X. PRODUCTS: Atlas $625 ×4 (öneri, sorgu yok). 375/768/1440.",
+    "input": "query bag. Pills: bag / mini flex bag / louise bag / micro flex bag. PRODUCTS: Mini Flex Bag - Carbon $525, Mini Louise $475, Mini Flex Mirror $570… VIEW ALL. 375 2 kolon; 1440 4×2."
   },
   "missingStates": [],
-  "interactionNote": "375/768/1440 header Search (search-action--hidden-on-drawer 44×44). Submit /search ayrı. PII yok."
+  "interactionNote": "375 Search = search-action--hidden-on-menu (drawer butonu 0px). 768/1440 = hidden-on-drawer. Submit /search ayrı. PII yok.",
+  "capture": {
+    "url": "https://theme-atelier-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:36:53.923Z"
+  }
 }
