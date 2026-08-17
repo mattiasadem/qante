@@ -7,7 +7,10 @@
   "url": "https://eurus-breath-demo.myshopify.com/",
   "selector": ".x-container-mobile-nav",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/eurus/breath/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/eurus/breath/home/global-menu-drawer.open.hamburger.768.png"
+  ],
   "captureMode": "viewport",
   "notlar": "375/768 .mobile-navigation-modern-icon-bg (id=mobile-navigation, ikon). Drawer .menu-drawer.fixed.z-[9999] aynı id. 1440 N/A (mega).",
   "delta": "Kapalı drawer -translate-x-full ama kutu boyu var; viewport karesi drawer açılmazsa homepage olur. Yazılı Collections <a> sayfaya gider.",
@@ -31,7 +34,10 @@
       "state": "open",
       "action": "click",
       "selector": ".mobile-navigation-modern-icon-bg",
-      "viewports": ["375", "768"],
+      "viewports": [
+        "375",
+        "768"
+      ],
       "capture": false,
       "not": "Hamburger ikon"
     },
@@ -39,7 +45,10 @@
       "state": "open",
       "action": "waitFor",
       "value": 1500,
-      "viewports": ["375", "768"],
+      "viewports": [
+        "375",
+        "768"
+      ],
       "capture": true,
       "captureMode": "viewport",
       "etiket": "hamburger",
@@ -47,8 +56,19 @@
     }
   ],
   "stateFindings": {
-    "open": ""
+    "open": "375/768: MENU + X. Collections (>), Shop 30% OFF (>), Templates NEW (>), Theme features. Sosyal X/FB/IG. Alt: Canada, United States (USD $), English. 1440 N/A (mega)."
   },
   "missingStates": [],
-  "interactionNote": "1440 N/A (mega birincil). İki #mobile-navigation (ikon + drawer). Yazılı Collections tıklanmadı."
+  "interactionNote": "1440 N/A (mega birincil). İki #mobile-navigation (ikon + drawer). Yazılı Collections tıklanmadı. 429 retry bir kez 375'i kaçırdı; PNG drawer açık.",
+  "capture": {
+    "url": "https://eurus-breath-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T20:07:36.625Z"
+  }
 }

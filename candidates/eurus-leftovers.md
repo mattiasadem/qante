@@ -2,9 +2,10 @@
 
 *Store:* https://eurus-breath-demo.myshopify.com/  
 *Tema (görülen):* ** Breath 10.1.0** · `schema_name` **Eurus** · `schema_version` **10.1.0** · `theme_store_id` **null**  
-*Tarih:* 2026-08-17
+*Tarih:* 2026-08-17  
+*Walk + 3vp + interact + validate:* bitti
 
-Şema icat edilmedi. En yakın mevcut tipe observation yazıldıysa burada tekrarlanmaz.
+Şema icat edilmedi. En yakın mevcut tipe observation yazıldıysa burada tekrarlanmaz. Predictive `food` ürün kartı vermedi (Plants/Herbs chip) — leftover değil, gözlenen davranış.
 
 ---
 
