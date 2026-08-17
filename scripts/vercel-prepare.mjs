@@ -3,12 +3,14 @@
  * Vercel build step: expose evidence PNGs as CDN static assets without
  * bundling them into api/index.mjs (keeps the serverless bundle small).
  *
- * Creates public/evidence → ../evidence (symlink). Vercel serves public/
- * at the deployment root before SPA rewrites hit the function.
+ * Hardlinks evidence/ into public/evidence/ (cp -al: fast, no duplicate bytes
+ * on the build disk; real files for Vercel static upload — symlinks are not
+ * reliably followed).
  */
 
 import fs from "fs";
 import path from "path";
+import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "url";
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -27,7 +29,11 @@ if (fs.existsSync(linkPath)) {
   fs.rmSync(linkPath, { recursive: true, force: true });
 }
 
-fs.symlinkSync(evidenceDir, linkPath, "dir");
+const cp = spawnSync("cp", ["-al", evidenceDir, linkPath], { stdio: "inherit" });
+if (cp.status !== 0) {
+  console.error("vercel-prepare: cp -al evidence public/evidence failed");
+  process.exit(cp.status || 1);
+}
 
 const sample = path.join(
   linkPath,
@@ -41,4 +47,6 @@ if (!fs.existsSync(sample)) {
   process.exit(1);
 }
 
-console.log("vercel-prepare: public/evidence → evidence/ (static CDN, not in function bundle)");
+console.log(
+  "vercel-prepare: public/evidence hardlinked from evidence/ (static CDN, not in function bundle)"
+);
