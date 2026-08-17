@@ -138,6 +138,30 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: pipeline-tenoff-coupon  
+Gerekçe: Cart sayfası “Use code TENOFF at checkout for 10% off”. Kupon uygulanmadı.  
+Örnekler: `/cart` filled  
+Öneri: leftover — kupon  
+Karar: onay bekliyor
+
+---
+
+ADAY: pipeline-buy-it-now  
+Gerekçe: PDP terracotta BUY IT NOW (dynamic checkout). Tıklanmadı.  
+Örnekler: Andre Luxe Cashmere Set  
+Öneri: leftover — checkout  
+Karar: onay bekliyor
+
+---
+
+ADAY: pipeline-pdp-accordions  
+Gerekçe: DESCRIPTION / CARE / SHIPPING + RETURNS + BUY IT WITH Quick View. Interact edilmedi.  
+Örnekler: product-info-main  
+Öneri: leftover — PDP derinlik  
+Karar: onay bekliyor
+
+---
+
 ADAY: pipeline-pii-stop  
 Gerekçe: Footer/home JOIN newsletter, contact SEND, checkout, account login tıklanmadı.  
 Örnekler: newsletter · `/pages/contact` · cart  
