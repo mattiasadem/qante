@@ -1,0 +1,46 @@
+{
+  "observationId": "sense.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "sense",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-sense-demo.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "375 hamburger → #menu-drawer. Skin Care / Hair Care / Body Care / Nail Polish / Blog / About Us.",
+  "delta": "1440 hamburger gizli (Dawn large-up inline). Mega yok.",
+  "captureMode": "viewport",
+  "prepareClick": "summary.header__icon--menu",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://theme-sense-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "summary.header__icon--menu",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Drawer açık; 1440 hamburger yok"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger yok (Dawn large-up) — beklenen"
+    }
+  ]
+}

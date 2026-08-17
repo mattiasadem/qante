@@ -1,0 +1,44 @@
+{
+  "observationId": "sense.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "sense",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://theme-sense-demo.myshopify.com/products/natural-vegan-lip-balm-lemon-lime",
+  "selector": "#shopify-section-template--16716094111952__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "Lip Balm / BKIND. Galeri + Flavor Lime/Berries/Peppermint (variant-radios) + qty stepper + Add to cart. Accordion: Ingredients / How to use / Shipping / Return policy. Share.",
+  "delta": "Dawn main-product. Accordion buy box içinde (ayrı product-info-tabs section yok). Sticky ATC yoklandı değil.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-sense-demo.myshopify.com/products/natural-vegan-lip-balm-lemon-lime",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16716094111952__main",
+      "capture": true,
+      "etiket": "lime",
+      "not": "Varsayılan Flavor Lime"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='template--16716094111952__main-1-1']",
+      "capture": true,
+      "etiket": "berries",
+      "not": "Flavor Berries"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Lime → Berries. Checkout/email yok."
+}

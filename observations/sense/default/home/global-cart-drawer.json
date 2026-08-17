@@ -1,0 +1,44 @@
+{
+  "observationId": "sense.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "sense",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-sense-demo.myshopify.com/products/natural-vegan-lip-balm-lemon-lime",
+  "selector": "#cart-notification",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Dawn cart-notification popup (side drawer değil). ATC sonrası Item added to your cart.",
+  "delta": "cart-drawer yok. Overlay #cart-notification. Cart ikonu /cart sayfasına gider.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-sense-demo.myshopify.com/products/natural-vegan-lip-balm-lemon-lime",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": ".product-form__submit",
+      "capture": false,
+      "not": "Lip Balm Lime ATC"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "lip-eklendi",
+      "not": "#cart-notification Item added"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Boş bildirim 0-size — initial statik çekilmedi. Checkout’a girilmedi."
+}

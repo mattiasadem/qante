@@ -1,0 +1,42 @@
+{
+  "observationId": "sense.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "sense",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-sense-demo.myshopify.com/",
+  "selector": "#shopify-section-header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Logo SENSE. 1440 düz linkler: Skin Care / Hair Care / Body Care / Nail Polish / Blog / About Us. Arama ikonu + Cart. Hesap ikonu yok.",
+  "delta": "Mega panel yok — Dawn header__inline-menu. 1440 hamburger gizli. Cart → /cart; overlay cart-notification (drawer değil).",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-sense-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-header",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "Mega yok; kapalı header"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440 düz menü + logo + search + cart. Mega kolon/görsel yok."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "Mega yok — details.mega-menu / .mega-menu__content yoklandı, bulunamadı."
+    }
+  ],
+  "interactionNote": "Hover denemesi yok; panel host yok. Mobil menü ayrı global-menu-drawer."
+}
