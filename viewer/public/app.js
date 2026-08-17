@@ -36,6 +36,7 @@ const state = {
   sel: null,
   selObs: null,
   selCand: null,
+  selList: null,
   vp: "compare",
 };
 
@@ -165,6 +166,7 @@ function syncUrl() {
   if (state.sel) p.set("sel", state.sel);
   if (state.selObs) p.set("obs", state.selObs);
   if (state.selCand) p.set("cand", state.selCand);
+  if (state.selList) p.set("list", state.selList);
   if (state.vp !== "compare") p.set("vp", state.vp);
   const url = p.toString() ? `?${p}` : location.pathname;
   history.replaceState(null, "", url);
@@ -184,6 +186,7 @@ function readUrl() {
   state.sel = p.get("sel") || null;
   state.selObs = p.get("obs") || null;
   state.selCand = p.get("cand") || null;
+  state.selList = p.get("list") || null;
   state.vp = p.get("vp") || "compare";
 }
 
@@ -361,17 +364,21 @@ async function refresh({ keepDetail = false } = {}) {
 
   if (state.view === "gallery") state.view = "browse";
 
-  if (state.view === "candidates" || !candidatesData) {
+  if (state.view === "candidates" || state.view === "lists" || !candidatesData) {
     candidatesData = await api("/api/candidates");
     const n =
       (candidatesData.counts?.candidates || 0) +
       (candidatesData.counts?.misfits || 0);
     $("#n-candidates").textContent = n ? ` ${n}` : "";
+    const nList = candidatesData.counts?.lists || 0;
+    $("#n-lists").textContent = nList ? ` ${nList}` : "";
   }
 
   renderTabs();
   if (state.view === "candidates") {
     renderCandidatesSidebar();
+  } else if (state.view === "lists") {
+    renderListsSidebar();
   } else {
     renderSidebar();
   }
@@ -380,6 +387,8 @@ async function refresh({ keepDetail = false } = {}) {
     if (!keepDetail) await renderDetail();
   } else if (state.view === "candidates") {
     renderCandidatesDetail();
+  } else if (state.view === "lists") {
+    renderListsDetail();
   } else if (state.view === "coverage") {
     await renderCoverage();
   } else if (state.view === "health") {
@@ -974,6 +983,181 @@ function wireCandLinks() {
   });
 }
 
+/* ---------------- listeler (tema / DTC takip) ---------------- */
+
+const LIST_STATUS_LABEL = {
+  done: "yapılmış",
+  "in progress": "yapılıyor",
+  "": "kuyruk",
+};
+
+const LIST_GROUP_ORDER = ["Shopify temalar", "DTC-69"];
+
+function listStatusKey(row) {
+  const s = String(row?.status || "").trim().toLowerCase();
+  if (s === "done") return "done";
+  if (s === "in progress") return "in progress";
+  return "";
+}
+
+function listStatusChip(status) {
+  const key = listStatusKey({ status });
+  const cls = key === "done" ? "ok" : key === "in progress" ? "warn" : "queue";
+  return `<span class="chip ${cls}">${esc(LIST_STATUS_LABEL[key])}</span>`;
+}
+
+function listCounts(rows) {
+  let done = 0;
+  let progress = 0;
+  let queued = 0;
+  for (const r of rows) {
+    const k = listStatusKey(r);
+    if (k === "done") done++;
+    else if (k === "in progress") progress++;
+    else queued++;
+  }
+  return { done, progress, queued, total: rows.length };
+}
+
+function listCountLabel(c) {
+  return `${c.done} yapılmış · ${c.progress} yapılıyor · ${c.queued} kuyruk`;
+}
+
+function listsFlat() {
+  if (!candidatesData) return [];
+  const q = (state.q || "").trim().toLowerCase();
+  return (candidatesData.lists || []).filter((row) => {
+    if (!q) return true;
+    const hay = [row.title, row.domain, row.slug, row.walkUrl, row.notes, row.developer, row.group]
+      .join(" ")
+      .toLowerCase();
+    return hay.includes(q);
+  });
+}
+
+function renderListsSidebar() {
+  const flat = listsFlat();
+  if (!state.selList && flat[0]) state.selList = flat[0].id;
+  if (state.selList && !flat.some((r) => r.id === state.selList) && flat[0]) {
+    state.selList = flat[0].id;
+  }
+
+  const byGroup = new Map();
+  for (const row of flat) {
+    const g = row.group || "Liste";
+    if (!byGroup.has(g)) byGroup.set(g, []);
+    byGroup.get(g).push(row);
+  }
+
+  const keys = [
+    ...LIST_GROUP_ORDER.filter((k) => byGroup.has(k)),
+    ...[...byGroup.keys()].filter((k) => !LIST_GROUP_ORDER.includes(k)),
+  ];
+
+  const groupsHtml = keys
+    .map((key) => {
+      const rows = byGroup.get(key) || [];
+      const c = listCounts(rows);
+      const head = `<div class="group-head"><span>▾ ${esc(key)}</span><span>${c.total}</span></div>`;
+      const buttons = rows
+        .map((row) => {
+          const active = state.selList === row.id;
+          const sub = row.slug || row.walkUrl || row.developer || "";
+          return `<button class="item ${active ? "active" : ""}" data-list="${esc(row.id)}">
+            <div class="id">${esc(row.title)}</div>
+            <div class="sub">${esc(sub)}</div>
+            <div class="chips">${listStatusChip(row.status)}</div>
+          </button>`;
+        })
+        .join("");
+      return head + buttons;
+    })
+    .join("");
+
+  const all = listCounts(flat);
+  $("#sidebar").innerHTML = `
+    <div class="facet-head list-head">
+      <strong>Listeler · ${flat.length}</strong>
+      <span class="list-head-count">${esc(listCountLabel(all))}</span>
+    </div>
+    <p class="amac" style="padding:.55rem .85rem;margin:0;font-size:.78rem">
+      Shopify temaları ve DTC-69 siteleri — yapılmış / yapılıyor / kuyruk.
+      Kaynak: <code>candidates/shopify-themes.md</code>, <code>candidates/dtc-69-brands.md</code>
+    </p>
+    ${groupsHtml || `<p class="empty">Liste kaydı yok</p>`}
+  `;
+}
+
+function renderListsDetail() {
+  const main = $("#main");
+  const flat = listsFlat();
+  let row = flat.find((r) => r.id === state.selList);
+  if (!row && flat[0]) {
+    state.selList = flat[0].id;
+    row = flat[0];
+    syncUrl();
+  }
+  if (!row) {
+    main.innerHTML = `<p class="empty">Liste kaydı yok. <code>candidates/</code> içinde Status sütunlu tablo gerekir.</p>`;
+    return;
+  }
+
+  const groupRows = flat.filter((r) => r.group === row.group);
+  const c = listCounts(groupRows);
+  const walk = row.walkUrl
+    ? `<a href="${esc(row.walkUrl)}" target="_blank" rel="noopener">${esc(row.walkUrl)}</a>`
+    : "—";
+  const store = row.storeUrl && row.storeUrl !== row.walkUrl
+    ? `<a href="${esc(row.storeUrl)}" target="_blank" rel="noopener">${esc(row.storeUrl)}</a>`
+    : "";
+
+  main.innerHTML = `
+    <p class="list-count-head">${esc(row.group)} · ${esc(listCountLabel(c))}</p>
+    <h2>${esc(row.title)}</h2>
+    <p class="amac">${row.theme ? "Shopify teması" : "DTC site"} · #${esc(row.num)}</p>
+    <div class="chips">
+      ${listStatusChip(row.status)}
+      ${row.developer ? `<span class="chip">${esc(row.developer)}</span>` : ""}
+      ${row.price ? `<span class="chip">${esc(row.price)}</span>` : ""}
+      ${row.slug ? `<span class="chip mono">${esc(row.slug)}</span>` : ""}
+      <span class="chip mono">${esc(row.sourceFile)}</span>
+    </div>
+    <div class="card" style="margin-top:1rem">
+      <div class="card-head"><strong>Walk URL</strong></div>
+      <p class="amac">${walk}</p>
+    </div>
+    ${
+      row.slug
+        ? `<div class="card">
+      <div class="card-head"><strong>Slug</strong></div>
+      <p class="amac"><code>observations/${esc(row.slug)}</code></p>
+    </div>`
+        : ""
+    }
+    ${
+      row.notes
+        ? `<div class="card">
+      <div class="card-head"><strong>Notlar</strong></div>
+      <div class="cand-md">${simpleMd(row.notes)}</div>
+    </div>`
+        : ""
+    }
+    ${
+      store
+        ? `<div class="card">
+      <div class="card-head"><strong>Theme Store</strong></div>
+      <p class="amac">${store}</p>
+    </div>`
+        : ""
+    }
+  `;
+  wireCandLinks();
+  main.scrollTop = 0;
+  document.querySelector("#sidebar .item.active")?.scrollIntoView({
+    block: "nearest",
+  });
+}
+
 /* ---------------- coverage ---------------- */
 
 async function renderCoverage() {
@@ -1155,6 +1339,13 @@ function bindEvents() {
       const k = gh.dataset.groupKey;
       collapsedGroups.has(k) ? collapsedGroups.delete(k) : collapsedGroups.add(k);
       return renderSidebar();
+    }
+
+    const listItem = e.target.closest(".item[data-list]");
+    if (listItem) {
+      state.selList = listItem.dataset.list;
+      state.view = "lists";
+      return refresh();
     }
 
     const cand = e.target.closest(".item[data-cand]");
