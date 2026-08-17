@@ -1,0 +1,65 @@
+{
+  "observationId": "savor.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "savor",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://savor-theme-demo.myshopify.com/",
+  "selector": "#header-component",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/savor/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/savor/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/savor/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/savor/default/home/navigation-header-mega.open.shop-mega.1440.png",
+    "evidence/savor/default/home/navigation-header-mega.open.shop-mega.768.png"
+  ],
+  "captureMode": "viewport",
+  "notlar": "Horizon header-component 90px. Logo SAVOR; Shop / About / Recipes; Search; shopify-account; Cart. Home’da transparent=always — shopify-section header 0px.",
+  "delta": "Shopify.theme.name `Updated copy of Savor demo store 3.2.0` · id 141564117043 · schema_name Savor · schema_version 3.4.0 · theme_store_id 3626 · role main · shop se-horizon7-en-erc6.myshopify.com. Nested header-menu / header-drawer / overflow-list. Account tıklanmadı. 375 hamburger; 768 desktop nav + mega.",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://savor-theme-demo.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bar",
+      "not": "Kapalı bar"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "header-menu a.menu-list__link[href='/collections/all-products']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "not": "Shop hover → #submenu-1 mega"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440/768: şeffaf bar — şişe logo SAVOR; SHOP / ABOUT / RECIPES; Search + Account + Cart. Mega kapalı. 375: siyah bar, hamburger + Search solda, logo ortada, Account + Cart sağda.",
+    "open": "768/1440 Shop hover: sol kolon BARBECUE / DIPPING / GIFTS / MERCH. 1440 sağda ALL PRODUCTS + BARBECUE SAUCES görsel kart. 768 sağda yalnız ALL PRODUCTS kart."
+  },
+  "missingStates": [],
+  "interactionNote": "375 mega yok — hamburger global-menu-drawer. Shop <a> /collections/all-products — tıklama sayfa değiştirir, hover şart.",
+  "capture": {
+    "url": "https://savor-theme-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:27:24.477Z"
+  }
+}
