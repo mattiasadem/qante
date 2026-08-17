@@ -7,14 +7,21 @@
   "url": "https://theme-craft-demo.myshopify.com/",
   "selector": "predictive-search",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/craft/default/home/global-predictive-search.input.arama-bowl.1440.png",
+    "evidence/craft/default/home/global-predictive-search.input.arama-bowl.375.png",
+    "evidence/craft/default/home/global-predictive-search.input.arama-bowl.768.png",
+    "evidence/craft/default/home/global-predictive-search.open.arama-acik.1440.png",
+    "evidence/craft/default/home/global-predictive-search.open.arama-acik.375.png",
+    "evidence/craft/default/home/global-predictive-search.open.arama-acik.768.png"
+  ],
   "notlar": "Header büyüteç → search-modal. Input placeholder Search. katalogSorgu: bowl (47 sonuç sayfası).",
   "delta": "Dawn details-modal; tam overlay. Drawer değil.",
   "captureMode": "viewport",
   "interactionStates": [
     "initial",
-    "open",
-    "input"
+    "input",
+    "open"
   ],
   "interactionSteps": [
     {
@@ -35,15 +42,35 @@
     {
       "state": "input",
       "action": "fill",
-      "selector": "#Search-In-Modal",
+      "selector": "#Search-In-Modal-1",
       "value": "bowl",
+      "viewports": [
+        "1440"
+      ],
       "capture": true,
       "captureMode": "viewport",
       "etiket": "arama-bowl",
-      "not": "katalogSorgu bowl — ürün/öneri listesi"
+      "not": "1440 görünür input #Search-In-Modal-1"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "bowl",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bowl",
+      "not": "375/768 görünür input #Search-In-Modal"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "open": "Büyüteç → search-modal. Boş input placeholder Search + X. Arka plan karartılı.",
+    "input": "bowl yazınca PRODUCTS: The Serving Bowl ×4 (beyaz/pembe $49, lacivert/yeşil $55) + Search for \"bowl\". 1440 #Search-In-Modal-1; 375/768 #Search-In-Modal."
+  },
   "missingStates": [
     {
       "state": "hover",
@@ -58,13 +85,16 @@
       "sebep": "Tek sorgu; boş sonuç bu turda yok"
     }
   ],
-  "interactionNote": "İki input var (Search-In-Modal-1 / Search-In-Modal). Fill #Search-In-Modal. Submit/Enter yok — predictive overlay.",
+  "interactionNote": "1440 input #Search-In-Modal-1 (Search-In-Modal gizli). 375/768 #Search-In-Modal. Submit/Enter yok.",
   "capture": {
     "url": "https://theme-craft-demo.myshopify.com/",
     "viewports": [
       "375",
       "768",
       "1440"
-    ]
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:23:59.122Z"
   }
 }
