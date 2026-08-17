@@ -1,0 +1,75 @@
+{
+  "observationId": "taiga.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "taiga",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://taiga-demo-sage.myshopify.com/",
+  "selector": "#MainHeader",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/taiga/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/taiga/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/taiga/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/taiga/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
+  "notlar": "1440 overlay header: logo + New/Shop (submenu) + About + Blog + Theme features + Country + Search + Account + Cart. Home’da section wrapper 0px (overlay).",
+  "delta": "Taiga header overlay. Shop tık → drawer-menu + .megamenu. Account / locale tıklanmadı. Shopify.theme: name **Taiga / LIVE update** · schema_name **Taiga** · schema_version **8.1.0** · theme_store_id **null** · role main · id 159278366958 · shop taiga-demo-sage.myshopify.com",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://taiga-demo-sage.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.header-main-menu-link:has-text('Shop')",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "1440 Shop → drawer mega (Backpacks / Duffel / Stoves / Accessories)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440 overlay: hamburger + TAIGA + NEW/SHOP (caret) / ABOUT / BLOG / THEME FEATURES + Finland bayrağı + search + account + cart. Hero Savotta Jääkäri görünür. Mega kapalı.",
+    "open": "1440 Shop tık: sol iki panelli drawer — kök New/Shop/About/Blog/Theme features; Shop altı Backpacks, Duffel bags, Travel stoves, Accessories, Spare parts, All products. Görsel kolon yok."
+  },
+  "missingStates": [],
+  "interactionNote": "Mega = drawer-menu drilldown, klasik görsel mega değil. 375/768 hamburger ayrı global-menu-drawer. Account/locale tıklanmadı.",
+  "capture": {
+    "url": "https://taiga-demo-sage.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T21:01:10.591Z"
+  }
+}

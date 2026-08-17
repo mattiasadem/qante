@@ -1,0 +1,107 @@
+{
+  "observationId": "taiga.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "taiga",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://taiga-demo-sage.myshopify.com/cart",
+  "selector": "#shopify-section-template--21784160469230__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/taiga/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/taiga/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/taiga/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/taiga/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/taiga/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/taiga/default/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/taiga/default/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/taiga/default/cart/cart-page-main.initial.cart-bos.768.png"
+  ],
+  "notlar": "Shopping cart / Continue shopping / Your cart is empty. cart-items + cart-recommendations.",
+  "delta": "Drawer ayrı. Checkout tıklanmadı. Shopify.theme: name **Taiga / LIVE update** · schema_name **Taiga** · schema_version **8.1.0** · theme_store_id **null** · role main · id 159278366958 · shop taiga-demo-sage.myshopify.com",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://taiga-demo-sage.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://taiga-demo-sage.myshopify.com/products/backpack-202-black",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://taiga-demo-sage.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--21784160469230__cart-items .quantity__input, #Quantity-1",
+      "capture": false,
+      "not": "375’te plus 0×0 — önce qty input odak"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 400,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--21784160469230__cart-items button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Shopping cart · Your cart is empty · Continue shopping (sarı).",
+    "filled": "Backpack 202 — Black · Color Black · adet 1 · €61,95. Subtotal €61,95 + Checkout. YOU MIGHT ALSO LIKE ızgarası.",
+    "changed": "768/1440: adet 2 · satır/subtotal €123,90 EUR."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "375’te button[name=plus] 0×0. İki deneme görünür tık vermedi. 768/1440 adet 1→2 kanıtlı."
+    }
+  ],
+  "interactionNote": "Checkout tıklanmadı. 375 qty leftover (drawer ile aynı).",
+  "capture": {
+    "url": "https://taiga-demo-sage.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T21:15:03.967Z"
+  }
+}
