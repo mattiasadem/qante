@@ -1,0 +1,70 @@
+{
+  "observationId": "eurus.breath.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "eurus",
+  "preset": "breath",
+  "sayfa": "home",
+  "url": "https://eurus-breath-demo.myshopify.com/",
+  "selector": "#shopify-section-sections--27353596920086__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/eurus/breath/home/navigation-header-mega.1440.png",
+    "evidence/eurus/breath/home/navigation-header-mega.375.png",
+    "evidence/eurus/breath/home/navigation-header-mega.768.png",
+    "evidence/eurus/breath/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/eurus/breath/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/eurus/breath/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/eurus/breath/home/navigation-header-mega.open.mega-collections.1440.png"
+  ],
+  "notlar": "Logo Breath. 1440: Collections / Shop / Templates / Presets / Other Industries. SearchOpen + cart-icon. Mega Alpine (#menu-1), details yok.",
+  "delta": "theme_store_id null. Mega hover Collections → Dog/Cat kolonları + görseller. 375 hamburger ayrı global-menu-drawer.",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eurus-breath-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-sections--27353596920086__header",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#shopify-section-sections--27353596920086__header a[href='#']:has-text('Collections')",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mega-collections",
+      "not": "#menu-1 Dog/Cat kolonları"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440: Breath logo; Collections / Shop (NEW) / Templates / Presets / Other Industries; Canada; search; cart; light/dark. 375/768: logo + search/cart/theme + hamburger; mega yok.",
+    "open": "1440 Collections hover: #menu-1. Sol: Dog (aktif) / Cat / Sales & Deals / Featured Product. Sağ 4 kolon görselli: Dog food, Dog Treats, Dog Toys, Dog Collars, Leads & Beds + alt linkler. 375/768 mega N/A."
+  },
+  "missingStates": [],
+  "interactionNote": "details/summary yok — Alpine hover. 375/768 mega N/A (global-menu-drawer).",
+  "capture": {
+    "url": "https://eurus-breath-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:36:27.358Z"
+  }
+}
