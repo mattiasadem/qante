@@ -1,0 +1,46 @@
+{
+  "observationId": "expanse.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "expanse",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://expanse-theme-furniture.myshopify.com/",
+  "selector": "#SiteHeader",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "details#site-nav-item--1 data-hover=true. megamenu--products.",
+  "delta": "Mega 4 üst öğe. Account / Theme features tıklanmadı.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://expanse-theme-furniture.myshopify.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#site-nav-item--1 > summary",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "homestyle-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Homestyle hover → megamenu kolonları. summary data-link=/collections/homestyle tıklanmadı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Logo + Search + Account + Cart. Homestyle / Lifestyle / Kids / Brands + Sale Blog Locations Theme features. Mega kapalı.",
+    "open": "1440 Homestyle mega: Decor / Kitchen / Tabletop / More kolonları (Bath…Planters, Boards…Spices, Carafes…Serving, Clocks/Frames/Mirrors)."
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 mega yok — hamburger. Homestyle summary tıklanmadı (sayfaya kaçar). Account duruldu."
+}

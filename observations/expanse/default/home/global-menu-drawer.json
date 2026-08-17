@@ -1,0 +1,48 @@
+{
+  "observationId": "expanse.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "expanse",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://expanse-theme-furniture.myshopify.com/",
+  "selector": "header-drawer.site-header__mobile-nav",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "Expanse mobile nav header drawer, Impulse #NavDrawer değil.",
+  "delta": "header-drawer custom element. Expand submenu akordeon yoklandı değil (changed leftover).",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://expanse-theme-furniture.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.mobile-nav-trigger",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mobil-menu-acik",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "button.mobile-nav-trigger aria-controls=MobileNav"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: Homestyle/Lifestyle/Kids/Brands Expand submenu + Sale/Blog/Locations/Theme features + About us / Customer support. 1440 hamburger yok."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger 0×0 — leftover değil, masaüstü nav"
+    }
+  ],
+  "interactionNote": "Drawer = header-drawer.site-header__mobile-nav.is-active. 1440 adım yok."
+}

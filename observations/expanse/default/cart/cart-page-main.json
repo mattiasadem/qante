@@ -1,0 +1,63 @@
+{
+  "observationId": "expanse.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "expanse",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://expanse-theme-furniture.myshopify.com/cart",
+  "selector": "#shopify-section-template--17354735780037__main",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Boş + dolu + qty.",
+  "delta": "Popular picks yok (404'te var).",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://expanse-theme-furniture.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://expanse-theme-furniture.myshopify.com/products/ibed-lap-desk",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://expanse-theme-furniture.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--17354735780037__main .js-qty__adjust--plus",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Cart. Your cart is currently empty. Continue shopping.",
+    "filled": "iBed Lap Desk Small $25 qty 1.",
+    "changed": "Beklenen qty 2 / $50."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı. recently-viewed 0px leftover."
+}

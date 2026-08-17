@@ -1,0 +1,81 @@
+{
+  "observationId": "expanse.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "expanse",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://expanse-theme-furniture.myshopify.com/",
+  "selector": ".site-header__drawer.site-header__cart",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "#HeaderCartTrigger href=/cart aria-controls=HeaderCart.",
+  "delta": "Header dropdown + Goes great with cross-sell. Impulse yan drawer değil.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://expanse-theme-furniture.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#HeaderCartTrigger",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş header cart drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://expanse-theme-furniture.myshopify.com/products/ibed-lap-desk",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add']",
+      "capture": false,
+      "not": "iBed Small $25 — ATC drawer'ı otomatik açar"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer: satır + Goes great with + Subtotal + Check out (tıklanmadı)"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".site-header__cart .js-qty__adjust--plus",
+      "capture": false,
+      "not": "Adet 1→2"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet ve subtotal"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is currently empty. 450px header dropdown.",
+    "filled": "iBed Lap Desk Size Small qty1 $25. Goes great with card cases. Subtotal $25. Check out (tıklanmadı).",
+    "changed": "Beklenen: qty 2 / Subtotal $50."
+  },
+  "missingStates": [],
+  "interactionNote": "Header dropdown cart (.site-header__cart), yan drawer değil. Check out tıklanmadı. ATC sonrası otomatik açılır."
+}

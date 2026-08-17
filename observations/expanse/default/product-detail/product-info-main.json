@@ -1,0 +1,42 @@
+{
+  "observationId": "expanse.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "expanse",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://expanse-theme-furniture.myshopify.com/products/ibed-lap-desk",
+  "selector": "#shopify-section-template--17354735714501__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "Kikkerland iBed. Size Small $25 / X-Large $40.",
+  "delta": "store-availability pickup satırı. Low stock metni X-Large'da.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://expanse-theme-furniture.myshopify.com/products/ibed-lap-desk",
+      "capture": true,
+      "etiket": "size-small",
+      "not": "Size Small $25"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label.variant__button-label[for$='-1-1']",
+      "value": 1500,
+      "capture": true,
+      "etiket": "size-xlarge",
+      "not": "X-Large → $40 sale from $50, Low stock 4"
+    }
+  ],
+  "stateFindings": {
+    "initial": "iBed Lap Desk. Size Small seçili. Regular $25. Add to cart. Pickup Texas Warehouse.",
+    "changed": "X-Large. Regular $50 / Sale $40 / Save $10. Low stock - 4 item left."
+  },
+  "missingStates": [],
+  "interactionNote": "Size radio visually-hidden; label.variant__button-label. Checkout yok."
+}
