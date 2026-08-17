@@ -1,0 +1,121 @@
+{
+  "observationId": "tinker.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "tinker",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-tinker-demo.myshopify.com/",
+  "selector": "dialog.cart-drawer__dialog",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/tinker/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/tinker/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/tinker/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/tinker/default/home/global-cart-drawer.filled.bicak-qty1.1440.png",
+    "evidence/tinker/default/home/global-cart-drawer.filled.bicak-qty1.375.png",
+    "evidence/tinker/default/home/global-cart-drawer.filled.bicak-qty1.768.png",
+    "evidence/tinker/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/tinker/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/tinker/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "Horizon cart-drawer-component. Boş sınıf cart-drawer--empty.",
+  "delta": "/cart ayrı sayfa (cart-page-main). Checkout tıklanmadı.",
+  "captureMode": "viewport",
+  "prepareClick": "header button[aria-label='Cart']",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-tinker-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header button[aria-label='Cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-tinker-demo.myshopify.com/products/craighill-desk-knife-brass",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#BuyButtons-ProductSubmitButton-ARkhuckNSSWJxRGRCb__add-to-cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "header button[aria-label='Cart']",
+      "capture": false,
+      "not": "Drawer ATC sonrası kapanabiliyor — cart ikonu ile aç"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bıcak-qty1",
+      "not": "Dolu drawer qty 1"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "dialog.cart-drawer__dialog button[name='plus']",
+      "capture": false,
+      "not": "Drawer içi plus"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 2 beklenir"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty. Have an account? Log in to check out faster. Continue shopping. Login tıklanmadı.",
+    "filled": "Cart 1. Craighill Desk Knife · Brass · qty 1 · $75.00 CAD. Estimated total $75. Check out tıklanmadı.",
+    "changed": "Cart 2. Adet 2. Satır + estimated total $150.00 CAD."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC UI (addToCart → ui). Drawer ATC sonrası kapanabiliyor — cart ikonu ile yeniden açıldı. Checkout / Discount Apply tıklanmadı.",
+  "capture": {
+    "url": "https://theme-tinker-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:26:50.543Z"
+  }
+}
