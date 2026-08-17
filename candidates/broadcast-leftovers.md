@@ -38,5 +38,7 @@
 ## Interact notları
 
 - Shop mega: `hover-disclosure` + `a.navlink--toplevel` (`href=/collections/all`) — tıklama sayfaya kaçar; yalnız hover.
-- Predictive: `shirt` 0 sonuç; katalog `magnesium` (4 sonuç).
-- Sticky bar metni **CONFIGURE** (ATC değil) — buy box’a kaydırır.
+- Predictive: `shirt` 0 sonuç; katalog `magnesium` (4 sonuç). 375 `#SearchInput--mobile`; 768/1440 `#SearchInput--desktop`.
+- Sticky bar metni **CONFIGURE** (ATC değil) — buy box’a kaydırır. Resmi crop: `product-info-main-sticky.changed.sticky-configure.{375,768,1440}.png`.
+- 768 hamburger `0×0` (masaüstü nav). 375 menü resmi çekildi; 768 leftover, eksik çekim değil.
+- Recently-purchased toast Bold vitrinde belirmadi (8s). Sosyal kanıt var: reviews, press logos, quote marquees.

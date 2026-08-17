@@ -7,8 +7,15 @@
   "url": "https://broadcast-bold.myshopify.com/",
   "selector": "predictive-search",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
-  "notlar": "summary.navlink--search açar. 1440 #SearchInput--desktop; 375/768 #SearchInput--mobile. Katalog: magnesium.",
+  "evidence": [
+    "evidence/broadcast/bold/home/global-predictive-search.initial.search-bos.1440.png",
+    "evidence/broadcast/bold/home/global-predictive-search.initial.search-bos.375.png",
+    "evidence/broadcast/bold/home/global-predictive-search.initial.search-bos.768.png",
+    "evidence/broadcast/bold/home/global-predictive-search.input.magnesium.1440.png",
+    "evidence/broadcast/bold/home/global-predictive-search.input.magnesium.375.png",
+    "evidence/broadcast/bold/home/global-predictive-search.input.magnesium.768.png"
+  ],
+  "notlar": "summary.navlink--search açar. 375 #SearchInput--mobile; 768/1440 #SearchInput--desktop. Katalog: magnesium.",
   "delta": "Kapalı kare boş. Submit /search — interact'te submit yok.",
   "captureMode": "viewport",
   "interactionStates": [
@@ -37,10 +44,11 @@
       "selector": "#SearchInput--desktop",
       "value": "magnesium",
       "viewports": [
+        "768",
         "1440"
       ],
       "capture": false,
-      "not": "1440 masaüstü input"
+      "not": "768/1440 masaüstü input"
     },
     {
       "state": "input",
@@ -48,11 +56,10 @@
       "selector": "#SearchInput--mobile",
       "value": "magnesium",
       "viewports": [
-        "375",
-        "768"
+        "375"
       ],
       "capture": false,
-      "not": "375/768 mobil input"
+      "not": "375 mobil input"
     },
     {
       "state": "input",
@@ -71,9 +78,20 @@
     }
   ],
   "stateFindings": {
-    "initial": "Search popdown + boş input.",
-    "input": "magnesium önerileri (kareye bakılacak)."
+    "initial": "Search overlay + boş input + CLEAR + X.",
+    "input": "PRODUCTS Magnesium Powder From $56.00 + SEARCH FOR 'MAGNESIUM' →. Enter yok."
   },
   "missingStates": [],
-  "interactionNote": "Enter/submit yok. shirt 0 sonuç — katalog magnesium."
+  "interactionNote": "Enter/submit yok. shirt 0 sonuç — katalog magnesium. 768 hamburger değil; 768 search masaüstü input.",
+  "capture": {
+    "url": "https://broadcast-bold.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:28:14.310Z"
+  }
 }

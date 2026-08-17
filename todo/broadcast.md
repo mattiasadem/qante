@@ -10,7 +10,7 @@
 `theme_store_id` = **null** (canlıda yok; uydurulmadı)  
 shop `broadcast-bold.myshopify.com`
 
-**Durum:** Mod A walk + resmi 3vp + interact (yazılıyor)  
+**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti** (0 error)  
 **PR:** draft — **main'e merge yok**
 
 ---
@@ -25,7 +25,7 @@ shop `broadcast-bold.myshopify.com`
 | Parallel | yalnız `observations/broadcast/`, `evidence/broadcast/`, `todo/broadcast.md`, `candidates/broadcast-*` |
 
 **Kapsam satırı:**  
-`Broadcast · bold · Broadcast 6.2.0 · theme_store_id null · home→PDP→PLP→collections→search→cart→about/contact→faq→blog→404 · 65 obs · 0 yeni şema · leftover: candidates/broadcast-leftovers.md`
+`Broadcast · bold · Broadcast 6.2.0 · theme_store_id null · home→PDP→PLP→collections→search→cart→about/contact→faq→blog→404 · 65 obs · 215 PNG · 0 yeni şema · leftover: candidates/broadcast-leftovers.md`
 
 ---
 
@@ -33,22 +33,23 @@ shop `broadcast-bold.myshopify.com`
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home + announcement/header/footer + conversion blocks | roster yazıldı | [ ] |
-| Mega Shop 1440 | interact yazıldı | [ ] |
-| Predictive search `magnesium` | interact yazıldı | [ ] |
-| Mobile menu 375+768 | interact yazıldı | [ ] |
-| Cart drawer empty + filled + qty | interact yazıldı | [ ] |
-| Sticky ATC `#cart-bar` | obs yazıldı | [ ] |
-| PDP Multivitamin 18+ Type Bottle→Refill | interact yazıldı | [ ] |
-| PLP `/collections/best-sellers` | roster yazıldı | [ ] |
-| Collections index `/collections` | roster yazıldı | [ ] |
-| Search `/search?q=magnesium` | roster yazıldı | [ ] |
-| Cart page empty + filled + qty | interact yazıldı | [ ] |
-| About `/pages/about-us` | roster yazıldı | [ ] |
-| Contact form (submit yok) | roster yazıldı | [ ] |
-| FAQ `/pages/faq` | roster yazıldı | [ ] |
-| News + article | roster yazıldı | [ ] |
-| 404 leftover | roster yazıldı | [ ] |
+| Home + announcement/header/footer + conversion blocks | roster + capture | [x] |
+| Mega Shop 1440 | interact | [x] |
+| Predictive search `magnesium` | interact 3vp | [x] |
+| Mobile menu 375 | interact | [x] |
+| Mobile menu 768 | ⛔ hamburger 0×0 | leftover |
+| Cart drawer empty + filled + qty | interact 3vp | [x] |
+| Sticky `#cart-bar` CONFIGURE | interact crop 3vp | [x] |
+| PDP Multivitamin 18+ Type Bottle→Refill | interact 3vp | [x] |
+| PLP `/collections/best-sellers` | roster + capture | [x] |
+| Collections index `/collections` | roster + capture | [x] |
+| Search `/search?q=magnesium` | roster + capture | [x] |
+| Cart page empty + filled + qty | interact 3vp | [x] |
+| About `/pages/about-us` | roster + capture | [x] |
+| Contact form (submit yok) | roster + capture | [x] |
+| FAQ `/pages/faq` | roster + capture | [x] |
+| News + article | roster + capture | [x] |
+| 404 leftover | roster + capture | [x] |
 | Recently-purchased popup | ⛔ yok (8s bekledi) | leftover |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
@@ -58,13 +59,13 @@ shop `broadcast-bold.myshopify.com`
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | open | [ ] 1440 Shop hover |
-| global-predictive-search | input | [ ] 3vp `magnesium` |
-| global-menu-drawer | open | [ ] 375/768 |
-| global-cart-drawer | filled + changed | [ ] |
-| cart-page-main | filled + changed | [ ] |
-| product-info-main | changed | [ ] Type Refill |
-| product-info-main-2 | sticky | [ ] `#cart-bar` CONFIGURE |
+| navigation-header-mega | open | [x] 1440 Shop hover — 3 kolon + 2 görsel + Immune Support |
+| global-predictive-search | input | [x] 3vp `magnesium` — Magnesium Powder From $56 |
+| global-menu-drawer | open | [x] 375; 768 leftover |
+| global-cart-drawer | filled + changed | [x] (0) → (1) $50 → (2) $100 |
+| cart-page-main | filled + changed | [x] CART (1) $50 → CART (2) $100 |
+| product-info-main | changed | [x] Bottle $50 → Refill $48 + Only 18 Left |
+| product-info-main-2 | sticky | [x] `#cart-bar` CONFIGURE 3vp |
 
 ---
 
@@ -76,6 +77,6 @@ shop `broadcast-bold.myshopify.com`
 
 ## Evidence backlog
 
-- [ ] Statik 3vp
-- [ ] Mega / search / cart empty+filled+qty / mobile menu / PDP Type / sticky ATC
-- [ ] Email / account / checkout / newsletter submit — **yapılmayacak**
+- [x] Statik 3vp (177 PNG)
+- [x] Mega / search / cart empty+filled+qty / mobile menu 375 / PDP Type / sticky CONFIGURE (38 PNG)
+- [x] Email / account / checkout / newsletter submit — **yapılmayacak**
