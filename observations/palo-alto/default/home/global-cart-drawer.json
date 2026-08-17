@@ -1,0 +1,121 @@
+{
+  "observationId": "palo-alto.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "palo-alto",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://palo-alto-theme-main.myshopify.com/",
+  "selector": "#cart-drawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/palo-alto/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/palo-alto/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/palo-alto/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/palo-alto/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/palo-alto/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/palo-alto/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/palo-alto/default/home/global-cart-drawer.initial.sepet-bos.1440.png",
+    "evidence/palo-alto/default/home/global-cart-drawer.initial.sepet-bos.375.png",
+    "evidence/palo-alto/default/home/global-cart-drawer.initial.sepet-bos.768.png"
+  ],
+  "notlar": "cart-items#cart-drawer. Header a.cart__toggle drawer açar (href /cart da var).",
+  "delta": "Boş: Cart 0 items + koleksiyon hapları. Dolu + adet interact.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://palo-alto-theme-main.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.cart__toggle",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://palo-alto-theme-main.myshopify.com/products/exclesa-dress-scacchi-black-ivory",
+      "capture": false,
+      "not": "Revive Dress ATC"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "#AddToCart--template--21945700909244__main-8877227802812",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#AddToCart--template--21945700909244__main-8877227802812",
+      "capture": false,
+      "not": "ADD TO CART $150.00 — drawer ATC ile açılır; cart__toggle kapatır, tıklanmadı"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": "#cart-drawer.is-open",
+      "value": 8000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer (ATC is-open)"
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#cart-drawer .cart__item__quantity-plus",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#cart-drawer .cart__item__quantity-plus",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Cart (0 items). Your cart is currently empty. 2×2 New Arrivals / Staff Picks / Bestselling / Sale + SHOP ALL. WELCOME10 + FREE SHIPPING ON ORDERS OVER $100.",
+    "filled": "Cart (1 item). Revive Dress Size XS Color Checkered $150 qty 1. FREE shipping bar. Buy It With Classic Trench $240 QUICK BUY. Discounts / Calculate shipping. CHECKOUT • $150.00 USD — tıklanmadı.",
+    "changed": "Cart (2 items). qty 2. CHECKOUT • $300.00 USD — tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC drawer'ı is-open açar (375 tam ekran; 768/1440 ~400px sağ). İkinci a.cart__toggle kapatır — filled'da tıklanmadı. Checkout / kupon / QUICK BUY yok.",
+  "capture": {
+    "url": "https://palo-alto-theme-main.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T21:03:15.402Z"
+  }
+}
