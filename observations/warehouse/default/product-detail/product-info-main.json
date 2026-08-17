@@ -7,7 +7,14 @@
   "url": "https://warehouse-theme-metal.myshopify.com/products/jbl-charge-3-portable-bluetooth-speaker",
   "selector": "#shopify-section-template--16536532877363__main",
   "evidenceSlug": "product-info-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/warehouse/default/product-detail/product-info-main.changed.renk-blue.1440.png",
+    "evidence/warehouse/default/product-detail/product-info-main.changed.renk-blue.375.png",
+    "evidence/warehouse/default/product-detail/product-info-main.changed.renk-blue.768.png",
+    "evidence/warehouse/default/product-detail/product-info-main.initial.ilk-hal.1440.png",
+    "evidence/warehouse/default/product-detail/product-info-main.initial.ilk-hal.375.png",
+    "evidence/warehouse/default/product-detail/product-info-main.initial.ilk-hal.768.png"
+  ],
   "notlar": "product. JBL Charge 3 $99.95. Color swatch Black/Blue/Camo/Red/Teal/Grey. Qty stepper. Add to cart + Buy it now.",
   "delta": "Buy it now / checkout tıklanmadı. Sticky ATC yoklandı değil.",
   "interactionStates": [
@@ -31,17 +38,34 @@
     },
     {
       "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16536532877363__main label.color-swatch__item[title='Blue']",
+      "capture": false
+    },
+    {
+      "state": "changed",
       "action": "click",
-      "selector": "#shopify-section-template--16536532877363__main input.color-swatch__radio[value='Blue']",
+      "selector": "#shopify-section-template--16536532877363__main label.color-swatch__item[title='Blue']",
       "capture": true,
       "etiket": "renk-blue",
-      "not": "Color Blue — görsel/etiket değişmeli"
+      "not": "Color Blue label — radio 0×0"
     }
   ],
   "stateFindings": {
-    "initial": "Color: Black, Sale $99.95, In stock (56), Add to cart.",
-    "changed": "Color: Blue seçili (görsel/swatch). Fiyat aynı kalabilir."
+    "initial": "Color: Black, $99.95, SKU JBL-859042-CHA-BL, In stock (56), siyah hoparlör.",
+    "changed": "Color: Blue, $99.95, SKU JBL-472498-CHA-BL, In stock (116), mavi hoparlör + swatch çerçeve."
   },
   "missingStates": [],
-  "interactionNote": "Buy it now duruldu. Description / Shipping accordion leftover."
+  "interactionNote": "Buy it now duruldu. Description / Shipping accordion leftover.",
+  "capture": {
+    "url": "https://warehouse-theme-metal.myshopify.com/products/jbl-charge-3-portable-bluetooth-speaker",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T20:50:56.695Z"
+  }
 }

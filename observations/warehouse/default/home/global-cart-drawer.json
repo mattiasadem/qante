@@ -7,7 +7,17 @@
   "url": "https://warehouse-theme-metal.myshopify.com/",
   "selector": "#mini-cart",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/warehouse/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/warehouse/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/warehouse/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/warehouse/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/warehouse/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/warehouse/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/warehouse/default/home/global-cart-drawer.initial.sepet-bos.1440.png",
+    "evidence/warehouse/default/home/global-cart-drawer.initial.sepet-bos.375.png",
+    "evidence/warehouse/default/home/global-cart-drawer.initial.sepet-bos.768.png"
+  ],
   "notlar": "form#mini-cart. Header Cart toggle [data-action=toggle-mini-cart] href=/cart.",
   "delta": "Mini-cart overlay (drawer değil tam sayfa). Boş + dolu + adet.",
   "captureMode": "viewport",
@@ -55,32 +65,37 @@
       "state": "filled",
       "action": "waitFor",
       "value": 1500,
-      "capture": false
-    },
-    {
-      "state": "filled",
-      "action": "click",
-      "selector": "[data-action='toggle-mini-cart']",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "sepete-eklendi",
-      "not": "Dolu mini-cart"
+      "not": "ATC mini-cart'ı açar — toggle tekrar kapatır, tıklanmadı"
     },
     {
       "state": "changed",
       "action": "click",
-      "selector": "#mini-cart [data-action='increase-picker-quantity']",
+      "selector": "#mini-cart [data-action='increase-quantity']",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "adet-artti",
-      "not": "Adet 1→2"
+      "not": "Adet 1→2 (increase-quantity, picker değil)"
     }
   ],
   "stateFindings": {
     "initial": "Your cart is empty + Spend $80.00 more and get free shipping! + Shop our products.",
-    "filled": "JBL Charge 3 satır (Beklenen). Checkout görünürse tıklanmadı.",
-    "changed": "Adet 2, ara toplam güncellenmeli."
+    "filled": "Charge 3 Black $99.95 qty 1. You are eligible for free shipping! Total $99.95 USD. View cart + Checkout (tıklanmadı).",
+    "changed": "Qty 2, satır $199.90, Total $199.90 USD. Header cart badge 2."
   },
   "missingStates": [],
-  "interactionNote": "Checkout tıklanmadı. ATC UI; fallback /cart/add.js olursa not güncellenecek."
+  "interactionNote": "ATC UI (addToCart → ui) mini-cart'ı açar. Toggle tekrar kapatır. Qty data-action=increase-quantity. Checkout tıklanmadı.",
+  "capture": {
+    "url": "https://warehouse-theme-metal.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T20:52:46.875Z"
+  }
 }

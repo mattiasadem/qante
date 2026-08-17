@@ -7,7 +7,12 @@
   "url": "https://warehouse-theme-metal.myshopify.com/",
   "selector": "#shopify-section-header",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
+  "evidence": [
+    "evidence/warehouse/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/warehouse/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/warehouse/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/warehouse/default/home/navigation-header-mega.open.all-products-mega.1440.png"
+  ],
   "notlar": "header + nav-bar. Logo Warehouse - Metal. Search expanded. All Products mega. 375/768 hamburger.",
   "delta": "All Products href=/collections — tıklama sayfaya gider; mega hover. Account / currency leftover.",
   "captureMode": "section",
@@ -28,13 +33,24 @@
       "state": "open",
       "action": "hover",
       "selector": "a.nav-bar__link[aria-controls='desktop-menu-0-1']",
+      "capture": false,
+      "viewports": [
+        "1440"
+      ],
+      "not": "All Products hover. href=/collections tıklanmadı."
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#desktop-menu-0-1",
       "capture": true,
-      "captureMode": "viewport",
+      "captureMode": "section",
+      "captureSelector": "#desktop-menu-0-1",
       "etiket": "all-products-mega",
       "viewports": [
         "1440"
       ],
-      "not": "All Products hover → #desktop-menu-0-1 Audio/Hi-Fi/TV kolonları. <a> tıklanmadı."
+      "not": "Mega panel crop — Audio / Hi-Fi / TV kolonları"
     }
   ],
   "stateFindings": {
@@ -44,8 +60,19 @@
   "missingStates": [
     {
       "state": "open",
-      "sebep": "375/768 mega yok — hamburger (global-menu-drawer)."
+      "sebep": "375/768 mega yok — hamburger (global-menu-drawer). 1440 crop #desktop-menu-0-1."
     }
   ],
-  "interactionNote": "All Products href=/collections. Yalnız hover. Presets mega walk dışı leftover. Currency/account tıklanmadı."
+  "interactionNote": "All Products href=/collections. Hover + forceOpen (viewport scroll mega'yı kapatıyordu). Presets mega leftover. Currency/account tıklanmadı.",
+  "capture": {
+    "url": "https://warehouse-theme-metal.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T20:51:00.469Z"
+  }
 }

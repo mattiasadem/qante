@@ -44,8 +44,9 @@
 
 ## Interact notları
 
-- Mega: `a.nav-bar__link[aria-controls='desktop-menu-0-1']` hover. href=`/collections` — tıklama sayfaya kaçar.
-- Predictive: katalog `jbl` (Link 20 / Stage / Charge 3). 375 input görünür (285×44).
+- Mega: `a.nav-bar__link[aria-controls='desktop-menu-0-1']` hover. href=`/collections` — tıklama sayfaya kaçar. Viewport `scrollTo(0,0)` hover'ı kapatıyordu → crop `#desktop-menu-0-1` + forceOpen.
+- Predictive: katalog `jbl` (Stage A125C / A135C / Charge 3). 375 Close overlay + input görünür.
 - 375 **ve** 768 hamburger var (`20×16`). 1440 hamburger 0×0.
-- Mini-cart `#mini-cart` (form overlay). Tam sayfa `/cart` ayrı.
-- PDP Color radio Black→Blue. Fiyat $99.95 kalabilir; görsel/etiket bakılacak.
+- Mini-cart `#mini-cart` overlay. ATC UI açar; toggle tekrar kapatır. Qty `data-action=increase-quantity` (picker değil).
+- Cart sayfa aynı qty action. Gift wrap $2.50 / Estimate shipping doldurulmadı.
+- PDP Color `label.color-swatch__item[title=Blue]` (radio 0×0). Black SKU JBL-859042 / 56 stok → Blue JBL-472498 / 116 stok. Fiyat $99.95.
