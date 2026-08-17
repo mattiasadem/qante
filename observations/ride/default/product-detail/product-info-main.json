@@ -1,0 +1,50 @@
+{
+  "observationId": "ride.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "ride",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://theme-ride-demo.myshopify.com/products/fcs-ii-performer-neo-glass-tri-fins",
+  "selector": "#shopify-section-template--17836803817640__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "FCS II PERFORMER NEO GLASS TRI FINS $85. Size radio X-SMALL/SMALL/MEDIUM. Qty stepper. ATC.",
+  "delta": "Dawn product--large thumbnail. Pickup yok. Quick view yok. Sold-out board PDP yazılmadı.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-ride-demo.myshopify.com/products/fcs-ii-performer-neo-glass-tri-fins",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17836803817640__main",
+      "capture": true,
+      "etiket": "size-xsmall",
+      "not": "X-SMALL seçili"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='template--17836803817640__main-1-1']",
+      "capture": true,
+      "etiket": "size-small",
+      "not": "SMALL — seçim değişmeli"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Size radio. Checkout/subscribe yok."
+}

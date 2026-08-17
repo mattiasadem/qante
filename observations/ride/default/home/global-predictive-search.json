@@ -1,0 +1,54 @@
+{
+  "observationId": "ride.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "ride",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-ride-demo.myshopify.com/",
+  "selector": "details-modal.header__search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "Header search ikon → details-modal. Input #Search-In-Modal placeholder Search.",
+  "delta": "Dawn predictive-search modal. Tam sayfa /search ayrı observation.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-ride-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "details-modal.header__search summary.header__icon--search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Boş search modal"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "fin",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "fin",
+      "not": "katalog: FCS / NeoGlass fin"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "katalogSorgu fin (FCS II Performer Neo Glass). Submit/Enter yok — yalnız öneri."
+}

@@ -1,0 +1,65 @@
+{
+  "observationId": "ride.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "ride",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-ride-demo.myshopify.com/",
+  "selector": "#cart-notification",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Dawn cart-notification (drawer değil). Cart ikon → /cart. Checkout tıklanmadı.",
+  "delta": "Overlay popup sağ-üst. Boş notification yok. Adet kontrolü notification'da yok → cart-page-main changed.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-ride-demo.myshopify.com/products/fcs-ii-performer-neo-glass-tri-fins",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button.product-form__submit",
+      "capture": false,
+      "not": "UI ATC — notification açılsın"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "forceOpen",
+      "selector": "#cart-notification",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Item added + View cart + Check out"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "Boş cart-notification yok; boş hâl /cart sayfası"
+    },
+    {
+      "state": "changed",
+      "sebep": "Notification'da adet stepper yok — qty cart-page-main"
+    }
+  ],
+  "interactionNote": "UI ATC tercih; fallback /cart/add.js olursa forceOpen. Checkout tıklanmadı."
+}

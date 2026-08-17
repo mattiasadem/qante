@@ -1,0 +1,56 @@
+{
+  "observationId": "ride.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "ride",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-ride-demo.myshopify.com/",
+  "selector": "#shopify-section-header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Ride logo + SHOP + EXPLORE + search ikon + Cart. 104px. Account yok.",
+  "delta": "Mega kolon/görsel yok — Dawn details dropdown (header__submenu). 375 hamburger ayrı global-menu-drawer.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-ride-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-1 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-dropdown",
+      "not": "SHOP hover → Original / Performance / Fins"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "1440 SHOP hover. 375/768 open hamburger ayrı observation. Login yok."
+}

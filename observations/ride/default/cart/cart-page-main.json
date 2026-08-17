@@ -1,0 +1,99 @@
+{
+  "observationId": "ride.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "ride",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://theme-ride-demo.myshopify.com/cart",
+  "selector": "#shopify-section-template--17836803227816__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Boş: Your cart is empty + Continue shopping. Dolu: satır + footer checkout. Checkout tıklanmadı.",
+  "delta": "cart-footer ayrı section (boşken 0px). Featured collection altta ayrı obs.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-ride-demo.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17836803227816__cart-items",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş sepet sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-ride-demo.myshopify.com/products/fcs-ii-performer-neo-glass-tri-fins",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button.product-form__submit",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-ride-demo.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17836803227816__cart-items",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "fin-qty1",
+      "not": "Dolu sepet satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button.quantity__button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +1"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı. Notification ayrı global-cart-drawer."
+}
