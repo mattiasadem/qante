@@ -7,14 +7,21 @@
   "url": "https://savor-theme-demo.myshopify.com/",
   "selector": "dialog.search-modal__content",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/savor/default/home/global-predictive-search.input.arama-sauce.1440.png",
+    "evidence/savor/default/home/global-predictive-search.input.arama-sauce.375.png",
+    "evidence/savor/default/home/global-predictive-search.input.arama-sauce.768.png",
+    "evidence/savor/default/home/global-predictive-search.open.arama-acik.1440.png",
+    "evidence/savor/default/home/global-predictive-search.open.arama-acik.375.png",
+    "evidence/savor/default/home/global-predictive-search.open.arama-acik.768.png"
+  ],
   "captureMode": "viewport",
   "prepareClick": "search-button.search-action--hidden-on-drawer button[aria-label='Search']",
   "notlar": "dialog-component#search-modal + predictive-search-component. Input #cmdk-input. Kapalı 0 yükseklik.",
   "delta": "Horizon predictive-search-form. katalogSorgu: sauce (31 sonuç sayfa). 375 header Search görünür (hidden-on-drawer).",
   "interactionStates": [
-    "open",
-    "input"
+    "input",
+    "open"
   ],
   "interactionSteps": [
     {
@@ -57,9 +64,20 @@
     }
   ],
   "stateFindings": {
-    "open": "SEARCH overlay. Placeholder Search. Products öneri: BBQ Mix & Match / Campfire Tee / Cruisin Tee / Dip & Drizzle Box.",
-    "input": "sauce + Clear; 13 search results found for \"sauce\"; Products: The Original $9.49 / Gluten-Free / Mini Bottle / Sweet Pineapple…"
+    "open": "Beyaz search modal. Placeholder Search + X. Products: BBQ Mix & Match $9.49 / Campfire Tee $25 / Cruisin Tee $25 / Dip & Drizzle Box $49.99.",
+    "input": "sauce + Clear + chip sauce. Products ızgara: The Original / Gluten-Free / Mini Bottle / Sweet Pineapple… 1440 kırmızı VIEW ALL + Collections başlığı. 375 tam ekran 2 kolon."
   },
   "missingStates": [],
-  "interactionNote": "İki Search butonu: hidden-on-menu (gizli) + hidden-on-drawer (görünür). clickVisible ilk görünürü alır. Submit/Enter yok. PII yok."
+  "interactionNote": "İki Search butonu: hidden-on-menu (gizli) + hidden-on-drawer (görünür). clickVisible ilk görünürü alır. Submit/Enter yok. PII yok.",
+  "capture": {
+    "url": "https://savor-theme-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:28:19.009Z"
+  }
 }

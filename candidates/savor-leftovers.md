@@ -97,6 +97,14 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: savor-discount-field  
+Gerekçe: Dolu cart drawer ve cart sayfasında “Discount +” satırı. Kupon açılmadı / yazılmadı (PII/ödeme yakını).  
+Örnekler: https://savor-theme-demo.myshopify.com/cart  
+Öneri: leftover  
+Karar: onay bekliyor
+
+---
+
 ## Diğer leftover (aday değil)
 
 - Account / `shopify-account` header sağda — login tıklanmadı
@@ -105,3 +113,4 @@ Karar: onay bekliyor
 - Video PLAY — tıklanmadı
 - Collection filtre/sort paneli — açık hâl yoklandı değil
 - Native `/policies/*` — sayfa şablonları alındı
+- Collections index “HOME PAGE” kiremit (`/collections/frontpage`) — claiming grid’te duruyor
