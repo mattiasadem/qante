@@ -1,0 +1,124 @@
+{
+  "observationId": "combine.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "combine",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://combine-theme-main.myshopify.com/cart",
+  "selector": "#shopify-section-template--21976060788969__main",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/combine/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/combine/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/combine/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/combine/default/cart/cart-page-main.filled.carafe-qty1.1440.png",
+    "evidence/combine/default/cart/cart-page-main.filled.carafe-qty1.375.png",
+    "evidence/combine/default/cart/cart-page-main.filled.carafe-qty1.768.png",
+    "evidence/combine/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/combine/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/combine/default/cart/cart-page-main.initial.sepet-bos.768.png"
+  ],
+  "notlar": "Your cart is currently empty. Continue browsing. Recommendations section 0px.",
+  "delta": "Checkout tıklanmadı. Discount codes accordion.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://combine-theme-main.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://combine-theme-main.myshopify.com/products/carafe-1-2ltr",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.add-to-cart.button--product, form[action*='/cart/add'] button[type='submit']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://combine-theme-main.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "carafe-qty1",
+      "not": "Dolu cart"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], [data-qty-plus], button[aria-label*='Increase' i]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +1"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Shopping Cart. Your cart is currently empty. Continue browsing. Cart badge 0.",
+    "filled": "Carafe 1.2Ltr Color Clear qty 1 $55. Gift wrap $10. Free shipping $145 away. New Product Lion $15. Total $55. Cart badge 1.",
+    "changed": "qty 2 satır $110. Free shipping $90 away. Total $110. Cart badge 2. Checkout tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart UI. Checkout tıklanmadı.",
+  "capture": {
+    "url": "https://combine-theme-main.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:26:57.297Z"
+  }
+}
