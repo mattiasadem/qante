@@ -1,0 +1,71 @@
+{
+  "observationId": "vessel.default.collection.product-showcase-grid-plp",
+  "schemaId": "product-showcase-grid-plp",
+  "kaynak": "vessel",
+  "preset": "default",
+  "sayfa": "collection",
+  "url": "https://theme-vessel-demo.myshopify.com/collections/coffee-tea",
+  "selector": "#shopify-section-template--21019562475577__main",
+  "evidenceSlug": "product-showcase-grid-plp",
+  "evidence": [],
+  "notlar": "67 ITEMS. AVAILABILITY / PRICE / SORT + Column grid. Kartlar: Capsule Cold Brew Carafe $44, Carat Teapot… Horizon facets--horizontal.",
+  "delta": "Shopify.theme.name `Updated copy of Vessel demo store 3.2.0` · id 159183306809 · schema_name Vessel · schema_version 3.4.0 · theme_store_id 3628 · role main · shop horizon-vessel.myshopify.com. Horizon nested theme-blocks: header-component / product-card / slideshow-component / variant-picker / cart-drawer-component / predictive-search-component / facets-form-component (shopify-block custom element yok). facets-block-wrapper--horizon + facets-form-component. Infinite/uzun ızgara.",
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-vessel-demo.myshopify.com/collections/coffee-tea",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21019562475577__main",
+      "capture": true,
+      "etiket": "filtre-kapali",
+      "not": "AVAILABILITY/PRICE kapalı"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Facet-Details-template--21019562475577__main-filter-v-availability summary, details.facets__panel summary.facets__summary",
+      "capture": true,
+      "etiket": "availability-acik",
+      "not": "AVAILABILITY panel"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='Filter-filter-v-availability-1-horizontal-']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21019562475577__main",
+      "capture": true,
+      "etiket": "in-stock",
+      "not": "In stock seçili"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "375 dikey facet farklı olabilir. Checkout yok."
+}

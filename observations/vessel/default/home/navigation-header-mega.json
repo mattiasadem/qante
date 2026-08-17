@@ -1,0 +1,48 @@
+{
+  "observationId": "vessel.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "vessel",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-vessel-demo.myshopify.com/",
+  "selector": "#header-component",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "66px sticky scroll-up bar. Logo Vessel. 1440 düz nav: NEW IN / COFFEE & TEA / DRINKWARE / KITCHENWARE / ACCENTS + More overflow. Search + Cart. Account header’da yok. 375 hamburger summary[aria-label=Menu].",
+  "delta": "Shopify.theme.name `Updated copy of Vessel demo store 3.2.0` · id 159183306809 · schema_name Vessel · schema_version 3.4.0 · theme_store_id 3628 · role main · shop horizon-vessel.myshopify.com. Horizon nested theme-blocks: header-component / product-card / slideshow-component / variant-picker / cart-drawer-component / predictive-search-component / facets-form-component (shopify-block custom element yok). Mega panel yok — düz menu-list__link. Hover NEW IN submenu açmadı. Theme Store ‘Mega menu’ özelliği bu demoda kapalı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-vessel-demo.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bar",
+      "not": "Kapalı sticky bar"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "header a.menu-list__link[href='/collections/all']",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "new-in-hover",
+      "not": "NEW IN hover — mega beklenirse kolonlar"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "Yoklanacak — mega beklenmiyor; hover karesi aynıysa leftover"
+    }
+  ],
+  "interactionNote": "375/768 mega yok — hamburger ayrı observation. Account/login tıklanmadı."
+}

@@ -1,0 +1,88 @@
+{
+  "observationId": "vessel.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "vessel",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-vessel-demo.myshopify.com/",
+  "selector": ".cart-drawer__dialog",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Horizon cart-drawer-component. Boş: Your cart is empty; Have an account? Log in; Continue shopping.",
+  "delta": "Shopify.theme.name `Updated copy of Vessel demo store 3.2.0` · id 159183306809 · schema_name Vessel · schema_version 3.4.0 · theme_store_id 3628 · role main · shop horizon-vessel.myshopify.com. Horizon nested theme-blocks: header-component / product-card / slideshow-component / variant-picker / cart-drawer-component / predictive-search-component / facets-form-component (shopify-block custom element yok). Slide-out drawer (Dawn notification değil). /cart ayrı sayfa. Login tıklanmadı.",
+  "captureMode": "viewport",
+  "prepareClick": "header button[aria-label='Cart']",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-vessel-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header button[aria-label='Cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-vessel-demo.myshopify.com/products/baum-neu-canister",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#BuyButtons-ProductSubmitButton-AYzdvK2VXMkVMTVBJU__add-to-cart, button.add-to-cart-button[name='add'], button.add-to-cart-button",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "header button[aria-label='Cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "canister-qty1",
+      "not": "ATC sonrası drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], .quantity-selector button[name='increase'], button[aria-label='Increase quantity']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +1"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Checkout / login yok. Qty selector yoklanır."
+}

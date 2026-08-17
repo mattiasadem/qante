@@ -1,0 +1,65 @@
+{
+  "observationId": "vessel.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "vessel",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://theme-vessel-demo.myshopify.com/cart",
+  "selector": "#shopify-section-template--21019562410041__cart-section",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Boş: Your cart is empty + Have an account? Log in + Continue shopping.",
+  "delta": "Shopify.theme.name `Updated copy of Vessel demo store 3.2.0` · id 159183306809 · schema_name Vessel · schema_version 3.4.0 · theme_store_id 3628 · role main · shop horizon-vessel.myshopify.com. Horizon nested theme-blocks: header-component / product-card / slideshow-component / variant-picker / cart-drawer-component / predictive-search-component / facets-form-component (shopify-block custom element yok). Drawer ayrı. Login/checkout yok.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-vessel-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "bos-sepet",
+      "not": "Your cart is empty"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-vessel-demo.myshopify.com/products/baum-neu-canister",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#BuyButtons-ProductSubmitButton-AYzdvK2VXMkVMTVBJU__add-to-cart, button.add-to-cart-button",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-vessel-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "dolu-sepet",
+      "not": "Canister satırı. Checkout yok."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], button[aria-label='Increase quantity']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet +1"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Checkout / Shop Pay tıklanmadı."
+}

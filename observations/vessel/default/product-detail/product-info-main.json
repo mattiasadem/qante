@@ -1,0 +1,51 @@
+{
+  "observationId": "vessel.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "vessel",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://theme-vessel-demo.myshopify.com/products/baum-neu-canister",
+  "selector": "#shopify-section-template--21019562541113__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "Baum Neu Canister $25. Galeri + buy box. Size 450ml/800ml, Color Clear. Adet stepper. Add to cart. Buy it now tıklanmadı. DETAILS / SIZE / SHIPPING & RETURNS accordion aynı section.",
+  "delta": "Shopify.theme.name `Updated copy of Vessel demo store 3.2.0` · id 159183306809 · schema_name Vessel · schema_version 3.4.0 · theme_store_id 3628 · role main · shop horizon-vessel.myshopify.com. Horizon nested theme-blocks: header-component / product-card / slideshow-component / variant-picker / cart-drawer-component / predictive-search-component / facets-form-component (shopify-block custom element yok). Horizon product main + nested variant-picker. Alfresco Tumbler aynı şablon (Colour Beige/Black sold-out) — ayrı observation yok.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-vessel-demo.myshopify.com/products/baum-neu-canister",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21019562541113__main",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Size 450ml / Color Clear"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label.variant-option__button-label:has-text('800ml')",
+      "value": "1500",
+      "capture": true,
+      "etiket": "size-800ml",
+      "not": "Size 800ml"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Buy it now / checkout yok. Accordion DETAILS ayrı state değil."
+}

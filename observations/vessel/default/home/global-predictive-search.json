@@ -1,0 +1,68 @@
+{
+  "observationId": "vessel.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "vessel",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-vessel-demo.myshopify.com/",
+  "selector": "dialog.search-modal__content",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "dialog-component#search-modal + predictive-search-component. Kapalı 0 yükseklik. Search ikon → overlay. Input #cmdk-input.",
+  "delta": "Shopify.theme.name `Updated copy of Vessel demo store 3.2.0` · id 159183306809 · schema_name Vessel · schema_version 3.4.0 · theme_store_id 3628 · role main · shop horizon-vessel.myshopify.com. Horizon nested theme-blocks: header-component / product-card / slideshow-component / variant-picker / cart-drawer-component / predictive-search-component / facets-form-component (shopify-block custom element yok). Horizon predictive-search-form. Boş açıkta da PRODUCTS önerisi (Alfresco…) görüldü.",
+  "captureMode": "viewport",
+  "prepareClick": "header search-button.search-action--hidden-on-drawer button[aria-label='Search']",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-vessel-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header search-button.search-action--hidden-on-drawer button[aria-label='Search'], header button[aria-label='Search']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Boş/öneri overlay"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#cmdk-input",
+      "value": "mug",
+      "capture": false,
+      "not": "katalogSorgu mug (Fog Mug / Nest Mug / Ripple mug)"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "#cmdk-input",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mug",
+      "not": "mug önerileri"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "katalogSorgu=mug (91 /search sonuç). Submit/PII yok."
+}
