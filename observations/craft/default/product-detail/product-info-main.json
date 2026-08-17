@@ -1,0 +1,82 @@
+{
+  "observationId": "craft.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "craft",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://theme-craft-demo.myshopify.com/products/ceramic-carafe-set",
+  "selector": "#shopify-section-template--18214085099774__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/craft/default/product-detail/product-info-main.changed.blush-pink.1440.png",
+    "evidence/craft/default/product-detail/product-info-main.changed.blush-pink.375.png",
+    "evidence/craft/default/product-detail/product-info-main.changed.blush-pink.768.png",
+    "evidence/craft/default/product-detail/product-info-main.initial.speckled-white.1440.png",
+    "evidence/craft/default/product-detail/product-info-main.initial.speckled-white.375.png",
+    "evidence/craft/default/product-detail/product-info-main.initial.speckled-white.768.png"
+  ],
+  "notlar": "Ceramic Carafe Set. Color radios: Speckled White / Blush Pink / Dove Gray / Midnight Blue. Qty stepper. Add to cart + Buy it now. 4 variant.",
+  "delta": "variant-radios metin pill (swatch daire değil). Buy it now checkout — tıklanmadı. Rec section h=0.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-craft-demo.myshopify.com/products/ceramic-carafe-set",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--18214085099774__main",
+      "capture": true,
+      "etiket": "speckled-white",
+      "not": "Color Speckled White seçili"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='template--18214085099774__main-1-1']",
+      "capture": true,
+      "etiket": "blush-pink",
+      "not": "Color → Blush Pink"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Ceramic Carafe Set · FABLE HOME · $120→$108 Sale. Color Speckled White hap seçili. Galeri beyaz set. Qty 1. Add to cart + Buy it now. Materials/Bundle Specs/Care accordion kapalı.",
+    "changed": "Blush Pink hap dolu. Ana görsel pembe set. 375 galeri 1/9. Fiyat aynı $108."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "open",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "filled",
+      "sebep": "Sepet cart/notification'da"
+    },
+    {
+      "state": "input",
+      "sebep": "Anlamsız"
+    }
+  ],
+  "interactionNote": "Tek option change: Blush Pink label. Buy it now / checkout yok. Çoğu katalog rengi ayrı handle (cereal-bowl-dove-gray); bu üründe gerçek variant.",
+  "capture": {
+    "url": "https://theme-craft-demo.myshopify.com/products/ceramic-carafe-set",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:17:38.990Z"
+  }
+}
