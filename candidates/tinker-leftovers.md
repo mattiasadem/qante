@@ -41,6 +41,14 @@ Karar: observation yazıldı
 
 ---
 
+ADAY: tinker-faq-not-collapsible  
+Gerekçe: `/pages/faq` beş Q&A düz metin (return / final sale / when order / where made / shipping). `details` / accordion yok. `faq-collapsible-tabs` + delta.  
+Örnekler: https://theme-tinker-demo.myshopify.com/pages/faq  
+Öneri: mevcut şema + delta  
+Karar: observation yazıldı
+
+---
+
 ADAY: tinker-menu-768  
 Gerekçe: 768 hamburger `summary[aria-label=Menu]` 0px. Desktop nav (Organizers…Decor) görünür. 375 drawer + nested Gather product cards.  
 Örnekler: https://theme-tinker-demo.myshopify.com/  

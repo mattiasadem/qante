@@ -5,7 +5,7 @@
 *Tema (storefront, uydurulmadı):* **Updated copy of Tinker demo store** · `schema_name`: **Tinker** · `schema_version`: **3.4.0** · `theme_store_id`: **3627** · role `main` · id `183829266735`  
 *Shop:* `se-horizon6-en-ixxd.myshopify.com`
 
-**Durum:** Mod A walk JSON yazıldı — 3vp + interact + validate sırada  
+**Durum:** ✅ Mod A walk + resmi 3vp + interact + validate  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -28,9 +28,9 @@
 
 - [x] F0 Tema kimliği + sitemap + section haritası
 - [x] F1 Observation JSON (32) — şema yok, mevcut tipler
-- [ ] F2 3vp `capture-observation.mjs`
-- [ ] F3 Interact: mega/header · predictive search `tray` · menu 375 (768 leftover) · cart empty/filled/qty · PDP Brass→Black Steel
-- [ ] F4 `npm run validate` — 0 error
+- [x] F2 3vp `capture-observation.mjs` (26/26 static)
+- [x] F3 Interact: header (mega yok) · predictive `tray` 375/768/1440 · menu 375 (768 leftover) · cart drawer empty/filled/qty · cart page empty/filled/qty · PDP Brass→Black Steel
+- [x] F4 `npm run validate` — 0 error
 
 ---
 
@@ -53,9 +53,6 @@
 | blog-post | `/blogs/news/cultivating-a-creative-practice-with-journalling` |
 | not-found | `/pages/this-page-does-not-exist-xyz-tinker` → HTTP 404 |
 
-Koleksiyonlar: gather · analog · the-analog-system · the-gather-collection · objects · sale · chargers · workspace · our-story  
-Sayfalar: contact · faq · policies · our-story-2
-
 ---
 
 ## Home remap (kanıt)
@@ -63,8 +60,8 @@ Sayfalar: contact · faq · policies · our-story-2
 - announcement → `promo-announcement-bar`
 - header-component (mega yok) → `navigation-header-mega` + delta
 - hero Introducing / Newest Arrivals → `hero-slideshow`
-- generic `section` “Make Your Workspace Yours” (yalnız heading, nested blocks boş) → `editorial-rich-text`
-- media_with_content Productivity Essentials + Play video → `editorial-image-with-text`
+- generic `section` “Make Your Workspace Yours” (yalnız heading) → `editorial-rich-text`
+- media_with_content Productivity Essentials + Shop Now → `editorial-image-with-text`
 - collection_list Shop by Collection (445/903 bento span) → `collection-nav-cards`
 - footer-group newsletter → `lead-capture-newsletter-band`
 - migrated_footer_content kolonlar → `footer-columns-newsletter`
@@ -74,12 +71,12 @@ Sayfalar: contact · faq · policies · our-story-2
 
 ## Interact (pixel-check)
 
-- [ ] `navigation-header-mega` — 1440 hover mega **yok** (düz link)
-- [ ] `global-predictive-search` — `tray` (12 sonuç). 375 hidden-on-menu · 768/1440 hidden-on-drawer
-- [ ] `global-menu-drawer` — 375 hamburger + nested Gather kartları. 768 hamburger 0px
-- [ ] `global-cart-drawer` — boş / Desk Knife / qty
-- [ ] `cart-page-main` — boş + dolu + qty
-- [ ] `product-info-main` — Handle color Brass → Black Steel
+- [x] `navigation-header-mega` — 1440 hover mega **yok** (düz link). Account ikonu var, login yok.
+- [x] `global-predictive-search` — `tray` → chips + Valet/Gather Tray + View all. 375/768/1440
+- [x] `global-menu-drawer` — 375 hamburger + nested Gather kartları. 768 hamburger 0px
+- [x] `global-cart-drawer` — boş / Desk Knife qty 1 $75 / qty 2 $150
+- [x] `cart-page-main` — boş + dolu $75 + qty 2 $150
+- [x] `product-info-main` — Handle color Brass → Black Steel (görsel + swatch)
 
 Stop: email / account / checkout / newsletter submit / contact Send / PII
 
@@ -91,28 +88,28 @@ Stop: email / account / checkout / newsletter submit / contact Send / PII
 
 | # | id | sayfa | Screenshot | Not | JSON | Done |
 |---|---|---|---|---|---|---|
-| 1 | promo-announcement-bar | home | [ ] | [x] | reuse | [ ] |
-| 2 | navigation-header-mega | home | [ ] | [x] | reuse (mega yok) | [ ] |
-| 3 | hero-slideshow | home | [ ] | [x] | reuse | [ ] |
-| 4 | editorial-rich-text | home | [ ] | [x] | heading-only nested | [ ] |
-| 5 | editorial-image-with-text | home | [ ] | [x] | media_with_content | [ ] |
-| 6 | collection-nav-cards | home | [ ] | [x] | bento span | [ ] |
-| 7 | lead-capture-newsletter-band | home | [ ] | [x] | e-posta yok | [ ] |
-| 8 | footer-columns-newsletter | home | [ ] | [x] | reuse | [ ] |
-| 9 | global-predictive-search | home | [ ] | [x] | tray | [ ] |
-| 10 | global-menu-drawer | home | [ ] | [x] | 375 | [ ] |
-| 11 | global-cart-drawer | home | [ ] | [x] | empty/filled/qty | [ ] |
-| 12 | collection-nav-grid | collections | [ ] | [x] | reuse | [ ] |
-| 13–14 | banner + grid-plp | collection | [ ] | [x] | objects/Decor | [ ] |
-| 15 | search-results | search | [ ] | [x] | tray | [ ] |
-| 16–17 | cart-page + related | cart | [ ] | [x] | reuse | [ ] |
-| 18–20 | PDP info / video / related | product-detail | [ ] | [x] | Desk Knife | [ ] |
-| 21 | lead-capture-form | contact | [ ] | [x] | Send yok | [ ] |
-| 22–26 | about ×5 | about-brand | [ ] | [x] | our-story-2 | [ ] |
-| 27 | faq-collapsible-tabs | faq-support | [ ] | [x] | reuse | [ ] |
-| 28 | page-content-main | policy | [ ] | [x] | reuse | [ ] |
-| 29–30 | blog list + post | blog-* | [ ] | [x] | reuse | [ ] |
-| 31–32 | 404 + related | not-found | [ ] | [x] | leftover | [ ] |
+| 1 | promo-announcement-bar | home | [x] | [x] | reuse | [x] |
+| 2 | navigation-header-mega | home | [x] | [x] | reuse (mega yok) | [x] |
+| 3 | hero-slideshow | home | [x] | [x] | reuse | [x] |
+| 4 | editorial-rich-text | home | [x] | [x] | heading-only nested | [x] |
+| 5 | editorial-image-with-text | home | [x] | [x] | media_with_content | [x] |
+| 6 | collection-nav-cards | home | [x] | [x] | bento span | [x] |
+| 7 | lead-capture-newsletter-band | home | [x] | [x] | e-posta yok | [x] |
+| 8 | footer-columns-newsletter | home | [x] | [x] | reuse | [x] |
+| 9 | global-predictive-search | home | [x] | [x] | tray | [x] |
+| 10 | global-menu-drawer | home | [x] 375 | [x] | 768 leftover | [x] |
+| 11 | global-cart-drawer | home | [x] | [x] | empty/filled/qty | [x] |
+| 12 | collection-nav-grid | collections | [x] | [x] | reuse | [x] |
+| 13–14 | banner + grid-plp | collection | [x] | [x] | objects/Decor | [x] |
+| 15 | search-results | search | [x] | [x] | tray | [x] |
+| 16–17 | cart-page + related | cart | [x] | [x] | reuse | [x] |
+| 18–20 | PDP info / video / related | product-detail | [x] | [x] | Desk Knife | [x] |
+| 21 | lead-capture-form | contact | [x] | [x] | Send yok | [x] |
+| 22–26 | about ×5 | about-brand | [x] | [x] | our-story-2 | [x] |
+| 27 | faq-collapsible-tabs | faq-support | [x] | [x] | düz Q&A | [x] |
+| 28 | page-content-main | policy | [x] | [x] | reuse | [x] |
+| 29–30 | blog list + post | blog-* | [x] | [x] | reuse | [x] |
+| 31–32 | 404 + related | not-found | [x] | [x] | leftover | [x] |
 
 ---
 
@@ -124,8 +121,8 @@ Stop: email / account / checkout / newsletter submit / contact Send / PII
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact search / menu 375 / cart / PDP variant
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate` — 0 error
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact search / menu 375 / cart / PDP variant
+- [x] PNG bak → stateFindings
+- [x] `npm run validate` — 0 error
 - [x] Newsletter / account / checkout — **yapılmayacak** (PII)
