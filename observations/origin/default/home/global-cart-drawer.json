@@ -1,0 +1,46 @@
+{
+  "observationId": "origin.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "origin",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-origin-demo.myshopify.com/",
+  "selector": "cart-drawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Dawn cart-drawer. Boş: Your cart is empty + Continue shopping. #cart-icon-bubble hem drawer açar hem /cart var. Dolu + adet PDP’den.",
+  "delta": "Drawer + /cart sayfa şablonu. Checkout tıklanmadı.",
+  "captureMode": "viewport",
+  "prepareClick": "#cart-icon-bubble",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-origin-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer: Your cart is empty"
+    }
+  ],
+  "interactionStates": [
+    "initial"
+  ],
+  "missingStates": [
+    {
+      "state": "filled",
+      "sebep": "Henüz çekilmedi — capture-interaction sonrası."
+    },
+    {
+      "state": "changed",
+      "sebep": "Henüz çekilmedi — adet +."
+    }
+  ],
+  "interactionNote": "Boş drawer prepareClick #cart-icon-bubble. Filled/qty ayrı adımlar."
+}

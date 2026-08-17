@@ -1,0 +1,48 @@
+{
+  "observationId": "origin.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "origin",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-origin-demo.myshopify.com/",
+  "selector": "predictive-search.search-modal__form",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "details-modal.header__search + predictive-search. 1440 opener 44×44. 375/768 opener 0×0. Placeholder Search. katalogSorgu: bag.",
+  "delta": "İki details-modal kopyası (Dawn). Mobilde opener yok — leftover.",
+  "captureMode": "viewport",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-origin-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "details-modal.header__search summary.header__icon--search",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik",
+      "not": "1440: boş search modal"
+    }
+  ],
+  "interactionStates": [
+    "initial"
+  ],
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "Henüz çekilmedi — fill bag."
+    },
+    {
+      "state": "open",
+      "sebep": "375/768 opener 0×0; 1440 input ile birleşir."
+    }
+  ],
+  "interactionNote": "375/768 arama ikonu görünmüyor. Yalnız 1440 fill denenecek."
+}
