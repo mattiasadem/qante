@@ -1,0 +1,71 @@
+{
+  "observationId": "eurus.breath.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "eurus",
+  "preset": "breath",
+  "sayfa": "home",
+  "url": "https://eurus-breath-demo.myshopify.com/",
+  "selector": "#FormSearch",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "captureMode": "viewport",
+  "notlar": "SearchOpen ikon #search-in-modal (1440) / #search-in-modal-mobile (375) açar. #search-result + #suggest-search. Katalog: food.",
+  "delta": "Kapalı kare 0px. Alpine x-search-popup. Submit /search sayfasına gider — interact'te Enter yok.",
+  "interactionStates": ["initial", "input"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eurus-breath-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#SearchOpen",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Boş search popup"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#search-in-modal",
+      "value": "food",
+      "viewports": ["1440"],
+      "capture": false,
+      "not": "1440 görünür input"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#search-in-modal-mobile",
+      "value": "food",
+      "viewports": ["375", "768"],
+      "capture": false,
+      "not": "375/768 mobil input"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "#search-in-modal, #search-in-modal-mobile",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "food",
+      "not": "Öneri/ürün listesi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "input": ""
+  },
+  "missingStates": [],
+  "interactionNote": "1440 #search-in-modal; 375/768 #search-in-modal-mobile. Enter/submit yok."
+}

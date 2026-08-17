@@ -1,0 +1,66 @@
+{
+  "observationId": "eurus.breath.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "eurus",
+  "preset": "breath",
+  "sayfa": "cart",
+  "url": "https://eurus-breath-demo.myshopify.com/cart",
+  "selector": "#shopify-section-template--27353604325654__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Boş/dolu cart-items. Dolu: reserved timer, free-shipping bar, Product/Price/Quantity/Total.",
+  "delta": "cart-footer (Estimate shipping) ayrı section — leftover. Checkout tıklanmadı.",
+  "interactionStates": ["initial", "filled", "changed"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eurus-breath-demo.myshopify.com/cart/clear",
+      "capture": false,
+      "not": "Viewport cookie temizliği"
+    },
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eurus-breath-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş sepet sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://eurus-breath-demo.myshopify.com/products/eco-friendly-natural-rubber-chew-toy",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://eurus-breath-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart-items satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--27353604325654__cart-items button[name='plus'], [aria-label*='Increase' i], button.quantity-plus",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet + "
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "filled": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı. Qty selector yoklanır."
+}

@@ -1,0 +1,44 @@
+{
+  "observationId": "eurus.breath.home.commerce-tools-products-bundle",
+  "schemaId": "commerce-tools-products-bundle",
+  "kaynak": "eurus",
+  "preset": "breath",
+  "sayfa": "home",
+  "url": "https://eurus-breath-demo.myshopify.com/",
+  "selector": "#shopify-section-template--27353605177622__products_bundle_EDmhGy",
+  "evidenceSlug": "commerce-tools-products-bundle",
+  "evidence": [],
+  "notlar": "Stack Your Bowl, Slash the Price. BEST BUNDLE / 1 WEEK TREAT. 4 ürün ADD TO BUNDLE. Bundle Contents: Add at least 3 items to get 50% off. Your bundle is empty.",
+  "delta": "Eurus products-bundle. Quiz sayfası Breath'te yok; bundle home'da. Eşik 3 ürün / %50.",
+  "interactionStates": ["initial", "changed"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eurus-breath-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--27353605177622__products_bundle_EDmhGy",
+      "capture": true,
+      "etiket": "bundle-bos",
+      "not": "Your bundle is empty"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--27353605177622__products_bundle_EDmhGy button:has-text('ADD TO BUNDLE')",
+      "capture": true,
+      "etiket": "bundle-eklendi",
+      "not": "İlk ADD TO BUNDLE — Bundle Contents güncellenir mi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "3 ürün eşiğine kadar gidilmedi. Checkout/PII yok. Quiz Breath preset'te yok."
+}

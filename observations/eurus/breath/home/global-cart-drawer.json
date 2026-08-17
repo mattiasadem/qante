@@ -1,0 +1,77 @@
+{
+  "observationId": "eurus.breath.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "eurus",
+  "preset": "breath",
+  "sayfa": "home",
+  "url": "https://eurus-breath-demo.myshopify.com/",
+  "selector": ".drawer.typeDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "captureMode": "viewport",
+  "prepareClick": "#cart-icon",
+  "notlar": "ATC sonrası sağ drawer. Your cart + reserved timer + free-shipping bar + satır + You'll love this too. #CartDrawer-Form / #CartDrawer-CartItems.",
+  "delta": "Boş: #cart-icon tık. Dolu: Eco-Friendly Natural Rubber Chew Toy $25. Checkout tıklanmadı.",
+  "interactionStates": ["initial", "filled", "changed"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eurus-breath-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://eurus-breath-demo.myshopify.com/products/eco-friendly-natural-rubber-chew-toy",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add']",
+      "capture": false,
+      "not": "Chew Toy ATC — drawer açılır"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#cart-icon",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer-CartItems button[name='plus'], .drawer.typeDrawer button[name='plus'], .drawer.typeDrawer [aria-label*='Increase' i]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "filled": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "ATC UI. Checkout / Discount / Share cart tıklanmadı."
+}
