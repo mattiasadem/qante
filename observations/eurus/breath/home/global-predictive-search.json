@@ -1,0 +1,166 @@
+{
+  "observationId": "eurus.breath.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "eurus",
+  "preset": "breath",
+  "sayfa": "home",
+  "url": "https://eurus-breath-demo.myshopify.com/",
+  "selector": "#FormSearch",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/eurus/breath/home/global-predictive-search.initial.search-bos.1440.png",
+    "evidence/eurus/breath/home/global-predictive-search.initial.search-bos.375.png",
+    "evidence/eurus/breath/home/global-predictive-search.initial.search-bos.768.png",
+    "evidence/eurus/breath/home/global-predictive-search.input.food.1440.png",
+    "evidence/eurus/breath/home/global-predictive-search.input.food.375.png",
+    "evidence/eurus/breath/home/global-predictive-search.input.food.768.png"
+  ],
+  "captureMode": "viewport",
+  "notlar": "a#SearchOpen açar. 375/768: #FormSearch popup + #search-in-modal-mobile. 1440: inline #search-in-modal (FormSearch 0px). Katalog: food.",
+  "delta": "Kapalı kare 0px. Alpine x-search-popup. 1440 popup-hidden; arama header içinde. Submit /search — interact'te Enter yok.",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eurus-breath-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 8000,
+      "capture": false,
+      "not": "429 / Just a moment soğuma"
+    },
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eurus-breath-demo.myshopify.com/",
+      "capture": false,
+      "not": "İkinci yükleme — bot challenge sonrası"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a#SearchOpen",
+      "capture": false,
+      "not": "İlk görünür SearchOpen (375/768 [0], 1440 [1])"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 200,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#FormSearch",
+      "etiket": "search-bos",
+      "not": "375/768 boş search popup"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 200,
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#search-in-modal",
+      "etiket": "search-bos",
+      "not": "1440 inline input (FormSearch 0px)"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#search-in-modal-mobile",
+      "value": "food",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false,
+      "not": "375/768 mobil input"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#search-in-modal",
+      "value": "food",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "1440 masaüstü input"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2800,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 200,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#FormSearch",
+      "etiket": "food",
+      "not": "Öneri listesi"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 200,
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#search-in-modal",
+      "etiket": "food",
+      "not": "1440 öneri"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Açık overlay: All types + placeholder Search for articles + X. 1440 ayrıca SUGGESTIONS Plants / Herbs (sorgu yok). 375/768 boş karede öneri kutusu yok. Enter yok.",
+    "input": "Sorgu food. SUGGESTIONS: Plants, Herbs. Ürün kartı / food SKU yok. /search?q=food ayrı sayfa (151 sonuç)."
+  },
+  "missingStates": [],
+  "interactionNote": "İki a#SearchOpen; clickVisible görünür olanı. 1440 #FormSearch popup-hidden. Predictive ürün hit vermedi — chip öneri. Enter/submit yok.",
+  "capture": {
+    "url": "https://eurus-breath-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T20:34:38.892Z"
+  }
+}
