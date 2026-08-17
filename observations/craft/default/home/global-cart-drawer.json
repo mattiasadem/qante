@@ -1,0 +1,80 @@
+{
+  "observationId": "craft.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "craft",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-craft-demo.myshopify.com/",
+  "selector": "cart-notification",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Dawn cart-notification (popup). cart-drawer yok. Sepet ikonu /cart sayfasına gider.",
+  "delta": "Slide-out drawer değil; add sonrası header altı bildirim. Qty drawer'da yok — cart sayfasında.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-craft-demo.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bildirim-kapali",
+      "not": "Notification kapalı / sepet boş"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-craft-demo.myshopify.com/products/ceramic-carafe-set",
+      "capture": false,
+      "not": "Carafe Set PDP"
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add']",
+      "capture": false,
+      "not": "Add to cart — gerçek tık"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "urun-eklendi",
+      "not": "Item added to your cart bildirimi"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "input",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "open",
+      "sebep": "Açılma filled ile aynı bildirim"
+    },
+    {
+      "state": "changed",
+      "sebep": "Adet cart sayfasında; bildirimde qty yok"
+    }
+  ],
+  "interactionNote": "Overlay = cart-notification. Checkout tıklanmadı. Qty → cart-page-main.",
+  "capture": {
+    "url": "https://theme-craft-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ]
+  }
+}

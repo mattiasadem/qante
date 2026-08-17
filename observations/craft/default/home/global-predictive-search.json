@@ -1,0 +1,70 @@
+{
+  "observationId": "craft.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "craft",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-craft-demo.myshopify.com/",
+  "selector": "predictive-search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "Header büyüteç → search-modal. Input placeholder Search. katalogSorgu: bowl (47 sonuç sayfası).",
+  "delta": "Dawn details-modal; tam overlay. Drawer değil.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-craft-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "details-modal.header__search summary.header__icon--search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik",
+      "not": "Büyüteç → search-modal boş"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "bowl",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bowl",
+      "not": "katalogSorgu bowl — ürün/öneri listesi"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "filled",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "changed",
+      "sebep": "Tek sorgu; boş sonuç bu turda yok"
+    }
+  ],
+  "interactionNote": "İki input var (Search-In-Modal-1 / Search-In-Modal). Fill #Search-In-Modal. Submit/Enter yok — predictive overlay.",
+  "capture": {
+    "url": "https://theme-craft-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "observationId": "craft.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "craft",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-craft-demo.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "header-drawer tablet breakpoint. Hamburger summary aria-controls=menu-drawer.",
+  "delta": "Dawn menu-drawer; soldan. 1440'ta hamburger gizli.",
+  "captureMode": "viewport",
+  "prepareClick": "#Details-menu-drawer-container > summary",
+  "interactionStates": [
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://theme-craft-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "drawer-acik",
+      "not": "Hamburger açık — Dinnerware ok + düz linkler"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-menu-drawer-menu-item-1 > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "dinnerware-akordeon",
+      "not": "Dinnerware drill"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "Kapalı drawer zero-size; kapalı kare header'da"
+    },
+    {
+      "state": "hover",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "filled",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "input",
+      "sebep": "Anlamsız"
+    }
+  ],
+  "interactionNote": "1440 hamburger yok (data-breakpoint=tablet). 1440 interact header Dinnerware submenu.",
+  "capture": {
+    "url": "https://theme-craft-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ]
+  }
+}
