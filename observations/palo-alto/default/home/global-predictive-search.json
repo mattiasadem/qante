@@ -1,0 +1,97 @@
+{
+  "observationId": "palo-alto.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "palo-alto",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://palo-alto-theme-main.myshopify.com/",
+  "selector": "#searchResults-desktop-compress, #searchResults-desktop",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/palo-alto/default/home/global-predictive-search.initial.search-bos.1440.png",
+    "evidence/palo-alto/default/home/global-predictive-search.initial.search-bos.375.png",
+    "evidence/palo-alto/default/home/global-predictive-search.initial.search-bos.768.png",
+    "evidence/palo-alto/default/home/global-predictive-search.input.shirt.1440.png",
+    "evidence/palo-alto/default/home/global-predictive-search.input.shirt.375.png",
+    "evidence/palo-alto/default/home/global-predictive-search.input.shirt.768.png"
+  ],
+  "notlar": "summary.search-popdown__toggle açar. 375/768 #searchInput-desktop-compress; 1440 #searchInput-desktop. Katalog: shirt.",
+  "delta": "Kapalı kare boş. Submit /search interact'te yok. #searchInput-mobile 0×0 — compress input kullanıldı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://palo-alto-theme-main.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "summary.search-popdown__toggle",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Boş search popdown"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#searchInput-desktop",
+      "value": "shirt",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "1440 masaüstü input"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#searchInput-desktop-compress",
+      "value": "shirt",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false,
+      "not": "375/768 compress header input"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "predictive-search input[name='q']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shirt",
+      "not": "Öneri/ürün listesi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Search popdown + boş input. SUGGESTED SEARCH TERMS: Blazers / Blouses / Camis and Tanks / Cover-ups / Dresses / Jackets / Pants / Shorts / Skirts.",
+    "input": "Query shirt. SUGGESTIONS: shirt. PRODUCTS: Amalfi Shirt / Zay Shirt / Kassandra Shirt / Meg Shirt. View All Results. 1440/768 Press enter — Enter basılmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "Enter/submit yok. 375/768 #searchInput-desktop-compress; 1440 #searchInput-desktop. #searchInput-mobile 0×0.",
+  "capture": {
+    "url": "https://palo-alto-theme-main.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T20:52:12.995Z"
+  }
+}
