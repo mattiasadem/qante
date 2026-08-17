@@ -1,0 +1,82 @@
+{
+  "observationId": "ride.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "ride",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-ride-demo.myshopify.com/",
+  "selector": "#cart-notification",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/ride/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/ride/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/ride/default/home/global-cart-drawer.filled.sepete-eklendi.768.png"
+  ],
+  "notlar": "Dawn cart-notification (drawer değil). Cart ikon → /cart. Checkout tıklanmadı.",
+  "delta": "Overlay popup sağ-üst. Boş notification yok. Adet kontrolü notification'da yok → cart-page-main changed.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-ride-demo.myshopify.com/products/fcs-ii-performer-neo-glass-tri-fins",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button.product-form__submit",
+      "capture": false,
+      "not": "UI ATC — notification açılsın"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "forceOpen",
+      "selector": "#cart-notification",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Item added + View cart + Check out"
+    }
+  ],
+  "stateFindings": {
+    "filled": "Item added to your cart. FCS II PERFORMER NEO GLASS TRI FINS · Size: X-SMALL. View my cart (1) + Check out + Continue shopping. Cart badge 1. Adet stepper yok. 375/768/1440."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "Boş cart-notification yok; boş hâl /cart sayfası"
+    },
+    {
+      "state": "changed",
+      "sebep": "Notification'da adet stepper yok — qty cart-page-main"
+    }
+  ],
+  "interactionNote": "UI ATC (3vp). Checkout tıklanmadı. forceOpen yedek.",
+  "capture": {
+    "url": "https://theme-ride-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:03:34.280Z"
+  }
+}
