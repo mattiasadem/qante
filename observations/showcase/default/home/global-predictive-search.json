@@ -1,0 +1,101 @@
+{
+  "observationId": "showcase.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "showcase",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://betty-theme.myshopify.com/",
+  "selector": "#search-modal",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/showcase/default/home/global-predictive-search.initial.search-bos.1440.png",
+    "evidence/showcase/default/home/global-predictive-search.initial.search-bos.375.png",
+    "evidence/showcase/default/home/global-predictive-search.initial.search-bos.768.png",
+    "evidence/showcase/default/home/global-predictive-search.input.tote.1440.png",
+    "evidence/showcase/default/home/global-predictive-search.input.tote.375.png",
+    "evidence/showcase/default/home/global-predictive-search.input.tote.768.png"
+  ],
+  "notlar": "Fullscreen #search-modal. Placeholder Type to search. Katalog: tote (shirt 0 sonuç).",
+  "delta": "Canlı öneri listesi belirmadi — modal input + ok submit. dismiss #search-modal'ı gizleyebilir → forceOpen.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://betty-theme.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "#search-modal",
+      "capture": false,
+      "not": "dismiss display:none geri alınır"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[aria-label='Search']",
+      "capture": false,
+      "not": "reveal class için opener"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Boş arama modalı"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#search-modal input[name='q']",
+      "value": "tote",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "tote",
+      "not": "Yazılı tote — öneri var mı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Koyu fullscreen. Ortada çizgi input. Sağ üst X.",
+    "input": "tote yazılı + ok. Ürün/koleksiyon önerisi yok."
+  },
+  "missingStates": [],
+  "interactionNote": "Predictive dropdown 3vp yoklandı, belirmadi. Enter/submit yok. shirt → No search results. 3vp PNG birleşik koşulardan (375/1440 + 768).",
+  "capture": {
+    "url": "https://betty-theme.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T20:55:33.174Z"
+  }
+}
