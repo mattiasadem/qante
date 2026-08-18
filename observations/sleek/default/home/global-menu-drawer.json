@@ -1,0 +1,56 @@
+{
+  "observationId": "sleek.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "sleek",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://sleek-theme-demo.myshopify.com/",
+  "selector": "#MenuDrawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "menu-drawer drawer--left. 375/768 hamburger. 1440 lg:hidden — hamburger 0px.",
+  "delta": "FoxEcom #MenuDrawer header section içinde (ayrı shopify-section değil).",
+  "captureMode": "viewport",
+  "prepareClick": "button.menu-drawer-button[aria-controls='MenuDrawer']",
+  "interactionStates": [
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://sleek-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.menu-drawer-button[aria-controls='MenuDrawer']",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger-acik",
+      "not": "375/768 hamburger"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#MenuDrawer details > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "akordeon-acik",
+      "not": "İlk boş ok / Presets expander. Yazılı <a> sayfaya kaçar"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "1440 hamburger gizli (lg:hidden). Presets expander dış vitrin — leftover."
+}

@@ -1,0 +1,53 @@
+{
+  "observationId": "sleek.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "sleek",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://sleek-theme-demo.myshopify.com/",
+  "selector": "#shopify-section-sections--24914038096161__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "SLEEK GLOSSY logo + Home / Presets / Shop / Collections / Pages / Contact. Sağ: search + account + cart. Mega: details[is=details-mega] hover. Account tıklanmadı.",
+  "delta": "FoxEcom Sleek 2.3.0 sticky header. Presets mega = diğer Sleek preset vitrinleri (Wildpeak/Jumped/Sleek/Modiva/Glint) — Theme Store satış, walk dışı.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sleek-theme-demo.myshopify.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Mega-menu-item-product_list_XR3rz8 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "Shop hover — tıklama /collections'a kaçar"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 800,
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "Shop mega: Best Sellers/New/Bundles/Trending + Skincare/Makeup kolon + ürün şeridi"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "375/768 mega header'da değil — global-menu-drawer. Account / Presets dış vitrin tıklanmadı."
+}

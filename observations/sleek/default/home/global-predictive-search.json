@@ -1,0 +1,55 @@
+{
+  "observationId": "sleek.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "sleek",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://sleek-theme-demo.myshopify.com/",
+  "selector": "#SearchDrawer",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "search-drawer drawer--right. Opener: a.search-drawer-button. Input #SearchInput-… Most searched keywords/products kapalı metinde.",
+  "delta": "predictive-search custom element yok; search-drawer + input aria-controls=predictive-search-results.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sleek-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.search-drawer-button[aria-controls='SearchDrawer']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Boş search drawer"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#SearchInput-sections--24914039275809__search-drawer",
+      "value": "moisturizer",
+      "capture": false,
+      "not": "katalog: Water Lock Moisturizer"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "moisturizer",
+      "not": "Öneri/ürün listesi"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Enter/submit yok. Account yok. Katalog moisturizer."
+}

@@ -1,0 +1,65 @@
+{
+  "observationId": "sleek.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "sleek",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://sleek-theme-demo.myshopify.com/cart",
+  "selector": "#shopify-section-template--24914043699489__main-cart",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Boş: Your cart is currently empty + Try these collections. Dolu interact.",
+  "delta": "Checkout tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sleek-theme-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://sleek-theme-demo.myshopify.com/products/water-lock-moisturizer",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--24914044518689__main",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://sleek-theme-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Water Lock 100ml $39 qty 1"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--24914043699489__main-cart button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "qty +"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Check out tıklanmadı. Drawer ayrı observation."
+}
