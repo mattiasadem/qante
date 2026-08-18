@@ -1,0 +1,142 @@
+{
+  "observationId": "maker.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "maker",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://maker-theme-food.myshopify.com/",
+  "selector": ".cart--root",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/maker/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/maker/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/maker/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/maker/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/maker/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/maker/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/maker/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/maker/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "Sağ off-canvas .cart--root 400px. Boş: Your cart is currently empty. Click here to continue shopping. ATC → satır + qty ± + CHECKOUT.",
+  "delta": "/cart ayrı sayfa. Checkout tıklanmadı. plus a[href*='/cart/change'].",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://maker-theme-food.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".cart--open-right",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Desktop CART metni"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".header--cart-count",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "viewports": [
+        "768"
+      ],
+      "not": "768 cart rozet"
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": ".cart--root",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "viewports": [
+        "375"
+      ],
+      "not": "375 header cart gizli — forceOpen"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://maker-theme-food.myshopify.com/products/empress-box-5-day-detox",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'], form[action*='/cart/add'] button[type='submit']",
+      "capture": false,
+      "not": "Empress Mixed Box 5-Pack / 473ml"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC drawer açar"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".cart--root a.plus",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Plus → qty 2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your Cart. Your cart is currently empty. Click here to continue shopping.",
+    "filled": "Empress 5-Day Detox Box · Mixed Box 5-Pack / 473ml · $80.00 · qty 1 · REMOVE · Leave a note · Total $80.00 · CHECKOUT / CONTINUE SHOPPING.",
+    "changed": "375/768/1440: qty 2 · $160.00 · Total $160.00. Checkout tıklanmadı."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "375: header cart kontrolü 0×0, forceOpen drawer kaydırmadı (kare homepage oldu, silindi). Boş sepet /cart 375 yazıldı. 768/1440 empty OK."
+    }
+  ],
+  "interactionNote": "Host .cart--root. 375 boş opener yok (yalnız hamburger). ATC filled+changed 375 OK. Checkout/note PII yok.",
+  "capture": {
+    "url": "https://maker-theme-food.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:33:09.518Z"
+  }
+}

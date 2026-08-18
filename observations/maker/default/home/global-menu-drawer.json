@@ -1,0 +1,64 @@
+{
+  "observationId": "maker.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "maker",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://maker-theme-food.myshopify.com/",
+  "selector": ".mobile-nav",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/maker/default/home/global-menu-drawer.open.mobil-menu-acik.375.png",
+    "evidence/maker/default/home/global-menu-drawer.open.mobil-menu-acik.768.png"
+  ],
+  "notlar": "Sol off-canvas .mobile-nav. SEARCH ACCOUNT + HOME JUICES BOXES ABOUT BLOG + Email Address ENTER + sosyal. Account/ENTER tıklanmadı.",
+  "delta": "Maker mobile-nav. 1440 hamburger yok. Newsletter input PII.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://maker-theme-food.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header svg.icon--menu",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mobil-menu-acik",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Görünür hamburger SVG"
+    }
+  ],
+  "stateFindings": {
+    "open": "375 sol drawer 300px: SEARCH/ACCOUNT, HOME/JUICES/BOXES/ABOUT/BLOG, Email Address + ENTER, Facebook/Instagram/Twitter. 768 aynı iskelet 400px. Account/ENTER tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "Opener header svg.icon--menu (2. görünür kopya). 1440 N/A.",
+  "capture": {
+    "url": "https://maker-theme-food.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:24:23.504Z"
+  }
+}
