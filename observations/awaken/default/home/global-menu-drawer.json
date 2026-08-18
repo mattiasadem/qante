@@ -1,0 +1,66 @@
+{
+  "observationId": "awaken.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "awaken",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://awaken-store-newdemo.myshopify.com/",
+  "selector": "xo-modal.xo-menu-hamburger-base__modal",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "375 hamburger 24×24 → xo-modal Shop / Features / Blog.",
+  "delta": "768 ve 1440 hamburger boundingBox null. Shop <a href=/> tık sayfaya kaçar.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://awaken-store-newdemo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": ".xo-menu-hamburger-icon",
+      "value": 2000,
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "xo-modal.xo-menu-hamburger-base__modal:not(.xo-menu-hamburger-base__modal--level-1)",
+      "etiket": "hamburger",
+      "not": "375 drawer; 768/1440 hamburger yok"
+    }
+  ],
+  "stateFindings": {
+    "open": ""
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375 resmi capture zero-size xo-modal.xo-menu-hamburger-base__modal (2 deneme). 768/1440 hamburger yok — yatay Shop/Features/Blog. 3. yok."
+    }
+  ],
+  "interactionNote": "0 menu PNG. Yoklama: 375 hamburger 24×24 Shop/Features/Blog; resmi kare yok. Shop <a href=/> tık sayfaya kaçar — changed yok. Login tıklanmadı.",
+  "capture": {
+    "url": "https://awaken-store-newdemo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:51:18.623Z"
+  }
+}
