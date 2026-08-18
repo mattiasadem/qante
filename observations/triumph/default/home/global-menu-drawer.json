@@ -5,9 +5,9 @@
   "selector": "#Details-menu-drawer-container",
   "evidenceSlug": "global-menu-drawer",
   "captureMode": "viewport",
-  "prepareClick": "header summary.header__icon--menu[aria-label='Menu']",
-  "notlar": "header-drawer data-breakpoint=tablet. 375/768 hamburger 20×30. Women/Men/Kids + nested New & Featured / Clothing…",
-  "delta": "Triumph header-drawer. 1440 hamburger gizli (mega).",
+  "prepareClick": "#Details-menu-drawer-container > summary",
+  "notlar": "header-drawer[data-breakpoint=tablet]. Hamburger #Details-menu-drawer-container > summary (header-drawer <header> dışında; header summary.header__icon--menu eşleşmez). 375/768 20×30. Women/Men/Kids + nested New & Featured / Clothing…",
+  "delta": "Triumph header-drawer. 1440 hamburger gizli (mega). 768 official dismiss cart-drawer açıyor — leftover.",
   "interactionStates": [
     "open"
   ],
@@ -27,7 +27,7 @@
     {
       "state": "open",
       "action": "click",
-      "selector": "header summary.header__icon--menu[aria-label='Menu']",
+      "selector": "#Details-menu-drawer-container > summary",
       "viewports": [
         "375",
         "768"
@@ -35,16 +35,32 @@
       "capture": true,
       "captureMode": "viewport",
       "etiket": "hamburger",
-      "not": "375/768 drawer"
+      "not": "375/768 drawer. Summary header dışında."
     }
   ],
   "stateFindings": {
     "open": ""
   },
-  "missingStates": [],
-  "interactionNote": "1440 hamburger yok. Nested written <a> tıklanmadı.",
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "önceki koşu: header summary.header__icon--menu eşleşmedi (hamburger header-drawer içinde, <header> değil). Selector düzeltildi; recapture bekleniyor."
+    }
+  ],
+  "interactionNote": "1440 hamburger yok. Nested written <a> tıklanmadı. Account tıklanmadı. 768 goto settle: dismiss [aria-label=Close] cart-drawer açıyor, assertClean iptal.",
   "kaynak": "triumph",
   "preset": "default",
   "sayfa": "home",
-  "evidence": []
+  "evidence": [],
+  "capture": {
+    "url": "https://triumph-theme.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:10:00.000Z"
+  }
 }

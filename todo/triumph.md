@@ -8,7 +8,7 @@
 *Tema (storefront, uydurulmadı):* **Designer check** · `schema_name`: **Triumph** · `schema_version`: **1.0.0** · `theme_store_id`: **null** · role `main` · id `184658100489`  
 *Shop:* `triumph-theme.myshopify.com`
 
-**Durum:** Mod A walk + resmi 3vp + interact (capture sırada)  
+**Durum:** Mod A walk + resmi 3vp (375+1440; 768 leftover) + interact pixel-check  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -21,7 +21,7 @@
 | Capture | resmi `capture-observation.mjs` + `capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **38** |
-| PNG | (capture sonrası) |
+| PNG | **122** (menu recapture sonrası artacak) |
 | Parallel | yalnız `observations/triumph/`, `evidence/triumph/`, `todo/triumph.md`, `candidates/triumph-leftovers.md` |
 
 **Kapsam satırı:**  
@@ -33,20 +33,20 @@
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home + announcement/hero/categories/tabs/bundle/collage/countdown/feed/blog/faq/footer | [x] obs | [ ] capture |
-| Mega Clothing hover 1440 | [x] obs | [ ] interact |
-| Predictive search `sneakers` | [x] obs | [ ] interact 375/768/1440 |
-| Mobile hamburger 375+768 | [x] obs | [ ] interact (1440 mega) |
-| Cart drawer empty + filled + qty | [x] obs | [ ] interact |
-| PDP JumpFlex Color Pink→Blue | [x] obs | [ ] interact |
-| PLP `/collections/womens-bras` | [x] obs | [ ] capture |
-| Collections index `/collections` | [x] obs | [ ] capture |
-| Search `/search?q=sneakers` | [x] obs | [ ] capture |
-| Cart `/cart` empty + filled + qty | [x] obs | [ ] interact |
-| About `/pages/about-us` | [x] obs | [ ] capture |
-| Contact form (submit yok) | [x] obs | [ ] capture |
-| Blog `/blogs/news` + sports bra post | [x] obs | [ ] capture |
-| 404 leftover | [x] obs | [ ] capture |
+| Home + announcement/hero/categories/tabs/bundle/collage/countdown/feed/blog/faq/footer | [x] obs | [x] 375+1440 · 768 leftover |
+| Mega Clothing hover 1440 | [x] obs | [x] 375 kapalı + 1440 kapalı/open · 768 leftover |
+| Predictive search `sneakers` | [x] obs | [x] 375+1440 · 768 leftover |
+| Mobile hamburger 375+768 | [x] obs | [ ] recapture (selector düzeltildi) |
+| Cart drawer empty + filled + qty | [x] obs | [x] pixel-check (375 filled / 768 initial leftover) |
+| PDP JumpFlex Color Pink→Blue | [x] obs | [x] 375+1440 initial/changed · 768 changed |
+| PLP `/collections/womens-bras` | [x] obs | [x] 375+1440 · 768 leftover |
+| Collections index `/collections` | [x] obs | [x] 375+1440 · 768 leftover |
+| Search `/search?q=sneakers` | [x] obs | [x] 375+1440 · 768 leftover |
+| Cart `/cart` empty + filled + qty | [x] obs | [x] 3vp |
+| About `/pages/about-us` | [x] obs | [x] 375+1440 · 768 leftover |
+| Contact form (submit yok) | [x] obs | [x] 375+1440 · 768 leftover |
+| Blog `/blogs/news` + sports bra post | [x] obs | [x] 375+1440 · 768 leftover |
+| 404 leftover | [x] obs | [x] 375+1440 · 768 leftover |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -55,7 +55,7 @@
 
 | # | Triumph / id | QANTE schemaId | Karar |
 |---|---|---|---|
-| 1 | header `__header` announcement | `promo-announcement-bar` | reuse · header içi |
+| 1 | header `__header` announcement | `promo-announcement-bar` | reuse · 375 dismiss 0px |
 | 2 | header / mega-menu | `navigation-header-mega` | reuse · Clothing mega |
 | 3 | slideshow_amRJiq | `hero-slideshow` | reuse · 3 slayt |
 | 4 | mobile_catalog_button | — | leftover 375 |
@@ -79,8 +79,8 @@
 | 26 | icons_with_text | `trust-icon-row` | reuse |
 | 27 | footer | `footer-columns-newsletter` | reuse · submit yok |
 | 28 | footer utilities | — | leftover © |
-| 29 | popup | — | leftover · açılmadı |
-| 30 | header-drawer | `global-menu-drawer` | reuse · 375/768 |
+| 29 | popup | — | leftover · dismiss kill |
+| 30 | header-drawer | `global-menu-drawer` | reuse · recapture |
 | 31 | predictive-search | `global-predictive-search` | reuse |
 | 32 | cart-drawer | `global-cart-drawer` | reuse |
 
@@ -90,12 +90,12 @@
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | open Clothing 1440 | [ ] capture |
-| global-predictive-search | input `sneakers` | [ ] capture |
-| global-menu-drawer | open 375/768 | [ ] capture |
-| global-cart-drawer | initial / filled / changed | [ ] capture |
-| cart-page-main | initial / filled / changed | [ ] capture |
-| product-info-main | changed Color Pink→Blue | [ ] capture |
+| navigation-header-mega | open Clothing 1440 | [x] WOMEN'S CLOTHING + 4 kart |
+| global-predictive-search | input `sneakers` | [x] 375+1440 SUGGESTIONS/PRODUCTS |
+| global-menu-drawer | open 375/768 | [ ] selector düzeltildi; recapture |
+| global-cart-drawer | initial / filled / changed | [x] boş 375+1440 · dolu 768+1440 · qty 3vp |
+| cart-page-main | initial / filled / changed | [x] 3vp $45.89 → $91.78 |
+| product-info-main | changed Color Pink→Blue | [x] SKU 94-0002→94-0001 · 768 initial leftover |
 
 ---
 
@@ -107,8 +107,8 @@
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact mega / search / menu / cart / PDP Color
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate` — 0 error
+- [x] Official 3vp static (`capture-observation.mjs` 375 yazdı, 768 abort; `capture-interaction.mjs` 375+1440)
+- [x] Interact mega / search / cart / PDP Color (menu recapture sırada)
+- [x] PNG bak → stateFindings
+- [x] `npm run validate` — **0 error · 0 warn**
 - [x] Email / account / checkout / newsletter submit — **yapılmayacak**

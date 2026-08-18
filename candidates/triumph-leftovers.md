@@ -145,6 +145,30 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: triumph-768-dismiss-opens-cart-drawer  
+Gerekçe: Resmi `dismiss-overlays.mjs` 768’de `[aria-label=Close]` / Close tıklayınca `cart-drawer.drawer.is-empty.opened-by-icon.active` tam viewport (768×1024) açılıyor. `assertCleanForScreenshot` iptal: “You may also like Your cart is empty…”. `scripts/` düzenlenmedi. `capture-observation.mjs` 768’de duruyor (1440 o koşuda yazılmıyor). `capture-interaction.mjs` 375+1440 yazıyor, 768 home/PDP/collections/search/about/blog/404’ta initial kaçıyor. 768 temiz görülenler: `/cart` (interact 3vp tam), bazen PLP/contact (hydrate yarışı). Drawer close `tablet-down-hide` 0×0.  
+Örnekler: home, `/products/jumpflex-sneakers`, `/collections`, `/search?q=sneakers`, `/pages/about-us`, `/blogs/news`  
+Öneri: leftover — official dismiss 768  
+Karar: onay bekliyor
+
+---
+
+ADAY: triumph-announcement-375-dismissed  
+Gerekçe: `.header__announcement` 375’te dismiss Close sonrası 0px (`zero-size`). 1440 section kare yalnız countdown + BIG SALE metni (~5KB). Tam bar (USD/EN + sosyal) mega 1440 viewport karede.  
+Örnekler: home  
+Öneri: leftover — announcement 375  
+Karar: onay bekliyor
+
+---
+
+ADAY: triumph-cart-drawer-375-filled  
+Gerekçe: ATC sonrası `#cart-icon-bubble` “outside of the viewport”. `filled.375` yok. `changed.375` ATC’nin açtığı drawer’da qty 2 $91.78.  
+Örnekler: home cart-drawer  
+Öneri: leftover — 375 filled  
+Karar: onay bekliyor
+
+---
+
 ## Bilinçli atlananlar
 
 - `/account/login` — auth  

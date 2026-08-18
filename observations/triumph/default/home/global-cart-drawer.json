@@ -86,14 +86,42 @@
     }
   ],
   "stateFindings": {
-    "initial": "",
-    "filled": "",
-    "changed": ""
+    "initial": "1440+375 boş drawer: YOUR CART IS EMPTY + Not sure where to start? + WOMEN'S / MEN'S / KIDS kartları + CONTINUE SHOPPING. 1440 sağ panel, X kapat. 768 initial yok (dismiss cart-drawer’ı overlay sayıp iptal).",
+    "filled": "1440+768: YOUR CART badge 1. JumpFlex Sneakers SYNRGY COLOR PINK SIZE 1 qty 1 $45.89. Spend $954.11 to Free Shipping. YOU MAY ALSO LIKE (ALTURA MiniRunner $58.96 / NEXA TinyMotion $68.96). DISCOUNT + ORDER SPECIAL INSTRUCTIONS. SUBTOTAL $45.89 USD. CHECK OUT görünür, tıklanmadı. 375 filled yok (#cart-icon-bubble outside viewport).",
+    "changed": "375+768+1440: aynı satır qty 2, satır/subtotal $91.78, header badge 2 (1440). Spend $908.22 to Free Shipping. Checkout tıklanmadı."
   },
-  "missingStates": [],
-  "interactionNote": "İkon <a href=/cart>. Sayfa kaçarsa leftover. Checkout tıklanmadı.",
+  "missingStates": [
+    {
+      "state": "filled",
+      "sebep": "adım 7 (click #cart-icon-bubble): locator.click: Element is outside of the viewport\nCall log:\n  - waiting for locator('#cart-icon-bubble').first()\n    - locator resolved to <a href=\"/cart\" role=\"button\" data-tooltip=\"Cart\" id=\"cart-icon-bubble\" aria-haspopup=\"dialog\" data-tooltip-position=\"bottom\" class=\"header__icon header__icon--cart header__icon--cart-animate cart-link-bubble link-unstyled tap-highlight\">…</a>\n  - attempting click action\n    - scrolling into view if needed\n    - done scrolling\n"
+    },
+    {
+      "state": "initial",
+      "sebep": "adım 0 (goto): Screenshot iptal: ekranda hâlâ overlay var:\n[\n  {\n    \"tag\": \"CART-DRAWER\",\n    \"cls\": \"drawer is-empty opened-by-icon active\",\n    \"text\": \"You may also like Your cart is empty Not sure where to start\",\n    \"w\": 768,\n    \"h\": 1024\n  }\n]"
+    }
+  ],
+  "interactionNote": "İkon <a href=/cart>. 375 filled: #cart-icon-bubble outside viewport (changed ATC sonrası drawer’da qty 2). 768 initial: dismiss cart-drawer açıp assertClean iptal; filled/changed PDP goto ile geldi. Checkout/login tıklanmadı.",
   "kaynak": "triumph",
   "preset": "default",
   "sayfa": "home",
-  "evidence": []
+  "evidence": [
+    "evidence/triumph/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/triumph/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/triumph/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/triumph/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/triumph/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/triumph/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/triumph/default/home/global-cart-drawer.initial.cart-bos.375.png"
+  ],
+  "capture": {
+    "url": "https://triumph-theme.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:46:55.023Z"
+  }
 }

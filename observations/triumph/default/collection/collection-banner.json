@@ -9,5 +9,38 @@
   "kaynak": "triumph",
   "preset": "default",
   "sayfa": "collection",
-  "evidence": []
+  "evidence": [
+    "evidence/triumph/default/collection/collection-banner.initial.statik.1440.png",
+    "evidence/triumph/default/collection/collection-banner.initial.statik.375.png"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://triumph-theme.myshopify.com/collections/womens-bras",
+      "capture": true,
+      "etiket": "statik",
+      "not": "Static 3vp via capture-interaction (768 dismiss opens cart-drawer)"
+    }
+  ],
+  "interactionStates": [
+    "initial"
+  ],
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "adım 0 (goto): Screenshot iptal: ekranda hâlâ overlay var:\n[\n  {\n    \"tag\": \"CART-DRAWER\",\n    \"cls\": \"drawer is-empty opened-by-icon active\",\n    \"text\": \"You may also like Your cart is empty Not sure where to start\",\n    \"w\": 768,\n    \"h\": 1024\n  }\n]"
+    }
+  ],
+  "capture": {
+    "url": "https://triumph-theme.myshopify.com/collections/womens-bras",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:39:54.017Z"
+  }
 }

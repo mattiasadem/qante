@@ -4,10 +4,43 @@
   "url": "https://triumph-theme.myshopify.com/",
   "selector": "#shopify-section-template--26010642481417__slideshow_amRJiq",
   "evidenceSlug": "hero-slideshow",
-  "notlar": "SPORTSWEAR STORE / MOVE WITH CONFIDENCE. CTA: SHOP NEW COLLECTION + EXPLORE BEST SELLERS. FREE SHIPPING on orders over $100. Nokta 1/2/3 + ok + video play.",
+  "notlar": "3 slayt (otomatik). Viewport kare: WOMEN’S ACTIVEWEAR / 50% OFF! + SHOP THE SALE + EXPLORE BEST SELLERS. Section 375 kare başka slayt: PULX / RUN FAST. FEEL ALIVE. + EXPLORE COLLECTION. 1440 section kare split/carousel (plaj + model). Nokta 1/2/3 + ok.",
   "delta": "Triumph slideshow. 3 slayt. Video kontrolü var.",
   "kaynak": "triumph",
   "preset": "default",
   "sayfa": "home",
-  "evidence": []
+  "evidence": [
+    "evidence/triumph/default/home/hero-slideshow.initial.statik.1440.png",
+    "evidence/triumph/default/home/hero-slideshow.initial.statik.375.png"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://triumph-theme.myshopify.com/",
+      "capture": true,
+      "etiket": "statik",
+      "not": "Static 3vp via capture-interaction (768 dismiss opens cart-drawer)"
+    }
+  ],
+  "interactionStates": [
+    "initial"
+  ],
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "adım 0 (goto): Screenshot iptal: ekranda hâlâ overlay var:\n[\n  {\n    \"tag\": \"CART-DRAWER\",\n    \"cls\": \"drawer is-empty opened-by-icon active\",\n    \"text\": \"You may also like Your cart is empty Not sure where to start\",\n    \"w\": 768,\n    \"h\": 1024\n  }\n]"
+    }
+  ],
+  "capture": {
+    "url": "https://triumph-theme.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:47:49.711Z"
+  }
 }

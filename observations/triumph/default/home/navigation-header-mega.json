@@ -47,13 +47,33 @@
     }
   ],
   "stateFindings": {
-    "initial": "",
-    "open": ""
+    "initial": "1440 kapalı: announcement (USD/EN + countdown + BIG SALE 50% OFF + sosyal) + TRIUMPH logo + WOMEN (aktif) / MEN / KIDS + NEW & FEATURED / CLOTHING / SHOES / ACCESSORIES / SHOP BY SPORT + SEARCH + telefon/account/cart 0. Altta hero 50% OFF. 375 kapalı: hamburger + search + logo + account + cart 0; announcement yok (dismiss Close). Mega panel yok. 768 kare yok.",
+    "open": "1440 CLOTHING hover: solda WOMEN'S CLOTHING listesi (ALL CLOTHING, BRAS, HOODIES & SWEATSHIRTS, LEGGINGS, MATCHING SETS, JACKETS & VESTS, PANTS, SKIRTS & DRESSES, SHORTS, TOPS) + COLLECTIONS VIEW ALL + 4 kart FLOW MOTION / URBAN FLEX / POWER CORE / RUN ACTIVE. Hero bulanık. 375/768 mega yok — hamburger ayrı global-menu-drawer."
   },
-  "missingStates": [],
-  "interactionNote": "375/768 mega hover yok — hamburger ayrı global-menu-drawer. Account/login tıklanmadı.",
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "adım 0 (goto): Screenshot iptal: ekranda hâlâ overlay var:\n[\n  {\n    \"tag\": \"CART-DRAWER\",\n    \"cls\": \"drawer is-empty opened-by-icon active\",\n    \"text\": \"You may also like Your cart is empty Not sure where to start\",\n    \"w\": 768,\n    \"h\": 1024\n  }\n]"
+    }
+  ],
+  "interactionNote": "375/768 mega hover yok — hamburger ayrı global-menu-drawer. 768 initial: official dismiss cart-drawer overlay. Account/login tıklanmadı.",
   "kaynak": "triumph",
   "preset": "default",
   "sayfa": "home",
-  "evidence": []
+  "evidence": [
+    "evidence/triumph/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/triumph/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/triumph/default/home/navigation-header-mega.open.mega-clothing.1440.png"
+  ],
+  "capture": {
+    "url": "https://triumph-theme.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:48:41.228Z"
+  }
 }
