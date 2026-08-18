@@ -7,7 +7,17 @@
   "url": "https://theme-trade-demo.myshopify.com/cart",
   "selector": "#shopify-section-template--22715910717462__cart-items",
   "evidenceSlug": "cart-page-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/trade/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/trade/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/trade/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/trade/default/cart/cart-page-main.filled.dolu-sepet.1440.png",
+    "evidence/trade/default/cart/cart-page-main.filled.dolu-sepet.375.png",
+    "evidence/trade/default/cart/cart-page-main.filled.dolu-sepet.768.png",
+    "evidence/trade/default/cart/cart-page-main.initial.bos-sepet.1440.png",
+    "evidence/trade/default/cart/cart-page-main.initial.bos-sepet.375.png",
+    "evidence/trade/default/cart/cart-page-main.initial.bos-sepet.768.png"
+  ],
   "notlar": "Boş: Your cart is empty + Continue shopping. cart-footer boşken h=0.",
   "delta": "Dolu + qty interact. Checkout tıklanmadı.",
   "interactionStates": [
@@ -55,23 +65,25 @@
     }
   ],
   "stateFindings": {
-    "initial": "Yazılacak — capture sonrası PNG.",
-    "filled": "Yazılacak — capture sonrası PNG.",
-    "changed": "Yazılacak — capture sonrası PNG."
+    "initial": "Your cart is empty + Continue shopping. Satır/özet yok.",
+    "filled": "Cape Side Table · Color White Marble · adet 1 · $499.00. PRODUCT/QUANTITY/TOTAL. Checkout tıklanmadı.",
+    "changed": "Adet 2. Satır toplam $998.00."
   },
   "missingStates": [
-    {
-      "state": "hover",
-      "sebep": "Anlamsız"
-    },
-    {
-      "state": "open",
-      "sebep": "Sayfa, drawer değil"
-    },
-    {
-      "state": "input",
-      "sebep": "Anlamsız"
-    }
+    { "state": "hover", "sebep": "Anlamsız" },
+    { "state": "open", "sebep": "Sayfa, drawer değil" },
+    { "state": "input", "sebep": "Anlamsız" }
   ],
-  "interactionNote": "Checkout / Shop Pay tıklanmadı. addToCart fallback bekleniyor."
+  "interactionNote": "Checkout tıklanmadı. addToCart → cart/add.js (buy box ATC yok).",
+  "capture": {
+    "url": "https://theme-trade-demo.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:40:57.809Z"
+  }
 }

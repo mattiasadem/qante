@@ -7,14 +7,21 @@
   "url": "https://theme-trade-demo.myshopify.com/",
   "selector": "predictive-search.search-modal__form",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/trade/default/home/global-predictive-search.input.arama-sonucu.1440.png",
+    "evidence/trade/default/home/global-predictive-search.input.arama-sonucu.375.png",
+    "evidence/trade/default/home/global-predictive-search.input.arama-sonucu.768.png",
+    "evidence/trade/default/home/global-predictive-search.open.arama-modal.1440.png",
+    "evidence/trade/default/home/global-predictive-search.open.arama-modal.375.png",
+    "evidence/trade/default/home/global-predictive-search.open.arama-modal.768.png"
+  ],
   "notlar": "Header büyüteç → details-modal + #Search-In-Modal. katalogSorgu towel.",
   "delta": "Satır içi arama yok. Submit yok.",
   "captureMode": "viewport",
   "prepareClick": "details-modal.header__search summary",
   "interactionStates": [
-    "open",
-    "input"
+    "input",
+    "open"
   ],
   "interactionSteps": [
     {
@@ -44,9 +51,20 @@
     }
   ],
   "stateFindings": {
-    "open": "Yazılacak — capture sonrası PNG.",
-    "input": "Yazılacak — capture sonrası PNG."
+    "open": "Koyu modal, boş Search input + X. Sonuç yok. 375/768/1440 opener çalıştı.",
+    "input": "towel → SUGGESTIONS: turkish cotton towels, towels, towel, Towels, Bath towels, Beach towels. PRODUCTS: Tassel / Organic Cotton / Fouta Stripe / Waffle Towels. Search for “towel”."
   },
   "missingStates": [],
-  "interactionNote": "katalog towel (vitrin: towels/washcloth). Fill görünür input.search__input."
+  "interactionNote": "katalog towel. Fill görünür input.search__input. Submit yok.",
+  "capture": {
+    "url": "https://theme-trade-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:38:18.690Z"
+  }
 }

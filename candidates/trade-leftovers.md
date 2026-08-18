@@ -18,17 +18,17 @@ Karar: onay bekliyor
 ---
 
 ADAY: trade-pdp-no-buy-box-atc  
-Gerekçe: `product-info-main` galeri + fiyat + accordion. `button[name=add]` / qty yok. Sepete ekleme quick-order-list veya `/cart/add.js`.  
-Örnekler: https://theme-trade-demo.myshopify.com/products/cape-side-table  
-Öneri: leftover — B2B buy box  
+Gerekçe: `product-info-main` galeri + fiyat + accordion. `button[name=add]` / qty / variant-radios yok. 768/1440 thumb-2 lifestyle değişti; 375 slider next karesi 1/2 kaldı.  
+Örnekler: https://theme-trade-demo.myshopify.com/products/euro-sham-brushed-cotton  
+Öneri: leftover — B2B buy box + mobil galeri  
 Karar: onay bekliyor
 
 ---
 
 ADAY: trade-cart-notification-not-drawer  
-Gerekçe: `cart-drawer` yok. Overlay `#cart-notification`. Sepet ikonu `/cart`. `global-cart-drawer` + delta. AJAX add bildirim açmayabilir.  
-Örnekler: header cart-notification  
-Öneri: leftover — Dawn notification vs drawer  
+Gerekçe: `cart-drawer` yok. `#cart-notification.active` add.js ve quick-order-list plus sonrası açılmadı (yoklandı). Sepet ikonu `/cart`. Filled kare = header rozet 1. `global-cart-drawer` + delta.  
+Örnekler: Cape ATC yok → /cart/add.js; QOL plus item_count 1, popup yok  
+Öneri: leftover — Dawn notification vs drawer; popup tetiklenmedi  
 Karar: onay bekliyor
 
 ---

@@ -7,7 +7,14 @@
   "url": "https://theme-trade-demo.myshopify.com/products/euro-sham-brushed-cotton",
   "selector": "#shopify-section-template--22715911405590__main",
   "evidenceSlug": "product-info-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/trade/default/product-detail/product-info-main.changed.galeri-ileri.375.png",
+    "evidence/trade/default/product-detail/product-info-main.changed.galeri-thumb-2.1440.png",
+    "evidence/trade/default/product-detail/product-info-main.changed.galeri-thumb-2.768.png",
+    "evidence/trade/default/product-detail/product-info-main.initial.galeri-ilk.1440.png",
+    "evidence/trade/default/product-detail/product-info-main.initial.galeri-ilk.375.png",
+    "evidence/trade/default/product-detail/product-info-main.initial.galeri-ilk.768.png"
+  ],
   "notlar": "Brushed Cotton Sham $59. Galeri + açıklama + Product features / Materials and care / Merchandising tips accordion. Share. Add to cart ve variant-radios YOK.",
   "delta": "B2B: varyant + adet quick-order-list leftover. Buy box’ta ATC/qty yok.",
   "interactionStates": [
@@ -32,33 +39,42 @@
     {
       "state": "changed",
       "action": "click",
+      "selector": "#shopify-section-template--22715911405590__main button.slider-button--next",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "etiket": "galeri-ileri",
+      "not": "375: thumb gizli; galeri next"
+    },
+    {
+      "state": "changed",
+      "action": "click",
       "selector": "#shopify-section-template--22715911405590__main .thumbnail-list__item:nth-child(2) .thumbnail",
+      "viewports": [
+        "768",
+        "1440"
+      ],
       "capture": true,
       "etiket": "galeri-thumb-2",
       "not": "İkinci thumbnail — variant picker yok, galeri değişimi"
     }
   ],
   "stateFindings": {
-    "initial": "Yazılacak — capture sonrası PNG.",
-    "changed": "Yazılacak — capture sonrası PNG."
+    "initial": "Brushed Cotton Sham · $59.00 USD. Sol: açıklama + Product features / Materials and care / Merchandising tips accordion + Share. Sağ: lacivert sham stüdyo. ATC ve variant-radios yok.",
+    "changed": "768/1440: 2. thumb seçili, ana görsel yatak lifestyle. 375 next tık sonrası kare hâlâ 1/2 stüdyo — mobil galeri değişimi doğrulanamadı."
   },
-  "missingStates": [
-    {
-      "state": "hover",
-      "sebep": "Anlamsız"
-    },
-    {
-      "state": "open",
-      "sebep": "Accordion tıklanmadı"
-    },
-    {
-      "state": "filled",
-      "sebep": "Sepet cart/notification’da; buy box ATC yok"
-    },
-    {
-      "state": "input",
-      "sebep": "Anlamsız"
-    }
-  ],
-  "interactionNote": "Variant-radios yok. Renk satırları quick-order-list leftover. Galeri thumb = görsel changed."
+  "missingStates": [],
+  "interactionNote": "Variant-radios yok. Renk satırları quick-order-list leftover. 375 thumb gizli → slider next.",
+  "capture": {
+    "url": "https://theme-trade-demo.myshopify.com/products/euro-sham-brushed-cotton",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:43:31.627Z"
+  }
 }
