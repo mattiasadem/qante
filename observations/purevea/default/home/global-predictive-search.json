@@ -1,0 +1,122 @@
+{
+  "observationId": "purevea.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "purevea",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://purevea-theme-demo.myshopify.com/",
+  "selector": "#offcanvasSearch",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/purevea/default/home/global-predictive-search.initial.search-bos.1440.png",
+    "evidence/purevea/default/home/global-predictive-search.initial.search-bos.375.png",
+    "evidence/purevea/default/home/global-predictive-search.initial.search-bos.768.png",
+    "evidence/purevea/default/home/global-predictive-search.input.serum.1440.png",
+    "evidence/purevea/default/home/global-predictive-search.input.serum.375.png",
+    "evidence/purevea/default/home/global-predictive-search.input.serum.768.png"
+  ],
+  "notlar": "offcanvasSearch sağ. 1440 header'da inline #SearchInput-sections--… de var. You might like + Popular searches + Trending kapalı metinde.",
+  "delta": "GSP search offcanvas. Submit yok (yalnız fill).",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://purevea-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[data-bs-target='#offcanvasSearch']",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "375/768 offcanvas boş"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#offcanvasSearch input.search-input",
+      "value": "serum",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false,
+      "not": "katalog: Facial Serum"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1500,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "serum",
+      "not": "Predictive offcanvas"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#SearchInput-sections--27619329769750__header",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "1440 inline search boş"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#SearchInput-sections--27619329769750__header",
+      "value": "serum",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1500,
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "serum",
+      "not": "1440 inline predictive"
+    }
+  ],
+  "stateFindings": {
+    "initial": "375/768 sağ offcanvas: Search + X; boş Search input; You might like (Clear Cream Cleanser $120 BODYCARE, Light Reflecting Blush $138.50 MAKEUP Hot); Popular searches: sunscreen / foundation / mascara / lipstick / toner. 768'de ayrıca Trending: lip stains / serum / blush sticks / eye cream. 1440: header inline Search + ortada beyaz modal — Popular searches + Trending + You might like 4 kart (Cleanser $120, Blush $138.50 Hot, Plumping Lip Mask $145 ~~$160 9% off, Body Butter $150).",
+    "input": "375/768: input serum; Products (4) carousel — Facial Serum $110 (~~$115, 4% off), Facial Serum Anti $110; Suggestions: serum; Collections: Hydra Boost Serum / Serums. 1440: header'da serum; sol Suggestions / Collections / 3 Article; sağ Products (4) Facial Serum $110, Facial Serum Anti $110, Hydrating Serum $130, Facial Serum Hyaluronic $120; View All Results."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 opener 0×0 — inline #SearchInput-sections--27619329769750__header. 375/768 #offcanvasSearch. Submit / View All tıklanmadı. Account yok.",
+  "capture": {
+    "url": "https://purevea-theme-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:57:58.321Z"
+  }
+}
