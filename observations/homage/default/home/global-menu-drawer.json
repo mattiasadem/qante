@@ -7,7 +7,12 @@
   "url": "https://homage-theme-demo-01.myshopify.com/",
   "selector": "#sections--30283080204620__navigation-main-nav-menu-drawer .drawer__wrapper",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/homage/default/home/global-menu-drawer.changed.gentlemen-accordion.375.png",
+    "evidence/homage/default/home/global-menu-drawer.changed.gentlemen-accordion.768.png",
+    "evidence/homage/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/homage/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
   "notlar": "375/768 button.menu-trigger.menu-trigger--drawer. Accordion nav__mobile-accordion-opener. 1440 hamburger 0px.",
   "delta": "Homage nav-drawer accordion. Account tıklanmadı. Shopify.theme.name homage/release/v1.1 · schema_name Homage · schema_version 1.0.1 · theme_store_id null · role main · id 200065417548 · shop homage-theme-demo-01.myshopify.com",
   "captureMode": "viewport",
@@ -25,7 +30,7 @@
     {
       "state": "open",
       "action": "waitFor",
-      "value": 2000,
+      "value": 3500,
       "capture": false
     },
     {
@@ -36,30 +41,41 @@
         "375",
         "768"
       ],
-      "value": 900,
-      "capture": true,
-      "captureMode": "viewport",
-      "etiket": "hamburger",
-      "not": "Mobil menü GENTLEMEN/LADIES/COLLECTIONS/ABOUT + localization"
+      "value": 1500,
+      "capture": false,
+      "not": "Hamburger"
     },
     {
-      "state": "changed",
-      "action": "click",
-      "selector": "button.nav__mobile-accordion-opener",
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#sections--30283080204620__navigation-main-nav-menu-drawer",
       "viewports": [
         "375",
         "768"
       ],
-      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Drawer açık — GENTLEMEN/LADIES/COLLECTIONS/ABOUT"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#navigation-accordion-sections--30283080204620__navigation-main-gentlemen-trigger",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "value": 900,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "gentlemen-accordion",
-      "not": "GENTLEMEN add — çocuk linkler"
+      "not": "GENTLEMEN accordion — Outerwear/Knitwear/Sportswear/Essentials/All Gentlemen"
     }
   ],
   "stateFindings": {
-    "open": "375/768: GENTLEMEN/LADIES/COLLECTIONS/ABOUT + add; USD/EN localization.",
-    "changed": "GENTLEMEN accordion: Outerwear add + alt koleksiyonlar beklenir (DOM'da var)."
+    "open": "375/768: X + HOMAGE; GENTLEMEN+ LADIES+ COLLECTIONS+ ABOUT+; altta USD/EN. 1440 hamburger yok.",
+    "changed": "375/768 GENTLEMEN açık (−): Outerwear+ Knitwear Sportswear Essentials All Gentlemen. LADIES/COLLECTIONS/ABOUT kapalı."
   },
   "missingStates": [
     {
@@ -67,5 +83,16 @@
       "sebep": "1440 hamburger 0×0 — masaüstü yatay menü."
     }
   ],
-  "interactionNote": "1440 drawer yok. Account tıklanmadı."
+  "interactionNote": "Accordion #navigation-accordion-…-gentlemen-trigger. Account tıklanmadı. forceOpen drawer host.",
+  "capture": {
+    "url": "https://homage-theme-demo-01.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:49:07.273Z"
+  }
 }

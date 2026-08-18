@@ -145,6 +145,14 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: homage-shopify-bot-wall  
+Gerekçe: Paralel Playwright (4 tarayıcı) sonrası Shopify “Just a moment… Your connection needs to be verified” checkpoint. Interact search 1440 + PDP Size 375/768 ilk koşuda challenge sayfası geldi; sıralı retry ile alındı.  
+Örnekler: capture-interaction parallel load  
+Öneri: leftover — capture notu, şema değil  
+Karar: onay bekliyor
+
+---
+
 ## Bilinçli atlananlar
 
 - `/account` / customer_authentication — auth  
@@ -155,3 +163,4 @@ Karar: onay bekliyor
 - Home/PDP boş collage, related, recently viewed  
 - 404 + cart placeholder product grid  
 - Footer hero logo + custom-code  
+- Shopify bot-wall (paralel capture; retry ile PNG tamam)  

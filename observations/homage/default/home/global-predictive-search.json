@@ -7,7 +7,14 @@
   "url": "https://homage-theme-demo-01.myshopify.com/",
   "selector": "#sections--30283080237388__predictive-search-predictive-search-drawer .drawer__wrapper",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/homage/default/home/global-predictive-search.initial.arama-bos.1440.png",
+    "evidence/homage/default/home/global-predictive-search.initial.arama-bos.375.png",
+    "evidence/homage/default/home/global-predictive-search.initial.arama-bos.768.png",
+    "evidence/homage/default/home/global-predictive-search.input.arama-jacket.1440.png",
+    "evidence/homage/default/home/global-predictive-search.input.arama-jacket.375.png",
+    "evidence/homage/default/home/global-predictive-search.input.arama-jacket.768.png"
+  ],
   "notlar": "Header search-trigger → drawer. Input #SearchInput-sections--30283080237388__predictive-search.",
   "delta": "Homage predictive-search overlay drawer. katalogSorgu=jacket (Downhill ‘27 Jacket). Shopify.theme.name homage/release/v1.1 · schema_name Homage · schema_version 1.0.1 · theme_store_id null · role main · id 200065417548 · shop homage-theme-demo-01.myshopify.com",
   "captureMode": "viewport",
@@ -25,14 +32,14 @@
     {
       "state": "initial",
       "action": "waitFor",
-      "value": 2000,
+      "value": 4000,
       "capture": false
     },
     {
       "state": "initial",
       "action": "click",
       "selector": "button.search-trigger",
-      "value": 800,
+      "value": 1200,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "arama-bos",
@@ -50,9 +57,20 @@
     }
   ],
   "stateFindings": {
-    "initial": "Search drawer: SEARCH + input + Clear. Öneri boşken View all results gizlendi.",
-    "input": "jacket: SUGGESTIONS (High West / Outrig / Frontier / Downhill ‘27 / Monarch Italiana) + PRODUCTS fiyat + YOU MIGHT LIKE + View all results."
+    "initial": "375: SEARCH + Enter your search terms + GENTLEMEN/LADIES/COLLECTIONS quick link + YOU MIGHT LIKE. 768/1440: SEARCH + boş input + Clear; öneri ürün yok.",
+    "input": "jacket 375/768/1440: SUGGESTIONS High West / Alpine Outrig / Frontier / Downhill ‘27 / Monarch Jacket Italiana + PRODUCTS fiyat + SALE rozet + View all results."
   },
   "missingStates": [],
-  "interactionNote": "Submit /search ayrı observation. PII yok."
+  "interactionNote": "katalogSorgu=jacket. 1440 ikinci koşuda alındı. Submit yok. PII yok.",
+  "capture": {
+    "url": "https://homage-theme-demo-01.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:46:05.958Z"
+  }
 }

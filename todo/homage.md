@@ -11,8 +11,8 @@
 `theme_store_id` = **null** (canlıda yok; uydurulmadı)  
 `Shopify.shop` = `homage-theme-demo-01.myshopify.com`
 
-**Durum:** Mod A roster yazıldı · 3vp/interact capture sırada  
-**PR:** draft · **main'e merge yok**
+**Durum:** Mod A complete · 51 obs · 173 PNG · validate 0 error  
+**PR:** https://github.com/mattiasadem/qante/pull/188 (draft) · **main'e merge yok**
 
 ---
 
@@ -24,11 +24,12 @@
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **51** |
-| Evidence PNG | **0** (capture öncesi) |
+| Evidence PNG | **173** |
 | Parallel | yalnız `observations/homage/`, `evidence/homage/`, `todo/homage.md`, `candidates/homage-leftovers.md` |
+| Validate | **65 temiz · 0 error · 0 warn** (2026-08-18) |
 
 **Kapsam satırı:**  
-`Homage · default · homage/release/v1.1 · schema_name Homage 1.0.1 · theme_store_id null · home→PDP Downhill ‘27 Jacket→PLP gentlemen→/collections→search jacket→cart empty/filled/qty→about→contact→journal+Looks of Moda→404 · 51 obs · 0 yeni şema · leftover: candidates/homage-leftovers.md`
+`Homage · default · homage/release/v1.1 · schema_name Homage 1.0.1 · theme_store_id null · role main · id 200065417548 · shop homage-theme-demo-01.myshopify.com · home→PDP Downhill ‘27 Jacket→PLP gentlemen→/collections→search jacket→cart empty/filled/qty→about→contact→journal+Looks of Moda→404 · 51 obs · 173 PNG · 0 yeni şema · leftover: candidates/homage-leftovers.md`
 
 ---
 
@@ -36,20 +37,20 @@
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | [x] obs | [ ] capture |
-| Header kapalı + Gentlemen click band 1440 | [x] obs | [ ] interact |
-| Predictive search `jacket` | [x] obs | [ ] interact 375/768/1440 |
-| Mobile hamburger 375+768 + Gentlemen accordion | [x] obs | [ ] interact (1440 N/A) |
-| Cart drawer empty + filled + qty | [x] obs | [ ] interact |
-| PDP Downhill ‘27 Jacket Size S→M | [x] obs | [ ] interact |
-| PLP `/collections/gentlemen` | [x] obs | [ ] capture |
-| Collections index `/collections` | [x] obs | [ ] capture |
-| Search `/search?q=jacket` | [x] obs | [ ] capture |
-| Cart `/cart` empty + filled + qty | [x] obs | [ ] interact |
-| About `/pages/about` (`/pages/about-us` 404) | [x] obs | [ ] capture |
-| Contact `/pages/contact` (SEND yok) | [x] obs | [ ] capture |
-| Journal + The Looks of Moda | [x] obs | [ ] capture |
-| 404 | [x] obs | [ ] capture |
+| Home roster (announcement→footer) | [x] obs | [x] capture |
+| Header kapalı + Gentlemen click band 1440 | [x] obs | [x] interact |
+| Predictive search `jacket` | [x] obs | [x] interact 375/768/1440 |
+| Mobile hamburger 375+768 + Gentlemen accordion | [x] obs | [x] interact (1440 N/A) |
+| Cart drawer empty + filled + qty | [x] obs | [x] interact |
+| PDP Downhill ‘27 Jacket Size S→M | [x] obs | [x] interact |
+| PLP `/collections/gentlemen` | [x] obs | [x] capture |
+| Collections index `/collections` | [x] obs | [x] capture |
+| Search `/search?q=jacket` | [x] obs | [x] capture |
+| Cart `/cart` empty + filled + qty | [x] obs | [x] interact |
+| About `/pages/about` (`/pages/about-us` 404) | [x] obs | [x] capture |
+| Contact `/pages/contact` (SEND yok) | [x] obs | [x] capture |
+| Journal + The Looks of Moda | [x] obs | [x] capture |
+| 404 | [x] obs | [x] capture |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -95,14 +96,12 @@
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | open | 1440 Gentlemen click — yatay bant (mega kolon yok). Hover yok. |
-| global-predictive-search | input | `jacket` — SUGGESTIONS + PRODUCTS (DOM) |
-| global-menu-drawer | open/changed | 375/768 hamburger + Gentlemen accordion |
-| global-cart-drawer | empty/filled/qty | DOM: empty → $995 → plus |
-| cart-page-main | empty/filled/qty | DOM: empty → $995 → plus |
-| product-info-main | changed | Size S→M (Color yalnız Hunter) |
-
-PNG bakılacak (capture sonrası).
+| navigation-header-mega | closed vs Gentlemen | 1440 click — 56px yatay bant (Outerwear+ Knitwear Sportswear Essentials All Gentlemen). Kolon/görsel yok. Hover açmaz. |
+| global-predictive-search | empty + `jacket` | 375 empty: collection quick links + YOU MIGHT LIKE. `jacket` 375/768/1440: SUGGESTIONS + PRODUCTS + View all. |
+| global-menu-drawer | open/changed | 375/768: X + list; Gentlemen accordion Outerwear+/Knitwear/Sportswear/Essentials/All Gentlemen. 1440 hamburger yok. |
+| global-cart-drawer | empty/filled/qty | Empty copy; Hunter/S $995; qty 2 = $1,990. |
+| cart-page-main | empty/filled/qty | Aynı tutarlar; kardeş $19.99 Product Title placeholder grid duruyor. |
+| product-info-main | Size S→M | SIZE:M seçili; $995 değişmedi; Color hâlâ Hunter. |
 
 ---
 
@@ -114,7 +113,7 @@ PNG bakılacak (capture sonrası).
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact header / search / cart / menu / PDP Size
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate` — 0 error hedef
+- [x] Official 3vp static (`capture-observation.mjs`) — 135 PNG
+- [x] Interact header / search / cart / menu / PDP Size
+- [x] PNG bak → stateFindings
+- [x] `npm run validate` — **0 error · 0 warn · 65 temiz**
