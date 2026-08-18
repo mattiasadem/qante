@@ -1,0 +1,63 @@
+{
+  "observationId": "stack.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "stack",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://retailer-mass.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/stack/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/stack/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "header-drawer data-breakpoint=tablet. 375 ve 768 hamburger 24×24.",
+  "delta": "Shopify.theme: name **retailer/mass** · schema_name **Stack** · schema_version **1.0.2** · theme_store_id **null** · role main · id 150759768247 · shop retailer-mass.myshopify.com. 1440 hamburger 0×0. Equipment chevron leftover (kaçış).",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://retailer-mass.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "summary.header__icon--menu",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "#menu-drawer"
+    }
+  ],
+  "stateFindings": {
+    "open": "375 ve 768 tam ekran drawer: X; Equipment + chevron; News; About; Features. Alt: Contact + ay ikon + United States (USD $) + English. Account drawer’da yok."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 hamburger 0×0 — adım yok. Equipment chevron tıklanmadı (kaçış). Contact / locale tık yok.",
+  "capture": {
+    "url": "https://retailer-mass.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:33:18.873Z"
+  }
+}
