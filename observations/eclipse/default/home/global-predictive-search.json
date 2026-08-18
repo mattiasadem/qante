@@ -1,0 +1,70 @@
+{
+  "observationId": "eclipse.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "eclipse",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://eclipse-theme-ripple.myshopify.com/",
+  "selector": "dialog[data-fluco-dialog='predictiveSearchDrawer']",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/eclipse/default/home/global-predictive-search.initial.arama-acik.1440.png",
+    "evidence/eclipse/default/home/global-predictive-search.initial.arama-acik.375.png",
+    "evidence/eclipse/default/home/global-predictive-search.initial.arama-acik.768.png",
+    "evidence/eclipse/default/home/global-predictive-search.input.arama-sonucu.1440.png",
+    "evidence/eclipse/default/home/global-predictive-search.input.arama-sonucu.375.png",
+    "evidence/eclipse/default/home/global-predictive-search.input.arama-sonucu.768.png"
+  ],
+  "notlar": "Sağ drawer. Quick links Kidswear Adultwear Toys Accessories Shop All.",
+  "delta": "Kapalıda 0px. a.header__button--search opener. Submit tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eclipse-theme-ripple.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.header__button--search[data-action='show-predictive-search-drawer']",
+      "value": 1400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik",
+      "not": "Quick links"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#search-input--sections--20338290458789__predictive-search-drawer",
+      "value": "jacket",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "katalogSorgu jacket"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Search drawer. Placeholder Search. Quick links Kidswear / Adultwear / Toys / Accessories / Shop All.",
+    "input": "jacket: SUGGESTIONS jacket + PRODUCTS Eclipse Jacket $146 / Lilac Jacket $146 / Stripe Jacket / Koenig Jacket $164 + View all results for 'jacket' (tıklanmadı). 375 aynı liste, tek kolon."
+  },
+  "missingStates": [],
+  "interactionNote": "Submit / View all tıklanmadı. Account yok.",
+  "capture": {
+    "url": "https://eclipse-theme-ripple.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:31:09.210Z"
+  }
+}
