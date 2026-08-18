@@ -31,6 +31,7 @@ viewer/
 | **Envanter** | Sol listede gruplanmış şema + gözlem kayıtları, sağda evidence |
 | **Aday & sığmayanlar** | `candidates/` — aday kategoriler + şemaya sığmayanlar |
 | **Listeler** | Theme Store + DTC-69 listeleri (yapılmış / yapılıyor / kuyruk) |
+| **CRO** | Funnel / CRO section tipleri — canlı envanterden eşleşme (`?view=cro&type=faqs-qnas`) |
 | **Kapsama** | Satır = şema, kolon = tema/preset. Yeşil 3/3, sarı kısmi, kırmızı SS yok, nokta hiç gözlem yok |
 | **Sağlık** | Hata/uyarı/bilgi bulguları + düzeltme komutu (tıkla → kopyalanır) |
 
@@ -59,6 +60,7 @@ Tüm filtre + seçim + viewport durumu URL'de: link paylaşılabilir, F5 dayanı
 | `/api/observation?id=` | tek gözlem (tam JSON) |
 | `/api/coverage` | şema × tema matrisi |
 | `/api/candidates` | aday kategoriler + sığmayanlar + Status tablolu listeler (`candidates/*.md`) |
+| `/api/cro` | CRO katalog (17 tip) + canlı envanter eşleşmeleri (`viewer/lib/cro.mjs`) |
 | `/api/health` | tutarsızlık listesi |
 
 Liste endpoint'i tam JSON gövdesi taşımaz; detay ayrı istekle gelir — binlerce kayıtta da hafif kalır.
