@@ -8,12 +8,69 @@
   "selector": "#shopify-section-template--19058350096432__9904a28f-6381-41fe-96eb-d4a73d60f0a0",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
+    "evidence/venue/default/product-detail/testimonial-quote-carousel.1440.png",
     "evidence/venue/default/product-detail/testimonial-quote-carousel.375.png",
     "evidence/venue/default/product-detail/testimonial-quote-carousel.768.png",
-    "evidence/venue/default/product-detail/testimonial-quote-carousel.1440.png"
+    "evidence/venue/default/product-detail/testimonial-quote-carousel.changed.sonraki-alinti.1440.png",
+    "evidence/venue/default/product-detail/testimonial-quote-carousel.changed.sonraki-alinti.375.png",
+    "evidence/venue/default/product-detail/testimonial-quote-carousel.changed.sonraki-alinti.768.png",
+    "evidence/venue/default/product-detail/testimonial-quote-carousel.initial.ilk-hal.1440.png",
+    "evidence/venue/default/product-detail/testimonial-quote-carousel.initial.ilk-hal.375.png",
+    "evidence/venue/default/product-detail/testimonial-quote-carousel.initial.ilk-hal.768.png"
   ],
   "notlar": "They love us. Jimmy Gilzean + Twitter.",
   "delta": "Shopify.theme.name venue-18-2-1 · id 142511603760 · schema_name Venue · schema_version 18.2.1 · theme_store_id null · role main · shop venue-theme-morning.myshopify.com PDP testimonials. Home instance ayrı.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://venue-theme-morning.myshopify.com/products/tucker-wallet",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19058350096432__9904a28f-6381-41fe-96eb-d4a73d60f0a0",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "İlk alıntı jacket"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--19058350096432__9904a28f-6381-41fe-96eb-d4a73d60f0a0 button[aria-label='Next slide']",
+      "value": 1200,
+      "capture": true,
+      "etiket": "sonraki-alinti",
+      "viewports": [
+        "1440"
+      ],
+      "not": "1440 Next ok"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--19058350096432__9904a28f-6381-41fe-96eb-d4a73d60f0a0 [aria-label='Go to slide 2']",
+      "value": 1200,
+      "capture": true,
+      "etiket": "sonraki-alinti",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "375/768 ok 0×0 — nokta 2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "They love us. Jimmy Gilzean / Twitter: Just got my order… jacket. Avatar + 3 nokta, ilki dolu. 1440 oklar.",
+    "changed": "Brett Smith / Instagram: customer service is really excellent… return and replace. Orta nokta dolu. 1440 Next ok; 375/768 nokta 2."
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 Next 0×0; bir kez nokta ile tekrar. Şema emit:carousel.next duruyor.",
   "capture": {
     "url": "https://venue-theme-morning.myshopify.com/products/tucker-wallet",
     "viewports": [
@@ -22,7 +79,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T20:42:40.979Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T20:07:30.102Z"
   }
 }

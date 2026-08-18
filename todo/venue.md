@@ -11,8 +11,8 @@
 
 **Beklenen vs canlı:** Theme Store listing güncel Safe As Milk Venue. Canlı demo **Venue 18.2.1** ve `theme_store_id` **null**. null yazıldı; ID uydurulmadı.
 
-**Durum:** Mod A walk + resmi 3vp + interact + validate  
-**PR:** draft https://github.com/mattiasadem/qante/pull/158 · **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact + CRO leftover interact + validate  
+**PR:** draft https://github.com/mattiasadem/qante/pull/213 · walk PR 158 ayrı · **main'e merge yok**
 
 ---
 
@@ -23,12 +23,12 @@
 | Evidence kökü | `evidence/venue/default/` |
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** |
-| Observation | **34** |
-| Evidence PNG | **118** |
+| Observation | **34** (5 CRO interact güncellendi) |
+| Evidence PNG | **148** |
 | Parallel | yalnız `observations/venue/`, `evidence/venue/`, `todo/venue.md`, `candidates/venue-leftovers.md` |
 
 **Kapsam satırı:**  
-`Venue · default · venue-18-2-1 / schema_name Venue 18.2.1 · theme_store_id null · home→PDP→PLP→collections→search→cart→about/contact→faq→blog→404 · 34 obs · 118 PNG · 0 yeni şema · leftover: candidates/venue-leftovers.md`
+`Venue · default · venue-18-2-1 / schema_name Venue 18.2.1 · theme_store_id null · home→PDP→PLP→collections→search→cart→about/contact→faq→blog→404 · 34 obs · 148 PNG · 0 yeni şema · leftover: candidates/venue-leftovers.md`
 
 ---
 
@@ -49,7 +49,7 @@
 | Cart `/cart` empty + filled + qty | interact | [x] $70→$140 |
 | About `/pages/about-us` | roster + capture | [x] |
 | Contact form (submit yok) | roster + capture | [x] |
-| FAQ `/pages/faq` | roster + capture | [x] |
+| FAQ `/pages/faq` | roster + capture + accordion | [x] |
 | News + article | roster + capture | [x] |
 | 404 | roster + capture | [x] |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
@@ -66,6 +66,10 @@
 | global-cart-drawer | filled + changed | [x] (1) $70 → (2) $140; 768 filled leftover |
 | cart-page-main | filled + changed | [x] (1) $70 → (2) $140 |
 | product-info-main | changed | [x] Tan Only 2 → Brown In stock |
+| before-after-slider | changed | [x] 3vp End → Land kaplar (Sea değil) |
+| promo-banner-countdown | changed | [x] saniye tick (dismiss yok) |
+| faq-collapsible-tabs | changed | [x] Do you ship overseas? açık |
+| testimonial-quote-carousel | changed | [x] home Linda + PDP Brett; 375/768 nokta |
 
 ---
 
@@ -120,5 +124,6 @@
 
 - [x] Official 3vp static (`capture-observation.mjs`)
 - [x] Interact mega / search / cart / menu / PDP Color
+- [x] CRO leftover: slider / countdown / FAQ / reviews
 - [x] PNG bak → stateFindings
 - [x] `npm run validate`
