@@ -1,0 +1,54 @@
+{
+  "observationId": "ali.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "ali",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://dev-alitheme.ikas.shop/",
+  "selector": "section.ali-header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "captureMode": "viewport",
+  "notlar": "Sticky `section.ali-header`. Üst `ali-ann` “250 TL üzeri siparişlerde ücretsiz kargo” (ayrı section değil). 1440/768/375: hamburger `button[aria-label=Menü]` · Ara · wordmark ALİ · Hesap (tıklanmadı) · Sepet. Yatay mega yok.",
+  "delta": "ikas (Shopify.theme yok) · Theme Store UUID 4857cf85-064f-42ba-afc6-9aba4d5b8a43 · Ali / ikascom · demo dev-alitheme.ikas.shop · __IKAS_DATA__.storefrontThemeId 74f53e77-93a4-4e2f-b000-749142d53f82 · storefrontId d61280e7-8d90-4733-a630-98bcd92d60ba · merchantId 2a064ff8-b678-4f35-b163-20e70e5eec4d · salesChannelId 2a4cbf94-dd59-4c43-8f9a-a5a4e728428b · storeName dev-alitheme · locale tr · TRY · logoText ALİ · x-powered-by ikas · IkasEvents var · pageType from __IKAS_DATA__ · pageType INDEX. Mega yok — hamburger tüm viewport. Announcement header içinde leftover. Hesap /account tıklanmadı.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://dev-alitheme.ikas.shop/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Mega yok; kapalı header + duyuru"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Placeholder — capture sonrası bakılacak. Duyuru + ALİ + ikonlar."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "Yatay mega yok; menü `.ali-nav` drawer (global-menu-drawer)"
+    },
+    {
+      "state": "hover",
+      "sebep": "Mega hover yok"
+    }
+  ],
+  "interactionNote": "Hesap tıklanmadı. Menü ayrı observation."
+}

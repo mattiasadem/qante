@@ -1,0 +1,57 @@
+{
+  "observationId": "ali.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "ali",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://dev-alitheme.ikas.shop/",
+  "selector": ".ali-search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "captureMode": "viewport",
+  "notlar": "Header `button.ali-header__icon-btn[aria-label=Ara]` → overlay `.ali-search`. Boş: POPÜLER ARAMALAR (filtre kahve / espresso / kahve makinesi) + ÖNE ÇIKAN ÜRÜNLER.",
+  "delta": "ikas (Shopify.theme yok) · Theme Store UUID 4857cf85-064f-42ba-afc6-9aba4d5b8a43 · Ali / ikascom · demo dev-alitheme.ikas.shop · __IKAS_DATA__.storefrontThemeId 74f53e77-93a4-4e2f-b000-749142d53f82 · storefrontId d61280e7-8d90-4733-a630-98bcd92d60ba · merchantId 2a064ff8-b678-4f35-b163-20e70e5eec4d · salesChannelId 2a4cbf94-dd59-4c43-8f9a-a5a4e728428b · storeName dev-alitheme · locale tr · TRY · logoText ALİ · x-powered-by ikas · IkasEvents var · pageType from __IKAS_DATA__ · pageType INDEX. katalogSorgu=kahve (Kahve Paketi). Submit /search?s= ayrı. ?q= uygulanmaz leftover.",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://dev-alitheme.ikas.shop/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.ali-header__icon-btn[aria-label=\"Ara\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Boş overlay: popüler arama + öne çıkan"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input.ali-search__input",
+      "value": "kahve",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-kahve",
+      "not": "katalogSorgu=kahve → Kahve Paketi + TÜMÜNÜ GÖR"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Placeholder — popüler aramalar.",
+    "input": "Placeholder — kahve sonucu."
+  },
+  "missingStates": [],
+  "interactionNote": "Submit/PII yok. /search?s=kahve sayfa ayrı."
+}

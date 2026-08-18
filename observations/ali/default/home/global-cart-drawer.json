@@ -1,0 +1,93 @@
+{
+  "observationId": "ali.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "ali",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://dev-alitheme.ikas.shop/",
+  "selector": ".ali-cart",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "captureMode": "viewport",
+  "notlar": "Yandan `.ali-cart` / `aside.ali-cart__panel`. Boş: empty + ALIŞVERİŞE BAŞLA. Dolu: satır + kargo eşiği + kupon (açılmadı) + ÖDEME YAP (tıklanmadı) + SEPETİ GÖRÜNTÜLE.",
+  "delta": "ikas (Shopify.theme yok) · Theme Store UUID 4857cf85-064f-42ba-afc6-9aba4d5b8a43 · Ali / ikascom · demo dev-alitheme.ikas.shop · __IKAS_DATA__.storefrontThemeId 74f53e77-93a4-4e2f-b000-749142d53f82 · storefrontId d61280e7-8d90-4733-a630-98bcd92d60ba · merchantId 2a064ff8-b678-4f35-b163-20e70e5eec4d · salesChannelId 2a4cbf94-dd59-4c43-8f9a-a5a4e728428b · storeName dev-alitheme · locale tr · TRY · logoText ALİ · x-powered-by ikas · IkasEvents var · pageType from __IKAS_DATA__ · pageType INDEX. addToCart /cart/add.js yok — UI `button.ali-pd__atc`. Kahve Paketi ATC boş bıraktı leftover; sleeve doldurdu. Checkout tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://dev-alitheme.ikas.shop/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.ali-header__icon-btn[aria-label=\"Sepet\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://dev-alitheme.ikas.shop/puffer-laptop-sleeve-14-",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.ali-pd__atc",
+      "capture": false,
+      "not": "Sepete Ekle — drawer açılır"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": ".ali-cart--open .ali-cart-item__step",
+      "value": 5000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sleeve-1",
+      "not": "Puffer Laptop Sleeve 14\" Black ₺18"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".ali-cart button.ali-cart-item__step[aria-label=\"Artır\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2 · ₺36 beklenir"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Placeholder — boş sepet.",
+    "filled": "Placeholder — sleeve satırı.",
+    "changed": "Placeholder — adet 2."
+  },
+  "missingStates": [],
+  "interactionNote": "ÖDEME YAP / kupon tıklanmadı. addToCart helper yok."
+}

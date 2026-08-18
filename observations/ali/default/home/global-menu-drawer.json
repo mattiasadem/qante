@@ -1,0 +1,71 @@
+{
+  "observationId": "ali.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "ali",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://dev-alitheme.ikas.shop/",
+  "selector": ".ali-nav",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "captureMode": "viewport",
+  "notlar": "Hamburger tüm vp (1440 dahil) → `.ali-nav.ali-nav--open` / `.ali-nav__panel`. YENİ · KAHVE · EKİPMAN · ABONELİK · HEDİYE SETLERİ · İNDİRİM · TÜM ÜRÜNLER · Sipariş Takip. Sipariş Takip PII — tıklanmadı.",
+  "delta": "ikas (Shopify.theme yok) · Theme Store UUID 4857cf85-064f-42ba-afc6-9aba4d5b8a43 · Ali / ikascom · demo dev-alitheme.ikas.shop · __IKAS_DATA__.storefrontThemeId 74f53e77-93a4-4e2f-b000-749142d53f82 · storefrontId d61280e7-8d90-4733-a630-98bcd92d60ba · merchantId 2a064ff8-b678-4f35-b163-20e70e5eec4d · salesChannelId 2a4cbf94-dd59-4c43-8f9a-a5a4e728428b · storeName dev-alitheme · locale tr · TRY · logoText ALİ · x-powered-by ikas · IkasEvents var · pageType from __IKAS_DATA__ · pageType INDEX. Mega yok. Linkler button; ilk tık paneli kapatabilir leftover. 1440 hamburger var.",
+  "interactionStates": [
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://dev-alitheme.ikas.shop/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.ali-header__icon-btn[aria-label=\"Menü\"]",
+      "viewports": [
+        "375",
+        "768",
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "menu-acik",
+      "not": "Drawer açık — kahve menü etiketleri"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button.ali-nav__link:has-text(\"KAHVE\")",
+      "viewports": [
+        "375",
+        "768",
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kahve-alt",
+      "not": "KAHVE satırı — alt sayfa veya kapanma leftover"
+    }
+  ],
+  "stateFindings": {
+    "open": "Placeholder — menü listesi.",
+    "changed": "Placeholder — KAHVE tık."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "Kapalı drawer ekran dışı 0-görünür overlay"
+    }
+  ],
+  "interactionNote": "Sipariş Takip / Hesap tıklanmadı. Yazılı <a> değil button."
+}
