@@ -1,0 +1,110 @@
+{
+  "observationId": "zest.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "zest",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://zest-theme-demo.myshopify.com/",
+  "selector": "#Drawer-Search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/zest/default/home/global-predictive-search.initial.arama-bos.1440.png",
+    "evidence/zest/default/home/global-predictive-search.initial.arama-bos.375.png",
+    "evidence/zest/default/home/global-predictive-search.initial.arama-bos.768.png",
+    "evidence/zest/default/home/global-predictive-search.input.arama-alpine.1440.png",
+    "evidence/zest/default/home/global-predictive-search.input.arama-alpine.375.png",
+    "evidence/zest/default/home/global-predictive-search.input.arama-alpine.768.png"
+  ],
+  "notlar": "#Drawer-Search + #f-search-drawer-input. katalogSorgu=alpine (Alpine Jogger).",
+  "delta": "Sağ search drawer. 375 mobile toggle ayrı class. Shopify.theme.name [Update theme store] Zest · schema_name Zest · schema_version 9.3.0 · theme_store_id null · role main · id 151342186722 · walk zest-theme-demo.myshopify.com · Shopify.shop zest-flairy.myshopify.com.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://zest-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".f-popup__close",
+      "capture": false,
+      "not": "Newsletter popup kapat"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.site-header__search-toggle-mobile",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Mobil büyüteç"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.site-header__search-toggle:not(.site-header__search-toggle-mobile)",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Masaüstü büyüteç"
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "#Drawer-Search",
+      "viewports": [
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "768: ikon gizli; drawer forceOpen"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#f-search-drawer-input",
+      "value": "alpine",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-alpine",
+      "not": "katalogSorgu=alpine"
+    }
+  ],
+  "stateFindings": {
+    "initial": "375 drawer: Search boş + POPULAR SEARCHES: Kits, Skincare, Sublinguals + MOST SEARCHED PRODUCTS (Alpine Jogger $68.60, Amalfi Bandeau $22.00, Amalfi Crossover Pocket Legging $61.60, Amalfi Flare $71.40; 5. kart kesik). 768 forceOpen (ikon gizli): aynı öneriler + Amalfi Four-Way One Piece $51.20 (üstü $128.00). 1440 sağ drawer boş input + aynı popular/most-searched.",
+    "input": "q=alpine 375/768/1440: PRODUCTS — Alpine Jogger $68.60 + Chai Jogger $68.60 (aynı thumbnail) + Search for “alpine” →. Koleksiyon grubu yok."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu=alpine. 768 ikon görünür değil → forceOpen #Drawer-Search. Submit yok. Popular Kits/Skincare/Sublinguals leftover (katalog dışı).",
+  "capture": {
+    "url": "https://zest-theme-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:13:34.546Z"
+  },
+  "prepareClick": ".f-popup__close"
+}
