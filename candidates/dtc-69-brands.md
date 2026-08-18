@@ -8,6 +8,8 @@
 
 Durum: `done` = main'e merge · `in progress` = açık PR · boş = kuyrukta
 
+Tema listesi: [`shopify-themes.md`](./shopify-themes.md) · viewer **Listeler** sekmesi.
+
 | # | Status | Domain | URL |
 |---|---|---|---|
 | 1 | done | myobvi.com | https://myobvi.com |
@@ -69,7 +71,7 @@ Durum: `done` = main'e merge · `in progress` = açık PR · boş = kuyrukta
 | 57 | done | materialkitchen.com | https://materialkitchen.com |
 | 58 | done | onnit.com | https://onnit.com |
 | 59 | done | buckmason.com | https://buckmason.com |
-| 60 | in progress | herocosmetics.com | https://herocosmetics.com |
+| 60 | done | herocosmetics.com | https://herocosmetics.com |
 | 61 | done | magicspoon.com | https://magicspoon.com |
 | 62 | done | takearecess.com | https://takearecess.com |
 | 63 | in progress | vivobarefoot.com | https://vivobarefoot.com |

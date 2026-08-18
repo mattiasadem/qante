@@ -1,0 +1,83 @@
+{
+  "observationId": "savor.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "savor",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://savor-theme-demo.myshopify.com/",
+  "selector": "dialog.search-modal__content",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/savor/default/home/global-predictive-search.input.arama-sauce.1440.png",
+    "evidence/savor/default/home/global-predictive-search.input.arama-sauce.375.png",
+    "evidence/savor/default/home/global-predictive-search.input.arama-sauce.768.png",
+    "evidence/savor/default/home/global-predictive-search.open.arama-acik.1440.png",
+    "evidence/savor/default/home/global-predictive-search.open.arama-acik.375.png",
+    "evidence/savor/default/home/global-predictive-search.open.arama-acik.768.png"
+  ],
+  "captureMode": "viewport",
+  "prepareClick": "search-button.search-action--hidden-on-drawer button[aria-label='Search']",
+  "notlar": "dialog-component#search-modal + predictive-search-component. Input #cmdk-input. Kapalı 0 yükseklik.",
+  "delta": "Horizon predictive-search-form. katalogSorgu: sauce (31 sonuç sayfa). 375 header Search görünür (hidden-on-drawer).",
+  "interactionStates": [
+    "input",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://savor-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button[aria-label='Search']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik",
+      "not": "Görünür Search — boş/öneri"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#cmdk-input",
+      "value": "sauce",
+      "capture": false,
+      "not": "katalog: Japanese barbecue sauce"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "#cmdk-input",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sauce",
+      "not": "13 search results found for sauce"
+    }
+  ],
+  "stateFindings": {
+    "open": "Beyaz search modal. Placeholder Search + X. Products: BBQ Mix & Match $9.49 / Campfire Tee $25 / Cruisin Tee $25 / Dip & Drizzle Box $49.99.",
+    "input": "sauce + Clear + chip sauce. Products ızgara: The Original / Gluten-Free / Mini Bottle / Sweet Pineapple… 1440 kırmızı VIEW ALL + Collections başlığı. 375 tam ekran 2 kolon."
+  },
+  "missingStates": [],
+  "interactionNote": "İki Search butonu: hidden-on-menu (gizli) + hidden-on-drawer (görünür). clickVisible ilk görünürü alır. Submit/Enter yok. PII yok.",
+  "capture": {
+    "url": "https://savor-theme-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:28:19.009Z"
+  }
+}

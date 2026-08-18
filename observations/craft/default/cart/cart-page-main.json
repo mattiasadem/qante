@@ -1,0 +1,97 @@
+{
+  "observationId": "craft.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "craft",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://theme-craft-demo.myshopify.com/cart",
+  "selector": "#shopify-section-template--18214084542718__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/craft/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/craft/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/craft/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/craft/default/cart/cart-page-main.filled.dolu-sepet.1440.png",
+    "evidence/craft/default/cart/cart-page-main.filled.dolu-sepet.375.png",
+    "evidence/craft/default/cart/cart-page-main.filled.dolu-sepet.768.png",
+    "evidence/craft/default/cart/cart-page-main.initial.bos-sepet.1440.png",
+    "evidence/craft/default/cart/cart-page-main.initial.bos-sepet.375.png",
+    "evidence/craft/default/cart/cart-page-main.initial.bos-sepet.768.png"
+  ],
+  "notlar": "Boş: Your cart is empty + Continue shopping. cart-footer boşken h=0.",
+  "delta": "Boş state metin+CTA. Dolu state interact.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-craft-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "bos-sepet",
+      "not": "Your cart is empty"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-craft-demo.myshopify.com/products/ceramic-carafe-set",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-craft-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "dolu-sepet",
+      "not": "Carafe Set satırı + özet. Checkout tıklanmaz."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], quantity-input button[name='plus'], .quantity__button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet +1"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + Continue shopping. Özet/satır yok.",
+    "filled": "Ceramic Carafe Set · Color Speckled White · adet 1 · $108 üstü çizili $97.20 FIRSTTIMER. 1440 PRODUCT/QUANTITY/TOTAL. Checkout tıklanmadı.",
+    "changed": "Adet 2. Satır toplam $216 üstü çizili $194.40."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "open",
+      "sebep": "Sayfa, drawer değil"
+    },
+    {
+      "state": "input",
+      "sebep": "Anlamsız"
+    }
+  ],
+  "interactionNote": "Checkout / Shop Pay tıklanmadı. cart-footer boşken 0px; dolu karede görünmeli.",
+  "capture": {
+    "url": "https://theme-craft-demo.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:20:51.109Z"
+  }
+}

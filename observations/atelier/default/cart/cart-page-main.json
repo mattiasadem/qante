@@ -1,0 +1,124 @@
+{
+  "observationId": "atelier.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "atelier",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://theme-atelier-demo.myshopify.com/cart",
+  "selector": "#shopify-section-template--26420035748138__cart-section",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/atelier/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/atelier/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/atelier/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/atelier/default/cart/cart-page-main.filled.louise-qty1.1440.png",
+    "evidence/atelier/default/cart/cart-page-main.filled.louise-qty1.375.png",
+    "evidence/atelier/default/cart/cart-page-main.filled.louise-qty1.768.png",
+    "evidence/atelier/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/atelier/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/atelier/default/cart/cart-page-main.initial.sepet-bos.768.png"
+  ],
+  "notlar": "Boş: Your cart is empty · Have an account? Log in · CONTINUE SHOPPING.",
+  "delta": "Horizon cart-section. Login/checkout tıklanmadı. divider_aaknnG 101px leftover.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-atelier-demo.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-atelier-demo.myshopify.com/products/louise-slide-sandal-south-america",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'], .product-details button.add-to-cart-button",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-atelier-demo.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "louise-qty1",
+      "not": "Dolu cart satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], quantity-selector button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +1"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty · Have an account? Log in · CONTINUE SHOPPING. You may also like altta.",
+    "filled": "Cart 1. Louise Slide Sandal 35 qty 1 $415.00 · Estimated total $415.00 CAD. CHECK OUT.",
+    "changed": "Cart 2. qty 2 · satır $830.00 CAD · Estimated total $830.00 CAD. Checkout tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout / Log in tıklanmadı.",
+  "capture": {
+    "url": "https://theme-atelier-demo.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:31:43.870Z"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "observationId": "sense.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "sense",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-sense-demo.myshopify.com/",
+  "selector": "#shopify-section-header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/sense/default/home/navigation-header-mega.1440.png",
+    "evidence/sense/default/home/navigation-header-mega.375.png",
+    "evidence/sense/default/home/navigation-header-mega.768.png",
+    "evidence/sense/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/sense/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/sense/default/home/navigation-header-mega.initial.kapali.768.png"
+  ],
+  "notlar": "Logo SENSE. 1440 düz linkler: Skin Care / Hair Care / Body Care / Nail Polish / Blog / About Us. Arama ikonu + Cart. Hesap ikonu yok.",
+  "delta": "Mega panel yok — Dawn header__inline-menu. 1440 hamburger gizli. Cart → /cart; overlay cart-notification (drawer değil).",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-sense-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-header",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "Mega yok; kapalı header"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440: SENSE logo, search, cart, alt satır Skin Care…About Us. Mega kolon/görsel yok. 375: hamburger + SENSE + search + cart."
+  },
+  "missingStates": [],
+  "interactionNote": "Hover denemesi yok; panel host yok. Mobil menü ayrı global-menu-drawer.",
+  "capture": {
+    "url": "https://theme-sense-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:32:52.934Z"
+  }
+}

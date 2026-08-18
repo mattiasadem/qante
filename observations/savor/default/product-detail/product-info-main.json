@@ -1,0 +1,59 @@
+{
+  "observationId": "savor.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "savor",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://savor-theme-demo.myshopify.com/products/the-original-japanese-barbecue-sauce",
+  "selector": "#shopify-section-template--18561684504627__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/savor/default/product-detail/product-info-main.changed.2-bottles.1440.png",
+    "evidence/savor/default/product-detail/product-info-main.changed.2-bottles.375.png",
+    "evidence/savor/default/product-detail/product-info-main.changed.2-bottles.768.png",
+    "evidence/savor/default/product-detail/product-info-main.initial.1-bottle.1440.png",
+    "evidence/savor/default/product-detail/product-info-main.initial.1-bottle.375.png",
+    "evidence/savor/default/product-detail/product-info-main.initial.1-bottle.768.png"
+  ],
+  "notlar": "THE ORIGINAL. Bottle Pack Size 1/2/3/6 Bottles. $9.49 CAD. ADD TO CART + BUY IT NOW. Horizon product-form-component.",
+  "delta": "Nested add-to-cart-component / product-price / variant radio. Buy it now tıklanmadı. Campfire Tee Size leftover (claiming pack size).",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://savor-theme-demo.myshopify.com/products/the-original-japanese-barbecue-sauce",
+      "capture": true,
+      "etiket": "1-bottle",
+      "not": "Default 1 Bottle $9.49"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label:has-text('2 Bottles')",
+      "capture": true,
+      "etiket": "2-bottles",
+      "not": "2 Bottles — fiyat $18.98"
+    }
+  ],
+  "stateFindings": {
+    "initial": "THE ORIGINAL. $9.49 CAD. Bottle Pack Size: 1 Bottle siyah pill. 2/3/6 boş. Adet 1. ADD TO CART + BUY IT NOW. Sol galeri şişe + yemek kareleri.",
+    "changed": "2 Bottles siyah pill. Fiyat $18.98 CAD. Galeri aynı küme. Buy it now tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "Buy it now / checkout yok. Pack size yeterli.",
+  "capture": {
+    "url": "https://savor-theme-demo.myshopify.com/products/the-original-japanese-barbecue-sauce",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:31:06.777Z"
+  }
+}

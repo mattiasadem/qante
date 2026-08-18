@@ -1,0 +1,80 @@
+{
+  "observationId": "sense.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "sense",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://theme-sense-demo.myshopify.com/cart",
+  "selector": "#shopify-section-template--16716093358288__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/sense/default/cart/cart-page-main.1440.png",
+    "evidence/sense/default/cart/cart-page-main.375.png",
+    "evidence/sense/default/cart/cart-page-main.768.png",
+    "evidence/sense/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/sense/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/sense/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/sense/default/cart/cart-page-main.filled.lip-satir.1440.png",
+    "evidence/sense/default/cart/cart-page-main.filled.lip-satir.375.png",
+    "evidence/sense/default/cart/cart-page-main.filled.lip-satir.768.png",
+    "evidence/sense/default/cart/cart-page-main.initial.bos.1440.png",
+    "evidence/sense/default/cart/cart-page-main.initial.bos.375.png",
+    "evidence/sense/default/cart/cart-page-main.initial.bos.768.png"
+  ],
+  "notlar": "Boş: Your cart is empty + Continue shopping. cart-footer boşken height 0.",
+  "delta": "Dawn cart-items. Dolu hâlde satır+qty. Checkout’a girilmedi.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-sense-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "bos"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-sense-demo.myshopify.com/cart/add?id=40582358466768&quantity=1",
+      "capture": false,
+      "not": "GET /cart/add Lip Balm Lime"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-sense-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "lip-satir"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--16716093358288__cart-items button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Qty +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + Continue shopping.",
+    "filled": "Lip Balm / Flavor: Lime / $16.00. Qty stepper 3, total $48.00, çöp. (GET add quantity=1; karede 3 — önceki ATC/viewport sızıntısı olabilir.)",
+    "changed": "Plus tık → qty 4, total $64.00. Satır aynı Lime."
+  },
+  "missingStates": [],
+  "interactionNote": "GET /cart/add?id=40582358466768 Lime. Plus piksel değişti (3→4, $48→$64). Checkout yok.",
+  "capture": {
+    "url": "https://theme-sense-demo.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:31:35.826Z"
+  }
+}

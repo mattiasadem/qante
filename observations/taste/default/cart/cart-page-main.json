@@ -1,0 +1,124 @@
+{
+  "observationId": "taste.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "taste",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://theme-taste-demo.myshopify.com/cart",
+  "selector": "#shopify-section-template--22715886862358__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/taste/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/taste/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/taste/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/taste/default/cart/cart-page-main.filled.fiery-ginger-qty1.1440.png",
+    "evidence/taste/default/cart/cart-page-main.filled.fiery-ginger-qty1.375.png",
+    "evidence/taste/default/cart/cart-page-main.filled.fiery-ginger-qty1.768.png",
+    "evidence/taste/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/taste/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/taste/default/cart/cart-page-main.initial.sepet-bos.768.png"
+  ],
+  "notlar": "Dawn main-cart-items. Boş: Your cart is empty + Continue shopping. cart-footer boşken 0px.",
+  "delta": "Drawer yok; tam sayfa sepet. Checkout tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-taste-demo.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-taste-demo.myshopify.com/products/fiery-ginger-booster",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'], form[action*='/cart/add'] button[type='submit']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-taste-demo.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "fiery-ginger-qty1",
+      "not": "Dolu cart satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "quantity-input button[name='plus'], cart-items button[name='plus'], button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +1"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + Continue shopping. Footer görünür. 375/768/1440.",
+    "filled": "Your cart. Fiery Ginger Booster Size: 60 mL qty 1 · $3.95. Subtotal $3.95 CAD. Check out. Cart badge 1.",
+    "changed": "qty 2 · satır $7.90 · Subtotal $7.90 CAD. Cart badge 2. Checkout tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı. cart-footer doluyken görünür olmalı.",
+  "capture": {
+    "url": "https://theme-taste-demo.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:16:10.621Z"
+  }
+}
