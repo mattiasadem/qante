@@ -10,8 +10,8 @@
 `theme_store_id` = **null** (canlıda yok; uydurulmadı)  
 shop `minion-theme-red.myshopify.com`
 
-**Durum:** Mod A walk roster yazıldı · 3vp + interact yakalama sırada  
-**PR:** draft · **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti** (0 error)  
+**PR:** draft https://github.com/mattiasadem/qante/pull/170 — **main'e merge yok**
 
 ---
 
@@ -25,7 +25,7 @@ shop `minion-theme-red.myshopify.com`
 | Parallel | yalnız `observations/minion/`, `evidence/minion/`, `todo/minion.md`, `candidates/minion-leftovers.md` |
 
 **Kapsam satırı:**  
-`Minion · default (Red) · Devices 29-Jun 6a15611 · schema_name Minion 4.2.0 · theme_store_id null · home→PDP→PLP→collections→search→cart→about-us/contact→blog→404 · 37 obs · 0 yeni şema · leftover: candidates/minion-leftovers.md`
+`Minion · default (Red) · Devices 29-Jun 6a15611 · schema_name Minion 4.2.0 · theme_store_id null · home→PDP→PLP→collections→search→cart→about-us/contact→news/article→404 · 37 obs · 129 PNG · 0 yeni şema · leftover: candidates/minion-leftovers.md`
 
 ---
 
@@ -33,21 +33,21 @@ shop `minion-theme-red.myshopify.com`
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home + announcement/header/slideshow/brands/categories/featured/banners/tabs/feed/services/about accordion/trust/footer | roster | [ ] |
-| Mega Phones 1440 | interact yazıldı | [ ] |
-| Predictive search `phone` | interact yazıldı | [ ] |
-| Mobile menu 375 | interact yazıldı | [ ] |
-| Mobile menu 768 | interact yazıldı | [ ] |
-| Cart drawer empty + filled + qty | interact yazıldı | [ ] |
-| PDP Gaming PC Storage 256→512 | interact yazıldı | [ ] |
-| PLP `/collections/phones` | roster | [ ] |
-| Collections index `/collections` | roster | [ ] |
-| Search `/search?q=phone` | roster | [ ] |
-| Cart page empty + filled + qty | interact yazıldı | [ ] |
-| About `/pages/about-us` (`/pages/about` 404) | roster | [ ] |
-| Contact `/pages/contact` (submit yok) | roster | [ ] |
-| News + How To Layer Sweaters | roster | [ ] |
-| 404 leftover | roster | [ ] |
+| Home + announcement/header/slideshow/brands/categories/featured/banners/tabs/feed/services/about accordion/trust/footer | roster + capture | [x] |
+| Mega Phones 1440 | interact | [x] |
+| Predictive search `phone` | interact 3vp | [x] |
+| Mobile menu 375 | interact | [x] |
+| Mobile menu 768 | interact | [x] |
+| Cart drawer empty + filled + qty | interact 3vp | [x] |
+| PDP Gaming PC Storage 256→512 | interact 3vp | [x] |
+| PLP `/collections/phones` | roster + capture | [x] |
+| Collections index `/collections` | roster + capture | [x] |
+| Search `/search?q=phone` | roster + capture | [x] |
+| Cart page empty + filled + qty | interact 3vp | [x] |
+| About `/pages/about-us` (`/pages/about` 404) | roster + capture | [x] |
+| Contact `/pages/contact` (submit yok) | roster + capture | [x] |
+| News + How To Layer Sweaters | roster + capture | [x] |
+| 404 leftover | roster + capture | [x] |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -79,12 +79,12 @@ shop `minion-theme-red.myshopify.com`
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | open | Phones tile hover 1440 — henüz çekilmedi |
-| global-predictive-search | input | `phone` 3vp — henüz çekilmedi |
-| global-menu-drawer | open | 375/768 hamburger — henüz çekilmedi |
-| global-cart-drawer | filled + changed | henüz çekilmedi |
-| cart-page-main | filled + changed | henüz çekilmedi |
-| product-info-main | changed | Storage 256→512 — henüz çekilmedi |
+| navigation-header-mega | open | 1440 Phones hover — 4 kolon + Popular Smartphones görsel |
+| global-predictive-search | input | `phone` 3vp — Suggestions + Revel Phone From $399; 1440 Collections |
+| global-menu-drawer | open | 375/768 ikonlu kategoriler + About. 768 Account Sign in (dur) |
+| global-cart-drawer | filled + changed | empty → PC $600 qty1 → qty2 $1,199. Check out dur |
+| cart-page-main | filled + changed | empty → PC $600 qty1 → qty2 $1,199 |
+| product-info-main | changed | 256GB $1,199 → 512GB $1,899 |
 
 ---
 
@@ -96,7 +96,7 @@ shop `minion-theme-red.myshopify.com`
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact mega / search / cart / menu / PDP Storage
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate` — 0 error
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact mega / search / cart / menu / PDP Storage
+- [x] PNG bak → stateFindings
+- [x] `npm run validate` — 0 error

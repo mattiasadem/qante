@@ -30,14 +30,16 @@
 | `/pages/theme-features` | Tema satış sayfası; walk dışı leftover |
 | Newsletter footer / blog band | input var — submit PII, dur |
 | Contact Submit | PII, dur |
-| Account / Log in | Header + cart drawer — dur |
-| Checkout / Buy it now | drawer + PDP — tıklanmadı |
-| Cart discount code | `#cart-discount` — dur |
+| Account / Log in / Sign in with shop | Header + 768 drawer — dur |
+| Checkout / Buy it now / View Cart | drawer + PDP — tıklanmadı |
+| Cart discount (`DISCOUNT` / `#cart-discount`) | dur |
+| Terms checkbox | cart drawer — işaretlenmedi |
 | Quick view | kart `btn-quickview` — interact listesinde yok |
 | PDP `product-recommendations` / `1648018242bd6448c3` | yükseklik 0 ilk ziyarette |
 | PLP `description` | yükseklik 0 |
+| Cart `cart-footer` | boşken h=0; doluyken totals/checkout kardeş section — items crop dışında leftover |
 | Search `q=shirt` | 0 sonuç; katalog `phone` (13) |
-| Mobile submenu `changed` | drawer expander görüldü; alt menü açılmadı |
+| Mobile submenu `changed` | Phones chevron görüldü; alt menü açılmadı |
 
 ---
 
@@ -48,13 +50,16 @@
 - **header-drawer mobile** — `summary.main-menu-button` + `.menu-drawer`. `global-menu-drawer` + delta.
 - **404 template** — taxonomy `pageTypes` içinde yok. `page-content-main` + delta.
 - **popular_categories** — 3 kolon + ürün listesi. `collection-nav-image-cards` + delta.
+- **collections index** — ~28 kart; `collection-nav-grid` items.max 16. Delta.
+- **cart 50% OFF** — drawer/sayfada $1,199→$600; PDP’de $1,199. Promo leftover, şema değil.
 
 ---
 
-## Interact notları (çekim öncesi)
+## Interact notları
 
 - Phones mega: `a.tiles-menu-item[href="/collections/phones"]` hover. Tıklama `/collections/phones`.
 - Predictive: 1440 `input#Search-In-Modal`; 375 `input#Search-In-Modal-mobile`. Katalog `phone`.
-- Cart: `#cart-icon-bubble` drawer açar (sayfa değişmez). ATC Gaming PC $1,199.
+- Cart: `#cart-icon-bubble` / `#cart-icon-bubble--mobile` drawer. ATC UI (`filled/addToCart → ui`).
 - 1440 hamburger 0×0. 375/768 `summary.main-menu-button`.
 - PDP Storage: `label[for="template--22435922837762__main-2-1"]` 512GB SSD $1,899.
+- Qty: `button[name=plus]` / `.quantity__button[name=plus]`.
