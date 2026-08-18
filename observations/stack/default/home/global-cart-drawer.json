@@ -1,0 +1,107 @@
+{
+  "observationId": "stack.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "stack",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://retailer-mass.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/stack/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/stack/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/stack/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/stack/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/stack/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/stack/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/stack/default/home/global-cart-drawer.initial.sepet-bos.1440.png",
+    "evidence/stack/default/home/global-cart-drawer.initial.sepet-bos.375.png",
+    "evidence/stack/default/home/global-cart-drawer.initial.sepet-bos.768.png"
+  ],
+  "notlar": "cart-drawer #CartDrawer. Opener #cart-icon-bubble. Indoor Cycling Bike $849.",
+  "delta": "Shopify.theme: name **retailer/mass** · schema_name **Stack** · schema_version **1.0.2** · theme_store_id **null** · role main · id 150759768247 · shop retailer-mass.myshopify.com. /cart ayrı. Checkout tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://retailer-mass.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://retailer-mass.myshopify.com/products/indoor-cycling-bike",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit[name='add']",
+      "capture": false,
+      "not": "Indoor Cycling Bike Black — ATC drawer açar"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC UI drawer — ikon tıklanmadı (375/768 overlay dışında)"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button.quantity__button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your Cart [0]. You’re $100.00 away from free shipping. Çanta ikon + Your cart is empty. + Continue Shopping. Categories: Cardio Machines / Free Weights (+ 1440 Storage Racks).",
+    "filled": "Your Cart [1]. Congratulations! You've reached free shipping. Indoor Cycling Bike · Retailer Mass · Black · $849.00 · adet 1. Delivery Charges Calculated at checkout. Subtotal $849.00 USD. Checkout + View Cart.",
+    "changed": "Your Cart [2]. Adet 2; satır $1,698.00; Subtotal $1,698.00 USD. Aynı drawer iskeleti."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC UI (addToCart → ui) drawer açar. 375/768 ikon tıklanmadı (overlay dışında). Checkout / View Cart tıklanmadı.",
+  "capture": {
+    "url": "https://retailer-mass.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:41:27.884Z"
+  }
+}
