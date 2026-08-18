@@ -1,0 +1,92 @@
+{
+  "observationId": "concept.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "concept",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://concept-theme.myshopify.com/cart",
+  "selector": "#shopify-section-template--16903853342959__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/concept/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/concept/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/concept/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/concept/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/concept/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/concept/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/concept/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/concept/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/concept/default/cart/cart-page-main.initial.sepet-bos.768.png"
+  ],
+  "notlar": "Your cart. Boş: Continue shopping + Have an account?",
+  "delta": "Account link leftover. Checkout tıklanmadı.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://concept-theme.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepet-bos",
+      "not": "Your cart is empty"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://concept-theme.myshopify.com/products/vita-botanical-mela-fade-serum-system-a-b",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--16903853998319__main",
+      "capture": false,
+      "not": "75ml/White $70"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://concept-theme.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Cart sayfa dolu"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--16903853342959__cart-items .quantity__button:nth-of-type(2)",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + Continue shopping + Have an account? Log in to check out faster (tıklanmadı).",
+    "filled": "Vita-Botanical 75ml/White. Qty 1. $70.00→$63.00 (10% Off). Subtotal $63.00. Only $737 away from free shipping!",
+    "changed": "Qty 2. Satır $140.00→$126.00. Subtotal $126.00. Only $674 away from free shipping!"
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart → ui sonra /cart. Log in / Check out / PayPal tıklanmadı.",
+  "capture": {
+    "url": "https://concept-theme.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:13:04.320Z"
+  }
+}
