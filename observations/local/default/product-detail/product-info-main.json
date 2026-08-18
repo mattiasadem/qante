@@ -1,0 +1,71 @@
+{
+  "observationId": "local.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "local",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://local-theme-main.myshopify.com/products/hamburger",
+  "selector": "#shopify-section-template--18571817025597__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/local/default/product-detail/product-info-main.changed.size-large.1440.png",
+    "evidence/local/default/product-detail/product-info-main.changed.size-large.375.png",
+    "evidence/local/default/product-detail/product-info-main.changed.size-large.768.png",
+    "evidence/local/default/product-detail/product-info-main.initial.ilk-hal.1440.png",
+    "evidence/local/default/product-detail/product-info-main.initial.ilk-hal.375.png",
+    "evidence/local/default/product-detail/product-info-main.initial.ilk-hal.768.png"
+  ],
+  "notlar": "Hamburger $4.50/$5.50. Size Small (disabled) / Medium / Large. Nutri-score · Allergens · Nutritional table. Add to cart + Buy it now. Choose a store leftover.",
+  "delta": "Shopify.theme.name local-build/light · id 139927814205 · schema_name Local · schema_version 4.1.0 · theme_store_id null · role main · shop local-theme-light-demo.myshopify.com Size hapları. Small disabled. Buy it now / store selector tıklanmadı.",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://local-theme-main.myshopify.com/products/hamburger",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2200,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--18571817025597__main",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Size Medium varsayılan"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#hamburger-option-size-3-template--18571817025597__main",
+      "capture": true,
+      "etiket": "size-large",
+      "not": "Medium → Large"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "stateFindings": {
+    "initial": "Hamburger $4.50 / $5.50. Size Small / Medium (seçili) / Large. Allergens + Nutri-score C. 25% OFF kutusu. Add to cart + Buy it now. Nutritional table + Goes well with Chili Pepper / BBQ Sauce. Pickup Warehouse / Champs-Élysées.",
+    "changed": "Size Large (12 oz) seçili. Fiyat $5.50 / $6.50. you save $1.00. Görsel aynı hamburger."
+  },
+  "missingStates": [],
+  "interactionNote": "Buy it now / checkout / store selector / 25% OFF kopyala dur. Radio #hamburger-option-size-3… tık.",
+  "capture": {
+    "url": "https://local-theme-main.myshopify.com/products/hamburger",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:41:03.571Z"
+  }
+}
