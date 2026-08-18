@@ -1,0 +1,64 @@
+{
+  "observationId": "trade.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "trade",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-trade-demo.myshopify.com/",
+  "selector": "#shopify-section-sections--22715907047446__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Logo Trade. 1440: Shop mega + Marketing resources + Become a wholesale partner + locale + arama + sepet. Account yok.",
+  "delta": "Shop = #Details-HeaderMenu-1 .mega-menu__content metin kolonları (görsel/promo yok). Country/region + Language header’da. Cart-notification; cart-drawer yok.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-trade-demo.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali-header",
+      "not": "Shop mega ve hamburger kapalı"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-HeaderMenu-1 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "Shop caret — kolonlar Shop all / Home decor / Towels / Loungewear / Bedding. Yazılı <a> tıklanmaz."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Yazılacak — capture sonrası PNG.",
+    "open": "Yazılacak — capture sonrası PNG."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Shop tık ile details açılıyor; hover-only mega yoklandı değil"
+    },
+    {
+      "state": "filled",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "input",
+      "sebep": "Arama ayrı component"
+    },
+    {
+      "state": "changed",
+      "sebep": "Mobil drill-down global-menu-drawer’da"
+    }
+  ],
+  "interactionNote": "1440 Shop = details#Details-HeaderMenu-1. Mega görsel yok. 375/768 hamburger ayrı observation."
+}

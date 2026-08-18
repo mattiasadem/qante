@@ -1,0 +1,52 @@
+{
+  "observationId": "trade.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "trade",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-trade-demo.myshopify.com/",
+  "selector": "predictive-search.search-modal__form",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "Header büyüteç → details-modal + #Search-In-Modal. katalogSorgu towel.",
+  "delta": "Satır içi arama yok. Submit yok.",
+  "captureMode": "viewport",
+  "prepareClick": "details-modal.header__search summary",
+  "interactionStates": [
+    "open",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://theme-trade-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "details-modal.header__search summary",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-modal",
+      "not": "Büyüteç → boş Search"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input.search__input[name='q']",
+      "value": "towel",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "katalogSorgu towel — öneri. Submit yok."
+    }
+  ],
+  "stateFindings": {
+    "open": "Yazılacak — capture sonrası PNG.",
+    "input": "Yazılacak — capture sonrası PNG."
+  },
+  "missingStates": [],
+  "interactionNote": "katalog towel (vitrin: towels/washcloth). Fill görünür input.search__input."
+}

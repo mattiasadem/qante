@@ -1,0 +1,77 @@
+{
+  "observationId": "trade.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "trade",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://theme-trade-demo.myshopify.com/cart",
+  "selector": "#shopify-section-template--22715910717462__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Boş: Your cart is empty + Continue shopping. cart-footer boşken h=0.",
+  "delta": "Dolu + qty interact. Checkout tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-trade-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "bos-sepet",
+      "not": "Your cart is empty"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-trade-demo.myshopify.com/products/cape-side-table",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add']",
+      "capture": false,
+      "not": "Görünür ATC yok → /cart/add.js"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-trade-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "dolu-sepet",
+      "not": "Cape Side Table satırı. Checkout yok."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], quantity-input button[name='plus'], .quantity__button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet +1"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Yazılacak — capture sonrası PNG.",
+    "filled": "Yazılacak — capture sonrası PNG.",
+    "changed": "Yazılacak — capture sonrası PNG."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "open",
+      "sebep": "Sayfa, drawer değil"
+    },
+    {
+      "state": "input",
+      "sebep": "Anlamsız"
+    }
+  ],
+  "interactionNote": "Checkout / Shop Pay tıklanmadı. addToCart fallback bekleniyor."
+}

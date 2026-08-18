@@ -1,0 +1,77 @@
+{
+  "observationId": "trade.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "trade",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-trade-demo.myshopify.com/",
+  "selector": "#cart-notification",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Dawn cart-notification. cart-drawer yok. Sepet ikonu /cart.",
+  "delta": "Slide-out drawer değil. Buy box’ta Add to cart yok — B2B quick-order-list / AJAX.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-trade-demo.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#shopify-section-sections--22715907047446__header",
+      "etiket": "bildirim-kapali",
+      "not": "Host cart-notification 0px; kapalı kare header"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-trade-demo.myshopify.com/products/cape-side-table",
+      "capture": false,
+      "not": "Cape Side Table — form[id] var, görünür ATC yok"
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add']",
+      "capture": false,
+      "not": "UI ATC yoksa /cart/add.js fallback"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": "#cart-notification.active",
+      "value": 8000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "urun-eklendi",
+      "not": "Bildirim açılırsa yakala; AJAX fallback açmazsa missing"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Yazılacak — capture sonrası PNG.",
+    "filled": "Yazılacak — capture sonrası PNG."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "input",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "open",
+      "sebep": "Açılma filled ile aynı bildirim"
+    },
+    {
+      "state": "changed",
+      "sebep": "Adet cart sayfasında"
+    }
+  ],
+  "interactionNote": "PDP’de görünür Add to cart yok. Fallback bekleniyor. Checkout tıklanmadı."
+}
