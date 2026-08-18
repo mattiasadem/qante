@@ -99,9 +99,11 @@ Karar: onay bekliyor
 
 ## Interact notları
 
-- Mega: `a:text-is("ÇANTA")` hover 1440. Tıklama `#`.
-- Predictive: `button[aria-label="Ara"]` → `input.ethm-search__input`. Katalog `bag`.
-- Cart drawer: `button[aria-label="Sepet"]` → `.ethm-cart`. ATC UI `button.pd-atc__cta` (Shopify `addToCart` / `/cart/add.js` yok).
-- 1440 hamburger gizlenebilir. 375/768 `button[aria-label="Menü"]` → `.ethm-nav__menu`.
+- Mega: `a.ethm-menu-item__trigger[href="#"]` hover 1440. Tıklama `#`.
+- Predictive: `button[aria-label="Ara"]` → `input.ethm-search__input`. Katalog `bag`. Sonuç başlığı `10 {count} sonuç` — şablon placeholder leftover.
+- Cart drawer: boş = `button[aria-label="Sepet"]`. ATC `button.pd-atc__cta` drawer'ı **kendisi açar**; ikinci Sepet tıkı kapatır. Shopify `addToCart` / `/cart/add.js` yok.
+- Qty: `.ethm-cart button[aria-label="+"]` / `.cartx button[aria-label="+"]`. Minus aria `−` (unicode).
+- Ücretsiz kargo progress (1.476 ₺ → 1.452 ₺) drawer leftover.
+- 1440 hamburger 0×0. 375/768 `button[aria-label="Menü"]` → `.ethm-nav__menu`. ÇANTA chevron kapalı (changed yok).
 - PDP Color: `button.pd-variants__swatch[aria-label="Beige"]`.
-- Qty: `.ethm-cart button[aria-label="+"]` / `.cartx button[aria-label="+"]` (kanıt sonrası doğrulanacak).
+- Çerez: dismiss overlay gizler; gizli `Tümünü Kabul Et` tıkı patlatır — adım yok.

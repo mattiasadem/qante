@@ -7,7 +7,14 @@
   "url": "https://dev-selimtheme.ikas.shop/medium-shoulder-bag",
   "selector": "section.pd",
   "evidenceSlug": "product-info-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/selim/default/product-detail/product-info-main.changed.beige.1440.png",
+    "evidence/selim/default/product-detail/product-info-main.changed.beige.375.png",
+    "evidence/selim/default/product-detail/product-info-main.changed.beige.768.png",
+    "evidence/selim/default/product-detail/product-info-main.initial.black.1440.png",
+    "evidence/selim/default/product-detail/product-info-main.initial.black.375.png",
+    "evidence/selim/default/product-detail/product-info-main.initial.black.768.png"
+  ],
   "notlar": "Medium Shoulder Bag ₺24.00 / ₺32.00. Breadcrumb Anasayfa / Bags / Shoulder Bags. COLOR swatch Black (default) Beige Pistachio Green Coral Cyan. Adet ± · SEPETE EKLE. Güvenli Ödeme / Hızlı Kargo / Kolay İade. Favori leftover. Değerlendirme yaz PII dur.",
   "delta": "pageType PRODUCT. galleryLayout carousel. Black→Beige interact. Checkout yok. ikas · Shopify.theme yok · window.__IKAS_DATA__ · storefrontId 59b21621-cd0c-4bae-94f2-d0ddf3154adc · storefrontThemeId b16764ac-ef37-4683-b598-61c72fb5b2f6 · storefrontRoutingId 4b99701f-6745-4417-a8cf-d903245060d9 · storefrontType STOREFRONT · salesChannelId da5ff479-e38f-4fb4-9dd2-ba7e6e6b7930 · merchantId d2e5754b-2da4-4526-80e6-ce75fc6be32f · storeName dev-selimtheme · locale tr · currency TRY ₺ · region TR · domain dev-selimtheme.ikas.shop · Theme Store UUID cd45021d-2f96-4fc4-afe2-229ea0fd7b49 · IkasEvents subscribe/unsubscribe · html lang=tr",
   "prepareClick": "button:has-text(\"TÜMÜNÜ KABUL ET\")",
@@ -30,12 +37,6 @@
     },
     {
       "state": "initial",
-      "action": "click",
-      "selector": "button:has-text(\"TÜMÜNÜ KABUL ET\")",
-      "capture": false
-    },
-    {
-      "state": "initial",
       "action": "scrollTo",
       "selector": "section.pd",
       "capture": true,
@@ -46,12 +47,45 @@
       "state": "changed",
       "action": "click",
       "selector": "button.pd-variants__swatch[aria-label=\"Beige\"]",
+      "capture": false,
+      "not": "COLOR Beige"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "section.pd",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "mouseMove",
+      "value": "20,400",
       "capture": true,
       "etiket": "beige",
-      "not": "COLOR Beige"
+      "not": "COLOR Beige — mega üstünde hover yok"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "Medium Shoulder Bag ₺24 / ₺32. COLOR Seçiminiz: Black. Galeri siyah çanta. SEPETE EKLE. Güvenli ödeme / hızlı kargo / kolay iade.",
+    "changed": "Seçiminiz: Beige; galeride bej çanta. Fiyat aynı ₺24. Favori / değerlendirme yaz dur."
+  },
   "missingStates": [],
-  "interactionNote": "Favorilere Ekle / Değerlendirme Yaz / account dur. Sticky bar .pd-atc__bar-cta leftover."
+  "interactionNote": "Çerez overlay dismissAllOverlays ile gizlenir; tık adımı yok (gizli buton patlatır). Favorilere Ekle / Değerlendirme Yaz / account dur. Sticky bar .pd-atc__bar-cta leftover.",
+  "capture": {
+    "url": "https://dev-selimtheme.ikas.shop/medium-shoulder-bag",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:57:18.058Z"
+  }
 }

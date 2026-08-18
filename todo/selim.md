@@ -21,8 +21,8 @@
 Theme Store UUID (katalog, vitrin JS’te yok): **cd45021d-2f96-4fc4-afe2-229ea0fd7b49**  
 Script: `/sf/p/{storefrontId}/{storefrontThemeId}/p0gbk-y4yfc/`
 
-**Durum:** Mod A walk yazıldı — 3vp + interact sırada  
-**PR:** draft · **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti** (0 error)  
+**PR:** draft https://github.com/mattiasadem/qante/pull/207 · **main'e merge yok**
 
 ---
 
@@ -34,10 +34,11 @@ Script: `/sf/p/{storefrontId}/{storefrontThemeId}/p0gbk-y4yfc/`
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **22** |
+| Evidence PNG | **84** |
 | Parallel | yalnız `observations/selim/`, `evidence/selim/`, `todo/selim.md`, `candidates/selim-leftovers.md` |
 
 **Kapsam satırı:**  
-`Selim · default · ikas · Shopify.theme yok · storefrontThemeId b16764ac-ef37-4683-b598-61c72fb5b2f6 · Theme Store UUID cd45021d-2f96-4fc4-afe2-229ea0fd7b49 · host dev-selimtheme.ikas.shop · home→PDP Medium Shoulder Bag Black→Beige→PLP /shoulder-bags→search bag→cart empty/filled/qty→/pages/iletisim→/pages/sss→blog 404 leftover→404 · 22 obs · 0 yeni şema · leftover: candidates/selim-leftovers.md`
+`Selim · default · ikas · Shopify.theme yok · storefrontThemeId b16764ac-ef37-4683-b598-61c72fb5b2f6 · Theme Store UUID cd45021d-2f96-4fc4-afe2-229ea0fd7b49 · host dev-selimtheme.ikas.shop · home→PDP Medium Shoulder Bag Black→Beige→PLP /shoulder-bags→search bag→cart empty/filled/qty→/pages/iletisim→/pages/sss→blog 404 leftover→404 · 22 obs · 84 PNG · 0 yeni şema · leftover: candidates/selim-leftovers.md`
 
 ---
 
@@ -45,20 +46,20 @@ Script: `/sf/p/{storefrontId}/{storefrontThemeId}/p0gbk-y4yfc/`
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announce→footer) | [x] obs | [ ] capture |
-| ÇANTA mega hover 1440 | [x] obs | [ ] interact |
-| Predictive search `bag` | [x] obs | [ ] interact 3vp |
-| Mobile menu 375 + 768 | [x] obs | [ ] interact |
-| Cart drawer empty + filled + qty | [x] obs | [ ] interact |
-| PDP Medium Shoulder Bag Color Black→Beige | [x] obs | [ ] interact |
-| PLP `/shoulder-bags` | [x] obs | [ ] capture |
-| Search `/search?q=bag` | [x] obs | [ ] capture |
-| Cart `/cart` empty + filled + qty | [x] obs | [ ] interact |
-| Contact `/pages/iletisim` (submit yok) | [x] obs | [ ] capture |
-| FAQ `/pages/sss` | [x] obs | [ ] capture |
+| Home roster (announce→footer) | [x] obs | [x] capture |
+| ÇANTA mega hover 1440 | [x] obs | [x] interact |
+| Predictive search `bag` | [x] obs | [x] interact 3vp |
+| Mobile menu 375 + 768 | [x] obs | [x] interact |
+| Cart drawer empty + filled + qty | [x] obs | [x] interact |
+| PDP Medium Shoulder Bag Color Black→Beige | [x] obs | [x] interact |
+| PLP `/shoulder-bags` | [x] obs | [x] capture |
+| Search `/search?q=bag` | [x] obs | [x] capture |
+| Cart `/cart` empty + filled + qty | [x] obs | [x] interact |
+| Contact `/pages/iletisim` (submit yok) | [x] obs | [x] capture |
+| FAQ `/pages/sss` | [x] obs | [x] capture |
 | About `/about` `/pages/hakkimizda` | ⛔ 404 leftover | — |
 | Blog `/blog` | ⛔ 404 leftover | — |
-| 404 `/this-page-does-not-exist-qante` | [x] obs | [ ] capture |
+| 404 `/this-page-does-not-exist-qante` | [x] obs | [x] capture |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -88,12 +89,12 @@ Script: `/sf/p/{storefrontId}/{storefrontThemeId}/p0gbk-y4yfc/`
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | open | [ ] 1440 ÇANTA hover |
-| global-predictive-search | input | [ ] `bag` 3vp |
-| global-menu-drawer | open | [ ] 375/768 |
-| global-cart-drawer | filled + changed | [ ] empty → ATC → qty |
-| cart-page-main | filled + changed | [ ] empty → ATC → qty |
-| product-info-main | changed | [ ] Black → Beige |
+| navigation-header-mega | open | OK — 1440 ÇANTA: 6 link + 2 kart |
+| global-predictive-search | input | OK — `bag` 3vp; `{count}` leftover |
+| global-menu-drawer | open | OK — 375/768 sol drawer; Giriş yap dur |
+| global-cart-drawer | filled + changed | OK — boş → Black ₺24 qty1 → qty2 ₺48 |
+| cart-page-main | filled + changed | OK — 1 ürün ₺24 → 2 ürün ₺48 |
+| product-info-main | changed | OK — Black → Beige; fiyat ₺24 |
 
 Stop: email / account / checkout / newsletter submit / contact GÖNDER / PII
 
@@ -107,7 +108,7 @@ Stop: email / account / checkout / newsletter submit / contact GÖNDER / PII
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact mega / search / cart / menu / PDP Color
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate` — 0 error
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact mega / search / cart / menu / PDP Color
+- [x] PNG bak → stateFindings
+- [x] `npm run validate` — 0 error
