@@ -1,0 +1,124 @@
+{
+  "observationId": "triumph.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "url": "https://triumph-theme.myshopify.com/",
+  "selector": "predictive-search.search-modal__form",
+  "evidenceSlug": "global-predictive-search",
+  "captureMode": "viewport",
+  "notlar": "Desktop #Search-In-Modal; mobil #Search-In-Modal-Mobile. Katalog: sneakers.",
+  "delta": "Triumph predictive-search. İki form (desktop/mobile).",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://triumph-theme.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#Search-In-Modal",
+      "viewports": [
+        "1440",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Desktop/tablet search focus"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".header__icon--search, .header__search button[aria-label='Search']",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "375 search opener"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "sneakers",
+      "viewports": [
+        "1440",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal-Mobile",
+      "value": "sneakers",
+      "viewports": [
+        "375"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sneakers",
+      "not": "Öneri/ürün"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440 search focus: sağda POPULAR SEARCHES (BRAS, HOODIES, LEGGINGS, MATCHING SETS, JACKETS & VESTS, PANTS) + POPULAR COLLECTIONS (WOMEN'S 50 ITEMS / MEN'S 26 ITEMS / BIG SALE — 50% OFF thumb şeritleri). Input boş SEARCH. 375 opener sonrası aynı popular liste, overlay neredeyse tam genişlik, sağda bulanık hero. 768 kare yok.",
+    "input": "375+1440 query SNEAKERS. SUGGESTIONS: SNEAKERS. PRODUCTS: ALTURA MiniRunner $58.96, ARKYN Endurance Sports $35.89, SYNRGY JumpFlex $45.89, NEXA Active Lifestyle (1440’te $34.89/$56.89). Altta VIEW ALL. Submit/Enter yok. 768 yok."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "adım 0 (goto): Screenshot iptal: ekranda hâlâ overlay var:\n[\n  {\n    \"tag\": \"CART-DRAWER\",\n    \"cls\": \"drawer is-empty opened-by-icon active\",\n    \"text\": \"You may also like Your cart is empty Not sure where to start\",\n    \"w\": 768,\n    \"h\": 1024\n  }\n]"
+    },
+    {
+      "state": "input",
+      "sebep": "adım 4 (fill #Search-In-Modal): locator.waitFor: Timeout 12000ms exceeded.\nCall log:\n  - waiting for locator('#Search-In-Modal').first() to be visible\n    28 × locator resolved to hidden <input name=\"q\" value=\"\" type=\"search\" role=\"combobox\" autocorrect=\"off\" autocomplete=\"off\" spellcheck=\"false\" id=\"Search-In-Modal\" placeholder=\"Search\" autocapitalize=\"off\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-autocomplete=\"list\" aria-owns=\"predictive-search-results\" aria-controls=\"predictive-search-results\" class=\"search__input field__input search__input search__input--dropdown\"/>\n"
+    }
+  ],
+  "interactionNote": "katalogSorgu sneakers (JumpFlex / Urban Running). Submit/Enter yok. PII yok. 768: dismiss cart-drawer + #Search-In-Modal hidden.",
+  "kaynak": "triumph",
+  "preset": "default",
+  "sayfa": "home",
+  "evidence": [
+    "evidence/triumph/default/home/global-predictive-search.initial.search-bos.1440.png",
+    "evidence/triumph/default/home/global-predictive-search.initial.search-bos.375.png",
+    "evidence/triumph/default/home/global-predictive-search.input.sneakers.1440.png",
+    "evidence/triumph/default/home/global-predictive-search.input.sneakers.375.png"
+  ],
+  "capture": {
+    "url": "https://triumph-theme.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:47:07.731Z"
+  }
+}
