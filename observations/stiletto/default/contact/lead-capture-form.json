@@ -1,0 +1,76 @@
+{
+  "observationId": "stiletto.default.contact.lead-capture-form",
+  "schemaId": "lead-capture-form",
+  "kaynak": "stiletto",
+  "preset": "default",
+  "sayfa": "contact",
+  "url": "https://stiletto-theme-vogue.myshopify.com/pages/contact",
+  "selector": "#shopify-section-template--22242344894613__contact-form",
+  "evidenceSlug": "lead-capture-form",
+  "evidence": [
+    "evidence/stiletto/default/contact/lead-capture-form.initial.bolum.1440.png",
+    "evidence/stiletto/default/contact/lead-capture-form.initial.bolum.375.png",
+    "evidence/stiletto/default/contact/lead-capture-form.initial.bolum.768.png"
+  ],
+  "notlar": "Email / Name / Message / SUBMIT. Gönderilmedi.",
+  "delta": "contact-form. PII submit yok.",
+  "capture": {
+    "url": "https://stiletto-theme-vogue.myshopify.com/pages/contact",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:43:17.518Z"
+  },
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://stiletto-theme-vogue.myshopify.com/pages/contact",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".popup--has-image .popup__dismiss-icon",
+      "value": 700,
+      "capture": false,
+      "not": "JOIN US kapat"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".popup--flyout [data-dismiss-popup]",
+      "value": 700,
+      "capture": false,
+      "not": "walkthrough kapat"
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--22242344894613__contact-form",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 500,
+      "capture": true,
+      "etiket": "bolum",
+      "captureMode": "section",
+      "not": "Popup kapalı section"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Email / Name / Message / SUBMIT. Gönderilmedi."
+  },
+  "missingStates": [],
+  "interactionNote": "JOIN US + THEME WALKTHROUGH kapatıldı. Get 10% Off tab leftover olabilir.",
+  "captureMode": "section"
+}

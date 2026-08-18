@@ -1,0 +1,130 @@
+{
+  "observationId": "stiletto.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "stiletto",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://stiletto-theme-vogue.myshopify.com/",
+  "selector": ".quick-cart__container",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/stiletto/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/stiletto/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/stiletto/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/stiletto/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/stiletto/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/stiletto/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/stiletto/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "quick-cart overlay. a[data-js-cart-icon=cart]. Boş: Your cart is empty + All Clothing / The City Edit / Resort.",
+  "delta": "Yan drawer. Checkout tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://stiletto-theme-vogue.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".popup--has-image [data-dismiss-popup]",
+      "value": 600,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "[data-popup] [data-dismiss-popup]",
+      "value": 600,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[data-js-cart-icon='cart']",
+      "value": 1400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş quick-cart"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://stiletto-theme-vogue.myshopify.com/products/behati-dress-in-pearl",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": ".popup--has-image [data-dismiss-popup]",
+      "value": 600,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add']",
+      "capture": false,
+      "not": "Behati XS ADD TO BAG"
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a[data-js-cart-icon='cart']",
+      "value": 1600,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu quick-cart. Checkout tıklanmadı."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "a[data-js-cart-icon='cart']",
+      "value": 1200,
+      "capture": false,
+      "not": "Drawer kapandıysa tekrar aç"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".quick-cart__container .product__quantity-add-item",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "YOUR CART IS EMPTY. Try these collections: ALL CLOTHING / THE CITY EDIT / RESORT & SPRING. Sağ siyah drawer.",
+    "filled": "Behati Dress In Pearl XS qty 1 $249 CAD. Only $1.00 away from free shipping. LAST CHANCE TO SAVE 3 upsell + CHECKOUT (tıklanmadı).",
+    "changed": "1440: qty 2, YOUR CART 2, subtotal $498, qualifies for free shipping. 375/768 plus tık eşleşmedi — leftover."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "adım 9 (click .quick-cart__container .product__quantity-add-item): selector eşleşmedi: .quick-cart__container .product__quantity-add-item"
+    }
+  ],
+  "interactionNote": ".quick-cart parent 0px; kutu .quick-cart__container. ATC drawer açmazsa ikon tık. Checkout tıklanmadı. addToCart bazen /cart/add.js.",
+  "capture": {
+    "url": "https://stiletto-theme-vogue.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:26:07.266Z"
+  }
+}

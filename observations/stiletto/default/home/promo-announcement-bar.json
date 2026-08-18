@@ -1,0 +1,76 @@
+{
+  "observationId": "stiletto.default.home.promo-announcement-bar",
+  "schemaId": "promo-announcement-bar",
+  "kaynak": "stiletto",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://stiletto-theme-vogue.myshopify.com/",
+  "selector": "#shopify-section-sections--22242345517205__announcement-bar",
+  "evidenceSlug": "promo-announcement-bar",
+  "evidence": [
+    "evidence/stiletto/default/home/promo-announcement-bar.initial.bolum.1440.png",
+    "evidence/stiletto/default/home/promo-announcement-bar.initial.bolum.375.png",
+    "evidence/stiletto/default/home/promo-announcement-bar.initial.bolum.768.png"
+  ],
+  "notlar": "Free shipping on orders over $250 / Welcome to Stiletto. 2 slayt, 34px.",
+  "delta": "Swiper announcement; 2 mesaj.",
+  "capture": {
+    "url": "https://stiletto-theme-vogue.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:47:58.697Z"
+  },
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://stiletto-theme-vogue.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".popup--has-image .popup__dismiss-icon",
+      "value": 700,
+      "capture": false,
+      "not": "JOIN US kapat"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".popup--flyout [data-dismiss-popup]",
+      "value": 700,
+      "capture": false,
+      "not": "walkthrough kapat"
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-sections--22242345517205__announcement-bar",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 500,
+      "capture": true,
+      "etiket": "bolum",
+      "captureMode": "section",
+      "not": "Popup kapalı section"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Free shipping on orders over $250 / Welcome to Stiletto. 2 slayt, 34px."
+  },
+  "missingStates": [],
+  "interactionNote": "JOIN US + THEME WALKTHROUGH kapatıldı. Get 10% Off tab leftover olabilir.",
+  "captureMode": "section"
+}
