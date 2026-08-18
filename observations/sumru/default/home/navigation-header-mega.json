@@ -1,0 +1,71 @@
+{
+  "observationId": "sumru.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "sumru",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://dev-sumru.ikas.shop/",
+  "selector": "section.cp-header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "captureMode": "viewport",
+  "notlar": "Sticky .cp-navbar. 1440: İndirimli / Özel Koleksiyonlar / Koleksiyonlar / Tüm Ürünler + logo Sumru + Ara… + Hesabım + sepet (0). Mega .cp-navbar__dropdown: Özel Koleksiyonlar (Antigo/Coco/Sandy Loam kolon) ve Koleksiyonlar (Barolo…Wisteria grid). 375/768 hamburger Menüyü aç. Hesabım tıklanmadı.",
+  "delta": "Gerçek mega (kolon+grid). Account/login tıklanmadı. ikas Studio storefront · listed https://dev-sumru.myikas.com/ HTTP 301 → https://dev-sumru.ikas.shop/ · window.Shopify yok · window.__IKAS_DATA__ var (pageType + storefrontConfig) · storefrontThemeId d96fc0bb-bfdd-4813-b9b3-2f3f5b6d5909 · storefrontId 76990161-78d3-414c-8ff8-125eedb8073d · storefrontType STOREFRONT · domain dev-sumru.ikas.shop · merchantId 24aaa627-acd3-48e8-9da0-0530a3e43ace · merchantName/storeName dev-sumru · salesChannelId 7a969667-380a-42c8-99cb-c04d380a738a · storefrontRoutingId 8cee84d1-4020-49db-b404-2ea0b60a6b44 · apiUrl https://api.myikas.com/api/sf/graphql · locale tr · TRY ₺ · window.IkasEvents {subscribe,unsubscribe} · theme_store_id cfeb78d2-89b1-4c09-9496-04089a07ec18 (Theme Store UUID; storefront JSON'da Shopify.theme / theme_store_id yok)",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://dev-sumru.ikas.shop/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.cp-cookie-bar__close",
+      "capture": false,
+      "not": "Cookie kapat (PII değil)"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Mega kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "div.cp-navbar__nav-item:has-text(\"Özel Koleksiyonlar\")",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "ozel-koleksiyonlar-mega",
+      "not": "Özel Koleksiyonlar hover — Antigo/Coco/Sandy Loam"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440: İndirimli Net %10 / Özel Koleksiyonlar / Koleksiyonlar / Tüm Ürünler + Sumru + Ara… + Hesabım + (0). 375/768: hamburger + Sumru + search + sepet; nav-items gizli.",
+    "open": "1440 Özel Koleksiyonlar hover: dropdown 3 kolon Antigo (Antigo/Creme/Light Blue) · Coco (Blue/Green/Pink) · Sandy Loam (Blue/Green/Grey). Hesabım tıklanmadı."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "1440 mega hover = open; ayrı hover state yok"
+    }
+  ],
+  "interactionNote": "Hesabım /account/login tıklanmadı. İndirimli ve Tüm Ürünler mega açmaz."
+}
