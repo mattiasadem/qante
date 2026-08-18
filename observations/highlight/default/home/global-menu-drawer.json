@@ -1,0 +1,60 @@
+{
+  "observationId": "highlight.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "highlight",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://highlight-theme.myshopify.com/",
+  "selector": "#site-menu-sidebar",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/highlight/default/home/global-menu-drawer.open.menu-acik.1440.png",
+    "evidence/highlight/default/home/global-menu-drawer.open.menu-acik.375.png",
+    "evidence/highlight/default/home/global-menu-drawer.open.menu-acik.768.png"
+  ],
+  "notlar": "#menu-open-button → sidebar-drawer#site-menu-sidebar. 375/768/1440 hamburger var.",
+  "delta": "Masaüstü mega yok; tüm vp drawer. Reflective chevron var; alt menü açılmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://highlight-theme.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#menu-open-button",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "menu-acik",
+      "not": "All / Reflective / Writable / Food & home / Apparel / About Us / Contacts / Help / News + Facebook/Instagram. Account yok."
+    }
+  ],
+  "stateFindings": {
+    "open": "Sol drawer. Close + All / Reflective (>) / Writable / Food & home / Apparel + About Us / Contacts / Help / News + Facebook / Instagram. 1440 homepage sağda kalır."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Reflective chevron görüldü; Things/Accessories kapalı. Chevron tıklanmadı (koleksiyona kaçma riski)."
+    }
+  ],
+  "interactionNote": "1440 hamburger görünür. Account tıklanmadı.",
+  "capture": {
+    "url": "https://highlight-theme.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:17:47.055Z"
+  }
+}
