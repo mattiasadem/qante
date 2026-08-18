@@ -33,9 +33,25 @@ Karar: onay bekliyor
 ---
 
 ADAY: kingdom-gift-tiles-unlinked  
-Gerekçe: Home isotope 6 kare (babies/her/him/kids 8–12 / 4–7 / toddlers). Canlıda `<a>` yok. `collection-nav-image-cards` + delta.  
+Gerekçe: Home isotope 6 daire + etiket (GIFTS FOR BABIES/HER/HIM/KIDS 8-12/4-7/TODDLERS). DOM `<a>` yoklandı 0. `collection-nav-image-cards` + delta.  
 Örnekler: https://kingdom-theme.myshopify.com/ `#shopify-section-1543384696781`  
 Öneri: leftover — link yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: kingdom-trust-sticky-crop  
+Gerekçe: `#shopify-section-1533512331819` ~58px header altında. Resmi 3vp sticky nav’a kaydı (logo/Home/Blog…). İkon+metin (Free Shipping / Text Updates / Visit us / 24h chat) header/hero viewport karelerinde görünür.  
+Örnekler: `evidence/kingdom/default/home/trust-icon-row.*.png`  
+Öneri: leftover — crop  
+Karar: onay bekliyor
+
+---
+
+ADAY: kingdom-cart-empty-mobile  
+Gerekçe: 375/768 boş cart hover + forceOpen 0px. Boş dropdown yalnız 1440. Dolu ATC mega 3vp var. Qty drawer’da yok.  
+Örnekler: header `.cart`  
+Öneri: leftover — mobil boş dropdown  
 Karar: onay bekliyor
 
 ---
@@ -57,7 +73,7 @@ Karar: onay bekliyor
 ---
 
 ADAY: kingdom-cart-mega  
-Gerekçe: `cart-drawer` yok. Hover `.toolbar-dropdown.cart-dropdown`; ATC `.mega-menu.cart-mega.show-mega` (Added). `global-cart-drawer` + delta. Qty +/- drawer’da yok.  
+Gerekçe: `cart-drawer` yok. 1440 hover `.toolbar-dropdown.cart-dropdown`; ATC `.mega-menu.cart-mega.show-mega` (Added). `global-cart-drawer` + delta. Qty +/- drawer’da yok — cart sayfa Update Cart.  
 Örnekler: header `.cart` · PDP ATC  
 Öneri: leftover — dropdown/mega ≠ drawer  
 Karar: onay bekliyor
@@ -179,6 +195,22 @@ Karar: onay bekliyor
 `/blogs/blog`  
 `/policies/privacy-policy`  
 `/pages/does-not-exist-qante-kingdom`
+
+---
+
+ADAY: kingdom-predictive-fill  
+Gerekçe: `fill("owl")` rivets keyup tetiklemedi (Quick Links). Resmi interact `press` o/w/l ile Owl Mug + Steampunk.  
+Örnekler: `nav.site-search-centered input` · `#search_bar`  
+Öneri: leftover — fill vs keyup  
+Karar: onay bekliyor
+
+---
+
+ADAY: kingdom-cart-update-button  
+Gerekçe: Cart `+` yalnız input 2 yapar; satır/subtotal $25 kalır. Toplam $50 için `input[name=update]` Update Cart (checkout değil).  
+Örnekler: https://kingdom-theme.myshopify.com/cart  
+Öneri: leftover — eski cart form  
+Karar: onay bekliyor
 
 ---
 

@@ -7,7 +7,12 @@
   "url": "https://kingdom-theme.myshopify.com/",
   "selector": ".mega-menu.cart-mega, .toolbar-dropdown.cart-dropdown",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/kingdom/default/home/global-cart-drawer.filled.dolu.1440.png",
+    "evidence/kingdom/default/home/global-cart-drawer.filled.dolu.375.png",
+    "evidence/kingdom/default/home/global-cart-drawer.filled.dolu.768.png",
+    "evidence/kingdom/default/home/global-cart-drawer.initial.sepet-bos.1440.png"
+  ],
   "notlar": "Drawer yok. Hover/ATC: .toolbar-dropdown.cart-dropdown + .mega-menu.cart-mega (Added). Cart + Check Out.",
   "delta": "Kingdom cart-mega / cart-dropdown — drawer değil. Checkout tıklanmadı.",
   "captureMode": "viewport",
@@ -33,10 +38,26 @@
       "state": "initial",
       "action": "hover",
       "selector": "header .cart",
+      "viewports": [
+        "1440"
+      ],
       "capture": true,
       "captureMode": "viewport",
       "etiket": "sepet-bos",
-      "not": "Boş cart dropdown"
+      "not": "1440 hover dropdown"
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": ".toolbar-dropdown.cart-dropdown",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "375/768 hover 0px — forceOpen dropdown"
     },
     {
       "state": "filled",
@@ -73,9 +94,20 @@
   },
   "missingStates": [
     {
-      "state": "changed",
-      "sebep": "Dropdown/mega içinde adet +/- yok. Qty cart sayfada."
+      "state": "initial",
+      "sebep": "375/768 boş hover+forceOpen 0px. Boş kare yalnız 1440. Dolu 3vp ATC mega var."
     }
   ],
-  "interactionNote": "ATC UI mega-menu.cart-mega.show-mega açtı. Checkout dur. Qty leftover — cart-page-main."
+  "interactionNote": "ATC UI mega-menu.cart-mega.show-mega. Checkout dur. 375/768 boş hover 0px — forceOpen. Qty leftover — cart-page-main.",
+  "capture": {
+    "url": "https://kingdom-theme.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:13:56.144Z"
+  }
 }
