@@ -6,8 +6,8 @@
 *Tema (storefront, uydurulmadı):* **Updated copy of Heritage demo store 3.2.0** · `schema_name`: **Heritage** · `schema_version`: **3.4.0** · `theme_store_id`: **3624** · role `main` · id `149503737910`  
 *Shop:* `se-horizon8-en-0xw5.myshopify.com`
 
-**Durum:** Mod A walk + resmi 3vp + interact + validate **devam**  
-**PR:** draft · **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti** (0 error)  
+**PR:** draft https://github.com/mattiasadem/qante/pull/178 · **main'e merge yok**
 
 ---
 
@@ -19,11 +19,11 @@
 | Capture | resmi `capture-observation.mjs` + `capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **33** |
-| Evidence PNG | (capture sonrası) |
+| Evidence PNG | **117** |
 | Parallel | yalnız `observations/heritage/`, `evidence/heritage/`, `todo/heritage.md`, `candidates/heritage-leftovers.md` |
 
 **Kapsam satırı:**  
-`Heritage · default · Updated copy of Heritage demo store 3.2.0 / schema_name Heritage 3.4.0 (theme_store_id 3624) · home→PDP→PLP→collections index→search→cart→about/contact→blog→404 · 33 obs · 0 yeni şema · leftover: candidates/heritage-leftovers.md`
+`Heritage · default · Updated copy of Heritage demo store 3.2.0 / schema_name Heritage 3.4.0 (theme_store_id 3624) · home→PDP→PLP→collections index→search→cart→about/contact→blog→404 · 33 obs · 117 PNG · 0 yeni şema · leftover: candidates/heritage-leftovers.md`
 
 ---
 
@@ -31,22 +31,22 @@
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home + heading / collection bento / IWT / bestsellers / footer | [x] obs | [ ] capture |
-| Header kapalı + Men hover mega 768/1440 | [x] obs | [ ] interact |
-| Predictive search `wool` | [x] obs | [ ] interact 375/768/1440 |
-| Mobile hamburger 375 (768 0×0 leftover) | [x] obs | [ ] interact |
-| Cart drawer empty + filled + qty | [x] obs | [ ] interact |
-| PDP The Terry Short Color Pelican→Navy | [x] obs | [ ] interact |
-| PLP `/collections/all` + Britannia IWT | [x] obs | [ ] capture |
-| Collections index `/collections` | [x] obs | [ ] capture |
-| Search `/search?q=wool` | [x] obs | [ ] capture |
-| Cart `/cart` empty + filled + qty | [x] obs | [ ] interact |
-| About `/pages/about-us` (`/pages/about` 404) | [x] obs | [ ] capture |
-| Contact form (submit yok) | [x] obs | [ ] capture |
-| FAQ | [x] obs | [ ] capture |
-| Field notes + Embracing wool | [x] obs | [ ] capture |
-| Privacy policy (native) | [x] obs | [ ] capture |
-| 404 leftover | [x] obs | [ ] capture |
+| Home + heading / collection bento / IWT / bestsellers / footer | [x] obs | [x] capture |
+| Header kapalı + Men hover mega 768/1440 | [x] obs | [x] interact |
+| Predictive search `wool` | [x] obs | [x] interact 375/768/1440 |
+| Mobile hamburger 375 (768 0×0 leftover) | [x] obs | [x] interact |
+| Cart drawer empty + filled + qty | [x] obs | [x] interact $105→$210 |
+| PDP The Terry Short Color Pelican→Navy | [x] obs | [x] interact $105→$109 |
+| PLP `/collections/all` + Britannia IWT | [x] obs | [x] capture |
+| Collections index `/collections` | [x] obs | [x] capture |
+| Search `/search?q=wool` | [x] obs | [x] capture 43 items |
+| Cart `/cart` empty + filled + qty | [x] obs | [x] interact $105→$210 |
+| About `/pages/about-us` (`/pages/about` 404) | [x] obs | [x] capture |
+| Contact form (submit yok) | [x] obs | [x] capture |
+| FAQ | [x] obs | [x] capture |
+| Field notes + Embracing wool | [x] obs | [x] capture |
+| Privacy policy (native) | [x] obs | [x] capture |
+| 404 leftover | [x] obs | [x] capture |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -74,12 +74,12 @@
 
 ## Interact (pixel-check)
 
-- Header 768/1440 Men hover — #submenu-1 kolon + ürün kartları (PNG bakılacak)
-- Hamburger 375: drawer; 768 hamburger 0px leftover
-- Predictive `wool`: 375/768/1440 (PNG bakılacak)
-- Cart drawer: empty → Terry Short qty 1 → qty 2 (PNG bakılacak)
-- Cart page: empty → filled → qty
-- PDP Color: Pelican → Navy
+- Header 768/1440 Men hover — #submenu-1 kolon + 3 ürün kartı — OK
+- Hamburger 375: Men/Women çocukları düz + ürün şeridi — OK; 768 hamburger 0px leftover
+- Predictive `wool`: Latest öneri → wool + chip + View all — OK
+- Cart drawer: empty → Terry Short qty 1 $105 → qty 2 $210 — OK (ATC UI)
+- Cart page: empty → filled $105 → qty 2 $210 — OK
+- PDP Color: Pelican $105 → Navy $109 (galeri önde Navy) — OK
 
 ---
 
@@ -91,7 +91,7 @@
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact header / search / cart / menu / PDP Color
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate` — 0 error
+- [x] Official 3vp static (`capture-observation.mjs`) — 81 PNG
+- [x] Interact header / search / cart / menu / PDP Color — 36 PNG
+- [x] PNG bak → stateFindings
+- [x] `npm run validate` — 0 error

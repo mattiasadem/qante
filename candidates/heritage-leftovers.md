@@ -99,6 +99,22 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: heritage-pdp-trust-icon-row  
+Gerekçe: PDP `product-information` içinde MADE WITH CARE / HEIRLOOM QUALITY / SATISFACTION GUARANTEED / CLASSIC STYLING. Ayrı shopify-section değil; `product-info-main` notuna yazıldı. `trust-icon-row` zorlanmadı.  
+Örnekler: `/products/the-terry-short`  
+Öneri: leftover — nested trust, ayrı şema yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: heritage-pdp-features-list  
+Gerekçe: `media_with_content_3R3mTy` sol makro görsel + sağ 3 satır Materials/Care/Details. 3 kolon kart grid değil. `features-multicolumn` + delta.  
+Örnekler: `/products/the-terry-short`  
+Öneri: mevcut şema + delta  
+Karar: observation yazıldı
+
+---
+
 ADAY: heritage-about-hero-no-text  
 Gerekçe: `/pages/about-us` `hero_MCVHpm` ~500px görsel; metin/CTA/ok/dot yok. `hero-slideshow` + delta.  
 Örnekler: https://theme-heritage-demo.myshopify.com/pages/about-us  
