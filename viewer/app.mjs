@@ -18,6 +18,7 @@ import {
 } from "./lib/facets.mjs";
 import { runHealth } from "./lib/health.mjs";
 import { loadCandidates } from "./lib/candidates.mjs";
+import { buildCro } from "./lib/cro.mjs";
 import { externalEvidenceUrl } from "./lib/evidence-external.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -140,6 +141,10 @@ const routes = {
 
   "/api/candidates": (_url, res) => {
     json(res, loadCandidates(ROOT));
+  },
+
+  "/api/cro": (_url, res, inv) => {
+    json(res, buildCro(inv));
   },
 
   "/api/observation": (url, res, inv) => {
