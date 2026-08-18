@@ -1,0 +1,73 @@
+{
+  "observationId": "rise.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "rise",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-rise-demo.myshopify.com/en/",
+  "selector": "#shopify-section-sections--21605978439702__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/rise/default/home/navigation-header-mega.initial.catalog-hover.1440.png",
+    "evidence/rise/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/rise/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/rise/default/home/navigation-header-mega.initial.kapali.768.png"
+  ],
+  "notlar": "1440: Catalog / Blog / Contact + Language + search + cart. 375/768: hamburger + search + logo + cart. Mega yok.",
+  "delta": "Dawn sticky-header. Düz link nav — görsel mega yok. Account ikonu yok. Shopify.theme: name **rise/rise/demo-store** · schema_name **Rise** · schema_version **1.0.0** · theme_store_id **null** · role main · id 163183165462 · shop a7c44a-4.myshopify.com",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-rise-demo.myshopify.com/en/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "initial",
+      "action": "hover",
+      "selector": ".header__inline-menu a[href='/en/collections/all']",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "catalog-hover",
+      "not": "Catalog hover — mega beklenmez"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440 kapalı: rise + Catalog Blog Contact + English + search + cart. Catalog hover (catalog-hover.png): Catalog altı çizili; kolon/promo/mega panel yok. 375/768: hamburger + rise + search + cart; inline menü yok."
+  },
+  "missingStates": [],
+  "interactionNote": "Mega yok — Catalog/Blog/Contact düz <a>. 375/768 hamburger ayrı global-menu-drawer.",
+  "capture": {
+    "url": "https://theme-rise-demo.myshopify.com/en/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:01:24.045Z"
+  }
+}
