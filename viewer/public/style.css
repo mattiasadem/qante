@@ -261,6 +261,7 @@ details.facet[open] > summary::after { content: "–"; }
 }
 .item:hover { background: #f7f3ec; }
 .item.active { background: var(--accent-soft); box-shadow: inset 3px 0 0 var(--accent); }
+.item.zero { opacity: 0.45; }
 .item .id { font-weight: 600; font-size: 0.88rem; }
 .item .sub { color: var(--muted); font-size: 0.74rem; margin-top: 0.1rem; }
 
@@ -330,6 +331,8 @@ h3 {
 .shots { display: grid; gap: 0.6rem; }
 .shots.compare { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); align-items: start; }
 .shots.single { grid-template-columns: 1fr; max-width: 900px; }
+.shots.cro-thumbs { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 640px; }
+.shots.cro-thumbs img { max-height: 140px; object-fit: cover; width: 100%; }
 
 figure {
   margin: 0;
