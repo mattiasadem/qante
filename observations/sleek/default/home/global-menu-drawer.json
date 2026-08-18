@@ -7,7 +7,12 @@
   "url": "https://sleek-theme-demo.myshopify.com/",
   "selector": "#MenuDrawer",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/sleek/default/home/global-menu-drawer.changed.akordeon-acik.375.png",
+    "evidence/sleek/default/home/global-menu-drawer.changed.akordeon-acik.768.png",
+    "evidence/sleek/default/home/global-menu-drawer.open.hamburger-acik.375.png",
+    "evidence/sleek/default/home/global-menu-drawer.open.hamburger-acik.768.png"
+  ],
   "notlar": "menu-drawer drawer--left. 375/768 hamburger. 1440 lg:hidden — hamburger 0px.",
   "delta": "FoxEcom #MenuDrawer header section içinde (ayrı shopify-section değil).",
   "captureMode": "viewport",
@@ -50,7 +55,26 @@
       "not": "İlk boş ok / Presets expander. Yazılı <a> sayfaya kaçar"
     }
   ],
-  "stateFindings": {},
-  "missingStates": [],
-  "interactionNote": "1440 hamburger gizli (lg:hidden). Presets expander dış vitrin — leftover."
+  "stateFindings": {
+    "open": "375/768 sol drawer: Home, Presets/Shop/Collections/Pages chevron, Contact. Altta United States (USD $) + Log In + sosyal.",
+    "changed": "İlk expander Presets: geri oku + Wildpeak/Jumped/Sleek/Modiva kart ızgarası. Shop akordeon değil — ilk details Presets."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger lg:hidden; #MenuDrawer 0px — viewport capture eşleşmedi. Yalnız 375/768."
+    }
+  ],
+  "interactionNote": "1440 hamburger gizli. Log In tıklanmadı. Presets dış vitrin leftover. Shop expander ikinci details — bu koşuda tıklanmadı.",
+  "capture": {
+    "url": "https://sleek-theme-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:22:22.236Z"
+  }
 }

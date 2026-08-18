@@ -7,7 +7,17 @@
   "url": "https://sleek-theme-demo.myshopify.com/cart",
   "selector": "#shopify-section-template--24914043699489__main-cart",
   "evidenceSlug": "cart-page-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/sleek/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/sleek/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/sleek/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/sleek/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/sleek/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/sleek/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/sleek/default/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/sleek/default/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/sleek/default/cart/cart-page-main.initial.cart-bos.768.png"
+  ],
   "notlar": "Boş: Your cart is currently empty + Try these collections. Dolu interact.",
   "delta": "Checkout tıklanmadı.",
   "interactionStates": [
@@ -16,6 +26,13 @@
     "changed"
   ],
   "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sleek-theme-demo.myshopify.com/cart/clear",
+      "capture": false,
+      "not": "Her viewport'ta sepeti sıfırla"
+    },
     {
       "state": "initial",
       "action": "goto",
@@ -59,7 +76,22 @@
       "not": "qty +"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "Your cart is currently empty. Try these collections: Accessories / Makeup / Skincare / Cheek 4 kart.",
+    "filled": "Your cart. Spend $161 more. Water Lock 100ml qty 1 $39. Estimated total $39.00 USD. Check Out.",
+    "changed": "qty 2; satır total $78.00; Spend $122 more; Estimated total $78.00 USD."
+  },
   "missingStates": [],
-  "interactionNote": "Check out tıklanmadı. Drawer ayrı observation."
+  "interactionNote": "ATC UI. Check out / gift wrap / Order note tıklanmadı. Viewport başına /cart/clear.",
+  "capture": {
+    "url": "https://sleek-theme-demo.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:20:09.442Z"
+  }
 }

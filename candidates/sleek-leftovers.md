@@ -41,8 +41,24 @@ Karar: onay bekliyor
 ---
 
 ADAY: sleek-sticky-atc  
-Gerekçe: PDP `#shopify-section-sticky-atc-bar` ilk karede h=0 (Water Lock / Gift card). Size + qty + ATC içerir. Ayrı şema yok.  
+Gerekçe: PDP `#shopify-section-sticky-atc-bar` ilk DOM h=0; scroll sonrası `product-info-main` karelerinde görünür (thumbnail + Size + qty + ATC). Ayrı şema yok.  
 Örnekler: https://sleek-theme-demo.myshopify.com/products/water-lock-moisturizer  
+Öneri: leftover  
+Karar: onay bekliyor
+
+---
+
+ADAY: sleek-1440-hamburger  
+Gerekçe: `button.menu-drawer-button` `lg:hidden`. 1440 `#MenuDrawer` 0px — viewport capture zero-size. Interact yalnız 375/768.  
+Örnekler: https://sleek-theme-demo.myshopify.com/  
+Öneri: leftover  
+Karar: onay bekliyor
+
+---
+
+ADAY: sleek-menu-presets-first  
+Gerekçe: Mobil drawer ilk `details > summary` = Presets (Wildpeak/Jumped/Sleek/Modiva). Shop expander ikinci. changed karesi Presets paneli.  
+Örnekler: https://sleek-theme-demo.myshopify.com/ `#MenuDrawer`  
 Öneri: leftover  
 Karar: onay bekliyor
 

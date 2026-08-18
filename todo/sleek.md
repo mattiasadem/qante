@@ -11,8 +11,8 @@
 `theme_store_id` = **null** (canlıda yok; uydurulmadı)  
 shop `sleek-glossy.myshopify.com`
 
-**Durum:** Mod A walk + resmi 3vp + interact + validate (devam)  
-**PR:** draft · **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti** (0 error)  
+**PR:** draft https://github.com/mattiasadem/qante/pull/171 — **main'e merge yok**
 
 ---
 
@@ -24,10 +24,11 @@ shop `sleek-glossy.myshopify.com`
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **59** |
+| PNG | **197** |
 | Parallel | yalnız `observations/sleek/`, `evidence/sleek/`, `todo/sleek.md`, `candidates/sleek-leftovers.md` |
 
 **Kapsam satırı:**  
-`Sleek · default (Glossy) · [Update Theme Store] Sleek / schema_name Sleek 2.3.0 · theme_store_id null · home→PDP Water Lock→PLP accessories→collections→search skin→cart→about/contact→faqs→blog our-journey→404 · 59 obs · 0 yeni şema · leftover: candidates/sleek-leftovers.md`
+`Sleek · default (Glossy) · [Update Theme Store] Sleek / schema_name Sleek 2.3.0 · theme_store_id null · home→PDP Water Lock→PLP accessories→collections→search skin→cart→about/contact→faqs→blog our-journey→404 · 59 obs · 197 PNG · 0 yeni şema · leftover: candidates/sleek-leftovers.md`
 
 ---
 
@@ -35,22 +36,22 @@ shop `sleek-glossy.myshopify.com`
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home + announcement/header/footer + conversion | roster | [ ] capture |
-| Mega Shop 1440 | interact | [ ] |
-| Predictive search `moisturizer` | interact 3vp | [ ] |
-| Mobile menu 375 | interact | [ ] |
-| Mobile menu 768 | interact | [ ] |
-| Cart drawer empty + filled + qty | interact 3vp | [ ] |
-| PDP Water Lock Size 100ml→150ml | interact 3vp | [ ] |
-| PLP `/collections/accessories` | roster | [ ] capture |
-| Collections index `/collections` | roster | [ ] capture |
-| Search `/search?q=skin` | roster | [ ] capture |
-| Cart page empty + filled + qty | interact 3vp | [ ] |
-| About `/pages/about` (`/pages/about-us` 404) | roster | [ ] capture |
-| Contact `/pages/contact` (submit yok) | roster | [ ] capture |
-| FAQ `/pages/faqs` | roster | [ ] capture |
-| Blog `/blogs/our-journey` + Top Lipsticks | roster | [ ] capture |
-| 404 leftover | roster | [ ] capture |
+| Home + announcement/header/footer + conversion | roster | [x] |
+| Mega Shop 1440 | interact | [x] |
+| Predictive search `moisturizer` | interact 3vp | [x] |
+| Mobile menu 375 | interact | [x] |
+| Mobile menu 768 | interact | [x] |
+| Cart drawer empty + filled + qty | interact 3vp | [x] |
+| PDP Water Lock Size 100ml→150ml | interact 3vp | [x] |
+| PLP `/collections/accessories` | roster | [x] |
+| Collections index `/collections` | roster | [x] |
+| Search `/search?q=skin` | roster | [x] |
+| Cart page empty + filled + qty | interact 3vp | [x] |
+| About `/pages/about` (`/pages/about-us` 404) | roster | [x] |
+| Contact `/pages/contact` (submit yok) | roster | [x] |
+| FAQ `/pages/faqs` | roster | [x] |
+| Blog `/blogs/our-journey` + Top Lipsticks | roster | [x] |
+| 404 leftover | roster | [x] |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -91,12 +92,12 @@ shop `sleek-glossy.myshopify.com`
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | open | [ ] Shop hover 1440 |
-| global-predictive-search | input | [ ] `moisturizer` 3vp |
-| global-menu-drawer | open / changed | [ ] 375/768 |
-| global-cart-drawer | filled + changed | [ ] empty → 100ml $39 → qty 2 |
-| cart-page-main | filled + changed | [ ] empty → filled → qty |
-| product-info-main | changed | [ ] 100ml → 150ml |
+| navigation-header-mega | open | [x] Shop hover 1440 — Best Sellers + Skincare/Makeup + Trend This Week |
+| global-predictive-search | input | [x] `moisturizer` 3vp — Water Lock + Moisturizers collection |
+| global-menu-drawer | open / changed | [x] 375/768 hamburger; changed = Presets panel. 1440 hamburger yok |
+| global-cart-drawer | filled + changed | [x] empty → 100ml $39 qty1 → qty2 $78 |
+| cart-page-main | filled + changed | [x] empty → $39 → qty2 $78 |
+| product-info-main | changed | [x] 100ml 221 stock → 150ml 222 stock; fiyat $39 |
 
 ---
 
@@ -108,8 +109,8 @@ shop `sleek-glossy.myshopify.com`
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact mega / search / menu / cart / PDP Size
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate` — 0 error
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact mega / search / menu / cart / PDP Size
+- [x] PNG bak → stateFindings
+- [x] `npm run validate` — 0 error / 0 warn
 - [x] Email / account / checkout / newsletter submit — **yapılmayacak**
