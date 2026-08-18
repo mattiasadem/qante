@@ -1,0 +1,110 @@
+{
+  "observationId": "selim.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "selim",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://dev-selimtheme.ikas.shop/cart",
+  "selector": "section.cartx",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/selim/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/selim/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/selim/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/selim/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/selim/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/selim/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/selim/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/selim/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/selim/default/cart/cart-page-main.initial.sepet-bos.768.png"
+  ],
+  "notlar": "Sepetim. Boş: Sepetin boş / Alışverişe başla. Dolu + adet PDP ATC sonrası /cart.",
+  "delta": "pageType CART. Kupon leftover. Ödemeye geç dur. ikas · Shopify.theme yok · window.__IKAS_DATA__ · storefrontId 59b21621-cd0c-4bae-94f2-d0ddf3154adc · storefrontThemeId b16764ac-ef37-4683-b598-61c72fb5b2f6 · storefrontRoutingId 4b99701f-6745-4417-a8cf-d903245060d9 · storefrontType STOREFRONT · salesChannelId da5ff479-e38f-4fb4-9dd2-ba7e6e6b7930 · merchantId d2e5754b-2da4-4526-80e6-ce75fc6be32f · storeName dev-selimtheme · locale tr · currency TRY ₺ · region TR · domain dev-selimtheme.ikas.shop · Theme Store UUID cd45021d-2f96-4fc4-afe2-229ea0fd7b49 · IkasEvents subscribe/unsubscribe · html lang=tr",
+  "prepareClick": "button:has-text(\"TÜMÜNÜ KABUL ET\")",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://dev-selimtheme.ikas.shop/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "section.cartx",
+      "capture": true,
+      "etiket": "sepet-bos",
+      "not": "Boş cart sayfa"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://dev-selimtheme.ikas.shop/medium-shoulder-bag",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2800,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.pd-atc__cta",
+      "capture": false,
+      "not": "UI Sepete Ekle"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://dev-selimtheme.ikas.shop/cart",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Cart sayfa dolu"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".cartx button[aria-label=\"+\"]",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Sepetim / Sepetin boş / Sepetine henüz ürün eklemedin / Alışverişe başla.",
+    "filled": "Sepetim (1 ürün) Medium Shoulder Bag Black qty1 ₺24. Sipariş özeti Toplam ₺24. Ödemeye geç dur. İndirim kodum var leftover.",
+    "changed": "Sepetim (2 ürün) qty2 Toplam ₺48."
+  },
+  "missingStates": [],
+  "interactionNote": "Çerez overlay dismissAllOverlays ile gizlenir; tık adımı yok (gizli buton patlatır). addToCart yok. Ödemeye geç / kupon / login dur.",
+  "capture": {
+    "url": "https://dev-selimtheme.ikas.shop/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:55:11.273Z"
+  }
+}
