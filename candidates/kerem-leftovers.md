@@ -38,6 +38,14 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: kerem-overlay-typeahead-empty  
+Gerekçe: `.hsearch` boşken POPÜLER ÜRÜNLER. Yazılan `canta` / `omuz` / `shorts` / `nuvora` / `çanta` / `bag` → «Sonuç bulunamadı». Tam sayfa `?s=canta` 12. Overlay typeahead katalog süzmez.  
+Örnekler: header ARA  
+Öneri: leftover — predictive boş  
+Karar: onay bekliyor
+
+---
+
 ADAY: kerem-cookie-bar  
 Gerekçe: `.hcookie.is-open` ÇEREZLER / KABUL ET / REDDET. Capture dismiss overlay. Ayrı şema yok. Çerez Politikası `/cerez-politikasi` 404.  
 Örnekler: home  

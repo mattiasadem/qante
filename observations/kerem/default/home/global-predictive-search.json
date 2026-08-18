@@ -7,7 +7,14 @@
   "url": "https://dev-kerem.ikas.shop/",
   "selector": ".hsearch",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/kerem/default/home/global-predictive-search.initial.arama-acik.1440.png",
+    "evidence/kerem/default/home/global-predictive-search.initial.arama-acik.375.png",
+    "evidence/kerem/default/home/global-predictive-search.initial.arama-acik.768.png",
+    "evidence/kerem/default/home/global-predictive-search.input.canta-sonuc.1440.png",
+    "evidence/kerem/default/home/global-predictive-search.input.canta-sonuc.375.png",
+    "evidence/kerem/default/home/global-predictive-search.input.canta-sonuc.768.png"
+  ],
   "notlar": "ARA → .hsearch overlay. Placeholder Ürün ara. Kapalıda POPÜLER ÜRÜNLER listesi. Fill katalog canta.",
   "delta": "ikas .hsearch / input.hsearch__input. /cart/add.js yok. Kerem · ikas Studio storefront · host dev-kerem.ikas.shop · window.Shopify yok · Shopify.theme yok · x-powered-by ikas · window.__IKAS_DATA__ var (storefrontThemeId e0e11d6b-d4ef-46c6-bdab-5912cdd1cfc4 · storefrontId f0022564-b0a6-4568-b4c0-268715f1cded · storefrontRoutingId 909356fb-0dd4-49b9-9d3b-8d3b8cadeb25 · storefrontType STOREFRONT · salesChannelId fb519b2f-b246-4207-abf8-9c6e055a19d0 · domain dev-kerem.ikas.shop · apiUrl https://api.myikas.com/api/sf/graphql · merchantId 70d6ab17-775e-4c3b-9840-7aeb37587d3f · merchantName/storeName dev-kerem · locale tr · defaultLocale tr · region TR · currencyCode TRY) · window.IkasEvents subscribe/unsubscribe · theme_store_id 5bfeca45-4f60-44d7-aef8-c280be7db7c2 (Theme Store UUID; storefront JSON'da Shopify id yok)",
   "captureMode": "viewport",
@@ -61,9 +68,20 @@
     }
   ],
   "stateFindings": {
-    "initial": "",
-    "input": ""
+    "initial": "Overlay açık: Ürün ara + KAPAT + POPÜLER ÜRÜNLER (kılıf, şort, omuz/sırt çanta kartları + fiyat).",
+    "input": "`canta` yazılınca POPÜLER listesi kayboldu → «Sonuç bulunamadı». omuz / shorts / nuvora / çanta / bag da overlay'de 0 (yoklandı). Tam sayfa /search?s=canta 12 sonuç."
   },
   "missingStates": [],
-  "interactionNote": "Katalog canta (ş+ç yok). bag 0; ?q= yok sayıldı leftover."
+  "interactionNote": "Katalog canta (sayfa 12). Overlay typeahead her sorguda boş — Enter/submit yok. bag 0; ?q= yok sayıldı leftover.",
+  "capture": {
+    "url": "https://dev-kerem.ikas.shop/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T17:10:16.434Z"
+  }
 }

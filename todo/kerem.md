@@ -24,8 +24,8 @@
 `window.IkasEvents` = `{subscribe, unsubscribe}`  
 `theme_store_id` = **5bfeca45-4f60-44d7-aef8-c280be7db7c2** (Theme Store UUID; storefront JSON’da Shopify id yok)
 
-**Durum:** Mod A walk + resmi 3vp + interact (capture sırada)  
-**PR:** draft — **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti** (0 error)  
+**PR:** draft https://github.com/mattiasadem/qante/pull/209 — **main'e merge yok**
 
 ---
 
@@ -37,10 +37,12 @@
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **31** |
+| PNG | **113** |
+| Validator | 65 temiz · **0 error** · 0 warn |
 | Parallel | yalnız `observations/kerem/`, `evidence/kerem/`, `todo/kerem.md`, `candidates/kerem-leftovers.md` |
 
 **Kapsam satırı:**  
-`Kerem · default · ikas Studio · theme_store_id 5bfeca45-4f60-44d7-aef8-c280be7db7c2 · home→PDP Orta Boy Omuz Çantası Siyah→Bej→PLP /bags→search?s=canta→cart empty/filled/qty→FAQ home only→blog boş→404 · about/contact/FAQ page yok · 31 obs · 0 yeni şema · leftover: candidates/kerem-leftovers.md`
+`Kerem · default · ikas Studio · theme_store_id 5bfeca45-4f60-44d7-aef8-c280be7db7c2 · home→PDP Orta Boy Omuz Çantası Siyah→Bej→PLP /bags→search?s=canta→cart empty/filled/qty→FAQ home only→blog boş→404 · about/contact/FAQ page yok · 31 obs · 113 PNG · 0 yeni şema · leftover: candidates/kerem-leftovers.md`
 
 ---
 
@@ -48,20 +50,20 @@
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announce→footer) | roster + capture | [ ] |
-| Mega Çantalar 1440 | interact | [ ] |
-| Predictive search `canta` | interact 3vp | [ ] |
-| Mobile menu 375 | interact | [ ] |
-| Mobile menu 768 | interact | [ ] |
-| Cart drawer empty + filled + qty | interact 3vp | [ ] |
-| PDP Orta Boy Omuz Çantası Siyah→Bej | interact 3vp | [ ] |
-| PLP `/bags` | roster + capture | [ ] |
-| Search `/search?s=canta` (12) | roster + capture | [ ] |
-| Cart page empty + filled + qty | interact 3vp | [ ] |
+| Home roster (announce→footer) | roster + capture | [x] |
+| Mega Çantalar 1440 | interact | [x] |
+| Predictive search `canta` | interact 3vp | [x] overlay boş |
+| Mobile menu 375 | interact | [x] |
+| Mobile menu 768 | interact | [x] |
+| Cart drawer empty + filled + qty | interact 3vp | [x] |
+| PDP Orta Boy Omuz Çantası Siyah→Bej | interact 3vp | [x] |
+| PLP `/bags` | roster + capture | [x] |
+| Search `/search?s=canta` (12) | roster + capture | [x] |
+| Cart page empty + filled + qty | interact 3vp | [x] |
 | About / contact | ⛔ 404 leftover | leftover |
-| FAQ | home `section.content-acc` · `/pages/sss` 404 | [ ] home |
-| Blog `/blog` (boş) | roster + capture | [ ] |
-| 404 | roster + capture | [ ] |
+| FAQ | home `section.content-acc` · `/pages/sss` 404 | [x] home |
+| Blog `/blog` (boş) | roster + capture | [x] |
+| 404 | roster + capture | [x] |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -99,12 +101,12 @@
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | open | [ ] 1440 Çantalar hover |
-| global-predictive-search | input | [ ] `canta` 3vp |
-| global-menu-drawer | open / changed | [ ] 375+768 hamburger + Çantalar + |
-| global-cart-drawer | empty/filled/qty | [ ] boş → çanta qty1 → qty2 |
-| cart-page-main | empty/filled/qty | [ ] aynı |
-| product-info-main | changed | [ ] Siyah → Bej |
+| navigation-header-mega | open | [x] 1440 Çantalar — alt kat + Atelier Kış Kapsülü |
+| global-predictive-search | input | [x] `canta` 3vp — overlay «Sonuç bulunamadı»; sayfa 12 |
+| global-menu-drawer | open / changed | [x] 375+768 hamburger; Çantalar + açıldı |
+| global-cart-drawer | empty/filled/qty | [x] boş → qty1 ₺24 → qty2 ₺48 |
+| cart-page-main | empty/filled/qty | [x] aynı |
+| product-info-main | changed | [x] Siyah → Bej; ₺24 |
 
 Stop: email / account / checkout / newsletter submit / Hemen Al / PII
 
@@ -118,8 +120,8 @@ Stop: email / account / checkout / newsletter submit / Hemen Al / PII
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact mega / search / menu 375+768 / cart / PDP Renk
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate` — 0 error
-- [ ] Newsletter / account / checkout — **yapılmayacak**
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact mega / search / menu 375+768 / cart / PDP Renk
+- [x] PNG bak → stateFindings
+- [x] `npm run validate` — 65 temiz · 0 error · 0 warn
+- [x] Newsletter / account / checkout — **yapılmayacak**
