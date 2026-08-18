@@ -1,0 +1,71 @@
+{
+  "observationId": "homage.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "homage",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://homage-theme-demo-01.myshopify.com/",
+  "selector": "#sections--30283080204620__navigation-main-nav-menu-drawer .drawer__wrapper",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "375/768 button.menu-trigger.menu-trigger--drawer. Accordion nav__mobile-accordion-opener. 1440 hamburger 0px.",
+  "delta": "Homage nav-drawer accordion. Account tıklanmadı. Shopify.theme.name homage/release/v1.1 · schema_name Homage · schema_version 1.0.1 · theme_store_id null · role main · id 200065417548 · shop homage-theme-demo-01.myshopify.com",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://homage-theme-demo-01.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.menu-trigger.menu-trigger--drawer",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "value": 900,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Mobil menü GENTLEMEN/LADIES/COLLECTIONS/ABOUT + localization"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button.nav__mobile-accordion-opener",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "gentlemen-accordion",
+      "not": "GENTLEMEN add — çocuk linkler"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: GENTLEMEN/LADIES/COLLECTIONS/ABOUT + add; USD/EN localization.",
+    "changed": "GENTLEMEN accordion: Outerwear add + alt koleksiyonlar beklenir (DOM'da var)."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger 0×0 — masaüstü yatay menü."
+    }
+  ],
+  "interactionNote": "1440 drawer yok. Account tıklanmadı."
+}

@@ -1,0 +1,62 @@
+{
+  "observationId": "homage.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "homage",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://homage-theme-demo-01.myshopify.com/products/downhill-27-jacket",
+  "selector": "#shopify-section-template--30283080663372__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "DOWNHILL ‘27 JACKET $995. Color yalnız Hunter. Size S–XXL. THE SPECS accordion. Breadcrumb HOME / BEST SELLERS.",
+  "delta": "Homage main-product. Color tek swatch; option change = Size S→M. Buy it now/checkout tıklanmadı. Shopify.theme.name homage/release/v1.1 · schema_name Homage · schema_version 1.0.1 · theme_store_id null · role main · id 200065417548 · shop homage-theme-demo-01.myshopify.com",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://homage-theme-demo-01.myshopify.com/products/downhill-27-jacket",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "size-s",
+      "not": "SIZE:S seçili · $995 Hunter"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#main-product-15116188287308-Size-8463214936396",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "size-m",
+      "not": "Size M"
+    }
+  ],
+  "stateFindings": {
+    "initial": "DOWNHILL ‘27 JACKET · $995 · COLOR:HUNTER · SIZE:S · IN STOCK · ADD TO CART. Galeri zoom.",
+    "changed": "SIZE:M seçili (PNG ile doğrulanacak). Fiyat $995 aynı beklenir."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "PDP option change Size; Color tek Hunter."
+    }
+  ],
+  "interactionNote": "Color tek Hunter. Checkout/Buy it now dur."
+}
