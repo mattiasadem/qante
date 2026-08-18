@@ -1,0 +1,81 @@
+{
+  "observationId": "homage.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "homage",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://homage-theme-demo-01.myshopify.com/",
+  "selector": "#shopify-section-sections--30283080204620__navigation-main",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/homage/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/homage/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/homage/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/homage/default/home/navigation-header-mega.open.gentlemen-band.1440.png"
+  ],
+  "notlar": "Sticky logo-left menu-center. GENTLEMEN/LADIES/COLLECTIONS/ABOUT + add. Search + cart + account. data-dropdown-open=click.",
+  "delta": "Mega kolon/görsel yok — click ile yatay bant (Outerwear Knitwear…). Hover açmaz. Account tıklanmadı. Shopify.theme.name homage/release/v1.1 · schema_name Homage · schema_version 1.0.1 · theme_store_id null · role main · id 200065417548 · shop homage-theme-demo-01.myshopify.com",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://homage-theme-demo-01.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Header kapalı"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "a.nav-trigger--parent[href='/collections/gentlemen']",
+      "viewports": [
+        "1440"
+      ],
+      "value": 900,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "gentlemen-band",
+      "not": "Gentlemen click — yatay bant Outerwear/Knitwear/Sportswear/Essentials/All Gentlemen"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440: announcement Free shipping / S/S 2026; HOMAGE logo; GENTLEMEN+ LADIES+ COLLECTIONS+ ABOUT+; USD/EN; search; account; cart. Hero HIGH WEST / GO WEST. Mega kapalı — ikinci sıra yok.",
+    "open": "1440 Gentlemen tık: ikinci yatay sıra Outerwear+ Knitwear Sportswear Essentials All Gentlemen. Kolon/görsel/promo yok."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "data-dropdown-open=click; hover bant açmadı."
+    }
+  ],
+  "interactionNote": "Mega değil yatay nav band. Account / country tıklanmadı.",
+  "capture": {
+    "url": "https://homage-theme-demo-01.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:32:02.384Z"
+  }
+}
