@@ -1,0 +1,95 @@
+{
+  "observationId": "craft.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "craft",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-craft-demo.myshopify.com/",
+  "selector": "#cart-notification",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/craft/default/home/global-cart-drawer.filled.urun-eklendi.1440.png",
+    "evidence/craft/default/home/global-cart-drawer.filled.urun-eklendi.375.png",
+    "evidence/craft/default/home/global-cart-drawer.filled.urun-eklendi.768.png",
+    "evidence/craft/default/home/global-cart-drawer.initial.bildirim-kapali.1440.png",
+    "evidence/craft/default/home/global-cart-drawer.initial.bildirim-kapali.375.png",
+    "evidence/craft/default/home/global-cart-drawer.initial.bildirim-kapali.768.png"
+  ],
+  "notlar": "Dawn cart-notification (popup). cart-drawer yok. Sepet ikonu /cart sayfasına gider.",
+  "delta": "Slide-out drawer değil; add sonrası header altı bildirim. Qty drawer'da yok — cart sayfasında.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-craft-demo.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#shopify-section-header",
+      "etiket": "bildirim-kapali",
+      "not": "Host cart-notification 0px; kapalı kare header (boş sepet ikonu)"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-craft-demo.myshopify.com/products/ceramic-carafe-set",
+      "capture": false,
+      "not": "Carafe Set PDP"
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add']",
+      "capture": false,
+      "not": "Add to cart — gerçek tık (AJAX bildirim açmaz)"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": "#cart-notification.active",
+      "value": 8000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "urun-eklendi",
+      "not": "İç kutu #cart-notification.active — Item added + View my cart"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Bildirim kapalı. Header sepet ikonunda sayı yok.",
+    "filled": "Add to cart UI → #cart-notification.active: Item added to your cart + Carafe Set / Color Speckled White + View my cart (1) + Check out + Continue shopping. Sepet rozeti 1. Checkout tıklanmadı."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "input",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "open",
+      "sebep": "Açılma filled ile aynı bildirim"
+    },
+    {
+      "state": "changed",
+      "sebep": "Adet cart sayfasında; bildirimde qty yok"
+    }
+  ],
+  "interactionNote": "Host <cart-notification> 0×0; görünür kutu #cart-notification.active. Checkout tıklanmadı. Qty → cart-page-main.",
+  "capture": {
+    "url": "https://theme-craft-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:25:15.042Z"
+  }
+}

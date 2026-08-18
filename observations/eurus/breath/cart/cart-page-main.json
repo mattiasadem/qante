@@ -1,0 +1,125 @@
+{
+  "observationId": "eurus.breath.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "eurus",
+  "preset": "breath",
+  "sayfa": "cart",
+  "url": "https://eurus-breath-demo.myshopify.com/cart",
+  "selector": "#shopify-section-template--27353604325654__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/eurus/breath/cart/cart-page-main.1440.png",
+    "evidence/eurus/breath/cart/cart-page-main.375.png",
+    "evidence/eurus/breath/cart/cart-page-main.768.png",
+    "evidence/eurus/breath/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/eurus/breath/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/eurus/breath/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/eurus/breath/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/eurus/breath/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/eurus/breath/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/eurus/breath/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/eurus/breath/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/eurus/breath/cart/cart-page-main.initial.cart-bos.768.png"
+  ],
+  "notlar": "Boş/dolu cart-items. Dolu: reserved timer, free-shipping bar, Product/Price/Quantity/Total. Qty aria-label=button-plus.",
+  "delta": "cart-footer (Estimate shipping) ayrı section — leftover. Checkout tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eurus-breath-demo.myshopify.com/cart/clear",
+      "capture": false,
+      "not": "Viewport cookie temizliği"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eurus-breath-demo.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş sepet sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://eurus-breath-demo.myshopify.com/products/eco-friendly-natural-rubber-chew-toy",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://eurus-breath-demo.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart-items satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "[aria-label='button-plus']",
+      "capture": false,
+      "not": "Adet +"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Qty 2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty. Not sure where to start? Try these collections: For dogs / For cats.",
+    "filled": "Your cart + Continue shopping. Reserved timer. Add $475 more to get FREE shipping. Chew Toy $25, qty 1, Total $25. Product/Price/Quantity/Total.",
+    "changed": "Qty 2. Line total $50. Free-shipping $450."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı. Qty aria-label=button-plus. cart-footer leftover.",
+  "capture": {
+    "url": "https://eurus-breath-demo.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T20:22:15.993Z"
+  }
+}

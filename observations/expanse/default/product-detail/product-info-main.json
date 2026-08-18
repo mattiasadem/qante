@@ -1,0 +1,60 @@
+{
+  "observationId": "expanse.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "expanse",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://expanse-theme-furniture.myshopify.com/products/ibed-lap-desk",
+  "selector": "#shopify-section-template--17354735714501__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/expanse/default/product-detail/product-info-main.changed.size-xlarge.1440.png",
+    "evidence/expanse/default/product-detail/product-info-main.changed.size-xlarge.375.png",
+    "evidence/expanse/default/product-detail/product-info-main.changed.size-xlarge.768.png",
+    "evidence/expanse/default/product-detail/product-info-main.initial.size-small.1440.png",
+    "evidence/expanse/default/product-detail/product-info-main.initial.size-small.375.png",
+    "evidence/expanse/default/product-detail/product-info-main.initial.size-small.768.png"
+  ],
+  "notlar": "Kikkerland iBed. Size Small $35→$25 (1 left) / X-Large $50→$40 (4 left).",
+  "delta": "store-availability pickup satırı. Low stock her varyantta; Small stok 1.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://expanse-theme-furniture.myshopify.com/products/ibed-lap-desk",
+      "capture": true,
+      "etiket": "size-small",
+      "not": "Size Small $25"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label.variant__button-label[for$='-1-1']",
+      "value": 1500,
+      "capture": true,
+      "etiket": "size-xlarge",
+      "not": "X-Large → $40 sale from $50, Low stock 4"
+    }
+  ],
+  "stateFindings": {
+    "initial": "iBed Lap Desk. Size Small seçili. $35→$25 Save $10. Low stock - 1 item left. Add to cart. Pickup Texas Warehouse.",
+    "changed": "X-Large. $50→$40 Save $10. Low stock - 4 item left. Pickup Texas Warehouse."
+  },
+  "missingStates": [],
+  "interactionNote": "Size radio visually-hidden; label.variant__button-label. Checkout yok.",
+  "capture": {
+    "url": "https://expanse-theme-furniture.myshopify.com/products/ibed-lap-desk",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T21:05:59.373Z"
+  }
+}

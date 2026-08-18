@@ -1,0 +1,65 @@
+{
+  "observationId": "broadcast.bold.product-detail.product-info-main.2",
+  "schemaId": "product-info-main",
+  "kaynak": "broadcast",
+  "preset": "bold",
+  "sayfa": "product-detail",
+  "url": "https://broadcast-bold.myshopify.com/products/multivitamin-18",
+  "selector": "#cart-bar",
+  "evidenceSlug": "product-info-main-sticky",
+  "evidence": [
+    "evidence/broadcast/bold/product-detail/product-info-main-sticky.changed.sticky-configure.1440.png",
+    "evidence/broadcast/bold/product-detail/product-info-main-sticky.changed.sticky-configure.375.png",
+    "evidence/broadcast/bold/product-detail/product-info-main-sticky.changed.sticky-configure.768.png"
+  ],
+  "notlar": "Sticky cart-bar: ürün adı + $50 + CONFIGURE (buy box'a kaydır). Conversion bar.",
+  "delta": "Ayrı overlay değil — PDP sticky ATC/configure şeridi. Şema aynı product-info-main.",
+  "interactionStates": [
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://broadcast-bold.myshopify.com/products/multivitamin-18",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15449277792320__related",
+      "capture": false,
+      "not": "Buy box'tan aşağı kaydır → sticky bar"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "selector": "#cart-bar",
+      "capture": true,
+      "etiket": "sticky-configure",
+      "not": "#cart-bar şeridi"
+    }
+  ],
+  "stateFindings": {
+    "changed": "Sticky #cart-bar: Multivitamin 18+ • $50.00 + CONFIGURE (yukarı ok). ATC değil — buy box'a kaydırır."
+  },
+  "missingStates": [],
+  "interactionNote": "capture-observation viewport sticky kullanılamaz (script scrollTo 0). Resmi kanıt: capture-interaction section crop. Bar buy box görünürken gizlenebilir; related'a kaydırınca çıktı.",
+  "capture": {
+    "url": "https://broadcast-bold.myshopify.com/products/multivitamin-18",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:32:11.205Z"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "observationId": "colorblock.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "colorblock",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://theme-colorblock-demo.myshopify.com/cart",
+  "selector": "#shopify-section-template--22715895152662__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/colorblock/default/cart/cart-page-main.1440.png",
+    "evidence/colorblock/default/cart/cart-page-main.375.png",
+    "evidence/colorblock/default/cart/cart-page-main.768.png",
+    "evidence/colorblock/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/colorblock/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/colorblock/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/colorblock/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/colorblock/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/colorblock/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/colorblock/default/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/colorblock/default/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/colorblock/default/cart/cart-page-main.initial.cart-bos.768.png"
+  ],
+  "notlar": "Boş: Your cart is empty + Continue shopping. cart-footer boşken h=0. Drawer yok.",
+  "delta": "Dawn cart-items + cart-footer. Cart ikon /cart. ATC cart-notification leftover.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-colorblock-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş sepet sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-colorblock-demo.myshopify.com/products/pocket-cardi-purple",
+      "capture": false,
+      "not": "Pocket Cardi ATC"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add']",
+      "capture": false,
+      "not": "Add to cart; drawer yok"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-colorblock-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart-items satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "cart-items button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet + → satır güncellendi mi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + Continue shopping.",
+    "filled": "Pocket Cardi Size S Color Green · qty 1 · $245.00. Continue shopping kırmızı.",
+    "changed": "qty 2 · TOTAL $490.00. Çöp ikonu duruyor."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC UI (fallback yok). Checkout tıklanmadı. cart-notification leftover.",
+  "capture": {
+    "url": "https://theme-colorblock-demo.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:21:49.022Z"
+  }
+}

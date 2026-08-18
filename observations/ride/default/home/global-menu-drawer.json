@@ -1,0 +1,85 @@
+{
+  "observationId": "ride.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "ride",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-ride-demo.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/ride/default/home/global-menu-drawer.changed.shop-akordeon.375.png",
+    "evidence/ride/default/home/global-menu-drawer.changed.shop-akordeon.768.png",
+    "evidence/ride/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/ride/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "Dawn header-drawer. 1440 hamburger 0px.",
+  "delta": "SHOP/EXPLORE accordion. Yazılı <a> sayfaya gider — yalnız boş ok/summary.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://theme-ride-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary.header__icon--menu",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Mobil menü açık"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-menu-drawer-menu-item-1 > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-akordeon",
+      "not": "SHOP accordion — koleksiyona kaçırma"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: X + Ride logo + search/cart. SHOP → ve EXPLORE →. Altta Facebook/Instagram/YouTube. Sağda sayfa şeridi.",
+    "changed": "375/768 SHOP drill-down: ← SHOP + ORIGINAL BOARDS / PERFORMANCE BOARDS / FINS. Link tıklanmadı."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "open@1440 — hamburger 0px; masaüstü SHOP dropdown header-mega"
+    }
+  ],
+  "interactionNote": "1440 atlandı. Shop koleksiyon linki tıklanmadı.",
+  "capture": {
+    "url": "https://theme-ride-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:04:20.793Z"
+  }
+}

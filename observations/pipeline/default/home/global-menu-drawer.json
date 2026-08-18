@@ -1,0 +1,94 @@
+{
+  "observationId": "pipeline.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "pipeline",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pipeline-theme-fashion.myshopify.com/",
+  "selector": "#header-menu .drawer__content",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/pipeline/default/home/global-menu-drawer.changed.shop-akordeon.375.png",
+    "evidence/pipeline/default/home/global-menu-drawer.open.inline-nav.1440.png",
+    "evidence/pipeline/default/home/global-menu-drawer.open.inline-nav.768.png",
+    "evidence/pipeline/default/home/global-menu-drawer.open.menu-acik.375.png"
+  ],
+  "notlar": "375: button.header__mobile__button Open menu → nav#header-menu.drawer.header__drawer .drawer__content 375×812. Language/Currency + Search + SHOP/LOOKBOOKS/CONTACT/NEWS Expand menu (button.sliderow).",
+  "delta": "Shopify.theme.name Pipeline 8.2.0 · id 162762195160 · schema_name Pipeline · schema_version 8.2.0 · theme_store_id null · role main · shop pipeline-theme-fashion.myshopify.com. Preset folder default = Fashion / Theme Store official preview (document title suffix Pipeline Clean). Sibling pipeline-theme.myshopify.com (Bright) not walked. 768 hamburger 0×0 — inline Shop/Lookbooks/Contact/News. 1440 mega ayrı.",
+  "captureMode": "viewport",
+  "prepareClick": "button.header__mobile__button[aria-label='Open menu']",
+  "interactionStates": [
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://pipeline-theme-fashion.myshopify.com/",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "header.theme__header",
+      "etiket": "inline-nav",
+      "not": "768/1440 hamburger 0×0 — inline Shop/Lookbooks/Contact/News"
+    },
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://pipeline-theme-fashion.myshopify.com/",
+      "viewports": [
+        "375"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.header__mobile__button[aria-label='Open menu']",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "menu-acik"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button.sliderow[aria-controls='sliderule-97e73737d2e70108ebd678d4eddcad96']",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-akordeon",
+      "not": "Shop Expand menu — yazılı Shop <a> sayfaya gider"
+    }
+  ],
+  "stateFindings": {
+    "open": "375: ENGLISH / US$ / X + Search + SHOP> LOOKBOOKS> CONTACT> NEWS. 768/1440 hamburger 0×0 — inline nav (ayrı kare).",
+    "changed": "375 Shop sliderule: ← SHOP + READY-TO-WEAR / SHOES & ACCESSORIES / CURATED EDITS + Bestselling / New promo kartları. Accordion değil, drill-down."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "768/1440 hamburger 0×0 — drawer yok. inline-nav karesi header.theme__header viewport."
+    }
+  ],
+  "interactionNote": "Yalnız 375 drawer. 768 leftover hamburger yok.",
+  "capture": {
+    "url": "https://pipeline-theme-fashion.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T21:02:27.926Z"
+  }
+}

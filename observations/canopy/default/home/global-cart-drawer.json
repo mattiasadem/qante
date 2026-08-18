@@ -1,0 +1,129 @@
+{
+  "observationId": "canopy.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "canopy",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://canopy-theme-natural.myshopify.com/",
+  "selector": "#cart-drawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/canopy/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/canopy/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/canopy/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/canopy/default/home/global-cart-drawer.filled.soured-cream.1440.png",
+    "evidence/canopy/default/home/global-cart-drawer.filled.soured-cream.375.png",
+    "evidence/canopy/default/home/global-cart-drawer.filled.soured-cream.768.png",
+    "evidence/canopy/default/home/global-cart-drawer.initial.bos-cekmece.375.png",
+    "evidence/canopy/default/home/global-cart-drawer.initial.bos-cekmece.768.png",
+    "evidence/canopy/default/home/global-cart-drawer.initial.bos-docked.1440.png"
+  ],
+  "notlar": "cart-drawer. 1440 body.cart-drawer-docked sağ panel 360px (her zaman). 375/768 #cart-icon drawer açar (sayfa değişmez).",
+  "delta": "Docked desktop + overlay mobile. Promoted products + Eat Fresh! medya. Qty drawer'da var.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://canopy-theme-natural.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bos-cekmece",
+      "not": "Boş drawer: Your cart is empty + Start shopping + Don't miss these deals"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "selector": "#cart-drawer",
+      "value": 3000,
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bos-docked",
+      "not": "1440 #cart-icon /cart'a gider — tıklanmaz. Docked boş panel."
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://canopy-theme-natural.myshopify.com/products/soured-cream",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--18143730139336__main button[name='add']",
+      "capture": false,
+      "not": "Soured Cream 7.5oz Add to cart"
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#cart-icon",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "soured-cream",
+      "not": "375/768 add sonrası drawer kapalı; #cart-icon ile aç. 1440 ikon /cart'a gider."
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": "#cart-drawer",
+      "value": 8000,
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "soured-cream",
+      "not": "1440 docked drawer — Soured Cream 7.5 oz $3.00 qty1. Checkout tıklanmaz."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#cart-drawer button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Drawer adet +1"
+    }
+  ],
+  "stateFindings": {
+    "initial": "375/768 overlay: Your cart is empty + Start shopping + Don't miss these deals (Mozzarella $7.00 / $8.00) + Eat Fresh! Shop Now. 1440 docked aynı boş panel; sol homepage.",
+    "filled": "Soured Cream 7.5 oz $3.00 · Weight 7.5oz · qty 1 · Products (1) · Subtotal $3.00 USD · Spend $97.00 more for free shipping! · Checkout görünür (tıklanmadı). 375 sepet rozeti 1. 1440 docked PDP üzerinde.",
+    "changed": "qty 2 · line Subtotal $6.00 · Spend $94.00 more · Products (2) · 375 rozet 2. Checkout tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 cart ikonu /cart. Checkout / Shop Pay tıklanmadı. Ekran fiyatı $3.00 / $6.00 (üst simge cents).",
+  "capture": {
+    "url": "https://canopy-theme-natural.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T21:07:56.996Z"
+  }
+}

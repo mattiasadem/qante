@@ -1,0 +1,96 @@
+{
+  "observationId": "refresh.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "refresh",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-refresh-demo.myshopify.com/",
+  "selector": "cart-drawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/refresh/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/refresh/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/refresh/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/refresh/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/refresh/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/refresh/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/refresh/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/refresh/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/refresh/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "cart-drawer.drawer.is-empty. İkon #cart-icon-bubble href=/cart; Dawn JS drawer açar. Checkout tıklanmaz.",
+  "delta": "Boş: Your cart is empty + Continue shopping. Pair Well With / koleksiyon kartı bu boş karede yok.",
+  "captureMode": "viewport",
+  "prepareClick": "#cart-icon-bubble",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-refresh-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-refresh-demo.myshopify.com/products/bar-soap-2-pack-2",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add']",
+      "capture": false,
+      "not": "Bar Soap Original ATC. Buy it now yok."
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer: satır + adet + subtotal"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "cart-drawer button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Sağ drawer: Your cart is empty + Continue shopping. 375 neredeyse tam genişlik.",
+    "filled": "Your cart · Bar Soap 2 Pack · Scent Original · adet 1 · $15 · Subtotal $15.00 USD · Check out (tıklanmadı).",
+    "changed": "Adet 2, satır $30.00, Subtotal $30.00 USD."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC UI (notlar: filled/addToCart → ui). Checkout/email yok. Dolu kare PDP üzerinde drawer.",
+  "capture": {
+    "url": "https://theme-refresh-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:14:48.386Z"
+  }
+}
