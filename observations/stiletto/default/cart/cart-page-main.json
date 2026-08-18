@@ -1,0 +1,64 @@
+{
+  "observationId": "stiletto.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "stiletto",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://stiletto-theme-vogue.myshopify.com/cart",
+  "selector": "#shopify-section-template--22242344566933__main",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Boş: YOUR CART IS EMPTY. Dolu + qty.",
+  "delta": "",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://stiletto-theme-vogue.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://stiletto-theme-vogue.myshopify.com/products/behati-dress-in-pearl",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://stiletto-theme-vogue.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--22242344566933__main button[name='plus'], #shopify-section-template--22242344566933__main [data-quantity-plus], #shopify-section-template--22242344566933__main button[aria-label*='Increase' i]",
+      "value": 2000,
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "filled": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı."
+}

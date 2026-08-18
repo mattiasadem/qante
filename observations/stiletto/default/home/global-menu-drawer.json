@@ -1,0 +1,44 @@
+{
+  "observationId": "stiletto.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "stiletto",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://stiletto-theme-vogue.myshopify.com/",
+  "selector": "#shopify-section-sections--22242345517205__header",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "button[data-js-menu-button] Open menu modal. Header overlay menü.",
+  "delta": "Ayrı #NavDrawer yok. Menü header'dan açılır.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://stiletto-theme-vogue.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button[data-js-menu-button]",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mobil-menu-acik",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Hamburger. 1440 buton 0px."
+    }
+  ],
+  "stateFindings": {
+    "open": ""
+  },
+  "missingStates": [],
+  "interactionNote": "1440 hamburger yok. Alt menü expander changed denenmedi."
+}

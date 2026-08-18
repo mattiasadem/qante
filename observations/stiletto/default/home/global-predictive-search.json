@@ -1,0 +1,52 @@
+{
+  "observationId": "stiletto.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "stiletto",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://stiletto-theme-vogue.myshopify.com/",
+  "selector": "#MainQuickSearch",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "Quick search overlay. Popular collections öncesi; predictive_search_url=/search/suggest.",
+  "delta": "Kapalıda 0px. a[data-search] opener. Submit View all results tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://stiletto-theme-vogue.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[data-search][aria-controls='MainQuickSearch']",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik",
+      "not": "Boş overlay: Popular collections"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input#search",
+      "value": "dress",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "katalogSorgu dress"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "input": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Input kapalıyken 0px — önce ikon. Form submit yok."
+}
