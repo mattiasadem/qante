@@ -7,9 +7,14 @@
   "url": "https://borders-theme-raw.myshopify.com/",
   "selector": "#site-header",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
+  "evidence": [
+    "evidence/borders/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/borders/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/borders/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/borders/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
   "notlar": "BORDERS logo. Shop mega + New Arrivals / About Us / Contacts / News. Dil/para + Search + Cart 0. 375/768 hamburger.",
-  "delta": "Section sticky. Mega <a href=#>. Account yok. 1440 hamburger 0×0.",
+  "delta": "Section sticky. Mega <a href=#>. Playwright hover .focus eklemedi; click açtı. Account yok. 1440 hamburger 0×0.",
   "captureMode": "section",
   "interactionStates": [
     "initial",
@@ -38,7 +43,7 @@
     },
     {
       "state": "open",
-      "action": "hover",
+      "action": "click",
       "selector": "#menu-item-shop-classic > a.menu-link",
       "value": 1400,
       "viewports": [
@@ -47,13 +52,24 @@
       "capture": true,
       "captureMode": "viewport",
       "etiket": "shop-mega",
-      "not": "Shop mega hover. href=# — tıklanmadı."
+      "not": "Shop click (href=#) → .focus + mega. Hover CSS tetiklemedi."
     }
   ],
   "stateFindings": {
-    "initial": "BORDERS + Shop / New Arrivals / About Us / Contacts / News + dil + search + cart 0. Mega kapalı. 375/768 hamburger.",
-    "open": "1440 Shop hover — kolonlar + promo görseller (kareye bakılacak)."
+    "initial": "1440 sarı bar: BORDERS + Shop▾ / New Arrivals / About Us / Contacts / News + US bayrak + search + cart 0. Mega kapalı. 375: BORDERS | search | cart 0 | hamburger.",
+    "open": "1440 Shop click (.focus): sol Autumn (Knitwear Embroidery Outerwear Accessories Bottoms) + Summer (T-Shirts Shirts Sweatshirts); orta Vibrant Hues + LEARN MORE; sağ 'City Trail' AW 2025 + LEARN MORE."
   },
   "missingStates": [],
-  "interactionNote": "1440 hamburger 0×0. 375/768 menü ayrı global-menu-drawer. Account/checkout yok."
+  "interactionNote": "Playwright hover .focus eklemedi; click (href=#) açtı. 1440 hamburger 0×0. Account/checkout yok.",
+  "capture": {
+    "url": "https://borders-theme-raw.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:20:29.687Z"
+  }
 }
