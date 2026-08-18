@@ -1,0 +1,59 @@
+{
+  "observationId": "kerem.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "kerem",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://dev-kerem.ikas.shop/",
+  "selector": "header.vheader",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Sticky header. Announce + nav. 1440: ÇOK SATANLAR / ÇANTALAR + KEREM + ARA / HESABIM / SEPET 0. 375/768: burger + KEREM + ARA + SEPET. Mega .menu-item__panel.",
+  "delta": "ikas header.vheader + nav.vheader__nav. Mega var (Çantalar/Çok Satanlar has-panel). Hesabım tıklanmadı. Kerem · ikas Studio storefront · host dev-kerem.ikas.shop · window.Shopify yok · Shopify.theme yok · x-powered-by ikas · window.__IKAS_DATA__ var (storefrontThemeId e0e11d6b-d4ef-46c6-bdab-5912cdd1cfc4 · storefrontId f0022564-b0a6-4568-b4c0-268715f1cded · storefrontRoutingId 909356fb-0dd4-49b9-9d3b-8d3b8cadeb25 · storefrontType STOREFRONT · salesChannelId fb519b2f-b246-4207-abf8-9c6e055a19d0 · domain dev-kerem.ikas.shop · apiUrl https://api.myikas.com/api/sf/graphql · merchantId 70d6ab17-775e-4c3b-9840-7aeb37587d3f · merchantName/storeName dev-kerem · locale tr · defaultLocale tr · region TR · currencyCode TRY) · window.IkasEvents subscribe/unsubscribe · theme_store_id 5bfeca45-4f60-44d7-aef8-c280be7db7c2 (Theme Store UUID; storefront JSON'da Shopify id yok)",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://dev-kerem.ikas.shop/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Navbar kapalı"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "nav.vheader__nav button.menu-item__label--toggle:has-text(\"Çantalar\")",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cantalar-mega",
+      "not": "Çantalar hover — alt kategoriler + öne çıkan"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440: ticker + ÇOK SATANLAR / ÇANTALAR + KEREM + ARA / HESABIM / SEPET 0. 375/768: burger + logo + ARA + SEPET.",
+    "open": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Hesabım /account dur. 1440 hamburger ayrı drawer."
+}
