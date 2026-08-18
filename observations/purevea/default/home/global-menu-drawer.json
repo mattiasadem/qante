@@ -1,0 +1,85 @@
+{
+  "observationId": "purevea.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "purevea",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://purevea-theme-demo.myshopify.com/",
+  "selector": "#offcanvasMenuMobile",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/purevea/default/home/global-menu-drawer.changed.shop-akordeon.375.png",
+    "evidence/purevea/default/home/global-menu-drawer.changed.shop-akordeon.768.png",
+    "evidence/purevea/default/home/global-menu-drawer.open.hamburger-acik.375.png",
+    "evidence/purevea/default/home/global-menu-drawer.open.hamburger-acik.768.png"
+  ],
+  "notlar": "Bootstrap offcanvas sol. 375/768 hamburger .gsp-header__menu-toggle. 1440 gizli.",
+  "delta": "GSP #offcanvasMenuMobile. Shop caret → #sub-menu-mobile2.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://purevea-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": ".gsp-header__menu-toggle[data-bs-target='#offcanvasMenuMobile']",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger-acik",
+      "not": "375/768 hamburger"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#offcanvasMenuMobile [data-bs-target='#sub-menu-mobile2']",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false,
+      "not": "Shop expander — yazılı <a> değil caret"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 600,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-akordeon",
+      "not": "Shop alt menü"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 sol offcanvas: purevea + X; Home; Shop >; Collections >; Pages >; altta Login (siyah pill) + Facebook / X / Instagram / Pinterest / TikTok / YouTube. 768'de homepage karartılı (hero + sepet 0).",
+    "changed": "375/768 Shop caret → < Shop geri. Shop All / Best Sellers / New Collections / Trending (kırmızı yıldız) / Categories > / Concern >. Kartlar: Own Your Glow 15 items; Glow & Go Set 26 items (375'te ikinci kart kısmi)."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 hamburger yok (d-lg-none) — leftover. Login / Account tıklanmadı. Shop yazılı <a> değil caret (#sub-menu-mobile2).",
+  "capture": {
+    "url": "https://purevea-theme-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:56:44.907Z"
+  }
+}
