@@ -11,8 +11,8 @@
 `theme_store_id` = **null** (canlıda yok; uydurulmadı)  
 `Shopify.shop` = `purevea-theme-demo.myshopify.com`
 
-**Durum:** Mod A walk + resmi 3vp + interact — **capture devam**  
-**PR:** draft — **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact pixel-check — **bitti**  
+**PR:** https://github.com/mattiasadem/qante/pull/187 (draft) — **main'e merge yok**
 
 ---
 
@@ -24,11 +24,11 @@
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **60** |
-| PNG | (capture sonrası) |
+| PNG | **200** (162 static + 38 interact) |
 | Parallel | yalnız `observations/purevea/`, `evidence/purevea/`, `todo/purevea.md`, `candidates/purevea-leftovers.md` |
 
 **Kapsam satırı:**  
-`Purevea · default · purevea-v2 / schema_name Purevea 2.0.0 · theme_store_id null · home→PDP Herbal Hair Oil→PLP best-sellers→collections landing→search serum→cart→about-us/contact-us→faqs→blog news→404 · 60 obs · 0 yeni şema · leftover: candidates/purevea-leftovers.md`
+`Purevea · default · purevea-v2 / schema_name Purevea 2.0.0 · theme_store_id null · home→PDP Herbal Hair Oil→PLP best-sellers→collections landing→search serum→cart→about-us/contact-us→faqs→blog news→404 · 60 obs · 200 PNG · 0 yeni şema · leftover: candidates/purevea-leftovers.md`
 
 ---
 
@@ -36,22 +36,22 @@
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home + announcement/header/footer + conversion | roster | [ ] capture |
-| Mega Shop 1440 | interact | [ ] |
-| Predictive search `serum` | interact 3vp | [ ] |
-| Mobile menu 375 | interact | [ ] |
-| Mobile menu 768 | interact | [ ] |
-| Cart drawer empty + filled + qty | interact 3vp | [ ] |
-| PDP Herbal Hair Oil Hair type Normal→Colored | interact 3vp | [ ] |
-| PLP `/collections/best-sellers` | roster | [ ] |
-| Collections index `/collections` (designed landing) | roster | [ ] |
-| Search `/search?q=serum` | roster | [ ] |
-| Cart page empty + filled + qty | interact 3vp | [ ] |
-| About `/pages/about-us` (`/pages/about` 404) | roster | [ ] |
-| Contact `/pages/contact-us` (submit yok; `/pages/contact` aynı şablon) | roster | [ ] |
-| FAQ `/pages/faqs` (`/pages/faq` 404) | roster | [ ] |
-| Blog `/blogs/news` | roster | [ ] |
-| 404 leftover | roster | [ ] |
+| Home + announcement/header/footer + conversion | roster | [x] 3vp |
+| Mega Shop 1440 | interact | [x] pixel-check |
+| Predictive search `serum` | interact 3vp | [x] pixel-check |
+| Mobile menu 375 | interact | [x] pixel-check |
+| Mobile menu 768 | interact | [x] pixel-check |
+| Cart drawer empty + filled + qty | interact 3vp | [x] pixel-check |
+| PDP Herbal Hair Oil Hair type Normal→Colored | interact 3vp | [x] pixel-check |
+| PLP `/collections/best-sellers` | roster | [x] 3vp |
+| Collections index `/collections` (designed landing) | roster | [x] 3vp |
+| Search `/search?q=serum` | roster | [x] 3vp |
+| Cart page empty + filled + qty | interact 3vp | [x] pixel-check |
+| About `/pages/about-us` (`/pages/about` 404) | roster | [x] 3vp |
+| Contact `/pages/contact-us` (submit yok; `/pages/contact` aynı şablon) | roster | [x] 3vp |
+| FAQ `/pages/faqs` (`/pages/faq` 404) | roster | [x] 3vp |
+| Blog `/blogs/news` | roster | [x] 3vp |
+| 404 leftover | roster | [x] 3vp |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -94,12 +94,12 @@
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | open | [ ] Shop hover 1440 |
-| global-predictive-search | input | [ ] `serum` 3vp |
-| global-menu-drawer | open / changed | [ ] 375/768 hamburger + Shop expander |
-| global-cart-drawer | filled + changed | [ ] empty → ATC → qty |
-| cart-page-main | filled + changed | [ ] empty → ATC → qty |
-| product-info-main | changed | [ ] Hair type Normal→Colored |
+| navigation-header-mega | open | [x] Shop hover 1440 — Shop All / Categories / Concern / Own Your Glow + Glow & Go Set |
+| global-predictive-search | input | [x] `serum` 3vp — Products (4) + Suggestions + Collections |
+| global-menu-drawer | open / changed | [x] 375/768 hamburger + Shop accordion |
+| global-cart-drawer | filled + changed | [x] empty (0) → ATC $115 qty1 → qty2 $230 |
+| cart-page-main | filled + changed | [x] empty → ATC $115 qty1 → qty2 $230 |
+| product-info-main | changed | [x] Hair type Normal→Colored; stok 12→22; fiyat $115 |
 
 ---
 
@@ -111,8 +111,8 @@
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact mega / search / menu / cart / PDP Hair type
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate` — 0 error
-- [ ] Email / account / checkout / newsletter submit — **yapılmayacak**
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact mega / search / menu / cart / PDP Hair type
+- [x] PNG bak → stateFindings
+- [x] `npm run validate` — 0 error
+- [x] Email / account / checkout / newsletter submit — **yapılmayacak**

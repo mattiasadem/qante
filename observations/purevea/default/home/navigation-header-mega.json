@@ -7,7 +7,12 @@
   "url": "https://purevea-theme-demo.myshopify.com/",
   "selector": "header.header",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
+  "evidence": [
+    "evidence/purevea/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/purevea/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/purevea/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/purevea/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
   "notlar": "Logo-center header. Home / Shop mega / Own Your Glow kartlar. Sağ: search + account + cart. Shopify-section h=0 (sticky header.header 88px).",
   "delta": "GSP Purevea 2.0.0. Mega = li.gsp-menu-item__mega hover, details yok. Account tıklanmadı.",
   "captureMode": "section",
@@ -27,30 +32,31 @@
     {
       "state": "open",
       "action": "hover",
-      "selector": "header.header li.gsp-menu-item.gsp-menu-item__mega",
-      "viewports": [
-        "1440"
-      ],
-      "capture": false,
-      "not": "Shop LI hover — <a href=/collections/all> tıklama PLP'ye kaçar"
-    },
-    {
-      "state": "open",
-      "action": "waitFor",
-      "value": 800,
+      "selector": "header.header li.gsp-menu-item.position-static.gsp-menu-item__mega",
       "viewports": [
         "1440"
       ],
       "capture": true,
       "captureMode": "viewport",
       "etiket": "shop-mega",
-      "not": "Shop mega panel"
+      "not": "Shop LI hover — <a href=/collections/all> tıklama PLP'ye kaçar. capture hover adımında (ayrı waitFor + scroll kapanışı)."
     }
   ],
   "stateFindings": {
-    "initial": "",
-    "open": ""
+    "initial": "1440: mavi bar; solda Home (altı çizili) / Shop / Collections / Pages (chevron); ortada lime serif purevea; sağda Search + hesap + sepet 0. Mega kolon yok. 375/768: hamburger + Search + sepet 0; logo lime (section crop kısmi).",
+    "open": "1440 Shop hover: beyaz yuvarlak mega. Sol: Shop All / Best Sellers / New Collections / Trending (kırmızı yıldız). Categories: Skincare, Bodycare (yeşil New), Haircare, Makeup, Accessories. Concern: Dull Skin, Anti-Ageing, Oiliness, Dehydration. Sağ kartlar: Own Your Glow 15 items, Glow & Go Set 26 items. Hero (Nourish Your Skin) panel altında."
   },
   "missingStates": [],
-  "interactionNote": "375/768 mega header'da değil — global-menu-drawer. Account tıklanmadı."
+  "interactionNote": "375/768 mega header'da değil — global-menu-drawer. İlk viewport+waitFor karesi kapalı homepage'di (capture scrollTo hover'ı düşürdü). Recapture hover adımında panel göründü. Shop <a href=/collections/all> tıklanmadı. Account tıklanmadı. CSS ayrıca .active-mega / :focus-within.",
+  "capture": {
+    "url": "https://purevea-theme-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:11:15.688Z"
+  }
 }

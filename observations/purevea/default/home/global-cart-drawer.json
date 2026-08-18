@@ -7,7 +7,17 @@
   "url": "https://purevea-theme-demo.myshopify.com/",
   "selector": "#CartDrawer",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/purevea/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/purevea/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/purevea/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/purevea/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/purevea/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/purevea/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/purevea/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/purevea/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/purevea/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
   "notlar": "gsp-cart-drawer offcanvas. Opener a[data-bs-target='#CartDrawer'][aria-label='Cart']. Boş: New Arrivals / Glow Makeup / Own Your Glow kartlar.",
   "delta": "Checkout / coupon / gift wrap tıklanmadı.",
   "captureMode": "viewport",
@@ -70,7 +80,7 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": "#CartDrawer button[name='plus'], #CartDrawer .gsp-quantity__plus, #CartDrawer [data-action='increase']",
+      "selector": "#CartDrawer .gsp-quantity__button.quantity-up",
       "capture": false
     },
     {
@@ -84,10 +94,21 @@
     }
   ],
   "stateFindings": {
-    "initial": "",
-    "filled": "",
-    "changed": ""
+    "initial": "Your cart (0) + X. Your cart is empty / Add your favorite items to your cart. View All Products →. Alt kart New Arrivals 11 items (PALMS compact + Herbae gloss). 1440'te ikinci kartın üst kenarı görünür.",
+    "filled": "Your cart (1). Spend $185.00 more to reach free shipping. Satır: HAIRCARE Herbal Hair Oil Normal $115.00 adet 1 + Remove. Gift wrap $1.00 (tik yok). Promo code + Apply. Subtotal $115.00. Check Out + View Cart →. ATC UI (Herbal Hair Oil Normal).",
+    "changed": "Your cart (2). Spend $70.00 more. Adet 2; satır $230.00; Subtotal $230.00. Aynı iskelet (gift wrap / promo / Check Out / View Cart)."
   },
   "missingStates": [],
-  "interactionNote": "Check out / coupon / gift wrap tıklanmadı. Qty selector yoklanırsa missingStates."
+  "interactionNote": "ATC UI (#ProductSubmitButton-…). Qty .gsp-quantity__button.quantity-up (name=plus yok). Check out / coupon / gift wrap tıklanmadı.",
+  "capture": {
+    "url": "https://purevea-theme-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:49:59.100Z"
+  }
 }
