@@ -1,7 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
-  "buildCommand": "node scripts/vercel-prepare.mjs",
   "functions": {
     "api/index.mjs": {
       "includeFiles": "{sections,observations,taxonomy,candidates,viewer}/**",
@@ -9,12 +8,10 @@
       "maxDuration": 30
     }
   },
-  "headers": [
+  "redirects": [
     {
-      "source": "/evidence/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=3600" }
-      ]
+      "source": "/evidence/:path*",
+      "destination": "https://cdn.jsdelivr.net/gh/mattiasadem/qante@main/evidence/:path*"
     }
   ],
   "rewrites": [

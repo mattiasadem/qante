@@ -18,6 +18,7 @@ import {
 } from "./lib/facets.mjs";
 import { runHealth } from "./lib/health.mjs";
 import { loadCandidates } from "./lib/candidates.mjs";
+import { externalEvidenceUrl } from "./lib/evidence-external.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export const PUBLIC_DIR = path.join(__dirname, "public");
@@ -191,6 +192,17 @@ export function handleRequest(req, res) {
       file = safeJoin(ROOT, p);
     }
     if (!file || !fs.existsSync(file) || fs.statSync(file).isDirectory()) {
+      if (p.startsWith("/evidence/")) {
+        const external = externalEvidenceUrl(p);
+        if (external) {
+          res.writeHead(302, {
+            Location: external,
+            "Cache-Control": "public, max-age=3600",
+          });
+          res.end();
+          return;
+        }
+      }
       return send(res, 404, "Not found");
     }
     return serveStatic(res, file);
