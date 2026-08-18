@@ -7,7 +7,12 @@
   "url": "https://pebble-little.myshopify.com/",
   "selector": "header.header",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
+  "evidence": [
+    "evidence/pebble/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/pebble/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/pebble/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/pebble/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
   "notlar": "details#Mega-menu-item-sidebar_6tJn4m / banner_PzqTic / text_with_banners_zWYKqx.",
   "delta": "Shop sidebar mega + Collections banner mega + Pages text/banners. Home 1440 section h=0 — selector header.header.",
   "captureMode": "section",
@@ -28,16 +33,40 @@
       "state": "open",
       "action": "hover",
       "selector": "#Mega-menu-item-sidebar_6tJn4m > summary",
+      "capture": false,
+      "viewports": [
+        "1440"
+      ],
+      "not": "Shop hover. Summary tıklanmadı (koleksiyona kaçabilir)."
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Mega-menu-item-sidebar_6tJn4m",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "shop-mega",
       "viewports": [
         "1440"
       ],
-      "not": "Shop hover → sidebar mega. Summary tıklanmadı (koleksiyona kaçabilir)."
+      "not": "details open tutuldu — scrollTo(0) hover'ı kapatmasın."
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "1440: Shop / Collections / Pages / Features + Search 'What are you looking for?' + account + bag. 375/768: hamburger + logo + search + bag.",
+    "open": "1440 Shop mega: sol New Arrivals / Best Sellers / Clothing / Shop All; orta T-Shirts–Shoes thumb; sağ NEW COLLECTION The Cozy Crew Shop Now. Shop pill aktif."
+  },
   "missingStates": [],
-  "interactionNote": "375/768 mega yok — hamburger. Features düz link olabilir. Account/Sign In duruldu."
+  "interactionNote": "375/768 mega yok — hamburger. Hover sonrası capture scrollTo(0) kapatıyordu; forceOpen details. Features tıklanmadı. Account duruldu.",
+  "capture": {
+    "url": "https://pebble-little.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:07:40.514Z"
+  }
 }

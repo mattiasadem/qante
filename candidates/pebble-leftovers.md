@@ -50,8 +50,8 @@
 
 ## Interact notları
 
-- Shop mega: `details#Mega-menu-item-sidebar_6tJn4m > summary` — hover 1440. Tıklama sayfaya kaçabilir.
-- Predictive: katalog `polo` (Logo Polo Red $45). 1440 `#SearchInput-…__header`; 375/768 `.search-drawer-button` → drawer input.
-- Cart: `.cart-drawer-button` → `#cart-drawer-dialog`. ATC sonrası otomatik açılır. Qty `#cart-drawer-dialog button.quantity-plus`.
-- 1440 hamburger yok. 375/768 `.menu-drawer-button` → `#menu-drawer-dialog`.
-- PDP Size: 3Y → 8Y (`label.variant-option__button-label`). Color yalnız Red.
+- Shop mega: `details#Mega-menu-item-sidebar_6tJn4m > summary` hover 1440. Capture `scrollTo(0)` hover'ı kapatıyordu — `forceOpen` details. Kare: sidebar + thumb + The Cozy Crew.
+- Predictive: katalog `polo` (Logo Polo Red $45 / Cotton Polo $30 / Stripe Polo Pink $45). 1440 inline; 375/768 drawer.
+- Cart: `.cart-drawer-button` → `#cart-drawer-dialog`. ATC UI. qty 1 $45 → qty 2 $90. Free-ship $55 → $10. Checkout tıklanmadı.
+- 1440 hamburger yok. 375/768 `.menu-drawer-button` → `#menu-drawer-dialog`. Sign In duruldu.
+- PDP Size: 3Y in-stock → 8Y Only 2 items in stock. Color yalnız Red. Fiyat $45.
