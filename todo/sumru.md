@@ -23,7 +23,7 @@
 `theme_store_id` = **cfeb78d2-89b1-4c09-9496-04089a07ec18** (Theme Store UUID; storefront JSON’da Shopify id yok)
 
 **Durum:** Mod A walk + resmi 3vp + interact + validate  
-**PR:** draft — **main'e merge yok**
+**PR:** draft https://github.com/mattiasadem/qante/pull/212 — **main'e merge yok**
 
 ---
 
@@ -35,12 +35,12 @@
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **16** |
-| PNG | (capture sonrası) |
-| Validator | (validate sonrası) |
+| PNG | **68** |
+| Validator | 65 temiz · **0 error** · 0 warn |
 | Parallel | yalnız `observations/sumru/`, `evidence/sumru/`, `todo/sumru.md`, `candidates/sumru-leftovers.md` |
 
 **Kapsam satırı:**  
-`Sumru · default · ikas Studio · listed dev-sumru.myikas.com 301→dev-sumru.ikas.shop · theme_store_id cfeb78d2-89b1-4c09-9496-04089a07ec18 · home→PDP Kiryu Kase galeri1→2→PLP /kiryu 7→search kiryu→cart empty/filled/qty ₺405/İlk Sipariş -₺20.25→iletisim→FAQ/blog/about yok→404 · 16 obs · 0 yeni şema · leftover: candidates/sumru-leftovers.md`
+`Sumru · default · ikas Studio · listed dev-sumru.myikas.com 301→dev-sumru.ikas.shop · theme_store_id cfeb78d2-89b1-4c09-9496-04089a07ec18 · home→PDP Kiryu Kase galeri1→2→PLP /kiryu 7→search kiryu overlay 6 / page unsüzülmüş→cart empty/filled/qty2 ₺769.50→iletisim→FAQ/blog/about yok→404 · 16 obs · 68 PNG · 0 yeni şema · leftover: candidates/sumru-leftovers.md`
 
 ---
 
@@ -92,9 +92,9 @@
 | navigation-header-mega | initial + open | 1440 Özel Koleksiyonlar hover — 3 kolon Antigo/Coco/Sandy Loam |
 | global-predictive-search | input | `kiryu` → Kiryu kase/tabak listesi + Tümünü gör |
 | global-menu-drawer | open/changed | 375/768 hamburger; Özel Koleksiyonlar → Antigo/Coco/Sandy Loam. Login tıklanmadı |
-| global-cart-drawer | empty/filled/qty | boş → ATC toast → bag · qty1 ₺405 / ₺384.75 → Arttır |
-| cart-page-main | empty/filled/qty | Sofranız henüz kurulmamış → kuruluyor · aynı fiyat |
-| product-info-main | changed | Galeri 1→2; renk/beden swatch yok |
+| global-cart-drawer | empty/filled/qty | boş → ATC toast → bag · qty1 ₺384.75 → qty2 ₺769.50 |
+| cart-page-main | empty/filled/qty | Sofranız henüz kurulmamış → kuruluyor · qty1 ₺384.75 → qty2 ₺769.50 |
+| product-info-main | changed | Galeri 1/2 kase close-up → 2/2 lifestyle; renk/beden yok |
 
 ---
 
@@ -108,5 +108,5 @@
 
 - [x] Official 3vp static (`capture-observation.mjs`)
 - [x] Interact header / search / cart / menu / PDP galeri
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate`
+- [x] PNG bak → stateFindings
+- [x] `npm run validate` — 65 temiz · 0 error · 0 warn

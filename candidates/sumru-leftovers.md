@@ -142,6 +142,14 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: sumru-search-page-unfiltered  
+Gerekçe: `/search?q=kiryu` pageType SEARCH ama `section.cp-pl` Cecil/Wisteria/Sandy Loam grid — sorgu süzülmemiş. Overlay `kiryu` süzüyor.  
+Örnekler: https://dev-sumru.ikas.shop/search?q=kiryu  
+Öneri: leftover  
+Karar: onay bekliyor
+
+---
+
 ADAY: sumru-atc-toast-not-drawer  
 Gerekçe: PDP `button.cp-pdp__atc` toast “Ürün sepete eklendi / Sepeti Gör”; drawer bag tık ile.  
 Örnekler: Kiryu PDP  
