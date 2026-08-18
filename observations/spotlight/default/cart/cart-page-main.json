@@ -1,7 +1,17 @@
 {
   "kaynak": "spotlight",
   "preset": "default",
-  "evidence": [],
+  "evidence": [
+    "evidence/spotlight/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/spotlight/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/spotlight/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/spotlight/default/cart/cart-page-main.filled.dolu-sepet.1440.png",
+    "evidence/spotlight/default/cart/cart-page-main.filled.dolu-sepet.375.png",
+    "evidence/spotlight/default/cart/cart-page-main.filled.dolu-sepet.768.png",
+    "evidence/spotlight/default/cart/cart-page-main.initial.bos-sepet.1440.png",
+    "evidence/spotlight/default/cart/cart-page-main.initial.bos-sepet.375.png",
+    "evidence/spotlight/default/cart/cart-page-main.initial.bos-sepet.768.png"
+  ],
   "observationId": "spotlight.default.cart.cart-page-main",
   "schemaId": "cart-page-main",
   "sayfa": "cart",
@@ -54,10 +64,34 @@
     }
   ],
   "stateFindings": {
-    "initial": "",
-    "filled": "",
-    "changed": ""
+    "initial": "Your cart is empty + Continue shopping (sarı pill). Satır/özet yok.",
+    "filled": "Your cart + Continue shopping. Cap Ebbets Corduroy thumbnail (pembe), adet 1, $48.00. 1440 PRODUCT/QUANTITY/TOTAL. Checkout bu kırpıda yok.",
+    "changed": "Adet 2. Satır toplam $96.00."
   },
-  "missingStates": [],
-  "interactionNote": "Checkout / Shop Pay tıklanmadı."
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "open",
+      "sebep": "Sayfa, drawer değil"
+    },
+    {
+      "state": "input",
+      "sebep": "Anlamsız"
+    }
+  ],
+  "interactionNote": "Checkout / Shop Pay tıklanmadı. cart-footer boşken 0px.",
+  "capture": {
+    "url": "https://theme-spotlight-demo.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:38:38.612Z"
+  }
 }

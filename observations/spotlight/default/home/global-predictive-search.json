@@ -1,7 +1,14 @@
 {
   "kaynak": "spotlight",
   "preset": "default",
-  "evidence": [],
+  "evidence": [
+    "evidence/spotlight/default/home/global-predictive-search.input.arama-cap.1440.png",
+    "evidence/spotlight/default/home/global-predictive-search.input.arama-cap.375.png",
+    "evidence/spotlight/default/home/global-predictive-search.input.arama-cap.768.png",
+    "evidence/spotlight/default/home/global-predictive-search.open.arama-acik.1440.png",
+    "evidence/spotlight/default/home/global-predictive-search.open.arama-acik.375.png",
+    "evidence/spotlight/default/home/global-predictive-search.open.arama-acik.768.png"
+  ],
   "observationId": "spotlight.default.home.global-predictive-search",
   "schemaId": "global-predictive-search",
   "sayfa": "home",
@@ -12,8 +19,8 @@
   "notlar": "Header büyüteç / details-modal. katalogSorgu: cap (PLP 4 sonuç).",
   "delta": "Dawn details-modal. 1440 görünür input #Search-In-Modal; 375/768 #Search-In-Modal-1 (Craft tersi).",
   "interactionStates": [
-    "open",
-    "input"
+    "input",
+    "open"
   ],
   "interactionSteps": [
     {
@@ -60,9 +67,33 @@
     }
   ],
   "stateFindings": {
-    "open": "",
-    "input": ""
+    "open": "Büyüteç → search-modal. Boş input placeholder Search + sağda X. Arka plan karartılı; home grid görünür. Öneri listesi yok.",
+    "input": "cap yazınca PRODUCTS: Cap Wool (siyah + turuncu), Cap Ebbets Corduroy (pembe + sarı) + Search for “cap” →. 1440 #Search-In-Modal; 375/768 #Search-In-Modal-1. Enter yok."
   },
-  "missingStates": [],
-  "interactionNote": "Fill viewport-özel. Enter/submit yok."
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "filled",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "changed",
+      "sebep": "Tek sorgu; chair 0-sonuç sayfa karesi ayrı leftover"
+    }
+  ],
+  "interactionNote": "Fill viewport-özel (Craft tersi). Enter/submit yok.",
+  "capture": {
+    "url": "https://theme-spotlight-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:35:32.686Z"
+  }
 }
