@@ -1,0 +1,142 @@
+{
+  "observationId": "highlight.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "highlight",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://highlight-theme.myshopify.com/",
+  "selector": "#site-cart-sidebar",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/highlight/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/highlight/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/highlight/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/highlight/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/highlight/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/highlight/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/highlight/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/highlight/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/highlight/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "#cart-open-button → #site-cart-sidebar. Boş: 0 PRODUCTS IN YOUR CART + CONTINUE BROWSING. Dolu: Writable sweatshirt S/Black $79. Qty input.number (plus yok). Checkout tıklanmadı.",
+  "delta": "GET /cart/clear Cloudflare 429 — boş hâl için ATC + Remove. Qty plus yok; input.qty fill.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://highlight-theme.myshopify.com/products/copy-of-reflective-sweatshirt",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2200,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--15101007397025__main button.product__add-to-cart[name='add']",
+      "capture": false,
+      "not": "Önce satır ekle — cookie kirliyse temizlenecek"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 1600,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#site-cart-sidebar a.remove",
+      "value": 1400,
+      "capture": false,
+      "not": "Satırı sil → boş drawer"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-open-button",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer (opener — drawer kapandıysa)"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://highlight-theme.myshopify.com/products/copy-of-reflective-sweatshirt",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2200,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--15101007397025__main button.product__add-to-cart[name='add']",
+      "capture": false,
+      "not": "S / Black $79"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1600,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC drawer açar"
+    },
+    {
+      "state": "changed",
+      "action": "fill",
+      "selector": "#site-cart-sidebar input.qty",
+      "value": "2",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "press",
+      "value": "Enter",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1600,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "qty 1→2 · $79→$158 beklenir"
+    }
+  ],
+  "stateFindings": {
+    "initial": "0 PRODUCTS IN YOUR CART + CONTINUE BROWSING.",
+    "filled": "1 PRODUCT IN YOUR CART. Writable sweatshirt (S / Black) $79.00. Total $79.00. VIEW CART + CHECKOUT (tıklanmadı).",
+    "changed": "2 PRODUCTS. Satır $158.00. 2021 PROMO -$31.60. Total $126.40. Qty kutusu 2."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout / Order instructions PII dur. GET /cart/clear kullanılmadı (CF). Qty plus yok.",
+  "capture": {
+    "url": "https://highlight-theme.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:21:35.993Z"
+  }
+}
