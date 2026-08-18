@@ -1,0 +1,91 @@
+{
+  "observationId": "awaken.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "awaken",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://awaken-store-newdemo.myshopify.com/products/the-devil-s-kiss",
+  "selector": "#shopify-section-template--15964882632750__main_product",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/awaken/default/product-detail/product-info-main.changed.size-50ml.1440.png",
+    "evidence/awaken/default/product-detail/product-info-main.changed.size-50ml.375.png",
+    "evidence/awaken/default/product-detail/product-info-main.changed.size-50ml.768.png",
+    "evidence/awaken/default/product-detail/product-info-main.initial.size-30ml.1440.png",
+    "evidence/awaken/default/product-detail/product-info-main.initial.size-30ml.375.png",
+    "evidence/awaken/default/product-detail/product-info-main.initial.size-30ml.768.png"
+  ],
+  "notlar": "The Devil’s Kiss. $239 / Regular $339. Size 30ml $239 · 50ml $259 · 100ml $299. Qty + Add to cart + Buy it now. DESCRIPTION / FRAGRANCE NOTES. Breadcrumb Home.",
+  "delta": "XO xo-main-product. Buy it now tıklanmadı. Sticky ATC leftover.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://awaken-store-newdemo.myshopify.com/products/the-devil-s-kiss",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "20% popup Close geniş — dismiss atlar"
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15964882632750__main_product label.xo-field-toggle[aria-label='30ml']",
+      "capture": true,
+      "etiket": "size-30ml",
+      "not": "Varsayılan Size 30ml $239"
+    },
+    {
+      "state": "changed",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15964882632750__main_product label.xo-field-toggle[aria-label='50ml']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--15964882632750__main_product label.xo-field-toggle[aria-label='50ml']",
+      "value": 2000,
+      "capture": true,
+      "etiket": "size-50ml",
+      "not": "Size 50ml $259 — scoped aria; scrollIntoView sonra tık"
+    }
+  ],
+  "stateFindings": {
+    "initial": "The Devil’s Kiss. Size 30ml seçili $239 / Regular $339. 50ml / 100ml. Qty 1. 375: xo-mobile-dock (Home/Menu/Search/Cart/Account) buy box üstünde. 1440: Buy it now + çanta ATC. DESCRIPTION Petal Veil + FRAGRANCE NOTES.",
+    "changed": "375: 50ml seçili $259 / Regular $359. 768/1440 resmi changed kare 30ml $239 kaldı (2. deneme; dosya neredeyse initial ile aynı). Yoklama 50ml → $259 çalıştı."
+  },
+  "missingStates": [],
+  "interactionNote": "Buy it now / checkout tıklanmadı. Sticky ATC leftover. 768/1440 Size 50ml resmi karede görünmedi — 3. deneme yok. 375 dock account dur.",
+  "capture": {
+    "url": "https://awaken-store-newdemo.myshopify.com/products/the-devil-s-kiss",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:02:56.026Z"
+  }
+}
