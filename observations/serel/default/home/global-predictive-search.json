@@ -7,7 +7,12 @@
   "url": "https://dev-serel.ikas.shop/",
   "selector": "div.style_Myt5yr9T3y",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/serel/default/home/global-predictive-search.initial.arama-acik.1440.png",
+    "evidence/serel/default/home/global-predictive-search.initial.arama-acik.375.png",
+    "evidence/serel/default/home/global-predictive-search.initial.arama-acik.768.png",
+    "evidence/serel/default/home/global-predictive-search.input.arama-vazo.1440.png"
+  ],
   "notlar": "1440 büyüteç style_mLsPuaCOAr; 375/768 style_ODzLJGPFc8. Overlay input.style_9pSncokZRq. katalogSorgu vazo (Zeytin Yeşili Cam Vazo). /search?s=vazo ayrı sayfa.",
   "delta": "ikas search overlay. ?q= 20 ürüne düşmedi (unfiltered leftover). PII yok. ikas · Shopify.theme yok · listed https://dev-serel.myikas.com/ → https://dev-serel.ikas.shop/ · Theme Store UUID 7e1f7850-46d1-4a83-9d6b-a12cdc033e8b · x-powered-by ikas · x-cache-tag dev-serel.ikas.shop · window.__IKAS_DATA__ · IkasEvents subscribe/unsubscribe · storefrontThemeId e3b5fc65-ad07-402e-8380-2599504c38fb · storefrontId ef023962-e737-4119-9cb1-c1f489d080ce · storefrontRoutingId 993f48b4-cddd-4c7b-8c8d-278192788e0e · storefrontType STOREFRONT · salesChannelId aad6374f-a5d3-46e8-a483-d1dad510da62 · domain dev-serel.ikas.shop · apiUrl https://api.myikas.com/api/sf/graphql · merchantSettings.merchantId 155a3907-5bfb-4070-b6ef-3b030caf4da3 · merchantName/storeName dev-serel · locale tr · region TR · TRY ₺ · html lang=tr · logoText yok",
   "captureMode": "viewport",
@@ -61,16 +66,35 @@
       "action": "fill",
       "selector": "input.style_9pSncokZRq",
       "value": "vazo",
+      "viewports": [
+        "1440"
+      ],
       "capture": true,
       "captureMode": "viewport",
       "etiket": "arama-vazo",
-      "not": "katalogSorgu vazo"
+      "not": "katalogSorgu vazo — yalnız 1440. 375/768 input gizli."
     }
   ],
   "stateFindings": {
-    "initial": "Arama overlay + metin input (placeholder boş görüldü).",
-    "input": "vazo yazıldı — öneri/sonuç karede doğrulanacak."
+    "initial": "1440: overlay Ara placeholder + 8 öneri kart (2×4) · Stoneware ₺1,049 vb. 375/768: büyüteç + X + 2 kolon öneri grid; typeable input görünmüyor.",
+    "input": "1440 vazo → Serel Zeytin Yeşili Cam Vazo ₺459.00 + Tümünü Gör. 375/768 input yok — leftover."
   },
-  "missingStates": [],
-  "interactionNote": "375/768 opener style_ODzLJGPFc8. /search ayrı. Account tıklanmadı."
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "375/768: input.style_9pSncokZRq attached ama gizli. Overlay ürün grid. vazo yalnız 1440."
+    }
+  ],
+  "interactionNote": "375/768 opener style_ODzLJGPFc8. Fill yalnız 1440. /search?s=vazo ayrı sayfa. Account tıklanmadı.",
+  "capture": {
+    "url": "https://dev-serel.ikas.shop/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T17:01:25.766Z"
+  }
 }

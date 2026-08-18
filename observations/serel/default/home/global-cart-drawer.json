@@ -7,7 +7,17 @@
   "url": "https://dev-serel.ikas.shop/",
   "selector": "div.style_po6dey2tLa",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/serel/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/serel/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/serel/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/serel/default/home/global-cart-drawer.filled.tabak-qty1.1440.png",
+    "evidence/serel/default/home/global-cart-drawer.filled.tabak-qty1.375.png",
+    "evidence/serel/default/home/global-cart-drawer.filled.tabak-qty1.768.png",
+    "evidence/serel/default/home/global-cart-drawer.initial.sepet-bos.1440.png",
+    "evidence/serel/default/home/global-cart-drawer.initial.sepet-bos.375.png",
+    "evidence/serel/default/home/global-cart-drawer.initial.sepet-bos.768.png"
+  ],
   "notlar": "Sağ modal Alışveriş Sepetim. /cart NOT_FOUND. Boş: ikon tık + forceOpen. Dolu: PDP Sepete Ekle → overlay--show. Qty + style_sIXvEhPK2F. Alışverişi Tamamla tıklanmadı.",
   "delta": "ikas cart overlay style_po6dey2tLa. /cart/add.js yok — UI div.style_Ne1PdIXGDb. Checkout dur. ikas · Shopify.theme yok · listed https://dev-serel.myikas.com/ → https://dev-serel.ikas.shop/ · Theme Store UUID 7e1f7850-46d1-4a83-9d6b-a12cdc033e8b · x-powered-by ikas · x-cache-tag dev-serel.ikas.shop · window.__IKAS_DATA__ · IkasEvents subscribe/unsubscribe · storefrontThemeId e3b5fc65-ad07-402e-8380-2599504c38fb · storefrontId ef023962-e737-4119-9cb1-c1f489d080ce · storefrontRoutingId 993f48b4-cddd-4c7b-8c8d-278192788e0e · storefrontType STOREFRONT · salesChannelId aad6374f-a5d3-46e8-a483-d1dad510da62 · domain dev-serel.ikas.shop · apiUrl https://api.myikas.com/api/sf/graphql · merchantSettings.merchantId 155a3907-5bfb-4070-b6ef-3b030caf4da3 · merchantName/storeName dev-serel · locale tr · region TR · TRY ₺ · html lang=tr · logoText yok",
   "captureMode": "viewport",
@@ -33,8 +43,22 @@
       "state": "initial",
       "action": "click",
       "selector": "div.style_pEmvg8BI0i",
+      "viewports": [
+        "1440"
+      ],
       "capture": false,
-      "not": "Sepet ikon (rozet 0)"
+      "not": "Masaüstü sepet ikon (rozet 0). 375/768 0×0 — görünür değil."
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "div.style_zwZQEZXSFG",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false,
+      "not": "Mobil sepet rozet 0 (36×36). style_pEmvg8BI0i gizli."
     },
     {
       "state": "initial",
@@ -90,10 +114,21 @@
     }
   ],
   "stateFindings": {
-    "initial": "Alışveriş Sepetim boş (veya 0). Sağ overlay.",
-    "filled": "1 satır Serel Stoneware Servis Tabağı Seti · qty 1 · satır ₺1,029.00 (PDP list ₺1,049.00) · 20$ Discount for 350$ −₺20 · Toplam ₺1,029.00 · Alışverişi Tamamla.",
-    "changed": "Qty + tık — adet/toplam değişimi karede doğrulanacak."
+    "initial": "Alışveriş Sepetim (0) · çanta ikonu · Sepetinizde Ürün Bulunmamaktadır. · Alışverişe Başla. 1440 sağ modal; 768 sağ overlay; 375 tam yükseklik panel.",
+    "filled": "Alışveriş Sepetim (1) · Serel Stoneware Servis Tabağı Seti · qty 1 · satır ₺1,029.00 (PDP list ₺1,049.00) · 20$ Discount for 350$ ₺ −20.00 · Toplam ₺1,029.00 · Alışverişi Tamamla.",
+    "changed": "Qty + → (2) · satır ₺1,039.00 · Toplam ₺2,078.00 · aynı 20$ Discount satırı. 375/768/1440 aynı adet/toplam."
   },
   "missingStates": [],
-  "interactionNote": "Alışverişi Tamamla / checkout tıklanmadı. /cart 404 leftover. ATC CSS div.style_Ne1PdIXGDb."
+  "interactionNote": "Alışverişi Tamamla tıklanmadı. /cart 404 leftover. 1440 opener style_pEmvg8BI0i; 375/768 style_zwZQEZXSFG. ATC div.style_Ne1PdIXGDb.",
+  "capture": {
+    "url": "https://dev-serel.ikas.shop/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T17:07:57.270Z"
+  }
 }

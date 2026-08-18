@@ -96,6 +96,14 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: serel-search-mobile-input-hidden  
+Gerekçe: 375/768 arama overlay ürün grid (büyüteç + X). `input.style_9pSncokZRq` attached ama gizli. `vazo` yalnız 1440 (Zeytin Yeşili Cam Vazo ₺459 + Tümünü Gör).  
+Örnekler: home search overlay  
+Öneri: leftover — mobil input yok  
+Karar: onay bekliyor
+
+---
+
 ADAY: serel-blog-empty  
 Gerekçe: `/blog` BLOG_INDEX, başlık “Blog Başlığı”, `blogListesi.count` 0, yazı href yok.  
 Örnekler: https://dev-serel.ikas.shop/blog  
@@ -132,6 +140,14 @@ ADAY: serel-no-collection-banner
 Gerekçe: PLP’de koleksiyon hero/banner yok; yalnız sayaç + sort + grid.  
 Örnekler: https://dev-serel.ikas.shop/dekorasyon  
 Öneri: leftover  
+Karar: onay bekliyor
+
+---
+
+ADAY: serel-plp-mobile-filters  
+Gerekçe: 375 PLP’de **Filtreler** butonu (1440’ta Sütun). Filtre drawer açılmadı.  
+Örnekler: `/dekorasyon` 375  
+Öneri: leftover — interact yok  
 Karar: onay bekliyor
 
 ---
@@ -188,6 +204,14 @@ ADAY: serel-hashed-studio-classes
 Gerekçe: Semantic `section.hero` yok. Sınırlar `div.style_*` + `[data-critical][id]`.  
 Örnekler: home  
 Öneri: leftover — Studio DOM  
+Karar: onay bekliyor
+
+---
+
+ADAY: serel-footer-your-logo  
+Gerekçe: Footer karesinde **YOUR LOGO** + lorem; header **SEREL**. Newsletter formu yok.  
+Örnekler: home footer  
+Öneri: leftover — demo placeholder  
 Karar: onay bekliyor
 
 ---

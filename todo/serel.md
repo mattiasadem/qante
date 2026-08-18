@@ -25,7 +25,7 @@ locale `tr` · region `TR` · `TRY` ₺ · `html lang=tr`
 `logoText` yok  
 `theme_store_id` = **7e1f7850-46d1-4a83-9d6b-a12cdc033e8b** (Theme Store UUID; storefront JSON’da Shopify id yok)
 
-**Durum:** Mod A walk yazıldı · resmi 3vp + interact sırada  
+**Durum:** Mod A walk + resmi 3vp + interact yazıldı  
 **PR:** draft — **main'e merge yok**
 
 ---
@@ -38,11 +38,11 @@ locale `tr` · region `TR` · `TRY` ₺ · `html lang=tr`
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **18** |
-| PNG | pending official 3vp + interact |
+| PNG | **61** |
 | Parallel | yalnız `observations/serel/`, `evidence/serel/`, `todo/serel.md`, `candidates/serel-leftovers.md` |
 
 **Kapsam satırı:**  
-`Serel · default · ikas Studio · theme_store_id 7e1f7850-46d1-4a83-9d6b-a12cdc033e8b · listed dev-serel.myikas.com → live dev-serel.ikas.shop · home→PDP Stoneware Tabağı (seçenek yok)→PLP /dekorasyon→search ?s=vazo→cart overlay empty/filled/qty→contact /pages/iletisim→FAQ /pages/sss→blog boş→404 · about yok · 18 obs · 0 yeni şema · leftover: candidates/serel-leftovers.md`
+`Serel · default · ikas Studio · theme_store_id 7e1f7850-46d1-4a83-9d6b-a12cdc033e8b · listed dev-serel.myikas.com → live dev-serel.ikas.shop · home→PDP Stoneware Tabağı (seçenek yok)→PLP /dekorasyon→search ?s=vazo→cart overlay empty/filled/qty→contact /pages/iletisim→FAQ /pages/sss→blog boş→404 · about yok · 18 obs · 61 PNG · 0 yeni şema · leftover: candidates/serel-leftovers.md`
 
 ---
 
@@ -50,21 +50,21 @@ locale `tr` · region `TR` · `TRY` ₺ · `html lang=tr`
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announce→footer) | obs | pending capture |
-| Desktop nav (Anasayfa dropdown, mega yok) | interact adımları | pending |
-| Predictive search `vazo` | interact adımları | pending |
-| Mobile menu 375 | interact adımları | pending |
-| Mobile menu 768 | interact adımları | pending |
-| Cart overlay empty + filled + qty | interact adımları | pending |
-| PDP Stoneware Tabağı (seçenek yok) | interact initial | pending |
-| PLP `/dekorasyon` | obs | pending |
-| Search `/search?s=vazo` | obs | pending |
+| Home roster (announce→footer) | obs | 3vp |
+| Desktop nav (Anasayfa dropdown, mega yok) | interact | initial 3vp + open 1440 |
+| Predictive search `vazo` | interact | initial 3vp + input 1440 (mobil input leftover) |
+| Mobile menu 375 | interact | open 375 |
+| Mobile menu 768 | interact | open 768 |
+| Cart overlay empty + filled + qty | interact | empty/filled/changed 3vp |
+| PDP Stoneware Tabağı (seçenek yok) | obs initial | 3vp · changed leftover |
+| PLP `/dekorasyon` | obs | 3vp · 375 Filtreler leftover |
+| Search `/search?s=vazo` | obs | 3vp |
 | Cart page `/cart` | ⛔ NOT_FOUND | leftover |
 | About | ⛔ 404 | leftover |
-| Contact `/pages/iletisim` | obs | pending |
-| FAQ `/pages/sss` | obs | pending |
-| Blog `/blog` (boş) | obs | pending |
-| 404 | obs | pending |
+| Contact `/pages/iletisim` | obs | 3vp · GÖNDER dur |
+| FAQ `/pages/sss` | obs | 3vp |
+| Blog `/blog` (boş) | obs | 3vp |
+| 404 | obs | 3vp |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -88,15 +88,15 @@ locale `tr` · region `TR` · `TRY` ₺ · `html lang=tr`
 
 ---
 
-## Interact (beklenen)
+## Interact (karede)
 
 | Bileşen | State | Not |
 |---|---|---|
-| navigation-header-mega | initial + open | 1440 Anasayfa hover — 2 satır Anasayfa |
-| global-predictive-search | initial + input | `vazo` |
-| global-menu-drawer | open | 375/768 hamburger |
-| global-cart-drawer | empty/filled/qty | ATC `div.style_Ne1PdIXGDb` · qty `style_sIXvEhPK2F` |
-| product-info-main | initial | changed yok — swatch yok |
+| navigation-header-mega | initial + open | 1440 Anasayfa: 2 satır Anasayfa, mega yok |
+| global-predictive-search | initial + input | 1440 `vazo` → vazo ₺459; 375/768 input gizli |
+| global-menu-drawer | open | 375/768 hamburger · Üye Ol / Giriş Yap dur |
+| global-cart-drawer | empty/filled/qty | boş (0) · qty1 ₺1,029 · qty2 Toplam ₺2,078 |
+| product-info-main | initial | swatch yok — changed leftover |
 
 ---
 
@@ -108,7 +108,7 @@ locale `tr` · region `TR` · `TRY` ₺ · `html lang=tr`
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact header / search / cart / menu / PDP
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate` — expect 0 error
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact header / search / cart / menu / PDP
+- [x] PNG bak → stateFindings
+- [x] `npm run validate` — expect 0 error
