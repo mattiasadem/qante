@@ -36,6 +36,7 @@
 | Lookbook hotspot / Shop the look tık | `shop_the_look_*` envanterde; overlay leftover |
 | Choose options / quick-add | Kart overlay. Interact listesinde yok |
 | Mobile submenu `changed` | 375/768 Shop chevron; alt menü açılmadı |
+| Cart page free-ship bar | qty 2 / $292 iken hâlâ “$54.00 away”; drawer “qualifies” |
 | PLP filtre / sort | Kidswear 71 — interact zorunlu değil |
 | `/collections/all-products` | Aynı PLP şablonu (`childwear` çekildi) |
 | `/collections/all` | 200; merchandised PLP = childwear |
@@ -58,8 +59,10 @@
 
 ## Interact notları
 
-- Shop mega: `a.submenu__link.submenu__parent-item[href='/collections/all-products']` hover 1440. Tıklama `/collections/all-products`'a kaçar.
-- Predictive: opener `a.header__button--search[data-action=show-predictive-search-drawer]`. Input `#search-input--sections--20338290458789__predictive-search-drawer`. katalog `jacket`.
-- Cart: `a.cart-button[data-action=show-cart-drawer]` → `dialog[data-fluco-dialog=cartDrawer]`. ATC UI / `/cart/add.js` fallback. Checkout tıklanmadı.
-- 1440 hamburger 0px. 375/768 `label.navigation__control`. Account dur.
+- Shop mega: `li.submenu__item--primary.submenu__item--parent:has(a[href=/collections/all-products])` hover 1440. Çıplak `<a>` hover parent li pointer-events kesti. Tıklama `/collections/all-products`'a kaçar.
+- Predictive: opener `a.header__button--search[data-action=show-predictive-search-drawer]`. Input `#search-input--sections--20338290458789__predictive-search-drawer`. katalog `jacket` → Eclipse/Lilac/Stripe/Koenig + View all (tıklanmadı).
+- Cart drawer: `a.cart-button[data-action=show-cart-drawer]` → `dialog[data-fluco-dialog=cartDrawer]`. ATC UI. qty1 $146 / $54 to free-ship → qty2 $292 qualifies. Checkout tıklanmadı.
+- Cart sayfa: aynı qty 1→2 / $146→$292. Free-ship bar qty2'de hâlâ $54 away (drawer güncellendi).
+- 1440 hamburger 0px. 375/768 `label.navigation__control` → Shop / Our Company / Community + Sign in (dur).
 - PDP: Size `select#option1` Small→Large. $146 aynı. Color sibling URL değiştirir — kullanılmadı.
+- Nav etiketleri canlıda Shop / Our Company / **Community** (DOM'da Learn More footer'da).

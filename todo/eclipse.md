@@ -11,8 +11,8 @@
 `theme_store_id` = **null** (canlıda yok; uydurulmadı)  
 `Shopify.shop` = `eclipse-theme-ripple.myshopify.com`
 
-**Durum:** Mod A walk + resmi 3vp + interact — yazıldı, capture sürüyor  
-**PR:** draft · **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti** (0 error)  
+**PR:** draft https://github.com/mattiasadem/qante/pull/186 · **main'e merge yok**
 
 ---
 
@@ -24,11 +24,11 @@
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **44** |
-| PNG | (capture sonrası) |
+| PNG | **150** |
 | Parallel | yalnız `observations/eclipse/`, `evidence/eclipse/`, `todo/eclipse.md`, `candidates/eclipse-leftovers.md` |
 
 **Kapsam satırı:**  
-`Eclipse · default (Ripple) · ripple-v5-1-2 · schema_name Eclipse 5.1.2 · theme_store_id null · home→PDP Eclipse Jacket→PLP childwear→collections→search jacket→cart→about-us/contact→news+flagship→404 · 44 obs · PNG TBD · 0 yeni şema · leftover: candidates/eclipse-leftovers.md`
+`Eclipse · default (Ripple) · ripple-v5-1-2 · schema_name Eclipse 5.1.2 · theme_store_id null · home→PDP Eclipse Jacket→PLP childwear→collections→search jacket→cart→about-us/contact→news+flagship→404 · 44 obs · 150 PNG · 0 yeni şema · leftover: candidates/eclipse-leftovers.md`
 
 ---
 
@@ -36,21 +36,21 @@
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | roster + obs | capture |
-| Mega Shop 1440 | interact | pending |
-| Predictive search `jacket` | interact 3vp | pending |
-| Mobile menu 375 | interact | pending |
-| Mobile menu 768 | interact | pending |
-| Cart drawer empty + filled + qty | interact 3vp | pending |
-| PDP Eclipse Jacket Size Small→Large | interact 3vp | pending |
-| PLP `/collections/childwear` | roster + obs | capture |
-| Collections index `/collections` | roster + obs | capture |
-| Search `/search?q=jacket` | roster + obs | capture |
-| Cart page empty + filled + qty | interact 3vp | pending |
-| About `/pages/about-us` | roster + obs | capture |
-| Contact `/pages/contact` (submit yok) | roster + obs | capture |
-| News + Flagship Store Open | roster + obs | capture |
-| 404 leftover | roster + obs | capture |
+| Home roster (announcement→footer) | roster + obs | [x] |
+| Mega Shop 1440 | interact | [x] |
+| Predictive search `jacket` | interact 3vp | [x] |
+| Mobile menu 375 | interact | [x] |
+| Mobile menu 768 | interact | [x] |
+| Cart drawer empty + filled + qty | interact 3vp | [x] $146→$292 · free-ship qualifies |
+| PDP Eclipse Jacket Size Small→Large | interact 3vp | [x] $146 aynı |
+| PLP `/collections/childwear` | roster + obs | [x] |
+| Collections index `/collections` | roster + obs | [x] |
+| Search `/search?q=jacket` | roster + obs | [x] |
+| Cart page empty + filled + qty | interact 3vp | [x] qty2 $292 · bar $54 leftover |
+| About `/pages/about-us` | roster + obs | [x] |
+| Contact `/pages/contact` (submit yok) | roster + obs | [x] |
+| News + Flagship Store Open | roster + obs | [x] |
+| 404 leftover | roster + obs | [x] |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -87,7 +87,7 @@
 | 26 | blog_posts | `blog-list-main` | reuse |
 | 27 | newsletter_qwJNXV | `lead-capture-newsletter-band` | reuse · submit yok |
 | 28 | footer | `footer-columns-newsletter` | reuse · submit yok |
-| 29 | label.navigation__control | `global-menu-drawer` | reuse · 375/768 |
+| 29 | label.navigation__control | `global-menu-drawer` | reuse · 375/768 Shop/Our Company/Community |
 
 ---
 
@@ -95,12 +95,12 @@
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | open | pending 1440 Shop hover |
-| global-predictive-search | input | pending `jacket` |
-| global-menu-drawer | open | pending 375+768 |
-| global-cart-drawer | filled + changed | pending |
-| cart-page-main | filled + changed | pending |
-| product-info-main | changed | Size Small→Large $146 |
+| navigation-header-mega | open | [x] 1440 Shop lime pill + 4 kolon mega |
+| global-predictive-search | input | [x] `jacket` — Eclipse/Lilac/Stripe/Koenig + View all |
+| global-menu-drawer | open | [x] 375+768 Shop/Our Company/Community. Sign in dur |
+| global-cart-drawer | filled + changed | [x] $146 → $292 · qualifies free shipping |
+| cart-page-main | filled + changed | [x] qty2 $292 · bar hâlâ $54 |
+| product-info-main | changed | [x] Size Small→Large $146 |
 
 ---
 
@@ -112,7 +112,7 @@
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact mega / search / menu / cart / PDP Size
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate` — hedef 0 error
+- [x] Official 3vp static (`capture-observation.mjs`) — 114 PNG
+- [x] Interact mega / search / menu / cart / PDP Size — 36 PNG
+- [x] PNG bak → stateFindings
+- [x] `npm run validate` — 0 error
