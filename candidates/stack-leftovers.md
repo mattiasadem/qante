@@ -20,7 +20,8 @@
 | `/blogs/blog`, `/blogs/journal` | 404. Blog = `/blogs/news`. |
 | `/pages/features` | Tema satış (5 presets, countdown, cart drawer… reklam). Walk dışı leftover. |
 | Header **Contact** | `/pages/contact` — sayfa envanter; header tık yok. |
-| Header Account | Yok / dur. |
+| Header Account (kişilik ikon) | 1440 + 375 görüldü — tıklanmadı. |
+| Header ay / dark mode | leftover. |
 | Announcement Country/region + Language | leftover. Footer locale aynı. |
 | Newsletter Subscribe / contact Send | PII — dur. |
 | Checkout / CartDrawer Checkout / Buy it now | dur. |
@@ -55,8 +56,9 @@
 
 ## Interact notları
 
-- Mega: `a.header__menu-item[aria-label='Equipment']` hover 1440. Tıklama `/collections/all` kaçar.
-- Predictive: katalog `bike`. 1440 `a.header__input-opener--wrapper` + `#Search-In-Modal-primary`. 375/768 `a.header__icon--search.multi-row` + `#Search-In-Modal-icons`.
-- 375 **ve** 768 hamburger 24×24. 1440 hamburger 0×0.
-- Cart drawer `#CartDrawer`. ATC Indoor Cycling Bike Black $849. Qty `button.quantity__button[name=plus]`.
-- PDP Color `label.color-swatch[for=template--20149681553591__main-product-1-1-8552502689975]` Gray.
+- Mega: `a.header__menu-item[aria-label='Equipment']` hover 1440. 4 kolon (Cardio / Weights / Essentials / Storage) + Lift Without Limits Up to 30%. Tıklama `/collections/all` kaçar.
+- Predictive: katalog `bike`. Boş overlay: Suggestions + Take Control / Lift Without Limits. Input: Products/Articles + Spin Bike $995 + Indoor Cycling Bike $849. 1440 `#Search-In-Modal-primary`; 375/768 `#Search-In-Modal-icons`.
+- 375 **ve** 768 hamburger 24×24. Drawer: Equipment chevron / News / About / Features + Contact + locale. 1440 hamburger 0×0.
+- Cart drawer `#CartDrawer`. ATC UI drawer açar. Empty: $100 away + Categories. Filled Indoor Cycling Bike Black $849 qty1; plus → qty2 $1,698. 375/768 ikon tıklanmadı (overlay dışı). Checkout tıklanmadı.
+- Cart sayfa: empty Shop Now → qty1 $849 → qty2 $1,698.
+- PDP Color `label.color-swatch[for=template--20149681553591__main-product-1-1-8552502689975]` Gray. Black In Stock → Gray Low Stock; $849 aynı.

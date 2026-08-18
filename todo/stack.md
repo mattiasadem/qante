@@ -14,8 +14,8 @@
 **Beklenen vs canlı:** Theme Store listing Stack. Canlı Mass demo **Stack 1.0.2** ve `theme_store_id` **null**. null yazıldı.  
 **Diğer preset:** Workbench / Gardenia / Setup / Lager **bu PR’de yok**.
 
-**Durum:** Mod A walk + observation JSON yazıldı; resmi 3vp + interact **sırada**  
-**PR:** draft — **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti** (0 error)  
+**PR:** draft https://github.com/mattiasadem/qante/pull/185 — **main'e merge yok**
 
 ---
 
@@ -27,11 +27,11 @@
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **39** |
-| PNG | — (capture öncesi) |
+| PNG | **135** |
 | Parallel | yalnız `observations/stack/`, `evidence/stack/`, `todo/stack.md`, `candidates/stack-leftovers.md` |
 
 **Kapsam satırı:**  
-`Stack · default (Mass) · retailer/mass · schema_name Stack 1.0.2 · theme_store_id null · home→PDP Indoor Cycling Bike→PLP /collections/cardio→collections→search bike→cart→about/contact→FAQ→blog→404 · 39 obs · 0 yeni şema · leftover: candidates/stack-leftovers.md`
+`Stack · default (Mass) · retailer/mass · schema_name Stack 1.0.2 · theme_store_id null · home→PDP Indoor Cycling Bike→PLP /collections/cardio→collections→search bike→cart→about/contact→FAQ→blog→404 · 39 obs · 135 PNG · 0 yeni şema · leftover: candidates/stack-leftovers.md`
 
 ---
 
@@ -39,21 +39,21 @@
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | roster + JSON | [ ] capture |
-| Mega Equipment 1440 | JSON | [ ] interact |
-| Predictive search `bike` | JSON | [ ] interact 3vp |
-| Mobile menu 375 + 768 | JSON | [ ] interact |
-| Cart drawer empty + filled + qty | JSON | [ ] interact 3vp |
-| PDP Indoor Cycling Bike Black→Gray | JSON | [ ] interact 3vp |
-| PLP `/collections/cardio` | roster + JSON | [ ] capture |
-| Collections index `/collections` | roster + JSON | [ ] capture |
-| Search `/search?q=bike` | roster + JSON | [ ] capture |
-| Cart page empty + filled + qty | JSON | [ ] interact 3vp |
-| About `/pages/about` (`/pages/about-us` 404) | roster + JSON | [ ] capture |
-| Contact `/pages/contact` (submit yok) | roster + JSON | [ ] capture |
-| FAQ `/pages/faq` | roster + JSON | [ ] capture |
-| News + article | roster + JSON | [ ] capture |
-| 404 | roster + JSON | [ ] capture |
+| Home roster (announcement→footer) | roster + capture | [x] |
+| Mega Equipment 1440 | interact | [x] |
+| Predictive search `bike` | interact 3vp | [x] |
+| Mobile menu 375 + 768 | interact | [x] |
+| Cart drawer empty + filled + qty | interact 3vp | [x] |
+| PDP Indoor Cycling Bike Black→Gray | interact 3vp | [x] |
+| PLP `/collections/cardio` | roster + capture | [x] |
+| Collections index `/collections` | roster + capture | [x] |
+| Search `/search?q=bike` | roster + capture | [x] |
+| Cart page empty + filled + qty | interact 3vp | [x] |
+| About `/pages/about` (`/pages/about-us` 404) | roster + capture | [x] |
+| Contact `/pages/contact` (submit yok) | roster + capture | [x] |
+| FAQ `/pages/faq` | roster + capture | [x] |
+| News + article | roster + capture | [x] |
+| 404 | roster + capture | [x] |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 | Workbench / Gardenia / Setup / Lager | ⛔ walk dışı | — |
 
@@ -88,7 +88,7 @@
 
 | # | id | sayfa | Screenshot | Not | JSON | Done |
 |---|---|---|---|---|---|---|
-| 1–39 | reuse set | walk | [ ] | [x] | reuse | [ ] |
+| 1–39 | reuse set | walk | [x] | [x] | reuse | [x] |
 
 ---
 
@@ -96,12 +96,12 @@
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | open | [ ] 1440 Equipment hover |
-| global-predictive-search | input | [ ] 3vp `bike` |
-| global-menu-drawer | open | [ ] 375 + 768 hamburger |
-| global-cart-drawer | filled + changed | [ ] empty + Indoor Cycling Bike + qty |
-| cart-page-main | filled + changed | [ ] empty + filled + qty |
-| product-info-main | changed | [ ] Black → Gray |
+| navigation-header-mega | open | [x] 1440 Equipment — 4 kolon + Lift Without Limits Up to 30% |
+| global-predictive-search | input | [x] 3vp `bike` — Spin Bike $995 / Indoor Cycling Bike $849 + Products/Articles |
+| global-menu-drawer | open | [x] 375 + 768 hamburger — Equipment chevron / News / About / Features |
+| global-cart-drawer | filled + changed | [x] empty $100 away → qty1 $849 → qty2 $1,698 |
+| cart-page-main | filled + changed | [x] empty → qty1 $849 → qty2 $1,698 |
+| product-info-main | changed | [x] Black In Stock → Gray Low Stock; $849 aynı |
 
 ---
 
@@ -113,7 +113,7 @@
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact mega / search / cart / menu / PDP Color
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate` — 0 error
+- [x] Official 3vp static (`capture-observation.mjs`) — 33/33
+- [x] Interact mega / search / cart / menu / PDP Color — 36 PNG
+- [x] PNG bak → stateFindings
+- [x] `npm run validate` — 0 error
