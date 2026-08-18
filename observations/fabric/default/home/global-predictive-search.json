@@ -1,0 +1,87 @@
+{
+  "observationId": "fabric.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "fabric",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-fabric-demo.myshopify.com/",
+  "selector": "dialog.search-modal__content",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "dialog-component#search-modal + predictive-search-component. Input #cmdk-input. Katalog: tefnut.",
+  "delta": "Horizon cmdk search. 375 opener search-action--hidden-on-menu; 768/1440 hidden-on-drawer.",
+  "captureMode": "viewport",
+  "prepareClick": "search-button.search-action--hidden-on-drawer button[aria-label='Search']",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-fabric-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "search-button.search-action--hidden-on-menu button[aria-label='Search']",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "375 Search"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "search-button.search-action--hidden-on-drawer button[aria-label='Search']",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "768/1440 Search"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#cmdk-input",
+      "value": "tefnut",
+      "capture": false,
+      "not": "katalog: tefnut (7 sonuç sayfa)"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "#cmdk-input",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "tefnut",
+      "not": "Öneri/ürün listesi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "input": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Enter/submit yok. PII yok."
+}

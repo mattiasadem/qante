@@ -1,0 +1,59 @@
+{
+  "observationId": "fabric.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "fabric",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-fabric-demo.myshopify.com/",
+  "selector": "#header-component",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "1440/768: logo Fabric + Womenswear + Menswear + Home + Search + Cart. 375: hamburger + Search + logo + Cart. Mega panel var.",
+  "delta": "Shopify.theme: name **Updated copy of Fabric demo store 3.2.0** · schema_name **Fabric** · schema_version **3.4.0** · theme_store_id **3622** · role main · id 145077665845 · shop se-horizon5-en-624k.myshopify.com. Horizon header + mega-menu__grid. Womenswear hover: kolon linkler + koleksiyon kartları. Account/login tıklanmadı. Section wrapper home’da h=0 — #header-component 66px.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-fabric-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "header-menu a.menu-list__link[href='/collections/womenswear-children-only']",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mega-womenswear",
+      "not": "Womenswear mega — kolon + kart"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "open": ""
+  },
+  "missingStates": [],
+  "interactionNote": "768 hamburger 0px — desktop Womenswear/Menswear/Home. 375 hamburger ayrı global-menu-drawer. Account tıklanmadı."
+}

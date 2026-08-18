@@ -1,0 +1,100 @@
+{
+  "observationId": "fabric.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "fabric",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-fabric-demo.myshopify.com/",
+  "selector": "dialog.cart-drawer__dialog",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Horizon cart-drawer-component. Boş: Your cart is empty.",
+  "delta": "/cart ayrı sayfa (cart-page-main). Checkout/login tıklanmadı.",
+  "captureMode": "viewport",
+  "prepareClick": "header button[aria-label='Cart']",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-fabric-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header button[aria-label='Cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-fabric-demo.myshopify.com/products/tefnut-beach-vest-in-black",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add']",
+      "capture": false,
+      "not": "ATC UI; fallback /cart/add.js"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "header button[aria-label='Cart']",
+      "capture": false,
+      "not": "ATC sonrası drawer"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "dialog.cart-drawer__dialog button.quantity-plus, dialog.cart-drawer__dialog button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "filled": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout/login tıklanmadı."
+}

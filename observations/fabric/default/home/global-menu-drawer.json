@@ -1,0 +1,54 @@
+{
+  "observationId": "fabric.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "fabric",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-fabric-demo.myshopify.com/",
+  "selector": "#Details-menu-drawer-container",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "375 hamburger. Womenswear / Menswear / Home + child linkler.",
+  "delta": "Horizon header-drawer. 768 hamburger 0px — leftover.",
+  "captureMode": "viewport",
+  "prepareClick": "header summary.header__icon--menu[aria-label='Menu']",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://theme-fabric-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header summary.header__icon--menu[aria-label='Menu']",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "375 drawer"
+    }
+  ],
+  "stateFindings": {
+    "open": ""
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "768 hamburger 0px — desktop nav. 1440 hamburger yok. Denendi; open karesi yok."
+    }
+  ],
+  "interactionNote": "768/1440 N/A. Child koleksiyon link tıklanmadı."
+}
