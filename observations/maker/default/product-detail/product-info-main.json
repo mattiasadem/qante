@@ -1,0 +1,61 @@
+{
+  "observationId": "maker.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "maker",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://maker-theme-food.myshopify.com/products/empress-box-5-day-detox",
+  "selector": "#shopify-section-product",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "Empress 5-Day Detox Box $80.00. BOX + SIZE select.single-option-selector. ADD TO CART / BUY IT NOW. Uzun editorial + paylaş.",
+  "delta": "Maker #shopify-section-product. Buy it now leftover.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://maker-theme-food.myshopify.com/products/empress-box-5-day-detox",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".popup--root .popup--close",
+      "value": 400,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-product",
+      "capture": true,
+      "etiket": "mixed-box",
+      "not": "Varsayılan Mixed Box 5-Pack / 473ml"
+    },
+    {
+      "state": "changed",
+      "action": "select",
+      "selector": "#product-select-3026983875-option-0",
+      "value": "Green Goddess 5-Pack",
+      "capture": true,
+      "etiket": "green-goddess",
+      "not": "BOX → Green Goddess 5-Pack"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Mixed Box 5-Pack / 473ml seçili. $80.00. Add to cart.",
+    "changed": "BOX Green Goddess 5-Pack. Fiyat/görsel değişimi karede doğrulanacak."
+  },
+  "missingStates": [],
+  "interactionNote": "select.single-option-selector. Checkout yok."
+}

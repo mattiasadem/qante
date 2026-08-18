@@ -1,0 +1,106 @@
+{
+  "observationId": "maker.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "maker",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://maker-theme-food.myshopify.com/cart",
+  "selector": "main.layout--main-content",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Shopify-section yok. Boş: Your Cart + empty + continue shopping. İki .cart--root (biri h=0).",
+  "delta": "Maker template--cart. Drawer ayrı. Checkout tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://maker-theme-food.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".popup--root .popup--close",
+      "value": 400,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://maker-theme-food.myshopify.com/products/empress-box-5-day-detox",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": ".popup--root .popup--close",
+      "value": 400,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'], form[action*='/cart/add'] button[type='submit']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://maker-theme-food.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart sayfası"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "main .cart--root a.plus",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Plus qty 2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your Cart. Your cart is currently empty. Click here to continue shopping.",
+    "filled": "Empress satırı $80.00 qty 1 beklenir.",
+    "changed": "qty 2 / $160 beklenir."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı."
+}

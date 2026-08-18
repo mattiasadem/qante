@@ -1,0 +1,65 @@
+{
+  "observationId": "maker.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "maker",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://maker-theme-food.myshopify.com/",
+  "selector": ".search--root",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "Header SEARCH → tam ekran overlay data-view=modal. Placeholder Search store. Input name=q. katalogSorgu=empress.",
+  "delta": "FrameworkSearch. Ön yazımda ürün listesi görünmedi — leftover. /search sayfası ayrı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://maker-theme-food.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".popup--root .popup--close",
+      "value": 400,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header a[href='/search']",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Search store overlay"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input.search--textbox[name='q']",
+      "value": "empress",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-empress",
+      "not": "katalogSorgu empress"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Tam ekran beyaz overlay. Search store + X. Sonuç yok.",
+    "input": "Yazılan empress görünür. Ürün/öneri listesi yoklandı — karede kart yoksa leftover."
+  },
+  "missingStates": [],
+  "interactionNote": "Enter/submit yok. /search?q=empress ayrı observation."
+}

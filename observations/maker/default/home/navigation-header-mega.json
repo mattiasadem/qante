@@ -1,0 +1,58 @@
+{
+  "observationId": "maker.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "maker",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://maker-theme-food.myshopify.com/",
+  "selector": "header.layout--header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "1440: logo + HOME JUICES BOXES ABOUT BLOG + SEARCH ACCOUNT FOLLOW CART. Mega yok — düz <a>. 375/768 hamburger (svg.icon--menu). FOLLOW newsletter popup.",
+  "delta": "Mega panel yok. Shopify.theme name **Maker - current** · schema_name **Maker** · schema_version **5.2.0** · theme_store_id **null** · role main · id 74552705096 · shop maker-theme-food.myshopify.com 375/768 menü ayrı global-menu-drawer. Account/FOLLOW submit yok.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://maker-theme-food.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".popup--root .popup--close",
+      "value": 400,
+      "capture": false,
+      "not": "Newsletter popup kapat"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Kapalı header — mega yok"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Kapalı header. 1440 düz linkler HOME/JUICES/BOXES/ABOUT/BLOG + SEARCH/ACCOUNT/FOLLOW/CART. Mega kolon/promo yok. 375 logo + hamburger. 768 logo + cart rozet 0 + hamburger."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "Mega yok. JUICES düz /collections/empress-juice-collection. Hover panel yok."
+    }
+  ],
+  "interactionNote": "Mega yok — leftover. FOLLOW/Account tıklanmadı."
+}
