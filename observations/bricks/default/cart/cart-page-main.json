@@ -1,0 +1,124 @@
+{
+  "observationId": "bricks.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "bricks",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://bricks-theme-demo.myshopify.com/cart",
+  "selector": "#shopify-section-template--31401014591826__group",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/bricks/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/bricks/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/bricks/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/bricks/default/cart/cart-page-main.filled.dolu.1440.png",
+    "evidence/bricks/default/cart/cart-page-main.filled.dolu.375.png",
+    "evidence/bricks/default/cart/cart-page-main.filled.dolu.768.png",
+    "evidence/bricks/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/bricks/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/bricks/default/cart/cart-page-main.initial.sepet-bos.768.png"
+  ],
+  "notlar": "Boş: Your cart is empty + Start shopping. cart-section--empty.",
+  "delta": "Bricks cart-section group. Drawer ayrı. Checkout/login tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://bricks-theme-demo.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://bricks-theme-demo.myshopify.com/products/green-floral-puff-dress",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.button-v2--primary",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://bricks-theme-demo.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "dolu",
+      "not": "Dolu cart satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "cart-section .input-base__control--plus, .input-base__control--plus",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + Start shopping. Satır yok.",
+    "filled": "Your cart. Lovely Green Mini Dress · 2XS / Green · €39,90 (€59,90) · qty 1 · satır €39,90. Rozet 1. Spend €10.10 more… Total €39,90. Checkout tıklanmadı.",
+    "changed": "qty 2 · satır €79,80. Rozet 2. Free shipping unlocked. 2 items €119,80 · Discount −€40,00 · Total €79,80."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout / discount Apply / login tıklanmadı. addToCart → ui.",
+  "capture": {
+    "url": "https://bricks-theme-demo.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:40:20.711Z"
+  }
+}
