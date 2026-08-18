@@ -1,0 +1,130 @@
+{
+  "observationId": "market.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "market",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://dev-market.ikas.shop/",
+  "selector": ".m-cart-rail",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/market/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/market/default/home/global-cart-drawer.filled.dolu.1440.png",
+    "evidence/market/default/home/global-cart-drawer.initial.sepet-bos.1440.png"
+  ],
+  "notlar": "1440 sağ rail 360px. Boş: Sepetiniz / Sepetiniz boş / Lezzetli ürünleri keşfetmek için kategorilere göz atın. Dolu: Avokado ₺29.90 · 1 ürün · Ara Toplam/Toplam · Siparişi Tamamla. qty+ → 2 ürün · 2 × ₺29.90 · ₺59.80. Checkout tıklanmadı.",
+  "delta": "Drawer değil — kalıcı rail (.m-product-list__rail). 375/768 kutu 0×0 (DOM dolu). Sepeti Görüntüle DOM'da, görünür değil. /cart.js yok; ATC = modal CTA tık (addToCart action yok). pageType INDEX.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://dev-market.ikas.shop/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "sepet-bos",
+      "not": "Boş rail — yalnız 1440 görünür"
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": ".m-product-card:has-text(\"Avokado\") .m-product-card__add",
+      "capture": false,
+      "not": "Avokado + → modal"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": ".m-product-modal__cta",
+      "capture": false,
+      "not": "Sepete Ekle · 29,90 TL — /cart/add.js yok"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "dolu",
+      "not": "Rail 1 ürün Avokado"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".m-cart-rail .m-stepper__btn--plus",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 800,
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "qty 2 · ₺59.80"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440: Sepetiniz + sepet ikonu + Sepetiniz boş + kategorilere göz atın.",
+    "filled": "1440: 1 ürün · Avokado ₺29.90 qty 1 · Ara Toplam ₺29.90 · Toplam 29,90 ₺ · Siparişi Tamamla • 29,90 ₺ (tıklanmadı).",
+    "changed": "1440: 2 ürün · 2 × ₺29.90 qty 2 · Ara Toplam ₺59.80 · Toplam 59,80 ₺ · Siparişi Tamamla • 59,80 ₺."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "375/768 rail 0×0 — kare yalnız 1440; mobil = cart-page-main"
+    },
+    {
+      "state": "filled",
+      "sebep": "375/768 rail 0×0"
+    },
+    {
+      "state": "changed",
+      "sebep": "375/768 rail 0×0"
+    }
+  ],
+  "interactionNote": "375/768 adımlar viewports 1440. Mobil sepet = /cart. Siparişi Tamamla tıklanmadı.",
+  "capture": {
+    "url": "https://dev-market.ikas.shop/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:29:45.667Z"
+  }
+}
