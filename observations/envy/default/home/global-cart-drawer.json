@@ -1,0 +1,101 @@
+{
+  "observationId": "envy.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "envy",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://eight-boho-demo.myshopify.com/",
+  "selector": "cart-drawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/envy/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/envy/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/envy/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/envy/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/envy/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/envy/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/envy/default/home/global-cart-drawer.initial.sepet-bos.1440.png",
+    "evidence/envy/default/home/global-cart-drawer.initial.sepet-bos.375.png",
+    "evidence/envy/default/home/global-cart-drawer.initial.sepet-bos.768.png"
+  ],
+  "notlar": "cart-drawer.global-drawer. Trigger a.js-drawer-open-right-link[aria-label=Cart].",
+  "delta": "Yan panel overlay. Boş + dolu + adet. Checkout tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eight-boho-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.js-drawer-open-right-link[aria-label='Cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://eight-boho-demo.myshopify.com/products/floral-dress",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--19414372581442__product-form",
+      "capture": false,
+      "not": "Floral Dress Extra Small $132"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC drawer açar — toggle tekrar kapatır"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "cart-drawer button.cart-drawer__product-card--quantity--button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2 — drawer plus, js-qty değil"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Cart (0). Your cart is currently empty. RETURN TO SHOP. Don't forget these yok.",
+    "filled": "Cart (1). Floral Dress $132 Size Extra Small qty 1. Don't forget these… + VIEW CART + CHECKOUT.",
+    "changed": "Cart (2). Floral Dress qty 2, satır $264, Subtotal $264. Header badge 2."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC UI drawer açar. Qty cart-drawer__product-card--quantity--button[name=plus] (js-qty PDP'de). Checkout / order note tıklanmadı.",
+  "capture": {
+    "url": "https://eight-boho-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:26:05.408Z"
+  }
+}
