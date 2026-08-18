@@ -1,0 +1,99 @@
+{
+  "observationId": "triumph.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "url": "https://triumph-theme.myshopify.com/",
+  "selector": "cart-drawer",
+  "evidenceSlug": "global-cart-drawer",
+  "captureMode": "viewport",
+  "prepareClick": "#cart-icon-bubble",
+  "notlar": "cart-drawer + cart-child-panel. İkon #cart-icon-bubble href=/cart — JS drawer umulur.",
+  "delta": "/cart ayrı sayfa (cart-page-main). Checkout/login tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://triumph-theme.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://triumph-theme.myshopify.com/products/jumpflex-sneakers",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add']",
+      "capture": false,
+      "not": "ATC UI; fallback /cart/add.js"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "cart-drawer button[name='plus'], cart-drawer [name='plus'], cart-items button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "filled": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "İkon <a href=/cart>. Sayfa kaçarsa leftover. Checkout tıklanmadı.",
+  "kaynak": "triumph",
+  "preset": "default",
+  "sayfa": "home",
+  "evidence": []
+}

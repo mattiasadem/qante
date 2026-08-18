@@ -1,0 +1,66 @@
+{
+  "observationId": "triumph.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "url": "https://triumph-theme.myshopify.com/products/jumpflex-sneakers",
+  "selector": "#shopify-section-template--26042746372361__main",
+  "evidenceSlug": "product-info-main",
+  "notlar": "JumpFlex Sneakers $45.89 · SYNRGY · Color Pink/Blue · Size 1–6. Galeri + ATC. Coupon TRIUMPH (kopyalandı değil).",
+  "delta": "Triumph product main + variant-selects swatch. Buy it now/checkout tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://triumph-theme.myshopify.com/products/jumpflex-sneakers",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "etiket": "renk-pink",
+      "not": "Color Pink"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label.swatch-input__label[for$='-1-1']",
+      "capture": false,
+      "not": "Pink → Blue"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "etiket": "renk-blue",
+      "not": "Blue swatch"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Color Blue input id …-1-1. Size tıklanmadı. ATC cart interact’te.",
+  "kaynak": "triumph",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "evidence": []
+}

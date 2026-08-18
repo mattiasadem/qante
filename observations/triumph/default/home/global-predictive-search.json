@@ -1,0 +1,99 @@
+{
+  "observationId": "triumph.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "url": "https://triumph-theme.myshopify.com/",
+  "selector": "predictive-search.search-modal__form",
+  "evidenceSlug": "global-predictive-search",
+  "captureMode": "viewport",
+  "notlar": "Desktop #Search-In-Modal; mobil #Search-In-Modal-Mobile. Katalog: sneakers.",
+  "delta": "Triumph predictive-search. İki form (desktop/mobile).",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://triumph-theme.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#Search-In-Modal",
+      "viewports": [
+        "1440",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Desktop/tablet search focus"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".header__icon--search, .header__search button[aria-label='Search']",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "375 search opener"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "sneakers",
+      "viewports": [
+        "1440",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal-Mobile",
+      "value": "sneakers",
+      "viewports": [
+        "375"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sneakers",
+      "not": "Öneri/ürün"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "input": ""
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu sneakers (JumpFlex Sneakers / Urban Running Sneakers). Submit/Enter yok. PII yok.",
+  "kaynak": "triumph",
+  "preset": "default",
+  "sayfa": "home",
+  "evidence": []
+}
