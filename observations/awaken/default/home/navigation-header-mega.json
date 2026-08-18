@@ -7,7 +7,12 @@
   "url": "https://awaken-store-newdemo.myshopify.com/",
   "selector": ".xo-header-base",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
+  "evidence": [
+    "evidence/awaken/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/awaken/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/awaken/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/awaken/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
   "notlar": "Home header shopify-section 0px (absolute overlay). Visible bar `.xo-header-base` 224px: announcement Essence Aura + logo Awaken + Shop/Features/Blog + Cart/Login/Search. 1440 horizontal nav; 375 hamburger.",
   "delta": "Shopify.theme.name Awaken · schema_name Awaken · schema_version 1.0.0 · theme_store_id null · role main · id 128258572334 · shop awaken-store-newdemo.myshopify.com. Announcement ayrı section değil — header içinde. Mega TEMPLATE __mega_menu_AApBnx / __mega_menu_gczKaP 0px; panel header'a enjekte. Login PII yoklandı değil.",
   "captureMode": "viewport",
@@ -39,7 +44,7 @@
     },
     {
       "state": "open",
-      "action": "hover",
+      "action": "click",
       "selector": "div.xo-menu-horizontal-base__link",
       "viewports": [
         "1440"
@@ -47,13 +52,24 @@
       "capture": true,
       "captureMode": "viewport",
       "etiket": "shop-mega",
-      "not": "1440 Shop hover — mega panel (koleksiyon kartları)"
+      "not": "1440 Shop tık — XO-MEGA-MENU (hover panel açmadı)"
     }
   ],
   "stateFindings": {
-    "initial": "",
-    "open": ""
+    "initial": "375: hamburger + Awaken. + Search + Cart 0; announcement yok; altta hero Awaken + 01–04. 768/1440: logo + Essence Aura announcement + Shop/Features/Blog + Cart 0 / Login / Search; mega kapalı.",
+    "open": "1440 Shop tık (hover değil): tam ekran XO-MEGA-MENU — Shop all + Discovery more + Romantic (koyu) / Energizing / Bold & Mysterious / Smoothing & Calm / Classic & Timeless / Exotic & Adventurous + görsel + sosyal + X."
   },
   "missingStates": [],
-  "interactionNote": "Login / account tıklanmadı. 375/768 mega hover yok — hamburger ayrı observation."
+  "interactionNote": "Mega tık ile açılır (hover panel açmadı). Login / account tıklanmadı. 768 yatay nav (hamburger yok). 375 hamburger ayrı observation.",
+  "capture": {
+    "url": "https://awaken-store-newdemo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:39:36.010Z"
+  }
 }

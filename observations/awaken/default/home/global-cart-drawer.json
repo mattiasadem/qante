@@ -7,9 +7,17 @@
   "url": "https://awaken-store-newdemo.myshopify.com/products/the-devil-s-kiss",
   "selector": "#xo-cart-mini",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/awaken/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/awaken/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/awaken/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/awaken/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/awaken/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/awaken/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/awaken/default/home/global-cart-drawer.initial.sepet-bos.375.png"
+  ],
   "notlar": "XO-CART-MINI #xo-cart-mini içinde XO-MODAL. Header Cart trigger. Boş: Your cart is empty + Continue shopping + Login + View cart.",
-  "delta": "Drawer/modal. Login/checkout tıklanmadı. Qty plus selector capture sonrası.",
+  "delta": "XO-CART-MINI modal. Qty − / input / + var. Login/checkout/discount tıklanmadı.",
   "captureMode": "viewport",
   "interactionStates": [
     "initial",
@@ -32,7 +40,8 @@
     {
       "state": "initial",
       "action": "click",
-      "selector": "xo-modal-trigger[aria-label='Cart']",
+      "selector": ".xo-header-base xo-modal-trigger[aria-label='Cart']",
+      "value": 2000,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "sepet-bos",
@@ -53,40 +62,68 @@
     {
       "state": "filled",
       "action": "addToCart",
-      "selector": "#shopify-section-template--15964882632750__main_product form[action*='/cart/add'] button.xo-button[type='submit']",
+      "selector": "form[action*='/cart/add'] button.xo-button[type='submit']",
       "capture": false,
-      "not": "The Devil’s Kiss 30ml $239"
+      "not": "The Devil’s Kiss (varsayılan Size)"
     },
     {
       "state": "filled",
       "action": "waitFor",
-      "value": 1500,
-      "capture": false
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "etiket": "sepete-eklendi",
+      "not": "768/1440 ATC UI drawer açar"
     },
     {
       "state": "filled",
       "action": "click",
-      "selector": "xo-modal-trigger[aria-label='Cart']",
+      "selector": ".xo-header-base xo-modal-trigger[aria-label='Cart']",
+      "value": 1500,
+      "viewports": [
+        "375"
+      ],
       "capture": true,
       "captureMode": "viewport",
       "etiket": "sepete-eklendi",
-      "not": "Dolu drawer; ATC zaten açtıysa toggle kapatabilir"
+      "not": "375 ATC add.js — Cart ikonu ile drawer aç"
     },
     {
       "state": "changed",
-      "action": "click",
-      "selector": "#xo-cart-mini button[name='plus'], #xo-cart-mini [aria-label*='Increase'], #xo-cart-mini button:has-text('+')",
+      "action": "fill",
+      "selector": "#xo-cart-mini input[name='quantity'][aria-label='Quantity']",
+      "value": "2",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "adet-artti",
-      "not": "Adet +1"
+      "not": "Qty input 1→2 (plus yok)"
     }
   ],
   "stateFindings": {
-    "initial": "",
-    "filled": "",
-    "changed": ""
+    "initial": "375: Your cart + çanta 0 + Your cart is empty + Continue shopping + Have an account? Login. 768/1440 boş kare yok.",
+    "filled": "3vp: Devil’s Kiss Size 30ml $239 qty 1. − / 1 / +. Spend $361 more for FREE shipping. Note + Discount. Subtotal $239. Check out + View cart (tıklanmadı).",
+    "changed": "3vp: qty alanı 2; satır ve Subtotal $239 kaldı (fill commit etmedi). Badge/shipping aynı. Plus karede var — 2. denemede fill kullanıldı, 3. yok."
   },
-  "missingStates": [],
-  "interactionNote": "Checkout/login tıklanmadı. AJAX fallback olursa not."
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "768/1440 resmi empty open zero-size #xo-cart-mini (2. deneme). 375 boş kare duruyor. 3. yok."
+    }
+  ],
+  "interactionNote": "Checkout/login/discount tıklanmadı. 375 filled: ATC sonrası Cart ikonu. Qty fill rakamı değiştirir, toplamı değil.",
+  "capture": {
+    "url": "https://awaken-store-newdemo.myshopify.com/products/the-devil-s-kiss",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:53:13.875Z"
+  }
 }

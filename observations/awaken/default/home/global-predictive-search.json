@@ -5,9 +5,12 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://awaken-store-newdemo.myshopify.com/",
-  "selector": "#shopify-section-sections--15827504398382__main-predictive-search",
+  "selector": ".xo-predictive-search-base",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/awaken/default/home/global-predictive-search.initial.arama-bos.1440.png",
+    "evidence/awaken/default/home/global-predictive-search.input.arama-amber.1440.png"
+  ],
   "notlar": "Header Search → xo-modal. Input #predictive-search. Öneri: Home/Collection/News/Perfume/Fragrance/Scent + ürünler.",
   "delta": "Kapalı 0px. katalogSorgu=amber (A Dark Smoky Amber). Submit yok.",
   "captureMode": "viewport",
@@ -31,11 +34,13 @@
     {
       "state": "initial",
       "action": "click",
-      "selector": "xo-modal-trigger[aria-label='Search']",
+      "selector": ".xo-header-base xo-modal-trigger[aria-label='Search']",
+      "value": 2000,
       "capture": true,
       "captureMode": "viewport",
+      "captureSelector": ".xo-predictive-search-base",
       "etiket": "arama-bos",
-      "not": "Boş predictive overlay"
+      "not": "Header Search — overlay .xo-predictive-search-base"
     },
     {
       "state": "input",
@@ -49,9 +54,29 @@
     }
   ],
   "stateFindings": {
-    "initial": "",
-    "input": ""
+    "initial": "1440 Search tık: overlay Search for your thing… + POPULAR SEARCHES (Home/Collection/News/Perfume/Fragrance/Scent/Eaude parfum/Category/Blog) + TRENDING PRODUCT A Dark Smoky Amber / A Soft Floral / Cyan nori Kit From $239.",
+    "input": "1440 alan `amber`. Popular chips + aynı 3 trending ürün (liste değişmedi). Submit yok."
   },
-  "missingStates": [],
-  "interactionNote": "Submit /search sayfası ayrı observation. PII yok."
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "375/768: Search tık overlay açmadı; .xo-predictive-search-base zero-size. 2. deneme. 3. yok."
+    },
+    {
+      "state": "input",
+      "sebep": "375/768: #predictive-search hidden kaldı (fill timeout). 2. deneme. 3. yok."
+    }
+  ],
+  "interactionNote": "Yalnız 1440 overlay. 375/768 resmi kare yok. Submit /search ayrı observation. PII yok.",
+  "capture": {
+    "url": "https://awaken-store-newdemo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:50:31.814Z"
+  }
 }

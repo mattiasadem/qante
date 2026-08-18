@@ -7,9 +7,19 @@
   "url": "https://awaken-store-newdemo.myshopify.com/cart",
   "selector": "#shopify-section-template--15827504594990__main_cart_rPMdHz",
   "evidenceSlug": "cart-page-main",
-  "evidence": [],
-  "notlar": "Boş: Your cart is empty + Continue shopping. Dolu interact.",
-  "delta": "XO main_cart. Checkout tıklanmadı.",
+  "evidence": [
+    "evidence/awaken/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/awaken/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/awaken/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/awaken/default/cart/cart-page-main.filled.kiss-qty1.1440.png",
+    "evidence/awaken/default/cart/cart-page-main.filled.kiss-qty1.375.png",
+    "evidence/awaken/default/cart/cart-page-main.filled.kiss-qty1.768.png",
+    "evidence/awaken/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/awaken/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/awaken/default/cart/cart-page-main.initial.sepet-bos.768.png"
+  ],
+  "notlar": "Boş: Your cart is empty + Continue shopping + Login + You may also like. Dolu: Kiss 30ml. Plus 1→2 = $478.",
+  "delta": "XO main_cart. Qty xo-cart-quantity-plus. Fill toplamı güncellemedi; plus güncelledi. Checkout/login/discount tıklanmadı.",
   "captureMode": "viewport",
   "interactionStates": [
     "initial",
@@ -26,13 +36,20 @@
     {
       "state": "initial",
       "action": "waitFor",
-      "value": 2000,
+      "value": 7000,
       "capture": false
     },
     {
       "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "xo-popup-promo Close >200px — dismiss atlar; Escape ikinci deneme"
+    },
+    {
+      "state": "initial",
       "action": "waitFor",
-      "value": 500,
+      "value": 800,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "sepet-bos",
@@ -86,18 +103,30 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": "#shopify-section-template--15827504594990__main_cart_rPMdHz button[name='plus'], #shopify-section-template--15827504594990__main_cart_rPMdHz button:has-text('+')",
+      "selector": "#shopify-section-template--15827504594990__main_cart_rPMdHz xo-cart-quantity-plus",
+      "value": 2500,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "adet-artti",
-      "not": "Adet +1"
+      "not": "Qty plus 1→2 (fill toplamı güncellemedi)"
     }
   ],
   "stateFindings": {
-    "initial": "",
-    "filled": "",
-    "changed": ""
+    "initial": "3vp: Your cart is empty + Continue shopping + Have an account? Login + You may also like. Cart badge 0. 20% popup yok (Escape sonrası 2. çekim).",
+    "filled": "3vp: The Devil’s Kiss - 30ml $239 qty 1. Badge 1. Spend $361 more. Note + / Discount +. Subtotal $239. Check out tıklanmadı.",
+    "changed": "3vp plus tık: qty 2, satır + Subtotal $478, badge 2, Spend $122 more. Fill 1. denemede toplamı güncellemedi."
   },
   "missingStates": [],
-  "interactionNote": "Checkout/login tıklanmadı."
+  "interactionNote": "Checkout/login/discount tıklanmadı. 1. deneme fill rakam 2 / toplam $239. 2. deneme xo-cart-quantity-plus → $478.",
+  "capture": {
+    "url": "https://awaken-store-newdemo.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:01:29.059Z"
+  }
 }
