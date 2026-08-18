@@ -1,0 +1,87 @@
+{
+  "observationId": "homage.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "homage",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://homage-theme-demo-01.myshopify.com/products/downhill-27-jacket",
+  "selector": ".main-product",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/homage/default/product-detail/product-info-main.changed.size-m.1440.png",
+    "evidence/homage/default/product-detail/product-info-main.changed.size-m.375.png",
+    "evidence/homage/default/product-detail/product-info-main.changed.size-m.768.png",
+    "evidence/homage/default/product-detail/product-info-main.initial.size-s.1440.png",
+    "evidence/homage/default/product-detail/product-info-main.initial.size-s.375.png",
+    "evidence/homage/default/product-detail/product-info-main.initial.size-s.768.png"
+  ],
+  "notlar": "DOWNHILL ‘27 JACKET $995. Color yalnız Hunter. Size S–XXL. THE SPECS accordion. Breadcrumb HOME / BEST SELLERS.",
+  "delta": "Homage main-product. Color tek swatch; option change = Size S→M. Buy it now/checkout tıklanmadı. Shopify.theme.name homage/release/v1.1 · schema_name Homage · schema_version 1.0.1 · theme_store_id null · role main · id 200065417548 · shop homage-theme-demo-01.myshopify.com",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://homage-theme-demo-01.myshopify.com/products/downhill-27-jacket",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "selector": ".main-product",
+      "value": 20000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 600,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "size-s",
+      "not": "SIZE:S seçili · $995 Hunter"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='main-product-15116188287308-Size-8463214936396']",
+      "value": 1400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "size-m",
+      "not": "Size M pill"
+    }
+  ],
+  "stateFindings": {
+    "initial": "DOWNHILL ‘27 JACKET $995 · COLOR:HUNTER · SIZE:S (S dolu) · IN STOCK · ADD TO CART. Galeri + Shop Pay. 375/768/1440.",
+    "changed": "SIZE:M dolu; S boş. Fiyat $995 aynı. Color hâlâ Hunter."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Color tek Hunter; option = Size."
+    }
+  ],
+  "interactionNote": "Size label[for=…Size-8463214936396]. Checkout/Shop Pay tıklanmadı.",
+  "capture": {
+    "url": "https://homage-theme-demo-01.myshopify.com/products/downhill-27-jacket",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:47:08.177Z"
+  }
+}
