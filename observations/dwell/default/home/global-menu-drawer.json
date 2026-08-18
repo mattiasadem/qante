@@ -1,0 +1,77 @@
+{
+  "observationId": "dwell.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "dwell",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-dwell-demo.myshopify.com/",
+  "selector": "#Details-menu-drawer-container",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "375 hamburger. Bedding/Bath/Decor/Sale/Inspiration + nested koleksiyon.",
+  "delta": "Horizon header-drawer. 768 hamburger 0px — leftover (desktop nav).",
+  "captureMode": "viewport",
+  "prepareClick": "header summary[aria-label='Menu']",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://theme-dwell-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header summary[aria-label='Menu']",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "375 drawer"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header summary[aria-label='Menu']",
+      "viewports": [
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger-768",
+      "not": "768 hamburger yoklandı — 0px beklenir"
+    }
+  ],
+  "stateFindings": {
+    "open": "375 drawer: Bedding / Bath / Decor / Sale / Inspiration. 768 hamburger 0px (desktop nav)."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "768 hamburger summary 0×0 — desktop Bedding/Bath/Decor. 1440 hamburger yok."
+    }
+  ],
+  "interactionNote": "768/1440 N/A (desktop mega). Nested koleksiyon link tıklanmadı.",
+  "capture": {
+    "url": "https://theme-dwell-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": ""
+  }
+}

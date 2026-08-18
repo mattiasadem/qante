@@ -1,0 +1,86 @@
+{
+  "observationId": "dwell.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "dwell",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://theme-dwell-demo.myshopify.com/cart",
+  "selector": "#shopify-section-template--20640021938365__cart-section",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Boş: Your cart is empty + Have an account? Log in + Continue shopping. Dolu/qty interact.",
+  "delta": "Horizon cart-section. Drawer ayrı. Checkout tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-dwell-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş sepet sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-dwell-demo.myshopify.com/products/down-pillow",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#BuyButtons-ProductSubmitButton-AUkVaQ2R4V3k1d3lVW__add-to-cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-dwell-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Down Pillow satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--20640021938365__cart-section button[name='plus'], button.quantity-plus",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty; Have an account? Log in to check out faster; Continue shopping. Satır yok.",
+    "filled": "Cart 1. Down Pillow · Standard / Firm · $250.00 · adet 1. Check out tıklanmadı.",
+    "changed": "Rozet 2; adet 2; satır + estimated total $500.00 CAD."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout / Shop Pay / login tıklanmadı.",
+  "capture": {
+    "url": "https://theme-dwell-demo.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": ""
+  }
+}

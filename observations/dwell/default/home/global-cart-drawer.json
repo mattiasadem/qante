@@ -1,0 +1,111 @@
+{
+  "observationId": "dwell.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "dwell",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-dwell-demo.myshopify.com/",
+  "selector": "dialog.cart-drawer__dialog",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Horizon cart-drawer-component. Boş sınıf cart-drawer--empty.",
+  "delta": "/cart ayrı sayfa (cart-page-main). Checkout tıklanmadı.",
+  "captureMode": "viewport",
+  "prepareClick": "header button[aria-label='Cart']",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-dwell-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header button[aria-label='Cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-dwell-demo.myshopify.com/products/down-pillow",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#BuyButtons-ProductSubmitButton-AUkVaQ2R4V3k1d3lVW__add-to-cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "header button[aria-label='Cart']",
+      "capture": false,
+      "not": "Drawer ATC sonrası kapanabiliyor"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "yastik-qty1",
+      "not": "Down Pillow qty 1"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "dialog.cart-drawer__dialog button[name='plus']",
+      "capture": false,
+      "not": "Drawer içi plus"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 2 beklenir"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty. Have an account? Log in to check out faster. Continue shopping. Login tıklanmadı.",
+    "filled": "Cart 1. Down Pillow · Standard / Firm · qty 1 · $250.00 CAD. Check out tıklanmadı.",
+    "changed": "Cart 2. Adet 2. Satır + estimated total $500.00 CAD."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC UI. Drawer ATC sonrası kapanabiliyor — cart ikonu ile yeniden açıldı. Checkout / Discount Apply tıklanmadı.",
+  "capture": {
+    "url": "https://theme-dwell-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": ""
+  }
+}
