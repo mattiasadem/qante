@@ -1,0 +1,59 @@
+{
+  "observationId": "awaken.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "awaken",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://awaken-store-newdemo.myshopify.com/",
+  "selector": ".xo-header-base",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Home header shopify-section 0px (absolute overlay). Visible bar `.xo-header-base` 224px: announcement Essence Aura + logo Awaken + Shop/Features/Blog + Cart/Login/Search. 1440 horizontal nav; 375 hamburger.",
+  "delta": "Shopify.theme.name Awaken · schema_name Awaken · schema_version 1.0.0 · theme_store_id null · role main · id 128258572334 · shop awaken-store-newdemo.myshopify.com. Announcement ayrı section değil — header içinde. Mega TEMPLATE __mega_menu_AApBnx / __mega_menu_gczKaP 0px; panel header'a enjekte. Login PII yoklandı değil.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://awaken-store-newdemo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Mega kapalı header + announcement"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "div.xo-menu-horizontal-base__link",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "1440 Shop hover — mega panel (koleksiyon kartları)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "open": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Login / account tıklanmadı. 375/768 mega hover yok — hamburger ayrı observation."
+}
