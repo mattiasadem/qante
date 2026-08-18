@@ -1,6 +1,7 @@
 /**
  * Evidence PNGs are not uploaded to Vercel — served from GitHub via jsDelivr CDN.
  * Local dev still reads evidence/ from disk (viewer/app.mjs).
+ * Redeploy stamp: 2026-08-18T13:05 Europe/Berlin — force production after #164.
  */
 
 export const EVIDENCE_REPO = "mattiasadem/qante";
