@@ -1,0 +1,104 @@
+{
+  "observationId": "stack.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "stack",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://retailer-mass.myshopify.com/",
+  "selector": ".header__search-inner.search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/stack/default/home/global-predictive-search.initial.search-bos.1440.png",
+    "evidence/stack/default/home/global-predictive-search.initial.search-bos.375.png",
+    "evidence/stack/default/home/global-predictive-search.initial.search-bos.768.png",
+    "evidence/stack/default/home/global-predictive-search.input.bike.1440.png",
+    "evidence/stack/default/home/global-predictive-search.input.bike.375.png",
+    "evidence/stack/default/home/global-predictive-search.input.bike.768.png"
+  ],
+  "notlar": "header-search + predictive-search. Katalog bike. 1440 opener şerit; 375/768 ikon.",
+  "delta": "Shopify.theme: name **retailer/mass** · schema_name **Stack** · schema_version **1.0.2** · theme_store_id **null** · role main · id 150759768247 · shop retailer-mass.myshopify.com. İki kopya: primary + icons. Submit yok.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://retailer-mass.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.header__icon.header__icon--search.modal__toggle.multi-row",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "375/768 search ikon"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.header__input-opener--wrapper.header__icon--search",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "1440 search şerit"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal-primary, #Search-In-Modal-icons",
+      "value": "bike",
+      "capture": false,
+      "not": "katalog bike — /search?q=bike 4 sonuç"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "#Search-In-Modal-primary, #Search-In-Modal-icons",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bike",
+      "not": "Öneri/ürün"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Overlay açık, placeholder What are you looking for? Suggestions: Ski Trainer / 3-Tier Dumbbell Rack / Adjustable Spin Bike / EZ Curl / Indoor Cycling Bike / Kettlebell / Plate Tree / Hex Dumbbell. Sağ/alt promo: Take Control of Your Strength + Lift Without Limits Up to 30%.",
+    "input": "Sorgu bike + Clear. Tab Products (aktif) / Articles + View all results. Kartlar: Adjustable Spin Bike New $995.00 + Indoor Cycling Bike $849.00. 375: ATC + Quick View ikon; ikinci kart peek."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu bike. Enter/submit yok. 375/768 #Search-In-Modal-icons; 1440 #Search-In-Modal-primary. View all tıklanmadı.",
+  "capture": {
+    "url": "https://retailer-mass.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:32:34.262Z"
+  }
+}
