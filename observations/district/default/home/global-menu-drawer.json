@@ -1,0 +1,47 @@
+{
+  "observationId": "district.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "district",
+  "preset": "default",
+  "sayfa": "home",
+  "evidence": [],
+  "url": "https://district-theme-demo.myshopify.com/",
+  "selector": ".menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "notlar": "menu-drawer. 375 button.header-top__menu → Shop/Best Sellers/Blog/About/More + Log in.",
+  "delta": "768/1440 hamburger display:none. Kapalı drawer solda (x negatif).",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://district-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.header-top__menu",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "375 sol drawer"
+    }
+  ],
+  "stateFindings": {
+    "open": ""
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "768 hamburger 0×0 display:none — masaüstü nav. 1440 hamburger yok."
+    }
+  ],
+  "interactionNote": "Log in / Create account tıklanmadı. Shop chevron leftover (kaçış)."
+}

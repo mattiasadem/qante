@@ -1,0 +1,76 @@
+{
+  "observationId": "district.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "district",
+  "preset": "default",
+  "sayfa": "cart",
+  "evidence": [],
+  "url": "https://district-theme-demo.myshopify.com/cart",
+  "selector": "#shopify-section-template--17215441207349__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "notlar": "cart-items. Boş: Your cart is empty. Dolu: satır + qty. Drawer yok — ATC /cart.",
+  "delta": "cart-footer ayrı (checkout/terms) leftover. CHECK OUT tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://district-theme-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş sepet sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://district-theme-demo.myshopify.com/products/enjoy-the-journey",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#AddToCart-template--17215441403957__product",
+      "capture": false,
+      "not": "ATC → /cart yönlendirir"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17215441207349__cart-items",
+      "capture": true,
+      "etiket": "sepet-dolu",
+      "not": "Enjoy The Journey qty 1 $28"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--17215441207349__cart-items button.quantity__button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "filled": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Cart drawer yok. ATC sayfaya gider. CHECK OUT / terms leftover."
+}
