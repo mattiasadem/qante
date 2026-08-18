@@ -1,0 +1,80 @@
+{
+  "observationId": "envy.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "envy",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://eight-boho-demo.myshopify.com/",
+  "selector": "cart-drawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "cart-drawer.global-drawer. Trigger a.js-drawer-open-right-link[aria-label=Cart].",
+  "delta": "Yan panel overlay. Boş + dolu + adet. Checkout tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eight-boho-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.js-drawer-open-right-link[aria-label='Cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://eight-boho-demo.myshopify.com/products/floral-dress",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--19414372581442__product-form",
+      "capture": false,
+      "not": "Floral Dress Extra Small $132"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC drawer açar — toggle tekrar kapatır"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "cart-drawer .js-qty__adjust--plus",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is currently empty + CONTINUE SHOPPING (karede).",
+    "filled": "Floral Dress satır qty 1 $132 (karede).",
+    "changed": "Qty 2, toplam güncellenir (karede)."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout / account tıklanmadı. Qty js-qty__adjust--plus."
+}

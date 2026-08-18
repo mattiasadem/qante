@@ -1,0 +1,64 @@
+{
+  "observationId": "envy.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "envy",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://eight-boho-demo.myshopify.com/",
+  "selector": "search-dropdown",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "search-dropdown + input.predictive-search__input. Katalog: dress.",
+  "delta": "Overlay dropdown. Submit /search sayfası ayrı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eight-boho-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.search-button[aria-label='Search']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Boş predictive overlay"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input.predictive-search__input[name='q']",
+      "value": "dress",
+      "capture": false,
+      "not": "katalog dress (Floral Dress / Frill Dress)"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "input.predictive-search__input[name='q']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "dress",
+      "not": "Öneri listesi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Search overlay açık, input boş — Search our collection...",
+    "input": "dress → ürün önerileri (karede bakılacak)."
+  },
+  "missingStates": [],
+  "interactionNote": "Opener a.search-button[aria-label=Search] görünür olan. Enter/submit yok. Account yok."
+}

@@ -1,0 +1,53 @@
+{
+  "observationId": "envy.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "envy",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://eight-boho-demo.myshopify.com/products/floral-dress",
+  "selector": "#shopify-section-template--19414372581442__product-form",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "Floral Dress $132. SIZE Extra Small→XXXL + Size guide. ADD TO CART. Buy now duruldu.",
+  "delta": "Envy product-form. Size guide drawer leftover. Checkout/Buy now tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eight-boho-demo.myshopify.com/products/floral-dress",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19414372581442__product-form",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Size Extra Small $132"
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "label[for='template--19414372581442__product-form-0-2']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='template--19414372581442__product-form-0-2']",
+      "capture": true,
+      "etiket": "beden-medium",
+      "not": "SIZE Medium"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Floral Dress $132, SIZE Extra Small seçili.",
+    "changed": "SIZE Medium seçili (karede swatch)."
+  },
+  "missingStates": [],
+  "interactionNote": "Size guide / Account / checkout duruldu. Color yok bu üründe."
+}
