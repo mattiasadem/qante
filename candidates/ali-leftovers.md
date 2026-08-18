@@ -22,8 +22,8 @@ Karar: onay bekliyor
 ---
 
 ADAY: ali-announcement-in-header  
-Gerekçe: Ayrı `promo-announcement-bar` section yok. “250 TL üzeri siparişlerde ücretsiz kargo” `section.ali-header` içinde `.ali-ann`.  
-Örnekler: home `.ali-ann`  
+Gerekçe: Ayrı `promo-announcement-bar` section yok. Duyuru `section.ali-header` içinde `.ali-ann`. Kareler arasında döner: “250 TL üzeri siparişlerde ücretsiz kargo” ↔ “Her hafta taze kavrulur…”.  
+Örnekler: home `.ali-ann` · header / search / menu PNG  
 Öneri: leftover — header chrome  
 Karar: onay bekliyor
 
@@ -174,9 +174,9 @@ Karar: onay bekliyor
 ---
 
 ADAY: ali-nav-buttons-not-links  
-Gerekçe: Drawer satırları `<button class="ali-nav__link">` (YENİ/KAHVE…). İlk tık paneli kapatabilir. Yazılı `<a>` değil.  
-Örnekler: `.ali-nav--open`  
-Öneri: leftover — submenu  
+Gerekçe: Drawer satırları `<button class="ali-nav__link">` (YENİ/KAHVE…). Yazılı `<a>` değil. İlk tık **kapatmadı**: KAHVE → `Geri` + Çekirdek Kahve / Filtre Kahve / Espresso / Tek Kökenli / Kapsül Kahve. Mega yok; hamburger 375/768/1440.  
+Örnekler: `global-menu-drawer.{375,768,1440}.{open,changed}.png`  
+Öneri: leftover — `global-menu-drawer` (mega yok)  
 Karar: onay bekliyor
 
 ---
@@ -193,6 +193,22 @@ ADAY: ali-hashed-css-modules
 Gerekçe: Birçok node’da `_3RG0seZZnJ` / `_5xNj7KNPTg` hash class. Selector’da **kullanılmadı** — `section.ali-*` / aria-label.  
 Örnekler: home sections  
 Öneri: leftover — not  
+Karar: onay bekliyor
+
+---
+
+ADAY: ali-trust-copy-repeat  
+Gerekçe: Home `section.ali-tb` dört kolon hexagon-tik, **marquee değil**. Pixel-check sonrası `promo-scrolling-marquee` → `trust-icon-row`. 1440/375 karede dört kolon aynı copy: “dünya geneli teslimat” + “Siparişini dünyanın her yerine gönderiyoruz”. Yeni şema yok.  
+Örnekler: `trust-icon-row.{375,768,1440}.png`  
+Öneri: leftover — demo copy tekrarı; `trust-icon-row`  
+Karar: onay bekliyor
+
+---
+
+ADAY: ali-pdp-gallery-autoplay  
+Gerekçe: COLOR Black → Gray 375/768/1440 label + swatch güncellendi. 375 karede gri puffer görsel; 1440 galeri hâlâ siyah model (autoplay bağımsız). Yeni şema yok.  
+Örnekler: `product-info-main.1440.{initial,changed}.png`  
+Öneri: leftover — `product-info-main`  
 Karar: onay bekliyor
 
 ---
