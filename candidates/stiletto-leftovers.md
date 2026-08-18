@@ -19,9 +19,9 @@
 |---|---|
 | `/pages/about` | 404. About = `/pages/about-us` |
 | `/pages/contact-us` | 404. Contact = `/pages/contact` |
-| Newsletter popup (`data-is-signup=true`, JOIN US / GET OFFER) | Scroll-delay. PII — submit yok. Capture’ta `[data-dismiss-popup]` ile kapatıldı |
-| Theme walkthrough popup | WATCH NOW / `/pages/theme#stiletto-walkthrough`. Tema satış; kapatıldı |
-| “Get 10% Off” tab | Popup kapanınca köşe tab. Bazı PNG’de kalır |
+| Newsletter popup (`data-is-signup=true`, JOIN US / GET OFFER) | Scroll-delay. PII — submit yok. Statik kareler `capture-interaction` ile `.popup--has-image .popup__dismiss-icon` kapatılarak yeniden çekildi |
+| Theme walkthrough popup | WATCH NOW / `/pages/theme#stiletto-walkthrough`. Tema satış. `.popup--flyout [data-dismiss-popup]` ile kapatıldı |
+| “Get 10% Off” tab | Popup kapanınca köşe tab. Bazı PNG’de kalır — leftover, kabul |
 | Account / Register / Login | Mobil menüde görüldü — tıklanmadı |
 | Checkout | Drawer + cart sayfa CHECKOUT — tıklanmadı |
 | Footer SIGN UP, contact SUBMIT, blog comment | PII — dur |
