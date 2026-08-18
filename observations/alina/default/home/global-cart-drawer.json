@@ -7,7 +7,17 @@
   "url": "https://dev-alina.ikas.shop/",
   "selector": ".cartd",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/alina/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/alina/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/alina/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/alina/default/home/global-cart-drawer.filled.daily-backpack.1440.png",
+    "evidence/alina/default/home/global-cart-drawer.filled.daily-backpack.375.png",
+    "evidence/alina/default/home/global-cart-drawer.filled.daily-backpack.768.png",
+    "evidence/alina/default/home/global-cart-drawer.initial.sepet-bos.1440.png",
+    "evidence/alina/default/home/global-cart-drawer.initial.sepet-bos.375.png",
+    "evidence/alina/default/home/global-cart-drawer.initial.sepet-bos.768.png"
+  ],
   "captureMode": "viewport",
   "notlar": "Yandan `.cartd` / aside.cartd__panel. Boş: Sepetiniz henüz boş + öneri kartları. Dolu: satır + kargo eşiği + Ödemeye Geç (tıklanmadı).",
   "delta": "ikas (Shopify.theme yok) · Theme Store UUID 7f5c4b83-e6fa-4cdd-a35b-72eb1911a8e3 · Alina / ikascom · demo dev-alina.ikas.shop · __IKAS_DATA__.storefrontThemeId b19652e2-11ef-4979-97b1-879567363d56 · storefrontId dd2e2c99-fb2a-44b5-82db-bc71532c7e5c · pageType from __IKAS_DATA__ · x-powered-by ikas · addToCart action yok (ikas /cart/add.js yok) — UI `button.pd__atc`. Checkout tıklanmadı.",
@@ -59,15 +69,9 @@
     {
       "state": "filled",
       "action": "click",
-      "selector": ".cookiebar__btn",
-      "capture": false
-    },
-    {
-      "state": "filled",
-      "action": "click",
       "selector": "button.pd__atc",
       "capture": false,
-      "not": "Sepete Ekle — drawer açılır"
+      "not": "Sepete Ekle — drawer açılır. Cookie aynı context'te yok."
     },
     {
       "state": "filled",
@@ -88,7 +92,7 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": ".cartd [aria-label=\"Adet artır\"]",
+      "selector": "button.cartd__qty-btn[aria-label=\"Artır\"]",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "adet-artti",
@@ -96,10 +100,21 @@
     }
   ],
   "stateFindings": {
-    "initial": "Placeholder — boş sepet.",
-    "filled": "Placeholder — Daily Backpack satırı.",
-    "changed": "Placeholder — adet."
+    "initial": "Sağ panel Sepetim. Sepetiniz henüz boş + Alışverişe Başla. Altta öneri: Carry-On Cosmetic ₺15 / Kangaroo ₺17 / Spots ₺38.",
+    "filled": "Sepetim 1 ürün. Ücretsiz kargoya ₺49.969 kaldı. Daily Backpack Color: Black · ₺31 · adet 1 · Kaldır. Siparişine ekle. Toplam ₺31. Ödemeye Geç / Sepeti Gör (ödeme tıklanmadı).",
+    "changed": "Sepetim 2 ürün. Adet 2 · satır ₺62 · kargo eşiği ₺49.938. Toplam ₺62."
   },
   "missingStates": [],
-  "interactionNote": "Ödemeye Geç / Sepeti Gör checkout değil sayfa. Ödeme tıklanmadı. addToCart helper kullanılmadı."
+  "interactionNote": "Ödemeye Geç tıklanmadı. addToCart helper yok (ikas /cart/add.js yok). Cookie PDP'de yok (ilk adımda kapatıldı). Qty aria=Artır (Adet artır değil).",
+  "capture": {
+    "url": "https://dev-alina.ikas.shop/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:44:28.980Z"
+  }
 }

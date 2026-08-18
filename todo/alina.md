@@ -18,12 +18,14 @@
 |---|---|
 | Evidence kökü | `evidence/alina/default/` |
 | Observation | **29** |
+| Evidence PNG | **105** |
 | Yeni şema | **0** |
 | Capture | resmi `capture-observation.mjs` + `capture-interaction.mjs` |
+| Validator | 65 temiz · 0 error · 0 warn |
 | Parallel | yalnız `observations/alina/`, `evidence/alina/`, `todo/alina.md`, `candidates/alina-leftovers.md` |
 
 **Kapsam satırı:**  
-`Alina · default · ikas Theme Store UUID 7f5c4b83-e6fa-4cdd-a35b-72eb1911a8e3 · home→PDP daily-backpack→PLP /bags→search?s=backpack→cart empty/filled/qty→iletisim→sss→blog+post→404 · 29 obs · 0 yeni şema · leftover: about yok / cookie / bundle / reviews / q= / guest-track`
+`Alina · default · ikas Theme Store UUID 7f5c4b83-e6fa-4cdd-a35b-72eb1911a8e3 · home→PDP daily-backpack COLOR Gray→PLP /bags→search?s=backpack 2→cart empty/filled/qty2 ₺62→iletisim→sss→blog+post→404 · 29 obs · 105 PNG · 0 yeni şema · leftover: about yok / cookie / bundle / reviews / q= / guest-track / mobnav chevron`
 
 ---
 
@@ -87,9 +89,9 @@
 |---|---|---|
 | navigation-header-mega | open | 1440 Çantalar **hover** (tık kapanır) — tabs + ürün kartı |
 | global-predictive-search | input | `backpack` → Daily + Foldable + Tüm sonuçları gör |
-| global-menu-drawer | open/changed | 375/768 hamburger; Çantalar boş chevron |
-| global-cart-drawer | initial/filled/changed | boş + Daily Backpack + adet |
-| cart-page-main | initial/filled/changed | boş → qty1 ₺31 → qty2 |
+| global-menu-drawer | open | 375/768 hamburger. changed yok — Çantalar `<a href=/bags>` |
+| global-cart-drawer | initial/filled/changed | boş → Daily Backpack qty1 ₺31 → qty2 ₺62 |
+| cart-page-main | initial/filled/changed | boş → qty1 ₺31 → qty2 ₺62 |
 | product-info-main | changed | COLOR Black → Gray |
 
 ---
@@ -102,7 +104,7 @@
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact header / search / cart / menu / PDP Color
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate` — 0 error
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact header / search / cart / menu / PDP Color
+- [x] PNG bak → stateFindings
+- [x] `npm run validate` — 65 temiz · 0 error · 0 warn

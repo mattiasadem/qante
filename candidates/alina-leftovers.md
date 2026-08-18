@@ -10,6 +10,14 @@
 
 ---
 
+ADAY: alina-contact-map  
+Gerekçe: `/pages/iletisim` form + info kartlarının altında gömülü harita (ikas pin, Ankara). `lead-capture-form` yazıldı; harita ayrı şema değil.  
+Örnekler: https://dev-alina.ikas.shop/pages/iletisim  
+Öneri: leftover — map widget  
+Karar: onay bekliyor
+
+---
+
 ADAY: alina-no-about  
 Gerekçe: Footer “Hakkımızda” accordion linki `/` (home). `/pages/hakkimizda` ve `/pages/about` → 404 `section.nf` (aynı not-found karesi). Walk about/contact’tan contact yazıldı; about yok.  
 Örnekler: https://dev-alina.ikas.shop/ · https://dev-alina.ikas.shop/pages/hakkimizda  
@@ -86,6 +94,22 @@ ADAY: alina-related-missing
 Gerekçe: PDP `__IKAS_DATA__` productList alanı var; ayrı related `section` DOM’da yok / boş. `product-showcase-related` yazılmadı.  
 Örnekler: https://dev-alina.ikas.shop/daily-backpack  
 Öneri: leftover — boş/yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: alina-mobnav-chevron-navigates  
+Gerekçe: 375/768 `.mobnav` Çantalar satırı `<a href="/bags">` + `.navmega__chevron`. Chevron tık `/bags` PLP; drawer kapanır. Ayrı boş ok yok. `changed` yazılmadı.  
+Örnekler: https://dev-alina.ikas.shop/  
+Öneri: leftover — yazılı link  
+Karar: onay bekliyor
+
+---
+
+ADAY: alina-mobnav-chevron-navigates  
+Gerekçe: 375/768 `.mobnav` Çantalar satırı `<a href="/bags">` + `.navmega__chevron`. Chevron tık `/bags` PLP; drawer kapanır. Ayrı boş ok yok. `changed` yazılmadı.  
+Örnekler: https://dev-alina.ikas.shop/  
+Öneri: leftover — yazılı link  
 Karar: onay bekliyor
 
 ---
