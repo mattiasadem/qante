@@ -4,8 +4,8 @@ QANTE Theme Store takibi: hangi resmi demo / canlı mağaza walk edildi.
 Durum: `done` = yapılmış (main’de resmi 3vp) · `in progress` = yapılıyor (açık PR / cloud agent) · boş = kuyruk.  
 *Kesim:* 18 Ağustos 2026 (Berlin). Viewer: **Listeler** sekmesi.
 
-Shopify Theme Store 54/70 done on main; 4 in progress (Stiletto, Pitch, Dwell, Fabric); 12 View-demo-only remaining.  
-Paid batch 10/10 and the next-10-after-Expanse are largely on main except Stiletto still walking.
+Shopify Theme Store 58/70 done on main; 0 in progress; 12 View-demo-only remaining (rows 59–70).  
+Paid batch 10/10 and the next-10-after-Expanse are on main. No walking PRs remain.
 
 DTC marka listesi: [`dtc-69-brands.md`](./dtc-69-brands.md)
 
@@ -52,7 +52,7 @@ DTC marka listesi: [`dtc-69-brands.md`](./dtc-69-brands.md)
 | 39 | done | [Taiga](https://themes.shopify.com/themes/taiga) | Woolman | ~$320 | https://taiga-demo-sage.myshopify.com/ | taiga | Resmi Sage preset. |
 | 40 | done | [Canopy](https://themes.shopify.com/themes/canopy) | Clean Canvas | ~$280 | https://canopy-theme-natural.myshopify.com/ | canopy | Resmi Natural preset. |
 | 41 | done | [Expanse](https://themes.shopify.com/themes/expanse) | Archetype | ~premium | https://expanse-theme-furniture.myshopify.com/ | expanse | Resmi Furniture preset. Expanse 6.1.0 · 46 obs · 156 PNG. PR #155 squash `3b98299a`. Paid batch 10/10. |
-| 42 | in progress | [Stiletto](https://themes.shopify.com/themes/stiletto) | Fluorescent | $380 | https://stiletto-theme-vogue.myshopify.com/ | stiletto | PR #169 · recapture hâlâ yürüyor. Açık demo · next 10 (Expanse sonrası). |
+| 42 | done | [Stiletto](https://themes.shopify.com/themes/stiletto) | Fluorescent | $380 | https://stiletto-theme-vogue.myshopify.com/ | stiletto | Stiletto 6.1.0 · Vogue demo · 60 obs / 196 PNG. PR #169 squash `1a4094bc`. theme_store_id null. |
 | 43 | done | [Concept](https://themes.shopify.com/themes/concept) | RoarTheme | $400 | https://concept-theme.myshopify.com/ | concept | Resmi demo · PR #168 squash `e32093ee`. Next 10 (Expanse sonrası). |
 | 44 | done | [Be Yours](https://themes.shopify.com/themes/be-yours) | RoarTheme | $350 | https://beyours-theme.myshopify.com/ | be-yours | Be Yours 8.3.1 · beyours-theme.myshopify.com · 47 obs / 161 PNG. PR #173 squash `745a9a50`. |
 | 45 | done | [Wonder](https://themes.shopify.com/themes/wonder) | NETHYPE | $390 | https://wonder-theme-beauty.myshopify.com/ | wonder | Resmi demo · PR #166 squash `289f1dec`. Next 10 (Expanse sonrası). |
@@ -66,9 +66,9 @@ DTC marka listesi: [`dtc-69-brands.md`](./dtc-69-brands.md)
 | 53 | done | [Spotlight](https://themes.shopify.com/themes/spotlight) | Shopify | Free | https://theme-spotlight-demo.myshopify.com/ | spotlight | Spotlight-8.0.0 · theme-spotlight-demo · 15 obs / 54 PNG. PR #176 squash `5ff3349b`. |
 | 54 | done | [Trade](https://themes.shopify.com/themes/trade) | Shopify | Free | https://theme-trade-demo.myshopify.com/ | trade | Trade 15.0.0 · theme-trade-demo · 33 obs / 116 PNG. PR #177 squash `4d20160a`. Free Shopify · B2B. |
 | 55 | done | [Heritage](https://themes.shopify.com/themes/heritage) | Shopify | Free | https://theme-heritage-demo.myshopify.com/ | heritage | Horizon ailesi 2026 · 33 obs / 117 PNG. PR #178 squash `08d0de5e`. |
-| 56 | in progress | [Pitch](https://themes.shopify.com/themes/pitch) | Shopify | Free | https://theme-pitch-demo.myshopify.com/ | pitch | Horizon ailesi 2026 · PR #179 açık. |
-| 57 | in progress | [Dwell](https://themes.shopify.com/themes/dwell) | Shopify | Free | https://theme-dwell-demo.myshopify.com/ | dwell | Horizon ailesi 2026 · PR #180 açık. |
-| 58 | in progress | [Fabric](https://themes.shopify.com/themes/fabric) | Shopify | Free | https://theme-fabric-demo.myshopify.com/ | fabric | Horizon ailesi 2026 · PR #181 açık. |
+| 56 | done | [Pitch](https://themes.shopify.com/themes/pitch) | Shopify | Free | https://theme-pitch-demo.myshopify.com/ | pitch | Pitch 3.4.0 · Horizon ailesi 2026 · 34 obs / 120 PNG. PR #179 squash `300913d0`. theme_store_id 3620. |
+| 57 | done | [Dwell](https://themes.shopify.com/themes/dwell) | Shopify | Free | https://theme-dwell-demo.myshopify.com/ | dwell | dwell-100-0-0 · Horizon ailesi 2026 · 36 obs / 126 PNG. PR #180 squash `d10bb703`. theme_store_id null. |
+| 58 | done | [Fabric](https://themes.shopify.com/themes/fabric) | Shopify | Free | https://theme-fabric-demo.myshopify.com/ | fabric | Fabric 3.4.0 · Horizon ailesi 2026 · 31 obs / 110 PNG. PR #181 squash `18145eb7`. theme_store_id 3622. |
 | 59 |  | [Enterprise](https://themes.shopify.com/themes/enterprise) | Clean Canvas | $420 | https://themes.shopify.com/themes/enterprise | enterprise | View demo only. |
 | 60 |  | [Streamline](https://themes.shopify.com/themes/streamline) | Archetype | $420 | https://themes.shopify.com/themes/streamline | streamline | View demo only. |
 | 61 |  | [Local](https://themes.shopify.com/themes/local) | Krown | $380 | https://themes.shopify.com/themes/local | local | View demo only. |
