@@ -1,0 +1,77 @@
+{
+  "observationId": "concept.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "concept",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://concept-theme.myshopify.com/",
+  "selector": "predictive-search.search-modal__form",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "PREDICTIVE-SEARCH + #Search-In-Modal. Katalog cream.",
+  "delta": "1440 header içi input 430×50. 375/768 arama ikonu → Drawer-Search.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://concept-theme.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-kapali",
+      "not": "1440 input görünür; 375/768 ikon"
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "header.header side-drawer-opener.header__icon--search",
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Mobil/tablet arama çekmecesi"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ]
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "cream",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "katalogSorgu cream — Golden Hour / Recovery Cream"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440 Search input. Öneri listesi kapalı.",
+    "input": "cream önerileri (kareye bakılacak)."
+  },
+  "missingStates": [],
+  "interactionNote": "Submit yok. 375/768 önce search ikon. Account araması yok.",
+  "capture": {
+    "url": "https://concept-theme.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": ""
+  }
+}

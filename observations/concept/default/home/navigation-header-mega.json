@@ -1,0 +1,73 @@
+{
+  "observationId": "concept.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "concept",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://concept-theme.myshopify.com/",
+  "selector": "header.header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "header--middle-left header--nav__center. THEME DEMO / SHOPS / PRODUCTS / PAGES / BLOG / BUY CONCEPT. 1440 mega. 375/768 hamburger.",
+  "delta": "shopify-section-header home'da h=0 (SCRIPT first child) — selector header.header. Mega HEADER-MENU custom element, details değil. Account/login/wishlist leftover.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://concept-theme.myshopify.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header + inline nav"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "header-menu[id=\"Details-HeaderMenu-2 test-4\"] > a.header__menu-item",
+      "capture": false,
+      "viewports": [
+        "1440"
+      ],
+      "not": "SHOPS hover. href koleksiyona gider; tıklanmadı."
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#MegaMenu-Content-2",
+      "capture": true,
+      "captureMode": "section",
+      "captureSelector": "#MegaMenu-Content-2",
+      "etiket": "shops-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "SHOPS mega crop — Collection Page kolonları"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Logo + THEME DEMO / SHOPS / PRODUCTS / PAGES / BLOG / BUY CONCEPT. Arama kutusu 1440. Cart 0.",
+    "open": "1440 SHOPS mega: Collection Page / Theme Highlights kolonları (kareye bakılacak)."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375/768 mega yok — hamburger (global-menu-drawer)."
+    }
+  ],
+  "interactionNote": "SHOPS <a> href=/collections/skincare — tıklama sayfaya kaçar. Hover + forceOpen #MegaMenu-Content-2. THEME DEMO mega diğer preset'lere gider; leftover.",
+  "capture": {
+    "url": "https://concept-theme.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": ""
+  }
+}

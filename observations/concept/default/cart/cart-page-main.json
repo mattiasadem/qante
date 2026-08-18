@@ -1,0 +1,82 @@
+{
+  "observationId": "concept.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "concept",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://concept-theme.myshopify.com/cart",
+  "selector": "#shopify-section-template--16903853342959__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Your cart. Boş: Continue shopping + Have an account?",
+  "delta": "Account link leftover. Checkout tıklanmadı.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://concept-theme.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepet-bos",
+      "not": "Your cart is empty"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://concept-theme.myshopify.com/products/vita-botanical-mela-fade-serum-system-a-b",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--16903853998319__main",
+      "capture": false,
+      "not": "75ml/White $70"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://concept-theme.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Cart sayfa dolu"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--16903853342959__cart-items .quantity__button:nth-of-type(2)",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + Continue shopping.",
+    "filled": "Vita-Botanical qty 1 $70 (kareye bakılacak).",
+    "changed": "Qty 2 (kareye bakılacak)."
+  },
+  "missingStates": [],
+  "interactionNote": "Have an account? / checkout tıklanmadı.",
+  "capture": {
+    "url": "https://concept-theme.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": ""
+  }
+}
