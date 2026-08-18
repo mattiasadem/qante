@@ -161,6 +161,14 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: venue-cro-interact-2026-08-18
+Gerekçe: Discover-interact leftover. Var olan obs kullanıldı: before-after-slider (End → Land), promo-banner-countdown (saniye tick, dismiss yok), faq-collapsible-tabs (ilk soru), testimonial-quote-carousel home+PDP (1440 ok / 375+768 nokta). product-info-main stok/Color zaten interact. Sticky ATC observation yok — icat edilmedi. comparison-quick-table yok (karşılaştırma = before-after). FAQ Categories hash (#cat-…) diğer grubu gizlemedi.  
+Örnekler: `/products/tucker-wallet` image-compare · home countdown · `/pages/faq` · testimonials  
+Öneri: leftover — şema uydurma yok  
+Karar: onay bekliyor
+
+---
+
 ADAY: venue-taxonomy-404  
 Gerekçe: 404 `page-content-main` reuse; `pageType` 404 listede yok. `search` / `cart` / `collections` / `blog-list` klasörleri diğer temalarla aynı pratik.  
 Örnekler: `/pages/this-does-not-exist-xyz-venue`  

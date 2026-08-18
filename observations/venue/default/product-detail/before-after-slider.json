@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--19058350096432__section_image_compare_Lxpwbg",
   "evidenceSlug": "before-after-slider",
   "evidence": [
+    "evidence/venue/default/product-detail/before-after-slider.1440.png",
     "evidence/venue/default/product-detail/before-after-slider.375.png",
     "evidence/venue/default/product-detail/before-after-slider.768.png",
-    "evidence/venue/default/product-detail/before-after-slider.1440.png"
+    "evidence/venue/default/product-detail/before-after-slider.changed.land-dolu.1440.png",
+    "evidence/venue/default/product-detail/before-after-slider.changed.land-dolu.375.png",
+    "evidence/venue/default/product-detail/before-after-slider.changed.land-dolu.768.png",
+    "evidence/venue/default/product-detail/before-after-slider.initial.ilk-hal.1440.png",
+    "evidence/venue/default/product-detail/before-after-slider.initial.ilk-hal.375.png",
+    "evidence/venue/default/product-detail/before-after-slider.initial.ilk-hal.768.png"
   ],
   "notlar": "js-section__image-compare. Crafted for every occasion. Land / Sea. Control how much of each overlapping image is shown.",
   "delta": "Shopify.theme.name venue-18-2-1 · id 142511603760 · schema_name Venue · schema_version 18.2.1 · theme_store_id null · role main · shop venue-theme-morning.myshopify.com image-compare. En yakın before-after-slider.",
@@ -59,20 +65,23 @@
       "action": "press",
       "value": "End",
       "capture": false,
-      "not": "exposure %100 Sea"
+      "not": "exposure %100 = Land kaplar"
     },
     {
       "state": "changed",
       "action": "waitFor",
       "value": 500,
       "capture": true,
-      "etiket": "sea-dolu",
-      "not": "Ayırıcı sağa — Sea kaplar"
+      "etiket": "land-dolu",
+      "not": "Ayırıcı sağa — Land kaplar"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "Crafted for every occasion. Land (motosiklet) solda + Sea (sörf) sağda, ayırıcı ~ortada, tutamaç <> . Sağda Versatile / Weatherproof / Dependable (1440 kolon; 375 altta).",
+    "changed": "End sonrası Land motosiklet kareyi kaplar; ayırıcı sağ kenarda, tutamaç < . Sea etiketi duruyor ama deniz görseli neredeyse yok. 3vp aynı yön."
+  },
   "missingStates": [],
-  "interactionNote": "Yoklama: fill range güvenilmez; click+End 375/768/1440'te --exposure %45→%100. Sea etiketi tık değiştirmedi. Şema emit:slider.drag duruyor — yeni alan yok.",
+  "interactionNote": "Yoklama: fill range güvenilmez; click+End --exposure %45→%100 = before/Land. Sea yazısı tık değiştirmedi. Şema emit:slider.drag duruyor — yeni alan yok.",
   "capture": {
     "url": "https://venue-theme-morning.myshopify.com/products/tucker-wallet",
     "viewports": [
@@ -81,7 +90,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T20:42:03.367Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T20:02:58.862Z"
   }
 }
