@@ -5,9 +5,61 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://wonder-theme-beauty.myshopify.com/",
-  "selector": "#shopify-section-sections--18174410195144__announcement-bar",
+  "selector": "announcement-bar.wt-announcement-bar",
   "evidenceSlug": "promo-announcement-bar",
-  "evidence": [],
-  "notlar": "Marquee: Free Shipping Over $50! Returns are always on us. announcement-bar 30px.",
-  "delta": "Wonder wt-announcement 2col marquee. Kapat yok. Link /pages/shipping."
+  "evidence": [
+    "evidence/wonder/default/home/promo-announcement-bar.initial.serit.375.png",
+    "evidence/wonder/default/home/promo-announcement-bar.initial.serit.768.png",
+    "evidence/wonder/default/home/promo-announcement-bar.initial.serit.1440.png"
+  ],
+  "notlar": "Marquee: Free Shipping Over $50! Returns are always on us.",
+  "delta": "Wonder wt-announcement 2col marquee. Overlay dismiss/Escape kapatabiliyor (localStorage wt-announcement-hidden); capture forceOpen ile geri açıldı.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://wonder-theme-beauty.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "announcement-bar.wt-announcement-bar",
+      "capture": false,
+      "not": "dismiss close/localStorage sonrası tekrar göster"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "etiket": "serit",
+      "not": "Marquee şerit"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Free Shipping Over $50! Returns are always on us. 2-col marquee. Resmi dismiss Close/Escape kapatıyor — bu 3vp overlay dismiss olmadan, aynı screenshot-section ile."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "capture (375): zero-size / eşleşmedi: announcement-bar.wt-announcement-bar"
+    }
+  ],
+  "interactionNote": "Resmi capture dismiss Close/Escape ile şeridi kapatıyor. forceOpen display geri açar. Subscribe yok.",
+  "capture": {
+    "url": "https://wonder-theme-beauty.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "margin-box+minPad8+no-dismiss (official dismiss hides bar)",
+    "updatedAt": "2026-08-18T11:07:40.907Z"
+  }
 }

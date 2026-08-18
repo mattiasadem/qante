@@ -32,10 +32,11 @@
 | Product Page CRO (Bakuchiol) | Ayrı PDP şablon (selling plan). Walk PDP = Default Body salt scrub |
 | Product Page Ver 2 / Ver 3 | Nav layout linkleri; ayrı walk yok |
 | `/collections/homepage-bestseller` | Bestseller PLP (slideshow + extra). Yazılan PLP = `/collections/all` |
-| 1440 hamburger | İlk `.wt-header__menu-trigger` 28×42 görünür. Interact listesi 375/768; 1440 leftover |
+| 1440 hamburger | İlk `.wt-header__menu-trigger` 28×42 — aynı `#wt-drawer-nav`. Header mega `open` + menu drawer 1440 |
 | Localization USD / Language | Header + drawer. Locale değiştirilmedi |
-| Mega Shop `<a href=/collections>` | Tıklama koleksiyon indeksine kaçar; yalnız hover |
-| Mobile submenu `changed` | Shop by expander görülebilir; alt menü açılmadı (yazılı `<a>` sayfaya gider) |
+| Hover mega | Shop teaser hover panel açmaz. `mega-menu-section` drawer içinde x=-500 |
+| Mobile/desktop submenu `changed` | Shop by `+` expander (CSS, text yok). Yazılı Shop `/collections`. Alt kolon açılmadı |
+| Announcement close | Overlay dismiss/Escape + `wt-announcement-hidden`. Resmi capture 0px; 3vp `screenshot-section` dismiss olmadan |
 
 ## Aday (yeni şema yok)
 
@@ -50,7 +51,7 @@
 
 ## Interact notları
 
-- Shop mega: `a.wt-header__nav-teaser__link--parent[href='/collections']` — tıklama `/collections`; yalnız hover 1440.
+- Mega: hover yok. 1440 hamburger → Shop by drawer (`mega-menu-section` içeride). Shop + expander leftover.
 - Predictive: opener `.wt-header__search-trigger`; fill `#search-shop` katalog `serum` (13 sonuç sayfa).
 - Cart: `a.wt-cart__trigger` → `#CartDrawer`. ATC Body salt scrub otomatik açar. Qty `button.js-counter-increase`.
 - PDP Size: `label[for='template--18174410653896__main-1-1']` = 300 ml. Type Cranberry varsayılan.

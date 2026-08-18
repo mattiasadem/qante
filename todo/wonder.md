@@ -10,8 +10,8 @@
 `theme_store_id` = **null** (canlıda yok; uydurulmadı)  
 shop `wonder-theme-beauty.myshopify.com`
 
-**Durum:** Mod A walk + resmi 3vp + interact — yazıldı, capture kuyrukta  
-**PR:** draft — **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti**  
+**PR:** draft https://github.com/mattiasadem/qante/pull/166 — **main'e merge yok**
 
 ---
 
@@ -25,7 +25,7 @@ shop `wonder-theme-beauty.myshopify.com`
 | Parallel | yalnız `observations/wonder/`, `evidence/wonder/`, `todo/wonder.md`, `candidates/wonder-leftovers.md` |
 
 **Kapsam satırı:**  
-`Wonder · default (Beauty) · wonder-theme/wonder-demo-v2.5 · schema_name Wonder 2.5.0 · theme_store_id null · home→PDP→PLP→collections→search→cart→about-us/contact→faq→blog→404 · leftover: candidates/wonder-leftovers.md`
+`Wonder · default (Beauty) · wonder-theme/wonder-demo-v2.5 · schema_name Wonder 2.5.0 · theme_store_id null · home→PDP→PLP→collections→search→cart→about-us/contact→faq→blog→404 · 58 obs · 193 PNG · 0 yeni şema · leftover: candidates/wonder-leftovers.md`
 
 ---
 
@@ -33,22 +33,22 @@ shop `wonder-theme-beauty.myshopify.com`
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home + announcement/header/footer + conversion blocks | roster | [ ] capture |
-| Mega Shop 1440 | interact | [ ] |
-| Predictive search `serum` | interact 3vp | [ ] |
-| Mobile menu 375 | interact | [ ] |
-| Mobile menu 768 | interact | [ ] |
-| Cart drawer empty + filled + qty | interact 3vp | [ ] |
-| PDP Body salt scrub Size 180→300 ml | interact 3vp | [ ] |
-| PLP `/collections/all` | roster | [ ] capture |
-| Collections index `/collections` | roster | [ ] capture |
-| Search `/search?q=serum` | roster | [ ] capture |
-| Cart page empty + filled + qty | interact 3vp | [ ] |
-| About `/pages/about-us` (`/pages/about` 404) | roster | [ ] capture |
-| Contact `/pages/contact` (submit yok) | roster | [ ] capture |
-| FAQ `/pages/faq` | roster | [ ] capture |
-| Beauty journal + article | roster | [ ] capture |
-| 404 leftover | roster | [ ] capture |
+| Home + announcement/header/footer + conversion blocks | roster + capture | [x] |
+| Mega / drawer 1440 | interact | [x] hover yok; hamburger drawer |
+| Predictive search `serum` | interact 3vp | [x] |
+| Mobile menu 375 | interact | [x] |
+| Mobile menu 768 | interact | [x] |
+| Cart drawer empty + filled + qty | interact 3vp | [x] |
+| PDP Body salt scrub Size 180→300 ml | interact 3vp | [x] |
+| PLP `/collections/all` | roster + capture | [x] |
+| Collections index `/collections` | roster + capture | [x] |
+| Search `/search?q=serum` | roster + capture | [x] |
+| Cart page empty + filled + qty | interact 3vp | [x] |
+| About `/pages/about-us` (`/pages/about` 404) | roster + capture | [x] |
+| Contact `/pages/contact` (submit yok) | roster + capture | [x] |
+| FAQ `/pages/faq` | roster + capture | [x] |
+| Beauty journal + article | roster + capture | [x] |
+| 404 leftover | roster + capture | [x] |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -92,12 +92,12 @@ shop `wonder-theme-beauty.myshopify.com`
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | open | Shop hover 1440 — bekleniyor |
-| global-predictive-search | input | `serum` 3vp — bekleniyor |
-| global-menu-drawer | open | 375/768 hamburger — bekleniyor |
-| global-cart-drawer | filled + changed | empty → Body salt scrub → qty — bekleniyor |
-| cart-page-main | filled + changed | empty → filled → qty — bekleniyor |
-| product-info-main | changed | Size 180 ml → 300 ml — bekleniyor |
+| navigation-header-mega | open | Shop hover panel yok. 1440 hamburger → Shop by drawer |
+| global-predictive-search | input | `serum` 3vp — Products + Suggestions + Articles |
+| global-menu-drawer | open | 375/768 Shop by + FAQ/Contact/USD |
+| global-cart-drawer | filled + changed | empty → qty1 $68/$61.20 → qty2 $136/$122.40 |
+| cart-page-main | filled + changed | empty → qty1 $68 → qty2 $136 |
+| product-info-main | changed | Size 180 ml $68 → 300 ml $98 |
 
 ---
 
@@ -109,7 +109,7 @@ shop `wonder-theme-beauty.myshopify.com`
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact mega / search / cart / menu / PDP Size
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate` — 0 error
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact mega / search / cart / menu / PDP Size
+- [x] PNG bak → stateFindings
+- [x] `npm run validate` — 0 error
