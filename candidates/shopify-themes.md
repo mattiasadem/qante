@@ -4,7 +4,7 @@ QANTE Theme Store takibi: hangi resmi demo / canlı mağaza walk edildi.
 Durum: `done` = yapılmış (main’de resmi 3vp) · `in progress` = yapılıyor (açık PR / cloud agent) · boş = kuyruk.  
 *Kesim:* 18 Ağustos 2026 (Berlin). Viewer: **Listeler** sekmesi.
 
-Shopify Theme Store 53/70 done on main; 5 in progress (Stiletto, Heritage, Pitch, Dwell, Fabric); 12 View-demo-only remaining.  
+Shopify Theme Store 54/70 done on main; 4 in progress (Stiletto, Pitch, Dwell, Fabric); 12 View-demo-only remaining.  
 Paid batch 10/10 and the next-10-after-Expanse are largely on main except Stiletto still walking.
 
 DTC marka listesi: [`dtc-69-brands.md`](./dtc-69-brands.md)
@@ -65,7 +65,7 @@ DTC marka listesi: [`dtc-69-brands.md`](./dtc-69-brands.md)
 | 52 | done | [Dawn](https://themes.shopify.com/themes/dawn) | Shopify | Free | https://theme-dawn-demo.myshopify.com/ | dawn | Dawn 15.0.0 · theme-dawn-demo · 29 obs / 101 PNG. PR #175 squash `511ba25f`. Canlı fork’lar done: brez, ghia, im8health. |
 | 53 | done | [Spotlight](https://themes.shopify.com/themes/spotlight) | Shopify | Free | https://theme-spotlight-demo.myshopify.com/ | spotlight | Spotlight-8.0.0 · theme-spotlight-demo · 15 obs / 54 PNG. PR #176 squash `5ff3349b`. |
 | 54 | done | [Trade](https://themes.shopify.com/themes/trade) | Shopify | Free | https://theme-trade-demo.myshopify.com/ | trade | Trade 15.0.0 · theme-trade-demo · 33 obs / 116 PNG. PR #177 squash `4d20160a`. Free Shopify · B2B. |
-| 55 | in progress | [Heritage](https://themes.shopify.com/themes/heritage) | Shopify | Free | https://theme-heritage-demo.myshopify.com/ | heritage | Horizon ailesi 2026 · PR #178 açık. |
+| 55 | done | [Heritage](https://themes.shopify.com/themes/heritage) | Shopify | Free | https://theme-heritage-demo.myshopify.com/ | heritage | Horizon ailesi 2026 · 33 obs / 117 PNG. PR #178 squash `08d0de5e`. |
 | 56 | in progress | [Pitch](https://themes.shopify.com/themes/pitch) | Shopify | Free | https://theme-pitch-demo.myshopify.com/ | pitch | Horizon ailesi 2026 · PR #179 açık. |
 | 57 | in progress | [Dwell](https://themes.shopify.com/themes/dwell) | Shopify | Free | https://theme-dwell-demo.myshopify.com/ | dwell | Horizon ailesi 2026 · PR #180 açık. |
 | 58 | in progress | [Fabric](https://themes.shopify.com/themes/fabric) | Shopify | Free | https://theme-fabric-demo.myshopify.com/ | fabric | Horizon ailesi 2026 · PR #181 açık. |
