@@ -1,0 +1,60 @@
+{
+  "observationId": "pebble.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "pebble",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://pebble-little.myshopify.com/products/logo-polo-red",
+  "selector": "#shopify-section-template--20816638607498__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/pebble/default/product-detail/product-info-main.changed.size-8y.1440.png",
+    "evidence/pebble/default/product-detail/product-info-main.changed.size-8y.375.png",
+    "evidence/pebble/default/product-detail/product-info-main.changed.size-8y.768.png",
+    "evidence/pebble/default/product-detail/product-info-main.initial.size-3y.1440.png",
+    "evidence/pebble/default/product-detail/product-info-main.initial.size-3y.375.png",
+    "evidence/pebble/default/product-detail/product-info-main.initial.size-3y.768.png"
+  ],
+  "notlar": "Color swatch Red (tek renk). Size 3Y–8Y. Add To Cart.",
+  "delta": "Horizon-style variant-picker block. Breadcrumb Accessories içinde.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pebble-little.myshopify.com/products/logo-polo-red",
+      "capture": true,
+      "etiket": "size-3y",
+      "not": "Logo Polo Red. Color Red. Size 3Y $45."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--20816638607498__main label.variant-option__button-label:has-text('8Y')",
+      "value": 1500,
+      "capture": true,
+      "etiket": "size-8y",
+      "not": "Size 8Y — fiyat/SKU değişiyor mu"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Logo Polo Red $45. Color Red. Size 3Y seçili. In-stock and ready to ship. Add To Cart + Buy It Now (tıklanmadı).",
+    "changed": "Size 8Y seçili. Only 2 items in stock! Fiyat $45 kaldı."
+  },
+  "missingStates": [],
+  "interactionNote": "Buy It Now / checkout yok. Size Guide overlay leftover. Color yalnız Red.",
+  "capture": {
+    "url": "https://pebble-little.myshopify.com/products/logo-polo-red",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:07:44.534Z"
+  }
+}
