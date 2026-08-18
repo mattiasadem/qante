@@ -7,7 +7,17 @@
   "url": "https://theme-dwell-demo.myshopify.com/",
   "selector": "dialog.cart-drawer__dialog",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/dwell/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/dwell/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/dwell/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/dwell/default/home/global-cart-drawer.filled.yastik-qty1.1440.png",
+    "evidence/dwell/default/home/global-cart-drawer.filled.yastik-qty1.375.png",
+    "evidence/dwell/default/home/global-cart-drawer.filled.yastik-qty1.768.png",
+    "evidence/dwell/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/dwell/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/dwell/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
   "notlar": "Horizon cart-drawer-component. Boş sınıf cart-drawer--empty.",
   "delta": "/cart ayrı sayfa (cart-page-main). Checkout tıklanmadı.",
   "captureMode": "viewport",
@@ -59,15 +69,35 @@
     },
     {
       "state": "filled",
+      "action": "waitFor",
+      "value": 400,
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "yastik-qty1",
+      "not": "375: ATC sonrası drawer açık kalır — cart ikonu viewport dışı"
+    },
+    {
+      "state": "filled",
       "action": "click",
       "selector": "header button[aria-label='Cart']",
+      "viewports": [
+        "768",
+        "1440"
+      ],
       "capture": false,
-      "not": "Drawer ATC sonrası kapanabiliyor"
+      "not": "768/1440 drawer ATC sonrası kapanabiliyor — cart ikonu ile aç"
     },
     {
       "state": "filled",
       "action": "waitFor",
       "value": 800,
+      "viewports": [
+        "768",
+        "1440"
+      ],
       "capture": true,
       "captureMode": "viewport",
       "etiket": "yastik-qty1",
@@ -96,7 +126,7 @@
     "changed": "Cart 2. Adet 2. Satır + estimated total $500.00 CAD."
   },
   "missingStates": [],
-  "interactionNote": "ATC UI. Drawer ATC sonrası kapanabiliyor — cart ikonu ile yeniden açıldı. Checkout / Discount Apply tıklanmadı.",
+  "interactionNote": "addToCart → ui. 375 ATC drawer'ı açık bırakır (cart ikonu viewport dışı). 768/1440 cart ikonu ile yeniden açıldı. Checkout / Discount Apply tıklanmadı.",
   "capture": {
     "url": "https://theme-dwell-demo.myshopify.com/",
     "viewports": [
@@ -106,6 +136,6 @@
     ],
     "mode": "viewport",
     "method": "interaction-steps",
-    "updatedAt": ""
+    "updatedAt": "2026-08-18T11:59:39.281Z"
   }
 }

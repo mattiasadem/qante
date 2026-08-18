@@ -97,6 +97,22 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: dwell-collections-duplicate-decor  
+Gerekçe: `/collections` ızgarasında Decor kartı iki kez (aynı görsel + etiket). Şema değil — katalog/liste.  
+Örnekler: https://theme-dwell-demo.myshopify.com/collections  
+Öneri: leftover — demo içerik  
+Karar: onay bekliyor
+
+---
+
+ADAY: dwell-featured-vs-plp-price  
+Gerekçe: Home featured Brushed Cotton Duvet Cover $310 / Vintage Linen Bed Blanket $489. Bedding PLP aynı adlar $210 / $185 (sale). Şema değil; katalog/market.  
+Örnekler: `home/product-showcase-grid-featured` vs `collection/product-showcase-grid-plp`  
+Öneri: leftover — fiyat sapması not edildi  
+Karar: onay bekliyor
+
+---
+
 ADAY: dwell-policy-siblings  
 Gerekçe: `/pages/shipping` yazıldı. `/pages/returns` `/pages/responsible-design` `/pages/care-maintenance` aynı template id (`__main`).  
 Örnekler: footer INFORMATION  
