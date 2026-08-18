@@ -1,0 +1,55 @@
+{
+  "observationId": "local.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "local",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://local-theme-main.myshopify.com/",
+  "selector": "#site-menu-sidebar",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "sidebar-drawer#site-menu-sidebar. 375/768 .mobile-menu-button 40×40. 1440 hamburger 0px.",
+  "delta": "Shopify.theme.name local-build/light · id 139927814205 · schema_name Local · schema_version 4.1.0 · theme_store_id null · role main · shop local-theme-light-demo.myshopify.com Mobil drawer: Categories / About us / Recipes / Blog / Theme Features + pickup/delivery + sosyal + locale.",
+  "captureMode": "viewport",
+  "prepareClick": ".mobile-menu-button",
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://local-theme-main.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": ".mobile-menu-button",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Sol menu drawer"
+    }
+  ],
+  "interactionStates": [
+    "open"
+  ],
+  "stateFindings": {
+    "open": ""
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger yok — inline nav + mega"
+    }
+  ],
+  "interactionNote": "Account yok drawer’da. Language/Email tıklanmadı. Categories alt menü leftover."
+}

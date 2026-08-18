@@ -1,0 +1,135 @@
+{
+  "observationId": "local.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "local",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://local-theme-main.myshopify.com/",
+  "selector": ".search-results-container",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "1440 inline input[name=q] placeholder Search for… data-js-focus-overlay=search-results-overlay-desktop. 375/768 .mobile-search-button → #header-mobile-search. katalogSorgu=bread.",
+  "delta": "Shopify.theme.name local-build/light · id 139927814205 · schema_name Local · schema_version 4.1.0 · theme_store_id null · role main · shop local-theme-light-demo.myshopify.com Predictive: breakfast / Bread & Bakery + Products (Bread Sticks $6.50…). Submit yok.",
+  "captureMode": "viewport",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://local-theme-main.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#site-header input[data-js-focus-overlay='search-results-overlay-desktop']",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Boş desktop arama"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".mobile-search-button",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Mobil arama aç"
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "#site-header input[data-js-focus-overlay='search-results-overlay-desktop']",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#site-header input[data-js-focus-overlay='search-results-overlay-desktop']",
+      "value": "bread",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "katalogSorgu bread"
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": ".mobile-search-button",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#header-mobile-search input[name='q']",
+      "value": "bread",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "#site-header input[data-js-focus-overlay='search-results-overlay-desktop']",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bread",
+      "not": "bread önerileri"
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "#header-mobile-search input[name='q']",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bread",
+      "not": "bread önerileri mobil"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "stateFindings": {
+    "initial": "",
+    "input": ""
+  },
+  "missingStates": [],
+  "interactionNote": "fill bazen boş overlay bıraktı probe'da; pressSequentially sonuç verdi. Submit/PII yok. Search for bread tıklanmadı."
+}

@@ -1,0 +1,128 @@
+{
+  "observationId": "local.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "local",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://local-theme-main.myshopify.com/",
+  "selector": "#site-cart-sidebar",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "sidebar-drawer#site-cart-sidebar. 1440 .button--cart-handle; 375/768 .mobile-cart-button. ATC hamburger sonrası otomatik açıldı.",
+  "delta": "Shopify.theme.name local-build/light · id 139927814205 · schema_name Local · schema_version 4.1.0 · theme_store_id null · role main · shop local-theme-light-demo.myshopify.com Cart drawer + Often bought together. Checkout tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://local-theme-main.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".button--cart-handle",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart drawer 1440"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".mobile-cart-button",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart drawer mobil"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://local-theme-main.myshopify.com/products/hamburger",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.add-to-cart",
+      "capture": false,
+      "not": "Hamburger ATC"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": ".button--cart-handle",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "Drawer kapandıysa aç"
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": ".mobile-cart-button",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#site-cart-sidebar .qty-plus",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "stateFindings": {
+    "initial": "",
+    "filled": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout / kupon / Often bought together tıklanmadı. Small (7 oz) disabled — ATC Medium."
+}
