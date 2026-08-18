@@ -1,0 +1,52 @@
+{
+  "observationId": "ata.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "ata",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://g5jhl-themes.myikas.com/",
+  "selector": ".mobile-menu",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "375/768 hamburger-btn → .mobile-menu-overlay.is-open. Anasayfa / Skin Care / Makeup + Sepet + Giriş Yap / Hesap Oluştur.",
+  "delta": "ikas mobile-menu. Alt menü/akordeon yok. Login tıklanmadı. Ata · ikas Studio storefront · host g5jhl-themes.myikas.com · window.Shopify yok · window.__IKAS_DATA__ var (storefrontThemeId 90e6a44f-b183-44d4-b141-55b49c09e75d · storefrontId f726bf61-68c8-4758-afb3-206ea66e32e7 · storefrontType STOREFRONT · domain themes.myikas.com · merchantName themes · locale tr · TRY) · window.IkasEvents var · theme_store_id 1863f1b9-8002-4446-8c3c-1436db3d47bc (Theme Store UUID; storefront JSON'da yok)",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://g5jhl-themes.myikas.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.hamburger-btn",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Mobil menü açık"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Alt menü yok — üç düz link. 1440 hamburger gizli (inline nav)."
+    }
+  ],
+  "interactionNote": "Giriş Yap / Hesap Oluştur tıklanmadı. Sepet satırı tıklanmadı (ayrı cart drawer)."
+}

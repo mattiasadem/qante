@@ -1,0 +1,56 @@
+{
+  "observationId": "ata.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "ata",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://g5jhl-themes.myikas.com/",
+  "selector": ".search-overlay",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "Header Arama → .search-overlay.is-open. Input Ürün ara... Popüler: Ruj Fondöten Parfüm Cilt Bakımı Set İndirim.",
+  "delta": "ikas search-overlay + search-panel. Sonuç sayfası /search?q=. Submit tam sayfa ayrı. Ata · ikas Studio storefront · host g5jhl-themes.myikas.com · window.Shopify yok · window.__IKAS_DATA__ var (storefrontThemeId 90e6a44f-b183-44d4-b141-55b49c09e75d · storefrontId f726bf61-68c8-4758-afb3-206ea66e32e7 · storefrontType STOREFRONT · domain themes.myikas.com · merchantName themes · locale tr · TRY) · window.IkasEvents var · theme_store_id 1863f1b9-8002-4446-8c3c-1436db3d47bc (Theme Store UUID; storefront JSON'da yok)",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://g5jhl-themes.myikas.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.nav-icon-btn[aria-label='Arama']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "populer-aramalar",
+      "not": "Boş overlay + popüler chip"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input.search-panel-input",
+      "value": "ruj",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-ruj",
+      "not": "katalogSorgu ruj (popüler chip + ruj PDP)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "POPÜLER ARAMALAR chip: Ruj Fondöten Parfüm Cilt Bakımı Set İndirim. Input placeholder Ürün ara..."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu=ruj. Tam sayfa /search ayrı observation. PII yok."
+}
