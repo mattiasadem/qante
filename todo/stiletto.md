@@ -25,7 +25,7 @@ Canlı host: `stiletto-theme-vogue.myshopify.com` → **301 primary_domain_redir
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **60** |
-| PNG | **196** |
+| PNG | **196** (statik kareler popup kapatılarak yeniden çekildi) |
 | Parallel | yalnız `observations/stiletto/`, `evidence/stiletto/`, `todo/stiletto.md`, `candidates/stiletto-leftovers.md` |
 
 **Kapsam satırı:**  
@@ -114,7 +114,8 @@ Canlı host: `stiletto-theme-vogue.myshopify.com` → **301 primary_domain_redir
 
 ## Evidence backlog
 
-- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Official 3vp static (`capture-observation.mjs` / recapture `capture-interaction.mjs`)
+- [x] JOIN US + walkthrough kapatıldı; Get 10% Off tab leftover
 - [x] Interact mega / search / cart / menu / PDP Size
 - [x] PNG bak → stateFindings
 - [x] `npm run validate` — 0 error
