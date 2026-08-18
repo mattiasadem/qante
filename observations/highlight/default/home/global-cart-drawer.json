@@ -7,7 +7,17 @@
   "url": "https://highlight-theme.myshopify.com/",
   "selector": "#site-cart-sidebar",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/highlight/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/highlight/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/highlight/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/highlight/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/highlight/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/highlight/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/highlight/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/highlight/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/highlight/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
   "notlar": "#cart-open-button → #site-cart-sidebar. Boş: 0 PRODUCTS IN YOUR CART + CONTINUE BROWSING. Dolu: Writable sweatshirt S/Black $79. Qty input.number (plus yok). Checkout tıklanmadı.",
   "delta": "GET /cart/clear Cloudflare 429 — boş hâl için ATC + Remove. Qty plus yok; input.qty fill.",
   "captureMode": "viewport",
@@ -112,10 +122,21 @@
     }
   ],
   "stateFindings": {
-    "initial": "0 PRODUCTS IN YOUR CART. CONTINUE BROWSING.",
-    "filled": "1 PRODUCT. Writable sweatshirt (S / Black) $79.00. Total $79. VIEW CART + CHECKOUT (tıklanmadı).",
-    "changed": "PNG'ye bak — qty 2 / Total $158 beklenir."
+    "initial": "0 PRODUCTS IN YOUR CART + CONTINUE BROWSING.",
+    "filled": "1 PRODUCT IN YOUR CART. Writable sweatshirt (S / Black) $79.00. Total $79.00. VIEW CART + CHECKOUT (tıklanmadı).",
+    "changed": "2 PRODUCTS. Satır $158.00. 2021 PROMO -$31.60. Total $126.40. Qty kutusu 2."
   },
   "missingStates": [],
-  "interactionNote": "Checkout / Order instructions PII dur. GET /cart/clear kullanılmadı (CF). Qty plus yok."
+  "interactionNote": "Checkout / Order instructions PII dur. GET /cart/clear kullanılmadı (CF). Qty plus yok.",
+  "capture": {
+    "url": "https://highlight-theme.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:21:35.993Z"
+  }
 }

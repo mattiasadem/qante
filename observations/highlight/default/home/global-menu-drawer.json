@@ -7,9 +7,13 @@
   "url": "https://highlight-theme.myshopify.com/",
   "selector": "#site-menu-sidebar",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/highlight/default/home/global-menu-drawer.open.menu-acik.1440.png",
+    "evidence/highlight/default/home/global-menu-drawer.open.menu-acik.375.png",
+    "evidence/highlight/default/home/global-menu-drawer.open.menu-acik.768.png"
+  ],
   "notlar": "#menu-open-button → sidebar-drawer#site-menu-sidebar. 375/768/1440 hamburger var.",
-  "delta": "Masaüstü mega yok; tüm vp drawer. Reflective submenu Things/Accessories display:none — changed yok (a tıklama koleksiyona kaçar).",
+  "delta": "Masaüstü mega yok; tüm vp drawer. Reflective chevron var; alt menü açılmadı.",
   "captureMode": "viewport",
   "interactionStates": [
     "open"
@@ -33,13 +37,24 @@
     }
   ],
   "stateFindings": {
-    "open": "Sol sidebar. Close + All / Reflective / Writable / Food & home / Apparel / About Us / Contacts / Help / News + Facebook / Instagram."
+    "open": "Sol drawer. Close + All / Reflective (>) / Writable / Food & home / Apparel + About Us / Contacts / Help / News + Facebook / Instagram. 1440 homepage sağda kalır."
   },
   "missingStates": [
     {
       "state": "changed",
-      "sebep": "Reflective li.has-submenu alt Things/Accessories display:none. Expander button yok; <a>Reflective koleksiyona kaçar."
+      "sebep": "Reflective chevron görüldü; Things/Accessories kapalı. Chevron tıklanmadı (koleksiyona kaçma riski)."
     }
   ],
-  "interactionNote": "1440 hamburger görünür (Highlight). Sign-in/account tıklanmadı."
+  "interactionNote": "1440 hamburger görünür. Account tıklanmadı.",
+  "capture": {
+    "url": "https://highlight-theme.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:17:47.055Z"
+  }
 }

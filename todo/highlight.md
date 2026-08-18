@@ -12,8 +12,8 @@
 `Shopify.shop` = `highlight-theme.myshopify.com`  
 *Canonical host (redirect):* `highlight-theme-main.myshopify.com` — aynı vitrin, başka preset değil.
 
-**Durum:** Mod A walk + resmi 3vp + interact + validate **devam**  
-**PR:** draft · **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti** (0 error)  
+**PR:** draft https://github.com/mattiasadem/qante/pull/198 · **main'e merge yok**
 
 ---
 
@@ -25,11 +25,11 @@
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **31** |
-| PNG | (capture sonrası) |
+| PNG | **111** |
 | Parallel | yalnız `observations/highlight/`, `evidence/highlight/`, `todo/highlight.md`, `candidates/highlight-leftovers.md` |
 
 **Kapsam satırı:**  
-`Highlight · default · highlight-build/highlight · schema_name Highlight 4.0.2 · theme_store_id null · home→PDP Writable sweatshirt→PLP apparel→collections→search reflective→cart→about unusual-usual-things/contact-us→news+Valise→404 · 31 obs · 0 yeni şema · leftover: candidates/highlight-leftovers.md`
+`Highlight · default · highlight-build/highlight · schema_name Highlight 4.0.2 · theme_store_id null · home→PDP Writable sweatshirt→PLP apparel→collections→search reflective→cart→about unusual-usual-things/contact-us→news+Valise→404 · 31 obs · 111 PNG · 0 yeni şema · leftover: candidates/highlight-leftovers.md`
 
 ---
 
@@ -37,22 +37,22 @@
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (header→footer) | roster + obs | [ ] capture |
+| Home roster (header→footer) | roster + obs | [x] capture |
 | Mega / nav hover | yok — leftover | [x] dürüst |
-| Predictive search `reflective` | interact 3vp | [ ] |
-| Mobile menu 375 | interact | [ ] |
-| Mobile menu 768 | interact | [ ] |
-| Menu 1440 (hamburger var) | interact | [ ] |
-| Cart drawer empty + filled + qty | interact 3vp | [ ] $79→$158 |
-| PDP Writable sweatshirt Color Black→White | interact 3vp | [ ] |
-| PLP `/collections/apparel` | roster + obs | [ ] |
-| Collections index `/collections` | roster + obs | [ ] |
-| Search `/search?q=reflective` | roster + obs | [ ] |
-| Cart page empty + filled + qty | interact 3vp | [ ] |
-| About `/pages/unusual-usual-things` | roster + obs | [ ] |
-| Contact `/pages/contact-us` (submit yok) | roster + obs | [ ] |
-| News + Valise post | roster + obs | [ ] |
-| 404 leftover | roster + obs | [ ] |
+| Predictive search `reflective` | interact 3vp | [x] input dolu, öneri yok |
+| Mobile menu 375 | interact | [x] |
+| Mobile menu 768 | interact | [x] |
+| Menu 1440 (hamburger var) | interact | [x] |
+| Cart drawer empty + filled + qty | interact 3vp | [x] $79 → qty2 $158 / promo $126.40 |
+| PDP Writable sweatshirt Color Black→White | interact 3vp | [x] $79→$99 · galeri 5/5→3/5 |
+| PLP `/collections/apparel` | roster + obs | [x] |
+| Collections index `/collections` | roster + obs | [x] |
+| Search `/search?q=reflective` | roster + obs | [x] 13 results |
+| Cart page empty + filled + qty | interact 3vp | [x] aynı promo |
+| About `/pages/unusual-usual-things` | roster + obs | [x] |
+| Contact `/pages/contact-us` (submit yok) | roster + obs | [x] |
+| News + Valise post | roster + obs | [x] |
+| 404 leftover | roster + obs | [x] |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -88,11 +88,11 @@
 | Bileşen | State | Sonuç |
 |---|---|---|
 | navigation-header-mega | hover mega | yok — leftover |
-| global-predictive-search | input | [ ] `reflective` — yoklamada sonuç kutusu boş |
-| global-menu-drawer | open | [ ] All/Reflective/Writable… 375+768+1440 |
-| global-cart-drawer | filled + changed | [ ] $79 → qty2 (plus yok, input.qty) |
-| cart-page-main | filled + changed | [ ] aynı |
-| product-info-main | changed | [ ] Color Black→White |
+| global-predictive-search | input | [x] `reflective` yazılı; öneri yok |
+| global-menu-drawer | open | [x] All/Reflective>/Writable… 375+768+1440 |
+| global-cart-drawer | filled + changed | [x] $79 → qty2 $158 · 2021 PROMO -$31.60 = $126.40 |
+| cart-page-main | filled + changed | [x] aynı |
+| product-info-main | changed | [x] Black $79 5/5 → White $99 3/5 |
 
 ---
 
@@ -104,8 +104,8 @@
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact menu / search / cart / PDP Color
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate` — 0 error
+- [x] Official 3vp static (`capture-observation.mjs`) — 78 PNG
+- [x] Interact menu / search / cart / PDP Color — 33 PNG
+- [x] PNG bak → stateFindings
+- [x] `npm run validate` — 0 error / 0 warn
 - [x] Email / account / checkout / newsletter submit — **yapılmayacak**

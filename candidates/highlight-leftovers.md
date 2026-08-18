@@ -146,6 +146,30 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: highlight-2021-promo  
+Gerekçe: Cart qty 2'de `2021 PROMO -$31.60` · Total $126.40 (satır $158). Qty 1'de indirim yok. Şema değil.  
+Örnekler: drawer + `/cart` changed  
+Öneri: leftover — otomatik indirim  
+Karar: onay bekliyor
+
+---
+
+ADAY: highlight-1440-lazy-images  
+Gerekçe: 1440 hero / Most Popular / PLP kartları gri kutu; 375 hero gerçek foto. Capture scroll yetmedi.  
+Örnekler: `hero-slideshow.1440.png` · `product-showcase-grid-featured.1440.png`  
+Öneri: leftover — lazy load  
+Karar: onay bekliyor
+
+---
+
+ADAY: highlight-menu-reflective-chevron  
+Gerekçe: Drawer'da Reflective `>` var. Things/Accessories DOM'da display:none. Chevron tıklanmadı.  
+Örnekler: `#site-menu-sidebar li.has-submenu`  
+Öneri: leftover — changed yok  
+Karar: onay bekliyor
+
+---
+
 ADAY: highlight-pii-stop  
 Gerekçe: Footer newsletter Submit + contact form + blog comment + Account + checkout tıklanmadı.  
 Örnekler: footer · `/pages/contact-us` · cart CHECKOUT  
