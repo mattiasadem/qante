@@ -1,0 +1,59 @@
+{
+  "observationId": "alina.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "alina",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://dev-alina.ikas.shop/daily-backpack",
+  "selector": "section.pd",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "Daily Backpack ₺31. COLOR Black (aktif) / Gray. Adet + Sepete Ekle + Hemen Satın Al (tıklanmadı). Birlikte Al teklifler. Breadcrumb Ana Sayfa/Tüm Ürünler/Bags/Backpacks.",
+  "delta": "ikas (Shopify.theme yok) · Theme Store UUID 7f5c4b83-e6fa-4cdd-a35b-72eb1911a8e3 · Alina / ikascom · demo dev-alina.ikas.shop · __IKAS_DATA__.storefrontThemeId b19652e2-11ef-4979-97b1-879567363d56 · storefrontId dd2e2c99-fb2a-44b5-82db-bc71532c7e5c · pageType from __IKAS_DATA__ · x-powered-by ikas · pageType PRODUCT. Bundle/Hemen Satın Al leftover. Reviews/FAQ ayrı obs. Favori/SKU gizlenebilir editor.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://dev-alina.ikas.shop/daily-backpack",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".cookiebar__btn",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "section.pd",
+      "capture": true,
+      "etiket": "color-black",
+      "not": "Varsayılan COLOR Black"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button.variant-selector__row:not(.variant-selector__row--active)",
+      "capture": true,
+      "etiket": "color-gray",
+      "not": "COLOR Gray"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Placeholder — Black.",
+    "changed": "Placeholder — Gray."
+  },
+  "missingStates": [],
+  "interactionNote": "Hemen Satın Al / account / e-posta yok. Birlikte Al işaretlenmedi."
+}

@@ -1,0 +1,105 @@
+{
+  "observationId": "alina.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "alina",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://dev-alina.ikas.shop/",
+  "selector": ".cartd",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "captureMode": "viewport",
+  "notlar": "Yandan `.cartd` / aside.cartd__panel. Boş: Sepetiniz henüz boş + öneri kartları. Dolu: satır + kargo eşiği + Ödemeye Geç (tıklanmadı).",
+  "delta": "ikas (Shopify.theme yok) · Theme Store UUID 7f5c4b83-e6fa-4cdd-a35b-72eb1911a8e3 · Alina / ikascom · demo dev-alina.ikas.shop · __IKAS_DATA__.storefrontThemeId b19652e2-11ef-4979-97b1-879567363d56 · storefrontId dd2e2c99-fb2a-44b5-82db-bc71532c7e5c · pageType from __IKAS_DATA__ · x-powered-by ikas · addToCart action yok (ikas /cart/add.js yok) — UI `button.pd__atc`. Checkout tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://dev-alina.ikas.shop/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".cookiebar__btn",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.nav__icon[aria-label=\"Sepetim\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş drawer + öneri"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://dev-alina.ikas.shop/daily-backpack",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": ".cookiebar__btn",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.pd__atc",
+      "capture": false,
+      "not": "Sepete Ekle — drawer açılır"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": ".cartd__item",
+      "value": 5000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "daily-backpack",
+      "not": "Daily Backpack Color Black ₺31"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".cartd [aria-label=\"Adet artır\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Drawer adet +1"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Placeholder — boş sepet.",
+    "filled": "Placeholder — Daily Backpack satırı.",
+    "changed": "Placeholder — adet."
+  },
+  "missingStates": [],
+  "interactionNote": "Ödemeye Geç / Sepeti Gör checkout değil sayfa. Ödeme tıklanmadı. addToCart helper kullanılmadı."
+}

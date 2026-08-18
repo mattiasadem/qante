@@ -1,0 +1,111 @@
+{
+  "observationId": "alina.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "alina",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://dev-alina.ikas.shop/cart",
+  "selector": "section.cart-page",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Boş: Sepetiniz boş + Alışverişe Başla. Dolu: satır + qty-stepper + kupon toggle (açılmadı) + ÖDEME YAP (tıklanmadı).",
+  "delta": "ikas (Shopify.theme yok) · Theme Store UUID 7f5c4b83-e6fa-4cdd-a35b-72eb1911a8e3 · Alina / ikascom · demo dev-alina.ikas.shop · __IKAS_DATA__.storefrontThemeId b19652e2-11ef-4979-97b1-879567363d56 · storefrontId dd2e2c99-fb2a-44b5-82db-bc71532c7e5c · pageType from __IKAS_DATA__ · x-powered-by ikas · pageType CART. Checkout/kupon PII yok.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://dev-alina.ikas.shop/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".cookiebar__btn",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "section.cart-page",
+      "capture": true,
+      "etiket": "bos",
+      "not": "Boş sepet sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://dev-alina.ikas.shop/daily-backpack",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": ".cookiebar__btn",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.pd__atc",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://dev-alina.ikas.shop/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "section.cart-page",
+      "capture": true,
+      "etiket": "daily-backpack-1",
+      "not": "qty 1 · ₺31"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button.qty-stepper__btn[aria-label=\"Adet artır\"]",
+      "capture": true,
+      "etiket": "adet-2",
+      "not": "Adet 1→2 · toplam ₺62 beklenir"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Placeholder — boş.",
+    "filled": "Placeholder — 1 adet.",
+    "changed": "Placeholder — 2 adet."
+  },
+  "missingStates": [],
+  "interactionNote": "ÖDEME YAP / kupon açılmadı."
+}

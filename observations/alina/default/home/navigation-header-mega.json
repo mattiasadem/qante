@@ -1,0 +1,71 @@
+{
+  "observationId": "alina.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "alina",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://dev-alina.ikas.shop/",
+  "selector": "section.alina-header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "captureMode": "viewport",
+  "notlar": "Sticky `.alina-header`. 1440: ALİNA wordmark · Öne Çıkanlar YENİ (navmega--strip) · Çantalar (navmega--tabs) · Aksesuarlar (navmega--grid) · Servis (navmega--links) · Ürün Ara · Hesabım · Sepetim. 375/768 hamburger `.nav__burger`. Cookiebar sibling.",
+  "delta": "ikas (Shopify.theme yok) · Theme Store UUID 7f5c4b83-e6fa-4cdd-a35b-72eb1911a8e3 · Alina / ikascom · demo dev-alina.ikas.shop · __IKAS_DATA__.storefrontThemeId b19652e2-11ef-4979-97b1-879567363d56 · storefrontId dd2e2c99-fb2a-44b5-82db-bc71532c7e5c · pageType from __IKAS_DATA__ · x-powered-by ikas · pageType INDEX. Mega var (tabs+ürün kartı). Hesabım /account tıklanmadı. Cookie `.cookiebar` leftover.",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://dev-alina.ikas.shop/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".cookiebar__btn",
+      "capture": false,
+      "not": "Çerez Reddet/Kabul — PII yok"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Mega kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": ".navmega--tabs .navmega__trigger",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cantalar-mega",
+      "not": "Çantalar hover — tık kapanıyor. Tabs: Sırt/Omuz/El/Seyahat + ürün kartları."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Placeholder — capture sonrası bakılacak. 1440 menü + ikonlar; 375 hamburger.",
+    "open": "Placeholder — Çantalar mega panel."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "1440 mega hover=open; ayrı hover state yok"
+    }
+  ],
+  "interactionNote": "Çantalar tık paneli kapatır — open=hover. Hesabım tıklanmadı."
+}
