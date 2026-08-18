@@ -1,0 +1,58 @@
+{
+  "observationId": "purevea.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "purevea",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://purevea-theme-demo.myshopify.com/",
+  "selector": "#offcanvasSearch",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "offcanvasSearch sağ. 1440 header'da inline #SearchInput-sections--… de var. You might like + Popular searches + Trending kapalı metinde.",
+  "delta": "GSP search offcanvas. Submit yok (yalnız fill).",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://purevea-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[data-bs-target='#offcanvasSearch']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Boş search offcanvas"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#offcanvasSearch input.search-input",
+      "value": "serum",
+      "capture": false,
+      "not": "katalog: Facial Serum"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "serum",
+      "not": "Predictive sonuç"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "input": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Account / checkout yok. 1440 inline input da var; interact offcanvas (3vp ortak)."
+}

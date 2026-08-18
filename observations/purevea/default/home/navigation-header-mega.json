@@ -1,0 +1,56 @@
+{
+  "observationId": "purevea.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "purevea",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://purevea-theme-demo.myshopify.com/",
+  "selector": "header.header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Logo-center header. Home / Shop mega / Own Your Glow kartlar. Sağ: search + account + cart. Shopify-section h=0 (sticky header.header 88px).",
+  "delta": "GSP Purevea 2.0.0. Mega = li.gsp-menu-item__mega hover, details yok. Account tıklanmadı.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://purevea-theme-demo.myshopify.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "header.header li.gsp-menu-item.gsp-menu-item__mega",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "Shop LI hover — <a href=/collections/all> tıklama PLP'ye kaçar"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 800,
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "Shop mega panel"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "open": ""
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 mega header'da değil — global-menu-drawer. Account tıklanmadı."
+}
