@@ -1,0 +1,80 @@
+{
+  "observationId": "trade.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "trade",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-trade-demo.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/trade/default/home/global-menu-drawer.changed.shop-akordeon.375.png",
+    "evidence/trade/default/home/global-menu-drawer.changed.shop-akordeon.768.png",
+    "evidence/trade/default/home/global-menu-drawer.open.mobil-menu-acik.375.png",
+    "evidence/trade/default/home/global-menu-drawer.open.mobil-menu-acik.768.png"
+  ],
+  "notlar": "header-drawer. Hamburger → Shop (ok) + Marketing resources + Become a wholesale partner.",
+  "delta": "1440 hamburger gizli. Shop drill-down Home decor/Towels/Loungewear/Bedding.",
+  "captureMode": "viewport",
+  "prepareClick": "details#Details-menu-drawer-container > summary",
+  "interactionStates": [
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://theme-trade-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "details#Details-menu-drawer-container > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mobil-menu-acik",
+      "not": "Hamburger → #menu-drawer. 1440 N/A."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-menu-drawer-menu-item-1 > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-akordeon",
+      "not": "Shop ok — yazılı koleksiyon <a> değil."
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 drawer: Shop (ok) + Marketing resources + Become a wholesale partner. Altta Country/region + Language + sosyal. Header X + TRADE + arama + sepet.",
+    "changed": "Shop ok → geri oku + Shop + Shop all / Home decor / Towels / Loungewear / Bedding (hepsinde ok). Yazılı <a> tıklanmadı."
+  },
+  "missingStates": [
+    { "state": "initial", "sebep": "Kapalı drawer 0px" },
+    { "state": "hover", "sebep": "Anlamsız" },
+    { "state": "input", "sebep": "Anlamsız" },
+    { "state": "filled", "sebep": "Anlamsız" }
+  ],
+  "interactionNote": "Yalnız 375/768. Yazılı Shop all tıklanmadı.",
+  "capture": {
+    "url": "https://theme-trade-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:38:13.169Z"
+  }
+}
