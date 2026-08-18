@@ -1,0 +1,73 @@
+{
+  "observationId": "district.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "district",
+  "preset": "default",
+  "sayfa": "home",
+  "evidence": [
+    "evidence/district/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/district/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/district/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/district/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
+  "url": "https://district-theme-demo.myshopify.com/",
+  "selector": "#shopify-section-sections--17215440977973__header",
+  "evidenceSlug": "navigation-header-mega",
+  "notlar": "header. Logo DISTRICT. SHOP mega + BEST SELLERS / BLOG / ABOUT / MORE. Utility bar ayrı leftover.",
+  "delta": "SHOP details#DetailsMenu-header-menu-1. 768'de hamburger 0 — masaüstü nav. Account leftover.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://district-theme-demo.myshopify.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header + logo + nav"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#DetailsMenu-header-menu-1 > summary",
+      "capture": false,
+      "viewports": [
+        "1440"
+      ],
+      "not": "SHOP hover. summary tıklanmadı (sayfa kaçışı)."
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#DetailsMenu-header-menu-1",
+      "capture": true,
+      "captureMode": "section",
+      "captureSelector": "#DetailsMenu-header-menu-1 .header-menu__disclosure",
+      "etiket": "shop-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "SHOP mega: Clothing / Womens / Everyday Carry / Workspace / Tees"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440: DISTRICT logo + SHOP / BEST SELLERS / BLOG / ABOUT / MORE. Mega kapalı. 375: yalnız logo kutusu (nav hamburger header-top’ta).",
+    "open": "1440 SHOP mega 5 kolon + görsel: CLOTHING / WOMENS / EVERYDAY CARRY / WORKSPACE / TEES."
+  },
+  "missingStates": [],
+  "interactionNote": "375 hamburger ayrı observation. 768 hamburger display:none — leftover. Utility Search/Cart header-top leftover.",
+  "capture": {
+    "url": "https://district-theme-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:23:52.664Z"
+  }
+}
