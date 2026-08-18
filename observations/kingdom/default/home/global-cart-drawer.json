@@ -1,0 +1,81 @@
+{
+  "observationId": "kingdom.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "kingdom",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://kingdom-theme.myshopify.com/",
+  "selector": ".mega-menu.cart-mega, .toolbar-dropdown.cart-dropdown",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Drawer yok. Hover/ATC: .toolbar-dropdown.cart-dropdown + .mega-menu.cart-mega (Added). Cart + Check Out.",
+  "delta": "Kingdom cart-mega / cart-dropdown — drawer değil. Checkout tıklanmadı.",
+  "captureMode": "viewport",
+  "prepareClick": "header .cart a[href='/cart']",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://kingdom-theme.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "hover",
+      "selector": "header .cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart dropdown"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://kingdom-theme.myshopify.com/products/owl-mug",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.btn-add-to-cart",
+      "capture": false,
+      "not": "Owl Mug White $25"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "dolu",
+      "not": "ATC mega cart Added"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Hover: Your cart is currently empty. Subtotal $0.00. CART + CHECK OUT.",
+    "filled": "ATC sonrası mega Added. Owl Mug - White · 1 x $25.00 · Subtotal $25.00. CART + CHECK OUT tıklanmadı."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Dropdown/mega içinde adet +/- yok. Qty cart sayfada."
+    }
+  ],
+  "interactionNote": "ATC UI mega-menu.cart-mega.show-mega açtı. Checkout dur. Qty leftover — cart-page-main."
+}

@@ -1,0 +1,59 @@
+{
+  "observationId": "kingdom.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "kingdom",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://kingdom-theme.myshopify.com/",
+  "selector": "#shopify-section-header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Topbar: mail/tel/FB/IG + currency AUD. 1440: logo + Home/Blog/Shop/About/Contact + center search + cart. 375/768: hamburger + logo + search ikon + cart.",
+  "delta": "Klasik çok kolonlu mega yok. Shop = li.has-children + ul.sub-menu (Sub nav href #). Blog/About/Contact href #. Announcement ayrı section değil (topbar header içinde). Shopify.theme.name Kingdom · schema_name Dragon Drop Kingdom Theme · schema_version 1.00 · theme_store_id null · role main · id 38278856768 · shop kingdom-theme.myshopify.com",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://kingdom-theme.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "nav.site-menu li.has-children > a[href='/collections']",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-submenu",
+      "not": "Shop hover — Sub nav dropdown"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440: topbar support@dragondropthemes.com / 1800-222-333 / AUD + Home Blog Shop About Contact + center Search our store + cart 0. 375/768: hamburger + logo + search + cart.",
+    "open": "1440 Shop hover: ul.sub-menu ~200px — tek satır Sub nav (href #). Kolon/görsel/promo yok."
+  },
+  "missingStates": [],
+  "interactionNote": "Shop <a href=/collections> — yalnız hover. 375/768 mega yok (hamburger ayrı global-menu-drawer). Account yok. Currency leftover."
+}

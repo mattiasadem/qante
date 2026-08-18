@@ -1,0 +1,103 @@
+{
+  "observationId": "kingdom.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "kingdom",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://kingdom-theme.myshopify.com/cart",
+  "selector": "body.template-cart .container.padding-bottom-1x.mb-1",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Boş: Shopping Cart / Your cart is currently empty. / Continue browsing here. Dolu: Owl Mug - White satır + qty -/+ + Subtotal.",
+  "delta": "Cart liquid (shopify-section yok). Sibling #shopify-section-homepage-featured-collection placeholder leftover. Checkout tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://kingdom-theme.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://kingdom-theme.myshopify.com/products/owl-mug",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.btn-add-to-cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://kingdom-theme.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "dolu",
+      "not": "Dolu cart satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "body.template-cart .quantity-up",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Shopping Cart. Your cart is currently empty. Continue browsing here.",
+    "filled": "Owl Mug - White · White · UncommonGoods · qty 1 · $25.00 · Subtotal $25.00. Shipping & taxes calculated at checkout.",
+    "changed": "qty 2 · satır/subtotal $50.00 beklenir."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout / Get shipping estimates tıklanmadı. addToCart → ui."
+}

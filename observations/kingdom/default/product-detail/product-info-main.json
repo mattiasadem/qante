@@ -1,0 +1,53 @@
+{
+  "observationId": "kingdom.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "kingdom",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://kingdom-theme.myshopify.com/products/owl-mug",
+  "selector": "#shopify-section-product",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "Owl Mug $25. Color swatch White/Brown/Black. Qty -/+. ADD TO CART. Breadcrumb Home / Owl Mug. Share. UncommonGoods demo notu.",
+  "delta": "Breadcrumb aynı section. Buy it now yok. Related ayrı section yok.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://kingdom-theme.myshopify.com/products/owl-mug",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-product",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Color White $25"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='swatch-0-brown']",
+      "capture": true,
+      "etiket": "renk-brown",
+      "not": "Color Brown swatch"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Owl Mug $25.00. Color | White (swatch-0-white). Qty 1. ADD TO CART.",
+    "changed": "Brown swatch. Color | Brown. Fiyat $25.00 aynı."
+  },
+  "missingStates": [],
+  "interactionNote": "Black leftover. Checkout yok. ATC interact cart'ta."
+}

@@ -1,0 +1,50 @@
+{
+  "observationId": "kingdom.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "kingdom",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://kingdom-theme.myshopify.com/",
+  "selector": "#mobile-menu",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "offcanvas-container #mobile-menu. 375/768 hamburger a.offcanvas-toggle.menu-toggle. HOME / BLOG / SHOP (+ SUB NAV) / ABOUT / CONTACT.",
+  "delta": "1440 hamburger 0px. Shop has-children + .sub-menu-toggle. body.offcanvas-open.",
+  "captureMode": "viewport",
+  "prepareClick": "a.offcanvas-toggle.menu-toggle",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://kingdom-theme.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "a.offcanvas-toggle.menu-toggle",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Offcanvas menü"
+    }
+  ],
+  "stateFindings": {
+    "open": "Sol offcanvas 290px. HOME BLOG SHOP (BACK / SUB NAV) ABOUT CONTACT. Account yok."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 opener 0px — adım yalnız 375/768. Shop child tıklanmadı (kaçış / href #)."
+}

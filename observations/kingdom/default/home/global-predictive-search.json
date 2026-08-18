@@ -1,0 +1,109 @@
+{
+  "observationId": "kingdom.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "kingdom",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://kingdom-theme.myshopify.com/",
+  "selector": "#header",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "1440: nav.site-search-centered input.form-control. 375/768: .search ikon → #search_bar. Katalog owl. Rivets search-container.",
+  "delta": "İki form (.site-search + center). Sonuç kutusu header altında. Enter/submit yok.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://kingdom-theme.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "nav.site-search-centered input.form-control[name='q']",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Masaüstü boş center search"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header .search",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Mobil search ikon"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "nav.site-search-centered input.form-control[name='q']",
+      "value": "owl",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "header .search",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#search_bar",
+      "value": "owl",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "owl",
+      "not": "Predictive Owl Mug + Steampunk"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440 center input Placeholder Search our store. 375/768 search ikon / #search_bar.",
+    "input": "owl → Owl Mug $25.00 + Steampunk Coffee Grinder $92.00 (thumbnail+fiyat). Quick Links kapanır."
+  },
+  "missingStates": [],
+  "interactionNote": "Katalog owl (search sayfası 2 ürün). Enter yok — /search walk ayrı. fill+wait; rivets keyup gerekirse leftover."
+}
