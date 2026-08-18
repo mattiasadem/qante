@@ -3,10 +3,17 @@
   "version": 2,
   "functions": {
     "api/index.mjs": {
-      "includeFiles": "{evidence,sections,observations,taxonomy,candidates,viewer}/**",
+      "includeFiles": "{sections,observations,taxonomy,candidates,viewer}/**",
+      "excludeFiles": "{evidence/**,public/evidence/**}",
       "maxDuration": 30
     }
   },
+  "redirects": [
+    {
+      "source": "/evidence/:path*",
+      "destination": "https://cdn.jsdelivr.net/gh/mattiasadem/qante@main/evidence/:path*"
+    }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/api" }
   ]
