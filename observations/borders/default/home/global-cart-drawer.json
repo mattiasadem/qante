@@ -1,0 +1,117 @@
+{
+  "observationId": "borders.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "borders",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://borders-theme-raw.myshopify.com/",
+  "selector": "#site-cart-sidebar",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/borders/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/borders/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/borders/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/borders/default/home/global-cart-drawer.filled.overshirt-qty1.1440.png",
+    "evidence/borders/default/home/global-cart-drawer.filled.overshirt-qty1.375.png",
+    "evidence/borders/default/home/global-cart-drawer.filled.overshirt-qty1.768.png",
+    "evidence/borders/default/home/global-cart-drawer.initial.sepet-bos.1440.png",
+    "evidence/borders/default/home/global-cart-drawer.initial.sepet-bos.375.png",
+    "evidence/borders/default/home/global-cart-drawer.initial.sepet-bos.768.png"
+  ],
+  "notlar": "a.cart-button → #site-cart-sidebar. Boş: Continue shopping. Dolu: Utility Overshirt $89.95. Checkout tıklanmadı.",
+  "delta": "Sidebar drawer. Checkout / discount Apply dur.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://borders-theme-raw.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.cart-button",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart drawer"
+    },
+    {
+      "state": "filled",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Boş drawer kapat"
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": null,
+      "capture": false,
+      "not": "UI ATC yok: PDP challenge; home Select options sepete eklemez. /cart/add.js home form id (Utility Overshirt S/Brown)."
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://borders-theme-raw.myshopify.com/",
+      "capture": false,
+      "not": "Reload — drawer AJAX sonrası boş kalıyor"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a.cart-button",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "overshirt-qty1",
+      "not": "Dolu drawer. Checkout tıklanmadı."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#site-cart-sidebar button.qty-plus",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "CART (0) + Your cart is currently empty. CONTINUE SHOPPING. 375 tam ekran; 768/1440 sağ drawer.",
+    "filled": "CART (1). Utility Overshirt Size S | Color Brown $89.95 qty1. $10.05 away from free shipping. NEW PRODUCT Fisherman Beanie. VIEW CART + CHECKOUT (tıklanmadı).",
+    "changed": "CART (2). qty2 satır $179.90. Eligible for free shipping. SALE10 −$20. Total $159.90."
+  },
+  "missingStates": [],
+  "interactionNote": "PDP ATC aynı oturumda Shopify challenge. Home Select options sepete eklemez. filled = /cart/add.js (home form) + home reload + a.cart-button. qty-plus native. Checkout tıklanmadı.",
+  "capture": {
+    "url": "https://borders-theme-raw.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:34:22.885Z"
+  }
+}
