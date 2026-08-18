@@ -1,0 +1,80 @@
+{
+  "observationId": "serel.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "serel",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://dev-serel.ikas.shop/",
+  "selector": "[data-critical='true'][id='0']",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/serel/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/serel/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/serel/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/serel/default/home/navigation-header-mega.open.anasayfa-dropdown.1440.png"
+  ],
+  "notlar": "1440: SEREL logo · Anasayfa (ok) / Kategori / Markalar / Kayıt Ol / İndirim(kırmızı) · arama · hesap · sepet rozet 0. 375/768 hamburger + logo + arama/hesap/sepet. Mega yok — Anasayfa hover 200×108 iki satır Anasayfa.",
+  "delta": "ikas Studio header style_rkUXpuksdy + parent [data-critical=true][id='0']. Mega yok. Kayıt Ol / Hesap tıklanmadı. Linklerin çoğu href=/ . ikas · Shopify.theme yok · listed https://dev-serel.myikas.com/ → https://dev-serel.ikas.shop/ · Theme Store UUID 7e1f7850-46d1-4a83-9d6b-a12cdc033e8b · x-powered-by ikas · x-cache-tag dev-serel.ikas.shop · window.__IKAS_DATA__ · IkasEvents subscribe/unsubscribe · storefrontThemeId e3b5fc65-ad07-402e-8380-2599504c38fb · storefrontId ef023962-e737-4119-9cb1-c1f489d080ce · storefrontRoutingId 993f48b4-cddd-4c7b-8c8d-278192788e0e · storefrontType STOREFRONT · salesChannelId aad6374f-a5d3-46e8-a483-d1dad510da62 · domain dev-serel.ikas.shop · apiUrl https://api.myikas.com/api/sf/graphql · merchantSettings.merchantId 155a3907-5bfb-4070-b6ef-3b030caf4da3 · merchantName/storeName dev-serel · locale tr · region TR · TRY ₺ · html lang=tr · logoText yok",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://dev-serel.ikas.shop/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2800,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Navbar kapalı"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "a.style_mazkUDBYzd:has-text('Anasayfa')",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "anasayfa-dropdown",
+      "not": "Anasayfa hover — küçük dropdown, mega değil"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440: SEREL + Anasayfa/Kategori/Markalar/Kayıt Ol/İndirim + arama/hesap/sepet 0. 375/768: hamburger + SEREL + ikonlar.",
+    "open": "1440 Anasayfa hover: 200px panel, iki satır Anasayfa. Kolon/görsel/promo yok."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Mega yok. Anasayfa hover 1440'ta 2 satır Anasayfa (open karesi). Kategori/Markalar panel açmadı."
+    }
+  ],
+  "interactionNote": "Kayıt Ol /account/register ve hesap /account/login tıklanmadı. Mega kolon/görsel yok. 375/768 hamburger + SEREL + arama/hesap/sepet 0.",
+  "capture": {
+    "url": "https://dev-serel.ikas.shop/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:59:40.894Z"
+  }
+}
