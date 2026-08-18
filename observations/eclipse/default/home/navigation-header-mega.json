@@ -1,0 +1,69 @@
+{
+  "observationId": "eclipse.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "eclipse",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://eclipse-theme-ripple.myshopify.com/",
+  "selector": "#shopify-section-sections--20338290491557__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/eclipse/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/eclipse/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/eclipse/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/eclipse/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
+  "notlar": "Logo Ripple + Shop / Our Company / Community. Search / account / bag.",
+  "delta": "Shop parent li hover. <a href=/collections/all-products> tıklanmadı. Account duruldu.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eclipse-theme-ripple.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 600,
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "li.submenu__item--primary.submenu__item--parent:has(a[href='/collections/all-products'])",
+      "value": 1600,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Shop parent li hover — <a> tıklanmadı (pointer-events li)."
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440: Shop / Our Company / Community + search/account/bag. Logo Ripple. 375: hamburger + Ripple + search + bag.",
+    "open": "1440 Shop lime pill. Mega: sol çocuk görseli Shop All Products >; Featured (Bestsellers / Gift Bundles / Recently Added); By Age (Newborn / Toddler / Childwear / Adultwear); Collection (Bottoms–Toys)."
+  },
+  "missingStates": [],
+  "interactionNote": "İlk hover <a> parent li pointer-events kesti; li.submenu__item--parent hover ile mega açıldı. 375/768 mega yok. Account duruldu.",
+  "capture": {
+    "url": "https://eclipse-theme-ripple.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:39:57.179Z"
+  }
+}
