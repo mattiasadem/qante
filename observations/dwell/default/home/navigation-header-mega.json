@@ -1,0 +1,77 @@
+{
+  "observationId": "dwell.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "dwell",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-dwell-demo.myshopify.com/",
+  "selector": "#header-component",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/dwell/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/dwell/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/dwell/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/dwell/default/home/navigation-header-mega.open.bedding-mega.1440.png",
+    "evidence/dwell/default/home/navigation-header-mega.open.bedding-mega.768.png"
+  ],
+  "notlar": "1440/768: logo Dwell + Bedding / Bath / Decor / Sale / Inspiration + Search + Account + Cart. 375: hamburger + Search + logo + Account + Cart. Bedding/Bath/Decor mega panel (koleksiyon kartları).",
+  "delta": "Shopify.theme: name **dwell-100-0-0** · schema_name **Dwell** · schema_version **100.0.0** · theme_store_id **null** · role main · id 153150455997 · shop se-horizon10-en-q73c.myshopify.com. Horizon header.liquid + header-menu mega. Bedding hover → #submenu-1 mega-menu grid (Pillows & Duvets / Sheets / Quilts & Comforters + görsel kartlar). Account tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-dwell-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "header-menu a.menu-list__link[href='/collections/bedding-1']",
+      "viewports": [
+        "1440",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bedding-mega",
+      "not": "Bedding hover — mega panel"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440/768: Dwell + Bedding/Bath/Decor/Sale/Inspiration + search + account + cart. Mega kapalı. 375: hamburger + search + logo + account + cart.",
+    "open": "1440 Bedding hover: sol Pillows & Duvets / Sheets / Quilts & Comforters + sağda Bedding (köpek) ve Pillows & Duvets kartları. 768 aynı linkler + tek Bedding kartı. 375 mega yok."
+  },
+  "missingStates": [],
+  "interactionNote": "375 hamburger ayrı global-menu-drawer. Account/login tıklanmadı.",
+  "capture": {
+    "url": "https://theme-dwell-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:50:42.734Z"
+  }
+}
