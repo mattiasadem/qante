@@ -7,7 +7,10 @@
   "url": "https://theme-rise-demo.myshopify.com/en/",
   "selector": "#menu-drawer",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/rise/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/rise/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
   "notlar": "Dawn header-drawer. Catalog / Blog / Contact + Language. Accordion yok.",
   "delta": "1440 hamburger 0×0. Drill-down summary yok — yalnız düz link.",
   "captureMode": "viewport",
@@ -41,16 +44,20 @@
       "not": "Mobil menü açık"
     }
   ],
-  "stateFindings": {},
-  "missingStates": [
-    {
-      "state": "open",
-      "sebep": "open@1440 — hamburger 0px; masaüstü inline Catalog/Blog/Contact"
-    },
-    {
-      "state": "changed",
-      "sebep": "Drawer’da accordion/summary yok; Catalog/Blog/Contact yazılı <a>"
-    }
-  ],
-  "interactionNote": "1440 atlandı. Dil switcher tıklanmadı (locale). Link tıklanmadı."
+  "stateFindings": {
+    "open": "375: tam genişlik overlay — X + rise + search/cart; Catalog / Blog / Contact; altta English. 768: sol ~yarım drawer, aynı 3 link + English; sağda sayfa şeridi."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 atlandı. Dil switcher tıklanmadı (locale). Link tıklanmadı.",
+  "capture": {
+    "url": "https://theme-rise-demo.myshopify.com/en/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:02:05.807Z"
+  }
 }

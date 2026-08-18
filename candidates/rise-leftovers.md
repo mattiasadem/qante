@@ -154,6 +154,14 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: rise-slideshow-four-dots  
+Gerekçe: Hero ok + 4 nokta. DOM slayt metni üç (Essentials / Better basics / Hot summer sale). Dördüncü slayt kopyası bu walk’ta açılmadı.  
+Örnekler: `#…__hero-slideshow`  
+Öneri: leftover — 4 nokta vs 3 görünen kopya  
+Karar: onay bekliyor
+
+---
+
 ADAY: rise-pii-stop  
 Gerekçe: Contact Send + checkout + language switch submit + account yok (ikon da yok). Newsletter yok.  
 Örnekler: `/en/pages/contact` · cart Check out  

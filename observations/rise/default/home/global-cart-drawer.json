@@ -7,7 +7,11 @@
   "url": "https://theme-rise-demo.myshopify.com/en/",
   "selector": "#cart-notification",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/rise/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/rise/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/rise/default/home/global-cart-drawer.filled.sepete-eklendi.768.png"
+  ],
   "notlar": "Dawn cart-notification (side drawer değil). Cart ikon → /en/cart. Checkout tıklanmadı.",
   "delta": "cart-drawer yok. Overlay #cart-notification. Boş notification yok. Qty cart-page-main.",
   "captureMode": "viewport",
@@ -50,16 +54,20 @@
       "not": "Item added + View cart + Check out"
     }
   ],
-  "stateFindings": {},
-  "missingStates": [
-    {
-      "state": "initial",
-      "sebep": "Boş cart-notification yok; boş hâl /en/cart"
-    },
-    {
-      "state": "changed",
-      "sebep": "Notification’da adet stepper yok — qty cart-page-main"
-    }
-  ],
-  "interactionNote": "UI ATC. Checkout/login tıklanmadı. forceOpen yedek."
+  "stateFindings": {
+    "filled": "Item added to your cart. White hoodie · Size: XS. View cart (1) + Check out + Continue shopping. Cart rozet 1. Adet stepper yok. 375/768/1440."
+  },
+  "missingStates": [],
+  "interactionNote": "UI ATC. Checkout/login tıklanmadı. forceOpen yedek.",
+  "capture": {
+    "url": "https://theme-rise-demo.myshopify.com/en/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:04:14.883Z"
+  }
 }
