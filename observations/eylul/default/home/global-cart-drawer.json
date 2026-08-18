@@ -1,0 +1,114 @@
+{
+  "observationId": "eylul.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "url": "https://dev-eylul.ikas.shop/",
+  "selector": ".cdr",
+  "captureMode": "viewport",
+  "notlar": "Yandan .cdr / .cdr-panel. Boş: Sepetin şu an boş + Alışverişe başla + Bunları eklemeyi unutma upsell. Dolu: satır + kargo eşiği (18000) + Ödemeye geç (tıklanmadı).",
+  "delta": "ikas (Shopify.theme yok) · Theme Store UUID ef88b30d-7c1c-4474-b03f-dff5ef4c6453 · Eylül / ikascom · demo https://dev-eylul.ikas.shop/ · __IKAS_DATA__.storefrontThemeId a1b55030-52e1-46ac-9b2c-ec238b9b442d · storefrontId 29fd0757-66fa-4007-bd68-7ad43c43c58f · merchantId fd24ec01-cb21-4b82-9ad0-d238e7619d37 · storeName dev-eylul · salesChannelId f53bfbe3-2200-4f62-bff8-0f70626b4177 · storefrontRoutingId 052bf91a-54a5-4786-983e-33b24ebe9b54 · x-powered-by ikas · x-cache-tag 8assj-dev-eylul.myikas.com · TRY · locale tr · logoText eylül · addToCart helper yok (ikas /cart/add.js yok) — UI button.atc__btn. Checkout tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://dev-eylul.ikas.shop/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.hdr-cartbtn",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş drawer + upsell"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://dev-eylul.ikas.shop/aarke-carbonator-3",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.atc__btn",
+      "capture": false,
+      "not": "Sepete Ekle — drawer açılır"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": ".cln-qty",
+      "value": 5000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "carbonator-3",
+      "not": "Carbonator 3 Renk Copper ₺10,500 qty 1"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button.cln-qty-btn[aria-label=\"Adedi artır\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Drawer adet +1"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Sepetim · Sepetin şu an boş. · Alışverişe başla. Bunları eklemeyi unutma: PET Su Şişesi ₺595 · Glass Bottle ₺1,020 · Nesting Glasses ₺2,250. Rozet 0.",
+    "filled": "Carbonator 3 Renk Copper qty 1 · ₺10,500. Ücretsiz kargoya ₺7,500 kaldı. Siparişine ekle PET/Glass. Ara toplam ₺10,500 · Ödemeye geç (tıklanmadı).",
+    "changed": "Adedi artır: qty 2 · satır/ara toplam ₺21,000. Ücretsiz kargoyu kazandın (dolu bar). Ödemeye geç tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "Ödemeye geç tıklanmadı. addToCart helper kullanılmadı.",
+  "kaynak": "eylul",
+  "preset": "default",
+  "sayfa": "home",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/eylul/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/eylul/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/eylul/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/eylul/default/home/global-cart-drawer.filled.carbonator-3.1440.png",
+    "evidence/eylul/default/home/global-cart-drawer.filled.carbonator-3.375.png",
+    "evidence/eylul/default/home/global-cart-drawer.filled.carbonator-3.768.png",
+    "evidence/eylul/default/home/global-cart-drawer.initial.sepet-bos.1440.png",
+    "evidence/eylul/default/home/global-cart-drawer.initial.sepet-bos.375.png",
+    "evidence/eylul/default/home/global-cart-drawer.initial.sepet-bos.768.png"
+  ],
+  "capture": {
+    "url": "https://dev-eylul.ikas.shop/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:48:57.168Z"
+  }
+}
