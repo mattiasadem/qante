@@ -1,0 +1,111 @@
+{
+  "observationId": "atlas.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "atlas",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://alloy-themes-atlas-demo.myshopify.com/",
+  "selector": ".search-panel-wrapper, .search-panel-mobile",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/atlas/default/home/global-predictive-search.initial.arama-bos.1440.png",
+    "evidence/atlas/default/home/global-predictive-search.initial.arama-bos.375.png",
+    "evidence/atlas/default/home/global-predictive-search.initial.arama-bos.768.png",
+    "evidence/atlas/default/home/global-predictive-search.input.arama-nimbus.1440.png",
+    "evidence/atlas/default/home/global-predictive-search.input.arama-nimbus.375.png",
+    "evidence/atlas/default/home/global-predictive-search.input.arama-nimbus.768.png"
+  ],
+  "notlar": "1440/768: #header-search-input + .search-panel-wrapper. 375: #header-search-mobile-input → .search-panel-mobile + #header-search-mobile-panel-input. katalogSorgu=nimbus.",
+  "delta": "Atlas predictive: desktop panel + mobil full-screen panel. Submit /search ayrı. PII yok.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://alloy-themes-atlas-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#header-search-mobile-input",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "375 full-screen search-panel-mobile boş"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#header-search-input",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "768/1440 desktop search panel boş"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#header-search-mobile-panel-input",
+      "value": "nimbus",
+      "viewports": [
+        "375"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#header-search-input",
+      "value": "nimbus",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-nimbus",
+      "not": "katalogSorgu=nimbus"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boş panel. 1440/768: Popular products (ChargePro, ML1001, Nova Mini, Series 11) + Recently viewed + Trending (powerbank, headphones, smartwatch, desk lamp). 375: Trending + Recently viewed (Popular products yok).",
+    "input": "Query nimbus. Products: Nimbus Over-Ear Wireless $549, AeroMax, PulseTrack, Wave 520. Suggestions: nimbus. See all results."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu nimbus. 375 panel input ayrı. Submit/PII yok.",
+  "capture": {
+    "url": "https://alloy-themes-atlas-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:45:51.119Z"
+  }
+}
