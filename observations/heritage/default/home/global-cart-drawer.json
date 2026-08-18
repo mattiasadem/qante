@@ -1,0 +1,121 @@
+{
+  "observationId": "heritage.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "heritage",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-heritage-demo.myshopify.com/",
+  "selector": "dialog.cart-drawer__dialog",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/heritage/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/heritage/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/heritage/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/heritage/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/heritage/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/heritage/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/heritage/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/heritage/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/heritage/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "Horizon cart-drawer-component. Boş: Your cart is empty; Have an account? Log in; Continue shopping.",
+  "delta": "/cart ayrı sayfa (cart-page-main). Checkout/login tıklanmadı.",
+  "captureMode": "viewport",
+  "prepareClick": "header button[aria-label='Cart']",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-heritage-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header button[aria-label='Cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-heritage-demo.myshopify.com/products/the-terry-short",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add']",
+      "capture": false,
+      "not": "ATC UI; fallback /cart/add.js"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "header button[aria-label='Cart']",
+      "capture": false,
+      "not": "ATC sonrası drawer tam açılsın"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "dialog.cart-drawer__dialog button.quantity-plus, dialog.cart-drawer__dialog button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Sağ drawer: Your cart is empty; Have an account? Log in to check out faster; Continue shopping. Satır yok.",
+    "filled": "Cart (1). The Terry Short · Pelican, S · $105.00 · adet 1. Discount +; Estimated total $105.00 CAD; Check out.",
+    "changed": "Rozet 2; adet 2; satır $210.00 CAD; Estimated total $210.00 CAD. Aynı drawer iskeleti."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC sonrası header Cart tık. Checkout/login tıklanmadı.",
+  "capture": {
+    "url": "https://theme-heritage-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:45:10.529Z"
+  }
+}
