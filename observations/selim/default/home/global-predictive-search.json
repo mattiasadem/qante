@@ -1,0 +1,61 @@
+{
+  "observationId": "selim.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "selim",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://dev-selimtheme.ikas.shop/",
+  "selector": ".ethm-search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "button[aria-label=Ara] → overlay .ethm-search. Input placeholder Ürün ara... Boş: Aramak istediğin ürünü yaz. katalogSorgu=bag → ÜRÜNLER 10 sonuç (Traveler Waist Bag ₺27 …).",
+  "delta": "q=canta 0 leftover. Tam sayfa /search?q=bag ayrı search-results. ikas · Shopify.theme yok · window.__IKAS_DATA__ · storefrontId 59b21621-cd0c-4bae-94f2-d0ddf3154adc · storefrontThemeId b16764ac-ef37-4683-b598-61c72fb5b2f6 · storefrontRoutingId 4b99701f-6745-4417-a8cf-d903245060d9 · storefrontType STOREFRONT · salesChannelId da5ff479-e38f-4fb4-9dd2-ba7e6e6b7930 · merchantId d2e5754b-2da4-4526-80e6-ce75fc6be32f · storeName dev-selimtheme · locale tr · currency TRY ₺ · region TR · domain dev-selimtheme.ikas.shop · Theme Store UUID cd45021d-2f96-4fc4-afe2-229ea0fd7b49 · IkasEvents subscribe/unsubscribe · html lang=tr",
+  "prepareClick": "button:has-text(\"TÜMÜNÜ KABUL ET\")",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://dev-selimtheme.ikas.shop/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button:has-text(\"TÜMÜNÜ KABUL ET\")",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button[aria-label=\"Ara\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Boş overlay hint"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input.ethm-search__input",
+      "value": "bag",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bag",
+      "not": "katalogSorgu bag — 10 ürün"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "katalogSorgu=bag (ürün adları İngilizce). Submit yok."
+}

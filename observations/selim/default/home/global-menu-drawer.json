@@ -1,0 +1,63 @@
+{
+  "observationId": "selim.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "selim",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://dev-selimtheme.ikas.shop/",
+  "selector": ".ethm-nav__menu",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "375/768 hamburger button[aria-label=Menü]. Açık: SELİM + ÇANTA alt + GİYİM + AKSESUAR + Giriş yap. .ethm-nav__scrim.",
+  "delta": "1440 menü yatay (drawer değil). Giriş yap dur. ikas · Shopify.theme yok · window.__IKAS_DATA__ · storefrontId 59b21621-cd0c-4bae-94f2-d0ddf3154adc · storefrontThemeId b16764ac-ef37-4683-b598-61c72fb5b2f6 · storefrontRoutingId 4b99701f-6745-4417-a8cf-d903245060d9 · storefrontType STOREFRONT · salesChannelId da5ff479-e38f-4fb4-9dd2-ba7e6e6b7930 · merchantId d2e5754b-2da4-4526-80e6-ce75fc6be32f · storeName dev-selimtheme · locale tr · currency TRY ₺ · region TR · domain dev-selimtheme.ikas.shop · Theme Store UUID cd45021d-2f96-4fc4-afe2-229ea0fd7b49 · IkasEvents subscribe/unsubscribe · html lang=tr",
+  "prepareClick": "button:has-text(\"TÜMÜNÜ KABUL ET\")",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://dev-selimtheme.ikas.shop/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button:has-text(\"TÜMÜNÜ KABUL ET\")",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button[aria-label=\"Menü\"]",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "menu-acik",
+      "not": "Mobil drawer"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "Kapalı drawer 1440 yatay menü / 375 off-canvas — açık kare asıl kanıt"
+    },
+    {
+      "state": "changed",
+      "sebep": "ÇANTA altı zaten açık listede; ayrı chevron yoklandı değil"
+    }
+  ],
+  "interactionNote": "1440 hamburger 0 veya gizli. Account tıklanmadı."
+}
