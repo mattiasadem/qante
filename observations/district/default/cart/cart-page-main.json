@@ -1,0 +1,104 @@
+{
+  "observationId": "district.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "district",
+  "preset": "default",
+  "sayfa": "cart",
+  "evidence": [
+    "evidence/district/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/district/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/district/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/district/default/cart/cart-page-main.filled.sepet-dolu.1440.png",
+    "evidence/district/default/cart/cart-page-main.filled.sepet-dolu.375.png",
+    "evidence/district/default/cart/cart-page-main.filled.sepet-dolu.768.png",
+    "evidence/district/default/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/district/default/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/district/default/cart/cart-page-main.initial.cart-bos.768.png"
+  ],
+  "url": "https://district-theme-demo.myshopify.com/cart",
+  "selector": "#shopify-section-template--17215441207349__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "notlar": "cart-items. Boş: Your cart is empty. Dolu: satır + qty. Drawer yok — ATC /cart.",
+  "delta": "cart-footer ayrı (checkout/terms) leftover. CHECK OUT tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://district-theme-demo.myshopify.com/cart/clear",
+      "capture": false,
+      "not": "Viewport arası sepet kalıntısını sil"
+    },
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://district-theme-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş sepet sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://district-theme-demo.myshopify.com/products/enjoy-the-journey",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#AddToCart-template--17215441403957__product",
+      "capture": false,
+      "not": "ATC → /cart yönlendirir"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17215441207349__cart-items",
+      "capture": true,
+      "etiket": "sepet-dolu",
+      "not": "Enjoy The Journey qty 1 $28"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--17215441207349__cart-items button.quantity__button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "/cart/clear sonrasi Your cart is empty + CONTINUE SHOPPING. Drawer yok.",
+    "filled": "ATC UI: Enjoy The Journey COLOR BLACK SIZE SMALL qty 1 $28. cart-footer leftover (CHECK OUT tiklanmadi).",
+    "changed": "quantity plus: qty 2, satir $56."
+  },
+  "missingStates": [],
+  "interactionNote": "Cart drawer yok. ATC sayfaya gider. CHECK OUT / terms leftover.",
+  "capture": {
+    "url": "https://district-theme-demo.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:15:07.458Z"
+  }
+}
