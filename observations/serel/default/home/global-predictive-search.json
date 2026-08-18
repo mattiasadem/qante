@@ -1,0 +1,76 @@
+{
+  "observationId": "serel.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "serel",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://dev-serel.ikas.shop/",
+  "selector": "div.style_Myt5yr9T3y",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "1440 büyüteç style_mLsPuaCOAr; 375/768 style_ODzLJGPFc8. Overlay input.style_9pSncokZRq. katalogSorgu vazo (Zeytin Yeşili Cam Vazo). /search?s=vazo ayrı sayfa.",
+  "delta": "ikas search overlay. ?q= 20 ürüne düşmedi (unfiltered leftover). PII yok. ikas · Shopify.theme yok · listed https://dev-serel.myikas.com/ → https://dev-serel.ikas.shop/ · Theme Store UUID 7e1f7850-46d1-4a83-9d6b-a12cdc033e8b · x-powered-by ikas · x-cache-tag dev-serel.ikas.shop · window.__IKAS_DATA__ · IkasEvents subscribe/unsubscribe · storefrontThemeId e3b5fc65-ad07-402e-8380-2599504c38fb · storefrontId ef023962-e737-4119-9cb1-c1f489d080ce · storefrontRoutingId 993f48b4-cddd-4c7b-8c8d-278192788e0e · storefrontType STOREFRONT · salesChannelId aad6374f-a5d3-46e8-a483-d1dad510da62 · domain dev-serel.ikas.shop · apiUrl https://api.myikas.com/api/sf/graphql · merchantSettings.merchantId 155a3907-5bfb-4070-b6ef-3b030caf4da3 · merchantName/storeName dev-serel · locale tr · region TR · TRY ₺ · html lang=tr · logoText yok",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://dev-serel.ikas.shop/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2800,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "div.style_mLsPuaCOAr",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "div.style_ODzLJGPFc8",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "div.style_Myt5yr9T3y",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik",
+      "not": "Boş arama overlay"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input.style_9pSncokZRq",
+      "value": "vazo",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-vazo",
+      "not": "katalogSorgu vazo"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Arama overlay + metin input (placeholder boş görüldü).",
+    "input": "vazo yazıldı — öneri/sonuç karede doğrulanacak."
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 opener style_ODzLJGPFc8. /search ayrı. Account tıklanmadı."
+}

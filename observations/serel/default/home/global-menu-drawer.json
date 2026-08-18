@@ -1,0 +1,65 @@
+{
+  "observationId": "serel.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "serel",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://dev-serel.ikas.shop/",
+  "selector": "div.style_SdV7qJlFUz",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "375/768 hamburger style_nHqBn3A2Jr → overlay--show. Anasayfa / Kategori / Markalar / Kayıt Ol / İndirim + Üye Ol / Giriş Yap. 1440 hamburger gizli.",
+  "delta": "ikas mobile-menu style_SdV7qJlFUz. Üye Ol / Giriş Yap tıklanmadı. ikas · Shopify.theme yok · listed https://dev-serel.myikas.com/ → https://dev-serel.ikas.shop/ · Theme Store UUID 7e1f7850-46d1-4a83-9d6b-a12cdc033e8b · x-powered-by ikas · x-cache-tag dev-serel.ikas.shop · window.__IKAS_DATA__ · IkasEvents subscribe/unsubscribe · storefrontThemeId e3b5fc65-ad07-402e-8380-2599504c38fb · storefrontId ef023962-e737-4119-9cb1-c1f489d080ce · storefrontRoutingId 993f48b4-cddd-4c7b-8c8d-278192788e0e · storefrontType STOREFRONT · salesChannelId aad6374f-a5d3-46e8-a483-d1dad510da62 · domain dev-serel.ikas.shop · apiUrl https://api.myikas.com/api/sf/graphql · merchantSettings.merchantId 155a3907-5bfb-4070-b6ef-3b030caf4da3 · merchantName/storeName dev-serel · locale tr · region TR · TRY ₺ · html lang=tr · logoText yok",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://dev-serel.ikas.shop/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2800,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "div.style_nHqBn3A2Jr",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false,
+      "not": "Hamburger"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "div.style_SdV7qJlFUz",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Sol drawer"
+    }
+  ],
+  "stateFindings": {
+    "open": "Sol beyaz drawer. Anasayfa (>) / Kategori / Markalar / Kayıt Ol / İndirim(kırmızı). Alt: Üye Ol + Giriş Yap. X + sepet 0."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Anasayfa > alt menü yoklandı değil; 1440 hamburger yok."
+    }
+  ],
+  "interactionNote": "Giriş Yap / Üye Ol tıklanmadı. 768 hamburger aynı class (30×36 @24,56)."
+}
