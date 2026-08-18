@@ -1,14 +1,20 @@
 /**
  * Envanter okuma + cache + fs.watch invalidation.
- * Disk tek kaynak; cache sadece hız için.
+ * Disk tek kaynak (lokal). Vercel'de evidence/ Lambda'da yok — listed
+ * evidence/... image paths are treated as present (jsDelivr redirect).
+ * Cache sadece hız için.
  */
 
 import fs from "fs";
 import path from "path";
+import {
+  isRemoteEvidenceEnv,
+  isRepoEvidencePath,
+} from "./evidence-external.mjs";
 
 const VIEWPORTS = ["375", "768", "1440"];
 
-export function createInventory(root) {
+export function createInventory(root, { env = process.env } = {}) {
   let cache = null;
   const watchers = [];
 
@@ -33,7 +39,7 @@ export function createInventory(root) {
 
   function get({ fresh = false } = {}) {
     if (fresh) invalidate();
-    if (!cache) cache = build(root);
+    if (!cache) cache = build(root, env);
     return cache;
   }
 
@@ -79,6 +85,29 @@ function parseViewport(evidencePath) {
   return m ? m[1] : null;
 }
 
+/**
+ * Disk wins. On Vercel (no evidence/ on the Lambda) trust observation-listed
+ * evidence/... image paths so the viewer can emit /evidence/... (jsDelivr 308).
+ * Local npm start still uses real exists/stat so a missing PNG stays missing.
+ */
+export function resolveListedEvidence(root, listedPath, env = process.env) {
+  const viewport = parseViewport(listedPath);
+  const full = path.join(root, listedPath);
+  if (fs.existsSync(full)) {
+    let bytes = 0;
+    try {
+      bytes = fs.statSync(full).size;
+    } catch {
+      bytes = 0;
+    }
+    return { path: listedPath, exists: true, viewport, bytes };
+  }
+  if (isRemoteEvidenceEnv(env) && isRepoEvidencePath(listedPath)) {
+    return { path: listedPath, exists: true, viewport, bytes: 0 };
+  }
+  return { path: listedPath, exists: false, viewport, bytes: 0 };
+}
+
 function loadTaxonomy(root) {
   const dir = path.join(root, "taxonomy");
   if (!fs.existsSync(dir)) return { version: null, categories: [], pageTypes: [] };
@@ -98,7 +127,7 @@ function loadTaxonomy(root) {
   };
 }
 
-function build(root) {
+function build(root, env = process.env) {
   const rel = (p) => path.relative(root, p).split(path.sep).join("/");
   const parseErrors = [];
 
@@ -134,18 +163,9 @@ function build(root) {
     const { data, error } = readJson(f);
     if (error) parseErrors.push({ path: rel(f), error });
     const d = data || {};
-    const evidence = (d.evidence || []).map((e) => ({
-      path: e,
-      exists: fs.existsSync(path.join(root, e)),
-      viewport: parseViewport(e),
-      bytes: (() => {
-        try {
-          return fs.statSync(path.join(root, e)).size;
-        } catch {
-          return 0;
-        }
-      })(),
-    }));
+    const evidence = (d.evidence || []).map((e) =>
+      resolveListedEvidence(root, e, env)
+    );
     const present = evidence.filter((e) => e.exists);
     const presentVps = present.map((e) => e.viewport).filter(Boolean);
     const missingVps = VIEWPORTS.filter((v) => !presentVps.includes(v));
