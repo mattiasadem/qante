@@ -1,0 +1,125 @@
+{
+  "observationId": "stiletto.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "stiletto",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://stiletto-theme-vogue.myshopify.com/cart",
+  "selector": "#shopify-section-template--22242344566933__main",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/stiletto/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/stiletto/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/stiletto/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/stiletto/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/stiletto/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/stiletto/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/stiletto/default/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/stiletto/default/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/stiletto/default/cart/cart-page-main.initial.cart-bos.768.png"
+  ],
+  "notlar": "Boş: YOUR CART IS EMPTY. Dolu + qty.",
+  "delta": "",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://stiletto-theme-vogue.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".popup--has-image [data-dismiss-popup]",
+      "value": 600,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "[data-popup] [data-dismiss-popup]",
+      "value": 600,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş cart"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://stiletto-theme-vogue.myshopify.com/products/behati-dress-in-pearl",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": ".popup--has-image [data-dismiss-popup]",
+      "value": 600,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://stiletto-theme-vogue.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": ".popup--has-image [data-dismiss-popup]",
+      "value": 600,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--22242344566933__main button[aria-label='Add product quantity']",
+      "value": 2000,
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "YOUR CART IS EMPTY.",
+    "filled": "Behati Dress In Pearl XS qty 1 $249 CAD. 1 item. Only $1.00 away from free shipping. LAST CHANCE TO SAVE 3 upsell. CHECKOUT (tıklanmadı).",
+    "changed": "qty 2 · 2 items. Subtotal $498 CAD. Your order qualifies for free shipping."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı.",
+  "capture": {
+    "url": "https://stiletto-theme-vogue.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:16:22.481Z"
+  }
+}
