@@ -1,0 +1,48 @@
+{
+  "observationId": "bricks.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "bricks",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://bricks-theme-demo.myshopify.com/",
+  "selector": "#MenuDrawer .menu-drawer__content",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "375/768 hamburger. #MenuDrawer mixed: Women/Men + nested + ürün şeridi.",
+  "delta": "1440 hamburger 0px (header__mock-burger). Aynı #MenuDrawer mega ile paylaşılıyor.",
+  "captureMode": "viewport",
+  "prepareClick": "burger-nav-button.burger:not(.header__mock-burger) button.burger__button",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://bricks-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "burger-nav-button.burger:not(.header__mock-burger) button.burger__button",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "375/768 Menu drawer"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "1440 hamburger yok. Child link tıklanmadı."
+}

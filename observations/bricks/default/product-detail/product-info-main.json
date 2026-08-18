@@ -1,0 +1,63 @@
+{
+  "observationId": "bricks.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "bricks",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://bricks-theme-demo.myshopify.com/products/green-floral-puff-dress",
+  "selector": "#shopify-section-template--31401014690130__product_information_4re74w",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "Lunavera / Lovely Green Mini Dress €59,90→€39,90. Size 2XS–2XL chips (2XS active) + SIZE CHART. Color: Green tek swatch. qty + Add to cart. Accordion How to use / Care / Shipping. 12 items left.",
+  "delta": "Bricks product_information + variant-picker + gsc-chip + gsc-swatch. Color tek; option change = Size. Buy/checkout yoklandı değil.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://bricks-theme-demo.myshopify.com/products/green-floral-puff-dress",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "etiket": "size-2xs",
+      "not": "Size 2XS chip--active · Color Green"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "variant-picker gsc-chip.chip:has-text('M')",
+      "capture": false,
+      "not": "Size 2XS → M"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "etiket": "size-m",
+      "not": "M seçili mi / fiyat-galeri"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Color yalnız Green. SIZE CHART popup leftover. ATC cart interact'te."
+}

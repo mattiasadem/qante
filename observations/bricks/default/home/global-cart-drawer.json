@@ -1,0 +1,89 @@
+{
+  "observationId": "bricks.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "bricks",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://bricks-theme-demo.myshopify.com/",
+  "selector": "#CartDrawerSection .drawer-v2__content",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Sağ drawer 500px. Boş: Your cart is empty + Start shopping.",
+  "delta": "cart-drawer#CartDrawerSection. Header a[href=/cart] JS ile drawer. Checkout tıklanmadı.",
+  "captureMode": "viewport",
+  "prepareClick": "a.cart-nav-button__trigger",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://bricks-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.cart-nav-button__trigger",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://bricks-theme-demo.myshopify.com/products/green-floral-puff-dress",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.button-v2--primary",
+      "capture": false,
+      "not": "Lovely Green Mini Dress default 2XS"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a.cart-nav-button__trigger",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "dolu",
+      "not": "Dolu drawer — ATC overlay kapatırsa tekrar Cart"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawerSection .input-base__control--plus",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı. addToCart UI yoksa cart/add.js."
+}

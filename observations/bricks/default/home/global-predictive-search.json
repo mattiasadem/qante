@@ -1,0 +1,67 @@
+{
+  "observationId": "bricks.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "bricks",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://bricks-theme-demo.myshopify.com/",
+  "selector": "#SearchInput",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "İkon a.header__search-icon-link. Overlay: Search + POPULAR PRODUCTS. Input #SearchInput. Katalog: dress.",
+  "delta": "predictive-search host 0px; açık kutu drawer-v2--top. Viewport capture.",
+  "captureMode": "viewport",
+  "prepareClick": "a.header__search-icon-link, header a[href='/search']",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://bricks-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.header__search-icon-link, header a[href='/search']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Boş overlay + popular"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#SearchInput",
+      "value": "dress",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "dress",
+      "not": "SUGGESTIONS / PRODUCTS / COLLECTIONS / BLOG POSTS"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Enter/submit yok. PII yok."
+}
