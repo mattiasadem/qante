@@ -37,6 +37,7 @@ const state = {
   selObs: null,
   selCand: null,
   selList: null,
+  croType: null,
   vp: "compare",
 };
 
@@ -44,6 +45,7 @@ let stats = null;
 let items = null;
 let facets = null;
 let candidatesData = null;
+let croData = null;
 let lightboxList = [];
 let lightboxIndex = 0;
 let advancing = false;
@@ -167,6 +169,7 @@ function syncUrl() {
   if (state.selObs) p.set("obs", state.selObs);
   if (state.selCand) p.set("cand", state.selCand);
   if (state.selList) p.set("list", state.selList);
+  if (state.view === "cro" && state.croType) p.set("type", state.croType);
   if (state.vp !== "compare") p.set("vp", state.vp);
   const url = p.toString() ? `?${p}` : location.pathname;
   history.replaceState(null, "", url);
@@ -187,6 +190,7 @@ function readUrl() {
   state.selObs = p.get("obs") || null;
   state.selCand = p.get("cand") || null;
   state.selList = p.get("list") || null;
+  state.croType = p.get("type") || null;
   state.vp = p.get("vp") || "compare";
 }
 
@@ -374,11 +378,19 @@ async function refresh({ keepDetail = false } = {}) {
     $("#n-lists").textContent = nList ? ` ${nList}` : "";
   }
 
+  if (state.view === "cro" || !croData) {
+    croData = await api("/api/cro");
+    const nCro = croData.counts?.observations || 0;
+    $("#n-cro").textContent = nCro ? ` ${nCro}` : "";
+  }
+
   renderTabs();
   if (state.view === "candidates") {
     renderCandidatesSidebar();
   } else if (state.view === "lists") {
     renderListsSidebar();
+  } else if (state.view === "cro") {
+    renderCroSidebar();
   } else {
     renderSidebar();
   }
@@ -389,6 +401,8 @@ async function refresh({ keepDetail = false } = {}) {
     renderCandidatesDetail();
   } else if (state.view === "lists") {
     renderListsDetail();
+  } else if (state.view === "cro") {
+    renderCroDetail();
   } else if (state.view === "coverage") {
     await renderCoverage();
   } else if (state.view === "health") {
@@ -976,7 +990,7 @@ function wireCandLinks() {
   $("#main").querySelectorAll("[data-goto-schema]").forEach((el) => {
     el.onclick = () => {
       state.sel = el.dataset.gotoSchema;
-      state.selObs = null;
+      state.selObs = el.dataset.gotoObs || null;
       state.view = "browse";
       refresh();
     };
@@ -1158,6 +1172,152 @@ function renderListsDetail() {
   });
 }
 
+/* ---------------- CRO / funnel ---------------- */
+
+function croMatchHay(m) {
+  return [m.observationId, m.schemaId, m.kaynak, m.preset, m.sayfa, m.kategori, m.why]
+    .join(" ")
+    .toLowerCase();
+}
+
+function croTypesFiltered() {
+  if (!croData) return [];
+  const q = (state.q || "").trim().toLowerCase();
+  return (croData.types || [])
+    .map((t) => {
+      if (!q) return t;
+      const typeHit = `${t.id} ${t.titleEn} ${t.titleTr} ${t.purpose}`.toLowerCase().includes(q);
+      const matches = (t.matches || []).filter((m) => croMatchHay(m).includes(q));
+      if (typeHit) {
+        return matches.length ? { ...t, matches, count: matches.length } : t;
+      }
+      if (matches.length) return { ...t, matches, count: matches.length };
+      return null;
+    })
+    .filter(Boolean);
+}
+
+function renderCroSidebar() {
+  const types = croTypesFiltered();
+  if (!state.croType && types[0]) state.croType = types[0].id;
+  if (state.croType && !types.some((t) => t.id === state.croType) && types[0]) {
+    state.croType = types[0].id;
+  }
+
+  const byGroup = new Map();
+  for (const t of types) {
+    const g = t.group === "funnel" ? "Diğer funnel" : "CRO tipleri";
+    if (!byGroup.has(g)) byGroup.set(g, []);
+    byGroup.get(g).push(t);
+  }
+
+  const groupsHtml = [...byGroup.entries()]
+    .map(([key, rows]) => {
+      const head = `<div class="group-head"><span>▾ ${esc(key)}</span><span>${rows.length}</span></div>`;
+      const buttons = rows
+        .map((t) => {
+          const active = state.croType === t.id;
+          const empty = t.count === 0;
+          return `<button class="item ${active ? "active" : ""}${empty ? " zero" : ""}" data-cro-type="${esc(t.id)}">
+            <div class="id">${esc(t.titleTr)}</div>
+            <div class="sub">${esc(t.titleEn)} · ${esc(t.id)}</div>
+            <div class="chips">
+              <span class="chip ${empty ? "queue" : "ok"}">${t.count}</span>
+            </div>
+          </button>`;
+        })
+        .join("");
+      return head + buttons;
+    })
+    .join("");
+
+  const nObs = croData?.counts?.observations || 0;
+  const nHit = croData?.counts?.typesWithHits || 0;
+  $("#sidebar").innerHTML = `
+    <div class="facet-head list-head">
+      <strong>CRO · ${types.length}</strong>
+      <span class="list-head-count">${nObs} eşleşen gözlem · ${nHit} tipte var</span>
+    </div>
+    <p class="amac" style="padding:.55rem .85rem;margin:0;font-size:.78rem">
+      Funnel / CRO section tipleri — mevcut envanterden (yürüyüş yok).
+      Sınıflandırıcı: <code>viewer/lib/cro.mjs</code>
+    </p>
+    ${groupsHtml || `<p class="empty">CRO tipi yok</p>`}
+  `;
+}
+
+function renderCroDetail() {
+  const main = $("#main");
+  const types = croTypesFiltered();
+  let type = types.find((t) => t.id === state.croType);
+  if (!type && types[0]) {
+    state.croType = types[0].id;
+    type = types[0];
+    syncUrl();
+  }
+  if (!type) {
+    main.innerHTML = `<p class="empty">Aramaya uyan CRO tipi yok.</p>`;
+    return;
+  }
+
+  const cards = type.matches.length
+    ? type.matches.map(croMatchCard).join("")
+    : `<p class="empty">henüz yok — bu tip envanterde eşleşmedi. Sonraki yürüyüşte bakılacak.</p>`;
+
+  main.innerHTML = `
+    <p class="list-count-head">${type.group === "funnel" ? "Diğer funnel" : "CRO tipleri"} · ${type.count} eşleşme</p>
+    <h2>${esc(type.titleTr)}</h2>
+    <p class="amac">${esc(type.purpose)}</p>
+    <div class="chips">
+      <span class="chip mono">${esc(type.id)}</span>
+      <span class="chip">${esc(type.titleEn)}</span>
+      ${
+        type.count
+          ? `<span class="chip ok">${type.count} gözlem</span>`
+          : `<span class="chip queue">henüz yok</span>`
+      }
+    </div>
+    <h3>Eşleşen gözlemler</h3>
+    ${cards}
+  `;
+  wireImages();
+  wireCandLinks();
+  main.scrollTop = 0;
+  document.querySelector("#sidebar .item.active")?.scrollIntoView({
+    block: "nearest",
+  });
+}
+
+function croMatchCard(m) {
+  const thumbs = (m.evidence || [])
+    .slice(0, 3)
+    .map(
+      (e) => `<figure>
+        <img src="/${esc(e.path)}" alt="${esc(e.path)}" loading="lazy" decoding="async" data-shot="${esc(e.path)}" />
+        <figcaption><span>${esc(e.viewport || "?")}px</span></figcaption>
+      </figure>`
+    )
+    .join("");
+  const slug = [m.kaynak, m.preset].filter(Boolean).join("/");
+  return `<div class="card">
+    <div class="card-head">
+      <div>
+        <strong>${esc(m.observationId || m.schemaId)}</strong>
+        <div class="sub" style="color:var(--muted);font-size:.76rem">${esc(slug)} · ${esc(m.sayfa || "—")}</div>
+      </div>
+      <button class="linkish" data-goto-schema="${esc(m.schemaId)}" data-goto-obs="${esc(m.observationId || "")}">Envanter ↗</button>
+    </div>
+    <p class="amac">${esc(m.why)}</p>
+    <div class="chips">
+      <span class="chip mono">${esc(m.schemaId)}</span>
+      ${m.sayfa ? `<span class="chip">${esc(m.sayfa)}</span>` : ""}
+      ${m.kategori ? `<span class="chip">${esc(m.kategori)}</span>` : ""}
+      ${m.evidenceCount ? `<span class="chip ok">${m.evidenceCount} SS</span>` : `<span class="chip miss">SS yok</span>`}
+    </div>
+    ${thumbs ? `<div class="shots compare cro-thumbs" style="margin-top:.6rem">${thumbs}</div>` : ""}
+  </div>`;
+}
+
 /* ---------------- coverage ---------------- */
 
 async function renderCoverage() {
@@ -1284,6 +1444,7 @@ function bindEvents() {
   $("#reload").addEventListener("click", async () => {
     await api("/api/stats", new URLSearchParams({ fresh: "1" }));
     candidatesData = null;
+    croData = null;
     await loadStats();
     await checkThemeNotify({ announce: true });
     await refresh();
@@ -1339,6 +1500,13 @@ function bindEvents() {
       const k = gh.dataset.groupKey;
       collapsedGroups.has(k) ? collapsedGroups.delete(k) : collapsedGroups.add(k);
       return renderSidebar();
+    }
+
+    const croItem = e.target.closest(".item[data-cro-type]");
+    if (croItem) {
+      state.croType = croItem.dataset.croType;
+      state.view = "cro";
+      return refresh();
     }
 
     const listItem = e.target.closest(".item[data-list]");
@@ -1435,7 +1603,7 @@ function bindEvents() {
     const goto = e.target.closest("[data-goto-schema]");
     if (goto) {
       state.sel = goto.dataset.gotoSchema;
-      state.selObs = null;
+      state.selObs = goto.dataset.gotoObs || null;
       state.view = "browse";
       return refresh();
     }

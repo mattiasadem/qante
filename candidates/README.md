@@ -10,6 +10,7 @@
 | [`sigmayanlar.md`](./sigmayanlar.md) | Section olmayan gözlemler + karar önerisi |
 | [`dtc-69-brands.md`](./dtc-69-brands.md) | Referans DTC marka havuzu (69 URL) |
 | [`shopify-themes.md`](./shopify-themes.md) | Theme Store listesi — viewer **Listeler** sekmesi |
+| [`cro-types.md`](./cro-types.md) | CRO / funnel 17 tip — viewer **CRO** sekmesi (walk listesi değil) |
 
 ## Aday formatı
 
