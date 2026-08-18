@@ -1,0 +1,42 @@
+{
+  "observationId": "be-yours.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "be-yours",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://beyours-theme.myshopify.com/products/money-tree",
+  "selector": "#shopify-section-template--17270937452731__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "Money Tree. Size S/M/L pill. Sale countdown. ADD TO CART + BUY IT NOW. Pickup German Warehouse.",
+  "delta": "S €14,99 → M €49,99 (probe). Sold-out a11y her pill'de. Buy it now tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://beyours-theme.myshopify.com/products/money-tree",
+      "capture": true,
+      "etiket": "size-s",
+      "not": "Size S €14,99"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='template--17270937452731__main-1-1']",
+      "value": 1500,
+      "capture": true,
+      "etiket": "size-m",
+      "not": "Size M → €49,99"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Money Tree. Size S. Regular €14,99. Hurry up sale countdown. Add to cart. Pickup German Warehouse.",
+    "changed": "Size M seçili. Regular €49,99."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout/Buy it now yok. Size radio visually-hidden; label[for=…-1-1]=M."
+}

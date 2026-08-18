@@ -1,0 +1,75 @@
+{
+  "observationId": "be-yours.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "be-yours",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://beyours-theme.myshopify.com/",
+  "selector": "mini-cart.cart-drawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "cart-drawer custom element + details.cart-drawer-container. ATC sonrası otomatik açık.",
+  "delta": "Yan drawer. YOU MAY ALSO LIKE + free shipping eşiği. Check out tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://beyours-theme.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş mini-cart"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://beyours-theme.myshopify.com/products/spider-plant",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add']",
+      "capture": false,
+      "not": "Spider Plant €12,99 — drawer otomatik açar"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer + You may also like"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "mini-cart button[name='plus']",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boş cart drawer (Your cart is currently empty / benzeri).",
+    "filled": "Spider Plant €12,99 qty 1. Spend €82,01 more to reach free shipping. You may also like.",
+    "changed": "qty plus — adet ve ara toplam."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı. Newsletter popup submit yok. qty button.quantity__button[name=plus]."
+}

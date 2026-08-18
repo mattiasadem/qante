@@ -1,0 +1,64 @@
+{
+  "observationId": "be-yours.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "be-yours",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://beyours-theme.myshopify.com/cart",
+  "selector": "#shopify-section-template--17270936797371__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Boş + dolu + qty. Sibling cart-footer leftover.",
+  "delta": "Boşken Your cart is currently empty / RETURN TO SHOP. Footer ayrı section.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://beyours-theme.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://beyours-theme.myshopify.com/products/spider-plant",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://beyours-theme.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Spider Plant €12,99"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--17270936797371__cart-items button[name='plus']",
+      "value": 2000,
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is currently empty. RETURN TO SHOP.",
+    "filled": "Spider Plant qty 1 €12,99.",
+    "changed": "qty 2 — ara toplam."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı. cart-footer sibling leftover. shipping-calculator / recommendations 0px."
+}

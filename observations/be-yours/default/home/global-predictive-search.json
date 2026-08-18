@@ -1,0 +1,57 @@
+{
+  "observationId": "be-yours.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "be-yours",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://beyours-theme.myshopify.com/",
+  "selector": "details:has(> summary.header__icon--search)",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "predictive-search header modal. Öneri: ROOMSCAPES + INFO. katalogSorgu=plant.",
+  "delta": "Öneri boşken koleksiyon/sayfa linkleri. Ürün listesi yazınca.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://beyours-theme.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-kapali",
+      "not": "İkon; overlay kapalı"
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "capture": false,
+      "not": "Görünür büyüteç"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input.search__input[name='q']",
+      "value": "plant",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "katalogSorgu=plant (Prayer Plant / Spider Plant)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Arama overlay kapalı. Header'da büyüteç.",
+    "input": "plant yazılınca predictive sonuç beklenir (Prayer Plant & Pot, Spider Plant…). Submit yok."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "Boş overlay ayrı çekilmedi; input ile ölçüldü"
+    }
+  ],
+  "interactionNote": "input#Search-In-Modal-455. Submit/PII yok. dress=0 sonuç leftover."
+}

@@ -1,0 +1,52 @@
+{
+  "observationId": "be-yours.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "be-yours",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://beyours-theme.myshopify.com/",
+  "selector": "#shopify-section-sections--17270937649339__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Sticky header. HOME / SHOP / ROOMSCAPES / PLANT DROP / EXPLORE. Country GERMANY (EUR €). Log in. Cart. Arama ikonu.",
+  "delta": "Gerçek mega-menu class yok. Shop = header__submenu list-menu--disclosure + list-menu-item data-image. theme_store_id null; schema_name Be Yours 8.3.1.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://beyours-theme.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali-header",
+      "not": "Dropdown kapalı"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "nav.header__inline-menu details:first-of-type > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-dropdown-acik",
+      "not": "Shop disclosure — Plants/Pots/Tools/Gifts/Best Sellers/Sale. Mega kolon yok."
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440: announcement + HOME/SHOP/ROOMSCAPES/PLANT DROP/EXPLORE + ülke/EUR + Log in + arama + sepet. 375/768: hamburger + logo + arama + sepet.",
+    "open": "1440 Shop tık: dikey disclosure 440×691 — Plants, Pots, Tools & Accessories, Gifts, Best Sellers, Sale. list-menu-item data-image var; klasik mega kolon/promo yok."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Shop click ile open; hover submenu boş metin verdi"
+    }
+  ],
+  "interactionNote": "hasMega=false. Account/Log in tıklanmadı. Country picker leftover."
+}
