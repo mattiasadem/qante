@@ -7,7 +7,12 @@
   "url": "https://woodstock-theme-light.myshopify.com/",
   "selector": "sticky-header.header-wrapper",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
+  "evidence": [
+    "evidence/woodstock/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/woodstock/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/woodstock/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/woodstock/default/home/navigation-header-mega.open.stores-mega.1440.png"
+  ],
   "notlar": "sticky-header. Mega: Stores / Watch / Cellphones / Accessories / Support.",
   "delta": "Announcement aynı section içinde (.header-top ayrı obs). 375/768 hamburger.",
   "captureMode": "section",
@@ -37,7 +42,7 @@
     {
       "state": "open",
       "action": "forceOpen",
-      "selector": "#MegaMenu-Content-1",
+      "selector": "#Details-HeaderMenu-1",
       "capture": true,
       "captureMode": "section",
       "captureSelector": "#MegaMenu-Content-1",
@@ -45,18 +50,24 @@
       "viewports": [
         "1440"
       ],
-      "not": "Stores mega panel crop"
+      "not": "details#Details-HeaderMenu-1 open + #MegaMenu-Content-1 crop"
     }
   ],
   "stateFindings": {
     "initial": "Logo Woodstock theme light + inline Search + Cart 0 + nav Stores/Watch Sale/Cellphones/Accessories Trending/Support.",
-    "open": "1440 Stores mega — kolonlar + NexaTime/Summit promo (karede bakılacak)."
+    "open": "1440 Stores mega 4 kolon: Shop / Featured / Bestseller + NexaTime Alpha Sync From $800 Shop now."
   },
-  "missingStates": [
-    {
-      "state": "open",
-      "sebep": "375/768 mega yok — hamburger (global-menu-drawer)."
-    }
-  ],
-  "interactionNote": "details#Details-HeaderMenu-1.mega-menu. 1440 hover + forceOpen #MegaMenu-Content-1. Currency/account tıklanmadı."
+  "missingStates": [],
+  "interactionNote": "details#Details-HeaderMenu-1.mega-menu. 1440 hover + forceOpen #MegaMenu-Content-1. Currency/account tıklanmadı.",
+  "capture": {
+    "url": "https://woodstock-theme-light.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:04:32.673Z"
+  }
 }
