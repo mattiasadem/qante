@@ -1,0 +1,68 @@
+{
+  "observationId": "zest.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "zest",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://zest-theme-demo.myshopify.com/",
+  "selector": "#Drawer-Search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "#Drawer-Search + #f-search-drawer-input. katalogSorgu=alpine (Alpine Jogger).",
+  "delta": "Sağ search drawer. 375 mobile toggle ayrı class. Shopify.theme.name [Update theme store] Zest · schema_name Zest · schema_version 9.3.0 · theme_store_id null · role main · id 151342186722 · walk zest-theme-demo.myshopify.com · Shopify.shop zest-flairy.myshopify.com.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://zest-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.site-header__search-toggle",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "İlk görünür büyüteç"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#f-search-drawer-input",
+      "value": "alpine",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-alpine",
+      "not": "katalogSorgu=alpine"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Yazılacak — capture sonrası PNG.",
+    "input": "Yazılacak — capture sonrası PNG."
+  },
+  "missingStates": [],
+  "interactionNote": "Submit yok. Probe: Alpine Jogger $68.60 + Amalfi* (predictive) + Search page 2 results.",
+  "capture": {
+    "url": "https://zest-theme-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": ""
+  }
+}

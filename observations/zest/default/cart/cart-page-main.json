@@ -1,0 +1,81 @@
+{
+  "observationId": "zest.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "zest",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://zest-theme-demo.myshopify.com/cart",
+  "selector": "#shopify-section-template--19598722433250__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Your cart. Boş: empty + CONTINUE SHOPPING + LOG IN. Sibling cart-footer h=0 boşken.",
+  "delta": "cart-items + cart-footer ayrık leftover. Account tıklanmadı. Shopify.theme.name [Update theme store] Zest · schema_name Zest · schema_version 9.3.0 · theme_store_id null · role main · id 151342186722 · walk zest-theme-demo.myshopify.com · Shopify.shop zest-flairy.myshopify.com.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://zest-theme-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepet-bos",
+      "not": "Boş cart sayfa"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://zest-theme-demo.myshopify.com/products/alpine-jogger",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--19598723252450__main button.f-product-form__submit[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://zest-theme-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Cart sayfa dolu"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--19598722433250__cart-items button[name='plus'], #shopify-section-template--19598722433250__cart-items button[aria-label*='Increase' i]",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Yazılacak — capture sonrası PNG.",
+    "filled": "Yazılacak — capture sonrası PNG.",
+    "changed": "Yazılacak — capture sonrası PNG."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout / Log in tıklanmadı.",
+  "capture": {
+    "url": "https://zest-theme-demo.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": ""
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "observationId": "zest.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "zest",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://zest-theme-demo.myshopify.com/",
+  "selector": "#Drawer-Cart",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "#Drawer-Cart cart-drawer. Boş: Your cart is empty + TOPS/SWIMWEARS/BRAS. Dolu: Alpine Jogger.",
+  "delta": "Checkout tıklanmadı. Shopify.theme.name [Update theme store] Zest · schema_name Zest · schema_version 9.3.0 · theme_store_id null · role main · id 151342186722 · walk zest-theme-demo.myshopify.com · Shopify.shop zest-flairy.myshopify.com.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://zest-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.site-header__link[href='/cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://zest-theme-demo.myshopify.com/products/alpine-jogger",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--19598723252450__main button.f-product-form__submit[name='add']",
+      "capture": false,
+      "not": "Alpine Jogger $68.60 XS"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Drawer-Cart button[name='plus'], #Drawer-Cart button[aria-label*='Increase' i], #Drawer-Cart button[aria-label*='increase' i]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Yazılacak — capture sonrası PNG.",
+    "filled": "Yazılacak — capture sonrası PNG.",
+    "changed": "Yazılacak — capture sonrası PNG."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart UI. Checkout/discount/note yok. Qty selector yoklanır.",
+  "capture": {
+    "url": "https://zest-theme-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": ""
+  }
+}

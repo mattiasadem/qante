@@ -1,0 +1,75 @@
+{
+  "observationId": "zest.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "zest",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://zest-theme-demo.myshopify.com/",
+  "selector": "#shopify-section-sections--19598715453666__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "site-header--design-5 show-dropdown-menu-on-hover. Home/Presets/Shop. 1440 Shop mega: CATEGORIES + DISCOVER + FEATURED. Logo Zest Flairy.",
+  "delta": "Home'da section h=0 (transparent overlay); viewport. .mega-menu class yok; f-site-nav__item--mega var. Shopify.theme.name [Update theme store] Zest · schema_name Zest · schema_version 9.3.0 · theme_store_id null · role main · id 151342186722 · walk zest-theme-demo.myshopify.com · Shopify.shop zest-flairy.myshopify.com.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://zest-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Mega kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": ".f-site-nav__item--has-child.f-site-nav__item--mega > a.f-site-nav__link",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "Shop hover — Categories/Discover/Featured kolonları"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Yazılacak — capture sonrası PNG.",
+    "open": "Yazılacak — capture sonrası PNG."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "open=Shop mega hover; ayrı hover state yok"
+    }
+  ],
+  "interactionNote": "Account/Log in tıklanmadı. Presets mega diğer demo URL (yürünmedi).",
+  "capture": {
+    "url": "https://zest-theme-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": ""
+  }
+}
