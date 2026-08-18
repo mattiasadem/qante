@@ -1,0 +1,91 @@
+{
+  "observationId": "pebble.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "pebble",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pebble-little.myshopify.com/",
+  "selector": "header.header",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/pebble/default/home/global-predictive-search.initial.arama-kapali.1440.png",
+    "evidence/pebble/default/home/global-predictive-search.initial.arama-kapali.375.png",
+    "evidence/pebble/default/home/global-predictive-search.initial.arama-kapali.768.png",
+    "evidence/pebble/default/home/global-predictive-search.input.arama-sonucu.1440.png",
+    "evidence/pebble/default/home/global-predictive-search.input.arama-sonucu.375.png",
+    "evidence/pebble/default/home/global-predictive-search.input.arama-sonucu.768.png"
+  ],
+  "notlar": "PredictiveSearchResults. Katalog polo (Logo Polo Red $45).",
+  "delta": "search-drawer custom element. Popular chips Softness Sweater / Short kapalı halde DOM'da.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pebble-little.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-kapali",
+      "not": "1440 header Search input; 375/768 drawer kapalı."
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": ".search-drawer-button",
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Mobil/tablet Open search — drawer."
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#SearchInput-sections--20816633299082__search-drawer",
+      "value": "polo",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "katalogSorgu polo — Logo Polo Red."
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#SearchInput-sections--20816632447114__header",
+      "value": "polo",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "viewports": [
+        "1440"
+      ],
+      "not": "1440 inline header predictive."
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440 header Search kutusu boş. 375/768 drawer kapalı (hamburger + search ikon).",
+    "input": "polo: Suggestions chip + Related Products Logo Polo Red $45 / Cotton Polo $30 / Stripe Polo Pink $45 + View All Results. Submit yok."
+  },
+  "missingStates": [],
+  "interactionNote": "Submit yok. 1440 inline #SearchInput-…__header; 375/768 .search-drawer-button → drawer input.",
+  "capture": {
+    "url": "https://pebble-little.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:05:38.234Z"
+  }
+}
