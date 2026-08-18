@@ -1,0 +1,144 @@
+{
+  "observationId": "kingdom.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "kingdom",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://kingdom-theme.myshopify.com/cart",
+  "selector": "body.template-cart .container.padding-bottom-1x.mb-1",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/kingdom/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/kingdom/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/kingdom/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/kingdom/default/cart/cart-page-main.filled.dolu.1440.png",
+    "evidence/kingdom/default/cart/cart-page-main.filled.dolu.375.png",
+    "evidence/kingdom/default/cart/cart-page-main.filled.dolu.768.png",
+    "evidence/kingdom/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/kingdom/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/kingdom/default/cart/cart-page-main.initial.sepet-bos.768.png"
+  ],
+  "notlar": "Boş: Shopping Cart / Your cart is currently empty. / Continue browsing here. Dolu: Owl Mug - White satır + qty -/+ + Subtotal.",
+  "delta": "Cart liquid (shopify-section yok). Sibling #shopify-section-homepage-featured-collection placeholder leftover. Checkout tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://kingdom-theme.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://kingdom-theme.myshopify.com/products/owl-mug",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.btn-add-to-cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://kingdom-theme.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "dolu",
+      "not": "Dolu cart satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "body.template-cart .quantity-up",
+      "capture": false,
+      "not": "Adet + (input 2; toplam Update Cart'sız $25 kalır)"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 400,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "body.template-cart input[name='update']",
+      "capture": false,
+      "not": "Update Cart — checkout değil"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "qty 2 + Update Cart"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Shopping Cart. Your cart is currently empty. Continue browsing here.",
+    "filled": "Owl Mug - White · White · UncommonGoods · qty 1 · $25.00 · Subtotal $25.00. Shipping & taxes calculated at checkout.",
+    "changed": "qty 2 + Update Cart. Satır/subtotal $50.00. Rozet 2."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout / shipping estimates tıklanmadı. + yalnız input değiştirir; toplam için Update Cart (checkout değil). addToCart → ui.",
+  "capture": {
+    "url": "https://kingdom-theme.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:12:14.837Z"
+  }
+}
