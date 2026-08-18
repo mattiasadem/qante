@@ -1,0 +1,41 @@
+{
+  "observationId": "pebble.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "pebble",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pebble-little.myshopify.com/",
+  "selector": "#menu-drawer-dialog",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "dialog#menu-drawer-dialog. Shop / Collections / Pages / Features.",
+  "delta": "Pebble dialog-component#menu-drawer. Impulse #NavDrawer değil.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://pebble-little.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": ".menu-drawer-button",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mobil-menu-acik",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "button.menu-drawer-button aria=Open menu → #menu-drawer-dialog"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "1440 hamburger yok (lg:hidden). Sign In/Register tıklanmadı."
+}

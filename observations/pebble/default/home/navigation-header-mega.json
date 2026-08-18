@@ -1,0 +1,43 @@
+{
+  "observationId": "pebble.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "pebble",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pebble-little.myshopify.com/",
+  "selector": "header.header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "details#Mega-menu-item-sidebar_6tJn4m / banner_PzqTic / text_with_banners_zWYKqx.",
+  "delta": "Shop sidebar mega + Collections banner mega + Pages text/banners. Home 1440 section h=0 — selector header.header.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pebble-little.myshopify.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header. 1440 Shop/Collections/Pages + Search. Home overlay."
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Mega-menu-item-sidebar_6tJn4m > summary",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Shop hover → sidebar mega. Summary tıklanmadı (koleksiyona kaçabilir)."
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "375/768 mega yok — hamburger. Features düz link olabilir. Account/Sign In duruldu."
+}

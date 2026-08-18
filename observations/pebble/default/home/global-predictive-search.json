@@ -1,0 +1,70 @@
+{
+  "observationId": "pebble.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "pebble",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pebble-little.myshopify.com/",
+  "selector": "header.header",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "PredictiveSearchResults. Katalog polo (Logo Polo Red $45).",
+  "delta": "search-drawer custom element. Popular chips Softness Sweater / Short kapalı halde DOM'da.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pebble-little.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-kapali",
+      "not": "1440 header Search input; 375/768 drawer kapalı."
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": ".search-drawer-button",
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Mobil/tablet Open search — drawer."
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#SearchInput-sections--20816633299082__search-drawer",
+      "value": "polo",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "katalogSorgu polo — Logo Polo Red."
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#SearchInput-sections--20816632447114__header",
+      "value": "polo",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "viewports": [
+        "1440"
+      ],
+      "not": "1440 inline header predictive."
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Submit yok. 1440 inline; 375/768 #search-drawer."
+}

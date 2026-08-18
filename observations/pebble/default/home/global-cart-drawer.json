@@ -1,0 +1,71 @@
+{
+  "observationId": "pebble.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "pebble",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pebble-little.myshopify.com/",
+  "selector": "#cart-drawer-dialog",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "#cart-drawer-dialog. cart-drawer-button aria=Open cart href=/cart.",
+  "delta": "Sağ drawer (dialog--drawer-right). Empty collection shortcuts.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pebble-little.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".cart-drawer-button",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer — Shop Boy's / Girl's / Accessories."
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://pebble-little.myshopify.com/products/logo-polo-red",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#BuyButtons-ProductSubmitButton-AckJJcEFnN2FTNk1jU__add-to-cart",
+      "capture": false,
+      "not": "Logo Polo Red Red / 3Y $45 — ATC drawer açar"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer. Checkout tıklanmadı."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#cart-drawer-dialog button.quantity-plus",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı. Qty #Quantity-sections--20816633299082__cart-drawer-0."
+}
