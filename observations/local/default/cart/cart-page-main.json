@@ -1,0 +1,115 @@
+{
+  "observationId": "local.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "local",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://local-theme-main.myshopify.com/cart",
+  "selector": "#shopify-section-template--18571816599613__main-cart",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/local/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/local/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/local/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/local/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/local/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/local/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/local/default/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/local/default/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/local/default/cart/cart-page-main.initial.cart-bos.768.png"
+  ],
+  "notlar": "Boş: Your cart is currently empty + Continue browsing. Dolu: Hamburger satır + Related products + Estimate shipping. Checkout tıklanmadı.",
+  "delta": "Shopify.theme.name local-build/light · id 139927814205 · schema_name Local · schema_version 4.1.0 · theme_store_id null · role main · shop local-theme-light-demo.myshopify.com main-cart. Related products aynı section. Estimate shipping leftover.",
+  "captureMode": "section",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://local-theme-main.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--18571816599613__main-cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş cart — cookie doluysa leftover"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://local-theme-main.myshopify.com/products/hamburger",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.add-to-cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://local-theme-main.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--18571816599613__main-cart",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Hamburger satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--18571816599613__main-cart .qty-plus",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "stateFindings": {
+    "initial": "Shopping Cart. Your cart is currently empty. Continue browsing.",
+    "filled": "Hamburger Medium (10 oz) $4.50 qty 1. Related products Vegetable Stew / Mega Sandwich / Muesli Breakfast. Estimate shipping Country France. You are $45.50 away from free shipping. Total $4.50. SUMMER25 kupon uygulanmadı. Checkout gri.",
+    "changed": "qty 2 · satır $9.00 ($11.00). You are $41.00 away from free shipping. Total $9.00."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout / Estimate / SUMMER25 / notes / terms dur. Related products aynı main-cart.",
+  "capture": {
+    "url": "https://local-theme-main.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:38:00.320Z"
+  }
+}
