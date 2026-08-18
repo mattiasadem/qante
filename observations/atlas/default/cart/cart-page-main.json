@@ -1,0 +1,110 @@
+{
+  "observationId": "atlas.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "atlas",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://alloy-themes-atlas-demo.myshopify.com/cart",
+  "selector": "#shopify-section-template--30838193389906__main-cart",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/atlas/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/atlas/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/atlas/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/atlas/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/atlas/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/atlas/default/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/atlas/default/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/atlas/default/cart/cart-page-main.initial.cart-bos.768.png"
+  ],
+  "notlar": "Boş: Your cart is empty + Continue shopping.",
+  "delta": "Atlas main-cart. Drawer ayrı. Checkout/login tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://alloy-themes-atlas-demo.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş sepet sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://alloy-themes-atlas-demo.myshopify.com/products/nimbus-over-ear-wireless-headphones",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'], form[action*='/cart/add'] button[type='submit']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://alloy-themes-atlas-demo.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--30838193389906__main-cart .quantity-selector__button--plus",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty. Continue shopping. Header Cart $0.00.",
+    "filled": "Your cart 1 ITEM. Aurora Sound Nimbus Over-Ear Wireless Matte / Standard Kit $549. Header rozet 1 / $549. 375 qty kutusu yalnız “1” — plus görünmüyor.",
+    "changed": "768/1440: 2 ITEMS, qty 2, line + header $1,098, rozet 2. 375 leftover: compact qty, plus görünür değil."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "375: plus DOM’da var, görünür değil (compact qty kutusu). 768/1440 changed OK (2 ITEMS $1,098)."
+    }
+  ],
+  "interactionNote": "Checkout/login tıklanmadı. 375 qty leftover.",
+  "capture": {
+    "url": "https://alloy-themes-atlas-demo.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:50:04.229Z"
+  }
+}
