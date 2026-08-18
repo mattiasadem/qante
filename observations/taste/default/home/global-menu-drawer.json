@@ -1,0 +1,72 @@
+{
+  "observationId": "taste.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "taste",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-taste-demo.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/taste/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/taste/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "Dawn header-drawer. Summary aria-label Menu. Drinks (akordeon) Bundles Recipes About.",
+  "delta": "1440 hamburger 0px — masaüstü inline menu.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://theme-taste-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header-drawer summary.header__icon--menu, #Details-menu-drawer-container > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Mobil menü drawer"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: X + taste logo + search/cart. Liste: Drinks →, Bundles, Recipes, About →. Alt sosyal: Twitter Facebook Pinterest Instagram TikTok. Sağda sayfa overlay. 1440 hamburger yok."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "open@1440 — hamburger gizli; inline header-mega"
+    },
+    {
+      "state": "changed",
+      "sebep": "Drinks/About ok akordeon bu turda açılmadı"
+    }
+  ],
+  "interactionNote": "Account yok. Login PII yok.",
+  "capture": {
+    "url": "https://theme-taste-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:13:32.486Z"
+  }
+}

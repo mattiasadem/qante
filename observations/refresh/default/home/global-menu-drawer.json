@@ -1,0 +1,76 @@
+{
+  "observationId": "refresh.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "refresh",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-refresh-demo.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/refresh/default/home/global-menu-drawer.changed.about-akordeon.375.png",
+    "evidence/refresh/default/home/global-menu-drawer.changed.about-akordeon.768.png",
+    "evidence/refresh/default/home/global-menu-drawer.open.mobil-menu-acik.375.png",
+    "evidence/refresh/default/home/global-menu-drawer.open.mobil-menu-acik.768.png"
+  ],
+  "notlar": "header-drawer data-breakpoint=tablet. Hamburger → #menu-drawer: Hair Body Face Kits + About ok + sosyal.",
+  "delta": "Drawer solda. About drill-down (geri oku + Our story / Blog / Contact), klasik + accordion değil. Mega kolon yok.",
+  "captureMode": "viewport",
+  "prepareClick": "details#Details-menu-drawer-container > summary",
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://theme-refresh-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "details#Details-menu-drawer-container > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mobil-menu-acik",
+      "not": "Hamburger → drawer. 1440 hamburger gizli."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "details#Details-menu-drawer-menu-item-5 > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "about-akordeon",
+      "not": "About ok → Our story / Blog / Contact. Yazılı Hair/Body <a> koleksiyona kaçar, tıklanmadı."
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 drawer: Hair Body Face Kits About + sosyal. Sayfa karartılı.",
+    "changed": "About drill-down: geri oku + Our story, Blog, Contact. Üst seviye liste kayboldu."
+  },
+  "missingStates": [],
+  "interactionNote": "Yalnız 375/768. 1440 N/A. About summary tık; yazılı menü linki değil.",
+  "capture": {
+    "url": "https://theme-refresh-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:11:18.604Z"
+  }
+}

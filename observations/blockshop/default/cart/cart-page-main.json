@@ -1,0 +1,90 @@
+{
+  "observationId": "blockshop.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "blockshop",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://blockshop-theme-beauty.myshopify.com/cart",
+  "selector": "#shopify-section-template--17329881219127__main",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/blockshop/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/blockshop/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/blockshop/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/blockshop/default/cart/cart-page-main.filled.dolu-sepet.1440.png",
+    "evidence/blockshop/default/cart/cart-page-main.filled.dolu-sepet.375.png",
+    "evidence/blockshop/default/cart/cart-page-main.filled.dolu-sepet.768.png",
+    "evidence/blockshop/default/cart/cart-page-main.initial.bos-sepet.1440.png",
+    "evidence/blockshop/default/cart/cart-page-main.initial.bos-sepet.375.png",
+    "evidence/blockshop/default/cart/cart-page-main.initial.bos-sepet.768.png"
+  ],
+  "notlar": "YOUR BAG. Boş: YOUR BAG IS CURRENTLY EMPTY + CLICK HERE TO CONTINUE SHOPPING.",
+  "delta": "Shopify.theme.name `Copy of design [do not delete]` · id 134976438327 · schema_name Blockshop · schema_version 13.2.0 · theme_store_id null · role main · shop blockshop-theme-beauty.myshopify.com. Drawer ayrı. Checkout tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://blockshop-theme-beauty.myshopify.com/cart",
+      "capture": true,
+      "etiket": "bos-sepet",
+      "not": "Boş bag"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://blockshop-theme-beauty.myshopify.com/products/brightening-serum",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-buy-buttons--primary",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://blockshop-theme-beauty.myshopify.com/cart",
+      "capture": true,
+      "etiket": "dolu-sepet",
+      "not": "Serum satırı. Checkout yok."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button.quantity-selector--plus[aria-label='Plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet +1"
+    }
+  ],
+  "stateFindings": {
+    "initial": "YOUR BAG. YOUR BAG IS CURRENTLY EMPTY. CLICK HERE TO CONTINUE SHOPPING.",
+    "filled": "Brightening Serum 75ML adet 1 · $70.00 · YOU ARE $30.00 FROM FREE SHIPPING · SUBTOTAL $70.00 · CHECKOUT (tıklanmadı) · LEAVE A NOTE alanı boş.",
+    "changed": "Adet 2 · satır $140.00 · CONGRATULATIONS! YOU QUALIFY FOR FREE SHIPPING · SUBTOTAL $140.00. 375/768/1440 aynı delta."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart UI (3vp). Checkout / note / REMOVE tıklanmadı.",
+  "capture": {
+    "url": "https://blockshop-theme-beauty.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T21:00:37.798Z"
+  }
+}

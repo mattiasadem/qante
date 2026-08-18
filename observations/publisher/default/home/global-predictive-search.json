@@ -1,0 +1,74 @@
+{
+  "observationId": "publisher.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "publisher",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-publisher-demo.myshopify.com/",
+  "selector": "predictive-search",
+  "captureMode": "viewport",
+  "prepareClick": "summary.header__icon--search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/publisher/default/home/global-predictive-search.1440.png",
+    "evidence/publisher/default/home/global-predictive-search.initial.arama-acik.1440.png",
+    "evidence/publisher/default/home/global-predictive-search.input.arama-sonucu.1440.png"
+  ],
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-publisher-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik",
+      "not": "1440: büyüteç → boş overlay (placeholder Search)"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input.search__input[name='q']",
+      "value": "book",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "katalogSorgu book — PRODUCTS listesi + Search for book"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440: details-modal açık, yuvarlak Search input + X. Sonuç listesi yok. 375/768 header'da search ikonu görünmüyor.",
+    "input": "book yazınca PRODUCTS: Celestino Piatti Coloring Book, Braulio Amado— 2021, Shoplifters 10, Mary Obering + Search for “book”."
+  },
+  "missingStates": [],
+  "interactionNote": "İki details-modal (Dawn). 1440 ilk summary görünür. 375/768 ikisi de gizli — force denemedi, uydurma yok.",
+  "notlar": "details-modal.header__search içinde predictive-search. Kapalı kare input off-screen.",
+  "delta": "Header'da iki details-modal kopyası (Dawn). Mega yok. Mobil arama ikonu bu demoda kapalı.",
+  "capture": {
+    "url": "https://theme-publisher-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:17:30.922Z",
+    "prepareClick": "summary.header__icon--search"
+  }
+}

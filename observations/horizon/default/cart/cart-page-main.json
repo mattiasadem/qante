@@ -1,0 +1,90 @@
+{
+  "observationId": "horizon.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "horizon",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://theme-horizon-demo.myshopify.com/cart",
+  "selector": "#shopify-section-template--25678738358593__cart-section",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/horizon/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/horizon/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/horizon/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/horizon/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/horizon/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/horizon/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/horizon/default/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/horizon/default/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/horizon/default/cart/cart-page-main.initial.cart-bos.768.png"
+  ],
+  "notlar": "Boş: Your cart is empty + Have an account? Log in + Continue shopping.",
+  "delta": "Horizon main-cart. Drawer ayrı. Checkout tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-horizon-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş sepet sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-horizon-demo.myshopify.com/products/michael-shaggy-wool-cardigan-324-1",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-horizon-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "cart-items-component button[name='plus'], button.quantity-plus",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty; Have an account? Log in to check out faster; Continue shopping. Satır yok.",
+    "filled": "Cart rozet 1. Michael Shaggy Wool Cardigan · Pumice, XS · $282.00 · adet 1. 1440: sol satır + sağ özet (Discount +; Estimated total $282.00 CAD; Check out; Shop Pay; G Pay).",
+    "changed": "Rozet 2; adet 2; satır $564.00; Estimated total $564.00 CAD."
+  },
+  "missingStates": [],
+  "interactionNote": "Pixel-check OK (boş ↔ dolu ↔ adet). Checkout/login tıklanmadı.",
+  "capture": {
+    "url": "https://theme-horizon-demo.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:22:50.083Z"
+  }
+}

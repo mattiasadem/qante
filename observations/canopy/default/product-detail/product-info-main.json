@@ -1,0 +1,65 @@
+{
+  "observationId": "canopy.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "canopy",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://canopy-theme-natural.myshopify.com/products/soured-cream",
+  "selector": ".product-info",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/canopy/default/product-detail/product-info-main.changed.weight-150.1440.png",
+    "evidence/canopy/default/product-detail/product-info-main.changed.weight-150.375.png",
+    "evidence/canopy/default/product-detail/product-info-main.changed.weight-150.768.png",
+    "evidence/canopy/default/product-detail/product-info-main.initial.weight-75.1440.png",
+    "evidence/canopy/default/product-detail/product-info-main.initial.weight-75.375.png",
+    "evidence/canopy/default/product-detail/product-info-main.initial.weight-75.768.png"
+  ],
+  "notlar": "Soured Cream 7.5 oz ★★★★☆ (2) $3.00. Weight 7.5oz/15.0oz/40.0oz. Qty. Add to cart. Buy it now görünür (tıklanmadı). Section wrapper h=18; .product parent h=0 — iç .product-info.",
+  "delta": "cc-main-product. Galeri kardeş #product-media (parent height 0). Buy it now checkout — tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://canopy-theme-natural.myshopify.com/products/soured-cream",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": ".product-info",
+      "capture": true,
+      "etiket": "weight-75",
+      "not": "Weight 7.5oz $3.00"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='product-form-template--18143730139336__main-1-opt-1']",
+      "capture": true,
+      "etiket": "weight-150",
+      "not": "Weight → 15.0oz ($5.00 / $500)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Soured Cream 7.5 oz · 4/5 (2) · $3.00 · New arrival · In stock - Fill your basket · Weight 7.5oz seçili · Add to cart · Buy it now (tıklanmadı) · Pickup Canopy Grocery Store · 5+ days freshness.",
+    "changed": "15.0oz seçili (kalın çerçeve) · $5.00 · “Soured Cream - 15.0oz is backordered and will ship as soon as it is back in stock.”"
+  },
+  "missingStates": [],
+  "interactionNote": "Variant id 41464839831752 = 15.0oz. Buy it now / checkout tıklanmadı.",
+  "capture": {
+    "url": "https://canopy-theme-natural.myshopify.com/products/soured-cream",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T21:00:37.794Z"
+  }
+}

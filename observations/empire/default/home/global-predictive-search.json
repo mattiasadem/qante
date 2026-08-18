@@ -1,0 +1,84 @@
+{
+  "observationId": "empire.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "empire",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://empire-demo.myshopify.com/",
+  "selector": ".search-flydown",
+  "captureMode": "viewport",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/empire/default/home/global-predictive-search.input.arama-sonucu.1440.png",
+    "evidence/empire/default/home/global-predictive-search.input.arama-sonucu.375.png",
+    "evidence/empire/default/home/global-predictive-search.input.arama-sonucu.768.png"
+  ],
+  "notlar": "live_search.enable true. katalogSorgu: pen (Electronic Super Pen). Playwright fill flydown açmaz; p-e-n press gerekir.",
+  "delta": "Flydown: ürün + Pages & Posts. 375/768 input ikinci satırda görünür.",
+  "interactionStates": [
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "input",
+      "action": "goto",
+      "value": "https://empire-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "input.site-header-search-form-field[name='q']",
+      "capture": false,
+      "not": "Input odak"
+    },
+    {
+      "state": "input",
+      "action": "press",
+      "value": "p",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "press",
+      "value": "e",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "press",
+      "value": "n",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": "2000",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "Flydown: Super Pen + Pages & Posts boş + View all results"
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "Ayrı boş modal yok. Öneri yazınca gelir."
+    }
+  ],
+  "stateFindings": {
+    "input": "375: tam ekran arama — pen + Cancel + Super Pen (Pen sarı vurgu) $15.85 + View all results. 1440: flydown Super Pen $15.85 + Pages & Posts No results. + View all results. Mosaic arkada."
+  },
+  "interactionNote": "fill() live-search tetiklemedi (flydown 0×0). press p/e/n. 375 overlay, 1440 flydown. zzzzz denenmedi.",
+  "capture": {
+    "url": "https://empire-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:30:52.439Z"
+  }
+}

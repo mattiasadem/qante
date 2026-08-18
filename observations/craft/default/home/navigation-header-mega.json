@@ -1,0 +1,108 @@
+{
+  "observationId": "craft.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "craft",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-craft-demo.myshopify.com/",
+  "selector": "#shopify-section-header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/craft/default/home/navigation-header-mega.changed.mobil-dinnerware-acik.375.png",
+    "evidence/craft/default/home/navigation-header-mega.changed.mobil-dinnerware-acik.768.png",
+    "evidence/craft/default/home/navigation-header-mega.initial.kapali-header.1440.png",
+    "evidence/craft/default/home/navigation-header-mega.initial.kapali-header.375.png",
+    "evidence/craft/default/home/navigation-header-mega.initial.kapali-header.768.png",
+    "evidence/craft/default/home/navigation-header-mega.open.dinnerware-submenu.1440.png",
+    "evidence/craft/default/home/navigation-header-mega.open.mobil-menu-acik.375.png",
+    "evidence/craft/default/home/navigation-header-mega.open.mobil-menu-acik.768.png"
+  ],
+  "notlar": "Logo Craft. 1440: Dinnerware (caret) + Glassware/Serveware/Flatware/Textiles/Bundles + arama + sepet. Mega görsel yok.",
+  "delta": "Dinnerware details submenu (renk koleksiyonları). Image mega yok. Cart-notification header içinde; cart-drawer yok.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-craft-demo.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali-header",
+      "not": "Dinnerware submenu ve hamburger kapalı"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-HeaderMenu-1 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "dinnerware-submenu",
+      "not": "Dinnerware caret — Speckled White / Dove Gray / Blush Pink / Beachgrass Green / Midnight Blue. Yazılı <a> tıklanmaz."
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mobil-menu-acik",
+      "not": "Hamburger → #menu-drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-menu-drawer-menu-item-1 > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mobil-dinnerware-acik",
+      "not": "Drawer içi Dinnerware ok — yazılı koleksiyon <a> değil"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440: logo ortada, sol büyüteç, sağ sepet, altta Dinnerware (caret) + Glassware/Serveware/Flatware/Textiles/Bundles. 375: hamburger + logo + arama + sepet; nav gizli.",
+    "open": "1440 Dinnerware tık → beyaz dropdown: Speckled White, Dove Gray, Blush Pink, Beachgrass Green, Midnight Blue. Görsel/promo yok. 375/768 hamburger → soldan drawer: Dinnerware (ok) + düz linkler + altta Twitter–TikTok.",
+    "changed": "375/768 drawer Dinnerware ok → geri oku + Dinnerware + aynı beş renk koleksiyonu. Yazılı <a> tıklanmadı."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Dinnerware tık ile details açılıyor; hover mega yok"
+    },
+    {
+      "state": "filled",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "input",
+      "sebep": "Arama ayrı component"
+    }
+  ],
+  "interactionNote": "1440 Dinnerware = details#Details-HeaderMenu-1. Mega görsel/promo kartı yok. 375/768 header-drawer data-breakpoint=tablet.",
+  "capture": {
+    "url": "https://theme-craft-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:15:21.313Z"
+  }
+}

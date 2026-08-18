@@ -9,7 +9,7 @@
 | [`commerce-tools.md`](./commerce-tools.md) | Aday kategori (bundle / compare / quick order) |
 | [`sigmayanlar.md`](./sigmayanlar.md) | Section olmayan gözlemler + karar önerisi |
 | [`dtc-69-brands.md`](./dtc-69-brands.md) | Referans DTC marka havuzu (69 URL) |
-| [`shopify-themes.md`](./shopify-themes.md) | Theme Store — önerilen Shopify temaları |
+| [`shopify-themes.md`](./shopify-themes.md) | Theme Store listesi — viewer **Listeler** sekmesi |
 
 ## Aday formatı
 

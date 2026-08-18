@@ -1,0 +1,61 @@
+{
+  "observationId": "ritual.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "ritual",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-ritual-demo.myshopify.com/",
+  "selector": "#Details-menu-drawer-container .menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/ritual/default/home/global-menu-drawer.open.hamburger.375.png"
+  ],
+  "notlar": "375 hamburger header-drawer. New / Tops / Bottoms + resource-card ürünler.",
+  "delta": "Horizon header-drawer. 768/1440 hamburger 0×0 — desktop NEW/TOPS/BOTTOMS. 375 drawer kapalıyken linkler x=-338 (offscreen).",
+  "captureMode": "viewport",
+  "prepareClick": "header summary.header__icon--menu[aria-label='Menu']",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://theme-ritual-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header summary.header__icon--menu[aria-label='Menu']",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "375 mobil drawer"
+    }
+  ],
+  "stateFindings": {
+    "open": "375: X + NEW / TOPS / BOTTOMS. Altta resource-card: Bonding Rose Blazer $2,800 / Blooming Belle Fitted Tee $1,800 / Black Swan… $890."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "768 hamburger 0×0 — desktop nav (NEW/TOPS/BOTTOMS). 1440 hamburger yok."
+    }
+  ],
+  "interactionNote": "768/1440 N/A. Login yok. Account tıklanmadı.",
+  "capture": {
+    "url": "https://theme-ritual-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:27:55.164Z"
+  }
+}

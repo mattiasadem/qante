@@ -1,0 +1,112 @@
+{
+  "observationId": "combine.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "combine",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://combine-theme-main.myshopify.com/",
+  "selector": "#site-cart-sidebar",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/combine/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/combine/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/combine/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/combine/default/home/global-cart-drawer.filled.carafe-qty1.1440.png",
+    "evidence/combine/default/home/global-cart-drawer.filled.carafe-qty1.375.png",
+    "evidence/combine/default/home/global-cart-drawer.filled.carafe-qty1.768.png",
+    "evidence/combine/default/home/global-cart-drawer.initial.sepet-bos.1440.png",
+    "evidence/combine/default/home/global-cart-drawer.initial.sepet-bos.375.png",
+    "evidence/combine/default/home/global-cart-drawer.initial.sepet-bos.768.png"
+  ],
+  "notlar": "a.area--cart Open cart. #site-cart-sidebar + #mini-cart-popup. Gift wrapping / discount codes drawer içinde.",
+  "delta": "Sidebar drawer, Dawn notification değil.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://combine-theme-main.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.area--cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://combine-theme-main.myshopify.com/products/carafe-1-2ltr",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.add-to-cart.button--product, form[action*='/cart/add'] button[type='submit']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a.area--cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "carafe-qty1",
+      "not": "Dolu drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#site-cart-sidebar button[name='plus'], #AjaxCartForm button[name='plus'], #site-cart-sidebar [data-qty-plus], #site-cart-sidebar button[aria-label*='Increase' i]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Drawer adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "SHOPPING CART (0). Your cart is currently empty. Continue browsing.",
+    "filled": "SHOPPING CART (1). Carafe 1.2Ltr Color Clear qty 1 $55. Free shipping $145 away. New Product W&S Little Lion $15. Gift wrap $10. Total $55. View Cart + Checkout (tıklanmadı).",
+    "changed": "SHOPPING CART (2). qty 2 satır $110. Free shipping $90 away. Total $110."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart UI. Checkout tıklanmadı. Discount codes açılmadı.",
+  "capture": {
+    "url": "https://combine-theme-main.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T19:23:53.820Z"
+  }
+}

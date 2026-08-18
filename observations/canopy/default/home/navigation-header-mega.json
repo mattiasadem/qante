@@ -1,0 +1,63 @@
+{
+  "observationId": "canopy.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "canopy",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://canopy-theme-natural.myshopify.com/",
+  "selector": "#shopify-section-sections--18143730630856__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/canopy/default/home/navigation-header-mega.initial.kapali-header.1440.png",
+    "evidence/canopy/default/home/navigation-header-mega.initial.kapali-header.375.png",
+    "evidence/canopy/default/home/navigation-header-mega.initial.kapali-header.768.png",
+    "evidence/canopy/default/home/navigation-header-mega.open.groceries-mega.1440.png"
+  ],
+  "notlar": "Logo Canopy. Inline search + Product type All. Account (tıklanmadı). Cart. Nav: Groceries / Offers / About Us / Inspiration & Recipes / Presets / In season now!",
+  "delta": "js-mega-nav sidebar mega (görsel+kolon). 1440 cart docked. 375/768 hamburger 44×44.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://canopy-theme-natural.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali-header",
+      "not": "Mega kapalı. 1440 Groceries/Offers/Presets. 375 hamburger+arama+sepet."
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "li.js-mega-nav .js-nav-hover",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "groceries-mega",
+      "not": "Groceries satır hover — yazılı <a href=/collections> tıklanmaz. Sidebar mega Fruit & Vegetables + alt linkler."
+    }
+  ],
+  "stateFindings": {
+    "initial": "375/768: hamburger + Canopy + arama/hesap/sepet ikonları; Offers & Rollbacks şerit; kırmızı Great Deals on your weekly shop. 1440: satır içi Search for fruit… + All; Groceries / Offers (kırmızı) / About Us / Inspiration & Recipes / Presets + In season now!; sağda docked boş sepet.",
+    "open": "1440 Groceries hover: sidebar mega — Fruit & Vegetables (karpuz, seçili) + Meat & Fish / Store Cupboard / The Bakery / Cheese & Dairy. Sağ grid Fresh Fruit (New In) / Fresh Vegetables (In Season) / Fresh Ingredients / Fresh Salad (Offers). Docked boş sepet duruyor."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 #cart-icon /cart sayfasına gider (docked drawer ayrı). Age-verification-pop-up pointer-events keser; script force hover. Presets (Willow/Cedar/Canopy) tıklanmadı.",
+  "capture": {
+    "url": "https://canopy-theme-natural.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T20:58:22.691Z"
+  }
+}

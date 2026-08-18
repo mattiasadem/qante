@@ -1,0 +1,92 @@
+{
+  "observationId": "craft.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "craft",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-craft-demo.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/craft/default/home/global-menu-drawer.changed.dinnerware-akordeon.375.png",
+    "evidence/craft/default/home/global-menu-drawer.changed.dinnerware-akordeon.768.png",
+    "evidence/craft/default/home/global-menu-drawer.open.drawer-acik.375.png",
+    "evidence/craft/default/home/global-menu-drawer.open.drawer-acik.768.png"
+  ],
+  "notlar": "header-drawer tablet breakpoint. Hamburger summary aria-controls=menu-drawer.",
+  "delta": "Dawn menu-drawer; soldan. 1440'ta hamburger gizli.",
+  "captureMode": "viewport",
+  "prepareClick": "#Details-menu-drawer-container > summary",
+  "interactionStates": [
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://theme-craft-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "drawer-acik",
+      "not": "Hamburger açık — Dinnerware ok + düz linkler"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-menu-drawer-menu-item-1 > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "dinnerware-akordeon",
+      "not": "Dinnerware drill"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 soldan drawer: Dinnerware ok + Glassware/Serveware/Flatware/Textiles/Bundles + sosyal ikonlar. 1440 hamburger yok.",
+    "changed": "Dinnerware drill: geri oku + Speckled White / Dove Gray / Blush Pink / Beachgrass Green / Midnight Blue."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "Kapalı drawer zero-size; kapalı kare header'da"
+    },
+    {
+      "state": "hover",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "filled",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "input",
+      "sebep": "Anlamsız"
+    }
+  ],
+  "interactionNote": "1440 hamburger yok (data-breakpoint=tablet). 1440 interact header Dinnerware submenu.",
+  "capture": {
+    "url": "https://theme-craft-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:16:57.264Z"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "observationId": "taste.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "taste",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://theme-taste-demo.myshopify.com/products/fiery-ginger-booster",
+  "selector": "#shopify-section-template--22715887419414__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/taste/default/product-detail/product-info-main.changed.six-pack.1440.png",
+    "evidence/taste/default/product-detail/product-info-main.changed.six-pack.375.png",
+    "evidence/taste/default/product-detail/product-info-main.changed.six-pack.768.png",
+    "evidence/taste/default/product-detail/product-info-main.initial.60ml.1440.png",
+    "evidence/taste/default/product-detail/product-info-main.initial.60ml.375.png",
+    "evidence/taste/default/product-detail/product-info-main.initial.60ml.768.png"
+  ],
+  "notlar": "Fiery Ginger Booster $3.95 CAD. variant-radios Size: 60 mL / Six Pack / Twelve Pack. Adet stepper + Add to cart.",
+  "delta": "Dawn main-product. Pickup/sticky ATC bu karede ayrı değil.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-taste-demo.myshopify.com/products/fiery-ginger-booster",
+      "capture": true,
+      "etiket": "60ml",
+      "not": "Default Size 60 mL $3.95"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "variant-radios label:has-text('Six Pack'), fieldset label:has-text('Six Pack')",
+      "capture": true,
+      "etiket": "six-pack",
+      "not": "Size Six Pack — fiyat/görsel"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Fiery Ginger Booster. Size 60 mL seçili (siyah pill). $3.95 CAD. Adet 1. Add to cart + Buy it now. Galeri sarı şişeler.",
+    "changed": "Six Pack seçili. Fiyat $14.95 CAD. Galeri aynı küme. Buy it now tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "Tek option Size. Checkout/Buy it now tıklanmadı.",
+  "capture": {
+    "url": "https://theme-taste-demo.myshopify.com/products/fiery-ginger-booster",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-17T17:14:33.130Z"
+  }
+}
