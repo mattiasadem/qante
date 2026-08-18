@@ -1,0 +1,55 @@
+{
+  "observationId": "district.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "district",
+  "preset": "default",
+  "sayfa": "home",
+  "evidence": [
+    "evidence/district/default/home/global-menu-drawer.open.hamburger.375.png"
+  ],
+  "url": "https://district-theme-demo.myshopify.com/",
+  "selector": ".menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "notlar": "menu-drawer. 375 button.header-top__menu → Shop/Best Sellers/Blog/About/More + Log in.",
+  "delta": "768/1440 hamburger display:none. Kapalı drawer solda (x negatif).",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://district-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.header-top__menu",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "375 sol drawer"
+    }
+  ],
+  "stateFindings": {
+    "open": "375 hamburger (32×24) header-top__menu aciyor. Drawer: Shop (chevron), Best Sellers, Blog, About, More + Log in / Create account. 768/1440 hamburger display:none — leftover. Overlay 375 375×667, drawer 300×667."
+  },
+  "missingStates": [],
+  "interactionNote": "Log in / Create account tıklanmadı. Shop chevron leftover (kaçış).",
+  "capture": {
+    "url": "https://district-theme-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:11:55.349Z"
+  }
+}
