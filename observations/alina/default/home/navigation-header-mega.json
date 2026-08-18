@@ -1,0 +1,82 @@
+{
+  "observationId": "alina.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "alina",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://dev-alina.ikas.shop/",
+  "selector": "section.alina-header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/alina/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/alina/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/alina/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/alina/default/home/navigation-header-mega.open.cantalar-mega.1440.png"
+  ],
+  "captureMode": "viewport",
+  "notlar": "Sticky `.alina-header`. 1440: ALİNA wordmark · Öne Çıkanlar YENİ (navmega--strip) · Çantalar (navmega--tabs) · Aksesuarlar (navmega--grid) · Servis (navmega--links) · Ürün Ara · Hesabım · Sepetim. 375/768 hamburger `.nav__burger`. Cookiebar sibling.",
+  "delta": "ikas (Shopify.theme yok) · Theme Store UUID 7f5c4b83-e6fa-4cdd-a35b-72eb1911a8e3 · Alina / ikascom · demo dev-alina.ikas.shop · __IKAS_DATA__.storefrontThemeId b19652e2-11ef-4979-97b1-879567363d56 · storefrontId dd2e2c99-fb2a-44b5-82db-bc71532c7e5c · pageType from __IKAS_DATA__ · x-powered-by ikas · pageType INDEX. Mega var (tabs+ürün kartı). Hesabım /account tıklanmadı. Cookie `.cookiebar` leftover.",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://dev-alina.ikas.shop/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".cookiebar__btn",
+      "capture": false,
+      "not": "Çerez Reddet/Kabul — PII yok"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Mega kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": ".navmega--tabs .navmega__trigger",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cantalar-mega",
+      "not": "Çantalar hover — tık kapanıyor. Tabs: Sırt/Omuz/El/Seyahat + ürün kartları."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Siyah sticky bar. ALINA solda. 1440: Öne Çıkanlar YENİ / Çantalar / Aksesuarlar / Servis + ara/hesap/sepet. Altta hero Yeni Sezon + trending. 375: hamburger + ALİNA + ikonlar.",
+    "open": "1440 Çantalar hover: sol tab Sırt Çantaları (aktif) / Omuz / El / Seyahat & Spor. Sağda Öne Çıkan Sırt Çantaları + Tümünü Gör + Daily Backpack ₺31. Tık paneli kapatır."
+  },
+  "missingStates": [],
+  "interactionNote": "Çantalar tık paneli kapatır — open=hover. Hesabım tıklanmadı.",
+  "capture": {
+    "url": "https://dev-alina.ikas.shop/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:31:30.762Z"
+  }
+}

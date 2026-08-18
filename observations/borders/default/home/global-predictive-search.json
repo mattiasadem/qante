@@ -1,0 +1,87 @@
+{
+  "observationId": "borders.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "borders",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://borders-theme-raw.myshopify.com/",
+  "selector": "#site-search-sidebar",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/borders/default/home/global-predictive-search.initial.arama-acik.1440.png",
+    "evidence/borders/default/home/global-predictive-search.initial.arama-acik.375.png",
+    "evidence/borders/default/home/global-predictive-search.initial.arama-acik.768.png",
+    "evidence/borders/default/home/global-predictive-search.input.shirt.1440.png",
+    "evidence/borders/default/home/global-predictive-search.input.shirt.375.png",
+    "evidence/borders/default/home/global-predictive-search.input.shirt.768.png"
+  ],
+  "notlar": "Search opener a.area__icon[href='/search'] → #site-search-sidebar + #search-form-sidebar. katalog shirt.",
+  "delta": "href /search; JS sidebar beklenir. Sayfa kaçarsa leftover.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://borders-theme-raw.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.area__icon[href='/search']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik",
+      "not": "Search sidebar"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#search-form-sidebar, input[name='q'][type='search']",
+      "value": "shirt",
+      "capture": false,
+      "not": "katalogSorgu shirt"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shirt",
+      "not": "Predictive sonuç"
+    }
+  ],
+  "stateFindings": {
+    "initial": "SEARCH + X. Input 'Type a keyword…'. POPULAR: Bottoms / Embroidery / Outerwear / Shirts. 375 tam ekran; 768/1440 sağ drawer, solda hero.",
+    "input": "Input 'shirt'. Hâlâ yalnız POPULAR listesi. #search-results.predictive-search 0px — ürün önerisi yok."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "shirt yazıldı (3vp); predictive ürün kartı gelmedi. #search-results h=0. Tam sayfa /search?q=shirt 21 sonuç ayrı observation."
+    }
+  ],
+  "interactionNote": "katalogSorgu shirt. Drawer açıldı (sayfa /search'e kaçmadı). Ürün önerisi yok — leftover.",
+  "capture": {
+    "url": "https://borders-theme-raw.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:10:35.762Z"
+  }
+}

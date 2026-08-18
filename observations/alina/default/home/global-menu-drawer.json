@@ -1,0 +1,78 @@
+{
+  "observationId": "alina.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "alina",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://dev-alina.ikas.shop/",
+  "selector": ".mobnav",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/alina/default/home/global-menu-drawer.open.menu-acik.375.png",
+    "evidence/alina/default/home/global-menu-drawer.open.menu-acik.768.png"
+  ],
+  "captureMode": "viewport",
+  "notlar": "375/768 hamburger → `.mobnav` / `.mobnav__panel`. Hesabım altta — tıklanmadı.",
+  "delta": "ikas (Shopify.theme yok) · Theme Store UUID 7f5c4b83-e6fa-4cdd-a35b-72eb1911a8e3 · Alina / ikascom · demo dev-alina.ikas.shop · __IKAS_DATA__.storefrontThemeId b19652e2-11ef-4979-97b1-879567363d56 · storefrontId dd2e2c99-fb2a-44b5-82db-bc71532c7e5c · pageType from __IKAS_DATA__ · x-powered-by ikas · 1440 hamburger yok. Yazılı <a> sayfaya gider; changed=boş chevron.",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://dev-alina.ikas.shop/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": ".cookiebar__btn",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.nav__burger",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "menu-acik",
+      "not": "Hamburger açık — Öne Çıkanlar / Çantalar / Aksesuarlar / Servis / Hesabım"
+    }
+  ],
+  "stateFindings": {
+    "open": "Sol beyaz panel ALİNA + X. Öne Çıkanlar YENİ / Çantalar / Aksesuarlar / Servis (chevron). Altta Hesabım. 375/768."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Çantalar satırı <a href=/bags> + .navmega__chevron; tık /bags PLP'ye gider, drawer kapanır. Ayrı boş ok yok."
+    },
+    {
+      "state": "initial",
+      "sebep": "Kapalı overlay 0-size"
+    }
+  ],
+  "interactionNote": "1440 hamburger yok. Hesabım tıklanmadı. changed ikinci deneme yok — <a> tuzak.",
+  "capture": {
+    "url": "https://dev-alina.ikas.shop/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:33:27.773Z"
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "observationId": "ediz-ege.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "ediz-ege",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://dev-edizege.ikas.shop/cart",
+  "selector": "section.ee-cart",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/ediz-ege/default/cart/cart-page-main.changed.adet-2.1440.png",
+    "evidence/ediz-ege/default/cart/cart-page-main.changed.adet-2.375.png",
+    "evidence/ediz-ege/default/cart/cart-page-main.changed.adet-2.768.png",
+    "evidence/ediz-ege/default/cart/cart-page-main.filled.dudak-balmi-1.1440.png",
+    "evidence/ediz-ege/default/cart/cart-page-main.filled.dudak-balmi-1.375.png",
+    "evidence/ediz-ege/default/cart/cart-page-main.filled.dudak-balmi-1.768.png",
+    "evidence/ediz-ege/default/cart/cart-page-main.initial.bos.1440.png",
+    "evidence/ediz-ege/default/cart/cart-page-main.initial.bos.375.png",
+    "evidence/ediz-ege/default/cart/cart-page-main.initial.bos.768.png"
+  ],
+  "notlar": "Boş: Sepetin boş / Henüz bir ürün eklemedin / Alışverişe başla. Dolu: satır + Azalt/Arttır + Kaldır + İNDİRİM KODU + ÖDEMEYE GEÇ (tıklanmadı).",
+  "delta": "ikas (Shopify.theme yok) · Theme Store UUID 97a7859b-38f3-40bd-8b9b-4020d7d2854b · Ediz Ege / ikascom · demo https://dev-edizege.ikas.shop · __IKAS_DATA__.storefrontThemeId 00a88f8a-20f8-4c8f-b91a-0d55c911315d · storefrontId a676df71-3345-4235-9f76-4ff2fbe56848 · merchantId b35c5ed6-3df7-4dae-bffb-9c87204009e1 · storeName dev-edizege · locale tr · TRY ₺ · x-powered-by ikas · pageType CART. Checkout/kupon yok. Slider Bunlarla Tamamla leftover (home ile aynı tip).",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://dev-edizege.ikas.shop/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "section.ee-cart",
+      "capture": true,
+      "etiket": "bos",
+      "not": "Boş sepet sayfası — önceki viewport cookie dolu bırakırsa not düş"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://dev-edizege.ikas.shop/dogal-dudak-balmi",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.ee-pd__add",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://dev-edizege.ikas.shop/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "section.ee-cart",
+      "capture": true,
+      "etiket": "dudak-balmi-1",
+      "not": "qty 1 · ₺140"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "section.ee-cart button[aria-label='Arttır']",
+      "capture": true,
+      "etiket": "adet-2",
+      "not": "Adet 1→2 · toplam ₺280 beklenir"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Sepetin boş + Henüz bir ürün eklemedin + Alışverişe başla.",
+    "filled": "Doğal Dudak Balmı Naturel · qty 1 · ₺140 · Özet ara toplam ₺140.",
+    "changed": "2 ürün · qty 2 · satır/özet ₺280 · ÖDEMEYE GEÇ (tıklanmadı)."
+  },
+  "missingStates": [],
+  "interactionNote": "ÖDEMEYE GEÇ / kupon tıklanmadı. addToCart helper yok.",
+  "capture": {
+    "url": "https://dev-edizege.ikas.shop/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:53:02.425Z"
+  }
+}

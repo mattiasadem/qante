@@ -1,0 +1,75 @@
+{
+  "observationId": "eylul.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "url": "https://dev-eylul.ikas.shop/",
+  "selector": "section.hdr",
+  "captureMode": "viewport",
+  "notlar": "Sticky section.hdr: announce + şeffaf bar. 1440: Mağaza (hmi mega) · Yeni Gelenler · Günlük (hmc) · eylül · Arama · Hesabım · Sepet. 375/768 hamburger. Cookiebar yok.",
+  "delta": "ikas (Shopify.theme yok) · Theme Store UUID ef88b30d-7c1c-4474-b03f-dff5ef4c6453 · Eylül / ikascom · demo https://dev-eylul.ikas.shop/ · __IKAS_DATA__.storefrontThemeId a1b55030-52e1-46ac-9b2c-ec238b9b442d · storefrontId 29fd0757-66fa-4007-bd68-7ad43c43c58f · merchantId fd24ec01-cb21-4b82-9ad0-d238e7619d37 · storeName dev-eylul · salesChannelId f53bfbe3-2200-4f62-bff8-0f70626b4177 · storefrontRoutingId 052bf91a-54a5-4786-983e-33b24ebe9b54 · x-powered-by ikas · x-cache-tag 8assj-dev-eylul.myikas.com · TRY · locale tr · logoText eylül · pageType INDEX. Mega var: .hmi-panel 3 kolon + hmi-cards. Günlük ayrı hmc leftover. Hesabım /account tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://dev-eylul.ikas.shop/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Mega kapalı header + announce + şeffaf bar"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "a.hmi-link[href=\"/mutfak\"]",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "magaza-mega",
+      "not": "Mağaza hover — tık /mutfak’a gider. 3 kolon + görsel kartlar."
+    }
+  ],
+  "stateFindings": {
+    "initial": "375: hamburger + eylül + arama/hesap/sepet 0; announce 1500₺ kargo / sezon. 1440: Mağaza Yeni Gelenler Günlük · eylül · ikonlar; şeffaf bar hero (kahve ekipmanı) üstünde; CTA Alışverişe başla; altta Çok satanlar. Mega kapalı.",
+    "open": "1440 Mağaza hover: altı çizili. .hmi-panel — Çok Satanlar (Carbonator 3/Pro, Coffee Maker, Purifier, Kettle) · Kategoriler (Soda/Kahve/Su Isıtıcısı/Su Arıtma/Tümünü gör) · Aksesuarlar (Bardak/Şişe/Sürahi/Kahve Ekipmanı) + iki kart Kahve Makineleri / Soda Makineleri."
+  },
+  "missingStates": [],
+  "interactionNote": "Mağaza tık kategoriye gider — open=hover. Hesabım tıklanmadı.",
+  "kaynak": "eylul",
+  "preset": "default",
+  "sayfa": "home",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/eylul/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/eylul/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/eylul/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/eylul/default/home/navigation-header-mega.open.magaza-mega.1440.png"
+  ],
+  "capture": {
+    "url": "https://dev-eylul.ikas.shop/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:45:20.717Z"
+  }
+}
