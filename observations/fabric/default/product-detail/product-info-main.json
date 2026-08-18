@@ -1,0 +1,84 @@
+{
+  "observationId": "fabric.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "fabric",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://theme-fabric-demo.myshopify.com/products/tefnut-beach-vest-in-black",
+  "selector": "#shopify-section-template--19138330689589__product-information",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/fabric/default/product-detail/product-info-main.changed.renk-olive.1440.png",
+    "evidence/fabric/default/product-detail/product-info-main.changed.renk-olive.375.png",
+    "evidence/fabric/default/product-detail/product-info-main.changed.renk-olive.768.png",
+    "evidence/fabric/default/product-detail/product-info-main.initial.black.1440.png",
+    "evidence/fabric/default/product-detail/product-info-main.initial.black.375.png",
+    "evidence/fabric/default/product-detail/product-info-main.initial.black.768.png"
+  ],
+  "notlar": "Tefnut Beach Vest $128. media-gallery 2 kolon + variant-picker Color Black/Olive/Midnight + Size XXS–XL + Add to cart + 3 accordion. Demo not: Kotn.",
+  "delta": "Horizon product-information. Nested variant-picker + accordion. Accelerated checkout görüldü, tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-fabric-demo.myshopify.com/products/tefnut-beach-vest-in-black",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "etiket": "black",
+      "not": "Color Black / XXS $128"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "variant-picker input[value='Olive']",
+      "capture": false,
+      "not": "Color Black → Olive"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "etiket": "renk-olive",
+      "not": "Olive swatch; galeri değişiyor mu"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Color: Black (sol swatch) · Size XXS · $128.00 CAD. Galeri 2 kolon stacked; Add to cart; PRODUCT DETAILS / FABRIC CARE / SIZE & FIT accordion (+).",
+    "changed": "Color Olive (orta swatch + halka). Size hâlâ XXS. $128.00 CAD. 375: carousel ilk kare olive vest; 14 nokta."
+  },
+  "missingStates": [],
+  "interactionNote": "Size tıklanmadı. ATC/checkout tıklanmadı (cart interact ayrı). Midnight swatch yoklandı değil.",
+  "capture": {
+    "url": "https://theme-fabric-demo.myshopify.com/products/tefnut-beach-vest-in-black",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T12:05:53.055Z"
+  }
+}

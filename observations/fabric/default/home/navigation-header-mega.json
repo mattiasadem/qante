@@ -1,0 +1,75 @@
+{
+  "observationId": "fabric.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "fabric",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-fabric-demo.myshopify.com/",
+  "selector": "#header-component",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/fabric/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/fabric/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/fabric/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/fabric/default/home/navigation-header-mega.open.mega-womenswear.1440.png"
+  ],
+  "notlar": "1440/768: Womenswear · Menswear · Home + Search + Account + Cart overlay hero. 375: hamburger + Search + Account + Cart. Mega panel var.",
+  "delta": "Shopify.theme: name **Updated copy of Fabric demo store 3.2.0** · schema_name **Fabric** · schema_version **3.4.0** · theme_store_id **3622** · role main · id 145077665845 · shop se-horizon5-en-624k.myshopify.com. Horizon header + mega-menu__grid. Womenswear hover: kolon linkler + koleksiyon kartları. Account/login tıklanmadı. Section wrapper home’da h=0 — #header-component 66px.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-fabric-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "header-menu a.menu-list__link[href='/collections/womenswear-children-only']",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mega-womenswear",
+      "not": "Womenswear mega — kolon + kart"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440/768: Fabric hero üstünde Womenswear · Menswear · Home + Search + Account + Cart. 375: hamburger + Search + Account + Cart. Mega kapalı.",
+    "open": "1440 Womenswear hover: beyaz mega panel. Sol kolon T-Shirts & Tanks / All Tops / Bottoms / Dresses / Loungewear / Socks & Accessories. Sağda iki koleksiyon kartı: Womenswear + T-Shirts & Tanks."
+  },
+  "missingStates": [],
+  "interactionNote": "Mega var (Horizon/Tinker’dan fark). 768 hamburger 0px — desktop nav. Account/login tıklanmadı. 375 hamburger ayrı global-menu-drawer.",
+  "capture": {
+    "url": "https://theme-fabric-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T12:03:13.876Z"
+  }
+}

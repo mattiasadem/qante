@@ -1,0 +1,67 @@
+{
+  "observationId": "fabric.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "fabric",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-fabric-demo.myshopify.com/",
+  "selector": "#Details-menu-drawer-container",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/fabric/default/home/global-menu-drawer.open.hamburger.375.png"
+  ],
+  "notlar": "375 hamburger. Womenswear / Menswear / Home + child linkler.",
+  "delta": "Horizon header-drawer. 768 hamburger 0px — leftover.",
+  "captureMode": "viewport",
+  "prepareClick": "header summary.header__icon--menu[aria-label='Menu']",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://theme-fabric-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header summary.header__icon--menu[aria-label='Menu']",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "375 drawer"
+    }
+  ],
+  "stateFindings": {
+    "open": "375 sol drawer: X; Womenswear + 6 child; Menswear + 6 child; Home + Bath/Bedding/Apothecary. Accordion ok yok — düz nested liste. Sağda karartılmış home."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "768 hamburger summary 0×0 — desktop Womenswear/Menswear/Home. 1440 hamburger yok. User istedi 768; denendi, open karesi yok."
+    }
+  ],
+  "interactionNote": "768/1440 N/A. Child koleksiyon link tıklanmadı (sayfa kaçar).",
+  "capture": {
+    "url": "https://theme-fabric-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T12:04:55.414Z"
+  }
+}
