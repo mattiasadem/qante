@@ -1,0 +1,77 @@
+{
+  "observationId": "pitch.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "pitch",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-pitch-demo.myshopify.com/",
+  "selector": "#header-component",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/pitch/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/pitch/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/pitch/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/pitch/default/home/navigation-header-mega.open.shop-mega.1440.png",
+    "evidence/pitch/default/home/navigation-header-mega.open.shop-mega.768.png"
+  ],
+  "captureMode": "viewport",
+  "notlar": "1440/768: Pitch logo + Shop + Bundles + Bestsellers + Search + Account + Cart. Home shopify-section header 0px — #header-component 66px. 375: hamburger + Search + logo + Account + Cart.",
+  "delta": "Shopify.theme.name `Updated copy of Pitch demo store 3.2.0` · id 183686005031 · schema_name Pitch · schema_version 3.4.0 · theme_store_id 3620 · role main · shop se-horizon2-en-2v6j.myshopify.com. Shop <a href=/collections/skincare aria-controls=submenu-1>. Mega var. Account tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-pitch-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "header-menu a.menu-list__link[href='/collections/skincare']",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "Shop hover → #submenu-1"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440/768: Shop / Bundles / Bestsellers solda; Search + Account + Cart sağda. Header’da küçük logo yok — PITCH hero’da. Turuncu duyuru üstte. 375: hamburger + Search + Account + Cart; bar’da logo yok.",
+    "open": "1440 Shop hover: #submenu-1 sol Skincare / Makeup / Bundles / Accessories + sağda iki görsel kart (Skincare, Makeup). 768 aynı linkler + tek Skincare kart. 375 mega yok."
+  },
+  "missingStates": [],
+  "interactionNote": "375 mega yok — hamburger global-menu-drawer. Shop <a> tıklama /collections/skincare’e gider; hover şart. Account/login tıklanmadı.",
+  "capture": {
+    "url": "https://theme-pitch-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:43:37.078Z"
+  }
+}

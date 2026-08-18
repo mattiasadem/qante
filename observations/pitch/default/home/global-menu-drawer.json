@@ -1,0 +1,67 @@
+{
+  "observationId": "pitch.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "pitch",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-pitch-demo.myshopify.com/",
+  "selector": "#Details-menu-drawer-container .menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/pitch/default/home/global-menu-drawer.open.hamburger.375.png"
+  ],
+  "captureMode": "viewport",
+  "prepareClick": "#Details-menu-drawer-container > summary[aria-label='Menu']",
+  "notlar": "375 hamburger 46×46. Horizon header-drawer.",
+  "delta": "768/1440 hamburger 0×0 — desktop Shop/Bundles/Bestsellers. 768 interact denenecek.",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://theme-pitch-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary[aria-label='Menu']",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "375 drawer"
+    }
+  ],
+  "stateFindings": {
+    "open": "375 sol cream drawer + X. Shop altında Skincare / Makeup / Bundles / Accessories; sonra Bundles; Bestsellers. Altta görsel kart şeridi (Skincare + Bundles peek)."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "768 hamburger summary 0×0 — masaüstü Shop/Bundles/Bestsellers + mega. Open karesi yok."
+    }
+  ],
+  "interactionNote": "1440 hamburger yok. 768 denendi, görünür değil. Account tıklanmadı.",
+  "capture": {
+    "url": "https://theme-pitch-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:45:36.634Z"
+  }
+}
