@@ -40,7 +40,9 @@ Mega "Collection List: Default/Grid", "Product: Classic/Standard", "Standard Blo
 | Footer / popup Subscribe | PII — dur. |
 | Contact **Send** | PII — dur. |
 | FAQ `example@example.com` / Message Us | e-posta — dur. |
-| Checkout / Buy it now | dur. |
+| Checkout / Buy it now / PayPal | drawer + cart sayfa + PDP — dur. |
+| Cart page **Log in to check out faster** | account — dur. |
+| Cart drawer **You May Also Like** | drawer içinde related; ayrı şema yok. |
 | `/pages/lookbook` | section__lookbook + hotspot. Walk dışı leftover (`media-lookbook-banner` aday). |
 | `/pages/brands` | section__az-brands A–Z. Şema yok; leftover. |
 | `/policies/*` | Privacy policy 200 ama **main section yok** (yalnız header/footer). |
@@ -59,7 +61,8 @@ Mega "Collection List: Default/Grid", "Product: Classic/Standard", "Standard Blo
 
 ## Aday (yeni şema yok)
 
-- **spotlight-products** → `product-showcase-featured` + delta (1/2/3 numaralı vitrin, 3 ürün).
+- **spotlight-products** → `media-lookbook-banner` (kare: lookbook + 1/2/3 hotspot + ürün slayt). Hotspot tık leftover.
+- **PLP product-grid** içinde 20% Off promo kartı — ayrı section değil; `product-showcase-grid-plp` delta.
 - **az-brands** — A–Z marka dizini. Overlay/aday.
 - **lookbook page** — hotspot + Show products.
 - **map** — contact harita.
@@ -68,7 +71,7 @@ Mega "Collection List: Default/Grid", "Product: Classic/Standard", "Standard Blo
 
 ## Interact notları
 
-- Mega: `header-menu` custom element (`id="Details-HeaderMenu-2 test-4"`). SHOPS `<a>` href koleksiyon — tıklama kaçırır. Hover + `#MegaMenu-Content-2` forceOpen.
+- Mega: `header-menu` custom element (`id="Details-HeaderMenu-2 test-4"`). SHOPS `<a>` href koleksiyon — tıklama kaçırır. Hover + `#MegaMenu-Content-2` forceOpen. Kare: Collection List / 48+ Unique Sections / Video Slider — tema satış mega’sı, ürün mega’sı değil.
 - Predictive: katalog `cream`. 1440 `#Search-In-Modal` header. 375/768 `side-drawer-opener.header__icon--search`.
 - 375 **ve** 768 hamburger `summary.header__icon--menu` 24×24. 1440 0×0.
 - Cart drawer `#CartDrawer`. ATC `#ProductSubmitButton-template--16903853998319__main`.

@@ -12,8 +12,8 @@ shop `concept-theme.myshopify.com`
 
 **Diğer preset'ler (THEME DEMO mega, yürünmedi):** Luxe Beauty `137577660655` · Accessories Avenue `137622028527` · Furniture Fusion `137322856687` · Cosmetic Harmony `138330046703` · Furniture Finesse `137894789359` · Dreamy Decor `139085644015` · Vogue Vault `141404373231`
 
-**Durum:** Mod A walk + observation JSON · 3vp/interact kuyruk  
-**PR:** draft · **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti** (0 error)  
+**PR:** draft https://github.com/mattiasadem/qante/pull/168 — **main'e merge yok**
 
 ---
 
@@ -25,10 +25,11 @@ shop `concept-theme.myshopify.com`
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **43** |
+| PNG | **149** |
 | Parallel | yalnız `observations/concept/`, `evidence/concept/`, `todo/concept.md`, `candidates/concept-leftovers.md` |
 
 **Kapsam satırı:**  
-`Concept · default (Beauty Blossom) · Concept-1-1-2-sections-ready · schema_name Concept 1.1.2 · theme_store_id null · home→PDP→PLP→collections→search→cart→about/contact→faq→blog→404 · 43 obs · 0 yeni şema · leftover: candidates/concept-leftovers.md`
+`Concept · default (Beauty Blossom) · Concept-1-1-2-sections-ready · schema_name Concept 1.1.2 · theme_store_id null · home→PDP→PLP→collections→search→cart→about/contact→faq→blog→404 · 43 obs · 149 PNG · 0 yeni şema · leftover: candidates/concept-leftovers.md`
 
 ---
 
@@ -36,21 +37,21 @@ shop `concept-theme.myshopify.com`
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | roster | [ ] capture |
-| Mega SHOPS 1440 | interact JSON | [ ] |
-| Predictive search `cream` | interact JSON | [ ] |
-| Mobile menu 375 + 768 | interact JSON | [ ] |
-| Cart drawer empty + filled + qty | interact JSON | [ ] |
-| PDP Vita-Botanical White→Blue | interact JSON | [ ] |
-| PLP `/collections/skincare` | roster | [ ] |
-| Collections `/collections` | roster | [ ] |
-| Search `/search?q=cream` | roster | [ ] |
-| Cart page empty + filled + qty | interact JSON | [ ] |
-| About `/pages/about-us` | roster | [ ] |
-| Contact form (submit yok) | roster | [ ] |
-| FAQ `/pages/theme-faqs` | roster | [ ] |
-| Blog list + Beauty Lab post | roster | [ ] |
-| 404 | roster | [ ] |
+| Home roster (announcement→footer) | roster + capture | [x] |
+| Mega SHOPS 1440 | interact | [x] |
+| Predictive search `cream` | interact 3vp | [x] |
+| Mobile menu 375 + 768 | interact | [x] |
+| Cart drawer empty + filled + qty | interact 3vp | [x] |
+| PDP Vita-Botanical White→Blue | interact 3vp | [x] |
+| PLP `/collections/skincare` | roster + capture | [x] |
+| Collections `/collections` | roster + capture | [x] |
+| Search `/search?q=cream` | roster + capture | [x] |
+| Cart page empty + filled + qty | interact 3vp | [x] |
+| About `/pages/about-us` | roster + capture | [x] |
+| Contact form (submit yok) | roster + capture | [x] |
+| FAQ `/pages/theme-faqs` | roster + capture | [x] |
+| Blog list + Beauty Lab post | roster + capture | [x] |
+| 404 | roster + capture | [x] |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -63,7 +64,7 @@ shop `concept-theme.myshopify.com`
 | 2 | header | `navigation-header-mega` | reuse · interact |
 | 3 | slideshow | `hero-slideshow` | reuse |
 | 4 | f-collection What's New | `product-showcase-grid-featured` | reuse |
-| 5 | spotl-products | `product-showcase-featured` | reuse + delta |
+| 5 | spotl-products | `media-lookbook-banner` | reuse · 1/2/3 hotspot (kare) |
 | 6 | i-banner | `editorial-image-with-text-overlay` | reuse |
 | 7 | marquee | `promo-scrolling-marquee` | reuse |
 | 8 | f-collection Enchanté | `product-showcase-grid-featured.2` | reuse |
@@ -86,31 +87,31 @@ shop `concept-theme.myshopify.com`
 
 | # | id | sayfa | Screenshot | Not | JSON | Done |
 |---|---|---|---|---|---|---|
-| 1–17 | home static + overlays | home | [ ] | [x] | reuse | [ ] |
-| 18 | product-info-main | product-detail | [ ] | [x] | reuse | [ ] |
-| 19–22 | trust / collage / tabs / related | product-detail | [ ] | [x] | reuse | [ ] |
-| 23–24 | grid-plp + collage | collection | [ ] | [x] | reuse | [ ] |
-| 25 | collection-nav-grid | collections | [ ] | [x] | reuse | [ ] |
-| 26 | search-results | search | [ ] | [x] | reuse | [ ] |
-| 27 | cart-page-main | cart | [ ] | [x] | reuse | [ ] |
-| 28–36 | about ×9 | about-brand | [ ] | [x] | reuse | [ ] |
-| 37–38 | contact | contact | [ ] | [x] | reuse | [ ] |
-| 39–40 | faq | faq-support | [ ] | [x] | reuse | [ ] |
-| 41–42 | blog list + post | blog-* | [ ] | [x] | reuse | [ ] |
-| 43 | 404 | not-found | [ ] | [x] | reuse | [ ] |
+| 1–17 | home static + overlays | home | [x] | [x] | reuse | [x] |
+| 18 | product-info-main | product-detail | [x] | [x] | reuse | [x] |
+| 19–22 | trust / collage / tabs / related | product-detail | [x] | [x] | reuse | [x] |
+| 23–24 | grid-plp + collage | collection | [x] | [x] | reuse | [x] |
+| 25 | collection-nav-grid | collections | [x] | [x] | reuse | [x] |
+| 26 | search-results | search | [x] | [x] | reuse | [x] |
+| 27 | cart-page-main | cart | [x] | [x] | reuse | [x] |
+| 28–36 | about ×9 | about-brand | [x] | [x] | reuse | [x] |
+| 37–38 | contact | contact | [x] | [x] | reuse | [x] |
+| 39–40 | faq | faq-support | [x] | [x] | reuse | [x] |
+| 41–42 | blog list + post | blog-* | [x] | [x] | reuse | [x] |
+| 43 | 404 | not-found | [x] | [x] | reuse | [x] |
 
 ---
 
-## Interact (pixel-check)
+## Interact (kareye bakıldı)
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | open | [ ] 1440 SHOPS mega |
-| global-predictive-search | input | [ ] 3vp `cream` |
-| global-menu-drawer | open | [ ] 375 + 768 |
-| global-cart-drawer | filled + changed | [ ] $70 → qty 2 |
-| cart-page-main | filled + changed | [ ] $70 → qty 2 |
-| product-info-main | changed | [ ] White → Blue $70→$72 |
+| navigation-header-mega | open | [x] 1440 SHOPS mega — Collection List + feature kolonları + fırça görseli |
+| global-predictive-search | input | [x] 3vp `cream` — Brazilian Blowout $103.90 / Adaptogen $124 / Golden Hour $126.50 |
+| global-menu-drawer | open | [x] 375 + 768 |
+| global-cart-drawer | filled + changed | [x] qty 1→2 · satır $70→$63 · subtotal $126 |
+| cart-page-main | filled + changed | [x] $63 → $126 |
+| product-info-main | changed | [x] White $70 (-29%) → Blue $72 (-27%) |
 
 Stop: email / account / checkout / newsletter submit / contact Send / PII
 
@@ -124,8 +125,8 @@ Stop: email / account / checkout / newsletter submit / contact Send / PII
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact mega / search / menu 375+768 / cart empty+filled+qty / PDP Color
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate` — 0 error
-- [ ] Newsletter / account / checkout — **yapılmayacak** (PII)
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact mega / search / menu 375+768 / cart empty+filled+qty / PDP Color
+- [x] PNG bak → stateFindings
+- [x] `npm run validate` — 0 error · 0 warn
+- [x] Newsletter / account / checkout — **yapılmayacak** (PII)
