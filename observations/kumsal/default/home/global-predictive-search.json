@@ -1,0 +1,102 @@
+{
+  "observationId": "kumsal.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "kumsal",
+  "preset": "default",
+  "sayfa": "home",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/kumsal/default/home/global-predictive-search.initial.bos-arama.1440.png",
+    "evidence/kumsal/default/home/global-predictive-search.initial.bos-arama.375.png",
+    "evidence/kumsal/default/home/global-predictive-search.initial.bos-arama.768.png",
+    "evidence/kumsal/default/home/global-predictive-search.input.chukka.1440.png",
+    "evidence/kumsal/default/home/global-predictive-search.input.chukka.375.png",
+    "evidence/kumsal/default/home/global-predictive-search.input.chukka.768.png"
+  ],
+  "url": "https://0esw4-dev-kumsal.myikas.com/search",
+  "selector": "section.sl",
+  "captureMode": "viewport",
+  "notlar": "Header ARA (.hdr-search) overlay değil — /search sayfasına gider. Sayfa: ARAMA + input Ürün ara... + 53 ürün + Filtrele ve Sırala. katalogSorgu: chukka (PDP adı).",
+  "delta": "Predictive overlay / öneri listesi yok. Header buton → SEARCH pageType. input sonrası Enter.",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://0esw4-dev-kumsal.myikas.com/search",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "section.sl",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "selector": "input.sl-search-input",
+      "value": 12000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bos-arama",
+      "not": "ARAMA 53 ürün, sorgu yok"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input.sl-search-input",
+      "value": "chukka",
+      "capture": false,
+      "not": "katalogSorgu chukka — Chukka Sweater Men's"
+    },
+    {
+      "state": "input",
+      "action": "press",
+      "value": "Enter",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "selector": "section.sl",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "chukka",
+      "not": "chukka sorgusu sonrası grid"
+    }
+  ],
+  "stateFindings": {
+    "initial": "ARAMA + input Ürün ara... + 53 ürün + Filtrele ve Sırala. Overlay/öneri yok — tam sayfa.",
+    "input": "chukka + Enter → 5 ürün (Chukka Mini Shorts Women's, Chukka Sweater Women's, Chukka Shirt Men's, 6incher Chukka Shorts…). 375/768/1440 aynı sorgu."
+  },
+  "missingStates": [],
+  "interactionNote": "Header ARA /search'e navigate. Overlay predictive yok. E-posta/account yok.",
+  "capture": {
+    "url": "https://0esw4-dev-kumsal.myikas.com/search",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:30:36.389Z"
+  }
+}

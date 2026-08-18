@@ -1,0 +1,105 @@
+{
+  "observationId": "maker.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "maker",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://maker-theme-food.myshopify.com/",
+  "selector": ".search--root",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/maker/default/home/global-predictive-search.initial.arama-bos.1440.png",
+    "evidence/maker/default/home/global-predictive-search.initial.arama-bos.375.png",
+    "evidence/maker/default/home/global-predictive-search.initial.arama-bos.768.png",
+    "evidence/maker/default/home/global-predictive-search.input.arama-empress.1440.png",
+    "evidence/maker/default/home/global-predictive-search.input.arama-empress.375.png",
+    "evidence/maker/default/home/global-predictive-search.input.arama-empress.768.png"
+  ],
+  "notlar": "Header SEARCH → tam ekran overlay data-view=modal. Placeholder Search store. Input name=q. katalogSorgu=empress.",
+  "delta": "FrameworkSearch. Ön yazımda ürün listesi görünmedi — leftover. /search sayfası ayrı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://maker-theme-food.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header svg.icon--menu",
+      "value": 1000,
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Mobil hamburger — SEARCH header'da gizli"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".mobile-nav a[href='/search']",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Mobile-nav SEARCH → overlay"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header a[href='/search']",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Desktop SEARCH overlay"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input.search--textbox[name='q']",
+      "value": "empress",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-empress",
+      "not": "katalogSorgu empress"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Tam ekran beyaz overlay. Search store + X. Sonuç yok.",
+    "input": "375/768/1440: yazılan empress + X. Ürün/koleksiyon/öneri kartı yok. Predictive değil."
+  },
+  "missingStates": [],
+  "interactionNote": "Enter/submit yok. 1440 overlay ürün kartı göstermedi. /search?q=empress ayrı observation. 375/768 SEARCH mobile-nav üzerinden.",
+  "capture": {
+    "url": "https://maker-theme-food.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:27:39.725Z"
+  }
+}
