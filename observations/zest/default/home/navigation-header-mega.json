@@ -1,0 +1,88 @@
+{
+  "observationId": "zest.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "zest",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://zest-theme-demo.myshopify.com/",
+  "selector": "header.site-header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/zest/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/zest/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/zest/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/zest/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
+  "notlar": "site-header--design-5 show-dropdown-menu-on-hover. Home/Presets/Shop. 1440 Shop mega: CATEGORIES + DISCOVER + FEATURED. Logo Zest Flairy.",
+  "delta": "Home'da section h=0 (transparent overlay); viewport. .mega-menu class yok; f-site-nav__item--mega var. Shopify.theme.name [Update theme store] Zest · schema_name Zest · schema_version 9.3.0 · theme_store_id null · role main · id 151342186722 · walk zest-theme-demo.myshopify.com · Shopify.shop zest-flairy.myshopify.com.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://zest-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".f-popup__close",
+      "capture": false,
+      "not": "Newsletter popup kapat (PII yok)"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Mega kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": ".f-site-nav__item--has-child.f-site-nav__item--mega > a.f-site-nav__link",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "Shop hover — Categories/Discover/Featured kolonları"
+    }
+  ],
+  "stateFindings": {
+    "initial": "375: hamburger + search + cart; announcement WELCOME; hero FLAIRY / NEW COLLECTION / COURTSIDE CAPSULE / SHOP NOW. 1440: Home / Presets / Shop solda; Collections / Pages + search / account / cart sağda; transparent header tenis kortu hero üstünde. Mega kapalı.",
+    "open": "1440 Shop hover: beyaz mega — CATEGORIES (Leggings, Bras, Shorts, Swimwears, Accessories, Shop All) · DISCOVER (Best Sellers, New Arrivals, Better Basics, Iconic Prints, Swim Wears, Holiday Gifting) · FEATURED (Active Tops, Four-Way Tops, Reversible Tops, One Shoulder Tops) + sağ promo Made for Good Living / Sustainability is well alive / SHOP NOW."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "open = Shop mega hover; ayrı hover state yok"
+    }
+  ],
+  "interactionNote": "Account/Log in tıklanmadı. Presets mega diğer demo URL (yürünmedi). Selector header.site-header (section h=0 overlay).",
+  "capture": {
+    "url": "https://zest-theme-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:55:28.064Z"
+  },
+  "prepareClick": ".f-popup__close"
+}

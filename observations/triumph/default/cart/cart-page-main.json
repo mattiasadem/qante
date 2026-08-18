@@ -1,0 +1,90 @@
+{
+  "observationId": "triumph.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "url": "https://triumph-theme.myshopify.com/cart",
+  "selector": "#shopify-section-template--26010642120969__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "notlar": "Boş: YOUR CART IS EMPTY + Have an account? + CONTINUE SHOPPING. cart-items.",
+  "delta": "Triumph cart-items. Drawer ayrı. Checkout/login tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://triumph-theme.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş sepet sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://triumph-theme.myshopify.com/products/jumpflex-sneakers",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://triumph-theme.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "cart-items button[name='plus'], button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "3vp: YOUR CART IS EMPTY + sepet ikon + HAVE AN ACCOUNT? Log in to check out faster + CONTINUE SHOPPING. Login tıklanmadı.",
+    "filled": "3vp: YOUR CART badge 1. JumpFlex Sneakers SYNRGY COLOR PINK SIZE 1 qty 1 $45.89. Spend $954.11 to Free Shipping. DISCOUNT + ORDER SPECIAL INSTRUCTIONS. SUBTOTAL $45.89 USD. CHECK OUT görünür, tıklanmadı.",
+    "changed": "3vp: badge 2, qty 2, satır/subtotal $91.78. Spend $908.22 to Free Shipping. Checkout tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout/login tıklanmadı. Kupon yok.",
+  "kaynak": "triumph",
+  "preset": "default",
+  "sayfa": "cart",
+  "evidence": [
+    "evidence/triumph/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/triumph/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/triumph/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/triumph/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/triumph/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/triumph/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/triumph/default/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/triumph/default/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/triumph/default/cart/cart-page-main.initial.cart-bos.768.png"
+  ],
+  "capture": {
+    "url": "https://triumph-theme.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:40:52.782Z"
+  }
+}

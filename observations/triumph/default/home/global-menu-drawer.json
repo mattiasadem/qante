@@ -1,0 +1,68 @@
+{
+  "observationId": "triumph.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "url": "https://triumph-theme.myshopify.com/",
+  "selector": "#Details-menu-drawer-container",
+  "evidenceSlug": "global-menu-drawer",
+  "captureMode": "viewport",
+  "prepareClick": "#Details-menu-drawer-container > summary",
+  "notlar": "header-drawer[data-breakpoint=tablet]. Hamburger #Details-menu-drawer-container > summary (header-drawer <header> dışında). 375 açık kare var. Nested WOMEN chevron tıklanmadı.",
+  "delta": "Triumph header-drawer. 1440 hamburger gizli (mega). 768 official dismiss cart-drawer — leftover.",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://triumph-theme.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "375 drawer. 768 settle overlay."
+    }
+  ],
+  "stateFindings": {
+    "open": "375: solda açık drawer. WOMEN / MEN / KIDS (sağ chevron). Altta PHONES (555) 555-1234 ve (555) 555-1235, Open 9 AM – 7 PM Daily, Facebook/Instagram/TikTok, USD $ + EN. Header’da X + search + TRIUMPH + account + cart 0. Nested Clothing tıklanmadı. Account tıklanmadı. 768 yok (dismiss cart-drawer)."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "768: official dismiss cart-drawer.drawer.is-empty.opened-by-icon.active 768×1024; assertClean iptal. drawer-close tablet-down-hide tıklanamaz. 375 kare var."
+    }
+  ],
+  "interactionNote": "1440 hamburger yok. Nested written <a> / chevron tıklanmadı. Account tıklanmadı.",
+  "kaynak": "triumph",
+  "preset": "default",
+  "sayfa": "home",
+  "evidence": [
+    "evidence/triumph/default/home/global-menu-drawer.open.hamburger.375.png"
+  ],
+  "capture": {
+    "url": "https://triumph-theme.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:18:58.218Z"
+  }
+}
