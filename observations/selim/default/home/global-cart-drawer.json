@@ -1,0 +1,108 @@
+{
+  "observationId": "selim.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "selim",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://dev-selimtheme.ikas.shop/",
+  "selector": ".ethm-cart",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/selim/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/selim/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/selim/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/selim/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/selim/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/selim/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/selim/default/home/global-cart-drawer.initial.sepet-bos.1440.png",
+    "evidence/selim/default/home/global-cart-drawer.initial.sepet-bos.375.png",
+    "evidence/selim/default/home/global-cart-drawer.initial.sepet-bos.768.png"
+  ],
+  "notlar": "button[aria-label=Sepet] → .ethm-cart__panel 440px. Boş: Sepetiniz şu an boş / ALIŞVERİŞE BAŞLA. Dolu: PDP Medium Shoulder Bag ATC UI (addToCart yok — ikas /cart/add.js yok).",
+  "delta": "Shopify cart.js yok. ATC = click button.pd-atc__cta. Checkout dur. ikas · Shopify.theme yok · window.__IKAS_DATA__ · storefrontId 59b21621-cd0c-4bae-94f2-d0ddf3154adc · storefrontThemeId b16764ac-ef37-4683-b598-61c72fb5b2f6 · storefrontRoutingId 4b99701f-6745-4417-a8cf-d903245060d9 · storefrontType STOREFRONT · salesChannelId da5ff479-e38f-4fb4-9dd2-ba7e6e6b7930 · merchantId d2e5754b-2da4-4526-80e6-ce75fc6be32f · storeName dev-selimtheme · locale tr · currency TRY ₺ · region TR · domain dev-selimtheme.ikas.shop · Theme Store UUID cd45021d-2f96-4fc4-afe2-229ea0fd7b49 · IkasEvents subscribe/unsubscribe · html lang=tr",
+  "prepareClick": "button:has-text(\"TÜMÜNÜ KABUL ET\")",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://dev-selimtheme.ikas.shop/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button[aria-label=\"Sepet\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://dev-selimtheme.ikas.shop/medium-shoulder-bag",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2800,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.pd-atc__cta",
+      "capture": false,
+      "not": "UI Sepete Ekle — addToCart/Shopify fallback yok"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC drawer'ı kendisi açar — ikinci Sepet tıkı kapatır"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".ethm-cart button[aria-label=\"+\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Sağ panel Sepet / Sepetiniz şu an boş / ALIŞVERİŞE BAŞLA.",
+    "filled": "Sepet (1) Medium Shoulder Bag Black ₺24 qty1. Ücretsiz kargoya 1.476 ₺ kaldı. ÖDEMEYE GEÇ dur. Sepeti Gör.",
+    "changed": "Sepet (2) qty2 Ara Toplam ₺48. Kargo eşiği 1.452 ₺."
+  },
+  "missingStates": [],
+  "interactionNote": "Çerez overlay dismissAllOverlays ile gizlenir; tık adımı yok (gizli buton patlatır). addToCart action kullanılmadı — ikas /cart.js ve /cart/add.js yok. Ödemeye geç tıklanmadı.",
+  "capture": {
+    "url": "https://dev-selimtheme.ikas.shop/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:53:06.710Z"
+  }
+}

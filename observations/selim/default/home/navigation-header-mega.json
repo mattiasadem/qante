@@ -1,0 +1,76 @@
+{
+  "observationId": "selim.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "selim",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://dev-selimtheme.ikas.shop/",
+  "selector": "section.ethm-header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/selim/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/selim/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/selim/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/selim/default/home/navigation-header-mega.open.canta-mega.1440.png"
+  ],
+  "notlar": "Sticky header: announce + .ethm-nav logo SELİM · ÇANTA / GİYİM / AKSESUAR · Ara / hesap / sepet. 1440 ÇANTA mega: link listesi + 2 görsel kart (PREMIUM ÇANTALAR / EL YAPIMI DERİ ÇANTALAR).",
+  "delta": "Mega class .ethm-menu-item__panel--mega --cards. Giriş yap /account/login dur. ikas · Shopify.theme yok · window.__IKAS_DATA__ · storefrontId 59b21621-cd0c-4bae-94f2-d0ddf3154adc · storefrontThemeId b16764ac-ef37-4683-b598-61c72fb5b2f6 · storefrontRoutingId 4b99701f-6745-4417-a8cf-d903245060d9 · storefrontType STOREFRONT · salesChannelId da5ff479-e38f-4fb4-9dd2-ba7e6e6b7930 · merchantId d2e5754b-2da4-4526-80e6-ce75fc6be32f · storeName dev-selimtheme · locale tr · currency TRY ₺ · region TR · domain dev-selimtheme.ikas.shop · Theme Store UUID cd45021d-2f96-4fc4-afe2-229ea0fd7b49 · IkasEvents subscribe/unsubscribe · html lang=tr",
+  "prepareClick": "button:has-text(\"TÜMÜNÜ KABUL ET\")",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://dev-selimtheme.ikas.shop/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Mega kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "a.ethm-menu-item__trigger[href=\"#\"]",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "canta-mega",
+      "not": "ÇANTA hover — liste + 2 kart"
+    }
+  ],
+  "stateFindings": {
+    "initial": "375: hamburger + logo SELİM + Ara/sepet; announce LANSMANA ÖZEL %20. 1440: ÇANTA / GİYİM / AKSESUAR + Ara / hesap / sepet; mega kapalı; hero Zamansız Tasarım.",
+    "open": "1440 ÇANTA hover: beyaz mega — Waist Bags / Backpacks / Shoulder Bags / Duffel Bags / Handbags / Other + iki kart PREMIUM ÇANTALAR ve EL YAPIMI DERİ ÇANTALAR."
+  },
+  "missingStates": [],
+  "interactionNote": "Çerez overlay dismissAllOverlays ile gizlenir; tık adımı yok (gizli buton patlatır). ÇANTA href=#. GİYİM/AKSESUAR düz kategori link. Account tıklanmadı.",
+  "capture": {
+    "url": "https://dev-selimtheme.ikas.shop/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:46:30.534Z"
+  }
+}
