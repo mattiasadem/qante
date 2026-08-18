@@ -1,0 +1,66 @@
+{
+  "observationId": "stack.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "stack",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://retailer-mass.myshopify.com/cart",
+  "selector": "#shopify-section-template--20149682012343__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Boş: Your Cart is Empty + Shop Now. Dolu: Indoor Cycling Bike $849.",
+  "delta": "Shopify.theme: name **retailer/mass** · schema_name **Stack** · schema_version **1.0.2** · theme_store_id **null** · role main · id 150759768247 · shop retailer-mass.myshopify.com. Checkout tıklanmadı. Log in yok.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://retailer-mass.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://retailer-mass.myshopify.com/products/indoor-cycling-bike",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://retailer-mass.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepete-eklendi"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#MainContent button.quantity__button[name='plus'], cart-items button.quantity__button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "filled": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı. Indoor Cycling Bike Black $849 → qty2."
+}

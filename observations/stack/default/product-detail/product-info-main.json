@@ -1,0 +1,53 @@
+{
+  "observationId": "stack.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "stack",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://retailer-mass.myshopify.com/products/indoor-cycling-bike",
+  "selector": "#shopify-section-template--20149681553591__main-product",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "Indoor Cycling Bike $849. Color Black/Gray/Brown swatch. In Stock. Add to Cart. Ski Trainer varyantsız — bu PDP.",
+  "delta": "Shopify.theme: name **retailer/mass** · schema_name **Stack** · schema_version **1.0.2** · theme_store_id **null** · role main · id 150759768247 · shop retailer-mass.myshopify.com. Sticky ATC leftover. Share leftover. Buy it now yok.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://retailer-mass.myshopify.com/products/indoor-cycling-bike",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20149681553591__main-product",
+      "capture": true,
+      "etiket": "renk-black",
+      "not": "Color Black $849"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label.color-swatch[for='template--20149681553591__main-product-1-1-8552502689975']",
+      "capture": true,
+      "etiket": "renk-gray",
+      "not": "Color Gray"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı. Brown yoklandı değil. Ski Trainer Machine varyantsız."
+}

@@ -1,0 +1,59 @@
+{
+  "observationId": "stack.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "stack",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://retailer-mass.myshopify.com/",
+  "selector": "sticky-header.header-wrapper",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "1440: logo + Equipment mega + News/About/Features + search şerit + Contact + Cart. 375/768 hamburger 24×24.",
+  "delta": "Shopify.theme: name **retailer/mass** · schema_name **Stack** · schema_version **1.0.2** · theme_store_id **null** · role main · id 150759768247 · shop retailer-mass.myshopify.com. Mega sola bağlı <a aria-label=Equipment href=/collections/all>. Account yok; Contact /pages/contact. Features tema satış leftover.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://retailer-mass.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bar",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "a.header__menu-item[aria-label='Equipment']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "equipment-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Equipment mega hover — tıklanmadı (koleksiyona kaçar)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "open": ""
+  },
+  "missingStates": [],
+  "interactionNote": "1440 hover a.header__menu-item[aria-label=Equipment]. 375/768 hamburger ayrı global-menu-drawer. Contact tık yok."
+}
