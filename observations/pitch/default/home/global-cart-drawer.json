@@ -1,0 +1,121 @@
+{
+  "observationId": "pitch.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "pitch",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-pitch-demo.myshopify.com/",
+  "selector": "dialog.cart-drawer__dialog",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/pitch/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/pitch/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/pitch/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/pitch/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/pitch/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/pitch/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/pitch/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/pitch/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/pitch/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "captureMode": "viewport",
+  "prepareClick": "header button[aria-label='Cart']",
+  "notlar": "Horizon cart-drawer-component. Boş: Your cart is empty; Have an account? Log in; Continue shopping.",
+  "delta": "/cart ayrı sayfa. Checkout/login tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-pitch-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header button[aria-label='Cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-pitch-demo.myshopify.com/products/gentle-body-wash",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add']",
+      "capture": false,
+      "not": "ATC UI; fallback /cart/add.js"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "header button[aria-label='Cart']",
+      "capture": false,
+      "not": "ATC sonrası drawer"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "dialog.cart-drawer__dialog button.quantity-plus, dialog.cart-drawer__dialog button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Sağ drawer (375 tam ekran): Your cart is empty; Have an account? Log in to check out faster; turuncu Continue shopping. Satır yok.",
+    "filled": "Cart rozet 1. Gentle Body Wash · Rose + Oud · $36.00 · adet 1. Discount +; Estimated total $36.00 CAD; Check out.",
+    "changed": "Rozet 2; adet 2; satır $72.00; Estimated total $72.00 CAD. Aynı drawer iskeleti."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC UI (fallback yok). ATC sonrası header Cart tık. Checkout/login tıklanmadı.",
+  "capture": {
+    "url": "https://theme-pitch-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:49:06.062Z"
+  }
+}
