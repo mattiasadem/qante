@@ -97,6 +97,14 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: dawn-featured-collection-no-title  
+Gerekçe: Home `#…__featured_collection` 8 kart (4×2) ama section başlığı boş. Sold out/Sale rozetleri var.  
+Örnekler: https://theme-dawn-demo.myshopify.com/  
+Öneri: leftover — boş başlık  
+Karar: onay bekliyor
+
+---
+
 ADAY: dawn-search-empty-snowboard  
 Gerekçe: `/search?q=snowboard` 0 results (eski Dawn snowboard kataloğu bu demoda yok). Observation `puff` (2). Boş-sonuç karesi çekilmedi.  
 Örnekler: https://theme-dawn-demo.myshopify.com/search?q=snowboard  
