@@ -1,0 +1,183 @@
+{
+  "observationId": "kingdom.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "kingdom",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://kingdom-theme.myshopify.com/",
+  "selector": "#header",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/kingdom/default/home/global-predictive-search.initial.arama-bos.1440.png",
+    "evidence/kingdom/default/home/global-predictive-search.initial.arama-bos.375.png",
+    "evidence/kingdom/default/home/global-predictive-search.initial.arama-bos.768.png",
+    "evidence/kingdom/default/home/global-predictive-search.input.owl.1440.png",
+    "evidence/kingdom/default/home/global-predictive-search.input.owl.375.png",
+    "evidence/kingdom/default/home/global-predictive-search.input.owl.768.png"
+  ],
+  "notlar": "1440: nav.site-search-centered input.form-control. 375/768: .search ikon → #search_bar. Katalog owl. Rivets search-container.",
+  "delta": "İki form (.site-search + center). Sonuç kutusu header altında. Enter/submit yok.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://kingdom-theme.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "nav.site-search-centered input.form-control[name='q']",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Masaüstü boş center search"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header .search",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Mobil search ikon"
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "nav.site-search-centered input.form-control[name='q']",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "fill() rivets keyup tetiklemedi — keyboard press"
+    },
+    {
+      "state": "input",
+      "action": "press",
+      "value": "o",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "press",
+      "value": "w",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "press",
+      "value": "l",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "header .search",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "#search_bar",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "press",
+      "value": "o",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "press",
+      "value": "w",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "press",
+      "value": "l",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "owl",
+      "not": "Predictive Owl Mug + Steampunk"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440 center input Placeholder Search our store. 375/768 search ikon / #search_bar.",
+    "input": "keyboard owl. Owl Mug $25.00 + Steampunk Coffee Grinder $92.00. Quick Links kapanır. fill() yalnız Quick Links bırakıyordu."
+  },
+  "missingStates": [],
+  "interactionNote": "Katalog owl. Enter yok. fill() rivets tetiklemedi — press o/w/l. 1. kare Quick Links idi; yeniden çekildi.",
+  "capture": {
+    "url": "https://kingdom-theme.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:11:05.918Z"
+  }
+}
