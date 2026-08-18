@@ -98,6 +98,14 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: ediz-ege-tablet-no-hamburger  
+Gerekçe: 768 `button.ee-nav__hamburger` `display:none`; Mağaza/Bakım/Koleksiyonlar masaüstü gibi. Drawer yalnız 375. User walk 375/768 istedi — 768 yoklandı, hamburger yok.  
+Örnekler: https://dev-edizege.ikas.shop/  
+Öneri: leftover — breakpoint  
+Karar: onay bekliyor
+
+---
+
 ADAY: ediz-ege-dropdown-not-mega  
 Gerekçe: 1440 Bakım/Koleksiyonlar `.ee-nav__dropdown` düz link listesi (220×154), görsel/tab/promo yok. `navigation-header-mega` yazıldı; delta dropdown.  
 Örnekler: https://dev-edizege.ikas.shop/  
