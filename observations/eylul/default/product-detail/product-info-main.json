@@ -1,0 +1,96 @@
+{
+  "observationId": "eylul.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "url": "https://dev-eylul.ikas.shop/aarke-carbonator-3",
+  "selector": "section.pdp",
+  "notlar": "Carbonator 3 ₺10,500. Renk media chips: Copper (default) / Matte Black / Matte Grey / Matte White / Sand / Steel / Burgundy. Sepete Ekle (qty yok). Accordion: Ürün Açıklaması (açık) / Malzeme ve Bakım / Ürün Özellikleri. Breadcrumb Ana Sayfa/Ev & Yaşam/Mutfak/Soda Makinesi.",
+  "delta": "ikas (Shopify.theme yok) · Theme Store UUID ef88b30d-7c1c-4474-b03f-dff5ef4c6453 · Eylül / ikascom · demo https://dev-eylul.ikas.shop/ · __IKAS_DATA__.storefrontThemeId a1b55030-52e1-46ac-9b2c-ec238b9b442d · storefrontId 29fd0757-66fa-4007-bd68-7ad43c43c58f · merchantId fd24ec01-cb21-4b82-9ad0-d238e7619d37 · storeName dev-eylul · salesChannelId f53bfbe3-2200-4f62-bff8-0f70626b4177 · storefrontRoutingId 052bf91a-54a5-4786-983e-33b24ebe9b54 · x-powered-by ikas · x-cache-tag 8assj-dev-eylul.myikas.com · TRY · locale tr · logoText eylül · pageType PRODUCT. Qty PDP’de yok leftover. Hemen Satın Al yok. Reviews ayrı leftover.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://dev-eylul.ikas.shop/aarke-carbonator-3",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "section.pdp",
+      "capture": true,
+      "etiket": "renk-copper",
+      "not": "Varsayılan Renk Copper"
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "button.variants__chip[aria-label=\"Matte Black\"]",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button.variants__chip[aria-label=\"Matte Black\"]",
+      "capture": false,
+      "not": "Renk Matte Black"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "section.pdp",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "renk-matte-black",
+      "not": "Renk Matte Black — galeri+buy-box viewport"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Renk: Copper (ilk chip çerçeveli). Galeri bakır Carbonator 3. ₺10,500. Sepete Ekle. Accordion: Ürün Açıklaması açık; Malzeme ve Bakım / Ürün Özellikleri +.",
+    "changed": "375/1440: Renk Matte Black + galeri mat siyah makine; fiyat aynı ₺10,500. 768: tık sonrası kare hâlâ Copper (galeri+legend) — ikinci denemede de değişmedi."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "768’de Matte Black chip tık + scrollTo sonrası galeri/legend Copper kaldı (375/1440 değişti). Üçüncü deneme yok."
+    }
+  ],
+  "interactionNote": "Checkout/email yok. Qty PDP’de yok. 768 changed doğrulanamadı.",
+  "kaynak": "eylul",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/eylul/default/product-detail/product-info-main.changed.renk-matte-black.1440.png",
+    "evidence/eylul/default/product-detail/product-info-main.changed.renk-matte-black.375.png",
+    "evidence/eylul/default/product-detail/product-info-main.changed.renk-matte-black.768.png",
+    "evidence/eylul/default/product-detail/product-info-main.initial.renk-copper.1440.png",
+    "evidence/eylul/default/product-detail/product-info-main.initial.renk-copper.375.png",
+    "evidence/eylul/default/product-detail/product-info-main.initial.renk-copper.768.png"
+  ],
+  "capture": {
+    "url": "https://dev-eylul.ikas.shop/aarke-carbonator-3",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:57:24.031Z"
+  }
+}
