@@ -1,0 +1,75 @@
+{
+  "observationId": "ediz-ege.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "ediz-ege",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://dev-edizege.ikas.shop/",
+  "selector": ".ee-search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/ediz-ege/default/home/global-predictive-search.initial.arama-bos.1440.png",
+    "evidence/ediz-ege/default/home/global-predictive-search.initial.arama-bos.375.png",
+    "evidence/ediz-ege/default/home/global-predictive-search.initial.arama-bos.768.png",
+    "evidence/ediz-ege/default/home/global-predictive-search.input.arama-serum.1440.png",
+    "evidence/ediz-ege/default/home/global-predictive-search.input.arama-serum.375.png",
+    "evidence/ediz-ege/default/home/global-predictive-search.input.arama-serum.768.png"
+  ],
+  "captureMode": "viewport",
+  "notlar": "Ara ikon → overlay .ee-search. Input placeholder Ürün, kategori veya içerik ara… Kapalı: POPÜLER ARAMALAR chip (serum lavanta sabun yüz bakımı hediye) + ÖNE ÇIKAN ÜRÜNLER.",
+  "delta": "ikas (Shopify.theme yok) · Theme Store UUID 97a7859b-38f3-40bd-8b9b-4020d7d2854b · Ediz Ege / ikascom · demo https://dev-edizege.ikas.shop · __IKAS_DATA__.storefrontThemeId 00a88f8a-20f8-4c8f-b91a-0d55c911315d · storefrontId a676df71-3345-4235-9f76-4ff2fbe56848 · merchantId b35c5ed6-3df7-4dae-bffb-9c87204009e1 · storeName dev-edizege · locale tr · TRY ₺ · x-powered-by ikas · pageType INDEX. katalogSorgu=serum. Submit /search?s= ayrı. ?q= yok sayılır.",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://dev-edizege.ikas.shop/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.ee-nav__icon-btn[aria-label='Ara']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Boş overlay: popüler chip + öne çıkan ürün"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input.ee-search__input",
+      "value": "serum",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-serum",
+      "not": "katalogSorgu=serum → Adaçayı & Zeytin Yüz Serumu 3 koku + TÜM SONUÇLARI GÖSTER"
+    }
+  ],
+  "stateFindings": {
+    "initial": "POPÜLER ARAMALAR: serum lavanta sabun yüz bakımı hediye. ÖNE ÇIKAN ÜRÜNLER: Rahatlatıcı Bakım Seti, Sakal Bakım Yağı, Dudak Balmı varyantları.",
+    "input": "ARAMA SONUÇLARI: Adaçayı & Zeytin Yüz Serumu Adaçayı/Lavanta/Bergamot ₺480 + TÜM SONUÇLARI GÖSTER."
+  },
+  "missingStates": [],
+  "interactionNote": "Enter/submit yok. Chip tıklanmadı. /search?s=serum ayrı sayfa.",
+  "capture": {
+    "url": "https://dev-edizege.ikas.shop/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:47:09.844Z"
+  }
+}
