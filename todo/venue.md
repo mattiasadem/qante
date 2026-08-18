@@ -49,7 +49,7 @@
 | Cart `/cart` empty + filled + qty | interact | [x] $70→$140 |
 | About `/pages/about-us` | roster + capture | [x] |
 | Contact form (submit yok) | roster + capture | [x] |
-| FAQ `/pages/faq` | roster + capture | [x] |
+| FAQ `/pages/faq` | roster + capture + accordion | [x] walk · interact bu tur |
 | News + article | roster + capture | [x] |
 | 404 | roster + capture | [x] |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
@@ -66,6 +66,10 @@
 | global-cart-drawer | filled + changed | [x] (1) $70 → (2) $140; 768 filled leftover |
 | cart-page-main | filled + changed | [x] (1) $70 → (2) $140 |
 | product-info-main | changed | [x] Tan Only 2 → Brown In stock |
+| before-after-slider | changed | [ ] Land/Sea range End — capture bu tur |
+| promo-banner-countdown | changed | [ ] saniye tick — PNG bak |
+| faq-collapsible-tabs | changed | [ ] ilk soru — capture bu tur |
+| testimonial-quote-carousel | changed | [ ] home + PDP Next — capture bu tur |
 
 ---
 

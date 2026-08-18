@@ -13,7 +13,66 @@
     "evidence/venue/default/product-detail/before-after-slider.1440.png"
   ],
   "notlar": "js-section__image-compare. Crafted for every occasion. Land / Sea. Control how much of each overlapping image is shown.",
-  "delta": "Shopify.theme.name venue-18-2-1 · id 142511603760 · schema_name Venue · schema_version 18.2.1 · theme_store_id null · role main · shop venue-theme-morning.myshopify.com image-compare. En yakın before-after-slider. Drag interact zorunlu değil (walk PDP variant = buy box).",
+  "delta": "Shopify.theme.name venue-18-2-1 · id 142511603760 · schema_name Venue · schema_version 18.2.1 · theme_store_id null · role main · shop venue-theme-morning.myshopify.com image-compare. En yakın before-after-slider.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://venue-theme-morning.myshopify.com/products/tucker-wallet",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false,
+      "not": "image-compare 30→45 oturana kadar"
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19058350096432__section_image_compare_Lxpwbg",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Land/Sea ~%45"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--19058350096432__section_image_compare_Lxpwbg input[type=range]",
+      "value": 400,
+      "capture": false,
+      "not": "range odak"
+    },
+    {
+      "state": "changed",
+      "action": "press",
+      "value": "End",
+      "capture": false,
+      "not": "exposure %100 Sea"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 500,
+      "capture": true,
+      "etiket": "sea-dolu",
+      "not": "Ayırıcı sağa — Sea kaplar"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Yoklama: fill range güvenilmez; click+End 375/768/1440'te --exposure %45→%100. Sea etiketi tık değiştirmedi. Şema emit:slider.drag duruyor — yeni alan yok.",
   "capture": {
     "url": "https://venue-theme-morning.myshopify.com/products/tucker-wallet",
     "viewports": [

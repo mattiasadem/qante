@@ -14,6 +14,37 @@
   ],
   "notlar": "Get ready! Our biggest sale ever starts in… HOURS/MIN/SEC. Görsel + timer.",
   "delta": "Shopify.theme.name venue-18-2-1 · id 142511603760 · schema_name Venue · schema_version 18.2.1 · theme_store_id null · role main · shop venue-theme-morning.myshopify.com section_countdown_timer. class js-section__image-banner (countdown varyantı).",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://venue-theme-morning.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19058349834288__section_countdown_timer_PT7T3G",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Timer ilk kare"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": true,
+      "etiket": "saniye",
+      "not": "Yoklama: saniye ticked (dismiss yok). Piksel değişmezse missingStates."
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Açıcı/dismiss/CTA yok. Yalnız saniye. PNG bak — aynıysa changed düşer.",
   "capture": {
     "url": "https://venue-theme-morning.myshopify.com/",
     "viewports": [
