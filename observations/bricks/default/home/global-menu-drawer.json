@@ -1,0 +1,75 @@
+{
+  "observationId": "bricks.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "bricks",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://bricks-theme-demo.myshopify.com/",
+  "selector": "#MenuDrawer .menu-drawer__content",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/bricks/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/bricks/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "375/768 hamburger. #MenuDrawer mixed: Women/Men + nested + ürün şeridi.",
+  "delta": "1440 hamburger 0px (header__mock-burger). Aynı #MenuDrawer mega ile paylaşılıyor.",
+  "captureMode": "viewport",
+  "prepareClick": "button.burger__button[aria-label='Menu']",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://bricks-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "burger-nav-button.burger:not(.header__mock-burger) button.burger__button",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "375 gerçek burger (mock değil)"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "burger-nav-button.header__mock-burger button.burger__button",
+      "viewports": [
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "768 görünür opener header__mock-burger MENU"
+    }
+  ],
+  "stateFindings": {
+    "open": "375: X + Bricks + search + cart; Women/Men (>) All News Contacts; altta account + English + EUR. 768: sol drawer WOMEN/MEN/ALL/NEWS/CONTACTS; header MENU + English/EUR/search/account/cart. Nested Women tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 hamburger 0px. 375 opener :not(.header__mock-burger); 768 opener header__mock-burger. Child link tıklanmadı.",
+  "capture": {
+    "url": "https://bricks-theme-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:43:16.653Z"
+  }
+}
