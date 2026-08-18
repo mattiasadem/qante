@@ -43,9 +43,17 @@ Karar: onay bekliyor
 ---
 
 ADAY: maker-search-overlay  
-Gerekçe: Header SEARCH tam ekran `.search--root[data-view=modal]` FrameworkSearch. İlk yoklamada `empress` yazınca ürün kartı görünmedi. `/search?q=empress` ayrı sayfa (8 sonuç) yazıldı.  
+Gerekçe: Header SEARCH tam ekran `.search--root[data-view=modal]` FrameworkSearch. 375/768/1440 `empress` yazınca yalnız metin + X; ürün/öneri kartı yok. `/search?q=empress` ayrı sayfa (8 sonuç) yazıldı.  
 Örnekler: header SEARCH  
-Öneri: leftover — predictive zayıf / submit-only olabilir  
+Öneri: leftover — predictive yok (submit-only overlay)  
+Karar: onay bekliyor
+
+---
+
+ADAY: maker-cart-drawer-375-empty  
+Gerekçe: 375 header’da cart kontrolü 0×0 (yalnız hamburger). forceOpen drawer kaydırmadı. Filled+changed 375 ATC ile OK. Boş sepet `/cart` 375 yazıldı.  
+Örnekler: home 375  
+Öneri: leftover — mobil boş drawer opener  
 Karar: onay bekliyor
 
 ---

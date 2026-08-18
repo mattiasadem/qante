@@ -11,8 +11,8 @@
 `theme_store_id` = **null** (canlıda yok; uydurulmadı)  
 Title: Maker Shopify Theme - Food Preset · currency CAD
 
-**Durum:** Mod A walk + resmi 3vp + interact — capture kuyruğu  
-**PR:** draft · **main'e merge yok**
+**Durum:** ✅ Mod A walk + resmi 3vp + interact + validate  
+**PR:** draft https://github.com/mattiasadem/qante/pull/202 — **main'e merge yok**
 
 ---
 
@@ -21,13 +21,14 @@ Title: Maker Shopify Theme - Food Preset · currency CAD
 | | |
 |---|---|
 | Evidence kökü | `evidence/maker/default/` |
-| Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
-| Şema | **0 yeni** — mevcut tiplere observation + delta |
-| Observation | **22** (yazıldı; PNG capture sonrası) |
+| Observation | **22** |
+| Evidence PNG | **82** |
+| Yeni şema | **0** |
+| Capture | resmi `capture-observation.mjs` + `capture-interaction.mjs` |
 | Parallel | yalnız `observations/maker/`, `evidence/maker/`, `todo/maker.md`, `candidates/maker-leftovers.md` |
 
 **Kapsam satırı:**  
-`Maker · default (Food) · Maker - current · schema_name Maker 5.2.0 · theme_store_id null · home→PDP Empress Box→PLP juices→/collections→search empress→cart empty/filled/qty→about→contact frontpage→blog+article→404 · 22 obs · 0 yeni şema · leftover: map / no-mega / newsletter-popup / search overlay / FAQ 404`
+`Maker · default (Food) · Maker - current / schema_name Maker 5.2.0 / theme_store_id null · home→PDP Empress BOX Mixed→Green Goddess→PLP juices→/collections→search empress→cart empty/filled/qty→about→contact frontpage→blog+article→404 · 22 obs · 82 PNG · 0 yeni şema · leftover: map / no-mega / newsletter-popup / search overlay / FAQ 404 / 375 empty drawer`
 
 ---
 
@@ -35,21 +36,21 @@ Title: Maker Shopify Theme - Food Preset · currency CAD
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | [x] obs | [ ] capture |
-| Header kapalı (mega yok) | [x] obs | [ ] interact |
-| Predictive search `empress` | [x] obs | [ ] interact |
-| Mobile hamburger 375+768 | [x] obs | [ ] interact |
-| Cart drawer empty + filled + qty | [x] obs | [ ] interact |
-| PDP Empress BOX Mixed→Green Goddess | [x] obs | [ ] interact |
-| PLP `/collections/empress-juice-collection` | [x] obs | [ ] capture |
-| Collections index `/collections` | [x] obs | [ ] capture |
-| Search `/search?q=empress` | [x] obs | [ ] capture |
-| Cart `/cart` empty + filled + qty | [x] obs | [ ] interact |
-| About `/pages/about-us` | [x] obs | [ ] capture |
-| Contact `/pages/frontpage` (submit yok) | [x] obs | [ ] capture |
+| Home roster (announcement→footer) | [x] obs | [x] capture |
+| Header kapalı (mega yok) | [x] obs | [x] interact |
+| Predictive search `empress` | [x] obs | [x] interact 3vp · kart yok |
+| Mobile hamburger 375+768 | [x] obs | [x] interact |
+| Cart drawer empty + filled + qty | [x] obs | [x] empty 768/1440 · filled/qty 3vp · 375 empty leftover |
+| PDP Empress BOX Mixed→Green Goddess | [x] obs | [x] interact |
+| PLP `/collections/empress-juice-collection` | [x] obs | [x] capture |
+| Collections index `/collections` | [x] obs | [x] capture |
+| Search `/search?q=empress` | [x] obs | [x] capture |
+| Cart `/cart` empty + filled + qty | [x] obs | [x] interact 3vp |
+| About `/pages/about-us` | [x] obs | [x] capture |
+| Contact `/pages/frontpage` (submit yok) | [x] obs | [x] capture |
 | FAQ `/pages/faq` | 404 leftover | — |
-| Blog `/blogs/news` + Jamie Dunn article | [x] obs | [ ] capture |
-| 404 | [x] obs | [ ] capture |
+| Blog `/blogs/news` + Jamie Dunn article | [x] obs | [x] capture |
+| 404 | [x] obs | [x] capture |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -68,19 +69,20 @@ Title: Maker Shopify Theme - Food Preset · currency CAD
 | 8 | 1520360150159 map | — | leftover |
 | 9 | footer | `footer-columns-newsletter` | reuse · ince |
 | 10 | .cart--root | `global-cart-drawer` | reuse · interact |
-| 11 | .search--root modal | `global-predictive-search` | reuse · interact |
+| 11 | .search--root modal | `global-predictive-search` | reuse · overlay, kart yok |
 | 12 | .mobile-nav | `global-menu-drawer` | reuse · 375/768 |
 | 13 | .popup--root | — | leftover PII |
 
 ---
 
-## Interact (pixel-check)
+## Interact (pixel-checked)
 
-- Header 1440: mega yok (düz link)
-- Hamburger 375/768: sol drawer SEARCH/ACCOUNT + nav + newsletter (submit yok)
-- Search overlay `empress`: kare bakılacak
-- Cart drawer + cart page empty/filled/qty +
-- PDP BOX Mixed Box 5-Pack → Green Goddess 5-Pack
+- Header 1440: mega yok — HOME JUICES BOXES ABOUT BLOG düz link
+- Hamburger 375/768: sol drawer SEARCH/ACCOUNT + nav + Email/ENTER (submit yok)
+- Search overlay `empress`: 3vp yalnız yazı + X, ürün kartı yok
+- Cart drawer: empty 768/1440; filled qty1 $80 + changed qty2 $160 3vp. 375 empty leftover
+- Cart page: empty → qty1 $80 CART(1) → qty2 $160 CART(2) 3vp
+- PDP BOX Mixed Box 5-Pack (kutu görseli) → Green Goddess 5-Pack (yeşil şişeler), $80 aynı
 
 Stop: email, account, checkout, newsletter ENTER, contact SEND, PII
 
@@ -94,7 +96,7 @@ Stop: email, account, checkout, newsletter ENTER, contact SEND, PII
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact header / search / cart / menu / PDP BOX
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate` — 0 error
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact header / search / cart / menu / PDP BOX
+- [x] PNG bak → stateFindings
+- [x] `npm run validate` — 0 error
