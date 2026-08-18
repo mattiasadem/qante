@@ -1,0 +1,115 @@
+{
+  "observationId": "homage.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "homage",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://homage-theme-demo-01.myshopify.com/",
+  "selector": "#cart-drawer .drawer__wrapper",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/homage/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/homage/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/homage/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/homage/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/homage/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/homage/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/homage/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/homage/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/homage/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "button.header__icons--cart-open → #cart-drawer floating right. ATC sonrası otomatik açılır.",
+  "delta": "Homage mini-cart drawer. Checkout tıklanmadı. Shopify.theme.name homage/release/v1.1 · schema_name Homage · schema_version 1.0.1 · theme_store_id null · role main · id 200065417548 · shop homage-theme-demo-01.myshopify.com",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://homage-theme-demo-01.myshopify.com/cart/clear",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://homage-theme-demo-01.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.header__icons--cart-open.no-js-hidden",
+      "value": 900,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Your cart is empty + Continue shopping"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://homage-theme-demo-01.myshopify.com/products/downhill-27-jacket",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add']",
+      "capture": false,
+      "not": "Downhill ‘27 Jacket Hunter/S"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC sonrası drawer: $995 Hunter/S"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#cart-drawer button[name='plus']",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "qty 1→2 subtotal $995→$1990 beklenir"
+    }
+  ],
+  "stateFindings": {
+    "initial": "CART · YOUR CART IS EMPTY · There are no items in your cart. · CONTINUE SHOPPING. 375/1440 drawer sağda.",
+    "filled": "DOWNHILL ‘27 JACKET HUNTER/S $995 qty 1 · free shipping · SUBTOTAL $995 · CONTINUE SHOPPING / SECURE CHECKOUT / GO TO CART.",
+    "changed": "qty 2 · SUBTOTAL $1,990. 375/768/1440."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC UI. SECURE CHECKOUT tıklanmadı. /cart/clear viewport başı.",
+  "capture": {
+    "url": "https://homage-theme-demo-01.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:34:26.414Z"
+  }
+}
