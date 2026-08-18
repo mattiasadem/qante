@@ -7,7 +7,17 @@
   "url": "https://bricks-theme-demo.myshopify.com/",
   "selector": "#CartDrawerSection .drawer-v2__content",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/bricks/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/bricks/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/bricks/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/bricks/default/home/global-cart-drawer.filled.dolu.1440.png",
+    "evidence/bricks/default/home/global-cart-drawer.filled.dolu.375.png",
+    "evidence/bricks/default/home/global-cart-drawer.filled.dolu.768.png",
+    "evidence/bricks/default/home/global-cart-drawer.initial.sepet-bos.1440.png",
+    "evidence/bricks/default/home/global-cart-drawer.initial.sepet-bos.375.png",
+    "evidence/bricks/default/home/global-cart-drawer.initial.sepet-bos.768.png"
+  ],
   "notlar": "Sağ drawer 500px. Boş: Your cart is empty + Start shopping.",
   "delta": "cart-drawer#CartDrawerSection. Header a[href=/cart] JS ile drawer. Checkout tıklanmadı.",
   "captureMode": "viewport",
@@ -61,29 +71,38 @@
     {
       "state": "filled",
       "action": "waitFor",
-      "value": 1500,
-      "capture": false
-    },
-    {
-      "state": "filled",
-      "action": "click",
-      "selector": "a.cart-nav-button__trigger",
+      "value": 2000,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "dolu",
-      "not": "Dolu drawer — ATC overlay kapatırsa tekrar Cart"
+      "not": "ATC drawer'ı açıyor — ikinci Cart tık kapatır"
     },
     {
       "state": "changed",
       "action": "click",
-      "selector": "#CartDrawerSection .input-base__control--plus",
+      "selector": "button[aria-label='Increase quantity']",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "adet-artti",
       "not": "Adet +"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "Sağ drawer. Cart + X. Your cart is empty + Start shopping.",
+    "filled": "Cart¹. Lovely Green Mini Dress · 2XS / Green · €39,90 (€59,90). qty 1. Spend €10.10 more to reach free shipping. 1 item €59,90 · Discount −€20,00 · Total €39,90. Checkout + View cart tıklanmadı.",
+    "changed": "Cart². qty 2. Free shipping unlocked. 2 items €119,80 · Discount −€40,00 · Total €79,80."
+  },
   "missingStates": [],
-  "interactionNote": "Checkout tıklanmadı. addToCart UI yoksa cart/add.js."
+  "interactionNote": "ATC UI drawer açtı; ikinci Cart tık kapatıyordu — filled ATC sonrası beklendi. Checkout/discount tıklanmadı. addToCart → ui.",
+  "capture": {
+    "url": "https://bricks-theme-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:45:08.970Z"
+  }
 }

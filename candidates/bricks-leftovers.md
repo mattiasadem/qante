@@ -59,9 +59,9 @@ Karar: onay bekliyor
 ---
 
 ADAY: bricks-hamburger-1440  
-Gerekçe: 1440 `button.burger__button` 0×0 (`header__mock-burger`). Masaüstü WOMEN/MEN inline + hover mega. Drawer opener yalnız 375/768.  
+Gerekçe: 1440 gerçek burger 0×0. 375 opener `burger-nav-button:not(.header__mock-burger)`. 768 görünür opener **`header__mock-burger` MENU** (74×36) — drawer açıldı.  
 Örnekler: `burger-nav-button.header__mock-burger`  
-Öneri: leftover — 1440 hamburger yok  
+Öneri: leftover — 1440 hamburger yok; 768 mock-burger tuzağı  
 Karar: onay bekliyor
 
 ---
