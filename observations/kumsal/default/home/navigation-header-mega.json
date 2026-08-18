@@ -1,0 +1,64 @@
+{
+  "observationId": "kumsal.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "kumsal",
+  "preset": "default",
+  "sayfa": "home",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "url": "https://0esw4-dev-kumsal.myikas.com/",
+  "selector": "header.hdr-bar",
+  "captureMode": "viewport",
+  "notlar": "1440: Erkek/Kadın/Ayakkabı/Aksesuar/Unisex + logo metin KUMSAL + ARA + Hesabım + sepet 00. Mega .hmi-panel: mono link + büyük kategori + promo görsel. 375/768 hamburger .hdr-menu-toggle.",
+  "delta": "Gerçek mega (kolon+promo). Hesabım/account tıklanmadı. ikas storefront (Shopify yok). host 0esw4-dev-kumsal.myikas.com. window.__IKAS_DATA__ (pageType + storefrontConfig). merchantId 232ff515-76eb-4634-ba96-87fcdf0c5064 · storeName dev-kumsal · salesChannelId df371fb7-ae8e-4a2f-a7ad-993a17e931af · storefrontId 711b0133-dfba-4f0d-bdc0-7ef9e3c3d079 · apiUrl https://api.myikas.com/api/sf/graphql · locale tr · TRY ₺ · routing 5c580a7f-ea01-492e-b36d-08eae125b90a · logoText Kumsal · Theme Store UUID 79a4d272-c76f-49e1-aeb9-22ad3a5c5066. og:site_name https://dev-alina.ikas.shop okundu, o hosta gidilmedi.",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://0esw4-dev-kumsal.myikas.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Mega kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#menu-items-0 button.hmi-root",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "erkek-mega",
+      "not": "Erkek mega: Yeni Sezon / Şort Rehberi / Koleksiyonlar + Tişört… + promo Yeni Sezon"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "open": ""
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Mega click ile açılıyor; hover ayrıca yoklanmadı"
+    }
+  ],
+  "interactionNote": "Hesabım / account tıklanmadı. 375/768 hamburger ayrı global-menu-drawer."
+}

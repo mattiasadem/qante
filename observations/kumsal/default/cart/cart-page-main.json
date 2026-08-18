@@ -1,0 +1,100 @@
+{
+  "observationId": "kumsal.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "kumsal",
+  "preset": "default",
+  "sayfa": "cart",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "url": "https://0esw4-dev-kumsal.myikas.com/cart",
+  "selector": ".cp",
+  "notlar": "CART pageType. Boş: SEPETİM / Sepetiniz boş. / Görünüşe göre henüz bir şey eklememişsiniz. / Alışverişe Başla.",
+  "delta": "ikas /cart. Checkout tıklanmadı. Dolu + adet interact.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://0esw4-dev-kumsal.myikas.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": ".cp",
+      "capture": true,
+      "etiket": "bos",
+      "not": "Boş sepet sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://0esw4-dev-kumsal.myikas.com/chukka-sweater-men-s?renk=600-oatmeal&beden=s",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.pd__atc",
+      "capture": false,
+      "not": "Chukka ekle"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://0esw4-dev-kumsal.myikas.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": ".cp",
+      "capture": true,
+      "etiket": "dolu",
+      "not": "Dolu sepet"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".cp button[aria-label*='artır' i], .cp button:has-text('+'), .cp-qty-plus",
+      "capture": true,
+      "etiket": "adet",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "filled": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı. addToCart action yok — .pd__atc click."
+}

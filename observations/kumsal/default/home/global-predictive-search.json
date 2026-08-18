@@ -1,0 +1,78 @@
+{
+  "observationId": "kumsal.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "kumsal",
+  "preset": "default",
+  "sayfa": "home",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "url": "https://0esw4-dev-kumsal.myikas.com/search",
+  "selector": "section.sl",
+  "captureMode": "viewport",
+  "notlar": "Header ARA (.hdr-search) overlay değil — /search sayfasına gider. Sayfa: ARAMA + input Ürün ara... + 53 ürün + Filtrele ve Sırala. katalogSorgu: chukka (PDP adı).",
+  "delta": "Predictive overlay / öneri listesi yok. Header buton → SEARCH pageType. input sonrası Enter.",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://0esw4-dev-kumsal.myikas.com/search",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "selector": "input.sl-search-input",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bos-arama",
+      "not": "ARAMA 53 ürün, sorgu yok"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input.sl-search-input",
+      "value": "chukka",
+      "capture": false,
+      "not": "katalogSorgu chukka — Chukka Sweater Men's"
+    },
+    {
+      "state": "input",
+      "action": "press",
+      "value": "Enter",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "selector": "section.sl",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "chukka",
+      "not": "chukka sorgusu sonrası grid"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "input": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Header ARA /search'e navigate. Overlay predictive yok. E-posta/account yok."
+}

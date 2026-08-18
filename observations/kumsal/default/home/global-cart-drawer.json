@@ -1,0 +1,107 @@
+{
+  "observationId": "kumsal.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "kumsal",
+  "preset": "default",
+  "sayfa": "home",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "url": "https://0esw4-dev-kumsal.myikas.com/",
+  "selector": ".cdw-panel",
+  "captureMode": "viewport",
+  "notlar": "Sepet drawer .cdw / .cdw-panel. Boş: Sepetiniz boş + Alışverişe Başla + Son Görüntülenenler. Dolu: PDP .pd__atc tık (addToCart/Shopify /cart/add.js yok — ikas).",
+  "delta": "ikas cart drawer. /cart.js yok. addToCart action kullanılmadı — UI click .pd__atc. Checkout tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://0esw4-dev-kumsal.myikas.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.hdr-cart",
+      "capture": false,
+      "not": "Boş drawer aç"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "selector": ".cdw-panel",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bos",
+      "not": "SEPETİM · Sepetiniz boş"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://0esw4-dev-kumsal.myikas.com/chukka-sweater-men-s?renk=600-oatmeal&beden=s",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.pd__atc",
+      "capture": false,
+      "not": "Chukka Oatmeal S sepete ekle — ikas UI, /cart/add.js yok"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": ".cdw-panel",
+      "value": 2500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "chukka-eklendi",
+      "not": "Dolu drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".cdw-panel button[aria-label*='artır' i], .cdw-panel button[aria-label*='increase' i], .cdw-panel button[aria-label*='plus' i], .cdw-qty-plus, .cdw-panel button:has-text('+')",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet",
+      "not": "Adet + (selector yoksa missingStates)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "filled": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart action kullanılmadı (ikas /cart.js yok). Checkout tıklanmadı. Adet selector ilk çekimde doğrulanacak."
+}
