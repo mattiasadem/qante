@@ -1,0 +1,149 @@
+{
+  "observationId": "local.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "local",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://local-theme-main.myshopify.com/",
+  "selector": "#site-cart-sidebar",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/local/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/local/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/local/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/local/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/local/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/local/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/local/default/home/global-cart-drawer.initial.sepet-bos.1440.png",
+    "evidence/local/default/home/global-cart-drawer.initial.sepet-bos.375.png",
+    "evidence/local/default/home/global-cart-drawer.initial.sepet-bos.768.png"
+  ],
+  "notlar": "sidebar-drawer#site-cart-sidebar. 1440 .button--cart-handle; 375/768 .mobile-cart-button. ATC hamburger sonrası otomatik açıldı.",
+  "delta": "Shopify.theme.name local-build/light · id 139927814205 · schema_name Local · schema_version 4.1.0 · theme_store_id null · role main · shop local-theme-light-demo.myshopify.com Cart drawer + Often bought together. Checkout tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://local-theme-main.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".button--cart-handle",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart drawer 1440"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".mobile-cart-button",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart drawer mobil"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://local-theme-main.myshopify.com/products/hamburger",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.add-to-cart",
+      "capture": false,
+      "not": "Hamburger ATC"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": ".button--cart-handle",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "Drawer kapandıysa aç"
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": ".mobile-cart-button",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#site-cart-sidebar .qty-plus",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "stateFindings": {
+    "initial": "Shopping Cart (0). Your cart is currently empty. Continue browsing.",
+    "filled": "Shopping Cart (1). You are $45.50 away from free shipping. Hamburger Size: Medium (10 oz) $4.50 qty 1. Often bought together. Total $4.50. Terms checkbox. Checkout tıklanmadı.",
+    "changed": "Shopping Cart (2). You are $41.00 away from free shipping. qty 2 · $9.00 ($11.00). Total $9.00."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC UI drawer açtı. Checkout / kupon / Often bought together / terms tıklanmadı. Small (7 oz) disabled — ATC Medium.",
+  "capture": {
+    "url": "https://local-theme-main.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:37:47.496Z"
+  }
+}
