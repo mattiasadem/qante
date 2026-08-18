@@ -1,0 +1,114 @@
+{
+  "observationId": "sleek.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "sleek",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://sleek-theme-demo.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/sleek/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/sleek/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/sleek/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/sleek/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/sleek/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/sleek/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/sleek/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/sleek/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/sleek/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "cart-drawer drawer--right. Opener: a.cart-drawer-button. Boş metin: Your cart 0 + free shipping eşiği $200.",
+  "delta": "FoxEcom overlay-group cart-drawer. Checkout tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sleek-theme-demo.myshopify.com/cart/clear",
+      "capture": false,
+      "not": "Her viewport'ta sepeti sıfırla — aynı browser cookie paylaşır"
+    },
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sleek-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.cart-drawer-button[aria-controls='CartDrawer']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://sleek-theme-demo.myshopify.com/products/water-lock-moisturizer",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--24914044518689__main",
+      "capture": false,
+      "not": "100ml $39"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC sonrası drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "qty 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is currently empty. Not sure where to start? Try these collections: Accessories / Makeup / Skincare / Cheek kartları.",
+    "filled": "Rozet 1. Water Lock Moisturizer 100ml qty 1 $39. Spend $161 more to free shipping. Estimated total $39.00 USD. View Cart + Check Out.",
+    "changed": "Rozet 2; qty 2; Spend $122 more; Estimated total $78.00 USD."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC UI. Check out / Coupon / Order note / gift wrap tıklanmadı. Viewport başına /cart/clear.",
+  "capture": {
+    "url": "https://sleek-theme-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:16:58.090Z"
+  }
+}
