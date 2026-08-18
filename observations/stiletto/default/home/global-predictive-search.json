@@ -1,0 +1,84 @@
+{
+  "observationId": "stiletto.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "stiletto",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://stiletto-theme-vogue.myshopify.com/",
+  "selector": "#MainQuickSearch",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/stiletto/default/home/global-predictive-search.initial.arama-acik.1440.png",
+    "evidence/stiletto/default/home/global-predictive-search.initial.arama-acik.375.png",
+    "evidence/stiletto/default/home/global-predictive-search.initial.arama-acik.768.png",
+    "evidence/stiletto/default/home/global-predictive-search.input.arama-sonucu.1440.png",
+    "evidence/stiletto/default/home/global-predictive-search.input.arama-sonucu.375.png",
+    "evidence/stiletto/default/home/global-predictive-search.input.arama-sonucu.768.png"
+  ],
+  "notlar": "Quick search overlay. Popular collections öncesi; predictive_search_url=/search/suggest.",
+  "delta": "Kapalıda 0px. a[data-search] opener. Submit View all results tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://stiletto-theme-vogue.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".popup--has-image [data-dismiss-popup]",
+      "value": 600,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "[data-popup] [data-dismiss-popup]",
+      "value": 600,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[data-search][aria-controls='MainQuickSearch']",
+      "value": 1400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik",
+      "not": "Popular collections"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input#search",
+      "value": "dress",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "katalogSorgu dress"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Sağ siyah overlay. Placeholder What are you looking for? Popular collections: Dresses / Tops / Sale / The City Edit.",
+    "input": "dress: Search suggestions (dress, behati dress, evie/ivy/bea blazer dress) + Products Coastline Dress $349→$259 / Chloe Dress In Coffee $319 + VIEW ALL RESULTS (tıklanmadı)."
+  },
+  "missingStates": [],
+  "interactionNote": "Popup kapatıldıktan sonra ikon. Overlay .quick-search.active. Submit yok.",
+  "capture": {
+    "url": "https://stiletto-theme-vogue.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:10:51.806Z"
+  }
+}
