@@ -32,22 +32,65 @@
     },
     {
       "state": "changed",
+      "action": "scrollTo",
+      "selector": "button.variants__chip[aria-label=\"Matte Black\"]",
+      "capture": false
+    },
+    {
+      "state": "changed",
       "action": "click",
       "selector": "button.variants__chip[aria-label=\"Matte Black\"]",
-      "capture": true,
-      "etiket": "renk-matte-black",
+      "capture": false,
       "not": "Renk Matte Black"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "section.pdp",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "renk-matte-black",
+      "not": "Renk Matte Black — galeri+buy-box viewport"
     }
   ],
   "stateFindings": {
-    "initial": "Placeholder — Copper.",
-    "changed": "Placeholder — Matte Black."
+    "initial": "Renk: Copper (ilk chip çerçeveli). Galeri bakır Carbonator 3. ₺10,500. Sepete Ekle. Accordion: Ürün Açıklaması açık; Malzeme ve Bakım / Ürün Özellikleri +.",
+    "changed": "375/1440: Renk Matte Black + galeri mat siyah makine; fiyat aynı ₺10,500. 768: tık sonrası kare hâlâ Copper (galeri+legend) — ikinci denemede de değişmedi."
   },
-  "missingStates": [],
-  "interactionNote": "Checkout/email yok. Qty PDP’de yok.",
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "768’de Matte Black chip tık + scrollTo sonrası galeri/legend Copper kaldı (375/1440 değişti). Üçüncü deneme yok."
+    }
+  ],
+  "interactionNote": "Checkout/email yok. Qty PDP’de yok. 768 changed doğrulanamadı.",
   "kaynak": "eylul",
   "preset": "default",
   "sayfa": "product-detail",
   "evidenceSlug": "product-info-main",
-  "evidence": []
+  "evidence": [
+    "evidence/eylul/default/product-detail/product-info-main.changed.renk-matte-black.1440.png",
+    "evidence/eylul/default/product-detail/product-info-main.changed.renk-matte-black.375.png",
+    "evidence/eylul/default/product-detail/product-info-main.changed.renk-matte-black.768.png",
+    "evidence/eylul/default/product-detail/product-info-main.initial.renk-copper.1440.png",
+    "evidence/eylul/default/product-detail/product-info-main.initial.renk-copper.375.png",
+    "evidence/eylul/default/product-detail/product-info-main.initial.renk-copper.768.png"
+  ],
+  "capture": {
+    "url": "https://dev-eylul.ikas.shop/aarke-carbonator-3",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:57:24.031Z"
+  }
 }

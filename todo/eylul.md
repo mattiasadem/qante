@@ -18,12 +18,14 @@
 |---|---|
 | Evidence kökü | `evidence/eylul/default/` |
 | Observation | **27** |
+| Evidence PNG | **101** |
 | Yeni şema | **0** |
 | Capture | resmi `capture-observation.mjs` + `capture-interaction.mjs` |
+| Validator | 65 temiz · 0 error · 0 warn |
 | Parallel | yalnız `observations/eylul/`, `evidence/eylul/`, `todo/eylul.md`, `candidates/eylul-leftovers.md` |
 
 **Kapsam satırı:**  
-`Eylül · default · ikas Theme Store UUID ef88b30d-7c1c-4474-b03f-dff5ef4c6453 · home→PDP Carbonator 3 Copper→Matte Black→PLP /mutfak→search?s=carbonator→cart empty/filled/qty→hakkimizda→iletisim→FAQ home-only→blog empty→404 · 27 obs · 0 yeni şema · leftover: tek slayt / FAQ sayfa 404 / blog boş / reviews / ?q= / media-only / gizlilik 404`
+`Eylül · default · ikas Theme Store UUID ef88b30d-7c1c-4474-b03f-dff5ef4c6453 · home→PDP Carbonator 3 Copper→Matte Black (768 doğrulanamadı)→PLP /mutfak→search?s=carbonator→cart empty/filled/qty2 ₺21,000→hakkimizda→iletisim→FAQ home-only→blog empty→404 · 27 obs · 101 PNG · 0 yeni şema · leftover: tek slayt / FAQ 404 / blog boş / reviews / ?q= / media-only / gizlilik 404`
 
 ---
 
@@ -89,7 +91,7 @@
 | global-menu-drawer | open/changed | 375/768 hamburger; Mağaza boş toggle |
 | global-cart-drawer | initial/filled/changed | boş + Carbonator 3 Copper + adet |
 | cart-page-main | initial/filled/changed | boş → qty1 ₺10,500 → qty2 |
-| product-info-main | changed | Renk Copper → Matte Black |
+| product-info-main | changed | 375/1440 Copper→Matte Black (siyah makine); **768 Copper kaldı** |
 
 ---
 
@@ -101,7 +103,7 @@
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact header / search / cart / menu / PDP Renk
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate` — 0 error
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact header / search / cart / menu / PDP Renk
+- [x] PNG bak → stateFindings
+- [x] `npm run validate` — 65 temiz · 0 error · 0 warn

@@ -43,6 +43,14 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: eylul-pdp-renk-768  
+Gerekçe: Carbonator 3 Renk Copper→Matte Black 375/1440’ta galeri siyah makineye döndü. 768’de chip tık + scrollTo sonrası legend/galeri Copper kaldı (iki capture). `product-info-main` missingStates.  
+Örnekler: https://dev-eylul.ikas.shop/aarke-carbonator-3  
+Öneri: leftover — 768 variant  
+Karar: onay bekliyor
+
+---
+
 ADAY: eylul-pdp-no-qty  
 Gerekçe: PDP `section.pdp` adet stepper yok. Adet yalnız drawer/sayfa (`Adedi artır`).  
 Örnekler: https://dev-eylul.ikas.shop/aarke-carbonator-3  
@@ -103,6 +111,14 @@ ADAY: eylul-gunluk-hmc
 Gerekçe: Nav “Günlük” `.hmc` / `.hmc-toggle` (blog). Mağaza mega `.hmi-panel` yazıldı. İkinci mega tipi yoklandı değil.  
 Örnekler: https://dev-eylul.ikas.shop/  
 Öneri: leftover — aynı schemaId  
+Karar: onay bekliyor
+
+---
+
+ADAY: eylul-cart-threshold-split  
+Gerekçe: Drawer qty1 Carbonator ₺10,500 → “Ücretsiz kargoya ₺7,500 kaldı”. Aynı satır `/cart` sayfasında “Ücretsiz kargoyu kazandın”. Threshold metni drawer≠sayfa.  
+Örnekler: https://dev-eylul.ikas.shop/cart  
+Öneri: leftover — kargo eşiği  
 Karar: onay bekliyor
 
 ---
