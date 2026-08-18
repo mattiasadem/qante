@@ -1,0 +1,73 @@
+{
+  "observationId": "market.default.search.search-results",
+  "schemaId": "search-results",
+  "kaynak": "market",
+  "preset": "default",
+  "sayfa": "search",
+  "url": "https://dev-market.ikas.shop/search",
+  "selector": ".m-search-block",
+  "evidenceSlug": "search-results",
+  "evidence": [
+    "evidence/market/default/search/search-results.initial.bos-sorgu.1440.png",
+    "evidence/market/default/search/search-results.initial.bos-sorgu.375.png",
+    "evidence/market/default/search/search-results.initial.bos-sorgu.768.png",
+    "evidence/market/default/search/search-results.input.avokado.1440.png",
+    "evidence/market/default/search/search-results.input.avokado.375.png",
+    "evidence/market/default/search/search-results.input.avokado.768.png"
+  ],
+  "notlar": "pageType SEARCH. Input placeholder Ürün, kategori veya marka ara... Boş: 24 sonuç (tüm katalog). avokado → /search?s=avokado&o=3&page=1 · 1 sonuç. zzzzz → Aramanızla eşleşen ürün bulunamadı. Filtre/sort yok. Sağ rail 1440.",
+  "delta": "Predictive overlay yok — home Ara full page /search. ?q= yok; ?s= yazınca. window.Shopify yok.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://dev-market.ikas.shop/search",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "etiket": "bos-sorgu",
+      "not": "24 sonuç"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": ".m-search-block__input",
+      "value": "avokado",
+      "capture": true,
+      "etiket": "avokado",
+      "not": "katalogSorgu Avokado kartından"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Placeholder Ürün, kategori veya marka ara... · 24 sonuç. 1440 4 kolon; 375 2 kolon. Filtre/sort yok.",
+    "input": "avokado yazılı · 1 sonuç · Avokado ₺29.90 + mavi +."
+  },
+  "missingStates": [],
+  "interactionNote": "Home Ara butonu /search'e gider (overlay değil). zzzzz boş sonuç leftover — bu karede avokado.",
+  "capture": {
+    "url": "https://dev-market.ikas.shop/search",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:27:42.711Z"
+  }
+}
