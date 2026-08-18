@@ -1,0 +1,104 @@
+{
+  "observationId": "borders.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "borders",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://borders-theme-raw.myshopify.com/cart",
+  "selector": "#shopify-section-template--19342762672417__main",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "CART. Boş: Your cart is currently empty + CONTINUE BROWSING. Dolu: Utility Overshirt $89.95. Checkout tıklanmadı.",
+  "delta": "cart-recommendations 0px leftover. Checkout / Estimate / Apply dur.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://borders-theme-raw.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://borders-theme-raw.myshopify.com/products/utility-overshirt",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.add-to-cart, form[action*='/cart/add'] button[type='submit']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://borders-theme-raw.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "overshirt-qty1",
+      "not": "Dolu cart"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], [data-qty-plus], button[aria-label*='Increase' i]",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +1"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is currently empty. CONTINUE BROWSING.",
+    "filled": "Utility Overshirt qty1 $89.95 (kareye bakılacak).",
+    "changed": "qty2 (kareye bakılacak)."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı."
+}

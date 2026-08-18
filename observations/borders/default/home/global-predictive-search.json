@@ -1,0 +1,64 @@
+{
+  "observationId": "borders.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "borders",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://borders-theme-raw.myshopify.com/",
+  "selector": "#site-search-sidebar",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "Search opener a.area__icon[href='/search'] → #site-search-sidebar + #search-form-sidebar. katalog shirt.",
+  "delta": "href /search; JS sidebar beklenir. Sayfa kaçarsa leftover.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://borders-theme-raw.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.area__icon[href='/search']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik",
+      "not": "Search sidebar"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#search-form-sidebar, input[name='q'][type='search']",
+      "value": "shirt",
+      "capture": false,
+      "not": "katalogSorgu shirt"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shirt",
+      "not": "Predictive sonuç"
+    }
+  ],
+  "stateFindings": {
+    "initial": "SEARCH sidebar açık, boş input (kareye bakılacak).",
+    "input": "shirt — öneri/ürün (kareye bakılacak)."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu shirt (search sayfasında 21 sonuç). Tam sayfa /search ayrı observation."
+}
