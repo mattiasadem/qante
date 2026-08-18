@@ -1,0 +1,86 @@
+{
+  "observationId": "heritage.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "heritage",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-heritage-demo.myshopify.com/",
+  "selector": "dialog.search-modal__content",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "dialog-component#search-modal + predictive-search-component. Input #cmdk-input. Katalog: wool (43 sonuç sayfa).",
+  "delta": "Horizon predictive-search. Kapalı 0 yükseklik. 375 opener search-action--hidden-on-menu; 768/1440 search-action--hidden-on-drawer.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-heritage-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "search-button.search-action--hidden-on-menu button[aria-label='Search']",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "375 Search"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "search-button.search-action--hidden-on-drawer button[aria-label='Search']",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "768/1440 Search"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#cmdk-input",
+      "value": "wool",
+      "capture": false,
+      "not": "katalog: wool (43 sonuç sayfa)"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "#cmdk-input",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "wool",
+      "not": "Öneri/ürün listesi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Search modal açık; boş input placeholder Search. (PNG bakılacak.)",
+    "input": "Sorgu wool. Tam sayfa /search?q=wool = 43 items (ayrı observation). PNG bakılacak."
+  },
+  "missingStates": [],
+  "interactionNote": "375 opener search-action--hidden-on-menu; 768/1440 search-action--hidden-on-drawer. Enter/submit yok. PII yok. chair araması leftover (1 result / No products found)."
+}

@@ -1,0 +1,66 @@
+{
+  "observationId": "heritage.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "heritage",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://theme-heritage-demo.myshopify.com/products/the-terry-short",
+  "selector": "#shopify-section-template--20430036959286__product-information",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "The Terry Short $105. media-gallery + variant-picker Color Pelican/Navy + Size S–3XL + qty + Add to cart. Theme-blocks: product-price AUHNtK0R5TDJSQVN0b__price_iBYhxh; variant-picker AUE1VdDhESHVnb2tpM__variant_picker_VT89rh.",
+  "delta": "Horizon product-information.liquid. Nested theme-blocks (price, variant-picker). sticky-add-to-cart. Accelerated checkout görüldü, tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-heritage-demo.myshopify.com/products/the-terry-short",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "etiket": "pelican",
+      "not": "Color Pelican / S $105"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "variant-picker input[value='Navy']",
+      "capture": false,
+      "not": "Color Pelican → Navy"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "etiket": "renk-navy",
+      "not": "Navy swatch; galeri değişiyor mu"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Color Pelican (seçili) · Size S · $105.00 CAD. PNG bakılacak.",
+    "changed": "Color Navy. Size hâlâ S. $105.00 CAD beklenir. PNG bakılacak."
+  },
+  "missingStates": [],
+  "interactionNote": "Size tıklanmadı. ATC/checkout tıklanmadı (cart interact ayrı). Tek renk değişimi."
+}
