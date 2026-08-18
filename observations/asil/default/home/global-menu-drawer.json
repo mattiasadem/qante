@@ -1,0 +1,94 @@
+{
+  "observationId": "asil.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "asil",
+  "preset": "default",
+  "sayfa": "home",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/asil/default/home/global-menu-drawer.changed.clothing-alt.375.png",
+    "evidence/asil/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/asil/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "url": "https://dev-asil.ikas.shop/",
+  "selector": ".menu",
+  "captureMode": "viewport",
+  "notlar": "375/768 button.hdr__mark → .menu dialog. Mobil liste .menu__m-link--parent + chevron. Clothing tık → Geri / Clothing / Shorts. 1440 aynı overlay navigation-header-mega'da.",
+  "delta": "ikas menu overlay. Hesap footer tıklanmadı. 1440 N/A (masaüstü header interact).",
+  "interactionStates": [
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://dev-asil.ikas.shop/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button.hdr__mark",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "selector": ".menu",
+      "value": 2000,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Mobil menü açık"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".menu__m-link--parent",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "clothing-alt",
+      "not": "Clothing alt: Geri + Shorts — sayfaya kaçırma (button)"
+    }
+  ],
+  "stateFindings": {
+    "open": "375: chevron liste Clothing/Bags/Accessories/Markalar. 768: masaüstü serif overlay (aynı 4 link, chevron yok). Her ikisinde Giriş / Kayıt / Hesabım.",
+    "changed": "375 Clothing drill-down: Geri, Clothing, Shorts. URL home kaldı."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "768: .menu__m-link--parent DOM'da ama görünmez (masaüstü .menu__link layout). Drill-down yalnız 375. 1440 hamburger N/A."
+    }
+  ],
+  "interactionNote": "1440 overlay navigation-header-mega'da. 768 changed yok. Giriş/Kayıt/Hesabım tıklanmadı.",
+  "capture": {
+    "url": "https://dev-asil.ikas.shop/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:53:51.430Z"
+  }
+}
