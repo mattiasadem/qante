@@ -1,0 +1,70 @@
+{
+  "observationId": "highlight.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "highlight",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://highlight-theme.myshopify.com/",
+  "selector": "#site-search-sidebar",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/highlight/default/home/global-predictive-search.initial.arama-acik.1440.png",
+    "evidence/highlight/default/home/global-predictive-search.initial.arama-acik.375.png",
+    "evidence/highlight/default/home/global-predictive-search.initial.arama-acik.768.png",
+    "evidence/highlight/default/home/global-predictive-search.input.arama-sonucu.1440.png",
+    "evidence/highlight/default/home/global-predictive-search.input.arama-sonucu.375.png",
+    "evidence/highlight/default/home/global-predictive-search.input.arama-sonucu.768.png"
+  ],
+  "notlar": "#search-open-button → #site-search-sidebar search-form. Placeholder Enter keyword here. Submit tıklanmadı.",
+  "delta": "Kapalı 0px. Predictive [data-js-search-results] yoklamada boş kaldı — /search?q=reflective 13 sonuç.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://highlight-theme.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#search-open-button",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik",
+      "not": "Boş sidebar + input"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#site-search-sidebar input[data-js-search-input]",
+      "value": "reflective",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "katalogSorgu reflective (ürün adı). Sonuç boşsa leftover."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Sol search sidebar. Close + boş input (Enter keyword here) + büyüteç.",
+    "input": "Input 'reflective'. Ürün/koleksiyon önerisi yok — sonuç alanı boş. 375/768/1440 aynı."
+  },
+  "missingStates": [],
+  "interactionNote": "Submit / View all yok. Tam sayfa /search?q=reflective ayrı observation.",
+  "capture": {
+    "url": "https://highlight-theme.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:18:36.525Z"
+  }
+}
