@@ -2,10 +2,10 @@
 
 QANTE Theme Store takibi: hangi resmi demo / canlı mağaza walk edildi.  
 Durum: `done` = yapılmış (main’de resmi 3vp) · `in progress` = yapılıyor (açık PR / cloud agent) · boş = kuyruk.  
-*Kesim:* 17 Ağustos 2026 (Berlin). Viewer: **Listeler** sekmesi.
+*Kesim:* 18 Ağustos 2026 (Berlin). Viewer: **Listeler** sekmesi.
 
-Paid batch 10/10 complete (Warehouse, Flow, Venue, Showcase, Pipeline, Palo Alto, Blockshop, Taiga, Canopy, Expanse).  
-Next 10 after Expanse (open demos): Stiletto, Concept, Be Yours, Wonder, Sleek, Pebble, District, Woodstock, Minion, Rise.
+Shopify Theme Store 53/70 done on main; 5 in progress (Stiletto, Heritage, Pitch, Dwell, Fabric); 12 View-demo-only remaining.  
+Paid batch 10/10 and the next-10-after-Expanse are largely on main except Stiletto still walking.
 
 DTC marka listesi: [`dtc-69-brands.md`](./dtc-69-brands.md)
 
@@ -52,23 +52,23 @@ DTC marka listesi: [`dtc-69-brands.md`](./dtc-69-brands.md)
 | 39 | done | [Taiga](https://themes.shopify.com/themes/taiga) | Woolman | ~$320 | https://taiga-demo-sage.myshopify.com/ | taiga | Resmi Sage preset. |
 | 40 | done | [Canopy](https://themes.shopify.com/themes/canopy) | Clean Canvas | ~$280 | https://canopy-theme-natural.myshopify.com/ | canopy | Resmi Natural preset. |
 | 41 | done | [Expanse](https://themes.shopify.com/themes/expanse) | Archetype | ~premium | https://expanse-theme-furniture.myshopify.com/ | expanse | Resmi Furniture preset. Expanse 6.1.0 · 46 obs · 156 PNG. PR #155 squash `3b98299a`. Paid batch 10/10. |
-| 42 |  | [Stiletto](https://themes.shopify.com/themes/stiletto) | Fluorescent | $380 | https://stiletto-theme-vogue.myshopify.com/ | stiletto | Açık demo · next 10 (Expanse sonrası). |
-| 43 |  | [Concept](https://themes.shopify.com/themes/concept) | RoarTheme | $400 | https://concept-theme.myshopify.com/ | concept | Açık demo · next 10 (Expanse sonrası). |
-| 44 |  | [Be Yours](https://themes.shopify.com/themes/be-yours) | RoarTheme | $350 | https://beyours-theme.myshopify.com/ | be-yours | Açık demo · next 10 (Expanse sonrası). |
-| 45 |  | [Wonder](https://themes.shopify.com/themes/wonder) | NETHYPE | $390 | https://wonder-theme-beauty.myshopify.com/ | wonder | Açık demo · next 10 (Expanse sonrası). |
-| 46 |  | [Sleek](https://themes.shopify.com/themes/sleek) | FoxEcom | $350 | https://sleek-theme-demo.myshopify.com/ | sleek | Açık demo · next 10 (Expanse sonrası). |
-| 47 |  | [Pebble](https://themes.shopify.com/themes/pebble) | FoxEcom | $400 | https://pebble-little.myshopify.com/ | pebble | Açık demo · next 10 (Expanse sonrası). |
-| 48 |  | [District](https://themes.shopify.com/themes/district) | Style Hatch | $220 | https://district-theme-demo.myshopify.com/ | district | Açık demo · next 10 (Expanse sonrası). |
-| 49 |  | [Woodstock](https://themes.shopify.com/themes/woodstock) | Boostheme | $270 | https://woodstock-theme-light.myshopify.com/ | woodstock | Açık demo · next 10 (Expanse sonrası). |
-| 50 |  | [Minion](https://themes.shopify.com/themes/minion) | Softali | $100 | https://minion-theme-red.myshopify.com/ | minion | Açık demo · next 10 (Expanse sonrası). |
-| 51 |  | [Rise](https://themes.shopify.com/themes/rise) | Shopify | Free | https://theme-rise-demo.myshopify.com/ | rise | Açık demo · next 10 (Expanse sonrası). |
-| 52 |  | [Dawn](https://themes.shopify.com/themes/dawn) | Shopify | Free | https://theme-dawn-demo.myshopify.com/ | dawn | Resmi demo kuyruk (`observations/dawn` yok). Canlı fork’lar done: brez, ghia, im8health. |
-| 53 |  | [Spotlight](https://themes.shopify.com/themes/spotlight) | Shopify | Free | https://theme-spotlight-demo.myshopify.com/ | spotlight | Free Shopify. Resmi demo henüz walk edilmedi. |
-| 54 |  | [Trade](https://themes.shopify.com/themes/trade) | Shopify | Free | https://theme-trade-demo.myshopify.com/ | trade | Free Shopify · B2B. |
-| 55 |  | [Heritage](https://themes.shopify.com/themes/heritage) | Shopify | Free | https://theme-heritage-demo.myshopify.com/ | heritage | Horizon ailesi 2026 · kuyruk. |
-| 56 |  | [Pitch](https://themes.shopify.com/themes/pitch) | Shopify | Free | https://theme-pitch-demo.myshopify.com/ | pitch | Horizon ailesi 2026 · kuyruk. |
-| 57 |  | [Dwell](https://themes.shopify.com/themes/dwell) | Shopify | Free | https://theme-dwell-demo.myshopify.com/ | dwell | Horizon ailesi 2026 · kuyruk. |
-| 58 |  | [Fabric](https://themes.shopify.com/themes/fabric) | Shopify | Free | https://theme-fabric-demo.myshopify.com/ | fabric | Horizon ailesi 2026 · kuyruk. |
+| 42 | in progress | [Stiletto](https://themes.shopify.com/themes/stiletto) | Fluorescent | $380 | https://stiletto-theme-vogue.myshopify.com/ | stiletto | PR #169 · recapture hâlâ yürüyor. Açık demo · next 10 (Expanse sonrası). |
+| 43 | done | [Concept](https://themes.shopify.com/themes/concept) | RoarTheme | $400 | https://concept-theme.myshopify.com/ | concept | Resmi demo · PR #168 squash `e32093ee`. Next 10 (Expanse sonrası). |
+| 44 | done | [Be Yours](https://themes.shopify.com/themes/be-yours) | RoarTheme | $350 | https://beyours-theme.myshopify.com/ | be-yours | Be Yours 8.3.1 · beyours-theme.myshopify.com · 47 obs / 161 PNG. PR #173 squash `745a9a50`. |
+| 45 | done | [Wonder](https://themes.shopify.com/themes/wonder) | NETHYPE | $390 | https://wonder-theme-beauty.myshopify.com/ | wonder | Resmi demo · PR #166 squash `289f1dec`. Next 10 (Expanse sonrası). |
+| 46 | done | [Sleek](https://themes.shopify.com/themes/sleek) | FoxEcom | $350 | https://sleek-theme-demo.myshopify.com/ | sleek | Resmi demo · PR #171 squash `a386ec1e`. Next 10 (Expanse sonrası). |
+| 47 | done | [Pebble](https://themes.shopify.com/themes/pebble) | FoxEcom | $400 | https://pebble-little.myshopify.com/ | pebble | Resmi demo · PR #167 squash `8b4e0a58`. Next 10 (Expanse sonrası). |
+| 48 | done | [District](https://themes.shopify.com/themes/district) | Style Hatch | $220 | https://district-theme-demo.myshopify.com/ | district | District 7.1.1 · district-theme-demo · 28 obs / 95 PNG. PR #174 squash `a1244265`. |
+| 49 | done | [Woodstock](https://themes.shopify.com/themes/woodstock) | Boostheme | $270 | https://woodstock-theme-light.myshopify.com/ | woodstock | Resmi demo · PR #172 squash `079fdd0e`. Next 10 (Expanse sonrası). |
+| 50 | done | [Minion](https://themes.shopify.com/themes/minion) | Softali | $100 | https://minion-theme-red.myshopify.com/ | minion | Resmi demo · PR #170 squash `e07f9248`. Next 10 (Expanse sonrası). |
+| 51 | done | [Rise](https://themes.shopify.com/themes/rise) | Shopify | Free | https://theme-rise-demo.myshopify.com/ | rise | Resmi first-party demo · PR #165 squash `db0d13f2`. Next 10 (Expanse sonrası). |
+| 52 | done | [Dawn](https://themes.shopify.com/themes/dawn) | Shopify | Free | https://theme-dawn-demo.myshopify.com/ | dawn | Dawn 15.0.0 · theme-dawn-demo · 29 obs / 101 PNG. PR #175 squash `511ba25f`. Canlı fork’lar done: brez, ghia, im8health. |
+| 53 | done | [Spotlight](https://themes.shopify.com/themes/spotlight) | Shopify | Free | https://theme-spotlight-demo.myshopify.com/ | spotlight | Spotlight-8.0.0 · theme-spotlight-demo · 15 obs / 54 PNG. PR #176 squash `5ff3349b`. |
+| 54 | done | [Trade](https://themes.shopify.com/themes/trade) | Shopify | Free | https://theme-trade-demo.myshopify.com/ | trade | Trade 15.0.0 · theme-trade-demo · 33 obs / 116 PNG. PR #177 squash `4d20160a`. Free Shopify · B2B. |
+| 55 | in progress | [Heritage](https://themes.shopify.com/themes/heritage) | Shopify | Free | https://theme-heritage-demo.myshopify.com/ | heritage | Horizon ailesi 2026 · PR #178 açık. |
+| 56 | in progress | [Pitch](https://themes.shopify.com/themes/pitch) | Shopify | Free | https://theme-pitch-demo.myshopify.com/ | pitch | Horizon ailesi 2026 · PR #179 açık. |
+| 57 | in progress | [Dwell](https://themes.shopify.com/themes/dwell) | Shopify | Free | https://theme-dwell-demo.myshopify.com/ | dwell | Horizon ailesi 2026 · PR #180 açık. |
+| 58 | in progress | [Fabric](https://themes.shopify.com/themes/fabric) | Shopify | Free | https://theme-fabric-demo.myshopify.com/ | fabric | Horizon ailesi 2026 · PR #181 açık. |
 | 59 |  | [Enterprise](https://themes.shopify.com/themes/enterprise) | Clean Canvas | $420 | https://themes.shopify.com/themes/enterprise | enterprise | View demo only. |
 | 60 |  | [Streamline](https://themes.shopify.com/themes/streamline) | Archetype | $420 | https://themes.shopify.com/themes/streamline | streamline | View demo only. |
 | 61 |  | [Local](https://themes.shopify.com/themes/local) | Krown | $380 | https://themes.shopify.com/themes/local | local | View demo only. |
