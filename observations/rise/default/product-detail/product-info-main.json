@@ -1,0 +1,71 @@
+{
+  "observationId": "rise.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "rise",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://theme-rise-demo.myshopify.com/en/products/sand-shorts",
+  "selector": "#shopify-section-template--21605978931222__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/rise/default/product-detail/product-info-main.changed.color-white.1440.png",
+    "evidence/rise/default/product-detail/product-info-main.changed.color-white.375.png",
+    "evidence/rise/default/product-detail/product-info-main.changed.color-white.768.png",
+    "evidence/rise/default/product-detail/product-info-main.initial.color-sand.1440.png",
+    "evidence/rise/default/product-detail/product-info-main.initial.color-sand.375.png",
+    "evidence/rise/default/product-detail/product-info-main.initial.color-sand.768.png"
+  ],
+  "notlar": "Terrycloth shorts. Color Sand/White/Grey/Moss/Slate/Black + Size XS–XL. Sale ¥1,900 → ¥1,520. ATC + Buy it now.",
+  "delta": "Dawn product-info + variant-selects pill. Pickup-availability DOM’da. Quick view yok.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-rise-demo.myshopify.com/en/products/sand-shorts",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21605978931222__main",
+      "capture": true,
+      "etiket": "color-sand",
+      "not": "Color Sand seçili"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='template--21605978931222__main-1-1']",
+      "capture": true,
+      "etiket": "color-white",
+      "not": "Color White — galeri/seçim değişmeli"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Terrycloth shorts. Color Sand pill dolu; Size XS. Galeri: bej şort + lifestyle. ¥1,900 → ¥1,520 Sale. ATC + Buy it now. 375/768/1440.",
+    "changed": "Color White pill dolu. Galeri önde beyaz şort. Fiyat aynı ¥1,520. Size XS. 375/768/1440."
+  },
+  "missingStates": [],
+  "interactionNote": "Color radio. Buy it now / checkout tıklanmadı.",
+  "capture": {
+    "url": "https://theme-rise-demo.myshopify.com/en/products/sand-shorts",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:05:02.337Z"
+  }
+}

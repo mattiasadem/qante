@@ -1,0 +1,124 @@
+{
+  "observationId": "rise.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "rise",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://theme-rise-demo.myshopify.com/en/cart",
+  "selector": "#shopify-section-template--21605978669078__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/rise/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/rise/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/rise/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/rise/default/cart/cart-page-main.filled.hoodie-qty1.1440.png",
+    "evidence/rise/default/cart/cart-page-main.filled.hoodie-qty1.375.png",
+    "evidence/rise/default/cart/cart-page-main.filled.hoodie-qty1.768.png",
+    "evidence/rise/default/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/rise/default/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/rise/default/cart/cart-page-main.initial.cart-bos.768.png"
+  ],
+  "notlar": "Boş: Your cart is empty + Continue shopping. Dolu: satır + footer. Checkout tıklanmadı.",
+  "delta": "cart-footer ayrı section (boşken 0px). Featured collection altta ayrı obs.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-rise-demo.myshopify.com/en/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21605978669078__cart-items",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş sepet sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-rise-demo.myshopify.com/en/products/white-hoodie",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button.product-form__submit",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-rise-demo.myshopify.com/en/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21605978669078__cart-items",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hoodie-qty1",
+      "not": "Dolu sepet satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button.quantity__button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +1"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + Continue shopping. Altta Shop our best sellers 4 kart. Cart rozet yok. 375/768/1440.",
+    "filled": "Your cart. White hoodie · Size: XS · ¥3,990 · adet 1. Estimated total ¥3,990 JPY. Check out. Rozet 1. 375/768/1440.",
+    "changed": "Adet 2 · satır ¥7,980 · Estimated total ¥7,980 JPY. Rozet 2. Aynı iskelet. 375/768/1440."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı. Notification ayrı global-cart-drawer. ATC UI (3vp).",
+  "capture": {
+    "url": "https://theme-rise-demo.myshopify.com/en/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:07:17.535Z"
+  }
+}
