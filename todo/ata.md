@@ -17,8 +17,8 @@
 `window.IkasEvents` = `{subscribe, unsubscribe}`  
 `theme_store_id` = **1863f1b9-8002-4446-8c3c-1436db3d47bc** (Theme Store UUID; storefront JSON’da Shopify id yok)
 
-**Durum:** Mod A walk + resmi 3vp + interact (capture devam)  
-**PR:** draft — **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti** (0 error)  
+**PR:** draft https://github.com/mattiasadem/qante/pull/200 — **main'e merge yok**
 
 ---
 
@@ -30,10 +30,12 @@
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **21** |
+| PNG | **82** |
+| Validator | 65 temiz · **0 error** · 0 warn |
 | Parallel | yalnız `observations/ata/`, `evidence/ata/`, `todo/ata.md`, `candidates/ata-leftovers.md` |
 
 **Kapsam satırı:**  
-`Ata · default · ikas Studio · theme_store_id 1863f1b9-8002-4446-8c3c-1436db3d47bc · home→PDP Metalic Lipstick→PLP /kadin→search ruj→cart empty/filled→blog+hikaye→404 · about/contact/FAQ yok · 21 obs · 0 yeni şema · leftover: candidates/ata-leftovers.md`
+`Ata · default · ikas Studio · theme_store_id 1863f1b9-8002-4446-8c3c-1436db3d47bc · home→PDP Metalic Lipstick Siyah→Taba→PLP /kadin→search ruj/Metalic→cart empty/filled/qty2 ₺41998→blog+hikaye→404 · about/contact/FAQ yok · 21 obs · 82 PNG · 0 yeni şema · leftover: candidates/ata-leftovers.md`
 
 ---
 
@@ -41,19 +43,19 @@
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | roster | [ ] capture |
-| Desktop nav (mega yok) | interact | [ ] |
-| Predictive search `ruj` | interact 3vp | [ ] |
-| Mobile menu 375 | interact | [ ] |
-| Mobile menu 768 | interact | [ ] |
-| Cart drawer empty + filled + qty | interact | [ ] |
-| PDP Metalic Lipstick Siyah→Taba | interact 3vp | [ ] |
-| PLP `/kadin` | roster | [ ] capture |
-| Search `/search?q=ruj` | roster | [ ] capture |
-| Cart page empty + filled + qty | interact | [ ] |
+| Home roster (announcement→footer) | roster + capture | [x] |
+| Desktop nav (mega yok) | interact | [x] |
+| Predictive search `Metalic` (+ ruj 1440) | interact 3vp | [x] |
+| Mobile menu 375 | interact | [x] |
+| Mobile menu 768 | interact | [x] |
+| Cart drawer empty + filled + qty | interact 3vp | [x] |
+| PDP Metalic Lipstick Siyah→Taba | interact 3vp | [x] |
+| PLP `/kadin` | roster + capture | [x] |
+| Search `/search?q=ruj` | roster + capture | [x] |
+| Cart page empty + filled + qty | interact 3vp | [x] |
 | About / contact / FAQ | ⛔ yok (`#` / 404) | leftover |
-| Blog `/blog` + `/blog/hikaye` | roster | [ ] capture |
-| 404 | roster | [ ] capture |
+| Blog `/blog` + `/blog/hikaye` | roster + capture | [x] |
+| 404 | roster + capture | [x] |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -84,12 +86,12 @@
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | initial (+ hover) | Mega yok — düz 3 link |
-| global-predictive-search | input | `ruj` — overlay + popüler chip |
-| global-menu-drawer | open | 375/768 hamburger. Login tıklanmadı |
-| global-cart-drawer | empty/filled/qty | UI ATC (ikas; `/cart/add.js` yok) |
-| cart-page-main | empty/filled/qty | `/cart` |
-| product-info-main | changed | Siyah → Taba |
+| navigation-header-mega | initial + open | Mega yok — 1440 Skin Care hover panel açmadı |
+| global-predictive-search | input | `Metalic` → 5× Metalic Lipstick ₺20.999; `ruj` 1440 Sonuç bulunamadı |
+| global-menu-drawer | open | 375/768 siyah menü + Sepet + Giriş. Login tıklanmadı |
+| global-cart-drawer | empty/filled/qty | boş → qty1 ₺20.999 → qty2 ₺41.998 |
+| cart-page-main | empty/filled/qty | aynı; birim ₺0.00 leftover |
+| product-info-main | changed | Siyah → Taba; ₺20.999 aynı |
 
 ---
 
@@ -101,7 +103,7 @@
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact header / search / cart / menu / PDP Renk
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate` — 0 error
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact header / search / cart / menu / PDP Renk
+- [x] PNG bak → stateFindings
+- [x] `npm run validate` — 65 temiz · 0 error · 0 warn

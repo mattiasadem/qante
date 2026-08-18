@@ -133,6 +133,14 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: ata-cart-page-unit-price-zero  
+Gerekçe: `/cart` dolu karede satır birim fiyat ₺0.00; satır toplam qty1 ₺20.999 / qty2 ₺41.998. Demo bağ.  
+Örnekler: https://g5jhl-themes.myikas.com/cart  
+Öneri: leftover — demo fiyat  
+Karar: onay bekliyor
+
+---
+
 ADAY: ata-cart-promo  
 Gerekçe: Drawer “İndirim Kodu Uygula”. Uygulanmadı.  
 Örnekler: cart drawer  

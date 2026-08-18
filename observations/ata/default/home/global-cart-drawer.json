@@ -5,11 +5,21 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://g5jhl-themes.myikas.com/",
-  "selector": "aside.cart-drawer-panel",
+  "selector": ".cart-drawer-overlay",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
-  "notlar": "Sepetim → aside.cart-drawer-panel. Boş: 0 Ürün / Sepetiniz / Sepetiniz boş. Dolu: Metalic Lipstick satır + qty + Ara Toplam + Sepeti Görüntüle + Ödemeye Geç.",
-  "delta": "ikas cart drawer (header props). /cart/add.js yok — UI .pd-add-to-cart. Ödemeye Geç tıklanmadı. Ata · ikas Studio storefront · host g5jhl-themes.myikas.com · window.Shopify yok · window.__IKAS_DATA__ var (storefrontThemeId 90e6a44f-b183-44d4-b141-55b49c09e75d · storefrontId f726bf61-68c8-4758-afb3-206ea66e32e7 · storefrontType STOREFRONT · domain themes.myikas.com · merchantName themes · locale tr · TRY) · window.IkasEvents var · theme_store_id 1863f1b9-8002-4446-8c3c-1436db3d47bc (Theme Store UUID; storefront JSON'da yok)",
+  "evidence": [
+    "evidence/ata/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/ata/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/ata/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/ata/default/home/global-cart-drawer.filled.lipstick-qty1.1440.png",
+    "evidence/ata/default/home/global-cart-drawer.filled.lipstick-qty1.375.png",
+    "evidence/ata/default/home/global-cart-drawer.filled.lipstick-qty1.768.png",
+    "evidence/ata/default/home/global-cart-drawer.initial.sepet-bos.1440.png",
+    "evidence/ata/default/home/global-cart-drawer.initial.sepet-bos.375.png",
+    "evidence/ata/default/home/global-cart-drawer.initial.sepet-bos.768.png"
+  ],
+  "notlar": "Sepetim → .cart-drawer-overlay + aside.cart-drawer-panel. Boş: 0 Ürün / Sepetiniz boş. Dolu: Metalic Lipstick + qty + Ödemeye Geç.",
+  "delta": "ikas cart drawer. /cart/add.js yok — UI .pd-add-to-cart. Checkout tıklanmadı. forceOpen = settle overlay kill undo. Ata · ikas Studio storefront · host g5jhl-themes.myikas.com · window.Shopify yok · window.__IKAS_DATA__ var (storefrontThemeId 90e6a44f-b183-44d4-b141-55b49c09e75d · storefrontId f726bf61-68c8-4758-afb3-206ea66e32e7 · storefrontType STOREFRONT · domain themes.myikas.com · merchantName themes · locale tr · TRY) · window.IkasEvents var · theme_store_id 1863f1b9-8002-4446-8c3c-1436db3d47bc (Theme Store UUID; storefront JSON'da yok)",
   "captureMode": "viewport",
   "interactionStates": [
     "initial",
@@ -33,10 +43,16 @@
       "state": "initial",
       "action": "click",
       "selector": "button.nav-icon-btn.cart-link",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": ".cart-drawer-overlay",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "sepet-bos",
-      "not": "Boş drawer"
+      "not": "Boş drawer; dismiss inline kill undo"
     },
     {
       "state": "filled",
@@ -55,7 +71,7 @@
       "action": "click",
       "selector": "button.pd-add-to-cart",
       "capture": false,
-      "not": "Add to Cart — ikas UI, /cart/add.js yok"
+      "not": "Add to Cart UI"
     },
     {
       "state": "filled",
@@ -65,9 +81,8 @@
     },
     {
       "state": "filled",
-      "action": "waitFor",
-      "selector": ".cart-drawer-overlay.is-open",
-      "value": 5000,
+      "action": "forceOpen",
+      "selector": ".cart-drawer-overlay",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "lipstick-qty1",
@@ -84,8 +99,21 @@
     }
   ],
   "stateFindings": {
-    "initial": "0 Ürün · Sepetiniz · Sepetiniz boş."
+    "initial": "Sağ drawer Sepetiniz · Sepetiniz boş. 375 üstte 0 Ürün.",
+    "filled": "1 satır Metalic Lipstick · Renk Siyah / Beden STD · qty 1 · ₺20.999 (üstü ₺26.249) · %20 · Ara Toplam/Toplam ₺20.999 · Sepeti Görüntüle + Ödemeye Geç.",
+    "changed": "2 Ürün · qty 2 · satır ₺41.998 · Toplam ₺41.998."
   },
   "missingStates": [],
-  "interactionNote": "ATC gerçek tık button.pd-add-to-cart. Ödemeye Geç / kupon Uygula tıklanmadı. Eksi aria Ürünü kaldır (qty1)."
+  "interactionNote": "ATC button.pd-add-to-cart. Ödemeye Geç / kupon tıklanmadı. forceOpen = dismiss overlay undo.",
+  "capture": {
+    "url": "https://g5jhl-themes.myikas.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:25:04.113Z"
+  }
 }

@@ -7,7 +7,17 @@
   "url": "https://g5jhl-themes.myikas.com/cart",
   "selector": "section.cart-page",
   "evidenceSlug": "cart-page-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/ata/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/ata/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/ata/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/ata/default/cart/cart-page-main.filled.lipstick-qty1.1440.png",
+    "evidence/ata/default/cart/cart-page-main.filled.lipstick-qty1.375.png",
+    "evidence/ata/default/cart/cart-page-main.filled.lipstick-qty1.768.png",
+    "evidence/ata/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/ata/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/ata/default/cart/cart-page-main.initial.sepet-bos.768.png"
+  ],
   "notlar": "pageType CART. Boş: Sepetiniz / Sepetiniz boş / Alışverişe devam et. /sepet 404. Dolu: drawer Sepeti Görüntüle veya /cart.",
   "delta": "ikas cart-page. Checkout tıklanmadı. Ata · ikas Studio storefront · host g5jhl-themes.myikas.com · window.Shopify yok · window.__IKAS_DATA__ var (storefrontThemeId 90e6a44f-b183-44d4-b141-55b49c09e75d · storefrontId f726bf61-68c8-4758-afb3-206ea66e32e7 · storefrontType STOREFRONT · domain themes.myikas.com · merchantName themes · locale tr · TRY) · window.IkasEvents var · theme_store_id 1863f1b9-8002-4446-8c3c-1436db3d47bc (Theme Store UUID; storefront JSON'da yok)",
   "captureMode": "viewport",
@@ -86,16 +96,29 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": "section.cart-page button[aria-label='Adedi artır'], section.cart-page button.cart-drawer-item__qty-btn[aria-label='Adedi artır']",
+      "selector": "section.cart-page button.cart-page-row-qty-btn[aria-label='Artır']",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "adet-artti",
-      "not": "Cart sayfa qty +"
+      "not": "Cart sayfa qty + (aria Artır)"
     }
   ],
   "stateFindings": {
-    "initial": "Sepetiniz · Sepetiniz boş · Alışverişe başlamak için ürünlere göz atın. · Alışverişe devam et."
+    "initial": "Sepetiniz · Sepetiniz boş · Alışverişe başlamak için ürünlere göz atın. · Alışverişe devam et.",
+    "filled": "Metalic Lipstick satır · ADET 1 · TOPLAM ₺20.999 · Tahmini toplam · Ödemeye geç. Birim fiyat karede ₺0.00 (demo).",
+    "changed": "ADET 2 · TOPLAM ₺41.998 · header sepet rozeti 2 · Tahmini toplam ₺41.998."
   },
   "missingStates": [],
-  "interactionNote": "Dolu sepet aynı oturumda PDP ATC sonra /cart. Checkout tıklanmadı."
+  "interactionNote": "Dolu sepet PDP ATC sonra /cart. Qty aria=Artır. Ödemeye geç tıklanmadı.",
+  "capture": {
+    "url": "https://g5jhl-themes.myikas.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:31:31.768Z"
+  }
 }
