@@ -1,0 +1,69 @@
+{
+  "observationId": "wonder.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "wonder",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://wonder-theme-beauty.myshopify.com/",
+  "selector": "search-drawer.wt-header__search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/wonder/default/home/global-predictive-search.initial.arama-bos.1440.png",
+    "evidence/wonder/default/home/global-predictive-search.initial.arama-bos.375.png",
+    "evidence/wonder/default/home/global-predictive-search.initial.arama-bos.768.png",
+    "evidence/wonder/default/home/global-predictive-search.input.arama-sonucu.1440.png",
+    "evidence/wonder/default/home/global-predictive-search.input.arama-sonucu.375.png",
+    "evidence/wonder/default/home/global-predictive-search.input.arama-sonucu.768.png"
+  ],
+  "notlar": "search-drawer + #search-shop. Katalog serum.",
+  "delta": "Wonder search-drawer overlay. 1440 da ikon + drawer.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://wonder-theme-beauty.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".wt-header__search-trigger",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Arama drawer açık, input boş"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#search-shop",
+      "value": "serum",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "katalogSorgu serum — Bakuchiol / firming serum"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Search overlay: Find a product… + Top Products (Bakuchiol $55, Orchid oil…) + Popular Searches (Orchid Face Oil / Firming Face Serum / Argan Oil) + Popular Collections.",
+    "input": "serum: Products ızgarası (MOKOSH/HERBIVORE, serum kalın) + Suggestions (serum / liposomal eye serum / bha…) + Articles (Why Your Skin Needs a Serum). VIEW ALL FOR 'SERUM' tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "Enter/submit yok. View all tıklanmadı.",
+  "capture": {
+    "url": "https://wonder-theme-beauty.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:06:37.052Z"
+  }
+}
