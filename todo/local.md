@@ -24,12 +24,12 @@
 | Evidence kökü | `evidence/local/default/` |
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** |
-| Observation | (capture sonrası) |
-| Evidence PNG | (capture sonrası) |
+| Observation | **45** |
+| Evidence PNG | **153** |
 | Parallel | yalnız `observations/local/`, `evidence/local/`, `todo/local.md`, `candidates/local-leftovers.md` |
 
 **Kapsam satırı:**  
-`Local · default · local-build/light / schema_name Local 4.1.0 · theme_store_id null · home→PDP hamburger→PLP fruits-berries→collections→search bread→cart→about/contact→FAQ→blog→404 · obs/PNG capture sonrası · 0 yeni şema · leftover: candidates/local-leftovers.md`
+`Local · default · local-build/light / schema_name Local 4.1.0 · theme_store_id null · home→PDP hamburger→PLP fruits-berries→collections→search bread→cart→about/contact→FAQ→blog→404 · 45 obs · 153 PNG · 0 yeni şema · leftover: candidates/local-leftovers.md`
 
 ---
 
@@ -37,21 +37,21 @@
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home + announcement/hero/category/featured/promo/marquee/lifestyle/recipes/video/testimonials/blog/pickup/footer | roster | [ ] |
-| Mega Categories 1440 | interact | [ ] |
-| Predictive search `bread` | interact 3vp | [ ] |
-| Mobile hamburger 375+768 | interact | [ ] |
-| Cart drawer empty + filled + qty | interact | [ ] |
-| PDP Hamburger Size Medium→Large | interact | [ ] |
-| PLP `/collections/fruits-berries` | roster | [ ] |
-| Collections index `/collections` | roster | [ ] |
-| Search `/search?q=bread` | roster | [ ] |
-| Cart `/cart` empty + filled + qty | interact | [ ] |
-| About `/pages/about-us` | roster | [ ] |
-| Contact form (submit yok) | roster | [ ] |
-| FAQ `/pages/faq` | roster | [ ] |
-| News + grilling article | roster | [ ] |
-| 404 | roster | [ ] |
+| Home + announcement/hero/category/featured/promo/marquee/lifestyle/recipes/video/testimonials/blog/pickup/footer | roster | [x] |
+| Mega Categories 1440 | interact | [x] |
+| Predictive search `bread` | interact 3vp | [x] tuş; fill overlay yok |
+| Mobile hamburger 375+768 | interact | [x] |
+| Cart drawer empty + filled + qty | interact | [x] 1→2 / $4.50→$9.00 |
+| PDP Hamburger Size Medium→Large | interact | [x] $4.50→$5.50 |
+| PLP `/collections/fruits-berries` | roster | [x] |
+| Collections index `/collections` | roster | [x] |
+| Search `/search?q=bread` | roster | [x] |
+| Cart `/cart` empty + filled + qty | interact | [x] 1→2 / $4.50→$9.00 |
+| About `/pages/about-us` | roster | [x] |
+| Contact form (submit yok) | roster | [x] |
+| FAQ `/pages/faq` | roster | [x] |
+| News + grilling article | roster | [x] |
+| 404 | roster | [x] |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -60,12 +60,12 @@
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | open | [ ] 1440 Categories mega |
-| global-predictive-search | input | [ ] 3vp `bread` |
-| global-menu-drawer | open | [ ] 375+768 |
-| global-cart-drawer | filled + changed | [ ] Hamburger qty |
-| cart-page-main | filled + changed | [ ] Hamburger qty |
-| product-info-main | changed | [ ] Medium → Large |
+| navigation-header-mega | open | [x] 1440 Categories mega |
+| global-predictive-search | input | [x] 3vp `bread` öneri+ürün |
+| global-menu-drawer | open | [x] 375+768; 1440 N/A |
+| global-cart-drawer | filled + changed | [x] (1) $4.50 → (2) $9.00 |
+| cart-page-main | filled + changed | [x] (1) $4.50 → (2) $9.00 |
+| product-info-main | changed | [x] Medium $4.50 → Large $5.50 |
 
 ---
 
@@ -75,44 +75,44 @@
 
 | # | id | sayfa | Screenshot | Not | JSON | Done |
 |---|---|---|---|---|---|---|
-| 1 | promo-announcement-bar | home | [ ] | BULKSAVE | reuse | [ ] |
-| 2 | navigation-header-mega | home | [ ] | Categories mega | reuse | [ ] |
-| 3 | hero-slideshow | home | [ ] | Fresh Organic | reuse | [ ] |
-| 4 | collection-nav-image-cards | home | [ ] | Shop by Category | reuse | [ ] |
-| 5 | product-showcase-grid-featured | home | [ ] | Best Sellers | reuse | [ ] |
-| 6 | promo-grid-banner | home | [ ] | Finest Bread | reuse | [ ] |
-| 7 | product-showcase-grid-featured.2 | home | [ ] | Bread & Bakery | reuse | [ ] |
-| 8 | editorial-image-with-text-overlay | home | [ ] | Locally sourced | reuse | [ ] |
-| 9 | promo-scrolling-marquee | home | [ ] | New York | reuse | [ ] |
-| 10 | editorial-image-with-text-overlay.2 | home | [ ] | Organic Food | reuse | [ ] |
-| 11 | product-showcase-featured | home | [ ] | Keto Crunch | reuse | [ ] |
-| 12 | promo-grid-banner.2 | home | [ ] | We promise | reuse | [ ] |
-| 13 | collection-nav-icon-buttons | home | [ ] | Lifestyle | reuse | [ ] |
-| 14 | product-showcase-grid-featured.3 | home | [ ] | Hot Meals | reuse | [ ] |
-| 15 | blog-list-main | home | [ ] | Delicious Recipes | reuse | [ ] |
-| 16 | product-showcase-grid-featured.4 | home | [ ] | Kitchenware | reuse | [ ] |
-| 17 | media-shop-the-feed | home | [ ] | shoppable video | reuse | [ ] |
-| 18 | collection-nav-slider | home | [ ] | Explore Organic | reuse | [ ] |
-| 19 | testimonial-quote-carousel | home | [ ] | quotes | reuse | [ ] |
-| 20 | blog-list-main.2 | home | [ ] | Latest Articles | reuse | [ ] |
-| 21 | features-multicolumn | home | [ ] | Local Pickup | reuse | [ ] |
-| 22 | footer-columns-newsletter | home | [ ] | submit yok | reuse | [ ] |
-| 23 | global-predictive-search | home | [ ] | bread | reuse | [ ] |
-| 24 | global-menu-drawer | home | [ ] | 375/768 | reuse | [ ] |
-| 25 | global-cart-drawer | home | [ ] | hamburger | reuse | [ ] |
-| 26 | collection-banner | collection | [ ] | fruits | reuse | [ ] |
-| 27 | product-showcase-grid-plp | collection | [ ] | fruits | reuse | [ ] |
-| 28 | editorial-image-with-text-overlay | collection | [ ] | Black Edition | reuse | [ ] |
-| 29 | collection-nav-grid | collections | [ ] | index | reuse | [ ] |
-| 30 | search-results | search | [ ] | bread | reuse | [ ] |
-| 31 | cart-page-main | cart | [ ] | boş+dolu+qty | reuse | [ ] |
-| 32 | product-info-main | product-detail | [ ] | Size | reuse | [ ] |
-| 33–37 | about title/rich/IWT×2/featured | about-brand | [ ] | reuse | reuse | [ ] |
-| 38–39 | contact title + form | contact | [ ] | PII yok | reuse | [ ] |
-| 40 | blog-list-main | blog-list | [ ] | News | reuse | [ ] |
-| 41–42 | article + more | blog-post | [ ] | reuse | reuse | [ ] |
-| 43–44 | FAQ title + accordion | faq-support | [ ] | reuse | reuse | [ ] |
-| 45 | page-content-main | not-found | [ ] | 404 | reuse | [ ] |
+| 1 | promo-announcement-bar | home | [x] | BULKSAVE | reuse | [x] |
+| 2 | navigation-header-mega | home | [x] | Categories mega | reuse | [x] |
+| 3 | hero-slideshow | home | [x] | Fresh Organic | reuse | [x] |
+| 4 | collection-nav-image-cards | home | [x] | Shop by Category | reuse | [x] |
+| 5 | product-showcase-grid-featured | home | [x] | Best Sellers | reuse | [x] |
+| 6 | promo-grid-banner | home | [x] | Finest Bread | reuse | [x] |
+| 7 | product-showcase-grid-featured.2 | home | [x] | Bread & Bakery | reuse | [x] |
+| 8 | editorial-image-with-text-overlay | home | [x] | Locally sourced | reuse | [x] |
+| 9 | promo-scrolling-marquee | home | [x] | New York | reuse | [x] |
+| 10 | editorial-image-with-text-overlay.2 | home | [x] | Organic Food | reuse | [x] |
+| 11 | product-showcase-featured | home | [x] | Keto Crunch | reuse | [x] |
+| 12 | promo-grid-banner.2 | home | [x] | We promise | reuse | [x] |
+| 13 | collection-nav-icon-buttons | home | [x] | Lifestyle | reuse | [x] |
+| 14 | product-showcase-grid-featured.3 | home | [x] | Hot Meals | reuse | [x] |
+| 15 | editorial-image-with-text | home | [x] | Delicious Recipes | reuse | [x] |
+| 16 | product-showcase-grid-featured.4 | home | [x] | Kitchenware | reuse | [x] |
+| 17 | media-shop-the-feed | home | [x] | shoppable video | reuse | [x] |
+| 18 | media-lookbook-banner | home | [x] | Explore Organic hotspot | reuse | [x] |
+| 19 | testimonial-quote-carousel | home | [x] | quotes | reuse | [x] |
+| 20 | blog-list-main.2 | home | [x] | Latest Articles | reuse | [x] |
+| 21 | features-multicolumn | home | [x] | Local Pickup | reuse | [x] |
+| 22 | footer-columns-newsletter | home | [x] | submit yok | reuse | [x] |
+| 23 | global-predictive-search | home | [x] | bread | reuse | [x] |
+| 24 | global-menu-drawer | home | [x] | 375/768 | reuse | [x] |
+| 25 | global-cart-drawer | home | [x] | hamburger | reuse | [x] |
+| 26 | collection-banner | collection | [x] | fruits | reuse | [x] |
+| 27 | product-showcase-grid-plp | collection | [x] | fruits | reuse | [x] |
+| 28 | editorial-image-with-text-overlay | collection | [x] | Black Edition | reuse | [x] |
+| 29 | collection-nav-grid | collections | [x] | index | reuse | [x] |
+| 30 | search-results | search | [x] | bread | reuse | [x] |
+| 31 | cart-page-main | cart | [x] | boş+dolu+qty | reuse | [x] |
+| 32 | product-info-main | product-detail | [x] | Size | reuse | [x] |
+| 33–37 | about title/rich/IWT×2/featured | about-brand | [x] | reuse | reuse | [x] |
+| 38–39 | contact title + form | contact | [x] | PII yok | reuse | [x] |
+| 40 | blog-list-main | blog-list | [x] | News | reuse | [x] |
+| 41–42 | article + more | blog-post | [x] | reuse | reuse | [x] |
+| 43–44 | FAQ title + accordion | faq-support | [x] | reuse | reuse | [x] |
+| 45 | page-content-main | not-found | [x] | 404 | reuse | [x] |
 
 ---
 
@@ -124,7 +124,7 @@
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact mega / search / menu / cart drawer / cart qty / PDP Size
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate`
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact mega / search / menu / cart drawer / cart qty / PDP Size
+- [x] PNG bak → stateFindings
+- [x] `npm run validate` — 65 temiz · **0 error** · 0 warn

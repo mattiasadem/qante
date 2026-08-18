@@ -100,8 +100,8 @@ Karar: onay bekliyor
 ---
 
 ADAY: local-sibling-blogs  
-Gerekçe: `/blogs/recipes` + `/blogs/events` sitemap’te. Walk birincil News + bir yazı. Recipes home “Delicious Recipes” ile bağlandı.  
-Örnekler: sitemap_blogs_1.xml  
+Gerekçe: `/blogs/recipes` + `/blogs/events` sitemap’te. Walk birincil News + bir yazı. Home “Delicious Recipes” PNG bakınca blog listesi değil (flat-lay + Explore All) → `editorial-image-with-text`. Latest Articles ayrı `blog-list-main.2`.  
+Örnekler: sitemap_blogs_1.xml · `__16551304148266b5a5`  
 Öneri: leftover — kardeş blog  
 Karar: onay bekliyor
 
@@ -135,6 +135,46 @@ ADAY: local-hamburger-small-disabled
 Gerekçe: PDP Hamburger Size Small (7 oz) `disabled`. Interact Medium → Large.  
 Örnekler: `/products/hamburger`  
 Öneri: leftover — disabled variant  
+Karar: onay bekliyor
+
+---
+
+ADAY: local-remap-png  
+Gerekçe: PNG bakınca iki home remap. `__16551304148266b5a5` Delicious Recipes: blog kartı yok → `editorial-image-with-text` (eski `blog-list-main` silindi). `__d57de2d5-c548-48dd-a4a3-581d89d355b5` Explore Organic: 4 hotspot + Coconut Water / flour → `media-lookbook-banner` (eski `collection-nav-slider` silindi). Hotspot tıklanmadı.  
+Örnekler: home editorial-image-with-text · media-lookbook-banner  
+Öneri: leftover — remap kaydı  
+Karar: onay bekliyor
+
+---
+
+ADAY: local-search-fill-trap  
+Gerekçe: Capture `fill` Local predictive JS tetiklemedi. Çalışan yol: input click + `press` b-r-e-a-d + wait `.search-results .search-item`. Desktop `#site-header input[data-js-focus-overlay='search-results-overlay-desktop']`. Mobil `.mobile-search-button` → `#header-mobile-search input[name=q]`. İlk deneme `.search-results-container` 0px.  
+Örnekler: global-predictive-search  
+Öneri: leftover — capture notu  
+Karar: onay bekliyor
+
+---
+
+ADAY: local-pdp-extras  
+Gerekçe: PDP main içinde Allergens, Nutri-score C, nutritional table, Goes well with (Chili Pepper / BBQ Sauce), pickup Warehouse / Champs-Élysées, “25% OFF YOUR ORDER!!!” kopya. Hepsi `product-info-main` notunda; ayrı şema yok. Buy it now / store selector dur.  
+Örnekler: `/products/hamburger`  
+Öneri: leftover — PDP iç bloklar  
+Karar: onay bekliyor
+
+---
+
+ADAY: local-cart-coupon-terms  
+Gerekçe: Cart page SUMMER25 alanı uygulandı değil. Terms checkbox + Checkout gri. Drawer Often bought together. Kupon/terms/checkout tıklanmadı.  
+Örnekler: `/cart` · `#site-cart-sidebar`  
+Öneri: leftover — kupon / terms  
+Karar: onay bekliyor
+
+---
+
+ADAY: local-pickup-repeat  
+Gerekçe: Local Pickup `features-multicolumn` home kanonik. Aynı blok PLP/PDP kopyası capture edilmedi.  
+Örnekler: fruits-berries · hamburger  
+Öneri: leftover — tekrar section  
 Karar: onay bekliyor
 
 ---

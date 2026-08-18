@@ -5,9 +5,16 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://local-theme-main.myshopify.com/",
-  "selector": ".search-results-container",
+  "selector": "#site-header",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/local/default/home/global-predictive-search.initial.search-bos.1440.png",
+    "evidence/local/default/home/global-predictive-search.initial.search-bos.375.png",
+    "evidence/local/default/home/global-predictive-search.initial.search-bos.768.png",
+    "evidence/local/default/home/global-predictive-search.input.bread.1440.png",
+    "evidence/local/default/home/global-predictive-search.input.bread.375.png",
+    "evidence/local/default/home/global-predictive-search.input.bread.768.png"
+  ],
   "notlar": "1440 inline input[name=q] placeholder Search for… data-js-focus-overlay=search-results-overlay-desktop. 375/768 .mobile-search-button → #header-mobile-search. katalogSorgu=bread.",
   "delta": "Shopify.theme.name local-build/light · id 139927814205 · schema_name Local · schema_version 4.1.0 · theme_store_id null · role main · shop local-theme-light-demo.myshopify.com Predictive: breakfast / Bread & Bakery + Products (Bread Sticks $6.50…). Submit yok.",
   "captureMode": "viewport",
@@ -56,18 +63,8 @@
       "viewports": [
         "1440"
       ],
-      "capture": false
-    },
-    {
-      "state": "input",
-      "action": "fill",
-      "selector": "#site-header input[data-js-focus-overlay='search-results-overlay-desktop']",
-      "value": "bread",
-      "viewports": [
-        "1440"
-      ],
       "capture": false,
-      "not": "katalogSorgu bread"
+      "not": "Desktop input odak"
     },
     {
       "state": "input",
@@ -81,45 +78,60 @@
     },
     {
       "state": "input",
-      "action": "fill",
+      "action": "click",
       "selector": "#header-mobile-search input[name='q']",
-      "value": "bread",
       "viewports": [
         "375",
         "768"
       ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "press",
+      "value": "b",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "press",
+      "value": "r",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "press",
+      "value": "e",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "press",
+      "value": "a",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "press",
+      "value": "d",
+      "capture": false,
+      "not": "katalogSorgu bread — fill overlay tetiklemedi, tuş"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "selector": ".search-results .search-item",
+      "value": 8000,
       "capture": false
     },
     {
       "state": "input",
       "action": "waitFor",
-      "value": 2500,
-      "capture": false
-    },
-    {
-      "state": "input",
-      "action": "click",
-      "selector": "#site-header input[data-js-focus-overlay='search-results-overlay-desktop']",
-      "viewports": [
-        "1440"
-      ],
+      "value": 800,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "bread",
       "not": "bread önerileri"
-    },
-    {
-      "state": "input",
-      "action": "click",
-      "selector": "#header-mobile-search input[name='q']",
-      "viewports": [
-        "375",
-        "768"
-      ],
-      "capture": true,
-      "captureMode": "viewport",
-      "etiket": "bread",
-      "not": "bread önerileri mobil"
     }
   ],
   "interactionStates": [
@@ -127,9 +139,20 @@
     "input"
   ],
   "stateFindings": {
-    "initial": "",
-    "input": ""
+    "initial": "1440: Search for… boş, overlay yok. 375/768: Open search tık → pill input boş.",
+    "input": "bread yazılı. Öneri: breakfast / Bread & Bakery. Products: Bread Sticks $6.50, Chocolate Cookie $9.00, Sandwich Bun $0.80…. Altta Search for \"bread\" (tıklanmadı)."
   },
   "missingStates": [],
-  "interactionNote": "fill bazen boş overlay bıraktı probe'da; pressSequentially sonuç verdi. Submit/PII yok. Search for bread tıklanmadı."
+  "interactionNote": "fill overlay tetiklemedi — tuş b-r-e-a-d. Submit/PII yok. Search for bread tıklanmadı.",
+  "capture": {
+    "url": "https://local-theme-main.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:41:39.535Z"
+  }
 }
