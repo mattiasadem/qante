@@ -1,0 +1,65 @@
+{
+  "observationId": "district.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "district",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "evidence": [
+    "evidence/district/default/product-detail/product-info-main.changed.renk-white.1440.png",
+    "evidence/district/default/product-detail/product-info-main.changed.renk-white.375.png",
+    "evidence/district/default/product-detail/product-info-main.changed.renk-white.768.png",
+    "evidence/district/default/product-detail/product-info-main.initial.ilk-hal.1440.png",
+    "evidence/district/default/product-detail/product-info-main.initial.ilk-hal.375.png",
+    "evidence/district/default/product-detail/product-info-main.initial.ilk-hal.768.png"
+  ],
+  "url": "https://district-theme-demo.myshopify.com/products/enjoy-the-journey",
+  "selector": "#shopify-section-template--17215441403957__product",
+  "evidenceSlug": "product-info-main",
+  "notlar": "product. Enjoy The Journey $28. Color Black/White. Size S/M/L. ATC + Buy it now.",
+  "delta": "Buy it now / SIZE GUIDE leftover. Recommendations h=0 ilk ziyaret.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://district-theme-demo.myshopify.com/products/enjoy-the-journey",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17215441403957__product",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Color Black $28 Size Small"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label.swatch-item__label[for='template--17215441403957__product-1-1']",
+      "capture": true,
+      "etiket": "renk-white",
+      "not": "Color White swatch"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Enjoy The Journey $28. COLOR BLACK (swatch-item--current), SIZE SMALL. ATC #AddToCart-template--17215441403957__product. SIZE GUIDE + Buy it now leftover.",
+    "changed": "White swatch for=...product-1-1 tiklandi. COLOR WHITE, SIZE SMALL, $28 ayni. Beyaz tisort gorseli."
+  },
+  "missingStates": [],
+  "interactionNote": "Buy it now duruldu. Description accordion leftover.",
+  "capture": {
+    "url": "https://district-theme-demo.myshopify.com/products/enjoy-the-journey",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:12:35.462Z"
+  }
+}
