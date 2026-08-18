@@ -25,7 +25,7 @@
 `og:site_name` = `https://dev-asil.ikas.shop`  
 `theme_store_id` = **5ccb940d-3b48-487d-859b-f860a4a238e8** (Theme Store UUID; storefront’ta Shopify id yok)
 
-**Durum:** Mod A walk + resmi 3vp + interact  
+**Durum:** ✅ Mod A walk + resmi 3vp + interact + validate  
 **PR:** draft — **main'e merge yok**
 
 ---
@@ -38,10 +38,12 @@
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **15** |
+| Evidence PNG | **57** |
+| Validator | 65 temiz · 0 error · 0 warn |
 | Parallel | yalnız `observations/asil/`, `evidence/asil/`, `todo/asil.md`, `candidates/asil-leftovers.md` |
 
 **Kapsam satırı:**  
-`Asil · default · ikas Studio · theme_store_id 5ccb940d-3b48-487d-859b-f860a4a238e8 · home→PDP Medium Shoulder Bag Black→Beige→PLP /bags→search s=bag→cart empty/filled/qty→/pages/iletisim→FAQ home→blog 404→404 · about yok · drawer yok · 15 obs · 0 yeni şema · leftover: candidates/asil-leftovers.md`
+`Asil · default · ikas Studio · theme_store_id 5ccb940d-3b48-487d-859b-f860a4a238e8 · home→PDP Medium Shoulder Bag Black→Beige→PLP /bags→search s=bag→cart empty/filled/qty→/pages/iletisim→FAQ home→blog 404→404 · about yok · drawer yok · 15 obs · 57 PNG · 0 yeni şema · leftover: candidates/asil-leftovers.md`
 
 ---
 
@@ -49,21 +51,21 @@
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (hdr→hero→grid→trust→FAQ→footer) | [x] obs | [ ] capture |
-| Desktop menu overlay 1440 (hover mega yok) | interact | [ ] |
-| Predictive search `bag` | interact 3vp | [ ] |
-| Mobile menu 375 | interact | [ ] |
-| Mobile menu 768 | interact | [ ] |
-| Cart page empty + filled + qty | interact | [ ] |
+| Home roster (hdr→hero→grid→trust→FAQ→footer) | [x] obs | [x] capture |
+| Desktop menu overlay 1440 (hover mega yok) | interact | [x] |
+| Predictive search `bag` | interact 3vp | [x] |
+| Mobile menu 375 | interact + Clothing alt | [x] |
+| Mobile menu 768 | interact open (changed leftover) | [x] |
+| Cart page empty + filled + qty | interact · 375 qty leftover | [x] |
 | Cart drawer | ⛔ yok (`hdr__cart` → `/cart`) | leftover |
-| PDP Medium Shoulder Bag Black→Beige | interact 3vp | [ ] |
-| PLP `/bags` | roster | [ ] capture |
-| Search `/search?s=bag` | roster | [ ] capture |
+| PDP Medium Shoulder Bag Black→Beige | interact 3vp | [x] |
+| PLP `/bags` | roster | [x] capture |
+| Search `/search?s=bag` | roster | [x] capture |
 | About | ⛔ yok (`/pages/hakkimizda` 404) | leftover |
-| Contact `/pages/iletisim` | roster | [ ] capture · PII yok |
+| Contact `/pages/iletisim` | roster | [x] capture · PII yok |
 | FAQ page | ⛔ `/pages/sss` 404 · home `section.faq` var | leftover + home obs |
 | Blog `/blog` | ⛔ sitemap’te var, `NOT_FOUND` | leftover |
-| 404 | roster | [ ] capture |
+| 404 | roster | [x] capture |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---

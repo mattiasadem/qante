@@ -5,7 +5,11 @@
   "preset": "default",
   "sayfa": "home",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/asil/default/home/global-menu-drawer.changed.clothing-alt.375.png",
+    "evidence/asil/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/asil/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
   "url": "https://dev-asil.ikas.shop/",
   "selector": ".menu",
   "captureMode": "viewport",
@@ -57,8 +61,7 @@
       "action": "click",
       "selector": ".menu__m-link--parent",
       "viewports": [
-        "375",
-        "768"
+        "375"
       ],
       "capture": true,
       "captureMode": "viewport",
@@ -67,9 +70,25 @@
     }
   ],
   "stateFindings": {
-    "open": "375/768 .menu: Clothing, Bags, Accessories, Markalar + Giriş / Kayıt / Hesabım.",
-    "changed": "Clothing drill-down: Geri, Clothing, Shorts. URL home kaldı."
+    "open": "375: chevron liste Clothing/Bags/Accessories/Markalar. 768: masaüstü serif overlay (aynı 4 link, chevron yok). Her ikisinde Giriş / Kayıt / Hesabım.",
+    "changed": "375 Clothing drill-down: Geri, Clothing, Shorts. URL home kaldı."
   },
-  "missingStates": [],
-  "interactionNote": "1440 hamburger yoklandı değil (masaüstü overlay header'da). Giriş/Kayıt/Hesabım tıklanmadı."
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "768: .menu__m-link--parent DOM'da ama görünmez (masaüstü .menu__link layout). Drill-down yalnız 375. 1440 hamburger N/A."
+    }
+  ],
+  "interactionNote": "1440 overlay navigation-header-mega'da. 768 changed yok. Giriş/Kayıt/Hesabım tıklanmadı.",
+  "capture": {
+    "url": "https://dev-asil.ikas.shop/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:53:51.430Z"
+  }
 }

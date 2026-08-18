@@ -151,6 +151,22 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: asil-375-cart-qty-overlap  
+Gerekçe: 375 dolu sepet `button.qty__btn[aria-label='Increase quantity']` sticky `Ödemeye geç` ile örtüşüyor. Plus tık `/checkout`’a gider. Changed kare 768/1440 (qty 1→2, ₺24→₺48). 375 changed yok.  
+Örnekler: `/cart` 375  
+Öneri: leftover — compact qty  
+Karar: onay bekliyor
+
+---
+
+ADAY: asil-768-menu-no-drilldown  
+Gerekçe: 768 menü masaüstü serif overlay; `.menu__m-link--parent` görünmez. Clothing alt yalnız 375 (Geri / Shorts).  
+Örnekler: home `button.hdr__mark` 768  
+Öneri: leftover — tablet layout  
+Karar: onay bekliyor
+
+---
+
 ADAY: asil-wishlist  
 Gerekçe: PDP `button.pdp__wishlist`. Tıklanmadı.  
 Örnekler: Medium Shoulder Bag  
