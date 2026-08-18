@@ -1,0 +1,51 @@
+{
+  "kaynak": "spotlight",
+  "preset": "default",
+  "evidence": [],
+  "observationId": "spotlight.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "sayfa": "home",
+  "url": "https://theme-spotlight-demo.myshopify.com/products/ebbets-corduroy-cap-yellow",
+  "selector": "#cart-notification",
+  "evidenceSlug": "global-cart-drawer",
+  "captureMode": "viewport",
+  "notlar": "Dawn cart-notification popup (side drawer değil). ATC sonrası Item added.",
+  "delta": "cart-drawer yok. Overlay #cart-notification. Cart ikonu /cart.",
+  "interactionStates": [
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-spotlight-demo.myshopify.com/products/ebbets-corduroy-cap-yellow",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": ".product-form__submit",
+      "capture": false,
+      "not": "Cap Ebbets Corduroy ATC"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cap-eklendi",
+      "not": "#cart-notification Item added"
+    }
+  ],
+  "stateFindings": {
+    "filled": ""
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "Boş bildirim 0-size"
+    }
+  ],
+  "interactionNote": "Checkout tıklanmadı. Qty notification'da yok — cart sayfasında."
+}

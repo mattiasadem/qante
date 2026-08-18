@@ -1,0 +1,63 @@
+{
+  "kaynak": "spotlight",
+  "preset": "default",
+  "evidence": [],
+  "observationId": "spotlight.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "sayfa": "cart",
+  "url": "https://theme-spotlight-demo.myshopify.com/cart",
+  "selector": "#shopify-section-template--15939470000184__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "notlar": "Boş: Your cart is empty + Continue shopping. cart-footer boşken h=0.",
+  "delta": "Boş state metin+CTA. Dolu + qty interact.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-spotlight-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "bos-sepet",
+      "not": "Your cart is empty"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-spotlight-demo.myshopify.com/products/ebbets-corduroy-cap-yellow",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-spotlight-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "dolu-sepet",
+      "not": "Cap satırı. Checkout tıklanmaz."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], quantity-input button[name='plus'], .quantity__button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet +1"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "filled": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout / Shop Pay tıklanmadı."
+}
