@@ -1,0 +1,99 @@
+{
+  "observationId": "atlas.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "atlas",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://alloy-themes-atlas-demo.myshopify.com/products/nimbus-over-ear-wireless-headphones",
+  "selector": "#Modal-CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "a[data-modal='Modal-CartDrawer'] aria-label=Cart. Boş: Your cart is empty + Headphones/Smartwatches/Speakers/Power banks.",
+  "delta": "/cart ayrı sayfa (cart-page-main). Checkout/login tıklanmadı. Section 0px — #Modal-CartDrawer.",
+  "captureMode": "viewport",
+  "prepareClick": "a.header-action-btn[aria-label='Cart']",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://alloy-themes-atlas-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.header-action-btn[aria-label='Cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://alloy-themes-atlas-demo.myshopify.com/products/nimbus-over-ear-wireless-headphones",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'], form[action*='/cart/add'] button[type='submit']",
+      "capture": false,
+      "not": "Nimbus default Finish Matte"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a.header-action-btn[aria-label='Cart']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Modal-CartDrawer button[name='plus'], #Modal-CartDrawer .quantity-plus, #Modal-CartDrawer button[aria-label*='Increase' i]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "filled": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "ATC UI; fallback /cart/add.js. Checkout tıklanmadı."
+}

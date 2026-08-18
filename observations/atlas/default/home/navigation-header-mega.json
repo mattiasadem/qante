@@ -1,0 +1,59 @@
+{
+  "observationId": "atlas.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "atlas",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://alloy-themes-atlas-demo.myshopify.com/",
+  "selector": ".header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "1440: Search input + Login + Account + Cart $0.00. Alt nav: Shop all · Explore · About · Journal · Contact · FAQ. 375: hamburger. Mega VAR.",
+  "delta": "Shopify.theme: name **demo-store-atlas-electronics/master** · schema_name **Atlas** · schema_version **1.3.0** · theme_store_id **null** · role main · id 203129913682 · shop alloy-themes-atlas-demo.myshopify.com Atlas mega-menu. Section wrapper 0×0 — .header 80px. Shop all hover: Audio/Wearables/Power/Lighting/Computing kolonları + promo. Account/login tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://alloy-themes-atlas-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Kapalı header + announcement"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#main-navigation a[data-mega-menu-link='AWndINldXandEV2kwa__mega_menu_76A4AM']",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mega-shop-all",
+      "not": "Shop all mega — kolon + promo"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "open": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Mega var. 375 hamburger ayrı global-menu-drawer. Account/login tıklanmadı."
+}

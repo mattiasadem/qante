@@ -1,0 +1,85 @@
+{
+  "observationId": "atlas.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "atlas",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://alloy-themes-atlas-demo.myshopify.com/cart",
+  "selector": "#shopify-section-template--30838193389906__main-cart",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Boş: Your cart is empty + Continue shopping.",
+  "delta": "Atlas main-cart. Drawer ayrı. Checkout/login tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://alloy-themes-atlas-demo.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş sepet sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://alloy-themes-atlas-demo.myshopify.com/products/nimbus-over-ear-wireless-headphones",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'], form[action*='/cart/add'] button[type='submit']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://alloy-themes-atlas-demo.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], .quantity-plus, button[aria-label*='Increase' i]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "filled": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout/login tıklanmadı."
+}

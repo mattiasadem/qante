@@ -1,0 +1,53 @@
+{
+  "observationId": "atlas.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "atlas",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://alloy-themes-atlas-demo.myshopify.com/products/nimbus-over-ear-wireless-headphones",
+  "selector": "#shopify-section-template--30838193291602__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "Nimbus Over‑Ear Wireless. BESTSELLER STAFF PICK. Finish Matte/Satin/Gloss · Accessories Standard Kit/With Travel Case. Qty + Add to cart. Sticky ATC.",
+  "delta": "Atlas main product. Buy it now/checkout tıklanmadı. Sticky ATC leftover not.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://alloy-themes-atlas-demo.myshopify.com/products/nimbus-over-ear-wireless-headphones",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--30838193291602__main",
+      "capture": true,
+      "etiket": "matte",
+      "not": "Varsayılan Finish Matte"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='Option-template--30838193291602__main-1-2']",
+      "capture": true,
+      "etiket": "satin",
+      "not": "Finish Satin"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Matte → Satin. Checkout/email yok."
+}
