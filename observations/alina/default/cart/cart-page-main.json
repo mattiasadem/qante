@@ -1,0 +1,127 @@
+{
+  "observationId": "alina.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "alina",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://dev-alina.ikas.shop/cart",
+  "selector": "section.cart-page",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/alina/default/cart/cart-page-main.changed.adet-2.1440.png",
+    "evidence/alina/default/cart/cart-page-main.changed.adet-2.375.png",
+    "evidence/alina/default/cart/cart-page-main.changed.adet-2.768.png",
+    "evidence/alina/default/cart/cart-page-main.filled.daily-backpack-1.1440.png",
+    "evidence/alina/default/cart/cart-page-main.filled.daily-backpack-1.375.png",
+    "evidence/alina/default/cart/cart-page-main.filled.daily-backpack-1.768.png",
+    "evidence/alina/default/cart/cart-page-main.initial.bos.1440.png",
+    "evidence/alina/default/cart/cart-page-main.initial.bos.375.png",
+    "evidence/alina/default/cart/cart-page-main.initial.bos.768.png"
+  ],
+  "notlar": "Boş: Sepetiniz boş + Alışverişe Başla. Dolu: satır + qty-stepper + kupon toggle (açılmadı) + ÖDEME YAP (tıklanmadı).",
+  "delta": "ikas (Shopify.theme yok) · Theme Store UUID 7f5c4b83-e6fa-4cdd-a35b-72eb1911a8e3 · Alina / ikascom · demo dev-alina.ikas.shop · __IKAS_DATA__.storefrontThemeId b19652e2-11ef-4979-97b1-879567363d56 · storefrontId dd2e2c99-fb2a-44b5-82db-bc71532c7e5c · pageType from __IKAS_DATA__ · x-powered-by ikas · pageType CART. Checkout/kupon PII yok.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://dev-alina.ikas.shop/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".cookiebar__btn",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "section.cart-page",
+      "capture": true,
+      "etiket": "bos",
+      "not": "Boş sepet sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://dev-alina.ikas.shop/daily-backpack",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.pd__atc",
+      "capture": false,
+      "not": "Cookie aynı context'te yok"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://dev-alina.ikas.shop/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "section.cart-page",
+      "capture": true,
+      "etiket": "daily-backpack-1",
+      "not": "qty 1 · ₺31"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button.qty-stepper__btn[aria-label=\"Adet artır\"]",
+      "capture": true,
+      "etiket": "adet-2",
+      "not": "Adet 1→2 · toplam ₺62 beklenir"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Sepet başlık. Kart: Sepetiniz boş · Beğendiğiniz ürünleri sepete ekleyerek… · Alışverişe Başla.",
+    "filled": "Sepet 1 ürün. Daily Backpack Color Black · adet 1 · ₺31. Ücretsiz kargoya ₺49.969. Ara Toplam ₺31 · Kargo Ücretsiz · Toplam ₺31. ÖDEME YAP + VISA/troy/AMEX. Kupon kapalı.",
+    "changed": "Sepet 2 ürün. Adet 2 · satır/toplam ₺62. Kargo eşiği ₺49.938. ÖDEME YAP tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "ÖDEME YAP / kupon açılmadı. Cookie PDP'de yok.",
+  "capture": {
+    "url": "https://dev-alina.ikas.shop/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:46:46.942Z"
+  }
+}
