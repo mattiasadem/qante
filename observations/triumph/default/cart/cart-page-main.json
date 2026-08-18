@@ -1,0 +1,72 @@
+{
+  "observationId": "triumph.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "triumph",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://triumph-theme.myshopify.com/cart",
+  "selector": "#shopify-section-template--26010642120969__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Boş: YOUR CART IS EMPTY / HAVE AN ACCOUNT? / CONTINUE SHOPPING. Dolu interact.",
+  "delta": "Checkout tıklanmadı. Log in duruldu.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://triumph-theme.myshopify.com/cart/clear",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://triumph-theme.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://triumph-theme.myshopify.com/products/flexmotion-leggings",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] [name='id']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://triumph-theme.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepete-eklendi"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--26010642120969__cart-items button[name='plus'], #shopify-section-template--26010642120969__cart-items [name='plus']",
+      "capture": true,
+      "etiket": "adet-artti"
+    }
+  ],
+  "stateFindings": {
+    "initial": "YOUR CART IS EMPTY. HAVE AN ACCOUNT? Log in. CONTINUE SHOPPING.",
+    "filled": "FlexMotion Leggings $14.89 qty 1 beklenir.",
+    "changed": "qty 2 / $29.78 beklenir."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart AJAX fallback beklenir. Check out / coupon tıklanmadı."
+}

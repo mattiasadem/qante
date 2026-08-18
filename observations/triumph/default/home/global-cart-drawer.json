@@ -1,0 +1,100 @@
+{
+  "observationId": "triumph.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "triumph",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://triumph-theme.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "a#cart-icon-bubble → #CartDrawer. FlexMotion variant 56253842096393.",
+  "delta": "Triumph cart-drawer. Empty: CONTINUE SHOPPING + collection slider.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://triumph-theme.myshopify.com/cart/clear",
+      "capture": false,
+      "not": "Sepeti sıfırla"
+    },
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://triumph-theme.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş cart drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://triumph-theme.myshopify.com/products/flexmotion-leggings",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] [name='id']",
+      "capture": false,
+      "not": "PDP buy box canlı node yok — addToCart fallback /cart/add.js beklenir"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://triumph-theme.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer. Check out tıklanmadı."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus'], #CartDrawer [name='plus'], cart-drawer button[name='plus']",
+      "capture": false,
+      "not": "Adet 1→2"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet ve subtotal"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boş cart drawer beklenir (Your cart is empty / CONTINUE SHOPPING).",
+    "filled": "FlexMotion Leggings Blue/XS $14.89 qty 1.",
+    "changed": "qty 2; satır total $29.78 beklenir."
+  },
+  "missingStates": [],
+  "interactionNote": "PDP variant-selects page HTML'de var, canlı querySelector 0 — addToCart AJAX fallback. Check out tıklanmadı."
+}

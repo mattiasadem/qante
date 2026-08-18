@@ -1,0 +1,56 @@
+{
+  "observationId": "triumph.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "triumph",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://triumph-theme.myshopify.com/",
+  "selector": "#shopify-section-sections--26010642940169__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "sticky-header: locale + announcement + WOMEN/MEN/KIDS + Account + Cart. 1440 mega-menu. Account tıklanmadı.",
+  "delta": "Triumph 1.0.0 header-group. Announcement aynı section. 1440 inline search #Search-In-Modal.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://triumph-theme.myshopify.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#HeaderMenu-clothing",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "Clothing hover — tıklama koleksiyona kaçar"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 800,
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "clothing-mega",
+      "not": "WOMEN'S CLOTHING kolon + FLOW MOTION / URBAN FLEX / POWER CORE / RUN ACTIVE banner"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Kapalı şerit: locale USD/EN, countdown + BIG SALE, WOMEN/MEN/KIDS, Account, Cart 0. Mega paneli yok.",
+    "open": "1440 Clothing hover: WOMEN'S CLOTHING (All Clothing…Tops) + COLLECTIONS VIEW ALL + FLOW MOTION / URBAN FLEX / POWER CORE / RUN ACTIVE görsel banner."
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 mega header'da değil — global-menu-drawer. Account tıklanmadı. Clothing <a> hover; tıklama sayfaya kaçar."
+}

@@ -1,0 +1,63 @@
+{
+  "observationId": "triumph.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "triumph",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://triumph-theme.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "details#Details-menu-drawer-container → #menu-drawer. 375/768 hamburger.",
+  "delta": "Triumph menu-drawer header içinde. 1440 hamburger tablet-down.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://triumph-theme.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "summary.header__icon--menu[aria-label='Menu']",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger-acik",
+      "not": "375/768 hamburger"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-menu-drawer-new-featured > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "akordeon-acik",
+      "not": "New & Featured expander. Yazılı <a> sayfaya kaçar"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 sol drawer: Women / Men / Kids sekmeleri + New & Featured / Clothing…",
+    "changed": "New & Featured alt: New Arrivals / Best Sellers / Latest Drops / Clearance / Buy 2 Get 1 Free."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger tablet-down-hide; #menu-drawer 0px. Yalnız 375/768."
+    }
+  ],
+  "interactionNote": "1440 hamburger gizli. Log In / Account tıklanmadı."
+}
