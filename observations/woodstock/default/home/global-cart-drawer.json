@@ -1,0 +1,80 @@
+{
+  "observationId": "woodstock.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "woodstock",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://woodstock-theme-light.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "cart-drawer #CartDrawer. Header #cart-icon-bubble href=/cart aria=dialog.",
+  "delta": "Dawn-benzeri yan drawer. Gift wrap leftover.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://woodstock-theme-light.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart-drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://woodstock-theme-light.myshopify.com/products/watch-generation-bxx7",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": ".product-form__submit.cart-submit-button",
+      "capture": false,
+      "not": "Watch Version I7 black/41mm"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC drawer açar — toggle tekrar kapatırsa tıklanmadı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus'], #CartDrawer .quantity__button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boş drawer (karede bakılacak).",
+    "filled": "Watch Version I7 satırı (karede bakılacak).",
+    "changed": "Qty 2 (karede bakılacak)."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı. ATC UI fallback /cart/add.js interactionNote’a yazılacak."
+}

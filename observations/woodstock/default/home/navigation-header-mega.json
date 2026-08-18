@@ -1,0 +1,62 @@
+{
+  "observationId": "woodstock.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "woodstock",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://woodstock-theme-light.myshopify.com/",
+  "selector": "sticky-header.header-wrapper",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "sticky-header. Mega: Stores / Watch / Cellphones / Accessories / Support.",
+  "delta": "Announcement aynı section içinde (.header-top ayrı obs). 375/768 hamburger.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://woodstock-theme-light.myshopify.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header + nav: Stores / Watch / Cellphones / Accessories / Support"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-1 > summary",
+      "capture": false,
+      "viewports": [
+        "1440"
+      ],
+      "not": "Stores mega hover. Summary tıklanmadı (sayfa kaçış)."
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#MegaMenu-Content-1",
+      "capture": true,
+      "captureMode": "section",
+      "captureSelector": "#MegaMenu-Content-1",
+      "etiket": "stores-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Stores mega panel crop"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Logo Woodstock theme light + inline Search + Cart 0 + nav Stores/Watch Sale/Cellphones/Accessories Trending/Support.",
+    "open": "1440 Stores mega — kolonlar + NexaTime/Summit promo (karede bakılacak)."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375/768 mega yok — hamburger (global-menu-drawer)."
+    }
+  ],
+  "interactionNote": "details#Details-HeaderMenu-1.mega-menu. 1440 hover + forceOpen #MegaMenu-Content-1. Currency/account tıklanmadı."
+}

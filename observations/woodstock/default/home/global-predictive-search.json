@@ -1,0 +1,56 @@
+{
+  "observationId": "woodstock.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "woodstock",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://woodstock-theme-light.myshopify.com/",
+  "selector": "sticky-header.header-wrapper",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "predictive-search. Katalog watch (45 sonuç /search?q=watch).",
+  "delta": "İki input: Search-In-Inline (1440) + Search-In-Modal (375/768).",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://woodstock-theme-light.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-kapali",
+      "not": "1440 inline #Search-In-Inline; 375/768 modal gizli"
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Mobil search modal opener"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Inline, #Search-In-Modal",
+      "value": "watch",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "katalogSorgu watch — Watch Version / Premium Watch"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440 header Search kutusu boş. 375/768 search ikon.",
+    "input": "watch önerileri karede bakılacak."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 #Search-In-Inline görünür. 375/768 önce summary.header__icon--search. Submit yok."
+}
