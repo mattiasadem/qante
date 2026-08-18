@@ -5,7 +5,17 @@
   "preset": "default",
   "sayfa": "cart",
   "evidenceSlug": "cart-page-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/kumsal/default/cart/cart-page-main.changed.adet.1440.png",
+    "evidence/kumsal/default/cart/cart-page-main.changed.adet.375.png",
+    "evidence/kumsal/default/cart/cart-page-main.changed.adet.768.png",
+    "evidence/kumsal/default/cart/cart-page-main.filled.dolu.1440.png",
+    "evidence/kumsal/default/cart/cart-page-main.filled.dolu.375.png",
+    "evidence/kumsal/default/cart/cart-page-main.filled.dolu.768.png",
+    "evidence/kumsal/default/cart/cart-page-main.initial.bos.1440.png",
+    "evidence/kumsal/default/cart/cart-page-main.initial.bos.375.png",
+    "evidence/kumsal/default/cart/cart-page-main.initial.bos.768.png"
+  ],
   "url": "https://0esw4-dev-kumsal.myikas.com/cart",
   "selector": ".cp",
   "notlar": "CART pageType. Boş: SEPETİM / Sepetiniz boş. / Görünüşe göre henüz bir şey eklememişsiniz. / Alışverişe Başla.",
@@ -84,17 +94,28 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": ".cp button[aria-label*='artır' i], .cp button:has-text('+'), .cp-qty-plus",
+      "selector": ".cp button.cdi-qty-btn[aria-label='Adedi artır']",
       "capture": true,
       "etiket": "adet",
       "not": "Adet +"
     }
   ],
   "stateFindings": {
-    "initial": "",
-    "filled": "",
-    "changed": ""
+    "initial": "SEPETİM · Sepetiniz boş · Görünüşe göre henüz bir şey eklememişsiniz · Alışverişe Başla.",
+    "filled": "1 ürün Chukka Sweater Men's 600 Oatmeal ₺11,450 ADET 1 · Ara toplam/Toplam ₺11,450 · Ödemeye Geç (tıklanmadı) · Alışverişe Devam Et.",
+    "changed": "Adedi artır → 2 ürün · ADET 2 · ₺22,900. Checkout tıklanmadı."
   },
   "missingStates": [],
-  "interactionNote": "Checkout tıklanmadı. addToCart action yok — .pd__atc click."
+  "interactionNote": "Checkout tıklanmadı. addToCart action yok — .pd__atc click.",
+  "capture": {
+    "url": "https://0esw4-dev-kumsal.myikas.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:28:13.899Z"
+  }
 }

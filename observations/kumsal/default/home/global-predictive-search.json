@@ -5,7 +5,14 @@
   "preset": "default",
   "sayfa": "home",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/kumsal/default/home/global-predictive-search.initial.bos-arama.1440.png",
+    "evidence/kumsal/default/home/global-predictive-search.initial.bos-arama.375.png",
+    "evidence/kumsal/default/home/global-predictive-search.initial.bos-arama.768.png",
+    "evidence/kumsal/default/home/global-predictive-search.input.chukka.1440.png",
+    "evidence/kumsal/default/home/global-predictive-search.input.chukka.375.png",
+    "evidence/kumsal/default/home/global-predictive-search.input.chukka.768.png"
+  ],
   "url": "https://0esw4-dev-kumsal.myikas.com/search",
   "selector": "section.sl",
   "captureMode": "viewport",
@@ -25,14 +32,20 @@
     {
       "state": "initial",
       "action": "waitFor",
-      "value": 3000,
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "section.sl",
       "capture": false
     },
     {
       "state": "initial",
       "action": "waitFor",
       "selector": "input.sl-search-input",
-      "value": 2000,
+      "value": 12000,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "bos-arama",
@@ -70,9 +83,20 @@
     }
   ],
   "stateFindings": {
-    "initial": "",
-    "input": ""
+    "initial": "ARAMA + input Ürün ara... + 53 ürün + Filtrele ve Sırala. Overlay/öneri yok — tam sayfa.",
+    "input": "chukka + Enter → 5 ürün (Chukka Mini Shorts Women's, Chukka Sweater Women's, Chukka Shirt Men's, 6incher Chukka Shorts…). 375/768/1440 aynı sorgu."
   },
   "missingStates": [],
-  "interactionNote": "Header ARA /search'e navigate. Overlay predictive yok. E-posta/account yok."
+  "interactionNote": "Header ARA /search'e navigate. Overlay predictive yok. E-posta/account yok.",
+  "capture": {
+    "url": "https://0esw4-dev-kumsal.myikas.com/search",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:30:36.389Z"
+  }
 }

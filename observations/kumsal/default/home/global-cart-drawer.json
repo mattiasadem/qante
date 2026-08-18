@@ -5,7 +5,17 @@
   "preset": "default",
   "sayfa": "home",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/kumsal/default/home/global-cart-drawer.changed.adet.1440.png",
+    "evidence/kumsal/default/home/global-cart-drawer.changed.adet.375.png",
+    "evidence/kumsal/default/home/global-cart-drawer.changed.adet.768.png",
+    "evidence/kumsal/default/home/global-cart-drawer.filled.chukka-eklendi.1440.png",
+    "evidence/kumsal/default/home/global-cart-drawer.filled.chukka-eklendi.375.png",
+    "evidence/kumsal/default/home/global-cart-drawer.filled.chukka-eklendi.768.png",
+    "evidence/kumsal/default/home/global-cart-drawer.initial.bos.1440.png",
+    "evidence/kumsal/default/home/global-cart-drawer.initial.bos.375.png",
+    "evidence/kumsal/default/home/global-cart-drawer.initial.bos.768.png"
+  ],
   "url": "https://0esw4-dev-kumsal.myikas.com/",
   "selector": ".cdw-panel",
   "captureMode": "viewport",
@@ -90,7 +100,7 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": ".cdw-panel button[aria-label*='artır' i], .cdw-panel button[aria-label*='increase' i], .cdw-panel button[aria-label*='plus' i], .cdw-qty-plus, .cdw-panel button:has-text('+')",
+      "selector": ".cdw-panel button.cdi-qty-btn[aria-label='Adedi artır']",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "adet",
@@ -98,10 +108,21 @@
     }
   ],
   "stateFindings": {
-    "initial": "",
-    "filled": "",
-    "changed": ""
+    "initial": "SEPETİM · Sepetiniz boş · Alışverişe Başla · Son Görüntülenenler (V-Bond Socks / Amundsen Belt / Fjord Towel).",
+    "filled": "1 ürün Chukka Sweater Men's 600 Oatmeal ₺11,450 ADET 1 · Siparişinize ekleyin (Fjord Towel) · Ara toplam/Toplam ₺11,450 · Ödemeye Geç (tıklanmadı).",
+    "changed": "Adedi artır → 2 ürün · ADET 2 · ₺22,900 · Ödemeye Geç tıklanmadı."
   },
   "missingStates": [],
-  "interactionNote": "addToCart action kullanılmadı (ikas /cart.js yok). Checkout tıklanmadı. Adet selector ilk çekimde doğrulanacak."
+  "interactionNote": "addToCart action yok — button.pd__atc click (ikas /cart.js yok). Checkout tıklanmadı. Adet: button.cdi-qty-btn[aria-label='Adedi artır'].",
+  "capture": {
+    "url": "https://0esw4-dev-kumsal.myikas.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:25:57.482Z"
+  }
 }

@@ -5,7 +5,12 @@
   "preset": "default",
   "sayfa": "home",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
+  "evidence": [
+    "evidence/kumsal/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/kumsal/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/kumsal/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/kumsal/default/home/navigation-header-mega.open.erkek-mega.1440.png"
+  ],
   "url": "https://0esw4-dev-kumsal.myikas.com/",
   "selector": "header.hdr-bar",
   "captureMode": "viewport",
@@ -39,7 +44,7 @@
     },
     {
       "state": "open",
-      "action": "click",
+      "action": "hover",
       "selector": "#menu-items-0 button.hmi-root",
       "viewports": [
         "1440"
@@ -47,18 +52,29 @@
       "capture": true,
       "captureMode": "viewport",
       "etiket": "erkek-mega",
-      "not": "Erkek mega: Yeni Sezon / Şort Rehberi / Koleksiyonlar + Tişört… + promo Yeni Sezon"
+      "not": "Erkek mega hover (click kapar): Yeni Sezon / Şort Rehberi / Koleksiyonlar + Tişört + promo"
     }
   ],
   "stateFindings": {
-    "initial": "",
-    "open": ""
+    "initial": "375: hamburger + KUMSAL + search + sepet 00; announcement Tüm Vergiler…; hero Yaz Maceraları stacked. 1440: ERKEK/KADIN/AYAKKABI/AKSESUAR/UNİSEX + KUMSAL + ARA + HESABIM + 00. Mega kapalı.",
+    "open": "1440 Erkek hover: beyaz mega — Yeni Sezon, Şort Rehberi, Koleksiyonlar; Tişört / Şort / Kazak & Sweatshirt / Gömlek / Ceket & Anorak / Mayo & Şort; Tümünü Gör; sağda Yeni Sezon promo + Yeni Sezonu Keşfet. Click kapar."
   },
   "missingStates": [
     {
       "state": "hover",
-      "sebep": "Mega click ile açılıyor; hover ayrıca yoklanmadı"
+      "sebep": "1440 mega hover = open; ayrı hover state yok"
     }
   ],
-  "interactionNote": "Hesabım / account tıklanmadı. 375/768 hamburger ayrı global-menu-drawer."
+  "interactionNote": "Mega hover ile açılır, click kapatır. Hesabım tıklanmadı.",
+  "capture": {
+    "url": "https://0esw4-dev-kumsal.myikas.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:24:07.928Z"
+  }
 }
