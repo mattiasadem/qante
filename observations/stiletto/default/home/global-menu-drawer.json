@@ -5,11 +5,14 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://stiletto-theme-vogue.myshopify.com/",
-  "selector": "#shopify-section-sections--22242345517205__header",
+  "selector": ".drawer-menu",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/stiletto/default/home/global-menu-drawer.open.mobil-menu-acik.375.png",
+    "evidence/stiletto/default/home/global-menu-drawer.open.mobil-menu-acik.768.png"
+  ],
   "notlar": "button[data-js-menu-button] Open menu modal. Header overlay menü.",
-  "delta": "Ayrı #NavDrawer yok. Menü header'dan açılır.",
+  "delta": "drawer-menu overlay (Impulse #NavDrawer değil). Register / Login dur.",
   "captureMode": "viewport",
   "interactionStates": [
     "open"
@@ -24,8 +27,22 @@
     {
       "state": "open",
       "action": "click",
+      "selector": ".popup--has-image [data-dismiss-popup]",
+      "value": 600,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "[data-popup] [data-dismiss-popup]",
+      "value": 600,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
       "selector": "button[data-js-menu-button]",
-      "value": 1500,
+      "value": 1600,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "mobil-menu-acik",
@@ -33,12 +50,23 @@
         "375",
         "768"
       ],
-      "not": "Hamburger. 1440 buton 0px."
+      "not": ".drawer-menu.active.visible. Register/Login tıklanmadı."
     }
   ],
   "stateFindings": {
-    "open": ""
+    "open": "375/768 siyah drawer-menu. CLOTHING/DRESSES/TOPS (thumb+chevron), SALE (UP TO 40% off thumb), LOOKBOOK, SECTIONS chevron. Altta Register/Login (tıklanmadı) + sosyal. Header X."
   },
   "missingStates": [],
-  "interactionNote": "1440 hamburger yok. Alt menü expander changed denenmedi."
+  "interactionNote": "1440 hamburger yok. Popup kapatıldı. Account tıklanmadı.",
+  "capture": {
+    "url": "https://stiletto-theme-vogue.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:10:40.988Z"
+  }
 }

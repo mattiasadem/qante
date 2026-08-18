@@ -7,9 +7,16 @@
   "url": "https://stiletto-theme-vogue.myshopify.com/products/behati-dress-in-pearl",
   "selector": "#shopify-section-template--22242345287829__main",
   "evidenceSlug": "product-info-main",
-  "evidence": [],
-  "notlar": "Behati Dress In Pearl. Size chips XS–XL. ADD TO BAG. $249.",
-  "delta": "sticky ATC var (leftover). Checkout yok.",
+  "evidence": [
+    "evidence/stiletto/default/product-detail/product-info-main.changed.size-s.1440.png",
+    "evidence/stiletto/default/product-detail/product-info-main.changed.size-s.375.png",
+    "evidence/stiletto/default/product-detail/product-info-main.changed.size-s.768.png",
+    "evidence/stiletto/default/product-detail/product-info-main.initial.size-xs.1440.png",
+    "evidence/stiletto/default/product-detail/product-info-main.initial.size-xs.375.png",
+    "evidence/stiletto/default/product-detail/product-info-main.initial.size-xs.768.png"
+  ],
+  "notlar": "Behati Dress In Pearl $249. Color Pearl swatch + Size chips XS–XL. ADD TO BAG.",
+  "delta": "sticky ATC leftover. Color + Size. Checkout yok.",
   "interactionStates": [
     "initial",
     "changed"
@@ -19,6 +26,26 @@
       "state": "initial",
       "action": "goto",
       "value": "https://stiletto-theme-vogue.myshopify.com/products/behati-dress-in-pearl",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".popup--has-image [data-dismiss-popup]",
+      "value": 600,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "[data-popup] [data-dismiss-popup]",
+      "value": 600,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
       "capture": true,
       "etiket": "size-xs",
       "not": "XS seçili $249"
@@ -34,9 +61,20 @@
     }
   ],
   "stateFindings": {
-    "initial": "",
-    "changed": ""
+    "initial": "BEHATI DRESS IN PEARL $249. Color Pearl. Size XS seçili. ADD TO BAG. In stock.",
+    "changed": "Size S chip seçili. Fiyat $249 aynı. Color Pearl kaldı."
   },
   "missingStates": [],
-  "interactionNote": "Color yok (yalnız Size). Checkout tıklanmadı."
+  "interactionNote": "Color yok (yalnız Size). Checkout tıklanmadı.",
+  "capture": {
+    "url": "https://stiletto-theme-vogue.myshopify.com/products/behati-dress-in-pearl",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:15:02.386Z"
+  }
 }

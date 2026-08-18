@@ -19,20 +19,23 @@
 |---|---|
 | `/pages/about` | 404. About = `/pages/about-us` |
 | `/pages/contact-us` | 404. Contact = `/pages/contact` |
-| Newsletter popup (`data-section-type=popup`, `data-is-signup=true`) | yükseklik 0 (scroll-delay 75). PII — dur |
-| Account / login | Header’da yok veya dur |
-| Checkout | drawer/sayfa Check out — tıklanmadı |
-| Footer / popup Subscribe, contact SUBMIT, blog comment | PII — dur |
-| `/pages/lookbook`, `/pages/shoppable-sections`, `/pages/theme`, grids/heros/promos… | Tema satış / section demo sayfaları; walk dışı leftover |
-| `/pages/fit-guide`, `/pages/size-guide`, `/pages/stockists` | Walk dışı leftover |
-| About 80px boş rich-text (`rich_text_ki99Er`, `rich_text_TyWcVm`) | Metin yok; şema yok |
-| FAQ `promotion-bar` (“DIDN'T FIND YOUR ANSWER?” / CONTACT US) | CTA bant; `cta-band` şeması yok. leftover |
-| PDP `scrolling-content` END OF SEASON SALE | Home’da zaten envanter |
+| Newsletter popup (`data-is-signup=true`, JOIN US / GET OFFER) | Scroll-delay. PII — submit yok. Capture’ta `[data-dismiss-popup]` ile kapatıldı |
+| Theme walkthrough popup | WATCH NOW / `/pages/theme#stiletto-walkthrough`. Tema satış; kapatıldı |
+| “Get 10% Off” tab | Popup kapanınca köşe tab. Bazı PNG’de kalır |
+| Account / Register / Login | Mobil menüde görüldü — tıklanmadı |
+| Checkout | Drawer + cart sayfa CHECKOUT — tıklanmadı |
+| Footer SIGN UP, contact SUBMIT, blog comment | PII — dur |
+| `/pages/lookbook`, shoppable-sections, theme, grids/heros/promos… | Tema satış / section demo; walk dışı |
+| `/pages/fit-guide`, `/pages/size-guide`, `/pages/stockists` | Walk dışı |
+| About 80px boş rich-text (`rich_text_ki99Er`, `rich_text_TyWcVm`) | Metin yok |
+| FAQ `promotion-bar` (“DIDN'T FIND YOUR ANSWER?”) | CTA bant; `cta-band` şeması yok |
+| PDP `scrolling-content` END OF SEASON SALE | Home’da envanter |
 | PDP sticky ATC | Kesite sızıyor; ayrı observation yok |
-| Quick view / Choose options overlay | Kart + lookbook. Interact listesinde yok; leftover |
-| Mobile submenu `changed` | 375/768 expander görülebilir; alt menü açılmadı |
-| SECTIONS mega | Tema satış linkleri; hover/tık yok |
-| `/collections/all` | Aynı PLP şablonu (`dresses-1` çekildi). Ayrı walk yok |
+| Quick view / Choose options | Kart + lookbook overlay. Interact listesinde yok |
+| Mobile submenu `changed` | 375/768 chevron görüldü; alt menü açılmadı |
+| SECTIONS mega | Tema satış; hover/tık yok |
+| `/collections/all` | Aynı PLP şablonu (`dresses-1` çekildi) |
+| Cart drawer qty 375/768 | Plus tık 2. denemede de eşleşmedi. Qty 1440 drawer + cart sayfa 3vp var |
 
 ## Aday (yeni şema yok)
 
@@ -41,16 +44,16 @@
 - **sales-banner / grid** — `promo-grid-banner` + delta.
 - **scrolling-text-banner** — görselli marquee. `promo-scrolling-marquee` + delta.
 - **gallery-carousel** — özellik slaytları. `features-slider-multicolumn` + delta.
-- **list-collections** — `collection-nav-grid` (max 16; canlı sayı PNG).
+- **list-collections** — `collection-nav-grid`.
 - **404 template** — taxonomy `pageTypes` içinde yok. `page-content-main` + delta.
-- **quick-cart** — overlay modal. `global-cart-drawer` + delta.
-- **#MainQuickSearch** — overlay. `global-predictive-search` + delta.
-- **header menu modal** — `button[data-js-menu-button]`. `global-menu-drawer` + delta.
+- **quick-cart** — parent 0px; kutu `.quick-cart__container`. `global-cart-drawer` + delta.
+- **#MainQuickSearch** — sağ overlay `.quick-search.active`. `global-predictive-search` + delta.
+- **drawer-menu** — `button[data-js-menu-button]`. `global-menu-drawer` + delta.
 
 ## Interact notları
 
-- CLOTHING mega: `[data-meganav-handle=clothing]` `<a href=/collections/all-clothing-1>` — tıklama sayfaya kaçar; yalnız hover.
-- Predictive: opener `a[data-search][aria-controls=MainQuickSearch]`; `input#search` kapalıda 0px. katalog `dress`.
-- Cart: `a[data-js-cart-icon=cart]` → `.quick-cart`. ATC Behati ADD TO BAG. Checkout tıklanmadı.
-- 1440 hamburger yok (masaüstü nav). 375/768 `button[data-js-menu-button]`.
-- PDP Size: XS seçili $249 → S chip. Color yok.
+- CLOTHING mega: `[data-meganav-handle=clothing]` `<a href=/collections/all-clothing-1>` — yalnız hover. 2 kolon + THE CITY EDIT / DISCOVER.
+- Predictive: opener `a[data-search]`; `input#search`. katalog `dress`. Suggestions + ürün + VIEW ALL RESULTS (tıklanmadı).
+- Cart: `a[data-js-cart-icon=cart]` → `.quick-cart__container`. ATC bazen `/cart/add.js`. Behati XS $249 → qty2 $498 (drawer 1440 + cart sayfa 3vp). Checkout tıklanmadı.
+- 1440 hamburger yok. 375/768 `.drawer-menu.active.visible`. Register/Login dur.
+- PDP: Color Pearl swatch + Size XS→S. Fiyat $249. Size guide / checkout yok.
