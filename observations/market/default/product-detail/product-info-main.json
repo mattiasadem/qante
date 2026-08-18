@@ -1,0 +1,82 @@
+{
+  "observationId": "market.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "market",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://dev-market.ikas.shop/",
+  "selector": ".m-product-modal__dialog",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "PDP = .m-product-modal (ayrı /product /urun 404). Salatalık · Yerli Bahçe · Miktar 500 g ₺19.90 (seçili) / 1 kg ₺39.80. Besin tablosu. Stepper + Sepete Ekle. Avokado addon Ayrı poşete koy +0,50 TL (bu karede değil).",
+  "delta": "pageType INDEX üstünde modal — PRODUCT rota yok. Option = Miktar radio. Checkout yok.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://dev-market.ikas.shop/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".m-product-card:has-text(\"Salatalık\") .m-product-card__add",
+      "capture": false,
+      "not": "Salatalık + → modal"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "selector": ".m-product-modal__dialog",
+      "value": 8000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 600,
+      "capture": true,
+      "etiket": "miktar-500g",
+      "not": "500 g seçili · ₺19.90"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".m-product-modal__option-row:has-text(\"1 kg\")",
+      "capture": false,
+      "not": "Miktar 500 g → 1 kg"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "etiket": "miktar-1kg",
+      "not": "1 kg · CTA 39,80?"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Salatalık · Yerli Bahçe · 500 g satır seçili · ₺19.90 · Sepete Ekle · 19,90 TL.",
+    "changed": "1 kg satır seçili · ₺39.80. Galeri aynı. CTA beklenen Sepete Ekle · 39,80 TL."
+  },
+  "missingStates": [],
+  "interactionNote": "Kart gövde tık sayfa değiştirmez. ATC cart interact'te. Avokado checkbox addon leftover.",
+  "capture": {
+    "url": "https://dev-market.ikas.shop/",
+    "viewports": ["375", "768", "1440"],
+    "mode": "section",
+    "method": "",
+    "updatedAt": ""
+  }
+}

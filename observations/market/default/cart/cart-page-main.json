@@ -1,0 +1,120 @@
+{
+  "observationId": "market.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "market",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://dev-market.ikas.shop/cart",
+  "selector": ".m-cart-page",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "pageType CART /cart. Boş: Sepetim · Sepetiniz boş · Taze ürünler sizi bekliyor · Alışverişe Başla. Dolu: Avokado satır + stepper + Sipariş Özeti. Checkout tıklanmadı.",
+  "delta": "Aynı context'te sepet kalır (375 doldurunca 768/1440 initial dolu olabilir). /cart/add.js yok. /checkout → INDEX.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://dev-market.ikas.shop/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "etiket": "sepet-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://dev-market.ikas.shop/",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": ".m-product-card:has-text(\"Avokado\") .m-product-card__add",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": ".m-product-modal__cta",
+      "capture": false,
+      "not": "UI ATC — addToCart /cart/add.js yok"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://dev-market.ikas.shop/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "etiket": "dolu",
+      "not": "Avokado satır"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".m-cart-page .m-stepper__btn--plus",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "qty+"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Sepetim · Sepetiniz boş · Alışverişe Başla. (Sonraki vp aynı context ise dolu kalabilir.)",
+    "filled": "Avokado satır + Sipariş Özeti + Siparişi Tamamla (tıklanmadı).",
+    "changed": "qty arttı; ara toplam güncellendi."
+  },
+  "missingStates": [],
+  "interactionNote": "Resmi script aynı browser context — sepet 375→768 taşır. Checkout / kupon yoklandı değil.",
+  "capture": {
+    "url": "https://dev-market.ikas.shop/cart",
+    "viewports": ["375", "768", "1440"],
+    "mode": "section",
+    "method": "",
+    "updatedAt": ""
+  }
+}
