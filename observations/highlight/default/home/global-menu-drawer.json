@@ -1,0 +1,45 @@
+{
+  "observationId": "highlight.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "highlight",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://highlight-theme.myshopify.com/",
+  "selector": "#site-menu-sidebar",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "#menu-open-button → sidebar-drawer#site-menu-sidebar. 375/768/1440 hamburger var.",
+  "delta": "Masaüstü mega yok; tüm vp drawer. Reflective submenu Things/Accessories display:none — changed yok (a tıklama koleksiyona kaçar).",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://highlight-theme.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#menu-open-button",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "menu-acik",
+      "not": "All / Reflective / Writable / Food & home / Apparel / About Us / Contacts / Help / News + Facebook/Instagram. Account yok."
+    }
+  ],
+  "stateFindings": {
+    "open": "Sol sidebar. Close + All / Reflective / Writable / Food & home / Apparel / About Us / Contacts / Help / News + Facebook / Instagram."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Reflective li.has-submenu alt Things/Accessories display:none. Expander button yok; <a>Reflective koleksiyona kaçar."
+    }
+  ],
+  "interactionNote": "1440 hamburger görünür (Highlight). Sign-in/account tıklanmadı."
+}

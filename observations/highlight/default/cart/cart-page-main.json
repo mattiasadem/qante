@@ -1,0 +1,123 @@
+{
+  "observationId": "highlight.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "highlight",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://highlight-theme.myshopify.com/cart",
+  "selector": "#shopify-section-template--15101612523681__main",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Boş: Shopping Cart / Your cart is currently empty / CONTINUE BROWSING. Dolu: Writable sweatshirt S/Black $79 + input.qty. Sibling 'Check out these as well' leftover.",
+  "delta": "GET /cart/clear CF 429. Qty plus yok.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://highlight-theme.myshopify.com/products/copy-of-reflective-sweatshirt",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2200,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--15101007397025__main button.product__add-to-cart[name='add']",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://highlight-theme.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#shopify-section-template--15101612523681__main a.remove",
+      "value": 1400,
+      "capture": false,
+      "not": "Satırı sil"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "etiket": "cart-bos"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://highlight-theme.myshopify.com/products/copy-of-reflective-sweatshirt",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2200,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--15101007397025__main button.product__add-to-cart[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://highlight-theme.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1000,
+      "capture": true,
+      "etiket": "sepete-eklendi"
+    },
+    {
+      "state": "changed",
+      "action": "fill",
+      "selector": "#shopify-section-template--15101612523681__main input.qty",
+      "value": "2",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "press",
+      "value": "Enter",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1600,
+      "capture": true,
+      "etiket": "adet-artti"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is currently empty. CONTINUE BROWSING.",
+    "filled": "1 PRODUCT. Writable sweatshirt (S / Black) $79. Total $79. CHECKOUT (tıklanmadı).",
+    "changed": "PNG — qty 2 / $158 beklenir."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout dur. Cart page altında featured slider leftover. /cart/clear kullanılmadı."
+}

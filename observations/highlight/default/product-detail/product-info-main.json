@@ -1,0 +1,48 @@
+{
+  "observationId": "highlight.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "highlight",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://highlight-theme.myshopify.com/products/copy-of-reflective-sweatshirt",
+  "selector": "#shopify-section-template--15101007397025__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "Writable sweatshirt by MARCH. Size S–XXL radio + Color Black/Grey/White. ATC + BUY IT NOW. Varsayılan S/Black $79.",
+  "delta": "BUY IT NOW checkout — tıklanmadı. Kardeş PDP extras leftover.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://highlight-theme.myshopify.com/products/copy-of-reflective-sweatshirt",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "etiket": "color-black",
+      "not": "S / Black $79"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='copy-of-reflective-sweatshirt-option-color-3-template--15101007397025__main']",
+      "value": 1400,
+      "capture": true,
+      "etiket": "color-white",
+      "not": "Color White. Katalog S/White $99 — UI fiyatına bak."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Writable sweatshirt. Price $79.00. Size S. Color Black. ADD TO CART + BUY IT NOW.",
+    "changed": "Color White seçili. PNG fiyat/galeri."
+  },
+  "missingStates": [],
+  "interactionNote": "BUY IT NOW / accelerated checkout dur. Size değişimi yapılmadı (Color)."
+}
