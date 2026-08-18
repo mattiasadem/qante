@@ -1,0 +1,45 @@
+{
+  "observationId": "triumph.default.home.promo-announcement-bar",
+  "schemaId": "promo-announcement-bar",
+  "url": "https://triumph-theme.myshopify.com/",
+  "selector": ".header__announcement",
+  "evidenceSlug": "promo-announcement-bar",
+  "notlar": "Header içinde. 1440 section kare: countdown DAY/HR/MIN/SEC + BIG SALE — 50% OFF SPORTSWEAR! (USD/EN/sosyal sibling, bu selector’da yok). 375/768: official dismiss Close announcement’ı 0px yapıyor — leftover. Mega 1440 viewport karede tam bar (USD/EN + countdown + sosyal) görünür.",
+  "delta": "Triumph announcement-bar custom element + countdown-timer. Ayrı shopify-section değil — header section içinde. theme_store_id canlıda null.",
+  "kaynak": "triumph",
+  "preset": "default",
+  "sayfa": "home",
+  "evidence": [
+    "evidence/triumph/default/home/promo-announcement-bar.initial.statik.1440.png"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://triumph-theme.myshopify.com/",
+      "capture": true,
+      "etiket": "statik",
+      "not": "Static 3vp via capture-interaction (768 dismiss opens cart-drawer)"
+    }
+  ],
+  "interactionStates": [
+    "initial"
+  ],
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "capture (375): zero-size / eşleşmedi: .header__announcement"
+    }
+  ],
+  "capture": {
+    "url": "https://triumph-theme.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:49:22.534Z"
+  }
+}

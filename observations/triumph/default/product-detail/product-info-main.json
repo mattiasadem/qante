@@ -1,0 +1,88 @@
+{
+  "observationId": "triumph.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "url": "https://triumph-theme.myshopify.com/products/jumpflex-sneakers",
+  "selector": "#shopify-section-template--26042746372361__main",
+  "evidenceSlug": "product-info-main",
+  "notlar": "JumpFlex Sneakers $45.89 · SYNRGY · Color Pink/Blue · Size 1–6. Galeri + ATC. Coupon TRIUMPH (kopyalandı değil).",
+  "delta": "Triumph product main + variant-selects swatch. Buy it now/checkout tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://triumph-theme.myshopify.com/products/jumpflex-sneakers",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "etiket": "renk-pink",
+      "not": "Color Pink"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label.swatch-input__label[for$='-1-1']",
+      "capture": false,
+      "not": "Pink → Blue"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "etiket": "renk-blue",
+      "not": "Blue swatch"
+    }
+  ],
+  "stateFindings": {
+    "initial": "375+1440 JumpFlex Sneakers SYNRGY $45.89. COLOR: PINK (swatch ring), SIZE: 1. SKU 94-0002. Galeri pembe+mavi karışık. Kupon TRIUMPH (kopyalanmadı). ATC / BUY IT NOW tıklanmadı. 768 initial yok (dismiss cart-drawer).",
+    "changed": "375+768+1440 COLOR: BLUE, SKU 94-0001, mavi swatch ring. Fiyat $45.89 aynı. 375’te ana görsel mavi; thumb’larda pembe+mavi. 1440 galeri hâlâ karışık. Size değişmedi. Buy it now tıklanmadı."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "adım 0 (goto): Screenshot iptal: ekranda hâlâ overlay var:\n[\n  {\n    \"tag\": \"CART-DRAWER\",\n    \"cls\": \"drawer is-empty opened-by-icon active\",\n    \"text\": \"You may also like Your cart is empty Not sure where to start\",\n    \"w\": 768,\n    \"h\": 1024\n  }\n]"
+    }
+  ],
+  "interactionNote": "Color Blue label.swatch-input__label[for$='-1-1']. Size tıklanmadı. ATC cart interact’te. Buy it now/checkout yok. 768 initial dismiss cart-drawer; changed 768 var.",
+  "kaynak": "triumph",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "evidence": [
+    "evidence/triumph/default/product-detail/product-info-main.changed.renk-blue.1440.png",
+    "evidence/triumph/default/product-detail/product-info-main.changed.renk-blue.375.png",
+    "evidence/triumph/default/product-detail/product-info-main.changed.renk-blue.768.png",
+    "evidence/triumph/default/product-detail/product-info-main.initial.renk-pink.1440.png",
+    "evidence/triumph/default/product-detail/product-info-main.initial.renk-pink.375.png"
+  ],
+  "capture": {
+    "url": "https://triumph-theme.myshopify.com/products/jumpflex-sneakers",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:51:18.840Z"
+  }
+}
