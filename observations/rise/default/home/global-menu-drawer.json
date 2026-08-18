@@ -1,0 +1,56 @@
+{
+  "observationId": "rise.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "rise",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-rise-demo.myshopify.com/en/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "Dawn header-drawer. Catalog / Blog / Contact + Language. Accordion yok.",
+  "delta": "1440 hamburger 0×0. Drill-down summary yok — yalnız düz link.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://theme-rise-demo.myshopify.com/en/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary.header__icon--menu",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Mobil menü açık"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "open@1440 — hamburger 0px; masaüstü inline Catalog/Blog/Contact"
+    },
+    {
+      "state": "changed",
+      "sebep": "Drawer’da accordion/summary yok; Catalog/Blog/Contact yazılı <a>"
+    }
+  ],
+  "interactionNote": "1440 atlandı. Dil switcher tıklanmadı (locale). Link tıklanmadı."
+}

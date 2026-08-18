@@ -1,0 +1,50 @@
+{
+  "observationId": "rise.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "rise",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://theme-rise-demo.myshopify.com/en/products/sand-shorts",
+  "selector": "#shopify-section-template--21605978931222__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "Terrycloth shorts. Color Sand/White/Grey/Moss/Slate/Black + Size XS–XL. Sale ¥1,900 → ¥1,520. ATC + Buy it now.",
+  "delta": "Dawn product-info + variant-selects pill. Pickup-availability DOM’da. Quick view yok.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-rise-demo.myshopify.com/en/products/sand-shorts",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21605978931222__main",
+      "capture": true,
+      "etiket": "color-sand",
+      "not": "Color Sand seçili"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='template--21605978931222__main-1-1']",
+      "capture": true,
+      "etiket": "color-white",
+      "not": "Color White — galeri/seçim değişmeli"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Color radio. Buy it now / checkout tıklanmadı."
+}

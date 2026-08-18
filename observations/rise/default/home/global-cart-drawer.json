@@ -1,0 +1,65 @@
+{
+  "observationId": "rise.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "rise",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-rise-demo.myshopify.com/en/",
+  "selector": "#cart-notification",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Dawn cart-notification (side drawer değil). Cart ikon → /en/cart. Checkout tıklanmadı.",
+  "delta": "cart-drawer yok. Overlay #cart-notification. Boş notification yok. Qty cart-page-main.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-rise-demo.myshopify.com/en/products/white-hoodie",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button.product-form__submit",
+      "capture": false,
+      "not": "UI ATC — notification açılsın"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "forceOpen",
+      "selector": "#cart-notification",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Item added + View cart + Check out"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "Boş cart-notification yok; boş hâl /en/cart"
+    },
+    {
+      "state": "changed",
+      "sebep": "Notification’da adet stepper yok — qty cart-page-main"
+    }
+  ],
+  "interactionNote": "UI ATC. Checkout/login tıklanmadı. forceOpen yedek."
+}
