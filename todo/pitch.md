@@ -8,8 +8,8 @@
 *Tema (storefront, uydurulmadı):* `Shopify.theme.name` **Updated copy of Pitch demo store 3.2.0** · `id` `183686005031` · `schema_name` **Pitch** · `schema_version` **3.4.0** · `theme_store_id` **3620** · `role` `main`  
 *Shop:* `se-horizon2-en-2v6j.myshopify.com`
 
-**Durum:** Mod A walk + resmi 3vp + interact + validate **devam** (pre-capture PR)  
-**PR:** draft · **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti** (0 error)  
+**PR:** draft https://github.com/mattiasadem/qante/pull/179 · **main'e merge yok**
 
 ---
 
@@ -21,11 +21,11 @@
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **34** |
-| PNG | *(capture sonrası)* |
+| PNG | **120** |
 | Parallel | yalnız `observations/pitch/`, `evidence/pitch/`, `todo/pitch.md`, `candidates/pitch-leftovers.md` |
 
 **Kapsam satırı:**  
-`Pitch · default · Updated copy of Pitch demo store 3.2.0 / schema_name Pitch 3.4.0 · theme_store_id 3620 · home→PDP Gentle Body Wash→PLP skincare→collections→search serum→cart→about-us/contact→blog→404 · 34 obs · 0 yeni şema · leftover: candidates/pitch-leftovers.md`
+`Pitch · default · Updated copy of Pitch demo store 3.2.0 / schema_name Pitch 3.4.0 · theme_store_id 3620 · home→PDP Gentle Body Wash→PLP skincare→collections→search serum→cart→about-us/contact→blog→404 · 34 obs · 120 PNG · 0 yeni şema · leftover: candidates/pitch-leftovers.md`
 
 ---
 
@@ -33,22 +33,22 @@
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home + announcement/hero/IWT×2/bestsellers/collection pair/footer | [x] obs | [ ] capture |
-| Mega Shop 768/1440 | [x] obs | [ ] interact |
-| Predictive search `serum` | [x] obs | [ ] interact 375/768/1440 |
-| Mobile menu 375 | [x] obs | [ ] interact |
-| Mobile menu 768 | [x] obs | [ ] interact (0×0 beklenir) |
-| Cart drawer empty + filled + qty | [x] obs | [ ] interact |
-| PDP Gentle Body Wash Scent Rose+Oud→Orange Blossom+Neroli | [x] obs | [ ] interact |
-| PLP `/collections/skincare` | [x] obs | [ ] capture |
-| Collections index `/collections` | [x] obs | [ ] capture |
-| Search `/search?q=serum` | [x] obs | [ ] capture |
-| Cart `/cart` empty + filled + qty | [x] obs | [ ] interact |
-| About `/pages/about-us` | [x] obs | [ ] capture |
-| Contact form (submit yok) | [x] obs | [ ] capture |
-| Blog `/blogs/news` + Why clean ingredients matter | [x] obs | [ ] capture |
-| Privacy `/policies/privacy-policy` | [x] obs | [ ] capture |
-| 404 leftover | [x] obs | [ ] capture |
+| Home + announcement/hero/IWT×2/bestsellers/collection pair/footer | [x] obs | [x] capture |
+| Mega Shop 768/1440 | [x] obs | [x] interact |
+| Predictive search `serum` | [x] obs | [x] interact 375/768/1440 |
+| Mobile menu 375 | [x] obs | [x] interact |
+| Mobile menu 768 | [x] obs | leftover 0×0 |
+| Cart drawer empty + filled + qty | [x] obs | [x] $36 → $72 |
+| PDP Gentle Body Wash Scent Rose+Oud→Orange Blossom+Neroli | [x] obs | [x] pill değişti; fiyat/galeri aynı |
+| PLP `/collections/skincare` | [x] obs | [x] capture |
+| Collections index `/collections` | [x] obs | [x] capture |
+| Search `/search?q=serum` | [x] obs | [x] 17 items |
+| Cart `/cart` empty + filled + qty | [x] obs | [x] $36 → $72 |
+| About `/pages/about-us` | [x] obs | [x] capture |
+| Contact form (submit yok) | [x] obs | [x] capture |
+| Blog `/blogs/news` + Why clean ingredients matter | [x] obs | [x] capture |
+| Privacy `/policies/privacy-policy` | [x] obs | [x] capture |
+| 404 leftover | [x] obs | [x] capture |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -78,12 +78,12 @@ Horizon nested theme-blocks (görülen custom elements): `header-component` · `
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | open | [ ] Shop hover 768/1440 — #submenu-1 |
-| global-predictive-search | initial / input `serum` | [ ] 375/768/1440 |
-| global-menu-drawer | open 375/768 | [ ] 375; 768 0×0 beklenir |
-| global-cart-drawer | initial / filled / changed | [ ] empty → Body Wash $36 → qty 2 |
-| cart-page-main | initial / filled / changed | [ ] aynı |
-| product-info-main | changed Scent | [ ] Rose + Oud → Orange Blossom + Neroli |
+| navigation-header-mega | open | [x] 1440 iki kart; 768 bir Skincare kart |
+| global-predictive-search | initial / input `serum` | [x] öneri 4 kart → chips + 8 serum + View all |
+| global-menu-drawer | open 375/768 | [x] 375 Shop çocukları + kart; 768 0×0 leftover |
+| global-cart-drawer | initial / filled / changed | [x] empty → qty1 $36 → qty2 $72 |
+| cart-page-main | initial / filled / changed | [x] aynı |
+| product-info-main | changed Scent | [x] Rose + Oud → Orange Blossom + Neroli; $36 aynı |
 
 ---
 
@@ -95,8 +95,8 @@ Horizon nested theme-blocks (görülen custom elements): `header-component` · `
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact mega / search / menu / cart / PDP Scent
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate` — 0 error
+- [x] Official 3vp static (`capture-observation.mjs`) — 28/28
+- [x] Interact mega / search / menu 375 / cart / PDP Scent
+- [x] PNG bak → stateFindings
+- [x] `npm run validate` — 0 error
 - [x] Email / account / checkout / newsletter submit — **yapılmayacak**

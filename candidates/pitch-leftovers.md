@@ -106,6 +106,22 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: pitch-about-equal-mosaic  
+Gerekçe: `/pages/about-us` `hero_nN99Ra` ve `hero_PnwYVm` iki eşit görsel, overlay metin yok. Claiming `editorial-image-with-text-overlay` + delta. `media-mosaic-grid` layout equal daha yakın; yeni şema yok.  
+Örnekler: https://theme-pitch-demo.myshopify.com/pages/about-us  
+Öneri: leftover — overlay zorlandı  
+Karar: onay bekliyor
+
+---
+
+ADAY: pitch-announcement-second-slide  
+Gerekçe: announcement autoplay=5. İlk kare “Sign up for our newsletter”. Search interact 1440’ta “Just launched: bestselling skincare bundles”. Ok var; ayrı state çekilmedi.  
+Örnekler: `#…__header_announcements_kcHY6p`  
+Öneri: leftover — ikinci slayt interact değil  
+Karar: onay bekliyor
+
+---
+
 ADAY: pitch-generic-section-wrapper  
 Gerekçe: Home hero / collection pair / about text / PDP accordion Horizon `section` + nested theme-blocks. Tip `section` — yeni şema açılmadı; mevcut tipe map.  
 Örnekler: `#…__section_6PnLrM` · `#…__section_eeFGpP`  
