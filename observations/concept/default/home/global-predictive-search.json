@@ -1,0 +1,76 @@
+{
+  "observationId": "concept.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "concept",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://concept-theme.myshopify.com/",
+  "selector": "predictive-search.search-modal__form",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/concept/default/home/global-predictive-search.initial.arama-kapali.1440.png",
+    "evidence/concept/default/home/global-predictive-search.initial.arama-kapali.375.png",
+    "evidence/concept/default/home/global-predictive-search.initial.arama-kapali.768.png",
+    "evidence/concept/default/home/global-predictive-search.input.arama-sonucu.1440.png",
+    "evidence/concept/default/home/global-predictive-search.input.arama-sonucu.375.png",
+    "evidence/concept/default/home/global-predictive-search.input.arama-sonucu.768.png"
+  ],
+  "notlar": "PREDICTIVE-SEARCH + #Search-In-Modal. Katalog cream.",
+  "delta": "Üç viewport’ta ikon → #Drawer-Search. 1440 #Search-In-Modal x=1460 (ekran dışı) — drawer şart.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://concept-theme.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-kapali",
+      "not": "Kapalı header — arama ikonu"
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "header.header side-drawer-opener.header__icon--search",
+      "capture": false,
+      "not": "Görünür search ikonu → #Drawer-Search (clickVisible 0×0’ı atlar)"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1000,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "cream",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "katalogSorgu cream — Golden Hour / Recovery Cream"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Header search ikonu. Öneri listesi yok.",
+    "input": "3vp #Drawer-Search: cream + SUGGESTIONS cream (sarı) / CONCEPT – Elite Creation. PRODUCTS: Brazilian Blowout Smoothing Cream $103.90 · Adaptogen Deep Moisture Cream $124.00 · Golden Hour Recovery Cream $126.50."
+  },
+  "missingStates": [],
+  "interactionNote": "Submit yok. 1440 #Search-In-Modal kapalıyken x=1460; görünür search ikonu drawer açar.",
+  "capture": {
+    "url": "https://concept-theme.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:05:42.088Z"
+  }
+}

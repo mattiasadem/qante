@@ -1,0 +1,60 @@
+{
+  "observationId": "concept.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "concept",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://concept-theme.myshopify.com/products/vita-botanical-mela-fade-serum-system-a-b",
+  "selector": "#shopify-section-template--16903853998319__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/concept/default/product-detail/product-info-main.changed.color-blue.1440.png",
+    "evidence/concept/default/product-detail/product-info-main.changed.color-blue.375.png",
+    "evidence/concept/default/product-detail/product-info-main.changed.color-blue.768.png",
+    "evidence/concept/default/product-detail/product-info-main.initial.color-white.1440.png",
+    "evidence/concept/default/product-detail/product-info-main.initial.color-white.375.png",
+    "evidence/concept/default/product-detail/product-info-main.initial.color-white.768.png"
+  ],
+  "notlar": "section__m-product. Vita-Botanical Mela-Fade Serum System A+B. Size 75/100/120ml + Color White/Yellow/Blue. ADD TO CART.",
+  "delta": "variant-radios. Sticky ATC duplicate var. Buy it now / checkout yoklandı değil.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://concept-theme.myshopify.com/products/vita-botanical-mela-fade-serum-system-a-b",
+      "capture": true,
+      "etiket": "color-white",
+      "not": "75ml / White $70.00"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#variant-radios-template--16903853998319__main label:has-text(\"Blue\")",
+      "value": 1500,
+      "capture": true,
+      "etiket": "color-blue",
+      "not": "Color White → Blue $72.00"
+    }
+  ],
+  "stateFindings": {
+    "initial": "AUGUSTINUS BADER. Size 75ml + Color White. $99.10→$70.00 (-29%). SALE. ADD TO CART. PayPal tıklanmadı.",
+    "changed": "Color: Blue (3. swatch). $99.10→$72.00 (-27%). Size 75ml hâlâ. 95% of this item's reviews are positive."
+  },
+  "missingStates": [],
+  "interactionNote": "Swatch label:has-text('Blue') görünür; radio 1×1. Checkout yok.",
+  "capture": {
+    "url": "https://concept-theme.myshopify.com/products/vita-botanical-mela-fade-serum-system-a-b",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:07:58.219Z"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "observationId": "minion.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "minion",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://minion-theme-red.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/minion/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/minion/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/minion/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/minion/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/minion/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/minion/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/minion/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/minion/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/minion/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "#cart-icon-bubble → #CartDrawer. Boşta TOP PRODUCTS OF THIS WEEK.",
+  "delta": "Dawn cart-drawer. Discount code + Check out dur. Log in dur.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://minion-theme-red.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble, #cart-icon-bubble--mobile",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://minion-theme-red.myshopify.com/products/gaming-personal-computer",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button.product-form__submit",
+      "capture": false,
+      "not": "Gaming PC default 8GB / 256GB $1,199"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer. Check out tıklanmadı."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus'], #CartDrawer .quantity__button[name='plus']",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+    "stateFindings": {
+      "initial": "Your cart is empty. Continue shopping. Have an account? Log in. Altta TOP PRODUCTS OF THIS WEEK (Gaming PC / Pnone XRT6 / scooter / Phone 8RT).",
+      "filled": "Gaming personal computer Memory 8GB / Storage 256GB qty 1. $1,199→$600 50% OFF. FREE SHIPPING. Subtotal $600. Check out (tıklanmadı). DISCOUNT kapalı.",
+      "changed": "qty 2. Satır $2,398→$1,199. Subtotal $1,199. Check out dur."
+    },
+  "missingStates": [],
+  "interactionNote": "375 #cart-icon-bubble--mobile /cart olabilir; 1440 bubble drawer açar. Check out / Log in / discount dur.",
+  "capture": {
+    "url": "https://minion-theme-red.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:02:44.512Z"
+  }
+}
