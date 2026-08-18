@@ -1,0 +1,91 @@
+{
+  "observationId": "wonder.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "wonder",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://wonder-theme-beauty.myshopify.com/cart",
+  "selector": "#shopify-section-template--18174411407560__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/wonder/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/wonder/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/wonder/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/wonder/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/wonder/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/wonder/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/wonder/default/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/wonder/default/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/wonder/default/cart/cart-page-main.initial.cart-bos.768.png"
+  ],
+  "notlar": "Cart items + empty. Footer sibling 0px boşken.",
+  "delta": "Wonder cart-items. Check out tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://wonder-theme-beauty.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Your cart is empty"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://wonder-theme-beauty.myshopify.com/products/body-salt-scrub-cranberry-300-g",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://wonder-theme-beauty.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart sayfası"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button.js-counter-increase",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet 2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + tote ikon + CONTINUE SHOPPING. Have an account? Log in (tıklanmadı).",
+    "filled": "Your cart (1). Body salt scrub 180 ml Cranberry qty 1 $68. Spend $32 more for Free Delivery. -10% milestone.",
+    "changed": "Your cart (2). qty 2 satır $136. Spend $64 more for -20%."
+  },
+  "missingStates": [],
+  "interactionNote": "Check out tıklanmadı. Log in duruldu.",
+  "capture": {
+    "url": "https://wonder-theme-beauty.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:12:00.987Z"
+  }
+}
