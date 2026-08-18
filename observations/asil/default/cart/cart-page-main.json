@@ -1,0 +1,100 @@
+{
+  "observationId": "asil.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "asil",
+  "preset": "default",
+  "sayfa": "cart",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "url": "https://dev-asil.ikas.shop/cart",
+  "selector": "section.cart",
+  "notlar": "CART. Boş: Sepetiniz / Sepetiniz boş / Henüz bir şey yok — koleksiyona göz atın… / Alışverişe devam et. Dolu: Medium Shoulder Bag Black, qty, Kaldır, ÖZET, İNDİRİM KODU, Ödemeye geç. Drawer yok — hdr__cart /cart'a gider.",
+  "delta": "ikas CART. Drawer yok. Checkout/kupon tıklanmadı. addToCart action yok — button.pdp__add.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://dev-asil.ikas.shop/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "section.cart",
+      "capture": true,
+      "etiket": "bos",
+      "not": "Boş sepet"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://dev-asil.ikas.shop/medium-shoulder-bag",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.pdp__add",
+      "capture": false,
+      "not": "Medium Shoulder Bag Black — ikas UI"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://dev-asil.ikas.shop/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "section.cart",
+      "capture": true,
+      "etiket": "dolu",
+      "not": "1 kalem"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button.qty__btn[aria-label='Increase quantity']",
+      "capture": true,
+      "etiket": "adet",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Sepetiniz boş. Henüz bir şey yok — koleksiyona göz atın ve beğeneceğiniz bir şey bulun. Alışverişe devam et.",
+    "filled": "Medium Shoulder Bag Black. qty 1. ₺24.00 (üstü ₺32). ÖZET Ara toplam (1 kalem) ₺24.00. Ödemeye geç tıklanmadı.",
+    "changed": "qty 2. Satır ₺48.00 (2x24). Ara toplam ₺48.00."
+  },
+  "missingStates": [],
+  "interactionNote": "Drawer yok. Checkout / kupon / login tıklanmadı."
+}

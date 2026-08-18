@@ -1,0 +1,53 @@
+{
+  "observationId": "asil.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "asil",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "url": "https://dev-asil.ikas.shop/medium-shoulder-bag",
+  "selector": "section.pdp",
+  "notlar": "PRODUCT Medium Shoulder Bag. NUVORA. ₺24 / ₺32 -25%. COLOR swatch Black (seçili) Beige Pistachio Green Coral Cyan. ADET +/-. Sepete ekle — ₺ 24.00. Accordion Detaylar & Kalıp / Kumaş & Bakım / Kargo & İade (buy box içi). Breadcrumb Anasayfa / Bags / Shoulder Bags.",
+  "delta": "ikas PRODUCT. Shopify variant id yok. Checkout yok. Wishlist tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://dev-asil.ikas.shop/medium-shoulder-bag",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "section.pdp",
+      "capture": true,
+      "etiket": "black",
+      "not": "COLOR Black"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button.pdp__swatch[aria-label='Beige']",
+      "capture": true,
+      "etiket": "beige",
+      "not": "COLOR Beige"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Medium Shoulder Bag. COLOR Black seçili. ₺24.00 (üstü ₺32.00 -25%). Sepete ekle — ₺ 24.00.",
+    "changed": "Beige swatch seçili (is-selected). Fiyat hâlâ ₺24.00."
+  },
+  "missingStates": [],
+  "interactionNote": "Tek option: COLOR Black→Beige. Checkout/email yok. addToCart /cart/add.js yok."
+}
