@@ -1,0 +1,83 @@
+{
+  "observationId": "trade.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "trade",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-trade-demo.myshopify.com/",
+  "selector": "#cart-notification",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/trade/default/home/global-cart-drawer.filled.sepet-rozeti.1440.png",
+    "evidence/trade/default/home/global-cart-drawer.filled.sepet-rozeti.375.png",
+    "evidence/trade/default/home/global-cart-drawer.filled.sepet-rozeti.768.png",
+    "evidence/trade/default/home/global-cart-drawer.initial.bildirim-kapali.1440.png",
+    "evidence/trade/default/home/global-cart-drawer.initial.bildirim-kapali.375.png",
+    "evidence/trade/default/home/global-cart-drawer.initial.bildirim-kapali.768.png"
+  ],
+  "notlar": "Dawn cart-notification. cart-drawer yok. Sepet ikonu /cart.",
+  "delta": "Slide-out drawer değil. Buy box’ta Add to cart yok — B2B quick-order-list / AJAX.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-trade-demo.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#shopify-section-sections--22715907047446__header",
+      "etiket": "bildirim-kapali",
+      "not": "Host cart-notification 0px; kapalı kare header"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-trade-demo.myshopify.com/products/cape-side-table",
+      "capture": false,
+      "not": "Cape Side Table — form[id] var, görünür ATC yok"
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add']",
+      "capture": false,
+      "not": "UI ATC yok → /cart/add.js"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-trade-demo.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#shopify-section-sections--22715907047446__header",
+      "etiket": "sepet-rozeti",
+      "not": "Bildirim .active olmadı (AJAX). Header sepet rozeti."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Bildirim kapalı. Header sepet ikonunda sayı yok.",
+    "filled": "#cart-notification.active açılmadı (add.js + QOL plus yoklandı). Header sepet rozeti 1. Checkout yok."
+  },
+  "missingStates": [
+    { "state": "hover", "sebep": "Anlamsız" },
+    { "state": "input", "sebep": "Anlamsız" },
+    { "state": "open", "sebep": "Popup #cart-notification.active AJAX/QOL plus ile açılmadı" },
+    { "state": "changed", "sebep": "Adet cart sayfasında" }
+  ],
+  "interactionNote": "Görünür ATC yok. addToCart → cart/add.js. Notification popup tetiklenmedi (QOL plus da açmadı). Dolu sepet cart-page-main.",
+  "capture": {
+    "url": "https://theme-trade-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:45:59.868Z"
+  }
+}

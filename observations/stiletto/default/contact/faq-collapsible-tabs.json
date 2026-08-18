@@ -1,0 +1,76 @@
+{
+  "observationId": "stiletto.default.contact.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "stiletto",
+  "preset": "default",
+  "sayfa": "contact",
+  "url": "https://stiletto-theme-vogue.myshopify.com/pages/contact",
+  "selector": "#shopify-section-template--22242344894613__collapsible-row-list",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/stiletto/default/contact/faq-collapsible-tabs.initial.bolum.1440.png",
+    "evidence/stiletto/default/contact/faq-collapsible-tabs.initial.bolum.375.png",
+    "evidence/stiletto/default/contact/faq-collapsible-tabs.initial.bolum.768.png"
+  ],
+  "notlar": "HOW DO I KNOW IF MY ORDER IS CONFIRMED?",
+  "delta": "",
+  "capture": {
+    "url": "https://stiletto-theme-vogue.myshopify.com/pages/contact",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:42:34.411Z"
+  },
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://stiletto-theme-vogue.myshopify.com/pages/contact",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".popup--has-image .popup__dismiss-icon",
+      "value": 700,
+      "capture": false,
+      "not": "JOIN US kapat"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".popup--flyout [data-dismiss-popup]",
+      "value": 700,
+      "capture": false,
+      "not": "walkthrough kapat"
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--22242344894613__collapsible-row-list",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 500,
+      "capture": true,
+      "etiket": "bolum",
+      "captureMode": "section",
+      "not": "Popup kapalı section"
+    }
+  ],
+  "stateFindings": {
+    "initial": "HOW DO I KNOW IF MY ORDER IS CONFIRMED?"
+  },
+  "missingStates": [],
+  "interactionNote": "JOIN US + THEME WALKTHROUGH kapatıldı. Get 10% Off tab leftover olabilir.",
+  "captureMode": "section"
+}

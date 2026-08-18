@@ -1,0 +1,76 @@
+{
+  "observationId": "stiletto.default.faq-support.editorial-rich-text",
+  "schemaId": "editorial-rich-text",
+  "kaynak": "stiletto",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "url": "https://stiletto-theme-vogue.myshopify.com/pages/faq",
+  "selector": "#shopify-section-template--22242344927381__rich-text",
+  "evidenceSlug": "editorial-rich-text",
+  "evidence": [
+    "evidence/stiletto/default/faq-support/editorial-rich-text.initial.bolum.1440.png",
+    "evidence/stiletto/default/faq-support/editorial-rich-text.initial.bolum.375.png",
+    "evidence/stiletto/default/faq-support/editorial-rich-text.initial.bolum.768.png"
+  ],
+  "notlar": "FAQ başlık.",
+  "delta": "",
+  "capture": {
+    "url": "https://stiletto-theme-vogue.myshopify.com/pages/faq",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:43:16.302Z"
+  },
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://stiletto-theme-vogue.myshopify.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".popup--has-image .popup__dismiss-icon",
+      "value": 700,
+      "capture": false,
+      "not": "JOIN US kapat"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".popup--flyout [data-dismiss-popup]",
+      "value": 700,
+      "capture": false,
+      "not": "walkthrough kapat"
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--22242344927381__rich-text",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 500,
+      "capture": true,
+      "etiket": "bolum",
+      "captureMode": "section",
+      "not": "Popup kapalı section"
+    }
+  ],
+  "stateFindings": {
+    "initial": "FAQ başlık."
+  },
+  "missingStates": [],
+  "interactionNote": "JOIN US + THEME WALKTHROUGH kapatıldı. Get 10% Off tab leftover olabilir.",
+  "captureMode": "section"
+}

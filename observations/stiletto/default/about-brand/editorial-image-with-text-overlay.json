@@ -1,0 +1,76 @@
+{
+  "observationId": "stiletto.default.about-brand.editorial-image-with-text-overlay",
+  "schemaId": "editorial-image-with-text-overlay",
+  "kaynak": "stiletto",
+  "preset": "default",
+  "sayfa": "about-brand",
+  "url": "https://stiletto-theme-vogue.myshopify.com/pages/about-us",
+  "selector": "#shopify-section-template--22242344861845__image_hero_cjVKyH",
+  "evidenceSlug": "editorial-image-with-text-overlay",
+  "evidence": [
+    "evidence/stiletto/default/about-brand/editorial-image-with-text-overlay.initial.bolum.1440.png",
+    "evidence/stiletto/default/about-brand/editorial-image-with-text-overlay.initial.bolum.375.png",
+    "evidence/stiletto/default/about-brand/editorial-image-with-text-overlay.initial.bolum.768.png"
+  ],
+  "notlar": "About kapanış image-hero.",
+  "delta": "Başlık HTML'de yok; görsel bant.",
+  "capture": {
+    "url": "https://stiletto-theme-vogue.myshopify.com/pages/about-us",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:39:06.464Z"
+  },
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://stiletto-theme-vogue.myshopify.com/pages/about-us",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".popup--has-image .popup__dismiss-icon",
+      "value": 700,
+      "capture": false,
+      "not": "JOIN US kapat"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".popup--flyout [data-dismiss-popup]",
+      "value": 700,
+      "capture": false,
+      "not": "walkthrough kapat"
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--22242344861845__image_hero_cjVKyH",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 500,
+      "capture": true,
+      "etiket": "bolum",
+      "captureMode": "section",
+      "not": "Popup kapalı section"
+    }
+  ],
+  "stateFindings": {
+    "initial": "About kapanış image-hero."
+  },
+  "missingStates": [],
+  "interactionNote": "JOIN US + THEME WALKTHROUGH kapatıldı. Get 10% Off tab leftover olabilir.",
+  "captureMode": "section"
+}

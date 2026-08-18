@@ -1,0 +1,76 @@
+{
+  "observationId": "stiletto.default.collections.collection-nav-grid",
+  "schemaId": "collection-nav-grid",
+  "kaynak": "stiletto",
+  "preset": "default",
+  "sayfa": "collections",
+  "url": "https://stiletto-theme-vogue.myshopify.com/collections",
+  "selector": "#shopify-section-template--22242344829077__main",
+  "evidenceSlug": "collection-nav-grid",
+  "evidence": [
+    "evidence/stiletto/default/collections/collection-nav-grid.initial.bolum.1440.png",
+    "evidence/stiletto/default/collections/collection-nav-grid.initial.bolum.375.png",
+    "evidence/stiletto/default/collections/collection-nav-grid.initial.bolum.768.png"
+  ],
+  "notlar": "COLLECTIONS. list-collections.",
+  "delta": "Katalog index. items.max 16 — canlı sayı PNG'de.",
+  "capture": {
+    "url": "https://stiletto-theme-vogue.myshopify.com/collections",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:41:53.698Z"
+  },
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://stiletto-theme-vogue.myshopify.com/collections",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".popup--has-image .popup__dismiss-icon",
+      "value": 700,
+      "capture": false,
+      "not": "JOIN US kapat"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".popup--flyout [data-dismiss-popup]",
+      "value": 700,
+      "capture": false,
+      "not": "walkthrough kapat"
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--22242344829077__main",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 500,
+      "capture": true,
+      "etiket": "bolum",
+      "captureMode": "section",
+      "not": "Popup kapalı section"
+    }
+  ],
+  "stateFindings": {
+    "initial": "COLLECTIONS. list-collections."
+  },
+  "missingStates": [],
+  "interactionNote": "JOIN US + THEME WALKTHROUGH kapatıldı. Get 10% Off tab leftover olabilir.",
+  "captureMode": "section"
+}
