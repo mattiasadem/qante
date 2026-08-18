@@ -1,0 +1,128 @@
+{
+  "observationId": "woodstock.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "woodstock",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://woodstock-theme-light.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/woodstock/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/woodstock/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/woodstock/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/woodstock/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/woodstock/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/woodstock/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/woodstock/default/home/global-cart-drawer.initial.sepet-bos.1440.png",
+    "evidence/woodstock/default/home/global-cart-drawer.initial.sepet-bos.375.png",
+    "evidence/woodstock/default/home/global-cart-drawer.initial.sepet-bos.768.png"
+  ],
+  "notlar": "cart-drawer #CartDrawer. Header #cart-icon-bubble href=/cart aria=dialog.",
+  "delta": "Dawn-benzeri yan drawer. Gift wrap leftover.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://woodstock-theme-light.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart-drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://woodstock-theme-light.myshopify.com/products/watch-generation-bxx7",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": ".product-form__submit.cart-submit-button",
+      "capture": false,
+      "not": "Watch Version I7 black/41mm"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC drawer açar — toggle tekrar kapatırsa tıklanmadı"
+    },
+    {
+      "state": "changed",
+      "action": "fill",
+      "selector": "#CartDrawer input.quantity__input[name='updates[]']",
+      "value": "2",
+      "capture": false,
+      "viewports": [
+        "375"
+      ],
+      "not": "375 plus 0×0 — input.quantity__input doldur"
+    },
+    {
+      "state": "changed",
+      "action": "press",
+      "value": "Enter",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "viewports": [
+        "375"
+      ],
+      "not": "375 qty input Enter"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button.quantity__button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "not": "Adet 1→2 (plus görünür)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + Spend $1,000 more Free Shipping 0% + Cellphones/Audio/Accessories/Cameras + Continue shopping + SALE30.",
+    "filled": "Watch Version I7 black/41mm $249 qty 1. Spend $751 more (24%). Subtotal $249. You may also like.",
+    "changed": "Qty 2, satır $498, Subtotal $498, Spend $502 more (49%). 375 plus 0×0 — input fill+Enter."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC UI (addToCart → ui) drawer açar. Checkout tıklanmadı. 375 quantity__button plus 0×0; qty input.quantity__input fill 2 + Enter. 768/1440 plus tık.",
+  "capture": {
+    "url": "https://woodstock-theme-light.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:14:45.688Z"
+  }
+}
