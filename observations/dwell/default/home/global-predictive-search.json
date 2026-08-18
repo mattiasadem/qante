@@ -1,0 +1,99 @@
+{
+  "observationId": "dwell.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "dwell",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-dwell-demo.myshopify.com/",
+  "selector": "dialog.search-modal__content",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/dwell/default/home/global-predictive-search.initial.search-bos.1440.png",
+    "evidence/dwell/default/home/global-predictive-search.initial.search-bos.375.png",
+    "evidence/dwell/default/home/global-predictive-search.initial.search-bos.768.png",
+    "evidence/dwell/default/home/global-predictive-search.input.linen.1440.png",
+    "evidence/dwell/default/home/global-predictive-search.input.linen.375.png",
+    "evidence/dwell/default/home/global-predictive-search.input.linen.768.png"
+  ],
+  "notlar": "dialog-component#search-modal + predictive-search. Input #cmdk-input. Kapalı 0 yükseklik.",
+  "delta": "Horizon cmdk search. katalogSorgu: linen (75 sonuç).",
+  "captureMode": "viewport",
+  "prepareClick": "search-button.search-action--hidden-on-drawer button[aria-label='Search']",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-dwell-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "search-button.search-action--hidden-on-menu button[aria-label='Search']",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "375 header Search (hidden-on-menu)"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "search-button.search-action--hidden-on-drawer button[aria-label='Search']",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "768/1440 header Search"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#cmdk-input",
+      "value": "linen",
+      "capture": false,
+      "not": "katalog: linen 75"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "#cmdk-input",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "linen",
+      "not": "öneri + View all"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Modal Search + X. Products: Birch Coverlet $279, Boucle Bolster Pillow Cover $40 (~~$99), Boucle Pillow Cover $79, Boucle Round Pillow Cover $40 (~~$99).",
+    "input": "linen + Clear; chips linen stitch / cloud linen gauze. Products: Linen Euro Sham $109, Linen Duvet Cover $410, Linen Box Quilt $389, Vintage Linen Pillow Cover $109… View all. 375 2 kolon."
+  },
+  "missingStates": [],
+  "interactionNote": "375 search header’da (hidden-on-menu). 768/1440 hidden-on-drawer. PII yok.",
+  "capture": {
+    "url": "https://theme-dwell-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:51:38.776Z"
+  }
+}
