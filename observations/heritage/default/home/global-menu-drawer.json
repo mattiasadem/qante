@@ -1,0 +1,62 @@
+{
+  "observationId": "heritage.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "heritage",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-heritage-demo.myshopify.com/",
+  "selector": "#Details-menu-drawer-container",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/heritage/default/home/global-menu-drawer.open.hamburger.375.png"
+  ],
+  "notlar": "375 hamburger 46×46. 768/1440 hamburger 0×0 — desktop Men/Women/Accessories.",
+  "delta": "Horizon header-drawer. 768 hamburger yok — leftover.",
+  "captureMode": "viewport",
+  "prepareClick": "header summary.header__icon--menu[aria-label='Menu']",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://theme-heritage-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header summary.header__icon--menu[aria-label='Menu']",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "375 drawer"
+    }
+  ],
+  "stateFindings": {
+    "open": "375 sol drawer: X; Men + Apparel/Outerwear/Shirts & Woven/Tees & Jersey/Hats (çocuklar düz açık); Women aynı çocuklar; Accessories. Altta ürün şeridi The Terry Short $105 / The Quilted Wool Vest $162.50 / The Britannia Coat $162.50."
+  },
+  "missingStates": [],
+  "interactionNote": "768/1440 N/A. Nested product link tıklanmadı (sayfa kaçar). Account tıklanmadı.",
+  "capture": {
+    "url": "https://theme-heritage-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:42:43.438Z"
+  }
+}
