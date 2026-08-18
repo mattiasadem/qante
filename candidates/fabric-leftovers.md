@@ -82,10 +82,10 @@ Karar: onay bekliyor
 ---
 
 ADAY: fabric-pdp-related-hydrate  
-Gerekçe: `#…__product_recommendations_UeDczP` “Related items”; ilk yüklemede img 0 / `data-recommendations-performed=false`. Observation yazıldı.  
+Gerekçe: İlk probe’da `#…__product_recommendations_UeDczP` img 0 / `data-recommendations-performed=false`. Resmi 3vp capture’da kart hydrate oldu (Shorts + Hamatah SALE).  
 Örnekler: https://theme-fabric-demo.myshopify.com/products/tefnut-beach-vest-in-black  
-Öneri: leftover — boş/hydrate  
-Karar: onay bekliyor
+Öneri: leftover — ilk yükleme gecikmesi not edildi  
+Karar: observation yazıldı
 
 ---
 
