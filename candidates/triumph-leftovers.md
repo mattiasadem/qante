@@ -161,6 +161,14 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: triumph-menu-drawer-768  
+Gerekçe: 375 hamburger kare var (`#Details-menu-drawer-container > summary`). 768 settle cart-drawer overlay. `cart-drawer [aria-label=Close]` `tablet-down-hide` — tıklanamaz. Nested WOMEN chevron tıklanmadı (yalnız top-level WOMEN/MEN/KIDS + PHONES + locale).  
+Örnekler: home  
+Öneri: leftover — 768 menu + nested  
+Karar: onay bekliyor
+
+---
+
 ADAY: triumph-cart-drawer-375-filled  
 Gerekçe: ATC sonrası `#cart-icon-bubble` “outside of the viewport”. `filled.375` yok. `changed.375` ATC’nin açtığı drawer’da qty 2 $91.78.  
 Örnekler: home cart-drawer  

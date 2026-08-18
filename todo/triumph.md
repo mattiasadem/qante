@@ -21,7 +21,7 @@
 | Capture | resmi `capture-observation.mjs` + `capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **38** |
-| PNG | **122** (menu recapture sonrası artacak) |
+| PNG | **123** |
 | Parallel | yalnız `observations/triumph/`, `evidence/triumph/`, `todo/triumph.md`, `candidates/triumph-leftovers.md` |
 
 **Kapsam satırı:**  
@@ -36,7 +36,7 @@
 | Home + announcement/hero/categories/tabs/bundle/collage/countdown/feed/blog/faq/footer | [x] obs | [x] 375+1440 · 768 leftover |
 | Mega Clothing hover 1440 | [x] obs | [x] 375 kapalı + 1440 kapalı/open · 768 leftover |
 | Predictive search `sneakers` | [x] obs | [x] 375+1440 · 768 leftover |
-| Mobile hamburger 375+768 | [x] obs | [ ] recapture (selector düzeltildi) |
+| Mobile hamburger 375+768 | [x] obs | [x] 375 open · 768 leftover |
 | Cart drawer empty + filled + qty | [x] obs | [x] pixel-check (375 filled / 768 initial leftover) |
 | PDP JumpFlex Color Pink→Blue | [x] obs | [x] 375+1440 initial/changed · 768 changed |
 | PLP `/collections/womens-bras` | [x] obs | [x] 375+1440 · 768 leftover |
@@ -92,7 +92,7 @@
 |---|---|---|
 | navigation-header-mega | open Clothing 1440 | [x] WOMEN'S CLOTHING + 4 kart |
 | global-predictive-search | input `sneakers` | [x] 375+1440 SUGGESTIONS/PRODUCTS |
-| global-menu-drawer | open 375/768 | [ ] selector düzeltildi; recapture |
+| global-menu-drawer | open 375/768 | [x] 375 WOMEN/MEN/KIDS · 768 leftover |
 | global-cart-drawer | initial / filled / changed | [x] boş 375+1440 · dolu 768+1440 · qty 3vp |
 | cart-page-main | initial / filled / changed | [x] 3vp $45.89 → $91.78 |
 | product-info-main | changed Color Pink→Blue | [x] SKU 94-0002→94-0001 · 768 initial leftover |
@@ -108,7 +108,7 @@
 ## Evidence backlog
 
 - [x] Official 3vp static (`capture-observation.mjs` 375 yazdı, 768 abort; `capture-interaction.mjs` 375+1440)
-- [x] Interact mega / search / cart / PDP Color (menu recapture sırada)
+- [x] Interact mega / search / menu 375 / cart / PDP Color
 - [x] PNG bak → stateFindings
 - [x] `npm run validate` — **0 error · 0 warn**
 - [x] Email / account / checkout / newsletter submit — **yapılmayacak**
