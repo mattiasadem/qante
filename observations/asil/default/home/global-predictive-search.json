@@ -1,0 +1,89 @@
+{
+  "observationId": "asil.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "asil",
+  "preset": "default",
+  "sayfa": "home",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/asil/default/home/global-predictive-search.initial.bos.1440.png",
+    "evidence/asil/default/home/global-predictive-search.initial.bos.375.png",
+    "evidence/asil/default/home/global-predictive-search.initial.bos.768.png",
+    "evidence/asil/default/home/global-predictive-search.input.bag.1440.png",
+    "evidence/asil/default/home/global-predictive-search.input.bag.375.png",
+    "evidence/asil/default/home/global-predictive-search.input.bag.768.png"
+  ],
+  "url": "https://dev-asil.ikas.shop/",
+  "selector": ".srch",
+  "captureMode": "viewport",
+  "notlar": "button.hdr__search → .srch dialog. Boş: Popüler aramalar Elbiseler / Ceketler / Yeni gelenler / Keten. katalogSorgu bag (Medium Shoulder Bag). Fill sonrası ürün kartları + TÜM SONUÇLARI GÖR 10.",
+  "delta": "ikas overlay. /search?s=bag ayrı search-results. /search?q= yok sayılıyor (katalog). Chip tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://dev-asil.ikas.shop/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.hdr__search",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "selector": ".srch",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bos",
+      "not": "Popüler aramalar"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input.srch__input",
+      "value": "bag",
+      "capture": false,
+      "not": "katalogSorgu bag — Medium Shoulder Bag"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bag",
+      "not": "Öneri listesi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Ürün ara. Popüler aramalar: Elbiseler, Ceketler, Yeni gelenler, Keten.",
+    "input": "bag → Medium Shoulder Bag ₺24 / Day Trip Waist / Spots Shoulder Bag / … + TÜM SONUÇLARI GÖR 10."
+  },
+  "missingStates": [],
+  "interactionNote": "Enter zorunlu değil — yazınca öneri geldi. Account/checkout yok.",
+  "capture": {
+    "url": "https://dev-asil.ikas.shop/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:54:50.797Z"
+  }
+}
