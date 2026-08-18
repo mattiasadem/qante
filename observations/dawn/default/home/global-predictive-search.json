@@ -1,0 +1,57 @@
+{
+  "observationId": "dawn.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "dawn",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-dawn-demo.myshopify.com/",
+  "selector": "details-modal.header__search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "Header büyüteç → details-modal. Input #Search-In-Modal. predictive-search var.",
+  "delta": "Öneri yalnız ürün beklenir. Submit /search ayrı observation. katalogSorgu=puff.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-dawn-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "details-modal.header__search > details > summary, summary.header__icon--search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Boş search modal"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "puff",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-puff",
+      "not": "katalogSorgu=puff (Puff / Puff Large)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Search overlay açık veya ikon; öneri listesi yok.",
+    "input": "puff: PRODUCTS Puff / Puff Large beklenir + Search for “puff”."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu puff. Submit/PII yok."
+}

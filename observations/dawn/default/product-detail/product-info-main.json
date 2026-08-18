@@ -1,0 +1,47 @@
+{
+  "observationId": "dawn.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "dawn",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://theme-dawn-demo.myshopify.com/products/puff-olive-leaf",
+  "selector": "#shopify-section-template--15968258293849__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "Puff $465 CAD. Color radios: Olive Leaf (sold out) / Emerald (default) / Chocolate / Latte / Pastel / Pink Cloud. Qty + Add to cart + Buy it now. Accordion: Materials / Shipping & Returns / Dimensions / Care Instructions / Share.",
+  "delta": "Dawn main-product. Accordion buy box içinde (ayrı product-info-tabs yok). Olive Leaf sold out. Buy it now tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-dawn-demo.myshopify.com/products/puff-olive-leaf",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15968258293849__main",
+      "capture": true,
+      "etiket": "emerald",
+      "not": "Varsayılan Color Emerald (Olive Leaf sold out)"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='template--15968258293849__main-1-2']",
+      "capture": true,
+      "etiket": "chocolate",
+      "not": "Color Chocolate"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Color Emerald hap dolu. $465. Olive Leaf sold out etiketi. Add to cart + Buy it now. Accordion kapalı.",
+    "changed": "Color Chocolate hap dolu; galeri değişmesi beklenir. Fiyat aynı $465."
+  },
+  "missingStates": [],
+  "interactionNote": "Emerald → Chocolate label tık. Checkout/email yok. Olive Leaf sold out."
+}

@@ -1,0 +1,64 @@
+{
+  "observationId": "dawn.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "dawn",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-dawn-demo.myshopify.com/",
+  "selector": "#shopify-section-sections--15968258195545__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Sticky header. 1440: Bags (details) Shoes (details) Lookbook + search + Log in + Cart. Logo. Ülke/para. Mega yok.",
+  "delta": "Mega panel yok — Dawn details-disclosure + header__submenu. Shopify.theme.name Dawn · schema_name Dawn · schema_version 15.0.0 · theme_store_id 887 · role main · id 129690763353 · shop theme-dawn-demo.myshopify.com. 375/768 hamburger ayrı global-menu-drawer. Log in PII yoklandı değil.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-dawn-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Dropdown kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-HeaderMenu-1 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bags-dropdown",
+      "not": "Bags — Shop all / Tote / Shoulder / Crossbody / Top handle / Mini. Mega kolon yok."
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440: announcement + Bags/Shoes/Lookbook + search + Log in + Cart. Dropdown kapalı. 375/768: hamburger + logo + arama + sepet.",
+    "open": "1440 Bags tık: dikey liste Shop all, Tote bags, Shoulder bags, Crossbody bags, Top handle bags, Mini bags. Görsel/promo kolon yok."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Mega yok; 1440 dropdown click ile open"
+    }
+  ],
+  "interactionNote": "Mega yok. Log in / account tıklanmadı."
+}

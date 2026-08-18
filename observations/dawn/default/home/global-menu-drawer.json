@@ -1,0 +1,69 @@
+{
+  "observationId": "dawn.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "dawn",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-dawn-demo.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "375/768 hamburger → #menu-drawer. Bags / Shoes / Lookbook + Log in + ülke + sosyal.",
+  "delta": "1440 hamburger gizli (Dawn large-up inline). Mega yok.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://theme-dawn-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header-drawer summary.header__icon--menu, #Details-menu-drawer-container > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Drawer açık; 1440 hamburger yok"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-menu-drawer-menu-item-1 > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bags-akordeon",
+      "not": "Bags nested menu"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: sol drawer Bags → / Shoes → / Lookbook; Log in; ülke listesi; sosyal. 1440 hamburger yok.",
+    "changed": "375/768 Bags → iç panel: Shop all + Tote/Shoulder/Crossbody/Top handle/Mini."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger yok (Dawn large-up inline) — beklenen"
+    }
+  ],
+  "interactionNote": "Log in tıklanmadı. 1440 N/A."
+}
