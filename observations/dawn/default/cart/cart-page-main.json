@@ -1,0 +1,124 @@
+{
+  "observationId": "dawn.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "dawn",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://theme-dawn-demo.myshopify.com/cart",
+  "selector": "#shopify-section-template--15968257638489__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/dawn/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/dawn/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/dawn/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/dawn/default/cart/cart-page-main.filled.puff-qty1.1440.png",
+    "evidence/dawn/default/cart/cart-page-main.filled.puff-qty1.375.png",
+    "evidence/dawn/default/cart/cart-page-main.filled.puff-qty1.768.png",
+    "evidence/dawn/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/dawn/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/dawn/default/cart/cart-page-main.initial.sepet-bos.768.png"
+  ],
+  "notlar": "Boş: Your cart is empty + Continue shopping + Have an account? Log in… Sibling cart-footer boşken h=0. Dolu: satır + adet. You may also like ayrı section.",
+  "delta": "Dawn cart-items + cart-footer ayrık. Drawer yok; header #cart-icon-bubble → /cart. cart-notification leftover. Checkout/login tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-dawn-demo.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-dawn-demo.myshopify.com/products/puff-olive-leaf",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'], form[action*='/cart/add'] button[type='submit']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-dawn-demo.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "puff-qty1",
+      "not": "Dolu cart satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "quantity-input button[name='plus'], cart-items button[name='plus'], button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +1"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + Continue shopping + Have an account? Log in to check out faster. Satır yok. Altta You may also like (Art Deco sale / Bo Ivy / Bo Soft Strap / Brick).",
+    "filled": "Your cart. Puff Color: Emerald qty 1 · $465.00. Estimated total $465.00 CAD + Check out. Sepet rozeti 1.",
+    "changed": "Plus: qty 2 · satır $930.00 · Estimated total $930.00 CAD. Sepet rozeti 2. Checkout tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart UI. Checkout/login tıklanmadı. cart-footer sibling leftover.",
+  "capture": {
+    "url": "https://theme-dawn-demo.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:31:50.805Z"
+  }
+}

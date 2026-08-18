@@ -1,0 +1,70 @@
+{
+  "observationId": "be-yours.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "be-yours",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://beyours-theme.myshopify.com/",
+  "selector": "details:has(> summary.header__icon--search)",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/be-yours/default/home/global-predictive-search.initial.arama-kapali.1440.png",
+    "evidence/be-yours/default/home/global-predictive-search.initial.arama-kapali.375.png",
+    "evidence/be-yours/default/home/global-predictive-search.initial.arama-kapali.768.png",
+    "evidence/be-yours/default/home/global-predictive-search.input.arama-sonucu.1440.png",
+    "evidence/be-yours/default/home/global-predictive-search.input.arama-sonucu.375.png",
+    "evidence/be-yours/default/home/global-predictive-search.input.arama-sonucu.768.png"
+  ],
+  "notlar": "predictive-search header modal. Öneri: ROOMSCAPES + INFO. katalogSorgu=plant.",
+  "delta": "Öneri boşken koleksiyon/sayfa linkleri. Ürün listesi yazınca.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://beyours-theme.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-kapali",
+      "not": "İkon; overlay kapalı"
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "capture": false,
+      "not": "Görünür büyüteç"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input.search__input[name='q']",
+      "value": "plant",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "katalogSorgu=plant (Prayer Plant / Spider Plant)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Arama overlay kapalı. Header'da büyüteç.",
+    "input": "1440 tam genişlik modal, q=plant: Suggestions (planter / plant / hbsch planter / prayer plant / All Plants) + Pages (Plant Drop, Plant Shelf Size) + Products (Snake Plant €14,99–€69,99, Spider Plant €12,99, Polystone Plant Pot, Glass Plant Mister, Prayer Plant & Pot, How to Raise a Plant) + SEARCH FOR “PLANT”. 375: Suggestions + Products (Pages kolonu yok). Submit yok."
+  },
+  "missingStates": [],
+  "interactionNote": "input#Search-In-Modal-455. Submit/PII yok. dress=0 sonuç leftover.",
+  "capture": {
+    "url": "https://beyours-theme.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:07:10.904Z"
+  }
+}

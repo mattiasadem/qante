@@ -1,0 +1,85 @@
+{
+  "observationId": "dawn.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "dawn",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-dawn-demo.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/dawn/default/home/global-menu-drawer.changed.bags-akordeon.375.png",
+    "evidence/dawn/default/home/global-menu-drawer.changed.bags-akordeon.768.png",
+    "evidence/dawn/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/dawn/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "375/768 hamburger → #menu-drawer. Bags / Shoes / Lookbook + Log in + ülke + sosyal.",
+  "delta": "1440 hamburger gizli (Dawn large-up inline). Mega yok.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://theme-dawn-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header-drawer summary.header__icon--menu, #Details-menu-drawer-container > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Drawer açık; 1440 hamburger yok"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-menu-drawer-menu-item-1 > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bags-akordeon",
+      "not": "Bags nested menu"
+    }
+  ],
+  "stateFindings": {
+    "open": "375: tam genişlik drawer — Bags → / Shoes → / Lookbook; altta Log in + Canada CAD $ + X/Facebook/Instagram/TikTok/YouTube; header X + DAWN. 768: sol ~yarı drawer, sağda karartılı hero (Shop now). 1440 hamburger yok.",
+    "changed": "375/768 Bags → geri oku + Bags + Shop all / Tote bags / Shoulder bags / Crossbody bags / Top handle bags / Mini bags. In-place nested, mega değil."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger yok (Dawn large-up inline) — beklenen"
+    }
+  ],
+  "interactionNote": "Log in tıklanmadı. 1440 N/A.",
+  "capture": {
+    "url": "https://theme-dawn-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:27:01.097Z"
+  }
+}

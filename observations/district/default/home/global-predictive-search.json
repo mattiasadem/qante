@@ -1,0 +1,92 @@
+{
+  "observationId": "district.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "district",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://district-theme-demo.myshopify.com/",
+  "selector": "#ModalPredictiveSearch > div.fixed",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/district/default/home/global-predictive-search.initial.search-bos.1440.png",
+    "evidence/district/default/home/global-predictive-search.initial.search-bos.375.png",
+    "evidence/district/default/home/global-predictive-search.initial.search-bos.768.png",
+    "evidence/district/default/home/global-predictive-search.input.shirt.1440.png",
+    "evidence/district/default/home/global-predictive-search.input.shirt.375.png",
+    "evidence/district/default/home/global-predictive-search.input.shirt.768.png"
+  ],
+  "notlar": "button.header-top__search → #ModalPredictiveSearch.openModal. Katalog: shirt.",
+  "delta": "Dismiss overlay #ModalPredictiveSearch > div.fixed'e display:none basıyor; forceOpen display geri alır.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://district-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.header-top__search",
+      "capture": false,
+      "not": "Search opener"
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "#ModalPredictiveSearch > div.fixed",
+      "capture": false,
+      "not": "Dismiss'in display:none'ını kaldır"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 600,
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#ModalPredictiveSearch > div.fixed",
+      "etiket": "search-bos",
+      "not": "Boş predictive overlay"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#PredictiveSearch",
+      "value": "shirt",
+      "capture": false,
+      "not": "katalog shirt"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#ModalPredictiveSearch > div.fixed",
+      "etiket": "shirt",
+      "not": "PRODUCTS Do A Lot With A Little $28"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boş overlay: büyüteç + kapat X. Sonuç listesi yok.",
+    "input": "shirt → PRODUCTS: Do A Lot With A Little $28 + Search for 'shirt'."
+  },
+  "missingStates": [],
+  "interactionNote": "Enter/submit yok. forceOpen #ModalPredictiveSearch > div.fixed — dismiss bu fixed sarmalayıcıya display:none basıyor. 375 altta District Updates e-posta şeridi (PII, dur).",
+  "capture": {
+    "url": "https://district-theme-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:25:06.571Z"
+  }
+}
