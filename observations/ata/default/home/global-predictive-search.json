@@ -1,0 +1,102 @@
+{
+  "observationId": "ata.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "ata",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://g5jhl-themes.myikas.com/",
+  "selector": ".search-overlay",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/ata/default/home/global-predictive-search.initial.populer-aramalar.1440.png",
+    "evidence/ata/default/home/global-predictive-search.initial.populer-aramalar.375.png",
+    "evidence/ata/default/home/global-predictive-search.initial.populer-aramalar.768.png",
+    "evidence/ata/default/home/global-predictive-search.input.arama-metalic.1440.png",
+    "evidence/ata/default/home/global-predictive-search.input.arama-metalic.375.png",
+    "evidence/ata/default/home/global-predictive-search.input.arama-metalic.768.png",
+    "evidence/ata/default/home/global-predictive-search.input.arama-ruj.1440.png"
+  ],
+  "notlar": "1440 header büyüteç; 375/768 .mobile-search-bar. Overlay + popüler chip. ruj → Sonuç bulunamadı; Metalic katalog adı.",
+  "delta": "ikas search-overlay + search-panel. /search?q= ayrı. Ata · ikas Studio storefront · host g5jhl-themes.myikas.com · window.Shopify yok · window.__IKAS_DATA__ var (storefrontThemeId 90e6a44f-b183-44d4-b141-55b49c09e75d · storefrontId f726bf61-68c8-4758-afb3-206ea66e32e7 · storefrontType STOREFRONT · domain themes.myikas.com · merchantName themes · locale tr · TRY) · window.IkasEvents var · theme_store_id 1863f1b9-8002-4446-8c3c-1436db3d47bc (Theme Store UUID; storefront JSON'da yok)",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://g5jhl-themes.myikas.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.nav-icon-btn[aria-label='Arama']",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "populer-aramalar",
+      "not": "1440 header büyüteç"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.mobile-search-bar",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": ".search-overlay",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "populer-aramalar",
+      "not": "375/768 overlay; dismiss kill undo"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input.search-panel-input",
+      "value": "Metalic",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-metalic",
+      "not": "katalogSorgu Metalic"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Overlay + Ürün ara... + POPÜLER ARAMALAR chip: Ruj Fondöten Parfüm Cilt Bakımı Set İndirim.",
+    "input": "Metalic: ÜRÜN ÖNERİLERİ · 5× Metalic Lipstick ₺20.999 · Kadın · METALİC için tüm sonuçları gör. ruj 1440 karede Sonuç bulunamadı."
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 opener .mobile-search-bar. ruj 0 öneri; Metalic ürün adı. /search ayrı. PII yok.",
+  "capture": {
+    "url": "https://g5jhl-themes.myikas.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:23:02.964Z"
+  }
+}
