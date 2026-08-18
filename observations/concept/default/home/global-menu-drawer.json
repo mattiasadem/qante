@@ -1,0 +1,68 @@
+{
+  "observationId": "concept.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "concept",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://concept-theme.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/concept/default/home/global-menu-drawer.initial.menu-kapali.375.png",
+    "evidence/concept/default/home/global-menu-drawer.initial.menu-kapali.768.png",
+    "evidence/concept/default/home/global-menu-drawer.open.menu-acik.375.png",
+    "evidence/concept/default/home/global-menu-drawer.open.menu-acik.768.png"
+  ],
+  "notlar": "header-drawer + #Details-menu-drawer-container. Theme Demo / Shops / Products / Pages / Blog.",
+  "delta": "1440 hamburger 0×0. 375 ve 768 summary.header__icon--menu 24×24.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://concept-theme.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "menu-kapali",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Kapalı hamburger"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "summary.header__icon--menu",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "menu-acik",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Menu drawer"
+    }
+  ],
+  "stateFindings": {
+    "initial": "375/768 hamburger ikonu (24×24).",
+    "open": "375 tam genişlik + 768 sol çekmece: Theme Demo / Shops / Products / Pages / Blog (chevron) / Buy Concept. Altta USD $ | United States, English, Wishlist (0), Log in. Log in tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "Yazılı <a> tıklanmadı (preset/koleksiyon kaçışı). Alt menü changed yoklandı değil.",
+  "capture": {
+    "url": "https://concept-theme.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:00:10.517Z"
+  }
+}

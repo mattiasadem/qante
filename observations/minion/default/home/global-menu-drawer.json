@@ -1,0 +1,57 @@
+{
+  "observationId": "minion.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "minion",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://minion-theme-red.myshopify.com/",
+  "selector": ".menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/minion/default/home/global-menu-drawer.open.mobil-menu-acik.375.png",
+    "evidence/minion/default/home/global-menu-drawer.open.mobil-menu-acik.768.png"
+  ],
+  "notlar": "summary.main-menu-button → .menu-drawer. 1440 0×0.",
+  "delta": "details.drawer + main-menu-button. Alt menü expander leftover.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://minion-theme-red.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "summary.main-menu-button",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mobil-menu-acik",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Hamburger. 1440 gizli."
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 sol drawer: Phones (chevron) … Drones ikonlu; About Us / Customer Service / Shipping & Returns. 768 ayrıca Theme Features + Account Sign in with shop (tıklanmadı) + tel. 1440 hamburger yok."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 hamburger yok. Log in tıklanmadı.",
+  "capture": {
+    "url": "https://minion-theme-red.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T10:59:18.430Z"
+  }
+}

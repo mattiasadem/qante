@@ -1,0 +1,101 @@
+{
+  "observationId": "concept.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "concept",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://concept-theme.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/concept/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/concept/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/concept/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/concept/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/concept/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/concept/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/concept/default/home/global-cart-drawer.initial.sepet-bos.1440.png",
+    "evidence/concept/default/home/global-cart-drawer.initial.sepet-bos.375.png",
+    "evidence/concept/default/home/global-cart-drawer.initial.sepet-bos.768.png"
+  ],
+  "notlar": "#Cart-Drawer / #CartDrawer. Header side-drawer-opener.header__icon--cart.",
+  "delta": "Boş + dolu + adet. Checkout tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://concept-theme.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header.header side-drawer-opener.header__icon--cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://concept-theme.myshopify.com/products/vita-botanical-mela-fade-serum-system-a-b",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--16903853998319__main",
+      "capture": false,
+      "not": "Vita-Botanical 75ml/White $70"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC drawer açar"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer .quantity__button:nth-of-type(2)",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart · 0 items. Free shipping for all orders over 800! Your cart is empty + Continue shopping. Sol panel You May Also Like (Golden Hour $126.50).",
+    "filled": "1 items. Vita-Botanical 75ml / White + 10% Off. Qty 1. Shipping progress. CHECK OUT / VIEW CART tıklanmadı.",
+    "changed": "2 items. Qty 2. Satır $70.00→$63.00 (10% Off). Subtotal $126.00. Only $674 away from free shipping!"
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart → ui (drawer açıldı). CHECK OUT / VIEW CART tıklanmadı. Qty #CartDrawer .quantity__button:nth-of-type(2).",
+  "capture": {
+    "url": "https://concept-theme.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:10:21.053Z"
+  }
+}
