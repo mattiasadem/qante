@@ -1,0 +1,116 @@
+{
+  "observationId": "woodstock.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "woodstock",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://woodstock-theme-light.myshopify.com/cart",
+  "selector": "#shopify-section-template--20124662792493__cart",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/woodstock/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/woodstock/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/woodstock/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/woodstock/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/woodstock/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/woodstock/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/woodstock/default/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/woodstock/default/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/woodstock/default/cart/cart-page-main.initial.cart-bos.768.png"
+  ],
+  "notlar": "section-main-cart-items. Boş + dolu + qty.",
+  "delta": "Have an account? Log in leftover. Discount copy leftover.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://woodstock-theme-light.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Your cart is empty + Check out our most wanted collections"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://woodstock-theme-light.myshopify.com/products/watch-generation-bxx7",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": ".product-form__submit.cart-submit-button",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://woodstock-theme-light.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart satırı"
+    },
+    {
+      "state": "changed",
+      "action": "fill",
+      "selector": "cart-items input.quantity__input[name='updates[]'], #MainContent input.quantity__input",
+      "value": "2",
+      "capture": false,
+      "viewports": [
+        "375"
+      ],
+      "not": "375 plus 0×0 — quantity input"
+    },
+    {
+      "state": "changed",
+      "action": "press",
+      "value": "Enter",
+      "capture": true,
+      "etiket": "adet-artti",
+      "viewports": [
+        "375"
+      ],
+      "not": "375 qty input Enter"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "cart-items button.quantity__button[name='plus'], #MainContent button.quantity__button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "not": "Adet 1→2 (plus görünür)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + collection önerileri + SALE50 kopyala (kullanılmadı).",
+    "filled": "Watch Version I7 black/41mm $249 qty 1. Cart totals $249 + Gift wrap / Add order note / Check out (tıklanmadı).",
+    "changed": "Qty 2, satır + Subtotal $498. 375 plus 0×0 — input fill+Enter."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC UI. SALE50 / Log in / checkout tıklanmadı. 375 qty input fill; 768/1440 plus.",
+  "capture": {
+    "url": "https://woodstock-theme-light.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:16:43.228Z"
+  }
+}
