@@ -1,0 +1,99 @@
+{
+  "kaynak": "spotlight",
+  "preset": "default",
+  "evidence": [
+    "evidence/spotlight/default/home/global-predictive-search.input.arama-cap.1440.png",
+    "evidence/spotlight/default/home/global-predictive-search.input.arama-cap.375.png",
+    "evidence/spotlight/default/home/global-predictive-search.input.arama-cap.768.png",
+    "evidence/spotlight/default/home/global-predictive-search.open.arama-acik.1440.png",
+    "evidence/spotlight/default/home/global-predictive-search.open.arama-acik.375.png",
+    "evidence/spotlight/default/home/global-predictive-search.open.arama-acik.768.png"
+  ],
+  "observationId": "spotlight.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "sayfa": "home",
+  "url": "https://theme-spotlight-demo.myshopify.com/",
+  "selector": "predictive-search.search-modal__form",
+  "evidenceSlug": "global-predictive-search",
+  "captureMode": "viewport",
+  "notlar": "Header büyüteç / details-modal. katalogSorgu: cap (PLP 4 sonuç).",
+  "delta": "Dawn details-modal. 1440 görünür input #Search-In-Modal; 375/768 #Search-In-Modal-1 (Craft tersi).",
+  "interactionStates": [
+    "input",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://theme-spotlight-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "details-modal.header__search summary.header__icon--search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik",
+      "not": "Büyüteç → search-modal. Submit yok."
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "cap",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-cap",
+      "not": "1440 görünür input #Search-In-Modal"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal-1",
+      "value": "cap",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-cap",
+      "not": "375/768 görünür input #Search-In-Modal-1"
+    }
+  ],
+  "stateFindings": {
+    "open": "Büyüteç → search-modal. Boş input placeholder Search + sağda X. Arka plan karartılı; home grid görünür. Öneri listesi yok.",
+    "input": "cap yazınca PRODUCTS: Cap Wool (siyah + turuncu), Cap Ebbets Corduroy (pembe + sarı) + Search for “cap” →. 1440 #Search-In-Modal; 375/768 #Search-In-Modal-1. Enter yok."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "filled",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "changed",
+      "sebep": "Tek sorgu; chair 0-sonuç sayfa karesi ayrı leftover"
+    }
+  ],
+  "interactionNote": "Fill viewport-özel (Craft tersi). Enter/submit yok.",
+  "capture": {
+    "url": "https://theme-spotlight-demo.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:35:32.686Z"
+  }
+}
