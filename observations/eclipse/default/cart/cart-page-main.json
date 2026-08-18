@@ -1,0 +1,73 @@
+{
+  "observationId": "eclipse.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "eclipse",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://eclipse-theme-ripple.myshopify.com/cart",
+  "selector": "#shopify-section-template--20338289705125__main",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Boş: Your cart is currently empty. Continue shopping.",
+  "delta": "",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eclipse-theme-ripple.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "etiket": "cart-bos"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://eclipse-theme-ripple.myshopify.com/products/versatile-jacket-eclipse",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form.product-form button.buy-buttons__add-to-cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://eclipse-theme-ripple.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 500,
+      "capture": true,
+      "etiket": "sepete-eklendi"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--20338289705125__main button[name='plus'], #shopify-section-template--20338289705125__main button[aria-label*='Increase' i], #shopify-section-template--20338289705125__main .quantity-plus",
+      "value": 2000,
+      "capture": true,
+      "etiket": "adet-artti"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is currently empty. Continue shopping.",
+    "filled": "Eclipse Jacket Small qty 1 $146. Checkout tıklanmadı.",
+    "changed": "qty 2 ~$292 beklenir."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı. Qty selector yoklanır."
+}

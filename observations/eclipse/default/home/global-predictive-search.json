@@ -1,0 +1,52 @@
+{
+  "observationId": "eclipse.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "eclipse",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://eclipse-theme-ripple.myshopify.com/",
+  "selector": "dialog[data-fluco-dialog='predictiveSearchDrawer']",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "notlar": "Sağ drawer. Quick links Kidswear Adultwear Toys Accessories Shop All.",
+  "delta": "Kapalıda 0px. a.header__button--search opener. Submit tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eclipse-theme-ripple.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.header__button--search[data-action='show-predictive-search-drawer']",
+      "value": 1400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik",
+      "not": "Quick links"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#search-input--sections--20338290458789__predictive-search-drawer",
+      "value": "jacket",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "katalogSorgu jacket"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Search drawer. Placeholder Search. Quick links Kidswear / Adultwear / Toys / Accessories / Shop All.",
+    "input": "jacket — ürün önerileri beklenir (Jacket $146/$164)."
+  },
+  "missingStates": [],
+  "interactionNote": "Submit / View all tıklanmadı. Account yok."
+}

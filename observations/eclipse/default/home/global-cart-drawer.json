@@ -1,0 +1,77 @@
+{
+  "observationId": "eclipse.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "eclipse",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://eclipse-theme-ripple.myshopify.com/",
+  "selector": "dialog[data-fluco-dialog='cartDrawer']",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "a.cart-button data-action=show-cart-drawer. Boş: Your cart is currently empty + Others also bought.",
+  "delta": "Yan drawer. Checkout tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eclipse-theme-ripple.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.cart-button[data-action='show-cart-drawer']",
+      "value": 1400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://eclipse-theme-ripple.myshopify.com/products/versatile-jacket-eclipse",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form.product-form button.buy-buttons__add-to-cart",
+      "capture": false,
+      "not": "Eclipse Jacket Small $146"
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a.cart-button[data-action='show-cart-drawer']",
+      "value": 1600,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer. Checkout tıklanmadı."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "dialog[data-fluco-dialog='cartDrawer'] button[name='plus'], dialog[data-fluco-dialog='cartDrawer'] button[aria-label*='Increase' i], dialog[data-fluco-dialog='cartDrawer'] .quantity-plus",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is currently empty. Continue shopping. Others also bought jackets.",
+    "filled": "Eclipse Jacket Small qty 1 $146. Checkout tıklanmadı.",
+    "changed": "qty 2 beklenir (~$292)."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC UI. Checkout tıklanmadı. Qty selector yoklanır."
+}

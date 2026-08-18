@@ -1,0 +1,48 @@
+{
+  "observationId": "eclipse.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "eclipse",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://eclipse-theme-ripple.myshopify.com/products/versatile-jacket-eclipse",
+  "selector": "#shopify-section-template--20338289967269__product_overview",
+  "evidenceSlug": "product-info-main",
+  "evidence": [],
+  "notlar": "Versatile Eclipse Jacket $146. Color Eclipse sibling swatches. Size Small/Large dropdown. ATC.",
+  "delta": "Color swatch sibling /products/versatile-jacket-red'e gider — Size değişimi kullanıldı. Size Guide leftover.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eclipse-theme-ripple.myshopify.com/products/versatile-jacket-eclipse",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 500,
+      "capture": true,
+      "etiket": "size-small",
+      "not": "Small $146"
+    },
+    {
+      "state": "changed",
+      "action": "select",
+      "selector": "select#option1",
+      "value": "Large",
+      "capture": true,
+      "etiket": "size-large",
+      "not": "Size Large. Color tıklanmadı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Eclipse Jacket $146 In stock. Color Eclipse. Size Small.",
+    "changed": "Size Large. Fiyat $146 aynı. Color Eclipse."
+  },
+  "missingStates": [],
+  "interactionNote": "Color Red sibling URL değiştirir — leftover. Checkout/Buy now yok. Gift add leftover."
+}

@@ -1,0 +1,53 @@
+{
+  "observationId": "eclipse.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "eclipse",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://eclipse-theme-ripple.myshopify.com/",
+  "selector": "#shopify-section-sections--20338290491557__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Logo ECL Ripple + Shop / Our Company / Learn. Search / account / bag.",
+  "delta": "Shop href=/collections/all-products — yalnız hover. Account duruldu.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eclipse-theme-ripple.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 600,
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "a.submenu__link.submenu__parent-item[href='/collections/all-products']",
+      "value": 1400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Shop hover. tıklanmadı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440: Shop / Our Company / Learn + search/account/bag 0. 375 hamburger label.navigation__control.",
+    "open": "1440 Shop mega: promo Shop All Products + Featured / By Age / Collection kolonları."
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 mega yok — hamburger. Account /checkout duruldu. Shop <a> tıklanmadı."
+}
