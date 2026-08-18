@@ -1,0 +1,83 @@
+{
+  "observationId": "dawn.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "dawn",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-dawn-demo.myshopify.com/products/puff-olive-leaf",
+  "selector": "#cart-notification",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/dawn/default/home/global-cart-drawer.filled.puff-eklendi.1440.png",
+    "evidence/dawn/default/home/global-cart-drawer.filled.puff-eklendi.375.png",
+    "evidence/dawn/default/home/global-cart-drawer.filled.puff-eklendi.768.png"
+  ],
+  "notlar": "Dawn cart-notification (side drawer değil). ATC sonrası Item added / View my cart / Check out / Continue shopping.",
+  "delta": "cart-drawer yok. Overlay #cart-notification. Cart ikonu /cart sayfasına gider. Checkout tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-dawn-demo.myshopify.com/products/puff-olive-leaf",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'], form[action*='/cart/add'] button[type='submit']",
+      "capture": false,
+      "not": "Puff (varsayılan Emerald — Olive Leaf sold out)"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": "#cart-notification",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "puff-eklendi",
+      "not": "#cart-notification Item added"
+    }
+  ],
+  "stateFindings": {
+    "filled": "Item added to your cart. Puff · Color: Emerald · yeşil thumbnail. View cart (1) · Check out · Continue shopping. Header sepet rozeti 1. 375 bildirim PDP üstünde; 1440 sağ kolon overlay. Checkout tıklanmadı."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "Boş notification 0-size — Dawn yalnız ATC sonrası açıyor"
+    },
+    {
+      "state": "changed",
+      "sebep": "Adet notification'da yok — cart-page-main changed"
+    }
+  ],
+  "interactionNote": "Olive Leaf sold out; ATC default Emerald. Checkout tıklanmadı.",
+  "capture": {
+    "url": "https://theme-dawn-demo.myshopify.com/products/puff-olive-leaf",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:28:51.315Z"
+  }
+}

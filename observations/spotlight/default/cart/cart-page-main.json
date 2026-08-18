@@ -1,0 +1,97 @@
+{
+  "kaynak": "spotlight",
+  "preset": "default",
+  "evidence": [
+    "evidence/spotlight/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/spotlight/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/spotlight/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/spotlight/default/cart/cart-page-main.filled.dolu-sepet.1440.png",
+    "evidence/spotlight/default/cart/cart-page-main.filled.dolu-sepet.375.png",
+    "evidence/spotlight/default/cart/cart-page-main.filled.dolu-sepet.768.png",
+    "evidence/spotlight/default/cart/cart-page-main.initial.bos-sepet.1440.png",
+    "evidence/spotlight/default/cart/cart-page-main.initial.bos-sepet.375.png",
+    "evidence/spotlight/default/cart/cart-page-main.initial.bos-sepet.768.png"
+  ],
+  "observationId": "spotlight.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "sayfa": "cart",
+  "url": "https://theme-spotlight-demo.myshopify.com/cart",
+  "selector": "#shopify-section-template--15939470000184__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "notlar": "Boş: Your cart is empty + Continue shopping. cart-footer boşken h=0.",
+  "delta": "Boş state metin+CTA. Dolu + qty interact.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-spotlight-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "bos-sepet",
+      "not": "Your cart is empty"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-spotlight-demo.myshopify.com/products/ebbets-corduroy-cap-yellow",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://theme-spotlight-demo.myshopify.com/cart",
+      "capture": true,
+      "etiket": "dolu-sepet",
+      "not": "Cap satırı. Checkout tıklanmaz."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], quantity-input button[name='plus'], .quantity__button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet +1"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + Continue shopping (sarı pill). Satır/özet yok.",
+    "filled": "Your cart + Continue shopping. Cap Ebbets Corduroy thumbnail (pembe), adet 1, $48.00. 1440 PRODUCT/QUANTITY/TOTAL. Checkout bu kırpıda yok.",
+    "changed": "Adet 2. Satır toplam $96.00."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Anlamsız"
+    },
+    {
+      "state": "open",
+      "sebep": "Sayfa, drawer değil"
+    },
+    {
+      "state": "input",
+      "sebep": "Anlamsız"
+    }
+  ],
+  "interactionNote": "Checkout / Shop Pay tıklanmadı. cart-footer boşken 0px.",
+  "capture": {
+    "url": "https://theme-spotlight-demo.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:38:38.612Z"
+  }
+}
