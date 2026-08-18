@@ -1,0 +1,73 @@
+{
+  "observationId": "concept.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "concept",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://concept-theme.myshopify.com/",
+  "selector": "header.header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/concept/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/concept/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/concept/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/concept/default/home/navigation-header-mega.open.shops-mega.1440.png"
+  ],
+  "notlar": "header--middle-left header--nav__center. THEME DEMO / SHOPS / PRODUCTS / PAGES / BLOG / BUY CONCEPT. 1440 mega. 375/768 hamburger.",
+  "delta": "shopify-section-header home'da h=0 (SCRIPT first child) — selector header.header. Mega HEADER-MENU custom element, details değil. Account/login/wishlist leftover.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://concept-theme.myshopify.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header + inline nav"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "header-menu[id=\"Details-HeaderMenu-2 test-4\"] > a.header__menu-item",
+      "capture": false,
+      "viewports": [
+        "1440"
+      ],
+      "not": "SHOPS hover. href koleksiyona gider; tıklanmadı."
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#MegaMenu-Content-2",
+      "capture": true,
+      "captureMode": "section",
+      "captureSelector": "#MegaMenu-Content-2",
+      "etiket": "shops-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "SHOPS mega crop — Collection Page kolonları"
+    }
+  ],
+  "stateFindings": {
+    "initial": "CONCEPT logo + THEME DEMO / SHOPS / PRODUCTS / PAGES / BLOG / BUY CONCEPT. Search / account / wishlist 0 / cart 0.",
+    "open": "1440 SHOPS mega crop: Collection List Default/Grid · Collection Default/Classic/Standard · Shopify OS 2.0 / 48+ Unique Sections / Video Slider / Cart Drawer / Enhanced Instant Search + fırça görseli BEYOND TEMPLATES, BEYOND BOUNDARIES."
+  },
+  "missingStates": [],
+  "interactionNote": "SHOPS <a> href=/collections/skincare — tıklama sayfaya kaçar. Hover + forceOpen #MegaMenu-Content-2. THEME DEMO mega diğer preset'lere gider; leftover.",
+  "capture": {
+    "url": "https://concept-theme.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:06:48.281Z"
+  }
+}

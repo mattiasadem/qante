@@ -1,0 +1,62 @@
+{
+  "observationId": "wonder.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "wonder",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://wonder-theme-beauty.myshopify.com/",
+  "selector": "#shopify-section-sections--18174410195144__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/wonder/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/wonder/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/wonder/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/wonder/default/home/navigation-header-mega.open.drawer-mega.1440.png"
+  ],
+  "notlar": "Shop / Bestseller / Hot Offer / Quiz. mega-menu-section drawer içinde (x=-500). Hover Shop panel açmaz.",
+  "delta": "Wonder hover mega yok. 1440 hamburger → #wt-drawer-nav + mega-menu-section (kolon + ürün thumb). Shop teaser href=/collections.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://wonder-theme-beauty.myshopify.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": ".wt-header__menu-trigger",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "drawer-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "1440 hamburger → drawer + mega-menu-section. Shop hover panel açmaz."
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440 şeffaf header: hamburger + Shop / Bestseller / Hot Offer / Quiz + USD + search + account + cart. 375/768 teaser dar.",
+    "open": "1440 hamburger → sol Shop by drawer (~500px): Shop/Bestseller/Layouts +; Hot Offer Quiz Sale; Theme Features yıldız; Blog; alt siyah FAQ Contact Log in USD. Shop hover kolon açmaz."
+  },
+  "missingStates": [],
+  "interactionNote": "Hover Shop panel yok (mega x=-500 drawer içinde). Shop + expander tıklanmadı (yazılı Shop /collections). Account/Quiz duruldu.",
+  "capture": {
+    "url": "https://wonder-theme-beauty.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:14:38.973Z"
+  }
+}

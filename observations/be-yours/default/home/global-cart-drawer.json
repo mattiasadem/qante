@@ -1,0 +1,96 @@
+{
+  "observationId": "be-yours.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "be-yours",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://beyours-theme.myshopify.com/",
+  "selector": "mini-cart.cart-drawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/be-yours/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/be-yours/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/be-yours/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/be-yours/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/be-yours/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/be-yours/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/be-yours/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/be-yours/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/be-yours/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "cart-drawer custom element + details.cart-drawer-container. ATC sonrası otomatik açık.",
+  "delta": "Yan drawer. YOU MAY ALSO LIKE + free shipping eşiği. Check out tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://beyours-theme.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş mini-cart"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://beyours-theme.myshopify.com/products/spider-plant",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add']",
+      "capture": false,
+      "not": "Spider Plant €12,99 — drawer otomatik açar"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer + You may also like"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "mini-cart button[name='plus']",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Sağ CART açık, X. Your cart is currently empty. Not sure where to start? Try these collections: LIVING ROOM / KITCHEN / BEDROOM / BATHROOM / CORRIDOR / WORKSPACES / ALL PLANTS. Solda YOU MAY ALSO LIKE (Coconut Palm, Glass Plant Mister…).",
+    "filled": "Sağ CART + sol YOU MAY ALSO LIKE. Spider Plant €12,99 qty 1. Spend €82,01 more to reach free shipping. CHECK OUT — €12,99. Gift wrap kutusu. NOTE/SHIPPING. Checkout tıklanmadı.",
+    "changed": "qty 2. Spend €69,02 more. CHECK OUT — €25,98."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı. Newsletter popup submit yok. qty button.quantity__button[name=plus].",
+  "capture": {
+    "url": "https://beyours-theme.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:05:42.583Z"
+  }
+}
