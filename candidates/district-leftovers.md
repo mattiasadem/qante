@@ -23,6 +23,7 @@ theme id `122133119029` · role `main` · shop `district-theme-demo.myshopify.co
 | Cart drawer | Yok. `#cart-button` ve ATC `/cart` sayfasına gider |
 | 768 hamburger | `button.header-top__menu` display:none. Masaüstü nav (SHOP mega) |
 | Newsletter popup JOIN & SAVE | E-posta — dur. Capture dismiss |
+| District Updates şerit | 375 predictive açıkken altta e-posta barı — PII, dur |
 | Footer Newsletter GO / contact SEND / blog comment | PII — dur |
 | Header Log in / Create account | `/account` — dur |
 | Currency USD $ | leftover |
@@ -33,6 +34,7 @@ theme id `122133119029` · role `main` · shop `district-theme-demo.myshopify.co
 | Shop the look hotspot tık | leftover |
 | Mobile Shop chevron | kaçış riski — leftover |
 | PLP facet/sort interact | Filtre DOM’da; walk zorunlu değil |
+| Slideshow autoplay | 3vp farklı slayt (Gather / New Classics) — tek kare |
 
 ## Aday (yeni şema yok)
 
@@ -45,8 +47,8 @@ theme id `122133119029` · role `main` · shop `district-theme-demo.myshopify.co
 
 ## Interact notları
 
-- Mega: `#DetailsMenu-header-menu-1 > summary` hover. Tıklama sayfaya kaçabilir.
-- Predictive: `button.header-top__search` → `#PredictiveSearch`. Katalog `shirt` → Do A Lot With A Little $28.
-- 375 hamburger `button.header-top__menu` → `.menu-drawer`. 768/1440 hamburger yok.
-- Cart: ATC `#AddToCart-template--17215441403957__product` → `/cart`. Qty `button.quantity__button[name=plus]`.
-- PDP Color: `label.swatch-item__label[for='template--17215441403957__product-1-1']` White.
+- Mega: `#DetailsMenu-header-menu-1 > summary` hover + `forceOpen` details. Tıklama sayfaya kaçabilir. 1440 açık kare: 5 kolon CLOTHING / WOMENS / EVERYDAY CARRY / WORKSPACE / TEES + görsel.
+- Predictive: `button.header-top__search` → `#PredictiveSearch`. Katalog `shirt` → Do A Lot With A Little $28. `dismiss-overlays` `#ModalPredictiveSearch > div.fixed` üzerine display:none basıyor; adımda `forceOpen` ile geri alındı.
+- 375 hamburger `button.header-top__menu` → `.menu-drawer` (Shop chevron / Best Sellers / Blog / About / More + Log in). 768/1440 hamburger yok — tek 375 PNG.
+- Cart: ATC `#AddToCart-template--17215441403957__product` → `/cart`. Empty: Your cart is empty. Filled: Enjoy The Journey COLOR BLACK SIZE SMALL qty 1 $28. Qty plus → 2 / $56. CHECK OUT tıklanmadı.
+- PDP Color: `label.swatch-item__label[for='template--17215441403957__product-1-1']` White. $28 aynı; görsel siyah→beyaz tisort.

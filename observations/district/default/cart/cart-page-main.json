@@ -4,7 +4,17 @@
   "kaynak": "district",
   "preset": "default",
   "sayfa": "cart",
-  "evidence": [],
+  "evidence": [
+    "evidence/district/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/district/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/district/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/district/default/cart/cart-page-main.filled.sepet-dolu.1440.png",
+    "evidence/district/default/cart/cart-page-main.filled.sepet-dolu.375.png",
+    "evidence/district/default/cart/cart-page-main.filled.sepet-dolu.768.png",
+    "evidence/district/default/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/district/default/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/district/default/cart/cart-page-main.initial.cart-bos.768.png"
+  ],
   "url": "https://district-theme-demo.myshopify.com/cart",
   "selector": "#shopify-section-template--17215441207349__cart-items",
   "evidenceSlug": "cart-page-main",
@@ -16,6 +26,13 @@
     "changed"
   ],
   "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://district-theme-demo.myshopify.com/cart/clear",
+      "capture": false,
+      "not": "Viewport arası sepet kalıntısını sil"
+    },
     {
       "state": "initial",
       "action": "goto",
@@ -67,10 +84,21 @@
     }
   ],
   "stateFindings": {
-    "initial": "",
-    "filled": "",
-    "changed": ""
+    "initial": "/cart/clear sonrasi Your cart is empty + CONTINUE SHOPPING. Drawer yok.",
+    "filled": "ATC UI: Enjoy The Journey COLOR BLACK SIZE SMALL qty 1 $28. cart-footer leftover (CHECK OUT tiklanmadi).",
+    "changed": "quantity plus: qty 2, satir $56."
   },
   "missingStates": [],
-  "interactionNote": "Cart drawer yok. ATC sayfaya gider. CHECK OUT / terms leftover."
+  "interactionNote": "Cart drawer yok. ATC sayfaya gider. CHECK OUT / terms leftover.",
+  "capture": {
+    "url": "https://district-theme-demo.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:15:07.458Z"
+  }
 }
