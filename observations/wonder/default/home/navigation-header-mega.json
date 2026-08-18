@@ -1,0 +1,46 @@
+{
+  "observationId": "wonder.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "wonder",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://wonder-theme-beauty.myshopify.com/",
+  "selector": "#shopify-section-sections--18174410195144__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Shop / Bestseller / Hot Offer / Quiz + mega-menu-section. Account/locale tıklanmadı.",
+  "delta": "Wonder wt-header + mega-menu-section. Shop href=/collections — tıklama sayfaya kaçar.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://wonder-theme-beauty.myshopify.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "a.wt-header__nav-teaser__link--parent[href='/collections']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Shop hover → mega kolonlar. Tıklanmadı (/collections)."
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "open": ""
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 mega yok — hamburger. Shop summary/link tıklanmadı. Account / Quiz / Hot Offer duruldu."
+}
