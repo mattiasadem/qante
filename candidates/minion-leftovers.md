@@ -1,0 +1,60 @@
+# Minion leftovers
+
+*Kaynak:* https://minion-theme-red.myshopify.com/  
+*Tema gözlemi:* **Devices 29-Jun 6a15611** · `schema_name` Minion · `schema_version` 4.2.0 · `theme_store_id` **null** · theme id `161916420354`  
+*Preset:* default (Red)
+
+Şema icat edilmedi. Storefront alanları uydurulmadı.
+
+---
+
+## Tema kimliği
+
+- Canlı `Shopify.theme.theme_store_id` **null**. Theme Store id uydurulmadı.
+- `schema_name` **Minion** · `schema_version` **4.2.0** · role `main`.
+- `name` **Devices 29-Jun 6a15611** (preset klasörü `default` = Red vitrin).
+
+---
+
+## Yok / gitmedi
+
+| Madde | Ne oldu |
+|---|---|
+| `/pages/about` | 404. About = `/pages/about-us` |
+| `/pages/contact-us` | 404. Contact = `/pages/contact` |
+| `/pages/faq` | 404. FAQ şablonu yok |
+| `/blogs/journal` | 404. Blog = `/blogs/news` |
+| `/blogs/blog` | 200, aynı `template--22435917299970` — ikinci blog; walk dışı leftover |
+| `/pages/shipping-returns` | Header link; walk dışı leftover |
+| `/pages/customer-service` | Header link; walk dışı leftover |
+| `/pages/theme-features` | Tema satış sayfası; walk dışı leftover |
+| Newsletter footer / blog band | input var — submit PII, dur |
+| Contact Submit | PII, dur |
+| Account / Log in | Header + cart drawer — dur |
+| Checkout / Buy it now | drawer + PDP — tıklanmadı |
+| Cart discount code | `#cart-discount` — dur |
+| Quick view | kart `btn-quickview` — interact listesinde yok |
+| PDP `product-recommendations` / `1648018242bd6448c3` | yükseklik 0 ilk ziyarette |
+| PLP `description` | yükseklik 0 |
+| Search `q=shirt` | 0 sonuç; katalog `phone` (13) |
+| Mobile submenu `changed` | drawer expander görüldü; alt menü açılmadı |
+
+---
+
+## Aday (yeni şema yok)
+
+- **tiles-menu + megamenu** — `ul.tiles-menu` + `li.submenu--megamenu`. `navigation-header-mega` + delta.
+- **header cart** — `#cart-icon-bubble` Dawn `#CartDrawer`. `global-cart-drawer` + delta.
+- **header-drawer mobile** — `summary.main-menu-button` + `.menu-drawer`. `global-menu-drawer` + delta.
+- **404 template** — taxonomy `pageTypes` içinde yok. `page-content-main` + delta.
+- **popular_categories** — 3 kolon + ürün listesi. `collection-nav-image-cards` + delta.
+
+---
+
+## Interact notları (çekim öncesi)
+
+- Phones mega: `a.tiles-menu-item[href="/collections/phones"]` hover. Tıklama `/collections/phones`.
+- Predictive: 1440 `input#Search-In-Modal`; 375 `input#Search-In-Modal-mobile`. Katalog `phone`.
+- Cart: `#cart-icon-bubble` drawer açar (sayfa değişmez). ATC Gaming PC $1,199.
+- 1440 hamburger 0×0. 375/768 `summary.main-menu-button`.
+- PDP Storage: `label[for="template--22435922837762__main-2-1"]` 512GB SSD $1,899.

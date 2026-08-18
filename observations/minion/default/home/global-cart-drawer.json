@@ -1,0 +1,75 @@
+{
+  "observationId": "minion.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "minion",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://minion-theme-red.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "#cart-icon-bubble → #CartDrawer. Boşta TOP PRODUCTS OF THIS WEEK.",
+  "delta": "Dawn cart-drawer. Discount code + Check out dur. Log in dur.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://minion-theme-red.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://minion-theme-red.myshopify.com/products/gaming-personal-computer",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button.product-form__submit",
+      "capture": false,
+      "not": "Gaming PC default 8GB / 256GB $1,199"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer. Check out tıklanmadı."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus'], #CartDrawer .quantity__button[name='plus']",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "filled": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "375 #cart-icon-bubble--mobile /cart olabilir; 1440 bubble drawer açar. Check out / Log in / discount dur."
+}

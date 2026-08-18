@@ -1,0 +1,43 @@
+{
+  "observationId": "minion.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "minion",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://minion-theme-red.myshopify.com/",
+  "selector": ".menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "summary.main-menu-button → .menu-drawer. 1440 0×0.",
+  "delta": "details.drawer + main-menu-button. Alt menü expander leftover.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://minion-theme-red.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "summary.main-menu-button",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mobil-menu-acik",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Hamburger. 1440 gizli."
+    }
+  ],
+  "stateFindings": {
+    "open": ""
+  },
+  "missingStates": [],
+  "interactionNote": "1440 hamburger yok. Log in tıklanmadı."
+}

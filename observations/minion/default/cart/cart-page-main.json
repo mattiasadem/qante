@@ -1,0 +1,64 @@
+{
+  "observationId": "minion.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "minion",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://minion-theme-red.myshopify.com/cart",
+  "selector": "#shopify-section-template--22435917332738__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Boş: Your cart is empty / Continue shopping / Have an account? Log in. Dolu + qty.",
+  "delta": "cart-footer boşken h=0. Discount leftover. Check out dur.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://minion-theme-red.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://minion-theme-red.myshopify.com/products/gaming-personal-computer",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button.product-form__submit",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://minion-theme-red.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu satır $1,199"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], .quantity__button[name='plus']",
+      "value": 2000,
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "filled": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Log in / Check out tıklanmadı. Featured Collection ayrı observation."
+}

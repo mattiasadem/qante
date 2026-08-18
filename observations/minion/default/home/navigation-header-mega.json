@@ -1,0 +1,46 @@
+{
+  "observationId": "minion.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "minion",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://minion-theme-red.myshopify.com/",
+  "selector": "#shopify-section-sections--22435917168898__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Üst: About Us / Customer Service / Shipping & Returns / Theme Features + tel + Search + Log in + Cart. Alt tiles-menu: Phones…Drones.",
+  "delta": "Tiles + megamenu hover. Account/Theme Features tıklanmadı. 375/768 hamburger.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://minion-theme-red.myshopify.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header + tiles"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "a.tiles-menu-item[href=\"/collections/phones\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "phones-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Phones tile hover → megamenu. href tıklanmadı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "open": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Mega yalnız hover; tile <a> tıklanırsa /collections/phones. 375/768 tiles yok — hamburger."
+}
