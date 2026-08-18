@@ -1,0 +1,119 @@
+{
+  "observationId": "homage.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "homage",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://homage-theme-demo-01.myshopify.com/cart",
+  "selector": "#shopify-section-template--30283080794444__cart_items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/homage/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/homage/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/homage/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/homage/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/homage/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/homage/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/homage/default/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/homage/default/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/homage/default/cart/cart-page-main.initial.cart-bos.768.png"
+  ],
+  "notlar": "Boş: YOUR CART IS EMPTY + CONTINUE SHOPPING. Dolu + qty.",
+  "delta": "Homage cart_items. Sibling featured_products placeholder leftover. Checkout dur. Shopify.theme.name homage/release/v1.1 · schema_name Homage · schema_version 1.0.1 · theme_store_id null · role main · id 200065417548 · shop homage-theme-demo-01.myshopify.com",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://homage-theme-demo-01.myshopify.com/cart/clear",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://homage-theme-demo-01.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://homage-theme-demo-01.myshopify.com/products/downhill-27-jacket",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://homage-theme-demo-01.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "qty1 $995"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--30283080794444__cart_items button[name='plus']",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "qty2 $1990 beklenir"
+    }
+  ],
+  "stateFindings": {
+    "initial": "YOUR CART IS EMPTY + CONTINUE SHOPPING. Altta 4× Product Title $19.99 placeholder. Footer HOMAGE band.",
+    "filled": "CART satır Downhill ‘27 Jacket Hunter/S $995 qty 1 · ORDER SUMMARY SUBTOTAL $995 · SECURE CHECKOUT. Header bag rozet 1.",
+    "changed": "qty 2 · SUBTOTAL $1,990. Header bag 1440’te 2. Placeholder grid duruyor."
+  },
+  "missingStates": [],
+  "interactionNote": "SECURE CHECKOUT tıklanmadı. featured_products placeholder leftover.",
+  "capture": {
+    "url": "https://homage-theme-demo-01.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T15:37:36.823Z"
+  }
+}
