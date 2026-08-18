@@ -7,7 +7,17 @@
   "url": "https://dev-market.ikas.shop/cart",
   "selector": ".m-cart-page",
   "evidenceSlug": "cart-page-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/market/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/market/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/market/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/market/default/cart/cart-page-main.filled.dolu.1440.png",
+    "evidence/market/default/cart/cart-page-main.filled.dolu.375.png",
+    "evidence/market/default/cart/cart-page-main.filled.dolu.768.png",
+    "evidence/market/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/market/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/market/default/cart/cart-page-main.initial.sepet-bos.768.png"
+  ],
   "notlar": "pageType CART /cart. Boş: Sepetim · Sepetiniz boş · Taze ürünler sizi bekliyor · Alışverişe Başla. Dolu: Avokado satır + stepper + Sipariş Özeti. Checkout tıklanmadı.",
   "delta": "Aynı context'te sepet kalır (375 doldurunca 768/1440 initial dolu olabilir). /cart/add.js yok. /checkout → INDEX.",
   "captureMode": "section",
@@ -104,17 +114,21 @@
     }
   ],
   "stateFindings": {
-    "initial": "Sepetim · Sepetiniz boş · Alışverişe Başla. (Sonraki vp aynı context ise dolu kalabilir.)",
-    "filled": "Avokado satır + Sipariş Özeti + Siparişi Tamamla (tıklanmadı).",
-    "changed": "qty arttı; ara toplam güncellendi."
+    "initial": "375/768/1440 boş: Sepetim · Sepetiniz boş · Taze ürünler sizi bekliyor · Alışverişe Başla.",
+    "filled": "1 ürün · Avokado ₺29.90 qty 1 · Sipariş Özeti Ara Toplam ₺29.90 · Toplam 29,90 ₺ · Siparişi Tamamla (tıklanmadı).",
+    "changed": "2 ürün · 2 × ₺29.90 qty 2 · Ara Toplam ₺59.80 · Toplam 59,80 ₺ · Siparişi Tamamla • 59,80 ₺."
   },
   "missingStates": [],
-  "interactionNote": "Resmi script aynı browser context — sepet 375→768 taşır. Checkout / kupon yoklandı değil.",
+  "interactionNote": "Yeni page boş başladı (375/768/1440 initial boş kare). Checkout / kupon yoklandı değil.",
   "capture": {
     "url": "https://dev-market.ikas.shop/cart",
-    "viewports": ["375", "768", "1440"],
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
     "mode": "section",
-    "method": "",
-    "updatedAt": ""
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T16:32:05.133Z"
   }
 }

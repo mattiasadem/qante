@@ -15,7 +15,7 @@ Theme Store UUID `704c0da7-16ad-4448-9dc7-7487d759145b` · demoLink `https://dev
 `storefrontConfig.domain` `dev-market.myikas.com` (config; public host `dev-market.ikas.shop`)  
 locale `tr` · `currencyCode` `TRY` · `currencySymbol` `₺` · region `TR`
 
-**Durum:** Mod A walk yazıldı · resmi 3vp + interact sırada  
+**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti** (0 error)  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -28,11 +28,11 @@ locale `tr` · `currencyCode` `TRY` · `currencySymbol` `₺` · region `TR`
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **7** |
-| Evidence PNG | *(capture sonrası)* |
+| Evidence PNG | **33** |
 | Parallel | yalnız `observations/market/`, `evidence/market/`, `todo/market.md`, `candidates/market-leftovers.md` |
 
 **Kapsam satırı:**  
-`Market · default · Theme Store 704c0da7-16ad-4448-9dc7-7487d759145b · ikascom · host dev-market.ikas.shop · Shopify.theme yok · pageType INDEX/SEARCH/CART/NOT_FOUND · home (katalog+rail)→PDP modal Salatalık 500g→1kg→PLP=INDEX (category 404)→search avokado 1→cart empty/filled/qty→about/contact/FAQ/blog leftover (href=/ veya 404)→404 blank · 7 obs · 0 yeni şema · leftover: candidates/market-leftovers.md`
+`Market · default · Theme Store 704c0da7-16ad-4448-9dc7-7487d759145b · ikascom · host dev-market.ikas.shop · Shopify.theme yok · pageType INDEX/SEARCH/CART/NOT_FOUND · home (katalog+rail)→PDP modal Salatalık 500g→1kg→PLP=INDEX (category 404)→search avokado 1→cart empty/filled/qty→about/contact/FAQ/blog leftover (href=/ veya 404)→404 blank · 7 obs · 33 PNG · 0 yeni şema · leftover: candidates/market-leftovers.md`
 
 ---
 
@@ -93,7 +93,7 @@ locale `tr` · `currencyCode` `TRY` · `currencySymbol` `₺` · region `TR`
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact header / search / cart / PDP Miktar
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate` — 0 error
+- [x] Official 3vp static (`capture-observation.mjs`) — catalog + footer
+- [x] Interact header / search avokado / cart rail 1440 / cart page 3vp / PDP Miktar
+- [x] PNG bak → stateFindings
+- [x] `npm run validate` — 0 error
