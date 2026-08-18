@@ -1,0 +1,50 @@
+{
+  "observationId": "pitch.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "pitch",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://theme-pitch-demo.myshopify.com/",
+  "selector": "#Details-menu-drawer-container .menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "captureMode": "viewport",
+  "prepareClick": "#Details-menu-drawer-container > summary[aria-label='Menu']",
+  "notlar": "375 hamburger 46×46. Horizon header-drawer.",
+  "delta": "768/1440 hamburger 0×0 — desktop Shop/Bundles/Bestsellers. 768 interact denenecek.",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://theme-pitch-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary[aria-label='Menu']",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "375/768 drawer"
+    }
+  ],
+  "stateFindings": {
+    "open": "375 sol drawer beklenir (Shop çocukları + ürün şeridi). 768 hamburger 0px ise missing."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 hamburger yok. 768 yoklanır. Account tıklanmadı."
+}
