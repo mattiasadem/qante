@@ -11,8 +11,8 @@
 `handle` = `"null"` · `style.id` / `style.handle` = **null**  
 shop `beyours-theme.myshopify.com` · locale `en` · country `DE` · currency `EUR`
 
-**Durum:** Mod A walk + resmi 3vp + interact + validate  
-**PR:** draft · **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti**  
+**PR:** draft https://github.com/mattiasadem/qante/pull/173 — **main'e merge yok**
 
 ---
 
@@ -26,7 +26,7 @@ shop `beyours-theme.myshopify.com` · locale `en` · country `DE` · currency `E
 | Parallel | yalnız `observations/be-yours/`, `evidence/be-yours/`, `todo/be-yours.md`, `candidates/be-yours-leftovers.md` |
 
 **Kapsam satırı:**  
-`Be Yours · default · Be Yours 8.3.1 - live / schema_name Be Yours 8.3.1 (theme_store_id null) · home→PDP Money Tree→PLP all→collections→search plant→cart→about/contact→faq→news→404 · 47 obs · 0 yeni şema · leftover: candidates/be-yours-leftovers.md`
+`Be Yours · default · Be Yours 8.3.1 - live / schema_name Be Yours 8.3.1 (theme_store_id null) · home→PDP Money Tree→PLP all→collections→search plant→cart→about/contact→faq→news→404 · 47 obs · 161 PNG · 0 yeni şema · leftover: candidates/be-yours-leftovers.md`
 
 ---
 
@@ -34,22 +34,22 @@ shop `beyours-theme.myshopify.com` · locale `en` · country `DE` · currency `E
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home + announcement/header/footer + conversion blocks | roster | [ ] capture |
-| Shop dropdown 1440 (mega class yok) | interact | [ ] |
-| Predictive search `plant` | interact | [ ] |
-| Mobile menu 375 | interact | [ ] |
-| Mobile menu 768 | interact | [ ] |
-| Cart drawer empty + filled + qty | interact | [ ] |
-| PDP Money Tree Size S→M | interact | [ ] |
-| PLP `/collections/all` | roster | [ ] |
-| Collections index `/collections` | roster | [ ] |
-| Search `/search?q=plant` | roster | [ ] |
-| Cart page empty + filled + qty | interact | [ ] |
-| About `/pages/about` | roster | [ ] |
-| Contact `/pages/contact` (submit yok) | roster | [ ] |
-| FAQ `/pages/faq` | roster | [ ] |
-| News + Christmas article | roster | [ ] |
-| 404 | roster | [ ] |
+| Home + announcement/header/footer + conversion blocks | roster + capture | [x] |
+| Shop sağ drawer 1440 (mega class yok) | interact | [x] |
+| Predictive search `plant` | interact | [x] |
+| Mobile menu 375 | interact | [x] |
+| Mobile menu 768 | interact | [x] |
+| Cart drawer empty + filled + qty | interact | [x] |
+| PDP Money Tree Size S→M | interact 768/1440 | [x] (375 leftover) |
+| PLP `/collections/all` | roster + capture | [x] |
+| Collections index `/collections` | roster + capture | [x] |
+| Search `/search?q=plant` | roster + capture | [x] |
+| Cart page empty + filled + qty | interact | [x] |
+| About `/pages/about` | roster + capture | [x] |
+| Contact `/pages/contact` (submit yok) | roster + capture | [x] |
+| FAQ `/pages/faq` | roster + capture | [x] |
+| News + Christmas article | roster + capture | [x] |
+| 404 | roster + capture | [x] |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -87,12 +87,12 @@ shop `beyours-theme.myshopify.com` · locale `en` · country `DE` · currency `E
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | open | Shop disclosure 1440 — 6 koleksiyon; mega class yok |
-| global-predictive-search | input | `plant` 3vp |
+| navigation-header-mega | open | Shop sağ drawer 1440 — 6 koleksiyon; mega class yok |
+| global-predictive-search | input | `plant` 3vp — Suggestions + Pages + Products |
 | global-menu-drawer | open | 375/768 hamburger |
-| global-cart-drawer | filled + changed | empty → Spider Plant €12,99 → qty+ |
-| cart-page-main | filled + changed | empty → Spider Plant → qty+ |
-| product-info-main | changed | Size S €14,99 → M €49,99 |
+| global-cart-drawer | filled + changed | Spider Plant €12,99 qty1 → qty2 €25,98 |
+| cart-page-main | filled + changed | empty → qty1 €12,99 → qty2 €25,98 |
+| product-info-main | changed | S €14,99 → M €49,99 (768/1440). 375 leftover |
 
 ---
 
@@ -104,7 +104,7 @@ shop `beyours-theme.myshopify.com` · locale `en` · country `DE` · currency `E
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact Shop / search / cart / menu / PDP Size
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate` — 0 error
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact Shop / search / cart / menu / PDP Size
+- [x] PNG bak → stateFindings
+- [x] `npm run validate` — 0 error

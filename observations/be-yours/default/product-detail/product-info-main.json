@@ -7,9 +7,15 @@
   "url": "https://beyours-theme.myshopify.com/products/money-tree",
   "selector": "#shopify-section-template--17270937452731__main",
   "evidenceSlug": "product-info-main",
-  "evidence": [],
-  "notlar": "Money Tree. Size S/M/L pill. Sale countdown. ADD TO CART + BUY IT NOW. Pickup German Warehouse.",
-  "delta": "S €14,99 → M €49,99 (probe). Sold-out a11y her pill'de. Buy it now tıklanmadı.",
+  "evidence": [
+    "evidence/be-yours/default/product-detail/product-info-main.changed.size-m.1440.png",
+    "evidence/be-yours/default/product-detail/product-info-main.changed.size-m.768.png",
+    "evidence/be-yours/default/product-detail/product-info-main.initial.size-s.1440.png",
+    "evidence/be-yours/default/product-detail/product-info-main.initial.size-s.375.png",
+    "evidence/be-yours/default/product-detail/product-info-main.initial.size-s.768.png"
+  ],
+  "notlar": "Money Tree. Size S/M/L pill. Sale countdown. ADD TO CART + BUY IT NOW. Pickup warehouse satırı.",
+  "delta": "S €14,99 → M €49,99 (768/1440). 375 changed yok. Buy it now tıklanmadı.",
   "interactionStates": [
     "initial",
     "changed"
@@ -25,18 +31,35 @@
     },
     {
       "state": "changed",
-      "action": "click",
-      "selector": "label[for='template--17270937452731__main-1-1']",
-      "value": 1500,
+      "action": "select",
+      "selector": "select#OptionAlt-template--17270937452731__main-0",
+      "value": "M",
+      "viewports": ["768", "1440"],
       "capture": true,
       "etiket": "size-m",
-      "not": "Size M → €49,99"
+      "not": "Size M. 375 pill force-click dock MENU'ye çarpıyor; hidden select de 375'te timeout."
     }
   ],
   "stateFindings": {
-    "initial": "Money Tree. Size S. Regular €14,99. Hurry up sale countdown. Add to cart. Pickup German Warehouse.",
-    "changed": "Size M seçili. Regular €49,99."
+    "initial": "Money Tree. Size S seçili. €14,99 Tax included. Hurry up sale countdown. ADD TO CART + BUY IT NOW. Pickup warehouse satırı. Gallery dikey + thumb.",
+    "changed": "768/1440: Size M siyah pill, €49,99. 375 changed karesi yok."
   },
-  "missingStates": [],
-  "interactionNote": "Checkout/Buy it now yok. Size radio visually-hidden; label[for=…-1-1]=M."
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "375: Size pill fold altında; capture force-click mobile-dock MENU açtı. Hidden select#OptionAlt görünür değil, timeout. 768/1440 select ile M €49,99."
+    }
+  ],
+  "interactionNote": "Buy it now / checkout tıklanmadı. 375 changed PNG silindi (yanlış menü karesi).",
+  "capture": {
+    "url": "https://beyours-theme.myshopify.com/products/money-tree",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:14:24.226Z"
+  }
 }

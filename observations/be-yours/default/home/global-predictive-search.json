@@ -7,7 +7,14 @@
   "url": "https://beyours-theme.myshopify.com/",
   "selector": "details:has(> summary.header__icon--search)",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/be-yours/default/home/global-predictive-search.initial.arama-kapali.1440.png",
+    "evidence/be-yours/default/home/global-predictive-search.initial.arama-kapali.375.png",
+    "evidence/be-yours/default/home/global-predictive-search.initial.arama-kapali.768.png",
+    "evidence/be-yours/default/home/global-predictive-search.input.arama-sonucu.1440.png",
+    "evidence/be-yours/default/home/global-predictive-search.input.arama-sonucu.375.png",
+    "evidence/be-yours/default/home/global-predictive-search.input.arama-sonucu.768.png"
+  ],
   "notlar": "predictive-search header modal. Öneri: ROOMSCAPES + INFO. katalogSorgu=plant.",
   "delta": "Öneri boşken koleksiyon/sayfa linkleri. Ürün listesi yazınca.",
   "captureMode": "viewport",
@@ -45,13 +52,19 @@
   ],
   "stateFindings": {
     "initial": "Arama overlay kapalı. Header'da büyüteç.",
-    "input": "plant yazılınca predictive sonuç beklenir (Prayer Plant & Pot, Spider Plant…). Submit yok."
+    "input": "1440 tam genişlik modal, q=plant: Suggestions (planter / plant / hbsch planter / prayer plant / All Plants) + Pages (Plant Drop, Plant Shelf Size) + Products (Snake Plant €14,99–€69,99, Spider Plant €12,99, Polystone Plant Pot, Glass Plant Mister, Prayer Plant & Pot, How to Raise a Plant) + SEARCH FOR “PLANT”. 375: Suggestions + Products (Pages kolonu yok). Submit yok."
   },
-  "missingStates": [
-    {
-      "state": "open",
-      "sebep": "Boş overlay ayrı çekilmedi; input ile ölçüldü"
-    }
-  ],
-  "interactionNote": "input#Search-In-Modal-455. Submit/PII yok. dress=0 sonuç leftover."
+  "missingStates": [],
+  "interactionNote": "input#Search-In-Modal-455. Submit/PII yok. dress=0 sonuç leftover.",
+  "capture": {
+    "url": "https://beyours-theme.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-18T11:07:10.904Z"
+  }
 }

@@ -13,6 +13,14 @@
 
 ---
 
+ADAY: be-yours-announcement-section-clip
+Gerekçe: `capture-observation` section clip 768/1440 koyu şeridi kaçırdı (sticky header chrome-clearance / dismiss sonrası beyaz 44px). Official `capture-interaction` viewport 3vp koyu barı gösterdi (Rated 4.97 / Free Delivery / 1-3 Days).  
+Örnekler: home announcement  
+Öneri: leftover — script section clip  
+Karar: onay bekliyor
+
+---
+
 ADAY: be-yours-theme-store-id-null  
 Gerekçe: `theme_store_id` canlıda null. Listing https://themes.shopify.com/themes/be-yours id uydurulmadı.  
 Örnekler: https://beyours-theme.myshopify.com/  
@@ -21,10 +29,18 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: be-yours-menu-drawer-1440-zero
+Gerekçe: `details.menu-drawer-container` 1440'te 0px. Official 3vp için viewport selector header. Open yalnız 375/768.  
+Örnekler: home hamburger  
+Öneri: leftover — masaüstü drawer host yok  
+Karar: onay bekliyor
+
+---
+
 ADAY: be-yours-no-mega  
-Gerekçe: `.mega-menu` / `[class*='mega-menu']` yok. Shop = `nav.header__inline-menu details` + `header__submenu list-menu--disclosure`. `list-menu-item` `data-image` taşıyor ama panel dikey liste. `navigation-header-mega` + delta.  
+Gerekçe: `.mega-menu` yok. 1440 Shop tık → sağ `list-menu-drawer` (Plants / Pots / Tools & Accessories / Gifts / Best Sellers / Sale). `list-menu-item` `data-image` var; kolon/promo yok. `navigation-header-mega` + delta.  
 Örnekler: https://beyours-theme.myshopify.com/  
-Öneri: leftover — mega yok  
+Öneri: leftover — sağ drawer, mega kolon yok  
 Karar: onay bekliyor
 
 ---
@@ -89,6 +105,22 @@ ADAY: be-yours-search-dress-empty
 Gerekçe: `/search?q=dress` 0 sonuç. Katalog `plant` (46).  
 Örnekler: https://beyours-theme.myshopify.com/search?q=dress  
 Öneri: leftover — yanlış katalog kelimesi  
+Karar: onay bekliyor
+
+---
+
+ADAY: be-yours-pdp-size-375  
+Gerekçe: 375 Size pill fold altında. `capture-interaction` force-click mobile-dock MENU açtı (yanlış kare silindi). Hidden `select#OptionAlt` 375'te görünür değil. 768/1440 select ile M €49,99.  
+Örnekler: /products/money-tree 375  
+Öneri: leftover — 375 changed yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: be-yours-get-10-off-rail  
+Gerekçe: Sol dikey “GET 10% OFF” + sosyal ikonlar (sabit). Newsletter/PII, tıklanmadı.  
+Örnekler: home / PDP viewport  
+Öneri: leftover  
 Karar: onay bekliyor
 
 ---
