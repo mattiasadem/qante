@@ -7,7 +7,17 @@
   "url": "https://zest-theme-demo.myshopify.com/",
   "selector": "#Drawer-Cart",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/zest/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/zest/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/zest/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/zest/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/zest/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/zest/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/zest/default/home/global-cart-drawer.initial.sepet-bos.1440.png",
+    "evidence/zest/default/home/global-cart-drawer.initial.sepet-bos.375.png",
+    "evidence/zest/default/home/global-cart-drawer.initial.sepet-bos.768.png"
+  ],
   "notlar": "#Drawer-Cart cart-drawer. Boş: Your cart is empty + TOPS/SWIMWEARS/BRAS. Dolu: Alpine Jogger.",
   "delta": "Checkout tıklanmadı. Shopify.theme.name [Update theme store] Zest · schema_name Zest · schema_version 9.3.0 · theme_store_id null · role main · id 151342186722 · walk zest-theme-demo.myshopify.com · Shopify.shop zest-flairy.myshopify.com.",
   "captureMode": "viewport",
@@ -27,6 +37,12 @@
       "state": "initial",
       "action": "waitFor",
       "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".f-popup__close",
       "capture": false
     },
     {
@@ -77,12 +93,12 @@
     }
   ],
   "stateFindings": {
-    "initial": "Yazılacak — capture sonrası PNG.",
-    "filled": "Yazılacak — capture sonrası PNG.",
-    "changed": "Yazılacak — capture sonrası PNG."
+    "initial": "Your cart (0). Your cart is empty + TOPS COLLECTION / SWIMWEARS / BRAS. Checkout yok.",
+    "filled": "Your cart (1). Alpine Jogger · Color Alpine · Size XS · $68.60 qty 1. Spend $31.40 more for free shipping. Subtotal $68.60. You may also like başlık + nokta (kart görünür değil). Gift wrap $1 / Add order note / Add discount code açık değil. VIEW CART / CHECK OUT tıklanmadı.",
+    "changed": "Your cart (2). Qty 2. Satır/subtotal $137.20. Congratulations! Your order qualifies for free shipping + konfeti. You may also like Aquarius Crisscross Bra $32.20 (Dark Red/Brown/Light Blue)."
   },
   "missingStates": [],
-  "interactionNote": "addToCart UI. Checkout/discount/note yok. Qty selector yoklanır.",
+  "interactionNote": "addToCart → ui (drawer açıldı). Checkout / discount / note / gift wrap tıklanmadı.",
   "capture": {
     "url": "https://zest-theme-demo.myshopify.com/",
     "viewports": [
@@ -92,6 +108,7 @@
     ],
     "mode": "viewport",
     "method": "interaction-steps",
-    "updatedAt": ""
-  }
+    "updatedAt": "2026-08-18T16:00:50.854Z"
+  },
+  "prepareClick": ".f-popup__close"
 }

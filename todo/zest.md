@@ -13,8 +13,8 @@ Walk host `zest-theme-demo.myshopify.com` · `Shopify.shop` = **zest-flairy.mysh
 
 **Diğer preset vitrinler (nav Presets, yürünmedi):** Gusto `zest-gusto.myshopify.com` · Cosmo `zest-cosmo.myshopify.com` · Fleek `zest-fleek.myshopify.com` · Laura `zest-laura.myshopify.com` · Flairy alias `zest-flairy.myshopify.com`
 
-**Durum:** Mod A roster yazıldı · 3vp + interact capture **sırada**  
-**PR:** draft · **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti** (0 error)  
+**PR:** https://github.com/mattiasadem/qante/pull/194 · draft · **main'e merge yok**
 
 ---
 
@@ -26,11 +26,11 @@ Walk host `zest-theme-demo.myshopify.com` · `Shopify.shop` = **zest-flairy.mysh
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **47** |
-| PNG | (capture sonrası) |
+| PNG | **161** |
 | Parallel | yalnız `observations/zest/`, `evidence/zest/`, `todo/zest.md`, `candidates/zest-leftovers.md` |
 
 **Kapsam satırı:**  
-`Zest · default (Flairy) · [Update theme store] Zest / schema_name Zest 9.3.0 · theme_store_id null · shop zest-flairy.myshopify.com · home→PDP Alpine Jogger Alpine→Chai→PLP leggings→/collections→search alpine→cart empty/filled/qty→about-us→contact→faqs→news+cozy post→404 · 47 obs · 0 yeni şema · leftover: candidates/zest-leftovers.md`
+`Zest · default (Flairy) · [Update theme store] Zest / schema_name Zest 9.3.0 · theme_store_id null · shop zest-flairy.myshopify.com · home→PDP Alpine Jogger Alpine→Chai→PLP leggings→/collections→search alpine→cart empty/filled/qty→about-us→contact→faqs→news+cozy post→404 · 47 obs · 161 PNG · 0 yeni şema · leftover: candidates/zest-leftovers.md`
 
 ---
 
@@ -38,21 +38,21 @@ Walk host `zest-theme-demo.myshopify.com` · `Shopify.shop` = **zest-flairy.mysh
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | roster | capture sırada |
-| Shop mega hover 1440 | interact adım | sırada |
-| Predictive search `alpine` | interact 3vp | sırada |
-| Mobile menu 375 + 768 | interact | sırada |
-| Cart drawer empty + filled + qty | interact | sırada |
-| PDP Alpine Jogger Color Alpine→Chai | interact 3vp | sırada |
-| PLP `/collections/leggings` | roster | sırada |
-| Collections `/collections` | roster | sırada |
-| Search `/search?q=alpine` | roster | sırada |
-| Cart page empty + filled + qty | interact | sırada |
-| About `/pages/about-us` | roster | sırada |
-| Contact form (submit yok) | roster | sırada |
-| FAQ `/pages/faqs` | roster | sırada |
-| News + Cozy & Bundled post | roster | sırada |
-| 404 | roster | sırada |
+| Home roster (announcement→footer) | [x] obs | [x] capture |
+| Shop mega hover 1440 | [x] obs | [x] interact |
+| Predictive search `alpine` | [x] obs | [x] interact 3vp (768 forceOpen) |
+| Mobile menu 375 + 768 | [x] obs | [x] interact |
+| Cart drawer empty + filled + qty | [x] obs | [x] interact |
+| PDP Alpine Jogger Color Alpine→Chai | [x] obs | [x] interact |
+| PLP `/collections/leggings` | [x] obs | [x] capture |
+| Collections `/collections` | [x] obs | [x] capture |
+| Search `/search?q=alpine` | [x] obs | [x] capture |
+| Cart page empty + filled + qty | [x] obs | [x] interact |
+| About `/pages/about-us` | [x] obs | [x] capture |
+| Contact form (submit yok) | [x] obs | [x] capture |
+| FAQ `/pages/faqs` | [x] obs | [x] capture |
+| News + Cozy & Bundled post | [x] obs | [x] capture |
+| 404 | [x] obs | [x] capture |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -70,18 +70,18 @@ Walk host `zest-theme-demo.myshopify.com` · `Shopify.shop` = **zest-flairy.mysh
 | 7 | layered_images Lookbooks | `editorial-layered-images` | reuse |
 | 8 | custom_content Psychedelic | `editorial-custom-content` | reuse |
 | 9 | custom Wear it four way | `editorial-custom-content.2` | reuse |
-| 10 | scrolling_promotion trust | `promo-scrolling-marquee` | reuse |
+| 10 | scrolling_promotion trust | `promo-scrolling-marquee` | reuse · clip header leftover |
 | 11 | collection_list_slider | `collection-nav-slider` | reuse |
-| 12 | testimonials Loved by 100k | `testimonial-quote-carousel` | reuse · marquee |
+| 12 | testimonials Loved by 100k | `testimonial-quote-carousel` | reuse · masonry UGC |
 | 13 | collection-tabs Top | `collection-nav-tabs.2` | reuse |
-| 14 | promotion_banner 30% | `promo-banner-countdown` | reuse · timer metin |
+| 14 | promotion_banner 30% | `promo-banner-countdown` | reuse · timer metin / April 120 |
 | 15 | press | `testimonial-quote-carousel.2` | reuse |
 | 16 | featured-collection Trends | `product-showcase-grid-featured` | reuse |
 | 17 | hero Spotlight | `editorial-image-with-text-overlay.2` | reuse |
 | 18 | scrolling logos | `social-proof-brand-logos` | reuse |
 | 19 | footer | `footer-columns-newsletter` | reuse · submit yok |
 | 20 | popup | — | leftover 0px / PII |
-| 21 | predictive-search | `global-predictive-search` | reuse · interact |
+| 21 | predictive-search | `global-predictive-search` | reuse · interact · 768 forceOpen |
 | 22 | Drawer-MobileNav | `global-menu-drawer` | reuse · 375/768 |
 | 23 | Drawer-Cart | `global-cart-drawer` | reuse · interact |
 
@@ -91,19 +91,19 @@ Walk host `zest-theme-demo.myshopify.com` · `Shopify.shop` = **zest-flairy.mysh
 
 | # | id | sayfa | Screenshot | Not | JSON | Done |
 |---|---|---|---|---|---|---|
-| 1–22 | home static + overlays | home | [ ] | [x] | reuse | [ ] |
-| 23 | product-info-main | product-detail | [ ] | [x] | reuse | [ ] |
-| 24–27 | marquee / IWT / quote / rich | product-detail | [ ] | [x] | reuse | [ ] |
-| 28–30 | crumb / banner / PLP | collection | [ ] | [x] | reuse | [ ] |
-| 31 | collection-nav-grid | collections | [ ] | [x] | reuse | [ ] |
-| 32 | search-results | search | [ ] | [x] | reuse | [ ] |
-| 33 | cart-page-main | cart | [ ] | [x] | reuse | [ ] |
-| 34–39 | overlay / rich / timeline / IWT | about-brand | [ ] | [x] | reuse | [ ] |
-| 40–41 | crumb + form | contact | [ ] | [x] | reuse | [ ] |
-| 42 | faq-collapsible-tabs | faq-support | [ ] | [x] | reuse | [ ] |
-| 43–45 | intro + list + post | blog-* | [ ] | [x] | reuse | [ ] |
-| 46 | page-content-main | not-found | [ ] | [x] | reuse | [ ] |
-| 47 | (count = 47 files) | | | | | |
+| 1–22 | home static + overlays | home | [x] | [x] | reuse | [x] |
+| 23 | product-info-main | product-detail | [x] | [x] | reuse | [x] |
+| 24–27 | marquee / IWT / quote / rich | product-detail | [x] | [x] | reuse | [x] |
+| 28–30 | crumb / banner / PLP | collection | [x] | [x] | reuse | [x] |
+| 31 | collection-nav-grid | collections | [x] | [x] | reuse | [x] |
+| 32 | search-results | search | [x] | [x] | reuse | [x] |
+| 33 | cart-page-main | cart | [x] | [x] | reuse | [x] |
+| 34–39 | overlay / rich / timeline / IWT | about-brand | [x] | [x] | reuse | [x] |
+| 40–41 | crumb + form | contact | [x] | [x] | reuse | [x] |
+| 42 | faq-collapsible-tabs | faq-support | [x] | [x] | reuse | [x] |
+| 43–45 | intro + list + post | blog-* | [x] | [x] | reuse | [x] |
+| 46 | page-content-main | not-found | [x] | [x] | reuse | [x] |
+| 47 | (count = 47 files) | | | | | [x] |
 
 ---
 
@@ -111,12 +111,12 @@ Walk host `zest-theme-demo.myshopify.com` · `Shopify.shop` = **zest-flairy.mysh
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | open | sırada — 1440 Shop hover |
-| global-predictive-search | input | sırada — `alpine` 3vp |
-| global-menu-drawer | open | sırada — 375 + 768 |
-| global-cart-drawer | filled + changed | sırada |
-| cart-page-main | filled + changed | sırada |
-| product-info-main | changed | sırada — Alpine → Chai |
+| navigation-header-mega | open | OK — 1440 Shop hover: CATEGORIES / DISCOVER / FEATURED + Made for Good Living |
+| global-predictive-search | input | OK — `alpine` 3vp; 768 forceOpen; popular Kits/Skincare/Sublinguals leftover |
+| global-menu-drawer | open | OK — 375 tam panel + 768 sol çekmece; LOG IN tıklanmadı |
+| global-cart-drawer | filled + changed | OK — Alpine/XS $68.60 → qty2 $137.20 + konfeti |
+| cart-page-main | filled + changed | OK — aynı tutarlar; CHECK OUT sibling leftover |
+| product-info-main | changed | OK — Alpine → Chai; fiyat $68.60; sticky Chai / XS |
 
 Stop: email / account / checkout / newsletter submit / contact SUBMIT / PII
 
@@ -130,7 +130,7 @@ Stop: email / account / checkout / newsletter submit / contact SUBMIT / PII
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact Shop / search / cart / menu / PDP Color
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate` — 0 error
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact Shop / search / cart / menu / PDP Color
+- [x] PNG bak → stateFindings
+- [x] `npm run validate` — 0 error

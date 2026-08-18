@@ -179,15 +179,39 @@ Karar: onay bekliyor
 ---
 
 ADAY: zest-predictive-unrelated-suggestions  
-Gerekçe: Probe `alpine` predictive listesinde Kits / Skincare / Sublinguals + Alpine/Amalfi ürünleri. Search sayfası 2 jogger. PNG sonrası doğrulanacak.  
+Gerekçe: PNG (375/768/1440 boş drawer): POPULAR SEARCHES **Kits, Skincare, Sublinguals** + MOST SEARCHED Alpine/Amalfi*. `q=alpine` PRODUCTS yalnız Alpine Jogger + Chai Jogger $68.60. Search sayfası 2 jogger.  
 Örnekler: #Drawer-Search  
 Öneri: leftover — öneri gürültüsü  
 Karar: onay bekliyor
 
 ---
 
+ADAY: zest-search-768-icon-hidden  
+Gerekçe: 768 `button.site-header__search-toggle` / mobile toggle Playwright’a görünür değil. Interact `forceOpen` `#Drawer-Search`. 375 mobile toggle, 1440 desktop toggle.  
+Örnekler: home 768 header  
+Öneri: leftover — tablet search ikon  
+Karar: onay bekliyor
+
+---
+
+ADAY: zest-marquee-header-clip  
+Gerekçe: Home `__scrolling_promotion_iTai8F` 3vp clip sticky header (FLAIRY + nav) + marquee ONLINE SUPPORT / FLEXIBLE PAYMENT / FREE SHIPPING / EASY REFUND.  
+Örnekler: evidence `promo-scrolling-marquee.*.png`  
+Öneri: leftover — section clip header  
+Karar: onay bekliyor
+
+---
+
+ADAY: zest-blog-comment-form  
+Gerekçe: `/blogs/zest-flairy-news/cozy-bundled-in-sweatshirts` “Leave a comment” Name / Email / Comment + POST COMMENT. PII, submit yok.  
+Örnekler: blog-post-main 1440  
+Öneri: leftover — PII form  
+Karar: onay bekliyor
+
+---
+
 ADAY: zest-sale-date-typo  
-Gerekçe: Promo “Ends April 120 2025”. Canlı timer yoklandı değil.  
+Gerekçe: Promo “Ends April 120 2025, 12:00 PST. T&C's Apply”. PNG’de canlı timer yok — yalnız statik metin + SHOP THE SALE.  
 Örnekler: home `__promotion_banner_6LqrTJ`  
-Öneri: leftover — metin  
+Öneri: leftover — metin / timer yok  
 Karar: onay bekliyor

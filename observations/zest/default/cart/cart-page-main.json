@@ -7,7 +7,17 @@
   "url": "https://zest-theme-demo.myshopify.com/cart",
   "selector": "#shopify-section-template--19598722433250__cart-items",
   "evidenceSlug": "cart-page-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/zest/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/zest/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/zest/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/zest/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/zest/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/zest/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/zest/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/zest/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/zest/default/cart/cart-page-main.initial.sepet-bos.768.png"
+  ],
   "notlar": "Your cart. Boş: empty + CONTINUE SHOPPING + LOG IN. Sibling cart-footer h=0 boşken.",
   "delta": "cart-items + cart-footer ayrık leftover. Account tıklanmadı. Shopify.theme.name [Update theme store] Zest · schema_name Zest · schema_version 9.3.0 · theme_store_id null · role main · id 151342186722 · walk zest-theme-demo.myshopify.com · Shopify.shop zest-flairy.myshopify.com.",
   "captureMode": "section",
@@ -21,6 +31,18 @@
       "state": "initial",
       "action": "goto",
       "value": "https://zest-theme-demo.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
       "capture": true,
       "etiket": "sepet-bos",
       "not": "Boş cart sayfa"
@@ -61,12 +83,12 @@
     }
   ],
   "stateFindings": {
-    "initial": "Yazılacak — capture sonrası PNG.",
-    "filled": "Yazılacak — capture sonrası PNG.",
-    "changed": "Yazılacak — capture sonrası PNG."
+    "initial": "Your cart is empty + CONTINUE SHOPPING + Have an account? LOG IN to check out faster (tıklanmadı).",
+    "filled": "Alpine Jogger Color Alpine Size XS. Qty 1. $68.60. Spend $31.40 more for free shipping. Subtotal $68.60. Gift wrap checkbox / ADD ORDER NOTE açık değil.",
+    "changed": "Qty 2. Satır/subtotal $137.20. Congratulations! Your order qualifies for free shipping + konfeti."
   },
   "missingStates": [],
-  "interactionNote": "Checkout / Log in tıklanmadı.",
+  "interactionNote": "addToCart → ui sonra /cart. Checkout / LOG IN tıklanmadı.",
   "capture": {
     "url": "https://zest-theme-demo.myshopify.com/cart",
     "viewports": [
@@ -76,6 +98,7 @@
     ],
     "mode": "section",
     "method": "interaction-steps",
-    "updatedAt": ""
-  }
+    "updatedAt": "2026-08-18T16:09:06.618Z"
+  },
+  "prepareClick": ".f-popup__close"
 }

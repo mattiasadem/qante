@@ -7,7 +7,12 @@
   "url": "https://zest-theme-demo.myshopify.com/",
   "selector": "#Drawer-MobileNav",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/zest/default/home/global-menu-drawer.initial.menu-kapali.375.png",
+    "evidence/zest/default/home/global-menu-drawer.initial.menu-kapali.768.png",
+    "evidence/zest/default/home/global-menu-drawer.open.menu-acik.375.png",
+    "evidence/zest/default/home/global-menu-drawer.open.menu-acik.768.png"
+  ],
   "notlar": "#Drawer-MobileNav / #Mobile-Nav. button[aria-label=expand menu]. 375/768.",
   "delta": "1440 hamburger 0px leftover. Shopify.theme.name [Update theme store] Zest · schema_name Zest · schema_version 9.3.0 · theme_store_id null · role main · id 151342186722 · walk zest-theme-demo.myshopify.com · Shopify.shop zest-flairy.myshopify.com.",
   "captureMode": "viewport",
@@ -20,8 +25,21 @@
       "state": "initial",
       "action": "goto",
       "value": "https://zest-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 800,
       "capture": true,
       "captureMode": "viewport",
+      "captureSelector": "header.site-header",
       "etiket": "menu-kapali",
       "viewports": [
         "375",
@@ -44,11 +62,11 @@
     }
   ],
   "stateFindings": {
-    "initial": "Yazılacak — capture sonrası PNG.",
-    "open": "Yazılacak — capture sonrası PNG."
+    "initial": "375/768: hamburger ikonu hero üstünde (FLAIRY / COURTSIDE CAPSULE). Drawer kapalı.",
+    "open": "375 tam beyaz panel + 768 sol çekmece: HOME / PRESETS+ / SHOP+ / PAGES+ / BLOG / CONTACT. Altta LOG IN + X/Facebook/Instagram/Vimeo/YouTube. LOG IN tıklanmadı."
   },
   "missingStates": [],
-  "interactionNote": "Yazılı <a> tıklanmadı. Account yoklandı değil.",
+  "interactionNote": "Yazılı <a> ve + expander tıklanmadı. Account dur. 1440 hamburger yok. Initial captureSelector header.site-header (#Drawer-MobileNav kapalıyken 0px forceOpen tuzağı).",
   "capture": {
     "url": "https://zest-theme-demo.myshopify.com/",
     "viewports": [
@@ -58,6 +76,7 @@
     ],
     "mode": "viewport",
     "method": "interaction-steps",
-    "updatedAt": ""
-  }
+    "updatedAt": "2026-08-18T16:12:31.754Z"
+  },
+  "prepareClick": ".f-popup__close"
 }
