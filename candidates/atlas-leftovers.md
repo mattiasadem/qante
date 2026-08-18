@@ -129,6 +129,14 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: atlas-qty-375  
+Gerekçe: Cart drawer + cart page 375 compact qty kutusu yalnız “1” gösterir; `.quantity-selector__button--plus` DOM’da var, görünür değil. 768/1440 plus tık → 2 ITEMS $1,098. İkinci deneme de 375’te olmadı.  
+Örnekler: cart drawer filled 375 · cart page filled 375  
+Öneri: leftover — mobile compact stepper  
+Karar: onay bekliyor
+
+---
+
 ## 404 URL’ler (şema yok / aynı 404)
 
 `/pages/about`  
@@ -148,3 +156,4 @@ Karar: onay bekliyor
 - PDP related-products boş kutu  
 - Newsletter popup  
 - Quick view  
+- Cart / drawer 375 qty + (compact stepper; 768/1440 OK)  
