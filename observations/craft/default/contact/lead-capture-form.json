@@ -8,12 +8,44 @@
   "selector": "#shopify-section-template--18214084968702__form",
   "evidenceSlug": "lead-capture-form",
   "evidence": [
+    "evidence/craft/default/contact/lead-capture-form.1440.png",
     "evidence/craft/default/contact/lead-capture-form.375.png",
     "evidence/craft/default/contact/lead-capture-form.768.png",
-    "evidence/craft/default/contact/lead-capture-form.1440.png"
+    "evidence/craft/default/contact/lead-capture-form.initial.bolum.1440.png",
+    "evidence/craft/default/contact/lead-capture-form.initial.bolum.375.png",
+    "evidence/craft/default/contact/lead-capture-form.initial.bolum.768.png"
   ],
   "notlar": "Name / Email * / Phone number / Comment / Send. Gönderilmedi.",
   "delta": "PII stop — Send tıklanmadı.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-craft-demo.myshopify.com/pages/contact",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--18214084968702__form",
+      "capture": true,
+      "etiket": "bolum",
+      "not": "Boş form — Name / Email / Phone / Comment / Send"
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "Name / Email / Phone PII. Comment fill anlamlı değil; Send submit dur."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boş form: Name, Email *, Phone number, Comment, Send. PII doldurulmadı."
+  },
+  "interactionNote": "Scan 4 input (Name, email, tel, comment). katalogSorgu null. PII stop.",
   "capture": {
     "url": "https://theme-craft-demo.myshopify.com/pages/contact",
     "viewports": [
@@ -22,7 +54,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T17:08:58.505Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:45:01.608Z"
   }
 }

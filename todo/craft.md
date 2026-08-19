@@ -6,7 +6,7 @@
 *Shop:* `theme-craft-demo.myshopify.com`  
 *Theme Store listing (beklenen, storefront alanı değil):* Craft · [themes.shopify.com/themes/craft](https://themes.shopify.com/themes/craft)
 
-**Durum:** ✅ Mod A walk + resmi 3vp + interact + validate  
+**Durum:** ✅ Mod A walk + resmi 3vp + interact (CRO) + validate  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -18,7 +18,7 @@
 | Evidence kökü | `evidence/craft/default/` |
 | Capture | resmi `capture-observation.mjs` + `capture-interaction.mjs` |
 | Observation | **38** |
-| Evidence PNG | **135** |
+| Evidence PNG | **142** |
 | Şema | **0 yeni** |
 | Parallel | yalnız `observations/craft/`, `evidence/craft/`, `todo/craft.md`, `candidates/craft-*.md` |
 
@@ -57,6 +57,20 @@
 
 ## Interact (pixel-checked)
 
+### CRO şemaları (gözlenen)
+
+| schemaId | States | Not |
+|---|---|---|
+| `testimonial-quote-carousel` | initial · changed (375) | Glen 1/3 → Vanessa 2/3; 768/1440 üç kolon |
+| `lead-capture-newsletter-band` | initial | PII — email fill/submit yok |
+| `lead-capture-form` | initial | PII — Send yok; boş form |
+
+### CRO şemaları (gözlenmedi — disk şema kullanılmadı)
+
+`before-after-slider` · `commerce-tools-products-bundle` · `promo-banner-countdown` · `faq-collapsible-tabs` · `comparison-quick-table` · `product-finder-quiz` · `media-shop-the-feed` · `media-scrolling-gallery`
+
+### Diğer interact (önceki tur)
+
 - `navigation-header-mega` — 1440 Dinnerware dropdown (5 renk koleksiyonu); 375/768 hamburger + Dinnerware drill
 - `global-predictive-search` — bowl → PRODUCTS The Serving Bowl ×4 + Search for "bowl"
 - `global-menu-drawer` — 375/768 drawer + Dinnerware accordion
@@ -77,4 +91,5 @@
 - [x] Official 3vp static (`capture-observation.mjs`) — 32/32
 - [x] Interact mega/dropdown · search · cart · menu · PDP color
 - [x] PNG bak → stateFindings
+- [x] CRO interact: testimonial carousel · newsletter PII stop · contact form PII stop
 - [x] `npm run validate` — 65 temiz · 0 error · 0 warn
