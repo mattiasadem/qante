@@ -1,0 +1,70 @@
+{
+  "id": "app-builder-gempages",
+  "kategori": "builder",
+  "varyant": "gempages",
+  "scope": "page",
+  "amac": "Yüksek dönüşümlü landing ve ürün sayfalarını görsel editörle üretir.",
+  "sorun": "Standart tema PDP ve landing şablonları A/B test ve hızlı iterasyon için yetersizdir.",
+  "link": "https://apps.shopify.com/gempages",
+  "yuzey": [],
+  "entegrasyon": {
+    "shopify": [
+      "page-runtime"
+    ],
+    "ikas": [
+      "admin-iframe",
+      "admin-graphql"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [],
+  "ikasSayfa": [],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "admin-iframe",
+  "ikasKapsam": [
+    "read_products",
+    "write_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "admin-iframe",
+  "ayarlar": {
+    "sayfaSablonu": {
+      "tip": "ref",
+      "hedef": "page",
+      "zorunlu": true
+    },
+    "seoBaslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 70
+    },
+    "yayinDurumu": {
+      "tip": "boolean",
+      "zorunlu": true
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urunler",
+      "source": "DataSource.productList",
+      "params": {
+        "kaynak": "manual",
+        "limit": 24
+      }
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  },
+  "_note": "Builder SDK — yuzey çocuk section'lardan çıkarılır"
+}

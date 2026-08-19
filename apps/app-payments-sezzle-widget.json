@@ -1,0 +1,96 @@
+{
+  "id": "app-payments-sezzle-widget",
+  "kategori": "payments",
+  "varyant": "sezzle-widget",
+  "scope": "in-flow",
+  "amac": "Ürün ve sepet sayfalarında Sezzle BNPL taksit mesajlaşması gösterir.",
+  "sorun": "Taksit seçeneği checkout öncesi görünmezse müşteri terk eder; Sezzle OSM fiyatı böler.",
+  "link": "https://apps.shopify.com/sezzle-widget",
+  "yuzey": [
+    "bnpl_messaging"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "VIEW_CART",
+    "BEGIN_CHECKOUT"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CART",
+    "CHECKOUT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "pdpMesajGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "sepetMesajGoster": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "bolge": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 10
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    },
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    },
+    {
+      "name": "odemeYontemleri",
+      "source": "DataSource.paymentMethods"
+    }
+  ],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:cartDrawer.footer"
+  ],
+  "bagimliliklar": [
+    "product-info-main"
+  ],
+  "ikasKarsilik": "yok",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

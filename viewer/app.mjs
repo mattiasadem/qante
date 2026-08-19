@@ -18,6 +18,7 @@ import {
 } from "./lib/facets.mjs";
 import { runHealth } from "./lib/health.mjs";
 import { loadCandidates } from "./lib/candidates.mjs";
+import { loadApps } from "./lib/apps.mjs";
 import { buildCro } from "./lib/cro.mjs";
 import { externalEvidenceUrl } from "./lib/evidence-external.mjs";
 
@@ -141,6 +142,10 @@ const routes = {
 
   "/api/candidates": (_url, res) => {
     json(res, loadCandidates(ROOT));
+  },
+
+  "/api/apps": (_url, res) => {
+    json(res, loadApps(ROOT));
   },
 
   "/api/cro": (_url, res, inv) => {

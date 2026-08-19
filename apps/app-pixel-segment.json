@@ -1,0 +1,74 @@
+{
+  "id": "app-pixel-segment",
+  "kategori": "pixel",
+  "varyant": "segment",
+  "scope": "head",
+  "amac": "Müşteri veri platformuna olay akışını tek entegrasyon noktasından yönlendirir.",
+  "sorun": "Olay verisi her araç için ayrı entegre edilince CDP pipeline tutarsız ve kırılgan olur.",
+  "link": "https://segment.com",
+  "yuzey": [],
+  "entegrasyon": {
+    "shopify": [
+      "web-pixel"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook"
+    ]
+  },
+  "ikasTur": "ozel",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW",
+    "ADD_TO_CART",
+    "COMPLETE_CHECKOUT",
+    "CUSTOMER_LOGIN"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT",
+    "CART",
+    "CHECKOUT",
+    "ACCOUNT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "webhook-listener",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_orders",
+    "read_customers",
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/order/created",
+    "store/customer/created"
+  ],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Extensions / Scripts",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  },
+  "_note": "Resmi Shopify App Store birinci parti Segment uygulaması yok; link Segment ana sitesi"
+}

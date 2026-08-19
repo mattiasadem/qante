@@ -1,0 +1,81 @@
+{
+  "id": "app-reviews-ali-reviews",
+  "kategori": "reviews",
+  "varyant": "ali-reviews",
+  "scope": "in-flow",
+  "amac": "AliExpress kaynaklı ve mağaza içi yorumları ürün sayfalarında gösterir.",
+  "sorun": "Dropshipping mağazalarında sosyal kanıt eksik kalır; Ali Reviews toplu yorum import eder.",
+  "link": "https://apps.shopify.com/ali-reviews",
+  "yuzey": [
+    "review_stars",
+    "review_widget",
+    "ugc_gallery"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-block",
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "yildizOzetiGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "fotoYorumGoster": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after"
+  ],
+  "bagimliliklar": [
+    "product-info-main"
+  ],
+  "ikasKarsilik": "Lehte",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

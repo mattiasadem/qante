@@ -1,0 +1,71 @@
+{
+  "id": "app-merchandising-aftersell",
+  "kategori": "merchandising",
+  "varyant": "aftersell",
+  "scope": "checkout",
+  "amac": "Sipariş sonrası upsell teklifleri ile sepet değerini artırır.",
+  "sorun": "Checkout tamamlandıktan sonra ek satış fırsatı tema ile sunulmaz.",
+  "link": "https://apps.shopify.com/aftersell",
+  "yuzey": [
+    "product_recs"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "checkout-extension"
+    ],
+    "ikas": [
+      "webhook"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "COMPLETE_CHECKOUT"
+  ],
+  "ikasSayfa": [
+    "CHECKOUT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "webhook-listener",
+  "ikasHedef": "webhook",
+  "ikasKapsam": [
+    "read_orders",
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/order/created",
+    "store/order/updated"
+  ],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "upsellAktif": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "teklifLimiti": {
+      "tip": "number",
+      "zorunlu": false
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urunler",
+      "source": "DataSource.productList",
+      "params": {
+        "kaynak": "recommended",
+        "limit": 3
+      }
+    }
+  ],
+  "actions": [
+    "emit:cart.add"
+  ],
+  "hookNoktalari": [],
+  "bagimliliklar": [],
+  "ikasKarsilik": "yok",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

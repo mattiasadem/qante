@@ -1,0 +1,82 @@
+{
+  "id": "app-wishlist-swym",
+  "kategori": "wishlist",
+  "varyant": "swym",
+  "scope": "overlay",
+  "amac": "Ürünleri favorilere eklemek ve listeyi drawer veya sayfada yönetmek için UI sağlar.",
+  "sorun": "Ürünü beğenen ziyaretçi hemen satın almazsa tema onu geri getirecek mekanizma sunmaz.",
+  "link": "https://apps.shopify.com/swym-relay",
+  "yuzey": [
+    "wishlist_button",
+    "wishlist_drawer",
+    "wishlist_page"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "app-block"
+    ],
+    "ikas": []
+  },
+  "ikasTur": "yok",
+  "ikasOlaylar": [
+    "ADD_TO_WISHLIST",
+    "PRODUCT_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "ACCOUNT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "yok",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "favoriButonuGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "anonimListe": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "fiyatDususUyarisi": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "stokGeldiUyarisi": {
+      "tip": "boolean",
+      "zorunlu": false
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    },
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [
+    "mount:productCard.badge",
+    "mount:buyBox.after",
+    "mount:header.utility"
+  ],
+  "bagimliliklar": [
+    "product-info-main"
+  ],
+  "ikasKarsilik": "Favori Ürünler",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

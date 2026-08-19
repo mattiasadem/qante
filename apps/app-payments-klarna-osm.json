@@ -1,0 +1,87 @@
+{
+  "id": "app-payments-klarna-osm",
+  "kategori": "payments",
+  "varyant": "klarna-osm",
+  "scope": "in-flow",
+  "amac": "Ürün ve sepet sayfalarında Klarna taksit mesajlaşması ile ödeme güvenini artırır.",
+  "sorun": "Taksit seçeneği checkout'ta görünmeden önce müşteri fiyat şoku yaşar; OSM PDP ve sepette ödeme mesajı gösterir.",
+  "link": "https://apps.shopify.com/klarna-on-site-messaging",
+  "yuzey": [
+    "bnpl_messaging"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-block"
+    ],
+    "ikas": []
+  },
+  "ikasTur": "yok",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "VIEW_CART",
+    "BEGIN_CHECKOUT"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CART",
+    "CHECKOUT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "yok",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "pdpMesajGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "sepetMesajGoster": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "bolge": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 10
+    },
+    "temaStili": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 40
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    },
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    },
+    {
+      "name": "odemeYontemleri",
+      "source": "DataSource.paymentMethods"
+    }
+  ],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:cartDrawer.footer"
+  ],
+  "bagimliliklar": [
+    "product-info-main",
+    "global-cart-drawer"
+  ],
+  "ikasKarsilik": "native Klarna payment + badge",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}
