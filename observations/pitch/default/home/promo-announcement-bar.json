@@ -12,8 +12,40 @@
     "evidence/pitch/default/home/promo-announcement-bar.768.png",
     "evidence/pitch/default/home/promo-announcement-bar.1440.png"
   ],
-  "notlar": "44px turuncu bant + oklar. Mesaj 1: Sign up for our newsletter → /pages/contact. Mesaj 2 (autoplay): Just launched: bestselling skincare bundles (search interact karesinde görüldü).",
-  "delta": "Shopify.theme.name `Updated copy of Pitch demo store 3.2.0` · id 183686005031 · schema_name Pitch · schema_version 3.4.0 · theme_store_id 3620 · role main · shop se-horizon2-en-2v6j.myshopify.com. announcement-bar-component autoplay=5. Timer görünür değil.",
+  "notlar": "44px turuncu bant + oklar. Mesaj 1: Sign up for our newsletter → /pages/contact. Mesaj 2: Just launched: bestselling skincare bundles. Countdown/timer yok.",
+  "delta": "Shopify.theme.name `Updated copy of Pitch demo store 3.2.0` · id 183686005031 · schema_name Pitch · schema_version 3.4.0 · theme_store_id 3620 · role main · shop se-horizon2-en-2v6j.myshopify.com. announcement-bar-component autoplay=5. Timer görünür değil — promo-banner-countdown uydurulmadı.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-pitch-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "etiket": "ilk-slayt",
+      "not": "Settle sonrası görünen slayt. Newsletter link tıklanmaz."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-sections--26029916782887__header_announcements_kcHY6p button[aria-label='Next slide']",
+      "value": 800,
+      "capture": true,
+      "etiket": "sonraki-slayt",
+      "not": "Next — diğer slayt. URL home. Sign up <a> tıklanmaz."
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Countdown yok. Autoplay=5; settle ~4s sonra slayt 2 olabilir — kareye bak. Scan changer görmedi (oklar button).",
   "capture": {
     "url": "https://theme-pitch-demo.myshopify.com/",
     "viewports": [

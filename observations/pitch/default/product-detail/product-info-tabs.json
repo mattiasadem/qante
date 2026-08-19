@@ -13,7 +13,45 @@
     "evidence/pitch/default/product-detail/product-info-tabs.1440.png"
   ],
   "notlar": "Our signature formula… Accordion: Natural ingredients · Tested for safety · Fragrance free + görsel (goop).",
-  "delta": "Horizon generic section + accordion-custom. Kapalı başlıklar; içerik tıklanmadı leftover.",
+  "delta": "Horizon generic section + accordion-custom. Kapalı başlıklar; içerik leftover değil — changed yakalandı.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-pitch-demo.myshopify.com/products/gentle-body-wash",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--26029916619047__section_dEGUdG",
+      "capture": true,
+      "etiket": "kapali-akordeon",
+      "not": "Üç satır kapalı (+). Cevap görünmez."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--26029916619047__section_dEGUdG accordion-custom details:first-of-type > summary",
+      "value": 1200,
+      "capture": true,
+      "etiket": "natural-acik",
+      "not": "Natural ingredients açılmalı; URL PDP’de kalmalı. details id yok — first-of-type."
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Scan mega/hover taslağı koşulmadı — accordion = changed + click. Unique id yok.",
   "capture": {
     "url": "https://theme-pitch-demo.myshopify.com/products/gentle-body-wash",
     "viewports": [

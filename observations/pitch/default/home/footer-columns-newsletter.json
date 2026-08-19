@@ -14,6 +14,47 @@
   ],
   "notlar": "Join the club + Email/Sign up. Kolonlar: Skincare · Makeup · About. Social utilities sibling’de.",
   "delta": "Horizon migrated_footer_content. E-posta submit yok (PII). Sibling footer_utilities © 2026 leftover.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-pitch-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-sections--26029916815655__migrated_footer_content",
+      "capture": true,
+      "etiket": "newsletter-bos",
+      "not": "PII — Email doldurulmadı, Sign up tıklanmadı. 375 kolonlar kapalı; 768/1440 açık."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-sections--26029916815655__migrated_footer_content details:first-of-type > summary",
+      "value": 900,
+      "capture": true,
+      "etiket": "skincare-acik",
+      "viewports": [
+        "375"
+      ],
+      "not": "375 Skincare accordion — URL home kalmalı. 768/1440 zaten açık, zorlanmadı."
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "PII stop: email fill / Sign up yok. 768/1440 details.open=true — changed yalnız 375.",
   "capture": {
     "url": "https://theme-pitch-demo.myshopify.com/",
     "viewports": [
