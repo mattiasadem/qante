@@ -8,12 +8,39 @@
   "selector": "#shopify-section-template--17357908574442__16395920543f5b3187",
   "evidenceSlug": "lead-capture-newsletter-band",
   "evidence": [
+    "evidence/crave/default/home/lead-capture-newsletter-band.1440.png",
     "evidence/crave/default/home/lead-capture-newsletter-band.375.png",
     "evidence/crave/default/home/lead-capture-newsletter-band.768.png",
-    "evidence/crave/default/home/lead-capture-newsletter-band.1440.png"
+    "evidence/crave/default/home/lead-capture-newsletter-band.initial.ilk-hal.1440.png",
+    "evidence/crave/default/home/lead-capture-newsletter-band.initial.ilk-hal.375.png",
+    "evidence/crave/default/home/lead-capture-newsletter-band.initial.ilk-hal.768.png"
   ],
   "notlar": "Spice up your inbox. Alt metin + Email alanı. Form gönderilmedi.",
-  "delta": "Görsel yok; ortalı bant. Submit yoklandı değil.",
+  "delta": "Görsel yok; ortalı bant. Submit yoklandı değil. Aynı bant collection / PDP / blog-list / meal-starters'ta tekrarlar — home kanonik.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-crave-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17357908574442__16395920543f5b3187",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Boş Email alanı — fill/submit yok (PII)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Spice up your inbox başlık + alt metin + Email placeholder. Alan boş; submit yapılmadı. Görsel yok; ortalı inline layout."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan 1 email input. katalogSorgu starter (body). Meaningful interact yalnız initial; şema dokunulmadı.",
   "capture": {
     "url": "https://theme-crave-demo.myshopify.com/",
     "viewports": [
@@ -22,7 +49,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T17:07:03.248Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:02:27.019Z"
   }
 }

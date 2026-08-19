@@ -8,12 +8,39 @@
   "selector": "#shopify-section-template--17357908639978__form",
   "evidenceSlug": "lead-capture-form",
   "evidence": [
+    "evidence/crave/default/contact/lead-capture-form.1440.png",
     "evidence/crave/default/contact/lead-capture-form.375.png",
     "evidence/crave/default/contact/lead-capture-form.768.png",
-    "evidence/crave/default/contact/lead-capture-form.1440.png"
+    "evidence/crave/default/contact/lead-capture-form.initial.bos-form.1440.png",
+    "evidence/crave/default/contact/lead-capture-form.initial.bos-form.375.png",
+    "evidence/crave/default/contact/lead-capture-form.initial.bos-form.768.png"
   ],
   "notlar": "Have a question, comment, or just want to say hi? 👇 Name / Email / Phone / Comment / Send. Form gönderilmedi.",
   "delta": "PII submit yok.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-crave-demo.myshopify.com/pages/contact",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17357908639978__form",
+      "capture": true,
+      "etiket": "bos-form",
+      "not": "Boş form alanları — gönderim yok"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Dört alan (Name, Email, Phone number, Comment) ve Send düğmesi. Tüm alanlar boş. 375 tek kolon stacked layout."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan: Name/Email/Phone/Comment görünür. Fill anlamlı ama PII stop.",
   "capture": {
     "url": "https://theme-crave-demo.myshopify.com/pages/contact",
     "viewports": [
@@ -22,7 +49,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T17:05:55.572Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:02:25.398Z"
   }
 }

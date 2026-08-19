@@ -69,3 +69,16 @@ Diğer recipe article’lar — bir post envanterlendi.
 - Country/region selector (footer) — tıklanmadı  
 - Shop dropdown içindeki koleksiyon `<a>` — sayfaya kaçar, tıklanmadı  
 - Heat Lover's Set slayt CTA — navigate, interact değil
+
+---
+
+## CRO interact leftover (2026-08-19)
+
+**Disk şemaları demo'da observation yok:** before-after-slider · commerce-tools-products-bundle · promo-banner-countdown · faq-collapsible-tabs · comparison-quick-table · product-finder-quiz · media-shop-the-feed · media-scrolling-gallery.
+
+**Observation var, anlamlı state yok:**
+- `testimonial-quote-carousel` — Dawn multicolumn statik; carousel affordance 0 (`changed` missing)
+- `lead-capture-newsletter-band` — home kanonik; email fill/submit PII stop (`input` missing)
+- `lead-capture-form` — contact; fill/submit PII stop (`input` missing)
+
+**FAQ / reviews / countdown / quiz / bundle / scarcity:** demo'da yok (şema icat edilmedi).
