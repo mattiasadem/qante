@@ -125,7 +125,21 @@ Karar: onay bekliyor
 
 ---
 
-ADAY: be-yours-buy-it-now  
+ADAY: be-yours-testimonial-375-changed
+Gerekçe: 375 Flickity Next `display:none` (0×0). JS click slayt değiştirir; capture-interaction görünür tık ister. 768/1440 changed ok.  
+Örnekler: home testimonial-quote-carousel 375  
+Öneri: leftover — mobil ok gizli  
+Karar: onay bekliyor
+
+---
+
+ADAY: be-yours-lead-capture-form-interact
+Gerekçe: Contact form Name/Email/Phone/Comment + SEND MESSAGE + hCaptcha. PII/submit dur — static 3vp yeterli.  
+Örnekler: /pages/contact lead-capture-form  
+Öneri: leftover — PII sınırı  
+Karar: onay bekliyor
+
+---  
 Gerekçe: PDP + featured `BUY IT NOW` / accelerated checkout. Tıklanmadı.  
 Örnekler: /products/money-tree  
 Öneri: leftover — checkout  
@@ -154,10 +168,12 @@ Karar: onay bekliyor
 | Newsletter Apply / contact Send / blog comment | PII — dur |
 | `/pages/plant-drop`, `/pages/visit` | Walk dışı leftover |
 | `/pages/shipping`, `/pages/privacy`, `/pages/terms`, `/pages/cookies`, `/pages/careers` | Policy leftover |
-| FAQ accordion open | Static kapalı; `changed` çekilmedi |
+| FAQ accordion open | interact `changed` 3vp — kargo sorusu |
+| Bundle ADD SET TO CART | interact `filled` 3vp — drawer €37,97 |
+| Before/after handle | interact `changed` drag pct:70 — 3vp |
+| Testimonial 375 changed | Next display:none — 768/1440 ok |
+| lead-capture-form interact | PII/submit dur — static |
 | Lookbook hotspot tık | Quick view leftover |
-| Bundle ADD SET TO CART | Tıklanmadı |
-| Before/after handle | Static 3vp |
 | FR/AR sitemap locale | Walk dışı |
 
 ## Interact notları

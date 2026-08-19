@@ -8,12 +8,72 @@
   "selector": "#shopify-section-template--17270937092283__165217027612407f35",
   "evidenceSlug": "commerce-tools-products-bundle",
   "evidence": [
+    "evidence/be-yours/default/home/commerce-tools-products-bundle.1440.png",
     "evidence/be-yours/default/home/commerce-tools-products-bundle.375.png",
     "evidence/be-yours/default/home/commerce-tools-products-bundle.768.png",
-    "evidence/be-yours/default/home/commerce-tools-products-bundle.1440.png"
+    "evidence/be-yours/default/home/commerce-tools-products-bundle.filled.set-sepete-eklendi.1440.png",
+    "evidence/be-yours/default/home/commerce-tools-products-bundle.filled.set-sepete-eklendi.375.png",
+    "evidence/be-yours/default/home/commerce-tools-products-bundle.filled.set-sepete-eklendi.768.png",
+    "evidence/be-yours/default/home/commerce-tools-products-bundle.initial.ilk-hal.1440.png",
+    "evidence/be-yours/default/home/commerce-tools-products-bundle.initial.ilk-hal.375.png",
+    "evidence/be-yours/default/home/commerce-tools-products-bundle.initial.ilk-hal.768.png"
   ],
   "notlar": "BUNDLE & SAVE / Build Your Own Basket From €100. Spider Plant + Philodendron + Polystone Pot. ADD SET TO CART.",
-  "delta": "bundle-products + lookbook görsel. Set ATC tıklanmadı.",
+  "delta": "bundle-products + lookbook görsel. ADD SET TO CART interact.",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://beyours-theme.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17270937092283__165217027612407f35",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "BUNDLE & SAVE. Spider Plant + Philodendron + Polystone Pot. ADD SET TO CART."
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#shopify-section-template--17270937092283__165217027612407f35 button:has-text('Add set to cart')",
+      "capture": false,
+      "not": "Add set to cart — 3 ürün sepete."
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "set-sepete-eklendi",
+      "not": "Sepet drawer açık — bundle ürünleri görünür. Checkout tıklanmadı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "BUNDLE & SAVE. Build Your Own Basket From €100. Lookbook hotspot + Spider Plant €12,99 + Philodendron S €14,99 + Polystone Black €9,99. ADD SET TO CART.",
+    "filled": "Add set to cart → #cart-icon-bubble drawer. Spider Plant €12,99 + Philodendron €14,99 + Polystone €9,99 = CHECK OUT €37,97. Spend €57,03 more free shipping. Checkout tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC drawer otomatik açmıyor; #cart-icon-bubble ile drawer. filled viewport capture. Checkout tıklanmadı.",
   "capture": {
     "url": "https://beyours-theme.myshopify.com/",
     "viewports": [
@@ -22,7 +82,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T10:57:57.242Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:44:27.492Z"
   }
 }
