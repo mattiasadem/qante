@@ -8,12 +8,36 @@
   "selector": "#shopify-section-custom-newsletter",
   "evidenceSlug": "lead-capture-newsletter-band",
   "evidence": [
-    "evidence/beardbrand/default/home/lead-capture-newsletter-band.375.png",
-    "evidence/beardbrand/default/home/lead-capture-newsletter-band.768.png",
-    "evidence/beardbrand/default/home/lead-capture-newsletter-band.1440.png"
+    "evidence/beardbrand/default/home/lead-capture-newsletter-band.initial.band.1440.png",
+    "evidence/beardbrand/default/home/lead-capture-newsletter-band.initial.band.375.png",
+    "evidence/beardbrand/default/home/lead-capture-newsletter-band.initial.band.768.png"
   ],
   "notlar": "GROW YOUR MIND ~226px. E-posta alanı #Email-custom-newsletter — form gönderilmedi (PII).",
-  "delta": "Tema (canlı, uydurulmadı): Split v1.0.3.7.4 [edp promo on PDPs]. schema_name Split, schema_version 3.1.0, theme_store_id 842, role main, theme.id 192727712114. Shop beardbrand.myshopify.com. Global #shopify-section-custom-newsletter çoğu şablonda. Submit yoklandı değil.",
+  "delta": "Tema (canlı, uydurulmadı): Split v1.0.3.7.4 [edp promo on PDPs]. schema_name Split, schema_version 3.1.0, theme_store_id 842, role main, theme.id 192727712114. Shop beardbrand.myshopify.com. Global #shopify-section-custom-newsletter çoğu şablonda. input state yok — e-posta fill/submit PII.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.beardbrand.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-custom-newsletter",
+      "capture": true,
+      "etiket": "band",
+      "not": "GROW YOUR MIND band — placeholder görünür, submit yok"
+    }
+  ],
+  "stateFindings": {
+    "initial": "GROW YOUR MIND başlık + e-posta alanı (enter your email address) + siyah ok submit düğmesi. Fill/submit yapılmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan: yalnız newsletter email input. initial yeterli; submit/account/checkout yok.",
   "capture": {
     "url": "https://www.beardbrand.com/",
     "viewports": [
@@ -22,7 +46,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-16T00:00:43.813Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:11:05.491Z"
   }
 }

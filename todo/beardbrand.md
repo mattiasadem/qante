@@ -4,8 +4,8 @@
 *Tema (storefront, uydurulmadı):* **Split v1.0.3.7.4 [edp promo on PDPs]** · `schema_name`: Split · `schema_version`: 3.1.0 · `theme_store_id`: 842 · role `main` · theme.id `192727712114`  
 *Shop:* `beardbrand.myshopify.com`
 
-**Durum:** Mod A walk kapandı — 37 obs · resmi 3vp · interact piksel değişenlerde · leftover kayıtlı  
-**PR:** https://github.com/mattiasadem/qante/pull/119 (draft · **main'e merge yok**)
+**Durum:** Mod A walk kapandı — 37 obs · resmi 3vp · CRO interact (faq + newsletter) · leftover kayıtlı  
+**PR:** bu branch — CRO interact leftover
 
 ---
 
@@ -63,7 +63,7 @@
 | 7 | collection-nav-slider | home fragrance | [x] | [x] | reuse | [x] |
 | 8 | promo-scrolling-marquee | home | [x] | [x] | reuse | [x] |
 | 9 | collection-nav-image-cards | home | [x] | [x] | reuse | [x] |
-| 10 | lead-capture-newsletter-band | home | [x] | [x] | reuse | [x] |
+| 10 | lead-capture-newsletter-band | home | [x] initial | [x] | reuse | [x] PII skip |
 | 11 | footer-columns-newsletter | home | [x] | [x] | reuse | [x] |
 | 12 | product-info-main | product-detail | [x] + size | [x] | reuse | [x] |
 | 13 | media-video-hero | PDP | [x] | [x] | reuse | [x] |
@@ -73,7 +73,7 @@
 | 17 | product-showcase-grid-plp | collection | [x] | [x] | reuse | [x] |
 | 18 | editorial-rich-text | collection | [x] | [x] | reuse | [x] |
 | 19 | features-multicolumn | collection uses | [x] | [x] | reuse | [x] |
-| 20 | faq-collapsible-tabs | collection | [x] | [x] | reuse | [x] changed leftover |
+| 20 | faq-collapsible-tabs | collection | [x] initial+changed | [x] | reuse | [x] |
 | 21 | product-showcase-grid-featured | collection | [x] | [x] | reuse | [x] |
 | 22 | search-results | search | [x] | [x] | reuse | [x] |
 | 23 | cart-page-main | cart | [x] empty+filled+qty | [x] | reuse | [x] |
@@ -97,7 +97,8 @@
 | global-menu-drawer | open | 375/768 hamburger (1440 0px) |
 | product-info-main | changed | SIZE 4 fl oz — $32→$42 |
 | cart-page-main | initial, filled, changed | boş → Norse Oil qty1 $26.56 → qty2 $53.12 |
-| faq-collapsible-tabs | changed | kare değişmedi leftover |
+| faq-collapsible-tabs | initial, changed | açık (faq-acik) → kapalı (faq-kapali); section id 28423988609394 |
+| lead-capture-newsletter-band | initial | GROW YOUR MIND band — input PII skip |
 
 ---
 
@@ -112,5 +113,5 @@
 - [x] Claiming obs resmi 3vp
 - [x] Mega / search / cart / menu / size interact
 - [ ] Predictive ürün kartı — boş (leftover)
-- [ ] PLP FAQ toggle pixel — değişmedi (leftover)
+- [x] PLP FAQ toggle — kapalı hâl (faq-kapali) doğrulandı
 - [ ] Newsletter / account / contact submit — **yapılmayacak** (PII)

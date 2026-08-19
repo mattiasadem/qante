@@ -5,54 +5,52 @@
   "preset": "default",
   "sayfa": "collection",
   "url": "https://www.beardbrand.com/collections/beard-oil",
-  "selector": "#shopify-section-template--28367258911090__faq_9Af66a",
+  "selector": "#shopify-section-template--28423988609394__faq_9Af66a",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
-    "evidence/beardbrand/default/collection/faq-collapsible-tabs.1440.png",
-    "evidence/beardbrand/default/collection/faq-collapsible-tabs.375.png",
-    "evidence/beardbrand/default/collection/faq-collapsible-tabs.768.png",
-    "evidence/beardbrand/default/collection/faq-collapsible-tabs.changed.faq-acik.1440.png",
-    "evidence/beardbrand/default/collection/faq-collapsible-tabs.changed.faq-acik.375.png",
-    "evidence/beardbrand/default/collection/faq-collapsible-tabs.changed.faq-acik.768.png"
+    "evidence/beardbrand/default/collection/faq-collapsible-tabs.changed.faq-kapali.1440.png",
+    "evidence/beardbrand/default/collection/faq-collapsible-tabs.changed.faq-kapali.375.png",
+    "evidence/beardbrand/default/collection/faq-collapsible-tabs.changed.faq-kapali.768.png",
+    "evidence/beardbrand/default/collection/faq-collapsible-tabs.initial.faq-acik.1440.png",
+    "evidence/beardbrand/default/collection/faq-collapsible-tabs.initial.faq-acik.375.png",
+    "evidence/beardbrand/default/collection/faq-collapsible-tabs.initial.faq-acik.768.png"
   ],
-  "notlar": "Beard Oil FAQs ~2143px. mount-toggles. COMMON QUESTIONS / WHAT MAKES BEARDBRAND BEARD OIL…",
-  "delta": "Tema (canlı, uydurulmadı): Split v1.0.3.7.4 [edp promo on PDPs]. schema_name Split, schema_version 3.1.0, theme_store_id 842, role main, theme.id 192727712114. Shop beardbrand.myshopify.com. Split faq mount-toggles (koleksiyon). /pages/faqs statik custom_liquid — leftover, accordion değil.",
+  "notlar": "Beard Oil FAQs ~2143px. mount-toggles toggle-tab. COMMON QUESTIONS varsayılan açık.",
+  "delta": "Tema (canlı, uydurulmadı): Split v1.0.3.7.4 [edp promo on PDPs]. schema_name Split, schema_version 3.1.0, theme_store_id 842, role main, theme.id 192727712114. Shop beardbrand.myshopify.com. Split faq mount-toggles (koleksiyon). Section id template--28423988609394 (önceki 28367258911090 DOM'da yok). /pages/faqs statik custom_liquid — leftover, accordion değil.",
   "interactionStates": [
     "initial",
     "changed"
   ],
   "interactionSteps": [
     {
-      "state": "changed",
+      "state": "initial",
       "action": "goto",
       "value": "https://www.beardbrand.com/collections/beard-oil",
       "capture": false
     },
     {
-      "state": "changed",
+      "state": "initial",
       "action": "scrollTo",
-      "selector": "#shopify-section-template--28367258911090__faq_9Af66a",
-      "capture": false
+      "selector": "#shopify-section-template--28423988609394__faq_9Af66a",
+      "capture": true,
+      "etiket": "faq-acik",
+      "not": "COMMON QUESTIONS açık — soru listesi görünür"
     },
     {
       "state": "changed",
       "action": "click",
-      "selector": "#shopify-section-template--28367258911090__faq_9Af66a button, #shopify-section-template--28367258911090__faq_9Af66a [aria-expanded], #shopify-section-template--28367258911090__faq_9Af66a .toggle, #shopify-section-template--28367258911090__faq_9Af66a summary",
+      "selector": "#shopify-section-template--28423988609394__faq_9Af66a .toggle__title",
       "capture": true,
-      "etiket": "faq-acik",
-      "not": "İlk yargı aç/kapa"
+      "etiket": "faq-kapali",
+      "not": "COMMON QUESTIONS tık → accordion kapanır (toggle__content h=0)"
     }
   ],
   "stateFindings": {
-    "changed": "COMMON QUESTIONS zaten açık (minus). Tık sonrası kare initial ile aynı — yargı kapanmadı/değişmedi."
+    "initial": "COMMON QUESTIONS açık (minus): What makes Beardbrand Beard Oil… + Jojoba/Abyssinian/Castor/Babassu alt başlıkları ve 3 ek soru görünür.",
+    "changed": ".toggle__title tık → accordion kapandı (plus). Soru listesi gizlendi; yalnız COMMON QUESTIONS satırı."
   },
-  "missingStates": [
-    {
-      "state": "changed",
-      "sebep": "İkinci deneme yok — initial ve changed PNG aynı içerik (açık FAQ listesi). /pages/faqs statik leftover."
-    }
-  ],
-  "interactionNote": "mount-toggles başlık açık geldi. Pixel değişmedi → leftover.",
+  "missingStates": [],
+  "interactionNote": "Section id template--28423988609394 (eski 28367258911090 yok). changed = kapalı (önceki deneme açık→açık aynı kare).",
   "capture": {
     "url": "https://www.beardbrand.com/collections/beard-oil",
     "viewports": [
@@ -62,6 +60,6 @@
     ],
     "mode": "section",
     "method": "interaction-steps",
-    "updatedAt": "2026-08-16T00:10:41.682Z"
+    "updatedAt": "2026-08-19T14:10:25.373Z"
   }
 }

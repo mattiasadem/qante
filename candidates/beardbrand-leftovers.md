@@ -120,9 +120,10 @@ Karar: onay bekliyor
 ---
 
 ADAY: beardbrand-plp-faq-already-open  
-Gerekçe: PLP FAQ `changed` karesi initial ile aynı (COMMON QUESTIONS minus, yargılar açık). Pixel değişmedi.  
-Öneri: leftover — toggle doğrulanamadı  
-Karar: onay bekliyor
+Gerekçe: Önceki interact denemesi eski section id (28367258911090) + açık→açık tık — pixel değişmedi. 2026-08-19: template--28423988609394 ile initial (açık) + changed (kapalı) doğrulandı.  
+Örnekler: https://www.beardbrand.com/collections/beard-oil  
+Öneri: **kapandı** — faq-collapsible-tabs interact tamam  
+Karar: çözüldü
 
 ---
 
