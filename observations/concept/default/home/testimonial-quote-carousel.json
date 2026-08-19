@@ -8,12 +8,80 @@
   "selector": "#shopify-section-template--16903853703407__4e159d86-5eeb-4230-9981-4de04664e2a3",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
+    "evidence/concept/default/home/testimonial-quote-carousel.1440.png",
     "evidence/concept/default/home/testimonial-quote-carousel.375.png",
     "evidence/concept/default/home/testimonial-quote-carousel.768.png",
-    "evidence/concept/default/home/testimonial-quote-carousel.1440.png"
+    "evidence/concept/default/home/testimonial-quote-carousel.changed.fenty-alinti.1440.png",
+    "evidence/concept/default/home/testimonial-quote-carousel.changed.fenty-alinti.375.png",
+    "evidence/concept/default/home/testimonial-quote-carousel.changed.fenty-alinti.768.png",
+    "evidence/concept/default/home/testimonial-quote-carousel.initial.ilk-hal.1440.png",
+    "evidence/concept/default/home/testimonial-quote-carousel.initial.ilk-hal.375.png",
+    "evidence/concept/default/home/testimonial-quote-carousel.initial.ilk-hal.768.png"
   ],
   "notlar": "Quotes. ELLE / FENTY / DOVINE alıntıları. style-carousel.",
   "delta": "MEDIA-EFFECT section__quotes.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://concept-theme.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16903853703407__4e159d86-5eeb-4230-9981-4de04664e2a3",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "ELLE — NIMO preternaturally cool…"
+    },
+    {
+      "state": "changed",
+      "action": "hover",
+      "selector": "#shopify-section-template--16903853703407__4e159d86-5eeb-4230-9981-4de04664e2a3",
+      "value": 400,
+      "capture": false,
+      "viewports": [
+        "1440"
+      ],
+      "not": "1440 oklar hover sonrası görünür"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--16903853703407__4e159d86-5eeb-4230-9981-4de04664e2a3 button[name='next']",
+      "value": 1500,
+      "capture": true,
+      "etiket": "fenty-alinti",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Next → FENTY game-changer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--16903853703407__4e159d86-5eeb-4230-9981-4de04664e2a3 .swiper-pagination-bullet:nth-child(2)",
+      "value": 1500,
+      "capture": true,
+      "etiket": "fenty-alinti",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Dashed pagination 2. nokta → FENTY"
+    }
+  ],
+  "stateFindings": {
+    "initial": "ELLE — “NIMO has a preternaturally cool reputation…” Dashed pagination 1/3 dolu. 1440 oklar görünmez.",
+    "changed": "FENTY — “NIMO cosmetics are a game-changer!…” Orta dash dolu. 1440: Next ok; 375/768: 2. pagination bullet."
+  },
+  "missingStates": [],
+  "interactionNote": "Swiper infinite-scroll; mobilde next 0×0 (swiper-screen__lg) — pagination bullet kullanıldı.",
   "capture": {
     "url": "https://concept-theme.myshopify.com/",
     "viewports": [
@@ -22,7 +90,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T10:57:06.565Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:30:10.335Z"
   }
 }

@@ -8,12 +8,44 @@
   "selector": "#shopify-section-template--16903853768943__352c83e3-c7c0-4e6c-bd9c-91dea026b0fa",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
+    "evidence/concept/default/about-brand/testimonial-quote-carousel.1440.png",
     "evidence/concept/default/about-brand/testimonial-quote-carousel.375.png",
     "evidence/concept/default/about-brand/testimonial-quote-carousel.768.png",
-    "evidence/concept/default/about-brand/testimonial-quote-carousel.1440.png"
+    "evidence/concept/default/about-brand/testimonial-quote-carousel.initial.ilk-hal.1440.png",
+    "evidence/concept/default/about-brand/testimonial-quote-carousel.initial.ilk-hal.375.png",
+    "evidence/concept/default/about-brand/testimonial-quote-carousel.initial.ilk-hal.768.png"
   ],
   "notlar": "Annie Lee - CEO, Founder at Concept. 5 out of 5.",
   "delta": "section__quotes style-carousel.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://concept-theme.myshopify.com/pages/about-us",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16903853768943__352c83e3-c7c0-4e6c-bd9c-91dea026b0fa",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Tek alıntı — Annie Lee CEO; ok/pagination yok"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Annie Lee — CEO, Founder at Concept. Tek alıntı + 5 yıldız; ok/pagination yok. 3vp aynı."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Tek statik quote; scan 0 opener/changer — carousel navigasyonu yok"
+    }
+  ],
+  "interactionNote": "schemaId testimonial-quote-carousel ama About'ta tek slide; changed anlamsız.",
   "capture": {
     "url": "https://concept-theme.myshopify.com/pages/about-us",
     "viewports": [
@@ -22,7 +54,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T10:52:49.801Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:29:59.683Z"
   }
 }
