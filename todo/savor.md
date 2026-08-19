@@ -6,8 +6,8 @@
 *Tema (storefront, uydurulmadı):* **Updated copy of Savor demo store 3.2.0** · `schema_name`: **Savor** · `schema_version`: **3.4.0** · `theme_store_id`: **3626** · role `main` · id `141564117043`  
 *Shop:* `se-horizon7-en-erc6.myshopify.com`
 
-**Durum:** ✅ Mod A walk + resmi 3vp + interact + validate  
-**PR:** draft https://github.com/mattiasadem/qante/pull/148 · **main'e merge yok**
+**Durum:** ✅ Mod A walk + resmi 3vp + interact + CRO leftover interact  
+**PR:** draft (bu branch) · eski walk PR 148 · **main'e merge yok**
 
 ---
 
@@ -78,6 +78,12 @@ Horizon nested theme-blocks (görülen custom elements): `header-component` · `
 - Cart drawer: boş → The Original qty1 $9.49 → qty2 $18.98
 - Cart page: boş → qty1 $9.49 → qty2 $18.98
 - PDP: 1 Bottle $9.49 → 2 Bottles $18.98
+- CRO leftover (scan + yoklama, şema uydurulmadı):
+  - `product-showcase-grid-featured` `open` — The Original CHOOSE → quick-add modal (3vp, capture bekleniyor)
+  - `product-showcase-grid-plp` `open` — 375 Filter drawer · 768/1440 Availability (capture bekleniyor)
+  - FAQ RTE / reviews tek alıntı / hero tek slayt — changed yok
+  - countdown · compare · before-after · quiz · bundle · popup · size guide · scarcity — obs yok, leftover
+  - sticky ATC var; viewport scrollTo(0) kaçırır — leftover
 
 ---
 
@@ -91,5 +97,6 @@ Horizon nested theme-blocks (görülen custom elements): `header-component` · `
 
 - [x] Official 3vp static (`capture-observation.mjs`) — 21/21
 - [x] Interact mega / search / cart / menu / PDP pack / cart qty
-- [x] PNG bak → stateFindings
-- [x] `npm run validate`
+- [ ] CRO interact CHOOSE + PLP filter — adımlar yazıldı, capture bekleniyor
+- [x] PNG bak → stateFindings (eski interact)
+- [ ] `npm run validate` CRO sonrası

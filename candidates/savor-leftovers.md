@@ -3,7 +3,7 @@
 *Kaynak:* https://savor-theme-demo.myshopify.com  
 *Tema (görülen, uydurulmadı):* `Shopify.theme.name` **Updated copy of Savor demo store 3.2.0** · id `141564117043` · `schema_name` **Savor** · `schema_version` **3.4.0** · `theme_store_id` **3626** · role `main`  
 *Shop:* `se-horizon7-en-erc6.myshopify.com`  
-*Tarih:* 2026-08-17
+*Tarih:* 2026-08-17 · CRO interact 2026-08-19
 
 Şema icat edilmedi. Claiming observation yazılan tipler burada tekrarlanmaz.
 
@@ -58,9 +58,9 @@ Karar: onay bekliyor
 ---
 
 ADAY: savor-quick-add-choose  
-Gerekçe: Home / PLP / cart / related kartlarda `CHOOSE` + `quick-add-component` / `quick-add-dialog`. Tıklanmadı. `global-quick-view` zorlama.  
+Gerekçe: Home The Original CHOOSE → `dialog.quick-add-modal` 864×616 (The Original $9.49, Bottle Pack Size, ADD TO CART). Claiming: `product-showcase-grid-featured` `open`. `global-quick-view` observation yazılmadı (şema uydurma yok; mevcut schemaId için ayrı obs keşif). PLP/cart/related aynı dialog.  
 Örnekler: https://savor-theme-demo.myshopify.com/  
-Öneri: leftover — interact dışı  
+Öneri: leftover — global-quick-view obs yok  
 Karar: onay bekliyor
 
 ---
@@ -105,12 +105,29 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: savor-sticky-atc  
+Gerekçe: PDP `sticky-add-to-cart` / `.sticky-add-to-cart__bar` fixed 600×74 “The Original 1 Bottle $9.49 ADD TO CART (1)”. Kaydırınca viewport dibinde. `capture-interaction` viewport `scrollTo(0,0)` barı kaçırır. product-info-main içinde; yeni şema yok.  
+Örnekler: https://savor-theme-demo.myshopify.com/products/the-original-japanese-barbecue-sauce  
+Öneri: leftover — capture tuzağı  
+Karar: onay bekliyor
+
+---
+
+ADAY: savor-cro-absent  
+Gerekçe: Resmi demoda countdown / compare / before-after / quiz / bundle / newsletter popup / size guide / stock scarcity / FAQ accordion **yok**. Observation da yok — interact şema uydurmaz. Reviews: about tek Yumi alıntı (ok yok). Hero: tek slayt, hero kutusunda ok yok.  
+Örnekler: https://savor-theme-demo.myshopify.com/  
+Öneri: leftover — yok  
+Karar: onay bekliyor
+
+---
+
 ## Diğer leftover (aday değil)
 
 - Account / `shopify-account` header sağda — login tıklanmadı
 - Checkout / Buy it now / Shop Pay — dur
 - Footer “WE SEND TASTY EMAILS” + contact form — submit yok (PII)
-- Video PLAY — tıklanmadı
-- Collection filtre/sort paneli — açık hâl yoklandı değil
+- Video PLAY — tıklandı; `<video>` yok, kutu aynı — changed yok
+- Search facet = PLP; claiming barbecue-sauces
 - Native `/policies/*` — sayfa şablonları alındı
 - Collections index “HOME PAGE” kiremit (`/collections/frontpage`) — claiming grid’te duruyor
+- Kart slideshow Next — src değişmedi

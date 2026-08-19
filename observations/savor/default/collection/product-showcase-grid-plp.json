@@ -13,7 +13,49 @@
     "evidence/savor/default/collection/product-showcase-grid-plp.1440.png"
   ],
   "notlar": "16 items. Availability / Price / Sort. The Original… product-card ızgara.",
-  "delta": "Horizon collection main. Filtre açık panel yoklandı değil. CHOOSE leftover.",
+  "delta": "Horizon collection main. facets-form-component. CHOOSE home featured’da claiming. In stock 16→16; Out of stock URL’yi değiştirmedi.",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://savor-theme-demo.myshopify.com/collections/barbecue-sauces",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#shopify-section-template--18561684439091__main .facets-toggle__button",
+      "viewports": [
+        "375"
+      ],
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "filter-drawer",
+      "not": "375 Filter → sağ drawer Availability / Price / Sort"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Facet-Details-template--18561684439091__main-filter-v-availability > summary",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "value": 600,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "availability-acik",
+      "not": "768/1440 AVAILABILITY — In stock / Out of stock. İki kopya; clickVisible ilk görünür."
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "changed yok: In stock hâlâ 16 items; OOS tık URL’yi değiştirmedi. Search aynı facet — leftover tekrar. CHOOSE home’da.",
   "capture": {
     "url": "https://savor-theme-demo.myshopify.com/collections/barbecue-sauces",
     "viewports": [

@@ -13,7 +13,47 @@
     "evidence/savor/default/home/product-showcase-grid-featured.1440.png"
   ],
   "notlar": "The Original / Sweet Pineapple / Roasted Garlic… CHOOSE + fiyat CAD. Horizon product-card theme-blocks.",
-  "delta": "Horizon product_list. Kartta CHOOSE (quick-add-dialog) — tıklanmadı, leftover. Nested product-card / product-price / quick-add-component.",
+  "delta": "Horizon product_list. Nested product-card / product-price / quick-add-component. CHOOSE → dialog.quick-add-modal (global-quick-view observation açılmadı — leftover).",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://savor-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--18561684275251__product_list_X8Q7bi",
+      "capture": false,
+      "not": "Kart ızgarası"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#product-card-AcFczUFZxanc4eXZ5T__static-product-card button.quick-add__button--choose",
+      "value": 2000,
+      "capture": false,
+      "not": "The Original CHOOSE — unique card id"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "selector": "dialog.quick-add-modal[open]",
+      "value": 8000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "choose-dialog",
+      "not": "Modal: The Original $9.49 + Bottle Pack Size 1/2/3/6 + ADD TO CART. URL home kalır."
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Hover zorlanmadı — CHOOSE 1440’ta zaten görünür. Kart next slide src değiştirmedi. Add gizli. global-quick-view ayrı observation yok (leftover). Buy it now tıklanmadı.",
   "capture": {
     "url": "https://savor-theme-demo.myshopify.com/",
     "viewports": [
