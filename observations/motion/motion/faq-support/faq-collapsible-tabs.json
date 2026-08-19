@@ -12,8 +12,43 @@
     "evidence/motion/motion/faq-support/faq-collapsible-tabs.768.png",
     "evidence/motion/motion/faq-support/faq-collapsible-tabs.1440.png"
   ],
-  "notlar": "FAQ akordeon.",
+  "notlar": "FAQ akordeon. Interact: ilk soru açık.",
   "delta": "",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://motion-theme-adventure.myshopify.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19291126661171__1628038998256a54e8",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Tüm sorular kapalı (openFirst yok)."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--19291126661171__1628038998256a54e8 button[aria-controls='FAQ-content-1628038998256a54e8-0']",
+      "value": 800,
+      "capture": true,
+      "etiket": "ilk-soru-acik",
+      "not": "When will my order ship? → 1–2 iş günü / tracking e-posta. URL /pages/faq."
+    }
+  ],
+  "stateFindings": {
+    "initial": "FAQ başlık. 19 soru kapalı (aria-expanded false). İlk: When will my order ship?",
+    "changed": "İlk soru açık: Orders are typically processed within 1 to 2 business days + tracking e-posta. URL faq'da kaldı."
+  },
+  "missingStates": [],
+  "interactionNote": "details yok; button[aria-controls]. openFirst bu demoda kapalı. Diğer sorular tıklanmadı. Şema değişmedi.",
   "capture": {
     "url": "https://motion-theme-adventure.myshopify.com/pages/faq",
     "viewports": [
@@ -21,7 +56,7 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
+    "method": "interaction-steps",
     "mode": "section",
     "updatedAt": "2026-08-15T11:50:15.479Z"
   }

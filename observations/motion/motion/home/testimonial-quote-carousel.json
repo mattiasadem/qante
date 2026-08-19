@@ -12,8 +12,43 @@
     "evidence/motion/motion/home/testimonial-quote-carousel.768.png",
     "evidence/motion/motion/home/testimonial-quote-carousel.1440.png"
   ],
-  "notlar": "DON'T TAKE OUR WORD FOR IT.",
+  "notlar": "DON'T TAKE OUR WORD FOR IT. Interact: Flickity nokta 2.",
   "delta": "",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://motion-theme-adventure.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19291126530099__1628005539ef941de4",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Orta slayt EVAN M. Bend, OR. Nokta 1."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--19291126530099__1628005539ef941de4 li.dot[aria-label='Page dot 2']",
+      "value": 1200,
+      "capture": true,
+      "etiket": "nokta-2",
+      "not": "Orta slayt MARCUS T. Vancouver, BC. Nokta 2. Ok yok."
+    }
+  ],
+  "stateFindings": {
+    "initial": "DON'T TAKE OUR WORD FOR IT. Orta: EVAN M. Bend, OR (sunrise trail). 1440 sağda MARCUS T. 5 Flickity nokta, ilki seçili. Ok yok.",
+    "changed": "Nokta 2. Orta: MARCUS T. Vancouver, BC (fit / hike). 1440 sağda NATE R. Denver. URL home."
+  },
+  "missingStates": [],
+  "interactionNote": "Next/Prev ok 0. li.dot[aria-label=Page dot 2]. Flickity; innerText tüm slaytları tutar — karede orta kart kayar. Şema değişmedi.",
   "capture": {
     "url": "https://motion-theme-adventure.myshopify.com/",
     "viewports": [
@@ -21,7 +56,7 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
+    "method": "interaction-steps",
     "mode": "section",
     "updatedAt": "2026-08-15T12:01:17.124Z"
   }

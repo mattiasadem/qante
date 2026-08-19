@@ -12,8 +12,42 @@
     "evidence/motion/motion/home/promo-banner-countdown.768.png",
     "evidence/motion/motion/home/promo-banner-countdown.1440.png"
   ],
-  "notlar": "BUY 1 GET 1 FREE + sayaç.",
+  "notlar": "BUY 1 GET 1 FREE + sayaç. Interact: saniye tick.",
   "delta": "",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://motion-theme-adventure.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19291126530099__countdown_A3AJ9j",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "BUY 1 GET 1 FREE + DAYS/HOURS/MINUTES/SECONDS."
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": true,
+      "etiket": "saniye",
+      "not": "3sn sonra saniye ticked. Shop Collection tıklanmadı (koleksiyona gider)."
+    }
+  ],
+  "stateFindings": {
+    "initial": "BUY 1 GET 1 FREE + LIMITED QUATINITES AND SIZES AVAILABLE + timer + Shop Collection. Açıcı/dismiss yok.",
+    "changed": "Yalnız saniye değişir. Başlık ve CTA aynı. Shop Collection href /collections/new-in — tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "Tık state yok. Tick piksel değiştirdi — changed duruyor. Kupon yok. Şema değişmedi.",
   "capture": {
     "url": "https://motion-theme-adventure.myshopify.com/",
     "viewports": [
@@ -21,7 +55,7 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
+    "method": "interaction-steps",
     "mode": "section",
     "updatedAt": "2026-08-15T11:59:56.243Z"
   }
