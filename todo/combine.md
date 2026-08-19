@@ -7,7 +7,7 @@
 *Tema (storefront, uydurulmadı):* **combine-build/home** · `schema_name`: **Combine** · `schema_version`: **4.0.0** · `theme_store_id`: **null** · role `main` · id `159816614121`  
 *Shop:* `bundle-theme-demo.myshopify.com` (host `combine-theme-main.myshopify.com`)
 
-**Durum:** ✅ Mod A walk + resmi 3vp + interact + validate  
+**Durum:** ✅ Mod A walk + resmi 3vp + interact (CRO leftover) + validate  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -18,13 +18,13 @@
 |---|---|
 | Evidence kökü | `evidence/combine/default/` |
 | Observation | **39** |
-| Evidence PNG | **141** |
+| Evidence PNG | **162** |
 | Yeni şema | **0** |
 | Capture | resmi `capture-observation.mjs` + `capture-interaction.mjs` |
 | Parallel | yalnız `observations/combine/`, `evidence/combine/`, `todo/combine.md`, `candidates/combine-*.md` |
 
 **Kapsam satırı:**  
-`Combine · default · combine-build/home / schema_name Combine 4.0.0 (theme_store_id null) · home→PDP→PLP→collections→search→cart→Our Story→contact→News→404 + Build Your Set + lookbook · 39 obs · 141 kanıt · 0 yeni şema · leftover: candidates/combine-leftovers.md`
+`Combine · default · combine-build/home / schema_name Combine 4.0.0 (theme_store_id null) · home→PDP→PLP→collections→search→cart→Our Story→contact→News→404 + Build Your Set + lookbook · 39 obs · 162 kanıt · 0 yeni şema · leftover: candidates/combine-leftovers.md`
 
 ---
 
@@ -60,7 +60,10 @@
 - `global-cart-drawer` — boş → Carafe qty1 $55 → qty2 $110
 - `cart-page-main` — aynı 1→2
 - `product-info-main` — Clear → Amber; 375 sticky Choose options
-- `commerce-tools-products-bundle` (Build Your Set) — Boulder Bookend slot 1; ATC disabled (min 2)
+- `lead-capture-form` — Subject + Message (`input`); Name/Email/Phone boş; Submit yok
+- `commerce-tools-products-bundle` (home curated) — Carafe Clear → Amber swatch (`changed`)
+- `commerce-tools-products-bundle-2` (home BYOB) — Boulder Bookend slot 1 (`changed`)
+- `commerce-tools-products-bundle` (Build Your Set) — initial → 1 ürün (`changed`) → 2 ürün ATC enabled (`filled`)
 
 ---
 
@@ -74,8 +77,9 @@
 
 - [x] Official 3vp static (`capture-observation.mjs`) — 32/32
 - [x] Interact mega / search / cart / menu / PDP / bundle / sticky ATC
+- [x] CRO leftover interact: `lead-capture-form`, `commerce-tools-products-bundle` (home + landing filled)
 - [x] PNG bak → stateFindings
 - [x] `npm run validate`
 - [ ] Predictive ürün kartı — boş (leftover)
-- [ ] Bundle 2. ürün / %30 apply — çekilmedi (leftover)
+- [ ] Bundle ATC tıklama / checkout — **yapılmayacak**
 - [ ] Newsletter / account / contact submit — **yapılmayacak** (PII)

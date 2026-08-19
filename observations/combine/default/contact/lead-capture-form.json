@@ -8,12 +8,61 @@
   "selector": "#shopify-section-template--21976061116649__main",
   "evidenceSlug": "lead-capture-form",
   "evidence": [
+    "evidence/combine/default/contact/lead-capture-form.1440.png",
     "evidence/combine/default/contact/lead-capture-form.375.png",
     "evidence/combine/default/contact/lead-capture-form.768.png",
-    "evidence/combine/default/contact/lead-capture-form.1440.png"
+    "evidence/combine/default/contact/lead-capture-form.initial.ilk-hal.1440.png",
+    "evidence/combine/default/contact/lead-capture-form.initial.ilk-hal.375.png",
+    "evidence/combine/default/contact/lead-capture-form.initial.ilk-hal.768.png",
+    "evidence/combine/default/contact/lead-capture-form.input.konu-mesaj.1440.png",
+    "evidence/combine/default/contact/lead-capture-form.input.konu-mesaj.375.png",
+    "evidence/combine/default/contact/lead-capture-form.input.konu-mesaj.768.png"
   ],
   "notlar": "Name Email* Subject Phone Number Message Submit. Submit tıklanmadı.",
   "delta": "PII stop.",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://combine-theme-main.myshopify.com/pages/contact",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21976061116649__main",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Boş form: Name / Email* / Subject / Phone / Message + Submit."
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#shopify-section-template--21976061116649__main input[name='contact[Title]']",
+      "value": "Product inquiry",
+      "capture": false,
+      "not": "Subject dolduruldu; PII alanları boş."
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#shopify-section-template--21976061116649__main textarea[name='contact[Message]']",
+      "value": "When will the Boulder Bookend be back in stock?",
+      "capture": true,
+      "etiket": "konu-mesaj",
+      "not": "Subject + Message dolu; Name/Email/Phone boş; Submit tıklanmadı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Contact form: Name / Email* / Subject / Phone Number / Message + Submit. Tüm alanlar boş.",
+    "input": "Subject = Product inquiry; Message dolu. Name, Email, Phone boş. Submit tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "Name / Email / Phone PII — doldurulmadı. Submit tıklanmadı.",
   "capture": {
     "url": "https://combine-theme-main.myshopify.com/pages/contact",
     "viewports": [
@@ -22,7 +71,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T19:15:00.180Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:33:26.450Z"
   }
 }

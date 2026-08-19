@@ -11,6 +11,9 @@
     "evidence/combine/default/landing-campaign/commerce-tools-products-bundle.changed.bir-urun.1440.png",
     "evidence/combine/default/landing-campaign/commerce-tools-products-bundle.changed.bir-urun.375.png",
     "evidence/combine/default/landing-campaign/commerce-tools-products-bundle.changed.bir-urun.768.png",
+    "evidence/combine/default/landing-campaign/commerce-tools-products-bundle.filled.iki-urun.1440.png",
+    "evidence/combine/default/landing-campaign/commerce-tools-products-bundle.filled.iki-urun.375.png",
+    "evidence/combine/default/landing-campaign/commerce-tools-products-bundle.filled.iki-urun.768.png",
     "evidence/combine/default/landing-campaign/commerce-tools-products-bundle.initial.ilk-hal.1440.png",
     "evidence/combine/default/landing-campaign/commerce-tools-products-bundle.initial.ilk-hal.375.png",
     "evidence/combine/default/landing-campaign/commerce-tools-products-bundle.initial.ilk-hal.768.png"
@@ -19,6 +22,7 @@
   "delta": "Asıl bundle builder sayfası. Home'daki .2 ile aynı tip.",
   "interactionStates": [
     "initial",
+    "filled",
     "changed"
   ],
   "interactionSteps": [
@@ -49,14 +53,23 @@
       "capture": true,
       "etiket": "bir-urun",
       "not": "İlk Add to bundle"
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#shopify-section-template--21976061051113__166434587223c52fdf button.add-to-cart:has-text('Add to bundle')",
+      "capture": true,
+      "etiket": "iki-urun",
+      "not": "İkinci Add to bundle; sticky 2 ürün + Add to cart enabled"
     }
   ],
   "stateFindings": {
     "initial": "Buy 2+ items & save 30%. Bundle contents: Add at least 2 products to proceed. 3 boş slot. Add to cart disabled. Grid Add to bundle / Choose a variant.",
-    "changed": "İlk Add to bundle: W&S Boulder Bookend slot 1'e girdi. Buton Added to bundle. Add to cart hâlâ disabled (min 2)."
+    "changed": "İlk Add to bundle: W&S Boulder Bookend slot 1'e girdi. Buton Added to bundle. Add to cart hâlâ disabled (min 2).",
+    "filled": "Boulder Bookend + Complot Candleholder sticky'de. Add to cart enabled. %30 indirim uygulanacak notu görünür."
   },
   "missingStates": [],
-  "interactionNote": "İkinci ürüne kadar tıklanmadı — 30% apply karesi yok. Checkout yok.",
+  "interactionNote": "Add to cart tıklanmadı — checkout yok. Choose a variant ürünler atlandı.",
   "capture": {
     "url": "https://combine-theme-main.myshopify.com/pages/build-your-set",
     "viewports": [
@@ -66,6 +79,6 @@
     ],
     "mode": "section",
     "method": "interaction-steps",
-    "updatedAt": "2026-08-17T19:27:52.382Z"
+    "updatedAt": "2026-08-19T15:36:20.559Z"
   }
 }
