@@ -14,6 +14,36 @@
   ],
   "notlar": "Aynı marquee cümlesi home ile.",
   "delta": "About marquee. Home ile aynı metin, ayrı instance.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-fabric-demo.myshopify.com/pages/our-story",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19138330951733__marquee_8xwiYr",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "About marquee — ok/link yok"
+    }
+  ],
+  "stateFindings": {
+    "initial": ""
+  },
+  "missingStates": [],
+  "interactionNote": "",
   "capture": {
     "url": "https://theme-fabric-demo.myshopify.com/pages/our-story",
     "viewports": [

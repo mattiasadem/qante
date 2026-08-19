@@ -14,6 +14,36 @@
   ],
   "notlar": "FAQ. Beş Q&A düz metin: return / final sale / when order / where made / shipping. details/accordion yok.",
   "delta": "Horizon page main. Collapsible değil. Fit guide / Materials & care aynı template id, leftover.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-fabric-demo.myshopify.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19138330787893__main",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Beş Q&A düz metin — accordion yok"
+    }
+  ],
+  "stateFindings": {
+    "initial": ""
+  },
+  "missingStates": [],
+  "interactionNote": "",
   "capture": {
     "url": "https://theme-fabric-demo.myshopify.com/pages/faq",
     "viewports": [

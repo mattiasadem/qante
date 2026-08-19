@@ -14,6 +14,36 @@
   ],
   "notlar": "Full-bleed hero. Shop now. Tek kare; model/ürün görseli. slideshow-component yok.",
   "delta": "Fabric hero. Tek kare, ok/dot yok. Shopify.theme: name **Updated copy of Fabric demo store 3.2.0** · schema_name **Fabric** · schema_version **3.4.0** · theme_store_id **3622** · role main · id 145077665845 · shop se-horizon5-en-624k.myshopify.com",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-fabric-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19138330460213__hero_HPEeBq",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Tek kare hero — ok/dot yok. Shop now tıklanmaz"
+    }
+  ],
+  "stateFindings": {
+    "initial": ""
+  },
+  "missingStates": [],
+  "interactionNote": "",
   "capture": {
     "url": "https://theme-fabric-demo.myshopify.com/",
     "viewports": [
