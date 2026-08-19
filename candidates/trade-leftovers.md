@@ -94,3 +94,19 @@ Gerekçe: Contact Send, company-account-request, checkout, account login tıklan
 Örnekler: `/pages/contact` · cart Check out  
 Öneri: PII / checkout stop  
 Karar: onay bekliyor
+
+---
+
+ADAY: trade-cro-types-no-obs  
+Gerekçe: CRO leftover interact — diskte observation yok: countdown, before-after, bundle, comparison, quiz, shop-the-feed, slideshow, scrolling gallery. Announcement-bar slideshow CSS; ok/nokta yok. Interact şema uydurmadı.  
+Örnekler: home announcement · leftover quick-order-list (bundle değil)  
+Öneri: leftover — ilk envanter `/qante-discover`  
+Karar: onay bekliyor
+
+---
+
+ADAY: trade-quote-desktop-grid  
+Gerekçe: `testimonial-quote-carousel` 375/768 next 1/4→2/4 STUDIO duvet. 1440 dört kolon, ok 0×0. Şema carousel; instance Dawn multicolumn.  
+Örnekler: home `#multicolumn1`  
+Öneri: leftover — masaüstü grid  
+Karar: onay bekliyor
