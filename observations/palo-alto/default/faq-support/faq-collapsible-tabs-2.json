@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--21945700745404__accordion-section-4",
   "evidenceSlug": "faq-collapsible-tabs-2",
   "evidence": [
+    "evidence/palo-alto/default/faq-support/faq-collapsible-tabs-2.1440.png",
     "evidence/palo-alto/default/faq-support/faq-collapsible-tabs-2.375.png",
     "evidence/palo-alto/default/faq-support/faq-collapsible-tabs-2.768.png",
-    "evidence/palo-alto/default/faq-support/faq-collapsible-tabs-2.1440.png"
+    "evidence/palo-alto/default/faq-support/faq-collapsible-tabs-2.changed.iade-acik.1440.png",
+    "evidence/palo-alto/default/faq-support/faq-collapsible-tabs-2.changed.iade-acik.375.png",
+    "evidence/palo-alto/default/faq-support/faq-collapsible-tabs-2.changed.iade-acik.768.png",
+    "evidence/palo-alto/default/faq-support/faq-collapsible-tabs-2.initial.ilk-hal.1440.png",
+    "evidence/palo-alto/default/faq-support/faq-collapsible-tabs-2.initial.ilk-hal.375.png",
+    "evidence/palo-alto/default/faq-support/faq-collapsible-tabs-2.initial.ilk-hal.768.png"
   ],
   "notlar": "Returns & Refunds 5 soru. 522px.",
   "delta": "",
@@ -22,7 +28,42 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T20:39:32.053Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:05:30.396Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://palo-alto-theme-main.myshopify.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21945700745404__accordion-section-4",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Returns & Refunds — beş soru kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Accordion--accordion_block_4_0 button[aria-controls='Accordions-item--0-template--21945700745404__accordion-section-4']",
+      "value": 900,
+      "capture": true,
+      "etiket": "iade-acik",
+      "not": "Do you offer refunds? — cevap açık"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Returns & Refunds başlığı. Beş soru kapalı (+).",
+    "changed": "Do you offer refunds? açık (−). Cevap: Yes, we offer full and partial refunds…"
+  },
+  "missingStates": [],
+  "interactionNote": "accordion-section-4 Returns & Refunds."
 }

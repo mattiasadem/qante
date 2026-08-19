@@ -42,6 +42,28 @@
 - **404 template** — taxonomy `pageTypes` içinde yok. `page-content-main` + delta
 - **locations** — mağaza adresi/saat. Overlay/aday; şema açılmadı
 
+## CRO şemaları (diskte var · observation yok)
+
+| schemaId | Durum |
+|---|---|
+| before-after-slider | Sitede yok — observation uydurulmadı |
+| commerce-tools-products-bundle | Sitede yok |
+| comparison-quick-table | Sitede yok |
+| product-finder-quiz | Sitede yok |
+
+## CRO interact (2026-08-19)
+
+| schemaId | State | Not |
+|---|---|---|
+| promo-banner-countdown | initial + changed | Canlı SEC tick (waitFor 3sn) |
+| faq-collapsible-tabs | initial + changed | Home görselli + FAQ 4 bölüm; accordion click |
+| lead-capture-form | initial | PII — input/SEND dur |
+| lead-capture-newsletter-band | initial | SIGN UP dur |
+| testimonial-quote-carousel | initial + changed (home) | Flickity; 375 swipe, 768/1440 Next |
+| testimonial-quote-carousel | initial (PDP) | Statik grid — changed yok |
+| media-shop-the-feed | initial + hover | Shop the look hover overlay |
+| media-scrolling-gallery | initial + changed | CSS ticker + zoomOut animasyonu |
+
 ## Interact notları
 
 - Apparel mega: `hover-disclosure.menu__item.grandparent.kids-3 > a.navlink--toplevel` — Playwright hover custom element’te açılmadı; inner `<a>` ile açıldı. Tıklama `/collections/all`.

@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--21945700614332__section_hero_scrolling_jEpm9N",
   "evidenceSlug": "media-scrolling-gallery",
   "evidence": [
+    "evidence/palo-alto/default/home/media-scrolling-gallery.1440.png",
     "evidence/palo-alto/default/home/media-scrolling-gallery.375.png",
     "evidence/palo-alto/default/home/media-scrolling-gallery.768.png",
-    "evidence/palo-alto/default/home/media-scrolling-gallery.1440.png"
+    "evidence/palo-alto/default/home/media-scrolling-gallery.changed.kaydirildi.1440.png",
+    "evidence/palo-alto/default/home/media-scrolling-gallery.changed.kaydirildi.375.png",
+    "evidence/palo-alto/default/home/media-scrolling-gallery.changed.kaydirildi.768.png",
+    "evidence/palo-alto/default/home/media-scrolling-gallery.initial.ilk-hal.1440.png",
+    "evidence/palo-alto/default/home/media-scrolling-gallery.initial.ilk-hal.375.png",
+    "evidence/palo-alto/default/home/media-scrolling-gallery.initial.ilk-hal.768.png"
   ],
   "notlar": "hero-scrolling 650px. ✦ spring style tekrarlayan kayan metin.",
   "delta": "Tek hero görsel + kayan yazı; discrete slayt yok. media-scrolling-gallery'ye map.",
@@ -22,7 +28,41 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T20:41:36.600Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:11:29.213Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://palo-alto-theme-main.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21945700614332__section_hero_scrolling_jEpm9N",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "spring style ticker + hero görsel"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": true,
+      "etiket": "kaydirildi",
+      "not": "ticker + zoomOut animasyonu — metin konumu değişir"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Tek hero görsel + ✦ spring style kayan ticker + SHOP THE COLLECTION.",
+    "changed": "~4sn sonra ticker metni sola kaymış; zoomOut animasyonu farklı kare. Manuel ok yok."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan changer yok. CSS ticker + zoomOut — waitFor ile piksel diff."
 }

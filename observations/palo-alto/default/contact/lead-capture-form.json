@@ -8,9 +8,12 @@
   "selector": "#shopify-section-template--21945700712636__contact-form",
   "evidenceSlug": "lead-capture-form",
   "evidence": [
+    "evidence/palo-alto/default/contact/lead-capture-form.1440.png",
     "evidence/palo-alto/default/contact/lead-capture-form.375.png",
     "evidence/palo-alto/default/contact/lead-capture-form.768.png",
-    "evidence/palo-alto/default/contact/lead-capture-form.1440.png"
+    "evidence/palo-alto/default/contact/lead-capture-form.initial.ilk-hal.1440.png",
+    "evidence/palo-alto/default/contact/lead-capture-form.initial.ilk-hal.375.png",
+    "evidence/palo-alto/default/contact/lead-capture-form.initial.ilk-hal.768.png"
   ],
   "notlar": "What's your name? / What's your email? / Message / SEND. 624px.",
   "delta": "Submit yok — PII.",
@@ -22,7 +25,31 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T20:37:42.841Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:07:30.456Z"
+  },
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://palo-alto-theme-main.myshopify.com/pages/contact",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21945700712636__contact-form",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Boş form: name / email / message + SEND. Gönderilmedi."
+    }
+  ],
+  "stateFindings": {
+    "initial": "What's your name? / What's your email? / Message alanları boş; SEND görünür. Submit tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "scan-affordances: 3 input; opener yok. PII stop."
 }

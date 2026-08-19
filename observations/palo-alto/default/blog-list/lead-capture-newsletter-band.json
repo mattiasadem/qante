@@ -8,9 +8,12 @@
   "selector": "#shopify-section-template--21945700352188__160fef01-8bb6-4e0d-9647-a1a1b312eb42",
   "evidenceSlug": "lead-capture-newsletter-band",
   "evidence": [
+    "evidence/palo-alto/default/blog-list/lead-capture-newsletter-band.1440.png",
     "evidence/palo-alto/default/blog-list/lead-capture-newsletter-band.375.png",
     "evidence/palo-alto/default/blog-list/lead-capture-newsletter-band.768.png",
-    "evidence/palo-alto/default/blog-list/lead-capture-newsletter-band.1440.png"
+    "evidence/palo-alto/default/blog-list/lead-capture-newsletter-band.initial.ilk-hal.1440.png",
+    "evidence/palo-alto/default/blog-list/lead-capture-newsletter-band.initial.ilk-hal.375.png",
+    "evidence/palo-alto/default/blog-list/lead-capture-newsletter-band.initial.ilk-hal.768.png"
   ],
   "notlar": "Never miss a post! · Get the latest fashion news… SIGN UP. 220px.",
   "delta": "SIGN UP tıklanmadı / PII.",
@@ -22,7 +25,31 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T20:40:08.654Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:08:06.264Z"
+  },
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://palo-alto-theme-main.myshopify.com/blogs/news",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21945700352188__160fef01-8bb6-4e0d-9647-a1a1b312eb42",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Never miss a post! · Your email + SIGN UP. Submit yok."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Never miss a post! bandı. Your email alanı boş; SIGN UP görünür. Submit tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "scan-affordances: 1 email input. Newsletter submit stop."
 }
