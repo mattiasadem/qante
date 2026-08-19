@@ -1,0 +1,78 @@
+{
+  "id": "app-capture-pushowl",
+  "kategori": "capture",
+  "varyant": "pushowl",
+  "scope": "overlay",
+  "amac": "Web push bildirimleri ile terk eden ziyaretçiyi geri getirir ve kampanya iletir.",
+  "sorun": "E-posta olmayan ziyaretçiye tema ulaşamaz; PushOwl tarayıcı push izni ile yeniden hedefler.",
+  "link": "https://apps.shopify.com/pushowl",
+  "yuzey": [
+    "flyout"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "web-pixel"
+    ],
+    "ikas": [
+      "storefront-js-script"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "ADD_TO_CART",
+    "VIEW_CART"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_customers",
+    "read_orders"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "izinPromptGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "kampanyaBasligi": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [
+    "mount:footer.before"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "yok",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

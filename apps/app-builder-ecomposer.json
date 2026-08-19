@@ -1,0 +1,74 @@
+{
+  "id": "app-builder-ecomposer",
+  "kategori": "builder",
+  "varyant": "ecomposer",
+  "scope": "page",
+  "amac": "Landing ve içerik sayfalarını sürükle-bırak editörle oluşturup yayınlar.",
+  "sorun": "Tema şablonları özel kampanya sayfası üretmekte yetersiz kalır; EComposer görsel sayfa editörü sunar.",
+  "link": "https://apps.shopify.com/ecomposer",
+  "yuzey": [],
+  "entegrasyon": {
+    "shopify": [
+      "page-runtime"
+    ],
+    "ikas": [
+      "admin-iframe",
+      "admin-graphql"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [],
+  "ikasSayfa": [],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "admin-iframe",
+  "ikasKapsam": [
+    "read_products",
+    "write_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "admin-iframe",
+  "ayarlar": {
+    "sayfaSablonu": {
+      "tip": "ref",
+      "hedef": "page",
+      "zorunlu": true
+    },
+    "seoBaslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 70
+    },
+    "yayinDurumu": {
+      "tip": "boolean",
+      "zorunlu": true
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urunler",
+      "source": "DataSource.productList",
+      "params": {
+        "kaynak": "manual",
+        "limit": 24
+      }
+    },
+    {
+      "name": "koleksiyon",
+      "source": "DataSource.collection"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  },
+  "_note": "Builder SDK — yuzey çocuk section'lardan çıkarılır"
+}

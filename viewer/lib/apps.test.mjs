@@ -42,7 +42,7 @@ describe("apps inventory", () => {
   it("loads all apps without parse errors", () => {
     const data = loadApps(ROOT);
     assert.equal(data.parseErrors.length, 0, data.parseErrors.map((e) => e.error).join("; "));
-    assert.ok(data.apps.length >= 28);
+    assert.ok(data.apps.length >= 73);
   });
 
   it("every apps/*.json has exactly 27 contract keys (+ optional _ keys)", () => {
