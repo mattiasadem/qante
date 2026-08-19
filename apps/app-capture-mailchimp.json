@@ -4,13 +4,45 @@
   "varyant": "mailchimp",
   "scope": "overlay",
   "amac": "Mailchimp listesine abone toplamak için sınırlı onsite popup ve gömülü formlar sağlar.",
-  "yuzey": ["popup_modal", "embedded_form"],
-  "entegrasyon": ["app-embed"],
-  "dataBindings": [
-    { "name": "musteri", "source": "DataSource.customer" }
+  "yuzey": [
+    "popup_modal",
+    "embedded_form"
   ],
-  "actions": ["emit:newsletter.subscribe"],
-  "hookNoktalari": ["mount:newsletter.before"],
-  "bagimliliklar": ["lead-capture-newsletter-band"],
-  "ikasKarsilik": "yok"
+  "entegrasyon": [
+    "app-embed"
+  ],
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "emit:newsletter.subscribe"
+  ],
+  "hookNoktalari": [
+    "mount:newsletter.before"
+  ],
+  "bagimliliklar": [
+    "lead-capture-newsletter-band"
+  ],
+  "ikasKarsilik": "yok",
+  "link": "https://apps.shopify.com/mailchimp",
+  "sorun": "Mailchimp listesi büyümesi tema formlarına bağlı kalınca ziyaretçi çoğu sayfada hiç yakalanmaz.",
+  "ayarlar": {
+    "baslik": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80
+    },
+    "listeId": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 40
+    },
+    "popupAktif": {
+      "tip": "boolean",
+      "zorunlu": true
+    }
+  }
 }

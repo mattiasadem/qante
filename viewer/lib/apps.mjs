@@ -42,8 +42,11 @@ export function loadApps(root) {
         varyant: schema.varyant || "",
         scope: schema.scope || "",
         amac: schema.amac || "",
+        sorun: schema.sorun || "",
+        link: schema.link || "",
         yuzey: schema.yuzey || [],
         entegrasyon: schema.entegrasyon || [],
+        ayarlar: schema.ayarlar || {},
         ikasKarsilik: schema.ikasKarsilik || "",
         schema,
       });

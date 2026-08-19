@@ -4,14 +4,52 @@
   "varyant": "instafeed",
   "scope": "in-flow",
   "amac": "Instagram gönderilerini mağaza vitrininde UGC galeri olarak gösterir.",
-  "yuzey": ["ugc_gallery"],
-  "entegrasyon": ["app-block", "app-embed"],
-  "dataBindings": [
-    { "name": "urunler", "source": "DataSource.productList", "params": { "kaynak": "manual", "limit": 12 } }
+  "yuzey": [
+    "ugc_gallery"
   ],
-  "actions": ["navigate"],
-  "hookNoktalari": ["mount:section.after"],
+  "entegrasyon": [
+    "app-block",
+    "app-embed"
+  ],
+  "dataBindings": [
+    {
+      "name": "urunler",
+      "source": "DataSource.productList",
+      "params": {
+        "kaynak": "manual",
+        "limit": 12
+      }
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
   "bagimliliklar": [],
   "ikasKarsilik": "yok",
-  "_note": "kategori merchandising — sosyal feed vitrin bloğu; reviews UGC ile örtüşse de feed odaklı"
+  "_note": "kategori merchandising — sosyal feed vitrin bloğu; reviews UGC ile örtüşse de feed odaklı",
+  "link": "https://apps.shopify.com/instafeed",
+  "sorun": "Sosyal kanıt Instagram'da kalınca vitrin statik görünür; Instafeed gönderileri mağazaya taşır.",
+  "ayarlar": {
+    "hesapBaglantisi": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 60
+    },
+    "gonderiLimiti": {
+      "tip": "number",
+      "zorunlu": false
+    },
+    "urunEtiketleme": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "layout": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 20
+    }
+  }
 }

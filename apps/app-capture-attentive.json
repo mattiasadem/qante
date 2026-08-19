@@ -4,13 +4,49 @@
   "varyant": "attentive",
   "scope": "overlay",
   "amac": "SMS pazarlama için onay popup ve gömülü formlarla abone yakalama sağlar.",
-  "yuzey": ["popup_modal", "embedded_form"],
-  "entegrasyon": ["app-embed"],
-  "dataBindings": [
-    { "name": "musteri", "source": "DataSource.customer" }
+  "yuzey": [
+    "popup_modal",
+    "embedded_form"
   ],
-  "actions": ["emit:newsletter.subscribe"],
-  "hookNoktalari": ["mount:footer.before"],
-  "bagimliliklar": ["lead-capture-newsletter-band"],
-  "ikasKarsilik": "yok"
+  "entegrasyon": [
+    "app-embed"
+  ],
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "emit:newsletter.subscribe"
+  ],
+  "hookNoktalari": [
+    "mount:footer.before"
+  ],
+  "bagimliliklar": [
+    "lead-capture-newsletter-band"
+  ],
+  "ikasKarsilik": "yok",
+  "link": "https://apps.shopify.com/attentive",
+  "sorun": "SMS izinli abone listesi olmadan mobil dönüşüm kanalı kapalı kalır; Attentive onsite popup ile opt-in toplar.",
+  "ayarlar": {
+    "baslik": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80
+    },
+    "yasalMetin": {
+      "tip": "richtext",
+      "zorunlu": true
+    },
+    "ciftOptIn": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "hedefCihaz": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 20
+    }
+  }
 }

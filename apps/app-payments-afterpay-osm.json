@@ -4,14 +4,49 @@
   "varyant": "afterpay-osm",
   "scope": "in-flow",
   "amac": "Ürün ve sepet sayfalarında Afterpay taksit bilgisini göstererek dönüşüm engelini azaltır.",
-  "yuzey": ["bnpl_messaging"],
-  "entegrasyon": ["app-block"],
-  "dataBindings": [
-    { "name": "urun", "source": "DataSource.product" },
-    { "name": "sepet", "source": "DataSource.cart" }
+  "yuzey": [
+    "bnpl_messaging"
   ],
-  "actions": ["yok"],
-  "hookNoktalari": ["mount:buyBox.after", "mount:cartDrawer.footer"],
-  "bagimliliklar": ["product-info-main", "global-cart-drawer"],
-  "ikasKarsilik": "yok"
+  "entegrasyon": [
+    "app-block"
+  ],
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    },
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:cartDrawer.footer"
+  ],
+  "bagimliliklar": [
+    "product-info-main",
+    "global-cart-drawer"
+  ],
+  "ikasKarsilik": "yok",
+  "link": "https://apps.shopify.com/afterpay-messaging",
+  "sorun": "BNPL seçeneği vitrinde belirtilmezse müşteri ödeme esnekliğini fark etmez ve sepetten vazgeçebilir.",
+  "ayarlar": {
+    "pdpMesajGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "sepetMesajGoster": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "bolge": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 10
+    }
+  }
 }

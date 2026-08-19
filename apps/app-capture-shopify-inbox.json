@@ -4,14 +4,54 @@
   "varyant": "shopify-inbox",
   "scope": "overlay",
   "amac": "Canlı sohbet ve mesajlaşma ile ziyaretçi sorularını mağaza içinde yanıtlar.",
-  "yuzey": ["flyout"],
-  "entegrasyon": ["app-embed"],
-  "dataBindings": [
-    { "name": "musteri", "source": "DataSource.customer" }
+  "yuzey": [
+    "flyout"
   ],
-  "actions": ["yok"],
-  "hookNoktalari": ["mount:footer.after"],
+  "entegrasyon": [
+    "app-embed"
+  ],
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [
+    "mount:footer.after"
+  ],
   "bagimliliklar": [],
   "ikasKarsilik": "yok",
-  "_note": "capture kategorisi — destek/sohbet overlay; kapalı kategori setinde capture en yakın eşleşme"
+  "_note": "capture kategorisi — destek/sohbet overlay; kapalı kategori setinde capture en yakın eşleşme",
+  "link": "https://apps.shopify.com/inbox",
+  "sorun": "Canlı soru soran ziyaretçi yanıt alamazsa satın alma anında kaybolur.",
+  "ayarlar": {
+    "karsilamaMesaji": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 200
+    },
+    "otomatikYanit": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "calismaSaatleri": {
+      "tip": "object",
+      "zorunlu": false,
+      "alanlar": {
+        "baslangic": {
+          "tip": "text",
+          "zorunlu": false,
+          "maxLen": 10
+        },
+        "bitis": {
+          "tip": "text",
+          "zorunlu": false,
+          "maxLen": 10
+        }
+      }
+    }
+  }
 }

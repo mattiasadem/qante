@@ -4,13 +4,58 @@
   "varyant": "smile",
   "scope": "overlay",
   "amac": "Sadakat puanları ve ödüller için launcher, rozet ve hesap sayfası sunar.",
-  "yuzey": ["loyalty_launcher", "loyalty_points_badge", "loyalty_page"],
-  "entegrasyon": ["app-embed", "app-block"],
-  "dataBindings": [
-    { "name": "musteri", "source": "DataSource.customer" }
+  "yuzey": [
+    "loyalty_launcher",
+    "loyalty_points_badge",
+    "loyalty_page"
   ],
-  "actions": ["yok"],
-  "hookNoktalari": ["mount:header.utility", "mount:buyBox.badge"],
+  "entegrasyon": [
+    "app-embed",
+    "app-block"
+  ],
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [
+    "mount:header.utility",
+    "mount:buyBox.badge"
+  ],
   "bagimliliklar": [],
-  "ikasKarsilik": "Sadakat Programı"
+  "ikasKarsilik": "Sadakat Programı",
+  "link": "https://apps.shopify.com/smile-io",
+  "sorun": "Tekrar satın alma teşviki olmadan müşteri yaşam boyu değeri düşer; Smile puan ve ödül launcher'ı vitrine taşır.",
+  "ayarlar": {
+    "launcherGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "puanRozetiGoster": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "kazanmaKurali": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80
+    },
+    "odulKatalogu": {
+      "tip": "array",
+      "zorunlu": false,
+      "min": 0,
+      "max": 12,
+      "item": {
+        "ad": {
+          "tip": "text",
+          "zorunlu": true,
+          "maxLen": 60
+        }
+      }
+    }
+  }
 }

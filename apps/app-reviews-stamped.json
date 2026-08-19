@@ -4,14 +4,56 @@
   "varyant": "stamped",
   "scope": "in-flow",
   "amac": "Yorum ve puanları vitrine yerleştirir; isteğe bağlı sadakat launcher ile birleştirilebilir.",
-  "yuzey": ["review_stars", "review_widget", "review_carousel", "ugc_gallery", "loyalty_launcher"],
-  "entegrasyon": ["app-block", "app-embed"],
-  "dataBindings": [
-    { "name": "urun", "source": "DataSource.product" },
-    { "name": "musteri", "source": "DataSource.customer" }
+  "yuzey": [
+    "review_stars",
+    "review_widget",
+    "review_carousel",
+    "ugc_gallery",
+    "loyalty_launcher"
   ],
-  "actions": ["yok"],
-  "hookNoktalari": ["mount:buyBox.after", "mount:productCard.badge"],
-  "bagimliliklar": ["product-info-main"],
-  "ikasKarsilik": "yok"
+  "entegrasyon": [
+    "app-block",
+    "app-embed"
+  ],
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    },
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:productCard.badge"
+  ],
+  "bagimliliklar": [
+    "product-info-main"
+  ],
+  "ikasKarsilik": "yok",
+  "link": "https://apps.shopify.com/product-reviews-addon",
+  "sorun": "Mağaza vitrininde sosyal kanıt yoksa dönüşüm düşer; Stamped yorumları ve isteğe bağlı sadakat launcher'ı aynı pakette sunar.",
+  "ayarlar": {
+    "yildizOzetiGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "yorumListesiGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "sadakatLauncherGoster": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "npsAnketiGoster": {
+      "tip": "boolean",
+      "zorunlu": false
+    }
+  }
 }

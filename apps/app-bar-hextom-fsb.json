@@ -4,13 +4,49 @@
   "varyant": "hextom-fsb",
   "scope": "overlay",
   "amac": "Ücretsiz kargo eşiğini görünür kılarak sepet değerini artırmayı hedefler.",
-  "yuzey": ["free_shipping_bar"],
-  "entegrasyon": ["app-embed"],
-  "dataBindings": [
-    { "name": "sepet", "source": "DataSource.cart" }
+  "yuzey": [
+    "free_shipping_bar"
   ],
-  "actions": ["listen:cart.updated"],
-  "hookNoktalari": ["mount:announcement.after", "mount:cartDrawer.aboveItems"],
-  "bagimliliklar": ["global-cart-drawer"],
-  "ikasKarsilik": "Barlio"
+  "entegrasyon": [
+    "app-embed"
+  ],
+  "dataBindings": [
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "listen:cart.updated"
+  ],
+  "hookNoktalari": [
+    "mount:announcement.after",
+    "mount:cartDrawer.aboveItems"
+  ],
+  "bagimliliklar": [
+    "global-cart-drawer"
+  ],
+  "ikasKarsilik": "Barlio",
+  "link": "https://apps.shopify.com/free-shipping-bar",
+  "sorun": "Ücretsiz kargo eşiği sepette görünmeden müşteri ek ürün eklemez; FSB eşiği vitrin genelinde hatırlatır.",
+  "ayarlar": {
+    "esikTutari": {
+      "tip": "number",
+      "zorunlu": true
+    },
+    "mesajSablonu": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 200
+    },
+    "paraBirimiDonusumu": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "bolgeHedefi": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 40
+    }
+  }
 }

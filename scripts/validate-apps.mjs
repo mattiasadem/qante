@@ -22,8 +22,11 @@ const TOP_LEVEL = [
   "varyant",
   "scope",
   "amac",
+  "sorun",
+  "link",
   "yuzey",
   "entegrasyon",
+  "ayarlar",
   "dataBindings",
   "actions",
   "hookNoktalari",
@@ -139,6 +142,26 @@ const PLATFORM_WORDS = [
 const ACTION_RE =
   /^(navigate|yok|emit:[a-zA-Z]+\.[a-zA-Z]+|listen:[a-zA-Z]+\.[a-zA-Z]+|filter:[a-zA-Z.]+)$/;
 
+const SLOT_TIPS = [
+  "text",
+  "richtext",
+  "image",
+  "video",
+  "icon",
+  "link",
+  "button",
+  "number",
+  "boolean",
+  "datetime",
+  "ref",
+  "object",
+  "array",
+];
+
+const SLOT_META = ["tip", "zorunlu", "maxLen", "min", "max", "hedef", "item", "alanlar", "not"];
+const REF_HEDEF = ["product", "collection", "menu", "blog", "page", "promo", "brand"];
+const LINK_RE = /^https:\/\/.+/;
+
 const errorsOnly = process.argv.includes("--errors-only");
 const jsonOut = process.argv.includes("--json");
 
@@ -155,6 +178,43 @@ function listAppFiles() {
   return readdirSync(APPS_DIR)
     .filter((n) => n.endsWith(".json") && !n.startsWith("_"))
     .sort();
+}
+
+function checkAyarSlots(slots, file, issues, path = "") {
+  for (const [name, slot] of Object.entries(slots)) {
+    const at = path + name;
+    if (typeof slot !== "object" || slot === null || Array.isArray(slot)) {
+      issues.push(err(file, `ayarlar slot "${at}" obje değil`));
+      continue;
+    }
+    if (!slot.tip) {
+      issues.push(err(file, `ayarlar slot "${at}" tip eksik`));
+    } else if (!SLOT_TIPS.includes(slot.tip)) {
+      issues.push(err(file, `ayarlar slot "${at}" geçersiz tip "${slot.tip}"`));
+    }
+    if (!("zorunlu" in slot)) {
+      issues.push(err(file, `ayarlar slot "${at}" zorunlu eksik`));
+    } else if (typeof slot.zorunlu !== "boolean") {
+      issues.push(err(file, `ayarlar slot "${at}" zorunlu boolean olmalı`));
+    }
+    for (const k of Object.keys(slot)) {
+      if (!SLOT_META.includes(k)) {
+        issues.push(warn(file, `ayarlar slot "${at}" bilinmeyen meta "${k}"`));
+      }
+    }
+    if (slot.tip === "ref") {
+      if (!slot.hedef) issues.push(err(file, `ayarlar slot "${at}" ref hedef eksik`));
+      else if (!REF_HEDEF.includes(slot.hedef)) {
+        issues.push(err(file, `ayarlar slot "${at}" geçersiz ref hedef "${slot.hedef}"`));
+      }
+    }
+    if (slot.tip === "array" && slot.item && typeof slot.item === "object") {
+      checkAyarSlots(slot.item, file, issues, `${at}.`);
+    }
+    if (slot.tip === "object" && slot.alanlar && typeof slot.alanlar === "object") {
+      checkAyarSlots(slot.alanlar, file, issues, `${at}.`);
+    }
+  }
 }
 
 function validateApp(filePath) {
@@ -286,6 +346,32 @@ function validateApp(filePath) {
     issues.push(err(file, "amac boş olamaz"));
   } else if (schema.amac.includes("\n")) {
     issues.push(warn(file, "amac tek cümle olmalı"));
+  }
+
+  if (typeof schema.sorun !== "string" || !schema.sorun.trim()) {
+    issues.push(err(file, "sorun boş olamaz"));
+  } else if (schema.sorun.split(/[.!?]/).filter(Boolean).length > 3) {
+    issues.push(warn(file, "sorun 1–2 cümle olmalı"));
+  }
+
+  if (typeof schema.link !== "string" || !LINK_RE.test(schema.link.trim())) {
+    issues.push(err(file, "link geçerli https:// URL olmalı"));
+  }
+
+  if (!schema.ayarlar || typeof schema.ayarlar !== "object" || Array.isArray(schema.ayarlar)) {
+    issues.push(err(file, "ayarlar obje olmalı"));
+  } else {
+    const isPurePixel = schema.kategori === "pixel" && schema.scope === "head";
+    const keys = Object.keys(schema.ayarlar);
+    if (isPurePixel) {
+      if (keys.length > 0) {
+        issues.push(err(file, "saf piksel (kategori pixel + scope head) iken ayarlar {} olmalı"));
+      }
+    } else if (keys.length === 0) {
+      issues.push(err(file, "ayarlar boş {} yalnızca saf piksellerde"));
+    } else {
+      checkAyarSlots(schema.ayarlar, file, issues);
+    }
   }
 
   if (typeof schema.varyant !== "string" || !schema.varyant.trim()) {

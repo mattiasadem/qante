@@ -5,14 +5,46 @@
   "scope": "page",
   "amac": "Özel landing ve içerik sayfalarını görsel editörle oluşturup mağazada yayınlar.",
   "yuzey": [],
-  "entegrasyon": ["page-runtime"],
-  "dataBindings": [
-    { "name": "urunler", "source": "DataSource.productList", "params": { "kaynak": "manual", "limit": 24 } },
-    { "name": "koleksiyon", "source": "DataSource.collection" }
+  "entegrasyon": [
+    "page-runtime"
   ],
-  "actions": ["navigate"],
+  "dataBindings": [
+    {
+      "name": "urunler",
+      "source": "DataSource.productList",
+      "params": {
+        "kaynak": "manual",
+        "limit": 24
+      }
+    },
+    {
+      "name": "koleksiyon",
+      "source": "DataSource.collection"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
   "hookNoktalari": [],
   "bagimliliklar": [],
   "ikasKarsilik": "Studio",
-  "_note": "Builder SDK — yuzey çocuk section'lardan çıkarılır, SDK'nın kendisi değil"
+  "_note": "Builder SDK — yuzey çocuk section'lardan çıkarılır, SDK'nın kendisi değil",
+  "link": "https://apps.shopify.com/pagefly",
+  "sorun": "Tema şablonları özel landing ihtiyacını karşılamaz; PageFly görsel editörle sayfa üretir.",
+  "ayarlar": {
+    "sayfaSablonu": {
+      "tip": "ref",
+      "hedef": "page",
+      "zorunlu": true
+    },
+    "seoBaslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 70
+    },
+    "yayinDurumu": {
+      "tip": "boolean",
+      "zorunlu": true
+    }
+  }
 }

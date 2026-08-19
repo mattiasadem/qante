@@ -4,14 +4,68 @@
   "varyant": "klaviyo",
   "scope": "overlay",
   "amac": "Ziyaretçi e-posta ve SMS listesi büyütmek için popup, flyout ve gömülü formlar sunar.",
-  "yuzey": ["popup_modal", "flyout", "embedded_form"],
-  "entegrasyon": ["app-embed", "web-pixel"],
-  "dataBindings": [
-    { "name": "musteri", "source": "DataSource.customer" },
-    { "name": "sepet", "source": "DataSource.cart" }
+  "yuzey": [
+    "popup_modal",
+    "flyout",
+    "embedded_form"
   ],
-  "actions": ["emit:newsletter.subscribe"],
-  "hookNoktalari": ["mount:newsletter.before", "mount:footer.before"],
-  "bagimliliklar": ["lead-capture-newsletter-band"],
-  "ikasKarsilik": "yok"
+  "entegrasyon": [
+    "app-embed",
+    "web-pixel"
+  ],
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    },
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "emit:newsletter.subscribe"
+  ],
+  "hookNoktalari": [
+    "mount:newsletter.before",
+    "mount:footer.before"
+  ],
+  "bagimliliklar": [
+    "lead-capture-newsletter-band"
+  ],
+  "ikasKarsilik": "yok",
+  "link": "https://apps.shopify.com/klaviyo-email-marketing",
+  "sorun": "Ziyaretçilerin büyük kısmı e-posta veya SMS bırakmadan çıkar; Klaviyo popup ve gömülü formlarla liste büyütür.",
+  "ayarlar": {
+    "baslik": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80
+    },
+    "altMetin": {
+      "tip": "richtext",
+      "zorunlu": false
+    },
+    "gosterimGecikmesi": {
+      "tip": "number",
+      "zorunlu": false
+    },
+    "cikisNiyeti": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "hedefSayfalar": {
+      "tip": "array",
+      "zorunlu": false,
+      "min": 0,
+      "max": 20,
+      "item": {
+        "yol": {
+          "tip": "text",
+          "zorunlu": true,
+          "maxLen": 120
+        }
+      }
+    }
+  }
 }

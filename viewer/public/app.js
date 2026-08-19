@@ -1263,6 +1263,8 @@ function appsFlat() {
       app.varyant,
       app.scope,
       app.amac,
+      app.sorun,
+      app.link,
       app.ikasKarsilik,
       ...(app.yuzey || []),
       ...(app.entegrasyon || []),
@@ -1348,6 +1350,19 @@ function renderAppsDetail() {
     <p class="list-count-head">${esc(APP_KATEGORI_LABEL[app.kategori] || app.kategori)} · ${esc(APP_SCOPE_LABEL[app.scope] || app.scope)}</p>
     <h2>${esc(app.id)}</h2>
     <p class="amac">${esc(app.amac)}</p>
+  ${
+    app.link
+      ? `<p class="amac"><a href="${esc(app.link)}" target="_blank" rel="noopener">${esc(app.link)}</a></p>`
+      : ""
+  }
+  ${
+    app.sorun
+      ? `<div class="card" style="margin-top:.75rem">
+      <div class="card-head"><strong>Sorun</strong></div>
+      <p class="amac">${esc(app.sorun)}</p>
+    </div>`
+      : ""
+  }
     <div class="chips">
       <span class="chip">${esc(app.varyant)}</span>
       <span class="chip">${esc(APP_KATEGORI_LABEL[app.kategori] || app.kategori)}</span>
@@ -1366,6 +1381,14 @@ function renderAppsDetail() {
       <div class="card-head"><strong>ikas karşılığı</strong></div>
       <p class="amac">${esc(app.ikasKarsilik || "yok")}</p>
     </div>
+    ${
+      app.ayarlar && Object.keys(app.ayarlar).length
+        ? `<div class="card">
+      <div class="card-head"><strong>Ayarlar</strong> <span class="chip mono">${Object.keys(app.ayarlar).length} slot</span></div>
+      <pre class="mono" style="font-size:.72rem;overflow:auto;max-height:200px">${esc(JSON.stringify(app.ayarlar, null, 2))}</pre>
+    </div>`
+        : ""
+    }
     ${
       app.schema?.bagimliliklar?.length
         ? `<div class="card">

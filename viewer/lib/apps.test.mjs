@@ -14,8 +14,11 @@ const TOP_LEVEL = [
   "varyant",
   "scope",
   "amac",
+  "sorun",
+  "link",
   "yuzey",
   "entegrasyon",
+  "ayarlar",
   "dataBindings",
   "actions",
   "hookNoktalari",
@@ -30,7 +33,7 @@ describe("apps inventory", () => {
     assert.ok(data.apps.length >= 28);
   });
 
-  it("every apps/*.json has exactly 12 contract keys (+ optional _ keys)", () => {
+  it("every apps/*.json has exactly 15 contract keys (+ optional _ keys)", () => {
     const files = readdirSync(APPS_DIR).filter((n) => n.endsWith(".json") && !n.startsWith("_"));
     assert.ok(files.length > 0);
 
@@ -43,11 +46,14 @@ describe("apps inventory", () => {
       assert.deepEqual(
         keys.sort(),
         [...TOP_LEVEL].sort(),
-        `${name}: must have exactly 12 top-level keys`
+        `${name}: must have exactly 15 top-level keys`
       );
 
       assert.ok(Array.isArray(schema.actions) && schema.actions.length > 0, `${name}: actions not empty`);
       assert.ok(typeof schema.amac === "string" && schema.amac.trim(), `${name}: amac required`);
+      assert.ok(typeof schema.sorun === "string" && schema.sorun.trim(), `${name}: sorun required`);
+      assert.ok(/^https:\/\//.test(schema.link), `${name}: link must be https URL`);
+      assert.ok(schema.ayarlar && typeof schema.ayarlar === "object", `${name}: ayarlar required`);
       assert.ok(typeof schema.ikasKarsilik === "string", `${name}: ikasKarsilik required`);
     }
   });

@@ -4,14 +4,74 @@
   "varyant": "judgeme",
   "scope": "in-flow",
   "amac": "Ürün ve mağaza güvenini artırmak için müşteri yorumlarını ve puanlarını vitrine taşır.",
-  "yuzey": ["review_stars", "review_widget", "review_carousel", "ugc_gallery", "review_floating_tab"],
-  "entegrasyon": ["app-block", "app-embed"],
-  "dataBindings": [
-    { "name": "urun", "source": "DataSource.product" },
-    { "name": "urunler", "source": "DataSource.productList", "params": { "kaynak": "manual", "limit": 12 } }
+  "yuzey": [
+    "review_stars",
+    "review_widget",
+    "review_carousel",
+    "ugc_gallery",
+    "review_floating_tab"
   ],
-  "actions": ["yok"],
-  "hookNoktalari": ["mount:buyBox.after", "mount:productCard.badge", "mount:section.after"],
-  "bagimliliklar": ["product-info-main"],
-  "ikasKarsilik": "native reviews + Lehte"
+  "entegrasyon": [
+    "app-block",
+    "app-embed"
+  ],
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    },
+    {
+      "name": "urunler",
+      "source": "DataSource.productList",
+      "params": {
+        "kaynak": "manual",
+        "limit": 12
+      }
+    }
+  ],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:productCard.badge",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [
+    "product-info-main"
+  ],
+  "ikasKarsilik": "native reviews + Lehte",
+  "link": "https://apps.shopify.com/judgeme",
+  "sorun": "Tema PDP'leri varsayılan olarak müşteri yorumu ve fotoğraf UGC göstermez; satın alma kararı için güven sinyali eksik kalır.",
+  "ayarlar": {
+    "yildizOzetiGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "yorumListesiGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "fotoYorumGoster": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "carouselGoster": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "floatingTabGoster": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "minimumPuan": {
+      "tip": "number",
+      "zorunlu": false
+    },
+    "siralama": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 40
+    }
+  }
 }

@@ -4,13 +4,51 @@
   "varyant": "loox",
   "scope": "in-flow",
   "amac": "Fotoğraf ve video tabanlı müşteri UGC'sini ürün sayfalarında öne çıkarır.",
-  "yuzey": ["review_stars", "review_widget", "ugc_gallery", "review_carousel"],
-  "entegrasyon": ["app-block", "app-embed"],
-  "dataBindings": [
-    { "name": "urun", "source": "DataSource.product" }
+  "yuzey": [
+    "review_stars",
+    "review_widget",
+    "ugc_gallery",
+    "review_carousel"
   ],
-  "actions": ["yok"],
-  "hookNoktalari": ["mount:gallery.after", "mount:buyBox.after"],
-  "bagimliliklar": ["product-info-main"],
-  "ikasKarsilik": "yok"
+  "entegrasyon": [
+    "app-block",
+    "app-embed"
+  ],
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [
+    "mount:gallery.after",
+    "mount:buyBox.after"
+  ],
+  "bagimliliklar": [
+    "product-info-main"
+  ],
+  "ikasKarsilik": "yok",
+  "link": "https://apps.shopify.com/loox",
+  "sorun": "Metin yorumları tek başına yeterli sosyal kanıt vermez; Loox fotoğraf ve video UGC'yi PDP'ye taşır.",
+  "ayarlar": {
+    "fotoYorumGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "videoYorumGoster": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "yildizOzetiGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "instagramSenkron": {
+      "tip": "boolean",
+      "zorunlu": false
+    }
+  }
 }

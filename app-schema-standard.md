@@ -8,7 +8,7 @@
 
 **Doğrulama:** `node scripts/validate-apps.mjs` — bu dosyadaki her kural orada kod olarak var. Prosa ile kod çelişirse **kod bug'dır**, prosa doğrudur.
 
-**Durum:** v0 varsayılan 12 alan — **Awaiting user approval**. Onaylanmadan üretim kodu türetilmez.
+**Durum:** v0 genişletilmiş 15 alan — **Awaiting user approval**. Onaylanmadan üretim kodu türetilmez.
 
 ---
 
@@ -16,19 +16,22 @@
 
 ```
 Ne işe yarar  → amac          (tek Türkçe cümle, görünüm anlatma)
+Neden gerekli → sorun         (1–2 cümle: merchant/vitrin boşluğu)
 Nerede görünür → scope + yuzey (kullanıcıya görünen grammar yüzeyleri)
+Merchant ayarı → ayarlar       (SectionSchema slot grameri — editör sözleşmesi)
 Nasıl bağlanır → entegrasyon + hookNoktalari + bagimliliklar
 Veri          → dataBindings   (schema-standard.md §4 DataSource listesi)
 Davranış      → actions        (schema-standard.md §5 action grameri)
+Kaynak        → link           (resmi public URL — App Store veya doğrulanmış ana site)
 ```
 
-Tema token'ları, Liquid/Preact kodu ve App Store URL'leri bu şemaya **girmez**. Store Leads / Diego sayıları `candidates/shopify-apps.md` skorboard'unda tutulur.
+Store Leads / Diego sayıları `candidates/shopify-apps.md` skorboard'unda tutulur.
 
 ---
 
 ## 2. Zorunlu üst seviye alanlar
 
-Her uygulama şeması **tam olarak** bu 12 anahtarı taşır. Eksik olamaz; fazlası `_` ile başlar (`_note`, `_kaynak`).
+Her uygulama şeması **tam olarak** bu 15 anahtarı taşır. Eksik olamaz; fazlası `_` ile başlar (`_note`, `_kaynak`).
 
 | Alan | Tip | Kural |
 |---|---|---|
@@ -37,9 +40,12 @@ Her uygulama şeması **tam olarak** bu 12 anahtarı taşır. Eksik olamaz; fazl
 | `varyant` | string | Kısa vendor slug (`judgeme`, `klaviyo`, `hextom-qab`) |
 | `scope` | enum | §4 |
 | `amac` | string | **Tek Türkçe cümle** — neyi çözer. Görünüm anlatma |
+| `sorun` | string | **1–2 Türkçe cümle** — merchant/vitrin boşluğu. Pazarlama metni değil |
+| `link` | string | Resmi public URL (`https://…`). App Store tercih; uydurma slug yasak |
 | `yuzey` | array | §5 — kapalı yüzey id listesi. Saf pikselde `[]` |
 | `entegrasyon` | array | §6 |
-| `dataBindings` | array | §7 — `{ name, source, params? }`. Pikselde `[]` ok |
+| `ayarlar` | object | §7 — merchant editör alanları (slot grameri). Saf pikselde `{}` |
+| `dataBindings` | array | §8 — `{ name, source, params? }`. Pikselde `[]` ok |
 | `actions` | array | schema-standard.md §5 — boş `[]` yasak; yoksa `["yok"]` |
 | `hookNoktalari` | array | schema-standard.md §6 — `mount:{bolge}.{konum}`. Head-only pikselde `[]` |
 | `bagimliliklar` | array | Oturduğu section schema id'leri. Yoksa `[]` |
@@ -129,7 +135,20 @@ Yeni yüzey §10 süreciyle eklenir.
 
 ---
 
-## 7. `dataBindings` — mağaza verisi
+## 7. `ayarlar` — merchant editör sözleşmesi
+
+Uygulamanın merchant'a sunduğu **yapılandırma alanları**. SectionSchema `slots` ile aynı gramer ([`schema-standard.md` §3](./schema-standard.md#3-slots--içerik-alanları)):
+
+- Her anahtar bir slot: `{ "tip", "zorunlu", … }`
+- 13 dondurulmuş `tip`: `text`, `richtext`, `image`, `video`, `icon`, `link`, `button`, `number`, `boolean`, `datetime`, `ref`, `object`, `array`
+- `ref.hedef`: `product` · `collection` · `menu` · `blog` · `page` · `promo` · `brand`
+- Saf `head` piksellerde **`{}`** — merchant-facing UI yok
+
+Amaç: gerçek uygulamayı reverse-engineer edip tema tarafında aynı işi yapan section'ın editör sözleşmesini çıkarmak.
+
+---
+
+## 8. `dataBindings` — mağaza verisi
 
 Section şeması ile **aynı** DataSource sözlüğü ([`schema-standard.md` §4](./schema-standard.md#4-databindings--mağaza-verisi)).
 
@@ -139,7 +158,7 @@ Section şeması ile **aynı** DataSource sözlüğü ([`schema-standard.md` §4
 
 ---
 
-## 8. `actions` ve `hookNoktalari`
+## 9. `actions` ve `hookNoktalari`
 
 Section şeması ile **aynı gramer** ([`schema-standard.md` §5–§6](./schema-standard.md)).
 
@@ -149,7 +168,7 @@ Section şeması ile **aynı gramer** ([`schema-standard.md` §5–§6](./schema
 
 ---
 
-## 9. `bagimliliklar`
+## 10. `bagimliliklar`
 
 Uygulamanın tipik olarak oturduğu **section schema id** listesi. Örnek değerler:
 
@@ -162,7 +181,7 @@ Yoksa `[]`.
 
 ---
 
-## 10. Sözlük genişletme
+## 11. Sözlük genişletme
 
 1. Bu dosyada yeni enum / yüzey tanımla
 2. `scripts/validate-apps.mjs` dondurulmuş listesini güncelle
@@ -170,7 +189,7 @@ Yoksa `[]`.
 
 ---
 
-## 11. Dosya düzeni
+## 12. Dosya düzeni
 
 ```
 app-schema-standard.md     ← bu sözleşme
@@ -181,11 +200,14 @@ observations/              ← tema gözlemleri; uygulama gözlemi zorunlu deği
 
 ---
 
-## 12. Kayıt kontrol listesi
+## 13. Kayıt kontrol listesi
 
-- [ ] 12 zorunlu alan tam
+- [ ] 15 zorunlu alan tam
 - [ ] `id` = dosya adı (`app-{kategori}-{slug}`)
+- [ ] `link` doğrulanmış `https://` URL
+- [ ] `sorun` 1–2 cümle, pazarlama değil
 - [ ] `kategori`, `scope`, `yuzey`, `entegrasyon` kapalı sette
+- [ ] `ayarlar` slot grameri; pikselde `{}`
 - [ ] `amac` tek cümle, görünüm yok
 - [ ] `actions` boş değil
 - [ ] `dataBindings` platform-bağımsız DataSource

@@ -4,13 +4,57 @@
   "varyant": "privy",
   "scope": "overlay",
   "amac": "Popup, çark ve duyuru şeridi ile ziyaretçi e-posta listesi ve kampanya dönüşümü yakalar.",
-  "yuzey": ["popup_modal", "spin_wheel", "announcement_bar", "flyout"],
-  "entegrasyon": ["app-embed"],
-  "dataBindings": [
-    { "name": "musteri", "source": "DataSource.customer" }
+  "yuzey": [
+    "popup_modal",
+    "spin_wheel",
+    "announcement_bar",
+    "flyout"
   ],
-  "actions": ["emit:newsletter.subscribe"],
-  "hookNoktalari": ["mount:announcement.before", "mount:footer.before"],
-  "bagimliliklar": ["promo-announcement-bar", "lead-capture-newsletter-band"],
-  "ikasKarsilik": "yok"
+  "entegrasyon": [
+    "app-embed"
+  ],
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "emit:newsletter.subscribe"
+  ],
+  "hookNoktalari": [
+    "mount:announcement.before",
+    "mount:footer.before"
+  ],
+  "bagimliliklar": [
+    "promo-announcement-bar",
+    "lead-capture-newsletter-band"
+  ],
+  "ikasKarsilik": "yok",
+  "link": "https://apps.shopify.com/privy",
+  "sorun": "Tema newsletter bandı tek seferlik görünür; Privy zamanlama, hedefleme ve çark ile tekrar ziyaretçi yakalar.",
+  "ayarlar": {
+    "baslik": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80
+    },
+    "indirimKodu": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 40
+    },
+    "carkAktif": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "duyuruSeridiGoster": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "gosterimGecikmesi": {
+      "tip": "number",
+      "zorunlu": false
+    }
+  }
 }
