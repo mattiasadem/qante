@@ -8,12 +8,44 @@
   "selector": "#shopify-section-template--20531863781565__form",
   "evidenceSlug": "lead-capture-form",
   "evidence": [
+    "evidence/ritual/default/contact/lead-capture-form.1440.png",
     "evidence/ritual/default/contact/lead-capture-form.375.png",
     "evidence/ritual/default/contact/lead-capture-form.768.png",
-    "evidence/ritual/default/contact/lead-capture-form.1440.png"
+    "evidence/ritual/default/contact/lead-capture-form.initial.ilk-hal.1440.png",
+    "evidence/ritual/default/contact/lead-capture-form.initial.ilk-hal.375.png",
+    "evidence/ritual/default/contact/lead-capture-form.initial.ilk-hal.768.png"
   ],
   "notlar": "Name · Email* · Phone · Comment · Submit. Form gönderilmedi.",
   "delta": "Horizon form section. PII/submit yok.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-ritual-demo.myshopify.com/pages/contact",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20531863781565__form",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Boş form alanları. Submit tıklanmadı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Contact form başlığı. Name / Email * / Phone / Comment alanları boş + Submit düğmesi. 1440/768 Name+Email yan yana; 375 tek kolon stacked. Submit yapılmadı."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "4 input (name, email, tel, textarea). Fill + Submit PII — dur. Statik 3vp initial duruyor."
+    }
+  ],
+  "interactionNote": "Scan 4 input. katalogSorgu yok (contact sayfası). Meaningful interact yalnız initial; şema dokunulmadı.",
   "capture": {
     "url": "https://theme-ritual-demo.myshopify.com/pages/contact",
     "viewports": [
@@ -22,7 +54,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T19:23:14.898Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:09:59.251Z"
   }
 }
