@@ -8,12 +8,44 @@
   "selector": "#shopify-section-sections--26058348724527__media_with_content_RqxiU3",
   "evidenceSlug": "lead-capture-newsletter-band",
   "evidence": [
+    "evidence/tinker/default/home/lead-capture-newsletter-band.1440.png",
     "evidence/tinker/default/home/lead-capture-newsletter-band.375.png",
     "evidence/tinker/default/home/lead-capture-newsletter-band.768.png",
-    "evidence/tinker/default/home/lead-capture-newsletter-band.1440.png"
+    "evidence/tinker/default/home/lead-capture-newsletter-band.initial.newsletter-bos.1440.png",
+    "evidence/tinker/default/home/lead-capture-newsletter-band.initial.newsletter-bos.375.png",
+    "evidence/tinker/default/home/lead-capture-newsletter-band.initial.newsletter-bos.768.png"
   ],
   "notlar": "Join our Newsletter — Get Updates, Offers and Invites. Email alanı. Submit yoklandı değil.",
   "delta": "Footer-group media_with_content. Her şablonda tekrar; home kanonik. PII yok.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-tinker-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-sections--26058348724527__media_with_content_RqxiU3",
+      "capture": true,
+      "etiket": "newsletter-bos",
+      "not": "Join our Newsletter bandı; Email address boş. Subscribe tıklanmadı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Join our Newsletter — Get Updates, Offers and Invites. Email address alanı boş; submit yoklandı değil."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "Tek affordan e-posta (contact[email]). Fill + subscribe PII — dur."
+    }
+  ],
+  "interactionNote": "Scan 1440: 1 newsletter input. katalogSorgu yok. Meaningful interact yalnız initial; e-posta doldurulmadı.",
   "capture": {
     "url": "https://theme-tinker-demo.myshopify.com/",
     "viewports": [
@@ -22,7 +54,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T19:12:15.367Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:17:04.042Z"
   }
 }
