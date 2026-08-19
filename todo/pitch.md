@@ -8,8 +8,8 @@
 *Tema (storefront, uydurulmadı):* `Shopify.theme.name` **Updated copy of Pitch demo store 3.2.0** · `id` `183686005031` · `schema_name` **Pitch** · `schema_version` **3.4.0** · `theme_store_id` **3620** · `role` `main`  
 *Shop:* `se-horizon2-en-2v6j.myshopify.com`
 
-**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti** (0 error)  
-**PR:** draft https://github.com/mattiasadem/qante/pull/179 · **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact + CRO leftover interact + validate  
+**PR:** draft https://github.com/mattiasadem/qante/pull/272 · **main'e merge yok**
 
 ---
 
@@ -20,12 +20,12 @@
 | Evidence kökü | `evidence/pitch/default/` |
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
-| Observation | **34** |
-| PNG | **120** |
+| Observation | **34** (CRO interact: 5 dosya güncellendi) |
+| PNG | **142** |
 | Parallel | yalnız `observations/pitch/`, `evidence/pitch/`, `todo/pitch.md`, `candidates/pitch-leftovers.md` |
 
 **Kapsam satırı:**  
-`Pitch · default · Updated copy of Pitch demo store 3.2.0 / schema_name Pitch 3.4.0 · theme_store_id 3620 · home→PDP Gentle Body Wash→PLP skincare→collections→search serum→cart→about-us/contact→blog→404 · 34 obs · 120 PNG · 0 yeni şema · leftover: candidates/pitch-leftovers.md`
+`Pitch · default · Updated copy of Pitch demo store 3.2.0 / schema_name Pitch 3.4.0 · theme_store_id 3620 · home→PDP Gentle Body Wash→PLP skincare→collections→search serum→cart→about-us/contact→blog→404 · 34 obs · 142 PNG · 0 yeni şema · CRO interact: form/footer/slideshow/tabs/announcement · leftover: candidates/pitch-leftovers.md`
 
 ---
 
@@ -45,7 +45,7 @@
 | Search `/search?q=serum` | [x] obs | [x] 17 items |
 | Cart `/cart` empty + filled + qty | [x] obs | [x] $36 → $72 |
 | About `/pages/about-us` | [x] obs | [x] capture |
-| Contact form (submit yok) | [x] obs | [x] capture |
+| Contact form (submit yok) | [x] obs | [x] interact `initial` (PII) |
 | Blog `/blogs/news` + Why clean ingredients matter | [x] obs | [x] capture |
 | Privacy `/policies/privacy-policy` | [x] obs | [x] capture |
 | 404 leftover | [x] obs | [x] capture |
@@ -84,6 +84,11 @@ Horizon nested theme-blocks (görülen custom elements): `header-component` · `
 | global-cart-drawer | initial / filled / changed | [x] empty → qty1 $36 → qty2 $72 |
 | cart-page-main | initial / filled / changed | [x] aynı |
 | product-info-main | changed Scent | [x] Rose + Oud → Orange Blossom + Neroli; $36 aynı |
+| lead-capture-form | initial | [x] boş form; Submit yok |
+| footer-columns-newsletter | initial / changed 375 | [x] Email boş; 375 Skincare − Cleansers/Moisturizers/Bundles |
+| hero-slideshow | initial | [x] tek kare; ok/nokta yok |
+| product-info-tabs | initial / changed | [x] üç + → Natural ingredients açık |
+| promo-announcement-bar | initial / changed | [x] newsletter → bundles; timer yok |
 
 ---
 
@@ -97,6 +102,7 @@ Horizon nested theme-blocks (görülen custom elements): `header-component` · `
 
 - [x] Official 3vp static (`capture-observation.mjs`) — 28/28
 - [x] Interact mega / search / menu 375 / cart / PDP Scent
+- [x] CRO leftover interact: form / footer 375 accordion / hero tek kare / PDP accordion / announcement Next
 - [x] PNG bak → stateFindings
-- [x] `npm run validate` — 0 error
+- [x] `npm run validate`
 - [x] Email / account / checkout / newsletter submit — **yapılmayacak**
