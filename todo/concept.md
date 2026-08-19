@@ -12,8 +12,8 @@ shop `concept-theme.myshopify.com`
 
 **Diğer preset'ler (THEME DEMO mega, yürünmedi):** Luxe Beauty `137577660655` · Accessories Avenue `137622028527` · Furniture Fusion `137322856687` · Cosmetic Harmony `138330046703` · Furniture Finesse `137894789359` · Dreamy Decor `139085644015` · Vogue Vault `141404373231`
 
-**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti** (0 error)  
-**PR:** draft https://github.com/mattiasadem/qante/pull/168 — **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact + **CRO leftover interact** + validate **bitti** (0 error)  
+**PR:** draft https://github.com/mattiasadem/qante/pull/168 — **main'e merge yok** · CRO interact PR ayrı branch
 
 ---
 
@@ -25,11 +25,11 @@ shop `concept-theme.myshopify.com`
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **43** |
-| PNG | **149** |
+| PNG | **164** (+15 CRO interact) |
 | Parallel | yalnız `observations/concept/`, `evidence/concept/`, `todo/concept.md`, `candidates/concept-leftovers.md` |
 
 **Kapsam satırı:**  
-`Concept · default (Beauty Blossom) · Concept-1-1-2-sections-ready · schema_name Concept 1.1.2 · theme_store_id null · home→PDP→PLP→collections→search→cart→about/contact→faq→blog→404 · 43 obs · 149 PNG · 0 yeni şema · leftover: candidates/concept-leftovers.md`
+`Concept · default (Beauty Blossom) · Concept-1-1-2-sections-ready · schema_name Concept 1.1.2 · theme_store_id null · home→PDP→PLP→collections→search→cart→about/contact→faq→blog→404 · 43 obs · 164 PNG · 0 yeni şema · CRO interact: faq + testimonial×2 · leftover: candidates/concept-leftovers.md`
 
 ---
 
@@ -112,6 +112,10 @@ shop `concept-theme.myshopify.com`
 | global-cart-drawer | filled + changed | [x] qty 1→2 · satır $70→$63 · subtotal $126 |
 | cart-page-main | filled + changed | [x] $63 → $126 |
 | product-info-main | changed | [x] White $70 (-29%) → Blue $72 (-27%) |
+| faq-collapsible-tabs | changed | [x] refund sorusu açık — 7-14 business days |
+| testimonial-quote-carousel (home) | changed | [x] ELLE → FENTY (pagination 1440 next / 375·768 dash) |
+| testimonial-quote-carousel (about) | initial only | [x] tek slide; changed yok |
+| lead-capture-form | — | ⛔ PII — fill/submit yok |
 
 Stop: email / account / checkout / newsletter submit / contact Send / PII
 
@@ -127,6 +131,7 @@ Stop: email / account / checkout / newsletter submit / contact Send / PII
 
 - [x] Official 3vp static (`capture-observation.mjs`)
 - [x] Interact mega / search / menu 375+768 / cart empty+filled+qty / PDP Color
+- [x] CRO leftover interact: faq-collapsible-tabs · home testimonial-quote-carousel · about testimonial initial
 - [x] PNG bak → stateFindings
 - [x] `npm run validate` — 0 error · 0 warn
 - [x] Newsletter / account / checkout — **yapılmayacak** (PII)

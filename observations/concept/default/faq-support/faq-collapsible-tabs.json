@@ -8,12 +8,53 @@
   "selector": "#shopify-section-template--16903853867247__30df29a6-f046-47e2-bbdc-47fb7e4188de",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/concept/default/faq-support/faq-collapsible-tabs.1440.png",
     "evidence/concept/default/faq-support/faq-collapsible-tabs.375.png",
     "evidence/concept/default/faq-support/faq-collapsible-tabs.768.png",
-    "evidence/concept/default/faq-support/faq-collapsible-tabs.1440.png"
+    "evidence/concept/default/faq-support/faq-collapsible-tabs.changed.refund-acik.1440.png",
+    "evidence/concept/default/faq-support/faq-collapsible-tabs.changed.refund-acik.375.png",
+    "evidence/concept/default/faq-support/faq-collapsible-tabs.changed.refund-acik.768.png",
+    "evidence/concept/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.1440.png",
+    "evidence/concept/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.375.png",
+    "evidence/concept/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.768.png"
   ],
   "notlar": "Need help? Returns, Guarantees & Delivery Q&A. Message Us / Contact Us. example@example.com tıklanmadı.",
   "delta": "section__c-content. E-posta leftover.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://concept-theme.myshopify.com/pages/theme-faqs",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16903853867247__30df29a6-f046-47e2-bbdc-47fb7e4188de",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Returns / Guarantees / Delivery — on bir soru kapalı (+)"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-template--16825783091439__30df29a6-f046-47e2-bbdc-47fb7e4188de-167884293653487533-0-template--16903853867247__30df29a6-f046-47e2-bbdc-47fb7e4188de > summary",
+      "value": 900,
+      "capture": true,
+      "etiket": "refund-acik",
+      "not": "İlk soru açık — 7-14 business days refund cevabı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Need help? sol kolon. Returns, Guarantees & Delivery + Services — on bir soru kapalı (+). 3vp aynı.",
+    "changed": "Q: When can I expect the refund… açık (−). Cevap: 7-14 business days from refund issued. Diğer sorular +."
+  },
+  "missingStates": [],
+  "interactionNote": "Accordion details>summary; scan 15 opener. İlk soru yeterli — changed.",
   "capture": {
     "url": "https://concept-theme.myshopify.com/pages/theme-faqs",
     "viewports": [
@@ -22,7 +63,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T10:54:37.465Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:29:03.168Z"
   }
 }
