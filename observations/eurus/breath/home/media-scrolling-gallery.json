@@ -8,12 +8,79 @@
   "selector": "#shopify-section-template--27353605177622__social_feeds_B8jNRP",
   "evidenceSlug": "media-scrolling-gallery",
   "evidence": [
+    "evidence/eurus/breath/home/media-scrolling-gallery.1440.png",
     "evidence/eurus/breath/home/media-scrolling-gallery.375.png",
     "evidence/eurus/breath/home/media-scrolling-gallery.768.png",
-    "evidence/eurus/breath/home/media-scrolling-gallery.1440.png"
+    "evidence/eurus/breath/home/media-scrolling-gallery.changed.sonraki-kartlar.1440.png",
+    "evidence/eurus/breath/home/media-scrolling-gallery.changed.sonraki-kartlar.375.png",
+    "evidence/eurus/breath/home/media-scrolling-gallery.changed.sonraki-kartlar.768.png",
+    "evidence/eurus/breath/home/media-scrolling-gallery.initial.ilk-hal.1440.png",
+    "evidence/eurus/breath/home/media-scrolling-gallery.initial.ilk-hal.375.png",
+    "evidence/eurus/breath/home/media-scrolling-gallery.initial.ilk-hal.768.png"
   ],
-  "notlar": "Let’s get social! See what others post. Follow us → /pages/contact.",
+  "notlar": "Let's get social! See what others post. Follow us → /pages/contact.",
   "delta": "section-social-feeds.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eurus-breath-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--27353605177622__social_feeds_B8jNRP",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "6 sosyal kart — ilk set görünür"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--27353605177622__social_feeds_B8jNRP .splide__arrow--next",
+      "value": 1200,
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "sonraki-kartlar",
+      "not": "768/1440 ana feed ok — translateX kayar"
+    },
+    {
+      "state": "changed",
+      "action": "drag",
+      "selector": "#shopify-section-template--27353605177622__social_feeds_B8jNRP .splide__track",
+      "value": "-200,0",
+      "wait": 1200,
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "etiket": "sonraki-kartlar",
+      "not": "375 ok gizli — track sola sürükle"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Let's get social! 6 Instagram kartı — ilk set (köpek/ürün görselleri). Follow us linki.",
+    "changed": "Feed kaydırıldı — farklı sosyal kart seti görünür. 768/1440 .splide__arrow--next; 375 track drag."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Quick View DOM'da var ama hover popup/overlay engelliyor."
+    },
+    {
+      "state": "open",
+      "sebep": "Kart tıkı #eurus-popup açar — section sınırı dışı global overlay."
+    }
+  ],
+  "interactionNote": "375 ok display:none → drag. Kart tıkı popup (open) bilinçli atlandı.",
   "capture": {
     "url": "https://eurus-breath-demo.myshopify.com/",
     "viewports": [
@@ -22,7 +89,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T19:26:35.850Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:52:07.633Z"
   }
 }

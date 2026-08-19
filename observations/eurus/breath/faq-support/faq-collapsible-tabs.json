@@ -8,12 +8,53 @@
   "selector": "#shopify-section-template--27353605734678__faq",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/eurus/breath/faq-support/faq-collapsible-tabs.1440.png",
     "evidence/eurus/breath/faq-support/faq-collapsible-tabs.375.png",
     "evidence/eurus/breath/faq-support/faq-collapsible-tabs.768.png",
-    "evidence/eurus/breath/faq-support/faq-collapsible-tabs.1440.png"
+    "evidence/eurus/breath/faq-support/faq-collapsible-tabs.changed.pure-natural-acik.1440.png",
+    "evidence/eurus/breath/faq-support/faq-collapsible-tabs.changed.pure-natural-acik.375.png",
+    "evidence/eurus/breath/faq-support/faq-collapsible-tabs.changed.pure-natural-acik.768.png",
+    "evidence/eurus/breath/faq-support/faq-collapsible-tabs.initial.ilk-hal.1440.png",
+    "evidence/eurus/breath/faq-support/faq-collapsible-tabs.initial.ilk-hal.375.png",
+    "evidence/eurus/breath/faq-support/faq-collapsible-tabs.initial.ilk-hal.768.png"
   ],
   "notlar": "Is your product 100% pure… / pack sizes / return / international / contact support.",
   "delta": "FAQ akordeon.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eurus-breath-demo.myshopify.com/pages/faqs",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--27353605734678__faq",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Beş soru kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--27353605734678__faq button.faq-collapsible >> nth=0",
+      "value": 900,
+      "capture": true,
+      "etiket": "pure-natural-acik",
+      "not": "Is your product 100% pure and natural? — cevap paneli açılır"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Beş soru kapalı: Is your product 100% pure and natural? / pack sizes / return / international / contact support.",
+    "changed": "İlk soru açık — Yes, our honey is 100% pure and natural… Diğer dört soru kapalı. 3vp aynı delta."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan opener 0; button.faq-collapsible tık → panel 0→58px. Accordion = changed.",
   "capture": {
     "url": "https://eurus-breath-demo.myshopify.com/pages/faqs",
     "viewports": [
@@ -22,7 +63,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T19:22:10.549Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:31:31.125Z"
   }
 }

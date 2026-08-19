@@ -8,12 +8,53 @@
   "selector": "#shopify-section-template--27353606947094__faq_yJqcc4",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/eurus/breath/product-detail/faq-collapsible-tabs.1440.png",
     "evidence/eurus/breath/product-detail/faq-collapsible-tabs.375.png",
     "evidence/eurus/breath/product-detail/faq-collapsible-tabs.768.png",
-    "evidence/eurus/breath/product-detail/faq-collapsible-tabs.1440.png"
+    "evidence/eurus/breath/product-detail/faq-collapsible-tabs.changed.feed-amount-acik.1440.png",
+    "evidence/eurus/breath/product-detail/faq-collapsible-tabs.changed.feed-amount-acik.375.png",
+    "evidence/eurus/breath/product-detail/faq-collapsible-tabs.changed.feed-amount-acik.768.png",
+    "evidence/eurus/breath/product-detail/faq-collapsible-tabs.initial.ilk-hal.1440.png",
+    "evidence/eurus/breath/product-detail/faq-collapsible-tabs.initial.ilk-hal.375.png",
+    "evidence/eurus/breath/product-detail/faq-collapsible-tabs.initial.ilk-hal.768.png"
   ],
   "notlar": "Frequently asked questions. How much should I feed my dog? / puppy bones / How often.",
   "delta": "PDP FAQ akordeon.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eurus-breath-demo.myshopify.com/products/superfood-blend-powder-for-optimal-health",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--27353606947094__faq_yJqcc4",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Üç soru kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--27353606947094__faq_yJqcc4 button.faq-collapsible >> nth=0",
+      "value": 900,
+      "capture": true,
+      "etiket": "feed-amount-acik",
+      "not": "How much should I feed my dog? — besleme cevabı açılır"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Frequently asked questions. Üç soru kapalı: How much should I feed my dog? / puppy bones / How often.",
+    "changed": "İlk soru açık — Variable factors like lifestyle, appetite and temperament… besleme rehberi. Diğer ikisi kapalı."
+  },
+  "missingStates": [],
+  "interactionNote": "button.faq-collapsible → panel 0→184px. PDP FAQ accordion = changed.",
   "capture": {
     "url": "https://eurus-breath-demo.myshopify.com/products/superfood-blend-powder-for-optimal-health",
     "viewports": [
@@ -22,7 +63,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T19:32:14.512Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:32:17.360Z"
   }
 }

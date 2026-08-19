@@ -9,7 +9,7 @@
 `schema_name` = **Eurus** · `schema_version` = **10.1.0** · `role` = **main** · id `188138782998`  
 `theme_store_id` = **null** (uydurulmadı)
 
-**Durum:** Mod A walk + resmi 3vp + interact **bitti** · validator **0 error**  
+**Durum:** Mod A walk + resmi 3vp + interact **bitti** (CRO interact 2026-08-19) · validator **0 error**  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -112,7 +112,17 @@
 | cart-page-main | initial/filled/changed | [x] boş → satır → qty 2 |
 | commerce-tools-products-bundle | changed | [x] ADD TO BUNDLE → Meal Mix $68 |
 | product-info-main | changed | [x] Weight 400g + sticky ATC |
+| faq-collapsible-tabs (faq-support) | initial/changed | [x] pure-natural açık 3vp |
+| faq-collapsible-tabs (PDP) | initial/changed | [x] feed-amount açık 3vp |
+| testimonial-quote-carousel | initial/changed | [x] Mia L.→Jenny D. drag 3vp |
+| media-shop-the-feed | initial/changed | [x] ikinci reel → Collars $45 Sold out |
+| media-scrolling-gallery | initial/changed | [x] next ok / 375 drag 3vp |
+| comparison-quick-table | initial | [x] statik tablo — changed yok |
+| lead-capture-form (contact + FAQ) | initial | [x] boş form — input PII dur |
 | product-finder-quiz | — | **yok** Breath preset |
+| before-after-slider | — | **obs yok** Breath |
+| promo-banner-countdown | — | **obs yok** (announcement-bar var, countdown yok) |
+| lead-capture-newsletter-band | — | **obs yok** (footer-columns-newsletter farklı schemaId) |
 
 ---
 
