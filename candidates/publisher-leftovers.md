@@ -38,6 +38,26 @@ Karar: not
 Diğer blog yazıları: `/blogs/news/appearance-ny-art-book-fair` · FACT Magazine — aynı `blog-post-main`  
 `sitemap_agentic_discovery.xml` — chrome dışı
 
+## CRO şema listesi — Publisher'da gözlenmedi (2026-08-19 interact)
+
+Diskte mevcut, bu demoda observation yok:
+
+| schemaId | Not |
+|---|---|
+| before-after-slider | Hiçbir sayfada yok |
+| commerce-tools-products-bundle | Yok |
+| promo-banner-countdown | Yok |
+| lead-capture-newsletter-band | Footer newsletter `footer-columns-newsletter` şemasında; ayrı band yok |
+| comparison-quick-table | Yok |
+| product-finder-quiz | Yok |
+| testimonial-quote-carousel | Yok |
+| media-shop-the-feed | Yok |
+| media-scrolling-gallery | Yok |
+
+Gözlenen CRO: `faq-collapsible-tabs` (policy) · `lead-capture-form` (contact, input PII stop)
+
+---
+
 ## Bilinçli atlananlar
 
 - `/account/login` — auth  

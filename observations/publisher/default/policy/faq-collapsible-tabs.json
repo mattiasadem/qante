@@ -8,12 +8,52 @@
   "selector": "#shopify-section-template--23705064112437__165722395089aa7d12",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/publisher/default/policy/faq-collapsible-tabs.1440.png",
     "evidence/publisher/default/policy/faq-collapsible-tabs.375.png",
     "evidence/publisher/default/policy/faq-collapsible-tabs.768.png",
-    "evidence/publisher/default/policy/faq-collapsible-tabs.1440.png"
+    "evidence/publisher/default/policy/faq-collapsible-tabs.changed.returns-acik.1440.png",
+    "evidence/publisher/default/policy/faq-collapsible-tabs.changed.returns-acik.375.png",
+    "evidence/publisher/default/policy/faq-collapsible-tabs.changed.returns-acik.768.png",
+    "evidence/publisher/default/policy/faq-collapsible-tabs.initial.ilk-hal.1440.png",
+    "evidence/publisher/default/policy/faq-collapsible-tabs.initial.ilk-hal.375.png",
+    "evidence/publisher/default/policy/faq-collapsible-tabs.initial.ilk-hal.768.png"
   ],
   "notlar": "Dawn collapsible-content: OUR POLICIES / Shipping, returns & exchanges. Shipping + Returns & Exchanges akordeon.",
   "delta": "FAQ sayfası değil policy şablonu. kategoriTab yok.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-publisher-demo.myshopify.com/pages/shipping-and-returns",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--23705064112437__165722395089aa7d12",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Shipping açık (−), Returns & Exchanges kapalı (+)"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-1657223950b0523dc5-1-template--23705064112437__165722395089aa7d12 > summary",
+      "capture": true,
+      "etiket": "returns-acik",
+      "not": "Returns & Exchanges açılır; Shipping zaten açık — iki panel görünür"
+    }
+  ],
+  "stateFindings": {
+    "initial": "OUR POLICIES başlığı. Shipping açık (−): 7 iş günü kargo metni. Returns & Exchanges kapalı (+). 3vp aynı.",
+    "changed": "Returns & Exchanges açık (−): 14 gün iade/değişim metni. Shipping hâlâ açık. Bölüm yüksekliği artar (498→673px 1440)."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan 2 disclosure opener. Yoklama: Shipping varsayılan açık; Returns tık → ikisi açık. Accordion = changed.",
   "capture": {
     "url": "https://theme-publisher-demo.myshopify.com/pages/shipping-and-returns",
     "viewports": [
@@ -22,7 +62,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T17:12:52.200Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:01:17.602Z"
   }
 }
