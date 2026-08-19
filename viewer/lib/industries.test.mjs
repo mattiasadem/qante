@@ -70,15 +70,8 @@ describe("official industry list", () => {
     assert.deepEqual(assertOfficialMap(), []);
   });
 
-  it("awaits only official proposed strings", () => {
-    for (const row of AWAITING_APPROVAL) {
-      for (const value of row.proposed) {
-        assert.ok(
-          OFFICIAL_INDUSTRIES.includes(value),
-          `${row.kaynak} proposed unknown ${value}`
-        );
-      }
-    }
+  it("has no awaiting leftover stores", () => {
+    assert.deepEqual([...AWAITING_APPROVAL], []);
   });
 });
 
@@ -91,29 +84,16 @@ describe("kaynak coverage", () => {
     })
     .sort();
 
-  const awaiting = new Set(AWAITING_APPROVAL.map((r) => r.kaynak));
-
-  it("maps or documents every observation kaynak", () => {
+  it("maps every observation kaynak (147/147, none untagged)", () => {
     const leftover = [];
     for (const kaynak of onDisk) {
       const mapped = Object.hasOwn(KAYNAK_INDUSTRIES, kaynak);
-      if (mapped) {
-        assert.ok(
-          industriesForKaynak(kaynak).length > 0,
-          `${kaynak} mapped to empty list`
-        );
-        continue;
+      if (!mapped || industriesForKaynak(kaynak).length === 0) {
+        leftover.push(kaynak);
       }
-      if (!awaiting.has(kaynak)) leftover.push(kaynak);
     }
+    assert.equal(onDisk.length, Object.keys(KAYNAK_INDUSTRIES).length);
     assert.deepEqual(leftover, []);
-  });
-
-  it("keeps awaiting slugs untagged", () => {
-    for (const row of AWAITING_APPROVAL) {
-      assert.deepEqual(industriesForKaynak(row.kaynak), []);
-      assert.ok(onDisk.includes(row.kaynak), `awaiting ${row.kaynak} not on disk`);
-    }
   });
 });
 
@@ -122,7 +102,7 @@ describe("endustri facet", () => {
     stubRow("graza"),
     stubRow("bandit"),
     stubRow("hexclad"),
-    stubRow("origin"),
+    stubRow("fixture-untagged"),
     stubRow("blockshop"),
   ];
   const inv = { rows, taxonomy: { categories: [] } };
@@ -156,7 +136,7 @@ describe("endustri facet", () => {
     assert.ok(!kaynaks.includes("graza"));
     assert.ok(!kaynaks.includes("hexclad"));
     assert.ok(!kaynaks.includes("blockshop"));
-    assert.ok(!kaynaks.includes("origin"));
+    assert.ok(!kaynaks.includes("fixture-untagged"));
   });
 
   it("keeps untagged rows behind —", () => {
@@ -164,7 +144,7 @@ describe("endustri facet", () => {
     const got = applyFilters(rows, f);
     assert.deepEqual(
       got.map((r) => r.kaynak),
-      ["origin"]
+      ["fixture-untagged"]
     );
   });
 

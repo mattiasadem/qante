@@ -6,7 +6,8 @@ This is a **kaynak → industry** map. SCHEMA `kategori` (navigation / hero / pr
 *Verified chips:* [themes.ikas.com](https://themes.ikas.com/) Filter · 2026-08-19  
 *Param:* `endustri` (comma-separated, same as other facets)  
 *UI label:* Endüstri  
-*Untagged token:* `—`
+*Untagged token:* `—` (schema-only rows with no `kaynak` only — **0 untagged stores**)  
+*Coverage:* **147 / 147** disk `kaynak` mapped
 
 Code: `viewer/lib/industries.mjs` (consumed by inventory + facets). Observation JSON is not rewritten.
 
@@ -145,12 +146,14 @@ Mapped from the **walked demo catalog** or an obvious official preset vertical. 
 | district | Fashion & Clothing | tees / lookbook |
 | dwell | Home & Furniture | Bedding / Bath / Decor |
 | eclipse | Fashion & Clothing | kids clothing |
+| empire | Electronics & Software | walked catalog: Electronic Super Pen + Oak Phone Charging Desk Organizer (gadgets / office) |
 | envy | Fashion & Clothing | boho tops / accessories |
 | eurus | Food & Beverage | Breath preset — healthy meals (toys leftover, not a chip) |
 | expanse | Home & Furniture | official Furniture preset |
 | fabric | Fashion & Clothing, Home & Furniture | Womenswear / Menswear / Home |
 | flow | Food & Beverage, Beauty & Health | Nourish — plant-powered food |
 | heritage | Fashion & Clothing | Shop Men / Women |
+| highlight | Fashion & Clothing, Home & Furniture, Food & Beverage | mixed demo (Apparel + Stationery/home objects + Food & home); multi-tag like ikas |
 | homage | Fashion & Clothing | alpine knitwear |
 | horizon | Fashion & Clothing | latest sweater collection |
 | hyper | Fashion & Clothing, Beauty & Health, Electronics & Software, Food & Beverage | kaynak-level union of official presets: pillar moda, ceramide beauty, nexvo teknoloji, trove market |
@@ -161,6 +164,7 @@ Mapped from the **walked demo catalog** or an obvious official preset vertical. 
 | maker | Food & Beverage | official Food preset (juices) |
 | minion | Electronics & Software | phones / tablets / drones |
 | motion | Sports & Activities, Fashion & Clothing | Adventure + Satchel accessories |
+| origin | Fashion & Clothing | walked catalog: 2Unfold Bag + Stuff it case (bags / cases), not a last-resort default |
 | palo-alto | Fashion & Clothing | wardrobe / new arrivals |
 | pebble | Fashion & Clothing | Little kids apparel |
 | pipeline | Fashion & Clothing | official Fashion preset |
@@ -176,6 +180,7 @@ Mapped from the **walked demo catalog** or an obvious official preset vertical. 
 | sense | Beauty & Health | Skin / Body / Nail Polish |
 | showcase | Home & Furniture | Betty — silicone / spill-proof home |
 | sleek | Beauty & Health | “Blend Beauty In You” |
+| spotlight | Fashion & Clothing | walked catalog: caps, tees, Sweater Icon Crewneck (footer “creative culture” is chrome, not merch) |
 | stack | Sports & Activities | Mass — cardio / indoor cycling bike |
 | stiletto | Fashion & Clothing | Vogue apparel (Stevie / Margot) |
 | stretch | Fashion & Clothing, Beauty & Health | Snow apparel + Sand skincare |
@@ -195,14 +200,12 @@ Mapped from the **walked demo catalog** or an obvious official preset vertical. 
 
 ## Awaiting user approval
 
-These `kaynak` stay **untagged** (`—`) until someone confirms. Do not block the viewer on them.
+None. **147 mapped / 0 untagged stores.** The former leftovers are in the Shopify-demo table:
 
-| Kaynak | Proposed | Why |
-|---|---|---|
-| empire | — | Sparse Empire demo is placeholder merch (Super Pen / Oak); no real vertical. |
-| highlight | Fashion & Clothing, Home & Furniture, Food & Beverage | One demo mixes sweatshirt/tote, birdhouse, and “Home & food”. Force-fit would lie. |
-| origin | — | First-party Origin demo has no nav catalog; generic Dawn-family chrome. |
-| spotlight | — | Spotlight demo is generic “creative culture” chrome; no product vertical. |
+- **highlight** — Fashion & Clothing, Home & Furniture, Food & Beverage (mixed demo, multi-tag).
+- **empire** — Electronics & Software (Electronic Super Pen + Oak Phone Charging Desk Organizer).
+- **origin** — Fashion & Clothing (2Unfold Bag + Stuff it case on disk).
+- **spotlight** — Fashion & Clothing (caps / tees / crewneck on disk).
 
 ## Notes
 

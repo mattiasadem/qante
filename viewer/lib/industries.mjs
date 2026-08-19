@@ -145,12 +145,14 @@ export const KAYNAK_INDUSTRIES = Object.freeze({
   district: [FASHION],
   dwell: [HOME],
   eclipse: [FASHION],
+  empire: [ELECTRONICS],
   envy: [FASHION],
   eurus: [FOOD],
   expanse: [HOME],
   fabric: [FASHION, HOME],
   flow: [FOOD, BEAUTY],
   heritage: [FASHION],
+  highlight: [FASHION, HOME, FOOD],
   homage: [FASHION],
   horizon: [FASHION],
   hyper: [FASHION, BEAUTY, ELECTRONICS, FOOD],
@@ -161,6 +163,7 @@ export const KAYNAK_INDUSTRIES = Object.freeze({
   maker: [FOOD],
   minion: [ELECTRONICS],
   motion: [SPORTS, FASHION],
+  origin: [FASHION],
   "palo-alto": [FASHION],
   pebble: [FASHION],
   pipeline: [FASHION],
@@ -176,6 +179,7 @@ export const KAYNAK_INDUSTRIES = Object.freeze({
   sense: [BEAUTY],
   showcase: [HOME],
   sleek: [BEAUTY],
+  spotlight: [FASHION],
   stack: [SPORTS],
   stiletto: [FASHION],
   stretch: [FASHION, BEAUTY],
@@ -194,32 +198,8 @@ export const KAYNAK_INDUSTRIES = Object.freeze({
   zest: [FASHION],
 });
 
-/**
- * Untagged / mixed / generic kaynaklar — not applied to the map.
- * proposed may be empty when even a guess would force-fit.
- */
-export const AWAITING_APPROVAL = Object.freeze([
-  {
-    kaynak: "empire",
-    proposed: [],
-    why: "Empire demo catalog is placeholder merch (Super Pen / Oak); no store vertical.",
-  },
-  {
-    kaynak: "highlight",
-    proposed: [FASHION, HOME, FOOD],
-    why: "Highlight demo mixes sweatshirt/tote, birdhouse, and Home & food in one catalog.",
-  },
-  {
-    kaynak: "origin",
-    proposed: [],
-    why: "First-party Origin demo is generic (no nav catalog); do not force-fit.",
-  },
-  {
-    kaynak: "spotlight",
-    proposed: [],
-    why: "Spotlight demo is generic creative-culture chrome; no product vertical.",
-  },
-]);
+/** No leftover stores — every disk kaynak is tagged. */
+export const AWAITING_APPROVAL = Object.freeze([]);
 
 export function isOfficialIndustry(value) {
   return OFFICIAL_SET.has(value);
