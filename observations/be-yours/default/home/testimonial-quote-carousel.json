@@ -8,12 +8,69 @@
   "selector": "#shopify-section-template--17270937092283__1634202215dee48d7c",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
+    "evidence/be-yours/default/home/testimonial-quote-carousel.1440.png",
     "evidence/be-yours/default/home/testimonial-quote-carousel.375.png",
     "evidence/be-yours/default/home/testimonial-quote-carousel.768.png",
-    "evidence/be-yours/default/home/testimonial-quote-carousel.1440.png"
+    "evidence/be-yours/default/home/testimonial-quote-carousel.changed.sonraki-alinti.1440.png",
+    "evidence/be-yours/default/home/testimonial-quote-carousel.changed.sonraki-alinti.768.png",
+    "evidence/be-yours/default/home/testimonial-quote-carousel.initial.ilk-hal.1440.png",
+    "evidence/be-yours/default/home/testimonial-quote-carousel.initial.ilk-hal.375.png",
+    "evidence/be-yours/default/home/testimonial-quote-carousel.initial.ilk-hal.768.png"
   ],
   "notlar": "What People Are Saying. Flickity testimonial__list. Paige Alexander quote.",
   "delta": "flickity-enabled; ok/dot ayrı toggle görülmedi.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://beyours-theme.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17270937092283__1634202215dee48d7c",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Paige Alexander — ilk slayt aktif. Flickity lazy-init beklemesi."
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1000,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--17270937092283__1634202215dee48d7c button.flickity-prev-next-button.next",
+      "value": 1000,
+      "capture": true,
+      "etiket": "sonraki-alinti",
+      "not": "Next → ikinci testimonial slaytı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "What People Are Saying. Paige Alexander — Absolutely in love with my recent purchase… 5 yıldız. 5 avatar; ortadaki büyük. 1440/768 oklar görünür.",
+    "changed": "Sara Bond — Beautiful, healthy plants, lovely pots… 5 yıldız. Ortadaki avatar değişti. 768/1440 Next tık."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "375: Next button display:none (0×0). JS click idx 0→1 çalışır ama capture script görünür tık ister."
+    }
+  ],
+  "interactionNote": "Flickity lazy-init: scrollTo + 3s wait. 375 Next gizli — 768/1440 ok ile changed.",
   "capture": {
     "url": "https://beyours-theme.myshopify.com/",
     "viewports": [
@@ -22,7 +79,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T11:00:22.854Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:45:19.626Z"
   }
 }
