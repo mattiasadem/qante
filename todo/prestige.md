@@ -3,7 +3,7 @@
 *Kaynak:* https://prestige-theme-allure.myshopify.com/  
 *Preset:* `allure` · Maestrooo Prestige
 
-**Şu anki odak:** Allure + Signature + Couture + Vogue + Strass bitti
+**Şu anki odak:** Allure CRO leftover interact (resmi demo) — envanter zaten vardı
 
 ---
 
@@ -13,7 +13,8 @@
 |---|---|
 | Evidence kökü | `evidence/prestige/allure/` |
 | Walkthrough / not | Theme Store: https://themes.shopify.com/themes/prestige |
-| Kapsam satırı (bitince) | Prestige · Allure · 9 sayfa · 66 gözlem · 4 yeni şema · dolu sepet + drawer · newsletter-popup aday |
+| Kapsam satırı (bitince) | Prestige · Allure · 9 sayfa · 66 gözlem · 0 yeni şema (CRO leftover interact) · leftover: candidates/prestige-leftovers.md |
+| Tema (görülen) | Prestige · schema_name Prestige 11.4.0 · theme_store_id null · id 124951035967 · role main |
 
 ---
 
@@ -28,6 +29,7 @@
 - [x] F7 Couture tam tur: [`prestige-couture.md`](./prestige-couture.md)
 - [x] F8 Vogue tam tur: [`prestige-vogue.md`](./prestige-vogue.md)
 - [x] F9 Strass tam tur: [`prestige-strass.md`](./prestige-strass.md)
+- [x] CRO leftover interact (Allure resmi): slider + FAQ + reviews + contact Subject
 
 ---
 
@@ -149,6 +151,7 @@ Prestige section class → QANTE şema. Aynı tip varsa **şemaya dokunma**, obs
 
 ## Aday / şemaya sığmayan
 
+- Leftover dosyası: [`candidates/prestige-leftovers.md`](../candidates/prestige-leftovers.md)
 - newsletter-popup (global overlay, Hyper’da yok)
 - privacy-banner (boş)
 - sticky ATC (product-info feature; diğer kesitlere sızıyor)
@@ -172,7 +175,20 @@ Prestige section class → QANTE şema. Aynı tip varsa **şemaya dokunma**, obs
 - `global-predictive-search` — dalia: Suggestions + 4 ürün + View all
 - `product-showcase-grid-plp` — Filter çekmece + Mini bags 65→13
 - `product-info-main` — Ivory swatch → /products/le-mini-dalia-ivory-liege $350
-- `faq-collapsible-tabs` — How to add a FAQ… açık
+- `faq-collapsible-tabs` — How to add a FAQ… açık (önceki tur)
 - `media-lookbook-slider` — 1440 hotspot Nova $450 → Primo $420
 - `product-showcase-tabs` — WOMEN Mini Dalia → MEN Slim Briefcase $420
-- `testimonial-quote-carousel` — GQ → FARFETCH Le Petit Violette
+- `testimonial-quote-carousel` — GQ → FARFETCH Le Petit Violette (önceki tur)
+
+### CRO leftover interact (Allure · 2026-08-19)
+
+| schemaId | states | Sonuç |
+|---|---|---|
+| before-after-slider | initial · changed | cursor + 23× ArrowRight — ayırıcı sağa |
+| faq-collapsible-tabs | initial · changed | mevcut 3vp — ilk soru açık |
+| testimonial-quote-carousel | initial · changed | mevcut 3vp — FARFETCH |
+| lead-capture-form (contact) | initial · changed | Subject → Order; PII yok |
+| promo-banner-countdown | — | leftover — 00:00 / Shop now sayfa değiştirir |
+| lead-capture-newsletter-band | — | leftover — e-posta PII |
+| media-scrolling-gallery | — | leftover — kontrol yok |
+| commerce-tools-products-bundle · comparison-quick-table · product-finder-quiz · media-shop-the-feed | — | leftover — Allure’da observation yok |

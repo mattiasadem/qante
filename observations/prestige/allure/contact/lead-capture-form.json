@@ -8,12 +8,53 @@
   "selector": "#shopify-section-template--15179705581631__contact-form",
   "evidenceSlug": "lead-capture-form",
   "evidence": [
+    "evidence/prestige/allure/contact/lead-capture-form.1440.png",
     "evidence/prestige/allure/contact/lead-capture-form.375.png",
     "evidence/prestige/allure/contact/lead-capture-form.768.png",
-    "evidence/prestige/allure/contact/lead-capture-form.1440.png"
+    "evidence/prestige/allure/contact/lead-capture-form.changed.konu-order.1440.png",
+    "evidence/prestige/allure/contact/lead-capture-form.changed.konu-order.375.png",
+    "evidence/prestige/allure/contact/lead-capture-form.changed.konu-order.768.png",
+    "evidence/prestige/allure/contact/lead-capture-form.initial.ilk-hal.1440.png",
+    "evidence/prestige/allure/contact/lead-capture-form.initial.ilk-hal.375.png",
+    "evidence/prestige/allure/contact/lead-capture-form.initial.ilk-hal.768.png"
   ],
-  "notlar": "NEED ASSISTANCE iletişim formu.",
+  "notlar": "NEED ASSISTANCE iletişim formu. Interact: Subject→Order. Name/email/message ve Send yok.",
   "delta": "",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://prestige-theme-allure.myshopify.com/pages/contact",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15179705581631__contact-form",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Subject placeholder. Name/E-mail/Message boş."
+    },
+    {
+      "state": "changed",
+      "action": "select",
+      "selector": "#shopify-section-template--15179705581631__contact-form select[name='contact[Subject]']",
+      "value": "Order",
+      "capture": true,
+      "etiket": "konu-order",
+      "not": "Subject=Order. PII alanları boş; Send tıklanmadı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "NEED ASSISTANCE? / WE ARE HERE TO HELP + FAQ linki. Name | E-mail (1440/768 yan yana; 375 istif). Subject placeholder + chevron. Message. SEND MESSAGE. Alanlar boş.",
+    "changed": "Subject seçili: Order (etiket çerçevede). Name / E-mail / Message boş. Send tıklanmadı. 3vp aynı."
+  },
+  "missingStates": [],
+  "interactionNote": "Name / E-mail / Message PII — doldurulmadı, form gönderilmedi. FAQ altı formda Subject yok.",
   "capture": {
     "url": "https://prestige-theme-allure.myshopify.com/pages/contact",
     "viewports": [
@@ -21,8 +62,8 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-13T19:27:49.123Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T13:26:06.390Z",
     "mode": "section"
   }
 }
