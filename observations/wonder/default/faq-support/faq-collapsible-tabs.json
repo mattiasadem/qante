@@ -14,6 +14,38 @@
   ],
   "notlar": "Are your beauty products cruelty-free? accordion.",
   "delta": "",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://wonder-theme-beauty.myshopify.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--18174410424520__19343041-49f3-4eb8-918f-d93e323afa2e",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Sekiz soru kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "[aria-controls='CollapsibleTab-template--15329436369096__19343041-49f3-4eb8-918f-d93e323afa2e-collapsible_tab-1']",
+      "value": 900,
+      "capture": true,
+      "etiket": "cruelty-free-acik",
+      "not": "İlk soru — Absolutely cruelty-free"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Scan opener hint yok; yoklama [aria-controls] tık → panel 0→50/92px. Accordion = changed.",
   "capture": {
     "url": "https://wonder-theme-beauty.myshopify.com/pages/faq",
     "viewports": [

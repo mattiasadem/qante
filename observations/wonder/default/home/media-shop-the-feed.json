@@ -14,6 +14,46 @@
   ],
   "notlar": "Best Skincare Products — video reels / UGC.",
   "delta": "Wonder video_reels.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://wonder-theme-beauty.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--18174410621128__video_reels_xexCWw",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Best Skincare Products — ilk reel seti"
+    },
+    {
+      "state": "changed",
+      "action": "hover",
+      "selector": "#shopify-section-template--18174410621128__video_reels_xexCWw",
+      "value": 400,
+      "capture": false,
+      "not": "Next 44×44"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--18174410621128__video_reels_xexCWw [aria-label='Next slide']",
+      "value": 1200,
+      "capture": true,
+      "etiket": "sonraki-reel",
+      "not": "Yoklama: BKIND Algae → MOKOSH Argan Oil"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Scan Next gorunur:false + ATC hint yanlış (button[name=add]). Yoklama Next — active reel değişti. ATC karede var, sepet drawer ayrı obs. Şema emit:carousel yok — leftover.",
   "capture": {
     "url": "https://wonder-theme-beauty.myshopify.com/",
     "viewports": [

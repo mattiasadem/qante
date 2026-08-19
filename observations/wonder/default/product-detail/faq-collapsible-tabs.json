@@ -14,6 +14,38 @@
   ],
   "notlar": "Collapsible + görsel.",
   "delta": "Wonder collapsible_menu_with_image.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://wonder-theme-beauty.myshopify.com/products/body-salt-scrub-cranberry-300-g",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--18174410653896__collapsible_menu_with_image_wzKQKa",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Got questions? altı soru kapalı + görsel"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "[aria-controls='CollapsibleTab-collapsible_tab_HNBXjG']",
+      "value": 900,
+      "capture": true,
+      "etiket": "facial-oil-acik",
+      "not": "When should I use a facial oil? — last step before SPF"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Scan opener gorunur:false; yoklama tık panel açtı (375 402px). Accordion = changed.",
   "capture": {
     "url": "https://wonder-theme-beauty.myshopify.com/products/body-salt-scrub-cranberry-300-g",
     "viewports": [

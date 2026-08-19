@@ -13,7 +13,39 @@
     "evidence/wonder/default/product-detail/before-after-slider.1440.png"
   ],
   "notlar": "We know you are unique. before_and_after.",
-  "delta": "Wonder before_and_after.",
+  "delta": "Wonder before_and_after. img-comparison-slider; range input yok.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://wonder-theme-beauty.myshopify.com/products/body-salt-scrub-cranberry-300-g",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--18174410653896__before_and_after_nAUDP9",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "exposure ~50 — Before/After ortada"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--18174410653896__before_and_after_nAUDP9 .wt-before-after__img-after-badge",
+      "value": 600,
+      "capture": true,
+      "etiket": "after-dolu",
+      "not": "After rozeti tık — yoklama exposure 50→~90"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Yoklama: After rozeti tık exposure 50→94 (1440) / 89 (375). Şema emit:slider.drag duruyor.",
   "capture": {
     "url": "https://wonder-theme-beauty.myshopify.com/products/body-salt-scrub-cranberry-300-g",
     "viewports": [
