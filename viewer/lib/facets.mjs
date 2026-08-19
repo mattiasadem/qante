@@ -9,6 +9,11 @@ import {
   matchesEndustriFilter,
   seedEndustriFacets,
 } from "./industries.mjs";
+import {
+  countKaynakTip,
+  matchesKaynakTipFilter,
+  seedKaynakTipFacets,
+} from "./sources.mjs";
 
 export const DIMENSIONS = [
   "kaynak",
@@ -18,6 +23,7 @@ export const DIMENSIONS = [
   "scope",
   "viewport",
   "endustri",
+  "kaynakTip",
 ];
 
 export const GROUPS = {
@@ -188,6 +194,7 @@ export function parseFilters(searchParams) {
     scope: list("scope"),
     viewport: list("viewport"),
     endustri: list("endustri"),
+    kaynakTip: list("kaynakTip"),
     evidence: searchParams.get("evidence") || "",
     schemaState: searchParams.get("schemaState") || "",
     group: searchParams.get("group") || "schema",
@@ -208,6 +215,9 @@ function matchesDimension(row, dim, values) {
   if (dim === "endustri") {
     return matchesEndustriFilter(row.endustri, values);
   }
+  if (dim === "kaynakTip") {
+    return matchesKaynakTipFilter(row.kaynakTip, values);
+  }
   return values.includes(row[dim] || "");
 }
 
@@ -222,6 +232,7 @@ function matchesQuery(row, q) {
     row.kategori,
     row.scope,
     ...(Array.isArray(row.endustri) ? row.endustri : []),
+    row.kaynakTip,
     row.varyant,
     row.amac,
     row.notlar,
@@ -312,7 +323,7 @@ function countValues(rows, dim) {
       for (const v of row.viewports) map.set(v, (map.get(v) || 0) + 1);
       continue;
     }
-    if (dim === "endustri") {
+    if (dim === "endustri" || dim === "kaynakTip") {
       continue;
     }
     const v = row[dim] || "";
@@ -342,6 +353,10 @@ export function computeFacets(inv, f) {
     const scoped = applyFilters(inv.rows, f, { skipDimension: dim });
     if (dim === "endustri") {
       facets[dim] = seedEndustriFacets(countEndustri(scoped), f.endustri);
+      continue;
+    }
+    if (dim === "kaynakTip") {
+      facets[dim] = seedKaynakTipFacets(countKaynakTip(scoped), f.kaynakTip);
       continue;
     }
     facets[dim] = countValues(scoped, dim);
@@ -418,6 +433,7 @@ export function lightRow(row) {
     hasSchema: row.hasSchema,
     url: row.url,
     endustri: row.endustri || [],
+    kaynakTip: row.kaynakTip || "",
   };
 }
 

@@ -541,6 +541,7 @@ function lightMatch(row, why) {
     evidenceCount: row.evidenceCount || 0,
     hasSchema: row.hasSchema,
     endustri: row.endustri || [],
+    kaynakTip: row.kaynakTip || "",
   };
 }
 

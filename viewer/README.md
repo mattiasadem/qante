@@ -37,7 +37,8 @@ viewer/
 
 ## Filtreler
 
-Sol panelde facet: **Endüstri · Tema · Preset · Sayfa · Kategori · Scope · Viewport · Durum**.
+Sol panelde facet: **Kaynak · Endüstri · Tema · Preset · Sayfa · Kategori · Scope · Viewport · Durum**.
+Kaynak (`?kaynakTip=shopify,dtc,ikas`) envanter kaynağıdır — store adı (`kaynak`) değil. Map: `viewer/lib/sources.mjs` + `candidates/kaynak-tip.md`.
 Endüstri (`?endustri=`) ikas Theme Marketplace’in 12 resmi dikey çipidir — SCHEMA `kategori` değil. Map: `viewer/lib/industries.mjs` + `candidates/industries.md`.
 Sayılar "kendi boyutu hariç diğer filtreler uygulanmış" halde hesaplanır, o yüzden çoklu seçim sayıları sıfırlamaz.
 
