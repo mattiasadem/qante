@@ -8,12 +8,52 @@
   "selector": "#shopify-section-template--17836803817640__164662931665cb5aa3",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/ride/default/product-detail/faq-collapsible-tabs.1440.png",
     "evidence/ride/default/product-detail/faq-collapsible-tabs.375.png",
     "evidence/ride/default/product-detail/faq-collapsible-tabs.768.png",
-    "evidence/ride/default/product-detail/faq-collapsible-tabs.1440.png"
+    "evidence/ride/default/product-detail/faq-collapsible-tabs.changed.fin-system-acik.1440.png",
+    "evidence/ride/default/product-detail/faq-collapsible-tabs.changed.fin-system-acik.375.png",
+    "evidence/ride/default/product-detail/faq-collapsible-tabs.changed.fin-system-acik.768.png",
+    "evidence/ride/default/product-detail/faq-collapsible-tabs.initial.ilk-hal.1440.png",
+    "evidence/ride/default/product-detail/faq-collapsible-tabs.initial.ilk-hal.375.png",
+    "evidence/ride/default/product-detail/faq-collapsible-tabs.initial.ilk-hal.768.png"
   ],
   "notlar": "DETAILS / OVERVIEW / IDEAL CONDITIONS accordion + görsel (reverse grid).",
   "delta": "product-info-tabs değil — collapsible-content. Spec metin accordion.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-ride-demo.myshopify.com/products/fcs-ii-performer-neo-glass-tri-fins",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17836803817640__164662931665cb5aa3",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "openFirst: DETAILS açık. FIN SYSTEM / SIZING / SHIPPING kapalı."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-1646629316c8bb1443-1-template--17836803817640__164662931665cb5aa3 > summary",
+      "capture": true,
+      "etiket": "fin-system-acik",
+      "not": "FIN SYSTEM tık — DETAILS açık kalır (allowMultipleOpen)."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Collapsible content reverse grid: sağ fin görseli, sol accordion. DETAILS açık (−): spec metin. FIN SYSTEM / SIZING / SHIPPING kapalı (+). 375/768/1440.",
+    "changed": "DETAILS hâlâ açık. FIN SYSTEM da açık (−): FCS II sistem açıklaması. SIZING ve SHIPPING kapalı. 375/768/1440 aynı delta."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan 4 opener. Probe: openFirst=true (DETAILS); ikinci tık allowMultipleOpen. OVERVIEW/IDEAL CONDITIONS notları statik karede yok — merchant başlıkları DETAILS/FIN SYSTEM/SIZING/SHIPPING.",
   "capture": {
     "url": "https://theme-ride-demo.myshopify.com/products/fcs-ii-performer-neo-glass-tri-fins",
     "viewports": [
@@ -22,7 +62,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T17:07:43.322Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:52:13.629Z"
   }
 }

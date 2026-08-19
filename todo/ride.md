@@ -5,8 +5,8 @@
 *Tema (storefront, uydurulmadı):* **[Ride] Theme Store demo (latest)** · `schema_name`: **Ride** · `schema_version`: **1.0.0** · `theme_store_id`: **null** (beklenen katalog 1372 `Shopify.theme` üzerinde yok) · role `main` · id `141073449128`  
 *Shop:* `theme-ride-demo.myshopify.com`
 
-**Durum:** Mod A walk + resmi 3vp + interact + validate  
-**PR:** draft https://github.com/mattiasadem/qante/pull/132 · **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact (CRO) + validate  
+**PR:** draft (CRO interact) · **main'e merge yok**
 
 ---
 
@@ -20,7 +20,7 @@
 | Parallel | yalnız `observations/ride/`, `evidence/ride/`, `todo/ride.md`, `candidates/ride-*.md` |
 
 **Kapsam satırı:**  
-`Ride · default · [Ride] Theme Store demo (latest) / schema_name Ride 1.0.0 · theme_store_id null (beklenen 1372 yok) · home→PDP(fins)→PLP(fins)→search→cart+notification→contact→team→stories→404→policy · 34 obs · 116 PNG · 0 yeni şema · leftover: theme_store_id / policy boş / frontpage IWT / newsletter tekrar / about 404`
+`Ride · default · [Ride] Theme Store demo (latest) / schema_name Ride 1.0.0 · theme_store_id null (beklenen 1372 yok) · home→PDP(fins)→PLP(fins)→search→cart+notification→contact→team→stories→404→policy · 34 obs · 134 PNG · 0 yeni şema · CRO interact: faq-collapsible-tabs×3 · leftover: theme_store_id / policy boş / frontpage IWT / newsletter tekrar / about 404 / CRO yok`
 
 ---
 
@@ -47,7 +47,17 @@
 
 ## Bileşen roster
 
-34 observation (28 static + 6 interact). 116 PNG. 0 yeni şema.
+34 observation (25 static + 9 interact captures + 2 CRO PII-doc). 134 PNG. 0 yeni şema.
+
+### CRO interact (schemaId → states)
+
+| schemaId | sayfa | states | not |
+|---|---|---|---|
+| `faq-collapsible-tabs` | home | initial, changed | openFirst + allowMultipleOpen |
+| `faq-collapsible-tabs` | collection | initial, changed | openFirst kapalı |
+| `faq-collapsible-tabs` | product-detail | initial, changed | openFirst + allowMultipleOpen |
+| `lead-capture-form` | contact | initial | input/changed PII stop |
+| `lead-capture-newsletter-band` | home | initial | input PII stop |
 
 ---
 
@@ -61,5 +71,7 @@
 
 - [x] Official 3vp static (`capture-observation.mjs`)
 - [x] Interact mega / search / cart-notification / menu / PDP size / cart qty
+- [x] CRO interact: faq-collapsible-tabs (home, collection, PDP) initial+changed
+- [x] CRO PII-doc: lead-capture-form, lead-capture-newsletter-band (missingStates)
 - [x] PNG bak → stateFindings (SHOP hover fail → click recapture)
 - [x] `npm run validate`

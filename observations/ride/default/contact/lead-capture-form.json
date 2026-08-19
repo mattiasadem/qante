@@ -14,6 +14,39 @@
   ],
   "notlar": "Name / Email * / Phone / Comment / Send. Gönderilmedi (PII).",
   "delta": "Dawn contact form. stacked.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-ride-demo.myshopify.com/pages/contact",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17836803719336__form",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Boş form — Name / Email / Phone / Comment + Send."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Contact form: Name / Email * / Phone number / Comment + Send. Tüm alanlar boş. 375 tek kolon; 768/1440 form geniş."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "Name / Email / Phone / Comment PII — doldurulmadı. Send tıklanmadı. Select/konu alanı yok."
+    },
+    {
+      "state": "changed",
+      "sebep": "Formda select/swatch/tab yok — yalnız text alanları."
+    }
+  ],
+  "interactionNote": "Scan 4 input (name, email, tel, textarea). katalogSorgu null. Statik 3vp initial duruyor; meaningful interact yok.",
   "capture": {
     "url": "https://theme-ride-demo.myshopify.com/pages/contact",
     "viewports": [
