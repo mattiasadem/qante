@@ -12,8 +12,46 @@
     "evidence/rise/default/product-detail/faq-collapsible-tabs.768.png",
     "evidence/rise/default/product-detail/faq-collapsible-tabs.1440.png"
   ],
-  "notlar": "Frequently asked questions. Washing / dryer / ironing / dry clean.",
-  "delta": "Dawn collapsible-content. İlk soru açık görünebilir.",
+  "notlar": "Frequently asked questions. Washing / dryer / ironing / dry clean / bleach / made from.",
+  "delta": "Dawn collapsible-content. İlk soru açık. İkinci açılınca birincisi kapanmıyor.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-rise-demo.myshopify.com/en/products/sand-shorts",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21605978931222__collapsible_content_kHH7Rd",
+      "capture": true,
+      "etiket": "washing-acik",
+      "not": "İlk soru (washing) açık; dryer kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-collapsible_row_C47tKk-template--21605978931222__collapsible_content_kHH7Rd > summary",
+      "value": 1200,
+      "capture": true,
+      "etiket": "dryer-acik",
+      "not": "Dryer sorusu açılmalı; URL PDP’de kalmalı"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Scan open/hover taslağı koşulmadı — accordion = changed + click. Unique details#id > summary.",
   "capture": {
     "url": "https://theme-rise-demo.myshopify.com/en/products/sand-shorts",
     "viewports": [
@@ -22,7 +60,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
+    "method": "interaction-steps",
     "updatedAt": "2026-08-18T10:55:16.459Z"
   }
 }
