@@ -1,0 +1,82 @@
+{
+  "id": "app-loyalty-swell",
+  "kategori": "loyalty",
+  "varyant": "swell",
+  "scope": "overlay",
+  "amac": "Yotpo Loyalty ile puan, ödül ve referral programını vitrine entegre eder.",
+  "sorun": "Sadakat ve reviews ayrı ürünlerde parçalanınca müşteri deneyimi tutarsız kalır.",
+  "link": "https://apps.shopify.com/swell",
+  "yuzey": [
+    "loyalty_launcher",
+    "loyalty_points_badge",
+    "loyalty_page"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "CUSTOMER_LOGIN",
+    "PRODUCT_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "ACCOUNT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_customers",
+    "read_orders"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "launcherGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "puanRozetiGoster": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [
+    "mount:header.utility"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Sadakat Programı",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

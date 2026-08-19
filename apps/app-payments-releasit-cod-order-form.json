@@ -1,0 +1,92 @@
+{
+  "id": "app-payments-releasit-cod-order-form",
+  "kategori": "payments",
+  "varyant": "releasit-cod-order-form",
+  "scope": "overlay",
+  "amac": "Kapıda ödeme sipariş formu ile COD dönüşümünü popup ve gömülü formda sunar.",
+  "sorun": "Standart checkout COD için yerel form ve doğrulama sunmaz; Releasit özel COD akışı ekler.",
+  "link": "https://apps.shopify.com/releasit-cod-order-form",
+  "yuzey": [
+    "popup_modal",
+    "embedded_form"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "BEGIN_CHECKOUT",
+    "PRODUCT_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CHECKOUT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_orders",
+    "read_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "codFormGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "telefonZorunlu": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "bolge": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 10
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    },
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after"
+  ],
+  "bagimliliklar": [
+    "product-info-main"
+  ],
+  "ikasKarsilik": "yok",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

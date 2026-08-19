@@ -1,0 +1,91 @@
+{
+  "id": "app-reviews-loox",
+  "kategori": "reviews",
+  "varyant": "loox",
+  "scope": "in-flow",
+  "amac": "Fotoğraf ve video tabanlı müşteri UGC'sini ürün sayfalarında öne çıkarır.",
+  "sorun": "Metin yorumları tek başına yeterli sosyal kanıt vermez; Loox fotoğraf ve video UGC'yi PDP'ye taşır.",
+  "link": "https://apps.shopify.com/loox",
+  "yuzey": [
+    "review_stars",
+    "review_widget",
+    "ugc_gallery",
+    "review_carousel"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-block",
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script"
+    ]
+  },
+  "ikasTur": "yok",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "fotoYorumGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "videoYorumGoster": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "yildizOzetiGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "instagramSenkron": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [
+    "mount:gallery.after",
+    "mount:buyBox.after"
+  ],
+  "bagimliliklar": [
+    "product-info-main"
+  ],
+  "ikasKarsilik": "yok",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "app-wishlist-wishlist-hero",
+  "kategori": "wishlist",
+  "varyant": "wishlist-hero",
+  "scope": "overlay",
+  "amac": "Favori ürün butonu, drawer ve sayfa ile wishlist deneyimi sunar.",
+  "sorun": "Tema favori mekanizması sunmaz; Wishlist Hero tam wishlist UI katmanı ekler.",
+  "link": "https://apps.shopify.com/wishlist-hero",
+  "yuzey": [
+    "wishlist_button",
+    "wishlist_drawer",
+    "wishlist_page"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "ADD_TO_WISHLIST",
+    "PRODUCT_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "ACCOUNT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products",
+    "read_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "favoriButonuGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "drawerAktif": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    },
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [
+    "mount:productCard.badge",
+    "mount:header.utility"
+  ],
+  "bagimliliklar": [
+    "product-info-main"
+  ],
+  "ikasKarsilik": "Favori Ürünler",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

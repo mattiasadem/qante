@@ -1,0 +1,94 @@
+{
+  "id": "app-merchandising-limespot",
+  "kategori": "merchandising",
+  "varyant": "limespot",
+  "scope": "overlay",
+  "amac": "Kişiselleştirilmiş ürün önerileri ve sepet çekmecesi upsell sunar.",
+  "sorun": "Statik öneriler dönüşümü düşük tutar; LimeSpot davranışa göre öneri üretir.",
+  "link": "https://apps.shopify.com/limespot",
+  "yuzey": [
+    "product_recs",
+    "cart_drawer"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "VIEW_CART",
+    "ADD_TO_CART"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_products",
+    "read_orders"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "pdpOnerisiAktif": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "sepetOnerisiAktif": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    },
+    {
+      "name": "oneriler",
+      "source": "DataSource.productList",
+      "params": {
+        "kaynak": "recommended",
+        "limit": 4
+      }
+    }
+  ],
+  "actions": [
+    "emit:cart.add"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:cartDrawer.belowItems"
+  ],
+  "bagimliliklar": [
+    "product-info-main",
+    "global-cart-drawer"
+  ],
+  "ikasKarsilik": "Kabile Sepet+",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

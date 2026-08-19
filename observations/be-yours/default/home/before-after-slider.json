@@ -8,12 +8,60 @@
   "selector": "#shopify-section-template--17270937092283__165424668016c0f885",
   "evidenceSlug": "before-after-slider",
   "evidence": [
+    "evidence/be-yours/default/home/before-after-slider.1440.png",
     "evidence/be-yours/default/home/before-after-slider.375.png",
     "evidence/be-yours/default/home/before-after-slider.768.png",
-    "evidence/be-yours/default/home/before-after-slider.1440.png"
+    "evidence/be-yours/default/home/before-after-slider.changed.sonra-gorseli.1440.png",
+    "evidence/be-yours/default/home/before-after-slider.changed.sonra-gorseli.375.png",
+    "evidence/be-yours/default/home/before-after-slider.changed.sonra-gorseli.768.png",
+    "evidence/be-yours/default/home/before-after-slider.initial.ilk-hal.1440.png",
+    "evidence/be-yours/default/home/before-after-slider.initial.ilk-hal.375.png",
+    "evidence/be-yours/default/home/before-after-slider.initial.ilk-hal.768.png"
   ],
   "notlar": "Before & After. image-comparison custom element.",
-  "delta": "image-comparison; handle sürüklenmedi (static 3vp).",
+  "delta": "image-comparison custom element; drag pct:70.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://beyours-theme.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17270937092283__165424668016c0f885",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Before & After — ayırıcı ortada, Before/After etiketleri."
+    },
+    {
+      "state": "changed",
+      "action": "drag",
+      "selector": "#shopify-section-template--17270937092283__165424668016c0f885 .image-comparison__button",
+      "dragContainer": "#shopify-section-template--17270937092283__165424668016c0f885 image-comparison",
+      "value": "pct:70",
+      "capture": true,
+      "etiket": "sonra-gorseli",
+      "not": "Tutamacı sağa sürükle — After alanı genişler (~%70)."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Before & After başlığı. Ayırıcı ~orta; sol oturma odası (koltuk, ayna), sağ komodin + palmiye. Tutamaç ◇ ortada. 375 slider üstte.",
+    "changed": "Tutamaç sağa (~%70). After (komodin, palmiye, altın ayna) baskın; Before ince şerit solda. 3vp aynı yön."
+  },
+  "missingStates": [],
+  "interactionNote": "image-comparison__button drag pct:70. Range input yok.",
   "capture": {
     "url": "https://beyours-theme.myshopify.com/",
     "viewports": [
@@ -22,7 +70,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T10:57:22.805Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:43:23.611Z"
   }
 }

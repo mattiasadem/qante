@@ -1,0 +1,83 @@
+{
+  "id": "app-loyalty-referralcandy",
+  "kategori": "loyalty",
+  "varyant": "referralcandy",
+  "scope": "overlay",
+  "amac": "Referral programı ile mevcut müşteriden yeni müşteri kazanımını teşvik eder.",
+  "sorun": "Ağızdan ağıza büyüme tema ile ölçülmez; ReferralCandy referral ödül akışı sunar.",
+  "link": "https://apps.shopify.com/referralcandy",
+  "yuzey": [
+    "loyalty_launcher",
+    "loyalty_page"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "CUSTOMER_REGISTER"
+  ],
+  "ikasSayfa": [
+    "ACCOUNT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "webhook-listener",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_customers",
+    "read_orders"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/order/created",
+    "store/customer/created"
+  ],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "referralLinkGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "odulMiktari": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 40
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [
+    "mount:header.utility"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "yok",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "id": "app-reviews-yotpo",
+  "kategori": "reviews",
+  "varyant": "yotpo",
+  "scope": "in-flow",
+  "amac": "Yorum, puan ve UGC içeriğini ölçeklenebilir şekilde ürün sayfalarına ve koleksiyonlara bağlar.",
+  "sorun": "Yorum, puan ve UGC ayrı sistemlerde kalınca vitrin güven kanıtı tutarsız olur; Yotpo bunu tek panelde toplar.",
+  "link": "https://apps.shopify.com/yotpo-social-reviews",
+  "yuzey": [
+    "review_stars",
+    "review_widget",
+    "review_carousel",
+    "ugc_gallery",
+    "review_floating_tab"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-block",
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "INDEX"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "yildizOzetiGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "yorumWidgetGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "ugcGaleriGoster": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "syndicationAktif": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "minimumPuan": {
+      "tip": "number",
+      "zorunlu": false
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    },
+    {
+      "name": "urunler",
+      "source": "DataSource.productList",
+      "params": {
+        "kaynak": "manual",
+        "limit": 12
+      }
+    }
+  ],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:productCard.badge",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [
+    "product-info-main"
+  ],
+  "ikasKarsilik": "Lehte",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "id": "app-reviews-stamped",
+  "kategori": "reviews",
+  "varyant": "stamped",
+  "scope": "in-flow",
+  "amac": "Yorum ve puanları vitrine yerleştirir; isteğe bağlı sadakat launcher ile birleştirilebilir.",
+  "sorun": "Mağaza vitrininde sosyal kanıt yoksa dönüşüm düşer; Stamped yorumları ve isteğe bağlı sadakat launcher'ı aynı pakette sunar.",
+  "link": "https://apps.shopify.com/product-reviews-addon",
+  "yuzey": [
+    "review_stars",
+    "review_widget",
+    "review_carousel",
+    "ugc_gallery",
+    "loyalty_launcher"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-block",
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script"
+    ]
+  },
+  "ikasTur": "yok",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "yildizOzetiGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "yorumListesiGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "sadakatLauncherGoster": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "npsAnketiGoster": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    },
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:productCard.badge"
+  ],
+  "bagimliliklar": [
+    "product-info-main"
+  ],
+  "ikasKarsilik": "yok",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

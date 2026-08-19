@@ -11,8 +11,8 @@
 `handle` = `"null"` · `style.id` / `style.handle` = **null**  
 shop `beyours-theme.myshopify.com` · locale `en` · country `DE` · currency `EUR`
 
-**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti**  
-**PR:** draft https://github.com/mattiasadem/qante/pull/173 — **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact (CRO leftover) + validate **bitti**  
+**PR:** draft — CRO interact turu
 
 ---
 
@@ -26,7 +26,7 @@ shop `beyours-theme.myshopify.com` · locale `en` · country `DE` · currency `E
 | Parallel | yalnız `observations/be-yours/`, `evidence/be-yours/`, `todo/be-yours.md`, `candidates/be-yours-leftovers.md` |
 
 **Kapsam satırı:**  
-`Be Yours · default · Be Yours 8.3.1 - live / schema_name Be Yours 8.3.1 (theme_store_id null) · home→PDP Money Tree→PLP all→collections→search plant→cart→about/contact→faq→news→404 · 47 obs · 161 PNG · 0 yeni şema · leftover: candidates/be-yours-leftovers.md`
+`Be Yours · default · Be Yours 8.3.1 - live / schema_name Be Yours 8.3.1 (theme_store_id null) · home→PDP→PLP→collections→search→cart→about/contact→faq→news→404 · 47 obs · CRO interact 4 şema · 0 yeni şema · leftover: candidates/be-yours-leftovers.md`
 
 ---
 
@@ -93,6 +93,11 @@ shop `beyours-theme.myshopify.com` · locale `en` · country `DE` · currency `E
 | global-cart-drawer | filled + changed | Spider Plant €12,99 qty1 → qty2 €25,98 |
 | cart-page-main | filled + changed | empty → qty1 €12,99 → qty2 €25,98 |
 | product-info-main | changed | S €14,99 → M €49,99 (768/1440). 375 leftover |
+| before-after-slider | initial + changed | drag pct:70 — 3vp |
+| commerce-tools-products-bundle | initial + filled | ADD SET TO CART → drawer €37,97 — 3vp |
+| faq-collapsible-tabs | initial + changed | kargo sorusu açık — 3vp |
+| testimonial-quote-carousel | initial + changed | Paige → Sara Bond (768/1440). 375 changed leftover |
+| lead-capture-form | — | PII/submit dur — static 3vp |
 
 ---
 
@@ -106,5 +111,6 @@ shop `beyours-theme.myshopify.com` · locale `en` · country `DE` · currency `E
 
 - [x] Official 3vp static (`capture-observation.mjs`)
 - [x] Interact Shop / search / cart / menu / PDP Size
+- [x] CRO interact: before-after / bundle / FAQ / testimonial
 - [x] PNG bak → stateFindings
 - [x] `npm run validate` — 0 error
