@@ -8,12 +8,60 @@
   "selector": "#shopify-section-template--24914044125473__testimonials_8JHr3L",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
+    "evidence/sleek/default/home/testimonial-quote-carousel.1440.png",
     "evidence/sleek/default/home/testimonial-quote-carousel.375.png",
     "evidence/sleek/default/home/testimonial-quote-carousel.768.png",
-    "evidence/sleek/default/home/testimonial-quote-carousel.1440.png"
+    "evidence/sleek/default/home/testimonial-quote-carousel.changed.sonraki-alinti.1440.png",
+    "evidence/sleek/default/home/testimonial-quote-carousel.changed.sonraki-alinti.768.png",
+    "evidence/sleek/default/home/testimonial-quote-carousel.initial.ilk-hal.1440.png",
+    "evidence/sleek/default/home/testimonial-quote-carousel.initial.ilk-hal.375.png",
+    "evidence/sleek/default/home/testimonial-quote-carousel.initial.ilk-hal.768.png"
   ],
   "notlar": "Over 2,000 Happy reviews — Danielle S. / Elizabeth R. / Kimberly J. + ürün adı. testimonials-wrapper--slider.",
   "delta": "",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sleek-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24914044125473__testimonials_8JHr3L",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Aktif slayt — Verified Buyer alıntı + ürün kartı."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--24914044125473__testimonials_8JHr3L [aria-label='Slide right']",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "sonraki-alinti",
+      "not": "Slide right — farklı müşteri alıntısı + ürün. 375'te ok 0×0."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Over 2,000 Happy reviews. Aktif kart: Jaroslava K. Verified Buyer — clay mask alıntısı + ürün görseli. Sol/sağ daire oklar.",
+    "changed": "Slide right sonrası Alexandra M. Verified Buyer — moisturizer alıntısı. Farklı ürün kartı."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "375: Slide right / Slide left 0×0 (display:inline-flex ama w=h=0). Swipe/drag tetiklenmedi; initial 3vp var."
+    }
+  ],
+  "interactionNote": "Subscription popup settle dismiss ile kapanır; email submit yok. changed yalnız 768/1440 — 375 oklar gizli.",
   "capture": {
     "url": "https://sleek-theme-demo.myshopify.com/",
     "viewports": [
@@ -22,7 +70,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T11:02:53.539Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:45:29.302Z"
   }
 }

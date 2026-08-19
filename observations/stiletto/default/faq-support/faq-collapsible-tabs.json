@@ -8,25 +8,19 @@
   "selector": "#shopify-section-template--22242344927381__collapsible-row-list-1",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
-    "evidence/stiletto/default/faq-support/faq-collapsible-tabs.initial.bolum.1440.png",
-    "evidence/stiletto/default/faq-support/faq-collapsible-tabs.initial.bolum.375.png",
-    "evidence/stiletto/default/faq-support/faq-collapsible-tabs.initial.bolum.768.png"
+    "evidence/stiletto/default/faq-support/faq-collapsible-tabs.changed.soru-acik.1440.png",
+    "evidence/stiletto/default/faq-support/faq-collapsible-tabs.changed.soru-acik.375.png",
+    "evidence/stiletto/default/faq-support/faq-collapsible-tabs.changed.soru-acik.768.png",
+    "evidence/stiletto/default/faq-support/faq-collapsible-tabs.initial.kapali-akordeon.1440.png",
+    "evidence/stiletto/default/faq-support/faq-collapsible-tabs.initial.kapali-akordeon.375.png",
+    "evidence/stiletto/default/faq-support/faq-collapsible-tabs.initial.kapali-akordeon.768.png"
   ],
-  "notlar": "ORDERS grubu.",
-  "delta": "",
-  "capture": {
-    "url": "https://stiletto-theme-vogue.myshopify.com/pages/faq",
-    "viewports": [
-      "375",
-      "768",
-      "1440"
-    ],
-    "mode": "section",
-    "method": "interaction-steps",
-    "updatedAt": "2026-08-18T11:43:57.263Z"
-  },
+  "notlar": "ORDERS grubu — collapsible-row-list.",
+  "delta": "Stiletto FAQ accordion. aria-controls content-N.",
+  "captureMode": "section",
   "interactionStates": [
-    "initial"
+    "initial",
+    "changed"
   ],
   "interactionSteps": [
     {
@@ -62,15 +56,45 @@
       "action": "waitFor",
       "value": 500,
       "capture": true,
-      "etiket": "bolum",
-      "captureMode": "section",
-      "not": "Popup kapalı section"
+      "etiket": "kapali-akordeon",
+      "not": "ORDERS başlık + kapalı soru satırları"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--22242344927381__collapsible-row-list-1 button[aria-controls=\"content-1\"]",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--22242344927381__collapsible-row-list-1",
+      "capture": true,
+      "etiket": "soru-acik",
+      "not": "How do I make a purchase? → cevap paneli görünür"
     }
   ],
   "stateFindings": {
-    "initial": "ORDERS grubu."
+    "initial": "ORDERS grubu. 4 soru satırı kapalı (aria-expanded=false).",
+    "changed": "How do I make a purchase? tık → aria-expanded=true + #content-1 cevap metni açılır. Diğer satırlar kapalı kalabilir."
   },
   "missingStates": [],
-  "interactionNote": "JOIN US + THEME WALKTHROUGH kapatıldı. Get 10% Off tab leftover olabilir.",
-  "captureMode": "section"
+  "interactionNote": "Scan 4 opener. İlk soru content-1. allowMultipleOpen doğrulanmadı — tek satır açıldı.",
+  "capture": {
+    "url": "https://stiletto-theme-vogue.myshopify.com/pages/faq",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:24:03.725Z"
+  }
 }

@@ -76,3 +76,18 @@ Mega "Collection List: Default/Grid", "Product: Classic/Standard", "Standard Blo
 - 375 **ve** 768 hamburger `summary.header__icon--menu` 24×24. 1440 0×0.
 - Cart drawer `#CartDrawer`. ATC `#ProductSubmitButton-template--16903853998319__main`.
 - PDP Color White $70.00 → Blue $72.00 (75ml). Size 75/100/120ml leftover (Color yeterli).
+
+## CRO leftover interact (2026-08-19)
+
+Resmi walk'ta observation olan CRO şemaları tarandı; yalnız kanıtlanan state'ler yakalandı.
+
+| schemaId | observation | states | sonuç |
+|---|---|---|---|
+| `faq-collapsible-tabs` | faq-support | initial, changed | [x] refund accordion açık |
+| `testimonial-quote-carousel` | home | initial, changed | [x] ELLE→FENTY; mobil pagination dash |
+| `testimonial-quote-carousel` | about-brand | initial | [x] tek slide; changed yok |
+| `lead-capture-form` | contact | — | ⛔ PII — fill/Send yok |
+
+**CRO şema diskte var, observation yok (uydurulmadı):** before-after-slider · commerce-tools-products-bundle · promo-banner-countdown · lead-capture-newsletter-band · comparison-quick-table · product-finder-quiz · media-shop-the-feed · media-scrolling-gallery
+
+**Observation var, CRO listesi dışı / interact atlandı:** footer-columns-newsletter (PII) · product-showcase-tabs (tab changed leftover)

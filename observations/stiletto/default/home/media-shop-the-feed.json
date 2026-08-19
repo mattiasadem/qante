@@ -8,25 +8,22 @@
   "selector": "#shopify-section-template--22242344796309__shoppable_videos_yqQa67",
   "evidenceSlug": "media-shop-the-feed",
   "evidence": [
-    "evidence/stiletto/default/home/media-shop-the-feed.initial.bolum.1440.png",
-    "evidence/stiletto/default/home/media-shop-the-feed.initial.bolum.375.png",
-    "evidence/stiletto/default/home/media-shop-the-feed.initial.bolum.768.png"
+    "evidence/stiletto/default/home/media-shop-the-feed.changed.sonraki-video.1440.png",
+    "evidence/stiletto/default/home/media-shop-the-feed.changed.sonraki-video.768.png",
+    "evidence/stiletto/default/home/media-shop-the-feed.initial.ilk-video.1440.png",
+    "evidence/stiletto/default/home/media-shop-the-feed.initial.ilk-video.375.png",
+    "evidence/stiletto/default/home/media-shop-the-feed.initial.ilk-video.768.png",
+    "evidence/stiletto/default/home/media-shop-the-feed.open.quick-view-acik.1440.png",
+    "evidence/stiletto/default/home/media-shop-the-feed.open.quick-view-acik.375.png",
+    "evidence/stiletto/default/home/media-shop-the-feed.open.quick-view-acik.768.png"
   ],
   "notlar": "GET INSPIRED. shoppable-videos: Kirsty / Maddie / Ella / Bea.",
-  "delta": "Video UGC + ürün. media-shop-the-feed.",
-  "capture": {
-    "url": "https://stiletto-theme-vogue.myshopify.com/",
-    "viewports": [
-      "375",
-      "768",
-      "1440"
-    ],
-    "mode": "section",
-    "method": "interaction-steps",
-    "updatedAt": "2026-08-18T11:46:27.619Z"
-  },
+  "delta": "Video UGC + ürün rayı. Choose options → .quick-product drawer.",
+  "captureMode": "section",
   "interactionStates": [
-    "initial"
+    "initial",
+    "open",
+    "changed"
   ],
   "interactionSteps": [
     {
@@ -60,17 +57,112 @@
     {
       "state": "initial",
       "action": "waitFor",
-      "value": 500,
+      "value": 1000,
       "capture": true,
-      "etiket": "bolum",
-      "captureMode": "section",
-      "not": "Popup kapalı section"
+      "etiket": "ilk-video",
+      "not": "GET INSPIRED + Kirsty Dress In Noir video + Choose options"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--22242344796309__shoppable_videos_yqQa67 .carousel__navigation-button--forward",
+      "capture": false,
+      "viewports": [
+        "768",
+        "1440"
+      ]
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": false,
+      "viewports": [
+        "768",
+        "1440"
+      ]
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--22242344796309__shoppable_videos_yqQa67",
+      "capture": true,
+      "etiket": "sonraki-video",
+      "not": "Sağ ok → Maddie Dress In Apple (veya sonraki slayt)",
+      "viewports": [
+        "768",
+        "1440"
+      ]
+    },
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://stiletto-theme-vogue.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": ".popup--has-image .popup__dismiss-icon",
+      "value": 700,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": ".popup--flyout [data-dismiss-popup]",
+      "value": 700,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--22242344796309__shoppable_videos_yqQa67",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#shopify-section-template--22242344796309__shoppable_videos_yqQa67 button[data-quick-shop-trigger=\"quick-view\"]",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "quick-view-acik",
+      "not": ".quick-product drawer: Kirsty Dress In Noir + Color/Size"
     }
   ],
   "stateFindings": {
-    "initial": "GET INSPIRED. shoppable-videos: Kirsty / Maddie / Ella / Bea."
+    "initial": "GET INSPIRED başlık. Video slayt (Kirsty) + alt ürün rayı + Choose options + carousel okları.",
+    "changed": "768/1440: sağ carousel ok sonrası farklı creator/video (Kirsty → Maddie). 375'te oklar görünmez — kaydırma doğrulanmadı.",
+    "open": "Choose options tık → .quick-product overlay: ürün adı + fiyat + Color swatch + Size chips + View product details. Checkout yok."
   },
-  "missingStates": [],
-  "interactionNote": "JOIN US + THEME WALKTHROUGH kapatıldı. Get 10% Off tab leftover olabilir.",
-  "captureMode": "section"
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Choose options zaten görünür; kart hover ek reveal yok."
+    }
+  ],
+  "interactionNote": "Quick view section dışında (.quick-product) — open viewport capture. 375 changed PNG yok — carousel okları mobilde görünmez. Play video tıklanmadı.",
+  "capture": {
+    "url": "https://stiletto-theme-vogue.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:28:26.992Z"
+  }
 }
