@@ -11,6 +11,7 @@ import {
   isRemoteEvidenceEnv,
   isRepoEvidencePath,
 } from "./evidence-external.mjs";
+import { industriesForKaynak } from "./industries.mjs";
 
 const VIEWPORTS = ["375", "768", "1440"];
 
@@ -235,6 +236,7 @@ function build(root, env = process.env) {
         .map((e) => ({ path: e.path, viewport: e.viewport })),
       evidenceCount: o.evidence.filter((e) => e.exists).length,
       hasSchema: Boolean(s),
+      endustri: industriesForKaynak(o.kaynak),
     });
   }
   for (const s of schemas) {
@@ -262,6 +264,7 @@ function build(root, env = process.env) {
         evidence: [],
         evidenceCount: 0,
         hasSchema: true,
+        endustri: [],
       });
     }
   }

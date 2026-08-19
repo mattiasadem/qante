@@ -217,6 +217,34 @@ details.facet[open] > summary::after { content: "–"; }
 }
 .facet-opt.zero { opacity: 0.45; }
 
+.facet-body.endustri-chips {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+.facet-opt.endustri-chip {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.22rem 0.65rem;
+  background: var(--chip);
+  gap: 0.35rem;
+  font-size: 0.78rem;
+}
+.facet-opt.endustri-chip input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+.facet-opt.endustri-chip.on,
+.facet-opt.endustri-chip:has(input:checked) {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.facet-opt.endustri-chip .n { margin-left: 0.15rem; }
+
 /* tema › preset ağacı */
 .tema-agaci { gap: 0.35rem; }
 .tema-grup { display: flex; flex-direction: column; }

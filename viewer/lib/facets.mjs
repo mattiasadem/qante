@@ -4,6 +4,12 @@
  * böylece çoklu seçim yaparken sayılar sıfırlanmaz.
  */
 
+import {
+  countEndustri,
+  matchesEndustriFilter,
+  seedEndustriFacets,
+} from "./industries.mjs";
+
 export const DIMENSIONS = [
   "kaynak",
   "tp", // tema/preset bileşik — preset'i temaya bağlar ( br. "hyper/default")
@@ -11,6 +17,7 @@ export const DIMENSIONS = [
   "kategori",
   "scope",
   "viewport",
+  "endustri",
 ];
 
 export const GROUPS = {
@@ -180,6 +187,7 @@ export function parseFilters(searchParams) {
     kategori: list("kategori"),
     scope: list("scope"),
     viewport: list("viewport"),
+    endustri: list("endustri"),
     evidence: searchParams.get("evidence") || "",
     schemaState: searchParams.get("schemaState") || "",
     group: searchParams.get("group") || "schema",
@@ -197,6 +205,9 @@ function matchesDimension(row, dim, values) {
   if (dim === "tp") {
     return values.includes(`${row.kaynak || "?"}/${row.preset || "?"}`);
   }
+  if (dim === "endustri") {
+    return matchesEndustriFilter(row.endustri, values);
+  }
   return values.includes(row[dim] || "");
 }
 
@@ -210,6 +221,7 @@ function matchesQuery(row, q) {
     row.sayfa,
     row.kategori,
     row.scope,
+    ...(Array.isArray(row.endustri) ? row.endustri : []),
     row.varyant,
     row.amac,
     row.notlar,
@@ -300,6 +312,9 @@ function countValues(rows, dim) {
       for (const v of row.viewports) map.set(v, (map.get(v) || 0) + 1);
       continue;
     }
+    if (dim === "endustri") {
+      continue;
+    }
     const v = row[dim] || "";
     if (!v) continue;
     map.set(v, (map.get(v) || 0) + 1);
@@ -325,6 +340,10 @@ export function computeFacets(inv, f) {
   const facets = {};
   for (const dim of DIMENSIONS) {
     const scoped = applyFilters(inv.rows, f, { skipDimension: dim });
+    if (dim === "endustri") {
+      facets[dim] = seedEndustriFacets(countEndustri(scoped), f.endustri);
+      continue;
+    }
     facets[dim] = countValues(scoped, dim);
     // Seçili ama sonuçta olmayan değerler de görünsün (kaldırılabilmesi için)
     for (const sel of f[dim]) {
@@ -398,6 +417,7 @@ export function lightRow(row) {
     evidence: row.evidence,
     hasSchema: row.hasSchema,
     url: row.url,
+    endustri: row.endustri || [],
   };
 }
 
