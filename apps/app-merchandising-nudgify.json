@@ -1,0 +1,73 @@
+{
+  "id": "app-merchandising-nudgify",
+  "kategori": "merchandising",
+  "varyant": "nudgify",
+  "scope": "overlay",
+  "amac": "Sosyal kanıt popup ve toast ile satın alma aciliyeti oluşturur.",
+  "sorun": "Ziyaretçi başkalarının da aldığını görmez; Nudgify canlı aktivite bildirimi gösterir.",
+  "link": "https://apps.shopify.com/nudgify",
+  "yuzey": [
+    "social_proof_toast"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_orders"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "toastAktif": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "gosterimSikligi": {
+      "tip": "number",
+      "zorunlu": false
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [
+    "mount:footer.before"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "yok",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

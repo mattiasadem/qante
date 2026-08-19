@@ -1,0 +1,74 @@
+{
+  "id": "app-builder-shogun",
+  "kategori": "builder",
+  "varyant": "shogun",
+  "scope": "page",
+  "amac": "Özel sayfa ve şablonları görsel editörle oluşturup tema akışına entegre eder.",
+  "sorun": "Kampanya ve koleksiyon landing'leri tema section'larıyla sınırlı kalır; Shogun tam sayfa şablon üretir.",
+  "link": "https://apps.shopify.com/shogun",
+  "yuzey": [],
+  "entegrasyon": {
+    "shopify": [
+      "page-runtime"
+    ],
+    "ikas": [
+      "admin-iframe",
+      "admin-graphql"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [],
+  "ikasSayfa": [],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "admin-iframe",
+  "ikasKapsam": [
+    "read_products",
+    "write_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "admin-iframe",
+  "ayarlar": {
+    "sayfaSablonu": {
+      "tip": "ref",
+      "hedef": "page",
+      "zorunlu": true
+    },
+    "seoBaslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 70
+    },
+    "yayinDurumu": {
+      "tip": "boolean",
+      "zorunlu": true
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urunler",
+      "source": "DataSource.productList",
+      "params": {
+        "kaynak": "manual",
+        "limit": 24
+      }
+    },
+    {
+      "name": "koleksiyon",
+      "source": "DataSource.collection"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  },
+  "_note": "Builder SDK — yuzey çocuk section'lardan çıkarılır, SDK'nın kendisi değil"
+}

@@ -1,0 +1,95 @@
+{
+  "id": "app-merchandising-instafeed",
+  "kategori": "merchandising",
+  "varyant": "instafeed",
+  "scope": "in-flow",
+  "amac": "Instagram gönderilerini mağaza vitrininde UGC galeri olarak gösterir.",
+  "sorun": "Sosyal kanıt Instagram'da kalınca vitrin statik görünür; Instafeed gönderileri mağazaya taşır.",
+  "link": "https://apps.shopify.com/instafeed",
+  "yuzey": [
+    "ugc_gallery"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-block",
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script"
+    ]
+  },
+  "ikasTur": "yok",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT",
+    "CUSTOM"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "hesapBaglantisi": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 60
+    },
+    "gonderiLimiti": {
+      "tip": "number",
+      "zorunlu": false
+    },
+    "urunEtiketleme": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "layout": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 20
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urunler",
+      "source": "DataSource.productList",
+      "params": {
+        "kaynak": "manual",
+        "limit": 12
+      }
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "yok",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  },
+  "_note": "kategori merchandising — sosyal feed vitrin bloğu; reviews UGC ile örtüşse de feed odaklı"
+}

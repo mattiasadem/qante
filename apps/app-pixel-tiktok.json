@@ -1,0 +1,68 @@
+{
+  "id": "app-pixel-tiktok",
+  "kategori": "pixel",
+  "varyant": "tiktok",
+  "scope": "head",
+  "amac": "TikTok Pixel ile reklam ve dönüşüm olaylarını TikTok Events API'ye iletir.",
+  "sorun": "TikTok reklam dönüşümleri ölçülmezse kampanya optimizasyonu kör kalır.",
+  "link": "https://apps.shopify.com/tiktok",
+  "yuzey": [],
+  "entegrasyon": {
+    "shopify": [
+      "web-pixel"
+    ],
+    "ikas": [
+      "storefront-js-script"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW",
+    "ADD_TO_CART",
+    "COMPLETE_CHECKOUT"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT",
+    "CART",
+    "CHECKOUT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "pikselKimligi": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [],
+  "bagimliliklar": [],
+  "ikasKarsilik": "yok",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

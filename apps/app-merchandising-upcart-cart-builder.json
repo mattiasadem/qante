@@ -1,0 +1,89 @@
+{
+  "id": "app-merchandising-upcart-cart-builder",
+  "kategori": "merchandising",
+  "varyant": "upcart-cart-builder",
+  "scope": "overlay",
+  "amac": "Özelleştirilebilir sepet çekmecesi ve upsell önerileri sunar.",
+  "sorun": "Tema sepet çekmecesi upsell ve progress bar sunmaz; UpCart dönüşüm odaklı çekmece ekler.",
+  "link": "https://apps.shopify.com/upcart-cart-builder",
+  "yuzey": [
+    "cart_drawer",
+    "product_recs"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "VIEW_CART",
+    "ADD_TO_CART"
+  ],
+  "ikasSayfa": [
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_products",
+    "read_orders"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "upsellAktif": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "ucretsizKargoBar": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    },
+    {
+      "name": "oneriler",
+      "source": "DataSource.productList",
+      "params": {
+        "kaynak": "recommended",
+        "limit": 4
+      }
+    }
+  ],
+  "actions": [
+    "emit:cart.add"
+  ],
+  "hookNoktalari": [
+    "mount:cartDrawer.belowItems"
+  ],
+  "bagimliliklar": [
+    "global-cart-drawer"
+  ],
+  "ikasKarsilik": "cart Drawer",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

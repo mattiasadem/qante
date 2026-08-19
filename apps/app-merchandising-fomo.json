@@ -1,0 +1,75 @@
+{
+  "id": "app-merchandising-fomo",
+  "kategori": "merchandising",
+  "varyant": "fomo",
+  "scope": "overlay",
+  "amac": "Sosyal kanıt bildirimleri ve güven rozetleri ile dönüşüm baskısı oluşturur.",
+  "sorun": "Ziyaretçi satın alma aciliyeti hissetmez; FOMO gerçek zamanlı aktivite toast'ı gösterir.",
+  "link": "https://apps.shopify.com/fomo",
+  "yuzey": [
+    "social_proof_toast",
+    "trust_badge"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_orders",
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "toastAktif": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "rozetGoster": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [
+    "mount:footer.before"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "yok",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

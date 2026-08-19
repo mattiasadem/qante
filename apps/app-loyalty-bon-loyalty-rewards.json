@@ -1,0 +1,89 @@
+{
+  "id": "app-loyalty-bon-loyalty-rewards",
+  "kategori": "loyalty",
+  "varyant": "bon-loyalty-rewards",
+  "scope": "overlay",
+  "amac": "Puan ve ödül programı ile tekrar satın almayı teşvik eden launcher ve rozet sunar.",
+  "sorun": "Sadakat teşviki olmadan müşteri yaşam boyu değeri düşer; BON puan kazanımını vitrine taşır.",
+  "link": "https://apps.shopify.com/bon-loyalty-rewards",
+  "yuzey": [
+    "loyalty_launcher",
+    "loyalty_points_badge",
+    "loyalty_page"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "CUSTOMER_LOGIN",
+    "CUSTOMER_REGISTER",
+    "PRODUCT_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "ACCOUNT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_customers",
+    "read_orders"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "launcherGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "puanRozetiGoster": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "kazanmaKurali": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [
+    "mount:header.utility",
+    "mount:buyBox.badge"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Sadakat Programı",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

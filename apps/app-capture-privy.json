@@ -1,0 +1,100 @@
+{
+  "id": "app-capture-privy",
+  "kategori": "capture",
+  "varyant": "privy",
+  "scope": "overlay",
+  "amac": "Popup, çark ve duyuru şeridi ile ziyaretçi e-posta listesi ve kampanya dönüşümü yakalar.",
+  "sorun": "Tema newsletter bandı tek seferlik görünür; Privy zamanlama, hedefleme ve çark ile tekrar ziyaretçi yakalar.",
+  "link": "https://apps.shopify.com/privy",
+  "yuzey": [
+    "popup_modal",
+    "spin_wheel",
+    "announcement_bar",
+    "flyout"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script"
+    ]
+  },
+  "ikasTur": "yok",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "CUSTOMER_REGISTER"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT",
+    "CUSTOM"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "baslik": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80
+    },
+    "indirimKodu": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 40
+    },
+    "carkAktif": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "duyuruSeridiGoster": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "gosterimGecikmesi": {
+      "tip": "number",
+      "zorunlu": false
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "emit:newsletter.subscribe"
+  ],
+  "hookNoktalari": [
+    "mount:announcement.before",
+    "mount:footer.before"
+  ],
+  "bagimliliklar": [
+    "promo-announcement-bar",
+    "lead-capture-newsletter-band"
+  ],
+  "ikasKarsilik": "yok",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

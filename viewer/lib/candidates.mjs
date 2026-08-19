@@ -12,6 +12,7 @@ import path from "path";
 const LIST_GROUP_BY_FILE = {
   "shopify-themes.md": "Shopify temalar",
   "dtc-69-brands.md": "DTC-69",
+  "shopify-apps.md": "Shopify appler",
 };
 
 export function loadCandidates(root) {
@@ -125,7 +126,7 @@ function listRowFromCells(row, { rel, title, group, slug, index }) {
   const status = normalizeListStatus(cell(row, ["status", "durum"]));
   const theme = stripMd(cell(row, ["theme", "tema"]));
   const domain = stripMd(cell(row, ["domain", "site"]));
-  const name = theme || domain || stripMd(cell(row, ["name", "ad"]));
+  const name = theme || domain || stripMd(cell(row, ["app", "name", "ad"]));
   if (!name || name === "#" || /^[-—–]+$/.test(name)) return null;
 
   const walkUrl =

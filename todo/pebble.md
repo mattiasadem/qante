@@ -10,8 +10,8 @@
 `theme_store_id` = **null** (canlıda yok; uydurulmadı)  
 shop `pebble-little.myshopify.com`
 
-**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti** (0 error)  
-**PR:** draft https://github.com/mattiasadem/qante/pull/167 — **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact (CRO leftover) + validate **bitti** (0 error)  
+**PR:** draft https://github.com/mattiasadem/qante/pull/261 — CRO interact turu
 
 ---
 
@@ -95,6 +95,17 @@ shop `pebble-little.myshopify.com`
 | global-cart-drawer | filled + changed | [x] $45 → $90 (qty 2) · free-ship $55→$10 |
 | cart-page-main | filled + changed | [x] $45 → $90 |
 | product-info-main | changed | [x] 3Y in-stock → 8Y Only 2 left |
+
+### CRO interact (leftover tur)
+
+| schemaId | State | Sonuç |
+|---|---|---|
+| commerce-tools-products-bundle (home) | initial + changed | [x] Pink/3Y → Pink/7Y size select · filled → global-cart-drawer |
+| commerce-tools-products-bundle (PDP) | initial | [x] Outfit Inspiration 1/2 · hover/changed yok |
+| testimonial-quote-carousel | initial | [x] parallax stacked — carousel changed yok |
+| lead-capture-form | initial | [x] PII dur — input yok |
+
+CRO şemaları observation'da yok (yeni şema yok): before-after-slider, promo-banner-countdown, faq-collapsible-tabs, lead-capture-newsletter-band, comparison-quick-table, product-finder-quiz, media-shop-the-feed, media-scrolling-gallery
 
 ---
 

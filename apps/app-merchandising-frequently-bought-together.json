@@ -1,0 +1,89 @@
+{
+  "id": "app-merchandising-frequently-bought-together",
+  "kategori": "merchandising",
+  "varyant": "frequently-bought-together",
+  "scope": "in-flow",
+  "amac": "PDP'de sık birlikte alınan ürün paketini önererek AOV artırır.",
+  "sorun": "Çapraz satış önerisi olmadan müşteri tek ürünle ayrılır.",
+  "link": "https://apps.shopify.com/frequently-bought-together",
+  "yuzey": [
+    "product_recs"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-block",
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "ADD_TO_CART"
+  ],
+  "ikasSayfa": [
+    "PRODUCT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products",
+    "read_orders"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "paketGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "oneriLimiti": {
+      "tip": "number",
+      "zorunlu": false
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    },
+    {
+      "name": "oneriler",
+      "source": "DataSource.productList",
+      "params": {
+        "kaynak": "recommended",
+        "limit": 3
+      }
+    }
+  ],
+  "actions": [
+    "emit:cart.add"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after"
+  ],
+  "bagimliliklar": [
+    "product-info-main"
+  ],
+  "ikasKarsilik": "yok",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

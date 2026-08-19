@@ -42,6 +42,7 @@ const state = {
   selObs: null,
   selCand: null,
   selList: null,
+  selApp: null,
   croType: null,
   vp: "compare",
 };
@@ -50,6 +51,7 @@ let stats = null;
 let items = null;
 let facets = null;
 let candidatesData = null;
+let appsData = null;
 let croData = null;
 let lightboxList = [];
 let lightboxIndex = 0;
@@ -184,6 +186,7 @@ function syncUrl() {
   if (state.selObs) p.set("obs", state.selObs);
   if (state.selCand) p.set("cand", state.selCand);
   if (state.selList) p.set("list", state.selList);
+  if (state.selApp) p.set("app", state.selApp);
   if (state.view === "cro" && state.croType) p.set("type", state.croType);
   if (state.vp !== "compare") p.set("vp", state.vp);
   const url = p.toString() ? `?${p}` : location.pathname;
@@ -205,6 +208,7 @@ function readUrl() {
   state.selObs = p.get("obs") || null;
   state.selCand = p.get("cand") || null;
   state.selList = p.get("list") || null;
+  state.selApp = p.get("app") || null;
   state.croType = p.get("type") || null;
   state.vp = p.get("vp") || "compare";
 }
@@ -393,6 +397,12 @@ async function refresh({ keepDetail = false } = {}) {
     $("#n-lists").textContent = nList ? ` ${nList}` : "";
   }
 
+  if (state.view === "apps" || !appsData) {
+    appsData = await api("/api/apps");
+    const nApps = appsData.counts?.total || 0;
+    $("#n-apps").textContent = nApps ? ` ${nApps}` : "";
+  }
+
   if (state.view === "cro" || !croData) {
     croData = await api("/api/cro");
     const nCro = croData.counts?.observations || 0;
@@ -404,6 +414,8 @@ async function refresh({ keepDetail = false } = {}) {
     renderCandidatesSidebar();
   } else if (state.view === "lists") {
     renderListsSidebar();
+  } else if (state.view === "apps") {
+    renderAppsSidebar();
   } else if (state.view === "cro") {
     renderCroSidebar();
   } else {
@@ -416,6 +428,8 @@ async function refresh({ keepDetail = false } = {}) {
     renderCandidatesDetail();
   } else if (state.view === "lists") {
     renderListsDetail();
+  } else if (state.view === "apps") {
+    renderAppsDetail();
   } else if (state.view === "cro") {
     renderCroDetail();
   } else if (state.view === "coverage") {
@@ -1049,7 +1063,7 @@ const LIST_STATUS_LABEL = {
   "": "kuyruk",
 };
 
-const LIST_GROUP_ORDER = ["Shopify temalar", "DTC-69"];
+const LIST_GROUP_ORDER = ["Shopify temalar", "DTC-69", "Shopify appler"];
 
 function listStatusKey(row) {
   const s = String(row?.status || "").trim().toLowerCase();
@@ -1140,7 +1154,7 @@ function renderListsSidebar() {
     </div>
     <p class="amac" style="padding:.55rem .85rem;margin:0;font-size:.78rem">
       Shopify temaları ve DTC-69 siteleri — yapılmış / yapılıyor / kuyruk.
-      Kaynak: <code>candidates/shopify-themes.md</code>, <code>candidates/dtc-69-brands.md</code>
+      Kaynak: <code>candidates/shopify-themes.md</code>, <code>candidates/dtc-69-brands.md</code>, <code>candidates/shopify-apps.md</code>
     </p>
     ${groupsHtml || `<p class="empty">Liste kaydı yok</p>`}
   `;
@@ -1210,6 +1224,273 @@ function renderListsDetail() {
     }
   `;
   wireCandLinks();
+  main.scrollTop = 0;
+  document.querySelector("#sidebar .item.active")?.scrollIntoView({
+    block: "nearest",
+  });
+}
+
+/* ---------------- Apps (AppSchema) ---------------- */
+
+const APP_KATEGORI_LABEL = {
+  pixel: "Piksel",
+  capture: "Yakalama",
+  reviews: "Yorumlar",
+  loyalty: "Sadakat",
+  merchandising: "Merchandising",
+  bar: "Bar",
+  payments: "Ödeme",
+  builder: "Builder",
+  wishlist: "Favori",
+};
+
+const APP_SCOPE_LABEL = {
+  head: "head",
+  overlay: "overlay",
+  "in-flow": "in-flow",
+  checkout: "checkout",
+  page: "page",
+};
+
+function appsFlat() {
+  if (!appsData) return [];
+  const q = (state.q || "").trim().toLowerCase();
+  return (appsData.apps || []).filter((app) => {
+    if (!q) return true;
+    const hay = [
+      app.id,
+      app.kategori,
+      app.varyant,
+      app.scope,
+      app.amac,
+      app.sorun,
+      app.link,
+      app.ikasKarsilik,
+      app.ikasTur,
+      app.ikasSablon,
+      app.ikasHedef,
+      app.ikasLink,
+      app.ikasYayin,
+      app.ikasHost,
+      ...(app.ikasKapsam || []),
+      ...(app.ikasWebhook || []),
+      ...(app.yuzey || []),
+      ...(app.ikasOlaylar || []),
+      ...(app.ikasSayfa || []),
+      ...(app.entegrasyon?.shopify || []),
+      ...(app.entegrasyon?.ikas || []),
+    ]
+      .join(" ")
+      .toLowerCase();
+    return hay.includes(q);
+  });
+}
+
+function renderAppsSidebar() {
+  const flat = appsFlat();
+  if (!state.selApp && flat[0]) state.selApp = flat[0].id;
+  if (state.selApp && !flat.some((a) => a.id === state.selApp) && flat[0]) {
+    state.selApp = flat[0].id;
+  }
+
+  const byKategori = new Map();
+  for (const app of flat) {
+    const g = APP_KATEGORI_LABEL[app.kategori] || app.kategori || "Diğer";
+    if (!byKategori.has(g)) byKategori.set(g, []);
+    byKategori.get(g).push(app);
+  }
+
+  const keys = [...byKategori.keys()].sort((a, b) => a.localeCompare(b, "tr"));
+
+  const groupsHtml = keys
+    .map((key) => {
+      const rows = byKategori.get(key) || [];
+      const head = `<div class="group-head"><span>▾ ${esc(key)}</span><span>${rows.length}</span></div>`;
+      const buttons = rows
+        .map((app) => {
+          const active = state.selApp === app.id;
+          return `<button class="item ${active ? "active" : ""}" data-app="${esc(app.id)}">
+            <div class="id">${esc(app.varyant)}</div>
+            <div class="sub">${esc(app.id)}</div>
+            <div class="chips">
+              <span class="chip">${esc(APP_SCOPE_LABEL[app.scope] || app.scope)}</span>
+            </div>
+          </button>`;
+        })
+        .join("");
+      return head + buttons;
+    })
+    .join("");
+
+  $("#sidebar").innerHTML = `
+    <div class="facet-head list-head">
+      <strong>Appler · ${flat.length}</strong>
+      <span class="list-head-count">AppSchema v0</span>
+    </div>
+    <p class="amac" style="padding:.55rem .85rem;margin:0;font-size:.78rem">
+      Shopify uygulama envanteri — tema section'larından ayrı katman.
+      Kaynak: <code>apps/*.json</code> · sözleşme: <code>app-schema-standard.md</code>
+    </p>
+    ${groupsHtml || `<p class="empty">Uygulama şeması yok</p>`}
+  `;
+}
+
+function renderAppsDetail() {
+  const main = $("#main");
+  const flat = appsFlat();
+  let app = flat.find((a) => a.id === state.selApp);
+  if (!app && flat[0]) {
+    state.selApp = flat[0].id;
+    app = flat[0];
+    syncUrl();
+  }
+  if (!app) {
+    main.innerHTML = `<p class="empty">Uygulama şeması yok. <code>apps/</code> altında AppSchema JSON gerekir.</p>`;
+    return;
+  }
+
+  const yuzeyChips = (app.yuzey || []).length
+    ? app.yuzey.map((y) => `<span class="chip mono">${esc(y)}</span>`).join("")
+    : `<span class="chip queue">— (head / builder)</span>`;
+
+  const shopifyEnt = (app.entegrasyon?.shopify || [])
+    .map((e) => `<span class="chip">${esc(e)}</span>`)
+    .join("") || `<span class="chip queue">—</span>`;
+
+  const ikasEnt = (app.entegrasyon?.ikas || [])
+    .map((e) => `<span class="chip mono">${esc(e)}</span>`)
+    .join("") || `<span class="chip queue">—</span>`;
+
+  const ikasOlayChips = (app.ikasOlaylar || []).length
+    ? app.ikasOlaylar.map((e) => `<span class="chip mono">${esc(e)}</span>`).join("")
+    : `<span class="chip queue">—</span>`;
+
+  const ikasSayfaChips = (app.ikasSayfa || []).length
+    ? app.ikasSayfa.map((e) => `<span class="chip mono">${esc(e)}</span>`).join("")
+    : `<span class="chip queue">—</span>`;
+
+  const ikasKapsamChips = (app.ikasKapsam || []).length
+    ? app.ikasKapsam.map((e) => `<span class="chip mono">${esc(e)}</span>`).join("")
+    : `<span class="chip queue">—</span>`;
+
+  const ikasWebhookChips = (app.ikasWebhook || []).length
+    ? app.ikasWebhook.map((e) => `<span class="chip mono">${esc(e)}</span>`).join("")
+    : `<span class="chip queue">—</span>`;
+
+  const ikasAksiyonHtml = (app.ikasAksiyon || []).length
+    ? app.ikasAksiyon
+        .map((a) => `<span class="chip mono">${esc(a.yer)} · ${esc(a.tip)}</span>`)
+        .join("")
+    : `<span class="chip queue">—</span>`;
+
+  const ikasLinkHtml =
+    app.ikasLink && app.ikasLink !== "yok"
+      ? `<a href="${esc(app.ikasLink)}" target="_blank" rel="noopener">${esc(app.ikasLink)}</a>`
+      : `<span class="chip queue">yok</span>`;
+
+  const tespitShopify = app.tespit?.shopify?.trim() || "—";
+  const tespitIkas = app.tespit?.ikas?.trim() || "—";
+
+  main.innerHTML = `
+    <p class="list-count-head">${esc(APP_KATEGORI_LABEL[app.kategori] || app.kategori)} · ${esc(APP_SCOPE_LABEL[app.scope] || app.scope)}</p>
+    <h2>${esc(app.id)}</h2>
+    <p class="amac">${esc(app.amac)}</p>
+  ${
+    app.link
+      ? `<p class="amac"><a href="${esc(app.link)}" target="_blank" rel="noopener">${esc(app.link)}</a></p>`
+      : ""
+  }
+  ${
+    app.sorun
+      ? `<div class="card" style="margin-top:.75rem">
+      <div class="card-head"><strong>Sorun</strong></div>
+      <p class="amac">${esc(app.sorun)}</p>
+    </div>`
+      : ""
+  }
+    <div class="chips">
+      <span class="chip">${esc(app.varyant)}</span>
+      <span class="chip">${esc(APP_KATEGORI_LABEL[app.kategori] || app.kategori)}</span>
+      <span class="chip">${esc(APP_SCOPE_LABEL[app.scope] || app.scope)}</span>
+      <span class="chip">ikas: ${esc(app.ikasTur || "yok")}</span>
+      <span class="chip">${esc(app.ikasSablon || "yok")}</span>
+      <span class="chip">${esc(app.ikasHedef || "yok")}</span>
+      <span class="chip">yayın: ${esc(app.ikasYayin || "yok")}</span>
+      <span class="chip">host: ${esc(app.ikasHost || "yok")}</span>
+      <span class="chip mono">${esc(app.path)}</span>
+    </div>
+    <div class="card" style="margin-top:1rem">
+      <div class="card-head"><strong>ikas link</strong></div>
+      <p class="amac">${ikasLinkHtml}</p>
+    </div>
+    <div class="card">
+      <div class="card-head"><strong>Entegrasyon · Shopify</strong></div>
+      <div class="chips">${shopifyEnt}</div>
+    </div>
+    <div class="card">
+      <div class="card-head"><strong>Entegrasyon · ikas</strong></div>
+      <div class="chips">${ikasEnt}</div>
+    </div>
+    <div class="card">
+      <div class="card-head"><strong>ikas olaylar</strong></div>
+      <div class="chips">${ikasOlayChips}</div>
+    </div>
+    <div class="card">
+      <div class="card-head"><strong>ikas sayfa</strong></div>
+      <div class="chips">${ikasSayfaChips}</div>
+    </div>
+    <div class="card">
+      <div class="card-head"><strong>ikas kapsam</strong></div>
+      <div class="chips">${ikasKapsamChips}</div>
+    </div>
+    <div class="card">
+      <div class="card-head"><strong>ikas aksiyon</strong></div>
+      <div class="chips">${ikasAksiyonHtml}</div>
+    </div>
+    <div class="card">
+      <div class="card-head"><strong>ikas webhook</strong></div>
+      <div class="chips">${ikasWebhookChips}</div>
+    </div>
+    <div class="card">
+      <div class="card-head"><strong>ikas yayın / host</strong></div>
+      <div class="chips">
+        <span class="chip">${esc(app.ikasYayin || "yok")}</span>
+        <span class="chip">${esc(app.ikasHost || "yok")}</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><strong>tespit</strong></div>
+      <p class="amac mono" style="font-size:.78rem">shopify: ${esc(tespitShopify)}<br/>ikas: ${esc(tespitIkas)}</p>
+    </div>
+    <div class="card">
+      <div class="card-head"><strong>Yüzey</strong></div>
+      <div class="chips">${yuzeyChips}</div>
+    </div>
+    <div class="card">
+      <div class="card-head"><strong>ikas karşılığı</strong></div>
+      <p class="amac">${esc(app.ikasKarsilik || "yok")}</p>
+    </div>
+    ${
+      app.ayarlar && Object.keys(app.ayarlar).length
+        ? `<div class="card">
+      <div class="card-head"><strong>Ayarlar</strong> <span class="chip mono">${Object.keys(app.ayarlar).length} slot</span></div>
+      <pre class="mono" style="font-size:.72rem;overflow:auto;max-height:200px">${esc(JSON.stringify(app.ayarlar, null, 2))}</pre>
+    </div>`
+        : ""
+    }
+    ${
+      app.schema?.bagimliliklar?.length
+        ? `<div class="card">
+      <div class="card-head"><strong>Bağımlılıklar</strong></div>
+      <div class="chips">${app.schema.bagimliliklar.map((b) => `<span class="chip mono">${esc(b)}</span>`).join("")}</div>
+    </div>`
+        : ""
+    }
+    <div class="card">
+      <div class="card-head"><strong>Şema JSON</strong></div>
+      <pre class="mono" style="font-size:.72rem;overflow:auto;max-height:320px">${esc(JSON.stringify(app.schema, null, 2))}</pre>
+    </div>
+  `;
   main.scrollTop = 0;
   document.querySelector("#sidebar .item.active")?.scrollIntoView({
     block: "nearest",
@@ -1574,6 +1855,13 @@ function bindEvents() {
     if (listItem) {
       state.selList = listItem.dataset.list;
       state.view = "lists";
+      return refresh();
+    }
+
+    const appItem = e.target.closest(".item[data-app]");
+    if (appItem) {
+      state.selApp = appItem.dataset.app;
+      state.view = "apps";
       return refresh();
     }
 

@@ -1,0 +1,104 @@
+{
+  "id": "app-loyalty-growave",
+  "kategori": "loyalty",
+  "varyant": "growave",
+  "scope": "in-flow",
+  "amac": "Sadakat, favori listesi ve yorumları tek pakette vitrine entegre eder.",
+  "sorun": "Sadakat, favori ve yorum ayrı uygulamalarda parçalanınca müşteri deneyimi kopuk kalır.",
+  "link": "https://apps.shopify.com/growave",
+  "yuzey": [
+    "loyalty_launcher",
+    "loyalty_points_badge",
+    "loyalty_page",
+    "wishlist_button",
+    "review_stars",
+    "review_widget"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script"
+    ]
+  },
+  "ikasTur": "yok",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "ADD_TO_WISHLIST",
+    "CUSTOMER_LOGIN"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "ACCOUNT",
+    "INDEX"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_products",
+    "read_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "sadakatLauncherGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "favoriButonuGoster": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "yorumWidgetGoster": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "puanKazanmaOrani": {
+      "tip": "number",
+      "zorunlu": false
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    },
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:productCard.badge",
+    "mount:header.utility"
+  ],
+  "bagimliliklar": [
+    "product-info-main"
+  ],
+  "ikasKarsilik": "yok",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  },
+  "_note": "Suite: loyalty + wishlist + reviews — baskın kategori loyalty"
+}

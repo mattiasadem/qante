@@ -8,12 +8,41 @@
   "selector": "#shopify-section-template--20816638312586__custom_section_tUbpGU",
   "evidenceSlug": "lead-capture-form",
   "evidence": [
-    "evidence/pebble/default/contact/lead-capture-form.375.png",
-    "evidence/pebble/default/contact/lead-capture-form.768.png",
-    "evidence/pebble/default/contact/lead-capture-form.1440.png"
+    "evidence/pebble/default/contact/lead-capture-form.initial.ilk-hal.375.png",
+    "evidence/pebble/default/contact/lead-capture-form.initial.ilk-hal.768.png",
+    "evidence/pebble/default/contact/lead-capture-form.initial.ilk-hal.1440.png"
   ],
   "notlar": "Name / Email* / Phone / Order Number / Country / Message / Send Message. Submit yok.",
   "delta": "custom_section içinde contact_form. PII dur.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pebble-little.myshopify.com/pages/contact",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20816638312586__custom_section_tUbpGU",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Contact form boş: Name, Email*, Phone, Order Number, Country, Message, Send Message."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Contact form boş: Name, Email*, Phone, Order Number, Country dropdown, Message, Send Message butonu. Store locator NY/LA/Palo Alto aynı sayfada."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "PII — Name/Email/Phone/Order Number/Message fill yasak. Send Message submit yasak."
+    }
+  ],
+  "interactionNote": "Contact form PII duruldu.",
   "capture": {
     "url": "https://pebble-little.myshopify.com/pages/contact",
     "viewports": [
@@ -22,7 +51,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T10:59:56.947Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:50:00.000Z"
   }
 }
