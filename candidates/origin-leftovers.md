@@ -32,11 +32,33 @@
 
 - 404 `template-404` → `page-content-main` reuse; `pageType` 404 listede yok.
 
+## CRO şemalar (görev listesi — envanterde yok)
+
+Origin demo vitrininde aşağıdaki CRO şemaları **gözlemlenmedi**; observation/şema uydurulmadı:
+
+- `before-after-slider`
+- `commerce-tools-products-bundle`
+- `promo-banner-countdown` (yalnız `promo-announcement-bar` var — countdown yok)
+- `faq-collapsible-tabs`
+- `comparison-quick-table`
+- `product-finder-quiz`
+- `media-shop-the-feed`
+- `media-scrolling-gallery`
+
+## CRO interact (2026-08-19)
+
+| schemaId | State | Not |
+|---|---|---|
+| lead-capture-form | initial | 4 input + Send; fill/submit PII — dur |
+| lead-capture-newsletter-band | initial | Tek Email; fill/submit PII — dur |
+| testimonial-quote-carousel | initial | Statik multicolumn; ok/nokta yok — `changed`/`hover` anlamsız |
+
 ## Interact doğrulandı
 
 - Predictive search 1440: `bag` → SUGGESTIONS + 2Unfold Bag. 375/768 kare yok.
 - Cart drawer: boş / dolu $995 / adet 2 = $1,990. Checkout yok.
 - PDP Color Brown → Gray: ana görsel + etiket değişti.
+- CRO: lead-capture-form / newsletter-band / testimonial initial 3vp (form input ve carousel changed duruldu).
 
 ## Açık soru
 

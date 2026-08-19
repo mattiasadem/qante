@@ -8,12 +8,44 @@
   "selector": "#shopify-section-sections--22715920711702__newsletter_tLLgmr",
   "evidenceSlug": "lead-capture-newsletter-band",
   "evidence": [
+    "evidence/origin/default/home/lead-capture-newsletter-band.1440.png",
     "evidence/origin/default/home/lead-capture-newsletter-band.375.png",
     "evidence/origin/default/home/lead-capture-newsletter-band.768.png",
-    "evidence/origin/default/home/lead-capture-newsletter-band.1440.png"
+    "evidence/origin/default/home/lead-capture-newsletter-band.initial.ilk-hal.1440.png",
+    "evidence/origin/default/home/lead-capture-newsletter-band.initial.ilk-hal.375.png",
+    "evidence/origin/default/home/lead-capture-newsletter-band.initial.ilk-hal.768.png"
   ],
   "notlar": "THE UPDATES / Stay in the know + Email alanı. Footer grubunda ama ayrı section. Form gönderilmedi.",
-  "delta": "Group section newsletter; footer’dan ayrı. PII/submit yok.",
+  "delta": "Group section newsletter; footer'dan ayrı. PII/submit yok.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-origin-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-sections--22715920711702__newsletter_tLLgmr",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Boş Email alanı. Fill/submit yok."
+    }
+  ],
+  "stateFindings": {
+    "initial": "THE UPDATES etiketi + Stay in the know başlık + Email placeholder + boş alan. Submit düğmesi yok (Dawn newsletter section). 1440 yatay; 375/768 dikey stack."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "Tek affordance contact[email]. Fill + submit PII — dur. Statik 3vp initial duruyor."
+    }
+  ],
+  "interactionNote": "Scan 1 input contact[email]. katalogSorgu=only (body). Meaningful interact yalnız initial; şema dokunulmadı.",
   "capture": {
     "url": "https://theme-origin-demo.myshopify.com/",
     "viewports": [
@@ -22,7 +54,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T17:07:15.850Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:07:44.301Z"
   }
 }
