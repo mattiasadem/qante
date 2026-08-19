@@ -8,7 +8,7 @@
 `schema_name` = **Dawn** · `schema_version` = **4.0.0** · `role` = **main** · theme id `168341930006`  
 `theme_store_id` = **null** (beklenen 1376 vitrinde yok)
 
-**Durum:** Mod A walk kapandı · 52 obs · statik 3vp + mega/search/cart/menu/PDP Color  
+**Durum:** Mod A walk kapandı · 52 obs · statik 3vp + mega/search/cart/menu/PDP Color + **CRO interact**  
 **PR:** draft — **main'e merge yok**
 
 ---
@@ -23,7 +23,7 @@
 | Parallel | yalnız `observations/colorblock/`, `evidence/colorblock/`, `todo/colorblock.md`, `candidates/colorblock-*` |
 
 **Kapsam satırı:**  
-`Colorblock · default · Dawn 4.0.0 first-party demo · theme_store_id null · home→PDP→PLP→search→cart→about→contact→blog→404 · 52 obs · 0 yeni şema · leftover: drawer/faq/policy/1376`
+`Colorblock · default · Dawn 4.0.0 first-party demo · theme_store_id null · home→PDP→PLP→search→cart→about→contact→blog→404 · 52 obs · 0 yeni şema · CRO interact: 2/11 · leftover: drawer/faq/policy/1376 + 9 CRO yok`
 
 ---
 
@@ -57,6 +57,26 @@
 | cart-page-main | filled + changed | [x] Pocket Cardi qty 1→2 / $245→$490 |
 | global-menu-drawer | open | [x] 375/768 Shop/Magazine/About |
 | product-info-main | changed | [x] Color Green→Purple; ana görsel mor |
+| lead-capture-newsletter-band | initial | [x] 3vp boş Email + Subscribe (input PII dur) |
+| lead-capture-form | initial | [x] 3vp boş Name/Email/Phone/Comment (input PII dur) |
+
+---
+
+## CRO interact (disk şemaları)
+
+| schemaId | Envanter | Interact | Not |
+|---|---|---|---|
+| lead-capture-newsletter-band | [x] home | initial 3vp | input missing — PII |
+| lead-capture-form | [x] contact | initial 3vp | input missing — PII |
+| before-after-slider | — | — | envanterde yok |
+| commerce-tools-products-bundle | — | — | envanterde yok |
+| promo-banner-countdown | — | — | envanterde yok (`promo-announcement-bar` farklı şema) |
+| faq-collapsible-tabs | — | — | envanterde yok; `/pages/faq` 404 |
+| comparison-quick-table | — | — | envanterde yok |
+| product-finder-quiz | — | — | envanterde yok |
+| testimonial-quote-carousel | — | — | envanterde yok |
+| media-shop-the-feed | — | — | envanterde yok |
+| media-scrolling-gallery | — | — | envanterde yok |
 
 ---
 
@@ -70,4 +90,5 @@
 
 - [x] Statik 3vp (50 obs)
 - [x] Mega / search / cart empty+filled+qty / mobile menu / PDP Color
+- [x] CRO interact: newsletter band + contact form initial 3vp
 - [ ] Email / account / checkout / newsletter submit / comment submit — **yapılmayacak**
