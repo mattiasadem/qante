@@ -8,12 +8,45 @@
   "selector": "#shopify-section-template--21605978603542__form",
   "evidenceSlug": "lead-capture-form",
   "evidence": [
+    "evidence/rise/default/contact/lead-capture-form.1440.png",
     "evidence/rise/default/contact/lead-capture-form.375.png",
     "evidence/rise/default/contact/lead-capture-form.768.png",
-    "evidence/rise/default/contact/lead-capture-form.1440.png"
+    "evidence/rise/default/contact/lead-capture-form.initial.bos-form.1440.png",
+    "evidence/rise/default/contact/lead-capture-form.initial.bos-form.375.png",
+    "evidence/rise/default/contact/lead-capture-form.initial.bos-form.768.png"
   ],
   "notlar": "Contact form: Name / Email * / Phone number / Comment / Send. Gönderilmedi (PII).",
-  "delta": "Dawn contact form. stacked.",
+  "delta": "Dawn contact form. 375 stacked; 768/1440 Name|Email yan yana.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-rise-demo.myshopify.com/en/pages/contact",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21605978603542__form",
+      "capture": true,
+      "etiket": "bos-form",
+      "not": "PII — Name/Email/Phone/Comment doldurulmadı, Send tıklanmadı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boş form. Name / Email * / Phone number / Comment / Send. 375 tek kolon. 768/1440 üstte Name|Email, Phone ve Comment tam genişlik. Doldurulmadı, Send tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "PII stop: fill/submit yok. input/filled zorlanmadı.",
   "capture": {
     "url": "https://theme-rise-demo.myshopify.com/en/pages/contact",
     "viewports": [
@@ -22,7 +55,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T10:58:52.913Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T17:10:57.835Z"
   }
 }
