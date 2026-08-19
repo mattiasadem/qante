@@ -12,8 +12,121 @@
     "evidence/prestige/allure/home/before-after-slider.768.png",
     "evidence/prestige/allure/home/before-after-slider.1440.png"
   ],
-  "notlar": "LE DALIA renk karşılaştırma before/after.",
-  "delta": "Renk varyantı wipe; ürün CTA var.",
+  "notlar": "LE DALIA renk karşılaştırma before/after. Interact: cursor + ArrowRight.",
+  "delta": "Renk varyantı wipe; ürün CTA var. Şemaya dokunulmadı.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://prestige-theme-allure.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15179705352255__7f505dbc-26a8-4d7e-8878-69976a1a901f",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Ayırıcı ~%50. Almond green | Blue denim."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--15179705352255__7f505dbc-26a8-4d7e-8878-69976a1a901f .before-after__cursor",
+      "capture": false,
+      "not": "input[type=range] yok; cursor odak."
+    },
+    {
+      "state": "changed",
+      "action": "press",
+      "value": "ArrowRight",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "press",
+      "value": "ArrowRight",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "press",
+      "value": "ArrowRight",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "press",
+      "value": "ArrowRight",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "press",
+      "value": "ArrowRight",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "press",
+      "value": "ArrowRight",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "press",
+      "value": "ArrowRight",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "press",
+      "value": "ArrowRight",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "press",
+      "value": "ArrowRight",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "press",
+      "value": "ArrowRight",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "press",
+      "value": "ArrowRight",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "press",
+      "value": "ArrowRight",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "etiket": "ayirici-saga",
+      "not": "Yoklama: 12× ArrowRight → cursor ~%62. View product tıklanmadı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Scan changer görmedi. <before-after> + .before-after__cursor. range yok; End %50'de kaldı. Drag %99 yaptı ama capture-interaction drag yok — ArrowRight. View product PDP'ye gider.",
   "capture": {
     "url": "https://prestige-theme-allure.myshopify.com/",
     "viewports": [
@@ -21,8 +134,8 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-13T18:40:19.059Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T13:30:00.000Z",
     "mode": "section"
   }
 }

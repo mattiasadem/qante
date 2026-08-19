@@ -12,8 +12,43 @@
     "evidence/prestige/allure/contact/lead-capture-form.768.png",
     "evidence/prestige/allure/contact/lead-capture-form.1440.png"
   ],
-  "notlar": "NEED ASSISTANCE iletişim formu.",
+  "notlar": "NEED ASSISTANCE iletişim formu. Interact: Subject→Order. Name/email/message ve Send yok.",
   "delta": "",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://prestige-theme-allure.myshopify.com/pages/contact",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15179705581631__contact-form",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Subject placeholder. Name/E-mail/Message boş."
+    },
+    {
+      "state": "changed",
+      "action": "select",
+      "selector": "#shopify-section-template--15179705581631__contact-form select[name='contact[Subject]']",
+      "value": "Order",
+      "capture": true,
+      "etiket": "konu-order",
+      "not": "Subject=Order. PII alanları boş; Send tıklanmadı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Name / E-mail / Message PII — doldurulmadı, form gönderilmedi. FAQ altı formda Subject yok.",
   "capture": {
     "url": "https://prestige-theme-allure.myshopify.com/pages/contact",
     "viewports": [
@@ -21,8 +56,8 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-13T19:27:49.123Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T13:30:00.000Z",
     "mode": "section"
   }
 }
