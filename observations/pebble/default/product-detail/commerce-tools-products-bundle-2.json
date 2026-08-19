@@ -8,12 +8,45 @@
   "selector": "#shopify-section-template--20816638607498__products_combine_UJYhfq",
   "evidenceSlug": "commerce-tools-products-bundle-2",
   "evidence": [
-    "evidence/pebble/default/product-detail/commerce-tools-products-bundle-2.375.png",
-    "evidence/pebble/default/product-detail/commerce-tools-products-bundle-2.768.png",
-    "evidence/pebble/default/product-detail/commerce-tools-products-bundle-2.1440.png"
+    "evidence/pebble/default/product-detail/commerce-tools-products-bundle-2.initial.ilk-hal.375.png",
+    "evidence/pebble/default/product-detail/commerce-tools-products-bundle-2.initial.ilk-hal.768.png",
+    "evidence/pebble/default/product-detail/commerce-tools-products-bundle-2.initial.ilk-hal.1440.png"
   ],
   "notlar": "Outfit Inspiration — current Logo Polo Red + Backpacks Kids / Cuffed Shorts / Canvas Sneaker.",
   "delta": "products_combine (complete the look). Bundle reuse + delta.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pebble-little.myshopify.com/products/logo-polo-red",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20816638607498__products_combine_UJYhfq",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Current item Logo Polo Red $45. Outfit Inspiration 1/2 — Backpacks Kids $22 + Cuffed Shorts Khaki $45."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Logo Polo Red Current item $45. Outfit Inspiration: Backpacks Kids $22 (sale $32) + Cuffed Shorts Khaki $45. Carousel 1/2, bag ATC ikonları görünür."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Scan quick-add var; Backpacks Kids bag ikonu initial'da da görünür — hover sonrası section crop farkı yok. Choose options quick-add drawer leftover."
+    },
+    {
+      "state": "changed",
+      "sebep": "Color swatch radio gizli; outfit slider'da swatch tıklaması görsel fark üretmedi."
+    }
+  ],
+  "interactionNote": "products_combine complete-the-look. Quick-add drawer interact listesinde yok.",
   "capture": {
     "url": "https://pebble-little.myshopify.com/products/logo-polo-red",
     "viewports": [
@@ -22,7 +55,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T11:02:31.676Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:50:00.000Z"
   }
 }
