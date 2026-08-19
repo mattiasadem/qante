@@ -22,7 +22,42 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T20:39:32.053Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:02:07.604Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://palo-alto-theme-main.myshopify.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21945700745404__accordion-section-4",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Returns & Refunds — beş soru kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Accordion--accordion_block_4_0 button[aria-controls='Accordions-item--0-template--21945700745404__accordion-section-4']",
+      "value": 900,
+      "capture": true,
+      "etiket": "iade-acik",
+      "not": "Do you offer refunds? — cevap açık"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Returns & Refunds başlığı. Beş soru kapalı (+).",
+    "changed": "Do you offer refunds? açık (−). Cevap: Yes, we offer full and partial refunds…"
+  },
+  "missingStates": [],
+  "interactionNote": "accordion-section-4 Returns & Refunds."
 }
