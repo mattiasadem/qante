@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--24036029202741__before_after_n3NNLg",
   "evidenceSlug": "before-after-slider",
   "evidence": [
+    "evidence/stretch/sand/home/before-after-slider.1440.png",
     "evidence/stretch/sand/home/before-after-slider.375.png",
     "evidence/stretch/sand/home/before-after-slider.768.png",
-    "evidence/stretch/sand/home/before-after-slider.1440.png"
+    "evidence/stretch/sand/home/before-after-slider.changed.sola-suruklendi.1440.png",
+    "evidence/stretch/sand/home/before-after-slider.changed.sola-suruklendi.375.png",
+    "evidence/stretch/sand/home/before-after-slider.changed.sola-suruklendi.768.png",
+    "evidence/stretch/sand/home/before-after-slider.initial.ilk-hal.1440.png",
+    "evidence/stretch/sand/home/before-after-slider.initial.ilk-hal.375.png",
+    "evidence/stretch/sand/home/before-after-slider.initial.ilk-hal.768.png"
   ],
   "notlar": "Skin problem / unifying serum.",
   "delta": "",
@@ -22,8 +28,43 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-14T23:16:43.971Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:08:48.431Z"
   },
-  "interactionNote": "Sürüklenmedi. Form/kupon yok."
+  "interactionNote": "Skin problem slider. Sürükleme kolu pct:25 sola — changed kanıtlandı.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://stretch-theme-sand.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24036029202741__before_after_n3NNLg",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Skin problem / unifying serum, kol ortada."
+    },
+    {
+      "state": "changed",
+      "action": "drag",
+      "selector": "#shopify-section-template--24036029202741__before_after_n3NNLg .before-after__cursor",
+      "value": "pct:25",
+      "dragContainer": "#shopify-section-template--24036029202741__before_after_n3NNLg .before-after",
+      "capture": true,
+      "etiket": "sola-suruklendi",
+      "not": "Kolu sola — after alanı genişler."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Skin problem / unifying serum, kol ortada.",
+    "changed": "Kol sola, after serum görseli genişledi."
+  }
 }
