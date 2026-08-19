@@ -1,0 +1,17 @@
+{
+  "id": "app-payments-afterpay-osm",
+  "kategori": "payments",
+  "varyant": "afterpay-osm",
+  "scope": "in-flow",
+  "amac": "Ürün ve sepet sayfalarında Afterpay taksit bilgisini göstererek dönüşüm engelini azaltır.",
+  "yuzey": ["bnpl_messaging"],
+  "entegrasyon": ["app-block"],
+  "dataBindings": [
+    { "name": "urun", "source": "DataSource.product" },
+    { "name": "sepet", "source": "DataSource.cart" }
+  ],
+  "actions": ["yok"],
+  "hookNoktalari": ["mount:buyBox.after", "mount:cartDrawer.footer"],
+  "bagimliliklar": ["product-info-main", "global-cart-drawer"],
+  "ikasKarsilik": "yok"
+}

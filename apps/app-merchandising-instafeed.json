@@ -1,0 +1,17 @@
+{
+  "id": "app-merchandising-instafeed",
+  "kategori": "merchandising",
+  "varyant": "instafeed",
+  "scope": "in-flow",
+  "amac": "Instagram gönderilerini mağaza vitrininde UGC galeri olarak gösterir.",
+  "yuzey": ["ugc_gallery"],
+  "entegrasyon": ["app-block", "app-embed"],
+  "dataBindings": [
+    { "name": "urunler", "source": "DataSource.productList", "params": { "kaynak": "manual", "limit": 12 } }
+  ],
+  "actions": ["navigate"],
+  "hookNoktalari": ["mount:section.after"],
+  "bagimliliklar": [],
+  "ikasKarsilik": "yok",
+  "_note": "kategori merchandising — sosyal feed vitrin bloğu; reviews UGC ile örtüşse de feed odaklı"
+}

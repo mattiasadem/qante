@@ -1,0 +1,18 @@
+{
+  "id": "app-merchandising-rebuy",
+  "kategori": "merchandising",
+  "varyant": "rebuy",
+  "scope": "overlay",
+  "amac": "Sepet çekmecesi ve ürün sayfalarında kişiselleştirilmiş upsell ve cross-sell önerileri sunar.",
+  "yuzey": ["cart_drawer", "product_recs"],
+  "entegrasyon": ["app-embed", "app-block"],
+  "dataBindings": [
+    { "name": "sepet", "source": "DataSource.cart" },
+    { "name": "oneriler", "source": "DataSource.productList", "params": { "kaynak": "recommended", "limit": 4 } },
+    { "name": "urun", "source": "DataSource.product" }
+  ],
+  "actions": ["emit:cart.add"],
+  "hookNoktalari": ["mount:cartDrawer.belowItems", "mount:buyBox.after"],
+  "bagimliliklar": ["global-cart-drawer", "product-info-main"],
+  "ikasKarsilik": "cart Drawer + Kabile Sepet+"
+}

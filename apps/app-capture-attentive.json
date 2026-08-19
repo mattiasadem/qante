@@ -1,0 +1,16 @@
+{
+  "id": "app-capture-attentive",
+  "kategori": "capture",
+  "varyant": "attentive",
+  "scope": "overlay",
+  "amac": "SMS pazarlama için onay popup ve gömülü formlarla abone yakalama sağlar.",
+  "yuzey": ["popup_modal", "embedded_form"],
+  "entegrasyon": ["app-embed"],
+  "dataBindings": [
+    { "name": "musteri", "source": "DataSource.customer" }
+  ],
+  "actions": ["emit:newsletter.subscribe"],
+  "hookNoktalari": ["mount:footer.before"],
+  "bagimliliklar": ["lead-capture-newsletter-band"],
+  "ikasKarsilik": "yok"
+}

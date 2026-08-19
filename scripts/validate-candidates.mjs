@@ -15,8 +15,9 @@ import { loadCandidates } from "../viewer/lib/candidates.mjs";
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
 const EXPECT = {
-  "Shopify temalar": { total: 70, done: 41, inProgress: 0, queue: 29 },
+  "Shopify temalar": { total: 70, done: 58, inProgress: 0, queue: 12 },
   "DTC-69": { total: 69, done: 66, inProgress: 3, queue: 0 },
+  "Shopify appler": { total: 28, done: 28, inProgress: 0, queue: 0 },
 };
 
 function summarizeGroup(rows) {

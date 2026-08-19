@@ -1,0 +1,16 @@
+{
+  "id": "app-capture-mailchimp",
+  "kategori": "capture",
+  "varyant": "mailchimp",
+  "scope": "overlay",
+  "amac": "Mailchimp listesine abone toplamak için sınırlı onsite popup ve gömülü formlar sağlar.",
+  "yuzey": ["popup_modal", "embedded_form"],
+  "entegrasyon": ["app-embed"],
+  "dataBindings": [
+    { "name": "musteri", "source": "DataSource.customer" }
+  ],
+  "actions": ["emit:newsletter.subscribe"],
+  "hookNoktalari": ["mount:newsletter.before"],
+  "bagimliliklar": ["lead-capture-newsletter-band"],
+  "ikasKarsilik": "yok"
+}

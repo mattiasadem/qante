@@ -1,0 +1,17 @@
+{
+  "id": "app-reviews-stamped",
+  "kategori": "reviews",
+  "varyant": "stamped",
+  "scope": "in-flow",
+  "amac": "Yorum ve puanları vitrine yerleştirir; isteğe bağlı sadakat launcher ile birleştirilebilir.",
+  "yuzey": ["review_stars", "review_widget", "review_carousel", "ugc_gallery", "loyalty_launcher"],
+  "entegrasyon": ["app-block", "app-embed"],
+  "dataBindings": [
+    { "name": "urun", "source": "DataSource.product" },
+    { "name": "musteri", "source": "DataSource.customer" }
+  ],
+  "actions": ["yok"],
+  "hookNoktalari": ["mount:buyBox.after", "mount:productCard.badge"],
+  "bagimliliklar": ["product-info-main"],
+  "ikasKarsilik": "yok"
+}

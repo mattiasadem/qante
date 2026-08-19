@@ -1,0 +1,18 @@
+{
+  "id": "app-loyalty-growave",
+  "kategori": "loyalty",
+  "varyant": "growave",
+  "scope": "in-flow",
+  "amac": "Sadakat, favori listesi ve yorumları tek pakette vitrine entegre eder.",
+  "yuzey": ["loyalty_launcher", "loyalty_points_badge", "loyalty_page", "wishlist_button", "review_stars", "review_widget"],
+  "entegrasyon": ["app-embed", "app-block"],
+  "dataBindings": [
+    { "name": "musteri", "source": "DataSource.customer" },
+    { "name": "urun", "source": "DataSource.product" }
+  ],
+  "actions": ["yok"],
+  "hookNoktalari": ["mount:buyBox.after", "mount:productCard.badge", "mount:header.utility"],
+  "bagimliliklar": ["product-info-main"],
+  "ikasKarsilik": "yok",
+  "_note": "Suite: loyalty + wishlist + reviews — baskın kategori loyalty"
+}

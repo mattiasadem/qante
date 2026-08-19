@@ -1,0 +1,16 @@
+{
+  "id": "app-capture-privy",
+  "kategori": "capture",
+  "varyant": "privy",
+  "scope": "overlay",
+  "amac": "Popup, çark ve duyuru şeridi ile ziyaretçi e-posta listesi ve kampanya dönüşümü yakalar.",
+  "yuzey": ["popup_modal", "spin_wheel", "announcement_bar", "flyout"],
+  "entegrasyon": ["app-embed"],
+  "dataBindings": [
+    { "name": "musteri", "source": "DataSource.customer" }
+  ],
+  "actions": ["emit:newsletter.subscribe"],
+  "hookNoktalari": ["mount:announcement.before", "mount:footer.before"],
+  "bagimliliklar": ["promo-announcement-bar", "lead-capture-newsletter-band"],
+  "ikasKarsilik": "yok"
+}

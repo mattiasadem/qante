@@ -1,0 +1,17 @@
+{
+  "id": "app-reviews-judgeme",
+  "kategori": "reviews",
+  "varyant": "judgeme",
+  "scope": "in-flow",
+  "amac": "Ürün ve mağaza güvenini artırmak için müşteri yorumlarını ve puanlarını vitrine taşır.",
+  "yuzey": ["review_stars", "review_widget", "review_carousel", "ugc_gallery", "review_floating_tab"],
+  "entegrasyon": ["app-block", "app-embed"],
+  "dataBindings": [
+    { "name": "urun", "source": "DataSource.product" },
+    { "name": "urunler", "source": "DataSource.productList", "params": { "kaynak": "manual", "limit": 12 } }
+  ],
+  "actions": ["yok"],
+  "hookNoktalari": ["mount:buyBox.after", "mount:productCard.badge", "mount:section.after"],
+  "bagimliliklar": ["product-info-main"],
+  "ikasKarsilik": "native reviews + Lehte"
+}

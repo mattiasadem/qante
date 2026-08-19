@@ -1,0 +1,16 @@
+{
+  "id": "app-bar-hextom-fsb",
+  "kategori": "bar",
+  "varyant": "hextom-fsb",
+  "scope": "overlay",
+  "amac": "Ücretsiz kargo eşiğini görünür kılarak sepet değerini artırmayı hedefler.",
+  "yuzey": ["free_shipping_bar"],
+  "entegrasyon": ["app-embed"],
+  "dataBindings": [
+    { "name": "sepet", "source": "DataSource.cart" }
+  ],
+  "actions": ["listen:cart.updated"],
+  "hookNoktalari": ["mount:announcement.after", "mount:cartDrawer.aboveItems"],
+  "bagimliliklar": ["global-cart-drawer"],
+  "ikasKarsilik": "Barlio"
+}

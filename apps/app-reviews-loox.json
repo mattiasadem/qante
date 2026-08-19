@@ -1,0 +1,16 @@
+{
+  "id": "app-reviews-loox",
+  "kategori": "reviews",
+  "varyant": "loox",
+  "scope": "in-flow",
+  "amac": "Fotoğraf ve video tabanlı müşteri UGC'sini ürün sayfalarında öne çıkarır.",
+  "yuzey": ["review_stars", "review_widget", "ugc_gallery", "review_carousel"],
+  "entegrasyon": ["app-block", "app-embed"],
+  "dataBindings": [
+    { "name": "urun", "source": "DataSource.product" }
+  ],
+  "actions": ["yok"],
+  "hookNoktalari": ["mount:gallery.after", "mount:buyBox.after"],
+  "bagimliliklar": ["product-info-main"],
+  "ikasKarsilik": "yok"
+}

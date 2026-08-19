@@ -1,0 +1,18 @@
+{
+  "id": "app-payments-klarna-osm",
+  "kategori": "payments",
+  "varyant": "klarna-osm",
+  "scope": "in-flow",
+  "amac": "Ürün ve sepet sayfalarında Klarna taksit mesajlaşması ile ödeme güvenini artırır.",
+  "yuzey": ["bnpl_messaging"],
+  "entegrasyon": ["app-block"],
+  "dataBindings": [
+    { "name": "urun", "source": "DataSource.product" },
+    { "name": "sepet", "source": "DataSource.cart" },
+    { "name": "odemeYontemleri", "source": "DataSource.paymentMethods" }
+  ],
+  "actions": ["yok"],
+  "hookNoktalari": ["mount:buyBox.after", "mount:cartDrawer.footer"],
+  "bagimliliklar": ["product-info-main", "global-cart-drawer"],
+  "ikasKarsilik": "native Klarna payment + badge"
+}
