@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--21945700614332__section_testimonials_with_images_xHFcKf",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
+    "evidence/palo-alto/default/home/testimonial-quote-carousel.1440.png",
     "evidence/palo-alto/default/home/testimonial-quote-carousel.375.png",
     "evidence/palo-alto/default/home/testimonial-quote-carousel.768.png",
-    "evidence/palo-alto/default/home/testimonial-quote-carousel.1440.png"
+    "evidence/palo-alto/default/home/testimonial-quote-carousel.changed.sonraki-slide.1440.png",
+    "evidence/palo-alto/default/home/testimonial-quote-carousel.changed.sonraki-slide.375.png",
+    "evidence/palo-alto/default/home/testimonial-quote-carousel.changed.sonraki-slide.768.png",
+    "evidence/palo-alto/default/home/testimonial-quote-carousel.initial.ilk-hal.1440.png",
+    "evidence/palo-alto/default/home/testimonial-quote-carousel.initial.ilk-hal.375.png",
+    "evidence/palo-alto/default/home/testimonial-quote-carousel.initial.ilk-hal.768.png"
   ],
   "notlar": "10,000+ 5-star reviews · Fave dress + alıntı. 618px. Görselli testimonial.",
   "delta": "Tema tipi testimonials. Kartta ürün/görsel var.",
@@ -23,7 +29,7 @@
     ],
     "mode": "section",
     "method": "interaction-steps",
-    "updatedAt": "2026-08-19T16:02:07.605Z"
+    "updatedAt": "2026-08-19T16:14:33.852Z"
   },
   "interactionStates": [
     "initial",
@@ -46,9 +52,26 @@
     },
     {
       "state": "changed",
+      "action": "drag",
+      "selector": "#shopify-section-template--21945700614332__section_testimonials_with_images_xHFcKf .flickity-viewport",
+      "value": "-200,0",
+      "viewports": [
+        "375"
+      ],
+      "wait": 1200,
+      "capture": true,
+      "etiket": "sonraki-slide",
+      "not": "375 swipe — dot 2 görsel slayt (Next ok yok)"
+    },
+    {
+      "state": "changed",
       "action": "hover",
       "selector": "#shopify-section-template--21945700614332__section_testimonials_with_images_xHFcKf",
       "value": 400,
+      "viewports": [
+        "768",
+        "1440"
+      ],
       "capture": false,
       "not": "Flickity okları görünür"
     },
@@ -57,6 +80,10 @@
       "action": "click",
       "selector": "#shopify-section-template--21945700614332__section_testimonials_with_images_xHFcKf [aria-label='Next']",
       "value": 1200,
+      "viewports": [
+        "768",
+        "1440"
+      ],
       "capture": true,
       "etiket": "sonraki-slide",
       "not": "Dot 2 — görsel slayt (alıntı değil)"
@@ -67,5 +94,5 @@
     "changed": "Next → dot 2: tam ekran model görseli slaytı (alıntı kartı değil). Prev/Next okları görünür."
   },
   "missingStates": [],
-  "interactionNote": "Scan changer yok; yoklama flickity Next 40×40. Quote ↔ image alternasyon."
+  "interactionNote": "375: Next ok 0×0 — flickity-viewport swipe. 768/1440: hover + Next. Quote ↔ image alternasyon."
 }
