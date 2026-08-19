@@ -5,8 +5,8 @@
 *Tema (görülen):* **[Crave] Theme store demo (latest)** · `schema_name`: Dawn · `schema_version`: 2.5.0 · `theme_store_id`: **null** (beklenen 1382 canlıda yok) · theme id `139772461290` · role `main`  
 *Shop:* `theme-crave-demo.myshopify.com` · Shopify first-party (Dawn 2.5 iskeleti)
 
-**Durum:** Mod A walk kapandı — 39 obs · 143 PNG · resmi 3vp + interact piksel değişenlerde · leftover kayıtlı  
-**PR:** https://github.com/mattiasadem/qante/pull/133 (draft · **main'e merge yok**)
+**Durum:** ✅ Mod A walk + resmi 3vp + interact + CRO leftover  
+**PR:** draft · **main'e merge yok**
 
 ---
 
@@ -21,7 +21,21 @@
 | Validator | `npm run validate` → 65 temiz · 0 error · 0 warn |
 
 **Kapsam satırı:**  
-`Crave · default · [Crave] Theme store demo (latest) · Dawn 2.5.0 · theme_store_id null · 11 şablon · 39 obs · 143 PNG · 0 yeni şema · leftover: 404 / news / page-template kopyası / cart-notification`
+`Crave · default · [Crave] Theme store demo (latest) · Dawn 2.5.0 · theme_store_id null · 11 şablon · 39 obs · 152 PNG · 0 yeni şema · CRO interact: testimonial + newsletter + contact form · leftover: 404 / news / cart-notification / 7 CRO şema yok`
+
+---
+
+## CRO interact (bu tur)
+
+| schemaId | States | Kanıt |
+|---|---|---|
+| `testimonial-quote-carousel` | initial (changed missing: statik multicolumn) | 3 PNG (ilk-hal × 3vp) |
+| `lead-capture-newsletter-band` | initial (input missing: PII) | 3 PNG (ilk-hal × 3vp) |
+| `lead-capture-form` | initial (input missing: PII) | 3 PNG (bos-form × 3vp) |
+
+**CRO disk şemaları observation'da yok (çekilmedi):** before-after-slider, commerce-tools-products-bundle, promo-banner-countdown, faq-collapsible-tabs, comparison-quick-table, product-finder-quiz, media-shop-the-feed, media-scrolling-gallery.
+
+**Yakın ama farklı schemaId:** announcement bar → `promo-announcement-bar` (timer/marquee yok); footer e-posta → `footer-columns-newsletter` (submit yok); sticky header → `navigation-header-mega` (interact walk'ta).
 
 ---
 
@@ -90,3 +104,4 @@
 - [x] Cart empty + filled + qty
 - [x] Crewneck Size changed
 - [x] Content templates 3vp
+- [x] CRO interact: testimonial-quote-carousel · lead-capture-newsletter-band · lead-capture-form

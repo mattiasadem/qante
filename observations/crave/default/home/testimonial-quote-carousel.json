@@ -8,12 +8,39 @@
   "selector": "#shopify-section-template--17357908574442__multi_column",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
+    "evidence/crave/default/home/testimonial-quote-carousel.1440.png",
     "evidence/crave/default/home/testimonial-quote-carousel.375.png",
     "evidence/crave/default/home/testimonial-quote-carousel.768.png",
-    "evidence/crave/default/home/testimonial-quote-carousel.1440.png"
+    "evidence/crave/default/home/testimonial-quote-carousel.initial.ilk-hal.1440.png",
+    "evidence/crave/default/home/testimonial-quote-carousel.initial.ilk-hal.375.png",
+    "evidence/crave/default/home/testimonial-quote-carousel.initial.ilk-hal.768.png"
   ],
   "notlar": "3 alıntı + yayın logosu: Vogue / Food network / Food & Wine. Ok/nokta yok.",
   "delta": "Dawn multicolumn; carousel değil, statik 3 kolon. Logo = yayın markası (avatar değil).",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-crave-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17357908574442__multi_column",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "3 statik kolon — Vogue / Food network / Food & Wine logoları"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Üç alıntı yan yana (1440) / stack (375): \"It's completely transformed home cooking.\" + Vogue; \"The best way to upgrade your pantry.\" + Food network; \"The only way to cook.\" + Food & Wine. Ok, nokta veya carousel kontrolü yok."
+  },
+  "missingStates": [],
+  "interactionNote": "testimonial-quote-carousel şeması carousel bekler; Crave Dawn multicolumn. Şema dokunulmadı.",
   "capture": {
     "url": "https://theme-crave-demo.myshopify.com/",
     "viewports": [
@@ -22,7 +49,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T17:07:37.598Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:01:46.878Z"
   }
 }
