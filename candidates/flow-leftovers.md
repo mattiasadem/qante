@@ -202,6 +202,46 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: flow-cro-testimonial-auto-scroll  
+Gerekçe: Home `social_proof_vnext` dikey otomatik kaydırma — ok/dot yok. `testimonial-quote-carousel` reuse; changed state yok.  
+Örnekler: home Loved by thousands  
+Öneri: leftover — ticker ≠ carousel  
+Karar: onay bekliyor
+
+---
+
+ADAY: flow-cro-testimonial-pdp-static  
+Gerekçe: PDP Hear it from them · Helen Smith + John Locke statik yığın; kaydırma kontrolü yok.  
+Örnekler: `/products/almond-banana`  
+Öneri: leftover — çoklu alıntı statik  
+Karar: onay bekliyor
+
+---
+
+ADAY: flow-cro-media-feed-375  
+Gerekçe: Shoppable videos Next slide 375'te 0×0 (small-hide). changed yalnız 768/1440.  
+Örnekler: home shoppable_videos_imL3eC  
+Öneri: leftover — mobil ok yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: flow-cro-gallery-hover-375  
+Gerekçe: FAQ Instagram grid 375'te caption overlay sürekli görünür; hover = initial.  
+Örnekler: `/pages/faqs` gallery_slideshow  
+Öneri: leftover — mobil hover anlamsız  
+Karar: onay bekliyor
+
+---
+
+ADAY: flow-cro-bundle-atc-no-ui-delta  
+Gerekçe: Add set to cart 3 satır ekler (`/cart.js` item_count 3) ama section görünümü değişmedi — filled state yok.  
+Örnekler: home bundled_products_vnext  
+Öneri: leftover — ATC feedback drawer'da  
+Karar: onay bekliyor
+
+---
+
 ADAY: flow-taxonomy-404  
 Gerekçe: 404 `page-content-main` reuse; `pageType` 404 listede yok.  
 Örnekler: `/pages/this-does-not-exist-xyz-flow`  

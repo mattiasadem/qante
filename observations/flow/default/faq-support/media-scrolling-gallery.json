@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--20936734376006__gallery_slideshow_YhhWHm",
   "evidenceSlug": "media-scrolling-gallery",
   "evidence": [
+    "evidence/flow/default/faq-support/media-scrolling-gallery.1440.png",
     "evidence/flow/default/faq-support/media-scrolling-gallery.375.png",
     "evidence/flow/default/faq-support/media-scrolling-gallery.768.png",
-    "evidence/flow/default/faq-support/media-scrolling-gallery.1440.png"
+    "evidence/flow/default/faq-support/media-scrolling-gallery.hover.overlay-gorunur.1440.png",
+    "evidence/flow/default/faq-support/media-scrolling-gallery.hover.overlay-gorunur.375.png",
+    "evidence/flow/default/faq-support/media-scrolling-gallery.hover.overlay-gorunur.768.png",
+    "evidence/flow/default/faq-support/media-scrolling-gallery.initial.ilk-hal.1440.png",
+    "evidence/flow/default/faq-support/media-scrolling-gallery.initial.ilk-hal.375.png",
+    "evidence/flow/default/faq-support/media-scrolling-gallery.initial.ilk-hal.768.png"
   ],
   "notlar": "We're on Instagram @flow_smoothies. gallery_slideshow.",
   "delta": "Shopify.theme.name `Flow R1 — design base` · id 150685581382 · schema_name Flow · schema_version 42.0.0 · theme_store_id null · role main · shop flow-queenstown.myshopify.com. Official walk eight-nourish-demo.myshopify.com (Nourish). flow-demo.myshopify.com = Debut, kullanılmadı. flow-theme.myshopify.com password, kullanılmadı.",
@@ -22,7 +28,48 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T20:42:56.758Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:52:43.551Z"
+  },
+  "interactionStates": [
+    "initial",
+    "hover"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eight-nourish-demo.myshopify.com/pages/faqs",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20936734376006__gallery_slideshow_YhhWHm",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Instagram grid — overlay gizli"
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#shopify-section-template--20936734376006__gallery_slideshow_YhhWHm .content-grid-item",
+      "value": 600,
+      "capture": true,
+      "etiket": "overlay-gorunur",
+      "not": "İlk kare hover — caption opacity 0→1"
+    }
+  ],
+  "stateFindings": {
+    "initial": "We're on Instagram @flow_smoothies · 4×2 grid smoothie foto. 1440/768 caption overlay opacity 0.",
+    "hover": "1440/768 ilk grid hover — Smooth / Strawberry and Banana caption opacity 1. 375 overlay zaten görünür."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "375 content-grid overlay always-on — hover kare initial ile aynı."
+    }
+  ],
+  "interactionNote": "content-grid--hover; scan 0 opener. 375 mobil grid overlay sürekli görünür.",
+  "captureMode": "section"
 }

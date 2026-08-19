@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--20936734081094__1645633383c94b2bb2",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/flow/default/contact/faq-collapsible-tabs.1440.png",
     "evidence/flow/default/contact/faq-collapsible-tabs.375.png",
     "evidence/flow/default/contact/faq-collapsible-tabs.768.png",
-    "evidence/flow/default/contact/faq-collapsible-tabs.1440.png"
+    "evidence/flow/default/contact/faq-collapsible-tabs.changed.kargo-sorusu-acik.1440.png",
+    "evidence/flow/default/contact/faq-collapsible-tabs.changed.kargo-sorusu-acik.375.png",
+    "evidence/flow/default/contact/faq-collapsible-tabs.changed.kargo-sorusu-acik.768.png",
+    "evidence/flow/default/contact/faq-collapsible-tabs.initial.ilk-hal.1440.png",
+    "evidence/flow/default/contact/faq-collapsible-tabs.initial.ilk-hal.375.png",
+    "evidence/flow/default/contact/faq-collapsible-tabs.initial.ilk-hal.768.png"
   ],
   "notlar": "Frequently asked questions: Do you ship overseas? How long will it take… Can I return… Can I get my product personal…",
   "delta": "Shopify.theme.name `Flow R1 — design base` · id 150685581382 · schema_name Flow · schema_version 42.0.0 · theme_store_id null · role main · shop flow-queenstown.myshopify.com. Official walk eight-nourish-demo.myshopify.com (Nourish). flow-demo.myshopify.com = Debut, kullanılmadı. flow-theme.myshopify.com password, kullanılmadı.",
@@ -22,7 +28,43 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T20:42:19.402Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:49:23.050Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eight-nourish-demo.myshopify.com/pages/contact-us",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20936734081094__1645633383c94b2bb2",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "FAQ accordion kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--20936734081094__1645633383c94b2bb2 collapsible-button",
+      "value": 900,
+      "capture": true,
+      "etiket": "kargo-sorusu-acik",
+      "not": "Do you ship overseas? açılır"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Frequently asked questions · Do you ship overseas? / How long… / Can I return… / Can I get personal… — hepsi kapalı.",
+    "changed": "Do you ship overseas? açık — cevap metni görünür. Diğer üç soru kapalı."
+  },
+  "missingStates": [],
+  "interactionNote": "Aynı collapsible-button pattern faq-support ile.",
+  "captureMode": "section"
 }
