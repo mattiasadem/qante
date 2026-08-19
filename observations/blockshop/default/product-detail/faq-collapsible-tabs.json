@@ -8,12 +8,66 @@
   "selector": "#shopify-section-template--17329881972791__ecdf9a28-b044-4c3e-b31c-766d12a713d0",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/blockshop/default/product-detail/faq-collapsible-tabs.1440.png",
     "evidence/blockshop/default/product-detail/faq-collapsible-tabs.375.png",
     "evidence/blockshop/default/product-detail/faq-collapsible-tabs.768.png",
-    "evidence/blockshop/default/product-detail/faq-collapsible-tabs.1440.png"
+    "evidence/blockshop/default/product-detail/faq-collapsible-tabs.changed.ilk-soru-acik.1440.png",
+    "evidence/blockshop/default/product-detail/faq-collapsible-tabs.changed.ilk-soru-acik.375.png",
+    "evidence/blockshop/default/product-detail/faq-collapsible-tabs.changed.ilk-soru-acik.768.png",
+    "evidence/blockshop/default/product-detail/faq-collapsible-tabs.initial.ilk-hal.1440.png",
+    "evidence/blockshop/default/product-detail/faq-collapsible-tabs.initial.ilk-hal.375.png",
+    "evidence/blockshop/default/product-detail/faq-collapsible-tabs.initial.ilk-hal.768.png"
   ],
   "notlar": "FAQS: organic/natural, fragrance, cruelty-free. Accordion kapalı başlıklar.",
-  "delta": "Shopify.theme.name `Copy of design [do not delete]` · id 134976438327 · schema_name Blockshop · schema_version 13.2.0 · theme_store_id null · role main · shop blockshop-theme-beauty.myshopify.com. PDP FAQ. Açılmadı (statik).",
+  "delta": "Shopify.theme.name `Copy of design [do not delete]` · id 134976438327 · schema_name Blockshop · schema_version 13.2.0 · theme_store_id null · role main · shop blockshop-theme-beauty.myshopify.com. PDP FAQ.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://blockshop-theme-beauty.myshopify.com/products/brightening-serum",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.layout--close[aria-label='close']",
+      "capture": false,
+      "not": "Glow Club kapat"
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17329881972791__ecdf9a28-b044-4c3e-b31c-766d12a713d0",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "FAQs kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--17329881972791__ecdf9a28-b044-4c3e-b31c-766d12a713d0 details > summary",
+      "value": 900,
+      "capture": true,
+      "etiket": "ilk-soru-acik",
+      "not": "Are your products organic/natural? açık"
+    }
+  ],
+  "stateFindings": {
+    "initial": "FAQS. 1440 iki kolon, 10 soru kapalı (+): organic/natural, fragrance, cruelty-free, sensitive, allergies | vegan, packaging, expiration, where made, return. 375 tek kolon.",
+    "changed": "Are your products organic/natural? açık (—). Yes, all our products are made with organic and natural ingredients… ethically sourced. Diğerleri +. 375/768/1440 aynı delta."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan hover/open önerdi — accordion click → changed. Glow Club settle. Şema emit:accordion.toggle duruyor.",
   "capture": {
     "url": "https://blockshop-theme-beauty.myshopify.com/products/brightening-serum",
     "viewports": [
@@ -22,7 +76,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T20:45:51.825Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T09:58:44.592Z"
   }
 }

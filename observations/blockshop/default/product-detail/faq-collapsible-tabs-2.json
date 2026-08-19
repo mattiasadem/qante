@@ -8,13 +8,67 @@
   "selector": "#shopify-section-template--17329881972791__78fe96ee-cd4c-4d7e-ba84-137f92201e73",
   "evidenceSlug": "faq-collapsible-tabs-2",
   "evidence": [
+    "evidence/blockshop/default/product-detail/faq-collapsible-tabs-2.1440.png",
     "evidence/blockshop/default/product-detail/faq-collapsible-tabs-2.375.png",
     "evidence/blockshop/default/product-detail/faq-collapsible-tabs-2.768.png",
-    "evidence/blockshop/default/product-detail/faq-collapsible-tabs-2.1440.png"
+    "evidence/blockshop/default/product-detail/faq-collapsible-tabs-2.changed.hyaluronic-acik.1440.png",
+    "evidence/blockshop/default/product-detail/faq-collapsible-tabs-2.changed.hyaluronic-acik.375.png",
+    "evidence/blockshop/default/product-detail/faq-collapsible-tabs-2.changed.hyaluronic-acik.768.png",
+    "evidence/blockshop/default/product-detail/faq-collapsible-tabs-2.initial.ilk-hal.1440.png",
+    "evidence/blockshop/default/product-detail/faq-collapsible-tabs-2.initial.ilk-hal.375.png",
+    "evidence/blockshop/default/product-detail/faq-collapsible-tabs-2.initial.ilk-hal.768.png"
   ],
   "notlar": "KEY INGREDIENTS accordion: HYALURONIC ACID / RETINOL / VITAMIN C / NIACINAMIDE / SALICYLIC ACID. Her satır +.",
   "delta": "Shopify.theme.name `Copy of design [do not delete]` · id 134976438327 · schema_name Blockshop · schema_version 13.2.0 · theme_store_id null · role main · shop blockshop-theme-beauty.myshopify.com. Kolon grid değil — accordion. PDP FAQ ayrı instance.",
   "prepareClick": "button.layout--close[aria-label='close']",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://blockshop-theme-beauty.myshopify.com/products/brightening-serum",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.layout--close[aria-label='close']",
+      "capture": false,
+      "not": "Glow Club kapat"
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17329881972791__78fe96ee-cd4c-4d7e-ba84-137f92201e73",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Key ingredients kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--17329881972791__78fe96ee-cd4c-4d7e-ba84-137f92201e73 details:has-text('Hyaluronic Acid') > summary",
+      "value": 900,
+      "capture": true,
+      "etiket": "hyaluronic-acik",
+      "not": "Hyaluronic Acid — yoklama 470→519 + humectant metni"
+    }
+  ],
+  "stateFindings": {
+    "initial": "KEY INGREDIENTS. Beş satır kapalı (+): Hyaluronic Acid / Retinol (Vitamin A) / Vitamin C / Niacinamide (Vitamin B3) / Salicylic Acid.",
+    "changed": "Hyaluronic Acid açık (—). A powerful humectant, hyaluronic acid attracts moisture… plump the skin… more supple. Diğerleri +. 375/768/1440 aynı delta."
+  },
+  "missingStates": [],
+  "interactionNote": "details id yok. :has-text('Hyaluronic Acid') unique. Glow Club close adımı. Şema emit:accordion.toggle duruyor.",
   "capture": {
     "url": "https://blockshop-theme-beauty.myshopify.com/products/brightening-serum",
     "viewports": [
@@ -23,8 +77,8 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T20:50:54.939Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T09:58:44.857Z",
     "prepareClick": "button.layout--close[aria-label='close']"
   }
 }

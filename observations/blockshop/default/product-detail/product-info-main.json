@@ -8,6 +8,9 @@
   "selector": "#shopify-section-template--17329881972791__main",
   "evidenceSlug": "product-info-main",
   "evidence": [
+    "evidence/blockshop/default/product-detail/product-info-main.changed.ingredients-acik.1440.png",
+    "evidence/blockshop/default/product-detail/product-info-main.changed.ingredients-acik.375.png",
+    "evidence/blockshop/default/product-detail/product-info-main.changed.ingredients-acik.768.png",
     "evidence/blockshop/default/product-detail/product-info-main.changed.size-200ml.1440.png",
     "evidence/blockshop/default/product-detail/product-info-main.changed.size-200ml.375.png",
     "evidence/blockshop/default/product-detail/product-info-main.changed.size-200ml.768.png",
@@ -56,14 +59,23 @@
       "capture": true,
       "etiket": "size-200ml",
       "not": "SIZE 200ML"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--17329881972791__main details:has-text('Ingredients') > summary",
+      "value": 900,
+      "capture": true,
+      "etiket": "ingredients-acik",
+      "not": "Buy-box Ingredients accordion — yoklama 1039→1146 + deeply exfoliates"
     }
   ],
   "stateFindings": {
-    "initial": "TIPTOE BRIGHTENING SERUM 70.00 CAD. SIZE 75ML kalın çerçeve, 200ML ince. HURRY ONLY 4 ITEMS LEFT. Şişe etiketi 75ML. ADD TO BAG + BUY IT NOW (tıklanmadı).",
-    "changed": "200ML kalın çerçeve. Fiyat 135.00 CAD. Stok çubuğu doluluk arttı. Şişe görseli hâlâ 75ML etiketli (foto değişmedi). 375/768/1440 aynı delta."
+    "initial": "TIPTOE BRIGHTENING SERUM 70.00 CAD. SIZE 75ML kalın çerçeve, 200ML ince. HURRY ONLY 4 ITEMS LEFT. Şişe etiketi 75ML. ADD TO BAG + BUY IT NOW (tıklanmadı). Ingredients / Customer results / Shipping + kapalı.",
+    "changed": "size-200ml: 200ML kalın çerçeve, 135.00 CAD; şişe hâlâ 75ML. ingredients-acik (200ML sonrası): Ingredients — Aloe Vera Juice…; Customer results / Shipping hâlâ +. Sticky ATC bar yok. 375/768/1440 aynı yön."
   },
   "missingStates": [],
-  "interactionNote": "Buy it now / checkout yok. 200ML fiyat değişti; galeri görseli değişmedi.",
+  "interactionNote": "Buy it now / checkout yok. 200ML fiyat değişti; galeri değişmedi. Accordion açık↔kapalı — yeni şema yok. Sticky ATC observation yok, icat edilmedi.",
   "capture": {
     "url": "https://blockshop-theme-beauty.myshopify.com/products/brightening-serum",
     "viewports": [
@@ -73,6 +85,6 @@
     ],
     "mode": "section",
     "method": "interaction-steps",
-    "updatedAt": "2026-08-17T20:52:26.537Z"
+    "updatedAt": "2026-08-19T10:00:59.591Z"
   }
 }

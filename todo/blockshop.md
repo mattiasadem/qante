@@ -8,7 +8,7 @@
 
 *Tema (vitrinde görülen, uydurulmadı):* `Shopify.theme.name` **Copy of design [do not delete]** · `id` `134976438327` · `schema_name` **Blockshop** · `schema_version` **13.2.0** · `theme_store_id` **null** · `role` `main` · shop `blockshop-theme-beauty.myshopify.com`
 
-**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti**  
+**Durum:** Mod A walk + resmi 3vp + interact + CRO leftover interact + validate  
 **PR:** https://github.com/mattiasadem/qante/pull/156 — **draft · main'e merge yok**
 
 ---
@@ -38,7 +38,11 @@
 | Mobile menu 375 | interact | [x] |
 | Mobile menu 768 | ⛔ hamburger 0×0 (sidebar) | leftover |
 | Cart drawer empty + filled + qty | interact 3vp | [x] |
-| PDP Brightening Serum 75ML→200ML | interact 3vp | [x] |
+| PDP Brightening Serum 75ML→200ML + Ingredients accordion | interact 3vp | [x] |
+| FAQ /pages/faqs + PDP FAQ + KEY INGREDIENTS | interact 3vp | [x] |
+| Reviews carousel 375 Next | interact | [x] |
+| BEST SELLERS 375 Next | interact | [x] |
+| logo_list slayt | ⛔ nokta tık Forbes kaldı | leftover |
 | PLP `/collections/all` | roster | [x] |
 | Collections index `/collections` | roster | [x] |
 | Search `/search?q=cream` | roster | [x] |
@@ -61,23 +65,23 @@
 | 3 | global-predictive-search | home | [x] | cream | reuse | [x] |
 | 4 | global-cart-drawer | home | [x] | boş+dolu+qty | reuse | [x] |
 | 5 | collection-nav-image-cards | home | [x] | SKINCARE/MAKEUP | reuse | [x] |
-| 6 | product-showcase-grid-featured | home | [x] | BEST SELLERS | reuse | [x] |
+| 6 | product-showcase-grid-featured | home | [x] | BEST SELLERS 375 1/6→2/6 | reuse | [x] |
 | 7 | editorial-rich-text | home | [x] | Avalon | reuse | [x] |
 | 8 | collection-nav-image-cards-2 | home | [x] | 3 hikâye | reuse | [x] |
-| 9 | social-proof-brand-logos | home | [x] | logo_list alıntı+logo | reuse | [x] |
+| 9 | social-proof-brand-logos | home | [x] | Forbes; slayt leftover | reuse | [x] |
 | 10 | editorial-image-with-text | home | [x] | Ritual | reuse | [x] |
 | 11 | trust-icon-row | home | [x] | kargo/iade | reuse | [x] |
 | 12 | collection-nav-cards | home | [x] | routine | reuse | [x] |
 | 13 | editorial-rich-text-2 | home | [x] | manifesto | reuse | [x] |
 | 14 | footer-columns-newsletter | home | [x] | submit yok | reuse | [x] |
-| 15 | product-info-main | product-detail | [x] | 75→200 | reuse | [x] |
-| 16 | faq-collapsible-tabs-2 | product-detail | [x] | KEY INGREDIENTS | reuse | [x] |
+| 15 | product-info-main | product-detail | [x] | 75→200 + Ingredients | reuse | [x] |
+| 16 | faq-collapsible-tabs-2 | product-detail | [x] | KEY INGREDIENTS opened | reuse | [x] |
 | 17 | editorial-image-with-text | product-detail | [x] | Glow Guide | reuse | [x] |
 | 18 | product-showcase-related | product-detail | [x] | Boost | reuse | [x] |
 | 19 | trust-icon-row | product-detail | [x] | icons_row | reuse | [x] |
-| 20 | faq-collapsible-tabs | product-detail | [x] | PDP FAQ | reuse | [x] |
+| 20 | faq-collapsible-tabs | product-detail | [x] | PDP FAQ opened | reuse | [x] |
 | 21 | media-shop-the-feed | product-detail | [x] | @YOUR.BRAND | reuse | [x] |
-| 22 | testimonial-quote-carousel | product-detail | [x] | journeys | reuse | [x] |
+| 22 | testimonial-quote-carousel | product-detail | [x] | 375 1/3→2/3 | reuse | [x] |
 | 23 | product-showcase-grid-plp | collection | [x] | all | reuse | [x] |
 | 24 | collection-nav-image-cards | collection | [x] | latest/best | reuse | [x] |
 | 25 | collection-nav-grid | collections | [x] | index | reuse | [x] |
@@ -89,7 +93,7 @@
 | 31 | editorial-rich-text-2 | about-brand | [x] | quote | reuse | [x] |
 | 32 | editorial-rich-text | contact | [x] | How can we help | reuse | [x] |
 | 33 | lead-capture-form | contact | [x] | submit yok | reuse | [x] |
-| 34 | faq-collapsible-tabs | faq-support | [x] | shipping | reuse | [x] |
+| 34 | faq-collapsible-tabs | faq-support | [x] | ship overseas opened | reuse | [x] |
 | 35 | editorial-rich-text | faq-support | [x] | further | reuse | [x] |
 | 36 | blog-list-main | blog-list | [x] | news | reuse | [x] |
 | 37 | blog-post-main | blog-post | [x] | future-tones | reuse | [x] |
@@ -106,7 +110,13 @@
 | global-menu-drawer | open | [x] 375; 768 leftover |
 | global-cart-drawer | initial / filled / changed | [x] boş → Serum $70 qty1 → qty2 $140 + free shipping |
 | cart-page-main | initial / filled / changed | [x] aynı delta; 375 empty + qty resmi |
-| product-info-main | initial / changed | [x] 75ML $70 → 200ML $135; şişe foto 75ML kaldı |
+| product-info-main | initial / changed | [x] 75ML $70 → 200ML $135; Ingredients accordion Aloe Vera…; şişe 75ML; sticky ATC yok |
+| faq-collapsible-tabs (faq-support) | initial / changed | [x] Do you ship overseas? açık — we ship all over the world |
+| faq-collapsible-tabs (PDP) | initial / changed | [x] organic/natural açık — organic and natural ingredients |
+| faq-collapsible-tabs-2 (KEY INGREDIENTS) | initial / changed | [x] Hyaluronic Acid — humectant / plump |
+| testimonial-quote-carousel | initial / changed | [x] 375 1/3→2/3 three months; 768/1440 ok 0×0 |
+| product-showcase-grid-featured | initial / changed | [x] 375 1/6 Blush → 2/6 Concealer; 768/1440 ok 0×0 |
+| social-proof-brand-logos | initial | [x] Forbes alıntı. changed yok (nokta tık slayt değiştirmedi) |
 
 ---
 
@@ -120,4 +130,6 @@
 
 - [x] Statik 3vp
 - [x] Interact 3vp
+- [x] CRO leftover: FAQ / reviews / featured slider / PDP accordion
+- [x] PNG bak → stateFindings
 - [x] `npm run validate` 0 error
