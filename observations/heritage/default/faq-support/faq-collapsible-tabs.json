@@ -12,8 +12,41 @@
     "evidence/heritage/default/faq-support/faq-collapsible-tabs.768.png",
     "evidence/heritage/default/faq-support/faq-collapsible-tabs.1440.png"
   ],
-  "notlar": "FAQ. Return / final sale / when order / where made / shipping. details + accordion-custom host var.",
-  "delta": "Horizon main-page Q&A. /pages/faq-page 404.",
+  "notlar": "FAQ. Beş soru-cevap rte-formatter içinde düz metin. details / accordion-custom yok.",
+  "delta": "Horizon main-page Q&A (page-content). /pages/faq-page 404. Accordion değil — changed zorlanmadı.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-heritage-demo.myshopify.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20430037057590__main",
+      "capture": true,
+      "etiket": "rte-duz",
+      "not": "Beş soru-cevap hepsi görünür. Summary/accordion yok — tıklama yok."
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Scan 0 changer. Probe: details/accordion yok; rte-formatter p+strong. Accordion tık yok."
+    }
+  ],
+  "interactionNote": "İlk envanter 'details + accordion-custom' dedi; interact DOM'da rte-formatter gördü. Şema değişmedi — boş↔kapalı accordion yok.",
   "capture": {
     "url": "https://theme-heritage-demo.myshopify.com/pages/faq",
     "viewports": [

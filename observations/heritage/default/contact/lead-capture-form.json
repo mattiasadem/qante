@@ -13,7 +13,35 @@
     "evidence/heritage/default/contact/lead-capture-form.1440.png"
   ],
   "notlar": "Name, Email*, Phone, Comment, Submit. Gönderilmedi.",
-  "delta": "PII stop — Submit yok.",
+  "delta": "PII stop — Submit yok. Fill yok.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-heritage-demo.myshopify.com/pages/contact",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20430036860982__form",
+      "capture": true,
+      "etiket": "bos-form",
+      "not": "PII — Name/Email/Phone/Comment doldurulmadı, Submit tıklanmadı"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "PII stop: fill/submit yok. input/filled zorlanmadı. Scan 4 input (name/email/tel/body).",
   "capture": {
     "url": "https://theme-heritage-demo.myshopify.com/pages/contact",
     "viewports": [

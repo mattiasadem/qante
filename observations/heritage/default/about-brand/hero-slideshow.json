@@ -14,6 +14,39 @@
   ],
   "notlar": "Görsel hero ~500px. Metin/CTA/ok/dot yok.",
   "delta": "Horizon hero.liquid — tek kare, overlay metin boş. slideshow-component yok.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-heritage-demo.myshopify.com/pages/about-us",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20430037188662__hero_MCVHpm",
+      "capture": true,
+      "etiket": "tek-kare",
+      "not": "Ok/nokta/CTA yok — changed zorlanmadı."
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Scan 0 changer. Probe: slideshow-component yok; button/a yok. Tek görsel kare."
+    }
+  ],
+  "interactionNote": "Home'da hero-slideshow observation yok. About hero tek kare. Hover/filled zorlanmadı.",
   "capture": {
     "url": "https://theme-heritage-demo.myshopify.com/pages/about-us",
     "viewports": [

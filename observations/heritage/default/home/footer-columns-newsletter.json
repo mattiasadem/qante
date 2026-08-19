@@ -14,6 +14,34 @@
   ],
   "notlar": "4 kolon: About us metin; Shop (Bestsellers/Men/Women/Accessories); Support (FAQ/Contact/Fit guide/Garment care); Our story (About us / Field notes). Newsletter input yok.",
   "delta": "Horizon footer.liquid (migrated_footer_content). Kolon menü var, e-posta bandı yok. Sibling footer_utilities leftover. PII yok.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-heritage-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-sections--20430037155894__migrated_footer_content",
+      "capture": true,
+      "etiket": "newsletter-yok",
+      "not": "Email input yok. Kolon summary tıklanmadı / locale-newsletter submit yok."
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Scan: email yok. 1440'ta 3 details summary (Shop/Support/Our story) — kolonlar zaten açık. 375'te de hepsi open. Accordion changed zorlanmadı.",
   "capture": {
     "url": "https://theme-heritage-demo.myshopify.com/",
     "viewports": [
