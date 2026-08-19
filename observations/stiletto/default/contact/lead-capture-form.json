@@ -8,23 +8,13 @@
   "selector": "#shopify-section-template--22242344894613__contact-form",
   "evidenceSlug": "lead-capture-form",
   "evidence": [
-    "evidence/stiletto/default/contact/lead-capture-form.initial.bolum.1440.png",
-    "evidence/stiletto/default/contact/lead-capture-form.initial.bolum.375.png",
-    "evidence/stiletto/default/contact/lead-capture-form.initial.bolum.768.png"
+    "evidence/stiletto/default/contact/lead-capture-form.initial.bos-form.1440.png",
+    "evidence/stiletto/default/contact/lead-capture-form.initial.bos-form.375.png",
+    "evidence/stiletto/default/contact/lead-capture-form.initial.bos-form.768.png"
   ],
   "notlar": "Email / Name / Message / SUBMIT. Gönderilmedi.",
   "delta": "contact-form. PII submit yok.",
-  "capture": {
-    "url": "https://stiletto-theme-vogue.myshopify.com/pages/contact",
-    "viewports": [
-      "375",
-      "768",
-      "1440"
-    ],
-    "mode": "section",
-    "method": "interaction-steps",
-    "updatedAt": "2026-08-18T11:43:17.518Z"
-  },
+  "captureMode": "section",
   "interactionStates": [
     "initial"
   ],
@@ -62,15 +52,24 @@
       "action": "waitFor",
       "value": 500,
       "capture": true,
-      "etiket": "bolum",
-      "captureMode": "section",
-      "not": "Popup kapalı section"
+      "etiket": "bos-form",
+      "not": "Boş contact form. SUBMIT tıklanmadı."
     }
   ],
   "stateFindings": {
-    "initial": "Email / Name / Message / SUBMIT. Gönderilmedi."
+    "initial": "Email / Name / Message alanları + SUBMIT. Demo uyarısı textarea placeholder'da. Tüm alanlar boş. Submit tıklanmadı."
   },
   "missingStates": [],
-  "interactionNote": "JOIN US + THEME WALKTHROUGH kapatıldı. Get 10% Off tab leftover olabilir.",
-  "captureMode": "section"
+  "interactionNote": "Scan 3 input (email, name, textarea). Anlamlı input state PII stop.",
+  "capture": {
+    "url": "https://stiletto-theme-vogue.myshopify.com/pages/contact",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:24:44.439Z"
+  }
 }

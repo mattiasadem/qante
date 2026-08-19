@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--20936734670918__specification_table_nutrition",
   "evidenceSlug": "comparison-quick-table",
   "evidence": [
+    "evidence/flow/default/product-detail/comparison-quick-table.1440.png",
     "evidence/flow/default/product-detail/comparison-quick-table.375.png",
     "evidence/flow/default/product-detail/comparison-quick-table.768.png",
-    "evidence/flow/default/product-detail/comparison-quick-table.1440.png"
+    "evidence/flow/default/product-detail/comparison-quick-table.changed.per-serving.1440.png",
+    "evidence/flow/default/product-detail/comparison-quick-table.changed.per-serving.375.png",
+    "evidence/flow/default/product-detail/comparison-quick-table.changed.per-serving.768.png",
+    "evidence/flow/default/product-detail/comparison-quick-table.initial.per-100ml.1440.png",
+    "evidence/flow/default/product-detail/comparison-quick-table.initial.per-100ml.375.png",
+    "evidence/flow/default/product-detail/comparison-quick-table.initial.per-100ml.768.png"
   ],
   "notlar": "specification_table_nutrition. Nutrition information · Per 100ml / Per serving satırları (Energy, Fat, Saturates…).",
   "delta": "Shopify.theme.name `Flow R1 — design base` · id 150685581382 · schema_name Flow · schema_version 42.0.0 · theme_store_id null · role main · shop flow-queenstown.myshopify.com. Official walk eight-nourish-demo.myshopify.com (Nourish). flow-demo.myshopify.com = Debut, kullanılmadı. flow-theme.myshopify.com password, kullanılmadı. Besin tablosu; ürün-vs-ürün değil. En yakın tip comparison-quick-table.",
@@ -22,7 +28,43 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T20:39:49.803Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:53:24.513Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eight-nourish-demo.myshopify.com/products/almond-banana",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20936734670918__specification_table_nutrition",
+      "capture": true,
+      "etiket": "per-100ml",
+      "not": "Per 100ml aktif — Energy 210kJ/50kcal"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--20936734670918__specification_table_nutrition label.specification-table__toggle",
+      "value": 800,
+      "capture": true,
+      "etiket": "per-serving",
+      "not": "Toggle Per serving — Energy 525kJ/125kcal görünür"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Nutrition information · Per 100ml seçili. Energy 210kJ / 50kcal · Fat 2g…",
+    "changed": "Per serving toggle aktif. Energy 525kJ / 125kcal · Fat 5g… base amount display:none."
+  },
+  "missingStates": [],
+  "interactionNote": "Besin tablosu; ürün karşılaştırma değil. specification-table__toggle checkbox.",
+  "captureMode": "section"
 }

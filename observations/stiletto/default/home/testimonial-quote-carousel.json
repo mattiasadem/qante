@@ -8,25 +8,19 @@
   "selector": "#shopify-section-template--22242344796309__16573189670de36596",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
-    "evidence/stiletto/default/home/testimonial-quote-carousel.initial.bolum.1440.png",
-    "evidence/stiletto/default/home/testimonial-quote-carousel.initial.bolum.375.png",
-    "evidence/stiletto/default/home/testimonial-quote-carousel.initial.bolum.768.png"
+    "evidence/stiletto/default/home/testimonial-quote-carousel.changed.sonraki-alinti.1440.png",
+    "evidence/stiletto/default/home/testimonial-quote-carousel.changed.sonraki-alinti.375.png",
+    "evidence/stiletto/default/home/testimonial-quote-carousel.changed.sonraki-alinti.768.png",
+    "evidence/stiletto/default/home/testimonial-quote-carousel.initial.ilk-alinti.1440.png",
+    "evidence/stiletto/default/home/testimonial-quote-carousel.initial.ilk-alinti.375.png",
+    "evidence/stiletto/default/home/testimonial-quote-carousel.initial.ilk-alinti.768.png"
   ],
-  "notlar": "Tek büyük alıntı (quote).",
-  "delta": "Tek slayt görüldü.",
-  "capture": {
-    "url": "https://stiletto-theme-vogue.myshopify.com/",
-    "viewports": [
-      "375",
-      "768",
-      "1440"
-    ],
-    "mode": "section",
-    "method": "interaction-steps",
-    "updatedAt": "2026-08-18T11:49:39.713Z"
-  },
+  "notlar": "Quote carousel — swiper-fade + oklar + 3 nokta.",
+  "delta": "Stiletto quote section. Autoplay olabilir; ok ile sonraki alıntı.",
+  "captureMode": "section",
   "interactionStates": [
-    "initial"
+    "initial",
+    "changed"
   ],
   "interactionSteps": [
     {
@@ -60,17 +54,47 @@
     {
       "state": "initial",
       "action": "waitFor",
-      "value": 500,
+      "value": 1000,
       "capture": true,
-      "etiket": "bolum",
-      "captureMode": "section",
-      "not": "Popup kapalı section"
+      "etiket": "ilk-alinti",
+      "not": "Aktif quote__item swiper-slide-active (autoplay olabilir)"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--22242344796309__16573189670de36596 .slider-nav-button-next",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--22242344796309__16573189670de36596",
+      "capture": true,
+      "etiket": "sonraki-alinti",
+      "not": "Sağ ok → farklı alıntı metni + nokta kaydı"
     }
   ],
   "stateFindings": {
-    "initial": "Tek büyük alıntı (quote)."
+    "initial": "Büyük alıntı kartı + logo. Sol/sağ slider-nav-button + 3 navigation-dot. swiper-fade.",
+    "changed": "Sağ ok sonrası alıntı metni değişir (ör. Quality → Absolutely unparalleled → We're confident). navigation-dot is-selected kayar. 375/768/1440 aynı davranış."
   },
   "missingStates": [],
-  "interactionNote": "JOIN US + THEME WALKTHROUGH kapatıldı. Get 10% Off tab leftover olabilir.",
-  "captureMode": "section"
+  "interactionNote": "Scan changer 0 (okların aria-label yok). Selector: .slider-nav-button-next. Autoplay initial kareyi kaydırabilir.",
+  "capture": {
+    "url": "https://stiletto-theme-vogue.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:20:22.078Z"
+  }
 }

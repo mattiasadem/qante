@@ -24,7 +24,9 @@
 | Newsletter JOIN / contact Send / blog comment | PII — dur. |
 | Presets nav | Aria / Mila / Drake / Ava Theme Store affiliate — walk dışı leftover. |
 | Language switcher | Menü + footer English — değiştirilmedi. |
-| FAQ accordion açık kare | Statik kapalı; `details.cc-accordion-item` var. Interact zorunlu listede yok. |
+| FAQ accordion açık kare | Statik kapalı; `details.cc-accordion-item` var. | **interact bitti** — 4 section × initial/changed |
+| Testimonial carousel | Home `cc-testimonial` tek alıntı; slider kontrolü yok. | `testimonial-quote-carousel` → `changed` missing |
+| CRO şemaları (observation yok) | before-after / bundle / countdown / compare / quiz / shop-the-feed / scrolling-gallery vitrinde yok. | leftover — icat edilmedi |
 | Sticky ATC | PDP sticky scroll-direction class; ayrı bar yoklandı değil. |
 
 ## Aday (yeni şema yok)
@@ -45,3 +47,4 @@
 - Cart qty: `a.plus.quantity-up`. FLASH SALE 5% OFF. Boş → Malibu COMPACT $89 / Subtotal $84.55 → qty 2 / Subtotal $169.10.
 - PDP MIDI: fiyat $69/$89 aynı kaldı; stok **13→30** (demo envanter; daha erken yoklamada 10 görüldü). Galeri değişmedi.
 - Hero `#slideshow_Y8dKTc` autoplay: resmi 3vp kare **Tote-ally Amazing** (orta slayt). Walk'ta COLORFUL ADVENTURE da görüldü.
+- **CRO leftover:** FAQ `details.cc-accordion-item:first-of-type > summary` click → `changed` (4 section, 24 PNG). Testimonial tek statik blok — carousel yok. Newsletter-band + contact form — e-posta/PII dur.

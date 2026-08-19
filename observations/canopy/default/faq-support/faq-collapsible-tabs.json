@@ -8,12 +8,54 @@
   "selector": "#shopify-section-template--18143729975496__faqs",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/canopy/default/faq-support/faq-collapsible-tabs.1440.png",
     "evidence/canopy/default/faq-support/faq-collapsible-tabs.375.png",
     "evidence/canopy/default/faq-support/faq-collapsible-tabs.768.png",
-    "evidence/canopy/default/faq-support/faq-collapsible-tabs.1440.png"
+    "evidence/canopy/default/faq-support/faq-collapsible-tabs.changed.cancel-order-acik.1440.png",
+    "evidence/canopy/default/faq-support/faq-collapsible-tabs.changed.cancel-order-acik.375.png",
+    "evidence/canopy/default/faq-support/faq-collapsible-tabs.changed.cancel-order-acik.768.png",
+    "evidence/canopy/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.1440.png",
+    "evidence/canopy/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.375.png",
+    "evidence/canopy/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.768.png"
   ],
   "notlar": "Browse our FAQs. Ordering / Shipping grupları. Can I cancel my order?",
   "delta": "faqs section. /pages/faq ayrı page-content leftover.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://canopy-theme-natural.myshopify.com/pages/faqs",
+      "capture": false,
+      "not": "Taban sayfa"
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--18143729975496__faqs",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Ordering + Shipping grupları; altı soru kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--18143729975496__faqs details:first-of-type > summary",
+      "value": 800,
+      "capture": true,
+      "etiket": "cancel-order-acik",
+      "not": "Can I cancel my order? → We completely get it… cevabı açılır"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Browse our FAQs. Ordering (Can I cancel… / speak to someone) + Shipping (countries / delivery / return / refund) — altı accordion kapalı (+).",
+    "changed": "Can I cancel my order? açık: We completely get it, we change our minds too!… cevap görünür. Diğer beş soru kapalı. 3vp aynı delta."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan 6 details>summary opener. Yoklama: ilk summary tık → open attribute + 354 char cevap. Accordion = changed (open değil). Şema emit:accordion.toggle duruyor.",
   "capture": {
     "url": "https://canopy-theme-natural.myshopify.com/pages/faqs",
     "viewports": [
@@ -22,7 +64,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T20:48:07.811Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:09:46.954Z"
   }
 }

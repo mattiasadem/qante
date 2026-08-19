@@ -8,25 +8,19 @@
   "selector": "#shopify-section-template--22242345287829__16588654968d8153d3",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
-    "evidence/stiletto/default/product-detail/testimonial-quote-carousel.initial.bolum.1440.png",
-    "evidence/stiletto/default/product-detail/testimonial-quote-carousel.initial.bolum.375.png",
-    "evidence/stiletto/default/product-detail/testimonial-quote-carousel.initial.bolum.768.png"
+    "evidence/stiletto/default/product-detail/testimonial-quote-carousel.changed.sonraki-alinti.1440.png",
+    "evidence/stiletto/default/product-detail/testimonial-quote-carousel.changed.sonraki-alinti.375.png",
+    "evidence/stiletto/default/product-detail/testimonial-quote-carousel.changed.sonraki-alinti.768.png",
+    "evidence/stiletto/default/product-detail/testimonial-quote-carousel.initial.ilk-alinti.1440.png",
+    "evidence/stiletto/default/product-detail/testimonial-quote-carousel.initial.ilk-alinti.375.png",
+    "evidence/stiletto/default/product-detail/testimonial-quote-carousel.initial.ilk-alinti.768.png"
   ],
-  "notlar": "Müşteri alıntı carousel.",
-  "delta": "",
-  "capture": {
-    "url": "https://stiletto-theme-vogue.myshopify.com/products/behati-dress-in-pearl",
-    "viewports": [
-      "375",
-      "768",
-      "1440"
-    ],
-    "mode": "section",
-    "method": "interaction-steps",
-    "updatedAt": "2026-08-18T11:51:50.673Z"
-  },
+  "notlar": "PDP testimonials carousel — görsel + alıntı.",
+  "delta": "testimonials__item--image-large. Başlık yok.",
+  "captureMode": "section",
   "interactionStates": [
-    "initial"
+    "initial",
+    "changed"
   ],
   "interactionSteps": [
     {
@@ -60,17 +54,47 @@
     {
       "state": "initial",
       "action": "waitFor",
-      "value": 500,
+      "value": 1000,
       "capture": true,
-      "etiket": "bolum",
-      "captureMode": "section",
-      "not": "Popup kapalı section"
+      "etiket": "ilk-alinti",
+      "not": "swiper-slide-active testimonials__item"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--22242345287829__16588654968d8153d3 .testimonials__navigation-button--next",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--22242345287829__16588654968d8153d3",
+      "capture": true,
+      "etiket": "sonraki-alinti",
+      "not": "Sağ ok → sonraki testimonials__item"
     }
   ],
   "stateFindings": {
-    "initial": "Müşteri alıntı carousel."
+    "initial": "Portre + alıntı kartı. Jessica Lipton placeholder veya ilk slayt. Sol/sağ testimonials__navigation-button.",
+    "changed": "Sağ ok sonrası farklı alıntı (ör. I love Stiletto… → Lola's prices… – Nathalie). swiper-slide-active kayar. Kart görseli üstte."
   },
   "missingStates": [],
-  "interactionNote": "JOIN US + THEME WALKTHROUGH kapatıldı. Get 10% Off tab leftover olabilir.",
-  "captureMode": "section"
+  "interactionNote": "Scan changer 0. Selector: .testimonials__navigation-button--next. 3 slayt + duplicate.",
+  "capture": {
+    "url": "https://stiletto-theme-vogue.myshopify.com/products/behati-dress-in-pearl",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:21:19.096Z"
+  }
 }

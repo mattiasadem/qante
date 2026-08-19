@@ -8,12 +8,54 @@
   "selector": "#shopify-section-template--18143729909960__press_testimonials_mnMrA6",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
+    "evidence/canopy/default/about-brand/testimonial-quote-carousel.1440.png",
     "evidence/canopy/default/about-brand/testimonial-quote-carousel.375.png",
     "evidence/canopy/default/about-brand/testimonial-quote-carousel.768.png",
-    "evidence/canopy/default/about-brand/testimonial-quote-carousel.1440.png"
+    "evidence/canopy/default/about-brand/testimonial-quote-carousel.changed.slide-2-alinti.1440.png",
+    "evidence/canopy/default/about-brand/testimonial-quote-carousel.changed.slide-2-alinti.375.png",
+    "evidence/canopy/default/about-brand/testimonial-quote-carousel.changed.slide-2-alinti.768.png",
+    "evidence/canopy/default/about-brand/testimonial-quote-carousel.initial.ilk-hal.1440.png",
+    "evidence/canopy/default/about-brand/testimonial-quote-carousel.initial.ilk-hal.375.png",
+    "evidence/canopy/default/about-brand/testimonial-quote-carousel.initial.ilk-hal.768.png"
   ],
   "notlar": "Press quotes: forefront of sourcing… / The best quality…",
   "delta": "press_testimonials.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://canopy-theme-natural.myshopify.com/pages/about-us",
+      "capture": false,
+      "not": "Taban sayfa"
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--18143729909960__press_testimonials_mnMrA6",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Slayt 1 — forefront of sourcing… Load slide 1 of 2 aktif"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--18143729909960__press_testimonials_mnMrA6 button:has-text('Load slide 2 of 2')",
+      "value": 1000,
+      "capture": true,
+      "etiket": "slide-2-alinti",
+      "not": "Load slide 2 → The best quality ingredients… is-active"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Press quote slayt 1: \"Canopy have been at the forefront of sourcing quality, sustainable and flavorful ingredients…\" Load slide 1 of 2 aktif.",
+    "changed": "Slayt 2: \"The best quality ingredients, at the best prices. Canopy can always be relied upon to deliver.\" Load slide 2 of 2 aktif (is-active + aria-hidden false)."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan dot butonları Load slide 1/2 of 2. Yoklama: slide 2 tık → is-active slayt 2'ye geçti. Şema emit:carousel.next duruyor.",
   "capture": {
     "url": "https://canopy-theme-natural.myshopify.com/pages/about-us",
     "viewports": [
@@ -22,7 +64,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T20:41:36.803Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:14:43.582Z"
   }
 }

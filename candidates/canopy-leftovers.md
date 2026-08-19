@@ -3,7 +3,7 @@
 *Store:* https://canopy-theme-natural.myshopify.com  
 *Tema (görülen, uydurulmadı):* **canopy-v7.3.0** · `schema_name` **Canopy** 7.3.0 · `theme_store_id` **null** · id `142543028424` · shop `canopy-theme-natural.myshopify.com`  
 *Preset:* default (Natural)  
-*Tarih:* 2026-08-17
+*Tarih:* 2026-08-19 (CRO interact güncellendi)
 
 Şema icat edilmedi. En yakın mevcut tipe observation yazıldıysa burada tekrarlanmaz.
 
@@ -173,6 +173,30 @@ ADAY: canopy-pii-stop
 Gerekçe: Newsletter Subscribe, contact Send, account, checkout, Buy it now, comment Post — tıklanmadı.  
 Örnekler: https://canopy-theme-natural.myshopify.com/pages/contact-us  
 Öneri: PII stop  
+Karar: onay bekliyor
+
+---
+
+ADAY: canopy-cro-schemas-not-on-storefront  
+Gerekçe: CRO şema listesinden storefront’ta observation yok: `before-after-slider` · `commerce-tools-products-bundle` · `comparison-quick-table` · `product-finder-quiz` · `media-shop-the-feed` · `media-scrolling-gallery`. Walk + interact envanterinde eşleşen section bulunmadı — şema uydurulmadı.  
+Örnekler: https://canopy-theme-natural.myshopify.com/  
+Öneri: leftover — tema/preset’te yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: canopy-countdown-expired  
+Gerekçe: `promo-banner-countdown` interact: scan 0 affordance; canlı sayaç 0 Days 0 Hours (süre dolmuş). Yalnız `initial` statik kare.  
+Örnekler: https://canopy-theme-natural.myshopify.com/  
+Öneri: leftover — merchant datetime / demo veri  
+Karar: onay bekliyor
+
+---
+
+ADAY: canopy-lead-capture-input-pii  
+Gerekçe: `lead-capture-form` + `lead-capture-newsletter-band`: select `changed` alındı (contact Orders & Sales; FAQ Get a refund). Name/email/phone/message/newsletter fill + Submit/Subscribe PII stop — `input` missingStates.  
+Örnekler: https://canopy-theme-natural.myshopify.com/pages/contact-us  
+Öneri: leftover — beklenen PII stop  
 Karar: onay bekliyor
 
 ---

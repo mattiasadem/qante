@@ -12,8 +12,8 @@
 `Shopify.shop` = `stiletto-theme-vogue.myshopify.com`  
 Canlı host: `stiletto-theme-vogue.myshopify.com` → **301 primary_domain_redirection** → `stiletto-theme-stiletto.myshopify.com` (aynı mağaza, aynı theme JSON).
 
-**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti** (0 error)  
-**PR:** draft https://github.com/mattiasadem/qante/pull/169 — **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + nav/cart/PDP interact + **CRO interact** + validate **bitti** (0 error)  
+**PR:** draft — CRO interact leftover pass
 
 ---
 
@@ -22,14 +22,14 @@ Canlı host: `stiletto-theme-vogue.myshopify.com` → **301 primary_domain_redir
 | | |
 |---|---|
 | Evidence kökü | `evidence/stiletto/default/` |
-| Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
+| Capture | `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **60** |
-| PNG | **196** (statik kareler popup kapatılarak yeniden çekildi) |
+| PNG | walk + nav interact + **32 CRO interact** (aşağı) |
 | Parallel | yalnız `observations/stiletto/`, `evidence/stiletto/`, `todo/stiletto.md`, `candidates/stiletto-leftovers.md` |
 
 **Kapsam satırı:**  
-`Stiletto · default (Vogue) · stiletto-v6-1-0 · schema_name Stiletto 6.1.0 · theme_store_id null · home→PDP→PLP→collections→search→cart→about/contact→faq→blog→404 · 60 obs · 196 PNG · 0 yeni şema · leftover: candidates/stiletto-leftovers.md`
+`Stiletto · default (Vogue) · stiletto-v6-1-0 · schema_name Stiletto 6.1.0 · theme_store_id null · home→PDP→PLP→collections→search→cart→about/contact→faq→blog→404 · 60 obs · CRO interact 6 schema · 0 yeni şema · leftover: candidates/stiletto-leftovers.md`
 
 ---
 
@@ -57,43 +57,24 @@ Canlı host: `stiletto-theme-vogue.myshopify.com` → **301 primary_domain_redir
 
 ---
 
-## Home roster (DOM `data-section-type`)
+## CRO interact (scan → capture → pixel-check)
 
-| # | Stiletto type | QANTE schemaId | Karar |
+| schemaId | sayfa | States | Sonuç |
 |---|---|---|---|
-| 1 | announcement-bar | `promo-announcement-bar` | reuse |
-| 2 | header | `navigation-header-mega` | reuse · interact |
-| 3 | quick-cart | `global-cart-drawer` | reuse · interact · kutu `__container` |
-| 4 | popup | — | leftover 0px / PII signup |
-| 5 | shoppable-hero (video) | `media-video-hero` | reuse · A PAIR IN MOTION |
-| 6 | scrolling-content | `promo-scrolling-marquee` | reuse |
-| 7 | rich-text | `editorial-rich-text` | reuse |
-| 8 | collection-list-slider | `collection-nav-slider` | reuse |
-| 9 | countdown-bar | `promo-banner-countdown` | reuse |
-| 10 | image-with-text-split | `editorial-image-with-text` | reuse |
-| 11 | featured-collection-slider | `product-showcase-grid-featured` | reuse |
-| 12 | shoppable-hero | `media-lookbook-banner` | reuse · BE CHIC |
-| 13 | sales-banner | `promo-grid-banner` | reuse |
-| 14 | featured-collection-slider | `product-showcase-grid-featured.2` | reuse |
-| 15 | shoppable | `media-lookbook-banner.2` | reuse · hotspot |
-| 16 | video-hero | `media-video-hero.2` | reuse |
-| 17 | shoppable-videos | `media-shop-the-feed` | reuse |
-| 18 | grid | `promo-grid-banner.2` | reuse |
-| 19 | featured-collection-slider | `product-showcase-grid-featured.3` | reuse |
-| 20 | quote | `testimonial-quote-carousel` | reuse |
-| 21 | image-hero | `editorial-image-with-text-overlay` | reuse |
-| 22 | scrolling-content | `promo-scrolling-marquee.2` | reuse |
-| 23 | multi-column (about) | `editorial-image-with-text.2` | reuse · tek portre |
-| 24 | blog-posts | `blog-list-main` | reuse |
-| 25 | scrolling-text-banner | `promo-scrolling-marquee.3` | reuse · görsel+CTA |
-| 26 | multi-column (footer group) | `trust-icon-row` | reuse |
-| 27 | footer | `footer-columns-newsletter` | reuse · submit yok |
-| 28 | drawer-menu | `global-menu-drawer` | reuse · 375/768 |
-| 29 | #MainQuickSearch | `global-predictive-search` | reuse |
+| `promo-banner-countdown` | home | initial | GET IT BEFORE IT'S GONE + DAYS/HOURS/MINUTES. Tıklanabilir kontrol yok → changed yok |
+| `testimonial-quote-carousel` | home | initial, changed | swiper-fade + oklar. Sağ ok → farklı alıntı 3vp |
+| `testimonial-quote-carousel` | product-detail | initial, changed | testimonials__navigation-button--next → farklı alıntı 3vp |
+| `media-shop-the-feed` | home | initial, changed, open | carousel 768/1440; Choose options → .quick-product 3vp; 375 changed yok |
+| `faq-collapsible-tabs` | faq-support | initial, changed | ORDERS: How do I make a purchase? → cevap açılır 3vp |
+| `lead-capture-form` | contact | initial | Boş form. PII stop → input yok |
+
+**Gözlemli ama bu pass'te interact edilmedi:** `faq-collapsible-tabs` (about-brand, contact, faq-support-2/3) — statik initial kaldı.
+
+**Diskte şema var, Stiletto'da observation yok:** `before-after-slider`, `commerce-tools-products-bundle`, `comparison-quick-table`, `product-finder-quiz`, `media-scrolling-gallery`, `lead-capture-newsletter-band`.
 
 ---
 
-## Interact (pixel-check)
+## Interact (nav/cart — önceki pass)
 
 | Bileşen | State | Sonuç |
 |---|---|---|
@@ -117,5 +98,6 @@ Canlı host: `stiletto-theme-vogue.myshopify.com` → **301 primary_domain_redir
 - [x] Official 3vp static (`capture-observation.mjs` / recapture `capture-interaction.mjs`)
 - [x] JOIN US + walkthrough kapatıldı; Get 10% Off tab leftover
 - [x] Interact mega / search / cart / menu / PDP Size
+- [x] **CRO interact** countdown / testimonials / shop-feed / FAQ / contact form
 - [x] PNG bak → stateFindings
 - [x] `npm run validate` — 0 error

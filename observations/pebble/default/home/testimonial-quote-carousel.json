@@ -8,12 +8,45 @@
   "selector": "#shopify-section-template--20816638214282__testimonials_parallax_8FqTjk",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
-    "evidence/pebble/default/home/testimonial-quote-carousel.375.png",
-    "evidence/pebble/default/home/testimonial-quote-carousel.768.png",
-    "evidence/pebble/default/home/testimonial-quote-carousel.1440.png"
+    "evidence/pebble/default/home/testimonial-quote-carousel.initial.ilk-hal.375.png",
+    "evidence/pebble/default/home/testimonial-quote-carousel.initial.ilk-hal.768.png",
+    "evidence/pebble/default/home/testimonial-quote-carousel.initial.ilk-hal.1440.png"
   ],
   "notlar": "WHAT CUSTOMERS SAY Over 500 Happy Reviews + ürün linkleri (Straw Hat Beige).",
   "delta": "testimonials-parallax — uzun stacked. Carousel değil parallax; reuse + delta.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pebble-little.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20816638214282__testimonials_parallax_8FqTjk",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "WHAT CUSTOMERS SAY Over 500 Happy Reviews. İlk quote + ürün linkleri. Parallax stacked ~2944px."
+    }
+  ],
+  "stateFindings": {
+    "initial": "WHAT CUSTOMERS SAY Over 500 Happy Reviews. İlk quote Amazing look and quality + Straw Hat Beige ürün linki. Parallax stacked layout, carousel ok yok."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Scan 0 affordance — carousel ok/nokta yok. testimonials_parallax uzun stacked layout."
+    },
+    {
+      "state": "hover",
+      "sebep": "Kart hover reveal yok; yalnız ürün linkleri (PDP'ye gider)."
+    }
+  ],
+  "interactionNote": "Parallax stacked ≠ carousel. testimonial-quote-carousel reuse + delta doğru.",
   "capture": {
     "url": "https://pebble-little.myshopify.com/",
     "viewports": [
@@ -22,7 +55,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T10:58:34.701Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:50:00.000Z"
   }
 }

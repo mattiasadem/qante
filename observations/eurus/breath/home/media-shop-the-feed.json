@@ -8,12 +8,53 @@
   "selector": "#shopify-section-template--27353605177622__video_shopping_xrUJCY",
   "evidenceSlug": "media-shop-the-feed",
   "evidence": [
+    "evidence/eurus/breath/home/media-shop-the-feed.1440.png",
     "evidence/eurus/breath/home/media-shop-the-feed.375.png",
     "evidence/eurus/breath/home/media-shop-the-feed.768.png",
-    "evidence/eurus/breath/home/media-shop-the-feed.1440.png"
+    "evidence/eurus/breath/home/media-shop-the-feed.changed.ikinci-video.1440.png",
+    "evidence/eurus/breath/home/media-shop-the-feed.changed.ikinci-video.375.png",
+    "evidence/eurus/breath/home/media-shop-the-feed.changed.ikinci-video.768.png",
+    "evidence/eurus/breath/home/media-shop-the-feed.initial.ilk-hal.1440.png",
+    "evidence/eurus/breath/home/media-shop-the-feed.initial.ilk-hal.375.png",
+    "evidence/eurus/breath/home/media-shop-the-feed.initial.ilk-hal.768.png"
   ],
   "notlar": "Trending now. 4 video + ürün görselleri (shoppable video).",
   "delta": "section-video-shopping → media-shop-the-feed reuse. 4 video / 12 img.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eurus-breath-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--27353605177622__video_shopping_xrUJCY",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Trending now — ilk video reel + ürün overlay"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--27353605177622__video_shopping_xrUJCY .splide__slide >> nth=1",
+      "value": 1200,
+      "capture": true,
+      "etiket": "ikinci-video",
+      "not": "İkinci reel tık — Adjustable Comfort Collars $45 Sold out overlay"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Trending now. İlk video reel + ürün overlay (Freeze-Dried / meal mix görseli). 4 reel.",
+    "changed": "İkinci reel seçili — Adjustable Comfort Collars & Matching Leads for Pets $45.00 Sold out + View full details."
+  },
+  "missingStates": [],
+  "interactionNote": "Ok yok; reel değişimi slide tıkıyla. Sold out ATC tıklanmadı. Scan addToCart hint yanlış (ürün stokta değil).",
   "capture": {
     "url": "https://eurus-breath-demo.myshopify.com/",
     "viewports": [
@@ -22,7 +63,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T19:26:41.180Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:34:34.555Z"
   }
 }

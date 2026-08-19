@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--21945700745404__accordion-section-2",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/palo-alto/default/faq-support/faq-collapsible-tabs.1440.png",
     "evidence/palo-alto/default/faq-support/faq-collapsible-tabs.375.png",
     "evidence/palo-alto/default/faq-support/faq-collapsible-tabs.768.png",
-    "evidence/palo-alto/default/faq-support/faq-collapsible-tabs.1440.png"
+    "evidence/palo-alto/default/faq-support/faq-collapsible-tabs.changed.teslimat-suresi-acik.1440.png",
+    "evidence/palo-alto/default/faq-support/faq-collapsible-tabs.changed.teslimat-suresi-acik.375.png",
+    "evidence/palo-alto/default/faq-support/faq-collapsible-tabs.changed.teslimat-suresi-acik.768.png",
+    "evidence/palo-alto/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.1440.png",
+    "evidence/palo-alto/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.375.png",
+    "evidence/palo-alto/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.768.png"
   ],
   "notlar": "Shipping & Delivery 5 soru. 470px.",
   "delta": "accordion-section.",
@@ -22,7 +28,42 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T20:41:22.180Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:04:48.483Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://palo-alto-theme-main.myshopify.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21945700745404__accordion-section-2",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Shipping & Delivery — beş soru kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Accordion--accordion_block_2_0 button[aria-controls='Accordions-item--0-template--21945700745404__accordion-section-2']",
+      "value": 900,
+      "capture": true,
+      "etiket": "teslimat-suresi-acik",
+      "not": "How long does it take — cevap açık"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Shipping & Delivery başlığı. Beş soru kapalı (+).",
+    "changed": "How long does it take to get my products? açık. Cevap metni görünür."
+  },
+  "missingStates": [],
+  "interactionNote": "FAQ sayfası accordion-section-2."
 }

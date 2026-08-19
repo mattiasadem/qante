@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--21945700745404__accordion-section-1",
   "evidenceSlug": "faq-collapsible-tabs-4",
   "evidence": [
+    "evidence/palo-alto/default/faq-support/faq-collapsible-tabs-4.1440.png",
     "evidence/palo-alto/default/faq-support/faq-collapsible-tabs-4.375.png",
     "evidence/palo-alto/default/faq-support/faq-collapsible-tabs-4.768.png",
-    "evidence/palo-alto/default/faq-support/faq-collapsible-tabs-4.1440.png"
+    "evidence/palo-alto/default/faq-support/faq-collapsible-tabs-4.changed.odeme-guvenligi-acik.1440.png",
+    "evidence/palo-alto/default/faq-support/faq-collapsible-tabs-4.changed.odeme-guvenligi-acik.375.png",
+    "evidence/palo-alto/default/faq-support/faq-collapsible-tabs-4.changed.odeme-guvenligi-acik.768.png",
+    "evidence/palo-alto/default/faq-support/faq-collapsible-tabs-4.initial.ilk-hal.1440.png",
+    "evidence/palo-alto/default/faq-support/faq-collapsible-tabs-4.initial.ilk-hal.375.png",
+    "evidence/palo-alto/default/faq-support/faq-collapsible-tabs-4.initial.ilk-hal.768.png"
   ],
   "notlar": "Payments & Safety 4 soru. 434px.",
   "delta": "",
@@ -22,7 +28,42 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T20:40:45.239Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:06:53.942Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://palo-alto-theme-main.myshopify.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21945700745404__accordion-section-1",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Payments & Safety — dört soru kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Accordion--accordion_block_1_1 button[aria-controls='Accordions-item--0-template--21945700745404__accordion-section-1']",
+      "value": 900,
+      "capture": true,
+      "etiket": "odeme-guvenligi-acik",
+      "not": "Is my payment data safe? — cevap açık"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Payments & Safety başlığı. Dört soru kapalı (+).",
+    "changed": "Is my payment data safe with you? açık. Ödeme güvenliği cevabı görünür."
+  },
+  "missingStates": [],
+  "interactionNote": "accordion-section-1 Payments & Safety."
 }

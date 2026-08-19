@@ -9,8 +9,8 @@
 
 **Yasak URL:** `flow-demo.myshopify.com` (Debut, Flow değil) · `flow-theme.myshopify.com` (password) — kullanılmadı.
 
-**Durum:** ✅ Mod A walk + resmi 3vp + interact + validate  
-**PR:** draft https://github.com/mattiasadem/qante/pull/153 · **main'e merge yok**
+**Durum:** ✅ Mod A walk + resmi 3vp + interact (nav/cart + CRO) + validate  
+**PR:** draft (CRO interact turu)
 
 ---
 
@@ -22,11 +22,11 @@
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **48** |
-| Evidence PNG | **162** |
+| Evidence PNG | **218** |
 | Parallel | yalnız `observations/flow/`, `evidence/flow/`, `todo/flow.md`, `candidates/flow-leftovers.md` |
 
 **Kapsam satırı:**  
-`Flow · default · Flow R1 — design base / schema_name Flow 42.0.0 · theme_store_id null · home→PDP→PLP→collections→search→cart→about/contact→faq→blog→404 · 48 obs · 162 PNG · 0 yeni şema · leftover: candidates/flow-leftovers.md`
+`Flow · default · Flow R1 — design base / schema_name Flow 42.0.0 · theme_store_id null · home→PDP→PLP→collections→search→cart→about/contact→faq→blog→404 · 48 obs · 218 PNG · 0 yeni şema · leftover: candidates/flow-leftovers.md`
 
 ---
 
@@ -53,33 +53,7 @@
 
 ---
 
-## Home roster (DOM)
-
-| # | Flow id | QANTE schemaId | Karar |
-|---|---|---|---|
-| 1 | announcement-bar | `promo-announcement-bar` | reuse |
-| 2 | header | `navigation-header-mega` | reuse · mega interact |
-| 3 | offers-drawer | — | 0px leftover |
-| 4 | product_hero_vnext | `hero-slideshow` | reuse |
-| 5 | scrolling_banner | `promo-scrolling-marquee` | reuse |
-| 6 | featured grid uuid | `product-showcase-grid-featured` | reuse |
-| 7 | quiz_vnext | `product-finder-quiz` | reuse · START yok |
-| 8 | shoppable_videos | `media-shop-the-feed` | reuse |
-| 9 | bundled_products_vnext | `commerce-tools-products-bundle` | reuse |
-| 10 | layered_showcase | `editorial-layered-images` | reuse |
-| 11 | 7 days overlay | `editorial-image-with-text-overlay` | reuse |
-| 12 | 3 collection cards | `collection-nav-image-cards` | reuse |
-| 13 | featured_product | `product-showcase-featured` | reuse |
-| 14 | social_proof_vnext | `testimonial-quote-carousel` | reuse |
-| 15 | 15%/30% cards | `promo-grid-banner` | reuse |
-| 16 | From the blog | `blog-list-main` | reuse |
-| 17 | parallax | `editorial-image-with-text-overlay` `.2` | reuse |
-| 18 | footer-main | `footer-columns-newsletter` | reuse |
-| 19 | footer-bottom | — | leftover copyright |
-
----
-
-## Interact (pixel-checked)
+## Interact — nav/cart/PDP (pixel-checked)
 
 | Bileşen | State | Sonuç |
 |---|---|---|
@@ -89,6 +63,28 @@
 | global-cart-drawer | initial / filled / changed | [x] (0) → (1) $3 → (2) $6 |
 | cart-page-main | initial / filled / changed | [x] adet 2; subtotal $3 leftover |
 | product-info-main | initial / changed | [x] 500ml $3.00 → 330ml $2.00 |
+
+---
+
+## Interact — CRO (pixel-checked)
+
+| schemaId | sayfa | States | Sonuç |
+|---|---|---|---|
+| commerce-tools-products-bundle | home | initial / changed | [x] Almond 500ml→330ml · $3.00→$2.00 |
+| promo-banner-countdown | collections | initial | [x] flash sale sayaç · changed yok |
+| faq-collapsible-tabs | faq-support | initial / changed | [x] Can I change my order… açık |
+| faq-collapsible-tabs | contact | initial / changed | [x] Do you ship overseas? açık |
+| product-finder-quiz | home | initial | [x] START ekranı · quiz PII stop |
+| testimonial-quote-carousel | home | initial | [x] auto vertical scroll · changed yok |
+| testimonial-quote-carousel | product-detail | initial | [x] statik yığın · carousel yok |
+| media-shop-the-feed | home | initial / changed | [x] 768/1440 Next slide · 375 ok gizli |
+| media-scrolling-gallery | faq-support | initial / hover | [x] 1440/768 overlay hover · 375 always-on |
+| comparison-quick-table | product-detail | initial / changed | [x] Per 100ml → Per serving |
+| lead-capture-form | about-brand | initial | [x] boş form · input PII stop |
+| lead-capture-form | contact | initial | [x] boş form · input PII stop |
+| lead-capture-newsletter-band | search | initial | [x] boş band · email PII stop |
+
+**Diskte şema var, observation yok:** `before-after-slider` — Flow Nourish’te görülmedi.
 
 ---
 
@@ -102,5 +98,6 @@
 
 - [x] Official 3vp static (`capture-observation.mjs`)
 - [x] Interact mega / search / cart / menu / PDP Size / cart qty
+- [x] Interact CRO (13 observation · yukarı tablo)
 - [x] PNG bak → stateFindings
-- [x] `npm run validate`
+- [x] `npm run validate` — 0 error

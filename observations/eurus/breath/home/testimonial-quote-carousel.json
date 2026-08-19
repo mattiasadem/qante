@@ -8,12 +8,54 @@
   "selector": "#shopify-section-template--27353605177622__testimonials_with_card_HkfcqV",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
+    "evidence/eurus/breath/home/testimonial-quote-carousel.1440.png",
     "evidence/eurus/breath/home/testimonial-quote-carousel.375.png",
     "evidence/eurus/breath/home/testimonial-quote-carousel.768.png",
-    "evidence/eurus/breath/home/testimonial-quote-carousel.1440.png"
+    "evidence/eurus/breath/home/testimonial-quote-carousel.changed.sonraki-alinti.1440.png",
+    "evidence/eurus/breath/home/testimonial-quote-carousel.changed.sonraki-alinti.375.png",
+    "evidence/eurus/breath/home/testimonial-quote-carousel.changed.sonraki-alinti.768.png",
+    "evidence/eurus/breath/home/testimonial-quote-carousel.initial.ilk-hal.1440.png",
+    "evidence/eurus/breath/home/testimonial-quote-carousel.initial.ilk-hal.375.png",
+    "evidence/eurus/breath/home/testimonial-quote-carousel.initial.ilk-hal.768.png"
   ],
   "notlar": "Don't just take our word for it... Mia L. Verified Customer. Ürün kartı Pure & Natural Frozen Meals.",
   "delta": "section-testimonial-with-card — alıntı + ürün kartı.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eurus-breath-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--27353605177622__testimonials_with_card_HkfcqV",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Mia L. — Great! — Pure & Natural Frozen Meals $95"
+    },
+    {
+      "state": "changed",
+      "action": "drag",
+      "selector": "#shopify-section-template--27353605177622__testimonials_with_card_HkfcqV .splide__track",
+      "value": "-280,0",
+      "wait": 1200,
+      "capture": true,
+      "etiket": "sonraki-alinti",
+      "not": "Splide track sola sürükle — Mia L.→Jenny D."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Mia L. Verified Customer — Great! — Pure & Natural Frozen Meals $95.00. 1/5 sayaç. 1440 sol/sağ ok.",
+    "changed": "Jenny D. — Great value raw food! — $100 ürün kartı. 2/5. Splide track drag (ok 375 gizli olsa da drag çalışır)."
+  },
+  "missingStates": [],
+  "interactionNote": "Next ok settle sonrası flaky; splide__track drag 3vp'de Mia→Jenny doğrulandı.",
   "capture": {
     "url": "https://eurus-breath-demo.myshopify.com/",
     "viewports": [
@@ -22,7 +64,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T19:30:23.608Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:49:44.003Z"
   }
 }

@@ -8,12 +8,39 @@
   "selector": "#shopify-section-template--27353605177622__product_attribute_table_hk3Kj3",
   "evidenceSlug": "comparison-quick-table",
   "evidence": [
+    "evidence/eurus/breath/home/comparison-quick-table.1440.png",
     "evidence/eurus/breath/home/comparison-quick-table.375.png",
     "evidence/eurus/breath/home/comparison-quick-table.768.png",
-    "evidence/eurus/breath/home/comparison-quick-table.1440.png"
+    "evidence/eurus/breath/home/comparison-quick-table.initial.ilk-hal.1440.png",
+    "evidence/eurus/breath/home/comparison-quick-table.initial.ilk-hal.375.png",
+    "evidence/eurus/breath/home/comparison-quick-table.initial.ilk-hal.768.png"
   ],
   "notlar": "Air-dried dog food. It's our thing. Ürün kolonları: Freeze-Dried Meal Mix / Nutrient-Rich Recipes / Hairball Control / Indoor Cat. Satırlar Fresh/Raw/Dry kibble.",
   "delta": "x-section-product-attribute-table.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eurus-breath-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--27353605177622__product_attribute_table_hk3Kj3",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Dört ürün kolonu + Fresh/Raw/Dry kibble satırları — statik tablo"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Air-dried dog food. It's our thing. Dört ürün başlığı (Freeze-Dried Meal Mix, Nutrient-Rich Recipes, Hairball Control, Indoor Cat) + Fresh ingredients / Raw ingredients / Dry kibble satırları. Ürün linkleri PDP'ye gider; tablo içi toggle yok."
+  },
+  "missingStates": [],
+  "interactionNote": "Karşılaştırma tablosu salt okunur grid; etkileşimli state anlamsız.",
   "capture": {
     "url": "https://eurus-breath-demo.myshopify.com/",
     "viewports": [
@@ -22,7 +49,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T19:24:08.532Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:36:09.427Z"
   }
 }

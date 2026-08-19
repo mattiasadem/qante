@@ -3,7 +3,7 @@
 *Store:* https://eurus-breath-demo.myshopify.com/  
 *Tema (görülen):* ** Breath 10.1.0** · `schema_name` **Eurus** · `schema_version` **10.1.0** · `theme_store_id` **null**  
 *Tarih:* 2026-08-17  
-*Walk + 3vp + interact + validate:* bitti
+*Walk + 3vp + interact + validate:* bitti · *CRO interact:* 2026-08-19
 
 Şema icat edilmedi. En yakın mevcut tipe observation yazıldıysa burada tekrarlanmaz. Predictive `food` ürün kartı vermedi (Plants/Herbs chip) — leftover değil, gözlenen davranış.
 
@@ -30,6 +30,15 @@ Gerekçe: Görev notu quiz/finder. Breath resmi preset’te `/pages/quiz`, `/pag
 Örnekler: yok (Breath)  
 Öneri: ertele — başka Eurus preset’te aranabilir  
 Karar: Breath’te yok
+
+---
+
+
+ADAY: eurus-cro-not-observed  
+Gerekçe: CRO listesinde `before-after-slider`, `promo-banner-countdown`, `lead-capture-newsletter-band`, `product-finder-quiz` — Breath envanterinde observation yok. `promo-announcement-bar` var ama countdown timer yok; `footer-columns-newsletter` farklı schemaId.  
+Örnekler: https://eurus-breath-demo.myshopify.com/  
+Öneri: leftover — şema uydurulmadı  
+Karar: Breath'te gözlenmedi
 
 ---
 

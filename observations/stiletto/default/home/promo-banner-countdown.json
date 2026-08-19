@@ -8,23 +8,13 @@
   "selector": "#shopify-section-template--22242344796309__countdown_bar_B8QKnT",
   "evidenceSlug": "promo-banner-countdown",
   "evidence": [
-    "evidence/stiletto/default/home/promo-banner-countdown.initial.bolum.1440.png",
-    "evidence/stiletto/default/home/promo-banner-countdown.initial.bolum.375.png",
-    "evidence/stiletto/default/home/promo-banner-countdown.initial.bolum.768.png"
+    "evidence/stiletto/default/home/promo-banner-countdown.initial.countdown-bant.1440.png",
+    "evidence/stiletto/default/home/promo-banner-countdown.initial.countdown-bant.375.png",
+    "evidence/stiletto/default/home/promo-banner-countdown.initial.countdown-bant.768.png"
   ],
   "notlar": "GET IT BEFORE IT'S GONE. countdown-bar.",
-  "delta": "",
-  "capture": {
-    "url": "https://stiletto-theme-vogue.myshopify.com/",
-    "viewports": [
-      "375",
-      "768",
-      "1440"
-    ],
-    "mode": "section",
-    "method": "interaction-steps",
-    "updatedAt": "2026-08-18T11:48:03.687Z"
-  },
+  "delta": "Stiletto countdown-bar. CTA karede yok. Sayaç otomatik.",
+  "captureMode": "section",
   "interactionStates": [
     "initial"
   ],
@@ -60,17 +50,26 @@
     {
       "state": "initial",
       "action": "waitFor",
-      "value": 500,
+      "value": 800,
       "capture": true,
-      "etiket": "bolum",
-      "captureMode": "section",
-      "not": "Popup kapalı section"
+      "etiket": "countdown-bant",
+      "not": "GET IT BEFORE IT'S GONE + DAYS/HOURS/MINUTES sayacı"
     }
   ],
   "stateFindings": {
-    "initial": "GET IT BEFORE IT'S GONE. countdown-bar."
+    "initial": "GET IT BEFORE IT'S GONE. countdown-bar: DAYS / HOURS / MINUTES (canlı sayaç). CTA yok. 375 dikey stack, 768/1440 yatay bant."
   },
   "missingStates": [],
-  "interactionNote": "JOIN US + THEME WALKTHROUGH kapatıldı. Get 10% Off tab leftover olabilir.",
-  "captureMode": "section"
+  "interactionNote": "Affordance taraması: input/opener/changer 0. Sayaç JS ile güncellenir; merchant state değil.",
+  "capture": {
+    "url": "https://stiletto-theme-vogue.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:19:21.343Z"
+  }
 }

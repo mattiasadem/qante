@@ -8,12 +8,53 @@
   "selector": "#shopify-section-template--17270937223355__162997382985eefc2c",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/be-yours/default/faq-support/faq-collapsible-tabs.1440.png",
     "evidence/be-yours/default/faq-support/faq-collapsible-tabs.375.png",
     "evidence/be-yours/default/faq-support/faq-collapsible-tabs.768.png",
-    "evidence/be-yours/default/faq-support/faq-collapsible-tabs.1440.png"
+    "evidence/be-yours/default/faq-support/faq-collapsible-tabs.changed.kargo-suresi-acik.1440.png",
+    "evidence/be-yours/default/faq-support/faq-collapsible-tabs.changed.kargo-suresi-acik.375.png",
+    "evidence/be-yours/default/faq-support/faq-collapsible-tabs.changed.kargo-suresi-acik.768.png",
+    "evidence/be-yours/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.1440.png",
+    "evidence/be-yours/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.375.png",
+    "evidence/be-yours/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.768.png"
   ],
   "notlar": "Shopping / Payment / Orders and Returns / Other. details kapalı. HOW LONG DOES IT TAKE…",
-  "delta": "Akordeon kapalı static. Interact leftover.",
+  "delta": "12 soru details accordion. Shopping/Payment/Orders/Other.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://beyours-theme.myshopify.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17270937223355__162997382985eefc2c",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "12 soru kapalı (+). Shopping / Payment / Orders / Other kategorileri."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--17270937223355__162997382985eefc2c summary:has-text('How long does it take to ship my order')",
+      "value": 900,
+      "capture": true,
+      "etiket": "kargo-suresi-acik",
+      "not": "İlk soru açık — 24-48 saat işleme + standart kargo süresi."
+    }
+  ],
+  "stateFindings": {
+    "initial": "12 soru kapalı (+). Shopping / Payment / Orders and Returns / Other dört kategori. 3vp aynı.",
+    "changed": "How long does it take to ship my order? açık (−). Cevap: 24-48 saat işleme; US 1-2 gün, Canada 1 gün, Australia 2-3 gün… Diğerleri +. 3vp aynı delta."
+  },
+  "missingStates": [],
+  "interactionNote": "details:first-of-type 12 eşleşme verir; text-scoped summary kullanıldı.",
   "capture": {
     "url": "https://beyours-theme.myshopify.com/pages/faq",
     "viewports": [
@@ -22,7 +63,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T10:57:20.836Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:37:05.029Z"
   }
 }

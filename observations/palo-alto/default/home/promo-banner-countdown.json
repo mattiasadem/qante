@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--21945700614332__3f667b5a-dadc-4263-bea9-189259f7b553",
   "evidenceSlug": "promo-banner-countdown",
   "evidence": [
+    "evidence/palo-alto/default/home/promo-banner-countdown.1440.png",
     "evidence/palo-alto/default/home/promo-banner-countdown.375.png",
     "evidence/palo-alto/default/home/promo-banner-countdown.768.png",
-    "evidence/palo-alto/default/home/promo-banner-countdown.1440.png"
+    "evidence/palo-alto/default/home/promo-banner-countdown.changed.saniye.1440.png",
+    "evidence/palo-alto/default/home/promo-banner-countdown.changed.saniye.375.png",
+    "evidence/palo-alto/default/home/promo-banner-countdown.changed.saniye.768.png",
+    "evidence/palo-alto/default/home/promo-banner-countdown.initial.ilk-hal.1440.png",
+    "evidence/palo-alto/default/home/promo-banner-countdown.initial.ilk-hal.375.png",
+    "evidence/palo-alto/default/home/promo-banner-countdown.initial.ilk-hal.768.png"
   ],
   "notlar": "Save 10% on bestsellers · Ends Wednesday, September 30, 2026 · SHOP BEFORE IT ENDS / SHOP THE SALE + gün/saat timer.",
   "delta": "Bitiş tarihi vitrinde yazılı. Timer canlı.",
@@ -22,7 +28,41 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T20:44:10.131Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:03:15.564Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://palo-alto-theme-main.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21945700614332__3f667b5a-dadc-4263-bea9-189259f7b553",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "42 DAYS / 00 HOURS / MIN / SEC timer ilk kare"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": true,
+      "etiket": "saniye",
+      "not": "Saniye tick — yalnız SEC rakamı değişir"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Save 10% on bestsellers · Ends Wednesday, September 30, 2026 · SHOP BEFORE IT ENDS / SHOP THE SALE + 42 DAYS 00 HOURS 01 MIN SEC.",
+    "changed": "3sn sonra yalnız SEC saniyesi tick eder; DAYS/HOURS/MIN aynı kalır."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan opener/changer yok. Canlı countdown timer — waitFor ile changed."
 }

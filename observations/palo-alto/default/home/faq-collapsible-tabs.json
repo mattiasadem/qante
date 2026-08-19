@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--21945700614332__section_accordions_with_images_3U9fky",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/palo-alto/default/home/faq-collapsible-tabs.1440.png",
     "evidence/palo-alto/default/home/faq-collapsible-tabs.375.png",
     "evidence/palo-alto/default/home/faq-collapsible-tabs.768.png",
-    "evidence/palo-alto/default/home/faq-collapsible-tabs.1440.png"
+    "evidence/palo-alto/default/home/faq-collapsible-tabs.changed.teslimat-suresi-acik.1440.png",
+    "evidence/palo-alto/default/home/faq-collapsible-tabs.changed.teslimat-suresi-acik.375.png",
+    "evidence/palo-alto/default/home/faq-collapsible-tabs.changed.teslimat-suresi-acik.768.png",
+    "evidence/palo-alto/default/home/faq-collapsible-tabs.initial.ilk-hal.1440.png",
+    "evidence/palo-alto/default/home/faq-collapsible-tabs.initial.ilk-hal.375.png",
+    "evidence/palo-alto/default/home/faq-collapsible-tabs.initial.ilk-hal.768.png"
   ],
   "notlar": "Find your luxury — everyday. Accordions + görsel. 399px.",
   "delta": "Tema tipi accordions. Görselli SSS.",
@@ -22,7 +28,42 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T20:39:04.421Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:04:06.824Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://palo-alto-theme-main.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21945700614332__section_accordions_with_images_3U9fky",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Dört soru kapalı (+)"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Accordion--text_ctE8FN button[aria-controls='Accordions-item--0-template--21945700614332__section_accordions_with_images_3U9fky']",
+      "value": 900,
+      "capture": true,
+      "etiket": "teslimat-suresi-acik",
+      "not": "How long does it take — cevap açık"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Find your luxury — everyday. Dört accordion kapalı (+): teslimat / garanti / iade / kargo.",
+    "changed": "How long does it take to get my products? açık (−). Cevap görünür; diğerleri +."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan accordion hint. Görselli SSS — accordion = changed."
 }

@@ -13,8 +13,7 @@
 `theme_store_id` = **null** (canlıda yok; uydurulmadı)  
 shop `betty-theme.myshopify.com`
 
-**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti** (0 error)  
-**PR:** draft https://github.com/mattiasadem/qante/pull/159 — **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + nav/cart/PDP interact + **CRO leftover interact** + validate **bitti** (0 error)
 
 ---
 
@@ -26,11 +25,11 @@ shop `betty-theme.myshopify.com`
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **52** |
-| PNG | **172** |
+| PNG | **196** (+24 CRO interact) |
 | Parallel | yalnız `observations/showcase/`, `evidence/showcase/`, `todo/showcase.md`, `candidates/showcase-leftovers.md` |
 
 **Kapsam satırı:**  
-`Showcase · default · showcase-v10.2.0 / schema_name Showcase 10.2.0 · theme_store_id null · home→PDP→PLP→collections→search→cart→about/contact→faq→blog→404 · 52 obs · 172 PNG · 0 yeni şema · leftover: candidates/showcase-leftovers.md`
+`Showcase · default · showcase-v10.2.0 / schema_name Showcase 10.2.0 · theme_store_id null · home→PDP→PLP→collections→search→cart→about/contact→faq→blog→404 · 52 obs · 196 PNG · 0 yeni şema · leftover: candidates/showcase-leftovers.md`
 
 ---
 
@@ -68,6 +67,17 @@ shop `betty-theme.myshopify.com`
 | product-info-main | initial / changed | [x] COMPACT 13 stock → MIDI 30 stock; fiyat $69/$89 aynı |
 | global-cart-drawer | — | yok |
 
+### CRO leftover interact
+
+| schemaId | States | Sonuç |
+|---|---|---|
+| `faq-collapsible-tabs` ×4 | initial / changed | [x] Ordering size / Shipping policy / Returns item / Sustainability materials — `details.cc-accordion-item` click |
+| `testimonial-quote-carousel` | initial | [x] tek statik cc-testimonial; carousel yok → `changed` missing |
+| `lead-capture-form` | initial | [x] Name/email/message; PII → `input` missing |
+| `lead-capture-newsletter-band` ×4 | initial | [x] about-brand / blog-post / faq-support / search — e-posta PII → `input` missing |
+
+**CRO disk şeması observation yok (icat edilmedi):** `before-after-slider` · `commerce-tools-products-bundle` · `promo-banner-countdown` · `comparison-quick-table` · `product-finder-quiz` · `media-shop-the-feed` · `media-scrolling-gallery`
+
 ---
 
 ## Aday / leftover
@@ -80,6 +90,8 @@ shop `betty-theme.myshopify.com`
 
 - [x] Official 3vp static (`capture-observation.mjs`)
 - [x] Interact mega / search / menu / cart / PDP Size
+- [x] CRO leftover interact — FAQ accordion ×4 (24 PNG)
+- [x] CRO scan — testimonial / form / newsletter-band (initial + missingStates)
 - [x] PNG bak → stateFindings
 - [x] `npm run validate` — 0 error / 0 warn
 - [x] Email / account / checkout / newsletter submit — **yapılmayacak**

@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--20936734376006__16457242689a58d7f3",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/flow/default/faq-support/faq-collapsible-tabs.1440.png",
     "evidence/flow/default/faq-support/faq-collapsible-tabs.375.png",
     "evidence/flow/default/faq-support/faq-collapsible-tabs.768.png",
-    "evidence/flow/default/faq-support/faq-collapsible-tabs.1440.png"
+    "evidence/flow/default/faq-support/faq-collapsible-tabs.changed.siparis-degisikligi-acik.1440.png",
+    "evidence/flow/default/faq-support/faq-collapsible-tabs.changed.siparis-degisikligi-acik.375.png",
+    "evidence/flow/default/faq-support/faq-collapsible-tabs.changed.siparis-degisikligi-acik.768.png",
+    "evidence/flow/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.1440.png",
+    "evidence/flow/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.375.png",
+    "evidence/flow/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.768.png"
   ],
   "notlar": "General Info akordeon. Smoothie Info / Delivery Info ayrı section (aynı tip, leftover tekrar).",
   "delta": "Shopify.theme.name `Flow R1 — design base` · id 150685581382 · schema_name Flow · schema_version 42.0.0 · theme_store_id null · role main · shop flow-queenstown.myshopify.com. Official walk eight-nourish-demo.myshopify.com (Nourish). flow-demo.myshopify.com = Debut, kullanılmadı. flow-theme.myshopify.com password, kullanılmadı.",
@@ -22,7 +28,43 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T20:42:57.595Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:48:42.280Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eight-nourish-demo.myshopify.com/pages/faqs",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20936734376006__16457242689a58d7f3",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "General Info — tüm sorular kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--20936734376006__16457242689a58d7f3 collapsible-button",
+      "value": 900,
+      "capture": true,
+      "etiket": "siparis-degisikligi-acik",
+      "not": "Can I change my order after placing it? → cevap paneli 92px"
+    }
+  ],
+  "stateFindings": {
+    "initial": "General Info · dört soru kapalı (chevron down). Can I change my order… / Why out of stock… / Where ingredients… / vb.",
+    "changed": "Can I change my order after placing it? açık — drop us a message… shipped cevabı görünür. Diğer sorular kapalı."
+  },
+  "missingStates": [],
+  "interactionNote": "Flow custom collapsible-button (details değil). Scan 0 opener; yoklama tık → height 0→92px.",
+  "captureMode": "section"
 }
