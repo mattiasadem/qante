@@ -185,4 +185,6 @@ Temsilci tarandı. Şema uydurulmadı. Form / kupon / ülke seçimi gönderilmed
 ## Motion · Motion / Satchel / Memo
 
 - [x] `product-showcase-tabs` — WEAR Quarter-Zip → CARRY Hip Pack (375 değişmedi)
+- [x] official CRO leftover — FAQ ilk soru · countdown tick · reviews nokta 4 Cole
 - [ ] mega / arama / sepet — Impulse chrome, bu turda yok
+- [ ] Satchel / Memo CRO interact — sibling leftover

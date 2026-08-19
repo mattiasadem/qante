@@ -5,7 +5,7 @@
 *Kaynak Memo:* https://motion-theme-home.myshopify.com/  
 *Theme Store:* https://themes.shopify.com/themes/motion
 
-**Şu anki odak:** ✅ üç resmi preset — 69 obs · 213 kare · 0 yeni şema
+**Şu anki odak:** ✅ üç resmi preset + official CRO leftover interact — 69 obs · 231 kare · 0 yeni şema
 
 | Preset | Demo |
 |---|---|
@@ -21,12 +21,13 @@
 |---|---|
 | Evidence kökü | `evidence/motion/{motion,satchel,memo}/` |
 | Observation | **69** |
-| Evidence PNG | **213** |
+| Evidence PNG | **231** |
 | Yeni şema | **0** |
 | Atlandı | newsletter-popup · theme-features · `/pages/lookbook` 404 · Motion `/pages/contact` 404 (`/pages/contact-us`) |
+| Leftover | [`candidates/motion-leftovers.md`](../candidates/motion-leftovers.md) |
 
 **Kapsam satırı:**  
-`Motion · 3 preset · 69 gözlem · 213 kanıt · 0 yeni şema · WEAR/CARRY interact`
+`Motion · 3 preset · 69 gözlem · 231 kanıt · 0 yeni şema · WEAR/CARRY + CRO leftover interact`
 
 ---
 
@@ -38,6 +39,7 @@
 - [x] F4 Satchel delta
 - [x] F5 Memo delta
 - [x] F6 Interact — WEAR → CARRY (768/1440)
+- [x] F7 CRO leftover interact — FAQ / countdown / reviews (official)
 
 ---
 
@@ -59,6 +61,10 @@
 ## Interact
 
 - `product-showcase-tabs` — WEAR Quarter-Zip → CARRY Hip Pack (375 değişmedi)
+- `faq-collapsible-tabs` — initial kapalı → changed ilk soru açık (3vp)
+- `promo-banner-countdown` — initial → changed saniye tick (3vp). Shop Collection tıklanmadı
+- `testimonial-quote-carousel` — initial MARCUS (hydrate) → changed COLE nokta 4 (3vp). Escape popup
+- `lead-capture-form` / `lead-capture-newsletter-band` — tarandı, doldurulmadı (PII)
 
 ## Bilinçli boşluklar
 
