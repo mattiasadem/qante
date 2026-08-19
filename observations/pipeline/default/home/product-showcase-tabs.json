@@ -8,12 +8,53 @@
   "selector": "#shopify-section-template--22817366311128__tabs",
   "evidenceSlug": "product-showcase-tabs",
   "evidence": [
+    "evidence/pipeline/default/home/product-showcase-tabs.1440.png",
     "evidence/pipeline/default/home/product-showcase-tabs.375.png",
     "evidence/pipeline/default/home/product-showcase-tabs.768.png",
-    "evidence/pipeline/default/home/product-showcase-tabs.1440.png"
+    "evidence/pipeline/default/home/product-showcase-tabs.changed.cotton.1440.png",
+    "evidence/pipeline/default/home/product-showcase-tabs.changed.cotton.375.png",
+    "evidence/pipeline/default/home/product-showcase-tabs.changed.cotton.768.png",
+    "evidence/pipeline/default/home/product-showcase-tabs.initial.ilk-hal.1440.png",
+    "evidence/pipeline/default/home/product-showcase-tabs.initial.ilk-hal.375.png",
+    "evidence/pipeline/default/home/product-showcase-tabs.initial.ilk-hal.768.png"
   ],
   "notlar": "SIGNATURE FABRICS sekmeler CASHMERE / COTTON / LINEN + ürün slider + QUICK ADD. İlk kart The Andre Luxe Cashmere Set $698.",
-  "delta": "Shopify.theme.name Pipeline 8.2.0 · id 162762195160 · schema_name Pipeline · schema_version 8.2.0 · theme_store_id null · role main · shop pipeline-theme-fashion.myshopify.com. Preset folder default = Fashion / Theme Store official preview (document title suffix Pipeline Clean). Sibling pipeline-theme.myshopify.com (Bright) not walked. Pipeline section-collection-tabs. Quick Add kart üzerinde. Sekme değişimi interact edilmedi.",
+  "delta": "Shopify.theme.name Pipeline 8.2.0 · id 162762195160 · schema_name Pipeline · schema_version 8.2.0 · theme_store_id null · role main · shop pipeline-theme-fashion.myshopify.com. Preset folder default = Fashion / Theme Store official preview (document title suffix Pipeline Clean). Sibling pipeline-theme.myshopify.com (Bright) not walked. Pipeline section-collection-tabs. Quick Add leftover. Sekme Cashmere→Cotton 3vp.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pipeline-theme-fashion.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--22817366311128__tabs",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Cashmere sekmesi current — Andre Luxe"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--22817366311128__tabs button.tab-link-1",
+      "value": 1600,
+      "capture": true,
+      "etiket": "cotton",
+      "not": "Cotton current — Havana / cotton ızgara. URL home kalır"
+    }
+  ],
+  "stateFindings": {
+    "initial": "SIGNATURE FABRICS. CASHMERE pill. Kartlar: Andre Luxe Cashmere Set $698 / Cashmere Neck Square $99 / Anaise Vee $378 / Looker Layered Crop Sold Out.",
+    "changed": "COTTON pill. Havana Dress $328 / Roan Layered Henley Sold Out / Danon Shrunken Striped Crew $368 / (1440) Orian Tee $298. URL home."
+  },
+  "missingStates": [],
+  "interactionNote": "button.tab-link-1 = Cotton. Flickity ok ve Quick Add tıklanmadı. Yeni merchant alanı yok.",
   "capture": {
     "url": "https://pipeline-theme-fashion.myshopify.com/",
     "viewports": [
@@ -22,7 +63,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T20:44:52.407Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T09:59:35.986Z"
   }
 }
