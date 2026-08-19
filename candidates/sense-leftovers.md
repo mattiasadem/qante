@@ -44,3 +44,24 @@ Karar: observation yazıldı
 - Newsletter bandı her şablonda tekrar (home kanonik; collection/PDP/search/cart/about/blog/404 kopya çekilmedi)
 - Body Lotion sold-out / Passionfruit varyant (ATC yok)
 - `/pages/returns` newsletter tekrarı
+
+## CRO şema leftover (disk’te var, Sense’te observation yok)
+
+| schemaId | Gerekçe |
+|---|---|
+| before-after-slider | Storefront’ta before/after karşılaştırma bloğu yok |
+| commerce-tools-products-bundle | Bundle / kit builder yok |
+| promo-banner-countdown | Countdown timer yok (`promo-announcement-bar` var, countdown değil) |
+| faq-collapsible-tabs | `/pages/faq` 404; accordion FAQ yok |
+| comparison-quick-table | Karşılaştırma tablosu yok |
+| product-finder-quiz | Quiz / finder akışı yok |
+| testimonial-quote-carousel | Tek alıntı `editorial-rich-text`; carousel/ok yok |
+| media-shop-the-feed | Shop-the-feed / UGC grid yok |
+| media-scrolling-gallery | Yatay kaydırmalı galeri yok (`media-mosaic-grid` collage) |
+
+## CRO interact (observation var)
+
+| schemaId | sayfa | States | Not |
+|---|---|---|---|
+| lead-capture-newsletter-band | home | initial | Email fill/submit PII — input missing |
+| lead-capture-form | about-brand | initial | 4 alan PII; Send dur — input missing |
