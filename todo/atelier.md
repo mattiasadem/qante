@@ -8,8 +8,8 @@
 
 **Yanlış URL:** `atelier-theme-demo.myshopify.com` → `/password` (kullanılmadı).
 
-**Durum:** ✅ Mod A walk + resmi 3vp + interact + validate  
-**PR:** https://github.com/mattiasadem/qante/pull/151 (draft · **main'e merge yok**)
+**Durum:** ✅ Mod A walk + resmi 3vp + interact + CRO interact + validate  
+**PR:** (bu tur — CRO interact)
 
 ---
 
@@ -21,11 +21,11 @@
 | Capture | resmi `capture-observation.mjs` + `capture-interaction.mjs` |
 | Şema | **0 yeni** |
 | Observation | **30** |
-| PNG | **108** |
+| PNG | **120** |
 | Parallel | yalnız `observations/atelier/`, `evidence/atelier/`, `todo/atelier.md`, `candidates/atelier-*.md` |
 
 **Kapsam satırı:**  
-`Atelier · default · Updated copy of Atelier demo store 3.2.0 / Atelier 3.4.0 · theme_store_id 3621 · home→PDP→PLP→collections→search→cart→about→contact→blog→404 · 30 obs · 108 PNG · 0 yeni şema · leftover: candidates/atelier-leftovers.md`
+`Atelier · default · Updated copy of Atelier demo store 3.2.0 / Atelier 3.4.0 · theme_store_id 3621 · home→PDP→PLP→collections→search→cart→about→contact→blog→404 · 30 obs · 120 PNG · 0 yeni şema · CRO interact: before-after-slider + lead-capture-form · leftover: candidates/atelier-leftovers.md`
 
 ---
 
@@ -81,6 +81,8 @@
 | global-cart-drawer | initial, filled, changed | boş → Louise $415 adet 1 → adet 2 / $830 |
 | product-info-main | initial, changed | Size 35 → 36 (fiyat $415) |
 | cart-page-main | initial, filled, changed | boş → Louise $415 → $830 |
+| **before-after-slider** | initial, changed | kol ortada → sağa sürükle; büyük çanta baskın |
+| **lead-capture-form** | initial, input | boş form → Comment dolu (PII yok; SUBMIT yok) |
 
 ---
 
@@ -94,5 +96,6 @@
 
 - [x] Official 3vp static (`capture-observation.mjs`)
 - [x] Interact mega / search / cart / menu 375 / PDP Size
+- [x] CRO interact: before-after-slider (drag) + lead-capture-form (comment fill)
 - [x] PNG bak → stateFindings
 - [x] `npm run validate` — 0 error

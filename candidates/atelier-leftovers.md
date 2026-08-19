@@ -144,6 +144,28 @@ Karar: onay bekliyor
 - Predictive `bag`: pills + Mini Flex / Mini Louise + VIEW ALL. 375 opener `search-action--hidden-on-menu`.
 - Cart drawer: ATC drawer açmaz — header Cart. Boş → Louise $415 adet 1 → adet 2 / $830. Checkout yok.
 - PDP Louise Size 35 → 36 (fiyat aynı $415).
+- **before-after-slider** (home): kol ortada iki çanta → `.cs-slider__handle` pct:85 sağa; büyük çanta baskın.
+- **lead-capture-form** (contact): Comment dolu; Name/Email/Phone boş; SUBMIT yok.
+
+---
+
+## CRO şema envanteri (observation yok — icat edilmedi)
+
+Walk + interact sonrası diskteki CRO şemalarından yalnız **2** observation vardı; diğerleri demo vitrinde görülmedi.
+
+| schemaId | Durum |
+|---|---|
+| `before-after-slider` | ✅ home — interact (initial, changed) |
+| `lead-capture-form` | ✅ contact — interact (initial, input) |
+| `commerce-tools-products-bundle` | ❌ observation yok |
+| `promo-banner-countdown` | ❌ observation yok (announcement-bar da yok) |
+| `faq-collapsible-tabs` | ❌ observation yok (`/pages/faq` düz metin) |
+| `lead-capture-newsletter-band` | ❌ observation yok (`footer-columns-newsletter` farklı şema) |
+| `comparison-quick-table` | ❌ observation yok |
+| `product-finder-quiz` | ❌ observation yok |
+| `testimonial-quote-carousel` | ❌ observation yok |
+| `media-shop-the-feed` | ❌ observation yok |
+| `media-scrolling-gallery` | ❌ observation yok |
 
 ---
 

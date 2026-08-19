@@ -8,12 +8,60 @@
   "selector": "#shopify-section-template--26420035649834__section_K7gyKH",
   "evidenceSlug": "before-after-slider",
   "evidence": [
+    "evidence/atelier/default/home/before-after-slider.1440.png",
     "evidence/atelier/default/home/before-after-slider.375.png",
     "evidence/atelier/default/home/before-after-slider.768.png",
-    "evidence/atelier/default/home/before-after-slider.1440.png"
+    "evidence/atelier/default/home/before-after-slider.changed.buyuk-canta-dolu.1440.png",
+    "evidence/atelier/default/home/before-after-slider.changed.buyuk-canta-dolu.375.png",
+    "evidence/atelier/default/home/before-after-slider.changed.buyuk-canta-dolu.768.png",
+    "evidence/atelier/default/home/before-after-slider.initial.ilk-hal.1440.png",
+    "evidence/atelier/default/home/before-after-slider.initial.ilk-hal.375.png",
+    "evidence/atelier/default/home/before-after-slider.initial.ilk-hal.768.png"
   ],
   "notlar": "A size for every occasion + SHOP NOW. comparison-slider-component yatay, iki çanta görseli.",
-  "delta": "Horizon comparison-slider (kozmetik before/after değil — iki ürün boyutu). Drag yoklandı değil.",
+  "delta": "Horizon comparison-slider (kozmetik before/after değil — iki ürün boyutu).",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-atelier-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--26420035649834__section_K7gyKH",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "A size for every occasion. Kol ortada (~%50), küçük çanta (before) sol / büyük çanta (after) sağ."
+    },
+    {
+      "state": "changed",
+      "action": "drag",
+      "selector": "#shopify-section-template--26420035649834__section_K7gyKH .cs-slider__handle",
+      "dragContainer": "#shopify-section-template--26420035649834__section_K7gyKH comparison-slider-component",
+      "value": "pct:85",
+      "capture": true,
+      "etiket": "buyuk-canta-dolu",
+      "not": "Tutamacı sağa sürükle — after (büyük çanta) alanı genişler."
+    }
+  ],
+  "stateFindings": {
+    "initial": "A size for every occasion + SHOP NOW. Yatay comparison-slider; ayırıcı ortada, küçük çanta sol / büyük çanta sağ.",
+    "changed": "Tutamaç sağa (~%85). Büyük çanta (after) kareyi kaplar; küçük çanta ince şerit solda."
+  },
+  "missingStates": [],
+  "interactionNote": "scan: input[type=range].cs-slider (görünür değil). Yoklama: drag .cs-slider__handle pct:85 range 50→86. SHOP NOW tıklanmadı.",
   "capture": {
     "url": "https://theme-atelier-demo.myshopify.com/",
     "viewports": [
@@ -22,7 +70,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T19:26:40.330Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:19:05.068Z"
   }
 }
