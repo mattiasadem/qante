@@ -8,12 +8,46 @@
   "selector": "#shopify-section-template--20031245123737__collapsible_rows_RhN7GT",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/hellobubble/default/store-locator/faq-collapsible-tabs.1440.png",
     "evidence/hellobubble/default/store-locator/faq-collapsible-tabs.375.png",
     "evidence/hellobubble/default/store-locator/faq-collapsible-tabs.768.png",
-    "evidence/hellobubble/default/store-locator/faq-collapsible-tabs.1440.png"
+    "evidence/hellobubble/default/store-locator/faq-collapsible-tabs.changed.us-canada.1440.png",
+    "evidence/hellobubble/default/store-locator/faq-collapsible-tabs.changed.us-canada.375.png",
+    "evidence/hellobubble/default/store-locator/faq-collapsible-tabs.changed.us-canada.768.png",
+    "evidence/hellobubble/default/store-locator/faq-collapsible-tabs.initial.kapali.1440.png",
+    "evidence/hellobubble/default/store-locator/faq-collapsible-tabs.initial.kapali.375.png",
+    "evidence/hellobubble/default/store-locator/faq-collapsible-tabs.initial.kapali.768.png"
   ],
   "notlar": "US & Canada / UK / Australia / Mexico. 635px.",
   "delta": "Ülke akordeon, SSS değil.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hellobubble.myshopify.com/pages/store-locator",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "9 kapalı ülke"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--20031245123737__collapsible_rows_RhN7GT button[aria-controls='expanded-row_9QxCVk']",
+      "capture": true,
+      "etiket": "us-canada",
+      "not": "US & Canada açık — retailer listesi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "9 kapalı ülke satırı (US & Canada … Sweden).",
+    "changed": "US & Canada açık; retailer / store link listesi görünür."
+  },
+  "missingStates": [],
+  "interactionNote": "Locator widget ayrı leftover. PII yok.",
   "capture": {
     "url": "https://hellobubble.myshopify.com/pages/store-locator",
     "viewports": [
@@ -22,7 +56,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T22:03:29.346Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:32:26.377Z"
   }
 }

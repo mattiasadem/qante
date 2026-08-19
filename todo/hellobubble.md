@@ -5,7 +5,7 @@
 *Tema (storefront, uydurulmadı):* **Bubble Baseline Theme -  Production 🚀** · `schema_name`: **Baseline** · `schema_version`: **5.0.0** · `theme_store_id`: null (custom) · role `main` · id `148258554009`  
 *Shop:* `hellobubble.myshopify.com` · CDN `t/353`
 
-**Durum:** Mod A walk + resmi 3vp + interact (piksel doğrulandı)  
+**Durum:** Mod A walk + resmi 3vp + interact (piksel doğrulandı) + **CRO interact** (2026-08-19)  
 **PR:** https://github.com/mattiasadem/qante/pull/85 (draft · **main'e merge yok**)
 
 ---
@@ -20,7 +20,7 @@
 | Parallel | yalnız `observations/hellobubble/`, `evidence/hellobubble/`, `todo/hellobubble.md`, `candidates/hellobubble-*.md` |
 
 **Kapsam satırı:**  
-`Hello Bubble · default · Bubble Baseline Theme - Production (Baseline 5.0.0 custom, theme_store_id null) · home→PDP→PLP→search→cart page+drawer→content→footer→mobile · 71 obs · 0 yeni şema · leftover: CF domain / Yotpo / Gorgias / Stay.ai / locator / PII`
+`Hello Bubble · default · Bubble Baseline Theme - Production (Baseline 5.0.0 custom, theme_store_id null) · home→PDP→PLP→search→cart page+drawer→content→footer→mobile · 71 obs · 0 yeni şema · CRO interact 15 obs · leftover: CF domain / Yotpo / Gorgias / Stay.ai / locator / PII / CRO-not-seen`
 
 ---
 
@@ -93,6 +93,34 @@
 | global-menu-drawer | open | 375/768 Shop/Skin/New/About + Log in. Accordion leftover |
 | product-info-main | changed | Mini seçili, üst $10 |
 | faq-collapsible-tabs | changed | Where do you ship to? US + 200 ülke |
+| faq-collapsible-tabs (×7 ek) | initial, changed | FAQ grupları 2–5 + community + derm + locator |
+| testimonial-quote-carousel (×4) | initial | carousel ok yok — statik grid/tek slayt |
+| media-shop-the-feed (×2) | initial | Instagram ızgara; affordance yok |
+| lead-capture-form | initial | PII stop — boş form |
+
+---
+
+## CRO interact (2026-08-19)
+
+| schemaId | sayfa | states | etiket |
+|---|---|---|---|
+| faq-collapsible-tabs | faq-support | initial, changed | kapali / ship-to |
+| faq-collapsible-tabs-2 | faq-support | initial, changed | kapali / skincare-return |
+| faq-collapsible-tabs-3 | faq-support | initial, changed | kapali / out-of-stock |
+| faq-collapsible-tabs-4 | faq-support | initial, changed | kapali / expiration |
+| faq-collapsible-tabs-5 | faq-support | initial, changed | kapali / still-questions |
+| faq-collapsible-tabs | community | initial, changed | kapali / shape-products |
+| faq-collapsible-tabs | dermatologists | initial, changed | kapali / focus-groups |
+| faq-collapsible-tabs | store-locator | initial, changed | kapali / us-canada |
+| testimonial-quote-carousel | home | initial | bolum |
+| testimonial-quote-carousel | community | initial | bolum |
+| testimonial-quote-carousel | dermatologists | initial | bolum |
+| testimonial-quote-carousel | product-detail | initial | bolum |
+| media-shop-the-feed | home | initial | bolum |
+| media-shop-the-feed | about-brand | initial | bolum |
+| lead-capture-form | dermatologists | initial | bolum |
+
+**CRO listede yok (observation yok):** before-after-slider, commerce-tools-products-bundle, promo-banner-countdown, lead-capture-newsletter-band, comparison-quick-table, product-finder-quiz, media-scrolling-gallery.
 
 ---
 
@@ -109,6 +137,7 @@
 - [x] Content templates 3vp
 - [x] Drawer / search / mega / mobile interact
 - [x] PNG bak → stateFindings
+- [x] CRO interact 15 obs (faq×8, testimonial×4, feed×2, form×1)
 - [ ] Community anchor 375/768 (zero-size, gizli)
 - [ ] Menu Shop accordion
 - [ ] Kart hover / quick-buy

@@ -8,12 +8,46 @@
   "selector": "#shopify-section-template--20011908825241__collapsible_rows_fR4Tri",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/hellobubble/default/dermatologists/faq-collapsible-tabs.1440.png",
     "evidence/hellobubble/default/dermatologists/faq-collapsible-tabs.375.png",
     "evidence/hellobubble/default/dermatologists/faq-collapsible-tabs.768.png",
-    "evidence/hellobubble/default/dermatologists/faq-collapsible-tabs.1440.png"
+    "evidence/hellobubble/default/dermatologists/faq-collapsible-tabs.changed.focus-groups.1440.png",
+    "evidence/hellobubble/default/dermatologists/faq-collapsible-tabs.changed.focus-groups.375.png",
+    "evidence/hellobubble/default/dermatologists/faq-collapsible-tabs.changed.focus-groups.768.png",
+    "evidence/hellobubble/default/dermatologists/faq-collapsible-tabs.initial.kapali.1440.png",
+    "evidence/hellobubble/default/dermatologists/faq-collapsible-tabs.initial.kapali.375.png",
+    "evidence/hellobubble/default/dermatologists/faq-collapsible-tabs.initial.kapali.768.png"
   ],
   "notlar": "Our Development Process 01–04. 754px.",
   "delta": "Süreç akordeon.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hellobubble.myshopify.com/pages/made-with-dermatologists",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "6 kapalı adım"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--20011908825241__collapsible_rows_fR4Tri button[aria-controls='expanded-row_bkYJdW']",
+      "capture": true,
+      "etiket": "focus-groups",
+      "not": "01 — Community Focus Groups açık"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Our Development Process + 6 kapalı adım (01–06).",
+    "changed": "01 — Community Focus Groups açık; süreç açıklaması + chevron yukarı."
+  },
+  "missingStates": [],
+  "interactionNote": "PII yok.",
   "capture": {
     "url": "https://hellobubble.myshopify.com/pages/made-with-dermatologists",
     "viewports": [
@@ -22,7 +56,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T21:57:59.814Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:31:42.263Z"
   }
 }

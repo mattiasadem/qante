@@ -8,12 +8,46 @@
   "selector": "#shopify-section-template--19572856389785__collapsible_rows_iFXNR4",
   "evidenceSlug": "faq-collapsible-tabs-2",
   "evidence": [
+    "evidence/hellobubble/default/faq-support/faq-collapsible-tabs-2.1440.png",
     "evidence/hellobubble/default/faq-support/faq-collapsible-tabs-2.375.png",
     "evidence/hellobubble/default/faq-support/faq-collapsible-tabs-2.768.png",
-    "evidence/hellobubble/default/faq-support/faq-collapsible-tabs-2.1440.png"
+    "evidence/hellobubble/default/faq-support/faq-collapsible-tabs-2.changed.skincare-return.1440.png",
+    "evidence/hellobubble/default/faq-support/faq-collapsible-tabs-2.changed.skincare-return.375.png",
+    "evidence/hellobubble/default/faq-support/faq-collapsible-tabs-2.changed.skincare-return.768.png",
+    "evidence/hellobubble/default/faq-support/faq-collapsible-tabs-2.initial.kapali.1440.png",
+    "evidence/hellobubble/default/faq-support/faq-collapsible-tabs-2.initial.kapali.375.png",
+    "evidence/hellobubble/default/faq-support/faq-collapsible-tabs-2.initial.kapali.768.png"
   ],
   "notlar": "Returns & Exchanges. 279px.",
   "delta": "İkinci grup.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hellobubble.myshopify.com/pages/faq",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "3 kapalı soru"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--19572856389785__collapsible_rows_iFXNR4 button[aria-controls='expanded-row_re01uV']",
+      "capture": true,
+      "etiket": "skincare-return",
+      "not": "İlk soru açık — skincare return policy"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Returns & Exchanges + 3 kapalı soru (skincare / apparel / retailer).",
+    "changed": "Can you return / exchange skincare products? açık; cevap metni + chevron yukarı."
+  },
+  "missingStates": [],
+  "interactionNote": "PII yok.",
   "capture": {
     "url": "https://hellobubble.myshopify.com/pages/faq",
     "viewports": [
@@ -22,7 +56,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T21:59:17.198Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:28:16.268Z"
   }
 }

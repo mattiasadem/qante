@@ -8,12 +8,46 @@
   "selector": "#shopify-section-template--19572856389785__collapsible_rows_J646pN",
   "evidenceSlug": "faq-collapsible-tabs-4",
   "evidence": [
+    "evidence/hellobubble/default/faq-support/faq-collapsible-tabs-4.1440.png",
     "evidence/hellobubble/default/faq-support/faq-collapsible-tabs-4.375.png",
     "evidence/hellobubble/default/faq-support/faq-collapsible-tabs-4.768.png",
-    "evidence/hellobubble/default/faq-support/faq-collapsible-tabs-4.1440.png"
+    "evidence/hellobubble/default/faq-support/faq-collapsible-tabs-4.changed.expiration.1440.png",
+    "evidence/hellobubble/default/faq-support/faq-collapsible-tabs-4.changed.expiration.375.png",
+    "evidence/hellobubble/default/faq-support/faq-collapsible-tabs-4.changed.expiration.768.png",
+    "evidence/hellobubble/default/faq-support/faq-collapsible-tabs-4.initial.kapali.1440.png",
+    "evidence/hellobubble/default/faq-support/faq-collapsible-tabs-4.initial.kapali.375.png",
+    "evidence/hellobubble/default/faq-support/faq-collapsible-tabs-4.initial.kapali.768.png"
   ],
   "notlar": "Product Questions. 985px.",
   "delta": "Dördüncü grup.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hellobubble.myshopify.com/pages/faq",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "13 kapalı soru"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--19572856389785__collapsible_rows_J646pN button[aria-controls='expanded-row_pq01']",
+      "capture": true,
+      "etiket": "expiration",
+      "not": "İlk soru açık — expiration dates"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Product Questions + 13 kapalı soru.",
+    "changed": "Do your products have expiration dates? açık; PAO / shelf-life cevabı."
+  },
+  "missingStates": [],
+  "interactionNote": "PII yok.",
   "capture": {
     "url": "https://hellobubble.myshopify.com/pages/faq",
     "viewports": [
@@ -22,7 +56,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T21:59:08.578Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:29:36.452Z"
   }
 }

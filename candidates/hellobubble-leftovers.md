@@ -142,3 +142,27 @@ Gerekçe: Mobil drawer Shop > / Skin Concerns > chevron var; alt liste açılmad
 Örnekler: 375/768 menu drawer  
 Öneri: leftover accordion  
 Karar: onay bekliyor
+
+---
+
+ADAY: hellobubble-cro-not-observed  
+Gerekçe: CRO listede before-after-slider, commerce-tools-products-bundle, promo-banner-countdown, lead-capture-newsletter-band, comparison-quick-table, product-finder-quiz, media-scrolling-gallery — walk'ta observation yok.  
+Örnekler: https://hellobubble.myshopify.com/ (home/PDP/FAQ tarandı)  
+Öneri: leftover — bu walk'ta görülmedi; şema icat edilmedi  
+Karar: onay bekliyor
+
+---
+
+ADAY: hellobubble-testimonial-no-carousel  
+Gerekçe: testimonial-quote-carousel 4 instance (home/community/derm/PDP) scan'de changer/ok yok — statik grid veya tek slayt. changed state anlamsız.  
+Örnekler: home consumer_testimonial, community text_columns_w_images_v2  
+Öneri: initial-only interact yeterli  
+Karar: onay bekliyor
+
+---
+
+ADAY: hellobubble-instagram-feed-static  
+Gerekçe: media-shop-the-feed home + about scan'de opener/hover/changer yok — üçüncü parti Instagram ızgara statik.  
+Örnekler: instagram_feed_BmEtE6  
+Öneri: initial-only interact  
+Karar: onay bekliyor

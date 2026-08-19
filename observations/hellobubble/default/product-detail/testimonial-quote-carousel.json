@@ -8,12 +8,39 @@
   "selector": "#shopify-section-template--19572856520857__product_derm_quote_section",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
+    "evidence/hellobubble/default/product-detail/testimonial-quote-carousel.1440.png",
     "evidence/hellobubble/default/product-detail/testimonial-quote-carousel.375.png",
     "evidence/hellobubble/default/product-detail/testimonial-quote-carousel.768.png",
-    "evidence/hellobubble/default/product-detail/testimonial-quote-carousel.1440.png"
+    "evidence/hellobubble/default/product-detail/testimonial-quote-carousel.initial.bolum.1440.png",
+    "evidence/hellobubble/default/product-detail/testimonial-quote-carousel.initial.bolum.375.png",
+    "evidence/hellobubble/default/product-detail/testimonial-quote-carousel.initial.bolum.768.png"
   ],
   "notlar": "Built by Dermatologists. Dr. Rebecca Smith quote. 464px.",
   "delta": "Tek alıntı, carousel ok bu karede yok.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hellobubble.myshopify.com/products/slam-dunk-hydrating-moisturizer",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19572856520857__product_derm_quote_section",
+      "capture": true,
+      "etiket": "bolum",
+      "not": "Tek derm quote"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Built by Dermatologists + Dr. Rebecca Smith tek alıntı. Carousel/changer yok."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan: opener/changer yok.",
   "capture": {
     "url": "https://hellobubble.myshopify.com/products/slam-dunk-hydrating-moisturizer",
     "viewports": [
@@ -22,7 +49,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T22:02:54.254Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:35:32.453Z"
   }
 }
