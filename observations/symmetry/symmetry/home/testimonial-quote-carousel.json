@@ -8,12 +8,53 @@
   "selector": "#shopify-section-template--24058934296599__16117511238528a364",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
+    "evidence/symmetry/symmetry/home/testimonial-quote-carousel.1440.png",
     "evidence/symmetry/symmetry/home/testimonial-quote-carousel.375.png",
     "evidence/symmetry/symmetry/home/testimonial-quote-carousel.768.png",
-    "evidence/symmetry/symmetry/home/testimonial-quote-carousel.1440.png"
+    "evidence/symmetry/symmetry/home/testimonial-quote-carousel.changed.sonraki-slide.1440.png",
+    "evidence/symmetry/symmetry/home/testimonial-quote-carousel.changed.sonraki-slide.375.png",
+    "evidence/symmetry/symmetry/home/testimonial-quote-carousel.changed.sonraki-slide.768.png",
+    "evidence/symmetry/symmetry/home/testimonial-quote-carousel.initial.ilk-slide.1440.png",
+    "evidence/symmetry/symmetry/home/testimonial-quote-carousel.initial.ilk-slide.375.png",
+    "evidence/symmetry/symmetry/home/testimonial-quote-carousel.initial.ilk-slide.768.png"
   ],
   "notlar": "Adele S, Toronto. Rhythm Collection CTA.",
   "delta": "",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://chantilly.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24058934296599__16117511238528a364",
+      "capture": true,
+      "etiket": "ilk-slide",
+      "not": "İlk slide: Adele S, Toronto + Rhythm Collection."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--24058934296599__16117511238528a364 button.slideshow-nav__btn:has-text('Next')",
+      "value": 600,
+      "capture": true,
+      "etiket": "sonraki-slide",
+      "not": "Next → ikinci testimonial görünür."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Adele S, Toronto + Rhythm Collection görseli.",
+    "changed": "Next → Izzy, London + B Swim Collection görseli."
+  },
+  "missingStates": [],
+  "interactionNote": "Carousel okları 375/768/1440 hepsinde çalıştı.",
   "capture": {
     "url": "https://chantilly.myshopify.com/",
     "viewports": [
@@ -21,8 +62,8 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
+    "method": "interaction-steps",
     "mode": "section",
-    "updatedAt": "2026-08-15T12:39:24.523Z"
+    "updatedAt": "2026-08-19T14:04:31.281Z"
   }
 }

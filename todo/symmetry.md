@@ -66,3 +66,7 @@
 
 - `media-lookbook-banner` — + → Heavy Rotation (375 kart yok)
 - `faq-collapsible-tabs` — What size should I buy? açık
+- `testimonial-quote-carousel` — home: Adele S → Izzy · lookbook: Jenny C → Rebecca S
+- `faq-collapsible-tabs-2` — Shipping policy açık
+- `faq-collapsible-tabs-3` — How do I return an item? açık
+- `faq-collapsible-tabs-4` — Materials açık
