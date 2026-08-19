@@ -8,12 +8,53 @@
   "selector": "#shopify-section-template--19324472033333__16336816691fb51b7b",
   "evidenceSlug": "faq-collapsible-tabs-2",
   "evidence": [
+    "evidence/showcase/default/faq-support/faq-collapsible-tabs-2.1440.png",
     "evidence/showcase/default/faq-support/faq-collapsible-tabs-2.375.png",
     "evidence/showcase/default/faq-support/faq-collapsible-tabs-2.768.png",
-    "evidence/showcase/default/faq-support/faq-collapsible-tabs-2.1440.png"
+    "evidence/showcase/default/faq-support/faq-collapsible-tabs-2.changed.shipping-policy-acik.1440.png",
+    "evidence/showcase/default/faq-support/faq-collapsible-tabs-2.changed.shipping-policy-acik.375.png",
+    "evidence/showcase/default/faq-support/faq-collapsible-tabs-2.changed.shipping-policy-acik.768.png",
+    "evidence/showcase/default/faq-support/faq-collapsible-tabs-2.initial.ilk-hal.1440.png",
+    "evidence/showcase/default/faq-support/faq-collapsible-tabs-2.initial.ilk-hal.375.png",
+    "evidence/showcase/default/faq-support/faq-collapsible-tabs-2.initial.ilk-hal.768.png"
   ],
   "notlar": "Shipping policy / providers / lost package.",
-  "delta": "details.cc-accordion-item. Açık kare interact değil — leftover OK.",
+  "delta": "details.cc-accordion-item.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://betty-theme.myshopify.com/pages/faqs",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19324472033333__16336816691fb51b7b",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Shipping başlığı; üç soru kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--19324472033333__16336816691fb51b7b details.cc-accordion-item:first-of-type > summary",
+      "value": 900,
+      "capture": true,
+      "etiket": "shipping-policy-acik",
+      "not": "What is the shipping policy? açık — confirmation email cevabı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Shipping başlığı; üç soru kapalı (+): What is the shipping policy? / What shipping providers do you use? / Eff! My package was lost…",
+    "changed": "What is the shipping policy? açık (−). Cevap: confirmation email + fulfillment team. Diğer iki soru +. 3vp aynı delta."
+  },
+  "missingStates": [],
+  "interactionNote": "details.cc-accordion-item:first-of-type click. Şema emit:accordion.toggle duruyor.",
   "capture": {
     "url": "https://betty-theme.myshopify.com/pages/faqs",
     "viewports": [
@@ -22,7 +63,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T20:42:42.490Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:48:05.096Z"
   }
 }

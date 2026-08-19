@@ -8,12 +8,53 @@
   "selector": "#shopify-section-template--19324472033333__1633681707d0a1c902",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/showcase/default/faq-support/faq-collapsible-tabs.1440.png",
     "evidence/showcase/default/faq-support/faq-collapsible-tabs.375.png",
     "evidence/showcase/default/faq-support/faq-collapsible-tabs.768.png",
-    "evidence/showcase/default/faq-support/faq-collapsible-tabs.1440.png"
+    "evidence/showcase/default/faq-support/faq-collapsible-tabs.changed.size-sorusu-acik.1440.png",
+    "evidence/showcase/default/faq-support/faq-collapsible-tabs.changed.size-sorusu-acik.375.png",
+    "evidence/showcase/default/faq-support/faq-collapsible-tabs.changed.size-sorusu-acik.768.png",
+    "evidence/showcase/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.1440.png",
+    "evidence/showcase/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.375.png",
+    "evidence/showcase/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.768.png"
   ],
   "notlar": "Ordering: What size / cancel / speak to someone.",
-  "delta": "details.cc-accordion-item. Açık kare interact değil — leftover OK.",
+  "delta": "details.cc-accordion-item.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://betty-theme.myshopify.com/pages/faqs",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19324472033333__1633681707d0a1c902",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Ordering başlığı; üç soru kapalı (+)"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--19324472033333__1633681707d0a1c902 details.cc-accordion-item:first-of-type > summary",
+      "value": 900,
+      "capture": true,
+      "etiket": "size-sorusu-acik",
+      "not": "What size should I buy? açık — size guides cevabı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Ordering başlığı; üç soru kapalı (+): What size should I buy? / Can I cancel my order? / What if I want to speak to someone?",
+    "changed": "What size should I buy? açık (−). Cevap: size guides underneath available sizes + contact us linki. Diğer iki soru +. 3vp aynı delta."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan details > summary; click (hover değil). details.cc-accordion-item:first-of-type. Şema emit:accordion.toggle duruyor.",
   "capture": {
     "url": "https://betty-theme.myshopify.com/pages/faqs",
     "viewports": [
@@ -22,7 +63,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T20:43:16.483Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:47:24.993Z"
   }
 }
