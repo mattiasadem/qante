@@ -8,12 +8,53 @@
   "selector": "#shopify-section-template--18174410653896__collapsible_menu_with_image_wzKQKa",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/wonder/default/product-detail/faq-collapsible-tabs.1440.png",
     "evidence/wonder/default/product-detail/faq-collapsible-tabs.375.png",
     "evidence/wonder/default/product-detail/faq-collapsible-tabs.768.png",
-    "evidence/wonder/default/product-detail/faq-collapsible-tabs.1440.png"
+    "evidence/wonder/default/product-detail/faq-collapsible-tabs.changed.facial-oil-acik.1440.png",
+    "evidence/wonder/default/product-detail/faq-collapsible-tabs.changed.facial-oil-acik.375.png",
+    "evidence/wonder/default/product-detail/faq-collapsible-tabs.changed.facial-oil-acik.768.png",
+    "evidence/wonder/default/product-detail/faq-collapsible-tabs.initial.ilk-hal.1440.png",
+    "evidence/wonder/default/product-detail/faq-collapsible-tabs.initial.ilk-hal.375.png",
+    "evidence/wonder/default/product-detail/faq-collapsible-tabs.initial.ilk-hal.768.png"
   ],
   "notlar": "Collapsible + görsel.",
   "delta": "Wonder collapsible_menu_with_image.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://wonder-theme-beauty.myshopify.com/products/body-salt-scrub-cranberry-300-g",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--18174410653896__collapsible_menu_with_image_wzKQKa",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Got questions? altı soru kapalı + görsel"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "[aria-controls='CollapsibleTab-collapsible_tab_HNBXjG']",
+      "value": 900,
+      "capture": true,
+      "etiket": "facial-oil-acik",
+      "not": "When should I use a facial oil? — last step before SPF"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Got questions? We’ve got answers. Altı soru kapalı (+). 1440 solda accordion / sağda mokosh üçlü görsel. 375 görsel üstte.",
+    "changed": "When should I use a facial oil? açık (−). Cevap: last step after moisturizer before SPF; oily-to-combo / normal-to-dry. Diğerleri +. 375 karede sticky CHOOSE OPTIONS sızdı."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan opener gorunur:false; yoklama tık panel açtı (375 402px). Accordion = changed. 375 sticky CHOOSE OPTIONS leftover. Şema emit:accordion.toggle duruyor.",
   "capture": {
     "url": "https://wonder-theme-beauty.myshopify.com/products/body-salt-scrub-cranberry-300-g",
     "viewports": [
@@ -22,7 +63,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T10:59:17.287Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T13:36:37.506Z"
   }
 }

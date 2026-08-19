@@ -8,12 +8,53 @@
   "selector": "#shopify-section-template--18174410424520__19343041-49f3-4eb8-918f-d93e323afa2e",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/wonder/default/faq-support/faq-collapsible-tabs.1440.png",
     "evidence/wonder/default/faq-support/faq-collapsible-tabs.375.png",
     "evidence/wonder/default/faq-support/faq-collapsible-tabs.768.png",
-    "evidence/wonder/default/faq-support/faq-collapsible-tabs.1440.png"
+    "evidence/wonder/default/faq-support/faq-collapsible-tabs.changed.cruelty-free-acik.1440.png",
+    "evidence/wonder/default/faq-support/faq-collapsible-tabs.changed.cruelty-free-acik.375.png",
+    "evidence/wonder/default/faq-support/faq-collapsible-tabs.changed.cruelty-free-acik.768.png",
+    "evidence/wonder/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.1440.png",
+    "evidence/wonder/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.375.png",
+    "evidence/wonder/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.768.png"
   ],
   "notlar": "Are your beauty products cruelty-free? accordion.",
   "delta": "",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://wonder-theme-beauty.myshopify.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--18174410424520__19343041-49f3-4eb8-918f-d93e323afa2e",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Sekiz soru kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "[aria-controls='CollapsibleTab-template--15329436369096__19343041-49f3-4eb8-918f-d93e323afa2e-collapsible_tab-1']",
+      "value": 900,
+      "capture": true,
+      "etiket": "cruelty-free-acik",
+      "not": "İlk soru — Absolutely cruelty-free"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Sekiz soru kapalı (+). 1440/768/375 tek kolon: cruelty-free / skin type / beginners / order / shipping / return / account / gift wrapping.",
+    "changed": "Are your beauty products cruelty-free? açık (−). Cevap: Absolutely! We are committed to ethical beauty, ensuring all our products are 100% cruelty-free. Diğerleri +. 3vp aynı delta."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan opener hint yok; yoklama [aria-controls] tık → panel 0→50/92px. Accordion = changed. Şema emit:accordion.toggle duruyor.",
   "capture": {
     "url": "https://wonder-theme-beauty.myshopify.com/pages/faq",
     "viewports": [
@@ -22,7 +63,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T10:53:33.799Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T13:35:49.183Z"
   }
 }

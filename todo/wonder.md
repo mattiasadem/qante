@@ -10,8 +10,8 @@
 `theme_store_id` = **null** (canlıda yok; uydurulmadı)  
 shop `wonder-theme-beauty.myshopify.com`
 
-**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti**  
-**PR:** draft https://github.com/mattiasadem/qante/pull/166 — **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact + CRO leftover interact + validate  
+**PR:** draft https://github.com/mattiasadem/qante/pull/223 — walk PR 166 ayrı — **main'e merge yok**
 
 ---
 
@@ -25,7 +25,7 @@ shop `wonder-theme-beauty.myshopify.com`
 | Parallel | yalnız `observations/wonder/`, `evidence/wonder/`, `todo/wonder.md`, `candidates/wonder-leftovers.md` |
 
 **Kapsam satırı:**  
-`Wonder · default (Beauty) · wonder-theme/wonder-demo-v2.5 · schema_name Wonder 2.5.0 · theme_store_id null · home→PDP→PLP→collections→search→cart→about-us/contact→faq→blog→404 · 58 obs · 193 PNG · 0 yeni şema · leftover: candidates/wonder-leftovers.md`
+`Wonder · default (Beauty) · wonder-theme/wonder-demo-v2.5 · schema_name Wonder 2.5.0 · theme_store_id null · home→PDP→PLP→collections→search→cart→about-us/contact→faq→blog→404 · 58 obs · 223 PNG · 0 yeni şema · leftover: candidates/wonder-leftovers.md`
 
 ---
 
@@ -98,6 +98,11 @@ shop `wonder-theme-beauty.myshopify.com`
 | global-cart-drawer | filled + changed | empty → qty1 $68/$61.20 → qty2 $136/$122.40 |
 | cart-page-main | filled + changed | empty → qty1 $68 → qty2 $136 |
 | product-info-main | changed | Size 180 ml $68 → 300 ml $98 |
+| faq-collapsible-tabs (faq) | changed | cruelty-free açık — 100% cruelty-free |
+| faq-collapsible-tabs (PDP) | changed | facial oil açık — last step before SPF |
+| before-after-slider | changed | After rozeti → tutamaç sağa, Before kaplar |
+| testimonial-quote-carousel | changed | Alex K → Monika R (3vp Next) |
+| media-shop-the-feed | changed | Algae $115 → Argan Oil From $19 |
 
 ---
 
@@ -111,5 +116,6 @@ shop `wonder-theme-beauty.myshopify.com`
 
 - [x] Official 3vp static (`capture-observation.mjs`)
 - [x] Interact mega / search / cart / menu / PDP Size
+- [x] CRO leftover: FAQ ×2 / before-after / home testi / shop-the-feed
 - [x] PNG bak → stateFindings
 - [x] `npm run validate` — 0 error
