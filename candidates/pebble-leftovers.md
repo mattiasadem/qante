@@ -27,6 +27,11 @@
 | Quick-add drawer | `quick-add-drawer` — Choose Options overlay. Interact listesinde yok |
 | Size Guide overlay | PDP Size Guide — leftover |
 | Mobile submenu `changed` | 375/768 Shop chevron görülebilir; alt menü açılmadı |
+| Bundle home `hover` | Scan ikinci-gorsel; section crop'ta thumbnail farkı yok |
+| Bundle PDP `hover` | Bag ATC ikonu initial'da görünür; quick-add drawer leftover |
+| testimonials_parallax `changed` | Carousel ok/nokta yok — stacked parallax |
+| contact form `input` | PII — fill/submit duruldu |
+| CRO şemaları sitede yok | before-after-slider, promo-banner-countdown, faq-collapsible-tabs, lead-capture-newsletter-band, comparison-quick-table, product-finder-quiz, media-shop-the-feed, media-scrolling-gallery |
 | PLP filtre / sort | Shop All 53 ürün — interact zorunlu değil |
 | Search header (`search-header`) | Search results başlık bloğu; `search-results` ayrı |
 | Our-story boş görsel (`custom_section_xeNeCm`) | 679px, metin yok — kanıtsız şema yok |
@@ -55,3 +60,4 @@
 - Cart: `.cart-drawer-button` → `#cart-drawer-dialog`. ATC UI. qty 1 $45 → qty 2 $90. Free-ship $55 → $10. Checkout tıklanmadı.
 - 1440 hamburger yok. 375/768 `.menu-drawer-button` → `#menu-drawer-dialog`. Sign In duruldu.
 - PDP Size: 3Y in-stock → 8Y Only 2 items in stock. Color yalnız Red. Fiyat $45.
+- **CRO leftover:** home bundle Pink/7Y size select changed. PDP products_combine initial only. testimonials_parallax carousel yok. contact form PII.

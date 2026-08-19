@@ -8,12 +8,59 @@
   "selector": "#shopify-section-template--20816638214282__products_bundle_mnDxAG",
   "evidenceSlug": "commerce-tools-products-bundle",
   "evidence": [
-    "evidence/pebble/default/home/commerce-tools-products-bundle.375.png",
-    "evidence/pebble/default/home/commerce-tools-products-bundle.768.png",
-    "evidence/pebble/default/home/commerce-tools-products-bundle.1440.png"
+    "evidence/pebble/default/home/commerce-tools-products-bundle.initial.ilk-hal.375.png",
+    "evidence/pebble/default/home/commerce-tools-products-bundle.initial.ilk-hal.768.png",
+    "evidence/pebble/default/home/commerce-tools-products-bundle.initial.ilk-hal.1440.png",
+    "evidence/pebble/default/home/commerce-tools-products-bundle.changed.pink-7y.375.png",
+    "evidence/pebble/default/home/commerce-tools-products-bundle.changed.pink-7y.768.png",
+    "evidence/pebble/default/home/commerce-tools-products-bundle.changed.pink-7y.1440.png"
   ],
   "notlar": "BUNDLE & SAVE Buy 2 Get 10% Off. Crochet Tank Mint + Floral Pant Mint. Add All To Cart.",
   "delta": "products-bundle image-left. Checkout yok; Add All tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pebble-little.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20816638214282__products_bundle_mnDxAG",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Bundle & Save Buy 2 Get 10% Off. Crochet Tank Mint Green/3Y + Floral Pant Mint Pink/3Y. Add all to cart."
+    },
+    {
+      "state": "changed",
+      "action": "select",
+      "selector": "#shopify-section-template--20816638214282__products_bundle_mnDxAG .products-bundle__product-block:nth-child(2) select[name='id']",
+      "value": "47236603805834",
+      "capture": true,
+      "etiket": "pink-7y",
+      "not": "Floral Pant Mint size Pink/3Y → Pink/7Y. İlk ürün Green/3Y sabit."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Bundle & Save Buy 2 Get 10% Off. Crochet Tank Mint Green/3Y $45 + Floral Pant Mint Pink/3Y $22 (sale $32). Add all to cart.",
+    "changed": "Floral Pant Mint dropdown Pink/7Y seçili. Crochet Tank Green/3Y sabit."
+  },
+  "missingStates": [
+    {
+      "state": "filled",
+      "sebep": "Add all to cart 2 ürün ekler ve cart drawer açılır; bundle section UI değişmiyor. Dolu sepet global-cart-drawer observation'da."
+    },
+    {
+      "state": "hover",
+      "sebep": "Scan ikinci-gorsel var ama section crop'ta thumbnail hover farkı 3vp'de görsel olarak doğrulanamadı — initial ile aynı kare."
+    }
+  ],
+  "interactionNote": "Add All ATC serbest ama filled bu selector'da görsel fark üretmiyor — drawer global-cart-drawer. Size select changed anlamlı.",
   "capture": {
     "url": "https://pebble-little.myshopify.com/",
     "viewports": [
@@ -22,7 +69,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T10:57:55.231Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:43:02.472Z"
   }
 }
