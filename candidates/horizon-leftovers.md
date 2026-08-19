@@ -102,3 +102,19 @@ Gerekçe: PLP başlık, blog post, contact form Horizon `section.liquid` + neste
 Örnekler: `#…__section` Products; blog-post `#…__section`  
 Öneri: leftover — generic wrapper, şema yok  
 Karar: onay bekliyor
+
+---
+
+ADAY: horizon-cro-schemas-absent  
+Gerekçe: Walk + interact sonrası listed CRO şemalarından yalnız `lead-capture-form` observation var. `footer-columns-newsletter` ≠ `lead-capture-newsletter-band`. Gözlenmedi: before-after-slider · commerce-tools-products-bundle · promo-banner-countdown · faq-collapsible-tabs · comparison-quick-table · product-finder-quiz · testimonial-quote-carousel · media-shop-the-feed · media-scrolling-gallery · FAQ/reviews/countdown/quiz/bundle/sticky/scarcity.  
+Örnekler: https://theme-horizon-demo.myshopify.com/  
+Öneri: leftover — Horizon demo minimal; şema icat edilmedi  
+Karar: onay bekliyor
+
+---
+
+ADAY: horizon-lead-capture-newsletter-band  
+Gerekçe: CRO `lead-capture-newsletter-band` şeması diskte var; Horizon’da observation yok. Footer newsletter `footer-columns-newsletter` (Join the club band).  
+Örnekler: `#shopify-section-sections--25678738850113__migrated_footer_content`  
+Öneri: leftover — farklı şema tipi  
+Karar: onay bekliyor
