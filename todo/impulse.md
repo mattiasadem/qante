@@ -66,9 +66,19 @@
 | global-cart-drawer | initial, filled, changed | PRE-ORDER → Wren XS; adet 1→2, $286→$572 |
 | global-quick-view | open | Lido Short modal, yalnız 1440 |
 | faq-collapsible-tabs | initial, changed | ilk soru açık |
+| lead-capture-form | initial, input | yalnız MESSAGE; NAME/EMAIL PII yok; SEND yok |
 | cart-page-main | initial, filled | sol satır + sağ özet |
 | media-lookbook-banner | initial, open | Lena Midi + → ad / fiyat / VIEW PRODUCT popover |
 | product-showcase-grid-plp | initial, open, changed | Filter drawer + Size=XS (36→3) |
+
+### CRO interact (preset delta)
+
+| schemaId | preset | State | Not |
+|---|---|---|---|
+| testimonial-quote-carousel | dune | initial, changed | flickity nokta 4 → farklı alıntı |
+| promo-banner-countdown | dune, terrain | initial | timer otomatik; kontrol yok |
+| before-after-slider | apothecary | initial | changed: drag yok (missingStates) |
+| promo-scrolling-marquee | apothecary, terrain | initial | otomatik kayma |
 
 ---
 

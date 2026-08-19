@@ -69,6 +69,8 @@ PDP: Frame/Wheels/Chain/Casette → product-info-tabs ✅. Video / IWT / countdo
 ## Interact
 
 - `product-info-tabs` — Frame → Wheels ETHIRTEEN (hotspot, tab çubuğu yok)
+- `promo-banner-countdown` — initial only; SHOP NOW linki state değiştirmez
+- `promo-scrolling-marquee` (about) — initial only; otomatik kayma
 
 ## Bilinçli boşluklar
 

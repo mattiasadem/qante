@@ -4,7 +4,7 @@
 *Parent:* [`impulse.md`](./impulse.md)  
 *Theme Store:* Apothecary → Jewelry demosu
 
-**Şu anki odak:** ✅ delta + before-after yoklandı (drag action yok)
+**Şu anki odak:** ✅ delta + before-after yoklandı + CRO interact
 
 **Kural:** Full kopya yok — Fashion/Dune/Terrain’de olmayan tipler.
 
