@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--20936734277702__bundled_products_vnext",
   "evidenceSlug": "commerce-tools-products-bundle",
   "evidence": [
+    "evidence/flow/default/home/commerce-tools-products-bundle.1440.png",
     "evidence/flow/default/home/commerce-tools-products-bundle.375.png",
     "evidence/flow/default/home/commerce-tools-products-bundle.768.png",
-    "evidence/flow/default/home/commerce-tools-products-bundle.1440.png"
+    "evidence/flow/default/home/commerce-tools-products-bundle.changed.almond-330ml.1440.png",
+    "evidence/flow/default/home/commerce-tools-products-bundle.changed.almond-330ml.375.png",
+    "evidence/flow/default/home/commerce-tools-products-bundle.changed.almond-330ml.768.png",
+    "evidence/flow/default/home/commerce-tools-products-bundle.initial.ilk-hal.1440.png",
+    "evidence/flow/default/home/commerce-tools-products-bundle.initial.ilk-hal.375.png",
+    "evidence/flow/default/home/commerce-tools-products-bundle.initial.ilk-hal.768.png"
   ],
   "notlar": "bundled_products_vnext. Build your week box · Three smoothies, one box. Almond & Banana / Beet & Berry / Mango & Coconut + Size 500ml/330ml/250ml.",
   "delta": "Shopify.theme.name `Flow R1 — design base` · id 150685581382 · schema_name Flow · schema_version 42.0.0 · theme_store_id null · role main · shop flow-queenstown.myshopify.com. Official walk eight-nourish-demo.myshopify.com (Nourish). flow-demo.myshopify.com = Debut, kullanılmadı. flow-theme.myshopify.com password, kullanılmadı.",
@@ -22,7 +28,43 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T20:37:50.161Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:47:23.379Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eight-nourish-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20936734277702__bundled_products_vnext",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Build your week box · üç ürün 500ml"
+    },
+    {
+      "state": "changed",
+      "action": "select",
+      "selector": "#shopify-section-template--20936734277702__bundled_products_vnext select.bundled-products__variant-select",
+      "value": "330ml",
+      "capture": true,
+      "etiket": "almond-330ml",
+      "not": "İlk ürün Size 500ml→330ml; fiyat güncellenir"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Build your week box · Almond & Banana $5.99→$3.00 / Beet & Berry $5.99 / Mango & Coconut $5.99. Her satır Size 500ml.",
+    "changed": "Almond & Banana 330ml seçili · $3.99→$2.00. Diğer iki ürün 500ml. Add set to cart tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan 3 select gördü; changed yalnız ilk select 330ml. Add set to cart ATC olur ama section görünümü değişmedi — filled yok.",
+  "captureMode": "section"
 }
