@@ -8,12 +8,46 @@
   "selector": "#shopify-section-template--19666883510447__faq_Udk3h6",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/bleame/default/product-detail/faq-collapsible-tabs.1440.png",
     "evidence/bleame/default/product-detail/faq-collapsible-tabs.375.png",
     "evidence/bleame/default/product-detail/faq-collapsible-tabs.768.png",
-    "evidence/bleame/default/product-detail/faq-collapsible-tabs.1440.png"
+    "evidence/bleame/default/product-detail/faq-collapsible-tabs.changed.friction.1440.png",
+    "evidence/bleame/default/product-detail/faq-collapsible-tabs.changed.friction.375.png",
+    "evidence/bleame/default/product-detail/faq-collapsible-tabs.changed.friction.768.png"
   ],
   "notlar": "Questions? We’ve Got You Covered. Accordion.",
   "delta": "Home FAQ ile aynı iskelet, farklı başlık.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://bleame.com/products/crystal-hair-eraser",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19666883510447__faq_Udk3h6",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--19666883510447__faq_Udk3h6 button.faq-question:has-text('Does the friction cause darkness?')",
+      "capture": true,
+      "etiket": "friction",
+      "not": "İkinci soru açık; ilk soru (Where can I use it?) kapandı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Where can I use it? açık (openFirst).",
+    "changed": "Does the friction cause darkness? açık: No, it actually improves your complexion by removing dead skin. İlk soru kapandı."
+  },
+  "missingStates": [],
   "capture": {
     "url": "https://bleame.com/products/crystal-hair-eraser",
     "viewports": [
@@ -22,7 +56,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T20:02:44.140Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:25:38.229Z"
   }
 }

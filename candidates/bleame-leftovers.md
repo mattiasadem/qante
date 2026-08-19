@@ -90,6 +90,10 @@ Diğer 50+ blog yazısı
 - PDP 1 Pack / 2 Pack radio — CLAIM OFFER default 2-pack; pack `changed` yoklandı değil
 - custom_liquid / custom_html 0px
 - Newsletter / contact / SMS submit — PII
+- `testimonial-quote-carousel` 1440 `changed` — üç kart paralel; drag sonraki slide üretmedi
+- `testimonial-quote-carousel.2` — tek kart; carousel kontrolü yok (interact yok)
+- `comparison-quick-table` — statik karşılaştırma tablosu; tıklanabilir affordance yok
+- CRO şemaları diskte ama observation yok: `before-after-slider`, `commerce-tools-products-bundle`, `promo-banner-countdown`, `lead-capture-form`, `lead-capture-newsletter-band`, `product-finder-quiz`, `media-shop-the-feed`
 
 ## Bilinçli atlananlar
 
