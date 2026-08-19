@@ -31,7 +31,18 @@
 | Checkout / Buy it now | dur. |
 | PDP Description / Shipping accordion | `product-info-main` içinde; ayrı şema yok. |
 | Mobile All Products `open-panel` | Akordeon yoklandı değil (kaçış). |
-| PLP facet/sort interact | Filtre DOM’da var; walk zorunlu interact değil. |
+| PLP facet/sort interact | Filtre DOM’da var; walk zorunlu interact değil. CRO listesinde değil; bu turda çekilmedi. |
+| FAQ sayfa newsletter | `__1631023868175fa3b0` “Subscribe to our newsletter” — home band tekrarı, çekilmedi. |
+| FAQ Any question? kartları | Customer support / Send a message (Enter your text here). FAQ section içinde; ayrı şema yok, tıklanmadı. |
+| before-after-slider | Home/PDP section yok. Şema uydurulmadı. |
+| commerce-tools-products-bundle | Home/PDP section yok. Şema uydurulmadı. |
+| promo-banner-countdown | Home/PDP section yok. Şema uydurulmadı. |
+| comparison-quick-table | Home/PDP section yok. Şema uydurulmadı. |
+| product-finder-quiz | Home/PDP section yok. Şema uydurulmadı. |
+| testimonial-quote-carousel | Home/PDP section yok. Şema uydurulmadı. |
+| media-shop-the-feed | Home/PDP section yok. Şema uydurulmadı. |
+| media-scrolling-gallery | Home/PDP section yok. Şema uydurulmadı. |
+| lead-capture-newsletter-band input | E-posta fill + Subscribe PII — dur. Statik 3vp initial. |
 
 ## Aday (yeni şema yok)
 
@@ -50,3 +61,12 @@
 - Mini-cart `#mini-cart` overlay. ATC UI açar; toggle tekrar kapatır. Qty `data-action=increase-quantity` (picker değil).
 - Cart sayfa aynı qty action. Gift wrap $2.50 / Estimate shipping doldurulmadı.
 - PDP Color `label.color-swatch__item[title=Blue]` (radio 0×0). Black SKU JBL-859042 / 56 stok → Blue JBL-472498 / 116 stok. Fiyat $99.95.
+- CRO leftover interact (2026-08-19): var olan obs — `faq-collapsible-tabs` ilk soru `changed` (375/768/1440); `lead-capture-form` konu select Partnerships. Newsletter e-posta dur. countdown/quiz/bundle/compare/before-after/testimonial/shop-the-feed/scrolling-gallery observation yok — icat edilmedi.
+
+---
+
+ADAY: warehouse-cro-interact-2026-08-19  
+Gerekçe: Discover-interact leftover. Var olan CRO obs: faq-collapsible-tabs (ilk accordion), lead-capture-form (konu select). lead-capture-newsletter-band input PII. before-after / bundle / countdown / compare / quiz / testimonial / shop-the-feed / scrolling-gallery Metal home/PDP’de yok.  
+Örnekler: `/pages/faq` · `/pages/contact-us`  
+Öneri: leftover — şema uydurma yok  
+Karar: onay bekliyor

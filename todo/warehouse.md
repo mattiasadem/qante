@@ -13,8 +13,8 @@ shop `warehouse-theme-metal.myshopify.com`
 
 **Beklenen vs canlı:** Theme Store listing güncel Maestrooo Warehouse (7.x iddia). Canlı Metal demo **Warehouse 3.1.0** ve `theme_store_id` **null**. 3.1.0 yazıldı.
 
-**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti** (0 error)  
-**PR:** draft · **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact + CRO leftover interact + validate  
+**PR:** draft (bu branch) · **main'e merge yok**
 
 ---
 
@@ -26,11 +26,11 @@ shop `warehouse-theme-metal.myshopify.com`
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** |
 | Observation | **35** |
-| PNG | **123** |
+| PNG | **135** |
 | Parallel | yalnız `observations/warehouse/`, `evidence/warehouse/`, `todo/warehouse.md`, `candidates/warehouse-leftovers.md` |
 
 **Kapsam satırı:**  
-`Warehouse · default · Warehouse 3.1.0 / schema_name Warehouse · theme_store_id null · home→PDP→PLP→collections→search→cart→about/contact→blog→404 · 35 obs · 123 PNG · 0 yeni şema · leftover: candidates/warehouse-leftovers.md`
+`Warehouse · default · Warehouse 3.1.0 / schema_name Warehouse · theme_store_id null · home→PDP→PLP→collections→search→cart→about/contact→blog→404 · 35 obs · 135 PNG · 0 yeni şema · CRO leftover interact: FAQ + contact topic · leftover: candidates/warehouse-leftovers.md`
 
 ---
 
@@ -49,8 +49,8 @@ shop `warehouse-theme-metal.myshopify.com`
 | Search `/search?q=jbl` | roster + capture | [x] |
 | Cart page empty + filled + qty | interact 3vp | [x] |
 | About `/pages/about` | roster + capture | [x] |
-| Contact form (submit yok) | roster + capture | [x] |
-| FAQ `/pages/faq` | roster + capture | [x] |
+| Contact form (submit yok) | roster + topic select | [x] |
+| FAQ `/pages/faq` | roster + accordion | [x] |
 | News + article | roster + capture | [x] |
 | 404 | roster + capture | [x] |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
@@ -135,6 +135,9 @@ shop `warehouse-theme-metal.myshopify.com`
 | global-cart-drawer | filled + changed | [x] $99.95 → $199.90 (qty 2) |
 | cart-page-main | filled + changed | [x] $99.95 → $199.90 |
 | product-info-main | changed | [x] Black → Blue (SKU + görsel + stok 56→116) |
+| faq-collapsible-tabs | changed | [x] Do you ship overseas? açık — worldwide + checkout costs + exclusive deals |
+| lead-capture-form | changed | [x] Who do you want to contact → Partnerships (name/email/message/send yok) |
+| lead-capture-newsletter-band | input | [ ] e-posta + Subscribe PII — dur; recapture yok |
 
 ---
 
@@ -148,4 +151,5 @@ shop `warehouse-theme-metal.myshopify.com`
 
 - [x] Statik 3vp (87 PNG)
 - [x] Mega / search / mobile 375+768 / cart empty+filled+qty / PDP Color (36 PNG)
+- [x] CRO leftover: FAQ ilk soru + contact topic Partnerships (12 PNG)
 - [x] Email / account / checkout / newsletter submit — **yapılmayacak**
