@@ -1270,6 +1270,8 @@ function appsFlat() {
       app.ikasSablon,
       app.ikasHedef,
       app.ikasLink,
+      app.ikasYayin,
+      app.ikasHost,
       ...(app.ikasKapsam || []),
       ...(app.ikasWebhook || []),
       ...(app.yuzey || []),
@@ -1413,6 +1415,8 @@ function renderAppsDetail() {
       <span class="chip">ikas: ${esc(app.ikasTur || "yok")}</span>
       <span class="chip">${esc(app.ikasSablon || "yok")}</span>
       <span class="chip">${esc(app.ikasHedef || "yok")}</span>
+      <span class="chip">yayın: ${esc(app.ikasYayin || "yok")}</span>
+      <span class="chip">host: ${esc(app.ikasHost || "yok")}</span>
       <span class="chip mono">${esc(app.path)}</span>
     </div>
     <div class="card" style="margin-top:1rem">
@@ -1446,6 +1450,13 @@ function renderAppsDetail() {
     <div class="card">
       <div class="card-head"><strong>ikas webhook</strong></div>
       <div class="chips">${ikasWebhookChips}</div>
+    </div>
+    <div class="card">
+      <div class="card-head"><strong>ikas yayın / host</strong></div>
+      <div class="chips">
+        <span class="chip">${esc(app.ikasYayin || "yok")}</span>
+        <span class="chip">${esc(app.ikasHost || "yok")}</span>
+      </div>
     </div>
     <div class="card">
       <div class="card-head"><strong>tespit</strong></div>

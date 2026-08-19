@@ -27,6 +27,8 @@ const TOP_LEVEL = [
   "ikasKapsam",
   "ikasAksiyon",
   "ikasWebhook",
+  "ikasYayin",
+  "ikasHost",
   "ayarlar",
   "dataBindings",
   "actions",
@@ -43,7 +45,7 @@ describe("apps inventory", () => {
     assert.ok(data.apps.length >= 28);
   });
 
-  it("every apps/*.json has exactly 25 contract keys (+ optional _ keys)", () => {
+  it("every apps/*.json has exactly 27 contract keys (+ optional _ keys)", () => {
     const files = readdirSync(APPS_DIR).filter((n) => n.endsWith(".json") && !n.startsWith("_"));
     assert.ok(files.length > 0);
 
@@ -56,7 +58,7 @@ describe("apps inventory", () => {
       assert.deepEqual(
         keys.sort(),
         [...TOP_LEVEL].sort(),
-        `${name}: must have exactly 25 top-level keys`
+        `${name}: must have exactly 27 top-level keys`
       );
 
       assert.ok(schema.entegrasyon?.shopify && Array.isArray(schema.entegrasyon.shopify));
@@ -65,12 +67,24 @@ describe("apps inventory", () => {
         schema.ikasLink === "yok" || /^https:\/\//.test(schema.ikasLink),
         `${name}: ikasLink`
       );
-      assert.ok(["starter", "webhook-listener", "yok"].includes(schema.ikasSablon));
+      assert.ok(
+        [
+          "starter",
+          "webhook-listener",
+          "dashboard-actions",
+          "starter-with-subscription",
+          "yok",
+        ].includes(schema.ikasSablon)
+      );
       assert.ok(
         ["studio-section", "storefront-script", "admin-iframe", "webhook", "yok"].includes(
           schema.ikasHedef
         )
       );
+      assert.ok(
+        ["herkese-acik", "gizli", "izin-verilen-magazalar", "yok"].includes(schema.ikasYayin)
+      );
+      assert.ok(["admin-iframe", "external", "yok"].includes(schema.ikasHost));
       assert.ok(schema.tespit && typeof schema.tespit.shopify === "string");
       assert.ok(typeof schema.tespit.ikas === "string");
     }

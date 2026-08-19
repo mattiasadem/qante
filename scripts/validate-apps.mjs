@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * QANTE AppSchema doğrulayıcı — app-schema-standard.md sözleşmesi (v0.3).
+ * QANTE AppSchema doğrulayıcı — app-schema-standard.md sözleşmesi (v0.3 + ikas crawl).
  */
 
 import { readFileSync, readdirSync, existsSync } from "node:fs";
@@ -29,6 +29,8 @@ const TOP_LEVEL = [
   "ikasKapsam",
   "ikasAksiyon",
   "ikasWebhook",
+  "ikasYayin",
+  "ikasHost",
   "ayarlar",
   "dataBindings",
   "actions",
@@ -54,7 +56,17 @@ const SCOPES = new Set(["head", "overlay", "in-flow", "checkout", "page"]);
 
 const IKAS_TUR = new Set(["admin", "ozel", "yok"]);
 
-const IKAS_SABLON = new Set(["starter", "webhook-listener", "yok"]);
+const IKAS_SABLON = new Set([
+  "starter",
+  "webhook-listener",
+  "dashboard-actions",
+  "starter-with-subscription",
+  "yok",
+]);
+
+const IKAS_YAYIN = new Set(["herkese-acik", "gizli", "izin-verilen-magazalar", "yok"]);
+
+const IKAS_HOST = new Set(["admin-iframe", "external", "yok"]);
 
 const IKAS_HEDEF = new Set([
   "studio-section",
@@ -65,17 +77,16 @@ const IKAS_HEDEF = new Set([
 ]);
 
 const IKAS_KAPSAM = new Set([
-  "read-campaigns",
-  "read-customers",
-  "read-inventories",
-  "read-orders",
-  "read-products",
-  "write-campaigns",
-  "write-customers",
-  "write-inventories",
-  "write-orders",
-  "write-products",
-  "write-storefront",
+  "read_products",
+  "write_products",
+  "read_orders",
+  "write_orders",
+  "read_customers",
+  "write_customers",
+  "read_campaigns",
+  "write_campaigns",
+  "read_inventories",
+  "write_inventories",
 ]);
 
 const IKAS_AKSIYON_YER = new Set([
@@ -97,6 +108,8 @@ const IKAS_WEBHOOK = new Set([
   "store/customer/statusUpdated",
   "store/stock/created",
   "store/stock/updated",
+  "store/app/payment",
+  "store/app/deleted",
 ]);
 
 const SHOPIFY_ENTEGRASYON = new Set([
@@ -109,11 +122,15 @@ const SHOPIFY_ENTEGRASYON = new Set([
 ]);
 
 const IKAS_ENTEGRASYON = new Set([
-  "storefront-script",
   "admin-iframe",
-  "admin-action",
+  "admin-action-iframe",
+  "admin-action-api",
+  "storefront-js-script",
   "webhook",
+  "admin-graphql",
 ]);
+
+const DEPRECATED_IKAS_ENTEGRASYON = new Set(["storefront-script", "admin-action"]);
 
 const IKAS_EVENT_TYPE = new Set([
   "PAGE_VIEW",
@@ -333,6 +350,14 @@ function validateEntegrasyon(file, entegrasyon, issues) {
     }
   }
   for (const e of entegrasyon.ikas) {
+    if (DEPRECATED_IKAS_ENTEGRASYON.has(e)) {
+      issues.push(
+        err(
+          file,
+          `deprecated ikas entegrasyon "${e}" — use storefront-js-script / admin-action-iframe / admin-action-api`
+        )
+      );
+    }
     if (!IKAS_ENTEGRASYON.has(e)) {
       issues.push(err(file, `geçersiz ikas entegrasyon: "${e}"`));
     }
@@ -460,6 +485,22 @@ function validateApp(filePath) {
     }
   }
 
+  if (!IKAS_YAYIN.has(schema.ikasYayin)) {
+    issues.push(err(file, `geçersiz ikasYayin: "${schema.ikasYayin}"`));
+  }
+
+  if (!IKAS_HOST.has(schema.ikasHost)) {
+    issues.push(err(file, `geçersiz ikasHost: "${schema.ikasHost}"`));
+  }
+
+  if (schema.ikasHost === "admin-iframe" && !schema.entegrasyon?.ikas?.includes("admin-iframe")) {
+    issues.push(err(file, "ikasHost admin-iframe iken entegrasyon.ikas admin-iframe içermeli"));
+  }
+
+  if (schema.ikasHost === "external" && !schema.entegrasyon?.ikas?.includes("admin-iframe")) {
+    issues.push(err(file, "ikasHost external iken entegrasyon.ikas admin-iframe içermeli"));
+  }
+
   if (!schema.tespit || typeof schema.tespit !== "object" || Array.isArray(schema.tespit)) {
     issues.push(err(file, "tespit { shopify, ikas } obje olmalı"));
   } else {
@@ -471,8 +512,10 @@ function validateApp(filePath) {
     }
   }
 
-  if (schema.ikasTur === "yok" && schema.entegrasyon?.ikas?.some((e) => e === "admin-iframe" || e === "admin-action")) {
-    issues.push(err(file, "ikasTur yok iken admin-iframe/admin-action kullanılamaz"));
+  if (schema.ikasTur === "yok" && schema.entegrasyon?.ikas?.some(
+    (e) => e === "admin-iframe" || e === "admin-action-iframe" || e === "admin-action-api"
+  )) {
+    issues.push(err(file, "ikasTur yok iken admin-iframe/admin-action-* kullanılamaz"));
   }
 
   if (!Array.isArray(schema.yuzey)) {
@@ -569,7 +612,7 @@ function validateApp(filePath) {
     issues.push(err(file, "link geçerli https:// URL olmalı"));
   }
 
-  const ikasHasStorefront = schema.entegrasyon?.ikas?.includes("storefront-script");
+  const ikasHasStorefront = schema.entegrasyon?.ikas?.includes("storefront-js-script");
 
   if (!schema.ayarlar || typeof schema.ayarlar !== "object" || Array.isArray(schema.ayarlar)) {
     issues.push(err(file, "ayarlar obje olmalı"));
@@ -579,19 +622,19 @@ function validateApp(filePath) {
       schema.kategori === "pixel" && schema.scope === "head" && !ikasHasStorefront;
 
     if (isPureHeadPixel && keys.length > 0) {
-      issues.push(err(file, "saf head piksel (ikas storefront-script yok) iken ayarlar {} olmalı"));
+      issues.push(err(file, "saf head piksel (ikas storefront-js-script yok) iken ayarlar {} olmalı"));
     } else if (!isPureHeadPixel && keys.length === 0) {
-      issues.push(err(file, "ayarlar boş {} — merchant veya storefront-script ayarı gerekli"));
+      issues.push(err(file, "ayarlar boş {} — merchant veya storefront-js-script ayarı gerekli"));
     } else if (keys.length > 0) {
       checkAyarSlots(schema.ayarlar, file, issues);
     }
 
     if (ikasHasStorefront) {
       if (!schema.ayarlar.oncelikliScript) {
-        issues.push(err(file, "storefront-script için ayarlar.oncelikliScript gerekli"));
+        issues.push(err(file, "storefront-js-script için ayarlar.oncelikliScript gerekli"));
       }
       if (!schema.ayarlar.publicApiKey) {
-        issues.push(err(file, "storefront-script için ayarlar.publicApiKey gerekli"));
+        issues.push(err(file, "storefront-js-script için ayarlar.publicApiKey gerekli"));
       }
     }
   }

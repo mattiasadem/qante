@@ -55,6 +55,8 @@ export function loadApps(root) {
         ikasKapsam: schema.ikasKapsam || [],
         ikasAksiyon: schema.ikasAksiyon || [],
         ikasWebhook: schema.ikasWebhook || [],
+        ikasYayin: schema.ikasYayin || "yok",
+        ikasHost: schema.ikasHost || "yok",
         ayarlar: schema.ayarlar || {},
         ikasKarsilik: schema.ikasKarsilik || "",
         tespit: schema.tespit || { shopify: "", ikas: "" },
