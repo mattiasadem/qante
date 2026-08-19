@@ -13,7 +13,48 @@
     "evidence/dwell/default/home/product-showcase-grid-featured.1440.png"
   ],
   "notlar": "Başlıksız product_list slider: Brushed Cotton Duvet Cover $310 · Vintage Linen Bed Blanket $489 · Cotton Mattress Protector $140 · Linen Pillowcase Set $119 · Vintage Linen Euro Pillow Cover $139 · Silk Pillowcase $169. Kartta Choose (quick-add).",
-  "delta": "Horizon product_list + nested product-price theme-blocks. Quick-add açılmadı (leftover).",
+  "delta": "Horizon product_list + nested product-price theme-blocks. Slider ok = changed. Quick-add overlay açılmadı (leftover).",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-dwell-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20640022003901__product_list_YidTcf",
+      "capture": true,
+      "etiket": "ilk-kartlar",
+      "not": "İlk görünür kart Brushed Cotton Duvet Cover. Choose overlay açılmaz."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--20640022003901__product_list_YidTcf .slideshow-control--next.slideshow-control--shape-circle",
+      "value": 1200,
+      "capture": true,
+      "etiket": "sonraki-slayt",
+      "not": "Liste Next slide (circle). Kart içi ok değil. URL home."
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Scan hover-reveal (Choose) koşulmadı — leftover quick-add. Unique next: slideshow-control--next.slideshow-control--shape-circle. media-scrolling-gallery icat edilmedi.",
   "capture": {
     "url": "https://theme-dwell-demo.myshopify.com/",
     "viewports": [
@@ -22,7 +63,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T11:45:31.164Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T17:40:00.000Z"
   }
 }

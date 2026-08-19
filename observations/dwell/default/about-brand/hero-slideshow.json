@@ -14,6 +14,36 @@
   ],
   "notlar": "★★★★★ “Perfect color and texture.” VOGUE. Quote hero.",
   "delta": "Horizon hero. Tek kare alıntı — slayt yok. testimonial-quote-carousel zorlanmadı (hero wrapper).",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-dwell-demo.myshopify.com/pages/about-us",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20640022036669__hero_HRGffr",
+      "capture": true,
+      "etiket": "vogue-quote",
+      "not": "Tek alıntı. Ok/nokta yok. testimonial şeması icat edilmedi."
+    }
+  ],
+  "stateFindings": {
+    "initial": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Scan: slides/arrows/dots 0. Alıntı hero — testimonial-quote-carousel leftover, şema yok.",
   "capture": {
     "url": "https://theme-dwell-demo.myshopify.com/pages/about-us",
     "viewports": [
@@ -22,7 +52,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T11:47:58.166Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T17:40:00.000Z"
   }
 }

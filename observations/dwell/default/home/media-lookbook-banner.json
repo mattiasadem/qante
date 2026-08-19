@@ -12,8 +12,66 @@
     "evidence/dwell/default/home/media-lookbook-banner.768.png",
     "evidence/dwell/default/home/media-lookbook-banner.1440.png"
   ],
-  "notlar": "Shop-the-look yatak görseli + product-hotspot-component. Down Pillow $250 dialog (Add / Choose). hotspot-trigger aria-label Open hotspot.",
-  "delta": "Horizon product_hotspots. media-lookbook-banner reuse. Hotspot tık bu walk’ta zorunlu interact değil — leftover.",
+  "notlar": "Shop-the-look yatak görseli + 3 product-hotspot-component. Down Pillow / Brushed Cotton Duvet Cover / Linen Pillowcase Set.",
+  "delta": "Horizon product_hotspots. media-lookbook-banner reuse. 768/1440 in-section hotspot-dialog; 375 page-level quick-add-modal. Yeni şema yok.",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-dwell-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20640022003901__product_hotspots_HXKqqD",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "3 Open hotspot pin. Dialog kapalı."
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#shopify-section-template--20640022003901__product_hotspots_HXKqqD button.hotspot-trigger",
+      "value": 1200,
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "hotspot-dialog",
+      "not": "İlk pin — Down Pillow $250 Choose. URL home. Choose tıklanmaz."
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#shopify-section-template--20640022003901__product_hotspots_HXKqqD button.hotspot-trigger",
+      "value": 1200,
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "quick-add-modal",
+      "not": "375: in-section dialog 0px; page-level quick-add-modal Down Pillow. Add to cart / Buy it now tıklanmaz."
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "open": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Scan hover-reveal taslağı koşulmadı — hotspot = click + open. Unique: button.hotspot-trigger (3; ilki Down Pillow). 375 overlay leftover quick-add ≠ global-quick-view şeması.",
   "capture": {
     "url": "https://theme-dwell-demo.myshopify.com/",
     "viewports": [
@@ -22,7 +80,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T11:46:07.740Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T17:40:00.000Z"
   }
 }

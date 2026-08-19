@@ -14,6 +14,36 @@
   ],
   "notlar": "Name / Email* / Phone / Comment / Submit. Submit tıklanmadı.",
   "delta": "Horizon form section. PII yok.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-dwell-demo.myshopify.com/pages/contact",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20640022069437__form",
+      "capture": true,
+      "etiket": "bos-form",
+      "not": "PII — Name/Email/Phone/Comment doldurulmadı, Submit tıklanmadı"
+    }
+  ],
+  "stateFindings": {
+    "initial": ""
+  },
+  "missingStates": [],
+  "interactionNote": "PII stop: fill/submit yok. input/filled zorlanmadı.",
   "capture": {
     "url": "https://theme-dwell-demo.myshopify.com/pages/contact",
     "viewports": [
@@ -22,7 +52,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T11:48:33.239Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T17:40:00.000Z"
   }
 }
