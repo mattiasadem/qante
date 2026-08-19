@@ -8,12 +8,39 @@
   "selector": "#shopify-section-template--19951749955737__instagram_feed_qCLwRY",
   "evidenceSlug": "media-shop-the-feed",
   "evidence": [
+    "evidence/hellobubble/default/about-brand/media-shop-the-feed.1440.png",
     "evidence/hellobubble/default/about-brand/media-shop-the-feed.375.png",
     "evidence/hellobubble/default/about-brand/media-shop-the-feed.768.png",
-    "evidence/hellobubble/default/about-brand/media-shop-the-feed.1440.png"
+    "evidence/hellobubble/default/about-brand/media-shop-the-feed.initial.bolum.1440.png",
+    "evidence/hellobubble/default/about-brand/media-shop-the-feed.initial.bolum.375.png",
+    "evidence/hellobubble/default/about-brand/media-shop-the-feed.initial.bolum.768.png"
   ],
   "notlar": "Follow Us @bubble. 489px.",
   "delta": "Home feed ile aynı tip, about instance.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hellobubble.myshopify.com/pages/about",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19951749955737__instagram_feed_qCLwRY",
+      "capture": true,
+      "etiket": "bolum",
+      "not": "Instagram ızgara statik"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Follow Us @bubble + Instagram post ızgarası. Scan: affordance yok."
+  },
+  "missingStates": [],
+  "interactionNote": "Home instance ile aynı; tıklanabilir affordance görülmedi.",
   "capture": {
     "url": "https://hellobubble.myshopify.com/pages/about",
     "viewports": [
@@ -22,7 +49,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T21:54:25.257Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:36:09.597Z"
   }
 }

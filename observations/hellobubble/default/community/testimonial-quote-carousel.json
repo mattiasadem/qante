@@ -8,12 +8,39 @@
   "selector": "#shopify-section-template--20011908858009__text_columns_w_images_v2_8Depry",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
+    "evidence/hellobubble/default/community/testimonial-quote-carousel.1440.png",
     "evidence/hellobubble/default/community/testimonial-quote-carousel.375.png",
     "evidence/hellobubble/default/community/testimonial-quote-carousel.768.png",
-    "evidence/hellobubble/default/community/testimonial-quote-carousel.1440.png"
+    "evidence/hellobubble/default/community/testimonial-quote-carousel.initial.bolum.1440.png",
+    "evidence/hellobubble/default/community/testimonial-quote-carousel.initial.bolum.375.png",
+    "evidence/hellobubble/default/community/testimonial-quote-carousel.initial.bolum.768.png"
   ],
   "notlar": "Alaya Moss @alayamoss_ quote + Favorite Product. 993px.",
   "delta": "Kolon kartları testimonial.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hellobubble.myshopify.com/pages/community-page",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20011908858009__text_columns_w_images_v2_8Depry",
+      "capture": true,
+      "etiket": "bolum",
+      "not": "5 ambassador kartı grid"
+    }
+  ],
+  "stateFindings": {
+    "initial": "5 ambassador kartı (Alaya Moss …): quote + Favorite Product + Add to Cart. Carousel ok yok — statik grid."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan: changer yok. ATC tıklanmadı.",
   "capture": {
     "url": "https://hellobubble.myshopify.com/pages/community-page",
     "viewports": [
@@ -22,7 +49,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T21:56:51.593Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:34:17.315Z"
   }
 }

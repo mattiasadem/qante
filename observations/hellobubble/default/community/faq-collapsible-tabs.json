@@ -8,12 +8,46 @@
   "selector": "#shopify-section-template--20011908858009__collapsible_rows_fR4Tri",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/hellobubble/default/community/faq-collapsible-tabs.1440.png",
     "evidence/hellobubble/default/community/faq-collapsible-tabs.375.png",
     "evidence/hellobubble/default/community/faq-collapsible-tabs.768.png",
-    "evidence/hellobubble/default/community/faq-collapsible-tabs.1440.png"
+    "evidence/hellobubble/default/community/faq-collapsible-tabs.changed.shape-products.1440.png",
+    "evidence/hellobubble/default/community/faq-collapsible-tabs.changed.shape-products.375.png",
+    "evidence/hellobubble/default/community/faq-collapsible-tabs.changed.shape-products.768.png",
+    "evidence/hellobubble/default/community/faq-collapsible-tabs.initial.kapali.1440.png",
+    "evidence/hellobubble/default/community/faq-collapsible-tabs.initial.kapali.375.png",
+    "evidence/hellobubble/default/community/faq-collapsible-tabs.initial.kapali.768.png"
   ],
   "notlar": "The Ambassador Experience 01–03. 814px.",
   "delta": "Akordeon perk listesi.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hellobubble.myshopify.com/pages/community-page",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "6 kapalı madde"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--20011908858009__collapsible_rows_fR4Tri button[aria-controls='expanded-row_bkYJdW']",
+      "capture": true,
+      "etiket": "shape-products",
+      "not": "01 — Help Shape Future Products açık"
+    }
+  ],
+  "stateFindings": {
+    "initial": "The Ambassador Experience + 6 kapalı madde (01–06).",
+    "changed": "01 — Help Shape Future Products açık; perk açıklaması + chevron yukarı."
+  },
+  "missingStates": [],
+  "interactionNote": "PII yok. APPLY NOW formu doldurulmadı.",
   "capture": {
     "url": "https://hellobubble.myshopify.com/pages/community-page",
     "viewports": [
@@ -22,7 +56,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T21:56:09.571Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:30:59.987Z"
   }
 }

@@ -8,12 +8,39 @@
   "selector": "#shopify-section-template--19572856258713__consumer_testimonial_athMXr",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
+    "evidence/hellobubble/default/home/testimonial-quote-carousel.1440.png",
     "evidence/hellobubble/default/home/testimonial-quote-carousel.375.png",
     "evidence/hellobubble/default/home/testimonial-quote-carousel.768.png",
-    "evidence/hellobubble/default/home/testimonial-quote-carousel.1440.png"
+    "evidence/hellobubble/default/home/testimonial-quote-carousel.initial.bolum.1440.png",
+    "evidence/hellobubble/default/home/testimonial-quote-carousel.initial.bolum.375.png",
+    "evidence/hellobubble/default/home/testimonial-quote-carousel.initial.bolum.768.png"
   ],
   "notlar": "Real Results. Sydney T. quote + Water Slide $17. 625px.",
   "delta": "consumer_testimonial — alıntı + ürün kartı aynı blok.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hellobubble.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19572856258713__consumer_testimonial_athMXr",
+      "capture": true,
+      "etiket": "bolum",
+      "not": "Sydney T. quote + Water Slide ATC"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Real Results başlığı; Sydney T. alıntısı + Water Slide $17 Add to Cart. Carousel ok yok — tek slayt."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan: changer/ok yok. changed state anlamsız.",
   "capture": {
     "url": "https://hellobubble.myshopify.com/",
     "viewports": [
@@ -22,7 +49,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T22:01:01.848Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:33:03.090Z"
   }
 }

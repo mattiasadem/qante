@@ -8,12 +8,46 @@
   "selector": "#shopify-section-template--19572856389785__collapsible_rows_OL1nQr",
   "evidenceSlug": "faq-collapsible-tabs-3",
   "evidence": [
+    "evidence/hellobubble/default/faq-support/faq-collapsible-tabs-3.1440.png",
     "evidence/hellobubble/default/faq-support/faq-collapsible-tabs-3.375.png",
     "evidence/hellobubble/default/faq-support/faq-collapsible-tabs-3.768.png",
-    "evidence/hellobubble/default/faq-support/faq-collapsible-tabs-3.1440.png"
+    "evidence/hellobubble/default/faq-support/faq-collapsible-tabs-3.changed.out-of-stock.1440.png",
+    "evidence/hellobubble/default/faq-support/faq-collapsible-tabs-3.changed.out-of-stock.375.png",
+    "evidence/hellobubble/default/faq-support/faq-collapsible-tabs-3.changed.out-of-stock.768.png",
+    "evidence/hellobubble/default/faq-support/faq-collapsible-tabs-3.initial.kapali.1440.png",
+    "evidence/hellobubble/default/faq-support/faq-collapsible-tabs-3.initial.kapali.375.png",
+    "evidence/hellobubble/default/faq-support/faq-collapsible-tabs-3.initial.kapali.768.png"
   ],
   "notlar": "Online Ordering. 420px.",
   "delta": "Üçüncü grup.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hellobubble.myshopify.com/pages/faq",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "5 kapalı soru"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--19572856389785__collapsible_rows_OL1nQr button[aria-controls='expanded-row_oo01aA']",
+      "capture": true,
+      "etiket": "out-of-stock",
+      "not": "İlk soru açık — restock"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Online Ordering + 5 kapalı soru.",
+    "changed": "The product I want is out of stock… açık; restock / notify metni."
+  },
+  "missingStates": [],
+  "interactionNote": "PII yok.",
   "capture": {
     "url": "https://hellobubble.myshopify.com/pages/faq",
     "viewports": [
@@ -22,7 +56,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T21:59:14.062Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:28:56.667Z"
   }
 }

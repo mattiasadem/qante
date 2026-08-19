@@ -8,12 +8,39 @@
   "selector": "#shopify-section-template--20011908825241__custom_liquid_Uaq4wa",
   "evidenceSlug": "lead-capture-form",
   "evidence": [
+    "evidence/hellobubble/default/dermatologists/lead-capture-form.1440.png",
     "evidence/hellobubble/default/dermatologists/lead-capture-form.375.png",
     "evidence/hellobubble/default/dermatologists/lead-capture-form.768.png",
-    "evidence/hellobubble/default/dermatologists/lead-capture-form.1440.png"
+    "evidence/hellobubble/default/dermatologists/lead-capture-form.initial.bolum.1440.png",
+    "evidence/hellobubble/default/dermatologists/lead-capture-form.initial.bolum.375.png",
+    "evidence/hellobubble/default/dermatologists/lead-capture-form.initial.bolum.768.png"
   ],
   "notlar": "For Dermatologists & Medical Professionals. Request samples. 340px.",
   "delta": "custom_liquid form. PII doldurulmadı.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hellobubble.myshopify.com/pages/made-with-dermatologists",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20011908825241__custom_liquid_Uaq4wa",
+      "capture": true,
+      "etiket": "bolum",
+      "not": "Boş form — PII doldurulmadı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "For Dermatologists & Medical Professionals başlığı + Request product samples formu (boş alanlar). Submit doldurulmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "PII stop — input/fill yok. Scan DOM'da input görmedi; form custom_liquid içinde.",
   "capture": {
     "url": "https://hellobubble.myshopify.com/pages/made-with-dermatologists",
     "viewports": [
@@ -22,7 +49,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T21:57:57.298Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:36:46.511Z"
   }
 }
