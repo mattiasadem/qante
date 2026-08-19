@@ -10,7 +10,7 @@
 `theme_store_id` = **null** (canlı JS; uydurulmadı)  
 shop `taiga-demo-sage.myshopify.com`
 
-**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti** (0 error)  
+**Durum:** Mod A walk + resmi 3vp + interact (nav/cart/PDP + **CRO**) + validate **bitti** (0 error)  
 **PR:** draft — **main'e merge yok**
 
 ---
@@ -23,7 +23,7 @@ shop `taiga-demo-sage.myshopify.com`
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **38** |
-| Evidence PNG | **130** |
+| Evidence PNG | **133** |
 | Parallel | yalnız `observations/taiga/`, `evidence/taiga/`, `todo/taiga.md`, `candidates/taiga-leftovers.md` |
 
 **Kapsam satırı:**  
@@ -63,6 +63,9 @@ shop `taiga-demo-sage.myshopify.com`
 | global-cart-drawer | filled + changed | [x] boş → €61,95 (1) → €123,90 (2) · 375 plus 0×0 leftover |
 | cart-page-main | filled + changed | [x] aynı fiyatlar · 375 leftover |
 | product-info-main | changed | [x] Desert Brown low-stock → Olive Green In stock |
+| promo-banner-countdown | initial | [x] 3vp countdown bant — tıklanabilir kontrol yok |
+| lead-capture-form | initial | [x] 3vp boş form — input PII stop |
+| testimonial-quote-carousel | initial + changed | [x] 3vp gridy-arrow next — ultimate load hauler → perfect daypack |
 
 Stop: email / account / checkout / newsletter submit / contact Send / PII
 
@@ -77,7 +80,7 @@ Stop: email / account / checkout / newsletter submit / contact Send / PII
 ## Evidence backlog
 
 - [x] Official 3vp static (`capture-observation.mjs`) — 32/32
-- [x] Interact mega / search / menu 375+768 / cart / PDP color
+- [x] Interact mega / search / menu 375+768 / cart / PDP color / **CRO (countdown, contact, testimonials)**
 - [x] PNG bak → stateFindings
 - [x] `npm run validate` — 0 error
 - [x] Newsletter / account / checkout — **yapılmayacak**

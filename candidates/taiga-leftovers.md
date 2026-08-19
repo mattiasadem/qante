@@ -10,6 +10,14 @@
 
 ---
 
+ADAY: taiga-cro-schemas-not-on-site  
+Gerekçe: CRO disk şemalarından Taiga envanterinde observation yok: before-after-slider, commerce-tools-products-bundle, faq-collapsible-tabs, lead-capture-newsletter-band (footer `footer-columns-newsletter` ayrı; submit stop), comparison-quick-table, product-finder-quiz, media-shop-the-feed, media-scrolling-gallery.  
+Örnekler: https://taiga-demo-sage.myshopify.com/  
+Öneri: leftover — şema uydurulmadı  
+Karar: onay bekliyor
+
+---
+
 ADAY: taiga-footer-divider  
 Gerekçe: Sibling `#shopify-section-sections--21784160895214__acaa7136-605d-409a-8d0d-fea5ba8c2f3a` — 118px SVG `divider-graphics` (turuncu→yeşil gradient). Metin yok. Footer ayrı observation.  
 Örnekler: home / her şablon  
