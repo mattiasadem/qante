@@ -5,8 +5,8 @@
 
 *Tema (vitrinde görülen, uydurulmadı):* `Shopify.theme.name` **Updated copy of Ritual demo store** · `id` `152770511037` · `schema_name` **Ritual** · `schema_version` **3.4.0** · `theme_store_id` **3625** · `role` `main` · shop `horizon-reborn.myshopify.com`
 
-**Durum:** Mod A walk + resmi 3vp + interact + validate  
-**PR:** draft https://github.com/mattiasadem/qante/pull/143 · **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact + CRO interact + validate  
+**PR:** draft (CRO interact branch)
 
 ---
 
@@ -18,12 +18,12 @@
 | Capture | resmi `capture-observation.mjs` + `capture-interaction.mjs` |
 | Şema | **0 yeni** |
 | Observation | **31** |
-| PNG | **109** |
+| PNG | **112** |
 | Validator | 65 temiz · 0 error · 0 warn |
 | Parallel | yalnız `observations/ritual/`, `evidence/ritual/`, `todo/ritual.md`, `candidates/ritual-*.md` |
 
 **Kapsam satırı:**  
-`Ritual · default · Updated copy of Ritual demo store / Ritual 3.4.0 · theme_store_id 3625 · Horizon (horizon-reborn) · home→PDP→PLP→collections→search→cart/drawer→about→contact→blog→404 · 31 obs · 109 PNG · 0 yeni şema · leftover: candidates/ritual-leftovers.md`
+`Ritual · default · Updated copy of Ritual demo store / Ritual 3.4.0 · theme_store_id 3625 · Horizon (horizon-reborn) · home→PDP→PLP→collections→search→cart/drawer→about→contact→blog→404 · 31 obs · 112 PNG · 0 yeni şema · leftover: candidates/ritual-leftovers.md`
 
 ---
 
@@ -52,7 +52,7 @@
 
 ## Bileşen roster
 
-31 observation. 109 PNG. 0 yeni şema.
+31 observation. 112 PNG. 0 yeni şema.
 
 ---
 
@@ -67,6 +67,16 @@
 | cart-page-main | initial / filled / changed | [x] aynı |
 | product-info-main | changed Color Red→Ivory | [x] ana görsel + etiket |
 
+Stop: email / account / checkout / newsletter submit / contact Submit / PII
+
+### CRO interact (2026-08-19)
+
+| schemaId | states | 3vp |
+|---|---|---|
+| `lead-capture-form` | initial (input → missingStates PII) | ✓ |
+
+CRO disk listesinden **gözlenmeyen** (leftover): before-after-slider · commerce-tools-products-bundle · promo-banner-countdown · faq-collapsible-tabs · lead-capture-newsletter-band · comparison-quick-table · product-finder-quiz · testimonial-quote-carousel · media-shop-the-feed · media-scrolling-gallery
+
 ---
 
 ## Aday / leftover
@@ -79,6 +89,7 @@
 
 - [x] Official 3vp static (`capture-observation.mjs`)
 - [x] Interact search / menu 375 / cart empty-filled-qty / PDP Color
+- [x] CRO interact PNG: lead-capture-form initial 3
 - [x] PNG bak → stateFindings
 - [x] `npm run validate` — 65 temiz · 0 error · 0 warn
 - [ ] Email / account / checkout / newsletter submit — **yapılmayacak**

@@ -3,9 +3,30 @@
 *Kaynak:* https://theme-ritual-demo.myshopify.com · Theme Store: https://themes.shopify.com/themes/ritual  
 *Tema (görülen, uydurulmadı):* `Shopify.theme.name` **Updated copy of Ritual demo store** · id `152770511037` · `schema_name` **Ritual** · `schema_version` **3.4.0** · `theme_store_id` **3625** · role `main`  
 *Shop:* `horizon-reborn.myshopify.com`  
-*Tarih:* 2026-08-17
+*Tarih:* 2026-08-17 · CRO interact güncelleme 2026-08-19
 
 Şema icat edilmedi. Claiming observation yazılan tipler burada tekrarlanmaz.
+
+---
+
+## CRO şema listesi — Ritual'da gözlenmedi (2026-08-19 interact)
+
+Diskte mevcut, bu demoda observation yok:
+
+| schemaId | Not |
+|---|---|
+| before-after-slider | Hiçbir sayfada yok |
+| commerce-tools-products-bundle | Yok |
+| promo-banner-countdown | Yok |
+| faq-collapsible-tabs | Yok (policy `page-content-main` prose) |
+| lead-capture-newsletter-band | Footer `footer-columns-newsletter` — newsletter input yok |
+| comparison-quick-table | Yok |
+| product-finder-quiz | Yok |
+| testimonial-quote-carousel | Yok |
+| media-shop-the-feed | Yok |
+| media-scrolling-gallery | Yok |
+
+Gözlenen CRO: `lead-capture-form` (contact, input PII stop)
 
 ---
 
