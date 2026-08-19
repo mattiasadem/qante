@@ -8,12 +8,39 @@
   "selector": "#shopify-section-template--27353605701910__contact_form_eTJ9Cz",
   "evidenceSlug": "lead-capture-form",
   "evidence": [
+    "evidence/eurus/breath/contact/lead-capture-form.1440.png",
     "evidence/eurus/breath/contact/lead-capture-form.375.png",
     "evidence/eurus/breath/contact/lead-capture-form.768.png",
-    "evidence/eurus/breath/contact/lead-capture-form.1440.png"
+    "evidence/eurus/breath/contact/lead-capture-form.initial.ilk-hal.1440.png",
+    "evidence/eurus/breath/contact/lead-capture-form.initial.ilk-hal.375.png",
+    "evidence/eurus/breath/contact/lead-capture-form.initial.ilk-hal.768.png"
   ],
   "notlar": "Questions? Send us an email. Name / Email * / Phone / Message / Send. Adres Hanoi + support@bsscommerce.com.",
   "delta": "Form doldurulmadı / Send yok. PII dur.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://eurus-breath-demo.myshopify.com/pages/contact",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--27353605701910__contact_form_eTJ9Cz",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Boş form — Name / Email / Phone / Message / Send"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Questions? Send us an email. Dört alan boş: Name, Email *, Phone number, Message. Send butonu görünür; tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "Contact form; görev sınırı email/PII/submit.",
   "capture": {
     "url": "https://eurus-breath-demo.myshopify.com/pages/contact",
     "viewports": [
@@ -22,7 +49,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T19:21:01.453Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:36:45.044Z"
   }
 }
