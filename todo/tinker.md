@@ -5,7 +5,7 @@
 *Tema (storefront, uydurulmadı):* **Updated copy of Tinker demo store** · `schema_name`: **Tinker** · `schema_version`: **3.4.0** · `theme_store_id`: **3627** · role `main` · id `183829266735`  
 *Shop:* `se-horizon6-en-ixxd.myshopify.com`
 
-**Durum:** ✅ Mod A walk + resmi 3vp + interact + validate  
+**Durum:** ✅ Mod A walk + resmi 3vp + interact + CRO interact + validate  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -30,6 +30,7 @@
 - [x] F1 Observation JSON (32) — şema yok, mevcut tipler
 - [x] F2 3vp `capture-observation.mjs` (26/26 static)
 - [x] F3 Interact: header (mega yok) · predictive `tray` 375/768/1440 · menu 375 (768 leftover) · cart drawer empty/filled/qty · cart page empty/filled/qty · PDP Brass→Black Steel
+- [x] F3b CRO interact: `faq-collapsible-tabs` · `lead-capture-form` · `lead-capture-newsletter-band` — scan + capture `initial` 375/768/1440
 - [x] F4 `npm run validate` — 0 error
 
 ---
@@ -79,6 +80,18 @@
 - [x] `product-info-main` — Handle color Brass → Black Steel (görsel + swatch)
 
 Stop: email / account / checkout / newsletter submit / contact Send / PII
+
+---
+
+## CRO interact (schemaId → states)
+
+| schemaId | observation | states | missing |
+|---|---|---|---|
+| `faq-collapsible-tabs` | faq-support | `initial` (`duz-qa`) | `changed`, `open` — accordion yok |
+| `lead-capture-form` | contact | `initial` (`bos-form`) | `input`, `changed` — PII |
+| `lead-capture-newsletter-band` | home | `initial` (`newsletter-bos`) | `input` — e-posta PII |
+
+CRO şemaları diskte ama Tinker’da observation yok (leftover): `before-after-slider`, `commerce-tools-products-bundle`, `promo-banner-countdown`, `comparison-quick-table`, `product-finder-quiz`, `testimonial-quote-carousel`, `media-shop-the-feed`, `media-scrolling-gallery`.
 
 ---
 

@@ -8,12 +8,48 @@
   "selector": "#shopify-section-template--26058348429615__section",
   "evidenceSlug": "lead-capture-form",
   "evidence": [
+    "evidence/tinker/default/contact/lead-capture-form.1440.png",
     "evidence/tinker/default/contact/lead-capture-form.375.png",
     "evidence/tinker/default/contact/lead-capture-form.768.png",
-    "evidence/tinker/default/contact/lead-capture-form.1440.png"
+    "evidence/tinker/default/contact/lead-capture-form.initial.bos-form.1440.png",
+    "evidence/tinker/default/contact/lead-capture-form.initial.bos-form.375.png",
+    "evidence/tinker/default/contact/lead-capture-form.initial.bos-form.768.png"
   ],
   "notlar": "Contact. Have a question… Name / Email* / Phone / Comment / Send. Send tıklanmadı.",
   "delta": "Horizon generic section + nested form blocks. PII yok.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-tinker-demo.myshopify.com/pages/contact",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--26058348429615__section",
+      "capture": true,
+      "etiket": "bos-form",
+      "not": "Boş form: Name / Email* / Phone / Comment + Send. Alanlar doldurulmadı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Contact — Have a question about our products? Name / Email* / Phone / Comment + Send. Tüm alanlar boş; Send tıklanmadı."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "Scan 4 input (name, email, phone, textarea) — hepsi PII. Fill yok; Send tıklanmadı."
+    },
+    {
+      "state": "changed",
+      "sebep": "Select / tab / accordion yok; yalnız metin alanları."
+    }
+  ],
+  "interactionNote": "Scan 1440: 4 input (contact[name], contact[email], contact[phone], contact[body]). Openers/changers 0. PII stop — e-posta ve kişisel alan doldurulmadı.",
   "capture": {
     "url": "https://theme-tinker-demo.myshopify.com/pages/contact",
     "viewports": [
@@ -22,7 +58,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T19:15:00.178Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:17:03.297Z"
   }
 }

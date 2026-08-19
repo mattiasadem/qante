@@ -8,12 +8,48 @@
   "selector": "#shopify-section-template--26058348626223__main",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/tinker/default/faq-support/faq-collapsible-tabs.1440.png",
     "evidence/tinker/default/faq-support/faq-collapsible-tabs.375.png",
     "evidence/tinker/default/faq-support/faq-collapsible-tabs.768.png",
-    "evidence/tinker/default/faq-support/faq-collapsible-tabs.1440.png"
+    "evidence/tinker/default/faq-support/faq-collapsible-tabs.initial.duz-qa.1440.png",
+    "evidence/tinker/default/faq-support/faq-collapsible-tabs.initial.duz-qa.375.png",
+    "evidence/tinker/default/faq-support/faq-collapsible-tabs.initial.duz-qa.768.png"
   ],
   "notlar": "FAQ. Beş Q&A düz metin: return policy, final sale, when will I get my order, where made, shipping cost. Accordion/details yok.",
   "delta": "Horizon page main. Collapsible değil — açık Q&A. Policies aynı template id ailesi, farklı URL. Yeni şema yok.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-tinker-demo.myshopify.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--26058348626223__main",
+      "capture": true,
+      "etiket": "duz-qa",
+      "not": "Beş Q&A hep açık metin; details/button yok."
+    }
+  ],
+  "stateFindings": {
+    "initial": "FAQ başlık + beş düz Q&A: return policy / final sale / when order / where made / shipping cost. Accordion (+/−) veya details yok — tüm cevaplar görünür."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Scan 0 opener/changer. details=0, button=0, aria-expanded yok. Collapsible etkileşim yok."
+    },
+    {
+      "state": "open",
+      "sebep": "Açılır panel veya sekme yok."
+    }
+  ],
+  "interactionNote": "Scan 1440: inputs 0, openers 0, changers 0. Probe: details=0, buttons=0. Statik Q&A — faq-collapsible-tabs delta (collapsible değil).",
   "capture": {
     "url": "https://theme-tinker-demo.myshopify.com/pages/faq",
     "viewports": [
@@ -22,7 +58,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T19:16:46.595Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:17:02.751Z"
   }
 }

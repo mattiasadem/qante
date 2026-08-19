@@ -3,7 +3,7 @@
 *Store:* https://theme-tinker-demo.myshopify.com  
 *Tema (görülen, uydurulmadı):* **Updated copy of Tinker demo store** · `schema_name` **Tinker** · `schema_version` **3.4.0** · `theme_store_id` **3627** · id `183829266735` · role `main`  
 *Shop:* `se-horizon6-en-ixxd.myshopify.com`  
-*Tarih:* 2026-08-17
+*Tarih:* 2026-08-19 (CRO interact güncellemesi)
 
 Şema icat edilmedi. En yakın mevcut tipe observation yazıldıysa burada tekrarlanmaz.
 
@@ -73,6 +73,35 @@ Karar: onay bekliyor
 - `/blogs/journal` — 404 (`/blogs/news` = Journal)
 - `/collections/all` — Products PLP (objects ile aynı template ailesi; objects birincil)
 - `/collections/our-story` — 4 ürünlü PLP; about içeriği `/pages/our-story-2`
+
+---
+
+ADAY: tinker-cro-not-observed  
+Gerekçe: CRO şemaları diskte; Tinker walk’ta observation yok — yeni şema icat edilmedi.  
+Örnekler: https://theme-tinker-demo.myshopify.com/  
+Öneri: leftover — şema hazır, tema instance yok  
+Karar: onay bekliyor
+
+| schemaId | not |
+|---|---|
+| `before-after-slider` | before/after karşılaştırma section yok |
+| `commerce-tools-products-bundle` | bundle builder yok |
+| `promo-banner-countdown` | countdown/timer yok (`promo-announcement-bar` statik mesaj) |
+| `comparison-quick-table` | karşılaştırma tablosu yok |
+| `product-finder-quiz` | quiz/finder yok |
+| `testimonial-quote-carousel` | testimonial carousel yok |
+| `media-shop-the-feed` | shop-the-feed / IG grid yok |
+| `media-scrolling-gallery` | horizontal scroll gallery yok |
+
+---
+
+ADAY: tinker-cro-interact-pii  
+Gerekçe: `lead-capture-form` ve `lead-capture-newsletter-band` scan’de input var; fill/submit PII stop. Yalnız `initial` capture.  
+Örnekler: https://theme-tinker-demo.myshopify.com/pages/contact · https://theme-tinker-demo.myshopify.com/  
+Öneri: mevcut şema + delta + missingStates  
+Karar: observation güncellendi (2026-08-19)
+
+---
 
 ## Bilinçli atlananlar
 
