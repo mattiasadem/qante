@@ -14,6 +14,34 @@
   ],
   "notlar": "Contact form. Name Email * Phone number Comment Send. Submit yok.",
   "delta": "Section id __form. PII gönderilmedi.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-dawn-demo.myshopify.com/pages/contact-us",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15968257769561__form",
+      "capture": true,
+      "etiket": "bos-form",
+      "not": "Boş Name / Email / Phone / Comment. Send tıklanmadı."
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "Name / Email / Phone / Comment PII — doldurulmadı. Send tıklanmadı."
+    }
+  ],
+  "interactionNote": "Scan 4 input. Changer yok. Anlamlı input state PII stop.",
   "capture": {
     "url": "https://theme-dawn-demo.myshopify.com/pages/contact-us",
     "viewports": [

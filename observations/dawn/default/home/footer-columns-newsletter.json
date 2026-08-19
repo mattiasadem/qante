@@ -13,7 +13,45 @@
     "evidence/dawn/default/home/footer-columns-newsletter.1440.png"
   ],
   "notlar": "Quick links (Bags/Shoes/Lookbook) + Info (About/Contact us/Shipping policy/Blog) + Our mission + Subscribe to our emails + ülke/para + sosyal + Powered by Shopify.",
-  "delta": "Newsletter form footer içinde. Submit/PII yoklandı değil. Dil seçici yok; localization country/currency var.",
+  "delta": "Newsletter form footer içinde. Submit/PII yok. Dil seçici yok; localization country/currency var.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-dawn-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-sections--15968258162777__footer",
+      "capture": true,
+      "etiket": "bos-newsletter",
+      "not": "Boş Email. Subscribe / fill yok. Locale kapalı (Canada | CAD $)."
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#FooterCountryForm button[aria-controls='FooterCountry-country-results']",
+      "value": 800,
+      "capture": true,
+      "etiket": "ulke-liste",
+      "not": "Canada | CAD $ → ülke listesi. Ülke seçilmedi, e-posta yok."
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "contact[email] PII — doldurulmadı. Subscribe tıklanmadı."
+    }
+  ],
+  "interactionNote": "Scan 1 email + locale Canada | CAD $. country_filter gizli (liste içi Search) — fill kör koşulmadı. 375 kolonlar accordion değil.",
   "capture": {
     "url": "https://theme-dawn-demo.myshopify.com/",
     "viewports": [

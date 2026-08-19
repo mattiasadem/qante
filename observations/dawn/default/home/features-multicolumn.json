@@ -13,7 +13,35 @@
     "evidence/dawn/default/home/features-multicolumn.1440.png"
   ],
   "notlar": "2 alıntı: environmentally friendly tanneries… / style or sustainability… Başlık yok.",
-  "delta": "Dawn multicolumn no-heading. Quote kartları; ikon yok.",
+  "delta": "Dawn multicolumn no-heading. Quote kartları; ikon yok. Carousel/tab yok — testimonial-quote-carousel uydurulmadı.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-dawn-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15968257704025__multicolumn",
+      "capture": true,
+      "etiket": "iki-alinti",
+      "not": "İki statik alıntı. Ok/nokta/changer yok."
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Scan 0 changer / opener. İki alıntı yan yana; carousel yok. Hover zorlanmadı."
+    }
+  ],
+  "interactionNote": "Testimonial analogu: features-multicolumn. testimonial-quote-carousel şema icat edilmedi.",
   "capture": {
     "url": "https://theme-dawn-demo.myshopify.com/",
     "viewports": [

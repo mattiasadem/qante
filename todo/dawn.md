@@ -6,7 +6,7 @@
 *Tema (storefront, uydurulmadı):* **Dawn** · `schema_name`: **Dawn** · `schema_version`: **15.0.0** · `theme_store_id`: **887** · role `main` · id `129690763353`  
 *Shop:* `theme-dawn-demo.myshopify.com`
 
-**Durum:** ✅ Mod A walk + resmi 3vp + interact + validate  
+**Durum:** ✅ Mod A walk + resmi 3vp + interact + CRO leftover interact (adımlar yazıldı; PNG çekim sırada)  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -91,6 +91,17 @@
 | cart-page-main | initial/filled/changed | boş → qty1 $465 → qty2 $930 |
 | product-info-main | changed | Emerald yeşil → Chocolate kahve; $465 aynı |
 
+### CRO leftover interact
+
+| schemaId | State | Sonuç |
+|---|---|---|
+| footer-columns-newsletter | initial + open | adımlar yazıldı — boş Email; Canada \| CAD $ liste. PII dur |
+| lead-capture-form | initial | adımlar yazıldı — Name/Email/Phone/Comment boş. Send dur |
+| features-multicolumn | initial | adımlar yazıldı — 2 alıntı, changer yok |
+| media-video-hero | initial + changed | adımlar yazıldı — poster → YouTube play |
+
+CRO şemaları observation’da yok (yeni şema yok): faq-collapsible-tabs, promo-banner-countdown, before-after-slider, commerce-tools-products-bundle, comparison-quick-table, product-finder-quiz, testimonial-quote-carousel, media-shop-the-feed, hero-slideshow, media-scrolling-gallery
+
 ---
 
 ## Aday / leftover
@@ -103,5 +114,6 @@
 
 - [x] Official 3vp static (`capture-observation.mjs`)
 - [x] Interact header / search / cart / menu / PDP Color
-- [x] PNG bak → stateFindings
+- [ ] CRO leftover: footer / contact / quotes / video — 3vp PNG
+- [ ] PNG bak → stateFindings
 - [x] `npm run validate` — 65 temiz · 0 error · 0 warn
