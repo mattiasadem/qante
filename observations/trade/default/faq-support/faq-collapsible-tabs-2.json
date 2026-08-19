@@ -13,7 +13,45 @@
     "evidence/trade/default/faq-support/faq-collapsible-tabs-2.1440.png"
   ],
   "notlar": "Ordering and Shipping: MOQ yok, lead time, packaging, tracking, pickup.",
-  "delta": "İkinci collapsible blok.",
+  "delta": "İkinci collapsible blok. İlk soru açık. İkinci açılınca birincisi kapanmıyor.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-trade-demo.myshopify.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--22715911241750__collapsible_content_nzeeC8",
+      "capture": true,
+      "etiket": "moq-acik",
+      "not": "İlk soru (MOQ) açık; lead time kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-collapsible_row_YT3MET-template--22715911241750__collapsible_content_nzeeC8 > summary",
+      "value": 1200,
+      "capture": true,
+      "etiket": "lead-time-acik",
+      "not": "What's the lead time for orders? açılmalı; URL FAQ’da kalmalı"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Scan open/hover taslağı koşulmadı — accordion = changed + click. Unique details#id > summary.",
   "capture": {
     "url": "https://theme-trade-demo.myshopify.com/pages/faq",
     "viewports": [

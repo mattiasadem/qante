@@ -14,6 +14,34 @@
   ],
   "notlar": "Ordering / Resources / About kolonları. Locale US|USD + Language. Sosyal Shopify. Newsletter input yok.",
   "delta": "Footer’da e-posta formu yok. Submit yok.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-trade-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-sections--22715906949142__footer",
+      "capture": true,
+      "etiket": "newsletter-yok",
+      "not": "Email input yok. Locale/dil gönderilmedi."
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Scan: email 0; locale opener United States | USD $ + English. Ülke listesi yoklandı (UK GBP / US USD) — seçilmedi, form yok. filled/hover zorlanmadı. 375 kolon accordion yok.",
   "capture": {
     "url": "https://theme-trade-demo.myshopify.com/",
     "viewports": [

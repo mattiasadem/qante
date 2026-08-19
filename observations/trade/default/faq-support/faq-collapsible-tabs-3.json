@@ -13,7 +13,45 @@
     "evidence/trade/default/faq-support/faq-collapsible-tabs-3.1440.png"
   ],
   "notlar": "Policies: return 14 gün, exchanges, wholesale partner, guarantee.",
-  "delta": "Üçüncü collapsible blok.",
+  "delta": "Üçüncü collapsible blok. İlk soru açık. İkinci açılınca birincisi kapanmıyor.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-trade-demo.myshopify.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--22715911241750__collapsible_content_dVYgrD",
+      "capture": true,
+      "etiket": "return-acik",
+      "not": "İlk soru (return) açık; exchanges kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-collapsible_row_fmAymG-template--22715911241750__collapsible_content_dVYgrD > summary",
+      "value": 1200,
+      "capture": true,
+      "etiket": "exchanges-acik",
+      "not": "Do you offer exchanges? açılmalı; URL FAQ’da kalmalı"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Scan open/hover taslağı koşulmadı — accordion = changed + click. Unique details#id > summary. Wholesale partner link tıklanmadı (account leftover).",
   "capture": {
     "url": "https://theme-trade-demo.myshopify.com/pages/faq",
     "viewports": [
