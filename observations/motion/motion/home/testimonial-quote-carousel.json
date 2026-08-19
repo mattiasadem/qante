@@ -8,11 +8,17 @@
   "selector": "#shopify-section-template--19291126530099__1628005539ef941de4",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
+    "evidence/motion/motion/home/testimonial-quote-carousel.1440.png",
     "evidence/motion/motion/home/testimonial-quote-carousel.375.png",
     "evidence/motion/motion/home/testimonial-quote-carousel.768.png",
-    "evidence/motion/motion/home/testimonial-quote-carousel.1440.png"
+    "evidence/motion/motion/home/testimonial-quote-carousel.changed.nokta-4.1440.png",
+    "evidence/motion/motion/home/testimonial-quote-carousel.changed.nokta-4.375.png",
+    "evidence/motion/motion/home/testimonial-quote-carousel.changed.nokta-4.768.png",
+    "evidence/motion/motion/home/testimonial-quote-carousel.initial.ilk-hal.1440.png",
+    "evidence/motion/motion/home/testimonial-quote-carousel.initial.ilk-hal.375.png",
+    "evidence/motion/motion/home/testimonial-quote-carousel.initial.ilk-hal.768.png"
   ],
-  "notlar": "DON'T TAKE OUR WORD FOR IT. Interact: Flickity nokta 2.",
+  "notlar": "DON'T TAKE OUR WORD FOR IT. Interact: Flickity nokta 4 (Cole).",
   "delta": "",
   "interactionStates": [
     "initial",
@@ -27,28 +33,49 @@
     },
     {
       "state": "initial",
+      "action": "waitFor",
+      "value": 1000,
+      "capture": false,
+      "not": "Hydrate sonrası GO FURTHER açılsın"
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Newsletter popup kapat. Email/SUBSCRIBE yok."
+    },
+    {
+      "state": "initial",
       "action": "scrollTo",
       "selector": "#shopify-section-template--19291126530099__1628005539ef941de4",
       "capture": true,
       "etiket": "ilk-hal",
-      "not": "Orta slayt EVAN M. Bend, OR. Nokta 1."
+      "not": "Hydrate sonrası orta slayt MARCUS T. Nokta 2."
+    },
+    {
+      "state": "changed",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Popup yeniden açıldıysa kapat"
     },
     {
       "state": "changed",
       "action": "click",
-      "selector": "#shopify-section-template--19291126530099__1628005539ef941de4 li.dot[aria-label='Page dot 2']",
-      "value": 1200,
+      "selector": "#shopify-section-template--19291126530099__1628005539ef941de4 li.dot[aria-label='Page dot 4']",
+      "value": 1600,
       "capture": true,
-      "etiket": "nokta-2",
-      "not": "Orta slayt MARCUS T. Vancouver, BC. Nokta 2. Ok yok."
+      "etiket": "nokta-4",
+      "not": "Orta slayt COLE H. Portland, ME. Nokta 4. Ok yok."
     }
   ],
   "stateFindings": {
-    "initial": "DON'T TAKE OUR WORD FOR IT. Orta: EVAN M. Bend, OR (sunrise trail). 1440 sağda MARCUS T. 5 Flickity nokta, ilki seçili. Ok yok.",
-    "changed": "Nokta 2. Orta: MARCUS T. Vancouver, BC (fit / hike). 1440 sağda NATE R. Denver. URL home."
+    "initial": "DON'T TAKE OUR WORD FOR IT. Hydrate sonrası orta: MARCUS T. Vancouver, BC. Nokta 2. Ok yok.",
+    "changed": "Nokta 4. Orta: COLE H. Portland, ME (trail shorts). URL home."
   },
   "missingStates": [],
-  "interactionNote": "Next/Prev ok 0. li.dot[aria-label=Page dot 2]. Flickity; innerText tüm slaytları tutar — karede orta kart kayar. Şema değişmedi.",
+  "interactionNote": "Hydrate scroll GO FURTHER popup açar; Escape ile kapatıldı, gönderilmedi. Popup üstündeyken nokta tık Flickity'yi değiştirmez. Ok yok. Şema değişmedi.",
   "capture": {
     "url": "https://motion-theme-adventure.myshopify.com/",
     "viewports": [
@@ -58,6 +85,6 @@
     ],
     "method": "interaction-steps",
     "mode": "section",
-    "updatedAt": "2026-08-15T12:01:17.124Z"
+    "updatedAt": "2026-08-19T13:30:42.648Z"
   }
 }
