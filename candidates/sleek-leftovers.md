@@ -8,6 +8,36 @@
 
 ---
 
+## CRO şema listesi (observation yok — şema icat edilmedi)
+
+Aşağıdaki CRO tipleri Sleek vitrinde **gözlenmedi**; en yakın mevcut tipe yazılmadı:
+
+- `before-after-slider`
+- `promo-banner-countdown` (yerine `promo-announcement-bar` + `promo-scrolling-marquee`)
+- `lead-capture-newsletter-band` (yerine `footer-columns-newsletter` — submit yok)
+- `comparison-quick-table`
+- `product-finder-quiz`
+- `media-shop-the-feed`
+- `media-scrolling-gallery`
+
+---
+
+ADAY: sleek-cro-testimonial-375-changed
+Gerekçe: `testimonial-quote-carousel` home — 375'te Slide right/left 0×0; swipe tetiklenmedi. changed yalnız 768/1440.
+Örnekler: https://sleek-theme-demo.myshopify.com/ `#shopify-section-template--24914044125473__testimonials_8JHr3L`
+Öneri: leftover — mobil carousel nav
+Karar: onay bekliyor
+
+---
+
+ADAY: sleek-cro-lead-capture-form-pii
+Gerekçe: `lead-capture-form` contact sayfasında var; email/name/message PII — fill/submit yok, yalnız statik 3vp.
+Örnekler: https://sleek-theme-demo.myshopify.com/pages/contact
+Öneri: leftover — PII
+Karar: onay bekliyor
+
+---
+
 ADAY: sleek-theme-store-id-null  
 Gerekçe: Canlı `Shopify.theme.theme_store_id` **null**. Theme Store listing id uydurulmadı. `schema_name` Sleek · `schema_version` 2.3.0 · name `[Update Theme Store] Sleek`.  
 Örnekler: https://sleek-theme-demo.myshopify.com/  
