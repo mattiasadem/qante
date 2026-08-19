@@ -28,8 +28,8 @@
 | `/pages/shipping-returns` | Header link; walk dışı leftover |
 | `/pages/customer-service` | Header link; walk dışı leftover |
 | `/pages/theme-features` | Tema satış sayfası; walk dışı leftover |
-| Newsletter footer / blog band | input var — submit PII, dur |
-| Contact Submit | PII, dur |
+| Newsletter footer / blog band | input var — submit PII, dur · initial 3vp |
+| Contact Submit | PII, dur · initial 3vp |
 | Account / Log in / Sign in with shop | Header + 768 drawer — dur |
 | Checkout / Buy it now / View Cart | drawer + PDP — tıklanmadı |
 | Cart discount (`DISCOUNT` / `#cart-discount`) | dur |
@@ -63,3 +63,13 @@
 - 1440 hamburger 0×0. 375/768 `summary.main-menu-button`.
 - PDP Storage: `label[for="template--22435922837762__main-2-1"]` 512GB SSD $1,899.
 - Qty: `button[name=plus]` / `.quantity__button[name=plus]`.
+- FAQ: `details.chm-toggle` Electronics store — kutu 299→450, URL aynı.
+- Shop the Feed: 375 `button.slider__button[aria-label="Slide 2"]`; 768 `.slider-desktop__buttons__next`. 1440 ok hide.
+- Hero: `li.big-slider__dots__item:nth-child(1)` Laptop PRO. Slayt `<a>` sayfa değiştirir.
+- product-showcase-tabs: 4 kolon; New Arrival tık no-op.
+
+## CRO observation yok (şema uydurulmadı)
+
+`before-after-slider` · `commerce-tools-products-bundle` · `promo-banner-countdown` · `comparison-quick-table` · `product-finder-quiz` · `testimonial-quote-carousel` · `media-scrolling-gallery`
+
+`social-proof-brand-logos` — `slider-component` 8 logo, tıklanır ok/nokta yok.
