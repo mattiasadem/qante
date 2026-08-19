@@ -14,6 +14,36 @@
   ],
   "notlar": "Subscribe to our emails / Be the first to know… Email + Subscribe.",
   "delta": "Submit / PII duruldu. Global footer üstü bant.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://woodstock-theme-light.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-sections--20124662497581__4e078c05-1639-42a5-afa3-cafcfb09f9ef",
+      "capture": true,
+      "etiket": "newsletter-bos",
+      "not": "Email placeholder boş. Subscribe tıklanmadı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Subscribe to our emails / Be the first to know about new collections and exclusive offers. Email kutusu boş; Subscribe görünür, tıklanmadı."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "PII — email fill yasak. Subscribe submit yasak."
+    }
+  ],
+  "interactionNote": "Scan 1 newsletter input contact[email]. Meaningful interact yalnız initial.",
   "capture": {
     "url": "https://woodstock-theme-light.myshopify.com/",
     "viewports": [
@@ -22,7 +52,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T10:58:20.969Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:57:00.000Z"
   }
 }

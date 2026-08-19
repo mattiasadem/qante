@@ -13,7 +13,52 @@
     "evidence/woodstock/default/home/media-shop-the-feed.1440.png"
   ],
   "notlar": "shoppable_reels. Tech Reels, Real Deals + Phone Generation 3 kartları.",
-  "delta": "Video reel + ürün kartı. media-shop-the-feed reuse.",
+  "delta": "Video reel + ürün kartı. media-shop-the-feed reuse. Play video leftover.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://woodstock-theme-light.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20124663021869__shoppable_reels_zgNqwB",
+      "capture": true,
+      "etiket": "ilk-reel",
+      "not": "Solda Phone Generation 3 $599. Prev disabled."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Slider-template--20124663021869__shoppable_reels_zgNqwB-next-button",
+      "value": 1800,
+      "capture": true,
+      "etiket": "sonraki-reel",
+      "not": "Slide right → ilk kart sola kayar; Camera 360 / sonraki reel öne gelir."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Tech Reels, Real Deals. Solda Phone Generation 3 $599 + play poster. Sağ ok 42×42; sol ok disabled.",
+    "changed": "Sağ ok sonrası slider scrollLeft artar; ilk reel sola çıkar, sonraki kart (Camera 360 degree) sola kayar. Sol ok açılır."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "ikinci-gorsel = reel görseli + ürün thumb; ekstra hover reveal yok."
+    },
+    {
+      "state": "open",
+      "sebep": "Load video / ürün <a> PDP'ye gider — play ve product click leftover."
+    }
+  ],
+  "interactionNote": "Scan changer 0; Slide right opener. Ürün linki navigate — tıklanmadı. Play leftover.",
   "capture": {
     "url": "https://woodstock-theme-light.myshopify.com/",
     "viewports": [
@@ -22,7 +67,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T10:58:55.783Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:57:00.000Z"
   }
 }

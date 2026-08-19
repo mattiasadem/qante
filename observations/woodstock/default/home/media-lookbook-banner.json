@@ -13,7 +13,59 @@
     "evidence/woodstock/default/home/media-lookbook-banner.1440.png"
   ],
   "notlar": "lookbook. Hotspot 1/2/3. Metin kapalı karede sayı.",
-  "delta": "lookbook__hotspot. Hotspot tık leftover (walk zorunlu interact değil).",
+  "delta": "lookbook__hotspot details. Hover/tık ürün kartı (Watch Generation B1). Tam QV değil.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://woodstock-theme-light.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20124663021869__lookbook_4V6V4B",
+      "capture": true,
+      "etiket": "hotspot-kapali",
+      "not": "Üç numaralı pin; kart kapalı."
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": ".lookbook__hotspot--template--20124663021869__lookbook_4V6V4B-hotspot_4tpBTF summary",
+      "value": 900,
+      "capture": true,
+      "etiket": "hotspot-1-kart",
+      "viewports": [
+        "1440"
+      ],
+      "not": "1440 hover → Watch Generation B1 From $749 + View full details"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": ".lookbook__hotspot--template--20124663021869__lookbook_4V6V4B-hotspot_4tpBTF summary",
+      "value": 900,
+      "capture": true,
+      "etiket": "hotspot-1-kart",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "375/768 tık → aynı ürün kartı. İkinci tık kapatır — bir kez."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Lookbook görseli + siyah pin 1 / 2 / 3. Ürün kartı kapalı.",
+    "open": "Pin 1: Watch Generation B1 From $749.00 + View full details. Tam quick-view değil."
+  },
+  "missingStates": [],
+  "interactionNote": "details id yok; unique class hotspot_4tpBTF. 1440 hover açar, tık kapatır. View full details tıklanmadı.",
   "capture": {
     "url": "https://woodstock-theme-light.myshopify.com/",
     "viewports": [
@@ -22,7 +74,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T10:58:54.178Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:57:00.000Z"
   }
 }

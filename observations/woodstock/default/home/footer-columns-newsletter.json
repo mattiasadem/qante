@@ -13,7 +13,37 @@
     "evidence/woodstock/default/home/footer-columns-newsletter.1440.png"
   ],
   "notlar": "Contact Info Montauk NY / Company / Woodstock Fin. Kolonlar + tel.",
-  "delta": "Newsletter ayrı section. Account/email tıklanmadı.",
+  "delta": "Newsletter ayrı section (lead-capture-newsletter-band). Footer'da input yok. 375 accordion yok.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://woodstock-theme-light.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-sections--20124662497581__footer",
+      "capture": true,
+      "etiket": "kolonlar",
+      "not": "Kolonlar + tel + ödeme. Form yok."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Contact Info Montauk NY / Company / Find It Fast / Make Money with Us. Newsletter formu bu section'da yok. 375'te de accordion opener yok."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "375/1440 scan opener 0 — mobil accordion yok. Newsletter input yok (ayrı bant)."
+    }
+  ],
+  "interactionNote": "Statik kolonlar. Account/email tıklanmadı. Newsletter = lead-capture-newsletter-band.",
   "capture": {
     "url": "https://woodstock-theme-light.myshopify.com/",
     "viewports": [
@@ -22,7 +52,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T10:58:18.196Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:57:00.000Z"
   }
 }

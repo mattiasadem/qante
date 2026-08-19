@@ -13,7 +13,48 @@
     "evidence/woodstock/default/contact/lead-capture-form.1440.png"
   ],
   "notlar": "Get In touch. NAME / EMAIL* / PHONE / COMMENT / best time. Submit yok.",
-  "delta": "PII form gönderilmedi.",
+  "delta": "PII form gönderilmedi. WHAT IS THIS REGARDING? select Returns varsayılan.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://woodstock-theme-light.myshopify.com/pages/contact",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20124662825261__form",
+      "capture": true,
+      "etiket": "bos-form",
+      "not": "Boş form. Regarding = Returns. Name/email/phone/comment boş. Send yok."
+    },
+    {
+      "state": "changed",
+      "action": "select",
+      "selector": "#shopify-section-template--20124662825261__form select[name='contact[request_type]']",
+      "value": "Shipping",
+      "capture": true,
+      "etiket": "konu-shipping",
+      "not": "WHAT IS THIS REGARDING? → Shipping. Metin alanları boş; Send tıklanmadı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Get In touch. NAME / EMAIL* / PHONE NUMBER / COMMENT boş. WHEN IS THE BEST TIME… Morning/Afternoon/Evening + Reply in two days. WHAT IS THIS REGARDING? = Returns. Send.",
+    "changed": "Regarding = Shipping. Name/email/phone/comment boş. Send tıklanmadı."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "PII — name/email/phone/comment fill yasak. Send submit yasak."
+    }
+  ],
+  "interactionNote": "Select Returns|Shipping|Custom order|Other. Select changed PII değil. Checkbox leftover.",
   "capture": {
     "url": "https://woodstock-theme-light.myshopify.com/pages/contact",
     "viewports": [
@@ -22,7 +63,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T10:57:06.641Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:57:00.000Z"
   }
 }
