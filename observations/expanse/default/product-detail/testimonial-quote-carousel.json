@@ -12,8 +12,41 @@
     "evidence/expanse/default/product-detail/testimonial-quote-carousel.768.png",
     "evidence/expanse/default/product-detail/testimonial-quote-carousel.1440.png"
   ],
-  "notlar": "From our customers — Sarah E. / Diana K. yıldızlı alıntı.",
-  "delta": "testimonials-slide. Merchant metin (UGC değil zorunlu).",
+  "notlar": "From our customers — Flickity 4 nokta. Ok yok.",
+  "delta": "testimonials-slide. Merchant metin (UGC değil zorunlu). Başlangıç nokta 2 (Diana K).",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://expanse-theme-furniture.myshopify.com/products/ibed-lap-desk",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17354735714501__e4a2429b-a657-4d06-8804-5386d9066130",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Nokta 2 seçili — Diana K / Atlanta"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--17354735714501__e4a2429b-a657-4d06-8804-5386d9066130 li.dot[aria-label='Page dot 3']",
+      "value": 1200,
+      "capture": true,
+      "etiket": "nokta-3",
+      "not": "Flickity Page dot 3 — yoklama: Gene H / The best customer service. Ok 0."
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Scan changer yok (nokta LI, role=tab değil). Yoklama tık Page dot 2→3. Şema emit:carousel.next duruyor.",
   "capture": {
     "url": "https://expanse-theme-furniture.myshopify.com/products/ibed-lap-desk",
     "viewports": [
@@ -22,7 +55,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
+    "method": "interaction-steps",
     "updatedAt": "2026-08-17T21:00:18.900Z"
   }
 }
