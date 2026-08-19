@@ -11,7 +11,7 @@
 shop `pebble-little.myshopify.com`
 
 **Durum:** Mod A walk + resmi 3vp + interact (CRO leftover) + validate **bitti** (0 error)  
-**PR:** draft — CRO interact turu
+**PR:** draft https://github.com/mattiasadem/qante/pull/261 — CRO interact turu
 
 ---
 
