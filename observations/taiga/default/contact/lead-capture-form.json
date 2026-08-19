@@ -8,12 +8,47 @@
   "selector": "#shopify-section-template--21784160698606__contact_form",
   "evidenceSlug": "lead-capture-form",
   "evidence": [
-    "evidence/taiga/default/contact/lead-capture-form.375.png",
-    "evidence/taiga/default/contact/lead-capture-form.768.png",
-    "evidence/taiga/default/contact/lead-capture-form.1440.png"
+    "evidence/taiga/default/contact/lead-capture-form.initial.bos-form.1440.png",
+    "evidence/taiga/default/contact/lead-capture-form.initial.bos-form.375.png",
+    "evidence/taiga/default/contact/lead-capture-form.initial.bos-form.768.png"
   ],
   "notlar": "Contact form + Hours (Mon–Fri 10–7:30 CET). Name * Email * Phone. Submit tıklanmadı.",
   "delta": "Taiga contact_form. PII stop. Shopify.theme: name **Taiga / LIVE update** · schema_name **Taiga** · schema_version **8.1.0** · theme_store_id **null** · role main · id 159278366958 · shop taiga-demo-sage.myshopify.com",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://taiga-demo-sage.myshopify.com/pages/contact",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21784160698606__contact_form",
+      "capture": true,
+      "etiket": "bos-form",
+      "not": "Boş Contact form + Hours bloğu. Send tıklanmadı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Contact form: Name * / Email * / Phone / Topic / Message * + Send. Sağda Hours (Mon–Fri 10–7:30 CET) + adres. 1440 iki kolon; 768/375 form üstte saatler altta. Tüm alanlar boş."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "Name / Email / Phone / Message PII — doldurulmadı. Send tıklanmadı."
+    }
+  ],
+  "interactionNote": "Scan 5 input (name, email, phone, topic, textarea). Select/changer yok. Topic doldurulmadı — anlamlı changed yok, PII stop.",
   "capture": {
     "url": "https://taiga-demo-sage.myshopify.com/pages/contact",
     "viewports": [
@@ -22,7 +57,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T20:48:09.687Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:02:37.018Z"
   }
 }

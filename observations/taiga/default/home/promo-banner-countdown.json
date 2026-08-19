@@ -8,12 +8,47 @@
   "selector": "#shopify-section-template--21784160633070__26f3965c-49dc-465b-9c19-6d9a1adacc22",
   "evidenceSlug": "promo-banner-countdown",
   "evidence": [
-    "evidence/taiga/default/home/promo-banner-countdown.375.png",
-    "evidence/taiga/default/home/promo-banner-countdown.768.png",
-    "evidence/taiga/default/home/promo-banner-countdown.1440.png"
+    "evidence/taiga/default/home/promo-banner-countdown.initial.countdown-bant.1440.png",
+    "evidence/taiga/default/home/promo-banner-countdown.initial.countdown-bant.375.png",
+    "evidence/taiga/default/home/promo-banner-countdown.initial.countdown-bant.768.png"
   ],
   "notlar": "Limited time offer! Up to 50% off. count-down DAYS/HOURS/MINUTES (ör. 133 gün).",
   "delta": "Taiga countdown. CTA karede yok. Shopify.theme: name **Taiga / LIVE update** · schema_name **Taiga** · schema_version **8.1.0** · theme_store_id **null** · role main · id 159278366958 · shop taiga-demo-sage.myshopify.com",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://taiga-demo-sage.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21784160633070__26f3965c-49dc-465b-9c19-6d9a1adacc22",
+      "capture": true,
+      "etiket": "countdown-bant",
+      "not": "Limited time offer + DAYS/HOURS/MINUTES sayacı. Tıklanabilir kontrol yok."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Limited time offer! Up to 50% off from selected products. + count-down DAYS/HOURS/MINUTES/SECONDS (ör. 131 / 23 / 58 / 18). CTA yok. Sayılar canlı; tıklanabilir kontrol yok. 375 dikey stack, 768/1440 yatay bant."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Scan 0 changer — sayaç otomatik, tıklanabilir kontrol yok."
+    }
+  ],
+  "interactionNote": "Affordance taraması: input/opener/changer 0. Sayaç JS ile tikler; state adı değil. Hyper ile aynı — yalnız initial.",
   "capture": {
     "url": "https://taiga-demo-sage.myshopify.com/",
     "viewports": [
@@ -22,7 +57,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T20:55:58.366Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:01:42.766Z"
   }
 }

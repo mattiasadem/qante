@@ -8,12 +8,67 @@
   "selector": "#shopify-section-template--21784396890350__testimonials_MHLU94",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
-    "evidence/taiga/default/product-detail/testimonial-quote-carousel.375.png",
-    "evidence/taiga/default/product-detail/testimonial-quote-carousel.768.png",
-    "evidence/taiga/default/product-detail/testimonial-quote-carousel.1440.png"
+    "evidence/taiga/default/product-detail/testimonial-quote-carousel.changed.sonraki-alinti.1440.png",
+    "evidence/taiga/default/product-detail/testimonial-quote-carousel.changed.sonraki-alinti.375.png",
+    "evidence/taiga/default/product-detail/testimonial-quote-carousel.changed.sonraki-alinti.768.png",
+    "evidence/taiga/default/product-detail/testimonial-quote-carousel.initial.ilk-alinti.1440.png",
+    "evidence/taiga/default/product-detail/testimonial-quote-carousel.initial.ilk-alinti.375.png",
+    "evidence/taiga/default/product-detail/testimonial-quote-carousel.initial.ilk-alinti.768.png"
   ],
   "notlar": "Perfect daypack for everyday carry — Jääkäri S alıntısı. gridy-slider.",
   "delta": "Taiga testimonials. Başlık yok, alıntı kartı. Shopify.theme: name **Taiga / LIVE update** · schema_name **Taiga** · schema_version **8.1.0** · theme_store_id **null** · role main · id 159278366958 · shop taiga-demo-sage.myshopify.com",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://taiga-demo-sage.myshopify.com/products/jaakari-m-desert-brown",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21784396890350__testimonials_MHLU94",
+      "capture": true,
+      "etiket": "ilk-alinti",
+      "not": "gridy-slider görünür aktif kart (autoplay olabilir)"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--21784396890350__testimonials_MHLU94 button.gridy-arrow >> nth=1",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21784396890350__testimonials_MHLU94",
+      "capture": true,
+      "etiket": "sonraki-alinti",
+      "not": "Sağ gridy-arrow → sonraki alıntı kartı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "5 yıldız. The ultimate load hauler — Jääkäri XL linkli gövde + — Author's name. Sol/sağ sarı gridy-arrow. Autoplay 4s; scroll anında 4. slayt görünür olabilir.",
+    "changed": "Sağ ok sonrası Perfect daypack for everyday carry — Jääkäri S linkli gövde + — Marko Mäkinen. Başlık/cite initial'dan farklı; track kaydı doğrulandı. 375/768/1440 aynı çift."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan changer 0 (okların aria-label yok). Sağ ok: button.gridy-arrow nth=1. 4 alıntı; nokta pagination yok. Autoplay initial kareyi kaydırır.",
   "capture": {
     "url": "https://taiga-demo-sage.myshopify.com/products/jaakari-m-desert-brown",
     "viewports": [
@@ -22,7 +77,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T20:59:34.887Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:02:53.994Z"
   }
 }
