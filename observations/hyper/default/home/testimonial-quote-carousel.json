@@ -8,13 +8,53 @@
   "selector": "section.section-testimonials",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
+    "evidence/hyper/default/home/testimonial-quote-carousel.1440.png",
     "evidence/hyper/default/home/testimonial-quote-carousel.375.png",
     "evidence/hyper/default/home/testimonial-quote-carousel.768.png",
-    "evidence/hyper/default/home/testimonial-quote-carousel.1440.png"
+    "evidence/hyper/default/home/testimonial-quote-carousel.changed.sonraki-alinti.1440.png",
+    "evidence/hyper/default/home/testimonial-quote-carousel.changed.sonraki-alinti.375.png",
+    "evidence/hyper/default/home/testimonial-quote-carousel.changed.sonraki-alinti.768.png",
+    "evidence/hyper/default/home/testimonial-quote-carousel.initial.ilk-hal.1440.png",
+    "evidence/hyper/default/home/testimonial-quote-carousel.initial.ilk-hal.375.png",
+    "evidence/hyper/default/home/testimonial-quote-carousel.initial.ilk-hal.768.png"
   ],
-  "notlar": "B2 seçimi: default Hyper home’da ayrı logo/trust şeridi yok; en temiz social-proof = testimonials. Başlık: 'What Clients Talk About Us'. Kart: alıntı + ad + şehir. Taxonomy: testimonial-ugc (social-proof ailesi).",
+  "notlar": "What Clients Talk About Us. Interact: Next ok.",
   "delta": "",
-  "interactionNote": "Bu karede ok/nokta yok, yan peek. Şema interact Impact Next + Allure FARFETCH karelerinde.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hyper-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "section.section-testimonials",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "İlk aktif slayt: coat alıntısı. Sağ ok görünür."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "section.section-testimonials button.swiper-button-next",
+      "value": 1500,
+      "capture": true,
+      "etiket": "sonraki-alinti",
+      "not": "Next. Alıntı products/artful slayta kayar."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "What Clients Talk About Us. Coat alıntısı aktif, sağ ok.",
+    "changed": "Next sonrası artful/products alıntısı. İsim/şehir değişti."
+  },
+  "interactionNote": "Impact Sound Next temsilcisi. PDP Clients Love Us tek slayt — changed yok.",
   "capture": {
     "url": "https://hyper-theme-demo.myshopify.com/",
     "viewports": [
@@ -22,7 +62,8 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-11T11:23:51.062Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T13:49:52.680Z",
+    "mode": "section"
   }
 }

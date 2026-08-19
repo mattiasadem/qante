@@ -8,12 +8,53 @@
   "selector": ".shopify-section[id*='multiple_product']",
   "evidenceSlug": "commerce-tools-products-bundle",
   "evidence": [
+    "evidence/hyper/nexvo/home/commerce-tools-products-bundle.1440.png",
     "evidence/hyper/nexvo/home/commerce-tools-products-bundle.375.png",
     "evidence/hyper/nexvo/home/commerce-tools-products-bundle.768.png",
-    "evidence/hyper/nexvo/home/commerce-tools-products-bundle.1440.png"
+    "evidence/hyper/nexvo/home/commerce-tools-products-bundle.changed.phone-256gb.1440.png",
+    "evidence/hyper/nexvo/home/commerce-tools-products-bundle.changed.phone-256gb.375.png",
+    "evidence/hyper/nexvo/home/commerce-tools-products-bundle.changed.phone-256gb.768.png",
+    "evidence/hyper/nexvo/home/commerce-tools-products-bundle.initial.ilk-hal.1440.png",
+    "evidence/hyper/nexvo/home/commerce-tools-products-bundle.initial.ilk-hal.375.png",
+    "evidence/hyper/nexvo/home/commerce-tools-products-bundle.initial.ilk-hal.768.png"
   ],
-  "notlar": "multiple_product_bundles",
+  "notlar": "multiple_product_bundles. Interact: NovaPhone Black/128GB → 256GB.",
   "delta": "bundle şema reuse",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hyper-nexvo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": ".shopify-section[id*='multiple_product']",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Bundle up & saving up to 20%. NovaPhone Black/128GB ilk select."
+    },
+    {
+      "state": "changed",
+      "action": "select",
+      "selector": ".shopify-section[id*='multiple_product'] select[name='id']",
+      "value": "42225499570250",
+      "capture": true,
+      "etiket": "phone-256gb",
+      "not": "İlk ürün select Black/128GB → Black/256GB. Add all to cart tıklanmaz."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Bundle up & saving up to 20%. NovaPhone Black/128GB seçili, carousel ürün kartları.",
+    "changed": "İlk select Black/256GB. Fiyat/görsel güncellendi."
+  },
+  "interactionNote": "Ceramide 512→946ml temsilcisi. Nexvo carousel bundle; ilk select variant değişimi.",
   "capture": {
     "url": "https://hyper-nexvo.myshopify.com/",
     "viewports": [
@@ -22,7 +63,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-12T08:30:11.105Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T13:46:06.176Z"
   }
 }

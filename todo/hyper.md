@@ -4,7 +4,9 @@
 *Walkthrough:* `../qante-ornek-calisma-hyper.md`  
 *Evidence:* `evidence/hyper/{preset}/{sayfa}/`
 
-**Şu anki odak:** ✅ Hyper **default + tüm preset delta** bitti — interact kuyruğu [`interact.md`](./interact.md)
+**Şu anki odak:** ✅ Hyper **default + tüm preset delta** bitti — CRO leftover interact (2026-08-19) kapandı
+
+**CRO interact (2026-08-19):** `commerce-tools-products-bundle` (ceramide+nexvo+pillar+trove) · `faq-collapsible-tabs` (faq-support + about-brand) · `testimonial-quote-carousel` (home Next) · `media-shop-the-feed` (ceramide 768/1440). Leftover: [`../candidates/hyper-leftovers.md`](../candidates/hyper-leftovers.md)
 
 **Evidence kuralı:** `selector` + url → `capture-observation.mjs` (3vp) · drawer/modal: `captureMode: viewport` + `prepareClick` / `prepareFill` / `prepareScroll`
 
@@ -64,6 +66,7 @@
 3. Ceramide PDP’de `before-after-slider` eklendi; diğer preset’lerde yoksa sorun değil  
 4. Compare drawer dolu çekildi — Grind Vessel + Spoke Sofa TonePlay (2/5)
 5. Interact: cart sayfa dolu · PLP Out of stock · FAQ ikinci soru · PDP Yellow swatch · PDP About Brand · slideshow Spoke→Dining · lookbook Shop this look · favori 1/3→2/3 · features slayt
+6. CRO interact (2026-08-19): bundle select/tab (4 preset) · FAQ about-brand intl shipping · home testimonial Next · ceramide shop-feed Next (768/1440)
 
 ---
 

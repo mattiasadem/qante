@@ -8,12 +8,53 @@
   "selector": ".shopify-section[id*='products_bundle']",
   "evidenceSlug": "commerce-tools-products-bundle",
   "evidence": [
+    "evidence/hyper/trove/home/commerce-tools-products-bundle.1440.png",
     "evidence/hyper/trove/home/commerce-tools-products-bundle.375.png",
     "evidence/hyper/trove/home/commerce-tools-products-bundle.768.png",
-    "evidence/hyper/trove/home/commerce-tools-products-bundle.1440.png"
+    "evidence/hyper/trove/home/commerce-tools-products-bundle.changed.fruits-tab.1440.png",
+    "evidence/hyper/trove/home/commerce-tools-products-bundle.changed.fruits-tab.375.png",
+    "evidence/hyper/trove/home/commerce-tools-products-bundle.changed.fruits-tab.768.png",
+    "evidence/hyper/trove/home/commerce-tools-products-bundle.initial.ilk-hal.1440.png",
+    "evidence/hyper/trove/home/commerce-tools-products-bundle.initial.ilk-hal.375.png",
+    "evidence/hyper/trove/home/commerce-tools-products-bundle.initial.ilk-hal.768.png"
   ],
-  "notlar": "Build Your Own Bundle (selection)",
+  "notlar": "Build Your Own Bundle (selection). Interact: Vegetables → Fruits tab.",
   "delta": "bundle builder varyantı — aynı şema",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hyper-trove.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": ".shopify-section[id*='products_bundle']",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Build Your Own Bundle. Vegetables sekmesi aktif."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".shopify-section[id*='products_bundle'] button.tabs__btn:has-text('Fruits')",
+      "value": 800,
+      "capture": true,
+      "etiket": "fruits-tab",
+      "not": "Vegetables → Fruits. Ürün grid değişir. Add tıklanmaz; Your Bundle drawer açılmaz."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Build Your Own Bundle. Vegetables sekmesi aktif, sebze ürün kartları + Add.",
+    "changed": "Fruits sekmesi aktif. Grid meyve ürünlerine döndü."
+  },
+  "interactionNote": "Trove bundle builder: kategori sekmesi changed. Add/Your Bundle drawer ayrı turda değil.",
   "capture": {
     "url": "https://hyper-trove.myshopify.com/",
     "viewports": [
@@ -22,7 +63,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-12T08:34:44.312Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T13:47:46.566Z"
   }
 }

@@ -8,9 +8,15 @@
   "selector": ".shopify-section[id*='collapsible_tabs_']",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/hyper/default/about-brand/faq-collapsible-tabs.1440.png",
     "evidence/hyper/default/about-brand/faq-collapsible-tabs.375.png",
     "evidence/hyper/default/about-brand/faq-collapsible-tabs.768.png",
-    "evidence/hyper/default/about-brand/faq-collapsible-tabs.1440.png"
+    "evidence/hyper/default/about-brand/faq-collapsible-tabs.changed.intl-shipping-acik.1440.png",
+    "evidence/hyper/default/about-brand/faq-collapsible-tabs.changed.intl-shipping-acik.375.png",
+    "evidence/hyper/default/about-brand/faq-collapsible-tabs.changed.intl-shipping-acik.768.png",
+    "evidence/hyper/default/about-brand/faq-collapsible-tabs.initial.ilk-hal.1440.png",
+    "evidence/hyper/default/about-brand/faq-collapsible-tabs.initial.ilk-hal.375.png",
+    "evidence/hyper/default/about-brand/faq-collapsible-tabs.initial.ilk-hal.768.png"
   ],
   "capture": {
     "url": "https://hyper-theme-demo.myshopify.com/pages/about-us",
@@ -19,10 +25,45 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
+    "method": "interaction-steps",
     "mode": "section",
-    "updatedAt": "2026-08-11T14:16:10.736Z"
+    "updatedAt": "2026-08-19T13:53:02.703Z"
   },
-  "notlar": "About page FAQ accordion",
-  "delta": ""
+  "notlar": "About page FAQ accordion. Interact: intl shipping açık.",
+  "delta": "",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hyper-theme-demo.myshopify.com/pages/about-us",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": ".shopify-section[id*='collapsible_tabs_MyaBhj']",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Still need help? Dört soru kapalı (+)."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "[id*='collapsible_tabs_MyaBhj'] .accordion-item:nth-child(3) details > summary",
+      "value": 600,
+      "capture": true,
+      "etiket": "intl-shipping-acik",
+      "not": "Do you ship internationally? açık (−) + cevap metni."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Still need help? Dört accordion sorusu kapalı (+).",
+    "changed": "Do you ship internationally? açık (−) + ülke listesi cevabı."
+  },
+  "interactionNote": "faq-support ilk soru açık başlar; about-brand hepsi kapalı. Ayrı instance."
 }
