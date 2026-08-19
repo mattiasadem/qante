@@ -70,3 +70,35 @@ Gerekçe: Drinks/About `details` dropdown (metin link listesi). Görsel kolon / 
 Örnekler: `#Details-HeaderMenu-1`  
 Öneri: leftover — Dawn dropdown ≠ image mega  
 Karar: onay bekliyor
+
+---
+
+ADAY: taste-cro-schemas-not-on-demo  
+Gerekçe: CRO disk şemalarından yalnız `faq-collapsible-tabs` ve `lead-capture-form` observation ile eşleşti. Demo'da görülmedi: before-after-slider, commerce-tools-products-bundle, promo-banner-countdown, lead-capture-newsletter-band, comparison-quick-table, product-finder-quiz, testimonial-quote-carousel, media-shop-the-feed, media-scrolling-gallery.  
+Örnekler: https://theme-taste-demo.myshopify.com/ (home/PDP/contact taraması)  
+Öneri: leftover — şema icat edilmedi  
+Karar: onay bekliyor
+
+---
+
+ADAY: taste-bundles-not-commerce-tools-bundle  
+Gerekçe: Home "Bundle up and save" grid Dawn `featured-collection`; `commerce-tools-products-bundle` şemasına observation yazılmadı. `product-showcase-grid-featured.2` reuse.  
+Örnekler: https://theme-taste-demo.myshopify.com/ — Green/Standard/Days bundles  
+Öneri: leftover — ürün grid ≠ bundle builder  
+Karar: onay bekliyor
+
+---
+
+ADAY: taste-footer-newsletter-not-newsletter-band  
+Gerekçe: Footer e-posta Dawn `footer` section; `lead-capture-newsletter-band` observation yok. `footer-columns-newsletter` + PII stop (submit yok).  
+Örnekler: home footer e-posta alanı  
+Öneri: leftover — band şeması ayrı instance değil  
+Karar: onay bekliyor
+
+---
+
+ADAY: taste-faq-accordion-multi-open  
+Gerekçe: PDP FAQ `changed` (shipping tık) sonrası shelf life satırı da açık kalıyor; şema `allowMultipleOpen: false` varsayımıyla çelişebilir.  
+Örnekler: Fiery Ginger Booster PDP FAQ  
+Öneri: leftover — Dawn instance davranışı  
+Karar: onay bekliyor

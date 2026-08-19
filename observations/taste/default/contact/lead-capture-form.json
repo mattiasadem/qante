@@ -8,12 +8,36 @@
   "selector": "#shopify-section-template--22715887288342__form",
   "evidenceSlug": "lead-capture-form",
   "evidence": [
-    "evidence/taste/default/contact/lead-capture-form.375.png",
-    "evidence/taste/default/contact/lead-capture-form.768.png",
-    "evidence/taste/default/contact/lead-capture-form.1440.png"
+    "evidence/taste/default/contact/lead-capture-form.initial.bos-form.1440.png",
+    "evidence/taste/default/contact/lead-capture-form.initial.bos-form.375.png",
+    "evidence/taste/default/contact/lead-capture-form.initial.bos-form.768.png"
   ],
   "notlar": "Name, Email *, Phone number, Comment, Send. Dawn contact form. Gönderilmedi.",
   "delta": "PII stop — Submit yok.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-taste-demo.myshopify.com/pages/contact",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--22715887288342__form",
+      "capture": true,
+      "etiket": "bos-form",
+      "not": "Boş form alanları — gönderim yok"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Dört alan (Name, Email *, Phone number, Comment) ve Send düğmesi. Tüm alanlar boş. 375 tek kolon stacked layout."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan: 4 input affordance; fill anlamlı ama PII politikası engelliyor.",
   "capture": {
     "url": "https://theme-taste-demo.myshopify.com/pages/contact",
     "viewports": [
@@ -22,7 +46,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T17:08:44.765Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:52:47.482Z"
   }
 }
