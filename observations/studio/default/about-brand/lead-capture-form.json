@@ -8,12 +8,44 @@
   "selector": "#shopify-section-template--17836821545128__1645478245a001282f",
   "evidenceSlug": "lead-capture-form",
   "evidence": [
+    "evidence/studio/default/about-brand/lead-capture-form.1440.png",
     "evidence/studio/default/about-brand/lead-capture-form.375.png",
     "evidence/studio/default/about-brand/lead-capture-form.768.png",
-    "evidence/studio/default/about-brand/lead-capture-form.1440.png"
+    "evidence/studio/default/about-brand/lead-capture-form.initial.ilk-hal.1440.png",
+    "evidence/studio/default/about-brand/lead-capture-form.initial.ilk-hal.375.png",
+    "evidence/studio/default/about-brand/lead-capture-form.initial.ilk-hal.768.png"
   ],
   "notlar": "Name / Email * / Phone / Comment / Send. Submit yok.",
   "delta": "Contact form about sayfasında da var.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-studio-demo.myshopify.com/pages/about-us",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17836821545128__1645478245a001282f",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Boş form alanları. Send tıklanmadı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Name / Email * / Phone number / Comment alanları boş + Send düğmesi. About-us sayfası altında iletişim formu. 1440/768/375 tek kolon. Submit yapılmadı."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "4 input (name, email, tel, textarea). Fill + Send PII — dur. Statik 3vp initial duruyor."
+    }
+  ],
+  "interactionNote": "Scan 4 input. katalogSorgu yok (about sayfası). Meaningful interact yalnız initial; şema dokunulmadı.",
   "capture": {
     "url": "https://theme-studio-demo.myshopify.com/pages/about-us",
     "viewports": [
@@ -22,7 +54,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T17:10:49.733Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:00:21.141Z"
   }
 }

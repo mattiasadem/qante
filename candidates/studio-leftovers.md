@@ -2,7 +2,7 @@
 
 *Store:* https://theme-studio-demo.myshopify.com  
 *Tema (görülen, uydurulmadı):* **[Studio] Theme Store demo (latest)** · `schema_name` **Dawn** · `schema_version` **3.0.0** · `theme_store_id` **null** · id `141073547432` · role `main` · shop `theme-studio-demo.myshopify.com`  
-*Tarih:* 2026-08-17
+*Tarih:* 2026-08-19 (CRO interact güncellemesi)
 
 Şema icat edilmedi. En yakın mevcut tipe observation yazıldıysa burada tekrarlanmaz.
 
@@ -70,6 +70,45 @@ ADAY: studio-buy-it-now
 Gerekçe: PDP `SHOPIFY-BUY-IT-NOW-BUTTON` / accelerated checkout. Checkout envanter dışı; tıklanmadı.  
 Örnekler: https://theme-studio-demo.myshopify.com/products/rhyme  
 Öneri: leftover — checkout  
+Karar: onay bekliyor
+
+---
+
+## CRO disk şemaları — envanterde yok (interact yapılmadı)
+
+| schemaId | Durum |
+|---|---|
+| `before-after-slider` | Demo'da section yok |
+| `commerce-tools-products-bundle` | Bundle UI yok |
+| `promo-banner-countdown` | Countdown yok (`promo-announcement-bar` statik metin) |
+| `faq-collapsible-tabs` | FAQ sayfası 404; accordion section yok |
+| `comparison-quick-table` | Karşılaştırma tablosu yok |
+| `product-finder-quiz` | Quiz flow yok |
+| `testimonial-quote-carousel` | Carousel yok (`editorial-image-with-text-3` tek alıntı IWT) |
+| `media-shop-the-feed` | Shop-the-feed / UGC grid yok |
+| `media-scrolling-gallery` | Yatay scroll gallery yok |
+
+## CRO interact — PII sınırı
+
+| schemaId | State | Not |
+|---|---|---|
+| `lead-capture-newsletter-band` | initial 3vp | home · Email fill + submit dur → `input` missing |
+| `lead-capture-form` | initial 3vp | about-us + contact · Name/Email/Phone/Comment fill + Send dur → `input` missing |
+
+## Sticky / scarcity (CRO değil, gözlem notu)
+
+| Madde | Durum |
+|---|---|
+| Sticky header | `navigation-header-mega` — sticky header; interact open/changed mevcut |
+| Sticky ATC / scarcity | PDP Rhyme — ayrı sticky bar veya scarcity metni yok; `product-info-main` statik |
+| Reviews | Yorum bloğu / carousel yok |
+
+---
+
+ADAY: studio-cro-interact-2026-08-19  
+Gerekçe: Discover-interact CRO leftover. Var olan obs: lead-capture-newsletter-band (home), lead-capture-form (about-us + contact). Scan-affordances → initial 3vp (`ilk-hal`). countdown / quiz / bundle / compare / before-after / FAQ / testimonials / UGC gallery observation yok — icat edilmedi.  
+Örnekler: `/` · `/pages/about-us` · `/pages/contact`  
+Öneri: leftover — şema uydurma yok  
 Karar: onay bekliyor
 
 ---

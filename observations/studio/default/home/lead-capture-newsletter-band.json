@@ -8,12 +8,44 @@
   "selector": "#shopify-section-template--17836821446824__16437518661b2dc948",
   "evidenceSlug": "lead-capture-newsletter-band",
   "evidence": [
+    "evidence/studio/default/home/lead-capture-newsletter-band.1440.png",
     "evidence/studio/default/home/lead-capture-newsletter-band.375.png",
     "evidence/studio/default/home/lead-capture-newsletter-band.768.png",
-    "evidence/studio/default/home/lead-capture-newsletter-band.1440.png"
+    "evidence/studio/default/home/lead-capture-newsletter-band.initial.ilk-hal.1440.png",
+    "evidence/studio/default/home/lead-capture-newsletter-band.initial.ilk-hal.375.png",
+    "evidence/studio/default/home/lead-capture-newsletter-band.initial.ilk-hal.768.png"
   ],
   "notlar": "Be the first to know + Join our email list… Email input. Submit yoklandı değil.",
   "delta": "layout=inline/center. Görsel yok.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-studio-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17836821446824__16437518661b2dc948",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Boş Email alanı. Fill/submit yok."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Be the first to know başlık + Join our email list… alt metin + Email placeholder + boş alan. Submit düğmesi yok (Dawn newsletter section). 1440 yatay; 375/768 dikey stack."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "Tek affordance contact[email]. Fill + submit PII — dur. Statik 3vp initial duruyor."
+    }
+  ],
+  "interactionNote": "Scan 1 input contact[email]. katalogSorgu=vessels (body). Meaningful interact yalnız initial; şema dokunulmadı.",
   "capture": {
     "url": "https://theme-studio-demo.myshopify.com/",
     "viewports": [
@@ -22,7 +54,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T17:13:43.106Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:59:46.772Z"
   }
 }
