@@ -8,12 +8,50 @@
   "selector": "#shopify-section-template--21019562442809__form",
   "evidenceSlug": "lead-capture-form",
   "evidence": [
+    "evidence/vessel/default/contact/lead-capture-form.1440.png",
     "evidence/vessel/default/contact/lead-capture-form.375.png",
     "evidence/vessel/default/contact/lead-capture-form.768.png",
-    "evidence/vessel/default/contact/lead-capture-form.1440.png"
+    "evidence/vessel/default/contact/lead-capture-form.initial.ilk-hal.1440.png",
+    "evidence/vessel/default/contact/lead-capture-form.initial.ilk-hal.375.png",
+    "evidence/vessel/default/contact/lead-capture-form.initial.ilk-hal.768.png"
   ],
   "notlar": "Name / Email* / Phone / Comment / Submit. Gönderilmedi.",
   "delta": "Shopify.theme.name `Updated copy of Vessel demo store 3.2.0` · id 159183306809 · schema_name Vessel · schema_version 3.4.0 · theme_store_id 3628 · role main · shop horizon-vessel.myshopify.com. Horizon nested theme-blocks: header-component / product-card / slideshow-component / variant-picker / cart-drawer-component / predictive-search-component / facets-form-component (shopify-block custom element yok). PII stop — Submit tıklanmadı.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-vessel-demo.myshopify.com/pages/contact",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21019562442809__form",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Boş form: Name / Email* / Phone / Comment + Submit. Gönderilmedi."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Contact form: Name, Email (zorunlu), Phone, Comment alanları boş; Submit butonu görünür. 1440/768 form ortada; 375 tek kolon. Submit tıklanmadı."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "Name / email / phone / comment PII — doldurulmadı. Submit tıklanmadı."
+    }
+  ],
+  "interactionNote": "scan-affordances: 4 input (name, email, phone, textarea); opener/changer yok. katalogSorgu yok. PII stop.",
   "capture": {
     "url": "https://theme-vessel-demo.myshopify.com/pages/contact",
     "viewports": [
@@ -22,7 +60,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T19:24:02.582Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:15:25.866Z"
   }
 }
