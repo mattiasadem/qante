@@ -8,12 +8,53 @@
   "selector": "#shopify-section-template--24058934394903__faq-content-2",
   "evidenceSlug": "faq-collapsible-tabs-2",
   "evidence": [
+    "evidence/symmetry/symmetry/faq-support/faq-collapsible-tabs-2.1440.png",
     "evidence/symmetry/symmetry/faq-support/faq-collapsible-tabs-2.375.png",
     "evidence/symmetry/symmetry/faq-support/faq-collapsible-tabs-2.768.png",
-    "evidence/symmetry/symmetry/faq-support/faq-collapsible-tabs-2.1440.png"
+    "evidence/symmetry/symmetry/faq-support/faq-collapsible-tabs-2.changed.shipping-policy.1440.png",
+    "evidence/symmetry/symmetry/faq-support/faq-collapsible-tabs-2.changed.shipping-policy.375.png",
+    "evidence/symmetry/symmetry/faq-support/faq-collapsible-tabs-2.changed.shipping-policy.768.png",
+    "evidence/symmetry/symmetry/faq-support/faq-collapsible-tabs-2.initial.kapali.1440.png",
+    "evidence/symmetry/symmetry/faq-support/faq-collapsible-tabs-2.initial.kapali.375.png",
+    "evidence/symmetry/symmetry/faq-support/faq-collapsible-tabs-2.initial.kapali.768.png"
   ],
   "notlar": "Shipping: policy / providers / lost.",
   "delta": "",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://chantilly.myshopify.com/pages/customer-help",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24058934394903__faq-content-2",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "Shipping: üç soru kapalı."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--24058934394903__faq-content-2 details:first-of-type summary",
+      "value": 600,
+      "capture": true,
+      "etiket": "shipping-policy",
+      "not": "What is the shipping policy? açık."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Shipping: üç soru kapalı.",
+    "changed": "What is the shipping policy? açık — fulfillment + tracking + international link."
+  },
+  "missingStates": [],
+  "interactionNote": "",
   "capture": {
     "url": "https://chantilly.myshopify.com/pages/customer-help",
     "viewports": [
@@ -21,8 +62,8 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
+    "method": "interaction-steps",
     "mode": "section",
-    "updatedAt": "2026-08-15T12:37:49.640Z"
+    "updatedAt": "2026-08-19T14:05:56.807Z"
   }
 }

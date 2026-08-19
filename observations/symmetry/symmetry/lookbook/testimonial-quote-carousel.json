@@ -8,12 +8,53 @@
   "selector": "#shopify-section-template--24058934460439__testimonials_ntGVBA",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
+    "evidence/symmetry/symmetry/lookbook/testimonial-quote-carousel.1440.png",
     "evidence/symmetry/symmetry/lookbook/testimonial-quote-carousel.375.png",
     "evidence/symmetry/symmetry/lookbook/testimonial-quote-carousel.768.png",
-    "evidence/symmetry/symmetry/lookbook/testimonial-quote-carousel.1440.png"
+    "evidence/symmetry/symmetry/lookbook/testimonial-quote-carousel.changed.sonraki-slide.1440.png",
+    "evidence/symmetry/symmetry/lookbook/testimonial-quote-carousel.changed.sonraki-slide.375.png",
+    "evidence/symmetry/symmetry/lookbook/testimonial-quote-carousel.changed.sonraki-slide.768.png",
+    "evidence/symmetry/symmetry/lookbook/testimonial-quote-carousel.initial.ilk-slide.1440.png",
+    "evidence/symmetry/symmetry/lookbook/testimonial-quote-carousel.initial.ilk-slide.375.png",
+    "evidence/symmetry/symmetry/lookbook/testimonial-quote-carousel.initial.ilk-slide.768.png"
   ],
   "notlar": "Jenny C / Rebecca S.",
   "delta": "",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://chantilly.myshopify.com/pages/lookbook",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24058934460439__testimonials_ntGVBA",
+      "capture": true,
+      "etiket": "ilk-slide",
+      "not": "İlk slide: Jenny C."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--24058934460439__testimonials_ntGVBA button.slideshow-nav__btn:has-text('Next')",
+      "value": 600,
+      "capture": true,
+      "etiket": "sonraki-slide",
+      "not": "Next → Rebecca S. görünür."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Jenny C — beach/snorkeling alıntısı.",
+    "changed": "Next → Rebecca S — reversible bikini alıntısı."
+  },
+  "missingStates": [],
+  "interactionNote": "Lookbook testimonial tek satır; oklar görünür.",
   "capture": {
     "url": "https://chantilly.myshopify.com/pages/lookbook",
     "viewports": [
@@ -21,8 +62,8 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
+    "method": "interaction-steps",
     "mode": "section",
-    "updatedAt": "2026-08-15T12:40:09.756Z"
+    "updatedAt": "2026-08-19T14:05:15.316Z"
   }
 }

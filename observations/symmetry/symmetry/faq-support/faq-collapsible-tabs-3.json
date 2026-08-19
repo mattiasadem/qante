@@ -8,12 +8,53 @@
   "selector": "#shopify-section-template--24058934394903__16378561658d3bd0ef",
   "evidenceSlug": "faq-collapsible-tabs-3",
   "evidence": [
+    "evidence/symmetry/symmetry/faq-support/faq-collapsible-tabs-3.1440.png",
     "evidence/symmetry/symmetry/faq-support/faq-collapsible-tabs-3.375.png",
     "evidence/symmetry/symmetry/faq-support/faq-collapsible-tabs-3.768.png",
-    "evidence/symmetry/symmetry/faq-support/faq-collapsible-tabs-3.1440.png"
+    "evidence/symmetry/symmetry/faq-support/faq-collapsible-tabs-3.changed.return-item.1440.png",
+    "evidence/symmetry/symmetry/faq-support/faq-collapsible-tabs-3.changed.return-item.375.png",
+    "evidence/symmetry/symmetry/faq-support/faq-collapsible-tabs-3.changed.return-item.768.png",
+    "evidence/symmetry/symmetry/faq-support/faq-collapsible-tabs-3.initial.kapali.1440.png",
+    "evidence/symmetry/symmetry/faq-support/faq-collapsible-tabs-3.initial.kapali.375.png",
+    "evidence/symmetry/symmetry/faq-support/faq-collapsible-tabs-3.initial.kapali.768.png"
   ],
   "notlar": "Returns & Exchanges + START A RETURN.",
   "delta": "",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://chantilly.myshopify.com/pages/customer-help",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24058934394903__16378561658d3bd0ef",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "Returns & Exchanges: üç soru kapalı."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--24058934394903__16378561658d3bd0ef details:first-of-type summary",
+      "value": 600,
+      "capture": true,
+      "etiket": "return-item",
+      "not": "How do I return an item? açık."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Returns & Exchanges: üç soru kapalı.",
+    "changed": "How do I return an item? açık — START A RETURN linki."
+  },
+  "missingStates": [],
+  "interactionNote": "",
   "capture": {
     "url": "https://chantilly.myshopify.com/pages/customer-help",
     "viewports": [
@@ -21,8 +62,8 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
+    "method": "interaction-steps",
     "mode": "section",
-    "updatedAt": "2026-08-15T12:37:50.458Z"
+    "updatedAt": "2026-08-19T14:06:38.085Z"
   }
 }
