@@ -1,6 +1,6 @@
 /* QANTE viewer — vanilla, bağımlılıksız. */
 
-const DIMS = ["kaynak", "tp", "sayfa", "kategori", "scope", "viewport"];
+const DIMS = ["kaynak", "tp", "sayfa", "kategori", "scope", "viewport", "endustri"];
 // Yan panelde düz facet olarak çizilenler (tema+preset iç içe ağaçta)
 const FLAT_DIMS = ["sayfa", "kategori", "scope", "viewport"];
 const DIM_LABEL = {
@@ -10,10 +10,11 @@ const DIM_LABEL = {
   kategori: "Kategori",
   scope: "Scope",
   viewport: "Viewport",
+  endustri: "Endüstri",
 };
 
 /** Varsayılan açık facet’ler — tema ağacı kritik (Hyper ailesi burada) */
-const DEFAULT_OPEN_FACETS = ["tema", "sayfa", "kategori"];
+const DEFAULT_OPEN_FACETS = ["endustri", "tema", "sayfa", "kategori"];
 const EVIDENCE_LABEL = { full: "Tam (3 viewport)", partial: "Kısmi", none: "Yok" };
 const SCHEMA_STATE_LABEL = {
   observed: "Gözlemi olan",
@@ -31,6 +32,7 @@ const state = {
   kategori: [],
   scope: [],
   viewport: [],
+  endustri: [],
   evidence: "",
   schemaState: "",
   sel: null,
@@ -127,6 +129,11 @@ if (localStorage.getItem("qante.openFacets.v2") !== "1") {
   for (const d of DEFAULT_OPEN_FACETS) openFacets.add(d);
   localStorage.setItem("qante.openFacets", JSON.stringify([...openFacets]));
   localStorage.setItem("qante.openFacets.v2", "1");
+}
+if (localStorage.getItem("qante.openFacets.v3") !== "1") {
+  openFacets.add("endustri");
+  localStorage.setItem("qante.openFacets", JSON.stringify([...openFacets]));
+  localStorage.setItem("qante.openFacets.v3", "1");
 }
 let collapsedGroups = new Set();
 let filtersOpen = localStorage.getItem("qante.filtersOpen") === "1";
@@ -465,6 +472,27 @@ function facetBlock(dim) {
   </details>`;
 }
 
+function endustriChipBlock() {
+  const opts = facets.endustri || [];
+  if (!opts.length) return "";
+  const sel = new Set(state.endustri);
+  const body = opts
+    .map(
+      (o) => `<label class="facet-opt endustri-chip${o.count ? "" : " zero"}${sel.has(o.value) ? " on" : ""}">
+        <input type="checkbox" data-dim="endustri" value="${esc(o.value)}" ${sel.has(o.value) ? "checked" : ""} />
+        <span>${esc(o.value)}</span>
+        <span class="n">${o.count}</span>
+      </label>`
+    )
+    .join("");
+  const isOpen = openFacets.has("endustri") || sel.size > 0;
+  const selNote = sel.size ? ` · ${sel.size} seçili` : "";
+  return `<details class="facet" data-facet="endustri" ${isOpen ? "open" : ""}>
+    <summary>Endüstri · ${opts.length}${selNote}</summary>
+    <div class="facet-body endustri-chips">${body}</div>
+  </details>`;
+}
+
 function themeTreeBlock() {
   const tree = facets.temaAgaci || [];
   if (!tree.length) return "";
@@ -543,6 +571,7 @@ function renderSidebar() {
   const nActive = activeFilterCount();
   const filterBody = `
     ${activeChips()}
+    ${endustriChipBlock()}
     ${themeTreeBlock()}
     ${FLAT_DIMS.map(facetBlock).join("")}
     ${statusFacetBlock()}
@@ -1180,19 +1209,29 @@ function croMatchHay(m) {
     .toLowerCase();
 }
 
+function croMatchEndustri(m) {
+  if (!state.endustri.length) return true;
+  const inds = m.endustri || [];
+  const untagged = !inds.length;
+  return state.endustri.some((v) => (v === "—" ? untagged : inds.includes(v)));
+}
+
 function croTypesFiltered() {
   if (!croData) return [];
   const q = (state.q || "").trim().toLowerCase();
+  const industryOn = state.endustri.length > 0;
   return (croData.types || [])
     .map((t) => {
-      if (!q) return t;
-      const typeHit = `${t.id} ${t.titleEn} ${t.titleTr} ${t.purpose}`.toLowerCase().includes(q);
-      const matches = (t.matches || []).filter((m) => croMatchHay(m).includes(q));
-      if (typeHit) {
-        return matches.length ? { ...t, matches, count: matches.length } : t;
+      let matches = (t.matches || []).filter(croMatchEndustri);
+      if (q) {
+        const typeHit = `${t.id} ${t.titleEn} ${t.titleTr} ${t.purpose}`.toLowerCase().includes(q);
+        matches = matches.filter((m) => croMatchHay(m).includes(q));
+        if (typeHit) return { ...t, matches, count: matches.length };
+        if (!matches.length) return null;
+        return { ...t, matches, count: matches.length };
       }
-      if (matches.length) return { ...t, matches, count: matches.length };
-      return null;
+      if (!industryOn) return t;
+      return { ...t, matches, count: matches.length };
     })
     .filter(Boolean);
 }

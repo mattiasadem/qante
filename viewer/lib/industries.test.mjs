@@ -1,0 +1,190 @@
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import path from "node:path";
+import { describe, it } from "node:test";
+import { fileURLToPath } from "node:url";
+import {
+  applyFilters,
+  computeFacets,
+  lightRow,
+  parseFilters,
+} from "./facets.mjs";
+import {
+  AWAITING_APPROVAL,
+  KAYNAK_INDUSTRIES,
+  OFFICIAL_INDUSTRIES,
+  UNTAGGED,
+  assertOfficialMap,
+  industriesForKaynak,
+} from "./industries.mjs";
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
+
+const OFFICIAL = [
+  "Art & Handcraft",
+  "Beauty & Health",
+  "Books, Music & Video",
+  "Electronics & Software",
+  "Fashion & Clothing",
+  "Flowers & Gifts",
+  "Food & Beverage",
+  "Hardware & Automotive",
+  "Home & Furniture",
+  "Jewelry & Accessories",
+  "Pet Care",
+  "Sports & Activities",
+];
+
+function stubRow(kaynak, extra = {}) {
+  return {
+    kind: "observation",
+    key: `${kaynak}.home.hero`,
+    schemaId: "hero-slideshow",
+    observationId: `${kaynak}.default.home.hero-slideshow`,
+    kaynak,
+    preset: "default",
+    sayfa: "home",
+    kategori: "hero",
+    scope: "instance",
+    varyant: "",
+    amac: "",
+    notlar: "",
+    selector: "#hero",
+    evidenceStatus: "full",
+    viewports: ["375", "768", "1440"],
+    missingViewports: [],
+    evidence: [],
+    evidenceCount: 3,
+    hasSchema: true,
+    endustri: industriesForKaynak(kaynak),
+    ...extra,
+  };
+}
+
+describe("official industry list", () => {
+  it("is the frozen ikas 12, exact names", () => {
+    assert.deepEqual([...OFFICIAL_INDUSTRIES], OFFICIAL);
+  });
+
+  it("maps only closed-list strings", () => {
+    assert.deepEqual(assertOfficialMap(), []);
+  });
+
+  it("awaits only official proposed strings", () => {
+    for (const row of AWAITING_APPROVAL) {
+      for (const value of row.proposed) {
+        assert.ok(
+          OFFICIAL_INDUSTRIES.includes(value),
+          `${row.kaynak} proposed unknown ${value}`
+        );
+      }
+    }
+  });
+});
+
+describe("kaynak coverage", () => {
+  const onDisk = fs
+    .readdirSync(path.join(ROOT, "observations"))
+    .filter((name) => {
+      if (name.startsWith("_")) return false;
+      return fs.statSync(path.join(ROOT, "observations", name)).isDirectory();
+    })
+    .sort();
+
+  const awaiting = new Set(AWAITING_APPROVAL.map((r) => r.kaynak));
+
+  it("maps or documents every observation kaynak", () => {
+    const leftover = [];
+    for (const kaynak of onDisk) {
+      const mapped = Object.hasOwn(KAYNAK_INDUSTRIES, kaynak);
+      if (mapped) {
+        assert.ok(
+          industriesForKaynak(kaynak).length > 0,
+          `${kaynak} mapped to empty list`
+        );
+        continue;
+      }
+      if (!awaiting.has(kaynak)) leftover.push(kaynak);
+    }
+    assert.deepEqual(leftover, []);
+  });
+
+  it("keeps awaiting slugs untagged", () => {
+    for (const row of AWAITING_APPROVAL) {
+      assert.deepEqual(industriesForKaynak(row.kaynak), []);
+      assert.ok(onDisk.includes(row.kaynak), `awaiting ${row.kaynak} not on disk`);
+    }
+  });
+});
+
+describe("endustri facet", () => {
+  const rows = [
+    stubRow("graza"),
+    stubRow("bandit"),
+    stubRow("hexclad"),
+    stubRow("origin"),
+    stubRow("blockshop"),
+  ];
+  const inv = { rows, taxonomy: { categories: [] } };
+
+  it("parses ?endustri=Fashion%20%26%20Clothing", () => {
+    const f = parseFilters(
+      new URLSearchParams("endustri=Fashion%20%26%20Clothing")
+    );
+    assert.deepEqual(f.endustri, ["Fashion & Clothing"]);
+  });
+
+  it("filters to rows whose kaynak maps to that industry", () => {
+    const f = parseFilters(
+      new URLSearchParams({ endustri: "Fashion & Clothing" })
+    );
+    const got = applyFilters(rows, f);
+    assert.deepEqual(
+      got.map((r) => r.kaynak),
+      ["bandit"]
+    );
+    assert.ok(
+      got.every((r) => r.endustri.includes("Fashion & Clothing"))
+    );
+  });
+
+  it("does not return Food rows when filtering Fashion", () => {
+    const f = parseFilters(
+      new URLSearchParams({ endustri: "Fashion & Clothing" })
+    );
+    const kaynaks = applyFilters(rows, f).map((r) => r.kaynak);
+    assert.ok(!kaynaks.includes("graza"));
+    assert.ok(!kaynaks.includes("hexclad"));
+    assert.ok(!kaynaks.includes("blockshop"));
+    assert.ok(!kaynaks.includes("origin"));
+  });
+
+  it("keeps untagged rows behind —", () => {
+    const f = parseFilters(new URLSearchParams(`endustri=${UNTAGGED}`));
+    const got = applyFilters(rows, f);
+    assert.deepEqual(
+      got.map((r) => r.kaynak),
+      ["origin"]
+    );
+  });
+
+  it("seeds all 12 chips plus — and ignores own dimension for counts", () => {
+    const f = parseFilters(
+      new URLSearchParams({ endustri: "Fashion & Clothing" })
+    );
+    const facets = computeFacets(inv, f);
+    assert.deepEqual(
+      facets.endustri.map((x) => x.value),
+      [...OFFICIAL, UNTAGGED]
+    );
+    const fashion = facets.endustri.find((x) => x.value === "Fashion & Clothing");
+    const food = facets.endustri.find((x) => x.value === "Food & Beverage");
+    assert.equal(fashion.count, 1);
+    assert.equal(food.count, 1);
+  });
+
+  it("puts endustri on light rows", () => {
+    const row = lightRow(stubRow("graza"));
+    assert.deepEqual(row.endustri, ["Food & Beverage"]);
+  });
+});

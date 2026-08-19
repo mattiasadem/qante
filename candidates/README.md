@@ -11,6 +11,7 @@
 | [`dtc-69-brands.md`](./dtc-69-brands.md) | Referans DTC marka havuzu (69 URL) |
 | [`shopify-themes.md`](./shopify-themes.md) | Theme Store listesi — viewer **Listeler** sekmesi |
 | [`cro-types.md`](./cro-types.md) | CRO / funnel 17 tip — viewer **CRO** sekmesi (walk listesi değil) |
+| [`industries.md`](./industries.md) | ikas Theme Marketplace 12 endüstri — `kaynak` map + Awaiting |
 
 ## Aday formatı
 

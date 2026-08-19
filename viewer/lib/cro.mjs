@@ -499,6 +499,7 @@ function lightMatch(row, why) {
     evidence: (row.evidence || []).slice(0, 3),
     evidenceCount: row.evidenceCount || 0,
     hasSchema: row.hasSchema,
+    endustri: row.endustri || [],
   };
 }
 
