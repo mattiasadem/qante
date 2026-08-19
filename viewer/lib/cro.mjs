@@ -2,17 +2,42 @@
  * CRO / funnel section classifier.
  *
  * Mines live inventory (observations + schemas). No static dump.
- * Deterministic: kategori/schemaId maps first, then keyword hits on real
- * text fields. False positives are worse than misses.
+ *
+ * Primary rule: explicit schemaId allowlist in cro-schemas.mjs
+ *   (every on-disk schema → cro | vitrine; cro has one closed type).
+ * Keyword / kategori fallback runs only when schemaId is missing from
+ * that map (orphan / unknown). Chrome and PDP buy-box names stay skipped
+ * even on that leftover path.
  *
  * Haystack fields (investigated from inventory.mjs + observation JSON):
  *   schemaId, kategori, sayfa, amac, notlar, delta, observationId,
  *   selector, url, varyant
  * Interaction stateFindings / nav open-copy are NOT used (too noisy).
- *
- * Chrome (nav/footer/search/cart) and PDP buy-box schemas are excluded
- * from keyword rules. Tight kategori/schemaId maps still apply.
  */
+
+import {
+  BUYBOX_SCHEMAS,
+  CHROME_SCHEMAS,
+  allowlistCounts,
+  classificationOf,
+  isClosedCroType,
+} from "./cro-schemas.mjs";
+
+export {
+  AWAITING_APPROVAL,
+  BUYBOX_SCHEMAS,
+  CHROME_SCHEMAS,
+  CLOSED_CRO_TYPE_IDS,
+  CRO_CATALOG_IDS,
+  FUNNEL_EXTRA_IDS,
+  SCHEMA_CLASSIFICATION,
+  allowlistCounts,
+  classificationOf,
+  croTypeOf,
+  isCroSchema,
+  isVitrineSchema,
+  laneOf,
+} from "./cro-schemas.mjs";
 
 export const CRO_GROUP = "cro";
 export const FUNNEL_GROUP = "funnel";
@@ -161,28 +186,17 @@ export const FUNNEL_EXTRAS = [
     titleTr: "İçerik / formül",
     purpose: "Key ingredients / ingredients-first bloğu. What's inside daha sıkıysa oraya gider.",
   },
+  {
+    id: "bundle",
+    titleEn: "Bundle",
+    titleTr: "Paket / bundle",
+    purpose: "Paket / bundle builder — birden fazla ürünü birlikte seçtirip sepete eklemek.",
+  },
 ];
 
 const TYPE_BY_ID = new Map(
   [...CRO_CATALOG, ...FUNNEL_EXTRAS].map((t) => [t.id, t])
 );
-
-/** Nav / chrome — keyword rules skip these. */
-export const CHROME_SCHEMAS = new Set([
-  "navigation-header-mega",
-  "global-menu-drawer",
-  "footer-columns-newsletter",
-  "global-predictive-search",
-  "global-cart-drawer",
-  "navigation-breadcrumbs",
-  "search-results",
-  "cart-page-main",
-  "global-quick-view",
-  "global-compare-drawer",
-]);
-
-/** PDP buy box — accordion “Ingredients / How to use” is not a CRO section. */
-export const BUYBOX_SCHEMAS = new Set(["product-info-main", "product-info-tabs"]);
 
 const RECIPE_CONTENT = new Set([
   "blog-list-main",
@@ -292,12 +306,33 @@ function add(hits, type, why) {
 
 /**
  * Classify one observation-shaped record.
+ * Known schemaId → allowlist only (one type if cro, none if vitrine).
+ * Unknown / missing schemaId → leftover keyword path below.
  * @returns {{ type: string, why: string }[]}
  */
 export function classifyRecord(rec) {
   const hits = [];
   if (!rec || rec.kind === "schema-only") return hits;
 
+  const schemaId = rec.schemaId || "";
+  const known = classificationOf(schemaId);
+  if (known) {
+    if (known.lane === "cro" && known.type && isClosedCroType(known.type)) {
+      add(hits, known.type, `allowlist ${schemaId} → ${known.type}`);
+    }
+    return hits;
+  }
+
+  return classifyUnknownSchema(rec);
+}
+
+/**
+ * Leftover path — only for observations whose schemaId is not on disk.
+ * Tight kategori/schema maps first, then keywords. Chrome / buy-box
+ * names (and lookalikes) still skip loose keywords.
+ */
+function classifyUnknownSchema(rec) {
+  const hits = [];
   const schemaId = rec.schemaId || "";
   const kategori = rec.kategori || "";
   const sayfa = rec.sayfa || "";
@@ -344,6 +379,10 @@ export function classifyRecord(rec) {
   }
   if (!chrome && schemaId === "media-scrolling-gallery" && /ugc/i.test(hay)) {
     add(hits, "ugc-grid", "şema media-scrolling-gallery + UGC metni");
+  }
+
+  if (!chrome && schemaId === "commerce-tools-products-bundle") {
+    add(hits, "bundle", "şema commerce-tools-products-bundle");
   }
 
   // --- Keyword rules (no chrome / buy-box) ---
@@ -485,6 +524,7 @@ export function classifyRecord(rec) {
 }
 
 function lightMatch(row, why) {
+  const known = classificationOf(row.schemaId);
   return {
     observationId: row.observationId,
     schemaId: row.schemaId,
@@ -494,12 +534,14 @@ function lightMatch(row, why) {
     kategori: row.kategori,
     url: row.url || "",
     why,
+    lane: known?.lane || "unknown",
     evidenceStatus: row.evidenceStatus,
     viewports: row.viewports || [],
     evidence: (row.evidence || []).slice(0, 3),
     evidenceCount: row.evidenceCount || 0,
     hasSchema: row.hasSchema,
     endustri: row.endustri || [],
+    kaynakTip: row.kaynakTip || "",
   };
 }
 
@@ -570,7 +612,10 @@ export function buildCro(inv) {
       typesWithHits: types.filter((t) => t.count > 0).length,
       matches: types.reduce((n, t) => n + t.count, 0),
       observations: matchedIds.size,
+      allowlist: allowlistCounts(),
     },
+    leftoverRule:
+      "Keyword / kategori fallback only when schemaId is missing from SCHEMA_CLASSIFICATION (orphan). Known vitrine schemas never match.",
   };
 }
 

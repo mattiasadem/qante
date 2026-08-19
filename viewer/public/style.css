@@ -217,11 +217,13 @@ details.facet[open] > summary::after { content: "–"; }
 }
 .facet-opt.zero { opacity: 0.45; }
 
+.facet-body.chip-row,
 .facet-body.endustri-chips {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 0.35rem;
 }
+.facet-opt.chip-toggle,
 .facet-opt.endustri-chip {
   border: 1px solid var(--line);
   border-radius: 999px;
@@ -230,6 +232,7 @@ details.facet[open] > summary::after { content: "–"; }
   gap: 0.35rem;
   font-size: 0.78rem;
 }
+.facet-opt.chip-toggle input,
 .facet-opt.endustri-chip input {
   position: absolute;
   width: 1px;
@@ -237,12 +240,15 @@ details.facet[open] > summary::after { content: "–"; }
   opacity: 0;
   pointer-events: none;
 }
+.facet-opt.chip-toggle.on,
+.facet-opt.chip-toggle:has(input:checked),
 .facet-opt.endustri-chip.on,
 .facet-opt.endustri-chip:has(input:checked) {
   background: var(--accent-soft);
   border-color: var(--accent);
   color: var(--accent);
 }
+.facet-opt.chip-toggle .n,
 .facet-opt.endustri-chip .n { margin-left: 0.15rem; }
 
 /* tema › preset ağacı */

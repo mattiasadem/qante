@@ -57,6 +57,7 @@ function stubRow(kaynak, extra = {}) {
     evidenceCount: 3,
     hasSchema: true,
     endustri: industriesForKaynak(kaynak),
+    kaynakTip: "",
     ...extra,
   };
 }

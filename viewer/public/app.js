@@ -1,6 +1,6 @@
 /* QANTE viewer — vanilla, bağımlılıksız. */
 
-const DIMS = ["kaynak", "tp", "sayfa", "kategori", "scope", "viewport", "endustri"];
+const DIMS = ["kaynak", "tp", "sayfa", "kategori", "scope", "viewport", "endustri", "kaynakTip"];
 // Yan panelde düz facet olarak çizilenler (tema+preset iç içe ağaçta)
 const FLAT_DIMS = ["sayfa", "kategori", "scope", "viewport"];
 const DIM_LABEL = {
@@ -11,10 +11,12 @@ const DIM_LABEL = {
   scope: "Scope",
   viewport: "Viewport",
   endustri: "Endüstri",
+  kaynakTip: "Kaynak",
 };
+const KAYNAK_TIP_LABEL = { shopify: "Shopify", dtc: "DTC", ikas: "ikas" };
 
 /** Varsayılan açık facet’ler — tema ağacı kritik (Hyper ailesi burada) */
-const DEFAULT_OPEN_FACETS = ["endustri", "tema", "sayfa", "kategori"];
+const DEFAULT_OPEN_FACETS = ["kaynakTip", "endustri", "tema", "sayfa", "kategori"];
 const EVIDENCE_LABEL = { full: "Tam (3 viewport)", partial: "Kısmi", none: "Yok" };
 const SCHEMA_STATE_LABEL = {
   observed: "Gözlemi olan",
@@ -33,6 +35,7 @@ const state = {
   scope: [],
   viewport: [],
   endustri: [],
+  kaynakTip: [],
   evidence: "",
   schemaState: "",
   sel: null,
@@ -134,6 +137,11 @@ if (localStorage.getItem("qante.openFacets.v3") !== "1") {
   openFacets.add("endustri");
   localStorage.setItem("qante.openFacets", JSON.stringify([...openFacets]));
   localStorage.setItem("qante.openFacets.v3", "1");
+}
+if (localStorage.getItem("qante.openFacets.v4") !== "1") {
+  openFacets.add("kaynakTip");
+  localStorage.setItem("qante.openFacets", JSON.stringify([...openFacets]));
+  localStorage.setItem("qante.openFacets.v4", "1");
 }
 let collapsedGroups = new Set();
 let filtersOpen = localStorage.getItem("qante.filtersOpen") === "1";
@@ -429,7 +437,12 @@ function activeChips() {
   const chips = [];
   for (const d of DIMS) {
     for (const v of state[d]) {
-      const shown = d === "tp" ? v.replace("/", " › ") : v;
+      const shown =
+        d === "tp"
+          ? v.replace("/", " › ")
+          : d === "kaynakTip"
+            ? KAYNAK_TIP_LABEL[v] || v
+            : v;
       chips.push(
         `<button class="active-chip" data-dim="${d}" data-val="${esc(v)}">${DIM_LABEL[d]}: ${esc(shown)}</button>`
       );
@@ -472,24 +485,25 @@ function facetBlock(dim) {
   </details>`;
 }
 
-function endustriChipBlock() {
-  const opts = facets.endustri || [];
+function chipFacetBlock(dim, title, labelOf = (v) => v) {
+  const opts = facets[dim] || [];
   if (!opts.length) return "";
-  const sel = new Set(state.endustri);
+  const sel = new Set(state[dim]);
   const body = opts
-    .map(
-      (o) => `<label class="facet-opt endustri-chip${o.count ? "" : " zero"}${sel.has(o.value) ? " on" : ""}">
-        <input type="checkbox" data-dim="endustri" value="${esc(o.value)}" ${sel.has(o.value) ? "checked" : ""} />
-        <span>${esc(o.value)}</span>
+    .map((o) => {
+      const label = o.label || labelOf(o.value);
+      return `<label class="facet-opt chip-toggle${o.count ? "" : " zero"}${sel.has(o.value) ? " on" : ""}">
+        <input type="checkbox" data-dim="${dim}" value="${esc(o.value)}" ${sel.has(o.value) ? "checked" : ""} />
+        <span>${esc(label)}</span>
         <span class="n">${o.count}</span>
-      </label>`
-    )
+      </label>`;
+    })
     .join("");
-  const isOpen = openFacets.has("endustri") || sel.size > 0;
+  const isOpen = openFacets.has(dim) || sel.size > 0;
   const selNote = sel.size ? ` · ${sel.size} seçili` : "";
-  return `<details class="facet" data-facet="endustri" ${isOpen ? "open" : ""}>
-    <summary>Endüstri · ${opts.length}${selNote}</summary>
-    <div class="facet-body endustri-chips">${body}</div>
+  return `<details class="facet" data-facet="${dim}" ${isOpen ? "open" : ""}>
+    <summary>${esc(title)} · ${opts.length}${selNote}</summary>
+    <div class="facet-body chip-row">${body}</div>
   </details>`;
 }
 
@@ -571,7 +585,8 @@ function renderSidebar() {
   const nActive = activeFilterCount();
   const filterBody = `
     ${activeChips()}
-    ${endustriChipBlock()}
+    ${chipFacetBlock("kaynakTip", "Kaynak", (v) => KAYNAK_TIP_LABEL[v] || v)}
+    ${chipFacetBlock("endustri", "Endüstri")}
     ${themeTreeBlock()}
     ${FLAT_DIMS.map(facetBlock).join("")}
     ${statusFacetBlock()}
@@ -1204,7 +1219,7 @@ function renderListsDetail() {
 /* ---------------- CRO / funnel ---------------- */
 
 function croMatchHay(m) {
-  return [m.observationId, m.schemaId, m.kaynak, m.preset, m.sayfa, m.kategori, m.why]
+  return [m.observationId, m.schemaId, m.kaynak, m.preset, m.sayfa, m.kategori, m.kaynakTip, m.why]
     .join(" ")
     .toLowerCase();
 }
@@ -1216,13 +1231,20 @@ function croMatchEndustri(m) {
   return state.endustri.some((v) => (v === "—" ? untagged : inds.includes(v)));
 }
 
+function croMatchKaynakTip(m) {
+  if (!state.kaynakTip.length) return true;
+  return state.kaynakTip.includes(m.kaynakTip);
+}
+
 function croTypesFiltered() {
   if (!croData) return [];
   const q = (state.q || "").trim().toLowerCase();
-  const industryOn = state.endustri.length > 0;
+  const facetOn = state.endustri.length > 0 || state.kaynakTip.length > 0;
   return (croData.types || [])
     .map((t) => {
-      let matches = (t.matches || []).filter(croMatchEndustri);
+      let matches = (t.matches || []).filter(
+        (m) => croMatchEndustri(m) && croMatchKaynakTip(m)
+      );
       if (q) {
         const typeHit = `${t.id} ${t.titleEn} ${t.titleTr} ${t.purpose}`.toLowerCase().includes(q);
         matches = matches.filter((m) => croMatchHay(m).includes(q));
@@ -1230,7 +1252,7 @@ function croTypesFiltered() {
         if (!matches.length) return null;
         return { ...t, matches, count: matches.length };
       }
-      if (!industryOn) return t;
+      if (!facetOn) return t;
       return { ...t, matches, count: matches.length };
     })
     .filter(Boolean);
@@ -1279,7 +1301,7 @@ function renderCroSidebar() {
     </div>
     <p class="amac" style="padding:.55rem .85rem;margin:0;font-size:.78rem">
       Funnel / CRO section tipleri — mevcut envanterden (yürüyüş yok).
-      Sınıflandırıcı: <code>viewer/lib/cro.mjs</code>
+      Allowlist: <code>viewer/lib/cro-schemas.mjs</code>
     </p>
     ${groupsHtml || `<p class="empty">CRO tipi yok</p>`}
   `;

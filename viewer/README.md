@@ -31,13 +31,14 @@ viewer/
 | **Envanter** | Sol listede gruplanmış şema + gözlem kayıtları, sağda evidence |
 | **Aday & sığmayanlar** | `candidates/` — aday kategoriler + şemaya sığmayanlar |
 | **Listeler** | Theme Store + DTC-69 listeleri (yapılmış / yapılıyor / kuyruk) |
-| **CRO** | Funnel / CRO section tipleri — canlı envanterden eşleşme (`?view=cro&type=faqs-qnas`) |
+| **CRO** | Funnel / CRO section tipleri — `cro-schemas.mjs` allowlist (`?view=cro&type=faqs-qnas`) |
 | **Kapsama** | Satır = şema, kolon = tema/preset. Yeşil 3/3, sarı kısmi, kırmızı SS yok, nokta hiç gözlem yok |
 | **Sağlık** | Hata/uyarı/bilgi bulguları + düzeltme komutu (tıkla → kopyalanır) |
 
 ## Filtreler
 
-Sol panelde facet: **Endüstri · Tema · Preset · Sayfa · Kategori · Scope · Viewport · Durum**.
+Sol panelde facet: **Kaynak · Endüstri · Tema · Preset · Sayfa · Kategori · Scope · Viewport · Durum**.
+Kaynak (`?kaynakTip=shopify,dtc,ikas`) envanter kaynağıdır — store adı (`kaynak`) değil. Map: `viewer/lib/sources.mjs` + `candidates/kaynak-tip.md`.
 Endüstri (`?endustri=`) ikas Theme Marketplace’in 12 resmi dikey çipidir — SCHEMA `kategori` değil. Map: `viewer/lib/industries.mjs` + `candidates/industries.md`.
 Sayılar "kendi boyutu hariç diğer filtreler uygulanmış" halde hesaplanır, o yüzden çoklu seçim sayıları sıfırlamaz.
 
@@ -61,7 +62,7 @@ Tüm filtre + seçim + viewport durumu URL'de: link paylaşılabilir, F5 dayanı
 | `/api/observation?id=` | tek gözlem (tam JSON) |
 | `/api/coverage` | şema × tema matrisi |
 | `/api/candidates` | aday kategoriler + sığmayanlar + Status tablolu listeler (`candidates/*.md`) |
-| `/api/cro` | CRO katalog (17 tip) + canlı envanter eşleşmeleri (`viewer/lib/cro.mjs`) |
+| `/api/cro` | CRO katalog (17 tip + extras) — eşleşme `viewer/lib/cro-schemas.mjs` allowlist; keyword yalnız yetim schemaId |
 | `/api/health` | tutarsızlık listesi |
 
 Liste endpoint'i tam JSON gövdesi taşımaz; detay ayrı istekle gelir — binlerce kayıtta da hafif kalır.
