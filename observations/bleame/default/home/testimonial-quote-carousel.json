@@ -8,12 +8,61 @@
   "selector": "#shopify-section-template--19666882920623__results_section_yka6hV",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
+    "evidence/bleame/default/home/testimonial-quote-carousel.1440.png",
     "evidence/bleame/default/home/testimonial-quote-carousel.375.png",
     "evidence/bleame/default/home/testimonial-quote-carousel.768.png",
-    "evidence/bleame/default/home/testimonial-quote-carousel.1440.png"
+    "evidence/bleame/default/home/testimonial-quote-carousel.changed.sonraki-slide.375.png",
+    "evidence/bleame/default/home/testimonial-quote-carousel.changed.sonraki-slide.768.png",
+    "evidence/bleame/default/home/testimonial-quote-carousel.initial.ilk-slide.1440.png",
+    "evidence/bleame/default/home/testimonial-quote-carousel.initial.ilk-slide.375.png",
+    "evidence/bleame/default/home/testimonial-quote-carousel.initial.ilk-slide.768.png"
   ],
   "notlar": "4.8/5 Over 175,000+ Rating Customers. Alıntı kartları (Sarah F. …) + görsel + Read all reviews → /pages/reviews.",
   "delta": "Custom results_section. Loox değil (native). Ok/dot karede net değil — evidence sonrası.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://bleame.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19666882920623__results_section_yka6hV",
+      "capture": true,
+      "etiket": "ilk-slide",
+      "not": "İlk slide: I'm totally blown away + ingrown hair alıntısı."
+    },
+    {
+      "state": "changed",
+      "action": "drag",
+      "selector": "#shopify-section-template--19666882920623__results_section_yka6hV .slick-list",
+      "value": "-200,0",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "etiket": "sonraki-slide",
+      "not": "Slick-list sola sürükle → ikinci slide (Smoother, more softer leg)."
+    }
+  ],
+  "stateFindings": {
+    "initial": "4.8/5 başlık; ilk alıntı kartı (Ingrown hair…) + görsel.",
+    "changed": "375/768: ikinci slide — Smoother, more softer leg alıntısı. 1440: üç kart paralel; kaydırma anlamlı değişim üretmedi."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "1440: slick üç kartı aynı anda gösteriyor; drag sonraki slide üretmedi."
+    }
+  ],
+  "interactionNote": "Dots DOM'da ama görünür değil; slick-list drag 375/768'de çalıştı.",
   "capture": {
     "url": "https://bleame.com/",
     "viewports": [
@@ -22,7 +71,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T19:59:40.504Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:27:10.241Z"
   }
 }

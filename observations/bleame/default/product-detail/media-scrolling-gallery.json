@@ -8,12 +8,52 @@
   "selector": "#shopify-section-template--19666883510447__marquee_posters_dggt3Q",
   "evidenceSlug": "media-scrolling-gallery",
   "evidence": [
+    "evidence/bleame/default/product-detail/media-scrolling-gallery.1440.png",
     "evidence/bleame/default/product-detail/media-scrolling-gallery.375.png",
     "evidence/bleame/default/product-detail/media-scrolling-gallery.768.png",
-    "evidence/bleame/default/product-detail/media-scrolling-gallery.1440.png"
+    "evidence/bleame/default/product-detail/media-scrolling-gallery.changed.kaydirildi.1440.png",
+    "evidence/bleame/default/product-detail/media-scrolling-gallery.changed.kaydirildi.375.png",
+    "evidence/bleame/default/product-detail/media-scrolling-gallery.changed.kaydirildi.768.png",
+    "evidence/bleame/default/product-detail/media-scrolling-gallery.initial.ilk-hal.1440.png",
+    "evidence/bleame/default/product-detail/media-scrolling-gallery.initial.ilk-hal.375.png",
+    "evidence/bleame/default/product-detail/media-scrolling-gallery.initial.ilk-hal.768.png"
   ],
   "notlar": "Look At How Others Are Loving Their Bleame / Real Reviews From Real People / CLAIM OFFER / Rated 4.8/5. 8 görsel + video tag. section-marquee-slider.",
   "delta": "Focal image-with-text + marquee. UGC poster şeridi; metin marquee değil.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://bleame.com/products/crystal-hair-eraser",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19666883510447__marquee_posters_dggt3Q",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Marquee poster şeridi — ilk konum."
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": true,
+      "etiket": "kaydirildi",
+      "not": "Otomatik slick kaydırma — track transform değişti, farklı posterler görünür."
+    }
+  ],
+  "stateFindings": {
+    "initial": "CLAIM OFFER CTA + UGC poster/video şeridi başlangıç konumu.",
+    "changed": "~3.5s sonra şerit sola kaydı; farklı poster/video kombinasyonu görünür. Ok/dot yok."
+  },
+  "missingStates": [],
+  "interactionNote": "Slick otomatik kayıyor; manuel ok/dot yok. waitFor ile changed yakalandı.",
   "capture": {
     "url": "https://bleame.com/products/crystal-hair-eraser",
     "viewports": [
@@ -22,7 +62,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T20:04:36.423Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:28:56.577Z"
   }
 }

@@ -3,8 +3,8 @@
 *Kaynak:* https://bleame.com · *Preset:* `default`  
 *Tema (storefront, görüldü):* **Bleame 2.0 [Loox] - OPT** · `schema_name`: Focal · `schema_version`: 11.1.0 · `theme_store_id`: 714 · theme id `149117534383` · shop `bleame-com.myshopify.com`
 
-**Durum:** Mod A walk kapandı — 48 obs · resmi 3vp · interact piksel değişenlerde · leftover kayıtlı  
-**PR:** https://github.com/mattiasadem/qante/pull/51 (draft · **main'e merge yok**)
+**Durum:** Mod A walk kapandı — 48 obs · resmi 3vp · CRO interact tamamlandı · leftover kayıtlı  
+**PR:** interact CRO follow-up (bu branch)
 
 ---
 
@@ -98,8 +98,12 @@
 | global-menu-drawer | open | 375/768 SHOP/REVIEWS/HELP + trust |
 | global-predictive-search | open | forceOpen; opener gizli; öneri yok |
 | global-cart-drawer | initial, filled | boş START SHOPPING; 2-pack $53 + free scrub |
-| promo-banner-tabs | changed | Leg — farklı medya |
-| faq-collapsible-tabs | changed | friction açık; ilk kapandı |
+| promo-banner-tabs | changed | home Leg · PDP Legs — farklı medya |
+| faq-collapsible-tabs | changed | home + PDP friction açık; ilk kapandı |
+| testimonial-quote-carousel | initial, changed | home + PDP: drag 375/768 sonraki slide; 1440 changed yok |
+| media-scrolling-gallery | initial, changed | PDP marquee otomatik kaydırma (~3.5s) |
+| comparison-quick-table | initial | statik tablo — affordance yok |
+| testimonial-quote-carousel.2 | initial | tek kart — carousel yok |
 
 ---
 
@@ -112,7 +116,7 @@
 ## Evidence backlog
 
 - [x] Claiming obs resmi 3vp
-- [x] Overlay / cart / menu / FAQ / tabs interact
+- [x] Overlay / cart / menu / FAQ / tabs / testimonial / marquee interact
 - [x] Predictive opener yoklandı — gizli (leftover)
 - [ ] Cart qty `changed`
 - [ ] PDP 1 Pack radio `changed`

@@ -8,12 +8,46 @@
   "selector": "#shopify-section-template--19666883510447__pro_tab_section_hBwRq4",
   "evidenceSlug": "promo-banner-tabs",
   "evidence": [
+    "evidence/bleame/default/product-detail/promo-banner-tabs.1440.png",
     "evidence/bleame/default/product-detail/promo-banner-tabs.375.png",
     "evidence/bleame/default/product-detail/promo-banner-tabs.768.png",
-    "evidence/bleame/default/product-detail/promo-banner-tabs.1440.png"
+    "evidence/bleame/default/product-detail/promo-banner-tabs.changed.legs.1440.png",
+    "evidence/bleame/default/product-detail/promo-banner-tabs.changed.legs.375.png",
+    "evidence/bleame/default/product-detail/promo-banner-tabs.changed.legs.768.png"
   ],
   "notlar": "Aynı home pro_tab: Bikini / Legs / Arm / Back videoları.",
   "delta": "Home ile aynı custom tip; sekme etiketi Legs (home Leg).",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://bleame.com/products/crystal-hair-eraser",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19666883510447__pro_tab_section_hBwRq4",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--19666883510447__pro_tab_section_hBwRq4 a.tablink[href='#tab2']",
+      "capture": true,
+      "etiket": "legs",
+      "not": "Legs sekmesi aktif — medya Bikini karesinden farklı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Bikini aktif; varsayılan demo videosu.",
+    "changed": "Legs aktif (mor pill). Bornoz + bacak/kalça üzerinde eraser — Bikini medyasından farklı."
+  },
+  "missingStates": [],
   "capture": {
     "url": "https://bleame.com/products/crystal-hair-eraser",
     "viewports": [
@@ -22,7 +56,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T20:06:28.691Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:26:27.266Z"
   }
 }
