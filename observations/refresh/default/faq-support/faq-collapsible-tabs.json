@@ -8,12 +8,52 @@
   "selector": "#shopify-section-template--16044338643196__1650545993c6f149c5",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/refresh/default/faq-support/faq-collapsible-tabs.1440.png",
     "evidence/refresh/default/faq-support/faq-collapsible-tabs.375.png",
     "evidence/refresh/default/faq-support/faq-collapsible-tabs.768.png",
-    "evidence/refresh/default/faq-support/faq-collapsible-tabs.1440.png"
+    "evidence/refresh/default/faq-support/faq-collapsible-tabs.changed.siparis-durumu-acik.1440.png",
+    "evidence/refresh/default/faq-support/faq-collapsible-tabs.changed.siparis-durumu-acik.375.png",
+    "evidence/refresh/default/faq-support/faq-collapsible-tabs.changed.siparis-durumu-acik.768.png",
+    "evidence/refresh/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.1440.png",
+    "evidence/refresh/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.375.png",
+    "evidence/refresh/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.768.png"
   ],
   "notlar": "Frequently asked questions. 8 details: shipping time, status, modify/cancel, return…",
   "delta": "Sayfa /pages/faq 404; bu şablon shipping-and-returns.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-refresh-demo.myshopify.com/pages/shipping-and-returns",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16044338643196__1650545993c6f149c5",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "İlk soru (shipping time) varsayılan açık; diğer üçü kapalı."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-1650545993e9f6b7f0-1-template--16044338643196__1650545993c6f149c5 > summary",
+      "capture": true,
+      "etiket": "siparis-durumu-acik",
+      "not": "How can I check the status of my order? — tracking email cevabı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Frequently asked questions başlığı. Dört accordion: ilk soru (How long will it take…) açık — 2 business days cevabı görünür; diğer üçü kapalı (+). 1440/768/375 tek kolon.",
+    "changed": "İlk soru hâlâ açık. İkinci soru (How can I check the status of my order?) da açık — You'll receive a confirmation email with a tracking link… Üçüncü ve dördüncü kapalı."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan 4 disclosure opener. İlk details varsayılan open=true. İkinci summary tık → multi-open accordion. Şema emit:accordion.toggle duruyor.",
   "capture": {
     "url": "https://theme-refresh-demo.myshopify.com/pages/shipping-and-returns",
     "viewports": [
@@ -22,7 +62,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T17:06:33.217Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:47:02.341Z"
   }
 }

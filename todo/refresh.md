@@ -3,7 +3,7 @@
 *Kaynak:* https://theme-refresh-demo.myshopify.com  
 *Preset:* `default` · Theme Store: [Refresh](https://themes.shopify.com/themes/refresh) · Free · by Shopify
 
-**Şu anki odak:** ✅ Mod A walk kapandı — statik 3vp + interact pixel-checked
+**Şu anki odak:** ✅ CRO interact kapandı — 4 şema, 16 interaction PNG, validate 0
 
 ---
 
@@ -17,10 +17,10 @@
 | Tema (gözlenen) | `Shopify.theme.name` **refresh/refresh-demo-store** · `schema_name` **Dawn** 5.0.0 · `role` **main** · theme id `132932272380` · `theme_store_id` **null** (vitrinde yok; uydurulmadı) |
 | Theme Store sayfası | https://themes.shopify.com/themes/refresh/presets/refresh — Refresh · Free · by Shopify |
 | Observation | **47** |
-| Evidence PNG | **158** |
+| Evidence PNG | **174** |
 | Yeni şema | **0** |
 | Validator | 65 temiz · 0 error · 0 warn |
-| Kapsam satırı | Refresh · default · 11 sayfa · 47 gözlem · 158 kanıt · 0 yeni şema · Shopify first-party free |
+| Kapsam satırı | Refresh · default · 11 sayfa · 47 gözlem · 174 kanıt · 0 yeni şema · Shopify first-party free |
 
 ---
 
@@ -30,6 +30,7 @@
 - [x] F2 Observation JSON (47) — reuse only
 - [x] F3 Statik 3vp `capture-observation.mjs` (41/41)
 - [x] F4 Interact: About dropdown · predictive search · cart empty/filled/qty · mobile menu · PDP Scent
+- [x] F4b CRO interact: FAQ accordion · press carousel · newsletter band · contact form
 - [x] F5 `npm run validate`
 
 ---
@@ -63,6 +64,15 @@
 | product-info-main | initial, changed | Scent Original → Sandalwood hap |
 | cart-page-main | initial, filled | boş + Bar Soap satırı |
 
+### CRO interact (pixel-checked)
+
+| schemaId | States | Not |
+|---|---|---|
+| faq-collapsible-tabs | initial, changed | shipping-and-returns: ilk soru açık → ikinci soru (tracking email) açıldı |
+| testimonial-quote-carousel | initial, changed (375 only) | Forbes 1/4 → GQ 2/4 Slide right. 768/1440 grid, next disabled |
+| lead-capture-newsletter-band | initial | Email boş; fill/submit PII dur |
+| lead-capture-form | initial | Name/email/phone/comment boş; Send tıklanmadı. Konu select yok |
+
 ---
 
 ## Aday / şemaya sığmayan
@@ -77,3 +87,4 @@
 - [x] PDP / PLP / search 3vp
 - [x] Cart / about / faq / contact / blog / 404 3vp
 - [x] Interact PNG
+- [x] CRO interact PNG (16)
