@@ -8,12 +8,53 @@
   "selector": "#shopify-section-template--24914044125473__products_bundle_cFjE73",
   "evidenceSlug": "commerce-tools-products-bundle",
   "evidence": [
+    "evidence/sleek/default/home/commerce-tools-products-bundle.1440.png",
     "evidence/sleek/default/home/commerce-tools-products-bundle.375.png",
     "evidence/sleek/default/home/commerce-tools-products-bundle.768.png",
-    "evidence/sleek/default/home/commerce-tools-products-bundle.1440.png"
+    "evidence/sleek/default/home/commerce-tools-products-bundle.changed.polish-150ml.1440.png",
+    "evidence/sleek/default/home/commerce-tools-products-bundle.changed.polish-150ml.375.png",
+    "evidence/sleek/default/home/commerce-tools-products-bundle.changed.polish-150ml.768.png",
+    "evidence/sleek/default/home/commerce-tools-products-bundle.initial.ilk-hal.1440.png",
+    "evidence/sleek/default/home/commerce-tools-products-bundle.initial.ilk-hal.375.png",
+    "evidence/sleek/default/home/commerce-tools-products-bundle.initial.ilk-hal.768.png"
   ],
   "notlar": "Shop Skincare Set — 1 Protective day oil $99 / 2 Rose quartz facial polish $79 / 3. numaralı ürün.",
   "delta": "FoxEcom products_bundle (Hyper Ceramide aynı tip). Add-all tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sleek-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24914044125473__products_bundle_cFjE73",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Protective day oil 50ml, Rose quartz 100ml, Cucumber cleanser 100ml. Add all to cart."
+    },
+    {
+      "state": "changed",
+      "action": "select",
+      "selector": "#shopify-section-template--24914044125473__products_bundle_cFjE73 .product-bundle-card:nth-of-type(2) select[name='id']",
+      "value": "49112192352545",
+      "capture": true,
+      "etiket": "polish-150ml",
+      "not": "İkinci ürün Rose quartz 100ml → 150ml. Add all to cart tıklanmaz."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Level up skincare routine with the bundle. Protective day oil 50ml $99, Rose quartz facial polish 100ml $79, Cucumber extract cleanser 100ml. Hotspot 1/2/3 + Add all to cart.",
+    "changed": "Rose quartz facial polish select 150ml. Diğer iki ürün aynı. Add all to cart görünür, tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "İkinci select[name=id] 100ml→150ml (variant 49112192352545). Add all to cart ATC olur; sepet çekmecesi ayrı şema.",
   "capture": {
     "url": "https://sleek-theme-demo.myshopify.com/",
     "viewports": [
@@ -22,7 +63,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T10:57:58.890Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:38:22.265Z"
   }
 }

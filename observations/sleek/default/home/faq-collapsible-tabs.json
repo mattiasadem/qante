@@ -8,12 +8,52 @@
   "selector": "#shopify-section-template--24914044125473__collapsible_tabs_KNKLiF",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/sleek/default/home/faq-collapsible-tabs.1440.png",
     "evidence/sleek/default/home/faq-collapsible-tabs.375.png",
     "evidence/sleek/default/home/faq-collapsible-tabs.768.png",
-    "evidence/sleek/default/home/faq-collapsible-tabs.1440.png"
+    "evidence/sleek/default/home/faq-collapsible-tabs.changed.ambalaj-sorusu.1440.png",
+    "evidence/sleek/default/home/faq-collapsible-tabs.changed.ambalaj-sorusu.375.png",
+    "evidence/sleek/default/home/faq-collapsible-tabs.changed.ambalaj-sorusu.768.png",
+    "evidence/sleek/default/home/faq-collapsible-tabs.initial.ilk-hal.1440.png",
+    "evidence/sleek/default/home/faq-collapsible-tabs.initial.ilk-hal.375.png",
+    "evidence/sleek/default/home/faq-collapsible-tabs.initial.ilk-hal.768.png"
   ],
   "notlar": "We're answerable! + See More Answers. Shipping / packaging / international / payment.",
   "delta": "Contact us + See More Answers <a>. Form submit yok.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sleek-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24914044125473__collapsible_tabs_KNKLiF",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "İlk soru How long does shipping take? varsayılan açık."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--24914044125473__collapsible_tabs_KNKLiF summary:has-text('packaging')",
+      "capture": true,
+      "etiket": "ambalaj-sorusu",
+      "not": "Does my piece come in any packaging? açık — cevap metni görünür."
+    }
+  ],
+  "stateFindings": {
+    "initial": "We're answerable! Dört accordion; How long does shipping take? açık — Shipping usually takes 3–5 business days. Diğer üç soru kapalı.",
+    "changed": "Does my piece come in any packaging? açık — Yes, every piece comes in a branded box. Shipping sorusu kapandı."
+  },
+  "missingStates": [],
+  "interactionNote": "details accordion; ikinci summary tık. Contact us / See More Answers link tıklanmadı.",
   "capture": {
     "url": "https://sleek-theme-demo.myshopify.com/",
     "viewports": [
@@ -22,7 +62,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T11:00:23.591Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:44:40.139Z"
   }
 }
