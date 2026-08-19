@@ -1267,6 +1267,11 @@ function appsFlat() {
       app.link,
       app.ikasKarsilik,
       app.ikasTur,
+      app.ikasSablon,
+      app.ikasHedef,
+      app.ikasLink,
+      ...(app.ikasKapsam || []),
+      ...(app.ikasWebhook || []),
       ...(app.yuzey || []),
       ...(app.ikasOlaylar || []),
       ...(app.ikasSayfa || []),
@@ -1362,6 +1367,28 @@ function renderAppsDetail() {
     ? app.ikasSayfa.map((e) => `<span class="chip mono">${esc(e)}</span>`).join("")
     : `<span class="chip queue">—</span>`;
 
+  const ikasKapsamChips = (app.ikasKapsam || []).length
+    ? app.ikasKapsam.map((e) => `<span class="chip mono">${esc(e)}</span>`).join("")
+    : `<span class="chip queue">—</span>`;
+
+  const ikasWebhookChips = (app.ikasWebhook || []).length
+    ? app.ikasWebhook.map((e) => `<span class="chip mono">${esc(e)}</span>`).join("")
+    : `<span class="chip queue">—</span>`;
+
+  const ikasAksiyonHtml = (app.ikasAksiyon || []).length
+    ? app.ikasAksiyon
+        .map((a) => `<span class="chip mono">${esc(a.yer)} · ${esc(a.tip)}</span>`)
+        .join("")
+    : `<span class="chip queue">—</span>`;
+
+  const ikasLinkHtml =
+    app.ikasLink && app.ikasLink !== "yok"
+      ? `<a href="${esc(app.ikasLink)}" target="_blank" rel="noopener">${esc(app.ikasLink)}</a>`
+      : `<span class="chip queue">yok</span>`;
+
+  const tespitShopify = app.tespit?.shopify?.trim() || "—";
+  const tespitIkas = app.tespit?.ikas?.trim() || "—";
+
   main.innerHTML = `
     <p class="list-count-head">${esc(APP_KATEGORI_LABEL[app.kategori] || app.kategori)} · ${esc(APP_SCOPE_LABEL[app.scope] || app.scope)}</p>
     <h2>${esc(app.id)}</h2>
@@ -1384,9 +1411,15 @@ function renderAppsDetail() {
       <span class="chip">${esc(APP_KATEGORI_LABEL[app.kategori] || app.kategori)}</span>
       <span class="chip">${esc(APP_SCOPE_LABEL[app.scope] || app.scope)}</span>
       <span class="chip">ikas: ${esc(app.ikasTur || "yok")}</span>
+      <span class="chip">${esc(app.ikasSablon || "yok")}</span>
+      <span class="chip">${esc(app.ikasHedef || "yok")}</span>
       <span class="chip mono">${esc(app.path)}</span>
     </div>
     <div class="card" style="margin-top:1rem">
+      <div class="card-head"><strong>ikas link</strong></div>
+      <p class="amac">${ikasLinkHtml}</p>
+    </div>
+    <div class="card">
       <div class="card-head"><strong>Entegrasyon · Shopify</strong></div>
       <div class="chips">${shopifyEnt}</div>
     </div>
@@ -1401,6 +1434,22 @@ function renderAppsDetail() {
     <div class="card">
       <div class="card-head"><strong>ikas sayfa</strong></div>
       <div class="chips">${ikasSayfaChips}</div>
+    </div>
+    <div class="card">
+      <div class="card-head"><strong>ikas kapsam</strong></div>
+      <div class="chips">${ikasKapsamChips}</div>
+    </div>
+    <div class="card">
+      <div class="card-head"><strong>ikas aksiyon</strong></div>
+      <div class="chips">${ikasAksiyonHtml}</div>
+    </div>
+    <div class="card">
+      <div class="card-head"><strong>ikas webhook</strong></div>
+      <div class="chips">${ikasWebhookChips}</div>
+    </div>
+    <div class="card">
+      <div class="card-head"><strong>tespit</strong></div>
+      <p class="amac mono" style="font-size:.78rem">shopify: ${esc(tespitShopify)}<br/>ikas: ${esc(tespitIkas)}</p>
     </div>
     <div class="card">
       <div class="card-head"><strong>Yüzey</strong></div>

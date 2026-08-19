@@ -1,169 +1,144 @@
-# AppSchema Standardı — v0.2 (Awaiting user approval)
+# AppSchema Standardı — v0.3 (Awaiting user approval)
 
-*Tarih: 2026-08-19 · Brief deliverable: APPS envanteri · SectionSchema ile paralel sözleşme*
+*Tarih: 2026-08-19 · ikas kaynak: [App Development](https://builders.ikas.com/docs/app-development) · [Admin App / CLI](https://builders.ikas.com/docs/app-development/admin-app) · [App Actions](https://builders.ikas.com/docs/app-development/admin-app/app-actions) · [Webhooks](https://builders.ikas.com/docs/app-development/ikas-sdk/webhooks)*
 
-**Bu dosya uygulama şemasının tamamının sözleşmesidir.** Section şeması için [`schema-standard.md`](./schema-standard.md) geçerlidir. ikas entegrasyonu için kaynak: [ikas App Development docs](https://builders.ikas.com/docs/app-development) — tema Studio kodu değil.
+**Doğrulama:** `node scripts/validate-apps.mjs`
 
-**Doğrulama:** `node scripts/validate-apps.mjs` — bu dosyadaki her kural orada kod olarak var.
-
-**Durum:** v0.2 — platform ayrımlı `entegrasyon` + ikas storefront event sözlüğü — **Awaiting user approval**.
+**Durum:** v0.3 — **Awaiting user approval**. Onaylanmadan üretim kodu türetilmez.
 
 ---
 
 ## 1. Katman kuralı
 
 ```
-Ne işe yarar  → amac          (tek Türkçe cümle)
-Neden gerekli → sorun         (1–2 cümle: merchant/vitrin boşluğu)
-Nerede görünür → scope + yuzey (Shopify grammar yüzeyleri)
-Merchant ayarı → ayarlar       (SectionSchema slot grameri)
+Ne işe yarar     → amac
+Neden gerekli    → sorun
+Nerede görünür   → scope + yuzey (Shopify grammar)
+Merchant ayarı   → ayarlar
 Shopify bağlantı → entegrasyon.shopify
-ikas bağlantı   → entegrasyon.ikas + ikasTur + ikasOlaylar + ikasSayfa
-Veri          → dataBindings
-Davranış      → actions
-Kaynak        → link
+ikas bağlantı    → entegrasyon.ikas + ikasTur … ikasWebhook
+ikas replacement → ikasHedef + ikasSablon + ikasKapsam + ikasAksiyon
+Kaynak           → link / ikasLink
+Fingerprint      → tespit (doğrulanmışsa)
 ```
-
-Store Leads / Diego sayıları `candidates/shopify-apps.md` skorboard'unda tutulur.
 
 ---
 
-## 2. Zorunlu üst seviye alanlar (18)
+## 2. Zorunlu üst seviye alanlar (25)
 
 | Alan | Tip | Kural |
 |---|---|---|
 | `id` | string | `app-{kategori}-{slug}` = dosya adı |
-| `kategori` | enum | §3 |
+| `kategori` | enum | `pixel` · `capture` · `reviews` · `loyalty` · `merchandising` · `bar` · `payments` · `builder` · `wishlist` |
 | `varyant` | string | Kısa vendor slug |
-| `scope` | enum | §4 |
+| `scope` | enum | `head` · `overlay` · `in-flow` · `checkout` · `page` |
 | `amac` | string | Tek Türkçe cümle |
 | `sorun` | string | 1–2 cümle merchant boşluğu |
-| `link` | string | Doğrulanmış `https://` URL |
-| `yuzey` | array | §5 — Shopify vitrin yüzeyleri |
-| `entegrasyon` | object | §6 — `{ shopify: [], ikas: [] }` |
-| `ikasTur` | enum | `admin` \| `ozel` \| `yok` (§6.3) |
-| `ikasOlaylar` | array | §6.4 — `IKAS_EVENT_TYPE` alt kümesi |
-| `ikasSayfa` | array | §6.5 — `IKAS_PAGE_TYPE` alt kümesi |
-| `ayarlar` | object | §7 — slot grameri |
-| `dataBindings` | array | §8 |
-| `actions` | array | §9 |
-| `hookNoktalari` | array | §9 |
-| `bagimliliklar` | array | §10 |
-| `ikasKarsilik` | string | ikas karşılığı adı; yoksa `yok` |
+| `link` | string | Doğrulanmış Shopify `https://` URL |
+| `yuzey` | array | Kapalı Shopify yüzey seti (v0.1). Head pikselde `[]` |
+| `entegrasyon` | object | `{ shopify: [], ikas: [] }` — §6 |
+| `ikasTur` | enum | `admin` · `ozel` · `yok` |
+| `ikasOlaylar` | array | `IKAS_EVENT_TYPE` alt kümesi — §6.4 |
+| `ikasSayfa` | array | `IKAS_PAGE_TYPE` alt kümesi — §6.5 |
+| `ikasLink` | string | ikas App Store / ana site URL veya `"yok"` |
+| `ikasSablon` | enum | `starter` · `webhook-listener` · `yok` — §6.10 |
+| `ikasHedef` | enum | §6.6 |
+| `ikasKapsam` | array | §6.7 OAuth scope alt kümesi |
+| `ikasAksiyon` | array | §6.8 `{ yer, tip }` |
+| `ikasWebhook` | array | §6.9 kapalı 9 webhook |
+| `ayarlar` | object | Slot grameri — §7 |
+| `dataBindings` | array | `schema-standard.md` DataSource |
+| `actions` | array | Boş `[]` yasak |
+| `hookNoktalari` | array | `mount:{bolge}.{konum}` |
+| `bagimliliklar` | array | Section schema id listesi |
+| `ikasKarsilik` | string | ikas karşılığı adı |
+| `tespit` | object | `{ shopify, ikas }` — §8 |
 
 ---
 
-## 3. `kategori`
+## 6. `entegrasyon`
 
-`pixel` · `capture` · `reviews` · `loyalty` · `merchandising` · `bar` · `payments` · `builder` · `wishlist`
+### 6.1 `shopify`
 
----
+`web-pixel` · `app-embed` · `app-block` · `script-tag` · `checkout-extension` · `page-runtime`
 
-## 4. `scope`
+### 6.2 `ikas`
 
-`head` · `overlay` · `in-flow` · `checkout` · `page`
-
----
-
-## 5. `yuzey` — Shopify grammar (değişmedi)
-
-Kapalı set — §5 v0.1 ile aynı. ikas tarafında theme app-block **yok**; vitrin enjeksiyonu `storefront-script` + `IkasEvents` ile modellenir.
-
----
-
-## 6. `entegrasyon` — platform ayrımlı (v0.2)
-
-```json
-"entegrasyon": {
-  "shopify": ["app-block", "app-embed"],
-  "ikas": ["storefront-script"]
-}
-```
-
-Boş array `[]` her iki tarafta da geçerli.
-
-### 6.1 `shopify` — kapalı set
-
-| Değer | Ne |
-|---|---|
-| `web-pixel` | Shopify Web Pixel |
-| `app-embed` | Theme app embed |
-| `app-block` | Theme app block |
-| `script-tag` | Legacy ScriptTag |
-| `checkout-extension` | Checkout UI extension |
-| `page-runtime` | Builder sayfa runtime |
-
-### 6.2 `ikas` — kapalı set
-
-Kaynak: [storefront-events](https://builders.ikas.com/docs/storefront-events), [admin-app](https://builders.ikas.com/docs/app-development/admin-app), [app-actions](https://builders.ikas.com/docs/app-development/admin-app/app-actions)
-
-| Değer | Ne |
-|---|---|
-| `storefront-script` | `CreateStorefrontJSScript` veya Dashboard → Sales Channel → Extensions → Scripts. **Theme app-block değil.** |
-| `admin-iframe` | Public Admin App — OAuth2 Auth Code, iframe, App Bridge |
-| `admin-action` | Admin panel action (product edit, order view, bulk) |
-| `webhook` | Webhook dinleyici (Private veya Public) |
-
-**Yasak:** ikas tarafında `app-block`, `app-embed`, `web-pixel`, `script-tag`, `page-runtime` yazılmaz — docs'ta karşılığı yok.
+`storefront-script` · `admin-iframe` · `admin-action` · `webhook` — **app-block yasak**
 
 ### 6.3 `ikasTur`
 
-| Değer | Ne |
-|---|---|
-| `admin` | Public App (App Store, OAuth2 Auth Code, iframe) |
-| `ozel` | Private App (Client Credentials, API + webhook) |
-| `yok` | ikas uygulama karşılığı yok / native özellik / yalnızca Dashboard script |
+`admin` = Public App · `ozel` = Private App · `yok` = native / Dashboard script
 
-### 6.4 `ikasOlaylar` — `IKAS_EVENT_TYPE`
+### 6.4 `ikasOlaylar`
 
 `PAGE_VIEW` · `PRODUCT_VIEW` · `ADD_TO_CART` · `REMOVE_FROM_CART` · `BEGIN_CHECKOUT` · `CHECKOUT_STEP` · `COMPLETE_CHECKOUT` · `ADD_TO_WISHLIST` · `SEARCH` · `VIEW_CART` · `VIEW_CATEGORY` · `VIEW_SEARCH_RESULTS` · `CUSTOMER_REGISTER` · `CUSTOMER_LOGIN` · `CUSTOMER_LOGOUT` · `CUSTOMER_VISIT` · `CONTACT_FORM`
 
-Runtime: `window.IkasEvents.subscribe({ id, callback })`
-
-### 6.5 `ikasSayfa` — `IKAS_PAGE_TYPE`
+### 6.5 `ikasSayfa`
 
 `INDEX` · `CATEGORY` · `BRAND` · `PRODUCT` · `CUSTOM` · `ACCOUNT` · `CART` · `CHECKOUT` · `SEARCH`
 
----
+### 6.6 `ikasHedef`
 
-## 7. `ayarlar` — merchant editör sözleşmesi
-
-SectionSchema slot grameri ([`schema-standard.md` §3](./schema-standard.md)).
-
-**Storefront-script** (`entegrasyon.ikas` içinde) için ek slotlar:
-
-| Slot | tip | zorunlu | not |
-|---|---|---|---|
-| `oncelikliScript` | boolean | false | `CreateStorefrontJSScript.isHighPriority` |
-| `publicApiKey` | text | true | script URL query, mağaza bazlı |
-
-Saf head piksel **ve** ikas `storefront-script` yoksa → `{}`.
-
----
-
-## 8–10. `dataBindings`, `actions`, `hookNoktalari`, `bagimliliklar`
-
-v0.1 ile aynı — [`schema-standard.md`](./schema-standard.md) grameri.
-
----
-
-## 11. Eşleme rehberi (Shopify app → ikas)
-
-| Shopify pattern | ikas karşılığı |
+| Değer | Ne |
 |---|---|
-| app-block / app-embed (vitrin) | `storefront-script` + `IkasEvents` |
-| web-pixel / script-tag | `storefront-script` (+ ilgili `ikasOlaylar`) |
-| page-runtime (builder) | `admin-iframe` (Studio) — vitrin SDK değil |
-| Admin-only sync | `admin-iframe` / `webhook` |
-| Native ikas özellik | `ikasTur: yok`, `ikas: []` |
+| `studio-section` | Studio in-flow görsel blok |
+| `storefront-script` | JS script / overlay / pixel |
+| `admin-iframe` | Admin panel iframe |
+| `webhook` | Backend-only senkron |
+| `yok` | Karşılık yok |
+
+### 6.7 `ikasKapsam`
+
+`read-campaigns` · `read-customers` · `read-inventories` · `read-orders` · `read-products` · `write-campaigns` · `write-customers` · `write-inventories` · `write-orders` · `write-products` · `write-storefront`
+
+### 6.8 `ikasAksiyon`
+
+`yer`: `product-edit` · `order-view` · `order-package` · `order-list-bulk`  
+`tip`: `iframe` · `api`
+
+### 6.9 `ikasWebhook` (kapalı 9)
+
+`store/order/created` · `store/order/updated` · `store/product/created` · `store/product/updated` · `store/customer/created` · `store/customer/updated` · `store/customer/statusUpdated` · `store/stock/created` · `store/stock/updated`
+
+### 6.10 `ikasSablon`
+
+`ikas app init` şablonu: `starter` (UI+OAuth+SDK) · `webhook-listener` · `yok`
 
 ---
 
-## 12. Kayıt kontrol listesi
+## 7. `ayarlar`
 
-- [ ] 18 zorunlu alan
-- [ ] `entegrasyon.shopify` + `entegrasyon.ikas` kapalı sette
-- [ ] ikas tarafında app-block yok
-- [ ] `ikasOlaylar` / `ikasSayfa` kapalı sette
-- [ ] storefront-script varsa `oncelikliScript` + `publicApiKey` ayarlarda
+SectionSchema slot grameri. `storefront-script` için `oncelikliScript` + `publicApiKey` slotları.
+
+---
+
+## 8. `tespit`
+
+```json
+"tespit": { "shopify": "", "ikas": "" }
+```
+
+Yalnızca doğrulanmış fingerprint. Tahmin yasak.
+
+---
+
+## 9. Eşleme rehberi
+
+| Shopify pattern | ikasHedef | ikasSablon |
+|---|---|---|
+| app-block in-flow | `studio-section` | `starter` |
+| overlay / pixel | `storefront-script` | `yok` veya `webhook-listener` |
+| page builder | `admin-iframe` | `starter` |
+| CDP / email sync | `storefront-script` + webhook | `webhook-listener` |
+| Native ikas | `studio-section` veya `yok` | `yok` |
+
+---
+
+## 10. Kayıt kontrol listesi
+
+- [ ] 25 zorunlu alan
+- [ ] `ikasLink` doğrulanmış veya `yok`
+- [ ] `ikasWebhook` yalnızca kapalı 9
+- [ ] `tespit` tahmin içermiyor
 - [ ] `node scripts/validate-apps.mjs` temiz

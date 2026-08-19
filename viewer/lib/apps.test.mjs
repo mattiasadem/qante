@@ -21,12 +21,19 @@ const TOP_LEVEL = [
   "ikasTur",
   "ikasOlaylar",
   "ikasSayfa",
+  "ikasLink",
+  "ikasSablon",
+  "ikasHedef",
+  "ikasKapsam",
+  "ikasAksiyon",
+  "ikasWebhook",
   "ayarlar",
   "dataBindings",
   "actions",
   "hookNoktalari",
   "bagimliliklar",
   "ikasKarsilik",
+  "tespit",
 ];
 
 describe("apps inventory", () => {
@@ -36,7 +43,7 @@ describe("apps inventory", () => {
     assert.ok(data.apps.length >= 28);
   });
 
-  it("every apps/*.json has exactly 18 contract keys (+ optional _ keys)", () => {
+  it("every apps/*.json has exactly 25 contract keys (+ optional _ keys)", () => {
     const files = readdirSync(APPS_DIR).filter((n) => n.endsWith(".json") && !n.startsWith("_"));
     assert.ok(files.length > 0);
 
@@ -49,17 +56,23 @@ describe("apps inventory", () => {
       assert.deepEqual(
         keys.sort(),
         [...TOP_LEVEL].sort(),
-        `${name}: must have exactly 18 top-level keys`
+        `${name}: must have exactly 25 top-level keys`
       );
 
       assert.ok(schema.entegrasyon?.shopify && Array.isArray(schema.entegrasyon.shopify));
       assert.ok(schema.entegrasyon?.ikas && Array.isArray(schema.entegrasyon.ikas));
-      assert.ok(["admin", "ozel", "yok"].includes(schema.ikasTur), `${name}: ikasTur`);
-      assert.ok(Array.isArray(schema.ikasOlaylar));
-      assert.ok(Array.isArray(schema.ikasSayfa));
-      for (const e of schema.entegrasyon.ikas) {
-        assert.ok(!["app-block", "app-embed", "web-pixel"].includes(e), `${name}: no Shopify types on ikas`);
-      }
+      assert.ok(
+        schema.ikasLink === "yok" || /^https:\/\//.test(schema.ikasLink),
+        `${name}: ikasLink`
+      );
+      assert.ok(["starter", "webhook-listener", "yok"].includes(schema.ikasSablon));
+      assert.ok(
+        ["studio-section", "storefront-script", "admin-iframe", "webhook", "yok"].includes(
+          schema.ikasHedef
+        )
+      );
+      assert.ok(schema.tespit && typeof schema.tespit.shopify === "string");
+      assert.ok(typeof schema.tespit.ikas === "string");
     }
   });
 });

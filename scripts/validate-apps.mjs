@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * QANTE AppSchema doğrulayıcı — app-schema-standard.md sözleşmesi (v0.2).
+ * QANTE AppSchema doğrulayıcı — app-schema-standard.md sözleşmesi (v0.3).
  */
 
 import { readFileSync, readdirSync, existsSync } from "node:fs";
@@ -23,12 +23,19 @@ const TOP_LEVEL = [
   "ikasTur",
   "ikasOlaylar",
   "ikasSayfa",
+  "ikasLink",
+  "ikasSablon",
+  "ikasHedef",
+  "ikasKapsam",
+  "ikasAksiyon",
+  "ikasWebhook",
   "ayarlar",
   "dataBindings",
   "actions",
   "hookNoktalari",
   "bagimliliklar",
   "ikasKarsilik",
+  "tespit",
 ];
 
 const KATEGORI = new Set([
@@ -46,6 +53,51 @@ const KATEGORI = new Set([
 const SCOPES = new Set(["head", "overlay", "in-flow", "checkout", "page"]);
 
 const IKAS_TUR = new Set(["admin", "ozel", "yok"]);
+
+const IKAS_SABLON = new Set(["starter", "webhook-listener", "yok"]);
+
+const IKAS_HEDEF = new Set([
+  "studio-section",
+  "storefront-script",
+  "admin-iframe",
+  "webhook",
+  "yok",
+]);
+
+const IKAS_KAPSAM = new Set([
+  "read-campaigns",
+  "read-customers",
+  "read-inventories",
+  "read-orders",
+  "read-products",
+  "write-campaigns",
+  "write-customers",
+  "write-inventories",
+  "write-orders",
+  "write-products",
+  "write-storefront",
+]);
+
+const IKAS_AKSIYON_YER = new Set([
+  "product-edit",
+  "order-view",
+  "order-package",
+  "order-list-bulk",
+]);
+
+const IKAS_AKSIYON_TIP = new Set(["iframe", "api"]);
+
+const IKAS_WEBHOOK = new Set([
+  "store/order/created",
+  "store/order/updated",
+  "store/product/created",
+  "store/product/updated",
+  "store/customer/created",
+  "store/customer/updated",
+  "store/customer/statusUpdated",
+  "store/stock/created",
+  "store/stock/updated",
+]);
 
 const SHOPIFY_ENTEGRASYON = new Set([
   "web-pixel",
@@ -356,6 +408,66 @@ function validateApp(filePath) {
       if (!IKAS_PAGE_TYPE.has(pg)) {
         issues.push(err(file, `geçersiz ikasSayfa: "${pg}"`));
       }
+    }
+  }
+
+  if (typeof schema.ikasLink !== "string" || !schema.ikasLink.trim()) {
+    issues.push(err(file, "ikasLink boş olamaz — doğrulanmış URL veya yok"));
+  } else if (schema.ikasLink !== "yok" && !LINK_RE.test(schema.ikasLink.trim())) {
+    issues.push(err(file, 'ikasLink "yok" veya geçerli https:// URL olmalı'));
+  }
+
+  if (!IKAS_SABLON.has(schema.ikasSablon)) {
+    issues.push(err(file, `geçersiz ikasSablon: "${schema.ikasSablon}"`));
+  }
+
+  if (!IKAS_HEDEF.has(schema.ikasHedef)) {
+    issues.push(err(file, `geçersiz ikasHedef: "${schema.ikasHedef}"`));
+  }
+
+  if (!Array.isArray(schema.ikasKapsam)) {
+    issues.push(err(file, "ikasKapsam array olmalı"));
+  } else {
+    for (const s of schema.ikasKapsam) {
+      if (!IKAS_KAPSAM.has(s)) issues.push(err(file, `geçersiz ikasKapsam: "${s}"`));
+    }
+  }
+
+  if (!Array.isArray(schema.ikasAksiyon)) {
+    issues.push(err(file, "ikasAksiyon array olmalı"));
+  } else {
+    for (const a of schema.ikasAksiyon) {
+      if (!a || typeof a !== "object") {
+        issues.push(err(file, "ikasAksiyon elemanı { yer, tip } obje olmalı"));
+        continue;
+      }
+      if (!IKAS_AKSIYON_YER.has(a.yer)) {
+        issues.push(err(file, `geçersiz ikasAksiyon.yer: "${a.yer}"`));
+      }
+      if (!IKAS_AKSIYON_TIP.has(a.tip)) {
+        issues.push(err(file, `geçersiz ikasAksiyon.tip: "${a.tip}"`));
+      }
+    }
+  }
+
+  if (!Array.isArray(schema.ikasWebhook)) {
+    issues.push(err(file, "ikasWebhook array olmalı"));
+  } else {
+    for (const w of schema.ikasWebhook) {
+      if (!IKAS_WEBHOOK.has(w)) {
+        issues.push(err(file, `geçersiz ikasWebhook: "${w}"`));
+      }
+    }
+  }
+
+  if (!schema.tespit || typeof schema.tespit !== "object" || Array.isArray(schema.tespit)) {
+    issues.push(err(file, "tespit { shopify, ikas } obje olmalı"));
+  } else {
+    if (typeof schema.tespit.shopify !== "string") {
+      issues.push(err(file, "tespit.shopify string olmalı"));
+    }
+    if (typeof schema.tespit.ikas !== "string") {
+      issues.push(err(file, "tespit.ikas string olmalı"));
     }
   }
 

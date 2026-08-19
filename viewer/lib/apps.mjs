@@ -49,8 +49,15 @@ export function loadApps(root) {
         ikasTur: schema.ikasTur || "yok",
         ikasOlaylar: schema.ikasOlaylar || [],
         ikasSayfa: schema.ikasSayfa || [],
+        ikasLink: schema.ikasLink || "yok",
+        ikasSablon: schema.ikasSablon || "yok",
+        ikasHedef: schema.ikasHedef || "yok",
+        ikasKapsam: schema.ikasKapsam || [],
+        ikasAksiyon: schema.ikasAksiyon || [],
+        ikasWebhook: schema.ikasWebhook || [],
         ayarlar: schema.ayarlar || {},
         ikasKarsilik: schema.ikasKarsilik || "",
+        tespit: schema.tespit || { shopify: "", ikas: "" },
         schema,
       });
       byKategori[schema.kategori] = (byKategori[schema.kategori] || 0) + 1;
