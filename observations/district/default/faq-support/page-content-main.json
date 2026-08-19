@@ -5,15 +5,47 @@
   "preset": "default",
   "sayfa": "faq-support",
   "evidence": [
+    "evidence/district/default/faq-support/page-content-main.1440.png",
     "evidence/district/default/faq-support/page-content-main.375.png",
     "evidence/district/default/faq-support/page-content-main.768.png",
-    "evidence/district/default/faq-support/page-content-main.1440.png"
+    "evidence/district/default/faq-support/page-content-main.initial.faq-duz.1440.png",
+    "evidence/district/default/faq-support/page-content-main.initial.faq-duz.375.png",
+    "evidence/district/default/faq-support/page-content-main.initial.faq-duz.768.png"
   ],
   "url": "https://district-theme-demo.myshopify.com/pages/faqs",
   "selector": "#shopify-section-template--17215441567797__main",
   "evidenceSlug": "page-content-main",
   "notlar": "main-page FAQs. Overseas / delivery süresi. Accordion yok.",
   "delta": "/pages/faq 404. faq-collapsible-tabs değil — düz sayfa.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://district-theme-demo.myshopify.com/pages/faqs",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17215441567797__main",
+      "capture": true,
+      "etiket": "faq-duz",
+      "not": "Düz FAQ metni. details/summary yok — changed zorlanmaz."
+    }
+  ],
+  "stateFindings": {
+    "initial": "FAQs başlık + düz Q&A (overseas / teslimat / carrier / iade / kişisel / newsletter / demo uyarısı). Accordion, +/caret, details yok."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Accordion yok — faq-collapsible-tabs uydurulmadı. Düz page-content-main."
+    }
+  ],
+  "interactionNote": "Scan+probe: details=0 summary=0 accordion=0. changed zorlanmadı.",
   "capture": {
     "url": "https://district-theme-demo.myshopify.com/pages/faqs",
     "viewports": [
@@ -22,7 +54,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T11:06:05.564Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:55:21.771Z"
   }
 }

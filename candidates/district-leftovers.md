@@ -23,23 +23,26 @@ theme id `122133119029` · role `main` · shop `district-theme-demo.myshopify.co
 | Cart drawer | Yok. `#cart-button` ve ATC `/cart` sayfasına gider |
 | 768 hamburger | `button.header-top__menu` display:none. Masaüstü nav (SHOP mega) |
 | Newsletter popup JOIN & SAVE | E-posta — dur. Capture dismiss |
-| District Updates şerit | 375 predictive açıkken altta e-posta barı — PII, dur |
+| District Updates şerit | 375 e-posta barı — submit yok. Footer interact'te `signup-bar__close` ile kapatıldı |
 | Footer Newsletter GO / contact SEND / blog comment | PII — dur |
 | Header Log in / Create account | `/account` — dur |
-| Currency USD $ | leftover |
+| Header currency USD $ | leftover (footer locale interact edildi) |
 | Buy it now / SIZE GUIDE | leftover |
 | `/pages/theme-features` | Tema satış; walk dışı |
 | `/pages/lookbook` | Home preview CTA. Walk dışı leftover |
 | Iceland CTA `href=#` | ölü link |
-| Shop the look hotspot tık | leftover |
+| Shop the look hotspot tık | Interact: hover caption + `.looks__modal` (Ampersand Maroon $32) |
 | Mobile Shop chevron | kaçış riski — leftover |
 | PLP facet/sort interact | Filtre DOM’da; walk zorunlu değil |
-| Slideshow autoplay | 3vp farklı slayt (Gather / New Classics) — tek kare |
+| Slideshow autoplay | Interact: slide 1 Lookbook 3vp. CTA SEE THE LOOKBOOK / SHOP TEES tıklanmadı |
+| Shop the look modal ürün | Ampersand $32 görünür (1440); ürün <a> / ATC tıklanmadı |
+| reviews / countdown / before-after / bundle / comparison / quiz / scrolling gallery | Observation yok — interact şema uydurmadı |
+| media-lookbook-banner | CTA `/pages/lookbook` — sayfa walk dışı leftover |
 
 ## Aday (yeni şema yok)
 
 - **header-top utility** — search opener + cart link + currency. Overlay/aday.
-- **looks / Shop The Look** → `media-shop-the-feed` (Instagram kartları).
+- **looks / Shop The Look** → `media-shop-the-feed` (hover caption + look modal).
 - **gallery 5 kart** → `collection-nav-image-cards` (1 kart blog).
 - **FAQs** → `page-content-main` (accordion yok).
 - **404** → `page-content-main` + delta. `pageType` 404 listede yok.
@@ -52,3 +55,7 @@ theme id `122133119029` · role `main` · shop `district-theme-demo.myshopify.co
 - 375 hamburger `button.header-top__menu` → `.menu-drawer` (Shop chevron / Best Sellers / Blog / About / More + Log in). 768/1440 hamburger yok — tek 375 PNG.
 - Cart: ATC `#AddToCart-template--17215441403957__product` → `/cart`. Empty: Your cart is empty. Filled: Enjoy The Journey COLOR BLACK SIZE SMALL qty 1 $28. Qty plus → 2 / $56. CHECK OUT tıklanmadı.
 - PDP Color: `label.swatch-item__label[for='template--17215441403957__product-1-1']` White. $28 aynı; görsel siyah→beyaz tisort.
+- Shop The Look: `#LooksItem-1642551013e82b51bf-0 a.looks__image-container` hover caption + tık `.looks__modal.modal--active`. FOLLOW US tıklanmadı.
+- Slideshow: `#splide01 button[aria-controls='splide01-slide01']` → New Fall Lookbook. Autoplay 375/768 Gather / 1440 Classics.
+- Footer locale: `#FooterCurrencyForm button[aria-controls='FooterCurrencyList']`. 375 önce `button.signup-bar__close`. GO/ülke yok.
+- Contact form + FAQ: yalnız initial. FAQ accordion yok.
