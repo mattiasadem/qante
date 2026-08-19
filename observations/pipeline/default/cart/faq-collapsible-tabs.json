@@ -8,12 +8,53 @@
   "selector": "#shopify-section-template--22817365983448__18aed73b-4673-4a6e-8103-3124c263bcb4",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/pipeline/default/cart/faq-collapsible-tabs.1440.png",
     "evidence/pipeline/default/cart/faq-collapsible-tabs.375.png",
     "evidence/pipeline/default/cart/faq-collapsible-tabs.768.png",
-    "evidence/pipeline/default/cart/faq-collapsible-tabs.1440.png"
+    "evidence/pipeline/default/cart/faq-collapsible-tabs.changed.ilk-soru.1440.png",
+    "evidence/pipeline/default/cart/faq-collapsible-tabs.changed.ilk-soru.375.png",
+    "evidence/pipeline/default/cart/faq-collapsible-tabs.changed.ilk-soru.768.png",
+    "evidence/pipeline/default/cart/faq-collapsible-tabs.initial.ilk-hal.1440.png",
+    "evidence/pipeline/default/cart/faq-collapsible-tabs.initial.ilk-hal.375.png",
+    "evidence/pipeline/default/cart/faq-collapsible-tabs.initial.ilk-hal.768.png"
   ],
   "notlar": "Cart altı FAQ: shipping options / international shipping / track my order. .section-faq",
-  "delta": "Shopify.theme.name Pipeline 8.2.0 · id 162762195160 · schema_name Pipeline · schema_version 8.2.0 · theme_store_id null · role main · shop pipeline-theme-fashion.myshopify.com. Preset folder default = Fashion / Theme Store official preview (document title suffix Pipeline Clean). Sibling pipeline-theme.myshopify.com (Bright) not walked. Accordion kapalı kare. Açılmadı — leftover depth.",
+  "delta": "Shopify.theme.name Pipeline 8.2.0 · id 162762195160 · schema_name Pipeline · schema_version 8.2.0 · theme_store_id null · role main · shop pipeline-theme-fashion.myshopify.com. Preset folder default = Fashion / Theme Store official preview (document title suffix Pipeline Clean). Sibling pipeline-theme.myshopify.com (Bright) not walked. Accordion interact: ilk soru açık.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pipeline-theme-fashion.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--22817365983448__18aed73b-4673-4a6e-8103-3124c263bcb4",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "3 soru kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--22817365983448__18aed73b-4673-4a6e-8103-3124c263bcb4 button[aria-controls='disclosure-panel-2']",
+      "value": 1000,
+      "capture": true,
+      "etiket": "ilk-soru",
+      "not": "Shipping options açık — kutu büyür"
+    }
+  ],
+  "stateFindings": {
+    "initial": "3 soru kapalı, chevron aşağı: shipping options and delivery times / international shipping / track my order.",
+    "changed": "İlk soru açık — Standard / Expedited / Overnight + süre ve maliyet. Chevron yukarı. Diğer ikisi kapalı."
+  },
+  "missingStates": [],
+  "interactionNote": "Accordion changed. Şema emit:accordion.toggle duruyor; yeni alan yok.",
   "capture": {
     "url": "https://pipeline-theme-fashion.myshopify.com/cart",
     "viewports": [
@@ -22,7 +63,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T20:40:26.288Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T09:58:25.102Z"
   }
 }

@@ -155,9 +155,9 @@ Karar: onay bekliyor
 ---
 
 ADAY: pipeline-pdp-accordions  
-Gerekçe: DESCRIPTION / CARE / SHIPPING + RETURNS + BUY IT WITH Quick View. Interact edilmedi.  
+Gerekçe: DESCRIPTION 3vp açıldı (changed.desc-acik). CARE / SHIPPING + RETURNS + BUY IT WITH Quick View hâlâ kapalı. QV tık viewport dışı / dialog görülmedi.  
 Örnekler: product-info-main  
-Öneri: leftover — PDP derinlik  
+Öneri: leftover — CARE/SHIPPING/QV  
 Karar: onay bekliyor
 
 ---
@@ -166,4 +166,68 @@ ADAY: pipeline-pii-stop
 Gerekçe: Footer/home JOIN newsletter, contact SEND, checkout, account login tıklanmadı.  
 Örnekler: newsletter · `/pages/contact` · cart  
 Öneri: PII / checkout stop  
+Karar: onay bekliyor
+
+---
+
+ADAY: pipeline-cro-no-countdown  
+Gerekçe: Fashion demo’da countdown section / timer yok. PDP “Only N left” stok metni — ayrı countdown şeması yok.  
+Örnekler: home section listesi  
+Öneri: leftover — observation yok, interact icat etmedi  
+Karar: onay bekliyor
+
+---
+
+ADAY: pipeline-cro-no-reviews  
+Gerekçe: testimonial / reviews section yok. `social-proof-brand-logos` statik logo şeridi.  
+Örnekler: home `__logos`  
+Öneri: leftover — observation yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: pipeline-cro-no-comparison  
+Gerekçe: comparison / us-vs-them yok.  
+Örnekler: home + PDP  
+Öneri: leftover — observation yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: pipeline-cro-no-before-after  
+Gerekçe: before-after slider yok.  
+Örnekler: home + PDP  
+Öneri: leftover — observation yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: pipeline-cro-no-quiz  
+Gerekçe: quiz / finder yok.  
+Örnekler: home  
+Öneri: leftover — observation yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: pipeline-size-guide-page  
+Gerekçe: PDP “SIZE GUIDE” → `/pages/sizing`. Sayfa yürünmedi; size-guide observation yok. Interact şema icat etmez.  
+Örnekler: product-info-main  
+Öneri: leftover — ilk envanter `/qante-discover`  
+Karar: onay bekliyor
+
+---
+
+ADAY: pipeline-sticky-atc-css  
+Gerekçe: PDP `product__inner is-sticky` buy kolonunu yapıştırır. Ayrı fixed sticky ATC bar / observation yok.  
+Örnekler: Andre Luxe  
+Öneri: leftover — feature, yeni tip değil  
+Karar: onay bekliyor
+
+---
+
+ADAY: pipeline-bestsellers-no-slider  
+Gerekçe: Home BEST SELLERS (`product-showcase-grid-featured-3`) ok yok; statik ızgara. Changed zorlanmadı. QUICK ADD leftover.  
+Örnekler: `#…__16637296905e47ad83`  
+Öneri: leftover — slider yok  
 Karar: onay bekliyor
