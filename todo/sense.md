@@ -6,7 +6,7 @@
 *Beklenen (görev notu, storefront’ta yok):* Sense · theme_store_id 1356 · Shopify first-party  
 *Shop:* `theme-sense-demo.myshopify.com`
 
-**Durum:** Mod A walk + resmi 3vp + interact  
+**Durum:** Mod A walk + resmi 3vp + interact + CRO leftover  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -21,7 +21,7 @@
 | Parallel | yalnız `observations/sense/`, `evidence/sense/`, `todo/sense.md`, `candidates/sense-*.md` |
 
 **Kapsam satırı:**  
-`Sense · default · [Sense] Theme Store demo (latest) / schema_name Dawn 2.5.0 (theme_store_id null) · home→PDP→PLP→search→cart/notification→about/contact→policy→blog→404 · 37 obs · 131 PNG · 0 yeni şema · leftover: 404 / policies 404 / FAQ 404 / mega yok / cart-notification`
+`Sense · default · [Sense] Theme Store demo (latest) / schema_name Dawn 2.5.0 (theme_store_id null) · home→PDP→PLP→search→cart/notification→about/contact→policy→blog→404 · 37 obs · 137 PNG · 0 yeni şema · leftover: 404 / policies 404 / FAQ 404 / mega yok / cart-notification / 8 CRO şema yok`
 
 ---
 
@@ -93,6 +93,17 @@
 | cart-page-main | initial/filled/changed | boş → Lime satır qty 3 → plus 4 / $64 |
 | product-info-main | changed | Lime → Berries (hap + turuncu tüp) |
 
+### CRO leftover interact
+
+| schemaId | States | Sonuç |
+|---|---|---|
+| lead-capture-newsletter-band | initial | scan 1 email; fill/submit PII — input missing |
+| lead-capture-form | initial | scan 4 alan; PII/Send dur — input missing |
+
+**CRO disk listesinde observation yok (9):** before-after-slider · commerce-tools-products-bundle · promo-banner-countdown · faq-collapsible-tabs · comparison-quick-table · product-finder-quiz · testimonial-quote-carousel · media-shop-the-feed · media-scrolling-gallery
+
+**FAQ/reviews/countdown/quiz/bundle/sticky/scarcity:** FAQ `/pages/faq` 404 · reviews yok · countdown yok (promo-announcement-bar var, countdown değil) · quiz yok · bundle yok · sticky/scarcity gözlenmedi
+
 ---
 
 ## Aday / leftover
@@ -105,5 +116,6 @@
 
 - [x] Official 3vp static (`capture-observation.mjs`)
 - [x] Interact search / menu / cart notification / cart qty / PDP Flavor
+- [x] CRO leftover interact (lead-capture-newsletter-band + lead-capture-form)
 - [x] PNG bak → stateFindings
 - [x] `npm run validate` — 65 temiz · 0 error · 0 warn

@@ -8,12 +8,41 @@
   "selector": "#shopify-section-template--16716093882576__1638900317191499c2",
   "evidenceSlug": "lead-capture-form",
   "evidence": [
-    "evidence/sense/default/about-brand/lead-capture-form.375.png",
-    "evidence/sense/default/about-brand/lead-capture-form.768.png",
-    "evidence/sense/default/about-brand/lead-capture-form.1440.png"
+    "evidence/sense/default/about-brand/lead-capture-form.initial.ilk-hal.1440.png",
+    "evidence/sense/default/about-brand/lead-capture-form.initial.ilk-hal.375.png",
+    "evidence/sense/default/about-brand/lead-capture-form.initial.ilk-hal.768.png"
   ],
   "notlar": "Name, Email *, Phone number, Comment, Send. Doldurulmadı / gönderilmedi (PII).",
   "delta": "Dawn contact form. Title Contact olan /pages/about-us.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-sense-demo.myshopify.com/pages/about-us",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16716093882576__1638900317191499c2",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Boş form alanları. Send tıklanmadı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Contact başlık + Name / Email * / Phone number / Comment alanları + Send düğmesi. Tüm alanlar boş; gönderim yapılmadı."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "Name / email / phone / comment PII — doldurulmadı. Send tıklanmadı. Select/tab/changer yok."
+    }
+  ],
+  "interactionNote": "Scan 4 input (name, email, tel, textarea). katalogSorgu yok (about sayfası). Meaningful interact yalnız initial.",
   "capture": {
     "url": "https://theme-sense-demo.myshopify.com/pages/about-us",
     "viewports": [
@@ -22,7 +51,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T17:23:54.964Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:36:08.019Z"
   }
 }
