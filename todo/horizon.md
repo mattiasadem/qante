@@ -6,7 +6,7 @@
 *Tema (storefront, uydurulmadı):* **Horizon demo store 3.2.0** · `schema_name`: **Horizon** · `schema_version`: **3.2.0** · `theme_store_id`: **2481** · role `main` · id `182785212737`  
 *Shop:* `se-horizon1-en-fk7v.myshopify.com`
 
-**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti** (0 error)  
+**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti** (0 error) · CRO interact **2026-08-19**  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -19,7 +19,7 @@
 | Capture | resmi `capture-observation.mjs` + `capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **23** |
-| Evidence PNG | **86** |
+| Evidence PNG | **92** |
 | Parallel | yalnız `observations/horizon/`, `evidence/horizon/`, `todo/horizon.md`, `candidates/horizon-*` |
 
 **Kapsam satırı:**  
@@ -75,6 +75,17 @@
 - Cart drawer: empty → Michael Cardigan qty 1 $282 → qty 2 $564 — OK (ATC sonrası Cart tık)
 - Cart page: empty → filled → qty — OK
 - PDP Color: Pumice → Black (galeri önde Black) — OK
+- **CRO `lead-capture-form`** (contact): scan + `initial` 3vp — OK; `input` PII stop
+- **Footer `footer-columns-newsletter`**: scan + `initial` 3vp — OK; `input` PII stop · `lead-capture-newsletter-band` observation yok
+
+### CRO şema → state (Horizon)
+
+| schemaId | observation | states | missing |
+|---|---|---|---|
+| `lead-capture-form` | contact | `initial` | `input` (PII) |
+| `footer-columns-newsletter` | home footer | `initial` | `input` (PII) |
+
+**Listed CRO schemas without observation on Horizon:** `before-after-slider` · `commerce-tools-products-bundle` · `promo-banner-countdown` · `faq-collapsible-tabs` · `lead-capture-newsletter-band` · `comparison-quick-table` · `product-finder-quiz` · `testimonial-quote-carousel` · `media-shop-the-feed` · `media-scrolling-gallery` · FAQ/reviews/countdown/quiz/bundle/sticky/scarcity (gözlenmedi)
 
 ---
 
