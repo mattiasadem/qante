@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--15968257704025__video",
   "evidenceSlug": "media-video-hero",
   "evidence": [
+    "evidence/dawn/default/home/media-video-hero.1440.png",
     "evidence/dawn/default/home/media-video-hero.375.png",
     "evidence/dawn/default/home/media-video-hero.768.png",
-    "evidence/dawn/default/home/media-video-hero.1440.png"
+    "evidence/dawn/default/home/media-video-hero.changed.video-oynuyor.1440.png",
+    "evidence/dawn/default/home/media-video-hero.changed.video-oynuyor.375.png",
+    "evidence/dawn/default/home/media-video-hero.changed.video-oynuyor.768.png",
+    "evidence/dawn/default/home/media-video-hero.initial.poster.1440.png",
+    "evidence/dawn/default/home/media-video-hero.initial.poster.375.png",
+    "evidence/dawn/default/home/media-video-hero.initial.poster.768.png"
   ],
   "notlar": "Dawn video-section / deferred-media. Görünür başlık/CTA yok.",
   "delta": "Yalnız video/poster. Metin overlay yok.",
@@ -52,9 +58,12 @@
       "not": "iframe youtube.com/embed/yXWXFzjVnt8 autoplay"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "Poster: sandalye + vazo + çanta + play düğmesi. Başlık/CTA yok. 375/768/1440.",
+    "changed": "Play tık → YouTube iframe (yXWXFzjVnt8). Kare: “Sign in to confirm you’re not a bot” + YouTube logosu. Poster/play yok. URL aynı. Video karesi (Sera Tote) gelmedi."
+  },
   "missingStates": [],
-  "interactionNote": "Scan opener göstermedi; probe: button.deferred-media__poster tık → deferred-media loaded + YouTube iframe. URL aynı.",
+  "interactionNote": "Scan opener göstermedi; probe + capture: button.deferred-media__poster → deferred-media loaded + iframe. Headless YouTube bot duvarı — Sign in yok (hesap). İkinci çekim denenmedi.",
   "capture": {
     "url": "https://theme-dawn-demo.myshopify.com/",
     "viewports": [
@@ -63,7 +72,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T11:28:50.171Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T17:21:01.451Z"
   }
 }

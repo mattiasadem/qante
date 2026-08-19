@@ -124,7 +124,7 @@ Karar: onay bekliyor
 
 ## CRO leftover interact (2026-08-19)
 
-Observation vardı, kullanıldı: `footer-columns-newsletter` (boş form + ülke listesi) · `lead-capture-form` (boş) · `features-multicolumn` home (2 statik alıntı) · `media-video-hero` (poster → YouTube).
+Observation vardı, kullanıldı: `footer-columns-newsletter` (boş form + ülke listesi) · `lead-capture-form` (boş) · `features-multicolumn` home (2 statik alıntı) · `media-video-hero` (poster → YouTube iframe; headless “not a bot” duvarı, video karesi yok).
 
 Şema icat edilmedi. Aşağıdakilerin observation’ı yok — `/qante-discover` işi.
 
