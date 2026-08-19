@@ -8,12 +8,52 @@
   "selector": "#shopify-section-template--17836803653800__1646617339680e19de",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/ride/default/home/faq-collapsible-tabs.1440.png",
     "evidence/ride/default/home/faq-collapsible-tabs.375.png",
     "evidence/ride/default/home/faq-collapsible-tabs.768.png",
-    "evidence/ride/default/home/faq-collapsible-tabs.1440.png"
+    "evidence/ride/default/home/faq-collapsible-tabs.changed.premium-quality-acik.1440.png",
+    "evidence/ride/default/home/faq-collapsible-tabs.changed.premium-quality-acik.375.png",
+    "evidence/ride/default/home/faq-collapsible-tabs.changed.premium-quality-acik.768.png",
+    "evidence/ride/default/home/faq-collapsible-tabs.initial.ilk-hal.1440.png",
+    "evidence/ride/default/home/faq-collapsible-tabs.initial.ilk-hal.375.png",
+    "evidence/ride/default/home/faq-collapsible-tabs.initial.ilk-hal.768.png"
   ],
   "notlar": "NEW RELEASE / MEET THE NEOGLASS ECO FIN. Sol görsel, sağ 5 satır: LOW ENVIRONMENTAL IMPACT (açık) + SHOP NEOGLASS FIN; Premium Quality; Built for Performance; Industry Innovation; Supports All Riding Styles.",
   "delta": "Dawn collapsible-content görsel+accordion, klasik SSS değil. openFirst ilk satır.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-ride-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17836803653800__1646617339680e19de",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "openFirst: LOW ENVIRONMENTAL IMPACT açık + SHOP NEOGLASS FIN CTA. Diğer dört satır kapalı."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-1646617339cae3e727-1-template--17836803653800__1646617339680e19de > summary",
+      "capture": true,
+      "etiket": "premium-quality-acik",
+      "not": "PREMIUM QUALITY tık — ilk satır açık kalır (allowMultipleOpen)."
+    }
+  ],
+  "stateFindings": {
+    "initial": "MEET THE NEOGLASS ECO FIN. Sol fin görseli, sağ accordion. LOW ENVIRONMENTAL IMPACT açık (−): cevap metni + SHOP NEOGLASS FIN butonu. PREMIUM QUALITY / BUILT FOR PERFORMANCE / INDUSTRY INNOVATION / SUPPORTS ALL RIDING STYLES kapalı (+). 375/768/1440.",
+    "changed": "LOW ENVIRONMENTAL IMPACT hâlâ açık. PREMIUM QUALITY da açık (−): cevap metni görünür. Diğer üç satır kapalı. 375/768/1440 aynı delta."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan 5 summary opener. Probe: openFirst=true; ikinci tık allowMultipleOpen (iki satır açık). SHOP NEOGLASS FIN link tıklanmadı.",
   "capture": {
     "url": "https://theme-ride-demo.myshopify.com/",
     "viewports": [
@@ -22,7 +62,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T17:06:02.573Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:50:50.165Z"
   }
 }

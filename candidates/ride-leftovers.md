@@ -2,7 +2,7 @@
 
 *Store:* https://theme-ride-demo.myshopify.com  
 *Tema (görülen, uydurulmadı):* **[Ride] Theme Store demo (latest)** · `schema_name` **Ride** 1.0.0 · `theme_store_id` **null** · id `141073449128` · shop `theme-ride-demo.myshopify.com`  
-*Tarih:* 2026-08-17
+*Tarih:* 2026-08-19 (CRO interact güncellendi)
 
 Şema icat edilmedi. En yakın mevcut tipe observation yazıldıysa burada tekrarlanmaz.
 
@@ -68,6 +68,22 @@ ADAY: ride-contact-pii-stop
 Gerekçe: Contact Name/Email/Phone/Comment + newsletter Email. Send/subscribe tıklanmadı. Account ikonu yok.  
 Örnekler: https://theme-ride-demo.myshopify.com/pages/contact  
 Öneri: PII stop  
+Karar: onay bekliyor
+
+---
+
+ADAY: ride-cro-schemas-absent  
+Gerekçe: CRO listesinden Ride'da observation yok: before-after-slider, commerce-tools-products-bundle, promo-banner-countdown (announcement-bar var, countdown yok), comparison-quick-table, product-finder-quiz, testimonial-quote-carousel, media-shop-the-feed, media-scrolling-gallery. Şema icat edilmedi.  
+Örnekler: https://theme-ride-demo.myshopify.com/  
+Öneri: leftover — tema bu tipleri kullanmıyor  
+Karar: onay bekliyor
+
+---
+
+ADAY: ride-cro-pii-stop  
+Gerekçe: lead-capture-form (contact) ve lead-capture-newsletter-band (home) scan edildi; meaningful interact yok — Name/Email/Phone/Comment/Subscribe doldurulmadı. interactionStates: initial; missingStates: input.  
+Örnekler: https://theme-ride-demo.myshopify.com/pages/contact · https://theme-ride-demo.myshopify.com/  
+Öneri: PII stop — statik 3vp duruyor  
 Karar: onay bekliyor
 
 ---

@@ -8,12 +8,52 @@
   "selector": "#shopify-section-template--17836803260584__16475590839fb6c38a",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/ride/default/collection/faq-collapsible-tabs.1440.png",
     "evidence/ride/default/collection/faq-collapsible-tabs.375.png",
     "evidence/ride/default/collection/faq-collapsible-tabs.768.png",
-    "evidence/ride/default/collection/faq-collapsible-tabs.1440.png"
+    "evidence/ride/default/collection/faq-collapsible-tabs.changed.performer-acik.1440.png",
+    "evidence/ride/default/collection/faq-collapsible-tabs.changed.performer-acik.375.png",
+    "evidence/ride/default/collection/faq-collapsible-tabs.changed.performer-acik.768.png",
+    "evidence/ride/default/collection/faq-collapsible-tabs.initial.ilk-hal.1440.png",
+    "evidence/ride/default/collection/faq-collapsible-tabs.initial.ilk-hal.375.png",
+    "evidence/ride/default/collection/faq-collapsible-tabs.initial.ilk-hal.768.png"
   ],
   "notlar": "FINS FOR ALL RIDERS AND CONDITIONS / DISCOVER YOUR PERFECT FIN. PERFORMER / ACCELERATOR / NEOGLASS.",
   "delta": "Collapsible + görsel. FAQ kopyası değil, fin rehberi.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-ride-demo.myshopify.com/collections/fins",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17836803260584__16475590839fb6c38a",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Üç accordion kapalı (+): PERFORMER / ACCELERATOR / NEOGLASS FINS."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-16475590835954a5b6-0-template--17836803260584__16475590839fb6c38a > summary",
+      "capture": true,
+      "etiket": "performer-acik",
+      "not": "PERFORMER FINS tık — cevap açılır."
+    }
+  ],
+  "stateFindings": {
+    "initial": "DISCOVER YOUR PERFECT FIN. Sol görsel, sağ üç satır accordion hepsi kapalı (+): PERFORMER FINS / ACCELERATOR FINS / NEOGLASS FINS. 375/768/1440.",
+    "changed": "PERFORMER FINS açık (−): cevap metni görünür. ACCELERATOR ve NEOGLASS kapalı (+). 375/768/1440 aynı delta."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan 3 opener. Probe: openFirst=false (hepsi kapalı). İlk tık expanded=true. allowMultipleOpen denenmedi — tek açık yeterli.",
   "capture": {
     "url": "https://theme-ride-demo.myshopify.com/collections/fins",
     "viewports": [
@@ -22,7 +62,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T17:04:52.834Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:51:32.543Z"
   }
 }
