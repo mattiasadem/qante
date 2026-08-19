@@ -8,12 +8,49 @@
   "selector": "#shopify-section-template--22715887419414__1645735466dbbf8c08",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
-    "evidence/taste/default/product-detail/faq-collapsible-tabs.375.png",
-    "evidence/taste/default/product-detail/faq-collapsible-tabs.768.png",
-    "evidence/taste/default/product-detail/faq-collapsible-tabs.1440.png"
+    "evidence/taste/default/product-detail/faq-collapsible-tabs.changed.shipping-acik.1440.png",
+    "evidence/taste/default/product-detail/faq-collapsible-tabs.changed.shipping-acik.375.png",
+    "evidence/taste/default/product-detail/faq-collapsible-tabs.changed.shipping-acik.768.png",
+    "evidence/taste/default/product-detail/faq-collapsible-tabs.initial.ilk-acik.1440.png",
+    "evidence/taste/default/product-detail/faq-collapsible-tabs.initial.ilk-acik.375.png",
+    "evidence/taste/default/product-detail/faq-collapsible-tabs.initial.ilk-acik.768.png"
   ],
   "notlar": "IN CASE YOU’RE WONDERING / Frequently asked questions. Dawn collapsible-content. What's the shelf life?",
   "delta": "Ayrı /pages/faq 404. FAQ PDP instance.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-taste-demo.myshopify.com/products/fiery-ginger-booster",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--22715887419414__1645735466dbbf8c08",
+      "capture": true,
+      "etiket": "ilk-acik",
+      "not": "İlk soru (shelf life) varsayılan açık"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-164573546692cefdc6-1-template--22715887419414__1645735466dbbf8c08 > summary",
+      "capture": true,
+      "etiket": "shipping-acik",
+      "not": "How much is shipping? tık — shelf life kapanır, shipping cevabı görünür"
+    }
+  ],
+  "stateFindings": {
+    "initial": "IN CASE YOU'RE WONDERING + Frequently asked questions. İlk satır What's the shelf life? açık (chevron yukarı); monospace cevap: 10 gün / 5 gün / 4°C. Diğer iki soru kapalı.",
+    "changed": "How much is shipping? açık — ücretsiz $70+ Kanada/ABD; $70 altı $10 flat rate. Shipping cevabı monospace. Shelf life satırı da açık (çoklu açık). Nutrition details kapalı."
+  },
+  "missingStates": [],
+  "interactionNote": "Akordeon details#id > summary click. allowMultipleOpen false — tek açık satır.",
   "capture": {
     "url": "https://theme-taste-demo.myshopify.com/products/fiery-ginger-booster",
     "viewports": [
@@ -22,7 +59,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T17:03:32.438Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:52:09.493Z"
   }
 }
