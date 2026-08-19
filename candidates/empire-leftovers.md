@@ -10,6 +10,26 @@
 - `schema_version` **1.4.2** — güncel Pixel Union Empire major’ından eski kopya (`Copy of empire-v1-4-2`).
 - `empire-theme.myshopify.com` password; walk edilmedi.
 
+## CRO şemaları (diskte var, demo'da observation yok)
+
+Resmi demo'da aşağıdaki CRO şemalarının hiçbiri için observation açılmadı; interact çekilmedi. HTML sınıf eşleşmeleri (footer newsletter, footer accordion) farklı şemalara ait (`footer-columns-newsletter`).
+
+| schemaId | Demo durumu |
+|---|---|
+| `before-after-slider` | Yok |
+| `commerce-tools-products-bundle` | Yok (`/collections/quick-order` tablo — farklı tip, aşağıda) |
+| `promo-banner-countdown` | Yok |
+| `faq-collapsible-tabs` | Yok (`/pages/faq` 404) |
+| `lead-capture-form` | Yok |
+| `lead-capture-newsletter-band` | Yok (footer newsletter `footer-columns-newsletter` olarak envanterlendi; submit duruldu) |
+| `comparison-quick-table` | Yok |
+| `product-finder-quiz` | Yok |
+| `testimonial-quote-carousel` | Yok |
+| `media-shop-the-feed` | Yok (`home-twitter-feed` placeholder — şema yok) |
+| `media-scrolling-gallery` | Yok |
+
+Ek conversion sinyalleri de yok: sticky ATC, low-stock/scarcity, quick view, reviews carousel.
+
 ## Chrome / conversion (istenip görülmeyen)
 
 - **Mega menü yok.** 1440 nav: Home + Catalog (`/collections/all`) düz link. Kolon / promo panel yok.

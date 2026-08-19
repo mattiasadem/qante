@@ -9,7 +9,7 @@
 
 **Beklenen vs canlı:** Theme Store listing güncel Pixel Union Empire. Canlı demo **Empire 1.4.2** ve `theme_store_id` **null**. null yazıldı; ID uydurulmadı.
 
-**Durum:** Mod A walk + resmi 3vp + interact bitti  
+**Durum:** Mod A walk + resmi 3vp + interact bitti · CRO leftover interact doğrulandı (2026-08-19)  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -90,6 +90,24 @@
 | product-showcase-grid-plp | initial, open, changed | facet yok; 375/768 sort modal; Oak $10.81 öne |
 | cart-page-main | initial, filled, changed | boş → Super Pen red $15.85 → adet 2 / $31.70 |
 | sticky ATC / countdown / low-stock | ⛔ | yok |
+
+### CRO şemaları (observation yok → interact yok)
+
+| schemaId | observation | interact |
+|---|---|---|
+| before-after-slider | ⛔ | — |
+| commerce-tools-products-bundle | ⛔ | — |
+| promo-banner-countdown | ⛔ | — |
+| faq-collapsible-tabs | ⛔ | — (FAQ sayfası 404) |
+| lead-capture-form | ⛔ | — |
+| lead-capture-newsletter-band | ⛔ | — (`footer-columns-newsletter` ayrı şema) |
+| comparison-quick-table | ⛔ | — |
+| product-finder-quiz | ⛔ | — |
+| testimonial-quote-carousel | ⛔ | — |
+| media-shop-the-feed | ⛔ | — |
+| media-scrolling-gallery | ⛔ | — |
+
+Canlı doğrulama (2026-08-19): home section seti `home-promo-mosaic`, `home-promo-grid`, `home-featured-collection-1/2`, `home-blog-posts`, `home-twitter-feed`, `static-header/footer`. CRO DOM yok; footer `has-accordion` yalnız Main menu kolonu (FAQ değil). Newsletter form duruldu (PII).
 
 ---
 
