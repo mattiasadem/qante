@@ -58,7 +58,7 @@ Karar: onay bekliyor
 ---
 
 ADAY: savor-quick-add-choose  
-Gerekçe: Home The Original CHOOSE → `dialog.quick-add-modal` 864×616 (The Original $9.49, Bottle Pack Size, ADD TO CART). Claiming: `product-showcase-grid-featured` `open`. `global-quick-view` observation yazılmadı (şema uydurma yok; mevcut schemaId için ayrı obs keşif). PLP/cart/related aynı dialog.  
+Gerekçe: Home The Original CHOOSE → `dialog.quick-add-modal` (768/1440: $9.49, Bottle Pack Size, ADD TO CART). 375 CHOOSE `display:none`; kart tık PDP. Claiming: `product-showcase-grid-featured` `open`. `global-quick-view` observation yazılmadı. PLP/cart/related aynı dialog.  
 Örnekler: https://savor-theme-demo.myshopify.com/  
 Öneri: leftover — global-quick-view obs yok  
 Karar: onay bekliyor

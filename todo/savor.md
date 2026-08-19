@@ -20,12 +20,12 @@
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Parallel | yalnız `observations/savor/`, `evidence/savor/`, `todo/savor.md`, `candidates/savor-*.md` |
 | Observation | **27** |
-| Evidence PNG | **99** |
+| Evidence PNG | **104** |
 | Yeni şema | **0** |
 | Validator | 65 temiz · 0 error · 0 warn |
 
 **Kapsam satırı:**  
-`Savor · default · Updated copy of Savor demo store 3.2.0 / schema_name Savor 3.4.0 · theme_store_id 3626 · home→PDP→PLP→collections→search→cart/drawer→about/contact→faq→blog→404 · 27 obs · 99 PNG · 0 yeni şema · leftover: candidates/savor-leftovers.md`
+`Savor · default · Updated copy of Savor demo store 3.2.0 / schema_name Savor 3.4.0 · theme_store_id 3626 · home→PDP→PLP→collections→search→cart/drawer→about/contact→faq→blog→404 · 27 obs · 104 PNG · 0 yeni şema · leftover: candidates/savor-leftovers.md`
 
 ---
 
@@ -78,9 +78,10 @@ Horizon nested theme-blocks (görülen custom elements): `header-component` · `
 - Cart drawer: boş → The Original qty1 $9.49 → qty2 $18.98
 - Cart page: boş → qty1 $9.49 → qty2 $18.98
 - PDP: 1 Bottle $9.49 → 2 Bottles $18.98
-- CRO leftover (scan + yoklama, şema uydurulmadı):
-  - `product-showcase-grid-featured` `open` — The Original CHOOSE → quick-add modal (3vp, capture bekleniyor)
-  - `product-showcase-grid-plp` `open` — 375 Filter drawer · 768/1440 Availability (capture bekleniyor)
+- CRO leftover (scan + yoklama + PNG bak, şema uydurulmadı):
+  - `product-showcase-grid-featured` `open` — 768/1440 The Original CHOOSE → modal $9.49 / pack size / ATC. 375 CHOOSE display:none
+  - `product-showcase-grid-plp` `open` — 375 FILTER + SEE 16 ITEMS · 768/1440 Availability popover (OOS disabled)
+  - `product-info-main` `changed` — pack size (önceki walk)
   - FAQ RTE / reviews tek alıntı / hero tek slayt — changed yok
   - countdown · compare · before-after · quiz · bundle · popup · size guide · scarcity — obs yok, leftover
   - sticky ATC var; viewport scrollTo(0) kaçırır — leftover
@@ -97,6 +98,6 @@ Horizon nested theme-blocks (görülen custom elements): `header-component` · `
 
 - [x] Official 3vp static (`capture-observation.mjs`) — 21/21
 - [x] Interact mega / search / cart / menu / PDP pack / cart qty
-- [ ] CRO interact CHOOSE + PLP filter — adımlar yazıldı, capture bekleniyor
-- [x] PNG bak → stateFindings (eski interact)
-- [ ] `npm run validate` CRO sonrası
+- [x] CRO interact CHOOSE 768/1440 + PLP filter 3vp
+- [x] PNG bak → stateFindings
+- [x] `npm run validate`

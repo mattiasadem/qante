@@ -8,9 +8,11 @@
   "selector": "#shopify-section-template--18561684275251__product_list_X8Q7bi",
   "evidenceSlug": "product-showcase-grid-featured",
   "evidence": [
+    "evidence/savor/default/home/product-showcase-grid-featured.1440.png",
     "evidence/savor/default/home/product-showcase-grid-featured.375.png",
     "evidence/savor/default/home/product-showcase-grid-featured.768.png",
-    "evidence/savor/default/home/product-showcase-grid-featured.1440.png"
+    "evidence/savor/default/home/product-showcase-grid-featured.open.choose-dialog.1440.png",
+    "evidence/savor/default/home/product-showcase-grid-featured.open.choose-dialog.768.png"
   ],
   "notlar": "The Original / Sweet Pineapple / Roasted Garlic… CHOOSE + fiyat CAD. Horizon product-card theme-blocks.",
   "delta": "Horizon product_list. Nested product-card / product-price / quick-add-component. CHOOSE → dialog.quick-add-modal (global-quick-view observation açılmadı — leftover).",
@@ -37,6 +39,10 @@
       "action": "click",
       "selector": "#product-card-AcFczUFZxanc4eXZ5T__static-product-card button.quick-add__button--choose",
       "value": 2000,
+      "viewports": [
+        "768",
+        "1440"
+      ],
       "capture": false,
       "not": "The Original CHOOSE — unique card id"
     },
@@ -45,15 +51,26 @@
       "action": "waitFor",
       "selector": "dialog.quick-add-modal[open]",
       "value": 8000,
+      "viewports": [
+        "768",
+        "1440"
+      ],
       "capture": true,
       "captureMode": "viewport",
       "etiket": "choose-dialog",
       "not": "Modal: The Original $9.49 + Bottle Pack Size 1/2/3/6 + ADD TO CART. URL home kalır."
     }
   ],
-  "stateFindings": {},
-  "missingStates": [],
-  "interactionNote": "Hover zorlanmadı — CHOOSE 1440’ta zaten görünür. Kart next slide src değiştirmedi. Add gizli. global-quick-view ayrı observation yok (leftover). Buy it now tıklanmadı.",
+  "stateFindings": {
+    "open": "768/1440 ortada quick-add modal. Sol şişe + SWEET SAVORY & Bold. The Original $9.49 CAD. Bottle Pack Size: 1 Bottle siyah pill, 2/3/6 boş. Adet 1. ADD TO CART + BUY IT NOW. X kapat. Izgara arkada dim."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375 CHOOSE display:none 0×0. Hover/tap dialog açmadı; kart tık PDP’ye kaçar. 768/1440 modal var."
+    }
+  ],
+  "interactionNote": "Hover zorlanmadı — CHOOSE 768/1440’ta zaten görünür. Kart next slide src değiştirmedi. Add gizli. global-quick-view ayrı observation yok (leftover). Buy it now tıklanmadı.",
   "capture": {
     "url": "https://savor-theme-demo.myshopify.com/",
     "viewports": [
@@ -62,7 +79,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T19:24:15.100Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T10:00:53.747Z"
   }
 }
