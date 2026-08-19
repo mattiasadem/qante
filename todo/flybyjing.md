@@ -3,7 +3,7 @@
 *Kaynak:* https://flybyjing.com · *Preset:* `default`  
 *Tema (vitrinde görülen, uydurulmadı):* **FBJ 4/1 Launch** · `schema_name`: **Shapes** · `schema_version`: **3.0.4** · `theme_store_id`: **1535** · theme id `126525112378` · `fly-by-jing.myshopify.com` · role `main`
 
-**Durum:** Mod A walk kapandı — 51 obs · resmi 3vp · interact piksel değişenlerde · leftover kayıtlı  
+**Durum:** Mod A walk kapandı — 51 obs · resmi 3vp · CRO interact tamam · leftover kayıtlı  
 **PR:** https://github.com/mattiasadem/qante/pull/63 (draft · **main'e merge yok**)
 
 ---
@@ -100,6 +100,12 @@
 | product-info-main | changed | 16 OZ — $32 / member $25.60 |
 | cart-page-main | filled | ATC → /cart 2-Pack $30 + express pay |
 | membership faq | changed | HOW DO I JOIN… cevabı açık |
+| home testimonial-quote-carousel | initial, changed | custom liquid #quote; 8sn rotasyon |
+| membership testimonial-quote-carousel | initial, changed | Splide Next → farklı alıntı |
+| home lead-capture-newsletter-band | initial | PII — fill/submit yok |
+| contact lead-capture-form | initial | PII — fill/submit yok |
+| faq-support faq-collapsible-tabs | initial | statik RTE; accordion yok |
+| PDP testimonial-quote-carousel | initial | Okendo widget; changed yok |
 
 Mega yok — SHOP düz `/collections/shop`.
 
@@ -113,7 +119,8 @@ Mega yok — SHOP düz `/collections/shop`.
 
 ## Evidence backlog
 
-- [x] Claiming obs resmi 3vp — **166 PNG** (static + interact)
+- [x] Claiming obs resmi 3vp — static + interact (CRO pass)
 - [x] Overlay / variant / FAQ / cart qty
+- [x] CRO interact: testimonial / newsletter / contact / FAQ / Okendo PDP
 - [ ] Predictive 375/768 (header SEARCH gizli; drawer fill overlay açmadı)
 - Osano cookie bar (Accept All yok) viewport karelerinde kalabilir

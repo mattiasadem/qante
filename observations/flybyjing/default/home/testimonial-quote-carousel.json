@@ -6,14 +6,58 @@
   "sayfa": "home",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
-    "evidence/flybyjing/default/home/testimonial-quote-carousel.375.png",
-    "evidence/flybyjing/default/home/testimonial-quote-carousel.768.png",
-    "evidence/flybyjing/default/home/testimonial-quote-carousel.1440.png"
+    "evidence/flybyjing/default/home/testimonial-quote-carousel.changed.sonraki-alinti.1440.png",
+    "evidence/flybyjing/default/home/testimonial-quote-carousel.changed.sonraki-alinti.375.png",
+    "evidence/flybyjing/default/home/testimonial-quote-carousel.changed.sonraki-alinti.768.png",
+    "evidence/flybyjing/default/home/testimonial-quote-carousel.initial.ilk-hal.1440.png",
+    "evidence/flybyjing/default/home/testimonial-quote-carousel.initial.ilk-hal.375.png",
+    "evidence/flybyjing/default/home/testimonial-quote-carousel.initial.ilk-hal.768.png"
   ],
   "delta": "Custom liquid rotator; ok/dot yok; yazar adı yok.",
   "url": "https://flybyjing.com/",
   "selector": "#shopify-section-template--15468669108282__custom_liquid_QCa4Fn",
   "notlar": "#quote sarı basın cümlesi; 3sn'de iki alıntı dönüyor: The addictive chili oil… / Your Home Cooking Needs Chili Crisp.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://flybyjing.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15468669108282__custom_liquid_QCa4Fn",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "İlk basın alıntısı görünür"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 8000,
+      "capture": false,
+      "not": "setInterval 3sn + 1sn fade; initial capture sonrası diğer alıntı"
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15468669108282__custom_liquid_QCa4Fn",
+      "capture": true,
+      "etiket": "sonraki-alinti",
+      "not": "The addictive chili oil… alıntısı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Sarı #quote alanında tek basın cümlesi (Your Home Cooking Needs Chili Crisp / addictive chili oil). Ok/dot/nav yok.",
+    "changed": "8sn wait sonrası farklı basın cümlesi (The addictive chili oil you won't be able to live without.). Otomatik rotasyon; kullanıcı kontrolü yok."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan: kontrol yok (buttons 0). changed = waitFor rotasyon; carousel şeması değil custom liquid.",
   "capture": {
     "url": "https://flybyjing.com/",
     "viewports": [
@@ -22,7 +66,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T20:26:42.575Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:37:18.514Z"
   }
 }

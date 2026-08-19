@@ -6,14 +6,38 @@
   "sayfa": "faq-support",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
-    "evidence/flybyjing/default/faq-support/faq-collapsible-tabs.375.png",
-    "evidence/flybyjing/default/faq-support/faq-collapsible-tabs.768.png",
-    "evidence/flybyjing/default/faq-support/faq-collapsible-tabs.1440.png"
+    "evidence/flybyjing/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.1440.png",
+    "evidence/flybyjing/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.375.png",
+    "evidence/flybyjing/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.768.png"
   ],
   "delta": "details/accordion yok; page template FAQ. Membership sayfasındaki faq_JBM4ea ayrı (buton accordion).",
   "url": "https://flybyjing.com/pages/faq",
   "selector": "#shopify-section-template--15468669239354__main",
   "notlar": "FAQ: SHIPPING, GIFT WRAPPING, RETURNS, WHOLESALE, STORAGE, VEGAN, CONTACT, PRESS, EVENT SAMPLES. Cevaplar statik açık.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://flybyjing.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15468669239354__main",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Tüm FAQ başlıkları + cevaplar statik görünür"
+    }
+  ],
+  "stateFindings": {
+    "initial": "FAQ kartı: SHIPPING … EVENT SAMPLES başlıkları ve cevap metinleri aynı anda görünür. Accordion paneli yok (#expandable-content DOM'da yok); tıklama metni değiştirmiyor."
+  },
+  "missingStates": [],
+  "interactionNote": "Membership faq_JBM4ea ayrı instance (button accordion, interact orada).",
   "capture": {
     "url": "https://flybyjing.com/pages/faq",
     "viewports": [
@@ -22,7 +46,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T20:32:47.682Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:27:57.920Z"
   }
 }
