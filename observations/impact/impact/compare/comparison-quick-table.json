@@ -8,12 +8,44 @@
   "selector": "#shopify-section-template--16701007921402__166013936852164c56",
   "evidenceSlug": "comparison-quick-table",
   "evidence": [
+    "evidence/impact/impact/compare/comparison-quick-table.1440.png",
     "evidence/impact/impact/compare/comparison-quick-table.375.png",
     "evidence/impact/impact/compare/comparison-quick-table.768.png",
-    "evidence/impact/impact/compare/comparison-quick-table.1440.png"
+    "evidence/impact/impact/compare/comparison-quick-table.initial.ilk-hal.1440.png",
+    "evidence/impact/impact/compare/comparison-quick-table.initial.ilk-hal.375.png",
+    "evidence/impact/impact/compare/comparison-quick-table.initial.ilk-hal.768.png"
   ],
   "notlar": "feature-chart 1.",
   "delta": "",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://impact-theme-sound.myshopify.com/pages/compare",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16701007921402__166013936852164c56",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Compare sayfası feature-chart. Swatch link."
+    }
+  ],
+  "stateFindings": {
+    "initial": "MW50/MW65/MW07 karşılaştırma tablosu. Renk swatch <a> PDP'ye gider."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "color-swatch <a> tık → /products/mw65-silver-metal-black-leather?variant=… navigate. In-page grid değişimi yok."
+    }
+  ],
+  "interactionNote": "Home chart ile aynı: swatch navigate, in-page changed yok.",
   "capture": {
     "url": "https://impact-theme-sound.myshopify.com/pages/compare",
     "viewports": [
@@ -21,8 +53,8 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-14T12:34:18.364Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T13:53:11.900Z",
     "mode": "section"
   }
 }

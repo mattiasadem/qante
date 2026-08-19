@@ -8,12 +8,54 @@
   "selector": "#shopify-section-template--16701007790330__1662393032a14cd9f2",
   "evidenceSlug": "before-after-slider",
   "evidence": [
+    "evidence/impact/impact/home/before-after-slider.1440.png",
     "evidence/impact/impact/home/before-after-slider.375.png",
     "evidence/impact/impact/home/before-after-slider.768.png",
-    "evidence/impact/impact/home/before-after-slider.1440.png"
+    "evidence/impact/impact/home/before-after-slider.changed.sonra-gorseli.1440.png",
+    "evidence/impact/impact/home/before-after-slider.changed.sonra-gorseli.375.png",
+    "evidence/impact/impact/home/before-after-slider.changed.sonra-gorseli.768.png",
+    "evidence/impact/impact/home/before-after-slider.initial.ilk-hal.1440.png",
+    "evidence/impact/impact/home/before-after-slider.initial.ilk-hal.375.png",
+    "evidence/impact/impact/home/before-after-slider.initial.ilk-hal.768.png"
   ],
-  "notlar": "MH40 Headphones before/after.",
+  "notlar": "MH40 Headphones before/after. Interact: split-cursor drag.",
   "delta": "",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://impact-theme-sound.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16701007790330__1662393032a14cd9f2",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "MH40 Wireless. Ayırıcı ~%39, before (mermer) solda."
+    },
+    {
+      "state": "changed",
+      "action": "drag",
+      "selector": "#shopify-section-template--16701007790330__1662393032a14cd9f2 split-cursor",
+      "dragContainer": "#shopify-section-template--16701007790330__1662393032a14cd9f2 .before-after",
+      "value": "pct:90",
+      "capture": true,
+      "etiket": "sonra-gorseli",
+      "not": "split-cursor sürükle sağa — after clip genişler, wireless görsel baskın."
+    }
+  ],
+  "stateFindings": {
+    "initial": "An icon, now wireless! MH40 mermer masada (before) ~%39; ayırıcı ortada, tutamaç split-cursor.",
+    "changed": "Ayırıcı sağa (~%90). After (wireless kulaklık) kareyi kaplar; before ince şerit solda."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan changer görmedi. input[type=range] yok; End/ArrowRight yavaş. drag pct:90 3vp doğrulandı (probe).",
   "capture": {
     "url": "https://impact-theme-sound.myshopify.com/",
     "viewports": [
@@ -21,8 +63,8 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-14T11:48:59.003Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T13:49:33.902Z",
     "mode": "section"
   }
 }

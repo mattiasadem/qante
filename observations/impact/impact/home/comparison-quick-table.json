@@ -8,12 +8,44 @@
   "selector": "#shopify-section-template--16701007790330__166072696001374ff0",
   "evidenceSlug": "comparison-quick-table",
   "evidence": [
+    "evidence/impact/impact/home/comparison-quick-table.1440.png",
     "evidence/impact/impact/home/comparison-quick-table.375.png",
     "evidence/impact/impact/home/comparison-quick-table.768.png",
-    "evidence/impact/impact/home/comparison-quick-table.1440.png"
+    "evidence/impact/impact/home/comparison-quick-table.initial.ilk-hal.1440.png",
+    "evidence/impact/impact/home/comparison-quick-table.initial.ilk-hal.375.png",
+    "evidence/impact/impact/home/comparison-quick-table.initial.ilk-hal.768.png"
   ],
   "notlar": "Compare feature-chart.",
   "delta": "",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://impact-theme-sound.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16701007790330__166072696001374ff0",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "MW50/MW65/MW07 feature chart. Renk swatch link."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Üç kulaklık sütunu + özellik satırları. Renk swatch <a> ve View/Shop linkleri PDP'ye gider."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "color-swatch <a> varyant PDP'ye navigate (MW50 Black Leather probe). Shop/View de navigate. In-page changed yok."
+    }
+  ],
+  "interactionNote": "Tarandı. Swatch tık → /products/…?variant=. Şemada variant değişimi yok; navigate action zaten var.",
   "capture": {
     "url": "https://impact-theme-sound.myshopify.com/",
     "viewports": [
@@ -21,9 +53,8 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-14T11:55:35.167Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T13:52:37.745Z",
     "mode": "section"
-  },
-  "interactionNote": "Tarandı. Renk swatch <a> varyant PDP’ye kaçtı (MW50 Black Leather). Shop/View de navigate. In-page changed yok."
+  }
 }

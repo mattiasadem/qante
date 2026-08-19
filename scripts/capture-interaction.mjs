@@ -81,6 +81,7 @@ const ACTIONS = [
   "addToCart",
   "forceOpen",
   "mouseMove",
+  "drag",
 ];
 
 const viewports = JSON.parse(
@@ -649,6 +650,42 @@ async function runStep(page, step) {
         .map((n) => Number(n.trim()));
       await page.mouse.move(x || 20, y || 400);
       await page.waitForTimeout(500);
+      return null;
+    }
+    case "drag": {
+      const parsed = splitIframeSelector(sel);
+      const el = (parsed?.kind === "inner"
+        ? (await locateInFrame(page, parsed)).loc
+        : resolveLocator(page, sel)
+      ).first();
+      await el.waitFor({ state: "attached", timeout: 12000 });
+      const box = await el.boundingBox();
+      if (!box) throw new Error(`drag: bounding box yok: ${sel}`);
+      const val = String(step.value || "0,0");
+      let dx;
+      let dy = 0;
+      if (val.startsWith("pct:")) {
+        const pct = Number(val.slice(4));
+        const containerSel = step.dragContainer || sel;
+        const cParsed = splitIframeSelector(containerSel);
+        const cEl = (cParsed?.kind === "inner"
+          ? (await locateInFrame(page, cParsed)).loc
+          : resolveLocator(page, containerSel)
+        ).first();
+        const cBox = await cEl.boundingBox();
+        if (!cBox) throw new Error(`drag: container box yok: ${containerSel}`);
+        const targetX = cBox.x + cBox.width * (pct / 100);
+        dx = targetX - (box.x + box.width / 2);
+      } else {
+        [dx, dy] = val.split(",").map((n) => Number(n.trim()));
+      }
+      const startX = box.x + box.width / 2;
+      const startY = box.y + box.height / 2;
+      await page.mouse.move(startX, startY);
+      await page.mouse.down();
+      await page.mouse.move(startX + dx, startY + dy, { steps: 18 });
+      await page.mouse.up();
+      await page.waitForTimeout(Number(step.wait) || 600);
       return null;
     }
     case "addToCart":

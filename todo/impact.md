@@ -4,7 +4,7 @@
 *Preset:* `impact` · Maestrooo Impact · ses / Master & Dynamic  
 *Theme Store:* https://themes.shopify.com/themes/impact
 
-**Şu anki odak:** ✅ default tur — 99 obs · 97 kare · 0 yeni şema · interact home bitti
+**Şu anki odak:** ✅ default tur — 99 obs · CRO interact leftovers bitti
 
 Diğer preset’ler (sonra, ayrı tur):
 | Preset | Demo |
@@ -21,7 +21,7 @@ Diğer preset’ler (sonra, ayrı tur):
 |---|---|
 | Evidence kökü | `evidence/impact/impact/` |
 | Walkthrough / not | Theme Store: https://themes.shopify.com/themes/impact/presets/impact |
-| Kapsam satırı (bitince) | Impact (default/Sound) · 14 sayfa · 99 obs · 0 yeni şema · home interact |
+| Kapsam satırı (bitince) | Impact (default/Sound) · 14 sayfa · 99 obs · 0 yeni şema · CRO interact |
 
 ---
 
@@ -85,11 +85,20 @@ Aynı tip = şemaya dokunma, observation + delta. Yeni şema yalnız 1440/375 so
 - [x] `product-showcase-grid-featured` — hover + Quick add (1440/375); dialog açılamadı; 768 hover = initial
 - [x] `cart-page-main` — boş + MW08 Sport $349 (satır + özet + Checkout)
 - [x] `product-showcase-grid-plp` — Color Galactic White → MG20 $449
-- [x] `faq-collapsible-tabs` — What is the status of my order?
+- [x] `faq-collapsible-tabs` — home: Do you ship overseas? + faq-support: What is the status of my order?
 - [x] `product-info-main` — Black Sapphire (768/1440)
 - [x] `media-lookbook-slider` — Read more Inductive Wireless Charging
-- [x] `testimonial-quote-carousel` — Men's Health → Forbes MW08
+- [x] `testimonial-quote-carousel` — home Men's Health → Forbes; PDP Item 2
 - [x] `editorial-timeline` — 2014 NYC → 2017 Adjaye speaker
+
+## Interact (CRO leftovers)
+
+- [x] `before-after-slider` — home MH40 + Lamborghini MW07: split-cursor drag pct:90
+- [x] `comparison-quick-table` — home + compare: swatch navigate; changed yok (missingStates)
+- [x] `testimonial-quote-carousel` — story + LP tek öğe; changed yok
+- [ ] `lead-capture-form` — dur (email/PII)
+- [ ] `lead-capture-newsletter-band` — dur (newsletter submit)
+- [ ] CRO disk gap: countdown, bundle, quiz, shop-the-feed, scrolling-gallery — gözlenmedi
 
 ## Evidence backlog
 
