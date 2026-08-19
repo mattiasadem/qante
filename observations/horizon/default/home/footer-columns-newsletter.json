@@ -8,12 +8,50 @@
   "selector": "#shopify-section-sections--25678738850113__migrated_footer_content",
   "evidenceSlug": "footer-columns-newsletter",
   "evidence": [
+    "evidence/horizon/default/home/footer-columns-newsletter.1440.png",
     "evidence/horizon/default/home/footer-columns-newsletter.375.png",
     "evidence/horizon/default/home/footer-columns-newsletter.768.png",
-    "evidence/horizon/default/home/footer-columns-newsletter.1440.png"
+    "evidence/horizon/default/home/footer-columns-newsletter.initial.ilk-hal.1440.png",
+    "evidence/horizon/default/home/footer-columns-newsletter.initial.ilk-hal.375.png",
+    "evidence/horizon/default/home/footer-columns-newsletter.initial.ilk-hal.768.png"
   ],
   "notlar": "Join the club. Get exclusive deals and early access to new products. Email + email-signup-block. Gönderilmedi.",
-  "delta": "Horizon footer.liquid (migrated_footer_content). Kolon menü yok — yalnız newsletter bandı. Sibling footer_utilities copyright leftover. PII stop.",
+  "delta": "Horizon footer.liquid (migrated_footer_content). Kolon menü yok — yalnız newsletter bandı. Sibling footer_utilities copyright leftover. PII stop. lead-capture-newsletter-band observation yok — bu şema footer-columns-newsletter.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-horizon-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-sections--25678738850113__migrated_footer_content",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Join the club newsletter band. Email boş; submit yok."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Join the club + alt metin + Email address input boş. Kolon menü yok — yalnız newsletter bandı. Submit tıklanmadı."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "Newsletter email PII — doldurulmadı. Submit tıklanmadı."
+    }
+  ],
+  "interactionNote": "scan-affordances: 1 email input; opener/changer yok. lead-capture-newsletter-band şeması bu sitede observation olarak yok.",
   "capture": {
     "url": "https://theme-horizon-demo.myshopify.com/",
     "viewports": [
@@ -22,7 +60,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T19:16:59.797Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:10:31.700Z"
   }
 }

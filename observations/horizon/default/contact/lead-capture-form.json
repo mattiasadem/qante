@@ -8,12 +8,50 @@
   "selector": "#shopify-section-template--25678738522433__form",
   "evidenceSlug": "lead-capture-form",
   "evidence": [
+    "evidence/horizon/default/contact/lead-capture-form.1440.png",
     "evidence/horizon/default/contact/lead-capture-form.375.png",
     "evidence/horizon/default/contact/lead-capture-form.768.png",
-    "evidence/horizon/default/contact/lead-capture-form.1440.png"
+    "evidence/horizon/default/contact/lead-capture-form.initial.ilk-hal.1440.png",
+    "evidence/horizon/default/contact/lead-capture-form.initial.ilk-hal.375.png",
+    "evidence/horizon/default/contact/lead-capture-form.initial.ilk-hal.768.png"
   ],
   "notlar": "Name, Email*, Phone, Comment, Submit. Horizon section.liquid + form theme-blocks. Gönderilmedi.",
   "delta": "PII stop — Submit yok. /pages/contact-us 404.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-horizon-demo.myshopify.com/pages/contact",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--25678738522433__form",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Boş form: Name / Email* / Phone / Comment + Submit. Gönderilmedi."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Contact form: Name, Email (zorunlu), Phone, Comment alanları boş; Submit butonu görünür. 1440/768 form ortada; 375 tek kolon. Submit tıklanmadı."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "Name / email / phone / comment PII — doldurulmadı. Submit tıklanmadı."
+    }
+  ],
+  "interactionNote": "scan-affordances: 4 input (name, email, phone, textarea); opener/changer yok. katalogSorgu yok. PII stop.",
   "capture": {
     "url": "https://theme-horizon-demo.myshopify.com/pages/contact",
     "viewports": [
@@ -22,7 +60,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T19:18:09.319Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:09:49.358Z"
   }
 }

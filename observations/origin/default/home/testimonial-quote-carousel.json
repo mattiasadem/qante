@@ -8,12 +8,48 @@
   "selector": "#shopify-section-template--22715923529750__multicolumn",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
+    "evidence/origin/default/home/testimonial-quote-carousel.1440.png",
     "evidence/origin/default/home/testimonial-quote-carousel.375.png",
     "evidence/origin/default/home/testimonial-quote-carousel.768.png",
-    "evidence/origin/default/home/testimonial-quote-carousel.1440.png"
+    "evidence/origin/default/home/testimonial-quote-carousel.initial.ilk-hal.1440.png",
+    "evidence/origin/default/home/testimonial-quote-carousel.initial.ilk-hal.375.png",
+    "evidence/origin/default/home/testimonial-quote-carousel.initial.ilk-hal.768.png"
   ],
   "notlar": "Koyu zemin, 3×2: So soft / Wicked smart / Really elegant / Uncommonly Good Design roundel / An investment / My favorite. Beş alıntı + rozet.",
   "delta": "Carousel değil: statik 3 kolon grid. Ok/nokta yok.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-origin-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--22715923529750__multicolumn",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Statik 3 kolon grid — tüm alıntılar görünür"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Koyu zemin üzerinde 3 kolon × 2 satır statik grid: So soft / Wicked smart / Really elegant / Uncommonly Good Design roundel / An investment / My favorite. Ok, nokta veya kaydırma kontrolü yok. 375 tek kolon stack; 768/1440 çok kolon."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Scan: inputs/openers/changers 0. multicolumn section — carousel davranışı yok; sonraki alıntı state'i anlamsız."
+    },
+    {
+      "state": "hover",
+      "sebep": "hoverReveal 0. Kartlarda gizli kontrol veya ikinci görsel yok."
+    }
+  ],
+  "interactionNote": "SchemaId testimonial-quote-carousel ama Origin demo statik multicolumn. Şema emit:carousel.* aksiyonları kanıtlanmadı; şema dokunulmadı.",
   "capture": {
     "url": "https://theme-origin-demo.myshopify.com/",
     "viewports": [
@@ -22,7 +58,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T17:08:29.294Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:08:20.059Z"
   }
 }

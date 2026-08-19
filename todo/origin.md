@@ -7,8 +7,8 @@
 
 **Beklenen vs canlı:** görev 2291 dedi; canlı `theme_store_id` **1841**. 2291 yazılmadı.
 
-**Durum:** Mod A walk + resmi 3vp + interact (search 1440 / cart empty-filled-qty / PDP Color Gray) bitti  
-**PR:** https://github.com/mattiasadem/qante/pull/134 (draft · **main'e merge yok**)
+**Durum:** Mod A walk + resmi 3vp + interact (search / cart / PDP / CRO) bitti  
+**PR:** (bu tur — CRO interact)
 
 ---
 
@@ -20,11 +20,11 @@
 | Capture | resmi `capture-observation.mjs` + `capture-interaction.mjs` |
 | Şema | **0 yeni** |
 | Observation | **31** |
-| PNG | **113** |
+| PNG | **122** |
 | Parallel | yalnız `observations/origin/`, `evidence/origin/`, `todo/origin.md`, `candidates/origin-*.md` |
 
 **Kapsam satırı:**  
-`Origin · default · [Origin] Theme Store demo (latest) / Origin 15.1.0 · theme_store_id 1841 (beklenen 2291 değil) · home→PDP→PLP→search→cart/drawer→contact→shipping→blog→404 leftover · 31 obs · 113 PNG · 0 yeni şema · leftover: candidates/origin-leftovers.md`
+`Origin · default · [Origin] Theme Store demo (latest) / Origin 15.1.0 · theme_store_id 1841 (beklenen 2291 değil) · home→PDP→PLP→search→cart/drawer→contact→shipping→blog→404 leftover · 31 obs · 122 PNG · 0 yeni şema · leftover: candidates/origin-leftovers.md`
 
 ---
 
@@ -60,6 +60,25 @@
 | global-cart-drawer | initial, filled, changed | boş → 2Unfold $995 adet 1 → adet 2 / $1,990 |
 | product-info-main | initial, changed | Brown tan → Gray gri çanta |
 | cart-page-main | initial, filled | boş → 2Unfold satır $995 |
+| lead-capture-form | initial | boş Name/Email/Phone/Comment + Send; input ⛔ PII |
+| lead-capture-newsletter-band | initial | THE UPDATES / Stay in the know + boş Email; input ⛔ PII |
+| testimonial-quote-carousel | initial | statik 3×2 multicolumn grid; changed/hover ⛔ kontrol yok |
+
+### CRO şema envanteri (görev listesi)
+
+| schemaId | Observation | Interact |
+|---|---|---|
+| lead-capture-form | ✅ contact | initial 3vp |
+| lead-capture-newsletter-band | ✅ home | initial 3vp |
+| testimonial-quote-carousel | ✅ home | initial 3vp (statik grid, carousel değil) |
+| before-after-slider | ⛔ yok | — |
+| commerce-tools-products-bundle | ⛔ yok | — |
+| promo-banner-countdown | ⛔ yok | — |
+| faq-collapsible-tabs | ⛔ yok | — |
+| comparison-quick-table | ⛔ yok | — |
+| product-finder-quiz | ⛔ yok | — |
+| media-shop-the-feed | ⛔ yok | — |
+| media-scrolling-gallery | ⛔ yok | — |
 
 ---
 
@@ -75,3 +94,4 @@
 - [x] PDP / PLP / search / collections 3vp
 - [x] Content (contact, shipping, blog, 404) 3vp
 - [x] Drawer / search / PDP renk / cart filled
+- [x] CRO interact: lead-capture-form / newsletter-band / testimonial (initial 3vp)
