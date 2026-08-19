@@ -6,8 +6,8 @@
 *Tema (storefront, uydurulmadı):* **Updated copy of Vessel demo store 3.2.0** · `schema_name`: **Vessel** · `schema_version`: **3.4.0** · `theme_store_id`: **3628** · role `main` · id `159183306809`  
 *Shop:* `horizon-vessel.myshopify.com`
 
-**Durum:** ✅ Mod A walk + resmi 3vp + interact + validate  
-**PR:** draft https://github.com/mattiasadem/qante/pull/146 · **main'e merge yok**
+**Durum:** ✅ Mod A walk + resmi 3vp + interact + **CRO interact** + validate  
+**PR:** draft · **main'e merge yok**
 
 ---
 
@@ -19,11 +19,11 @@
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **30** |
-| Evidence PNG | **111** |
+| Evidence PNG | **114** |
 | Parallel | yalnız `observations/vessel/`, `evidence/vessel/`, `todo/vessel.md`, `candidates/vessel-*.md` |
 
 **Kapsam satırı:**  
-`Vessel · default · Updated copy of Vessel demo store 3.2.0 / schema_name Vessel 3.4.0 · theme_store_id 3628 · home→PDP→PLP→collections→search→cart→about/contact→journal→404 · 30 obs · 0 yeni şema · Horizon nested theme-blocks · leftover: mega yok / hamburger 768 / drawer qty / PLP filter 375`
+`Vessel · default · Updated copy of Vessel demo store 3.2.0 / schema_name Vessel 3.4.0 · theme_store_id 3628 · home→PDP→PLP→collections→search→cart→about/contact→journal→404 · 30 obs · 114 PNG · 0 yeni şema · Horizon nested theme-blocks · CRO interact: lead-capture-form initial · leftover: mega yok / hamburger 768 / drawer qty / PLP filter 375 / 9 CRO yok`
 
 ---
 
@@ -46,6 +46,20 @@
 | Journal `/blogs/news` + Discovering donabes | [x] | [x] |
 | 404 | [x] | [x] |
 | Email / account / checkout / newsletter submit | ⛔ PII | — |
+| CRO interact (`lead-capture-form` initial) | [x] | [x] 375/768/1440 |
+| CRO disk (9 şema) | ⛔ storefront yok | — |
+
+---
+
+## CRO interact — schemaId → states
+
+| schemaId | States | Sayfa |
+|---|---|---|
+| `lead-capture-form` | `initial` | contact |
+
+`input` — PII stop (name/email/phone/comment fill + Submit yok).
+
+**Listed CRO schemas without observation on Vessel:** `before-after-slider` · `commerce-tools-products-bundle` · `promo-banner-countdown` · `faq-collapsible-tabs` · `lead-capture-newsletter-band` · `comparison-quick-table` · `product-finder-quiz` · `testimonial-quote-carousel` · `media-shop-the-feed` · `media-scrolling-gallery` · FAQ/reviews/countdown/quiz/bundle/scarcity (gözlenmedi; sticky → `navigation-header-mega` delta)
 
 ---
 
@@ -60,6 +74,7 @@
 | cart-page-main | initial / filled / changed | Boş → qty1 $25 → qty2 $50 |
 | product-info-main | initial / changed | 450ml $25 → 800ml $27.50 |
 | product-showcase-grid-plp | open / changed | 768/1440 In stock 67→62. 375 leftover |
+| lead-capture-form | initial | Boş form 3vp. `input` PII stop |
 
 ---
 
@@ -87,5 +102,6 @@ Canlı HTML’de `<shopify-block>` yok. Section sarmalayıcı + iç web componen
 
 - [x] Official 3vp static (`capture-observation.mjs`)
 - [x] Interact mega / search / cart / menu / PDP Size / PLP filter
+- [x] CRO interact `lead-capture-form` initial 3vp (`capture-interaction.mjs`)
 - [x] PNG bak → stateFindings
 - [x] `npm run validate`

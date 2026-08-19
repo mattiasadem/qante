@@ -126,3 +126,26 @@ Gerekçe: 404 `page-content-main` reuse; `pageType` 404 listede yok.
 Örnekler: `/pages/this-does-not-exist-xyz-vessel`  
 Öneri: leftover — taksonomi  
 Karar: onay bekliyor
+
+---
+
+## CRO disk şemaları (2026-08-19 interact)
+
+Listed CRO schemas — observation yok, storefront'ta gözlenmedi (şema icat edilmedi):
+
+| schemaId | Durum |
+|---|---|
+| `before-after-slider` | yok |
+| `commerce-tools-products-bundle` | yok |
+| `promo-banner-countdown` | yok |
+| `faq-collapsible-tabs` | yok |
+| `lead-capture-newsletter-band` | yok (`footer-columns-newsletter` farklı şema) |
+| `comparison-quick-table` | yok |
+| `product-finder-quiz` | yok |
+| `testimonial-quote-carousel` | yok |
+| `media-shop-the-feed` | yok |
+| `media-scrolling-gallery` | yok |
+
+**Gözlenen CRO:** `lead-capture-form` (contact) — interact `initial` 3vp; `input` PII stop.
+
+**Diğer CRO-adjacent:** sticky header → `navigation-header-mega` (interact yapıldı). FAQ/reviews/countdown/quiz/bundle/scarcity section yok.
