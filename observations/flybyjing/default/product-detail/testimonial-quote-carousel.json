@@ -6,14 +6,45 @@
   "sayfa": "product-detail",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
-    "evidence/flybyjing/default/product-detail/testimonial-quote-carousel.375.png",
-    "evidence/flybyjing/default/product-detail/testimonial-quote-carousel.768.png",
-    "evidence/flybyjing/default/product-detail/testimonial-quote-carousel.1440.png"
+    "evidence/flybyjing/default/product-detail/testimonial-quote-carousel.initial.okendo-yuklendi.1440.png",
+    "evidence/flybyjing/default/product-detail/testimonial-quote-carousel.initial.okendo-yuklendi.375.png",
+    "evidence/flybyjing/default/product-detail/testimonial-quote-carousel.initial.okendo-yuklendi.768.png"
   ],
   "delta": "Okendo widget (okeReviews 0.102.0); quote carousel değil. Şema icat edilmedi.",
   "url": "https://flybyjing.com/products/sichuan-chili-crisp",
   "selector": "#shopify-section-template--15476678918202__custom_liquid_kz9n64",
   "notlar": "PRAISE FOR ORIGINAL SICHUAN CHILI CRISP — Okendo 4.9 / 2459 reviews + UGC fotoğraflar.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://flybyjing.com/products/sichuan-chili-crisp",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false,
+      "not": "Okendo widget hydrate"
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15476678918202__custom_liquid_kz9n64",
+      "capture": true,
+      "etiket": "okendo-yuklendi",
+      "not": "4.9 / 2459 + UGC grid + review listesi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "PRAISE FOR ORIGINAL SICHUAN CHILI CRISP — Okendo 4.9 / 2,459 reviews; yıldız dağılımı; UGC foto grid; ilk review kartları (Tari S., Colleen S. …). Carousel/slider kontrolü yok."
+  },
+  "missingStates": [],
+  "interactionNote": "testimonial-quote-carousel şeması zorlama map; interact yalnız initial (widget yüklü).",
   "capture": {
     "url": "https://flybyjing.com/products/sichuan-chili-crisp",
     "viewports": [
@@ -22,7 +53,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T20:29:26.481Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:29:37.562Z"
   }
 }

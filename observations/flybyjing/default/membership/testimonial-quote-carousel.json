@@ -6,14 +6,59 @@
   "sayfa": "membership",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
-    "evidence/flybyjing/default/membership/testimonial-quote-carousel.375.png",
-    "evidence/flybyjing/default/membership/testimonial-quote-carousel.768.png",
-    "evidence/flybyjing/default/membership/testimonial-quote-carousel.1440.png"
+    "evidence/flybyjing/default/membership/testimonial-quote-carousel.changed.sonraki-alinti.1440.png",
+    "evidence/flybyjing/default/membership/testimonial-quote-carousel.changed.sonraki-alinti.375.png",
+    "evidence/flybyjing/default/membership/testimonial-quote-carousel.changed.sonraki-alinti.768.png",
+    "evidence/flybyjing/default/membership/testimonial-quote-carousel.initial.ilk-hal.1440.png",
+    "evidence/flybyjing/default/membership/testimonial-quote-carousel.initial.ilk-hal.375.png",
+    "evidence/flybyjing/default/membership/testimonial-quote-carousel.initial.ilk-hal.768.png"
   ],
   "delta": "Shapes testimonials.",
   "url": "https://flybyjing.com/pages/membership",
   "selector": "#shopify-section-template--15468669501498__testimonials_MTaghG",
   "notlar": "LOVE FROM THE TASTEMAKERS — 5 yıldız alıntılar.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://flybyjing.com/pages/membership",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15468669501498__testimonials_MTaghG",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "İlk splide slayt aktif"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": false,
+      "not": "Splide hydrate"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--15468669501498__testimonials_MTaghG button[aria-label='Next slide']",
+      "value": 1500,
+      "capture": true,
+      "etiket": "sonraki-alinti",
+      "not": "Next → farklı Tastemaker alıntısı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "LOVE FROM THE TASTEMAKERS — ★★★★★ ilk kart (Not only does the tastemaker club pay for itself…). Splide oklar altta.",
+    "changed": "Next sonrası farklı alıntı (My household goes through enough of this delicious chili oil…). Aktif slayt değişti."
+  },
+  "missingStates": [],
+  "interactionNote": "Splide carousel; scan Next gorunur:true. 3vp aynı delta.",
   "capture": {
     "url": "https://flybyjing.com/pages/membership",
     "viewports": [
@@ -22,7 +67,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T20:34:04.946Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:28:46.406Z"
   }
 }

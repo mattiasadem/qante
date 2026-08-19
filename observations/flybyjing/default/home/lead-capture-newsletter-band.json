@@ -6,14 +6,38 @@
   "sayfa": "home",
   "evidenceSlug": "lead-capture-newsletter-band",
   "evidence": [
-    "evidence/flybyjing/default/home/lead-capture-newsletter-band.375.png",
-    "evidence/flybyjing/default/home/lead-capture-newsletter-band.768.png",
-    "evidence/flybyjing/default/home/lead-capture-newsletter-band.1440.png"
+    "evidence/flybyjing/default/home/lead-capture-newsletter-band.initial.band.1440.png",
+    "evidence/flybyjing/default/home/lead-capture-newsletter-band.initial.band.375.png",
+    "evidence/flybyjing/default/home/lead-capture-newsletter-band.initial.band.768.png"
   ],
   "delta": "Custom liquid Klaviyo; footer-columns-newsletter kardeş section. PII yok.",
   "url": "https://flybyjing.com/",
   "selector": "#shopify-section-sections--15468669370426__custom_liquid_NHG7Tk",
   "notlar": "ELECTRIFY YOUR INBOX + 20% off first order + Subscribe. Footer group ama görsel olarak footer üstü bağımsız bant. Form gönderilmedi.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://flybyjing.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-sections--15468669370426__custom_liquid_NHG7Tk",
+      "capture": true,
+      "etiket": "band",
+      "not": "ELECTRIFY YOUR INBOX band — placeholder görünür, submit yok"
+    }
+  ],
+  "stateFindings": {
+    "initial": "ELECTRIFY YOUR INBOX⚡️ + 20% off first order + Enter email address alanı + Subscribe. Fill/submit yapılmadı (PII)."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan: newsletter email input. initial yeterli; Klaviyo submit yok.",
   "capture": {
     "url": "https://flybyjing.com/",
     "viewports": [
@@ -22,7 +46,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T20:27:21.074Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:26:47.104Z"
   }
 }

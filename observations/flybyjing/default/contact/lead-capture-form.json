@@ -6,14 +6,38 @@
   "sayfa": "contact",
   "evidenceSlug": "lead-capture-form",
   "evidence": [
-    "evidence/flybyjing/default/contact/lead-capture-form.375.png",
-    "evidence/flybyjing/default/contact/lead-capture-form.768.png",
-    "evidence/flybyjing/default/contact/lead-capture-form.1440.png"
+    "evidence/flybyjing/default/contact/lead-capture-form.initial.ilk-hal.1440.png",
+    "evidence/flybyjing/default/contact/lead-capture-form.initial.ilk-hal.375.png",
+    "evidence/flybyjing/default/contact/lead-capture-form.initial.ilk-hal.768.png"
   ],
   "delta": "PII yok — submit yok.",
   "url": "https://flybyjing.com/pages/contact",
   "selector": "#shopify-section-template--15468669173818__main",
   "notlar": "CONTACT. support@flybyjing.com / press flybyjing@isetta.co. Name / Email / Phone Number. Form gönderilmedi.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://flybyjing.com/pages/contact",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15468669173818__main",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Boş contact form + destek e-postaları"
+    }
+  ],
+  "stateFindings": {
+    "initial": "CONTACT başlık; support@flybyjing.com / press flybyjing@isetta.co. Name / Email / Phone Number / Message alanları boş. Send tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan: text/email/tel/textarea; select veya konu alanı yok. changed anlamsız.",
   "capture": {
     "url": "https://flybyjing.com/pages/contact",
     "viewports": [
@@ -22,7 +46,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T20:32:46.349Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:27:22.010Z"
   }
 }

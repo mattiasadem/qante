@@ -1,9 +1,25 @@
 # Fly By Jing leftovers / adaylar
 
 *Store:* https://flybyjing.com · *Tema (görülen):* **FBJ 4/1 Launch** · schema_name **Shapes** 3.0.4 · theme_store_id **1535**  
-*Tarih:* 2026-08-15
+*Tarih:* 2026-08-15 · *CRO interact güncelleme:* 2026-08-19
 
 Şema icat edilmedi. En yakın mevcut tipe observation yazıldıysa burada tekrarlanmaz.
+
+---
+
+## CRO şema adayları (observation yok — walk'ta görülmedi)
+
+Aşağıdaki CRO tipleri flybyjing Shapes walk'ında **observation dosyası yok**; şema uydurulmadı.
+
+| schemaId | Not |
+|---|---|
+| before-after-slider | Sitede before/after sürgüsü yok |
+| commerce-tools-products-bundle | Bundle builder / kit picker yok |
+| promo-banner-countdown | Countdown banner yok (announcement bar statik) |
+| comparison-quick-table | Karşılaştırma tablosu yok |
+| product-finder-quiz | Quiz / finder flow yok |
+| media-shop-the-feed | Shop-the-feed / shoppable UGC grid yok |
+| media-scrolling-gallery | Yatay scroll galeri yok (marquee var, farklı tip) |
 
 ---
 
