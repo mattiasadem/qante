@@ -5,15 +5,56 @@
   "preset": "fashion",
   "sayfa": "contact",
   "url": "https://impulse-theme-fashion.myshopify.com/pages/contact",
-  "selector": "[id$='__form']",
+  "selector": "#shopify-section-template--16365547225146__form",
   "evidenceSlug": "lead-capture-form",
   "evidence": [
+    "evidence/impulse/fashion/contact/lead-capture-form.1440.png",
     "evidence/impulse/fashion/contact/lead-capture-form.375.png",
     "evidence/impulse/fashion/contact/lead-capture-form.768.png",
-    "evidence/impulse/fashion/contact/lead-capture-form.1440.png"
+    "evidence/impulse/fashion/contact/lead-capture-form.initial.ilk-hal.1440.png",
+    "evidence/impulse/fashion/contact/lead-capture-form.initial.ilk-hal.375.png",
+    "evidence/impulse/fashion/contact/lead-capture-form.initial.ilk-hal.768.png",
+    "evidence/impulse/fashion/contact/lead-capture-form.input.mesaj-dolu.1440.png",
+    "evidence/impulse/fashion/contact/lead-capture-form.input.mesaj-dolu.375.png",
+    "evidence/impulse/fashion/contact/lead-capture-form.input.mesaj-dolu.768.png"
   ],
   "notlar": "NAME + EMAIL yan yana, MESSAGE, SEND, hCaptcha notu.",
   "delta": "layout=two-column. Form gönderilmedi.",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://impulse-theme-fashion.myshopify.com/pages/contact",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16365547225146__form",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "NAME / EMAIL / MESSAGE boş; SEND görünür"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#shopify-section-template--16365547225146__form textarea[name='contact[body]']",
+      "value": "Question about order status",
+      "capture": true,
+      "etiket": "mesaj-dolu",
+      "not": "Yalnız MESSAGE dolduruldu; NAME/EMAIL boş; SEND tıklanmadı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "CONTACT US formu: NAME | EMAIL (1440/768 yan yana; 375 istif), MESSAGE textarea, SEND. Tüm alanlar boş.",
+    "input": "MESSAGE dolu: Question about order status. NAME ve EMAIL boş kaldı. SEND tıklanmadı; hCaptcha notu altta."
+  },
+  "missingStates": [],
+  "interactionNote": "NAME / EMAIL PII — doldurulmadı, form gönderilmedi. Subject dropdown yok; yalnız message fill.",
   "capture": {
     "url": "https://impulse-theme-fashion.myshopify.com/pages/contact",
     "viewports": [
@@ -22,7 +63,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-14T10:24:41.088Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T13:58:05.033Z"
   }
 }

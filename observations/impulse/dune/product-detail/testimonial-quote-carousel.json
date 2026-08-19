@@ -8,12 +8,52 @@
   "selector": "#shopify-section-template--18938110869575__3255ae14-261f-4f45-bd1a-dcb1dd5c72bd",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
+    "evidence/impulse/dune/product-detail/testimonial-quote-carousel.1440.png",
     "evidence/impulse/dune/product-detail/testimonial-quote-carousel.375.png",
     "evidence/impulse/dune/product-detail/testimonial-quote-carousel.768.png",
-    "evidence/impulse/dune/product-detail/testimonial-quote-carousel.1440.png"
+    "evidence/impulse/dune/product-detail/testimonial-quote-carousel.changed.nokta-4.1440.png",
+    "evidence/impulse/dune/product-detail/testimonial-quote-carousel.changed.nokta-4.375.png",
+    "evidence/impulse/dune/product-detail/testimonial-quote-carousel.changed.nokta-4.768.png",
+    "evidence/impulse/dune/product-detail/testimonial-quote-carousel.initial.ilk-hal.1440.png",
+    "evidence/impulse/dune/product-detail/testimonial-quote-carousel.initial.ilk-hal.375.png",
+    "evidence/impulse/dune/product-detail/testimonial-quote-carousel.initial.ilk-hal.768.png"
   ],
   "notlar": "HEAR IT FROM THEM. Kart: 5 yıldız, alıntı, avatar, ad, şehir. 1440'te 3 kart (ortadaki büyük) + nokta. 375'te 1 kart + nokta.",
   "delta": "Fashion PDP'de testimonial yok.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://impulse-theme-apparel.myshopify.com/products/bear-pocket-tee-black",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--18938110869575__3255ae14-261f-4f45-bd1a-dcb1dd5c72bd",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Leslie M. alıntısı ortada; nokta 1 seçili"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--18938110869575__3255ae14-261f-4f45-bd1a-dcb1dd5c72bd .flickity-page-dots .dot:nth-child(4)",
+      "capture": true,
+      "etiket": "nokta-4",
+      "not": "Arrived fast and beautifully boxed… alıntısı; nokta 4 seçili"
+    }
+  ],
+  "stateFindings": {
+    "initial": "HEAR IT FROM THEM. Ortada Leslie M. alıntısı (5 yıldız + avatar). 1440'te yan kartlar küçük; 5 flickity noktası, ilki dolu.",
+    "changed": "Nokta 4 seçili: Arrived fast and beautifully boxed… alıntısı ortada. 1440 yan kartlar güncellendi; 375/768 tek kart + nokta şeridi."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan changer görmedi; flickity-page-dots .dot:nth-child(4) ile doğrulandı. Oklar yok, yalnız nokta. Şema emit:carousel.next duruyor.",
   "capture": {
     "url": "https://impulse-theme-apparel.myshopify.com/products/bear-pocket-tee-black",
     "viewports": [
@@ -22,7 +62,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-14T11:12:07.994Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T13:57:06.605Z"
   }
 }

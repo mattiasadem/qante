@@ -93,6 +93,8 @@ PDP: testimonial ✅ · recently-viewed denendi (kare yok) · shop-the-look / vi
 ## Interact
 
 - `media-lookbook-slider` — Bear Pocket Tee → Slim Chino $136 (alt hotspot)
+- `testimonial-quote-carousel` — flickity nokta 4 → Arrived fast… alıntısı (initial + changed, 3vp)
+- `promo-banner-countdown` — initial only; timer otomatik
 
 ## Bilinçli boşluklar
 
