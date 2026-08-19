@@ -5,7 +5,7 @@
 *Gözlenen tema:* `[Publisher] Theme Store demo (latest)` · `schema_name` Dawn 7.0.1 · `theme.id` 173430341941 · `role` main  
 *`Shopify.theme.theme_store_id`:* `null` (canlı JS). Theme Store: **Publisher · by Shopify · Free**. Sayısal 1380 demo/Theme Store HTML’de okunmadı.
 
-**Şu anki odak:** ✅ Mod A walk kapandı — 33 obs · 123 PNG · 0 yeni şema · interact pixel-check
+**Şu anki odak:** ✅ CRO interact kapandı — 2 CRO obs · 9 yeni PNG · validate 0
 
 ---
 
@@ -25,6 +25,7 @@
 - [x] F1 Observation JSON (33) — şema yok, mevcut tipler
 - [x] F2 3vp `capture-observation.mjs` (33/33 script OK; predictive 375/768 zero-size)
 - [x] F3 Interact: predictive search 1440 · cart empty/filled/qty · PDP Size MD→LG · mega/menu yok
+- [x] F3b CRO interact: `faq-collapsible-tabs` initial+changed · `lead-capture-form` initial (input PII stop)
 - [x] F4 `npm run validate` — 65 şema · 0 error · 0 warn
 
 ---
@@ -78,6 +79,15 @@ Tekrarlayan shipping bant + studio banner home’da bir kez.
 
 Stop: email / account / checkout / newsletter submit / contact Send / PII
 
+### CRO interact (2026-08-19)
+
+| schemaId | states | 3vp |
+|---|---|---|
+| `faq-collapsible-tabs` | initial · changed (Returns açık) | ✓ |
+| `lead-capture-form` | initial (input → missingStates PII) | ✓ |
+
+CRO disk listesinden **gözlenmeyen** (leftover): before-after-slider · commerce-tools-products-bundle · promo-banner-countdown · lead-capture-newsletter-band · comparison-quick-table · product-finder-quiz · testimonial-quote-carousel · media-shop-the-feed · media-scrolling-gallery
+
 ---
 
 ## Aday / şemaya sığmayan
@@ -90,3 +100,4 @@ Stop: email / account / checkout / newsletter submit / contact Send / PII
 
 - [x] 33 observation 3vp (predictive 375/768 kare yok — ikon gizli)
 - [x] Interact PNG: search 1440 · cart drawer 3 state · cart page 3 state · PDP size
+- [x] CRO interact PNG: faq initial+changed 6 · lead-capture-form initial 3
