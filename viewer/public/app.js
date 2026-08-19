@@ -1279,7 +1279,7 @@ function renderCroSidebar() {
     </div>
     <p class="amac" style="padding:.55rem .85rem;margin:0;font-size:.78rem">
       Funnel / CRO section tipleri — mevcut envanterden (yürüyüş yok).
-      Sınıflandırıcı: <code>viewer/lib/cro.mjs</code>
+      Allowlist: <code>viewer/lib/cro-schemas.mjs</code>
     </p>
     ${groupsHtml || `<p class="empty">CRO tipi yok</p>`}
   `;
