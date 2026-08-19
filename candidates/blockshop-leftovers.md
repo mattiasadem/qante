@@ -21,7 +21,7 @@
 | Footer-bar | `#…__footer-bar` — Shopify + ENGLISH + COUNTRY SELECTOR. Locale tıklanmadı. |
 | PLP collection-header | 14px — yalnız “ALL PRODUCTS”. Ayrı observation yok. |
 | PLP recent-products | yükseklik 0. |
-| PLP / search FILTER | Sort/Filter bar ayrı section; facet interact yoklandı değil. |
+| PLP / search FILTER | Sort/Filter `shopify-section-…__navigation` — grid-plp dışında. Observation yok; şema uydurulmadı. |
 | `/pages/our-approach`, `/pages/ingredients` | Yaşıyor (image_with_text + page main). Walk dışı leftover. |
 | About Amy Wilson / Sophia Chen | Rachel ile aynı image-with-text dilbilgisi; ayrı obs yok. |
 | Contact map | `map_KU3A3Q` VISIT OUR STORE. Map şeması yok. |
@@ -35,12 +35,25 @@
 | Bright Blush Powder PDP | Aynı şablon, varyant yok. Variant interact = Brightening Serum. |
 | PDP 200ML galeri | Fiyat 70→135 CAD; şişe görseli 75ML etiketli kaldı. |
 | Mobile menu Shop accordion | 375 drawer’da Shop alt menü yoklandı değil (yazılı `<a>` sayfaya gider). |
+| Sticky ATC | PDP kaydırınca ayrı bar yok. Buy box `position:sticky` (sidebar). Observation icat edilmedi. |
+| Countdown / quiz / bundle / compare / before-after / size guide | Beauty demoda section yok. Şema uydurulmadı. |
+| logo_list slayt | 375 nokta 2+3 Forbes alıntısını değiştirmedi. 1440 logo tık innerText aynı. |
+| media-shop-the-feed | Kartlar `instagram.com` — sayfa dışı. In-page state yok. |
+| Reviews / BEST SELLERS 768+1440 Next | ok 0×0; 1440 zaten çoklu kart/alıntı. |
 
 ## Aday (yeni şema yok)
 
 - **Sidebar header** — `data-layout=sidebar`. `navigation-header-mega` reuse + delta. Yeni tip açılmadı.
 - **logo_list basın alıntısı** — alıntı + 4 logo (375 slider). `social-proof-brand-logos` reuse (testimonial değil).
 - **404** — taxonomy `pageTypes` içinde yok. `page-content-main` + delta.
+
+---
+
+ADAY: blockshop-cro-interact-2026-08-19  
+Gerekçe: Discover-interact leftover. Var olan obs: faq-collapsible-tabs (sayfa + PDP + KEY INGREDIENTS), testimonial-quote-carousel (375 Next), product-showcase-grid-featured (375 Next), product-info-main Ingredients accordion. social-proof-brand-logos slayt tık değişmedi. countdown / quiz / bundle / compare / before-after / size guide / sticky ATC observation yok — icat edilmedi.  
+Örnekler: `/pages/faqs` · `/products/brightening-serum` · home BEST SELLERS  
+Öneri: leftover — şema uydurma yok  
+Karar: onay bekliyor
 
 ## Interact notları
 
@@ -50,3 +63,4 @@
 - Cart drawer + cart page: qty `button.quantity-selector--plus[aria-label='Plus']`. $70 → $140; free-shipping eşiği $100.
 - Cart drawer: ATC sonrası home’a dönüp bag açıldı (drawer toggle kapanmasın).
 - PDP SIZE `label.radios--value-button`.
+- CRO leftover interact (2026-08-19): var olan obs — FAQ sayfa + PDP FAQ + KEY INGREDIENTS (`changed`), testimonials 375 Next, BEST SELLERS 375 Next, PDP Ingredients accordion. countdown/quiz/bundle/compare/before-after/size-guide/sticky-ATC observation yok — icat edilmedi.
