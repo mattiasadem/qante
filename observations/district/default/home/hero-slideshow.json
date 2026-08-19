@@ -13,7 +13,39 @@
   "selector": "#shopify-section-template--17215442026549__16425493082e1094aa",
   "evidenceSlug": "hero-slideshow",
   "notlar": "slideshow. New Fall Lookbook / New Classics. SEE THE LOOKBOOK + SHOP TEES / SHOP NOW.",
-  "delta": "data-section-type=slideshow. Slayt metni DOM’da.",
+  "delta": "data-section-type=slideshow. Splide pagination 4 slayt. CTA <a> tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://district-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17215442026549__16425493082e1094aa",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Autoplay o anki slayt. CTA tıklanmaz."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--17215442026549__16425493082e1094aa button[aria-controls='splide01-slide03']",
+      "value": 1500,
+      "capture": true,
+      "etiket": "gather-slayt",
+      "not": "Go to slide 3 — Introducing Gather / PRE ORDER NOW"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Probe: slide 1 tık New Classics → New Fall Lookbook, URL home. Ok yok; noktalar 375/768/1440. CTA leftover.",
   "capture": {
     "url": "https://district-theme-demo.myshopify.com/",
     "viewports": [

@@ -13,7 +13,50 @@
   "selector": "#shopify-section-template--17215442026549__164255101301e547de",
   "evidenceSlug": "media-shop-the-feed",
   "notlar": "looks. Shop The Look + Instagram benzeri kartlar. FOLLOW US /pages/about-us.",
-  "delta": "data-section-type=looks. Hotspot tık leftover. # gather / New Lookbook kartları.",
+  "delta": "data-section-type=looks. Kart tık → .looks__modal (ürün ızgarası). FOLLOW US tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "hover",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://district-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17215442026549__164255101301e547de",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Shop The Look grid; caption opacity 0"
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#LooksItem-1642551013e82b51bf-0 a.looks__image-container",
+      "value": 900,
+      "capture": true,
+      "etiket": "kart-caption",
+      "not": "Hover: .looks__caption opacity 0→1 (The New Women's Line)"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#LooksItem-1642551013e82b51bf-0 a.looks__image-container",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "look-modal",
+      "not": "Kart tık href=# → .looks__modal.modal--active + Ampersand Maroon $32. Ürün link/ATC yok."
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Probe: hover caption + modal açıldı, URL home kaldı. FOLLOW US /pages/about-us tıklanmadı.",
   "capture": {
     "url": "https://district-theme-demo.myshopify.com/",
     "viewports": [
