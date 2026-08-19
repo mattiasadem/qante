@@ -8,12 +8,18 @@
   "selector": "#shopify-section-template--15449277333568__1b7aee97-f0f5-4ba0-8ff5-023d43355d9a",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/broadcast/bold/home/faq-collapsible-tabs.1440.png",
     "evidence/broadcast/bold/home/faq-collapsible-tabs.375.png",
     "evidence/broadcast/bold/home/faq-collapsible-tabs.768.png",
-    "evidence/broadcast/bold/home/faq-collapsible-tabs.1440.png"
+    "evidence/broadcast/bold/home/faq-collapsible-tabs.changed.soru-acildi.1440.png",
+    "evidence/broadcast/bold/home/faq-collapsible-tabs.changed.soru-acildi.375.png",
+    "evidence/broadcast/bold/home/faq-collapsible-tabs.changed.soru-acildi.768.png",
+    "evidence/broadcast/bold/home/faq-collapsible-tabs.initial.accordion-kapali.1440.png",
+    "evidence/broadcast/bold/home/faq-collapsible-tabs.initial.accordion-kapali.375.png",
+    "evidence/broadcast/bold/home/faq-collapsible-tabs.initial.accordion-kapali.768.png"
   ],
   "notlar": "Why Good Habit? Commitment to innovation / transparency / results / customer-centric.",
-  "delta": "Broadcast faq tipi; karede madde listesi gibi duruyor — accordion mu bakılacak.",
+  "delta": "Broadcast accordion (details/summary). Tüm maddeler kapalı başlar; tıklayınca tek soru açılır.",
   "capture": {
     "url": "https://broadcast-bold.myshopify.com/",
     "viewports": [
@@ -22,7 +28,41 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T19:19:02.957Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:25:25.752Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://broadcast-bold.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15449277333568__1b7aee97-f0f5-4ba0-8ff5-023d43355d9a",
+      "capture": true,
+      "etiket": "accordion-kapali",
+      "not": "Tüm accordion maddeleri kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--15449277333568__1b7aee97-f0f5-4ba0-8ff5-023d43355d9a details:nth-of-type(2) > summary",
+      "capture": true,
+      "etiket": "soru-acildi",
+      "not": "Empowerment through transparency açıldı — cevap paragrafı görünür"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Why Good Habit? başlığı. Dört soru kapalı: Commitment to innovation, Empowerment through transparency, Results-driven formulations, Customer-centric approach.",
+    "changed": "Empowerment through transparency açık — transparency / sourcing cevap metni görünür; diğer üç soru kapalı."
+  },
+  "missingStates": [],
+  "interactionNote": "details > summary tıklama; hover değil. Submit/checkout yok."
 }

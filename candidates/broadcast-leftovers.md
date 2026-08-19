@@ -42,3 +42,19 @@
 - Sticky bar metni **CONFIGURE** (ATC değil) — buy box’a kaydırır. Resmi crop: `product-info-main-sticky.changed.sticky-configure.{375,768,1440}.png`.
 - 768 hamburger `0×0` (masaüstü nav). 375 menü resmi çekildi; 768 leftover, eksik çekim değil.
 - Recently-purchased toast Bold vitrinde belirmadi (8s). Sosyal kanıt var: reviews, press logos, quote marquees.
+
+## CRO interact (2026-08-19)
+
+| schemaId | Durum | Not |
+|---|---|---|
+| faq-collapsible-tabs | [x] initial + changed | 6 obs · `details:nth-of-type(2) > summary` tık · home/contact/faq×3/PDP |
+| testimonial-quote-carousel | initial only | `section-reviews` grid; `slider__button--next` DOM’da ama görünmez — `changed` doğrulanamadı |
+| lead-capture-form | ⛔ input yok | PII: email/ad doldurulmadı, submit yok |
+| before-after-slider | yok | observation yok |
+| commerce-tools-products-bundle | yok | observation yok |
+| promo-banner-countdown | yok | observation yok |
+| lead-capture-newsletter-band | yok | footer `footer-columns-newsletter` farklı tip |
+| comparison-quick-table | yok | observation yok |
+| product-finder-quiz | yok | observation yok |
+| media-shop-the-feed | yok | observation yok |
+| media-scrolling-gallery | yok | observation yok |

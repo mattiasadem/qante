@@ -10,7 +10,7 @@
 `theme_store_id` = **null** (canlıda yok; uydurulmadı)  
 shop `broadcast-bold.myshopify.com`
 
-**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti** (0 error)  
+**Durum:** Mod A walk + resmi 3vp + interact (nav/cart/PDP) + **CRO interact** + validate **bitti** (0 error)  
 **PR:** draft — **main'e merge yok**
 
 ---
@@ -25,7 +25,7 @@ shop `broadcast-bold.myshopify.com`
 | Parallel | yalnız `observations/broadcast/`, `evidence/broadcast/`, `todo/broadcast.md`, `candidates/broadcast-*` |
 
 **Kapsam satırı:**  
-`Broadcast · bold · Broadcast 6.2.0 · theme_store_id null · home→PDP→PLP→collections→search→cart→about/contact→faq→blog→404 · 65 obs · 215 PNG · 0 yeni şema · leftover: candidates/broadcast-leftovers.md`
+`Broadcast · bold · Broadcast 6.2.0 · theme_store_id null · home→PDP→PLP→collections→search→cart→about/contact→faq→blog→404 · 65 obs · 254 PNG · 0 yeni şema · leftover: candidates/broadcast-leftovers.md`
 
 ---
 
@@ -67,6 +67,16 @@ shop `broadcast-bold.myshopify.com`
 | product-info-main | changed | [x] Bottle $50 → Refill $48 + Only 18 Left |
 | product-info-main-2 | sticky | [x] `#cart-bar` CONFIGURE 3vp |
 
+### CRO interact (bu tur)
+
+| schemaId | State | Sayfa / obs | Sonuç |
+|---|---|---|---|
+| faq-collapsible-tabs | initial + changed | home, contact, faq-support ×3, PDP | [x] accordion kapalı → 2. soru açık · 6×6 PNG |
+| testimonial-quote-carousel | initial | home reviews | [x] 3vp; `changed` ⛔ oklar gizli |
+| lead-capture-form | — | contact | ⛔ PII — input/submit yok |
+
+**CRO diskte yok / observation yok (uydurulmadı):** before-after-slider, commerce-tools-products-bundle, promo-banner-countdown, lead-capture-newsletter-band, comparison-quick-table, product-finder-quiz, media-shop-the-feed, media-scrolling-gallery
+
 ---
 
 ## Aday / leftover
@@ -79,4 +89,5 @@ shop `broadcast-bold.myshopify.com`
 
 - [x] Statik 3vp (177 PNG)
 - [x] Mega / search / cart empty+filled+qty / mobile menu 375 / PDP Type / sticky CONFIGURE (38 PNG)
+- [x] CRO interact: FAQ accordion 36 PNG + testimonial initial 3 PNG (39 PNG)
 - [x] Email / account / checkout / newsletter submit — **yapılmayacak**

@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--15449277497408__faq-third",
   "evidenceSlug": "faq-collapsible-tabs-3",
   "evidence": [
+    "evidence/broadcast/bold/faq-support/faq-collapsible-tabs-3.1440.png",
     "evidence/broadcast/bold/faq-support/faq-collapsible-tabs-3.375.png",
     "evidence/broadcast/bold/faq-support/faq-collapsible-tabs-3.768.png",
-    "evidence/broadcast/bold/faq-support/faq-collapsible-tabs-3.1440.png"
+    "evidence/broadcast/bold/faq-support/faq-collapsible-tabs-3.changed.soru-acildi.1440.png",
+    "evidence/broadcast/bold/faq-support/faq-collapsible-tabs-3.changed.soru-acildi.375.png",
+    "evidence/broadcast/bold/faq-support/faq-collapsible-tabs-3.changed.soru-acildi.768.png",
+    "evidence/broadcast/bold/faq-support/faq-collapsible-tabs-3.initial.accordion-kapali.1440.png",
+    "evidence/broadcast/bold/faq-support/faq-collapsible-tabs-3.initial.accordion-kapali.375.png",
+    "evidence/broadcast/bold/faq-support/faq-collapsible-tabs-3.initial.accordion-kapali.768.png"
   ],
   "notlar": "Shipping + Returns accordion.",
   "delta": "",
@@ -22,7 +28,41 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T19:17:15.848Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:28:23.034Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://broadcast-bold.myshopify.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15449277497408__faq-third",
+      "capture": true,
+      "etiket": "accordion-kapali",
+      "not": "Tüm accordion maddeleri kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--15449277497408__faq-third details:nth-of-type(2) > summary",
+      "capture": true,
+      "etiket": "soru-acildi",
+      "not": "İkinci Shipping/Returns sorusu açıldı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Shipping + Returns accordion — tüm sorular kapalı.",
+    "changed": "İkinci soru açık — cevap metni görünür."
+  },
+  "missingStates": [],
+  "interactionNote": "details > summary tıklama; hover değil. Submit/checkout yok."
 }
