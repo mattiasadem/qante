@@ -123,14 +123,20 @@ Karar: onay bekliyor
 ---
 
 ADAY: combine-bundle-min-two  
-Gerekçe: Build Your Set min 2 ürün. Bir Add to bundle çekildi (Boulder Bookend slot 1, ATC disabled). İkinci ürün / %30 apply karesi yok.  
+Gerekçe: Build Your Set min 2 ürün. **2026-08-19 interact:** `filled` state — Boulder Bookend + Complot Candleholder sticky'de; Add to cart enabled. ATC tıklanmadı; checkout yok.  
 Örnekler: https://combine-theme-main.myshopify.com/pages/build-your-set  
-Öneri: leftover — yarım bundle  
+Öneri: leftover — ATC/checkout stop (PII)  
 Karar: onay bekliyor
 
 ---
 
-ADAY: combine-pii-stop  
+ADAY: combine-cro-schemas-unobserved  
+Gerekçe: CRO şemaları diskte (`before-after-slider`, `promo-banner-countdown`, `faq-collapsible-tabs`, `lead-capture-newsletter-band`, `comparison-quick-table`, `product-finder-quiz`, `testimonial-quote-carousel`, `media-shop-the-feed`, `media-scrolling-gallery`) Combine envanterinde observation yok — şema icat edilmedi.  
+Örnekler: https://combine-theme-main.myshopify.com/  
+Öneri: leftover — CRO gap  
+Karar: onay bekliyor
+
+---  
 Gerekçe: Footer newsletter + contact Submit + checkout + Log in/Create Account tıklanmadı.  
 Örnekler: footer · `/pages/contact` · cart  
 Öneri: PII / checkout stop  
