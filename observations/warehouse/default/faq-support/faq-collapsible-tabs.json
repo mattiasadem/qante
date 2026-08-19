@@ -8,12 +8,53 @@
   "selector": "#shopify-section-template--16536532680755__faq",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/warehouse/default/faq-support/faq-collapsible-tabs.1440.png",
     "evidence/warehouse/default/faq-support/faq-collapsible-tabs.375.png",
     "evidence/warehouse/default/faq-support/faq-collapsible-tabs.768.png",
-    "evidence/warehouse/default/faq-support/faq-collapsible-tabs.1440.png"
+    "evidence/warehouse/default/faq-support/faq-collapsible-tabs.changed.ilk-soru-acik.1440.png",
+    "evidence/warehouse/default/faq-support/faq-collapsible-tabs.changed.ilk-soru-acik.375.png",
+    "evidence/warehouse/default/faq-support/faq-collapsible-tabs.changed.ilk-soru-acik.768.png",
+    "evidence/warehouse/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.1440.png",
+    "evidence/warehouse/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.375.png",
+    "evidence/warehouse/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.768.png"
   ],
-  "notlar": "faq. Shipping accordion: overseas / delivery time / carriers.",
-  "delta": "Information menüsünden. Newsletter alt section tekrar, çekilmedi.",
+  "notlar": "faq. Shipping accordion: overseas / delivery time / carriers. Interact: ilk soru açık.",
+  "delta": "Information menüsünden. Newsletter alt section tekrar, çekilmedi. openFirst bu instance'ta kapalı; allowMultipleOpen yoklandı (iki soru açık kaldı).",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://warehouse-theme-metal.myshopify.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16536532680755__faq",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Beş soru kapalı (+). Shipping + Product + Any question?"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--16536532680755__faq button[aria-controls='block-question-1']",
+      "value": 900,
+      "capture": true,
+      "etiket": "ilk-soru-acik",
+      "not": "Do you ship overseas? — aria-controls=block-question-1. Accordion changed, hover değil."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Shipping + Product. Beş soru kapalı (+): Do you ship overseas? / How long… / What shipping carriers… / Can I return… / Can I get my product personalized? Altta Any question? + Customer support / Send a message (Enter your text here). 375 kartlar alt alta; 768/1440 yan yana.",
+    "changed": "Do you ship overseas? açık (−). Cevap: Yes, we ship all over the world. Shipping costs will apply… exclusive deals. Diğer dördü +. 375/768/1440 aynı delta."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan 5 opener (button[aria-controls=block-question-1..5]). Unique match. Probe: ilk tık expanded=true + cevap 70px; ikinci soru da açık kalır (allowMultipleOpen). Any question? kartları tıklanmadı. Newsletter sibling leftover.",
   "capture": {
     "url": "https://warehouse-theme-metal.myshopify.com/pages/faq",
     "viewports": [
@@ -22,7 +63,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T20:43:26.011Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T13:21:55.516Z"
   }
 }
