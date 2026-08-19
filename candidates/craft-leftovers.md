@@ -80,6 +80,14 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: craft-cro-schemas-not-observed  
+Gerekçe: CRO disk şemaları gözlenmedi — observation yazılmadı: `before-after-slider` · `commerce-tools-products-bundle` · `promo-banner-countdown` · `faq-collapsible-tabs` · `comparison-quick-table` · `product-finder-quiz` · `media-shop-the-feed` · `media-scrolling-gallery`. Gözlenen CRO: `testimonial-quote-carousel` · `lead-capture-newsletter-band` · `lead-capture-form`.  
+Örnekler: https://theme-craft-demo.myshopify.com/  
+Öneri: leftover — şema uydurulmadı  
+Karar: onay bekliyor
+
+---
+
 ADAY: craft-no-image-mega  
 Gerekçe: Dinnerware details submenu (renk koleksiyon linkleri). Kolon/görsel/promo mega yok.  
 Örnekler: https://theme-craft-demo.myshopify.com/  
