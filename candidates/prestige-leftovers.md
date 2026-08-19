@@ -83,7 +83,7 @@ Karar: onay bekliyor
 ---
 
 ADAY: prestige-before-after-view-product  
-Gerekçe: Slider sol Almond green / sağ Blue denim “View product” → `/products/le-dalia-…`. Tıklanmadı (PDP). Cursor + ArrowRight `changed`.  
+Gerekçe: Slider sol Almond green / sağ Blue denim “View product” → `/products/le-dalia-…`. Tıklanmadı (PDP). Cursor + 23× ArrowRight `changed` (12× 1440/375 az kaydı).  
 Örnekler: home `before-after`  
 Öneri: leftover — CTA sayfa değiştirir  
 Karar: onay bekliyor

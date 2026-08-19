@@ -184,7 +184,7 @@ Prestige section class → QANTE şema. Aynı tip varsa **şemaya dokunma**, obs
 
 | schemaId | states | Sonuç |
 |---|---|---|
-| before-after-slider | initial · changed | cursor + 12× ArrowRight (range yok) |
+| before-after-slider | initial · changed | cursor + 23× ArrowRight — ayırıcı sağa |
 | faq-collapsible-tabs | initial · changed | mevcut 3vp — ilk soru açık |
 | testimonial-quote-carousel | initial · changed | mevcut 3vp — FARFETCH |
 | lead-capture-form (contact) | initial · changed | Subject → Order; PII yok |
