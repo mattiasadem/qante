@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--15449277497408__faq-first",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/broadcast/bold/faq-support/faq-collapsible-tabs.1440.png",
     "evidence/broadcast/bold/faq-support/faq-collapsible-tabs.375.png",
     "evidence/broadcast/bold/faq-support/faq-collapsible-tabs.768.png",
-    "evidence/broadcast/bold/faq-support/faq-collapsible-tabs.1440.png"
+    "evidence/broadcast/bold/faq-support/faq-collapsible-tabs.changed.soru-acildi.1440.png",
+    "evidence/broadcast/bold/faq-support/faq-collapsible-tabs.changed.soru-acildi.375.png",
+    "evidence/broadcast/bold/faq-support/faq-collapsible-tabs.changed.soru-acildi.768.png",
+    "evidence/broadcast/bold/faq-support/faq-collapsible-tabs.initial.accordion-kapali.1440.png",
+    "evidence/broadcast/bold/faq-support/faq-collapsible-tabs.initial.accordion-kapali.375.png",
+    "evidence/broadcast/bold/faq-support/faq-collapsible-tabs.initial.accordion-kapali.768.png"
   ],
   "notlar": "Products accordion.",
   "delta": "",
@@ -22,7 +28,41 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T19:17:47.746Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:26:54.767Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://broadcast-bold.myshopify.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15449277497408__faq-first",
+      "capture": true,
+      "etiket": "accordion-kapali",
+      "not": "Tüm accordion maddeleri kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--15449277497408__faq-first details:nth-of-type(2) > summary",
+      "capture": true,
+      "etiket": "soru-acildi",
+      "not": "How do I determine the right dosage açıldı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Products başlığı. Dört ürün SSS sorusu kapalı.",
+    "changed": "How do I determine the right dosage for your supplements açık — cevap görünür."
+  },
+  "missingStates": [],
+  "interactionNote": "details > summary tıklama; hover değil. Submit/checkout yok."
 }

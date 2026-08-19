@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--15449277497408__faq-second",
   "evidenceSlug": "faq-collapsible-tabs-2",
   "evidence": [
+    "evidence/broadcast/bold/faq-support/faq-collapsible-tabs-2.1440.png",
     "evidence/broadcast/bold/faq-support/faq-collapsible-tabs-2.375.png",
     "evidence/broadcast/bold/faq-support/faq-collapsible-tabs-2.768.png",
-    "evidence/broadcast/bold/faq-support/faq-collapsible-tabs-2.1440.png"
+    "evidence/broadcast/bold/faq-support/faq-collapsible-tabs-2.changed.soru-acildi.1440.png",
+    "evidence/broadcast/bold/faq-support/faq-collapsible-tabs-2.changed.soru-acildi.375.png",
+    "evidence/broadcast/bold/faq-support/faq-collapsible-tabs-2.changed.soru-acildi.768.png",
+    "evidence/broadcast/bold/faq-support/faq-collapsible-tabs-2.initial.accordion-kapali.1440.png",
+    "evidence/broadcast/bold/faq-support/faq-collapsible-tabs-2.initial.accordion-kapali.375.png",
+    "evidence/broadcast/bold/faq-support/faq-collapsible-tabs-2.initial.accordion-kapali.768.png"
   ],
   "notlar": "Company + Sourcing accordion.",
   "delta": "",
@@ -22,7 +28,41 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T19:17:16.771Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:27:38.957Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://broadcast-bold.myshopify.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15449277497408__faq-second",
+      "capture": true,
+      "etiket": "accordion-kapali",
+      "not": "Tüm accordion maddeleri kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--15449277497408__faq-second details:nth-of-type(2) > summary",
+      "capture": true,
+      "etiket": "soru-acildi",
+      "not": "İkinci Company/Sourcing sorusu açıldı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Company + Sourcing accordion — tüm sorular kapalı.",
+    "changed": "İkinci soru açık — cevap metni görünür."
+  },
+  "missingStates": [],
+  "interactionNote": "details > summary tıklama; hover değil. Submit/checkout yok."
 }

@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--15449277464640__faq",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/broadcast/bold/contact/faq-collapsible-tabs.1440.png",
     "evidence/broadcast/bold/contact/faq-collapsible-tabs.375.png",
     "evidence/broadcast/bold/contact/faq-collapsible-tabs.768.png",
-    "evidence/broadcast/bold/contact/faq-collapsible-tabs.1440.png"
+    "evidence/broadcast/bold/contact/faq-collapsible-tabs.changed.soru-acildi.1440.png",
+    "evidence/broadcast/bold/contact/faq-collapsible-tabs.changed.soru-acildi.375.png",
+    "evidence/broadcast/bold/contact/faq-collapsible-tabs.changed.soru-acildi.768.png",
+    "evidence/broadcast/bold/contact/faq-collapsible-tabs.initial.accordion-kapali.1440.png",
+    "evidence/broadcast/bold/contact/faq-collapsible-tabs.initial.accordion-kapali.375.png",
+    "evidence/broadcast/bold/contact/faq-collapsible-tabs.initial.accordion-kapali.768.png"
   ],
   "notlar": "Common Questions — shipping / vegan…",
   "delta": "",
@@ -22,7 +28,41 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T19:16:02.519Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:26:10.039Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://broadcast-bold.myshopify.com/pages/contact-us",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15449277464640__faq",
+      "capture": true,
+      "etiket": "accordion-kapali",
+      "not": "Tüm accordion maddeleri kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--15449277464640__faq details:nth-of-type(2) > summary",
+      "capture": true,
+      "etiket": "soru-acildi",
+      "not": "Are your supplements suitable for vegetarians açıldı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Common Questions. Üç soru kapalı: shipping options, vegetarian suitability, ingredient sourcing.",
+    "changed": "İkinci soru (vegetarian suitability) açık — cevap metni görünür."
+  },
+  "missingStates": [],
+  "interactionNote": "details > summary tıklama; hover değil. Submit/checkout yok."
 }

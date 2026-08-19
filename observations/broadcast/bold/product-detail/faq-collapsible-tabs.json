@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--15449277792320__ea22d29d-2bed-4f9d-a9e6-6878cf13c7ce",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/broadcast/bold/product-detail/faq-collapsible-tabs.1440.png",
     "evidence/broadcast/bold/product-detail/faq-collapsible-tabs.375.png",
     "evidence/broadcast/bold/product-detail/faq-collapsible-tabs.768.png",
-    "evidence/broadcast/bold/product-detail/faq-collapsible-tabs.1440.png"
+    "evidence/broadcast/bold/product-detail/faq-collapsible-tabs.changed.soru-acildi.1440.png",
+    "evidence/broadcast/bold/product-detail/faq-collapsible-tabs.changed.soru-acildi.375.png",
+    "evidence/broadcast/bold/product-detail/faq-collapsible-tabs.changed.soru-acildi.768.png",
+    "evidence/broadcast/bold/product-detail/faq-collapsible-tabs.initial.accordion-kapali.1440.png",
+    "evidence/broadcast/bold/product-detail/faq-collapsible-tabs.initial.accordion-kapali.375.png",
+    "evidence/broadcast/bold/product-detail/faq-collapsible-tabs.initial.accordion-kapali.768.png"
   ],
   "notlar": "You might be wondering — vegan / how soon…",
   "delta": "",
@@ -22,7 +28,41 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T19:22:55.035Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T15:29:10.388Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://broadcast-bold.myshopify.com/products/multivitamin-18",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15449277792320__ea22d29d-2bed-4f9d-a9e6-6878cf13c7ce",
+      "capture": true,
+      "etiket": "accordion-kapali",
+      "not": "Tüm accordion maddeleri kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--15449277792320__ea22d29d-2bed-4f9d-a9e6-6878cf13c7ce details:nth-of-type(2) > summary",
+      "capture": true,
+      "etiket": "soru-acildi",
+      "not": "How soon will I feel the benefits açıldı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "You might be wondering — dört soru kapalı (vegan, benefits timeline, meds, what we avoid).",
+    "changed": "How soon will I feel the benefits? açık — cevap metni görünür."
+  },
+  "missingStates": [],
+  "interactionNote": "details > summary tıklama; hover değil. Submit/checkout yok."
 }
