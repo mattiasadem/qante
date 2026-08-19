@@ -8,12 +8,53 @@
   "selector": "#shopify-section-template--16701007790330__16623925730fa3bc5b",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/impact/impact/home/faq-collapsible-tabs.1440.png",
     "evidence/impact/impact/home/faq-collapsible-tabs.375.png",
     "evidence/impact/impact/home/faq-collapsible-tabs.768.png",
-    "evidence/impact/impact/home/faq-collapsible-tabs.1440.png"
+    "evidence/impact/impact/home/faq-collapsible-tabs.changed.ilk-soru-acik.1440.png",
+    "evidence/impact/impact/home/faq-collapsible-tabs.changed.ilk-soru-acik.375.png",
+    "evidence/impact/impact/home/faq-collapsible-tabs.changed.ilk-soru-acik.768.png",
+    "evidence/impact/impact/home/faq-collapsible-tabs.initial.ilk-hal.1440.png",
+    "evidence/impact/impact/home/faq-collapsible-tabs.initial.ilk-hal.375.png",
+    "evidence/impact/impact/home/faq-collapsible-tabs.initial.ilk-hal.768.png"
   ],
-  "notlar": "Have a question?",
+  "notlar": "Have a question? Interact: ilk soru açık.",
   "delta": "",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://impact-theme-sound.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16701007790330__16623925730fa3bc5b",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "6 soru kapalı. Have a question?"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--16701007790330__16623925730fa3bc5b .accordion-box details:nth-of-type(1) > summary",
+      "value": 600,
+      "capture": true,
+      "etiket": "ilk-soru-acik",
+      "not": "Do you ship overseas? Tek accordion-box içinde 6 details."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Have a question? 6 soru kapalı, aşağı chevron. Gri accordion kutusu.",
+    "changed": "İlk soru açık: Yes, we ship all over the world… Yukarı ok. Diğer 5 kapalı."
+  },
+  "missingStates": [],
+  "interactionNote": "faq-support ile aynı accordion-box yapısı. details#id yok; nth-of-type(1) unique.",
   "capture": {
     "url": "https://impact-theme-sound.myshopify.com/",
     "viewports": [
@@ -21,8 +62,8 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-14T12:00:44.179Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T13:51:06.683Z",
     "mode": "section"
   }
 }

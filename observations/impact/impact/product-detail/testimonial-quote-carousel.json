@@ -8,12 +8,53 @@
   "selector": "#shopify-section-template--16701008806138__1657718525f1b36940",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
+    "evidence/impact/impact/product-detail/testimonial-quote-carousel.1440.png",
     "evidence/impact/impact/product-detail/testimonial-quote-carousel.375.png",
     "evidence/impact/impact/product-detail/testimonial-quote-carousel.768.png",
-    "evidence/impact/impact/product-detail/testimonial-quote-carousel.1440.png"
+    "evidence/impact/impact/product-detail/testimonial-quote-carousel.changed.sonraki-alinti.1440.png",
+    "evidence/impact/impact/product-detail/testimonial-quote-carousel.changed.sonraki-alinti.375.png",
+    "evidence/impact/impact/product-detail/testimonial-quote-carousel.changed.sonraki-alinti.768.png",
+    "evidence/impact/impact/product-detail/testimonial-quote-carousel.initial.ilk-hal.1440.png",
+    "evidence/impact/impact/product-detail/testimonial-quote-carousel.initial.ilk-hal.375.png",
+    "evidence/impact/impact/product-detail/testimonial-quote-carousel.initial.ilk-hal.768.png"
   ],
-  "notlar": "press.",
+  "notlar": "press. Interact: Next 2 alıntı.",
   "delta": "",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://impact-theme-sound.myshopify.com/products/mw08-sport-green-sapphire-glass-black-kevlar-r-case",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16701008806138__1657718525f1b36940",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Item 1 of 2. robust enough to withstand…"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--16701008806138__1657718525f1b36940 button[is='next-button']",
+      "value": 1000,
+      "capture": true,
+      "etiket": "sonraki-alinti",
+      "not": "Next → Item 2 of 2. best-sounding wireless earbuds."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Press alıntısı: robust enough to withstand the rigors… Item 1 of 2. Sol-sağ ok.",
+    "changed": "MW08 Sport headphones sound great… best-sounding wireless earbuds. Item 2 of 2."
+  },
+  "missingStates": [],
+  "interactionNote": "Home press ile aynı next-button[is]. 2 öğe; dots yok.",
   "capture": {
     "url": "https://impact-theme-sound.myshopify.com/products/mw08-sport-green-sapphire-glass-black-kevlar-r-case",
     "viewports": [
@@ -21,8 +62,8 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-14T13:00:49.449Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T13:51:50.186Z",
     "mode": "section"
   }
 }
