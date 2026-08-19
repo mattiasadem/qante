@@ -155,15 +155,23 @@ Karar: onay bekliyor
 ---
 
 ADAY: rise-slideshow-four-dots  
-Gerekçe: Hero ok + 4 nokta. DOM slayt metni üç (Essentials / Better basics / Hot summer sale). Dördüncü slayt kopyası bu walk’ta açılmadı.  
-Örnekler: `#…__hero-slideshow`  
-Öneri: leftover — 4 nokta vs 3 görünen kopya  
+Gerekçe: İlk walk 4 nokta sandı. Interact: `Load slide 1 of 3` … `3 of 3`. slide 4 selector 0. Nokta 3 açıldı — Hot summer sale + %50, CTA yok.  
+Örnekler: `#…__hero-slideshow` · `hero-slideshow.changed.summer-sale.*.png`  
+Öneri: leftover kapandı — 3 slayt, 4. yok  
 Karar: onay bekliyor
 
 ---
 
 ADAY: rise-pii-stop  
-Gerekçe: Contact Send + checkout + language switch submit + account yok (ikon da yok). Newsletter yok.  
+Gerekçe: Contact Send + checkout + language switch submit + account yok (ikon da yok). Newsletter yok. Interact form yalnız `initial`.  
 Örnekler: `/en/pages/contact` · cart Check out  
 Öneri: PII / checkout stop  
+Karar: onay bekliyor
+
+---
+
+ADAY: rise-cro-types-absent  
+Gerekçe: `observations/rise/` içinde countdown, before-after, bundle, comparison, quiz, testimonial, shop-the-feed, scrolling-gallery observation yok. Interact şema uydurmaz.  
+Örnekler: home roster (announcement tek satır, featured-collection slider ayrı tip)  
+Öneri: leftover — ilk envanter `/qante-discover`  
 Karar: onay bekliyor

@@ -8,12 +8,66 @@
   "selector": "#shopify-section-template--21605978865686__hero-slideshow",
   "evidenceSlug": "hero-slideshow",
   "evidence": [
+    "evidence/rise/default/home/hero-slideshow.1440.png",
     "evidence/rise/default/home/hero-slideshow.375.png",
     "evidence/rise/default/home/hero-slideshow.768.png",
-    "evidence/rise/default/home/hero-slideshow.1440.png"
+    "evidence/rise/default/home/hero-slideshow.changed.summer-sale.1440.png",
+    "evidence/rise/default/home/hero-slideshow.changed.summer-sale.375.png",
+    "evidence/rise/default/home/hero-slideshow.changed.summer-sale.768.png",
+    "evidence/rise/default/home/hero-slideshow.initial.essentials.1440.png",
+    "evidence/rise/default/home/hero-slideshow.initial.essentials.375.png",
+    "evidence/rise/default/home/hero-slideshow.initial.essentials.768.png"
   ],
-  "notlar": "slideshow-component. Görünen slayt: Essentials done better. + Buy now. Ok + 4 nokta (ilk dolu). DOM metni: Better basics. / Hot summer sale.",
-  "delta": "Rise/Dawn slideshow. 1440/768 metin sağda; 375 metin görsel altında. Ürün kartı yok.",
+  "notlar": "slideshow-component. 3 slayt: Essentials done better. / Better basics. / Hot summer sale. Ok + 3 nokta. Buy now /en/collections/all tıklanmadı.",
+  "delta": "Rise/Dawn slideshow. 1440/768 metin sağda; 375 metin görsel altında. Ürün kartı yok. 3 slayt — 4. nokta yok.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-rise-demo.myshopify.com/en/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21605978865686__hero-slideshow",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#shopify-section-template--21605978865686__hero-slideshow button[aria-label='Load slide 1 of 3']",
+      "value": 1500,
+      "capture": true,
+      "etiket": "essentials",
+      "not": "Nokta 1 — Essentials done better. Buy now tıklanmaz."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--21605978865686__hero-slideshow button[aria-label='Load slide 3 of 3']",
+      "value": 1500,
+      "capture": true,
+      "etiket": "summer-sale",
+      "not": "Nokta 3 — Hot summer sale. URL aynı kalmalı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Essentials done better. + Buy now. İlk nokta dolu; oklar var. 375 metin görsel altında (çömelmiş model). 768/1440 metin sağda. 375/768/1440.",
+    "changed": "Nokta 3: Hot summer sale + Up to 50% off all products! Summer sale coming soon. Katlanmış beyaz tişörtler. CTA yok. 3. nokta dolu. URL /en/. 375/768/1440."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan hint tüm noktalarda aynı aria-controls. Unique: aria-label Load slide N of 3. DOM 3 slayt — 4. yok. CTA <a> tıklanmadı.",
   "capture": {
     "url": "https://theme-rise-demo.myshopify.com/en/",
     "viewports": [
@@ -22,7 +76,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T10:50:51.350Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T17:11:13.776Z"
   }
 }
