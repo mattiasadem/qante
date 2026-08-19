@@ -74,3 +74,15 @@ Karar: leftover
 ADAY: refresh-contact-form-unsent  
 Gerekçe: Contact Name/Email/Phone/Comment/Send görüldü. Gönderilmedi. Newsletter Email gönderilmedi.  
 Karar: leftover — PII
+
+---
+
+ADAY: refresh-cro-types-absent  
+Gerekçe: CRO envanter listesinden Refresh'te observation yok: before-after-slider, commerce-tools-products-bundle, promo-banner-countdown, comparison-quick-table, product-finder-quiz, media-shop-the-feed, media-scrolling-gallery. promo-announcement-bar var (timer/marquee yok).  
+Karar: leftover — şema uydurulmadı
+
+---
+
+ADAY: refresh-testimonial-carousel-desktop  
+Gerekçe: testimonial-quote-carousel 768/1440'da dört kart grid; slider-button--next disabled. changed interact yalnız 375.  
+Karar: leftover — responsive davranış

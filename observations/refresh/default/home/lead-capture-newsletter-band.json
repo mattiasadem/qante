@@ -8,12 +8,39 @@
   "selector": "#shopify-section-template--16044337955068__1650477665daecd0d5",
   "evidenceSlug": "lead-capture-newsletter-band",
   "evidence": [
+    "evidence/refresh/default/home/lead-capture-newsletter-band.1440.png",
     "evidence/refresh/default/home/lead-capture-newsletter-band.375.png",
     "evidence/refresh/default/home/lead-capture-newsletter-band.768.png",
-    "evidence/refresh/default/home/lead-capture-newsletter-band.1440.png"
+    "evidence/refresh/default/home/lead-capture-newsletter-band.initial.ilk-hal.1440.png",
+    "evidence/refresh/default/home/lead-capture-newsletter-band.initial.ilk-hal.375.png",
+    "evidence/refresh/default/home/lead-capture-newsletter-band.initial.ilk-hal.768.png"
   ],
   "notlar": "Get 10% off your first order. Email alanı. Gönderilmedi. Aynı bant çoğu şablonda tekrar eder — yalnız home çekildi.",
   "delta": "Footer içinde değil; instance bant. Form submit yok.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-refresh-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16044337955068__1650477665daecd0d5",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Boş Email alanı + Subscribe düğmesi. Fill/submit yok."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Get 10% off your first order. başlık + Email placeholder + Subscribe düğmesi. Alan boş; submit yapılmadı. 1440 yatay; 375/768 dikey stack."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan 1 email input. katalogSorgu=face (body). Meaningful interact yalnız initial; şema dokunulmadı.",
   "capture": {
     "url": "https://theme-refresh-demo.myshopify.com/",
     "viewports": [
@@ -22,7 +49,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T17:07:41.020Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:48:18.409Z"
   }
 }

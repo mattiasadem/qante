@@ -8,12 +8,58 @@
   "selector": "#shopify-section-template--16044337955068__1650906547c6f40b2a",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
+    "evidence/refresh/default/home/testimonial-quote-carousel.1440.png",
     "evidence/refresh/default/home/testimonial-quote-carousel.375.png",
     "evidence/refresh/default/home/testimonial-quote-carousel.768.png",
-    "evidence/refresh/default/home/testimonial-quote-carousel.1440.png"
+    "evidence/refresh/default/home/testimonial-quote-carousel.changed.sonraki-logo.375.png",
+    "evidence/refresh/default/home/testimonial-quote-carousel.initial.ilk-hal.1440.png",
+    "evidence/refresh/default/home/testimonial-quote-carousel.initial.ilk-hal.375.png",
+    "evidence/refresh/default/home/testimonial-quote-carousel.initial.ilk-hal.768.png"
   ],
   "notlar": "4 basın alıntısı + logo: Forbes / GQ / Men's Health / The Manual. multicolumn, mobil slider.",
   "delta": "Kişi adı/avatar yok; yayın logosu. 1440 4 kart yan yana.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-refresh-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16044337955068__1650906547c6f40b2a",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Forbes alıntısı + GQ kısmen görünür (375). 1440 dört logo yan yana."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--16044337955068__1650906547c6f40b2a button[aria-label='Slide right']",
+      "capture": true,
+      "viewports": [
+        "375"
+      ],
+      "etiket": "sonraki-logo",
+      "not": "Slide right → GQ + Men's Health görünür"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Dört basın alıntısı (Forbes, GQ, Men's Health, The Manual) + logo. 1440/768 dört kart grid. 375 slider: Forbes + GQ görünür, oklar aktif.",
+    "changed": "375: Slide right sonrası GQ + Men's Health önde; Forbes sola kaydı. 768/1440 next disabled — dört kart zaten görünür, anlamlı delta yok."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "768/1440: slider-button--next disabled; dört kart grid'de zaten görünür."
+    }
+  ],
+  "interactionNote": "Scan 0 affordance (section dışı). Yoklama: 375 Slide left/right görünür; 768/1440 oklar gizli+disabled. changed yalnız 375. Şema emit:carousel.next duruyor.",
   "capture": {
     "url": "https://theme-refresh-demo.myshopify.com/",
     "viewports": [
@@ -22,7 +68,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T17:08:16.811Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:47:41.731Z"
   }
 }
