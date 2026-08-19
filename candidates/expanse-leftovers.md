@@ -42,6 +42,14 @@
 - **404 template** — taxonomy `pageTypes` içinde yok. `page-content-main` + delta + Popular picks featured.
 - **vendor-products** — More from Kikkerland → `product-showcase-related.2`.
 
+## Aday (CRO leftover interact)
+
+ADAY: expanse-cro-interact-2026-08-19  
+Gerekçe: Discover-interact leftover. Var olan obs: faq-collapsible-tabs (ilk soru açık), testimonial-quote-carousel (Flickity nokta 3). promo-banner-countdown home+PDP donuk 12 (tick yok). lead-capture form + newsletter — PII/submit dur. before-after / bundle / comparison / quiz / shop-the-feed / scrolling-gallery observation yok — icat edilmedi.  
+Örnekler: `/pages/faq` · `/products/ibed-lap-desk`  
+Öneri: leftover — şema uydurma yok  
+Karar: onay bekliyor
+
 ## Interact notları
 
 - Homestyle mega: `details#site-nav-item--1` + `summary` (`data-link=/collections/homestyle`) — tıklama sayfaya kaçar; yalnız hover.
@@ -51,3 +59,4 @@
 - PDP Size: Small $35→$25 (Low stock 1) → X-Large $50→$40 (Low stock 4).
 - Homestyle mega 1440: 4 kolon + iBed SALE promo (from $25 / $35 Save $10).
 - Search `/search?q=chair`: 5 sonuç (predictive 3 ürün + Suggestions).
+- CRO leftover interact (2026-08-19): FAQ ilk soru açık (worldwide shipping). Testimonials Flickity nokta 2 Diana K → nokta 3 Gene H. Countdown 12 sabit (home CTA yok; PDP Shop Collection href boş). Newsletter/contact/about form — e-posta/PII doldurulmadı, Send/Subscribe yok. before-after / bundle / comparison / quiz / media-shop-the-feed / media-scrolling-gallery obs yok.

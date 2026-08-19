@@ -8,12 +8,54 @@
   "selector": "#shopify-section-template--17354735714501__e4a2429b-a657-4d06-8804-5386d9066130",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
+    "evidence/expanse/default/product-detail/testimonial-quote-carousel.1440.png",
     "evidence/expanse/default/product-detail/testimonial-quote-carousel.375.png",
     "evidence/expanse/default/product-detail/testimonial-quote-carousel.768.png",
-    "evidence/expanse/default/product-detail/testimonial-quote-carousel.1440.png"
+    "evidence/expanse/default/product-detail/testimonial-quote-carousel.changed.nokta-3.1440.png",
+    "evidence/expanse/default/product-detail/testimonial-quote-carousel.changed.nokta-3.375.png",
+    "evidence/expanse/default/product-detail/testimonial-quote-carousel.changed.nokta-3.768.png",
+    "evidence/expanse/default/product-detail/testimonial-quote-carousel.initial.ilk-hal.1440.png",
+    "evidence/expanse/default/product-detail/testimonial-quote-carousel.initial.ilk-hal.375.png",
+    "evidence/expanse/default/product-detail/testimonial-quote-carousel.initial.ilk-hal.768.png"
   ],
-  "notlar": "From our customers — Sarah E. / Diana K. yıldızlı alıntı.",
-  "delta": "testimonials-slide. Merchant metin (UGC değil zorunlu).",
+  "notlar": "From our customers — Flickity 4 nokta. Ok yok.",
+  "delta": "testimonials-slide. Merchant metin (UGC değil zorunlu). Başlangıç nokta 2 (Diana K).",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://expanse-theme-furniture.myshopify.com/products/ibed-lap-desk",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17354735714501__e4a2429b-a657-4d06-8804-5386d9066130",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Nokta 2 seçili — Diana K / Atlanta"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--17354735714501__e4a2429b-a657-4d06-8804-5386d9066130 li.dot[aria-label='Page dot 3']",
+      "value": 1200,
+      "capture": true,
+      "etiket": "nokta-3",
+      "not": "Flickity Page dot 3 — yoklama: Gene H / The best customer service. Ok 0."
+    }
+  ],
+  "stateFindings": {
+    "initial": "From our customers. Flickity nokta 2 seçili. Ortada Diana K / Atlanta, GA — I bought it for my sister… 375/768 tek kart. 1440: solda Sarah E. (Great Product!), sağda Gene H. (The best customer service!). Ok yok.",
+    "changed": "Nokta 3. Gene H. / Charlotte, NC — The best customer service! I chose a custom colour… 375/768 tek kart, üçüncü nokta dolu. 1440 ortada Gene; solda Diana, sağda Kathrine S. / Reno (Lovely patterns and quality)."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan changer yok (nokta LI, role=tab değil). Yoklama + kare: Page dot 2→3. Ok yok. Şema emit:carousel.next duruyor. Yeni slot yok.",
   "capture": {
     "url": "https://expanse-theme-furniture.myshopify.com/products/ibed-lap-desk",
     "viewports": [
@@ -22,7 +64,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T21:00:18.900Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T13:23:52.182Z"
   }
 }
