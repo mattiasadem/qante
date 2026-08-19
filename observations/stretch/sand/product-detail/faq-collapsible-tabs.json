@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--24278246654261__faq_XbRydq",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/stretch/sand/product-detail/faq-collapsible-tabs.1440.png",
     "evidence/stretch/sand/product-detail/faq-collapsible-tabs.375.png",
     "evidence/stretch/sand/product-detail/faq-collapsible-tabs.768.png",
-    "evidence/stretch/sand/product-detail/faq-collapsible-tabs.1440.png"
+    "evidence/stretch/sand/product-detail/faq-collapsible-tabs.changed.ilk-soru-acik.1440.png",
+    "evidence/stretch/sand/product-detail/faq-collapsible-tabs.changed.ilk-soru-acik.375.png",
+    "evidence/stretch/sand/product-detail/faq-collapsible-tabs.changed.ilk-soru-acik.768.png",
+    "evidence/stretch/sand/product-detail/faq-collapsible-tabs.initial.ilk-hal.1440.png",
+    "evidence/stretch/sand/product-detail/faq-collapsible-tabs.initial.ilk-hal.375.png",
+    "evidence/stretch/sand/product-detail/faq-collapsible-tabs.initial.ilk-hal.768.png"
   ],
   "notlar": "PDP SSS.",
   "delta": "",
@@ -22,7 +28,41 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-14T23:47:42.736Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:11:01.670Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://stretch-theme-sand.myshopify.com/products/illuminating-cleansing-gel",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24278246654261__faq_XbRydq",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "PDP SSS kapalı."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--24278246654261__faq_XbRydq summary.accordion__summary",
+      "value": 1200,
+      "capture": true,
+      "etiket": "ilk-soru-acik",
+      "not": "İlk summary — Nüssa care right for me?"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "PDP SSS, tüm sorular kapalı.",
+    "changed": "İlk soru açık, cevap metni görünür."
   }
 }

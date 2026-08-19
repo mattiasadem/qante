@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--24323034284341__press_rDtmTK",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
+    "evidence/stretch/sand/landing-campaign/testimonial-quote-carousel.1440.png",
     "evidence/stretch/sand/landing-campaign/testimonial-quote-carousel.375.png",
     "evidence/stretch/sand/landing-campaign/testimonial-quote-carousel.768.png",
-    "evidence/stretch/sand/landing-campaign/testimonial-quote-carousel.1440.png"
+    "evidence/stretch/sand/landing-campaign/testimonial-quote-carousel.changed.ikinci-yayin.1440.png",
+    "evidence/stretch/sand/landing-campaign/testimonial-quote-carousel.changed.ikinci-yayin.375.png",
+    "evidence/stretch/sand/landing-campaign/testimonial-quote-carousel.changed.ikinci-yayin.768.png",
+    "evidence/stretch/sand/landing-campaign/testimonial-quote-carousel.initial.ilk-yayin.1440.png",
+    "evidence/stretch/sand/landing-campaign/testimonial-quote-carousel.initial.ilk-yayin.375.png",
+    "evidence/stretch/sand/landing-campaign/testimonial-quote-carousel.initial.ilk-yayin.768.png"
   ],
   "notlar": "In the press.",
   "delta": "",
@@ -22,7 +28,41 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-14T23:36:40.883Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:14:31.799Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://stretch-theme-sand.myshopify.com/pages/body-care",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24323034284341__press_rDtmTK",
+      "capture": true,
+      "etiket": "ilk-yayin",
+      "not": "In the press ilk alıntı."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--24323034284341__press_rDtmTK carousel-next-button[aria-controls='press-carousel-template--24323034284341__press_rDtmTK']",
+      "value": 1000,
+      "capture": true,
+      "etiket": "ikinci-yayin",
+      "not": "Next → ikinci press alıntısı."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "In the press, ilk yayın alıntısı.",
+    "changed": "İkinci press alıntısı."
   }
 }

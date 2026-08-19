@@ -10,7 +10,13 @@
   "evidence": [
     "evidence/stretch/snow/home/testimonial-quote-carousel.1440.png",
     "evidence/stretch/snow/home/testimonial-quote-carousel.375.png",
-    "evidence/stretch/snow/home/testimonial-quote-carousel.768.png"
+    "evidence/stretch/snow/home/testimonial-quote-carousel.768.png",
+    "evidence/stretch/snow/home/testimonial-quote-carousel.changed.ikinci-alinti.1440.png",
+    "evidence/stretch/snow/home/testimonial-quote-carousel.changed.ikinci-alinti.375.png",
+    "evidence/stretch/snow/home/testimonial-quote-carousel.changed.ikinci-alinti.768.png",
+    "evidence/stretch/snow/home/testimonial-quote-carousel.initial.ilk-alinti.1440.png",
+    "evidence/stretch/snow/home/testimonial-quote-carousel.initial.ilk-alinti.375.png",
+    "evidence/stretch/snow/home/testimonial-quote-carousel.initial.ilk-alinti.768.png"
   ],
   "notlar": "Testimonials.",
   "delta": "",
@@ -22,8 +28,42 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-14T22:02:36.479Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:13:01.938Z"
   },
-  "interactionNote": "Alıntı. Ok yoklandı değil; home'da tek kart görünür."
+  "interactionNote": "Alıntı. Ok yoklandı değil; home'da tek kart görünür.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://stretch-theme-snow.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--23643213234544__testimonials_VeyQiY",
+      "capture": true,
+      "etiket": "ilk-alinti",
+      "not": "İlk kurucu alıntısı."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--23643213234544__testimonials_VeyQiY carousel-next-button[aria-controls='testimonial-carousel-template--23643213234544__testimonials_VeyQiY']",
+      "value": 1000,
+      "capture": true,
+      "etiket": "ikinci-alinti",
+      "not": "Next → ikinci alıntı."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Kurucu alıntısı, tek kart.",
+    "changed": "İkinci alıntı slaytta."
+  }
 }

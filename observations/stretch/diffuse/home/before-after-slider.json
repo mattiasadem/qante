@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--17169449254987__before_after_bXxDib",
   "evidenceSlug": "before-after-slider",
   "evidence": [
+    "evidence/stretch/diffuse/home/before-after-slider.1440.png",
     "evidence/stretch/diffuse/home/before-after-slider.375.png",
     "evidence/stretch/diffuse/home/before-after-slider.768.png",
-    "evidence/stretch/diffuse/home/before-after-slider.1440.png"
+    "evidence/stretch/diffuse/home/before-after-slider.changed.sola-suruklendi.1440.png",
+    "evidence/stretch/diffuse/home/before-after-slider.changed.sola-suruklendi.375.png",
+    "evidence/stretch/diffuse/home/before-after-slider.changed.sola-suruklendi.768.png",
+    "evidence/stretch/diffuse/home/before-after-slider.initial.ilk-hal.1440.png",
+    "evidence/stretch/diffuse/home/before-after-slider.initial.ilk-hal.375.png",
+    "evidence/stretch/diffuse/home/before-after-slider.initial.ilk-hal.768.png"
   ],
   "notlar": "Book an eye exam.",
   "delta": "",
@@ -22,7 +28,42 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-15T09:13:03.322Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:09:34.852Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://stretch-theme-amber.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17169449254987__before_after_bXxDib",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Book an eye exam, kol ortada."
+    },
+    {
+      "state": "changed",
+      "action": "drag",
+      "selector": "#shopify-section-template--17169449254987__before_after_bXxDib .before-after__cursor",
+      "value": "pct:25",
+      "dragContainer": "#shopify-section-template--17169449254987__before_after_bXxDib .before-after",
+      "capture": true,
+      "etiket": "sola-suruklendi",
+      "not": "Kolu sola — after alanı genişler."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Book an eye exam before/after, kol ortada.",
+    "changed": "Kol sola, after görseli genişledi."
   }
 }

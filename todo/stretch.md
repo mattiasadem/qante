@@ -21,9 +21,34 @@
 |---|---|
 | Evidence kökü | `evidence/stretch/{snow,sand,diffuse}/` |
 | Observation | Snow **54** · Sand **70** · Diffuse **86** |
-| Kanıt | Snow **241** PNG · Sand **295** PNG · Diffuse **365** PNG |
+| Kanıt | Snow **259** PNG · Sand **325** PNG · Diffuse **371** PNG |
 | Yeni şema | **0** |
-| Kapsam satırı | Stretch (Diffuse) · 16 sayfa · 86 obs · 365 kare · 0 yeni şema · interact |
+| Kapsam satırı | Stretch (Diffuse) · 16 sayfa · 86 obs · 371 kare · 0 yeni şema · CRO interact |
+
+---
+
+## CRO interact (2026-08-19)
+
+Snow resmi demo. `scan-affordances` → `capture-interaction.mjs` 375/768/1440. Validate **0**.
+
+| schemaId | states | preset / sayfa |
+|---|---|---|
+| `before-after-slider` | initial, changed (drag pct:25) | snow/sand/diffuse home |
+| `faq-collapsible-tabs` | initial, changed | snow PDP · sand PDP (+ faq-support zaten vardı) |
+| `testimonial-quote-carousel` | initial, changed | snow home · sand home · sand landing-campaign · sand home press-2 (önceki tur) |
+| `comparison-quick-table` | initial, changed | sand PDP benefits accordion |
+
+**Statik / dur (initial kare yeterli):**
+
+| schemaId | neden |
+|---|---|
+| `promo-banner-countdown` | Sayaç token; tıklanabilir kontrol yok (snow/sand/diffuse home) |
+| `lead-capture-form` | E-posta + submit — PII dur |
+| `lead-capture-newsletter-band` | Newsletter submit dur (snow blog-post) |
+| `comparison-quick-table` | snow theme-features spec listesi — changer yok |
+| `testimonial-quote-carousel` | Tek alıntı, ok yok: snow/sand collection · sand about-brand · diffuse elias |
+
+**Observation yok (şema uydurulmadı):** `commerce-tools-products-bundle` · `product-finder-quiz` · `media-shop-the-feed` · `media-scrolling-gallery`
 
 ---
 
@@ -107,7 +132,7 @@
 - [x] Lookbook + → Toba Quarter Zip QV
 - [x] Search Pages → Size chart satırı
 
-**Açık:** featured slider Next 375/768 gizli, 1440 kare değişmedi. Slideshow ok yok. Before-after sürüklenmedi. Form/kupon yok.
+**Açık:** featured slider Next 375/768 gizli, 1440 kare değişmedi. Slideshow ok yok. ~~Before-after sürüklenmedi.~~ Form/kupon yok.
 
 ## Interact (Sand)
 
@@ -125,7 +150,7 @@
 - [x] Search Blog posts
 - [x] Footer ülke listesi
 
-**Açık:** Theme > demos ok 1440’te tıklanmadı (mobil Theme panelinde snow/diffuse/sand zaten duruyor). Before-after sürüklenmedi. Video play yok. Form/kupon/Buy it now yok.
+**Açık:** Theme > demos ok 1440’te tıklanmadı (mobil Theme panelinde snow/diffuse/sand zaten duruyor). ~~Before-after sürüklenmedi.~~ Video play yok. Form/kupon/Buy it now yok.
 
 ## Interact (Diffuse)
 
@@ -147,7 +172,7 @@
 - [x] Titanium hotspot + → Titanium frames kartı
 - [x] Footer ülke listesi
 
-**Açık:** 1440 image-cards liste `<a>` sayfa değiştirir, nokta gizli. Elias press tek alıntı, ok yok. Before-after sürüklenmedi. Form/kupon/Buy it now yok.
+**Açık:** 1440 image-cards liste `<a>` sayfa değiştirir, nokta gizli. Elias press tek alıntı, ok yok. ~~Before-after sürüklenmedi.~~ Form/kupon/Buy it now yok.
 
 ---
 

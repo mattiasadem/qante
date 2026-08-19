@@ -10,7 +10,13 @@
   "evidence": [
     "evidence/stretch/snow/home/before-after-slider.1440.png",
     "evidence/stretch/snow/home/before-after-slider.375.png",
-    "evidence/stretch/snow/home/before-after-slider.768.png"
+    "evidence/stretch/snow/home/before-after-slider.768.png",
+    "evidence/stretch/snow/home/before-after-slider.changed.sola-suruklendi.1440.png",
+    "evidence/stretch/snow/home/before-after-slider.changed.sola-suruklendi.375.png",
+    "evidence/stretch/snow/home/before-after-slider.changed.sola-suruklendi.768.png",
+    "evidence/stretch/snow/home/before-after-slider.initial.ilk-hal.1440.png",
+    "evidence/stretch/snow/home/before-after-slider.initial.ilk-hal.375.png",
+    "evidence/stretch/snow/home/before-after-slider.initial.ilk-hal.768.png"
   ],
   "notlar": "06_01 hiking boot. Sürükleme yok.",
   "delta": "",
@@ -22,8 +28,43 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-14T22:02:36.467Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T14:08:01.963Z"
   },
-  "interactionNote": "06_01 boot. Sürükleme yoklandı değil (skill)."
+  "interactionNote": "06_01 boot. Sürükleme kolu pct:25 sola — changed kanıtlandı.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://stretch-theme-snow.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--23643213234544__before_after_rF4F46",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Kolu ortada, Black / Sand/Black etiketleri."
+    },
+    {
+      "state": "changed",
+      "action": "drag",
+      "selector": "#shopify-section-template--23643213234544__before_after_rF4F46 .before-after__cursor",
+      "value": "pct:25",
+      "dragContainer": "#shopify-section-template--23643213234544__before_after_rF4F46 .before-after",
+      "capture": true,
+      "etiket": "sola-suruklendi",
+      "not": "Kolu sola — after (Sand/Black) alanı genişler."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "06_01 hiking boot, kol ortada, Black sol / Sand/Black sağ.",
+    "changed": "Kol sola kaydı, after görseli büyük, before dar."
+  }
 }
