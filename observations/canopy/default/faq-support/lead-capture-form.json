@@ -8,12 +8,54 @@
   "selector": "#shopify-section-template--18143729975496__contact-form",
   "evidenceSlug": "lead-capture-form",
   "evidence": [
+    "evidence/canopy/default/faq-support/lead-capture-form.1440.png",
     "evidence/canopy/default/faq-support/lead-capture-form.375.png",
     "evidence/canopy/default/faq-support/lead-capture-form.768.png",
-    "evidence/canopy/default/faq-support/lead-capture-form.1440.png"
+    "evidence/canopy/default/faq-support/lead-capture-form.changed.konu-refund.1440.png",
+    "evidence/canopy/default/faq-support/lead-capture-form.changed.konu-refund.375.png",
+    "evidence/canopy/default/faq-support/lead-capture-form.changed.konu-refund.768.png",
+    "evidence/canopy/default/faq-support/lead-capture-form.initial.ilk-hal.1440.png",
+    "evidence/canopy/default/faq-support/lead-capture-form.initial.ilk-hal.375.png",
+    "evidence/canopy/default/faq-support/lead-capture-form.initial.ilk-hal.768.png"
   ],
   "notlar": "Still looking for answers? Name / Email / How can we help? Submit yok.",
   "delta": "FAQ contact-form. PII yok.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://canopy-theme-natural.myshopify.com/pages/faqs",
+      "capture": false,
+      "not": "Taban sayfa"
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--18143729975496__contact-form",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Still looking for answers? boş form"
+    },
+    {
+      "state": "changed",
+      "action": "select",
+      "selector": "#shopify-section-template--18143729975496__contact-form select[name='contact[how-can-we-help]']",
+      "value": "Get a refund",
+      "capture": true,
+      "etiket": "konu-refund",
+      "not": "How can we help? → Get a refund. Name/email/order/message boş; Submit tıklanmadı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Still looking for answers? Name / Email / How can we help? (boş) / Order number / Message + Submit. Alanlar boş.",
+    "changed": "How can we help? = Get a refund. Name, Email, Order number, Message boş. Submit tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan 5 input. FAQ sayfası alt contact-form; select changed anlamlı, text fill PII stop.",
   "capture": {
     "url": "https://canopy-theme-natural.myshopify.com/pages/faqs",
     "viewports": [
@@ -22,7 +64,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T20:48:10.201Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:17:25.996Z"
   }
 }

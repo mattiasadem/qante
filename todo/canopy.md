@@ -25,7 +25,7 @@ shop `canopy-theme-natural.myshopify.com`
 | Parallel | yalnız `observations/canopy/`, `evidence/canopy/`, `todo/canopy.md`, `candidates/canopy-*.md` |
 
 **Kapsam satırı:**  
-`Canopy · default (Natural) · canopy-v7.3.0 / schema_name Canopy 7.3.0 · theme_store_id null · home→PDP→PLP→collections→search→cart→about/contact→faq→blog→404 · 65 obs · 215 PNG · 0 yeni şema · leftover: candidates/canopy-leftovers.md`
+`Canopy · default (Natural) · canopy-v7.3.0 / schema_name Canopy 7.3.0 · theme_store_id null · home→PDP→PLP→collections→search→cart→about/contact→faq→blog→404 · 65 obs · 251 PNG · 0 yeni şema · leftover: candidates/canopy-leftovers.md`
 
 ---
 
@@ -62,6 +62,13 @@ shop `canopy-theme-natural.myshopify.com`
 | global-cart-drawer | initial / filled / changed | 375/768 overlay; 1440 docked; qty plus $3→$6 |
 | cart-page-main | initial / filled / changed | boş → Soured Cream $3.00 → adet 2 $6.00 |
 | product-info-main | initial / changed | 7.5oz $3.00 → 15.0oz $5.00 + backorder |
+| promo-banner-countdown | initial | 0 Days 0 Hours — statik, affordance yok |
+| faq-collapsible-tabs | initial / changed | Can I cancel my order? açık → cevap metni |
+| lead-capture-newsletter-band | initial | Recipes & Inspiration boş; input PII stop |
+| lead-capture-form (contact) | initial / changed | How can we help? → Orders & Sales |
+| lead-capture-form (faq) | initial / changed | How can we help? → Get a refund |
+| testimonial-quote-carousel (home) | initial / changed | Martha 1/3 → Barrington 2/3 Next |
+| testimonial-quote-carousel (about) | initial / changed | slide 1 → slide 2 dot |
 
 ---
 
@@ -75,5 +82,6 @@ shop `canopy-theme-natural.myshopify.com`
 
 - [x] Official 3vp static (`capture-observation.mjs`) — 59 × 3
 - [x] Interact mega · search · menu · cart · PDP weight
+- [x] Interact CRO: countdown · FAQ · newsletter · forms · testimonials (7 obs)
 - [x] PNG bak → stateFindings
 - [x] `npm run validate` — 0 error
