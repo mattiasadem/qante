@@ -7,8 +7,8 @@
 *Shop:* `pipeline-theme-fashion.myshopify.com`  
 *Not:* `pipeline-theme.myshopify.com` sibling Bright demo — **yürünmedi**.
 
-**Durum:** ✅ Mod A walk + resmi 3vp + interact + validate  
-**PR:** draft https://github.com/mattiasadem/qante/pull/157 · **main'e merge yok**
+**Durum:** ✅ Mod A walk + resmi 3vp + interact + CRO leftover interact + validate  
+**PR:** draft https://github.com/mattiasadem/qante/pull/215 · **main'e merge yok**
 
 ---
 
@@ -20,11 +20,11 @@
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **50** |
-| Evidence PNG | **170** |
+| Evidence PNG | **197** |
 | Parallel | yalnız `observations/pipeline/`, `evidence/pipeline/`, `todo/pipeline.md`, `candidates/pipeline-leftovers.md` |
 
 **Kapsam satırı:**  
-`Pipeline · default · Pipeline 8.2.0 / schema_name Pipeline 8.2.0 · theme_store_id null · Fashion Theme Store preview · home→PDP→PLP→collections→search→cart→about/contact→blog→404 · 50 obs · 170 PNG · 0 yeni şema · leftover: Bright / hamburger 768 / lookbooks / map / Quick Add / PII`
+`Pipeline · default · Pipeline 8.2.0 / schema_name Pipeline 8.2.0 · theme_store_id null · Fashion Theme Store preview · home→PDP→PLP→collections→search→cart→about/contact→blog→404 · 50 obs · 197 PNG · 0 yeni şema · leftover: Bright / hamburger 768 / lookbooks / map / Quick Add / size guide / no countdown-reviews-quiz · PII`
 
 ---
 
@@ -59,7 +59,11 @@
 | global-menu-drawer | open / changed | 375 liste → Shop drill-down + promo. 768 hamburger 0px |
 | global-cart-drawer | initial / filled / changed | boş → qty1 $698 → qty2 $1,396 |
 | cart-page-main | initial / filled / changed | boş → qty1 $698 → qty2 $1,396 |
-| product-info-main | initial / changed | SIZE XS 14 left → S 30 left · $698 |
+| product-info-main | initial / changed | SIZE XS 14 left → S 30 left · $698 · Description açık |
+| faq-collapsible-tabs (contact) | initial / changed | Where do you ship? — We ship worldwide |
+| faq-collapsible-tabs (cart) | initial / changed | Shipping options — Standard/Expedited/Overnight |
+| product-showcase-tabs | initial / changed | CASHMERE Andre $698 → COTTON Havana $328 |
+| media-lookbook-slider | initial / changed | Cei $398 → Adel Pant $368 (hotspot 2) |
 
 ---
 
@@ -73,5 +77,6 @@
 
 - [x] Official 3vp static (`capture-observation.mjs`)
 - [x] Interact mega / search / cart / menu / PDP Size
+- [x] CRO leftover: FAQ ×2 / fabric tabs / lookbook hotspot / PDP Description
 - [x] PNG bak → stateFindings
 - [x] `npm run validate`
