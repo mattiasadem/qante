@@ -14,6 +14,39 @@
   ],
   "notlar": "About Our Store. 3 details.chm-toggle: Electronics store… / Assortment… / Complete list of services…",
   "delta": "SSS değil mağaza accordion. component-toggle.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://minion-theme-red.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--22435917463810__165779435859812db9",
+      "capture": true,
+      "etiket": "kapali-akordeon",
+      "not": "Üç satır kapalı; cevap yok"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--22435917463810__165779435859812db9 details.chm-toggle:has-text('Electronics store Minion') > summary",
+      "value": 900,
+      "capture": true,
+      "etiket": "electronics-acik",
+      "not": "İlk details açık — modern electronics store cevabı görünür"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Scan details/summary'yi mega opener sandı. Yoklama: tık URL değiştirmez, kutu 299→450, yalnız ilk satır open.",
   "capture": {
     "url": "https://minion-theme-red.myshopify.com/",
     "viewports": [

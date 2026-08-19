@@ -13,7 +13,35 @@
     "evidence/minion/default/home/product-showcase-tabs.1440.png"
   ],
   "notlar": "Popular / New Arrival / Best Offer / Recommended. Speaker $32, Game console $1,149, Headphones $149.",
-  "delta": "4 sekme (şema max 6).",
+  "delta": "4 kolon aynı anda (şema max 6). Sekme tık yok.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://minion-theme-red.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--22435917463810__grid_of_products_ebydAh",
+      "capture": true,
+      "etiket": "dort-kolon",
+      "not": "Dört başlık + listeler bir arada"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Popular / New Arrival / Best Offer / Recommended H3 — role=tab yok. New Arrival tık kutu/metin değiştirmedi (780px aynı). Dört kolon her zaman görünür."
+    }
+  ],
+  "interactionNote": "Scan changer yok. Hover (2+ img) zorlanmadı — statik kolon ızgarası. Shop All <a> tıklanmadı.",
   "capture": {
     "url": "https://minion-theme-red.myshopify.com/",
     "viewports": [

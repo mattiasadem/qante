@@ -12,8 +12,47 @@
     "evidence/minion/default/home/hero-slideshow.768.png",
     "evidence/minion/default/home/hero-slideshow.1440.png"
   ],
-  "notlar": "Stay in / Touch / Buy a smartphone / from $399. Sol-sağ ok + 3 nokta. Slayt link /collections/phones ve /products/tablet-pro.",
-  "delta": "Metin slayt görseline gömülü; DOM innerText boştu.",
+  "notlar": "Stay in / Touch / Buy a smartphone / from $399. 3 nokta. Slayt link /collections/phones ve /products/tablet-pro / laptop-pro.",
+  "delta": "Metin slayt görseline gömülü; DOM innerText boştu. Slayt <a> sayfa değiştirir — noktaya bas.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://minion-theme-red.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--22435917463810__16496874371d99a02e",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 600,
+      "capture": true,
+      "etiket": "orta-slayt",
+      "not": "Yoklamada 2. nokta aktif — phones / Stay in Touch"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--22435917463810__16496874371d99a02e li.big-slider__dots__item:nth-child(1)",
+      "value": 1400,
+      "capture": true,
+      "etiket": "ilk-nokta",
+      "not": "1. nokta → laptop-pro slayt. Slayt <a> tıklanmadı."
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Scan changer kaçırdı (noktalar LI). Yoklama: ilk inaktif nokta URL değiştirmez, active laptop-pro'ya geçer. Slayt href /products/laptop-pro — basılmadı.",
   "capture": {
     "url": "https://minion-theme-red.myshopify.com/",
     "viewports": [

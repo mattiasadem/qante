@@ -13,7 +13,55 @@
     "evidence/minion/default/home/media-shop-the-feed.1440.png"
   ],
   "notlar": "Shop the Feed. Headphones $99→$49, speaker $32, scooter RS PRO $699→$499, Mini drone, Phone 8RT.",
-  "delta": "Ürün kartlı feed; sosyal handle yok.",
+  "delta": "Ürün kartlı feed; sosyal handle yok. 375 nokta, 768 ok, 1440 beş kart.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://minion-theme-red.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--22435917463810__shop_the_feed_JXFrhM",
+      "capture": true,
+      "etiket": "ilk-kart",
+      "not": "375: headphones slayt 1. 768: üç kart. 1440: beş kart."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--22435917463810__shop_the_feed_JXFrhM button.slider__button[aria-label='Slide 2']",
+      "value": 1200,
+      "capture": true,
+      "etiket": "slayt-2-speaker",
+      "not": "375 nokta Slide 2 → speaker $32 önde",
+      "viewports": [
+        "375"
+      ]
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--22435917463810__shop_the_feed_JXFrhM .slider-desktop__buttons__next",
+      "value": 1200,
+      "capture": true,
+      "etiket": "ileri-ok",
+      "not": "768 sağ ok → scooter/drone/phone kayar",
+      "viewports": [
+        "768"
+      ]
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "1440'te beş kart yan yana; next/prev slider-desktop__buttons__hide — changed yok. Kart <a> PDP'ye gider, tıklanmadı. Scan hoverReveal (2+ img) zorlanmadı.",
   "capture": {
     "url": "https://minion-theme-red.myshopify.com/",
     "viewports": [
