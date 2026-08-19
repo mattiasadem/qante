@@ -12,8 +12,53 @@
   "url": "https://theme-spotlight-demo.myshopify.com/",
   "selector": "#shopify-section-sections--15939470360632__footer",
   "evidenceSlug": "footer-columns-newsletter",
-  "notlar": "Ortada S ikon + creative culture metni. Sosyal: Facebook Instagram YouTube TikTok Twitter. Country/region Canada (CAD $). Visa–Discover. © theme-spotlight-demo Powered by Shopify.",
-  "delta": "Newsletter formu yok. Menü kolonu yok.",
+  "notlar": "Ortada S ikon + creative culture metni. Sosyal: Facebook Instagram YouTube TikTok Twitter. Country/region Canada (CAD $). Visa–Discover. © theme-spotlight-demo Powered by Shopify. Newsletter input yok.",
+  "delta": "Newsletter formu yok. Menü kolonu yok. Locale disclosure var.",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-spotlight-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-sections--15939470360632__footer",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Newsletter input yok. Locale Canada (CAD $) kapalı."
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#FooterCountryForm button[aria-controls='FooterCountryList']",
+      "capture": true,
+      "etiket": "locale-liste",
+      "not": "Canada (CAD $) → ülke listesi. Ülke tıklanmaz."
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "open": ""
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "Newsletter e-posta alanı yok. Fill yok."
+    }
+  ],
+  "interactionNote": "scan-affordances: 0 input; 1 locale opener Canada (CAD $) → FooterCountryList. Probe: listH 0→98, aria false→true, URL aynı. Ülke seçilmedi. 375 accordion kolon yok.",
   "capture": {
     "url": "https://theme-spotlight-demo.myshopify.com/",
     "viewports": [
