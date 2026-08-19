@@ -8,12 +8,54 @@
   "selector": "#shopify-section-template--18143729942728__form",
   "evidenceSlug": "lead-capture-form",
   "evidence": [
+    "evidence/canopy/default/contact/lead-capture-form.1440.png",
     "evidence/canopy/default/contact/lead-capture-form.375.png",
     "evidence/canopy/default/contact/lead-capture-form.768.png",
-    "evidence/canopy/default/contact/lead-capture-form.1440.png"
+    "evidence/canopy/default/contact/lead-capture-form.changed.konu-orders-sales.1440.png",
+    "evidence/canopy/default/contact/lead-capture-form.changed.konu-orders-sales.375.png",
+    "evidence/canopy/default/contact/lead-capture-form.changed.konu-orders-sales.768.png",
+    "evidence/canopy/default/contact/lead-capture-form.initial.ilk-hal.1440.png",
+    "evidence/canopy/default/contact/lead-capture-form.initial.ilk-hal.375.png",
+    "evidence/canopy/default/contact/lead-capture-form.initial.ilk-hal.768.png"
   ],
   "notlar": "Drop us an email. Name / Email / Phone / How can we help? (Pre-Sales & Advice / Orders & Sales). Send yok.",
   "delta": "Contact form. PII submit yok.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://canopy-theme-natural.myshopify.com/pages/contact-us",
+      "capture": false,
+      "not": "Taban sayfa"
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--18143729942728__form",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Boş form; How can we help? * Please select *"
+    },
+    {
+      "state": "changed",
+      "action": "select",
+      "selector": "#shopify-section-template--18143729942728__form select[name='contact[how-can-we-help]']",
+      "value": "Orders & Sales",
+      "capture": true,
+      "etiket": "konu-orders-sales",
+      "not": "How can we help? → Orders & Sales. Name/email/phone/message boş; Send tıklanmadı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Drop us an email: Name / Email / Phone / How can we help? (boş * Please select *) / Message + Send. Alanlar boş.",
+    "changed": "How can we help? = Orders & Sales seçili. Name, Email, Phone, Message boş. Send tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan 5 input (name, email, tel, select, textarea). Select changed anlamlı; text fill PII stop.",
   "capture": {
     "url": "https://canopy-theme-natural.myshopify.com/pages/contact-us",
     "viewports": [
@@ -22,7 +64,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T20:47:32.833Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:11:09.590Z"
   }
 }

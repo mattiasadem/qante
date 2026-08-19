@@ -8,12 +8,40 @@
   "selector": "#shopify-section-template--18143729844424__countdown_timer_HAdw7m",
   "evidenceSlug": "promo-banner-countdown",
   "evidence": [
+    "evidence/canopy/default/home/promo-banner-countdown.1440.png",
     "evidence/canopy/default/home/promo-banner-countdown.375.png",
     "evidence/canopy/default/home/promo-banner-countdown.768.png",
-    "evidence/canopy/default/home/promo-banner-countdown.1440.png"
+    "evidence/canopy/default/home/promo-banner-countdown.initial.statik.1440.png",
+    "evidence/canopy/default/home/promo-banner-countdown.initial.statik.375.png",
+    "evidence/canopy/default/home/promo-banner-countdown.initial.statik.768.png"
   ],
   "notlar": "Fantastic fruit! Hurry, these offers won't be around forever! Days/Hours timer (canlıda 0).",
   "delta": "countdown_timer. Süre dolmuş görünüyor (0 Days 0 Hours).",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://canopy-theme-natural.myshopify.com/",
+      "capture": false,
+      "not": "Taban sayfa"
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--18143729844424__countdown_timer_HAdw7m",
+      "capture": true,
+      "etiket": "statik",
+      "not": "Fantastic fruit! + 0 Days 0 Hours sayaç. Scan: input/opener/changer yok."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Fantastic fruit! Hurry, these offers won't be around forever! Days/Hours sayacı 0 Days 0 Hours (süre dolmuş). Tıklanabilir kontrol yok; statik promo bandı."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan 0 affordance. Canlı sayaç 0/0 — hover/open/changed anlamsız. Eski statik PNG'ler initial.statik.* ile yenilendi.",
   "capture": {
     "url": "https://canopy-theme-natural.myshopify.com/",
     "viewports": [
@@ -22,7 +50,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T20:54:12.524Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:09:06.766Z"
   }
 }

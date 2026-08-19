@@ -8,12 +8,54 @@
   "selector": "#shopify-section-template--18143729844424__747f5bec-2c63-4259-aa6c-b06cf8f3ed13",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
+    "evidence/canopy/default/home/testimonial-quote-carousel.1440.png",
     "evidence/canopy/default/home/testimonial-quote-carousel.375.png",
     "evidence/canopy/default/home/testimonial-quote-carousel.768.png",
-    "evidence/canopy/default/home/testimonial-quote-carousel.1440.png"
+    "evidence/canopy/default/home/testimonial-quote-carousel.changed.sonraki-alinti.1440.png",
+    "evidence/canopy/default/home/testimonial-quote-carousel.changed.sonraki-alinti.375.png",
+    "evidence/canopy/default/home/testimonial-quote-carousel.changed.sonraki-alinti.768.png",
+    "evidence/canopy/default/home/testimonial-quote-carousel.initial.ilk-hal.1440.png",
+    "evidence/canopy/default/home/testimonial-quote-carousel.initial.ilk-hal.375.png",
+    "evidence/canopy/default/home/testimonial-quote-carousel.initial.ilk-hal.768.png"
   ],
   "notlar": "★★★★★ Martha Browne / sidecart alıntısı. Location etiketi.",
   "delta": "Hash id testimonial bloğu.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://canopy-theme-natural.myshopify.com/",
+      "capture": false,
+      "not": "Taban sayfa"
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--18143729844424__747f5bec-2c63-4259-aa6c-b06cf8f3ed13",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Martha Browne — Canopy always deliver… 1/of/3"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--18143729844424__747f5bec-2c63-4259-aa6c-b06cf8f3ed13 button:has-text('Next')",
+      "value": 1000,
+      "capture": true,
+      "etiket": "sonraki-alinti",
+      "not": "Next → Barbara — We love shopping online with Canopy… 2/of/3"
+    }
+  ],
+  "stateFindings": {
+    "initial": "★★★★★ Martha Browne: \"Canopy always deliver - pun intended!…\" Location etiketi. Slayt 1 / of 3; Previous/Next görünür.",
+    "changed": "★★★★★ Barbara: \"We love shopping online with Canopy. Their site is so easy to navigate and the sidecart is simply brilliant\". Slayt 2 / of 3."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan Previous/Next gorunur. Yoklama: Next tık → .slideshow__slide.is-active alıntı değişti (Martha→Barbara), sayaç 1→2. Şema emit:carousel.next duruyor.",
   "capture": {
     "url": "https://canopy-theme-natural.myshopify.com/",
     "viewports": [
@@ -22,7 +64,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T20:54:48.841Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:14:00.602Z"
   }
 }
