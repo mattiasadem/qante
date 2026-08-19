@@ -5,9 +5,15 @@
   "preset": "default",
   "sayfa": "home",
   "evidence": [
+    "evidence/district/default/home/hero-slideshow.1440.png",
     "evidence/district/default/home/hero-slideshow.375.png",
     "evidence/district/default/home/hero-slideshow.768.png",
-    "evidence/district/default/home/hero-slideshow.1440.png"
+    "evidence/district/default/home/hero-slideshow.changed.lookbook-slayt.1440.png",
+    "evidence/district/default/home/hero-slideshow.changed.lookbook-slayt.375.png",
+    "evidence/district/default/home/hero-slideshow.changed.lookbook-slayt.768.png",
+    "evidence/district/default/home/hero-slideshow.initial.ilk-hal.1440.png",
+    "evidence/district/default/home/hero-slideshow.initial.ilk-hal.375.png",
+    "evidence/district/default/home/hero-slideshow.initial.ilk-hal.768.png"
   ],
   "url": "https://district-theme-demo.myshopify.com/",
   "selector": "#shopify-section-template--17215442026549__16425493082e1094aa",
@@ -36,16 +42,19 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": "#shopify-section-template--17215442026549__16425493082e1094aa button[aria-controls='splide01-slide03']",
+      "selector": "#shopify-section-template--17215442026549__16425493082e1094aa button[aria-controls='splide01-slide01']",
       "value": 1500,
       "capture": true,
-      "etiket": "gather-slayt",
-      "not": "Go to slide 3 — Introducing Gather / PRE ORDER NOW"
+      "etiket": "lookbook-slayt",
+      "not": "Go to slide 1 — New Fall Lookbook. Slide 3 autoplay ile aynı kalıyordu."
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "Autoplay: 1440 New Classics + SHOP TEES (2. nokta teal). 375/768 Introducing Gather + PRE ORDER NOW.",
+    "changed": "Go to slide 1: New Fall Lookbook + SEE THE LOOKBOOK, 1. nokta teal. 375/768/1440. Ok yok."
+  },
   "missingStates": [],
-  "interactionNote": "Probe: slide 1 tık New Classics → New Fall Lookbook, URL home. Ok yok; noktalar 375/768/1440. CTA leftover.",
+  "interactionNote": "İlk denemede slide 3 tık 375/768'de zaten Gather'dı — aynı kare. İkinci: slide 1 Lookbook. CTA <a> tıklanmadı.",
   "capture": {
     "url": "https://district-theme-demo.myshopify.com/",
     "viewports": [
@@ -54,7 +63,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T10:56:15.450Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:59:25.389Z"
   }
 }
