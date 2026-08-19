@@ -8,12 +8,45 @@
   "selector": "#shopify-section-sections--22435917201666__footer",
   "evidenceSlug": "footer-columns-newsletter",
   "evidence": [
+    "evidence/minion/default/home/footer-columns-newsletter.1440.png",
     "evidence/minion/default/home/footer-columns-newsletter.375.png",
     "evidence/minion/default/home/footer-columns-newsletter.768.png",
-    "evidence/minion/default/home/footer-columns-newsletter.1440.png"
+    "evidence/minion/default/home/footer-columns-newsletter.initial.bos-newsletter.1440.png",
+    "evidence/minion/default/home/footer-columns-newsletter.initial.bos-newsletter.375.png",
+    "evidence/minion/default/home/footer-columns-newsletter.initial.bos-newsletter.768.png"
   ],
-  "notlar": "Kategori kolonları Phones…Drones + Newsletter Please enter your e-mail. Submit yok.",
+  "notlar": "Kategori kolonları Phones…Drones + Newsletter Please enter your e-mail. Subscribe opacity 0.",
   "delta": "Newsletter input var; PII submit dur.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://minion-theme-red.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-sections--22435917201666__footer",
+      "capture": true,
+      "etiket": "bos-newsletter",
+      "not": "Boş e-posta. Subscribe / fill yok."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Kırmızı footer. Dört link kolonu (Phones…Drones / About… / Theme…). Newsletter boş: Please enter your e-mail + Privacy Policy / Terms. Facebook TikTok YouTube. United States (USD $). Visa–Discover. Subscribe butonu karede yok (opacity 0)."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "contact[email] PII — doldurulmadı. Subscribe tıklanmadı."
+    }
+  ],
+  "interactionNote": "Scan 1 email + locale United States. Country/region opener leftover (CRO form değil). 375 kolonlar accordion değil — hepsi açık.",
   "capture": {
     "url": "https://minion-theme-red.myshopify.com/",
     "viewports": [
@@ -22,7 +55,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T10:55:20.756Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T17:09:16.464Z"
   }
 }

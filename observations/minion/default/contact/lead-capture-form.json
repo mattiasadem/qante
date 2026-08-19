@@ -8,12 +8,45 @@
   "selector": "#shopify-section-template--22435918348546__1654074802c1fb8429",
   "evidenceSlug": "lead-capture-form",
   "evidence": [
+    "evidence/minion/default/contact/lead-capture-form.1440.png",
     "evidence/minion/default/contact/lead-capture-form.375.png",
     "evidence/minion/default/contact/lead-capture-form.768.png",
-    "evidence/minion/default/contact/lead-capture-form.1440.png"
+    "evidence/minion/default/contact/lead-capture-form.initial.bos-form.1440.png",
+    "evidence/minion/default/contact/lead-capture-form.initial.bos-form.375.png",
+    "evidence/minion/default/contact/lead-capture-form.initial.bos-form.768.png"
   ],
   "notlar": "Contact Form. Name / Email / Phone / Comment / Submit.",
   "delta": "Submit tıklanmadı (PII).",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://minion-theme-red.myshopify.com/pages/contact",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--22435918348546__1654074802c1fb8429",
+      "capture": true,
+      "etiket": "bos-form",
+      "not": "Boş Name/Email/Phone/Comment. Submit yok."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Contact Form. Got a question or just want to chat? Boş Name / Email / Phone number / Comment + kırmızı Submit. 1440 Name|Email yan yana."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "Name / Email / Phone / Comment PII — doldurulmadı. Submit tıklanmadı."
+    }
+  ],
+  "interactionNote": "Scan 4 input. Changer yok. Anlamlı input state PII stop.",
   "capture": {
     "url": "https://minion-theme-red.myshopify.com/pages/contact",
     "viewports": [
@@ -22,7 +55,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T10:54:43.459Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T17:09:52.068Z"
   }
 }

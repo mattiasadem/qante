@@ -10,8 +10,8 @@
 `theme_store_id` = **null** (canlıda yok; uydurulmadı)  
 shop `minion-theme-red.myshopify.com`
 
-**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti** (0 error)  
-**PR:** draft https://github.com/mattiasadem/qante/pull/170 — **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact + CRO leftover interact + validate **bitti** (0 error)  
+**PR:** draft https://github.com/mattiasadem/qante/pull/265 — CRO interact turu
 
 ---
 
@@ -25,7 +25,7 @@ shop `minion-theme-red.myshopify.com`
 | Parallel | yalnız `observations/minion/`, `evidence/minion/`, `todo/minion.md`, `candidates/minion-leftovers.md` |
 
 **Kapsam satırı:**  
-`Minion · default (Red) · Devices 29-Jun 6a15611 · schema_name Minion 4.2.0 · theme_store_id null · home→PDP→PLP→collections→search→cart→about-us/contact→news/article→404 · 37 obs · 129 PNG · 0 yeni şema · leftover: candidates/minion-leftovers.md`
+`Minion · default (Red) · Devices 29-Jun 6a15611 · schema_name Minion 4.2.0 · theme_store_id null · home→PDP→PLP→collections→search→cart→about-us/contact→news/article→404 · 37 obs · 158 PNG · 0 yeni şema · leftover: candidates/minion-leftovers.md`
 
 ---
 
@@ -59,15 +59,15 @@ shop `minion-theme-red.myshopify.com`
 | 1 | cart-drawer | `global-cart-drawer` | reuse · interact |
 | 2 | ticker `66885636-…` | `promo-announcement-bar` | reuse |
 | 3 | header | `navigation-header-mega` | reuse · interact |
-| 4 | slideshow `16496874371d99a02e` | `hero-slideshow` | reuse |
-| 5 | brands `1654074087c407e2b5` | `social-proof-brand-logos` | reuse |
+| 4 | slideshow `16496874371d99a02e` | `hero-slideshow` | reuse · interact |
+| 5 | brands `1654074087c407e2b5` | `social-proof-brand-logos` | reuse · kontrol yok |
 | 6 | popular_categories_8GeQL6 | `collection-nav-image-cards` | reuse |
 | 7 | featured `16544355349cd01ef0` | `product-showcase-grid-featured` | reuse |
 | 8 | banners `1657623091ab93e52b` | `promo-grid-banner` | reuse |
-| 9 | grid_of_products_ebydAh | `product-showcase-tabs` | reuse |
-| 10 | shop_the_feed_JXFrhM | `media-shop-the-feed` | reuse |
+| 9 | grid_of_products_ebydAh | `product-showcase-tabs` | reuse · kolon, sekme tık yok |
+| 10 | shop_the_feed_JXFrhM | `media-shop-the-feed` | reuse · interact |
 | 11 | icon_banners_xY7Rpj | `features-multicolumn` | reuse |
-| 12 | about accordion `165779435859812db9` | `faq-collapsible-tabs` | reuse |
+| 12 | about accordion `165779435859812db9` | `faq-collapsible-tabs` | reuse · interact |
 | 13 | trust `2e871113-…` | `trust-icon-row` | reuse |
 | 14 | footer | `footer-columns-newsletter` | reuse · submit yok |
 | 15 | summary.main-menu-button | `global-menu-drawer` | reuse · 375/768 |
@@ -86,6 +86,20 @@ shop `minion-theme-red.myshopify.com`
 | cart-page-main | filled + changed | empty → PC $600 qty1 → qty2 $1,199 |
 | product-info-main | changed | 256GB $1,199 → 512GB $1,899 |
 
+### CRO interact (leftover tur)
+
+| schemaId | State | Sonuç |
+|---|---|---|
+| faq-collapsible-tabs | initial + changed | [x] 3vp Electronics store açık — courier delivery metni |
+| media-shop-the-feed | initial + changed | [x] 375 Slide 2 speaker $32; 768 ok → scooter/drone/phone. 1440 beş kart, ok gizl |
+| hero-slideshow | initial + changed | [x] 3vp 2. nokta phones $399 → 1. nokta Laptop PRO $1,499 |
+| product-showcase-tabs | initial | [x] 4 kolon her zaman görünür — changed yok |
+| footer-columns-newsletter | initial | [x] PII dur — input yok |
+| lead-capture-form | initial | [x] PII dur — Name/Email/Phone/Comment boş |
+| lead-capture-newsletter-band | initial | [x] PII dur — blog bant e-posta boş |
+
+CRO şemaları observation'da yok (yeni şema yok): before-after-slider, commerce-tools-products-bundle, promo-banner-countdown, comparison-quick-table, product-finder-quiz, testimonial-quote-carousel, media-scrolling-gallery
+
 ---
 
 ## Aday / leftover
@@ -98,5 +112,6 @@ shop `minion-theme-red.myshopify.com`
 
 - [x] Official 3vp static (`capture-observation.mjs`)
 - [x] Interact mega / search / cart / menu / PDP Storage
+- [x] CRO leftover: FAQ / shop-the-feed / hero / tabs / contact / newsletter
 - [x] PNG bak → stateFindings
 - [x] `npm run validate` — 0 error
