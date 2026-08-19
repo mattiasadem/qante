@@ -4,10 +4,36 @@
   "varyant": "shogun",
   "scope": "page",
   "amac": "Özel sayfa ve şablonları görsel editörle oluşturup tema akışına entegre eder.",
+  "sorun": "Kampanya ve koleksiyon landing'leri tema section'larıyla sınırlı kalır; Shogun tam sayfa şablon üretir.",
+  "link": "https://apps.shopify.com/shogun",
   "yuzey": [],
-  "entegrasyon": [
-    "page-runtime"
-  ],
+  "entegrasyon": {
+    "shopify": [
+      "page-runtime"
+    ],
+    "ikas": [
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [],
+  "ikasSayfa": [],
+  "ayarlar": {
+    "sayfaSablonu": {
+      "tip": "ref",
+      "hedef": "page",
+      "zorunlu": true
+    },
+    "seoBaslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 70
+    },
+    "yayinDurumu": {
+      "tip": "boolean",
+      "zorunlu": true
+    }
+  },
   "dataBindings": [
     {
       "name": "urunler",
@@ -28,23 +54,5 @@
   "hookNoktalari": [],
   "bagimliliklar": [],
   "ikasKarsilik": "Studio",
-  "_note": "Builder SDK — yuzey çocuk section'lardan çıkarılır, SDK'nın kendisi değil",
-  "link": "https://apps.shopify.com/shogun",
-  "sorun": "Kampanya ve koleksiyon landing'leri tema section'larıyla sınırlı kalır; Shogun tam sayfa şablon üretir.",
-  "ayarlar": {
-    "sayfaSablonu": {
-      "tip": "ref",
-      "hedef": "page",
-      "zorunlu": true
-    },
-    "seoBaslik": {
-      "tip": "text",
-      "zorunlu": false,
-      "maxLen": 70
-    },
-    "yayinDurumu": {
-      "tip": "boolean",
-      "zorunlu": true
-    }
-  }
+  "_note": "Builder SDK — yuzey çocuk section'lardan çıkarılır, SDK'nın kendisi değil"
 }

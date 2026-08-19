@@ -4,31 +4,30 @@
   "varyant": "hextom-fsb",
   "scope": "overlay",
   "amac": "Ücretsiz kargo eşiğini görünür kılarak sepet değerini artırmayı hedefler.",
+  "sorun": "Ücretsiz kargo eşiği sepette görünmeden müşteri ek ürün eklemez; FSB eşiği vitrin genelinde hatırlatır.",
+  "link": "https://apps.shopify.com/free-shipping-bar",
   "yuzey": [
     "free_shipping_bar"
   ],
-  "entegrasyon": [
-    "app-embed"
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-script"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "VIEW_CART",
+    "ADD_TO_CART",
+    "PAGE_VIEW"
   ],
-  "dataBindings": [
-    {
-      "name": "sepet",
-      "source": "DataSource.cart"
-    }
+  "ikasSayfa": [
+    "CART",
+    "PRODUCT",
+    "INDEX"
   ],
-  "actions": [
-    "listen:cart.updated"
-  ],
-  "hookNoktalari": [
-    "mount:announcement.after",
-    "mount:cartDrawer.aboveItems"
-  ],
-  "bagimliliklar": [
-    "global-cart-drawer"
-  ],
-  "ikasKarsilik": "Barlio",
-  "link": "https://apps.shopify.com/free-shipping-bar",
-  "sorun": "Ücretsiz kargo eşiği sepette görünmeden müşteri ek ürün eklemez; FSB eşiği vitrin genelinde hatırlatır.",
   "ayarlar": {
     "esikTutari": {
       "tip": "number",
@@ -47,6 +46,34 @@
       "tip": "text",
       "zorunlu": false,
       "maxLen": 40
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
     }
-  }
+  },
+  "dataBindings": [
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "listen:cart.updated"
+  ],
+  "hookNoktalari": [
+    "mount:announcement.after",
+    "mount:cartDrawer.aboveItems"
+  ],
+  "bagimliliklar": [
+    "global-cart-drawer"
+  ],
+  "ikasKarsilik": "Barlio"
 }

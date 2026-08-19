@@ -4,6 +4,8 @@
   "varyant": "growave",
   "scope": "in-flow",
   "amac": "Sadakat, favori listesi ve yorumları tek pakette vitrine entegre eder.",
+  "sorun": "Sadakat, favori ve yorum ayrı uygulamalarda parçalanınca müşteri deneyimi kopuk kalır.",
+  "link": "https://apps.shopify.com/growave",
   "yuzey": [
     "loyalty_launcher",
     "loyalty_points_badge",
@@ -12,10 +14,55 @@
     "review_stars",
     "review_widget"
   ],
-  "entegrasyon": [
-    "app-embed",
-    "app-block"
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-script"
+    ]
+  },
+  "ikasTur": "yok",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "ADD_TO_WISHLIST",
+    "CUSTOMER_LOGIN"
   ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "ACCOUNT",
+    "INDEX"
+  ],
+  "ayarlar": {
+    "sadakatLauncherGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "favoriButonuGoster": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "yorumWidgetGoster": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "puanKazanmaOrani": {
+      "tip": "number",
+      "zorunlu": false
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
   "dataBindings": [
     {
       "name": "musteri",
@@ -38,25 +85,5 @@
     "product-info-main"
   ],
   "ikasKarsilik": "yok",
-  "_note": "Suite: loyalty + wishlist + reviews — baskın kategori loyalty",
-  "link": "https://apps.shopify.com/growave",
-  "sorun": "Sadakat, favori ve yorum ayrı uygulamalarda parçalanınca müşteri deneyimi kopuk kalır.",
-  "ayarlar": {
-    "sadakatLauncherGoster": {
-      "tip": "boolean",
-      "zorunlu": true
-    },
-    "favoriButonuGoster": {
-      "tip": "boolean",
-      "zorunlu": false
-    },
-    "yorumWidgetGoster": {
-      "tip": "boolean",
-      "zorunlu": false
-    },
-    "puanKazanmaOrani": {
-      "tip": "number",
-      "zorunlu": false
-    }
-  }
+  "_note": "Suite: loyalty + wishlist + reviews — baskın kategori loyalty"
 }

@@ -4,34 +4,30 @@
   "varyant": "instafeed",
   "scope": "in-flow",
   "amac": "Instagram gönderilerini mağaza vitrininde UGC galeri olarak gösterir.",
+  "sorun": "Sosyal kanıt Instagram'da kalınca vitrin statik görünür; Instafeed gönderileri mağazaya taşır.",
+  "link": "https://apps.shopify.com/instafeed",
   "yuzey": [
     "ugc_gallery"
   ],
-  "entegrasyon": [
-    "app-block",
-    "app-embed"
+  "entegrasyon": {
+    "shopify": [
+      "app-block",
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-script"
+    ]
+  },
+  "ikasTur": "yok",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW"
   ],
-  "dataBindings": [
-    {
-      "name": "urunler",
-      "source": "DataSource.productList",
-      "params": {
-        "kaynak": "manual",
-        "limit": 12
-      }
-    }
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT",
+    "CUSTOM"
   ],
-  "actions": [
-    "navigate"
-  ],
-  "hookNoktalari": [
-    "mount:section.after"
-  ],
-  "bagimliliklar": [],
-  "ikasKarsilik": "yok",
-  "_note": "kategori merchandising — sosyal feed vitrin bloğu; reviews UGC ile örtüşse de feed odaklı",
-  "link": "https://apps.shopify.com/instafeed",
-  "sorun": "Sosyal kanıt Instagram'da kalınca vitrin statik görünür; Instafeed gönderileri mağazaya taşır.",
   "ayarlar": {
     "hesapBaglantisi": {
       "tip": "text",
@@ -50,6 +46,36 @@
       "tip": "text",
       "zorunlu": false,
       "maxLen": 20
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
     }
-  }
+  },
+  "dataBindings": [
+    {
+      "name": "urunler",
+      "source": "DataSource.productList",
+      "params": {
+        "kaynak": "manual",
+        "limit": 12
+      }
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "yok",
+  "_note": "kategori merchandising — sosyal feed vitrin bloğu; reviews UGC ile örtüşse de feed odaklı"
 }

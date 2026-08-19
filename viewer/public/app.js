@@ -1266,8 +1266,12 @@ function appsFlat() {
       app.sorun,
       app.link,
       app.ikasKarsilik,
+      app.ikasTur,
       ...(app.yuzey || []),
-      ...(app.entegrasyon || []),
+      ...(app.ikasOlaylar || []),
+      ...(app.ikasSayfa || []),
+      ...(app.entegrasyon?.shopify || []),
+      ...(app.entegrasyon?.ikas || []),
     ]
       .join(" ")
       .toLowerCase();
@@ -1342,9 +1346,21 @@ function renderAppsDetail() {
     ? app.yuzey.map((y) => `<span class="chip mono">${esc(y)}</span>`).join("")
     : `<span class="chip queue">— (head / builder)</span>`;
 
-  const entegrasyonChips = (app.entegrasyon || [])
+  const shopifyEnt = (app.entegrasyon?.shopify || [])
     .map((e) => `<span class="chip">${esc(e)}</span>`)
-    .join("");
+    .join("") || `<span class="chip queue">—</span>`;
+
+  const ikasEnt = (app.entegrasyon?.ikas || [])
+    .map((e) => `<span class="chip mono">${esc(e)}</span>`)
+    .join("") || `<span class="chip queue">—</span>`;
+
+  const ikasOlayChips = (app.ikasOlaylar || []).length
+    ? app.ikasOlaylar.map((e) => `<span class="chip mono">${esc(e)}</span>`).join("")
+    : `<span class="chip queue">—</span>`;
+
+  const ikasSayfaChips = (app.ikasSayfa || []).length
+    ? app.ikasSayfa.map((e) => `<span class="chip mono">${esc(e)}</span>`).join("")
+    : `<span class="chip queue">—</span>`;
 
   main.innerHTML = `
     <p class="list-count-head">${esc(APP_KATEGORI_LABEL[app.kategori] || app.kategori)} · ${esc(APP_SCOPE_LABEL[app.scope] || app.scope)}</p>
@@ -1367,15 +1383,28 @@ function renderAppsDetail() {
       <span class="chip">${esc(app.varyant)}</span>
       <span class="chip">${esc(APP_KATEGORI_LABEL[app.kategori] || app.kategori)}</span>
       <span class="chip">${esc(APP_SCOPE_LABEL[app.scope] || app.scope)}</span>
+      <span class="chip">ikas: ${esc(app.ikasTur || "yok")}</span>
       <span class="chip mono">${esc(app.path)}</span>
     </div>
     <div class="card" style="margin-top:1rem">
-      <div class="card-head"><strong>Yüzey</strong></div>
-      <div class="chips">${yuzeyChips}</div>
+      <div class="card-head"><strong>Entegrasyon · Shopify</strong></div>
+      <div class="chips">${shopifyEnt}</div>
     </div>
     <div class="card">
-      <div class="card-head"><strong>Entegrasyon</strong></div>
-      <div class="chips">${entegrasyonChips}</div>
+      <div class="card-head"><strong>Entegrasyon · ikas</strong></div>
+      <div class="chips">${ikasEnt}</div>
+    </div>
+    <div class="card">
+      <div class="card-head"><strong>ikas olaylar</strong></div>
+      <div class="chips">${ikasOlayChips}</div>
+    </div>
+    <div class="card">
+      <div class="card-head"><strong>ikas sayfa</strong></div>
+      <div class="chips">${ikasSayfaChips}</div>
+    </div>
+    <div class="card">
+      <div class="card-head"><strong>Yüzey</strong></div>
+      <div class="chips">${yuzeyChips}</div>
     </div>
     <div class="card">
       <div class="card-head"><strong>ikas karşılığı</strong></div>

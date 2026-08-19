@@ -4,13 +4,57 @@
   "varyant": "mailchimp",
   "scope": "overlay",
   "amac": "Mailchimp listesine abone toplamak için sınırlı onsite popup ve gömülü formlar sağlar.",
+  "sorun": "Mailchimp listesi büyümesi tema formlarına bağlı kalınca ziyaretçi çoğu sayfada hiç yakalanmaz.",
+  "link": "https://apps.shopify.com/mailchimp",
   "yuzey": [
     "popup_modal",
     "embedded_form"
   ],
-  "entegrasyon": [
-    "app-embed"
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-script"
+    ]
+  },
+  "ikasTur": "yok",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "CUSTOMER_REGISTER",
+    "CONTACT_FORM"
   ],
+  "ikasSayfa": [
+    "INDEX",
+    "CUSTOM"
+  ],
+  "ayarlar": {
+    "baslik": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80
+    },
+    "listeId": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 40
+    },
+    "popupAktif": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
   "dataBindings": [
     {
       "name": "musteri",
@@ -26,23 +70,5 @@
   "bagimliliklar": [
     "lead-capture-newsletter-band"
   ],
-  "ikasKarsilik": "yok",
-  "link": "https://apps.shopify.com/mailchimp",
-  "sorun": "Mailchimp listesi büyümesi tema formlarına bağlı kalınca ziyaretçi çoğu sayfada hiç yakalanmaz.",
-  "ayarlar": {
-    "baslik": {
-      "tip": "text",
-      "zorunlu": true,
-      "maxLen": 80
-    },
-    "listeId": {
-      "tip": "text",
-      "zorunlu": true,
-      "maxLen": 40
-    },
-    "popupAktif": {
-      "tip": "boolean",
-      "zorunlu": true
-    }
-  }
+  "ikasKarsilik": "yok"
 }

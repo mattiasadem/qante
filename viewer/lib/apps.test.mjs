@@ -18,6 +18,9 @@ const TOP_LEVEL = [
   "link",
   "yuzey",
   "entegrasyon",
+  "ikasTur",
+  "ikasOlaylar",
+  "ikasSayfa",
   "ayarlar",
   "dataBindings",
   "actions",
@@ -33,7 +36,7 @@ describe("apps inventory", () => {
     assert.ok(data.apps.length >= 28);
   });
 
-  it("every apps/*.json has exactly 15 contract keys (+ optional _ keys)", () => {
+  it("every apps/*.json has exactly 18 contract keys (+ optional _ keys)", () => {
     const files = readdirSync(APPS_DIR).filter((n) => n.endsWith(".json") && !n.startsWith("_"));
     assert.ok(files.length > 0);
 
@@ -46,15 +49,17 @@ describe("apps inventory", () => {
       assert.deepEqual(
         keys.sort(),
         [...TOP_LEVEL].sort(),
-        `${name}: must have exactly 15 top-level keys`
+        `${name}: must have exactly 18 top-level keys`
       );
 
-      assert.ok(Array.isArray(schema.actions) && schema.actions.length > 0, `${name}: actions not empty`);
-      assert.ok(typeof schema.amac === "string" && schema.amac.trim(), `${name}: amac required`);
-      assert.ok(typeof schema.sorun === "string" && schema.sorun.trim(), `${name}: sorun required`);
-      assert.ok(/^https:\/\//.test(schema.link), `${name}: link must be https URL`);
-      assert.ok(schema.ayarlar && typeof schema.ayarlar === "object", `${name}: ayarlar required`);
-      assert.ok(typeof schema.ikasKarsilik === "string", `${name}: ikasKarsilik required`);
+      assert.ok(schema.entegrasyon?.shopify && Array.isArray(schema.entegrasyon.shopify));
+      assert.ok(schema.entegrasyon?.ikas && Array.isArray(schema.entegrasyon.ikas));
+      assert.ok(["admin", "ozel", "yok"].includes(schema.ikasTur), `${name}: ikasTur`);
+      assert.ok(Array.isArray(schema.ikasOlaylar));
+      assert.ok(Array.isArray(schema.ikasSayfa));
+      for (const e of schema.entegrasyon.ikas) {
+        assert.ok(!["app-block", "app-embed", "web-pixel"].includes(e), `${name}: no Shopify types on ikas`);
+      }
     }
   });
 });

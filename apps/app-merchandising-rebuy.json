@@ -4,14 +4,61 @@
   "varyant": "rebuy",
   "scope": "overlay",
   "amac": "Sepet çekmecesi ve ürün sayfalarında kişiselleştirilmiş upsell ve cross-sell önerileri sunar.",
+  "sorun": "Sepet ve PDP önerileri statik kalınca AOV artmaz; Rebuy davranışa göre upsell ve cross-sell sunar.",
+  "link": "https://apps.shopify.com/rebuy",
   "yuzey": [
     "cart_drawer",
     "product_recs"
   ],
-  "entegrasyon": [
-    "app-embed",
-    "app-block"
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-script"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "VIEW_CART",
+    "ADD_TO_CART",
+    "PRODUCT_VIEW"
   ],
+  "ikasSayfa": [
+    "CART",
+    "PRODUCT"
+  ],
+  "ayarlar": {
+    "sepetOnerisiAktif": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "pdpOnerisiAktif": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "oneriLimiti": {
+      "tip": "number",
+      "zorunlu": false
+    },
+    "kuralSeti": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 60
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
   "dataBindings": [
     {
       "name": "sepet",
@@ -41,26 +88,5 @@
     "global-cart-drawer",
     "product-info-main"
   ],
-  "ikasKarsilik": "cart Drawer + Kabile Sepet+",
-  "link": "https://apps.shopify.com/rebuy",
-  "sorun": "Sepet ve PDP önerileri statik kalınca AOV artmaz; Rebuy davranışa göre upsell ve cross-sell sunar.",
-  "ayarlar": {
-    "sepetOnerisiAktif": {
-      "tip": "boolean",
-      "zorunlu": true
-    },
-    "pdpOnerisiAktif": {
-      "tip": "boolean",
-      "zorunlu": false
-    },
-    "oneriLimiti": {
-      "tip": "number",
-      "zorunlu": false
-    },
-    "kuralSeti": {
-      "tip": "text",
-      "zorunlu": false,
-      "maxLen": 60
-    }
-  }
+  "ikasKarsilik": "cart Drawer + Kabile Sepet+"
 }

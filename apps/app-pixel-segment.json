@@ -4,10 +4,46 @@
   "varyant": "segment",
   "scope": "head",
   "amac": "Müşteri veri platformuna olay akışını tek entegrasyon noktasından yönlendirir.",
+  "sorun": "Olay verisi her araç için ayrı entegre edilince CDP pipeline tutarsız ve kırılgan olur.",
+  "link": "https://segment.com",
   "yuzey": [],
-  "entegrasyon": [
-    "web-pixel"
+  "entegrasyon": {
+    "shopify": [
+      "web-pixel"
+    ],
+    "ikas": [
+      "storefront-script",
+      "webhook"
+    ]
+  },
+  "ikasTur": "ozel",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW",
+    "ADD_TO_CART",
+    "COMPLETE_CHECKOUT",
+    "CUSTOMER_LOGIN"
   ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT",
+    "CART",
+    "CHECKOUT",
+    "ACCOUNT"
+  ],
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
   "dataBindings": [],
   "actions": [
     "yok"
@@ -15,8 +51,5 @@
   "hookNoktalari": [],
   "bagimliliklar": [],
   "ikasKarsilik": "Extensions / Scripts",
-  "link": "https://segment.com",
-  "sorun": "Olay verisi her araç için ayrı entegre edilince CDP pipeline tutarsız ve kırılgan olur.",
-  "ayarlar": {},
   "_note": "Resmi Shopify App Store birinci parti Segment uygulaması yok; link Segment ana sitesi"
 }

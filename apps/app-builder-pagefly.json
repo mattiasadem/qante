@@ -4,10 +4,36 @@
   "varyant": "pagefly",
   "scope": "page",
   "amac": "Özel landing ve içerik sayfalarını görsel editörle oluşturup mağazada yayınlar.",
+  "sorun": "Tema şablonları özel landing ihtiyacını karşılamaz; PageFly görsel editörle sayfa üretir.",
+  "link": "https://apps.shopify.com/pagefly",
   "yuzey": [],
-  "entegrasyon": [
-    "page-runtime"
-  ],
+  "entegrasyon": {
+    "shopify": [
+      "page-runtime"
+    ],
+    "ikas": [
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [],
+  "ikasSayfa": [],
+  "ayarlar": {
+    "sayfaSablonu": {
+      "tip": "ref",
+      "hedef": "page",
+      "zorunlu": true
+    },
+    "seoBaslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 70
+    },
+    "yayinDurumu": {
+      "tip": "boolean",
+      "zorunlu": true
+    }
+  },
   "dataBindings": [
     {
       "name": "urunler",
@@ -28,23 +54,5 @@
   "hookNoktalari": [],
   "bagimliliklar": [],
   "ikasKarsilik": "Studio",
-  "_note": "Builder SDK — yuzey çocuk section'lardan çıkarılır, SDK'nın kendisi değil",
-  "link": "https://apps.shopify.com/pagefly",
-  "sorun": "Tema şablonları özel landing ihtiyacını karşılamaz; PageFly görsel editörle sayfa üretir.",
-  "ayarlar": {
-    "sayfaSablonu": {
-      "tip": "ref",
-      "hedef": "page",
-      "zorunlu": true
-    },
-    "seoBaslik": {
-      "tip": "text",
-      "zorunlu": false,
-      "maxLen": 70
-    },
-    "yayinDurumu": {
-      "tip": "boolean",
-      "zorunlu": true
-    }
-  }
+  "_note": "Builder SDK — yuzey çocuk section'lardan çıkarılır, SDK'nın kendisi değil"
 }

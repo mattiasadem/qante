@@ -4,6 +4,8 @@
   "varyant": "judgeme",
   "scope": "in-flow",
   "amac": "Ürün ve mağaza güvenini artırmak için müşteri yorumlarını ve puanlarını vitrine taşır.",
+  "sorun": "Tema PDP'leri varsayılan olarak müşteri yorumu ve fotoğraf UGC göstermez; satın alma kararı için güven sinyali eksik kalır.",
+  "link": "https://apps.shopify.com/judgeme",
   "yuzey": [
     "review_stars",
     "review_widget",
@@ -11,38 +13,24 @@
     "ugc_gallery",
     "review_floating_tab"
   ],
-  "entegrasyon": [
-    "app-block",
-    "app-embed"
+  "entegrasyon": {
+    "shopify": [
+      "app-block",
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-script"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "PAGE_VIEW"
   ],
-  "dataBindings": [
-    {
-      "name": "urun",
-      "source": "DataSource.product"
-    },
-    {
-      "name": "urunler",
-      "source": "DataSource.productList",
-      "params": {
-        "kaynak": "manual",
-        "limit": 12
-      }
-    }
+  "ikasSayfa": [
+    "PRODUCT",
+    "INDEX"
   ],
-  "actions": [
-    "yok"
-  ],
-  "hookNoktalari": [
-    "mount:buyBox.after",
-    "mount:productCard.badge",
-    "mount:section.after"
-  ],
-  "bagimliliklar": [
-    "product-info-main"
-  ],
-  "ikasKarsilik": "native reviews + Lehte",
-  "link": "https://apps.shopify.com/judgeme",
-  "sorun": "Tema PDP'leri varsayılan olarak müşteri yorumu ve fotoğraf UGC göstermez; satın alma kararı için güven sinyali eksik kalır.",
   "ayarlar": {
     "yildizOzetiGoster": {
       "tip": "boolean",
@@ -72,6 +60,43 @@
       "tip": "text",
       "zorunlu": false,
       "maxLen": 40
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
     }
-  }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    },
+    {
+      "name": "urunler",
+      "source": "DataSource.productList",
+      "params": {
+        "kaynak": "manual",
+        "limit": 12
+      }
+    }
+  ],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:productCard.badge",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [
+    "product-info-main"
+  ],
+  "ikasKarsilik": "native reviews + Lehte"
 }

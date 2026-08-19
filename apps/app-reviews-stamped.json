@@ -4,6 +4,8 @@
   "varyant": "stamped",
   "scope": "in-flow",
   "amac": "Yorum ve puanları vitrine yerleştirir; isteğe bağlı sadakat launcher ile birleştirilebilir.",
+  "sorun": "Mağaza vitrininde sosyal kanıt yoksa dönüşüm düşer; Stamped yorumları ve isteğe bağlı sadakat launcher'ı aynı pakette sunar.",
+  "link": "https://apps.shopify.com/product-reviews-addon",
   "yuzey": [
     "review_stars",
     "review_widget",
@@ -11,10 +13,51 @@
     "ugc_gallery",
     "loyalty_launcher"
   ],
-  "entegrasyon": [
-    "app-block",
-    "app-embed"
+  "entegrasyon": {
+    "shopify": [
+      "app-block",
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-script"
+    ]
+  },
+  "ikasTur": "yok",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW"
   ],
+  "ikasSayfa": [
+    "PRODUCT"
+  ],
+  "ayarlar": {
+    "yildizOzetiGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "yorumListesiGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "sadakatLauncherGoster": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "npsAnketiGoster": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
   "dataBindings": [
     {
       "name": "urun",
@@ -35,25 +78,5 @@
   "bagimliliklar": [
     "product-info-main"
   ],
-  "ikasKarsilik": "yok",
-  "link": "https://apps.shopify.com/product-reviews-addon",
-  "sorun": "Mağaza vitrininde sosyal kanıt yoksa dönüşüm düşer; Stamped yorumları ve isteğe bağlı sadakat launcher'ı aynı pakette sunar.",
-  "ayarlar": {
-    "yildizOzetiGoster": {
-      "tip": "boolean",
-      "zorunlu": true
-    },
-    "yorumListesiGoster": {
-      "tip": "boolean",
-      "zorunlu": true
-    },
-    "sadakatLauncherGoster": {
-      "tip": "boolean",
-      "zorunlu": false
-    },
-    "npsAnketiGoster": {
-      "tip": "boolean",
-      "zorunlu": false
-    }
-  }
+  "ikasKarsilik": "yok"
 }

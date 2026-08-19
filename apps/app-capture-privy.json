@@ -4,35 +4,32 @@
   "varyant": "privy",
   "scope": "overlay",
   "amac": "Popup, çark ve duyuru şeridi ile ziyaretçi e-posta listesi ve kampanya dönüşümü yakalar.",
+  "sorun": "Tema newsletter bandı tek seferlik görünür; Privy zamanlama, hedefleme ve çark ile tekrar ziyaretçi yakalar.",
+  "link": "https://apps.shopify.com/privy",
   "yuzey": [
     "popup_modal",
     "spin_wheel",
     "announcement_bar",
     "flyout"
   ],
-  "entegrasyon": [
-    "app-embed"
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-script"
+    ]
+  },
+  "ikasTur": "yok",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "CUSTOMER_REGISTER"
   ],
-  "dataBindings": [
-    {
-      "name": "musteri",
-      "source": "DataSource.customer"
-    }
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT",
+    "CUSTOM"
   ],
-  "actions": [
-    "emit:newsletter.subscribe"
-  ],
-  "hookNoktalari": [
-    "mount:announcement.before",
-    "mount:footer.before"
-  ],
-  "bagimliliklar": [
-    "promo-announcement-bar",
-    "lead-capture-newsletter-band"
-  ],
-  "ikasKarsilik": "yok",
-  "link": "https://apps.shopify.com/privy",
-  "sorun": "Tema newsletter bandı tek seferlik görünür; Privy zamanlama, hedefleme ve çark ile tekrar ziyaretçi yakalar.",
   "ayarlar": {
     "baslik": {
       "tip": "text",
@@ -55,6 +52,35 @@
     "gosterimGecikmesi": {
       "tip": "number",
       "zorunlu": false
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
     }
-  }
+  },
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "emit:newsletter.subscribe"
+  ],
+  "hookNoktalari": [
+    "mount:announcement.before",
+    "mount:footer.before"
+  ],
+  "bagimliliklar": [
+    "promo-announcement-bar",
+    "lead-capture-newsletter-band"
+  ],
+  "ikasKarsilik": "yok"
 }

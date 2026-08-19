@@ -4,11 +4,44 @@
   "varyant": "ga-universal",
   "scope": "head",
   "amac": "Eski Universal Analytics izlemesini sağlar; platform tarafından kullanımdan kaldırılmıştır.",
+  "sorun": "Eski UA izlemesi artık veri toplamaz; geçiş yapılmayan mağazalar analitik kör noktada kalır.",
+  "link": "https://apps.shopify.com/google",
   "yuzey": [],
-  "entegrasyon": [
-    "web-pixel",
-    "script-tag"
+  "entegrasyon": {
+    "shopify": [
+      "web-pixel",
+      "script-tag"
+    ],
+    "ikas": [
+      "storefront-script"
+    ]
+  },
+  "ikasTur": "yok",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW",
+    "ADD_TO_CART",
+    "COMPLETE_CHECKOUT"
   ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT",
+    "CART",
+    "CHECKOUT"
+  ],
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
   "dataBindings": [],
   "actions": [
     "yok"
@@ -16,8 +49,5 @@
   "hookNoktalari": [],
   "bagimliliklar": [],
   "ikasKarsilik": "Extensions / Scripts",
-  "_note": "Universal Analytics kullanımdan kaldırıldı; Google & YouTube uygulaması GA4'e yönlendirir",
-  "link": "https://apps.shopify.com/google",
-  "sorun": "Eski UA izlemesi artık veri toplamaz; geçiş yapılmayan mağazalar analitik kör noktada kalır.",
-  "ayarlar": {}
+  "_note": "Universal Analytics kullanımdan kaldırıldı; Google & YouTube uygulaması GA4'e yönlendirir"
 }

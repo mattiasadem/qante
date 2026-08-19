@@ -4,18 +4,48 @@
   "varyant": "meta",
   "scope": "head",
   "amac": "Reklam ölçümü ve yeniden hedefleme için Meta (Facebook) Pixel olaylarını toplar.",
+  "sorun": "Reklam platformları mağaza olaylarını alamazsa retargeting ve ROAS ölçümü çalışmaz.",
+  "link": "https://apps.shopify.com/facebook",
   "yuzey": [],
-  "entegrasyon": [
-    "web-pixel"
+  "entegrasyon": {
+    "shopify": [
+      "web-pixel"
+    ],
+    "ikas": [
+      "storefront-script"
+    ]
+  },
+  "ikasTur": "yok",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW",
+    "ADD_TO_CART",
+    "COMPLETE_CHECKOUT"
   ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT",
+    "CART",
+    "CHECKOUT"
+  ],
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
   "dataBindings": [],
   "actions": [
     "yok"
   ],
   "hookNoktalari": [],
   "bagimliliklar": [],
-  "ikasKarsilik": "Extensions / Scripts",
-  "link": "https://apps.shopify.com/facebook",
-  "sorun": "Reklam platformları mağaza olaylarını alamazsa retargeting ve ROAS ölçümü çalışmaz.",
-  "ayarlar": {}
+  "ikasKarsilik": "Extensions / Scripts"
 }

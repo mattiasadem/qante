@@ -1,12 +1,6 @@
 #!/usr/bin/env node
 /**
- * QANTE AppSchema doğrulayıcı — app-schema-standard.md sözleşmesi.
- *
- *   node scripts/validate-apps.mjs
- *   node scripts/validate-apps.mjs --errors-only
- *   node scripts/validate-apps.mjs --json
- *
- * Çıkış kodu: ERROR varsa 1, yoksa 0 (WARN çıkışı etkilemez).
+ * QANTE AppSchema doğrulayıcı — app-schema-standard.md sözleşmesi (v0.2).
  */
 
 import { readFileSync, readdirSync, existsSync } from "node:fs";
@@ -26,6 +20,9 @@ const TOP_LEVEL = [
   "link",
   "yuzey",
   "entegrasyon",
+  "ikasTur",
+  "ikasOlaylar",
+  "ikasSayfa",
   "ayarlar",
   "dataBindings",
   "actions",
@@ -47,6 +44,56 @@ const KATEGORI = new Set([
 ]);
 
 const SCOPES = new Set(["head", "overlay", "in-flow", "checkout", "page"]);
+
+const IKAS_TUR = new Set(["admin", "ozel", "yok"]);
+
+const SHOPIFY_ENTEGRASYON = new Set([
+  "web-pixel",
+  "app-embed",
+  "app-block",
+  "script-tag",
+  "checkout-extension",
+  "page-runtime",
+]);
+
+const IKAS_ENTEGRASYON = new Set([
+  "storefront-script",
+  "admin-iframe",
+  "admin-action",
+  "webhook",
+]);
+
+const IKAS_EVENT_TYPE = new Set([
+  "PAGE_VIEW",
+  "PRODUCT_VIEW",
+  "ADD_TO_CART",
+  "REMOVE_FROM_CART",
+  "BEGIN_CHECKOUT",
+  "CHECKOUT_STEP",
+  "COMPLETE_CHECKOUT",
+  "ADD_TO_WISHLIST",
+  "SEARCH",
+  "VIEW_CART",
+  "VIEW_CATEGORY",
+  "VIEW_SEARCH_RESULTS",
+  "CUSTOMER_REGISTER",
+  "CUSTOMER_LOGIN",
+  "CUSTOMER_LOGOUT",
+  "CUSTOMER_VISIT",
+  "CONTACT_FORM",
+]);
+
+const IKAS_PAGE_TYPE = new Set([
+  "INDEX",
+  "CATEGORY",
+  "BRAND",
+  "PRODUCT",
+  "CUSTOM",
+  "ACCOUNT",
+  "CART",
+  "CHECKOUT",
+  "SEARCH",
+]);
 
 const YUZEY = new Set([
   "announcement_bar",
@@ -71,15 +118,6 @@ const YUZEY = new Set([
   "cart_drawer",
   "social_proof_toast",
   "trust_badge",
-]);
-
-const ENTEGRASYON = new Set([
-  "web-pixel",
-  "app-embed",
-  "app-block",
-  "script-tag",
-  "checkout-extension",
-  "page-runtime",
 ]);
 
 const DATA_SOURCES = new Set([
@@ -162,6 +200,15 @@ const SLOT_META = ["tip", "zorunlu", "maxLen", "min", "max", "hedef", "item", "a
 const REF_HEDEF = ["product", "collection", "menu", "blog", "page", "promo", "brand"];
 const LINK_RE = /^https:\/\/.+/;
 
+const SHOPIFY_ONLY_INTEGRATIONS = new Set([
+  "web-pixel",
+  "app-embed",
+  "app-block",
+  "script-tag",
+  "checkout-extension",
+  "page-runtime",
+]);
+
 const errorsOnly = process.argv.includes("--errors-only");
 const jsonOut = process.argv.includes("--json");
 
@@ -217,15 +264,45 @@ function checkAyarSlots(slots, file, issues, path = "") {
   }
 }
 
+function validateEntegrasyon(file, entegrasyon, issues) {
+  if (!entegrasyon || typeof entegrasyon !== "object" || Array.isArray(entegrasyon)) {
+    issues.push(err(file, "entegrasyon { shopify, ikas } obje olmalı"));
+    return;
+  }
+  for (const key of ["shopify", "ikas"]) {
+    if (!Array.isArray(entegrasyon[key])) {
+      issues.push(err(file, `entegrasyon.${key} array olmalı`));
+      return;
+    }
+  }
+  for (const e of entegrasyon.shopify) {
+    if (!SHOPIFY_ENTEGRASYON.has(e)) {
+      issues.push(err(file, `geçersiz shopify entegrasyon: "${e}"`));
+    }
+  }
+  for (const e of entegrasyon.ikas) {
+    if (!IKAS_ENTEGRASYON.has(e)) {
+      issues.push(err(file, `geçersiz ikas entegrasyon: "${e}"`));
+    }
+    if (SHOPIFY_ONLY_INTEGRATIONS.has(e)) {
+      issues.push(err(file, `ikas tarafında Shopify entegrasyonu yasak: "${e}"`));
+    }
+  }
+  const forbiddenOnIkas = ["app-block", "app-embed", "web-pixel", "script-tag", "page-runtime"];
+  for (const e of entegrasyon.ikas) {
+    if (forbiddenOnIkas.includes(e)) {
+      issues.push(err(file, `ikas tarafında "${e}" yasak — docs'ta theme app extension yok`));
+    }
+  }
+}
+
 function validateApp(filePath) {
   const file = basename(filePath);
   const issues = [];
-  let raw;
   let schema;
 
   try {
-    raw = readFileSync(filePath, "utf8");
-    schema = JSON.parse(raw);
+    schema = JSON.parse(readFileSync(filePath, "utf8"));
   } catch (e) {
     issues.push(err(file, `JSON parse: ${e.message}`));
     return issues;
@@ -258,6 +335,34 @@ function validateApp(filePath) {
     issues.push(err(file, `geçersiz scope: "${schema.scope}"`));
   }
 
+  if (!IKAS_TUR.has(schema.ikasTur)) {
+    issues.push(err(file, `geçersiz ikasTur: "${schema.ikasTur}"`));
+  }
+
+  if (!Array.isArray(schema.ikasOlaylar)) {
+    issues.push(err(file, "ikasOlaylar array olmalı"));
+  } else {
+    for (const ev of schema.ikasOlaylar) {
+      if (!IKAS_EVENT_TYPE.has(ev)) {
+        issues.push(err(file, `geçersiz ikasOlaylar: "${ev}"`));
+      }
+    }
+  }
+
+  if (!Array.isArray(schema.ikasSayfa)) {
+    issues.push(err(file, "ikasSayfa array olmalı"));
+  } else {
+    for (const pg of schema.ikasSayfa) {
+      if (!IKAS_PAGE_TYPE.has(pg)) {
+        issues.push(err(file, `geçersiz ikasSayfa: "${pg}"`));
+      }
+    }
+  }
+
+  if (schema.ikasTur === "yok" && schema.entegrasyon?.ikas?.some((e) => e === "admin-iframe" || e === "admin-action")) {
+    issues.push(err(file, "ikasTur yok iken admin-iframe/admin-action kullanılamaz"));
+  }
+
   if (!Array.isArray(schema.yuzey)) {
     issues.push(err(file, "yuzey array olmalı"));
   } else {
@@ -269,13 +374,7 @@ function validateApp(filePath) {
     }
   }
 
-  if (!Array.isArray(schema.entegrasyon) || schema.entegrasyon.length === 0) {
-    issues.push(err(file, "entegrasyon boş olamaz"));
-  } else {
-    for (const e of schema.entegrasyon) {
-      if (!ENTEGRASYON.has(e)) issues.push(err(file, `geçersiz entegrasyon: "${e}"`));
-    }
-  }
+  validateEntegrasyon(file, schema.entegrasyon, issues);
 
   if (!Array.isArray(schema.dataBindings)) {
     issues.push(err(file, "dataBindings array olmalı"));
@@ -301,7 +400,7 @@ function validateApp(filePath) {
   }
 
   if (!Array.isArray(schema.actions) || schema.actions.length === 0) {
-    issues.push(err(file, "actions boş [] yasak — yoksa [\"yok\"] kullan"));
+    issues.push(err(file, 'actions boş [] yasak — yoksa ["yok"] kullan'));
   } else {
     for (const a of schema.actions) {
       if (!ACTION_RE.test(a)) {
@@ -339,7 +438,7 @@ function validateApp(filePath) {
   }
 
   if (typeof schema.ikasKarsilik !== "string" || !schema.ikasKarsilik.trim()) {
-    issues.push(err(file, "ikasKarsilik boş string olamaz — bilinmiyorsa \"yok\""));
+    issues.push(err(file, 'ikasKarsilik boş string olamaz — bilinmiyorsa "yok"'));
   }
 
   if (typeof schema.amac !== "string" || !schema.amac.trim()) {
@@ -358,19 +457,30 @@ function validateApp(filePath) {
     issues.push(err(file, "link geçerli https:// URL olmalı"));
   }
 
+  const ikasHasStorefront = schema.entegrasyon?.ikas?.includes("storefront-script");
+
   if (!schema.ayarlar || typeof schema.ayarlar !== "object" || Array.isArray(schema.ayarlar)) {
     issues.push(err(file, "ayarlar obje olmalı"));
   } else {
-    const isPurePixel = schema.kategori === "pixel" && schema.scope === "head";
     const keys = Object.keys(schema.ayarlar);
-    if (isPurePixel) {
-      if (keys.length > 0) {
-        issues.push(err(file, "saf piksel (kategori pixel + scope head) iken ayarlar {} olmalı"));
-      }
-    } else if (keys.length === 0) {
-      issues.push(err(file, "ayarlar boş {} yalnızca saf piksellerde"));
-    } else {
+    const isPureHeadPixel =
+      schema.kategori === "pixel" && schema.scope === "head" && !ikasHasStorefront;
+
+    if (isPureHeadPixel && keys.length > 0) {
+      issues.push(err(file, "saf head piksel (ikas storefront-script yok) iken ayarlar {} olmalı"));
+    } else if (!isPureHeadPixel && keys.length === 0) {
+      issues.push(err(file, "ayarlar boş {} — merchant veya storefront-script ayarı gerekli"));
+    } else if (keys.length > 0) {
       checkAyarSlots(schema.ayarlar, file, issues);
+    }
+
+    if (ikasHasStorefront) {
+      if (!schema.ayarlar.oncelikliScript) {
+        issues.push(err(file, "storefront-script için ayarlar.oncelikliScript gerekli"));
+      }
+      if (!schema.ayarlar.publicApiKey) {
+        issues.push(err(file, "storefront-script için ayarlar.publicApiKey gerekli"));
+      }
     }
   }
 

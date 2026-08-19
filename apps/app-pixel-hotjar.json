@@ -4,11 +4,42 @@
   "varyant": "hotjar",
   "scope": "head",
   "amac": "Oturum kaydı, anket ve ısı haritası ile UX geri bildirimi toplar.",
+  "sorun": "Isı haritası ve oturum kaydı olmadan dönüşüm düşüşünün nedeni teşhis edilemez.",
+  "link": "https://www.hotjar.com",
   "yuzey": [],
-  "entegrasyon": [
-    "script-tag",
-    "web-pixel"
+  "entegrasyon": {
+    "shopify": [
+      "script-tag",
+      "web-pixel"
+    ],
+    "ikas": [
+      "storefront-script"
+    ]
+  },
+  "ikasTur": "yok",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW"
   ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT",
+    "CART",
+    "CHECKOUT"
+  ],
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
   "dataBindings": [],
   "actions": [
     "yok"
@@ -16,8 +47,5 @@
   "hookNoktalari": [],
   "bagimliliklar": [],
   "ikasKarsilik": "Extensions / Scripts",
-  "link": "https://www.hotjar.com",
-  "sorun": "Isı haritası ve oturum kaydı olmadan dönüşüm düşüşünün nedeni teşhis edilemez.",
-  "ayarlar": {},
   "_note": "Hotjar'ın resmi Shopify uygulaması yok; entegrasyon ScriptTag veya üçüncü parti connector ile"
 }

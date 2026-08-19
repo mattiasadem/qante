@@ -4,38 +4,35 @@
   "varyant": "klaviyo",
   "scope": "overlay",
   "amac": "Ziyaretçi e-posta ve SMS listesi büyütmek için popup, flyout ve gömülü formlar sunar.",
+  "sorun": "Ziyaretçilerin büyük kısmı e-posta veya SMS bırakmadan çıkar; Klaviyo popup ve gömülü formlarla liste büyütür.",
+  "link": "https://apps.shopify.com/klaviyo-email-marketing",
   "yuzey": [
     "popup_modal",
     "flyout",
     "embedded_form"
   ],
-  "entegrasyon": [
-    "app-embed",
-    "web-pixel"
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "web-pixel"
+    ],
+    "ikas": [
+      "storefront-script",
+      "webhook"
+    ]
+  },
+  "ikasTur": "yok",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "CUSTOMER_REGISTER",
+    "CONTACT_FORM",
+    "COMPLETE_CHECKOUT"
   ],
-  "dataBindings": [
-    {
-      "name": "musteri",
-      "source": "DataSource.customer"
-    },
-    {
-      "name": "sepet",
-      "source": "DataSource.cart"
-    }
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT",
+    "CUSTOM"
   ],
-  "actions": [
-    "emit:newsletter.subscribe"
-  ],
-  "hookNoktalari": [
-    "mount:newsletter.before",
-    "mount:footer.before"
-  ],
-  "bagimliliklar": [
-    "lead-capture-newsletter-band"
-  ],
-  "ikasKarsilik": "yok",
-  "link": "https://apps.shopify.com/klaviyo-email-marketing",
-  "sorun": "Ziyaretçilerin büyük kısmı e-posta veya SMS bırakmadan çıkar; Klaviyo popup ve gömülü formlarla liste büyütür.",
   "ayarlar": {
     "baslik": {
       "tip": "text",
@@ -66,6 +63,38 @@
           "maxLen": 120
         }
       }
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
     }
-  }
+  },
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    },
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "emit:newsletter.subscribe"
+  ],
+  "hookNoktalari": [
+    "mount:newsletter.before",
+    "mount:footer.before"
+  ],
+  "bagimliliklar": [
+    "lead-capture-newsletter-band"
+  ],
+  "ikasKarsilik": "yok"
 }

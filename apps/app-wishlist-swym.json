@@ -4,15 +4,47 @@
   "varyant": "swym",
   "scope": "overlay",
   "amac": "Ürünleri favorilere eklemek ve listeyi drawer veya sayfada yönetmek için UI sağlar.",
+  "sorun": "Ürünü beğenen ziyaretçi hemen satın almazsa tema onu geri getirecek mekanizma sunmaz.",
+  "link": "https://apps.shopify.com/swym-relay",
   "yuzey": [
     "wishlist_button",
     "wishlist_drawer",
     "wishlist_page"
   ],
-  "entegrasyon": [
-    "app-embed",
-    "app-block"
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "app-block"
+    ],
+    "ikas": []
+  },
+  "ikasTur": "yok",
+  "ikasOlaylar": [
+    "ADD_TO_WISHLIST",
+    "PRODUCT_VIEW"
   ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "ACCOUNT"
+  ],
+  "ayarlar": {
+    "favoriButonuGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "anonimListe": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "fiyatDususUyarisi": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "stokGeldiUyarisi": {
+      "tip": "boolean",
+      "zorunlu": false
+    }
+  },
   "dataBindings": [
     {
       "name": "urun",
@@ -34,25 +66,5 @@
   "bagimliliklar": [
     "product-info-main"
   ],
-  "ikasKarsilik": "Favori Ürünler",
-  "link": "https://apps.shopify.com/swym-relay",
-  "sorun": "Ürünü beğenen ziyaretçi hemen satın almazsa tema onu geri getirecek mekanizma sunmaz.",
-  "ayarlar": {
-    "favoriButonuGoster": {
-      "tip": "boolean",
-      "zorunlu": true
-    },
-    "anonimListe": {
-      "tip": "boolean",
-      "zorunlu": false
-    },
-    "fiyatDususUyarisi": {
-      "tip": "boolean",
-      "zorunlu": false
-    },
-    "stokGeldiUyarisi": {
-      "tip": "boolean",
-      "zorunlu": false
-    }
-  }
+  "ikasKarsilik": "Favori Ürünler"
 }
