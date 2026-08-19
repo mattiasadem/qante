@@ -8,13 +8,57 @@
   "selector": ".shopify-section[id*='shop_the_feed']",
   "evidenceSlug": "media-shop-the-feed",
   "evidence": [
+    "evidence/hyper/ceramide/home/media-shop-the-feed.1440.png",
     "evidence/hyper/ceramide/home/media-shop-the-feed.375.png",
     "evidence/hyper/ceramide/home/media-shop-the-feed.768.png",
-    "evidence/hyper/ceramide/home/media-shop-the-feed.1440.png"
+    "evidence/hyper/ceramide/home/media-shop-the-feed.changed.sonraki-kart.1440.png",
+    "evidence/hyper/ceramide/home/media-shop-the-feed.changed.sonraki-kart.768.png",
+    "evidence/hyper/ceramide/home/media-shop-the-feed.initial.ilk-hal.1440.png",
+    "evidence/hyper/ceramide/home/media-shop-the-feed.initial.ilk-hal.375.png",
+    "evidence/hyper/ceramide/home/media-shop-the-feed.initial.ilk-hal.768.png"
   ],
-  "notlar": "What Trending On Social — UGC/shop-the-feed grid",
+  "notlar": "What Trending On Social — UGC/shop-the-feed grid. Interact: Next kart.",
   "delta": "default: yok → ceramide: shop_the_feed",
-  "interactionNote": "Play görsel olarak var; button.stf-card__play-button tık timeout. Kartlarda ürün zaten yazılı. Ok yalnız peek. Interact yok.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hyper-ceramide.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": ".shopify-section[id*='shop_the_feed']",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "İlk aktif kart Stephanie + ürün etiketi."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".shopify-section[id*='shop_the_feed'] button.swiper-button-next",
+      "value": 1500,
+      "capture": true,
+      "etiket": "sonraki-kart",
+      "not": "Next. Stephanie → Ella Kate. Play tıklanmadı (timeout)."
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "375: swiper next gizli (md:inline-flex hidden). 768/1440 Next ile Stephanie → Ella Kate kanıtlandı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "What Trending On Social. Stephanie kartı + ürün etiketi, play overlay.",
+    "changed": "Next sonrası Ella Kate kartı. 768/1440."
+  },
+  "interactionNote": "stf-card__play-button tık timeout. Carousel Next 768/1440; 375 ok gizli.",
   "capture": {
     "url": "https://hyper-ceramide.myshopify.com/",
     "viewports": [
@@ -23,7 +67,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-12T08:03:47.544Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T13:53:47.926Z"
   }
 }

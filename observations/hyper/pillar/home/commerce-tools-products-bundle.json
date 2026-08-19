@@ -8,12 +8,53 @@
   "selector": ".shopify-section[id*='products_bundle']",
   "evidenceSlug": "commerce-tools-products-bundle",
   "evidence": [
+    "evidence/hyper/pillar/home/commerce-tools-products-bundle.1440.png",
     "evidence/hyper/pillar/home/commerce-tools-products-bundle.375.png",
     "evidence/hyper/pillar/home/commerce-tools-products-bundle.768.png",
-    "evidence/hyper/pillar/home/commerce-tools-products-bundle.1440.png"
+    "evidence/hyper/pillar/home/commerce-tools-products-bundle.changed.jacket-s.1440.png",
+    "evidence/hyper/pillar/home/commerce-tools-products-bundle.changed.jacket-s.375.png",
+    "evidence/hyper/pillar/home/commerce-tools-products-bundle.changed.jacket-s.768.png",
+    "evidence/hyper/pillar/home/commerce-tools-products-bundle.initial.ilk-hal.1440.png",
+    "evidence/hyper/pillar/home/commerce-tools-products-bundle.initial.ilk-hal.375.png",
+    "evidence/hyper/pillar/home/commerce-tools-products-bundle.initial.ilk-hal.768.png"
   ],
-  "notlar": "Iconic Autumn Set bundle",
+  "notlar": "Iconic Autumn Set bundle. Interact: Jacket Beige/XS → Beige/S.",
   "delta": "ceramide'den sonra pillar'da da",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hyper-pillar.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": ".shopify-section[id*='products_bundle']",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Iconic Autumn Set. İlk kart Beige/XS."
+    },
+    {
+      "state": "changed",
+      "action": "select",
+      "selector": ".shopify-section[id*='products_bundle'] select[name='id']",
+      "value": "45142480617662",
+      "capture": true,
+      "etiket": "jacket-s",
+      "not": "İlk select Beige/XS → Beige/S. Add all to cart tıklanmaz."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Iconic Autumn Set. Pants/Jacket/T-shirt kartları, ilk select Beige/XS.",
+    "changed": "İlk kart select Beige/S. Beden etiketi güncellendi."
+  },
+  "interactionNote": "Ceramide shampoo select temsilcisi. Pillar fixed bundle, üç select.",
   "capture": {
     "url": "https://hyper-pillar.myshopify.com/",
     "viewports": [
@@ -22,7 +63,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-12T08:21:48.071Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T13:47:00.295Z"
   }
 }
