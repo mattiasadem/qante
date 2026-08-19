@@ -8,12 +8,58 @@
   "selector": "#shopify-section-template--16536532647987__contact-form",
   "evidenceSlug": "lead-capture-form",
   "evidence": [
+    "evidence/warehouse/default/contact/lead-capture-form.1440.png",
     "evidence/warehouse/default/contact/lead-capture-form.375.png",
     "evidence/warehouse/default/contact/lead-capture-form.768.png",
-    "evidence/warehouse/default/contact/lead-capture-form.1440.png"
+    "evidence/warehouse/default/contact/lead-capture-form.changed.konu-partnerships.1440.png",
+    "evidence/warehouse/default/contact/lead-capture-form.changed.konu-partnerships.375.png",
+    "evidence/warehouse/default/contact/lead-capture-form.changed.konu-partnerships.768.png",
+    "evidence/warehouse/default/contact/lead-capture-form.initial.ilk-hal.1440.png",
+    "evidence/warehouse/default/contact/lead-capture-form.initial.ilk-hal.375.png",
+    "evidence/warehouse/default/contact/lead-capture-form.initial.ilk-hal.768.png"
   ],
-  "notlar": "contact-form. Leave your message. Name / email / Customer Service|Partnerships|Press.",
-  "delta": "/pages/contact 404. Form submit yok (PII).",
+  "notlar": "contact-form. Leave your message. Name / email / Customer Service|Partnerships|Press|Legal. Interact: konu select.",
+  "delta": "/pages/contact 404. Form submit yok (PII). Name/email/message doldurulmadı.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://warehouse-theme-metal.myshopify.com/pages/contact-us",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16536532647987__contact-form",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Boş form + konu select boş."
+    },
+    {
+      "state": "changed",
+      "action": "select",
+      "selector": "#shopify-section-template--16536532647987__contact-form select[name='contact[Who do you want to contact]']",
+      "value": "Partnerships",
+      "capture": true,
+      "etiket": "konu-partnerships",
+      "not": "Who do you want to contact → Partnerships. Name/email/message yok; Send tıklanmadı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Leave your message: Your name / Your email / Who do you want to contact (boş) / Your message + Send message. Sağ/alt Find us + HiDEF LIFESTYLE foto. 1440 iki kolon; 768 form üstte foto altta (name+email yan yana); 375 hepsi tek kolon. Alanlar boş.",
+    "changed": "Who do you want to contact = Partnerships. Name/email/message boş. Send tıklanmadı."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "Name / email / message PII — doldurulmadı. Send message tıklanmadı."
+    }
+  ],
+  "interactionNote": "Scan 4 input: name, email, select, textarea. Seçenekler Customer Service / Partnerships / Press / Legal (boş default). E-posta fill yok. 375 changed karede sağ kenarda üçüncü parti widget sızdı; form alanı okunuyor.",
   "capture": {
     "url": "https://warehouse-theme-metal.myshopify.com/pages/contact-us",
     "viewports": [
@@ -22,7 +68,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-17T20:43:02.505Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T13:22:40.037Z"
   }
 }
