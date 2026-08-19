@@ -1,0 +1,73 @@
+{
+  "id": "app-pixel-triplewhale-1",
+  "kategori": "pixel",
+  "varyant": "triplewhale-1",
+  "scope": "head",
+  "amac": "Triple Whale ile reklam harcaması ve mağaza olaylarını birleşik analitik panele iletir.",
+  "sorun": "Kanal bazlı ROAS ve attribution parçalı kalınca bütçe kararları gecikir.",
+  "link": "https://apps.shopify.com/triplewhale-1",
+  "yuzey": [],
+  "entegrasyon": {
+    "shopify": [
+      "web-pixel"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "COMPLETE_CHECKOUT",
+    "ADD_TO_CART"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CHECKOUT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "webhook-listener",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_orders",
+    "read_customers",
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/order/created",
+    "store/order/updated"
+  ],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "hesapKimligi": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [],
+  "bagimliliklar": [],
+  "ikasKarsilik": "yok",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

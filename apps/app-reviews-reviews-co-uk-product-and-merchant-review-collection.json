@@ -1,0 +1,83 @@
+{
+  "id": "app-reviews-reviews-co-uk-product-and-merchant-review-collection",
+  "kategori": "reviews",
+  "varyant": "reviews-co-uk",
+  "scope": "in-flow",
+  "amac": "Ürün ve mağaza yorumlarını toplayıp PDP ve mağaza sayfasında gösterir.",
+  "sorun": "Üçüncü taraf review toplama tema ile gelmez; Reviews.co.uk hem ürün hem merchant skoru sunar.",
+  "link": "https://apps.shopify.com/reviews-co-uk-product-and-merchant-review-collection",
+  "yuzey": [
+    "review_stars",
+    "review_widget",
+    "trust_badge"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-block",
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "INDEX"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "yildizOzetiGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "merchantRozetiGoster": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after"
+  ],
+  "bagimliliklar": [
+    "product-info-main"
+  ],
+  "ikasKarsilik": "Lehte",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

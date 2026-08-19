@@ -5,15 +5,67 @@
   "preset": "default",
   "sayfa": "home",
   "evidence": [
+    "evidence/district/default/home/footer-columns-newsletter.1440.png",
     "evidence/district/default/home/footer-columns-newsletter.375.png",
     "evidence/district/default/home/footer-columns-newsletter.768.png",
-    "evidence/district/default/home/footer-columns-newsletter.1440.png"
+    "evidence/district/default/home/footer-columns-newsletter.initial.ilk-hal.1440.png",
+    "evidence/district/default/home/footer-columns-newsletter.initial.ilk-hal.375.png",
+    "evidence/district/default/home/footer-columns-newsletter.initial.ilk-hal.768.png",
+    "evidence/district/default/home/footer-columns-newsletter.open.locale-liste.1440.png",
+    "evidence/district/default/home/footer-columns-newsletter.open.locale-liste.375.png",
+    "evidence/district/default/home/footer-columns-newsletter.open.locale-liste.768.png"
   ],
   "url": "https://district-theme-demo.myshopify.com/",
   "selector": "#shopify-section-sections--17215441010741__footer",
   "evidenceSlug": "footer-columns-newsletter",
   "notlar": "footer. Newsletter + Shop District kolonları. GO.",
   "delta": "Newsletter GO tıklanmadı (PII). Account/checkout link tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://district-theme-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button.signup-bar__close",
+      "value": 500,
+      "capture": false,
+      "viewports": [
+        "375"
+      ],
+      "not": "District Updates bar kapat — currency altta kalıyor. Submit yok."
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-sections--17215441010741__footer",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Newsletter boş + kolonlar. Locale kapalı."
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#FooterCurrencyForm button[aria-controls='FooterCurrencyList']",
+      "value": 800,
+      "capture": true,
+      "etiket": "locale-liste",
+      "not": "Currency listesi açılır. Ülke tıklanmaz, GO yok."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Newsletter + Email + zarf butonu. Shop District / Customer Care / Contact us kolonları 375'te de açık (accordion yok). Locale United States (USD $) kapalı.",
+    "open": "United States (USD $) tık → liste: Australia / Canada / France / Germany / Japan / Mexico / New Zealand / UAE / UK. 375/768/1440. Ülke seçilmedi."
+  },
+  "missingStates": [],
+  "interactionNote": "375'te önce button.signup-bar__close (District Updates) kapatıldı — bar currency'yi örtüyordu. Newsletter fill/GO PII stop. Viewport capture hero'ya kaçtı, section kullanıldı.",
   "capture": {
     "url": "https://district-theme-demo.myshopify.com/",
     "viewports": [
@@ -22,7 +74,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T11:00:54.427Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T17:01:20.402Z"
   }
 }

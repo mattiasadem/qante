@@ -1,0 +1,85 @@
+{
+  "id": "app-capture-optimonk",
+  "kategori": "capture",
+  "varyant": "optimonk",
+  "scope": "overlay",
+  "amac": "Popup ve çark kampanyaları ile ziyaretçi e-postası ve indirim dönüşümü yakalar.",
+  "sorun": "Exit intent ve gamification olmadan liste büyümesi yavaşlar; OptiMonk hedefli popup sunar.",
+  "link": "https://apps.shopify.com/optimonk",
+  "yuzey": [
+    "popup_modal",
+    "spin_wheel"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "CUSTOMER_REGISTER"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "baslik": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80
+    },
+    "carkAktif": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "indirimKodu": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 40
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "emit:newsletter.subscribe"
+  ],
+  "hookNoktalari": [
+    "mount:footer.before"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "yok",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

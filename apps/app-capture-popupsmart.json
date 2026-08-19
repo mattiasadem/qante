@@ -1,0 +1,80 @@
+{
+  "id": "app-capture-popupsmart",
+  "kategori": "capture",
+  "varyant": "popupsmart",
+  "scope": "overlay",
+  "amac": "Akıllı popup'lar ile e-posta aboneliği ve indirim kodu dağıtımı yapar.",
+  "sorun": "Genel popup'lar segmentasyon olmadan düşük dönüşüm verir; Popupsmart tetikleyici kuralları sunar.",
+  "link": "https://apps.shopify.com/popupsmart",
+  "yuzey": [
+    "popup_modal"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "CUSTOMER_REGISTER"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "baslik": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80
+    },
+    "tetikleyici": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 40
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "emit:newsletter.subscribe"
+  ],
+  "hookNoktalari": [
+    "mount:footer.before"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "yok",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

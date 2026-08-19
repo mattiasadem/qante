@@ -1,0 +1,86 @@
+{
+  "id": "app-capture-recart",
+  "kategori": "capture",
+  "varyant": "recart",
+  "scope": "overlay",
+  "amac": "Messenger ve SMS flyout ile terk eden sepet ve abonelik dönüşümü yakalar.",
+  "sorun": "Sepet terk edildiğinde tema geri dönüş kanalı sunmaz; Recart mesajlaşma flyout'u ile hedefler.",
+  "link": "https://apps.shopify.com/recart",
+  "yuzey": [
+    "flyout"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "VIEW_CART",
+    "ADD_TO_CART"
+  ],
+  "ikasSayfa": [
+    "CART",
+    "CHECKOUT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "webhook-listener",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_customers",
+    "read_orders"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/order/created",
+    "store/order/updated"
+  ],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "flyoutAktif": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "kanal": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 20
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [
+    "mount:cartDrawer.footer"
+  ],
+  "bagimliliklar": [
+    "global-cart-drawer"
+  ],
+  "ikasKarsilik": "yok",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

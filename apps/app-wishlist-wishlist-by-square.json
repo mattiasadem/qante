@@ -1,0 +1,88 @@
+{
+  "id": "app-wishlist-wishlist-by-square",
+  "kategori": "wishlist",
+  "varyant": "wishlist-by-square",
+  "scope": "overlay",
+  "amac": "Ürün favorileme butonu ve liste sayfası ile geri dönüş niyetini yakalar.",
+  "sorun": "Beğenilen ürün kaydedilmezse ziyaretçi geri dönmez; Square wishlist buton ve sayfa sunar.",
+  "link": "https://apps.shopify.com/wishlist-by-square",
+  "yuzey": [
+    "wishlist_button",
+    "wishlist_page"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "ADD_TO_WISHLIST",
+    "PRODUCT_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "ACCOUNT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products",
+    "read_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "favoriButonuGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "anonimListe": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    },
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [
+    "mount:productCard.badge",
+    "mount:buyBox.after"
+  ],
+  "bagimliliklar": [
+    "product-info-main"
+  ],
+  "ikasKarsilik": "Favori Ürünler",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

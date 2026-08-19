@@ -1,0 +1,99 @@
+{
+  "id": "app-capture-shopify-inbox",
+  "kategori": "capture",
+  "varyant": "shopify-inbox",
+  "scope": "overlay",
+  "amac": "Canlı sohbet ve mesajlaşma ile ziyaretçi sorularını mağaza içinde yanıtlar.",
+  "sorun": "Canlı soru soran ziyaretçi yanıt alamazsa satın alma anında kaybolur.",
+  "link": "https://apps.shopify.com/inbox",
+  "yuzey": [
+    "flyout"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script"
+    ]
+  },
+  "ikasTur": "yok",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW",
+    "CUSTOMER_VISIT"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_customers",
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "karsilamaMesaji": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 200
+    },
+    "otomatikYanit": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "calismaSaatleri": {
+      "tip": "object",
+      "zorunlu": false,
+      "alanlar": {
+        "baslangic": {
+          "tip": "text",
+          "zorunlu": false,
+          "maxLen": 10
+        },
+        "bitis": {
+          "tip": "text",
+          "zorunlu": false,
+          "maxLen": 10
+        }
+      }
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [
+    "mount:footer.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "yok",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  },
+  "_note": "capture kategorisi — destek/sohbet overlay; kapalı kategori setinde capture en yakın eşleşme"
+}

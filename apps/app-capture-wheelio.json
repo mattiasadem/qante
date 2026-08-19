@@ -1,0 +1,84 @@
+{
+  "id": "app-capture-wheelio",
+  "kategori": "capture",
+  "varyant": "wheelio",
+  "scope": "overlay",
+  "amac": "Exit-intent çark popup ile e-posta yakalama ve indirim dağıtımı yapar.",
+  "sorun": "Çıkış niyetinde ziyaretçi kaybedilir; Wheelio interaktif çark ile son şans teklifi sunar.",
+  "link": "https://apps.shopify.com/wheelio-first-interactive-exit-intent-pop-up",
+  "yuzey": [
+    "spin_wheel",
+    "popup_modal"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "CUSTOMER_REGISTER"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "baslik": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80
+    },
+    "exitIntentAktif": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "carkAktif": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "emit:newsletter.subscribe"
+  ],
+  "hookNoktalari": [
+    "mount:footer.before"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "yok",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "id": "app-reviews-junip",
+  "kategori": "reviews",
+  "varyant": "junip",
+  "scope": "in-flow",
+  "amac": "Hızlı yıldız özeti ve yorum widget'ı ile PDP güvenini artırır.",
+  "sorun": "Yorum toplama ve gösterim tema ile entegre değildir; Junip hafif reviews katmanı ekler.",
+  "link": "https://apps.shopify.com/junip",
+  "yuzey": [
+    "review_stars",
+    "review_widget",
+    "review_carousel"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-block",
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "yildizOzetiGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "yorumListesiGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after"
+  ],
+  "bagimliliklar": [
+    "product-info-main"
+  ],
+  "ikasKarsilik": "native reviews + Lehte",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

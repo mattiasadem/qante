@@ -5,15 +5,42 @@
   "preset": "default",
   "sayfa": "contact",
   "evidence": [
+    "evidence/district/default/contact/lead-capture-form.1440.png",
     "evidence/district/default/contact/lead-capture-form.375.png",
     "evidence/district/default/contact/lead-capture-form.768.png",
-    "evidence/district/default/contact/lead-capture-form.1440.png"
+    "evidence/district/default/contact/lead-capture-form.initial.bos-form.1440.png",
+    "evidence/district/default/contact/lead-capture-form.initial.bos-form.375.png",
+    "evidence/district/default/contact/lead-capture-form.initial.bos-form.768.png"
   ],
   "url": "https://district-theme-demo.myshopify.com/pages/contact-us",
   "selector": "#shopify-section-template--17215441829941__form",
   "evidenceSlug": "lead-capture-form",
   "notlar": "liquid form. NAME / EMAIL / SUBJECTS / COMMENT / SEND.",
   "delta": "SEND tıklanmadı (PII).",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://district-theme-demo.myshopify.com/pages/contact-us",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17215441829941__form",
+      "capture": true,
+      "etiket": "bos-form",
+      "not": "Boş contact form. PII fill/SEND yok."
+    }
+  ],
+  "stateFindings": {
+    "initial": "NAME / EMAIL * / DETAILS TITLE / SUBJECTS / COMMENT boş + SEND (teal). 1440'te NAME|EMAIL yan yana; 375 stack."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan 5 alan (Name, email, Details Title, Subjects, Comment). Fill/SEND PII stop.",
   "capture": {
     "url": "https://district-theme-demo.myshopify.com/pages/contact-us",
     "viewports": [
@@ -22,7 +49,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T11:05:32.233Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T16:55:22.148Z"
   }
 }

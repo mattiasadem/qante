@@ -1,0 +1,88 @@
+{
+  "id": "app-capture-ecomsend",
+  "kategori": "capture",
+  "varyant": "ecomsend",
+  "scope": "overlay",
+  "amac": "SendWILL ile popup ve gömülü formlar üzerinden e-posta aboneliği yakalar.",
+  "sorun": "Ziyaretçi e-postası tema formuyla tek seferlik toplanır; Ecomsend hedefleme ve popup ile dönüşüm artırır.",
+  "link": "https://apps.shopify.com/ecomsend",
+  "yuzey": [
+    "popup_modal",
+    "embedded_form"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "CUSTOMER_REGISTER"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "baslik": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80
+    },
+    "indirimKodu": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 40
+    },
+    "gosterimGecikmesi": {
+      "tip": "number",
+      "zorunlu": false
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "emit:newsletter.subscribe"
+  ],
+  "hookNoktalari": [
+    "mount:footer.before",
+    "mount:newsletter.before"
+  ],
+  "bagimliliklar": [
+    "lead-capture-newsletter-band"
+  ],
+  "ikasKarsilik": "yok",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

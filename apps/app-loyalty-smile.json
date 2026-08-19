@@ -1,0 +1,86 @@
+{
+  "id": "app-loyalty-smile",
+  "kategori": "loyalty",
+  "varyant": "smile",
+  "scope": "overlay",
+  "amac": "Sadakat puanları ve ödüller için launcher, rozet ve hesap sayfası sunar.",
+  "sorun": "Tekrar satın alma teşviki olmadan müşteri yaşam boyu değeri düşer; Smile puan ve ödül launcher'ı vitrine taşır.",
+  "link": "https://apps.shopify.com/smile-io",
+  "yuzey": [
+    "loyalty_launcher",
+    "loyalty_points_badge",
+    "loyalty_page"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "app-block"
+    ],
+    "ikas": []
+  },
+  "ikasTur": "yok",
+  "ikasOlaylar": [
+    "CUSTOMER_LOGIN",
+    "CUSTOMER_REGISTER",
+    "PRODUCT_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "ACCOUNT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "yok",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "launcherGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "puanRozetiGoster": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "kazanmaKurali": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80
+    },
+    "odulKatalogu": {
+      "tip": "array",
+      "zorunlu": false,
+      "min": 0,
+      "max": 12,
+      "item": {
+        "ad": {
+          "tip": "text",
+          "zorunlu": true,
+          "maxLen": 60
+        }
+      }
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [
+    "mount:header.utility",
+    "mount:buyBox.badge"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Sadakat Programı",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

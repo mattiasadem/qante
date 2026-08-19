@@ -1,0 +1,94 @@
+{
+  "id": "app-capture-omnisend",
+  "kategori": "capture",
+  "varyant": "omnisend",
+  "scope": "overlay",
+  "amac": "E-posta ve SMS aboneliği için popup, çark ve gömülü formlar sunar.",
+  "sorun": "E-posta ve SMS kanalları ayrı araçlarda parçalanınca onsite yakalama tutarsız olur; Omnisend tek popup akışında birleştirir.",
+  "link": "https://apps.shopify.com/omnisend",
+  "yuzey": [
+    "popup_modal",
+    "spin_wheel",
+    "embedded_form"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script"
+    ]
+  },
+  "ikasTur": "yok",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "CUSTOMER_REGISTER"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "baslik": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80
+    },
+    "carkAktif": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "indirimTeklifi": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 60
+    },
+    "tetikleyici": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 40
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "emit:newsletter.subscribe"
+  ],
+  "hookNoktalari": [
+    "mount:newsletter.before",
+    "mount:footer.before"
+  ],
+  "bagimliliklar": [
+    "lead-capture-newsletter-band"
+  ],
+  "ikasKarsilik": "yok",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

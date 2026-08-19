@@ -1,6 +1,6 @@
 # QANTE — giriş kapısı
 
-E-ticaret temalarını **şema + kanıtlı envanter** olarak tanımlar. Amaç şu an kod/tema üretmek değil; gerçek sitelerden section dilbilgisini çıkarmak (Sprint 0 / İş Paketi A).
+E-ticaret temalarını **şema + kanıtlı envanter** olarak tanımlar; Shopify uygulamaları ayrıca **AppSchema** (`apps/*.json`) ile envanterlenir. Amaç şu an kod/tema üretmek değil; gerçek sitelerden section ve uygulama dilbilgisini çıkarmak (Sprint 0 / İş Paketi A).
 
 Platform hedefi: önce ikas Studio; IR/şema platform-bağımsız.
 
@@ -31,7 +31,8 @@ Dosyaları rolüne göre oku. Sözleşme bağlar, rehber öğretir, kayıt bilgi
 
 | Dosya | Kapsam |
 |---|---|
-| [`schema-standard.md`](./schema-standard.md) | **Şemanın tamamı**: 12 alan · slot tip seti · DataSource listesi · action grameri · scope testi |
+| [`schema-standard.md`](./schema-standard.md) | **Section şeması**: 12 alan · slot tip seti · DataSource listesi · action grameri · scope testi |
+| [`app-schema-standard.md`](./app-schema-standard.md) | **Uygulama şeması (AppSchema v0)**: 12 alan · yüzey seti · entegrasyon · tema section'larından ayrı katman |
 | [`styleknobs-standard.md`](./styleknobs-standard.md) | Yalnız `styleKnobs`: sözlük · karar testi · bütçe (4–8) · responsive |
 | [`taxonomy/v0.1.0.json`](./taxonomy/v0.1.0.json) | Geçerli kategori + sayfa tipi (en yüksek sürümü kullan) |
 | `sections/_template.json` · `observations/_template.json` | Dosya iskeletleri |

@@ -1,0 +1,82 @@
+{
+  "id": "app-reviews-trustpilot",
+  "kategori": "reviews",
+  "varyant": "trustpilot",
+  "scope": "in-flow",
+  "amac": "Trustpilot mağaza ve ürün yorumlarını vitrine entegre eder.",
+  "sorun": "Harici Trustpilot skoru tema içinde görünmez; resmi uygulama rozet ve widget ekler.",
+  "link": "https://apps.shopify.com/trustpilot",
+  "yuzey": [
+    "review_stars",
+    "review_widget",
+    "trust_badge"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-block",
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "rozetGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "yorumListesiGoster": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [
+    "mount:footer.before",
+    "mount:buyBox.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Lehte",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

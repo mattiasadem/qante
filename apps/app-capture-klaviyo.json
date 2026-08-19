@@ -1,0 +1,118 @@
+{
+  "id": "app-capture-klaviyo",
+  "kategori": "capture",
+  "varyant": "klaviyo",
+  "scope": "overlay",
+  "amac": "Ziyaretçi e-posta ve SMS listesi büyütmek için popup, flyout ve gömülü formlar sunar.",
+  "sorun": "Ziyaretçilerin büyük kısmı e-posta veya SMS bırakmadan çıkar; Klaviyo popup ve gömülü formlarla liste büyütür.",
+  "link": "https://apps.shopify.com/klaviyo-email-marketing",
+  "yuzey": [
+    "popup_modal",
+    "flyout",
+    "embedded_form"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "web-pixel"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook"
+    ]
+  },
+  "ikasTur": "yok",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "CUSTOMER_REGISTER",
+    "CONTACT_FORM",
+    "COMPLETE_CHECKOUT"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT",
+    "CUSTOM"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "webhook-listener",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_customers",
+    "read_orders"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/customer/created",
+    "store/order/created"
+  ],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "baslik": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80
+    },
+    "altMetin": {
+      "tip": "richtext",
+      "zorunlu": false
+    },
+    "gosterimGecikmesi": {
+      "tip": "number",
+      "zorunlu": false
+    },
+    "cikisNiyeti": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "hedefSayfalar": {
+      "tip": "array",
+      "zorunlu": false,
+      "min": 0,
+      "max": 20,
+      "item": {
+        "yol": {
+          "tip": "text",
+          "zorunlu": true,
+          "maxLen": 120
+        }
+      }
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    },
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "emit:newsletter.subscribe"
+  ],
+  "hookNoktalari": [
+    "mount:newsletter.before",
+    "mount:footer.before"
+  ],
+  "bagimliliklar": [
+    "lead-capture-newsletter-band"
+  ],
+  "ikasKarsilik": "yok",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

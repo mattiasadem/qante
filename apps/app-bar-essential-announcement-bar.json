@@ -1,0 +1,79 @@
+{
+  "id": "app-bar-essential-announcement-bar",
+  "kategori": "bar",
+  "varyant": "essential-announcement-bar",
+  "scope": "overlay",
+  "amac": "Ücretsiz duyuru şeridi ile kargo, indirim ve acil mesajları vitrine taşır.",
+  "sorun": "Tema tek satırlık duyuru ile kampanya rotasyonu ve hedefleme sunmaz.",
+  "link": "https://apps.shopify.com/essential-announcement-bar",
+  "yuzey": [
+    "announcement_bar"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "mesaj": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 200
+    },
+    "arkaPlanRengi": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 20
+    },
+    "zamanlama": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [
+    "mount:announcement.before"
+  ],
+  "bagimliliklar": [
+    "promo-announcement-bar"
+  ],
+  "ikasKarsilik": "yok",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

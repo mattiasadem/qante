@@ -1,0 +1,91 @@
+{
+  "id": "app-capture-attentive",
+  "kategori": "capture",
+  "varyant": "attentive",
+  "scope": "overlay",
+  "amac": "SMS pazarlama için onay popup ve gömülü formlarla abone yakalama sağlar.",
+  "sorun": "SMS izinli abone listesi olmadan mobil dönüşüm kanalı kapalı kalır; Attentive onsite popup ile opt-in toplar.",
+  "link": "https://apps.shopify.com/attentive",
+  "yuzey": [
+    "popup_modal",
+    "embedded_form"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script"
+    ]
+  },
+  "ikasTur": "yok",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "CUSTOMER_REGISTER"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "baslik": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80
+    },
+    "yasalMetin": {
+      "tip": "richtext",
+      "zorunlu": true
+    },
+    "ciftOptIn": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "hedefCihaz": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 20
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "emit:newsletter.subscribe"
+  ],
+  "hookNoktalari": [
+    "mount:footer.before"
+  ],
+  "bagimliliklar": [
+    "lead-capture-newsletter-band"
+  ],
+  "ikasKarsilik": "yok",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

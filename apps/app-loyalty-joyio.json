@@ -1,0 +1,82 @@
+{
+  "id": "app-loyalty-joyio",
+  "kategori": "loyalty",
+  "varyant": "joyio",
+  "scope": "overlay",
+  "amac": "Sadakat puanları, VIP kademeleri ve ödüller için vitrin launcher'ı sağlar.",
+  "sorun": "Tekrar alışveriş teşviki tema ile sunulmaz; Joyio puan ve ödül katmanı ekler.",
+  "link": "https://apps.shopify.com/joyio",
+  "yuzey": [
+    "loyalty_launcher",
+    "loyalty_points_badge",
+    "loyalty_page"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "CUSTOMER_LOGIN",
+    "PRODUCT_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "ACCOUNT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_customers",
+    "read_orders"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "yok",
+  "ikasHost": "yok",
+  "ayarlar": {
+    "launcherGoster": {
+      "tip": "boolean",
+      "zorunlu": true
+    },
+    "vipKademeGoster": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "oncelikliScript": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "CreateStorefrontJSScript.isHighPriority"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120,
+      "not": "script URL query, mağaza bazlı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [
+    "mount:header.utility"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Sadakat Programı",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}
