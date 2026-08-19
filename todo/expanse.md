@@ -11,8 +11,8 @@
 `theme_store_id` = **null** (canlıda yok; uydurulmadı)  
 shop `expanse-theme-furniture.myshopify.com`
 
-**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti** (0 error)  
-**PR:** draft https://github.com/mattiasadem/qante/pull/155 — **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact + CRO leftover interact + validate  
+**PR:** https://github.com/mattiasadem/qante/pull/221 — **draft · main'e merge yok**
 
 ---
 
@@ -51,6 +51,10 @@ shop `expanse-theme-furniture.myshopify.com`
 | News + article | roster + capture | [x] |
 | 404 leftover | roster + capture | [x] |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
+| CRO leftover FAQ ilk soru | interact 3vp | [x] |
+| CRO leftover testimonials Flickity nokta 3 | interact 3vp | [x] |
+| CRO leftover countdown tick | ⛔ donuk 12 | leftover |
+| CRO leftover lead-capture fill | ⛔ PII | leftover |
 
 ---
 
@@ -93,6 +97,10 @@ shop `expanse-theme-furniture.myshopify.com`
 | global-cart-drawer | filled + changed | empty → X-Large $40 qty1 → qty2 $80 |
 | cart-page-main | filled + changed | empty → X-Large $40 qty1 → qty2 $80 |
 | product-info-main | changed | Small $25 (1 left) → X-Large $40 (4 left) |
+| faq-collapsible-tabs | changed | İlk soru açık — worldwide shipping |
+| testimonial-quote-carousel | changed | Nokta 2 Diana K → nokta 3 Gene H |
+| promo-banner-countdown | — | Demo 12 sabit; tick yok |
+| lead-capture-form / newsletter-band | — | PII / submit dur |
 
 ---
 
@@ -106,5 +114,6 @@ shop `expanse-theme-furniture.myshopify.com`
 
 - [x] Official 3vp static (`capture-observation.mjs`)
 - [x] Interact mega / search / cart / menu / PDP Size
+- [x] CRO leftover: FAQ + testimonials (countdown/form leftover)
 - [x] PNG bak → stateFindings
 - [x] `npm run validate` — 0 error
