@@ -4,8 +4,8 @@
 *Tema (storefront, uydurulmadı):* **followhollow/main** · `schema_name`: **Shopify Theme Lab** · `schema_version`: 1.1.0 · `theme_store_id`: null · role `main`  
 *Shop:* `followhollow.myshopify.com` · theme id `151218847913`
 
-**Durum:** Mod A walk bitti · resmi 3vp claim’lerde var (PLP hariç) · PLP official retry 768’de kırıldı (leftover)  
-**PR:** https://github.com/mattiasadem/qante/pull/67 · draft · **main’e merge yok**
+**Durum:** Leftover retry 2026-08-20 · PLP official 3vp **hâlâ blocked** · leftover sayfa marquee 2× resmi 3vp  
+**PR:** https://github.com/mattiasadem/qante/pull/278 · draft · **main’e merge yok** · #67 devam değil
 
 ---
 
@@ -16,10 +16,11 @@
 | Evidence kökü | `evidence/hollowsocks/default/` |
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
+| Gözlem / kanıt | 40 obs · 128 PNG (PLP orphan 375 claim değil) |
 | Parallel | yalnız `observations/hollowsocks/` · `evidence/hollowsocks/` · `todo/hollowsocks.md` · `candidates/hollowsocks-*.md` |
 
 **Kapsam satırı:**  
-`Hollow Socks · default · followhollow/main (Shopify Theme Lab 1.1.0) · home→PDP→PLP→search→cart-drawer→content→footer→mobile · 38 obs · 0 yeni şema · leftover: 404/Junip/Gorgias/Replo-PDP/blog-0/advertorials/PLP-3vp-flake`
+`Hollow Socks · default · followhollow/main (Shopify Theme Lab 1.1.0) · home→PDP→PLP→search→cart-drawer→content→footer→mobile · 40 obs · 0 yeni şema · leftover: PLP-3vp-768-QV-Close / 404 / Junip / Gorgias / Replo-PDP / blog-0 / advertorials / quiz-start-yok / store-locator-title`
 
 ---
 
@@ -30,8 +31,8 @@
 | Home + announcement/header/footer | done | [x] 12 section |
 | Mega / search form / cart / mobile menu | mega+search missingStates; menu 375/768; cart interact 3vp | [x] menu · [x] cart interact |
 | PDP Crew | done | [x] 7/7 + size/FAQ interact |
-| Compression PDP | ⛔ Replo `#replo-fullpage-element` | — |
-| PLP `/collections/best-sellers` | roster; official retry 768 QV-Close → PDP + cart-drawer assertClean | [ ] |
+| Compression PDP | ⛔ Replo (2026-08-20 yeniden) | — |
+| PLP `/collections/best-sellers` | official retry 768 QV-Close → hunt-socks ×3 + cart-drawer assertClean | [ ] **hâlâ leftover** |
 | Search `/search?q=alpaca` | done | [x] |
 | Cart `/cart` | ⛔ main 0 — drawer | — |
 | About `/pages/about-us` | done | [x] 6/6 |
@@ -40,7 +41,9 @@
 | Privacy | done | [x] |
 | FAQ `/pages/faqs` | wrapper 3vp | [x] |
 | Contact | hub 3vp · form yok | [x] |
-| Blog / reviews / 404 / advertorials / quiz | ⛔ leftover | — |
+| Store locator marquee | leftover sayfa · locator title leftover | [x] marquee |
+| All-reviews marquee | leftover sayfa · Junip leftover | [x] marquee |
+| Blog / reviews title / 404 / advertorials / quiz | ⛔ leftover | — |
 
 ---
 
@@ -65,7 +68,7 @@
 | 15 | global-menu-drawer | home | [x] 375/768 | [x] 1440 N/A | reuse | [x] |
 | 16 | product-info-main | product-detail | [x] + size | [x] | reuse | [x] |
 | 17–22 | PDP perks/related/table/trust/FAQ/marquee | product-detail | [x] + FAQ | [x] | reuse | [x] |
-| 23–24 | PLP categories + grid | collection | [ ] | [x] leftover blocker | reuse | [ ] official retry failed |
+| 23–24 | PLP categories + grid | collection | [ ] | [x] 2026-08-20 retry failed | reuse | [ ] official 3vp yok |
 | 25–26 | search hero + results | search | [x] | [x] | reuse | [x] |
 | 27–32 | About | about-brand | [x] | [x] | reuse | [x] |
 | 33–34 | why-alpaca help | faq-support | [x] + FAQ | [x] | reuse | [x] |
@@ -73,6 +76,8 @@
 | 36 | privacy | policy | [x] | [x] | reuse | [x] |
 | 37 | faqs wrapper | faqs | [x] | [x] | reuse | [x] |
 | 38 | contact hub | contact | [x] | [x] | reuse | [x] |
+| 39 | product-showcase-grid-featured | store-locator | [x] | [x] locator leftover | reuse | [x] |
+| 40 | product-showcase-grid-featured | all-reviews | [x] | [x] Junip leftover | reuse | [x] |
 
 ---
 
@@ -99,6 +104,7 @@
 ## Evidence backlog
 
 - [x] Home + Crew PDP + search + about + help + size + policy + faqs/contact wrappers resmi 3vp
-- [ ] PLP 3vp — official retry failed (768 QV Close → compression-bundle ×3, then closed `ds-cart-drawer` assertClean). Orphan 375 claim değil. Script’e dokunulmadı.
+- [ ] PLP 3vp — 2026-08-20 official retry failed (768 QV Close → `/products/hunt-socks?variant=47338929029289` ×3, then closed `ds-cart-drawer` assertClean). Orphan 375 claim değil. Script’e dokunulmadı.
+- [x] Store locator + all-reviews BEST SELLERS marquee resmi 3vp (locator/Junip leftover)
 - [x] Cart drawer interact PNG (initial/filled/changed × 3vp)
-- [x] Newsletter / contact submit — **yapılmadı** (PII)
+- [x] Newsletter / contact submit / quiz Start — **yapılmadı** (PII)
