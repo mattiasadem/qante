@@ -72,7 +72,7 @@ DTC marka listesi: [`dtc-69-brands.md`](./dtc-69-brands.md)
 | 59 |  | [Enterprise](https://themes.shopify.com/themes/enterprise) | Clean Canvas | $420 | https://themes.shopify.com/themes/enterprise | enterprise | View demo only. |
 | 60 |  | [Streamline](https://themes.shopify.com/themes/streamline) | Archetype | $420 | https://themes.shopify.com/themes/streamline | streamline | View demo only. |
 | 61 |  | [Local](https://themes.shopify.com/themes/local) | Krown | $380 | https://themes.shopify.com/themes/local | local | View demo only. |
-| 62 |  | [Drop](https://themes.shopify.com/themes/drop) | We are Underground | $180 | https://themes.shopify.com/themes/drop | drop | View demo only. |
+| 62 | done | [Drop](https://themes.shopify.com/themes/drop) | We are Underground | $180 | https://drop-theme-reveal.myshopify.com/ | drop | resmi Reveal preset · Drop 5.3.0 · 58 obs / 174 PNG · draft PR · theme_store_id null. Unveil/Flash kullanılmadı. |
 | 63 |  | [Ignite](https://themes.shopify.com/themes/ignite) | Benchmark | $380 | https://themes.shopify.com/themes/ignite | ignite | View demo only. |
 | 64 |  | [Honey](https://themes.shopify.com/themes/honey) | Archer Commerce | $400 | https://themes.shopify.com/themes/honey | honey | View demo only. |
 | 65 |  | [Stockist](https://themes.shopify.com/themes/stockist) | Noord | $320 | https://themes.shopify.com/themes/stockist | stockist | View demo only. |
