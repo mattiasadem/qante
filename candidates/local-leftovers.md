@@ -2,7 +2,7 @@
 
 *Kaynak:* https://local-theme-main.myshopify.com/  
 *Theme Store:* https://themes.shopify.com/themes/local — paid · Krown · $380  
-*Tema (görülen, uydurulmadı):* **local-build/light** · `schema_name` **Local** · `schema_version` **4.1.0** · `theme_store_id` **null** · role `main` · id `139927814205`  
+*Tema (görülen, uydurulmadı):* **local-build/light** · `schema_name` **Local** · `schema_version` **4.2.0** · `theme_store_id` **null** · role `main` · id `139927814205`  
 *Walk host:* `local-theme-main.myshopify.com`  
 *Shopify.shop (JS):* `local-theme-light-demo.myshopify.com`  
 *Tarih:* 2026-08-18
