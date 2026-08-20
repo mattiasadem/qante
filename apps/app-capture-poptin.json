@@ -1,0 +1,89 @@
+{
+  "id": "app-capture-poptin",
+  "kategori": "capture",
+  "varyant": "poptin",
+  "scope": "overlay",
+  "amac": "Çıkış niyeti pop-up, hello bar ve gömülü formla sepet terkini ve e-posta kaydını yakalamak.",
+  "sorun": "Listing Poptin Exit Popup Email Pop Up — abandoned-cart rafında. Recart/OptiMonk zaten var; Poptin ayrı slug. ikas Marketing Pop-up temel karşılık.",
+  "link": "https://apps.shopify.com/poptin",
+  "yuzey": [
+    "popup_modal",
+    "announcement_bar",
+    "embedded_form"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "VIEW_CART",
+    "CONTACT_FORM",
+    "CUSTOMER_REGISTER"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CATEGORY",
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_customers",
+    "write_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/customer/created"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "listeId": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "Poptin form/liste kimliği"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "emit:newsletter.subscribe"
+  ],
+  "hookNoktalari": [
+    "mount:newsletter.after",
+    "mount:announcement.after",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "ikas Marketing Pop-up + duyuru bandı kısmen karşılar. Resmi Poptin ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}
