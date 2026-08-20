@@ -90,7 +90,23 @@ Karar: onay bekliyor
 ---
 
 ADAY: spotlight-pii-stop  
-Gerekçe: Contact Send ve e-posta/account/checkout/Buy it now tıklanmadı. Newsletter alanı yok.  
+Gerekçe: Contact Send ve e-posta/account/checkout/Buy it now tıklanmadı. Newsletter alanı yok. CRO interact: contact `initial` 3vp (doldurulmadı).  
 Örnekler: https://theme-spotlight-demo.myshopify.com/pages/contact  
 Öneri: PII stop  
+Karar: onay bekliyor
+
+---
+
+ADAY: spotlight-cro-schemas-absent  
+Gerekçe: Home yalnız header + featured_collection + footer. `/pages/faq` `/pages/faqs` 404. CRO leftover interact yalnız `lead-capture-form` (initial) + `footer-columns-newsletter` (locale open). Observation yok, şema icat edilmedi: before-after-slider · commerce-tools-products-bundle · promo-banner-countdown · faq-collapsible-tabs · lead-capture-newsletter-band · comparison-quick-table · product-finder-quiz · testimonial-quote-carousel · media-shop-the-feed · media-scrolling-gallery · hero-slideshow. Featured `slider-component` (slider-mobile-gutter) hero-slideshow değil.  
+Örnekler: https://theme-spotlight-demo.myshopify.com/  
+Öneri: leftover — Spotlight demo minimal; ilk envanter `/qante-discover`  
+Karar: onay bekliyor
+
+---
+
+ADAY: spotlight-locale-us-cad  
+Gerekçe: Footer `FooterCountryList` açık: Canada (CAD $) + United States (CAD $). Ülke tıklanmadı. US satırında CAD — katalog/market, şema değil.  
+Örnekler: `#FooterCountryForm` home footer  
+Öneri: leftover — locale para birimi  
 Karar: onay bekliyor
