@@ -1,0 +1,36 @@
+{
+  "observationId": "mejuri.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "mejuri",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://mejuri.com/",
+  "selector": "body",
+  "_selectorNote": "1440 prepareClick+fill search modal; 375/768 search header'da yok — viewport body",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/mejuri/default/home/global-predictive-search.375.png",
+    "evidence/mejuri/default/home/global-predictive-search.768.png",
+    "evidence/mejuri/default/home/global-predictive-search.1440.png"
+  ],
+  "notlar": "1440: Search → modal + hoop → öneriler (hoops/huggie hoops) + ürün kartları (TUBE HUGGIE HOOPS $98). 375/768 home'da search-modal-trigger yok — viewport body (kapalı home). /search?q= kırık.",
+  "delta": "Custom headless storefront. Shopify.shop / Shopify.theme / schema_name / schema_version / theme_store_id yok (uydurulmadı). Yalnız customerPrivacy + trackingConsent (@shopify/consent-tracking-api v0.2). #shopify-section-* yok. data-testid=search-modal-content + search-input. /search?q= kırık (search-results obs).",
+  "captureMode": "viewport",
+  "prepareClick": "[data-testid=\"search-modal-trigger\"]",
+  "prepareFill": {
+    "selector": "[data-testid=\"search-input\"]",
+    "value": "hoop"
+  },
+  "capture": {
+    "url": "https://mejuri.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "viewport",
+    "updatedAt": "2026-08-20T23:00:15.364Z",
+    "prepareClick": "[data-testid=\"search-modal-trigger\"]"
+  }
+}
