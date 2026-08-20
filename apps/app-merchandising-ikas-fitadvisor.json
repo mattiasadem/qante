@@ -1,0 +1,67 @@
+{
+  "id": "app-merchandising-ikas-fitadvisor",
+  "kategori": "merchandising",
+  "varyant": "ikas-fitadvisor",
+  "scope": "in-flow",
+  "amac": "Müşterinin doğru bedeni seçmesini sağlar ve iade oranlarını azaltır.",
+  "sorun": "PDP beden belirsizliği; kart açıklaması doğru beden seçimi vaat eder.",
+  "link": "https://apps.ikas.com/tr/uygulama/35631e2f-3977-48b2-b7c1-8d722aeeea26",
+  "yuzey": [
+    "popup_modal"
+  ],
+  "entegrasyon": {
+    "shopify": [],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT"
+  ],
+  "ikasLink": "https://apps.ikas.com/tr/uygulama/35631e2f-3977-48b2-b7c1-8d722aeeea26",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "admin-iframe",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "ikas App Store resmi listing (FitAdvisor). Vitrin storefront-js-script; yönetim admin-iframe.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

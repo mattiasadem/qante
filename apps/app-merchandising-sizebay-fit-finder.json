@@ -1,0 +1,76 @@
+{
+  "id": "app-merchandising-sizebay-fit-finder",
+  "kategori": "merchandising",
+  "varyant": "sizebay-fit-finder",
+  "scope": "in-flow",
+  "amac": "PDP’de sanal deneme odası ve AI beden önerisiyle iade ve beden belirsizliğini azaltmak.",
+  "sorun": "Listing Sizebay Virtual Fitting Room (HTTP 200; fit-predictor 404). sizebay slug tracking pixel (rapor); vitrin inject bu slug. Karşılık studio-section + overlay (popup_modal).",
+  "link": "https://apps.shopify.com/sizebay-fit-finder",
+  "yuzey": [
+    "popup_modal"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "ctaEtiket": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 40,
+      "not": "Fit finder / deneme odası buton yazısı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section PDP fit finder; overlay script ile modal. Sizebay tracking pixel ayrı listing, bu kayıtta yok. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

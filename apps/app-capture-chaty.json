@@ -1,0 +1,90 @@
+{
+  "id": "app-capture-chaty",
+  "kategori": "capture",
+  "varyant": "chaty",
+  "scope": "overlay",
+  "amac": "WhatsApp, Messenger ve 20+ sohbet butonuyla ziyaretçiyi tercih ettiği uygulamadan yakalamak.",
+  "sorun": "Chaty listing çoklu chat butonu (WhatsApp, Messenger, Line, Telegram) vaat ediyor. ikas’ta hazır çoklu-launcher yok; karşılık storefront-js-script flyout.",
+  "link": "https://apps.shopify.com/chaty",
+  "yuzey": [
+    "flyout"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW",
+    "CONTACT_FORM",
+    "CUSTOMER_REGISTER"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CATEGORY",
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_customers",
+    "write_customers",
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/customer/created"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "karsilamaMetni": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 160,
+      "not": "Listingde advertised preset welcome messages"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    },
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "emit:newsletter.subscribe"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Harici Chaty hesabı + vitrin flyout script (WhatsApp/Messenger launcher). Resmi ikas Chaty listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

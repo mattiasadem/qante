@@ -1,0 +1,74 @@
+{
+  "id": "app-capture-ikas-cark-ozvotek",
+  "kategori": "capture",
+  "varyant": "ikas-cark-ozvotek",
+  "scope": "overlay",
+  "amac": "İndirim çarkı ile müşterilerin e-posta adreslerini toplar.",
+  "sorun": "Gamification'lı e-posta yakalama; kart açıklaması indirim çarkı + e-posta toplama vaat eder.",
+  "link": "https://apps.ikas.com/tr/uygulama/1c559ec7-b9a8-405f-9dcd-703d9e91c1fa",
+  "yuzey": [
+    "spin_wheel",
+    "popup_modal"
+  ],
+  "entegrasyon": {
+    "shopify": [],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe",
+      "webhook"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "CUSTOMER_REGISTER",
+    "CONTACT_FORM"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CATEGORY",
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "https://apps.ikas.com/tr/uygulama/1c559ec7-b9a8-405f-9dcd-703d9e91c1fa",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_products",
+    "read_customers",
+    "write_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/customer/created"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "admin-iframe",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    }
+  },
+  "dataBindings": [],
+  "actions": [
+    "emit:newsletter.subscribe"
+  ],
+  "hookNoktalari": [
+    "mount:newsletter.after",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "ikas App Store resmi listing (Çark Ozvotek). Vitrin storefront-js-script; yönetim admin-iframe.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

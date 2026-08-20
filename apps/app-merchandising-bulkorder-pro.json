@@ -1,0 +1,74 @@
+{
+  "id": "app-merchandising-bulkorder-pro",
+  "kategori": "merchandising",
+  "varyant": "bulkorder-pro",
+  "scope": "in-flow",
+  "amac": "Ürün sayfasında canlı miktar indirim tablosu göstererek hacimli satışı artırmak.",
+  "sorun": "Listing BulkOrder Pro — Volume Selling (HTTP 200): PDP’de katlanır quantity discount table, aktif kademe vurgusu. volume-discount slug’ı boş/unavailable. ikas native kademe tablosu yok; yuzey [] (embedded_form şart değil).",
+  "link": "https://apps.shopify.com/bulkorder-pro",
+  "yuzey": [],
+  "entegrasyon": {
+    "shopify": [
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "ADD_TO_CART"
+  ],
+  "ikasSayfa": [
+    "PRODUCT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "Miktar tablosu başlığı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section miktar kademe tablosu. Kapalı yüzey yok. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

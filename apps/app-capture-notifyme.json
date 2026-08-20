@@ -1,0 +1,97 @@
+{
+  "id": "app-capture-notifyme",
+  "kategori": "capture",
+  "varyant": "notifyme",
+  "scope": "overlay",
+  "amac": "Stok bitince Notify Me formuyla e-posta/SMS/WhatsApp restock listesi toplayarak satışı kurtarmak.",
+  "sorun": "Listing Stok: Back in Stock Preorders — PDP/koleksiyon Notify Me widget + waitlist (e-posta kovalama değil, vitrin form). ikas’ta app-embed yok; karşılık storefront-js-script popup_modal / embedded_form.",
+  "link": "https://apps.shopify.com/notifyme",
+  "yuzey": [
+    "popup_modal",
+    "embedded_form"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "CONTACT_FORM",
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CATEGORY"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_products",
+    "read_customers",
+    "write_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/product/updated",
+    "store/customer/created"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "ctaEtiket": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 40,
+      "not": "Notify Me buton yazısı"
+    },
+    "kanal": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 40,
+      "not": "Listing email / SMS / WhatsApp vaat ediyor"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    },
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "emit:newsletter.subscribe"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Storefront script: stok yokken Notify Me overlay. Restock tetik product webhook. Preorder listing vaadi bu kayıtta ayrı yazılmadı. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

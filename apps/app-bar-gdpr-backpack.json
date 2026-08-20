@@ -1,0 +1,80 @@
+{
+  "id": "app-bar-gdpr-backpack",
+  "kategori": "bar",
+  "varyant": "gdpr-backpack",
+  "scope": "overlay",
+  "amac": "Ziyaretçi konumuna göre GDPR/CCPA çerez banner’ı göstererek onay toplamak.",
+  "sorun": "Listing Consentmo GDPR Compliance (slug gdpr-backpack, HTTP 200): geo cookie banner, script blocking, Consent Mode v2. Plus tier: ADA/WCAG widget and EU Withdrawal page. Overlay is not BFSG compliance. ikas’ta app-embed yok; karşılık storefront-js-script announcement_bar + popup_modal.",
+  "link": "https://apps.shopify.com/gdpr-backpack",
+  "yuzey": [
+    "announcement_bar",
+    "popup_modal"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CATEGORY",
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 120,
+      "not": "Çerez banner metni"
+    },
+    "geoHedef": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "Listing auto-detect visitor location vaat ediyor"
+    }
+  },
+  "dataBindings": [],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:announcement.after",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Storefront script: geo çerez çubuğu + tercih modalı. Pixel/Consent Mode v2 ikas web-pixel sözlüğüne yazılmaz. Plus ADA/WCAG overlay BFSG yerine geçmez. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "id": "app-merchandising-ikas-sarraf-canli-kur",
+  "kategori": "merchandising",
+  "varyant": "ikas-sarraf-canli-kur",
+  "scope": "in-flow",
+  "amac": "Canlı altın kurlarını ikas mağazasında otomatik yayınlar.",
+  "sorun": "Altın/sarraf kurunu vitrinde göstermek; kart açıklaması canlı altın kuru vaat eder.",
+  "link": "https://apps.ikas.com/tr/uygulama/4e2ae4bc-9a21-4c02-bdb5-36d7e730dfe9",
+  "yuzey": [],
+  "entegrasyon": {
+    "shopify": [],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT",
+    "CUSTOM"
+  ],
+  "ikasLink": "https://apps.ikas.com/tr/uygulama/4e2ae4bc-9a21-4c02-bdb5-36d7e730dfe9",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "admin-iframe",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after",
+    "mount:buyBox.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "ikas App Store resmi listing (Sarraf Canlı Kur). Vitrin storefront-js-script; yönetim admin-iframe.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

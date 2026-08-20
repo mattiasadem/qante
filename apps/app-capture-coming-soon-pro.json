@@ -1,0 +1,76 @@
+{
+  "id": "app-capture-coming-soon-pro",
+  "kategori": "capture",
+  "varyant": "coming-soon-pro",
+  "scope": "overlay",
+  "amac": "Lansman öncesi coming soon / bakım sayfası, geri sayım, e-posta toplama ve şifreli erişim göstermek.",
+  "sorun": "Listing Coming Soon ‑ Launch Page (HTTP 200): pre-launch/under-construction sayfa, countdown, password, e-posta. coming-soon / password-page 404. Vitrin overlay; admin-only değil. capture + popup_modal (page kapalı sette yok).",
+  "link": "https://apps.shopify.com/coming-soon-pro",
+  "yuzey": [
+    "popup_modal"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "CONTACT_FORM",
+    "CUSTOMER_REGISTER"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CUSTOM",
+    "PRODUCT",
+    "CATEGORY"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_customers",
+    "write_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "Coming soon başlığı"
+    }
+  },
+  "dataBindings": [],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Storefront-script popup_modal / tam sayfa coming-soon. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

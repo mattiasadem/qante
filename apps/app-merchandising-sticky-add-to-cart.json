@@ -1,0 +1,84 @@
+{
+  "id": "app-merchandising-sticky-add-to-cart",
+  "kategori": "merchandising",
+  "varyant": "sticky-add-to-cart",
+  "scope": "overlay",
+  "amac": "Kaydırırken görünen yapışkan sepete-ekle çubuğuyla ürün sayfasında dönüşümü artırmak.",
+  "sorun": "Sticky Add To Cart Bar Pro listing PDP sticky ATC vaat ediyor. Kapalı yuzeyde sticky_atc yok; announcement_bar bar karşılığı. ikas’ta app-embed yok.",
+  "link": "https://apps.shopify.com/sticky-add-to-cart",
+  "yuzey": [
+    "announcement_bar"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "ADD_TO_CART",
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "Sticky bar ürün / CTA metni"
+    },
+    "cta": {
+      "tip": "button",
+      "zorunlu": false
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "emit:cart.add"
+  ],
+  "hookNoktalari": [
+    "mount:header.before",
+    "mount:buyBox.after"
+  ],
+  "bagimliliklar": [
+    "global-cart-drawer"
+  ],
+  "ikasKarsilik": "Storefront-script yapışkan ATC bar (announcement_bar yüzeyi). Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

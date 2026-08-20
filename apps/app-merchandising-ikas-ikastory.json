@@ -1,0 +1,70 @@
+{
+  "id": "app-merchandising-ikas-ikastory",
+  "kategori": "merchandising",
+  "varyant": "ikas-ikastory",
+  "scope": "in-flow",
+  "amac": "Instagram tarzı storylerle müşteriyi etkiler, satışı artırır.",
+  "sorun": "Vitrinde story şeridi; kart açıklaması Instagram tarzı story vaat eder.",
+  "link": "https://apps.ikas.com/tr/uygulama/b8755176-2507-4b16-8452-4b19a71d2399",
+  "yuzey": [
+    "ugc_gallery"
+  ],
+  "entegrasyon": {
+    "shopify": [],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT",
+    "CATEGORY"
+  ],
+  "ikasLink": "https://apps.ikas.com/tr/uygulama/b8755176-2507-4b16-8452-4b19a71d2399",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "admin-iframe",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "ikas App Store resmi listing (ikaStory: Story ile Satış Artırma Aracı). Vitrin storefront-js-script; yönetim admin-iframe.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

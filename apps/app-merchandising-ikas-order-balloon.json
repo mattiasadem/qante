@@ -1,0 +1,82 @@
+{
+  "id": "app-merchandising-ikas-order-balloon",
+  "kategori": "merchandising",
+  "varyant": "ikas-order-balloon",
+  "scope": "overlay",
+  "amac": "Sitede canlı siparişleri göstererek kararsız müşterileri yakalar.",
+  "sorun": "Sosyal kanıt balonu ile son siparişleri göstermek; kart açıklaması canlı sipariş gösterimi vaat eder.",
+  "link": "https://apps.ikas.com/tr/uygulama/f1aa6ada-e660-4f9b-89fd-50ea6a23993b",
+  "yuzey": [
+    "social_proof_toast"
+  ],
+  "entegrasyon": {
+    "shopify": [],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe",
+      "webhook"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW",
+    "COMPLETE_CHECKOUT"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CATEGORY",
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "https://apps.ikas.com/tr/uygulama/f1aa6ada-e660-4f9b-89fd-50ea6a23993b",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_products",
+    "read_orders"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/order/created"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "admin-iframe",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "mesaj": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 120,
+      "not": "Toast metin kalıbı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "ikas App Store resmi listing (Order Balloon). Vitrin storefront-js-script; yönetim admin-iframe.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

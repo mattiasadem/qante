@@ -1,0 +1,91 @@
+{
+  "id": "app-merchandising-custom-options",
+  "kategori": "merchandising",
+  "varyant": "custom-options",
+  "scope": "in-flow",
+  "amac": "Ürün sayfasında metin, onay kutusu, swatch, tarih ve dosya alanlarıyla özel seçenek satmak.",
+  "sorun": "Listing Infinite Options for Products / ShopPad (HTTP 200; infinite-options 404). Canlı slug custom-options. ikas native custom options yok; karşılık studio-section + embedded_form.",
+  "link": "https://apps.shopify.com/custom-options",
+  "yuzey": [
+    "embedded_form"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-block",
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "ADD_TO_CART"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products",
+    "read_orders"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/order/created"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "Seçenek seti başlığı"
+    },
+    "dosyaYukle": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "Listing file / date / checkbox vaat ediyor"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    },
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "emit:cart.add"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section: PDP özel seçenek formu (text / checkbox / upload). Satır özelliği sipariş webhook ile. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

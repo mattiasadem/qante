@@ -1,0 +1,99 @@
+{
+  "id": "app-merchandising-stayai-subscriptions",
+  "kategori": "merchandising",
+  "varyant": "stayai-subscriptions",
+  "scope": "in-flow",
+  "amac": "PDP subscribe-and-save bloğu ve abone portalıyla tekrarlayan geliri büyütmek.",
+  "sorun": "Listing Stay AI Subscriptions App (HTTP 200; stay ve stay-subscriptions 404). stayai-subscriptions canlı slug. ikas’ta checkout-extension yok; karşılık studio-section plan seçici.",
+  "link": "https://apps.shopify.com/stayai-subscriptions",
+  "yuzey": [
+    "product_recs"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "checkout-extension"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "ADD_TO_CART",
+    "CUSTOMER_LOGIN",
+    "COMPLETE_CHECKOUT"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CART",
+    "ACCOUNT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products",
+    "read_orders",
+    "read_customers",
+    "write_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/order/created",
+    "store/customer/updated"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "PDP abone-ol widget başlığı"
+    },
+    "portalAcik": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "Listing subscriber portal vaat ediyor"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    },
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "emit:cart.add",
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section plan seçici. Stay AI portal ve checkout akışı ikas checkout-extension ile birebir değil.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

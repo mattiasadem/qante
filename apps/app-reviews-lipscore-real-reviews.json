@@ -1,0 +1,100 @@
+{
+  "id": "app-reviews-lipscore-real-reviews",
+  "kategori": "reviews",
+  "varyant": "lipscore-real-reviews",
+  "scope": "in-flow",
+  "amac": "Doğrulanmış müşteri puanı ve gerçek yorumları ürün sayfasında göstererek güven ve dönüşümü artırmak.",
+  "sorun": "Listing Lipscore Product Reviews: verified reviews + Google/AI arama görünürlüğü vaat ediyor. ikas’ta app-block yok; karşılık storefront-js-script + studio-section. SEO/head-only pixel değil.",
+  "link": "https://apps.shopify.com/lipscore-real-reviews",
+  "yuzey": [
+    "review_stars",
+    "review_widget"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-block",
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "PAGE_VIEW",
+    "COMPLETE_CHECKOUT"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "INDEX",
+    "CATEGORY"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products",
+    "write_products",
+    "read_orders",
+    "read_customers"
+  ],
+  "ikasAksiyon": [
+    {
+      "yer": "product-edit",
+      "tip": "iframe"
+    }
+  ],
+  "ikasWebhook": [
+    "store/order/created",
+    "store/product/updated"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "widgetBaslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80
+    },
+    "yildizGoster": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "Listingde advertised ratings / real reviews"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "emit:review.filter",
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:productCard.badge",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section: yıldız özeti + yorum listesi. Google/AI snippet listing vaadi ikas özel schema ile kısmen. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

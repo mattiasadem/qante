@@ -1,0 +1,81 @@
+{
+  "id": "app-merchandising-ikas-iade-ve-degisim-merkezi",
+  "kategori": "merchandising",
+  "varyant": "ikas-iade-ve-degisim-merkezi",
+  "scope": "page",
+  "amac": "ikas mağazaları için profesyonel iade ve değişim yönetim platformu sunar.",
+  "sorun": "Self-servis iade/değişim portalı; kart açıklaması iade ve değişim yönetimi vaat eder.",
+  "link": "https://apps.ikas.com/tr/uygulama/716032a6-0e6c-48c3-9e2f-2447d3a12e55",
+  "yuzey": [
+    "embedded_form"
+  ],
+  "entegrasyon": {
+    "shopify": [],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe",
+      "webhook"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "CUSTOMER_LOGIN"
+  ],
+  "ikasSayfa": [
+    "CUSTOM",
+    "ACCOUNT"
+  ],
+  "ikasLink": "https://apps.ikas.com/tr/uygulama/716032a6-0e6c-48c3-9e2f-2447d3a12e55",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products",
+    "read_orders",
+    "read_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/order/created",
+    "store/order/updated"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "admin-iframe",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "portalBaslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "İade portalı sayfa başlığı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "ikas App Store resmi listing (İade ve Değişim Merkezi). Vitrin storefront-js-script; yönetim admin-iframe.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

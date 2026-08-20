@@ -1,0 +1,79 @@
+{
+  "id": "app-bar-ikas-barlio",
+  "kategori": "bar",
+  "varyant": "ikas-barlio",
+  "scope": "overlay",
+  "amac": "Mağazaya özel sepet tutarı bar göstergesi ile ücretsiz kargo eşiğini gösterir.",
+  "sorun": "Sepet arttıkça güncellenen kargo/sepet tutarı barı; kart açıklaması sepet tutarı bar göstergesi vaat eder.",
+  "link": "https://apps.ikas.com/tr/uygulama/f11c28a4-db00-4fb5-8835-1c9bd381529a",
+  "yuzey": [
+    "free_shipping_bar"
+  ],
+  "entegrasyon": {
+    "shopify": [],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "VIEW_CART",
+    "ADD_TO_CART"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CATEGORY",
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "https://apps.ikas.com/tr/uygulama/f11c28a4-db00-4fb5-8835-1c9bd381529a",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "admin-iframe",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "kargoEsigi": {
+      "tip": "number",
+      "zorunlu": false,
+      "not": "Ücretsiz kargo sepet eşiği"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "listen:cart.updated"
+  ],
+  "hookNoktalari": [
+    "mount:announcement.after",
+    "mount:cart.after",
+    "mount:cartDrawer.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "ikas App Store resmi listing (Barlio). Vitrin storefront-js-script; yönetim admin-iframe.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

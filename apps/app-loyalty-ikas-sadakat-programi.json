@@ -1,0 +1,90 @@
+{
+  "id": "app-loyalty-ikas-sadakat-programi",
+  "kategori": "loyalty",
+  "varyant": "ikas-sadakat-programi",
+  "scope": "overlay",
+  "amac": "Puan, kupon ve mağaza widget'ını tek panelden yönetir.",
+  "sorun": "Sadakat puan/kupon widget'ı; kart açıklaması puan-kupon-widget vaat eder.",
+  "link": "https://apps.ikas.com/tr/uygulama/4e2fef99-4196-4056-93d6-4d9f6139947a",
+  "yuzey": [
+    "loyalty_launcher",
+    "loyalty_points_badge",
+    "loyalty_page"
+  ],
+  "entegrasyon": {
+    "shopify": [],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe",
+      "webhook"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "CUSTOMER_LOGIN",
+    "COMPLETE_CHECKOUT",
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "ACCOUNT",
+    "INDEX",
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "https://apps.ikas.com/tr/uygulama/4e2fef99-4196-4056-93d6-4d9f6139947a",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_products",
+    "read_customers",
+    "read_orders"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/order/created",
+    "store/customer/created"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "admin-iframe",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "launcherEtiket": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 40
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    },
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "emit:loyalty.open"
+  ],
+  "hookNoktalari": [
+    "mount:header.utility",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "ikas App Store resmi listing (Sadakat Programı - Harcadıkça Kazan). Vitrin storefront-js-script; yönetim admin-iframe.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "id": "app-capture-pop-up-builder-wisepops",
+  "kategori": "capture",
+  "varyant": "pop-up-builder-wisepops",
+  "scope": "overlay",
+  "amac": "Çıkış niyeti pop-up, spin-the-wheel ve gömülü formla e-posta yakalayıp sepet terkini azaltmak.",
+  "sorun": "Wisepops listing email/exit pop-up, spin-to-win, embeds ve announcement vaat ediyor. ikas Marketing Pop-up temel karşılık; AI/A-B için storefront-js-script.",
+  "link": "https://apps.shopify.com/pop-up-builder-wisepops",
+  "yuzey": [
+    "popup_modal",
+    "spin_wheel",
+    "embedded_form",
+    "announcement_bar"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "VIEW_CART",
+    "CONTACT_FORM",
+    "CUSTOMER_REGISTER"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CATEGORY",
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_customers",
+    "write_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/customer/created"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "listeId": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "Wisepops kampanya / form kimliği"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "emit:newsletter.subscribe"
+  ],
+  "hookNoktalari": [
+    "mount:newsletter.after",
+    "mount:announcement.after",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "ikas Marketing Pop-up + duyuru bandı kısmen karşılar. Resmi Wisepops ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

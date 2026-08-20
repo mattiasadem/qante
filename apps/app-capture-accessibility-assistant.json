@@ -1,0 +1,74 @@
+{
+  "id": "app-capture-accessibility-assistant",
+  "kategori": "capture",
+  "varyant": "accessibility-assistant",
+  "scope": "overlay",
+  "amac": "Vitrinde erişilebilirlik overlay widget’ı ile kontrast, yazı boyutu ve tarama ayarları sunmak.",
+  "sorun": "Listing Accessibility Assistant (slug accessibility-assistant, HTTP 200). Title claims WCAG/EAA/BFSG. Widget + scan + AI alt text. Overlay is not BFSG / EN 301 549 shop-code compliance. accessiBe (accesswidget) ve UserWay ayrı mevcut dosyalar; bu kayıt yeni. capture + flyout.",
+  "link": "https://apps.shopify.com/accessibility-assistant",
+  "yuzey": [
+    "flyout"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "script-tag"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CATEGORY",
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "widgetKonum": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 40,
+      "not": "Overlay köşe konumu"
+    }
+  },
+  "dataBindings": [],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:header.utility"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Storefront-script flyout erişilebilirlik widget’ı. Overlay BFSG yerine geçmez. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

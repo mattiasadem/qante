@@ -1,0 +1,80 @@
+{
+  "id": "app-merchandising-video-shopping",
+  "kategori": "merchandising",
+  "varyant": "video-shopping",
+  "scope": "in-flow",
+  "amac": "TikTok, Reels ve UGC videolarını ürün ve koleksiyon sayfalarında tıklanabilir shoppable carousel olarak göstermek.",
+  "sorun": "Listing Videowise Shoppable Video UGC (HTTP 200): PDP/koleksiyon/anasayfada 16+ video widget (stories, reels, carousel). Tapcart admin kanalı değil; vitrin enjekte UI. ikas native shoppable video yok; karşılık ugc_gallery studio-section.",
+  "link": "https://apps.shopify.com/video-shopping",
+  "yuzey": [
+    "ugc_gallery"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT",
+    "CATEGORY",
+    "CUSTOM"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "Video galeri başlığı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after",
+    "mount:buyBox.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section ugc_gallery: shoppable video carousel. Resmi Videowise ikas listing yok. ikas app-block yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "id": "app-merchandising-product-filter-search",
+  "kategori": "merchandising",
+  "varyant": "product-filter-search",
+  "scope": "in-flow",
+  "amac": "AI arama çubuğu, koleksiyon filtresi ve önerilerle doğru ürüne götürmek.",
+  "sorun": "Listing Boost AI Search & Filter (HTTP 200; smart-search-filter 404). Canlı slug product-filter-search. ikas native yok. Filtre/sonuç studio-section; anlık arama overlay script.",
+  "link": "https://apps.shopify.com/product-filter-search",
+  "yuzey": [
+    "flyout",
+    "product_recs"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW",
+    "VIEW_CATEGORY",
+    "SEARCH",
+    "VIEW_SEARCH_RESULTS",
+    "ADD_TO_CART"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CATEGORY",
+    "PRODUCT",
+    "SEARCH",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "aramaPlaceholder": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "oneriler",
+      "source": "DataSource.productList"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:header.utility",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section anlık arama flyout + filtre / öneri ızgarası. Boost merch ikas native değil. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "app-capture-ikas-cilt-tipi-testi",
+  "kategori": "capture",
+  "varyant": "ikas-cilt-tipi-testi",
+  "scope": "overlay",
+  "amac": "Mağazaya cilt tipi testi ekler; müşteri cilt tipini öğrenip doğru ürünü bulur.",
+  "sorun": "Kozmetik vitrininde quiz ile ürün yönlendirme; kart açıklaması cilt tipi testi vaat eder.",
+  "link": "https://apps.ikas.com/tr/uygulama/8e2c31a7-4fdf-4d9a-9003-0aa794a0564a",
+  "yuzey": [
+    "popup_modal",
+    "embedded_form"
+  ],
+  "entegrasyon": {
+    "shopify": [],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT",
+    "CUSTOM"
+  ],
+  "ikasLink": "https://apps.ikas.com/tr/uygulama/8e2c31a7-4fdf-4d9a-9003-0aa794a0564a",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "admin-iframe",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "ikas App Store resmi listing (Cilt Tipi Testi (Kozmetik Mağazaları)). Vitrin storefront-js-script; yönetim admin-iframe.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

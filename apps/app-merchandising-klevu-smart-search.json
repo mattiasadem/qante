@@ -1,0 +1,86 @@
+{
+  "id": "app-merchandising-klevu-smart-search",
+  "kategori": "merchandising",
+  "varyant": "klevu-smart-search",
+  "scope": "in-flow",
+  "amac": "AI site araması, merchandising ve ürün önerileriyle doğru ürüne götürmek.",
+  "sorun": "Listing Klevu ‑ AI Search & Discovery (HTTP 200). Search leftover; S&D / Searchanise / instant-search ayrı. flyout + product_recs.",
+  "link": "https://apps.shopify.com/klevu-smart-search",
+  "yuzey": [
+    "flyout",
+    "product_recs"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW",
+    "VIEW_CATEGORY",
+    "SEARCH",
+    "VIEW_SEARCH_RESULTS",
+    "ADD_TO_CART"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CATEGORY",
+    "PRODUCT",
+    "SEARCH",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "aramaPlaceholder": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "oneriler",
+      "source": "DataSource.productList"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:header.utility",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section anlık arama flyout + öneri ızgarası. Klevu merch ikas native değil. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

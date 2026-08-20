@@ -1,0 +1,87 @@
+{
+  "id": "app-merchandising-product-recommendation-quiz-revenuehunt",
+  "kategori": "merchandising",
+  "varyant": "product-recommendation-quiz-revenuehunt",
+  "scope": "in-flow",
+  "amac": "Ürün öneri quiz’iyle shopper’ı doğru ürüne yönlendirip dönüşümü artırmak.",
+  "sorun": "Listing RevenueHunt Product Quiz Maker (pop-up + upsell raflarında da görüldü). ikas native quiz yok; studio-section quiz/sonuç + script.",
+  "link": "https://apps.shopify.com/product-recommendation-quiz-revenuehunt",
+  "yuzey": [
+    "popup_modal",
+    "product_recs"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "app-block",
+      "script-tag"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW",
+    "ADD_TO_CART",
+    "CONTACT_FORM"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT",
+    "CUSTOM"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products",
+    "read_customers",
+    "write_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "Quiz / sonuç başlığı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "oneriler",
+      "source": "DataSource.productList"
+    }
+  ],
+  "actions": [
+    "emit:cart.add",
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after",
+    "mount:buyBox.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section quiz hunisi + product_recs sonuç. Overlay tetik storefront-js-script. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

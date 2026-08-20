@@ -1,0 +1,110 @@
+{
+  "id": "app-reviews-product-reviews-addon",
+  "kategori": "reviews",
+  "varyant": "product-reviews-addon",
+  "scope": "in-flow",
+  "amac": "Ürün yorumu, Q&A ve (ayrı modül olarak) puan/VIP sadakat programını tek uygulamada yürütmek.",
+  "sorun": "Stamped hem yorum widget'ı hem loyalty launcher satıyor; bu kayıt reviews kategorisinde. ikas'ta ikisini tek app-block ile koymak mümkün değil — yorum için studio-section, sadakat ayrıca storefront-script ister.",
+  "link": "https://apps.shopify.com/product-reviews-addon",
+  "yuzey": [
+    "review_stars",
+    "review_widget",
+    "review_carousel",
+    "loyalty_launcher"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-block",
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "PAGE_VIEW",
+    "COMPLETE_CHECKOUT"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "INDEX",
+    "CATEGORY"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products",
+    "write_products",
+    "read_orders",
+    "read_customers"
+  ],
+  "ikasAksiyon": [
+    {
+      "yer": "product-edit",
+      "tip": "iframe"
+    }
+  ],
+  "ikasWebhook": [
+    "store/order/created",
+    "store/product/updated"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "widgetBaslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80
+    },
+    "yildizGoster": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "soruCevapGoster": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "sadakatAcik": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "Listingde advertised loyalty/VIP; ayrı yüzey"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "emit:review.filter",
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:productCard.badge",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Öncelik: Studio review section + yıldız. Loyalty launcher ayrı ikas storefront-script olarak bağlanır, app-embed ikas'a taşınmaz.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

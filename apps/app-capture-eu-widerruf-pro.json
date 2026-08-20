@@ -1,0 +1,75 @@
+{
+  "id": "app-capture-eu-widerruf-pro",
+  "kategori": "capture",
+  "varyant": "eu-widerruf-pro",
+  "scope": "overlay",
+  "amac": "§ 356a BGB elektronik cayma için 2 adımlı „Vertrag widerrufen“ formunu vitrinde göstermek.",
+  "sorun": "Listing EU Withdrawal Button Pro (slug eu-widerruf-pro, HTTP 200). Listing claims IT-Recht Kanzlei München review. 2-step Vertrag widerrufen flow, guests allowed, confirmation email. capture overlay (buton + form); ikas’ta doğrulanmış DE Widerrufsbutton listing yok.",
+  "link": "https://apps.shopify.com/eu-widerruf-pro",
+  "yuzey": [
+    "popup_modal"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CATEGORY",
+    "PRODUCT",
+    "CART",
+    "CUSTOM"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_customers",
+    "read_orders"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "ctaEtiket": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 40,
+      "not": "„Vertrag widerrufen“ / eşdeğer buton yazısı"
+    }
+  },
+  "dataBindings": [],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Storefront-script popup_modal cayma formu. Resmi ikas Widerrufsbutton listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

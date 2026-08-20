@@ -1,0 +1,101 @@
+{
+  "id": "app-loyalty-gift-card-loyalty-program",
+  "kategori": "loyalty",
+  "varyant": "gift-card-loyalty-program",
+  "scope": "overlay",
+  "amac": "Hediye kartı, store credit ve cashback cüzdanını vitrinde göstererek tekrar satın almayı artırmak.",
+  "sorun": "Listing Rise Gift Cards & Store Credit (HTTP 200; rise-ai bu sluga yönlenir). Dijital cüzdan / hediye kartı. ikas’ta app-embed yok; karşılık storefront-js-script + loyalty launcher.",
+  "link": "https://apps.shopify.com/gift-card-loyalty-program",
+  "yuzey": [
+    "loyalty_launcher",
+    "loyalty_page"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "checkout-extension"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "CUSTOMER_LOGIN",
+    "COMPLETE_CHECKOUT",
+    "CUSTOMER_REGISTER",
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "ACCOUNT",
+    "INDEX",
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_customers",
+    "write_customers",
+    "read_orders"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/order/created",
+    "store/customer/created",
+    "store/customer/updated"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "launcherEtiket": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 40,
+      "not": "Cüzdan / hediye kartı launcher yazısı"
+    },
+    "cuzdanAcik": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "Listing digital wallet vaat ediyor"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    },
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "emit:loyalty.open",
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:header.utility",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Harici Rise cüzdan + storefront launcher script. Checkout store-credit Shopify checkout-extension; ikas’a birebir taşınmaz. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "id": "app-merchandising-honeycomb-upsell-funnels",
+  "kategori": "merchandising",
+  "varyant": "honeycomb-upsell-funnels",
+  "scope": "in-flow",
+  "amac": "Müşteri yolculuğunun her adımında tek tık upsell ve cross-sell hunisiyle AOV artırmak.",
+  "sorun": "Listing Honeycomb Upsell & Cross Sell: one-click upsell/cross-sell funnels. ikas’ta checkout-extension yok; karşılık studio-section product_recs.",
+  "link": "https://apps.shopify.com/honeycomb-upsell-funnels",
+  "yuzey": [
+    "product_recs"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "app-block",
+      "checkout-extension"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "ADD_TO_CART",
+    "BEGIN_CHECKOUT",
+    "COMPLETE_CHECKOUT"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CART",
+    "CHECKOUT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products",
+    "read_orders"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/order/created"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "Upsell / cross-sell teklif başlığı"
+    },
+    "limit": {
+      "tip": "number",
+      "zorunlu": false
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "oneriler",
+      "source": "DataSource.productList"
+    },
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "emit:cart.add"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section product_recs (in-flow + post-purchase teklif). Checkout hunisi ikas checkout-extension ile birebir değil.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

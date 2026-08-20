@@ -1,0 +1,78 @@
+{
+  "id": "app-merchandising-langify",
+  "kategori": "merchandising",
+  "varyant": "langify",
+  "scope": "in-flow",
+  "amac": "Mağaza ve üçüncü parti uygulama metinlerini çevirip vitrinde dil değiştiriciyle çok dilli deneyim vermek.",
+  "sorun": "Listing langify ‑ translate your store (HTTP 200). Exclusive switcher configurator vitrin flyout. Translate & Adapt ayrı kayıt. ikas eş listing yok.",
+  "link": "https://apps.shopify.com/langify",
+  "yuzey": [
+    "flyout"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CATEGORY",
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "switcherGoster": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "Listing switcher configurator vaat ediyor"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:header.utility",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section header flyout dil seçici. 3P app çevirisi ikas native değil. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

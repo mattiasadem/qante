@@ -1,0 +1,93 @@
+{
+  "id": "app-merchandising-back-in-stock",
+  "kategori": "merchandising",
+  "varyant": "back-in-stock",
+  "scope": "in-flow",
+  "amac": "Stokta yok üründe Notify Me ve preorder butonuyla restock talebi toplayıp tekrar satmak.",
+  "sorun": "Amp Back in Stock listing branded Notify Me + Preorder butonu (PDP in-flow form). Overlay popup değil — merchandising embedded_form. ikas native restock formu yok.",
+  "link": "https://apps.shopify.com/back-in-stock",
+  "yuzey": [
+    "embedded_form"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-block",
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products",
+    "read_inventories",
+    "read_customers",
+    "write_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/stock/updated",
+    "store/product/updated"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "butonEtiket": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 40,
+      "not": "Notify Me / Preorder buton metni"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    },
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "emit:newsletter.subscribe"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section embedded_form: PDP Notify Me / preorder. store/stock/updated ile restock mail. Resmi Amp ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

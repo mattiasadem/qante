@@ -1,0 +1,76 @@
+{
+  "id": "app-merchandising-urgency-low-stock-counter",
+  "kategori": "merchandising",
+  "varyant": "urgency-low-stock-counter",
+  "scope": "in-flow",
+  "amac": "Ürün sayfasında gerçek envanter veya manuel stok sayacıyla kıtlık mesajı göstererek aciliyet yaratmak.",
+  "sorun": "Listing Urgency+ Low Stock Counter (HTTP 200): PDP/koleksiyonda low-stock, last-item, sold-out mesajı. Duyuru çubuğu timer değil (countdown-bar-timer / essential-countdown-timer ayrı). Kapalı yuzeyde stock_counter yok; yuzey [] uydurulmadı.",
+  "link": "https://apps.shopify.com/urgency-low-stock-counter",
+  "yuzey": [],
+  "entegrasyon": {
+    "shopify": [
+      "app-block",
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "VIEW_CATEGORY"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CATEGORY"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products",
+    "read_inventories"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "esik": {
+      "tip": "number",
+      "zorunlu": false,
+      "not": "Düşük stok eşiği"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section stok sayacı (kapalı yuzey yok). Announcement bar değil. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "id": "app-merchandising-ikas-it-recht-kanzlei",
+  "kategori": "merchandising",
+  "varyant": "ikas-it-recht-kanzlei",
+  "scope": "in-flow",
+  "amac": "Yasal metinleri otomatik güncelleyerek mağazayı yasal uyarılara karşı korur.",
+  "sorun": "Dual-list. Shopify listing IT-Recht AGB-Schnittstelle (HTTP 200). ikas listing 200, Free Installation; texts from IT-Recht subscription land in Settings > Policies — merchant still creates theme pages. entegrasyon.shopify [] because texts land as pages, not app-embed. Does not inject Widerrufsbutton, cookie CMP, LUCID, or OSS.",
+  "link": "https://apps.shopify.com/it-recht-agb-schnittstelle",
+  "yuzey": [],
+  "entegrasyon": {
+    "shopify": [],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "CUSTOM",
+    "INDEX"
+  ],
+  "ikasLink": "https://apps.ikas.com/tr/uygulama/06aeeec6-3a53-4e23-a773-5b16f740afd1",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "admin-iframe",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    }
+  },
+  "dataBindings": [],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Dual-list: Shopify IT-Recht AGB-Schnittstelle + ikas App Store resmi listing (IT-Recht Kanzlei). ikasLink mevcut bırakıldı. Vitrin storefront-js-script; yönetim admin-iframe. Metinler policy/sayfa; app-embed yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

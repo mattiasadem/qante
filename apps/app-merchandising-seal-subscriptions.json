@@ -1,0 +1,104 @@
+{
+  "id": "app-merchandising-seal-subscriptions",
+  "kategori": "merchandising",
+  "varyant": "seal-subscriptions",
+  "scope": "in-flow",
+  "amac": "PDP abonelik widget’ı ve üyelik planıyla tekrarlayan siparişi vitrinde satmak.",
+  "sorun": "Listing Seal Subscriptions App (HTTP 200). stay 404 yedek slug olarak da istendi; Stay ayrı stayai-subscriptions. ikas’ta checkout-extension yok; studio-section plan seçici.",
+  "link": "https://apps.shopify.com/seal-subscriptions",
+  "yuzey": [
+    "product_recs"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "checkout-extension"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "ADD_TO_CART",
+    "CUSTOMER_LOGIN",
+    "COMPLETE_CHECKOUT"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CART",
+    "ACCOUNT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products",
+    "read_orders",
+    "read_customers",
+    "write_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/order/created",
+    "store/customer/created",
+    "store/customer/updated"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "PDP abone-ol widget başlığı"
+    },
+    "portalAcik": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "Listing customer portal / memberships vaat ediyor"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    },
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    },
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "emit:cart.add",
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section: PDP abone-ol / üyelik seçici. Portal ve checkout birebir taşınmaz.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "id": "app-merchandising-login-to-see-price",
+  "kategori": "merchandising",
+  "varyant": "login-to-see-price",
+  "scope": "overlay",
+  "amac": "Misafirden fiyatı ve sepete ekle’yi gizleyip giriş veya etiket sonrası B2B fiyatı göstermek.",
+  "sorun": "Listing ESTS B2B Lock & Hide Price (HTTP 200): hide price, lock content, login/tag/passcode. hide-price slug 429; canlı slug login-to-see-price. Vitrin overlay; popup_modal.",
+  "link": "https://apps.shopify.com/login-to-see-price",
+  "yuzey": [
+    "popup_modal"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "PAGE_VIEW",
+    "CUSTOMER_LOGIN"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CATEGORY",
+    "INDEX"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_products",
+    "read_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "mesajMetni": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 120,
+      "not": "Login to view price metni"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Storefront-script popup_modal: fiyat kilidi / giriş. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

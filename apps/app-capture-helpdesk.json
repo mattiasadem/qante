@@ -1,0 +1,91 @@
+{
+  "id": "app-capture-helpdesk",
+  "kategori": "capture",
+  "varyant": "helpdesk",
+  "scope": "overlay",
+  "amac": "Vitrin canlı sohbet balonuyla destek ve satış konuşması başlatıp iletişim yakalamak.",
+  "sorun": "Listing Gorgias: AI, Helpdesk & Chat (slug helpdesk). Shopify Inbox kaydı zaten var; bu Gorgias vitrin chat. ikas first-party Inbox yok; storefront-js-script flyout.",
+  "link": "https://apps.shopify.com/helpdesk",
+  "yuzey": [
+    "flyout"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "script-tag"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW",
+    "CONTACT_FORM"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CATEGORY",
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_customers",
+    "write_customers",
+    "read_products",
+    "read_orders"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/customer/created"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "karsilamaMetni": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 160,
+      "not": "Sohbet açılış karşılama yazısı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    },
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "emit:newsletter.subscribe"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Vitrin sohbet flyout storefront-js-script. Helpdesk ticket tarafı harici Gorgias hesabı. Resmi ikas Gorgias listing bu passta yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

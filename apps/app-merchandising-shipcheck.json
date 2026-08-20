@@ -1,0 +1,83 @@
+{
+  "id": "app-merchandising-shipcheck",
+  "kategori": "merchandising",
+  "varyant": "shipcheck",
+  "scope": "overlay",
+  "amac": "Sepet ve checkout’ta kargo koruması widget’ı sunarak kayıp/hasar/çalıntı güvencesi satmak.",
+  "sorun": "Listing Shipping Protection —Shipcheck (HTTP 200): cart, checkout ve thank-you sayfasında özelleştirilebilir koruma widget’ı. Route listing checkout/post-purchase platform; bu kayıt sepet enjekte UI. ikas’ta cart_drawer koruma kutusu.",
+  "link": "https://apps.shopify.com/shipcheck",
+  "yuzey": [
+    "cart_drawer"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "VIEW_CART",
+    "ADD_TO_CART",
+    "BEGIN_CHECKOUT"
+  ],
+  "ikasSayfa": [
+    "CART",
+    "CHECKOUT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_orders",
+    "write_orders",
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/order/created"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "korumaMetni": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 160,
+      "not": "Sepet koruma kutusu metni"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:cart.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Storefront-script cart_drawer: kargo koruması onay kutusu. Resmi Shipcheck ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

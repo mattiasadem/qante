@@ -1,0 +1,83 @@
+{
+  "id": "app-capture-age-verification-18-compliant",
+  "kategori": "capture",
+  "varyant": "age-verification-18-compliant",
+  "scope": "overlay",
+  "amac": "Ürün, koleksiyon ve ülkeye göre kural tabanlı 18+ yaş kapısı göstermek.",
+  "sorun": "Listing AgeVerify Shield 18+ (slug age-verification-18-compliant, HTTP 200). Rule-based gate by product/collection/country. Not delivery-stage AVS. Mevcut app-capture-age-verification-18.json AGE+ (slug age-verification-18); bu slug değil, yeni dosya.",
+  "link": "https://apps.shopify.com/age-verification-18-compliant",
+  "yuzey": [
+    "popup_modal"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CATEGORY",
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "minYas": {
+      "tip": "number",
+      "zorunlu": false,
+      "not": "Listing rule-based 18+ gate vaat ediyor"
+    },
+    "ctaEtiket": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 40,
+      "not": "Doğrulama buton yazısı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Storefront script kural tabanlı yaş kapısı. Teslimat AVS değil. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

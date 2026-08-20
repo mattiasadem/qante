@@ -1,0 +1,104 @@
+{
+  "id": "app-wishlist-swym-relay",
+  "kategori": "wishlist",
+  "varyant": "swym-relay",
+  "scope": "in-flow",
+  "amac": "Müşterinin favori ürünleri kaydedip hatırlatma, stok ve fiyat düşüşü mailleriyle geri dönmesini sağlamak.",
+  "sorun": "Swym Wishlist Plus buton + sayfa + POS. ikas temalarında native wishlist var ama Swym-benzeri hatırlatma/akış yok; buton studio-section veya storefront-script, drawer overlay.",
+  "link": "https://apps.shopify.com/swym-relay",
+  "yuzey": [
+    "wishlist_button",
+    "wishlist_drawer",
+    "wishlist_page"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-block",
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "ADD_TO_WISHLIST",
+    "PRODUCT_VIEW",
+    "CUSTOMER_LOGIN"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "INDEX",
+    "CATEGORY",
+    "ACCOUNT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_products",
+    "read_customers",
+    "write_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/product/updated",
+    "store/customer/updated"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "butonEtiket": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 40
+    },
+    "cekmeceBaslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 60
+    },
+    "hatirlatmaAcik": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "Listingde advertised restock/price-drop emails"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    },
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "emit:wishlist.add",
+    "emit:wishlist.open"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:productCard.badge"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "PDP/kart wishlist_button (studio-section veya script) + drawer + hesap sayfası listesi. ADD_TO_WISHLIST olayı. Hatırlatma harici.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

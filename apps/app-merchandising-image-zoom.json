@@ -1,0 +1,73 @@
+{
+  "id": "app-merchandising-image-zoom",
+  "kategori": "merchandising",
+  "varyant": "image-zoom",
+  "scope": "in-flow",
+  "amac": "Ürün görselinde hover merceğiyle büyütme göstererek detayı incelemek.",
+  "sorun": "Listing weedit Image Zoom — Interactive Image Zoom Lens Overlay (HTTP 200). Storefront widget. Kapalı yuzeyde zoom yok; yuzey [] uydurulmadı.",
+  "link": "https://apps.shopify.com/image-zoom",
+  "yuzey": [],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "mercekAc": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "Listing hover zoom lens vaat ediyor"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section / script ürün görsel zoom merceği. Kapalı yüzey yok. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

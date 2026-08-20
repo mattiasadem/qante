@@ -1,0 +1,81 @@
+{
+  "id": "app-capture-navonaai-stop-abandoned-carts",
+  "kategori": "capture",
+  "varyant": "navonaai-stop-abandoned-carts",
+  "scope": "overlay",
+  "amac": "Sepet terk niyetinde anlık indirim pop-up’ı göstererek checkout’u yerinde kurtarmak.",
+  "sorun": "Listing NavonaAI: Stop Abandoned Carts — exit-intent / session indirim pop-up (e-posta/SMS kovalama değil). Recart atlandı. ikas Marketing Pop-up temel; bu niyet pop-up’ı yok.",
+  "link": "https://apps.shopify.com/navonaai-stop-abandoned-carts",
+  "yuzey": [
+    "popup_modal"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "web-pixel"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "ADD_TO_CART",
+    "VIEW_CART"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CART",
+    "INDEX"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "Kurtarma pop-up başlığı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "emit:cart.add",
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Storefront script exit-intent popup_modal. İndirim kodu ikas kampanya ile bağlanır. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

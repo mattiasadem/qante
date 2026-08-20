@@ -1,0 +1,80 @@
+{
+  "id": "app-merchandising-wholesale-lock",
+  "kategori": "merchandising",
+  "varyant": "wholesale-lock",
+  "scope": "overlay",
+  "amac": "Misafirden fiyat ve sepete ekle’yi kilitleyip toptan fiyatı yalnızca giriş yapanlara göstermek.",
+  "sorun": "Listing B2B Login & Lock (slug wholesale-lock, HTTP 200): guest hide price + force login. ESTS login-to-see-price ayrı keeper. yuzey flyout.",
+  "link": "https://apps.shopify.com/wholesale-lock",
+  "yuzey": [
+    "flyout"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "PAGE_VIEW",
+    "CUSTOMER_LOGIN"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CATEGORY",
+    "INDEX"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_products",
+    "read_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "mesajMetni": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 120,
+      "not": "Giriş zorunluluğu metni"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Storefront-script flyout: B2B fiyat kilidi. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

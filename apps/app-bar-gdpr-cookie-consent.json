@@ -1,0 +1,82 @@
+{
+  "id": "app-bar-gdpr-cookie-consent",
+  "kategori": "bar",
+  "varyant": "gdpr-cookie-consent",
+  "scope": "overlay",
+  "amac": "GDPR/CCPA çerez onay çubuğu ve tercih paneli göstererek vitrini yasal olarak uyumlu tutmak.",
+  "sorun": "Listing Pandectes GDPR Compliance: cookie banner + preferences popup/bar. Checkout/Customer Account extension ikas’a yok; karşılık storefront-js-script announcement_bar + popup_modal.",
+  "link": "https://apps.shopify.com/gdpr-cookie-consent",
+  "yuzey": [
+    "announcement_bar",
+    "popup_modal"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "checkout-extension"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CATEGORY",
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 120,
+      "not": "Çerez çubuğu metni"
+    },
+    "tercihPaneli": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "Listing Preferences Popup, Bar & Banner vaat ediyor"
+    }
+  },
+  "dataBindings": [],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:announcement.after",
+    "mount:header.before",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Storefront script: çerez çubuğu + tercih modalı. Checkout banner Shopify checkout-extension; ikas’a taşınmaz. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

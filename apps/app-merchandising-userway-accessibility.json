@@ -1,0 +1,74 @@
+{
+  "id": "app-merchandising-userway-accessibility",
+  "kategori": "merchandising",
+  "varyant": "userway-accessibility",
+  "scope": "overlay",
+  "amac": "Vitrinde erişilebilirlik overlay widget’ı ile kontrast, yazı boyutu ve gezinme ayarları sunmak.",
+  "sorun": "Listing UserWay Website Accessibility (HTTP 200): ADA/WCAG overlay widget. userway slug 429/yanlış; canlı slug userway-accessibility. Admin-only değil. yuzey flyout.",
+  "link": "https://apps.shopify.com/userway-accessibility",
+  "yuzey": [
+    "flyout"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "script-tag"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CATEGORY",
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "widgetKonum": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 40,
+      "not": "Overlay köşe konumu"
+    }
+  },
+  "dataBindings": [],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:header.utility"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Storefront-script flyout erişilebilirlik widget’ı. Resmi UserWay ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

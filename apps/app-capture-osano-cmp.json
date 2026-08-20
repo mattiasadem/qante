@@ -1,0 +1,75 @@
+{
+  "id": "app-capture-osano-cmp",
+  "kategori": "capture",
+  "varyant": "osano-cmp",
+  "scope": "overlay",
+  "amac": "Çerezleri onay alınana kadar engelleyerek TDDDG/GDPR çerez overlay’i göstermek.",
+  "sorun": "Listing Osano Cookie Consent (slug osano-cmp, HTTP 200). Free to install; requires active Osano account and external Osano billing. Banner + block-until-consent. Not billed as a Shopify subscription on the listing. ikas listing yok. capture + announcement_bar / popup_modal (cookie overlay).",
+  "link": "https://apps.shopify.com/osano-cmp",
+  "yuzey": [
+    "announcement_bar",
+    "popup_modal"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CATEGORY",
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 120,
+      "not": "Çerez banner metni"
+    }
+  },
+  "dataBindings": [],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:announcement.after",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Storefront script: çerez overlay + block-until-consent. Osano hesabı + harici fatura gerekir. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

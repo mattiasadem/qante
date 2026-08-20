@@ -1,0 +1,91 @@
+{
+  "id": "app-merchandising-post-purchase-offers-carthook",
+  "kategori": "merchandising",
+  "varyant": "post-purchase-offers-carthook",
+  "scope": "in-flow",
+  "amac": "Checkout sonrası tek tık upsell hunisiyle siparişe ek satış eklemek.",
+  "sorun": "Listing CartHook Post Purchase Upsell (slug post-purchase-offers-carthook). Aftersell ailesi; p2 yerine look-up 200. ikas checkout-extension yok.",
+  "link": "https://apps.shopify.com/post-purchase-offers-carthook",
+  "yuzey": [
+    "product_recs"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "checkout-extension",
+      "web-pixel",
+      "script-tag"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "BEGIN_CHECKOUT",
+    "COMPLETE_CHECKOUT",
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "CHECKOUT",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products",
+    "read_orders"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/order/created"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80
+    },
+    "limit": {
+      "tip": "number",
+      "zorunlu": false
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "oneriler",
+      "source": "DataSource.productList"
+    },
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "emit:cart.add"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section post-purchase product_recs. CartHook 1-click checkout upsell ikas checkout-extension ile birebir değil.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

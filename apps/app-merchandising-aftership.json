@@ -1,0 +1,82 @@
+{
+  "id": "app-merchandising-aftership",
+  "kategori": "merchandising",
+  "varyant": "aftership",
+  "scope": "page",
+  "amac": "Markalı kargo takip sayfası ile müşterinin sipariş durumunu vitrinden görmesini sağlamak.",
+  "sorun": "Listing AfterShip Order Tracking (HTTP 200): branded tracking pages. Admin-only kargo paneli değil. Kapalı sette tracking_portal yok; takip formu için embedded_form.",
+  "link": "https://apps.shopify.com/aftership",
+  "yuzey": [
+    "embedded_form"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "CUSTOMER_LOGIN"
+  ],
+  "ikasSayfa": [
+    "CUSTOM",
+    "ACCOUNT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_orders",
+    "read_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/order/created",
+    "store/order/updated"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "portalBaslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "Takip sayfası başlığı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section / özel sayfa kargo takip formu. Sipariş durumu webhook. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

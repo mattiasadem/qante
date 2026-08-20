@@ -1,0 +1,78 @@
+{
+  "id": "app-bar-essential-countdown-timer",
+  "kategori": "bar",
+  "varyant": "essential-countdown-timer",
+  "scope": "overlay",
+  "amac": "Flash satış ve kampanya için vitrin üstünde geri sayım çubuğu göstermek.",
+  "sorun": "Listing Essential Countdown Timer Bar. ikas’ta eş zamanlı, sayfa hedefli timer bar yok; storefront-js-script announcement_bar.",
+  "link": "https://apps.shopify.com/essential-countdown-timer",
+  "yuzey": [
+    "announcement_bar"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "VIEW_CART"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CATEGORY",
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 120
+    },
+    "cta": {
+      "tip": "button",
+      "zorunlu": false
+    }
+  },
+  "dataBindings": [],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:announcement.after",
+    "mount:header.before"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio duyuru/header bandı + harici timer script. Essential Apps resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "id": "app-merchandising-wrapin-gift-wrap",
+  "kategori": "merchandising",
+  "varyant": "wrapin-gift-wrap",
+  "scope": "in-flow",
+  "amac": "Ürün ve sepette hediye paketi ile hediye notu seçtirerek siparişi kişiselleştirmek.",
+  "sorun": "Listing Wrapin ‑ Gift Wrap & Options (HTTP 200). PDP/cart hediye widget; script-tag inject. embedded_form.",
+  "link": "https://apps.shopify.com/wrapin-gift-wrap",
+  "yuzey": [
+    "embedded_form"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "script-tag"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "ADD_TO_CART",
+    "VIEW_CART"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products",
+    "read_orders"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/order/created"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "Hediye paketi seçenek başlığı"
+    },
+    "mesajAc": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "Listing gift message vaat ediyor"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    },
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "emit:cart.add"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:cartDrawer.belowItems"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section PDP/sepet hediye paketi formu. Sipariş etiketi webhook ile. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

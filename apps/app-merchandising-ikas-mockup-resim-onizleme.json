@@ -1,0 +1,65 @@
+{
+  "id": "app-merchandising-ikas-mockup-resim-onizleme",
+  "kategori": "merchandising",
+  "varyant": "ikas-mockup-resim-onizleme",
+  "scope": "in-flow",
+  "amac": "Baskılı t-shirt, kupa vb. ürünler için yüklenen resmin önizlenmesini sağlar.",
+  "sorun": "Kişiselleştirilebilir üründe mockup önizleme; kart açıklaması yüklenen resmin önizlemesi vaat eder.",
+  "link": "https://apps.ikas.com/tr/uygulama/d4c68133-d20a-4704-947d-28d0c26e7c92",
+  "yuzey": [],
+  "entegrasyon": {
+    "shopify": [],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT"
+  ],
+  "ikasLink": "https://apps.ikas.com/tr/uygulama/d4c68133-d20a-4704-947d-28d0c26e7c92",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "admin-iframe",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "ikas App Store resmi listing (Mockup Resim Önizleme). Vitrin storefront-js-script; yönetim admin-iframe.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

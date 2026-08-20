@@ -1,0 +1,94 @@
+{
+  "id": "app-merchandising-wrapped",
+  "kategori": "merchandising",
+  "varyant": "wrapped",
+  "scope": "in-flow",
+  "amac": "Ürün, sepet ve çekmecede hediye paketi ile mesaj bloğu sunarak hediye siparişini artırmak.",
+  "sorun": "Listing Wrapped: Gift Wrap & Messages (HTTP 200). Storefront gift blocks + checkout extension. ikas’ta checkout-extension yok; karşılık studio-section embedded_form.",
+  "link": "https://apps.shopify.com/wrapped",
+  "yuzey": [
+    "embedded_form"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-block",
+      "checkout-extension"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "ADD_TO_CART",
+    "VIEW_CART",
+    "BEGIN_CHECKOUT"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CART",
+    "CHECKOUT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products",
+    "read_orders"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/order/created"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80
+    },
+    "mesajAc": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "Listing gift messages / gift notes vaat ediyor"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    },
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "emit:cart.add"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:cartDrawer.belowItems"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section hediye paketi / not formu. Checkout bloğu ikas checkout-extension ile birebir değil. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

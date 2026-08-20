@@ -1,0 +1,69 @@
+{
+  "id": "app-capture-ikas-sans-carki",
+  "kategori": "capture",
+  "varyant": "ikas-sans-carki",
+  "scope": "overlay",
+  "amac": "Şans çarkı overlay'i gösterir. Kart açıklaması 15 gün ücretsiz deneme vurgular; özellik metni yok.",
+  "sorun": "Ödüllü çark ile vitrin etkileşimi; kartta yalnızca deneme süresi yazıyor, kurulum sayısı yazılmadı.",
+  "link": "https://apps.ikas.com/tr/uygulama/055debc4-791c-457f-9ce7-d944a3674d93",
+  "yuzey": [
+    "spin_wheel",
+    "popup_modal"
+  ],
+  "entegrasyon": {
+    "shopify": [],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "CONTACT_FORM"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CATEGORY",
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "https://apps.ikas.com/tr/uygulama/055debc4-791c-457f-9ce7-d944a3674d93",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_products",
+    "read_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "admin-iframe",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    }
+  },
+  "dataBindings": [],
+  "actions": [
+    "emit:newsletter.subscribe"
+  ],
+  "hookNoktalari": [
+    "mount:newsletter.after",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "ikas App Store resmi listing (Şans Çarkı). Vitrin storefront-js-script; yönetim admin-iframe.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "id": "app-merchandising-ikas-softier-sales-notification",
+  "kategori": "merchandising",
+  "varyant": "ikas-softier-sales-notification",
+  "scope": "overlay",
+  "amac": "Gerçek zamanlı satış bildirimleriyle güven ve dönüşüm artırır.",
+  "sorun": "Canlı satış toast'ı; kart açıklaması gerçek zamanlı satış bildirimi vaat eder.",
+  "link": "https://apps.ikas.com/tr/uygulama/fbabcee2-5318-4ea6-8886-c1bbd45c3ab4",
+  "yuzey": [
+    "social_proof_toast"
+  ],
+  "entegrasyon": {
+    "shopify": [],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe",
+      "webhook"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW",
+    "COMPLETE_CHECKOUT"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CATEGORY",
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "https://apps.ikas.com/tr/uygulama/fbabcee2-5318-4ea6-8886-c1bbd45c3ab4",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_products",
+    "read_orders"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/order/created"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "admin-iframe",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "mesaj": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 120,
+      "not": "Toast metin kalıbı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "ikas App Store resmi listing (Softier Premium Sales Notification). Vitrin storefront-js-script; yönetim admin-iframe.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

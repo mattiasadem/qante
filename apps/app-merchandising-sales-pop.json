@@ -1,0 +1,91 @@
+{
+  "id": "app-merchandising-sales-pop",
+  "kategori": "merchandising",
+  "varyant": "sales-pop",
+  "scope": "overlay",
+  "amac": "Son satış bildirimini köşe toast’ı olarak göstererek sosyal kanıt üretmek.",
+  "sorun": "Listing H1 “Sales Pop - Sales Notification” (Beeketing). HTTP 200 ama “not currently available on the Shopify App Store”. ikas native yok; overlay storefront-script social_proof_toast.",
+  "link": "https://apps.shopify.com/sales-pop",
+  "yuzey": [
+    "social_proof_toast"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW",
+    "ADD_TO_CART",
+    "COMPLETE_CHECKOUT"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT",
+    "CATEGORY",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "webhook-listener",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_orders",
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/order/created"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "mesaj": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 120,
+      "not": "Toast metin kalıbı"
+    },
+    "konum": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 24,
+      "not": "köşe konumu"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "storefront-js-script overlay social_proof_toast. store/order/created ile son siparişleri besle. Studio section değil. Listing şu an App Store’da unavailable.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

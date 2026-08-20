@@ -1,0 +1,76 @@
+{
+  "id": "app-merchandising-comparison-table",
+  "kategori": "merchandising",
+  "varyant": "comparison-table",
+  "scope": "in-flow",
+  "amac": "Birden fazla ürünü metafield/tip/kategoriye göre karşılaştırma tablosunda göstermek.",
+  "sorun": "Listing Compary Comparison Table Plus (HTTP 200): Amazon benzeri çoklu ürün tablosu, sepete ekleme. Beden tablosu değil (kiwi-sizing / avada-size-chart ayrı). Kapalı yuzey yok; [].",
+  "link": "https://apps.shopify.com/comparison-table",
+  "yuzey": [],
+  "entegrasyon": {
+    "shopify": [
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "VIEW_CATEGORY"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CATEGORY",
+    "CUSTOM"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "Karşılaştırma tablosu başlığı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section ürün karşılaştırma tablosu. Size-chart değil. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

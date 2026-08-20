@@ -1,0 +1,102 @@
+{
+  "id": "app-merchandising-subscriptions-by-appstle",
+  "kategori": "merchandising",
+  "varyant": "subscriptions-by-appstle",
+  "scope": "in-flow",
+  "amac": "PDP ve sepet widget’ıyla abonelik, kutu ve yenileme planlarını vitrinde satmak.",
+  "sorun": "Listing Appstle Subscriptions: ürün/sepet widget, build-a-box, müşteri portalı. ikas native yok; studio-section + script. Checkout 1-click taşınmaz.",
+  "link": "https://apps.shopify.com/subscriptions-by-appstle",
+  "yuzey": [
+    "product_recs",
+    "cart_drawer"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "checkout-extension",
+      "script-tag"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "ADD_TO_CART",
+    "VIEW_CART",
+    "CUSTOMER_LOGIN",
+    "COMPLETE_CHECKOUT"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CART",
+    "ACCOUNT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products",
+    "read_orders",
+    "read_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/order/created",
+    "store/customer/created"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80
+    },
+    "sepetWidget": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "Listing cart page widget placement vaat ediyor"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    },
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "emit:cart.add",
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:cartDrawer.belowItems"
+  ],
+  "bagimliliklar": [
+    "global-cart-drawer"
+  ],
+  "ikasKarsilik": "Studio section PDP plan seçici + cart_drawer abonelik bandı. Appstle portal/checkout ikas’a taşınmaz.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

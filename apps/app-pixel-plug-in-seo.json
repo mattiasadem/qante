@@ -1,0 +1,63 @@
+{
+  "id": "app-pixel-plug-in-seo",
+  "kategori": "pixel",
+  "varyant": "plug-in-seo",
+  "scope": "head",
+  "amac": "Yapısal veri ve on-page SEO düzeltmelerini vitrin head’ine basarak organik görünürlüğü artırmak.",
+  "sorun": "Listing Plug in SEO (HTTP 200): structured data deploy + audit. Saf backend audit değil; head enjekte. yuzey [].",
+  "link": "https://apps.shopify.com/plug-in-seo",
+  "yuzey": [],
+  "entegrasyon": {
+    "shopify": [
+      "script-tag"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT",
+    "CATEGORY"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    }
+  },
+  "dataBindings": [],
+  "actions": [
+    "yok"
+  ],
+  "hookNoktalari": [],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Head script: JSON-LD + on-page meta. ikas first-party Plug in SEO yok. Saf audit/kırık link tarayıcısı bu şemada yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

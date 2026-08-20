@@ -1,0 +1,86 @@
+{
+  "id": "app-merchandising-nosto-personalization-for-shopify",
+  "kategori": "merchandising",
+  "varyant": "nosto-personalization-for-shopify",
+  "scope": "in-flow",
+  "amac": "AI site araması, merchandising ve kişiselleştirilmiş ürün önerileriyle keşfi ve geliri artırmak.",
+  "sorun": "Listing Nosto | AI Search & Discovery (HTTP 200). Searchanise / S&D / instant-search / Rebuy / LimeSpot ayrı. flyout + product_recs leftover.",
+  "link": "https://apps.shopify.com/nosto-personalization-for-shopify",
+  "yuzey": [
+    "flyout",
+    "product_recs"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW",
+    "VIEW_CATEGORY",
+    "SEARCH",
+    "VIEW_SEARCH_RESULTS",
+    "ADD_TO_CART"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CATEGORY",
+    "PRODUCT",
+    "SEARCH",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "aramaPlaceholder": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "oneriler",
+      "source": "DataSource.productList"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:header.utility",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section arama flyout + product_recs. Nosto AI ajanı ikas first-party değil. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

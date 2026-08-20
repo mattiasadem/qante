@@ -1,0 +1,91 @@
+{
+  "id": "app-merchandising-order-delivery-estimated",
+  "kategori": "merchandising",
+  "varyant": "order-delivery-estimated",
+  "scope": "in-flow",
+  "amac": "Ürün, sepet ve checkout’ta tahmini teslim tarihi (ETA/EDD) göstererek belirsizliği azaltmak.",
+  "sorun": "Listing Estimated Delivery Date & ETA: kural tabanlı EDD (ülke, yöntem, tatil, cut-off). ikas native estimator yok; karşılık studio-section trust_badge.",
+  "link": "https://apps.shopify.com/order-delivery-estimated",
+  "yuzey": [
+    "trust_badge"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-block",
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "VIEW_CART",
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CART",
+    "INDEX",
+    "CATEGORY"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "EDD widget başlığı"
+    },
+    "kesimSaati": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "Listing cut-off times / countdown vaat ediyor"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    },
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:cartDrawer.belowItems"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section: PDP/sepet tahmini teslim tarihi. Checkout EDD Shopify checkout-extension; ikas’a taşınmaz.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

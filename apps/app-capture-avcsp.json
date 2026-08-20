@@ -1,0 +1,83 @@
+{
+  "id": "app-capture-avcsp",
+  "kategori": "capture",
+  "varyant": "avcsp",
+  "scope": "overlay",
+  "amac": "18+/doğum tarihi pop-up’ı ile yaş kısıtlı vitrine self-declare kapısı koymak.",
+  "sorun": "Listing AVP – Age Verification Popup (slug avcsp, HTTP 200). 18+/DOB popup. Self-declare only — not JuSchG two-step (order + delivery ID). Mevcut app-capture-age-verification.json Age Verifier by OTG (slug age-verification); bu slug değil, yeni dosya.",
+  "link": "https://apps.shopify.com/avcsp",
+  "yuzey": [
+    "popup_modal"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CATEGORY",
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "minYas": {
+      "tip": "number",
+      "zorunlu": false,
+      "not": "Listing 18+/DOB age gate vaat ediyor"
+    },
+    "ctaEtiket": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 40,
+      "not": "Doğrulama buton yazısı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Storefront script yaş kapısı popup_modal. JuSchG iki basamak (sipariş+teslimat) değil. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

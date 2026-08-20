@@ -1,0 +1,89 @@
+{
+  "id": "app-merchandising-badgehq",
+  "kategori": "merchandising",
+  "varyant": "badgehq",
+  "scope": "in-flow",
+  "amac": "Güven rozeti, ücretsiz kargo barı ve duyuru çubuğuyla vitrinde güven ve dönüşümü artırmak.",
+  "sorun": "BadgeHQ listing trust badges + free shipping bar + announcement bars (+ sticky ATC/timer bu kayıtta ikincil). ikas native trust_badge yok; studio-section.",
+  "link": "https://apps.shopify.com/badgehq",
+  "yuzey": [
+    "trust_badge",
+    "free_shipping_bar",
+    "announcement_bar"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-block",
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW",
+    "VIEW_CART"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT",
+    "CATEGORY",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "Rozet / bar başlığı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    },
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:announcement.after",
+    "mount:cart.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section trust_badge + free_shipping_bar + announcement_bar. Resmi BadgeHQ ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

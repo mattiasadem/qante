@@ -1,0 +1,95 @@
+{
+  "id": "app-merchandising-octane-ai-quiz-personalization",
+  "kategori": "merchandising",
+  "varyant": "octane-ai-quiz-personalization",
+  "scope": "overlay",
+  "amac": "Ürün öneri quiz’i ve pop-up hunisiyle doğru SKU’yu göstermek ve e-posta yakalamak.",
+  "sorun": "Listing Octane AI: Advanced Quiz Maker — quiz, popup shopping assistant, kişiselleştirilmiş öneri. ikas native quiz yok; overlay script + product_recs.",
+  "link": "https://apps.shopify.com/octane-ai-quiz-personalization",
+  "yuzey": [
+    "popup_modal",
+    "product_recs"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "web-pixel",
+      "script-tag"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW",
+    "CONTACT_FORM",
+    "ADD_TO_CART"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT",
+    "CUSTOM"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_products",
+    "read_customers",
+    "write_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/customer/created"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "quizId": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "Yayınlanacak quiz kimliği (panelden)"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "oneriler",
+      "source": "DataSource.productList"
+    },
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "emit:cart.add",
+    "emit:newsletter.subscribe",
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after",
+    "mount:buyBox.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Storefront script quiz popup. Sonuç ürünleri studio-section product_recs ile de basılabilir. Resmi ikas Octane listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

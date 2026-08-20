@@ -1,0 +1,84 @@
+{
+  "id": "app-payments-paypal-pay-later-messaging",
+  "kategori": "payments",
+  "varyant": "paypal-pay-later-messaging",
+  "scope": "in-flow",
+  "amac": "Ürün, sepet ve checkout’ta PayPal Pay Later taksit mesajı göstererek dönüşümü artırmak.",
+  "sorun": "Listing PayPal Pay Later Messaging (HTTP 200). Affirm / Sezzle Widget / Releasit COD ayrı. Klarna/Afterpay/Sezzle slug’ı yazılmadı. ikas’ta bnpl_messaging storefront-js-script / studio-section.",
+  "link": "https://apps.shopify.com/paypal-pay-later-messaging",
+  "yuzey": [
+    "bnpl_messaging"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-block",
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "PAGE_VIEW",
+    "VIEW_CART"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "mesajMetni": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 160,
+      "not": "Pay Later mesaj metni"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    },
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:cart.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "PDP/sepet bnpl_messaging (PayPal Pay Later). Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

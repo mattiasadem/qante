@@ -1,0 +1,99 @@
+{
+  "id": "app-wishlist-swishlist",
+  "kategori": "wishlist",
+  "varyant": "swishlist",
+  "scope": "in-flow",
+  "amac": "Ürünleri tek tıkla istek listesine kaydedip paylaşılabilir wishlist ile dönüşümü artırmak.",
+  "sorun": "SWishlist listing favori ekleme + paylaşılabilir liste + özelleştirilebilir buton vaat ediyor. ikas native wishlist sınırlı; drawer/hatırlatma için storefront-script gerekir.",
+  "link": "https://apps.shopify.com/swishlist",
+  "yuzey": [
+    "wishlist_button",
+    "wishlist_drawer",
+    "wishlist_page"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-block",
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "ADD_TO_WISHLIST",
+    "PRODUCT_VIEW",
+    "CUSTOMER_LOGIN"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "INDEX",
+    "CATEGORY",
+    "ACCOUNT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products",
+    "read_customers",
+    "write_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/product/updated",
+    "store/customer/updated"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "butonEtiket": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 40
+    },
+    "cekmeceBaslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 60
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    },
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "emit:wishlist.add",
+    "emit:wishlist.open"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:productCard.badge"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio wishlist_button (PDP + kart) + storefront drawer / paylaşım sayfası. Resmi SWishlist ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

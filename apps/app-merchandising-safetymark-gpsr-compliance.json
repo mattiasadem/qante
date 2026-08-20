@@ -1,0 +1,75 @@
+{
+  "id": "app-merchandising-safetymark-gpsr-compliance",
+  "kategori": "merchandising",
+  "varyant": "safetymark-gpsr-compliance",
+  "scope": "in-flow",
+  "amac": "GPSR üretici ve sorumlu kişi alanları ile çevirilebilir uyarıları ürün sayfasında göstermek.",
+  "sorun": "Listing SafetyMark — GPSR Compliance (slug safetymark-gpsr-compliance, HTTP 200). Manufacturer/RP fields, readiness score, translatable warnings. Display aid, not a notified-body CE process. yuzey [] — kapalı sette PDP bilgi bloğu yok, uydurulmadı.",
+  "link": "https://apps.shopify.com/safetymark-gpsr-compliance",
+  "yuzey": [],
+  "entegrasyon": {
+    "shopify": [
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "PDP GPSR / üretici bilgi bloğu başlığı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section PDP GPSR etiketi (üretici / RP / uyarı). Bildirim kuruluşu CE süreci değil. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}
