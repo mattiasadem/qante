@@ -6,8 +6,8 @@
 *Tema (storefront, uydurulmadı):* **Dawn** · `schema_name`: **Dawn** · `schema_version`: **15.0.0** · `theme_store_id`: **887** · role `main` · id `129690763353`  
 *Shop:* `theme-dawn-demo.myshopify.com`
 
-**Durum:** ✅ Mod A walk + resmi 3vp + interact + validate  
-**PR:** draft · **main'e merge yok**
+**Durum:** ✅ Mod A walk + resmi 3vp + interact + CRO leftover interact + validate  
+**PR:** draft https://github.com/mattiasadem/qante/pull/267 · **main'e merge yok**
 
 ---
 
@@ -17,14 +17,14 @@
 |---|---|
 | Evidence kökü | `evidence/dawn/default/` |
 | Observation | **29** |
-| Evidence PNG | **101** |
+| Evidence PNG | **119** |
 | Yeni şema | **0** |
 | Capture | resmi `capture-observation.mjs` + `capture-interaction.mjs` |
 | Validator | 65 temiz · 0 error · 0 warn |
 | Parallel | yalnız `observations/dawn/`, `evidence/dawn/`, `todo/dawn.md`, `candidates/dawn-leftovers.md` |
 
 **Kapsam satırı:**  
-`Dawn · default · Dawn / schema_name Dawn 15.0.0 / theme_store_id 887 · home→PDP Puff Emerald→Chocolate→PLP bags→/collections→search puff→cart empty/filled/qty2 $930→about→contact-us→news+origin story→404 · 29 obs · 101 PNG · 0 yeni şema · leftover: no mega / cart-notification / cart-footer / lookbook / related empty / 404 routes`
+`Dawn · default · Dawn / schema_name Dawn 15.0.0 / theme_store_id 887 · home→PDP Puff Emerald→Chocolate→PLP bags→/collections→search puff→cart empty/filled/qty2 $930→about→contact-us→news+origin story→404 · 29 obs · 119 PNG · 0 yeni şema · leftover: no FAQ/countdown/quiz + YouTube bot wall`
 
 ---
 
@@ -91,6 +91,17 @@
 | cart-page-main | initial/filled/changed | boş → qty1 $465 → qty2 $930 |
 | product-info-main | changed | Emerald yeşil → Chocolate kahve; $465 aynı |
 
+### CRO leftover interact
+
+| schemaId | State | Sonuç |
+|---|---|---|
+| footer-columns-newsletter | initial + open | [x] 3vp boş Email; Canada \| CAD $ → Search + Algeria…Canada tik. PII dur |
+| lead-capture-form | initial | [x] 3vp Name/Email*/Phone/Comment + Send. 375 tek kolon. PII dur |
+| features-multicolumn | initial | [x] 3vp REFINERY29 + The Cut. 1440 iki kolon; 375/768 alt alta. changed yok |
+| media-video-hero | initial + changed | [x] 3vp poster+play → YouTube iframe “not a bot”. Video karesi yok |
+
+CRO şemaları observation’da yok (yeni şema yok): faq-collapsible-tabs, promo-banner-countdown, before-after-slider, commerce-tools-products-bundle, comparison-quick-table, product-finder-quiz, testimonial-quote-carousel, media-shop-the-feed, hero-slideshow, media-scrolling-gallery
+
 ---
 
 ## Aday / leftover
@@ -103,5 +114,6 @@
 
 - [x] Official 3vp static (`capture-observation.mjs`)
 - [x] Interact header / search / cart / menu / PDP Color
+- [x] CRO leftover: footer / contact / quotes / video — 3vp PNG
 - [x] PNG bak → stateFindings
 - [x] `npm run validate` — 65 temiz · 0 error · 0 warn

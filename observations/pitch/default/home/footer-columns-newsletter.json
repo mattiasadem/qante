@@ -8,12 +8,60 @@
   "selector": "#shopify-section-sections--26029916815655__migrated_footer_content",
   "evidenceSlug": "footer-columns-newsletter",
   "evidence": [
+    "evidence/pitch/default/home/footer-columns-newsletter.1440.png",
     "evidence/pitch/default/home/footer-columns-newsletter.375.png",
     "evidence/pitch/default/home/footer-columns-newsletter.768.png",
-    "evidence/pitch/default/home/footer-columns-newsletter.1440.png"
+    "evidence/pitch/default/home/footer-columns-newsletter.changed.skincare-acik.375.png",
+    "evidence/pitch/default/home/footer-columns-newsletter.initial.newsletter-bos.1440.png",
+    "evidence/pitch/default/home/footer-columns-newsletter.initial.newsletter-bos.375.png",
+    "evidence/pitch/default/home/footer-columns-newsletter.initial.newsletter-bos.768.png"
   ],
   "notlar": "Join the club + Email/Sign up. Kolonlar: Skincare · Makeup · About. Social utilities sibling’de.",
   "delta": "Horizon migrated_footer_content. E-posta submit yok (PII). Sibling footer_utilities © 2026 leftover.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-pitch-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-sections--26029916815655__migrated_footer_content",
+      "capture": true,
+      "etiket": "newsletter-bos",
+      "not": "PII — Email doldurulmadı, Sign up tıklanmadı. 375 kolonlar kapalı; 768/1440 açık."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-sections--26029916815655__migrated_footer_content details:first-of-type > summary",
+      "value": 900,
+      "capture": true,
+      "etiket": "skincare-acik",
+      "viewports": [
+        "375"
+      ],
+      "not": "375 Skincare accordion — URL home kalmalı. 768/1440 zaten açık, zorlanmadı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Join the club + Email address boş + Sign up. 375: Skincare / Makeup / About kapalı (+). 768/1440: üç kolon açık (Cleansers… / Eyes and lips… / Get to know us…). PITCH wordmark. Email doldurulmadı.",
+    "changed": "375: Skincare açık (−) — Cleansers · Moisturizers · Bundles. Makeup ve About kapalı (+). Email hâlâ boş. URL /. 768/1440 changed yok — kolonlar zaten açıktı."
+  },
+  "missingStates": [],
+  "interactionNote": "PII stop: email fill / Sign up yok. 768/1440 details.open=true — changed yalnız 375. Accordion ≠ yeni şema.",
   "capture": {
     "url": "https://theme-pitch-demo.myshopify.com/",
     "viewports": [
@@ -22,7 +70,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T11:40:20.077Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T17:34:50.261Z"
   }
 }

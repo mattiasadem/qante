@@ -2,9 +2,12 @@
   "kaynak": "spotlight",
   "preset": "default",
   "evidence": [
+    "evidence/spotlight/default/contact/lead-capture-form.1440.png",
     "evidence/spotlight/default/contact/lead-capture-form.375.png",
     "evidence/spotlight/default/contact/lead-capture-form.768.png",
-    "evidence/spotlight/default/contact/lead-capture-form.1440.png"
+    "evidence/spotlight/default/contact/lead-capture-form.initial.ilk-hal.1440.png",
+    "evidence/spotlight/default/contact/lead-capture-form.initial.ilk-hal.375.png",
+    "evidence/spotlight/default/contact/lead-capture-form.initial.ilk-hal.768.png"
   ],
   "observationId": "spotlight.default.contact.lead-capture-form",
   "schemaId": "lead-capture-form",
@@ -13,7 +16,42 @@
   "selector": "#shopify-section-template--15939470065720__form",
   "evidenceSlug": "lead-capture-form",
   "notlar": "Contact form: Name, Email *, Phone number, Comment, Send. Doldurulmadı / gönderilmedi.",
-  "delta": "PII submit yok.",
+  "delta": "PII submit yok. Konu select yok.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-spotlight-demo.myshopify.com/pages/contact",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15939470065720__form",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Boş form: Name / Email* / Phone / Comment + Send. Gönderilmedi."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boş form: Name, Email * (zorunlu), Phone number, Comment. Send sarı. 1440/768 Name|Email yan yana, Phone+Comment tam genişlik; 375 tek kolon. Alanlar boş. Send tıklanmadı."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "Name / email / phone / comment PII — doldurulmadı. Send tıklanmadı."
+    }
+  ],
+  "interactionNote": "scan-affordances: 4 input (name, email, phone, textarea); opener/changer yok. katalogSorgu yok. PII stop.",
   "capture": {
     "url": "https://theme-spotlight-demo.myshopify.com/pages/contact",
     "viewports": [
@@ -22,7 +60,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T11:33:44.188Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T17:22:11.364Z"
   }
 }

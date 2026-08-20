@@ -8,12 +8,53 @@
   "selector": "#shopify-section-sections--26029916782887__header_announcements_kcHY6p",
   "evidenceSlug": "promo-announcement-bar",
   "evidence": [
+    "evidence/pitch/default/home/promo-announcement-bar.1440.png",
     "evidence/pitch/default/home/promo-announcement-bar.375.png",
     "evidence/pitch/default/home/promo-announcement-bar.768.png",
-    "evidence/pitch/default/home/promo-announcement-bar.1440.png"
+    "evidence/pitch/default/home/promo-announcement-bar.changed.sonraki-slayt.1440.png",
+    "evidence/pitch/default/home/promo-announcement-bar.changed.sonraki-slayt.375.png",
+    "evidence/pitch/default/home/promo-announcement-bar.changed.sonraki-slayt.768.png",
+    "evidence/pitch/default/home/promo-announcement-bar.initial.ilk-slayt.1440.png",
+    "evidence/pitch/default/home/promo-announcement-bar.initial.ilk-slayt.375.png",
+    "evidence/pitch/default/home/promo-announcement-bar.initial.ilk-slayt.768.png"
   ],
-  "notlar": "44px turuncu bant + oklar. Mesaj 1: Sign up for our newsletter → /pages/contact. Mesaj 2 (autoplay): Just launched: bestselling skincare bundles (search interact karesinde görüldü).",
-  "delta": "Shopify.theme.name `Updated copy of Pitch demo store 3.2.0` · id 183686005031 · schema_name Pitch · schema_version 3.4.0 · theme_store_id 3620 · role main · shop se-horizon2-en-2v6j.myshopify.com. announcement-bar-component autoplay=5. Timer görünür değil.",
+  "notlar": "44px turuncu bant + oklar. Mesaj 1: Sign up for our newsletter → /pages/contact. Mesaj 2: Just launched: bestselling skincare bundles. Countdown/timer yok.",
+  "delta": "Shopify.theme.name `Updated copy of Pitch demo store 3.2.0` · id 183686005031 · schema_name Pitch · schema_version 3.4.0 · theme_store_id 3620 · role main · shop se-horizon2-en-2v6j.myshopify.com. announcement-bar-component autoplay=5. Timer görünür değil — promo-banner-countdown uydurulmadı.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-pitch-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "etiket": "ilk-slayt",
+      "not": "Settle sonrası görünen slayt. Newsletter link tıklanmaz."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-sections--26029916782887__header_announcements_kcHY6p button[aria-label='Next slide']",
+      "value": 800,
+      "capture": true,
+      "etiket": "sonraki-slayt",
+      "not": "Next — diğer slayt. URL home. Sign up <a> tıklanmaz."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Turuncu 44px bant. Sign up for our newsletter + sol/sağ chevron. Timer / gün / saat yok. 375/768/1440.",
+    "changed": "Next: Just launched: bestselling skincare bundles. Aynı oklar. Countdown yok. URL /. 375/768/1440."
+  },
+  "missingStates": [],
+  "interactionNote": "Settle sonrası hâlâ slayt 1 (newsletter) — autoplay 5s yetişmedi. Sign up <a> tıklanmadı (PII / /pages/contact). promo-banner-countdown uydurulmadı.",
   "capture": {
     "url": "https://theme-pitch-demo.myshopify.com/",
     "viewports": [
@@ -22,7 +63,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T11:40:55.282Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T17:36:18.660Z"
   }
 }

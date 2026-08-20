@@ -8,12 +8,54 @@
   "selector": "#shopify-section-template--20124663021869__testimonials_UFzMP8",
   "evidenceSlug": "testimonial-quote-carousel",
   "evidence": [
+    "evidence/woodstock/default/home/testimonial-quote-carousel.1440.png",
     "evidence/woodstock/default/home/testimonial-quote-carousel.375.png",
     "evidence/woodstock/default/home/testimonial-quote-carousel.768.png",
-    "evidence/woodstock/default/home/testimonial-quote-carousel.1440.png"
+    "evidence/woodstock/default/home/testimonial-quote-carousel.changed.sonraki-alinti.1440.png",
+    "evidence/woodstock/default/home/testimonial-quote-carousel.changed.sonraki-alinti.375.png",
+    "evidence/woodstock/default/home/testimonial-quote-carousel.changed.sonraki-alinti.768.png",
+    "evidence/woodstock/default/home/testimonial-quote-carousel.initial.ilk-alinti.1440.png",
+    "evidence/woodstock/default/home/testimonial-quote-carousel.initial.ilk-alinti.375.png",
+    "evidence/woodstock/default/home/testimonial-quote-carousel.initial.ilk-alinti.768.png"
   ],
   "notlar": "What clients say. Michael O’Brien / Financial Analyst / A Tech Shop You Can Trust.",
-  "delta": "testimonials__slider. Ok/nokta karede.",
+  "delta": "testimonials__slider. Ok 375'te de 42×42.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://woodstock-theme-light.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20124663021869__testimonials_UFzMP8",
+      "capture": true,
+      "etiket": "ilk-alinti",
+      "not": "Michael O’Brien — A Tech Shop You Can Trust. Prev disabled."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Slider-template--20124663021869__testimonials_UFzMP8-next-button",
+      "value": 1800,
+      "capture": true,
+      "etiket": "sonraki-alinti",
+      "not": "Slide right → Anna Thompson Interior Designer. scrollLeft 0→726."
+    }
+  ],
+  "stateFindings": {
+    "initial": "What clients say. Michael O’Brien / Financial Analyst / A Tech Shop You Can Trust. 5 yıldız. Sol ok disabled, sağ ok 42×42.",
+    "changed": "Anna Thompson / Interior Designer — After buying a speaker from Woodstock electronics… Sol ok açılır."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan changer 0; Slide right opener. Selector #Slider-…-next-button (kendisi button). 375/768/1440 ok görünür.",
   "capture": {
     "url": "https://woodstock-theme-light.myshopify.com/",
     "viewports": [
@@ -22,7 +64,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T11:00:42.104Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T17:03:53.756Z"
   }
 }

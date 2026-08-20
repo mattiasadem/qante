@@ -8,12 +8,50 @@
   "selector": "#shopify-section-template--20430037057590__main",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/heritage/default/faq-support/faq-collapsible-tabs.1440.png",
     "evidence/heritage/default/faq-support/faq-collapsible-tabs.375.png",
     "evidence/heritage/default/faq-support/faq-collapsible-tabs.768.png",
-    "evidence/heritage/default/faq-support/faq-collapsible-tabs.1440.png"
+    "evidence/heritage/default/faq-support/faq-collapsible-tabs.initial.rte-duz.1440.png",
+    "evidence/heritage/default/faq-support/faq-collapsible-tabs.initial.rte-duz.375.png",
+    "evidence/heritage/default/faq-support/faq-collapsible-tabs.initial.rte-duz.768.png"
   ],
-  "notlar": "FAQ. Return / final sale / when order / where made / shipping. details + accordion-custom host var.",
-  "delta": "Horizon main-page Q&A. /pages/faq-page 404.",
+  "notlar": "FAQ. Beş soru-cevap rte-formatter içinde düz metin. details / accordion-custom yok.",
+  "delta": "Horizon main-page Q&A (page-content). /pages/faq-page 404. Accordion değil — changed zorlanmadı.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-heritage-demo.myshopify.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20430037057590__main",
+      "capture": true,
+      "etiket": "rte-duz",
+      "not": "Beş soru-cevap hepsi görünür. Summary/accordion yok — tıklama yok."
+    }
+  ],
+  "stateFindings": {
+    "initial": "FAQ başlık + beş soru-cevap hepsi açık: return policy / final sale / when order / where made / shipping. Soru kalın, cevap alt satır. Chevron/+/- yok. 375/768/1440 aynı iskelet (sol hizalı, koyu zemin)."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Scan 0 changer. Probe + kare: details/accordion yok; rte-formatter p+strong. Accordion tık yok."
+    }
+  ],
+  "interactionNote": "İlk envanter 'details + accordion-custom' dedi; interact DOM ve PNG rte-formatter. Şema değişmedi.",
   "capture": {
     "url": "https://theme-heritage-demo.myshopify.com/pages/faq",
     "viewports": [
@@ -22,7 +60,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T11:38:20.398Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T17:30:38.403Z"
   }
 }

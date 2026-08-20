@@ -8,12 +8,45 @@
   "selector": "#shopify-section-sections--22715906949142__footer",
   "evidenceSlug": "footer-columns-newsletter",
   "evidence": [
+    "evidence/trade/default/home/footer-columns-newsletter.1440.png",
     "evidence/trade/default/home/footer-columns-newsletter.375.png",
     "evidence/trade/default/home/footer-columns-newsletter.768.png",
-    "evidence/trade/default/home/footer-columns-newsletter.1440.png"
+    "evidence/trade/default/home/footer-columns-newsletter.initial.newsletter-yok.1440.png",
+    "evidence/trade/default/home/footer-columns-newsletter.initial.newsletter-yok.375.png",
+    "evidence/trade/default/home/footer-columns-newsletter.initial.newsletter-yok.768.png"
   ],
   "notlar": "Ordering / Resources / About kolonları. Locale US|USD + Language. Sosyal Shopify. Newsletter input yok.",
   "delta": "Footer’da e-posta formu yok. Submit yok.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-trade-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-sections--22715906949142__footer",
+      "capture": true,
+      "etiket": "newsletter-yok",
+      "not": "Email input yok. Locale/dil gönderilmedi."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Newsletter yok. Ordering / Resources / About. Sosyal 5 ikon. Country/region United States | USD $ + Language English kapalı. Mastercard + © 2026. 375 dikey istif; 768/1440 üç kolon. Dil/ülke seçilmedi."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan: email 0; locale opener United States | USD $ + English. Ülke listesi yoklandı (UK GBP / US USD) — seçilmedi, form yok. filled/hover zorlanmadı. 375 kolon accordion yok.",
   "capture": {
     "url": "https://theme-trade-demo.myshopify.com/",
     "viewports": [
@@ -22,7 +55,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T11:32:35.866Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T17:33:54.248Z"
   }
 }

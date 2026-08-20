@@ -122,6 +122,30 @@ Karar: onay bekliyor
 
 ---
 
+## CRO leftover interact (2026-08-19)
+
+Observation vardı, kullanıldı: `footer-columns-newsletter` (boş form + ülke listesi) · `lead-capture-form` (boş) · `features-multicolumn` home (2 statik alıntı) · `media-video-hero` (poster → YouTube iframe; headless “not a bot” duvarı, video karesi yok).
+
+Şema icat edilmedi. Aşağıdakilerin observation’ı yok — `/qante-discover` işi.
+
+---
+
+ADAY: dawn-no-faq  
+Gerekçe: `faq-collapsible-tabs` observation yok. `/pages/faq` ve `/pages/faqs` 404. PDP `#Details-collapsible-row-0-…` Materials accordion `product-info-main` içinde (Color interact zaten var; CRO turunda tekrar çekilmedi).  
+Örnekler: https://theme-dawn-demo.myshopify.com/pages/faq  
+Öneri: leftover — FAQ yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: dawn-no-cro-blocks  
+Gerekçe: Home DOM’da slideshow / countdown / before-after / bundle / comparison / quiz / shop-the-feed / scrolling-gallery yok. `editorial-image-with-text-overlay` slideshow değil. `media-mosaic-grid` collage (ok yok). `promo-announcement-bar` timer yok. `testimonial-quote-carousel` uydurulmadı — 2 alıntı `features-multicolumn`.  
+Örnekler: https://theme-dawn-demo.myshopify.com/  
+Öneri: leftover — CRO tipi yok  
+Karar: onay bekliyor
+
+---
+
 ## Bilinçli atlananlar
 
 - `/account/login` — auth  
@@ -130,3 +154,5 @@ Karar: onay bekliyor
 - Lookbook collage sayfaları (walk dışı)  
 - Shipping / returns / size-guide / style-guide / shoe-care (aynı page tipi)  
 - PDP related-products boş kutu  
+- PDP Materials accordion (Color interact duruyor; FAQ şeması değil)  
+- Collage / image-banner hover (statik; changer yok)

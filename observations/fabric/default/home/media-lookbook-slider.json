@@ -8,12 +8,67 @@
   "selector": "#shopify-section-template--19138330460213__carousel_LeVxwU",
   "evidenceSlug": "media-lookbook-slider",
   "evidence": [
+    "evidence/fabric/default/home/media-lookbook-slider.1440.png",
     "evidence/fabric/default/home/media-lookbook-slider.375.png",
     "evidence/fabric/default/home/media-lookbook-slider.768.png",
-    "evidence/fabric/default/home/media-lookbook-slider.1440.png"
+    "evidence/fabric/default/home/media-lookbook-slider.changed.sonraki-look.1440.png",
+    "evidence/fabric/default/home/media-lookbook-slider.changed.sonraki-look.375.png",
+    "evidence/fabric/default/home/media-lookbook-slider.changed.sonraki-look.768.png",
+    "evidence/fabric/default/home/media-lookbook-slider.initial.ilk-hal.1440.png",
+    "evidence/fabric/default/home/media-lookbook-slider.initial.ilk-hal.375.png",
+    "evidence/fabric/default/home/media-lookbook-slider.initial.ilk-hal.768.png"
   ],
   "notlar": "Sol: New this season + copy + Shop now outline. Sağ: lookbook slayt (beach vest/hoodie/pant). Ok var. Hotspot yok.",
   "delta": "Horizon carousel / section-carousel. Hotspot yok — media-lookbook-slider + delta. Yeni şema yok.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-fabric-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19138330460213__carousel_LeVxwU",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "New this season — vest + hoodie peek. Shop now tıklanmaz"
+    },
+    {
+      "state": "changed",
+      "action": "hover",
+      "selector": "#shopify-section-template--19138330460213__carousel_LeVxwU slideshow-component",
+      "value": 400,
+      "capture": false,
+      "not": "Next 44×44 opacity 0→1"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--19138330460213__carousel_LeVxwU button[aria-label='Next slide']",
+      "value": 1200,
+      "capture": true,
+      "etiket": "sonraki-look",
+      "not": "Next — vest kayar, hoodie/pant öne. URL aynı kalmalı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "New this season + copy + Shop now outline. 1440/768: vest look + hoodie + üçüncü peek; ok görünmez. 375: metin + ince görsel şerit.",
+    "changed": "Next (hover sonrası): 1440/768 hoodie + sarı tank + olive vest, sol ok. 375: vest look dolar, Prev/Next ok, sağda peek. URL /. Hotspot yok."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan changer görmedi (Prev display:none, Next opacity 0). Yoklama hover opacity 0→1; Next tık slayt kaydı. Shop now tıklanmadı. Şema dokunulmadı.",
   "capture": {
     "url": "https://theme-fabric-demo.myshopify.com/",
     "viewports": [
@@ -22,7 +77,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T11:47:52.262Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T17:47:29.417Z"
   }
 }

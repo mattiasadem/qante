@@ -8,12 +8,45 @@
   "selector": "#shopify-section-template--20640022036669__hero_HRGffr",
   "evidenceSlug": "hero-slideshow",
   "evidence": [
+    "evidence/dwell/default/about-brand/hero-slideshow.1440.png",
     "evidence/dwell/default/about-brand/hero-slideshow.375.png",
     "evidence/dwell/default/about-brand/hero-slideshow.768.png",
-    "evidence/dwell/default/about-brand/hero-slideshow.1440.png"
+    "evidence/dwell/default/about-brand/hero-slideshow.initial.vogue-quote.1440.png",
+    "evidence/dwell/default/about-brand/hero-slideshow.initial.vogue-quote.375.png",
+    "evidence/dwell/default/about-brand/hero-slideshow.initial.vogue-quote.768.png"
   ],
   "notlar": "★★★★★ “Perfect color and texture.” VOGUE. Quote hero.",
   "delta": "Horizon hero. Tek kare alıntı — slayt yok. testimonial-quote-carousel zorlanmadı (hero wrapper).",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-dwell-demo.myshopify.com/pages/about-us",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20640022036669__hero_HRGffr",
+      "capture": true,
+      "etiket": "vogue-quote",
+      "not": "Tek alıntı. Ok/nokta yok. testimonial şeması icat edilmedi."
+    }
+  ],
+  "stateFindings": {
+    "initial": "★★★★★ “Perfect color and texture.” VOGUE. Tek kare alıntı. Ok/nokta/slayt yok. testimonial carousel değil."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan: slides/arrows/dots 0. Alıntı hero — testimonial-quote-carousel leftover, şema yok.",
   "capture": {
     "url": "https://theme-dwell-demo.myshopify.com/pages/about-us",
     "viewports": [
@@ -22,7 +55,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T11:47:58.166Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T17:47:35.275Z"
   }
 }

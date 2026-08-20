@@ -67,7 +67,7 @@ Karar: onay bekliyor
 ---
 
 ADAY: pitch-pii-stop  
-Gerekçe: Footer newsletter Sign up + contact Submit + checkout + login tıklanmadı.  
+Gerekçe: Footer newsletter Sign up + contact Submit + checkout + login tıklanmadı. CRO interact form/footer yalnız `initial`.  
 Örnekler: footer · `/pages/contact` · cart Check out  
 Öneri: PII / checkout stop  
 Karar: onay bekliyor
@@ -75,17 +75,17 @@ Karar: onay bekliyor
 ---
 
 ADAY: pitch-faq-rte  
-Gerekçe: `/pages/faq` title FAQ. `#…__main` düz RTE Q&A (return / final sale / order / made / shipping). `accordion-custom` yok. Walk listesinde yok; claiming yazılmadı.  
+Gerekçe: `/pages/faq` title FAQ. `#…__main` düz RTE (H3 + P): return / final sale / order / made / shipping. `details` 0 · `accordion-custom` yok. Walk dışı; `faq-collapsible-tabs` interact ile uydurulmadı. En yakın inventoried accordion: PDP `product-info-tabs`.  
 Örnekler: https://theme-pitch-demo.myshopify.com/pages/faq  
-Öneri: leftover — walk dışı; faq-collapsible-tabs zorlanmadı  
+Öneri: leftover — ilk envanter `/qante-discover`  
 Karar: onay bekliyor
 
 ---
 
 ADAY: pitch-pdp-accordion-body  
-Gerekçe: PDP `section_dEGUdG` accordion başlıkları (Natural ingredients / Tested for safety / Fragrance free) kapalı. İçerik tıklanmadı.  
-Örnekler: `/products/gentle-body-wash`  
-Öneri: leftover — changed state yok  
+Gerekçe: PDP `section_dEGUdG` accordion. Interact: kapalı (+) → Natural ingredients açık (−) + gövde metni. 375/768/1440. `faq-collapsible-tabs` açılmadı.  
+Örnekler: `/products/gentle-body-wash` · `product-info-tabs.changed.natural-acik.*.png`  
+Öneri: leftover kapandı — changed yakalandı  
 Karar: onay bekliyor
 
 ---
@@ -115,9 +115,17 @@ Karar: onay bekliyor
 ---
 
 ADAY: pitch-announcement-second-slide  
-Gerekçe: announcement autoplay=5. İlk kare “Sign up for our newsletter”. Search interact 1440’ta “Just launched: bestselling skincare bundles”. Ok var; ayrı state çekilmedi.  
-Örnekler: `#…__header_announcements_kcHY6p`  
-Öneri: leftover — ikinci slayt interact değil  
+Gerekçe: Interact Next: “Sign up for our newsletter” → “Just launched: bestselling skincare bundles”. 375/768/1440. Timer / gün / saat yok — `promo-banner-countdown` uydurulmadı. Sign up `<a>` tıklanmadı.  
+Örnekler: `#…__header_announcements_kcHY6p` · `promo-announcement-bar.changed.sonraki-slayt.*.png`  
+Öneri: leftover kapandı — ikinci slayt + countdown yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: pitch-cro-types-absent  
+Gerekçe: `observations/pitch/` içinde `faq-collapsible-tabs` · `promo-banner-countdown` · `before-after-slider` · `commerce-tools-products-bundle` · `comparison-quick-table` · `product-finder-quiz` · `testimonial-quote-carousel` · `media-shop-the-feed` · `media-scrolling-gallery` yok. `/pages/quiz` `/pages/compare` `/pages/before-after` `/pages/testimonials` `/pages/countdown` 404. `/collections/bundles` PLP (3 kart), bundle builder değil. `/pages/faq` RTE. Interact şema uydurmaz.  
+Örnekler: home roster + leftover URL yoklaması  
+Öneri: leftover — ilk envanter `/qante-discover`  
 Karar: onay bekliyor
 
 ---

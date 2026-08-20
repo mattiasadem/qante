@@ -116,7 +116,31 @@ Karar: observation yazıldı
 ---
 
 ADAY: heritage-about-hero-no-text  
-Gerekçe: `/pages/about-us` `hero_MCVHpm` ~500px görsel; metin/CTA/ok/dot yok. `hero-slideshow` + delta.  
+Gerekçe: `/pages/about-us` `hero_MCVHpm` ~500px görsel; metin/CTA/ok/dot yok. `hero-slideshow` + delta. Interact `initial.tek-kare` — S virajlı orman yolu, overlay yok.  
 Örnekler: https://theme-heritage-demo.myshopify.com/pages/about-us  
 Öneri: mevcut şema + delta  
-Karar: observation yazıldı
+Karar: observation + interact initial yazıldı
+
+---
+
+ADAY: heritage-cro-types-absent  
+Gerekçe: Resmi demoda (home / about-us / contact / faq / PDP / PLP / blog / search / cart / fit-guide / garment-care) countdown, before-after, bundle, comparison, quiz, testimonial, shop-the-feed, `media-scrolling-gallery` section yok. Observation da yok. Interact şema uydurmadı.  
+Örnekler: https://theme-heritage-demo.myshopify.com/  
+Öneri: leftover — ilk envanter `/qante-discover`  
+Karar: onay bekliyor
+
+---
+
+ADAY: heritage-bestsellers-carousel-arrows-0px  
+Gerekçe: Home `product_list_4HyKBg` (`product-showcase-grid-featured`) `slideshow-component` + 6 kart. Next/prev 375/768/1440'ta 0×0 (`display:none` 375). Kaydırma `changed` zorlanmadı. `media-scrolling-gallery` observation yok.  
+Örnekler: home Our bestsellers  
+Öneri: leftover — ok yok, swipe çekilmedi  
+Karar: onay bekliyor
+
+---
+
+ADAY: heritage-faq-rte-not-accordion  
+Gerekçe: `/pages/faq` `__main` rte-formatter: beş soru-cevap düz metin. `details` / accordion-custom yok. İlk not “details + accordion” yanıltıcı. Interact `initial.rte-duz`.  
+Örnekler: https://theme-heritage-demo.myshopify.com/pages/faq  
+Öneri: leftover — accordion yok  
+Karar: interact initial yazıldı

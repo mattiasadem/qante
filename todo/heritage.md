@@ -6,8 +6,8 @@
 *Tema (storefront, uydurulmadı):* **Updated copy of Heritage demo store 3.2.0** · `schema_name`: **Heritage** · `schema_version`: **3.4.0** · `theme_store_id`: **3624** · role `main` · id `149503737910`  
 *Shop:* `se-horizon8-en-0xw5.myshopify.com`
 
-**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti** (0 error)  
-**PR:** draft https://github.com/mattiasadem/qante/pull/178 · **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact + CRO leftover interact + validate  
+**PR:** draft https://github.com/mattiasadem/qante/pull/270 · **main'e merge yok**
 
 ---
 
@@ -19,11 +19,11 @@
 | Capture | resmi `capture-observation.mjs` + `capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **33** |
-| Evidence PNG | **117** |
+| Evidence PNG | **129** |
 | Parallel | yalnız `observations/heritage/`, `evidence/heritage/`, `todo/heritage.md`, `candidates/heritage-leftovers.md` |
 
 **Kapsam satırı:**  
-`Heritage · default · Updated copy of Heritage demo store 3.2.0 / schema_name Heritage 3.4.0 (theme_store_id 3624) · home→PDP→PLP→collections index→search→cart→about/contact→blog→404 · 33 obs · 117 PNG · 0 yeni şema · leftover: candidates/heritage-leftovers.md`
+`Heritage · default · Updated copy of Heritage demo store 3.2.0 / schema_name Heritage 3.4.0 (theme_store_id 3624) · home→PDP→PLP→collections index→search→cart→about/contact→blog→404 · 33 obs · 129 PNG · 0 yeni şema · leftover: candidates/heritage-leftovers.md`
 
 ---
 
@@ -80,6 +80,10 @@
 - Cart drawer: empty → Terry Short qty 1 $105 → qty 2 $210 — OK (ATC UI)
 - Cart page: empty → filled $105 → qty 2 $210 — OK
 - PDP Color: Pelican $105 → Navy $109 (galeri önde Navy) — OK
+- FAQ `/pages/faq` RTE düz (accordion yok) — `initial.rte-duz` 375/768/1440
+- Contact form boş — `initial.bos-form` (PII, fill/submit yok)
+- Footer newsletter yok — `initial.newsletter-yok`
+- About hero tek kare (orman yolu) — `initial.tek-kare`; ok/nokta yok
 
 ---
 
@@ -93,5 +97,6 @@
 
 - [x] Official 3vp static (`capture-observation.mjs`) — 81 PNG
 - [x] Interact header / search / cart / menu / PDP Color — 36 PNG
+- [x] CRO leftover interact FAQ / form / footer / about hero — 12 PNG
 - [x] PNG bak → stateFindings
 - [x] `npm run validate` — 0 error

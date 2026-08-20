@@ -28,12 +28,16 @@
 | PDP warranty / Trade In / complementary Pairs well with | leftover. |
 | PDP empty `product-recommendations` | h≈80/0 ilk ziyaret. |
 | PDP specs / include-in-box / Boundless marquee / extra IWT | walk dışı tekrarlar. |
-| Lookbook hotspot tık | leftover. |
+| Lookbook hotspot | 768/1440 Watch Generation B1 kartı. 375 pin aktif, kart overflow. View full details leftover. |
 | Pinning cards sticky | `promo-grid-banner` delta. |
 | Mobile submenu chevron | kaçış — leftover. |
 | PLP facet/sort interact | DOM’da var; walk zorunlu interact değil. |
 | Policy pages | walk dışı; page-content kabuğu. |
 | Okendo reviews | üçüncü taraf leftover. |
+| shoppable_reels play / ürün <a> | play leftover; link PDP. Slider changed yakalandı. |
+| Collection IWT countdown | karede sayı; `promo-banner-countdown` observation yok — uydurulmadı. |
+| before-after / bundle / comparison / quiz | observation yok — interact şema açmadı. |
+| product-info-tabs tab / Ask a question | leftover (PII form). |
 
 ## Aday (yeni şema yok)
 
@@ -53,3 +57,10 @@
 - Cart drawer `#CartDrawer`. ATC UI (`addToCart → ui`). Empty SALE30; filled Watch I7 black/41mm $249; qty2 $498.
 - 375 `quantity__button[name=plus]` **0×0**. Qty `input.quantity__input` fill `2` + Enter. 768/1440 plus tık.
 - PDP Color `label[for=template--20218412368173__main-1-1]` gym red. black 98 stok SKU SACWN58-M1 → gym red 41mm Sold out SKU SACwNSB-M3. Next-earphone varyantsız.
+- FAQ: `#Details-AZXJCYTBSaWN4T3NUV__accordion_row_9UGVHX-… > summary` Return policies. İlk kutu açık kalır.
+- Testimonials: `#Slider-…testimonials…-next-button` Michael → Anna Thompson. 375 ok 42×42.
+- Reels: 768/1440 Slide right; 375 drag. Phone Generation 3 → Camera 360 degree.
+- Newsletter band: Email boş, Subscribe yok (PII).
+- Footer: 375 `a.footer-block__collapse-link:has-text('Company')` Our Story…. 768/1440 kolon.
+- Contact: Regarding Returns → Shipping. Name/email/phone/comment boş. Send yok.
+- Lookbook: hover first hotspot summary. 768/1440 Watch Generation B1 From $749.

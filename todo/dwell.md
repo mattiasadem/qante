@@ -6,8 +6,8 @@
 *Tema (storefront, uydurulmadı):* **dwell-100-0-0** · `schema_name`: **Dwell** · `schema_version`: **100.0.0** · `theme_store_id`: **null** · role `main` · id `153150455997`  
 *Shop:* `se-horizon10-en-q73c.myshopify.com`
 
-**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti** (0 error)  
-**PR:** draft · **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact + CRO leftover interact + validate  
+**PR:** draft https://github.com/mattiasadem/qante/pull/273 · **main'e merge yok**
 
 ---
 
@@ -19,11 +19,11 @@
 | Capture | resmi `capture-observation.mjs` + `capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **36** |
-| Evidence PNG | **126** |
+| Evidence PNG | **157** |
 | Parallel | yalnız `observations/dwell/`, `evidence/dwell/`, `todo/dwell.md`, `candidates/dwell-leftovers.md` |
 
 **Kapsam satırı:**  
-`Dwell · default · dwell-100-0-0 / schema_name Dwell 100.0.0 (theme_store_id null) · home→PDP→PLP→collections index→search→cart→about/contact→blog→404 · 36 obs · 126 PNG · 0 yeni şema · leftover: footer-utilities / search-header / 768 hamburger / 404 routes / quick-add / hotspot`
+`Dwell · default · dwell-100-0-0 / schema_name Dwell 100.0.0 (theme_store_id null) · home→PDP→PLP→collections index→search→cart→about/contact→blog→404 · 36 obs · 157 PNG · 0 yeni şema · CRO interact: FAQ/form/footer/hero/lookbook/sliders · leftover: footer-utilities / search-header / 768 hamburger / 404 / quick-add / CRO tipleri yok`
 
 ---
 
@@ -42,9 +42,9 @@
 | Search `/search?q=linen` | [x] obs | [x] capture |
 | Cart `/cart` empty + filled + qty | [x] obs | [x] interact |
 | About `/pages/about-us` | [x] obs | [x] capture |
-| Contact form (submit yok) | [x] obs | [x] capture |
+| Contact form (submit yok) | [x] obs | [x] interact `initial` (PII) |
 | News list + Art of Sheet Folding | [x] obs | [x] capture |
-| FAQ + Shipping policy | [x] obs | [x] capture |
+| FAQ + Shipping policy | [x] obs | [x] interact FAQ `initial` |
 | 404 leftover | [x] obs | [x] capture |
 
 ---
@@ -82,6 +82,14 @@
 - Cart drawer: empty → Down Pillow Standard/Firm qty 1 $250 → qty 2 $500
 - Cart page: empty → filled $250 → qty 2 $500
 - PDP Size: Standard $250 → King $310 (Density Firm)
+- FAQ `/pages/faq` düz Q&A — accordion yok (`initial`)
+- Contact form yalnız `initial` (PII)
+- Footer newsletter `initial` — Subscribe yok
+- Home hero tek kare Winter Collection — ok/nokta yok
+- About hero VOGUE alıntı — testimonial carousel değil
+- Lookbook 3 pin: 768/1440 Down Pillow $250 kart; 375 quick-add-modal
+- Featured slider Next: Brushed Cotton → Vintage Linen (375) / Mattress Protector (768/1440)
+- Accessories slider 375 Robes → Slippers; 768/1440 ok 0px
 
 Stop: email / account / checkout / newsletter submit / contact Submit / PII
 
@@ -97,6 +105,7 @@ Stop: email / account / checkout / newsletter submit / contact Submit / PII
 
 - [x] Official 3vp static (`capture-observation.mjs`) — 30/30
 - [x] Interact header / search / cart / menu / PDP Size
+- [x] CRO leftover interact: FAQ / form / footer / hero / lookbook / featured + collection sliders
 - [x] PNG bak → stateFindings
 - [x] `npm run validate` — 0 error
 - [x] Newsletter / account / checkout — **yapılmayacak** (PII)

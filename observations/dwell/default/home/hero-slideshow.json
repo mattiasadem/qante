@@ -8,12 +8,45 @@
   "selector": "#shopify-section-template--20640022003901__hero_G7CAX9",
   "evidenceSlug": "hero-slideshow",
   "evidence": [
+    "evidence/dwell/default/home/hero-slideshow.1440.png",
     "evidence/dwell/default/home/hero-slideshow.375.png",
     "evidence/dwell/default/home/hero-slideshow.768.png",
-    "evidence/dwell/default/home/hero-slideshow.1440.png"
+    "evidence/dwell/default/home/hero-slideshow.initial.winter-collection.1440.png",
+    "evidence/dwell/default/home/hero-slideshow.initial.winter-collection.375.png",
+    "evidence/dwell/default/home/hero-slideshow.initial.winter-collection.768.png"
   ],
   "notlar": "The Winter Collection + SHOP NOW. Tek kare hero.",
-  "delta": "Horizon hero. Bu walk’ta tek kare; ok/dot yoklandı değil.",
+  "delta": "Horizon hero. Tek kare; ok/nokta yok. Yeni şema yok.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-dwell-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20640022003901__hero_G7CAX9",
+      "capture": true,
+      "etiket": "winter-collection",
+      "not": "Tek slayt. Ok/nokta yok. SHOP NOW tıklanmaz."
+    }
+  ],
+  "stateFindings": {
+    "initial": "The Winter Collection + SHOP NOW. Tek kare (kadın + yorgan). Ok/nokta yok. 375/768/1440. CTA tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan+yoklama: button/arrow/dot 0. Metin tık sonrası aynı. changed yok. CTA <a> tıklanmadı.",
   "capture": {
     "url": "https://theme-dwell-demo.myshopify.com/",
     "viewports": [
@@ -22,7 +55,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T11:45:30.778Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T17:46:53.327Z"
   }
 }
