@@ -11,7 +11,7 @@
 shop `exhibit-theme-preset-1.myshopify.com`
 
 **Durum:** Mod A walk + resmi 3vp + validate  
-**PR:** draft (bu branch)
+**PR:** draft https://github.com/mattiasadem/qante/pull/281
 
 ---
 
