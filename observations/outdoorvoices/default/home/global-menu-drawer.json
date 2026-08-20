@@ -1,0 +1,66 @@
+{
+  "observationId": "outdoorvoices.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "outdoorvoices",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.outdoorvoices.com/",
+  "selector": ".dimmer.below-header-dimmer.dimmer--active",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/outdoorvoices/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/outdoorvoices/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "375/768: summary.header__mobile-menu-button → mobile-menu details[open]. Women/Men/OV Extra Sale/New Arrivals/Best Sellers/Log In.",
+  "delta": "Custom element mobile-menu; mega .mobile-mega-menu yan panel. 1440 hamburger yok.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://www.outdoorvoices.com/",
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ]
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "summary.header__mobile-menu-button",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger"
+    }
+  ],
+  "stateFindings": {
+    "open": "Mobil drawer açık: tier linkler + dimmer; desktop N/A."
+  },
+  "missingStates": [],
+  "interactionNote": "",
+  "capture": {
+    "url": "https://www.outdoorvoices.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-20T22:58:51.028Z"
+  }
+}
