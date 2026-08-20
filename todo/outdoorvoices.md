@@ -4,7 +4,7 @@
 *Tema (storefront):* **Outdoor Voices Theme 0.1.0** · `schema_name` Outdoor Voices Theme · `theme_store_id` **null** · shop `outdoor-voices.myshopify.com` · role main · handle August OV Outdoors_Kindred
 
 **Durum:** Mod A walk + resmi 3vp + interact  
-**PR:** draft · **main'e merge yok**
+**PR:** https://github.com/mattiasadem/qante/pull/298 (draft · **main'e merge yok**)
 
 ---
 
