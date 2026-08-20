@@ -8,12 +8,45 @@
   "selector": "#shopify-section-template--20430036860982__form",
   "evidenceSlug": "lead-capture-form",
   "evidence": [
+    "evidence/heritage/default/contact/lead-capture-form.1440.png",
     "evidence/heritage/default/contact/lead-capture-form.375.png",
     "evidence/heritage/default/contact/lead-capture-form.768.png",
-    "evidence/heritage/default/contact/lead-capture-form.1440.png"
+    "evidence/heritage/default/contact/lead-capture-form.initial.bos-form.1440.png",
+    "evidence/heritage/default/contact/lead-capture-form.initial.bos-form.375.png",
+    "evidence/heritage/default/contact/lead-capture-form.initial.bos-form.768.png"
   ],
   "notlar": "Name, Email*, Phone, Comment, Submit. Gönderilmedi.",
-  "delta": "PII stop — Submit yok.",
+  "delta": "PII stop — Submit yok. Fill yok.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-heritage-demo.myshopify.com/pages/contact",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20430036860982__form",
+      "capture": true,
+      "etiket": "bos-form",
+      "not": "PII — Name/Email/Phone/Comment doldurulmadı, Submit tıklanmadı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boş form. Name / Email* / Phone / Comment / Submit. 375 tek kolon. 768/1440 üstte Name|Email, Phone ve Comment tam genişlik. Doldurulmadı, Submit tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "PII stop: fill/submit yok. input/filled zorlanmadı. Scan 4 input (name/email/tel/body).",
   "capture": {
     "url": "https://theme-heritage-demo.myshopify.com/pages/contact",
     "viewports": [
@@ -22,7 +55,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T11:37:46.591Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T17:31:22.308Z"
   }
 }
