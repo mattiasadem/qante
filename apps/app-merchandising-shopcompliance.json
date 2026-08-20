@@ -1,0 +1,75 @@
+{
+  "id": "app-merchandising-shopcompliance",
+  "kategori": "merchandising",
+  "varyant": "shopcompliance",
+  "scope": "in-flow",
+  "amac": "GPSR, PPWR ve ilgili AB vitrin bilgi yükümlülüklerini ürün sayfasında göstermek.",
+  "sorun": "Listing ShopCompliance (slug shopcompliance, HTTP 200). Quiz-driven EU display duties (GPSR, PPWR, Green Claims, AI Act, accessibility info) on PDP. Not a Grundpreis engine; not LUCID registration. yuzey [] — kapalı sette PDP bilgi bloğu yok, uydurulmadı.",
+  "link": "https://apps.shopify.com/shopcompliance",
+  "yuzey": [],
+  "entegrasyon": {
+    "shopify": [
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "PDP uyum / GPSR bilgi bloğu başlığı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section PDP uyum bilgisi (GPSR/PPWR metin). Grundpreis motoru değil. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

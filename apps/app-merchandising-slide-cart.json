@@ -1,0 +1,99 @@
+{
+  "id": "app-merchandising-slide-cart",
+  "kategori": "merchandising",
+  "varyant": "slide-cart",
+  "scope": "overlay",
+  "amac": "Kayar sepet çekmecesinde upsell, hediye, BOGO ve kargo eşiği çubuğu göstererek AOV artırmak.",
+  "sorun": "Listing Amp Slide Cart Upsell Drawer: slide cart + progress bar + cart upsells / free gifts / BOGO. ikas’ta app-embed yok; karşılık studio-section cart_drawer + product_recs.",
+  "link": "https://apps.shopify.com/slide-cart",
+  "yuzey": [
+    "cart_drawer",
+    "product_recs",
+    "free_shipping_bar"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "ADD_TO_CART",
+    "VIEW_CART"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT",
+    "CATEGORY",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products",
+    "read_orders"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/order/created"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "Sepet çekmecesi başlığı"
+    },
+    "limit": {
+      "tip": "number",
+      "zorunlu": false,
+      "not": "In-cart upsell ürün sayısı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    },
+    {
+      "name": "oneriler",
+      "source": "DataSource.productList"
+    }
+  ],
+  "actions": [
+    "emit:cart.add",
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:cartDrawer.belowItems"
+  ],
+  "bagimliliklar": [
+    "global-cart-drawer"
+  ],
+  "ikasKarsilik": "Studio / script cart_drawer: slide cart + in-cart product_recs + kargo eşiği. Checkout kuralları ikas checkout-extension ile birebir değil.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

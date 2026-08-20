@@ -1,0 +1,78 @@
+{
+  "id": "app-merchandising-store-pickup-delivery-pti",
+  "kategori": "merchandising",
+  "varyant": "store-pickup-delivery-pti",
+  "scope": "in-flow",
+  "amac": "Sepet sayfasında mağaza teslimi veya yerel teslimat ile tarih/saat dilimi seçtirmek.",
+  "sorun": "Listing Store Pickup & Delivery ‑ PTI (HTTP 200): cart page widget — pickup veya local delivery, slot, pincode, tatil bloğu. Shopify Local Delivery admin sürücü rotası değil. ikas embedded_form.",
+  "link": "https://apps.shopify.com/store-pickup-delivery-pti",
+  "yuzey": [
+    "embedded_form"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "VIEW_CART",
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_orders",
+    "write_orders"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "Teslim / teslimat formu başlığı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:cart.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section embedded_form: sepet teslim/teslimat slot seçici. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "id": "app-merchandising-subscription-payments",
+  "kategori": "merchandising",
+  "varyant": "subscription-payments",
+  "scope": "in-flow",
+  "amac": "Ürün sayfasında abone ol / kaydet widget’ı ve plan seçiciyle tekrarlayan siparişi vitrinde satmak.",
+  "sorun": "Listing Recharge Subscriptions App: PDP abonelik widget’ı, müşteri portalı, checkout’ta abone ol. ikas’ta checkout-extension yok; karşılık studio-section plan seçici. Portal ve checkout birebir taşınmaz.",
+  "link": "https://apps.shopify.com/subscription-payments",
+  "yuzey": [
+    "product_recs"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "checkout-extension"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "ADD_TO_CART",
+    "CUSTOMER_LOGIN",
+    "COMPLETE_CHECKOUT"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CART",
+    "ACCOUNT",
+    "CHECKOUT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products",
+    "read_orders",
+    "read_customers",
+    "write_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/order/created",
+    "store/customer/created",
+    "store/customer/updated"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "PDP abone-ol widget başlığı"
+    },
+    "portalAcik": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "Listing no-code customer portal vaat ediyor"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    },
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    },
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "emit:cart.add",
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section: PDP abone-ol / plan seçici. Sipariş yazımı webhook. Shopify checkout-extension ve müşteri portalı ikas’a taşınmaz.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

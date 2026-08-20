@@ -1,0 +1,83 @@
+{
+  "id": "app-merchandising-translate-and-adapt",
+  "kategori": "merchandising",
+  "varyant": "translate-and-adapt",
+  "scope": "in-flow",
+  "amac": "Mağaza içeriğini dile/pazara göre çevirip vitrinde yerelleştirilmiş dil deneyimi sunmak.",
+  "sorun": "Listing Shopify Translate & Adapt (resmi Shopify, homepage featured). Admin çeviri + Markets yerelleştirme; vitrin dil seçici tema/Markets. ikas’ta eş first-party Translate & Adapt yok; karşılık studio-section dil switcher (flyout).",
+  "link": "https://apps.shopify.com/translate-and-adapt",
+  "yuzey": [
+    "flyout"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CATEGORY",
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "otomatikCevir": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "Listing auto-translate up to two languages (Google Translate) vaat ediyor"
+    },
+    "switcherGoster": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "Vitrin dil seçici"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:header.utility",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section / header flyout: dil seçici. Çeviri içeriği harici veya ikas çoklu dil alanları. Resmi Shopify uygulamasının ikas listing’i yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

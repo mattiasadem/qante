@@ -1,0 +1,87 @@
+{
+  "id": "app-merchandising-trustbadges",
+  "kategori": "merchandising",
+  "varyant": "trustbadges",
+  "scope": "in-flow",
+  "amac": "Güven mührü, ödeme, kargo ve güvenlik ikonlarını ürün/sepet/footer’da göstererek dönüşümü artırmak.",
+  "sorun": "Listing Trust Badges & Payment Icons (Elevio, slug trustbadges): 1000+ badge / payment / security / shipping icons. ikas native yok; karşılık studio-section trust_badge.",
+  "link": "https://apps.shopify.com/trustbadges",
+  "yuzey": [
+    "trust_badge"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-block",
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "PAGE_VIEW",
+    "VIEW_CART"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CART",
+    "INDEX"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "Rozet bloğu başlığı"
+    },
+    "konum": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 40,
+      "not": "Listing product / cart / footer / custom location vaat ediyor"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section trust_badge. Checkout yerleştirme ikas checkout-extension ile birebir değil. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

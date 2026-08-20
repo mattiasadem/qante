@@ -1,0 +1,73 @@
+{
+  "id": "app-merchandising-spinlook-360-3d-viewer",
+  "kategori": "merchandising",
+  "varyant": "spinlook-360-3d-viewer",
+  "scope": "in-flow",
+  "amac": "Ürün sayfasına sürükle-döndür 360° ve 3D model görüntüleyici eklemek.",
+  "sorun": "Listing SpinLook 360° & 3D Viewer (HTTP 200, theme app block). Kapalı yuzey setinde 360/spin viewer yok; yuzey [] uydurulmadı. in-flow PDP widget.",
+  "link": "https://apps.shopify.com/spinlook-360-3d-viewer",
+  "yuzey": [],
+  "entegrasyon": {
+    "shopify": [
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "otomatikOynat": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "Listing auto-play / drag-to-rotate vaat ediyor"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section PDP 360/3D görüntüleyici. Kapalı yüzey yok. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

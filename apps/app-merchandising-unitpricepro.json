@@ -1,0 +1,77 @@
+{
+  "id": "app-merchandising-unitpricepro",
+  "kategori": "merchandising",
+  "varyant": "unitpricepro",
+  "scope": "in-flow",
+  "amac": "Ölçülebilir ürünlerde €/kg veya €/L birim fiyatı ürün, koleksiyon ve sepette göstermek.",
+  "sorun": "Listing Unit Price Pro (slug unitpricepro, HTTP 200). Shows €/kg or €/L on PDP/collection/cart via theme app extension. Generic EU unit-price, not a DE attorney product. yuzey [] — kapalı sette birim-fiyat yüzeyi yok, uydurulmadı.",
+  "link": "https://apps.shopify.com/unitpricepro",
+  "yuzey": [],
+  "entegrasyon": {
+    "shopify": [
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CATEGORY",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "Birim fiyat etiketi"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section birim fiyat (€/kg, €/L). DE avukat ürünü değil. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}
