@@ -1,0 +1,71 @@
+{
+  "id": "app-merchandising-ikas-loopi",
+  "kategori": "merchandising",
+  "varyant": "ikas-loopi",
+  "scope": "in-flow",
+  "amac": "Kodsuz video carousel ekler; her video için ürün seçilerek satış artırılır.",
+  "sorun": "Ürünü videoyla vitrinde göstermek; kart açıklaması kodsuz video carousel vaat eder.",
+  "link": "https://apps.ikas.com/tr/uygulama/848f4bfa-2c92-45a6-826c-2568fe4ef52e",
+  "yuzey": [
+    "ugc_gallery"
+  ],
+  "entegrasyon": {
+    "shopify": [],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT",
+    "CATEGORY"
+  ],
+  "ikasLink": "https://apps.ikas.com/tr/uygulama/848f4bfa-2c92-45a6-826c-2568fe4ef52e",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "admin-iframe",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after",
+    "mount:buyBox.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "ikas App Store resmi listing (Loopi: Ürünlerini Video İle Tanıt). Vitrin storefront-js-script; yönetim admin-iframe.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

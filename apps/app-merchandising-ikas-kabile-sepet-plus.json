@@ -1,0 +1,75 @@
+{
+  "id": "app-merchandising-ikas-kabile-sepet-plus",
+  "kategori": "merchandising",
+  "varyant": "ikas-kabile-sepet-plus",
+  "scope": "in-flow",
+  "amac": "AI ile her sepete özel ürün önererek sepet ortalamasını artırır.",
+  "sorun": "Sepette kişiselleştirilmiş upsell; kart açıklaması sepete özel ürün önerisi vaat eder.",
+  "link": "https://apps.ikas.com/tr/uygulama/91149ac0-a490-4c8c-858e-2841c6d3b862",
+  "yuzey": [
+    "product_recs",
+    "cart_drawer"
+  ],
+  "entegrasyon": {
+    "shopify": [],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "VIEW_CART",
+    "ADD_TO_CART"
+  ],
+  "ikasSayfa": [
+    "CART",
+    "PRODUCT"
+  ],
+  "ikasLink": "https://apps.ikas.com/tr/uygulama/91149ac0-a490-4c8c-858e-2841c6d3b862",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "admin-iframe",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    },
+    {
+      "name": "oneriler",
+      "source": "DataSource.productList"
+    }
+  ],
+  "actions": [
+    "emit:cart.add"
+  ],
+  "hookNoktalari": [
+    "mount:cart.after",
+    "mount:cartDrawer.belowItems"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "ikas App Store resmi listing (Kabile: Sepet+). Vitrin storefront-js-script; yönetim admin-iframe.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}
