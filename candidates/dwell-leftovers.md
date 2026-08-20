@@ -66,9 +66,9 @@ Karar: onay bekliyor
 ---
 
 ADAY: dwell-hotspot-dialog  
-Gerekçe: Home `product_hotspots` Down Pillow dialog (Add / Choose). `media-lookbook-banner` kapalı kare yazıldı; hotspot tık interact listesinde yok.  
+Gerekçe: Home `product_hotspots` 3 pin. CRO interact: 768/1440 in-section Down Pillow $250 kart; 375 page-level `quick-add-modal` (Size/Density/Add to cart). Şema `media-lookbook-banner` — yeni şema yok.  
 Örnekler: `#…__product_hotspots_HXKqqD`  
-Öneri: leftover — hotspot open yoklandı değil  
+Öneri: leftover kapatıldı (interact PNG var)  
 Karar: onay bekliyor
 
 ---
@@ -133,5 +133,65 @@ Karar: onay bekliyor
 - `/account/login` — auth
 - Checkout / Shop Pay / Buy it now
 - Newsletter Subscribe / contact Submit
-- Quick-add Choose overlay
-- Hotspot dialog tık
+- Quick-add Choose overlay (kart + 375 hotspot)
+- Hotspot 375 = quick-add-modal (1440/768 in-section dialog yazıldı)
+
+---
+
+## CRO tipleri (observation yok — interact icat etmedi)
+
+ADAY: dwell-cro-countdown  
+Gerekçe: Home announcement “SHOP THE BEDROOM EVENT - ON NOW!” — timer yok. `promo-banner-countdown` yok.  
+Örnekler: `#…__header_announcements_pbXTDf`  
+Öneri: leftover — countdown şeması yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: dwell-cro-before-after  
+Gerekçe: Storefront’ta before-after / image-compare yok.  
+Öneri: leftover — `before-after-slider` yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: dwell-cro-bundle  
+Gerekçe: HTML’de tek “bundle” string (tema JS). Ürün bundle / FBT section yok.  
+Öneri: leftover — `commerce-tools-products-bundle` yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: dwell-cro-comparison  
+Gerekçe: Compare table / drawer yok.  
+Öneri: leftover — `comparison-quick-table` yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: dwell-cro-quiz  
+Gerekçe: Product finder / quiz yok.  
+Öneri: leftover — `product-finder-quiz` yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: dwell-cro-testimonial  
+Gerekçe: About hero `★★★★★ “Perfect color and texture.” VOGUE` — tek kare, ok yok. Mevcut `hero-slideshow`. `testimonial-quote-carousel` icat edilmedi.  
+Örnekler: `/pages/about-us` `#…__hero_HRGffr`  
+Öneri: leftover — alıntı hero  
+Karar: onay bekliyor
+
+---
+
+ADAY: dwell-cro-shop-the-feed  
+Gerekçe: UGC / Instagram feed yok. Shop-the-look = `media-lookbook-banner` (hotspot interact yazıldı).  
+Öneri: leftover — `media-shop-the-feed` yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: dwell-cro-scrolling-gallery  
+Gerekçe: `media-scrolling-gallery` yok. En yakın: home product_list slider + collection Accessories slider (changed PNG).  
+Öneri: leftover — media gallery şeması yok  
+Karar: onay bekliyor

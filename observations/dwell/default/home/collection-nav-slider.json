@@ -8,12 +8,65 @@
   "selector": "#shopify-section-template--20640022003901__collection_list_XaY9C3",
   "evidenceSlug": "collection-nav-slider",
   "evidence": [
+    "evidence/dwell/default/home/collection-nav-slider.1440.png",
     "evidence/dwell/default/home/collection-nav-slider.375.png",
     "evidence/dwell/default/home/collection-nav-slider.768.png",
-    "evidence/dwell/default/home/collection-nav-slider.1440.png"
+    "evidence/dwell/default/home/collection-nav-slider.changed.slippers.375.png",
+    "evidence/dwell/default/home/collection-nav-slider.initial.robes.1440.png",
+    "evidence/dwell/default/home/collection-nav-slider.initial.robes.375.png",
+    "evidence/dwell/default/home/collection-nav-slider.initial.robes.768.png"
   ],
   "notlar": "COMPLETE YOUR HOME WITH Accessories. Robes / Slippers / Throws / Candles / Bath mats. slideshow-component + ok.",
-  "delta": "Horizon collection_list slider. Home image-cards’tan ayrı instance.",
+  "delta": "Horizon collection_list slider. Home image-cards’tan ayrı instance. 375 Next → Slippers; 768/1440 beş kart sığar, ok 0px.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-dwell-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20640022003901__collection_list_XaY9C3",
+      "capture": true,
+      "etiket": "robes",
+      "not": "İlk kart Robes. Koleksiyon <a> tıklanmaz."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--20640022003901__collection_list_XaY9C3 .slideshow-control--next",
+      "value": 1200,
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "etiket": "slippers",
+      "not": "375 Next slide — Slippers öne. URL home."
+    }
+  ],
+  "stateFindings": {
+    "initial": "COMPLETE YOUR HOME WITH Accessories. 375: Robes + Slippers kenarda. 768/1440 beş kart: Robes / Slippers / Throws / Candles / Bath mats. 768/1440 ok 0px.",
+    "changed": "375 Next: Slippers önde + Throws kenarda; iki yön ok. URL home."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "768/1440 Next slide 0×0 — beş kart bir karede. Yalnız 375 kaydı."
+    }
+  ],
+  "interactionNote": "Kart <a> tıklanmadı (koleksiyona kaçar). media-scrolling-gallery icat edilmedi.",
   "capture": {
     "url": "https://theme-dwell-demo.myshopify.com/",
     "viewports": [
@@ -22,7 +75,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T11:46:08.282Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T17:50:06.234Z"
   }
 }
