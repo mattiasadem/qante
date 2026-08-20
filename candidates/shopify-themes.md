@@ -73,7 +73,7 @@ DTC marka listesi: [`dtc-69-brands.md`](./dtc-69-brands.md)
 | 60 |  | [Streamline](https://themes.shopify.com/themes/streamline) | Archetype | $420 | https://themes.shopify.com/themes/streamline | streamline | View demo only. |
 | 61 |  | [Local](https://themes.shopify.com/themes/local) | Krown | $380 | https://themes.shopify.com/themes/local | local | View demo only. |
 | 62 |  | [Drop](https://themes.shopify.com/themes/drop) | We are Underground | $180 | https://themes.shopify.com/themes/drop | drop | View demo only. |
-| 63 |  | [Ignite](https://themes.shopify.com/themes/ignite) | Benchmark | $380 | https://themes.shopify.com/themes/ignite | ignite | View demo only. |
+| 63 | done | [Ignite](https://themes.shopify.com/themes/ignite) | Benchmark | $380 | https://benchmark-electronics-demo.myshopify.com/ | ignite | resmi Electronics / Ignite Tech demo · Ignite 2.6.1 · theme_store_id null · 64 obs / 191 PNG · 0 yeni şema |
 | 64 |  | [Honey](https://themes.shopify.com/themes/honey) | Archer Commerce | $400 | https://themes.shopify.com/themes/honey | honey | View demo only. |
 | 65 |  | [Stockist](https://themes.shopify.com/themes/stockist) | Noord | $320 | https://themes.shopify.com/themes/stockist | stockist | View demo only. |
 | 66 |  | [Exhibit](https://themes.shopify.com/themes/exhibit) | Switch | $350 | https://themes.shopify.com/themes/exhibit | exhibit | View demo only. |
