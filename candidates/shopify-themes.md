@@ -76,7 +76,7 @@ DTC marka listesi: [`dtc-69-brands.md`](./dtc-69-brands.md)
 | 63 |  | [Ignite](https://themes.shopify.com/themes/ignite) | Benchmark | $380 | https://themes.shopify.com/themes/ignite | ignite | View demo only. |
 | 64 |  | [Honey](https://themes.shopify.com/themes/honey) | Archer Commerce | $400 | https://themes.shopify.com/themes/honey | honey | View demo only. |
 | 65 |  | [Stockist](https://themes.shopify.com/themes/stockist) | Noord | $320 | https://themes.shopify.com/themes/stockist | stockist | View demo only. |
-| 66 |  | [Exhibit](https://themes.shopify.com/themes/exhibit) | Switch | $350 | https://themes.shopify.com/themes/exhibit | exhibit | View demo only. |
+| 66 | done | [Exhibit](https://themes.shopify.com/themes/exhibit) | Switch | $350 | https://exhibit-theme-preset-1.myshopify.com/ | exhibit | Resmi preset 1 · PR draft · 23 obs / 68 PNG. |
 | 67 |  | [Alchemy](https://themes.shopify.com/themes/alchemy) | Clean Canvas | — | https://themes.shopify.com/themes/alchemy | alchemy | View demo only. |
 | 68 |  | [Beautify](https://themes.shopify.com/themes/beautify) | Clean Canvas | — | https://themes.shopify.com/themes/beautify | beautify | View demo only. |
 | 69 |  | [Boost](https://themes.shopify.com/themes/boost) | Clean Canvas | $380 | https://themes.shopify.com/themes/boost | boost | View demo only. |
