@@ -1,0 +1,88 @@
+{
+  "id": "app-capture-age-verification-18",
+  "kategori": "capture",
+  "varyant": "age-verification-18",
+  "scope": "overlay",
+  "amac": "Ülkeye göre 18+ yaş kapısı pop-up’ı göstererek kısıtlı ürün satışını vitrinde doğrulamak.",
+  "sorun": "Listing AGE+ : Age Verification PopUp (HTTP 200). Multi-country / multilingual popup. capture overlay; e-posta kovalama değil.",
+  "link": "https://apps.shopify.com/age-verification-18",
+  "yuzey": [
+    "popup_modal"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "COMPLETE_CHECKOUT"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CATEGORY",
+    "PRODUCT",
+    "CART",
+    "CHECKOUT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_products",
+    "read_orders"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/order/created"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "minYas": {
+      "tip": "number",
+      "zorunlu": false,
+      "not": "Listing 16/18/19/20/21+ ülke kuralı vaat ediyor"
+    },
+    "ctaEtiket": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 40
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Storefront script çok ülkeli yaş popup’ı. Sipariş kanıtı order webhook ile. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}
