@@ -4,7 +4,7 @@ QANTE Theme Store takibi: hangi resmi demo / canlı mağaza walk edildi.
 Durum: `done` = yapılmış (main’de resmi 3vp) · `in progress` = yapılıyor (açık PR / cloud agent) · boş = kuyruk.  
 *Kesim:* 18 Ağustos 2026 (Berlin). Viewer: **Listeler** sekmesi.
 
-Shopify Theme Store 58/70 done on main; 0 in progress; 12 View-demo-only remaining (rows 59–70).  
+Shopify Theme Store 59/70 done on main; 0 in progress; 11 View-demo-only remaining (rows 59–60, 62–70).  
 Paid batch 10/10 and the next-10-after-Expanse are on main. No walking PRs remain.
 
 DTC marka listesi: [`dtc-69-brands.md`](./dtc-69-brands.md)
@@ -71,7 +71,7 @@ DTC marka listesi: [`dtc-69-brands.md`](./dtc-69-brands.md)
 | 58 | done | [Fabric](https://themes.shopify.com/themes/fabric) | Shopify | Free | https://theme-fabric-demo.myshopify.com/ | fabric | Fabric 3.4.0 · Horizon ailesi 2026 · 31 obs / 110 PNG. PR #181 squash `18145eb7`. theme_store_id 3622. |
 | 59 |  | [Enterprise](https://themes.shopify.com/themes/enterprise) | Clean Canvas | $420 | https://themes.shopify.com/themes/enterprise | enterprise | View demo only. |
 | 60 |  | [Streamline](https://themes.shopify.com/themes/streamline) | Archetype | $420 | https://themes.shopify.com/themes/streamline | streamline | View demo only. |
-| 61 |  | [Local](https://themes.shopify.com/themes/local) | Krown | $380 | https://themes.shopify.com/themes/local | local | View demo only. |
+| 61 | done | [Local](https://themes.shopify.com/themes/local) | Krown | $380 | https://local-theme-main.myshopify.com/ | local | Resmi Local Theme Light demo. Local 4.2.0 · 45 obs / 154 PNG. PR draft. |
 | 62 |  | [Drop](https://themes.shopify.com/themes/drop) | We are Underground | $180 | https://themes.shopify.com/themes/drop | drop | View demo only. |
 | 63 |  | [Ignite](https://themes.shopify.com/themes/ignite) | Benchmark | $380 | https://themes.shopify.com/themes/ignite | ignite | View demo only. |
 | 64 |  | [Honey](https://themes.shopify.com/themes/honey) | Archer Commerce | $400 | https://themes.shopify.com/themes/honey | honey | View demo only. |
