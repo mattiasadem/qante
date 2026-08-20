@@ -1,0 +1,60 @@
+{
+  "evidence": [],
+  "capture": {
+    "url": "https://www.vivobarefoot.com/us/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "blocked-datadome",
+    "updatedAt": "2026-08-15T23:45:00.000Z",
+    "note": "Resmi 3vp bu egress’ten alınamadı: DataDome 403 (captcha-delivery). capture-observation.mjs / capture-interaction.mjs / computerUse aynı IP’yi kesti. Kanıt uydurulmadı."
+  },
+  "observationId": "vivobarefoot.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "vivobarefoot",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.vivobarefoot.com/us/",
+  "selector": "nav.vivo-main-menu",
+  "evidenceSlug": "global-menu-drawer",
+  "captureMode": "viewport",
+  "prepareClick": "a.open-nav.nav-toggle",
+  "notlar": "Mobil hamburger a.open-nav.nav-toggle. Quicknav: Mens / Womens / Kids / Shop All / Explore. close-wrapper + mobile-logo.",
+  "delta": "Shopify.theme yok (gözlendi, uydurulmadı). Magento 2 / Adobe Commerce Cloud (CNAME prod.magentocloud.map.fastly.net). Tema frontend/vivo/theme-frontend-vivo · body pl-thm-vivo pl-thm-vivo-theme-frontend-vivo · static/version1786509155. schema_name / schema_version / theme_store_id yok. Aynı nav masaüstü mega. 1440’ta hamburger beklenmez. Açık kare alınamadı.",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://www.vivobarefoot.com/us/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "a.open-nav.nav-toggle",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "viewports": [
+        "375",
+        "768"
+      ]
+    }
+  ],
+  "stateFindings": {
+    "open": "Koşulamadı. HTML: mobile-only quicknav + close."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "DataDome — hamburger karesi yok. 1440 N/A (mega ayrı)."
+    }
+  ],
+  "interactionNote": "Resmi 3vp bu egress’ten alınamadı: DataDome 403 (captcha-delivery). capture-observation.mjs / capture-interaction.mjs / computerUse aynı IP’yi kesti. Kanıt uydurulmadı."
+}
