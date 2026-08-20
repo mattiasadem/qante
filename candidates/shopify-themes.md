@@ -4,8 +4,8 @@ QANTE Theme Store takibi: hangi resmi demo / canlı mağaza walk edildi.
 Durum: `done` = yapılmış (main’de resmi 3vp) · `in progress` = yapılıyor (açık PR / cloud agent) · boş = kuyruk.  
 *Kesim:* 18 Ağustos 2026 (Berlin). Viewer: **Listeler** sekmesi.
 
-Shopify Theme Store 58/70 done on main; 0 in progress; 12 View-demo-only remaining (rows 59–70).  
-Paid batch 10/10 and the next-10-after-Expanse are on main. No walking PRs remain.
+Shopify Theme Store 59/70 done on main+branch; 0 in progress; 11 View-demo-only remaining (rows 60–70).  
+Paid batch 10/10 and the next-10-after-Expanse are on main. Enterprise row 59 on draft PR branch.
 
 DTC marka listesi: [`dtc-69-brands.md`](./dtc-69-brands.md)
 
@@ -69,7 +69,7 @@ DTC marka listesi: [`dtc-69-brands.md`](./dtc-69-brands.md)
 | 56 | done | [Pitch](https://themes.shopify.com/themes/pitch) | Shopify | Free | https://theme-pitch-demo.myshopify.com/ | pitch | Pitch 3.4.0 · Horizon ailesi 2026 · 34 obs / 120 PNG. PR #179 squash `300913d0`. theme_store_id 3620. |
 | 57 | done | [Dwell](https://themes.shopify.com/themes/dwell) | Shopify | Free | https://theme-dwell-demo.myshopify.com/ | dwell | dwell-100-0-0 · Horizon ailesi 2026 · 36 obs / 126 PNG. PR #180 squash `d10bb703`. theme_store_id null. |
 | 58 | done | [Fabric](https://themes.shopify.com/themes/fabric) | Shopify | Free | https://theme-fabric-demo.myshopify.com/ | fabric | Fabric 3.4.0 · Horizon ailesi 2026 · 31 obs / 110 PNG. PR #181 squash `18145eb7`. theme_store_id 3622. |
-| 59 |  | [Enterprise](https://themes.shopify.com/themes/enterprise) | Clean Canvas | $420 | https://themes.shopify.com/themes/enterprise | enterprise | View demo only. |
+| 59 | done | [Enterprise](https://themes.shopify.com/themes/enterprise) | Clean Canvas | $420 | https://enterprise-theme-digital.myshopify.com/ | enterprise | Resmi Digital preset · Enterprise 2.3.0 · 46 obs / 137 PNG · draft PR. |
 | 60 |  | [Streamline](https://themes.shopify.com/themes/streamline) | Archetype | $420 | https://themes.shopify.com/themes/streamline | streamline | View demo only. |
 | 61 |  | [Local](https://themes.shopify.com/themes/local) | Krown | $380 | https://themes.shopify.com/themes/local | local | View demo only. |
 | 62 |  | [Drop](https://themes.shopify.com/themes/drop) | We are Underground | $180 | https://themes.shopify.com/themes/drop | drop | View demo only. |
