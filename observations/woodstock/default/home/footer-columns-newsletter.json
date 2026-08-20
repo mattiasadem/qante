@@ -8,12 +8,60 @@
   "selector": "#shopify-section-sections--20124662497581__footer",
   "evidenceSlug": "footer-columns-newsletter",
   "evidence": [
+    "evidence/woodstock/default/home/footer-columns-newsletter.1440.png",
     "evidence/woodstock/default/home/footer-columns-newsletter.375.png",
     "evidence/woodstock/default/home/footer-columns-newsletter.768.png",
-    "evidence/woodstock/default/home/footer-columns-newsletter.1440.png"
+    "evidence/woodstock/default/home/footer-columns-newsletter.changed.sirket-akordeon.375.png",
+    "evidence/woodstock/default/home/footer-columns-newsletter.initial.kolonlar.1440.png",
+    "evidence/woodstock/default/home/footer-columns-newsletter.initial.kolonlar.375.png",
+    "evidence/woodstock/default/home/footer-columns-newsletter.initial.kolonlar.768.png"
   ],
   "notlar": "Contact Info Montauk NY / Company / Woodstock Fin. Kolonlar + tel.",
-  "delta": "Newsletter ayrı section. Account/email tıklanmadı.",
+  "delta": "Newsletter ayrı section (lead-capture-newsletter-band). Footer'da input yok. 375 footer-collapse-block accordion.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://woodstock-theme-light.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-sections--20124662497581__footer",
+      "capture": true,
+      "etiket": "kolonlar",
+      "not": "375: Contact Info açık, diğer kolonlar kapalı. 768/1440 kolonlar yan yana."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-sections--20124662497581__footer a.footer-block__collapse-link:has-text('Company')",
+      "value": 900,
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "etiket": "sirket-akordeon",
+      "not": "375 Company açılır — Our Story / Career / Newsroom / Contact Woodstock. Contact Info açık kalır."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Newsletter formu bu section'da yok (ayrı bant). 375: Contact Info açık (Montauk + tel); Company / Find It Fast / Make Money with Us kapalı. 768/1440 dört kolon yan yana.",
+    "changed": "375 Company açık — Our Story, Career Opportunities, Newsroom, Contact Woodstock. Contact Info da açık. 768/1440 accordion yok."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "768/1440 caret medium-hide — kolonlar zaten açık. Newsletter input yok (ayrı bant)."
+    }
+  ],
+  "interactionNote": "Scan opener 0: collapse <a href='#' class='footer-block__collapse-link'>. Account/email tıklanmadı.",
   "capture": {
     "url": "https://woodstock-theme-light.myshopify.com/",
     "viewports": [
@@ -22,7 +70,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T10:58:18.196Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T17:17:29.303Z"
   }
 }

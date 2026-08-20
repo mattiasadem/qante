@@ -8,12 +8,100 @@
   "selector": "#shopify-section-template--20124663021869__shoppable_reels_zgNqwB",
   "evidenceSlug": "media-shop-the-feed",
   "evidence": [
+    "evidence/woodstock/default/home/media-shop-the-feed.1440.png",
     "evidence/woodstock/default/home/media-shop-the-feed.375.png",
     "evidence/woodstock/default/home/media-shop-the-feed.768.png",
-    "evidence/woodstock/default/home/media-shop-the-feed.1440.png"
+    "evidence/woodstock/default/home/media-shop-the-feed.changed.sonraki-reel.1440.png",
+    "evidence/woodstock/default/home/media-shop-the-feed.changed.sonraki-reel.375.png",
+    "evidence/woodstock/default/home/media-shop-the-feed.changed.sonraki-reel.768.png",
+    "evidence/woodstock/default/home/media-shop-the-feed.initial.ilk-reel.1440.png",
+    "evidence/woodstock/default/home/media-shop-the-feed.initial.ilk-reel.375.png",
+    "evidence/woodstock/default/home/media-shop-the-feed.initial.ilk-reel.768.png"
   ],
   "notlar": "shoppable_reels. Tech Reels, Real Deals + Phone Generation 3 kartları.",
-  "delta": "Video reel + ürün kartı. media-shop-the-feed reuse.",
+  "delta": "Video reel + ürün kartı. media-shop-the-feed reuse. Play video leftover.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://woodstock-theme-light.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20124663021869__shoppable_reels_zgNqwB",
+      "capture": true,
+      "etiket": "ilk-reel",
+      "not": "Solda Phone Generation 3 $599. Prev disabled."
+    },
+    {
+      "state": "changed",
+      "action": "drag",
+      "selector": "#shopify-section-template--20124663021869__shoppable_reels_zgNqwB .slider__slide",
+      "value": "-180,0",
+      "viewports": [
+        "375"
+      ],
+      "capture": false,
+      "not": "375 next tık scrollLeft 0 bırakır — kartı sola sürükle"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 800,
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "etiket": "sonraki-reel",
+      "not": "375 drag sonrası Camera 360 / sonraki reel"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Slider-template--20124663021869__shoppable_reels_zgNqwB-next-button",
+      "value": 2000,
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "capture": false,
+      "not": "Slide right"
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20124663021869__shoppable_reels_zgNqwB",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "sonraki-reel",
+      "not": "İlk kart sola; Camera 360 öne. 1440 bir kart kayar."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Tech Reels, Real Deals. Solda Phone Generation 3 $599 + play poster. Sağ ok 42×42; sol ok disabled.",
+    "changed": "Phone Generation 3 sola çıkar; Camera 360 degree $249 öne gelir. 768/1440 Slide right; 375 drag (next tık scrollLeft 0)."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "ikinci-gorsel = reel + ürün thumb; ekstra hover reveal yok."
+    },
+    {
+      "state": "open",
+      "sebep": "Load video / ürün <a> PDP — play leftover, link tıklanmadı."
+    }
+  ],
+  "interactionNote": "Scan changer 0; Slide right opener. 375 next tık scrollLeft 0 — drag. Ürün linki navigate / play leftover.",
   "capture": {
     "url": "https://woodstock-theme-light.myshopify.com/",
     "viewports": [
@@ -22,7 +110,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T10:58:55.783Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T17:13:56.141Z"
   }
 }

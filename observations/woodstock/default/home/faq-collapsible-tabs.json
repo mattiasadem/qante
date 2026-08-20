@@ -8,12 +8,54 @@
   "selector": "#shopify-section-template--20124663021869__rich_collapsible_content_xjTXqN",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/woodstock/default/home/faq-collapsible-tabs.1440.png",
     "evidence/woodstock/default/home/faq-collapsible-tabs.375.png",
     "evidence/woodstock/default/home/faq-collapsible-tabs.768.png",
-    "evidence/woodstock/default/home/faq-collapsible-tabs.1440.png"
+    "evidence/woodstock/default/home/faq-collapsible-tabs.changed.iade-sorusu.1440.png",
+    "evidence/woodstock/default/home/faq-collapsible-tabs.changed.iade-sorusu.375.png",
+    "evidence/woodstock/default/home/faq-collapsible-tabs.changed.iade-sorusu.768.png",
+    "evidence/woodstock/default/home/faq-collapsible-tabs.initial.ilk-hal.1440.png",
+    "evidence/woodstock/default/home/faq-collapsible-tabs.initial.ilk-hal.375.png",
+    "evidence/woodstock/default/home/faq-collapsible-tabs.initial.ilk-hal.768.png"
   ],
   "notlar": "Have a question? / Our common questions. İlk soru açık: Is free shipping available?",
-  "delta": "rich_collapsible_content. FAQ sayfası 404 — home instance.",
+  "delta": "rich_collapsible_content. FAQ sayfası 404 — home instance. Birden fazla details aynı anda açık.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://woodstock-theme-light.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--20124663021869__rich_collapsible_content_xjTXqN",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "İlk soru Is free shipping available? açık; diğerleri kapalı."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-AZXJCYTBSaWN4T3NUV__accordion_row_9UGVHX-template--20124663021869__rich_collapsible_content_xjTXqN > summary",
+      "value": 900,
+      "capture": true,
+      "etiket": "iade-sorusu",
+      "not": "What are your return policies? açık — 30 day money back. İlk soru da açık kalır."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Have a question? / Our common questions. 10 accordion. Is free shipping available? açık — Yes, free ground shipping… Shipping and Delivery link. Diğerleri + kapalı.",
+    "changed": "What are your return policies? açık — We offer a 30 day money back guarantee… İlk kutu da açık kaldı (çoklu açık)."
+  },
+  "missingStates": [],
+  "interactionNote": "details#id > summary. Scan 10 opener'ı mega saydı — accordion. Shipping and Delivery <a> tıklanmadı.",
   "capture": {
     "url": "https://woodstock-theme-light.myshopify.com/",
     "viewports": [
@@ -22,7 +64,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T10:57:42.950Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T17:03:05.618Z"
   }
 }
