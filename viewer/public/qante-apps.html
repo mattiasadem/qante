@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QANTE Appler</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/qante-apps.css" />
+</head>
+<body class="apps-page">
+  <div class="topbar">
+    <div class="topbar-row">
+      <div class="brand">
+        <h1>QANTE Appler</h1>
+        <span class="ver" id="apps-count"></span>
+      </div>
+      <div class="controls">
+        <input id="q" type="search" placeholder="Ara (/)  id, varyant, amaç…" aria-label="Ara" />
+        <a class="badge-health" href="/" title="Tema envanterine dön">Envanter</a>
+        <button type="button" class="primary" id="reload">Yenile</button>
+      </div>
+    </div>
+    <div class="apps-filters" id="filters" aria-label="Filtreler">
+      <div class="apps-filter-row">
+        <span class="apps-filter-label">Kategori</span>
+        <div class="apps-chips" id="kategori-chips"></div>
+      </div>
+      <div class="apps-filter-row">
+        <span class="apps-filter-label">Scope</span>
+        <div class="apps-chips" id="scope-chips"></div>
+      </div>
+    </div>
+  </div>
+
+  <main class="apps-main" id="main">
+    <p class="empty">Yükleniyor…</p>
+  </main>
+
+  <script type="module" src="/qante-apps.js"></script>
+</body>
+</html>

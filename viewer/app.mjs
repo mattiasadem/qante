@@ -197,6 +197,10 @@ export function handleRequest(req, res) {
       return serveStatic(res, path.join(PUBLIC_DIR, "index.html"));
     }
 
+    if (p === "/qante-apps" || p === "/qante-apps/" || p === "/qante-apps.html") {
+      return serveStatic(res, path.join(PUBLIC_DIR, "qante-apps.html"));
+    }
+
     let file = safeJoin(PUBLIC_DIR, p);
     if (!file || !fs.existsSync(file) || fs.statSync(file).isDirectory()) {
       file = safeJoin(ROOT, p);
