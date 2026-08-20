@@ -4,8 +4,8 @@ QANTE Theme Store takibi: hangi resmi demo / canlı mağaza walk edildi.
 Durum: `done` = yapılmış (main’de resmi 3vp) · `in progress` = yapılıyor (açık PR / cloud agent) · boş = kuyruk.  
 *Kesim:* 18 Ağustos 2026 (Berlin). Viewer: **Listeler** sekmesi.
 
-Shopify Theme Store 58/70 done on main; 0 in progress; 12 View-demo-only remaining (rows 59–70).  
-Paid batch 10/10 and the next-10-after-Expanse are on main. No walking PRs remain.
+Shopify Theme Store 58/70 done on main; row 67 Alchemy done on branch (draft PR, 41 obs · 122 PNG); 11 View-demo-only remaining (rows 59–66, 68–70).  
+Paid batch 10/10 and the next-10-after-Expanse are on main.
 
 DTC marka listesi: [`dtc-69-brands.md`](./dtc-69-brands.md)
 
@@ -77,7 +77,7 @@ DTC marka listesi: [`dtc-69-brands.md`](./dtc-69-brands.md)
 | 64 |  | [Honey](https://themes.shopify.com/themes/honey) | Archer Commerce | $400 | https://themes.shopify.com/themes/honey | honey | View demo only. |
 | 65 |  | [Stockist](https://themes.shopify.com/themes/stockist) | Noord | $320 | https://themes.shopify.com/themes/stockist | stockist | View demo only. |
 | 66 |  | [Exhibit](https://themes.shopify.com/themes/exhibit) | Switch | $350 | https://themes.shopify.com/themes/exhibit | exhibit | View demo only. |
-| 67 |  | [Alchemy](https://themes.shopify.com/themes/alchemy) | Clean Canvas | — | https://themes.shopify.com/themes/alchemy | alchemy | View demo only. |
+| 67 | done | [Alchemy](https://themes.shopify.com/themes/alchemy) | Clean Canvas | — | https://alchemy-theme-sharp.myshopify.com/ | alchemy | Resmi Sharp preset. 41 obs · 122 PNG · draft PR. |
 | 68 |  | [Beautify](https://themes.shopify.com/themes/beautify) | Clean Canvas | — | https://themes.shopify.com/themes/beautify | beautify | View demo only. |
 | 69 |  | [Boost](https://themes.shopify.com/themes/boost) | Clean Canvas | $380 | https://themes.shopify.com/themes/boost | boost | View demo only. |
 | 70 |  | [Startup](https://themes.shopify.com/themes/startup) | Pixel Union | — | https://themes.shopify.com/themes/startup | startup | View demo only. |
