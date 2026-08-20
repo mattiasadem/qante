@@ -1,0 +1,75 @@
+{
+  "id": "app-merchandising-ikas-giftcart",
+  "kategori": "merchandising",
+  "varyant": "ikas-giftcart",
+  "scope": "overlay",
+  "amac": "Hedef kargo barı, sepette hediye seçimi ve sepet istatistikleri ekler.",
+  "sorun": "Sepeti hediye ve kargo eşiği ile zenginleştirmek; kart açıklaması kargo barı + hediye seçimi vaat eder.",
+  "link": "https://apps.ikas.com/tr/uygulama/aeef46fd-324f-46e4-8425-a9f589c74637",
+  "yuzey": [
+    "cart_drawer",
+    "free_shipping_bar"
+  ],
+  "entegrasyon": {
+    "shopify": [],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "VIEW_CART",
+    "ADD_TO_CART",
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "CART",
+    "PRODUCT",
+    "INDEX"
+  ],
+  "ikasLink": "https://apps.ikas.com/tr/uygulama/aeef46fd-324f-46e4-8425-a9f589c74637",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "admin-iframe",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "emit:cart.add",
+    "listen:cart.updated"
+  ],
+  "hookNoktalari": [
+    "mount:cart.after",
+    "mount:cartDrawer.belowItems",
+    "mount:announcement.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "ikas App Store resmi listing (GiftCart - Sepetinizi Özelleştirin). Vitrin storefront-js-script; yönetim admin-iframe.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

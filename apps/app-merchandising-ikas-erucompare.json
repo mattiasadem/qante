@@ -1,0 +1,68 @@
+{
+  "id": "app-merchandising-ikas-erucompare",
+  "kategori": "merchandising",
+  "varyant": "ikas-erucompare",
+  "scope": "in-flow",
+  "amac": "Ürünleri yan yana karşılaştırarak daha hızlı ve doğru satın almayı sağlar.",
+  "sorun": "Karşılaştırma tablosu ile karar süresini kısaltmak; kart açıklaması yan yana ürün kıyası vaat eder.",
+  "link": "https://apps.ikas.com/tr/uygulama/2dba5b7b-13d2-4e68-a96e-f0f4590420f9",
+  "yuzey": [],
+  "entegrasyon": {
+    "shopify": [],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "VIEW_CATEGORY"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CATEGORY",
+    "CUSTOM"
+  ],
+  "ikasLink": "https://apps.ikas.com/tr/uygulama/2dba5b7b-13d2-4e68-a96e-f0f4590420f9",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "admin-iframe",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "ikas App Store resmi listing (EruCompare - Ürün Karşılaştırma). Vitrin storefront-js-script; yönetim admin-iframe.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

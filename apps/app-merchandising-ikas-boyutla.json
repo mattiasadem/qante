@@ -1,0 +1,67 @@
+{
+  "id": "app-merchandising-ikas-boyutla",
+  "kategori": "merchandising",
+  "varyant": "ikas-boyutla",
+  "scope": "in-flow",
+  "amac": "Müşteri kendi ölçüsünü girer, fiyatı hesaplar ve sepete ekler.",
+  "sorun": "Ölçüye göre satılan üründe anlık fiyat ve sepete ekleme; kart açıklaması ölçü-fiyat-sepet akışı vaat eder.",
+  "link": "https://apps.ikas.com/tr/uygulama/6cb1d2a8-e079-416a-b87e-5c42dd6495a8",
+  "yuzey": [
+    "popup_modal"
+  ],
+  "entegrasyon": {
+    "shopify": [],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT"
+  ],
+  "ikasLink": "https://apps.ikas.com/tr/uygulama/6cb1d2a8-e079-416a-b87e-5c42dd6495a8",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "admin-iframe",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "emit:cart.add"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "ikas App Store resmi listing (Boyutla). Vitrin storefront-js-script; yönetim admin-iframe.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "id": "app-merchandising-ikas-bundleup",
+  "kategori": "merchandising",
+  "varyant": "ikas-bundleup",
+  "scope": "in-flow",
+  "amac": "Akıllı ürün paketleri ile sepet tutarını ve satışları artırır.",
+  "sorun": "PDP/sepet üzerinde paket önerisi; kart açıklaması akıllı ürün paketleri vaat eder.",
+  "link": "https://apps.ikas.com/tr/uygulama/0f44db61-b66f-4bef-9d82-8f0daef72d78",
+  "yuzey": [
+    "product_recs"
+  ],
+  "entegrasyon": {
+    "shopify": [],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "VIEW_CART",
+    "ADD_TO_CART"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "https://apps.ikas.com/tr/uygulama/0f44db61-b66f-4bef-9d82-8f0daef72d78",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "admin-iframe",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "oneriler",
+      "source": "DataSource.productList"
+    },
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "emit:cart.add"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:cart.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "ikas App Store resmi listing (BundleUp). Vitrin storefront-js-script; yönetim admin-iframe.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}
