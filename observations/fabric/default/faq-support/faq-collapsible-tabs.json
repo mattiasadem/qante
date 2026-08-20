@@ -8,12 +8,45 @@
   "selector": "#shopify-section-template--19138330787893__main",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/fabric/default/faq-support/faq-collapsible-tabs.1440.png",
     "evidence/fabric/default/faq-support/faq-collapsible-tabs.375.png",
     "evidence/fabric/default/faq-support/faq-collapsible-tabs.768.png",
-    "evidence/fabric/default/faq-support/faq-collapsible-tabs.1440.png"
+    "evidence/fabric/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.1440.png",
+    "evidence/fabric/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.375.png",
+    "evidence/fabric/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.768.png"
   ],
   "notlar": "FAQ. Beş Q&A düz metin: return / final sale / when order / where made / shipping. details/accordion yok.",
   "delta": "Horizon page main. Collapsible değil. Fit guide / Materials & care aynı template id, leftover.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-fabric-demo.myshopify.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19138330787893__main",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Beş Q&A düz metin — accordion yok"
+    }
+  ],
+  "stateFindings": {
+    "initial": "FAQ başlık. Beş Q&A düz metin, hepsi görünür: return policy / final sale / when order / where made / shipping. +/− ikon, details, accordion yok. 375/768/1440 aynı yığın."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan 1440/375: 0 opener/changer. Yoklama details=0 button=0. changed zorlanmadı. Şema emit:accordion.toggle duruyor — bu instance düz metin.",
   "capture": {
     "url": "https://theme-fabric-demo.myshopify.com/pages/faq",
     "viewports": [
@@ -22,7 +55,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T11:59:07.924Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T17:46:32.713Z"
   }
 }

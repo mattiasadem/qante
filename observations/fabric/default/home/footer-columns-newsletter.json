@@ -8,12 +8,45 @@
   "selector": "#shopify-section-sections--19138330886197__section_YWC48a",
   "evidenceSlug": "footer-columns-newsletter",
   "evidence": [
+    "evidence/fabric/default/home/footer-columns-newsletter.1440.png",
     "evidence/fabric/default/home/footer-columns-newsletter.375.png",
     "evidence/fabric/default/home/footer-columns-newsletter.768.png",
-    "evidence/fabric/default/home/footer-columns-newsletter.1440.png"
+    "evidence/fabric/default/home/footer-columns-newsletter.initial.ilk-hal.1440.png",
+    "evidence/fabric/default/home/footer-columns-newsletter.initial.ilk-hal.375.png",
+    "evidence/fabric/default/home/footer-columns-newsletter.initial.ilk-hal.768.png"
   ],
   "notlar": "Email address + ok. Dört kolon: Shop (Search/Womenswear/Menswear/Sale) · Customer care (FAQ/Fit guide/Contact us) · About us (Our story/Blog/Materials & care) · Connect (Instagram/TikTok/Youtube/Facebook).",
   "delta": "Horizon footer-group generic section + email-signup. Submit yok. Sibling footer_utilities leftover. PII stop.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-fabric-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-sections--19138330886197__section_YWC48a",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Email + dört kolon açık. PII — email doldurulmadı, ok/submit yok"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Email address + ok. Dört kolon açık: Shop (Search/Womenswear/Menswear/Sale) · Customer care (FAQ/Fit guide/Contact us) · About us (Our story/Blog/Materials & care) · Connect (Instagram/TikTok/Youtube/Facebook). 375 istif; 1440 dört kolon. Email boş."
+  },
+  "missingStates": [],
+  "interactionNote": "PII stop: email fill/submit yok. Scan details>summary'yi mega sandı — yoklama 375/1440 details.open=true, tık kapamadı. open/changed zorlanmadı.",
   "capture": {
     "url": "https://theme-fabric-demo.myshopify.com/",
     "viewports": [
@@ -22,7 +55,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T11:51:29.519Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T17:47:18.975Z"
   }
 }

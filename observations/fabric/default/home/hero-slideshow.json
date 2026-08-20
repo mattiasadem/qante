@@ -8,12 +8,45 @@
   "selector": "#shopify-section-template--19138330460213__hero_HPEeBq",
   "evidenceSlug": "hero-slideshow",
   "evidence": [
+    "evidence/fabric/default/home/hero-slideshow.1440.png",
     "evidence/fabric/default/home/hero-slideshow.375.png",
     "evidence/fabric/default/home/hero-slideshow.768.png",
-    "evidence/fabric/default/home/hero-slideshow.1440.png"
+    "evidence/fabric/default/home/hero-slideshow.initial.ilk-hal.1440.png",
+    "evidence/fabric/default/home/hero-slideshow.initial.ilk-hal.375.png",
+    "evidence/fabric/default/home/hero-slideshow.initial.ilk-hal.768.png"
   ],
   "notlar": "Full-bleed hero. Shop now. Tek kare; model/ürün görseli. slideshow-component yok.",
   "delta": "Fabric hero. Tek kare, ok/dot yok. Shopify.theme: name **Updated copy of Fabric demo store 3.2.0** · schema_name **Fabric** · schema_version **3.4.0** · theme_store_id **3622** · role main · id 145077665845 · shop se-horizon5-en-624k.myshopify.com",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-fabric-demo.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19138330460213__hero_HPEeBq",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Tek kare hero — ok/dot yok. Shop now tıklanmaz"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Tek kare: büyük beyaz Fabric + altta Shop now. Araçtaki model. Ok/dot/slideshow-component yok. 375 hamburger+Search; 1440 Womenswear/Menswear/Home header üstte."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan 1440/375: 0 changer. Shop now tıklanmadı (navigate). changed zorlanmadı.",
   "capture": {
     "url": "https://theme-fabric-demo.myshopify.com/",
     "viewports": [
@@ -22,7 +55,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T11:47:15.944Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T17:48:17.136Z"
   }
 }

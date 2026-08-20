@@ -126,3 +126,27 @@ Gerekçe: Video hero, about metin, blog post, contact form Horizon `section.liqu
 Örnekler: `#…__section_8zY7P4` · blog-post `#…__section`  
 Öneri: leftover — generic wrapper, şema yok  
 Karar: onay bekliyor
+
+---
+
+## CRO leftover interact (2026-08-19)
+
+Home / PDP / PLP / our-story / FAQ / contact / fit-guide / materials-care / blog / sale / search taranıldı. Şema icat edilmedi.
+
+| schemaId | Durum |
+|---|---|
+| `faq-collapsible-tabs` | obs var — düz Q&A, accordion yok · interact `initial` |
+| `lead-capture-form` | obs var — interact `initial` · `input` PII stop |
+| `footer-columns-newsletter` | obs var — interact `initial` · email fill yok · kolon details kapanmıyor |
+| `hero-slideshow` | obs var (home + our-story) — tek kare · interact `initial` |
+| `promo-scrolling-marquee` | obs var (home + our-story) — interact `initial` |
+| `media-lookbook-slider` | obs var — interact `initial` + `changed` (Next look) · hotspot yok |
+| `before-after-slider` | yok — storefront’ta section yok |
+| `commerce-tools-products-bundle` | yok |
+| `promo-banner-countdown` | yok |
+| `comparison-quick-table` | yok (`/pages/fit-guide` gövde “compare” kelimesi; tablo yok) |
+| `product-finder-quiz` | yok |
+| `testimonial-quote-carousel` | yok |
+| `media-shop-the-feed` | yok (“Shop the collection” editorial CTA; UGC/reel yok) |
+| `media-scrolling-gallery` | yok — kaydırma lookbook + marquee olarak yazıldı |
+| `lead-capture-newsletter-band` | yok (`footer-columns-newsletter` farklı şema) |

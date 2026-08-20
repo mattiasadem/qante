@@ -8,12 +8,45 @@
   "selector": "#shopify-section-template--19138330951733__hero_CKQJV6",
   "evidenceSlug": "hero-slideshow",
   "evidence": [
+    "evidence/fabric/default/about-brand/hero-slideshow.1440.png",
     "evidence/fabric/default/about-brand/hero-slideshow.375.png",
     "evidence/fabric/default/about-brand/hero-slideshow.768.png",
-    "evidence/fabric/default/about-brand/hero-slideshow.1440.png"
+    "evidence/fabric/default/about-brand/hero-slideshow.initial.ilk-hal.1440.png",
+    "evidence/fabric/default/about-brand/hero-slideshow.initial.ilk-hal.375.png",
+    "evidence/fabric/default/about-brand/hero-slideshow.initial.ilk-hal.768.png"
   ],
   "notlar": "Materials make a difference. İki yarı görsel (çöl look + erkek hoodie). Overlay başlık. /pages/about ve /pages/about-us 404.",
   "delta": "About hero. Home hero’dan ayrı instance.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-fabric-demo.myshopify.com/pages/our-story",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19138330951733__hero_CKQJV6",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "About hero — ok/dot yok"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Materials make a difference. İki yarı görsel: sol çöl vest, sağ erkek cap/hoodie. Ok/dot/CTA yok."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan 0 opener/changer. Home hero’dan ayrı instance, yine tek kare. changed zorlanmadı.",
   "capture": {
     "url": "https://theme-fabric-demo.myshopify.com/pages/our-story",
     "viewports": [
@@ -22,7 +55,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T11:56:12.735Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T17:48:15.443Z"
   }
 }
