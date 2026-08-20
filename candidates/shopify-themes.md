@@ -70,7 +70,7 @@ DTC marka listesi: [`dtc-69-brands.md`](./dtc-69-brands.md)
 | 57 | done | [Dwell](https://themes.shopify.com/themes/dwell) | Shopify | Free | https://theme-dwell-demo.myshopify.com/ | dwell | dwell-100-0-0 · Horizon ailesi 2026 · 36 obs / 126 PNG. PR #180 squash `d10bb703`. theme_store_id null. |
 | 58 | done | [Fabric](https://themes.shopify.com/themes/fabric) | Shopify | Free | https://theme-fabric-demo.myshopify.com/ | fabric | Fabric 3.4.0 · Horizon ailesi 2026 · 31 obs / 110 PNG. PR #181 squash `18145eb7`. theme_store_id 3622. |
 | 59 |  | [Enterprise](https://themes.shopify.com/themes/enterprise) | Clean Canvas | $420 | https://themes.shopify.com/themes/enterprise | enterprise | View demo only. |
-| 60 |  | [Streamline](https://themes.shopify.com/themes/streamline) | Archetype | $420 | https://themes.shopify.com/themes/streamline | streamline | View demo only. |
+| 60 | done | [Streamline](https://themes.shopify.com/themes/streamline) | Archetype | $420 | https://streamline-theme-core.myshopify.com/ | streamline | resmi Core preset · Streamline 6.6.1 · 36 obs / 108 PNG · 0 yeni şema · PR draft |
 | 61 |  | [Local](https://themes.shopify.com/themes/local) | Krown | $380 | https://themes.shopify.com/themes/local | local | View demo only. |
 | 62 |  | [Drop](https://themes.shopify.com/themes/drop) | We are Underground | $180 | https://themes.shopify.com/themes/drop | drop | View demo only. |
 | 63 |  | [Ignite](https://themes.shopify.com/themes/ignite) | Benchmark | $380 | https://themes.shopify.com/themes/ignite | ignite | View demo only. |
