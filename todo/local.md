@@ -6,11 +6,11 @@
 *Slug:* `local`  
 *70-list:* View-demo-only **#61** — resmi main demo artık açık public shop
 
-*Tema (vitrinde görülen, uydurulmadı):* `Shopify.theme.name` **local-build/light** · `id` `139927814205` · `schema_name` **Local** · `schema_version` **4.1.0** · `theme_store_id` **null** · `role` `main`  
+*Tema (vitrinde görülen, uydurulmadı):* `Shopify.theme.name` **local-build/light** · `id` `139927814205` · `schema_name` **Local** · `schema_version` **4.2.0** · `theme_store_id` **null** · `role` `main`  
 *Walk host:* `local-theme-main.myshopify.com`  
 *Shopify.shop (JS):* `local-theme-light-demo.myshopify.com`
 
-**Beklenen vs canlı:** Theme Store listing Krown Local $380. Canlı demo **Local 4.1.0** ve `theme_store_id` **null**. null yazıldı; ID uydurulmadı. Walk host ile `Shopify.shop` farklı — leftover.
+**Beklenen vs canlı:** Theme Store listing Krown Local $380. Canlı demo **Local 4.2.0** ve `theme_store_id` **null**. null yazıldı; ID uydurulmadı. Walk host ile `Shopify.shop` farklı — leftover.
 
 **Durum:** Mod A walk + resmi 3vp + interact + validate  
 **PR:** draft · **main'e merge yok**
@@ -25,11 +25,11 @@
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** |
 | Observation | **45** |
-| Evidence PNG | **153** |
+| Evidence PNG | **154** |
 | Parallel | yalnız `observations/local/`, `evidence/local/`, `todo/local.md`, `candidates/local-leftovers.md` |
 
 **Kapsam satırı:**  
-`Local · default · local-build/light / schema_name Local 4.1.0 · theme_store_id null · home→PDP hamburger→PLP fruits-berries→collections→search bread→cart→about/contact→FAQ→blog→404 · 45 obs · 153 PNG · 0 yeni şema · leftover: candidates/local-leftovers.md`
+`Local · default · local-build/light / schema_name Local 4.2.0 · theme_store_id null · home→PDP hamburger→PLP fruits-berries→collections→search bread→cart→about/contact→FAQ→blog→404 · 45 obs · 154 PNG · 0 yeni şema · leftover: candidates/local-leftovers.md`
 
 ---
 
