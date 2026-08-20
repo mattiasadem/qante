@@ -1,0 +1,85 @@
+{
+  "id": "app-payments-affirm",
+  "kategori": "payments",
+  "varyant": "affirm",
+  "scope": "in-flow",
+  "amac": "Ürün ve ödeme sayfalarında Affirm aylık veya iki haftalık taksit mesajı göstererek AOV artırmak.",
+  "sorun": "Affirm pay-over-time messaging listing PDP + checkout BNPL mesajı vaat ediyor. ikas’ta app-block yok; bnpl_messaging studio-section.",
+  "link": "https://apps.shopify.com/affirm",
+  "yuzey": [
+    "bnpl_messaging"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-block",
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "PAGE_VIEW",
+    "VIEW_CART"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CART",
+    "CHECKOUT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "mesajMetni": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 160,
+      "not": "Listingde advertised monthly / biweekly payment price"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    },
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:cart.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "PDP/sepet/checkout bnpl_messaging (Affirm pay-over-time). Resmi ikas Affirm listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

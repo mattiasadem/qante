@@ -1,0 +1,78 @@
+{
+  "id": "app-merchandising-weglot",
+  "kategori": "merchandising",
+  "varyant": "weglot",
+  "scope": "in-flow",
+  "amac": "Mağaza içeriğini AI ile çok dile çevirip vitrinde dil seçiciyle yerelleştirilmiş alışveriş sunmak.",
+  "sorun": "Listing Weglot: AI Translation & SEO (HTTP 200). Translate & Adapt ayrı kayıt; bu üçüncü parti AI çeviri + SEO. Kapalı sette language_switch yok; yüzey flyout. ikas first-party Weglot listing yok.",
+  "link": "https://apps.shopify.com/weglot",
+  "yuzey": [
+    "flyout"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CATEGORY",
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "switcherGoster": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "Listing dil seçici / multilingual storefront vaat ediyor"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:header.utility",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section / header flyout dil seçici. Çeviri harici Weglot veya ikas çoklu dil alanları. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}
