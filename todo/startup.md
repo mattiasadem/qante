@@ -11,7 +11,7 @@
 shop `startup-theme-tech.myshopify.com`
 
 **Durum:** Mod A walk + resmi 3vp · validate  
-**PR:** draft · **main'e merge yok**
+**PR:** https://github.com/mattiasadem/qante/pull/288 — **draft · main'e merge yok**
 
 ---
 
