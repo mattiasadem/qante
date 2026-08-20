@@ -78,7 +78,7 @@ DTC marka listesi: [`dtc-69-brands.md`](./dtc-69-brands.md)
 | 65 |  | [Stockist](https://themes.shopify.com/themes/stockist) | Noord | $320 | https://themes.shopify.com/themes/stockist | stockist | View demo only. |
 | 66 |  | [Exhibit](https://themes.shopify.com/themes/exhibit) | Switch | $350 | https://themes.shopify.com/themes/exhibit | exhibit | View demo only. |
 | 67 |  | [Alchemy](https://themes.shopify.com/themes/alchemy) | Clean Canvas | — | https://themes.shopify.com/themes/alchemy | alchemy | View demo only. |
-| 68 |  | [Beautify](https://themes.shopify.com/themes/beautify) | Clean Canvas | — | https://themes.shopify.com/themes/beautify | beautify | View demo only. |
+| 68 | done | [Beautify](https://themes.shopify.com/themes/beautify) | Clean Canvas | — | https://beautify-theme-cosmetics.myshopify.com/ | beautify | resmi Cosmetics preset · Mod A · 40 obs · 120 PNG |
 | 69 |  | [Boost](https://themes.shopify.com/themes/boost) | Clean Canvas | $380 | https://themes.shopify.com/themes/boost | boost | View demo only. |
 | 70 |  | [Startup](https://themes.shopify.com/themes/startup) | Pixel Union | — | https://themes.shopify.com/themes/startup | startup | View demo only. |
 
