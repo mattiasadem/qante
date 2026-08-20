@@ -1,0 +1,87 @@
+{
+  "id": "app-merchandising-locksmith",
+  "kategori": "merchandising",
+  "varyant": "locksmith",
+  "scope": "overlay",
+  "amac": "Sayfa, koleksiyon veya ürünü parola / etiket ile kilitleyip vitrinde erişim kontrolü uygulamak.",
+  "sorun": "Listing Locksmith (HTTP 200): lock any content; passcodes. Vitrin overlay; popup_modal. Checkout-only değil.",
+  "link": "https://apps.shopify.com/locksmith",
+  "yuzey": [
+    "popup_modal"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "script-tag"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW",
+    "CUSTOMER_LOGIN"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CATEGORY",
+    "INDEX",
+    "CUSTOM"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_products",
+    "read_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "mesajMetni": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 120,
+      "not": "Kilit / parola overlay metni"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    },
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after",
+    "mount:header.before"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Storefront-script popup_modal: içerik kilidi / parola. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

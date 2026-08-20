@@ -1,0 +1,74 @@
+{
+  "id": "app-merchandising-ikas-takiplio",
+  "kategori": "merchandising",
+  "varyant": "ikas-takiplio",
+  "scope": "page",
+  "amac": "Müşterinin kargosunu tek tıkla görmesini sağlar; güven ve şeffaflık katar.",
+  "sorun": "Sipariş/kargo takip sayfası; kart açıklaması tek tıkla kargo görünümü vaat eder.",
+  "link": "https://apps.ikas.com/tr/uygulama/9bf35a46-9994-47e9-9e55-97e636660a8b",
+  "yuzey": [
+    "embedded_form"
+  ],
+  "entegrasyon": {
+    "shopify": [],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe",
+      "webhook"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "CUSTOMER_LOGIN"
+  ],
+  "ikasSayfa": [
+    "CUSTOM",
+    "ACCOUNT"
+  ],
+  "ikasLink": "https://apps.ikas.com/tr/uygulama/9bf35a46-9994-47e9-9e55-97e636660a8b",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products",
+    "read_orders"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/order/created",
+    "store/order/updated"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "admin-iframe",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "ikas App Store resmi listing (Takiplio). Vitrin storefront-js-script; yönetim admin-iframe.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "id": "app-merchandising-locateus",
+  "kategori": "merchandising",
+  "varyant": "locateus",
+  "scope": "page",
+  "amac": "Mağaza ve stokist konumlarını aramalı interaktif harita widget’ı ile vitrinde göstermek.",
+  "sorun": "Listing LocateUs ‑ Store Locator Map (HTTP 200). Page map widget; locator popup değil. Kapalı yuzeyde map yok; yuzey [] uydurulmadı.",
+  "link": "https://apps.shopify.com/locateus",
+  "yuzey": [],
+  "entegrasyon": {
+    "shopify": [
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "CUSTOM",
+    "INDEX"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "haritaYukseklik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 20,
+      "not": "Listing banner / square / full-page layout vaat ediyor"
+    }
+  },
+  "dataBindings": [],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section mağaza konum haritası. Kapalı yüzey yok. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

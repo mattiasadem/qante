@@ -1,0 +1,70 @@
+{
+  "id": "app-merchandising-ikas-storymate",
+  "kategori": "merchandising",
+  "varyant": "ikas-storymate",
+  "scope": "in-flow",
+  "amac": "Ürünleri yaşayan videolarla keşfettiren mağaza story'leri gösterir.",
+  "sorun": "Instagram tarzı ürün story'si; kart açıklaması yaşayan videolarla keşif vaat eder.",
+  "link": "https://apps.ikas.com/tr/uygulama/376ecbe0-fca9-4cf9-b58b-b0e19f478b33",
+  "yuzey": [
+    "ugc_gallery"
+  ],
+  "entegrasyon": {
+    "shopify": [],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT",
+    "CATEGORY"
+  ],
+  "ikasLink": "https://apps.ikas.com/tr/uygulama/376ecbe0-fca9-4cf9-b58b-b0e19f478b33",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "admin-iframe",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "ikas App Store resmi listing (StoryMate - Mağaza Ürün Story Oluştur). Vitrin storefront-js-script; yönetim admin-iframe.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}
