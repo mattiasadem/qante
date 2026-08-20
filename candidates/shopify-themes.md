@@ -79,7 +79,7 @@ DTC marka listesi: [`dtc-69-brands.md`](./dtc-69-brands.md)
 | 66 |  | [Exhibit](https://themes.shopify.com/themes/exhibit) | Switch | $350 | https://themes.shopify.com/themes/exhibit | exhibit | View demo only. |
 | 67 |  | [Alchemy](https://themes.shopify.com/themes/alchemy) | Clean Canvas | — | https://themes.shopify.com/themes/alchemy | alchemy | View demo only. |
 | 68 |  | [Beautify](https://themes.shopify.com/themes/beautify) | Clean Canvas | — | https://themes.shopify.com/themes/beautify | beautify | View demo only. |
-| 69 |  | [Boost](https://themes.shopify.com/themes/boost) | Clean Canvas | $380 | https://themes.shopify.com/themes/boost | boost | View demo only. |
+| 69 | in progress | [Boost](https://themes.shopify.com/themes/boost) | Clean Canvas | $380 | https://spark-theme.myshopify.com/ | boost | Resmi Boost Spark demo. Draft PR · boost-v8.1.0 · 36 obs / 108 PNG. |
 | 70 |  | [Startup](https://themes.shopify.com/themes/startup) | Pixel Union | — | https://themes.shopify.com/themes/startup | startup | View demo only. |
 
 Trademark Theme Store listing 404 (17 Ağu 2026) — eklenmedi.
