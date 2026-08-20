@@ -1,0 +1,95 @@
+{
+  "id": "app-merchandising-avada-upsell",
+  "kategori": "merchandising",
+  "varyant": "avada-upsell",
+  "scope": "in-flow",
+  "amac": "Buy X get Y, BOGO ve otomatik sepete hediye kampanyalarıyla AOV artırmak.",
+  "sorun": "Slug avada-upsell; canlı listing adı AOV.ai Free Gifts BOGO Offer (auto add to cart / Buy X get Y). freegifts (BOGOS) ayrı slug. ikas native BOGO yok; karşılık studio-section product_recs.",
+  "link": "https://apps.shopify.com/avada-upsell",
+  "yuzey": [
+    "product_recs"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-block",
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW",
+    "ADD_TO_CART",
+    "VIEW_CART"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products",
+    "read_orders"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/order/created"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "BOGO / hediye kampanya başlığı"
+    },
+    "limit": {
+      "tip": "number",
+      "zorunlu": false
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "oneriler",
+      "source": "DataSource.productList"
+    },
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "emit:cart.add"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:cartDrawer.belowItems"
+  ],
+  "bagimliliklar": [
+    "global-cart-drawer"
+  ],
+  "ikasKarsilik": "Studio section product_recs (BOGO / auto-add gift). Checkout kuralı ikas checkout-extension ile birebir değil. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

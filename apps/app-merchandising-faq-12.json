@@ -1,0 +1,76 @@
+{
+  "id": "app-merchandising-faq-12",
+  "kategori": "merchandising",
+  "varyant": "faq-12",
+  "scope": "in-flow",
+  "amac": "Admin’de SSS grupları oluşturup tema akordeon bloğuyla vitrine basmak.",
+  "sorun": "Listing FAQed with SEO (slug faq-12, HTTP 200). Theme accordion block + isteğe bağlı FAQ schema. Helpdesk değil. Kapalı yuzeyde FAQ yok; yuzey [].",
+  "link": "https://apps.shopify.com/faq-12",
+  "yuzey": [],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CUSTOM",
+    "INDEX"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section FAQ akordeon. Schema head-only vaadi bu kayıtta ayrı yazılmadı. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}
