@@ -8,12 +8,59 @@
   "selector": "#shopify-section-template--22715911241750__collapsible_content_dVYgrD",
   "evidenceSlug": "faq-collapsible-tabs-3",
   "evidence": [
+    "evidence/trade/default/faq-support/faq-collapsible-tabs-3.1440.png",
     "evidence/trade/default/faq-support/faq-collapsible-tabs-3.375.png",
     "evidence/trade/default/faq-support/faq-collapsible-tabs-3.768.png",
-    "evidence/trade/default/faq-support/faq-collapsible-tabs-3.1440.png"
+    "evidence/trade/default/faq-support/faq-collapsible-tabs-3.changed.exchanges-acik.1440.png",
+    "evidence/trade/default/faq-support/faq-collapsible-tabs-3.changed.exchanges-acik.375.png",
+    "evidence/trade/default/faq-support/faq-collapsible-tabs-3.changed.exchanges-acik.768.png",
+    "evidence/trade/default/faq-support/faq-collapsible-tabs-3.initial.return-acik.1440.png",
+    "evidence/trade/default/faq-support/faq-collapsible-tabs-3.initial.return-acik.375.png",
+    "evidence/trade/default/faq-support/faq-collapsible-tabs-3.initial.return-acik.768.png"
   ],
   "notlar": "Policies: return 14 gün, exchanges, wholesale partner, guarantee.",
-  "delta": "Üçüncü collapsible blok.",
+  "delta": "Üçüncü collapsible blok. İlk soru açık. İkinci açılınca birincisi kapanmıyor.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-trade-demo.myshopify.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--22715911241750__collapsible_content_dVYgrD",
+      "capture": true,
+      "etiket": "return-acik",
+      "not": "İlk soru (return) açık; exchanges kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-collapsible_row_fmAymG-template--22715911241750__collapsible_content_dVYgrD > summary",
+      "value": 1200,
+      "capture": true,
+      "etiket": "exchanges-acik",
+      "not": "Do you offer exchanges? açılmalı; URL FAQ’da kalmalı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "QUESTIONS ABOUT… Policies. Return açık (^) — 14 days + RA number + full return policy link. Exchanges / wholesale partner / guarantee kapalı (v). 375/768/1440.",
+    "changed": "Exchanges da açık (^) — no exchanges; return then repurchase. Return açık kaldı. URL /pages/faq. 375/768/1440."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan open/hover taslağı koşulmadı — accordion = changed + click. Unique details#id > summary. Wholesale partner link tıklanmadı (account leftover).",
   "capture": {
     "url": "https://theme-trade-demo.myshopify.com/pages/faq",
     "viewports": [
@@ -22,7 +69,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T11:35:23.512Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T17:33:11.264Z"
   }
 }

@@ -8,12 +8,59 @@
   "selector": "#shopify-section-template--22715911241750__collapsible_content_dgnwhC",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/trade/default/faq-support/faq-collapsible-tabs.1440.png",
     "evidence/trade/default/faq-support/faq-collapsible-tabs.375.png",
     "evidence/trade/default/faq-support/faq-collapsible-tabs.768.png",
-    "evidence/trade/default/faq-support/faq-collapsible-tabs.1440.png"
+    "evidence/trade/default/faq-support/faq-collapsible-tabs.changed.origin-acik.1440.png",
+    "evidence/trade/default/faq-support/faq-collapsible-tabs.changed.origin-acik.375.png",
+    "evidence/trade/default/faq-support/faq-collapsible-tabs.changed.origin-acik.768.png",
+    "evidence/trade/default/faq-support/faq-collapsible-tabs.initial.swatches-acik.1440.png",
+    "evidence/trade/default/faq-support/faq-collapsible-tabs.initial.swatches-acik.375.png",
+    "evidence/trade/default/faq-support/faq-collapsible-tabs.initial.swatches-acik.768.png"
   ],
   "notlar": "QUESTIONS ABOUT… Products: swatches, origin, care, thread count, certifications.",
-  "delta": "Dawn collapsible-content.",
+  "delta": "Dawn collapsible-content. İlk soru açık. İkinci açılınca birincisi kapanmıyor.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://theme-trade-demo.myshopify.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--22715911241750__collapsible_content_dgnwhC",
+      "capture": true,
+      "etiket": "swatches-acik",
+      "not": "İlk soru (swatches) açık; origin kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-collapsible_row_eJihCj-template--22715911241750__collapsible_content_dgnwhC > summary",
+      "value": 1200,
+      "capture": true,
+      "etiket": "origin-acik",
+      "not": "Where are your products made? açılmalı; URL FAQ’da kalmalı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "QUESTIONS ABOUT… Products. Swatches açık (^) — complimentary fabric swatches, no full-sized samples. Origin / care / thread count / certifications kapalı (v). 375/768/1440.",
+    "changed": "Origin da açık (^) — Portuguese craftspeople / fourth-generation American mattress maker. Swatches açık kaldı. URL /pages/faq. 375/768/1440."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan open/hover taslağı koşulmadı — accordion = changed + click. Unique details#id > summary. allowMultipleOpen bu instance’ta açık (şema knob’u var, yeni şema değil).",
   "capture": {
     "url": "https://theme-trade-demo.myshopify.com/pages/faq",
     "viewports": [
@@ -22,7 +69,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-08-18T11:34:15.419Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-19T17:31:32.866Z"
   }
 }

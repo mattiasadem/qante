@@ -6,8 +6,8 @@
 *Tema (storefront, uydurulmadı):* **[Trade] Theme Store demo (latest)** · `schema_name`: **Trade** · `schema_version`: **15.0.0** · `theme_store_id`: **2699** · role `main` · id `168341995542`  
 *Shop:* `theme-trade-demo.myshopify.com` (`Shopify.shop` = `84f654-2.myshopify.com`)
 
-**Durum:** ✅ Mod A walk + resmi 3vp + interact + validate  
-**PR:** draft · **main'e merge yok**
+**Durum:** ✅ Mod A walk + resmi 3vp + interact + CRO leftover interact + validate  
+**PR:** draft https://github.com/mattiasadem/qante/pull/271 · **main'e merge yok**
 
 ---
 
@@ -17,14 +17,14 @@
 |---|---|
 | Evidence kökü | `evidence/trade/default/` |
 | Observation | **33** |
-| Evidence PNG | **116** |
+| Evidence PNG | **145** |
 | Yeni şema | **0** |
 | Validator | 65 temiz · 0 error · 0 warn |
 | Capture | resmi `capture-observation.mjs` + `capture-interaction.mjs` |
 | Parallel | yalnız `observations/trade/`, `evidence/trade/`, `todo/trade.md`, `candidates/trade-leftovers.md` |
 
 **Kapsam satırı:**  
-`Trade · default · [Trade] Theme Store demo (latest) / schema_name Trade 15.0.0 · theme_store_id 2699 · home→PDP Sham+Cape related→PLP bath-towels→collections→search towel→cart→about/contact→FAQ→blog→404 · 33 obs · 116 PNG · 0 yeni şema · leftover: quick-order-list / cart-notification popup / partner form`
+`Trade · default · [Trade] Theme Store demo (latest) / schema_name Trade 15.0.0 · theme_store_id 2699 · home→PDP Sham+Cape related→PLP bath-towels→collections→search towel→cart→about/contact→FAQ→blog→404 · 33 obs · 145 PNG · 0 yeni şema · CRO interact: quotes 375/768 + FAQ×3 + form/footer initial · leftover: quick-order-list / cart-notification / partner form / CRO tipleri yok`
 
 ---
 
@@ -44,8 +44,10 @@
 | Search `/search?q=towel` | [x] | [x] |
 | Cart `/cart` empty + filled + qty | [x] | [x] 1→2 · $499→$998 |
 | About `/pages/about-us` | [x] | [x] |
-| Contact form (Send yok) | [x] | [x] |
-| FAQ `/pages/faq` | [x] | [x] |
+| Contact form (Send yok) | [x] | [x] interact `initial` (PII) |
+| FAQ `/pages/faq` Products / Ordering / Policies | [x] | [x] interact ilk açık → ikinci |
+| Quote carousel 375/768 next 1/4→2/4 | [x] | [x] 1440 grid |
+| Footer newsletter yok | [x] | [x] interact `initial` |
 | Blog list + Using fabric swatches | [x] | [x] |
 | 404 | [x] | [x] |
 
@@ -62,7 +64,7 @@
 | 5 | rich_text | `editorial-rich-text` | reuse |
 | 6 | featured_collection1 | `product-showcase-grid-featured` | reuse · QuickBulk |
 | 7 | collection_list | `collection-nav-image-cards` | reuse |
-| 8 | multicolumn1 quotes | `testimonial-quote-carousel` | reuse |
+| 8 | multicolumn1 quotes | `testimonial-quote-carousel` | reuse · 375/768 slider |
 | 9 | featured_collection2 | `product-showcase-grid-featured.2` | reuse |
 | 10 | multicolumn2 | `features-multicolumn` | reuse |
 | 11 | footer | `footer-columns-newsletter` | reuse · newsletter yok |
@@ -80,6 +82,12 @@
 - Cart notification: `.active` yok (add.js + QOL plus). Header rozet 1
 - Cart page: empty → Cape $499 qty1 → qty2 $998
 - PDP: 768/1440 galeri thumb-2 lifestyle. 375 next karesi 1/2 kaldı. Variant-radios yok
+- Quotes 375/768: spotlight 1/4 sheets → STUDIO 2/4 duvet. 1440 dört kolon
+- FAQ Products: swatches açık → origin açık (birincisi kapanmadı)
+- FAQ Ordering: MOQ açık → lead time açık (3–7 gün)
+- FAQ Policies: return açık → exchanges açık (no exchanges)
+- Contact form yalnız `initial` (PII)
+- Footer `initial` — newsletter yok; ülke listesi yoklandı, seçilmedi
 
 Stop: email, account, checkout, newsletter (yok), contact Send, company-account-request, PII
 
@@ -95,5 +103,6 @@ Stop: email, account, checkout, newsletter (yok), contact Send, company-account-
 
 - [x] Official 3vp static (`capture-observation.mjs`) — 27/27
 - [x] Interact mega / search / menu / cart / PDP
+- [x] CRO leftover interact: testimonial-quote-carousel / faq-collapsible-tabs ×3 / lead-capture-form / footer-columns-newsletter
 - [x] PNG bak → stateFindings
-- [x] `npm run validate` — 65 temiz · 0 error · 0 warn
+- [x] `npm run validate`
