@@ -1,0 +1,79 @@
+{
+  "id": "app-merchandising-pixa-variant-swatches",
+  "kategori": "merchandising",
+  "varyant": "pixa-variant-swatches",
+  "scope": "in-flow",
+  "amac": "Varsayılan varyant seçiciyi renk, görsel swatch ve varyant kartlarıyla değiştirmek.",
+  "sorun": "Listing Pixa Variant Swatches (HTTP 200). 9 swatch stili; birincil swatch, options builder değil. Kapalı yuzeyde swatch yok; yuzey [].",
+  "link": "https://apps.shopify.com/pixa-variant-swatches",
+  "yuzey": [],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "VIEW_CATEGORY",
+    "ADD_TO_CART"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CATEGORY",
+    "INDEX",
+    "SEARCH"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "koleksiyondaGoster": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "Listing collection / search / home cards vaat ediyor"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "emit:cart.add"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section renk/görsel swatch picker. Kapalı yüzey yok. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

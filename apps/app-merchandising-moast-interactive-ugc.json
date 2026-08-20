@@ -1,0 +1,80 @@
+{
+  "id": "app-merchandising-moast-interactive-ugc",
+  "kategori": "merchandising",
+  "varyant": "moast-interactive-ugc",
+  "scope": "in-flow",
+  "amac": "Reels, TikTok ve müşteri UGC’sini vitrinde shoppable video carousel olarak yerleştirmek.",
+  "sorun": "Listing Moast Shoppable Video & UGC (HTTP 200): ürün etiketli video carousel, PDP/anasayfa. Videowise ayrı keeper. Instafeed fotoğraf akışı ayrı. ikas native Moast yok; ugc_gallery studio-section.",
+  "link": "https://apps.shopify.com/moast-interactive-ugc",
+  "yuzey": [
+    "ugc_gallery"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW",
+    "ADD_TO_CART"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT",
+    "CATEGORY"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "Carousel başlığı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after",
+    "mount:buyBox.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section ugc_gallery shoppable video. Resmi Moast ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

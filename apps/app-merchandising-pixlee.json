@@ -1,0 +1,79 @@
+{
+  "id": "app-merchandising-pixlee",
+  "kategori": "merchandising",
+  "varyant": "pixlee",
+  "scope": "in-flow",
+  "amac": "Emplifi (Pixlee) UGC ve influencer içeriğini vitrine shoppable galeri olarak yerleştirmek.",
+  "sorun": "Listing Emplifi UGC (slug pixlee, HTTP 200): shoppable social UGC. Instafeed ayrı. Yotpo Social Reviews ayrı (reviews); bu kayıt UGC galeri. ikas ugc_gallery studio-section.",
+  "link": "https://apps.shopify.com/pixlee",
+  "yuzey": [
+    "ugc_gallery"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-block",
+      "script-tag"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "PRODUCT",
+    "CUSTOM"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "UGC galeri başlığı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section ugc_gallery (Emplifi/Pixlee). review_widget değil. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

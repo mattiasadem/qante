@@ -1,0 +1,73 @@
+{
+  "id": "app-merchandising-product-description-tabs",
+  "kategori": "merchandising",
+  "varyant": "product-description-tabs",
+  "scope": "in-flow",
+  "amac": "Uzun ürün açıklamasını sekmelere bölerek PDP’yi düzenlemek ve dönüşümü artırmak.",
+  "sorun": "Listing Easy Tabs ‑ Product Tabs (HTTP 200): açıklama, SSS, kargo, beden sekmesi. Size-chart uygulaması değil (kiwi-sizing / avada-size-chart ayrı). Kapalı yuzey yok; yuzey [].",
+  "link": "https://apps.shopify.com/product-description-tabs",
+  "yuzey": [],
+  "entegrasyon": {
+    "shopify": [
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "İlk sekme başlığı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section ürün sekmeleri. Kapalı yüzey yok. Resmi Easy Tabs ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

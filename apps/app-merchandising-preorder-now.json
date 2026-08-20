@@ -1,0 +1,95 @@
+{
+  "id": "app-merchandising-preorder-now",
+  "kategori": "merchandising",
+  "varyant": "preorder-now",
+  "scope": "in-flow",
+  "amac": "Stokta olmayan veya henüz çıkacak üründe Preorder butonu ve rozetiyle erken satış almak.",
+  "sorun": "Listing PreOrder Now Back in Stock WOD: preorder button, badges, scheduling, mixed-cart alerts. ikas native preorder yok; karşılık studio-section (buton + trust_badge).",
+  "link": "https://apps.shopify.com/preorder-now",
+  "yuzey": [
+    "trust_badge"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "ADD_TO_CART",
+    "VIEW_CART"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CATEGORY",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products",
+    "read_orders"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/order/created",
+    "store/product/updated"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "ctaEtiket": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 40,
+      "not": "Preorder buton yazısı"
+    },
+    "rozetGoster": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "Listingde advertised stylish preorder badges"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    },
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "emit:cart.add"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:productCard.badge"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section: PDP Preorder CTA + rozet. Kısmi ödeme / checkout hunisi ikas checkout-extension ile birebir değil.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

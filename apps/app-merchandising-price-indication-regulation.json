@@ -1,0 +1,75 @@
+{
+  "id": "app-merchandising-price-indication-regulation",
+  "kategori": "merchandising",
+  "varyant": "price-indication-regulation",
+  "scope": "in-flow",
+  "amac": "PAngV Omnibus 30 günlük en düşük fiyatı metafield olarak tutup vitrinde göstermek.",
+  "sorun": "Listing Latori Best Price Indicator (slug price-indication-regulation, HTTP 200). Stores 30-day lowest price in a metafield (PAngV Omnibus). Not a Grundpreis engine — theme must output the metafield. yuzey [] — kapalı sette 30-gün fiyat yüzeyi yok, uydurulmadı.",
+  "link": "https://apps.shopify.com/price-indication-regulation",
+  "yuzey": [],
+  "entegrasyon": {
+    "shopify": [
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "30-gün en düşük fiyat etiketi"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section / metafield 30-gün en düşük fiyat. Grundpreis motoru değil. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}
