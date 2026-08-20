@@ -1,0 +1,75 @@
+{
+  "id": "app-capture-cookieyes",
+  "kategori": "capture",
+  "varyant": "cookieyes",
+  "scope": "overlay",
+  "amac": "Çerezleri tarayıp onay alınana kadar engelleyerek TDDDG/GDPR çerez overlay’i göstermek.",
+  "sorun": "Listing CookieYes GDPR Cookie Banner (slug cookieyes, HTTP 200). Scan, script block, GCM v2, IAB TCF 2.3. ikas listing yok. capture + announcement_bar / popup_modal (cookie overlay).",
+  "link": "https://apps.shopify.com/cookieyes",
+  "yuzey": [
+    "announcement_bar",
+    "popup_modal"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CATEGORY",
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 120,
+      "not": "Çerez banner metni"
+    }
+  },
+  "dataBindings": [],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:announcement.after",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Storefront script: çerez overlay + block-until-consent. Pixel/GCM v2 ikas web-pixel sözlüğüne yazılmaz. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

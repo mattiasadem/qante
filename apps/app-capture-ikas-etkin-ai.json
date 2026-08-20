@@ -1,0 +1,72 @@
+{
+  "id": "app-capture-ikas-etkin-ai",
+  "kategori": "capture",
+  "varyant": "ikas-etkin-ai",
+  "scope": "overlay",
+  "amac": "E-ticaret için 7/24 çalışan akıllı müşteri temsilcisi sunar.",
+  "sorun": "Kesintisiz vitrin sohbet/destek; kart açıklaması 7/24 akıllı temsilci vaat eder.",
+  "link": "https://apps.ikas.com/tr/uygulama/4b434180-ce09-402f-a431-4684104d76e5",
+  "yuzey": [
+    "flyout"
+  ],
+  "entegrasyon": {
+    "shopify": [],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "CONTACT_FORM"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CATEGORY",
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "https://apps.ikas.com/tr/uygulama/4b434180-ce09-402f-a431-4684104d76e5",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_products",
+    "read_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "admin-iframe",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "ikas App Store resmi listing (Etkin.ai | Yapay Zeka Müşteri Temsilcisi). Vitrin storefront-js-script; yönetim admin-iframe.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "id": "app-capture-ikas-jivochat",
+  "kategori": "capture",
+  "varyant": "ikas-jivochat",
+  "scope": "overlay",
+  "amac": "İşin tüm iletişimini tek yerden yürüten vitrin sohbet çözümüdür.",
+  "sorun": "Canlı destek ve mesajlaşmayı vitrinde toplamak; kart açıklaması tek yerden iletişim vaat eder.",
+  "link": "https://apps.ikas.com/tr/uygulama/52d7b157-0356-40ed-9a85-e71659ea3855",
+  "yuzey": [
+    "flyout"
+  ],
+  "entegrasyon": {
+    "shopify": [],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "CONTACT_FORM"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CATEGORY",
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "https://apps.ikas.com/tr/uygulama/52d7b157-0356-40ed-9a85-e71659ea3855",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_products",
+    "read_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "admin-iframe",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "ikas App Store resmi listing (JivoChat). Vitrin storefront-js-script; yönetim admin-iframe.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}
