@@ -1,0 +1,89 @@
+{
+  "id": "app-loyalty-ikas-para-puan",
+  "kategori": "loyalty",
+  "varyant": "ikas-para-puan",
+  "scope": "overlay",
+  "amac": "Alışverişten puan kazandırır; puanlar indirim olarak kullanılır.",
+  "sorun": "Sadakat puanı ve vitrin widget'ı; kart açıklaması puan kazan/kullan vaat eder.",
+  "link": "https://apps.ikas.com/tr/uygulama/50233694-83c9-47e7-9ef3-db3effa3a427",
+  "yuzey": [
+    "loyalty_launcher",
+    "loyalty_points_badge"
+  ],
+  "entegrasyon": {
+    "shopify": [],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe",
+      "webhook"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "CUSTOMER_LOGIN",
+    "COMPLETE_CHECKOUT",
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "ACCOUNT",
+    "INDEX",
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "https://apps.ikas.com/tr/uygulama/50233694-83c9-47e7-9ef3-db3effa3a427",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_products",
+    "read_customers",
+    "read_orders"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/order/created",
+    "store/customer/created"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "admin-iframe",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "launcherEtiket": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 40
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    },
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "emit:loyalty.open"
+  ],
+  "hookNoktalari": [
+    "mount:header.utility",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "ikas App Store resmi listing (Para Puan | Müşteri Sadakat ve Puan Modü). Vitrin storefront-js-script; yönetim admin-iframe.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

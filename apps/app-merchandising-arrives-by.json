@@ -1,0 +1,88 @@
+{
+  "id": "app-merchandising-arrives-by",
+  "kategori": "merchandising",
+  "varyant": "arrives-by",
+  "scope": "in-flow",
+  "amac": "Ürün ve sepette tahmini teslim tarihi göstererek kargo sorularını ve tereddüdü azaltmak.",
+  "sorun": "Listing ArrivesBy Delivery Date ETA: product/cart/checkout/order-status ETA, tatil ve cut-off. ikas native yok; karşılık studio-section trust_badge.",
+  "link": "https://apps.shopify.com/arrives-by",
+  "yuzey": [
+    "trust_badge"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-block",
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "VIEW_CART",
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "ETA satır metni"
+    },
+    "stokDuyarli": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "Listing inventory / preorder-aware ETA vaat ediyor"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    },
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section: Arrives by tarihi. Checkout / order-status ETA ikas checkout-extension ile birebir değil.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

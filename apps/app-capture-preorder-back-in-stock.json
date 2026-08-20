@@ -1,0 +1,97 @@
+{
+  "id": "app-capture-preorder-back-in-stock",
+  "kategori": "capture",
+  "varyant": "preorder-back-in-stock",
+  "scope": "overlay",
+  "amac": "Tükenen üründe Notify Me / waitlist butonu ve formla restock kaydı toplamak.",
+  "sorun": "Listing Notify Me! Back in Stock Alert: Notify Me + PreOrder + Wishlist + low stock. Bu kayıt capture (vitrin notify widget); wishlist/loyalty yüzeyi yazılmadı. ikas karşılık storefront-js-script.",
+  "link": "https://apps.shopify.com/preorder-back-in-stock",
+  "yuzey": [
+    "popup_modal",
+    "embedded_form"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "CONTACT_FORM",
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "INDEX",
+    "CATEGORY"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_products",
+    "read_customers",
+    "write_customers"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/product/updated",
+    "store/customer/created"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "ctaEtiket": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 40,
+      "not": "Listing advertised Notify me when available"
+    },
+    "dusukStokGoster": {
+      "tip": "boolean",
+      "zorunlu": false,
+      "not": "Listing Only X Remaining vaat ediyor"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    },
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    }
+  ],
+  "actions": [
+    "emit:newsletter.subscribe"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Storefront script: Notify Me overlay + form. Wishlist listing vaadi bu kayıtta yok. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

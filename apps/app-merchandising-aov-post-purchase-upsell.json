@@ -1,0 +1,91 @@
+{
+  "id": "app-merchandising-aov-post-purchase-upsell",
+  "kategori": "merchandising",
+  "varyant": "aov-post-purchase-upsell",
+  "scope": "in-flow",
+  "amac": "Ödeme sonrası ve teşekkür / sipariş durum sayfasında tek tık upsell ile AOV artırmak.",
+  "sorun": "Listing AOV.ai Post Purchase Upsell (upsell p2). Aftersell/Rebuy atlandı. ikas’ta checkout-extension yok; studio-section product_recs.",
+  "link": "https://apps.shopify.com/aov-post-purchase-upsell",
+  "yuzey": [
+    "product_recs"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "checkout-extension",
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "BEGIN_CHECKOUT",
+    "COMPLETE_CHECKOUT",
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "CHECKOUT",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products",
+    "read_orders"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/order/created"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "Post-purchase teklif başlığı"
+    },
+    "limit": {
+      "tip": "number",
+      "zorunlu": false
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "oneriler",
+      "source": "DataSource.productList"
+    },
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "emit:cart.add"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section product_recs (thank-you / post-purchase). Shopify checkout-extension ikas’a taşınmaz.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

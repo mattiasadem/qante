@@ -1,0 +1,109 @@
+{
+  "id": "app-loyalty-smile-io",
+  "kategori": "loyalty",
+  "varyant": "smile-io",
+  "scope": "overlay",
+  "amac": "Puan, ödül, VIP kademe ve referans ile tekrar satın almayı artırmak.",
+  "sorun": "Smile launcher ve puan rozeti Shopify app-embed ile her sayfada durur. ikas'ta app-embed yok; karşılık storefront-js-script + hesap/ürün sayfalarında puan rozeti.",
+  "link": "https://apps.shopify.com/smile-io",
+  "yuzey": [
+    "loyalty_launcher",
+    "loyalty_points_badge",
+    "loyalty_page"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "CUSTOMER_LOGIN",
+    "COMPLETE_CHECKOUT",
+    "CUSTOMER_REGISTER",
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "ACCOUNT",
+    "INDEX",
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_customers",
+    "write_customers",
+    "read_orders",
+    "read_campaigns",
+    "write_campaigns"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/order/created",
+    "store/customer/created",
+    "store/customer/updated"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "launcherEtiket": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 40
+    },
+    "puanRozetiGoster": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "vipAcik": {
+      "tip": "boolean",
+      "zorunlu": false
+    },
+    "referansAcik": {
+      "tip": "boolean",
+      "zorunlu": false
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    },
+    {
+      "name": "sepet",
+      "source": "DataSource.cart"
+    }
+  ],
+  "actions": [
+    "emit:loyalty.open",
+    "listen:cart.added"
+  ],
+  "hookNoktalari": [
+    "mount:header.utility",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Harici Smile hesabı + storefront launcher script. Puan rozeti product/account. Sipariş ve müşteri webhook'ları puan yazmak için.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

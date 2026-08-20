@@ -1,0 +1,74 @@
+{
+  "id": "app-merchandising-accesswidget",
+  "kategori": "merchandising",
+  "varyant": "accesswidget",
+  "scope": "overlay",
+  "amac": "accessiBe accessWidget ile vitrinde erişilebilirlik overlay’i göstermek.",
+  "sorun": "Listing accessiBe Web Accessibility (HTTP 200, slug accesswidget). accessibe / accessibly 404. UserWay ayrı keeper. Vitrin overlay; yuzey flyout.",
+  "link": "https://apps.shopify.com/accesswidget",
+  "yuzey": [
+    "flyout"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "script-tag"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CATEGORY",
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "widgetKonum": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 40,
+      "not": "Overlay köşe konumu"
+    }
+  },
+  "dataBindings": [],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:header.utility"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Storefront-script flyout (accessWidget). Resmi accessiBe ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

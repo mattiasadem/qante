@@ -1,0 +1,89 @@
+{
+  "id": "app-capture-tidio-chat",
+  "kategori": "capture",
+  "varyant": "tidio-chat",
+  "scope": "overlay",
+  "amac": "Canlı sohbet, chatbot ve AI ajanı ile vitrinde soru yanıtlayıp lead toplamak.",
+  "sorun": "Listing Tidio Live Chat & AI Chatbot. ikas’ta Tidio kadar kataloga bağlı sohbet widget’ı yok. Karşılık storefront-js-script flyout.",
+  "link": "https://apps.shopify.com/tidio-chat",
+  "yuzey": [
+    "flyout"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "webhook",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW",
+    "CONTACT_FORM",
+    "CUSTOMER_REGISTER"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CATEGORY",
+    "PRODUCT",
+    "CART"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "storefront-script",
+  "ikasKapsam": [
+    "read_customers",
+    "write_customers",
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [
+    "store/customer/created"
+  ],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "karsilamaMetni": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 160
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "musteri",
+      "source": "DataSource.customer"
+    },
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "emit:newsletter.subscribe"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Harici Tidio hesabı + vitrin flyout script. Resmi ikas Tidio listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

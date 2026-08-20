@@ -1,0 +1,76 @@
+{
+  "id": "app-merchandising-attributes-1",
+  "kategori": "merchandising",
+  "varyant": "attributes-1",
+  "scope": "in-flow",
+  "amac": "PAngV Grundpreis ve 30 günlük referans fiyatı vitrin / checkout’ta göstermek.",
+  "sorun": "Listing Addributes (slug attributes-1, HTTP 200). DE-specific: Grundpreis and essential characteristics plus 30-day reference price in checkout (listing cites § 4 and § 11 PAngV / Art. 246a EGBGB). Not LUCID/OSS. yuzey [] — kapalı sette birim-fiyat yüzeyi yok, uydurulmadı.",
+  "link": "https://apps.shopify.com/attributes-1",
+  "yuzey": [],
+  "entegrasyon": {
+    "shopify": [
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CATEGORY"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "Grundpreis / 30-gün fiyat etiketi"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section Grundpreis + 30-gün referans. Resmi ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}
