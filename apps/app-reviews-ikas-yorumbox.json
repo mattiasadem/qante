@@ -1,0 +1,73 @@
+{
+  "id": "app-reviews-ikas-yorumbox",
+  "kategori": "reviews",
+  "varyant": "ikas-yorumbox",
+  "scope": "in-flow",
+  "amac": "Trendyol yorumlarını ikas ürün sayfasına taşır.",
+  "sorun": "Pazaryeri yorumunu PDP'de göstermek; kart açıklaması Trendyol yorum aktarımı vaat eder.",
+  "link": "https://apps.ikas.com/tr/uygulama/3ac5730e-0a62-4d60-bfd7-0ea47ea7e6ea",
+  "yuzey": [
+    "review_widget",
+    "review_stars"
+  ],
+  "entegrasyon": {
+    "shopify": [],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "INDEX",
+    "CATEGORY"
+  ],
+  "ikasLink": "https://apps.ikas.com/tr/uygulama/3ac5730e-0a62-4d60-bfd7-0ea47ea7e6ea",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "admin-iframe",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "emit:review.filter",
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "ikas App Store resmi listing (Yorumbox - Trendyol Yorumları). Vitrin storefront-js-script; yönetim admin-iframe.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}
