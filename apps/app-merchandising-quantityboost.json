@@ -1,0 +1,76 @@
+{
+  "id": "app-merchandising-quantityboost",
+  "kategori": "merchandising",
+  "varyant": "quantityboost",
+  "scope": "in-flow",
+  "amac": "PDP’de kademeli miktar indirim ızgarası gösterip checkout’ta otomatik volume fiyat uygulamak.",
+  "sorun": "Listing QBoost: Bulk Quantity Breaks (HTTP 200): product page pricing table + checkout kademeleri. BulkOrder Pro ayrı keeper. ikas native quantity break yok; yuzey [].",
+  "link": "https://apps.shopify.com/quantityboost",
+  "yuzey": [],
+  "entegrasyon": {
+    "shopify": [
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "ADD_TO_CART",
+    "BEGIN_CHECKOUT"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CHECKOUT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "Kademe tablosu başlığı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section quantity-break tablosu. Resmi QBoost ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

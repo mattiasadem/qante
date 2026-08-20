@@ -1,0 +1,83 @@
+{
+  "id": "app-merchandising-searchanise",
+  "kategori": "merchandising",
+  "varyant": "searchanise",
+  "scope": "in-flow",
+  "amac": "Anlık arama, otomatik tamamlama ve koleksiyon filtreleriyle ürün keşfini vitrinde hızlandırmak.",
+  "sorun": "Listing Searchanise Search & Filter: site search + custom filters. ikas native Searchanise yok; karşılık studio-section filtre + storefront script arama overlay.",
+  "link": "https://apps.shopify.com/searchanise",
+  "yuzey": [
+    "flyout",
+    "product_recs"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-embed",
+      "app-block",
+      "web-pixel",
+      "script-tag"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "PRODUCT_VIEW",
+    "VIEW_CATEGORY"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CATEGORY",
+    "PRODUCT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "aramaPlaceholder": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "oneriler",
+      "source": "DataSource.productList"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:header.utility",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section koleksiyon filtresi + arama sonuç merch. Anlık overlay storefront-js-script. Resmi ikas Searchanise listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "id": "app-merchandising-search-and-discovery",
+  "kategori": "merchandising",
+  "varyant": "search-and-discovery",
+  "scope": "in-flow",
+  "amac": "Mağaza araması, koleksiyon filtreleri ve ürün önerilerini vitrinde özelleştirmek.",
+  "sorun": "Listing Shopify Search & Discovery (resmi Shopify). ikas’ta eş first-party Search & Discovery uygulaması yok; tema arama/filtre + studio-section öneri bandı.",
+  "link": "https://apps.shopify.com/search-and-discovery",
+  "yuzey": [
+    "flyout",
+    "product_recs"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-block"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PAGE_VIEW",
+    "VIEW_CATEGORY",
+    "PRODUCT_VIEW"
+  ],
+  "ikasSayfa": [
+    "INDEX",
+    "CATEGORY",
+    "PRODUCT"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "baslik": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 80,
+      "not": "Öneri / arama sonuç başlığı"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "oneriler",
+      "source": "DataSource.productList"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:header.utility",
+    "mount:section.after",
+    "mount:buyBox.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "ikas tema arama + koleksiyon filtresi. Öneri bandı studio-section product_recs. Resmi Shopify Search & Discovery ikas’ta yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}

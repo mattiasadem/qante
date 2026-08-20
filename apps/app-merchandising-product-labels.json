@@ -1,0 +1,81 @@
+{
+  "id": "app-merchandising-product-labels",
+  "kategori": "merchandising",
+  "varyant": "product-labels",
+  "scope": "in-flow",
+  "amac": "Ürün görsellerine sale, new, low-stock ve indirim etiketleri ekleyerek vitrinde öne çıkarmak.",
+  "sorun": "Listing DECO Product Labels & Badges (HTTP 200): sale/new/low-stock/BOGO product labels. BadgeHQ / essential-icon-badge-banners / trustbadges ödeme güven ikonu; bu kayıt ürün/satış etiketi. yuzey trust_badge.",
+  "link": "https://apps.shopify.com/product-labels",
+  "yuzey": [
+    "trust_badge"
+  ],
+  "entegrasyon": {
+    "shopify": [
+      "app-block",
+      "app-embed"
+    ],
+    "ikas": [
+      "storefront-js-script",
+      "admin-iframe"
+    ]
+  },
+  "ikasTur": "admin",
+  "ikasOlaylar": [
+    "PRODUCT_VIEW",
+    "VIEW_CATEGORY",
+    "PAGE_VIEW"
+  ],
+  "ikasSayfa": [
+    "PRODUCT",
+    "CATEGORY",
+    "INDEX"
+  ],
+  "ikasLink": "yok",
+  "ikasSablon": "starter",
+  "ikasHedef": "studio-section",
+  "ikasKapsam": [
+    "read_products"
+  ],
+  "ikasAksiyon": [],
+  "ikasWebhook": [],
+  "ikasYayin": "herkese-acik",
+  "ikasHost": "external",
+  "ayarlar": {
+    "oncelikliScript": {
+      "tip": "link",
+      "zorunlu": true,
+      "not": "Vitrin JS giriş adresi (merchant panelinden kopyalanır)"
+    },
+    "publicApiKey": {
+      "tip": "text",
+      "zorunlu": true,
+      "maxLen": 80,
+      "not": "Hesabın public/site anahtarı; gizli API anahtarı değil"
+    },
+    "etiketMetni": {
+      "tip": "text",
+      "zorunlu": false,
+      "maxLen": 40,
+      "not": "Satış / ürün etiketi metni"
+    }
+  },
+  "dataBindings": [
+    {
+      "name": "urun",
+      "source": "DataSource.product"
+    }
+  ],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:buyBox.after",
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "ikasKarsilik": "Studio section trust_badge: ürün/satış etiketi (ödeme ikonu değil). Resmi DECO ikas listing yok.",
+  "tespit": {
+    "shopify": "",
+    "ikas": ""
+  }
+}
