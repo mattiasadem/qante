@@ -4,7 +4,7 @@ QANTE Theme Store takibi: hangi resmi demo / canlı mağaza walk edildi.
 Durum: `done` = yapılmış (main’de resmi 3vp) · `in progress` = yapılıyor (açık PR / cloud agent) · boş = kuyruk.  
 *Kesim:* 18 Ağustos 2026 (Berlin). Viewer: **Listeler** sekmesi.
 
-Shopify Theme Store 58/70 done on main; 0 in progress; 12 View-demo-only remaining (rows 59–70).  
+Shopify Theme Store 58/70 done on main; 1 done on branch (Startup row 70); 11 View-demo-only remaining (rows 59–69).  
 Paid batch 10/10 and the next-10-after-Expanse are on main. No walking PRs remain.
 
 DTC marka listesi: [`dtc-69-brands.md`](./dtc-69-brands.md)
@@ -80,6 +80,6 @@ DTC marka listesi: [`dtc-69-brands.md`](./dtc-69-brands.md)
 | 67 |  | [Alchemy](https://themes.shopify.com/themes/alchemy) | Clean Canvas | — | https://themes.shopify.com/themes/alchemy | alchemy | View demo only. |
 | 68 |  | [Beautify](https://themes.shopify.com/themes/beautify) | Clean Canvas | — | https://themes.shopify.com/themes/beautify | beautify | View demo only. |
 | 69 |  | [Boost](https://themes.shopify.com/themes/boost) | Clean Canvas | $380 | https://themes.shopify.com/themes/boost | boost | View demo only. |
-| 70 |  | [Startup](https://themes.shopify.com/themes/startup) | Pixel Union | — | https://themes.shopify.com/themes/startup | startup | View demo only. |
+| 70 | done | [Startup](https://themes.shopify.com/themes/startup) | Pixel Union | — | https://startup-theme-tech.myshopify.com/ | startup | Resmi Tech preset · Startup 12.3.3 · 18 obs / 54 PNG · PR draft.
 
 Trademark Theme Store listing 404 (17 Ağu 2026) — eklenmedi.
