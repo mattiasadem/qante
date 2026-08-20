@@ -124,4 +124,4 @@ Aynı tip = şemaya dokunma, observation + delta. Yeni şema yalnızca kanıtsı
 
 - [x] Mod A walk + 3vp capture batch
 - [x] validate clean
-- [ ] draft PR
+- [x] draft PR
