@@ -137,6 +137,30 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: casper-listicle-toc-std-container  
+Gerekçe: `/blogs/article/casper-gifts` içinde `std-toc-container` — anchor link Table of Contents (1–10 + title), toggle header. Tek `main-article` gövdesinde; ayrı section/schema yok.  
+Örnekler: https://casper.com/blogs/article/casper-gifts  
+Öneri: leftover — listicle-advertorial TOC ailesi (şema icat edilmedi)  
+Karar: onay bekliyor
+
+---
+
+ADAY: casper-listicle-numbered-item-wrapper  
+Gerekçe: 10 numbered H2 item (H2 + P + Why-gift-it UL + görsel DIV) ayrı Shopify section değil; DOM wrapper yok. `product-showcase-featured` uymaz (buy box/fiyat/ATC yok — inline text linkleri). Observation: `editorial-image-with-text` viewport + `#article-h-N` prepareScroll; items 3–4, 6–10 örneklenmedi.  
+Örnekler: https://casper.com/blogs/article/casper-gifts#article-h-0  
+Öneri: leftover — numbered shoppable list item kabı  
+Karar: onay bekliyor
+
+---
+
+ADAY: casper-listicle-no-product-showcase  
+Gerekçe: Gift guide listicle'da embed product card / quick-add / fiyat kutusu yok; yalnız prose + görsel + metin içi `/products/*` linkleri.  
+Örnekler: https://casper.com/blogs/article/casper-gifts  
+Öneri: leftover — product-showcase-featured bu sayfada yok  
+Karar: onay bekliyor
+
+---
+
 ## Bilinçli atlananlar
 
 - Checkout / Shop Pay / Affirm qualify CTA  

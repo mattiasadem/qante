@@ -13,7 +13,7 @@
 | Evidence kökü | `evidence/casper/default/` |
 | Capture | resmi `capture-observation.mjs` |
 | Platform | Canlı Shopify (DTC, dtc-69 dışı) |
-| Kapsam satırı | Casper · default · home→PDP→collection→search→cart→blog→footer · 32 obs · 96 PNG · 0 yeni şema |
+| Kapsam satırı | Casper · default · storefront + listicle-advertorial · 39 obs · 117 PNG · 0 yeni şema |
 
 ---
 
@@ -29,6 +29,23 @@
 | Blog list `/blogs/article` | [x] | [x] |
 | Blog post (bunk bed mattress sizes) | [x] | [x] |
 | Footer (home observation) | [x] | [x] |
+| Listicle-advertorial `/blogs/article/casper-gifts` | [x] | [x] |
+
+---
+
+## Listicle-advertorial — `/blogs/article/casper-gifts`
+
+| # | schemaId | Done | 3vp |
+|---|---|---|---|
+| 1 | blog-post-main (article banner) | [x] | [x] |
+| 2 | editorial-rich-text (intro + TOC viewport) | [x] | [x] |
+| 3 | editorial-image-with-text (item #1 Casper Pillows) | [x] | [x] |
+| 4 | editorial-image-with-text-2 (item #2 Backrest Pillow) | [x] | [x] |
+| 5 | editorial-image-with-text-3 (item #5 Dog Bed) | [x] | [x] |
+| 6 | editorial-rich-text-2 (closing CTA + reviewer bio) | [x] | [x] |
+| 7 | blog-list-main (Reading next carousel) | [x] | [x] |
+
+*Gözlem kökü:* `observations/casper/default/listicle-gift-guide/` · *Evidence:* `evidence/casper/default/listicle-gift-guide/`
 
 ---
 
@@ -79,5 +96,6 @@
 
 ## Evidence backlog
 
-- [x] Mod A statik 3vp — 32 observation · 96 PNG
+- [x] Mod A statik 3vp — storefront 32 obs · 96 PNG
+- [x] Listicle-advertorial `/blogs/article/casper-gifts` — 7 obs · 21 PNG
 - [ ] Interact: cart filled, search input, mega menu, FAQ accordion (qc backlog)
