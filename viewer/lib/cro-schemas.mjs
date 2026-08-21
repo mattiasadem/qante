@@ -108,6 +108,7 @@ export const SCHEMA_CLASSIFICATION = Object.freeze({
   "editorial-images-scroll": { lane: "vitrine" },
   "editorial-layered-images": { lane: "vitrine" },
   "editorial-rich-text": { lane: "vitrine" },
+  "editorial-separator": { lane: "vitrine" },
   "editorial-timeline": { lane: "vitrine" },
   "page-content-main": { lane: "vitrine" },
 

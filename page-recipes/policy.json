@@ -1,0 +1,116 @@
+{
+  "pageType": "policy",
+  "label": {
+    "en": "Legal",
+    "tr": "Yasal",
+    "de": "Rechtliches"
+  },
+  "source": "Kreis-001 IKAS CUSTOM pages (remote inspection via GitHub raw; theme code not cloned)",
+  "ikasPageShape": {
+    "type": "CUSTOM",
+    "stack": [
+      "Header",
+      "Heading",
+      "Text",
+      "Separator (optional)",
+      "Footer"
+    ],
+    "note": "Privacy / Terms / Cookie CUSTOM pages are intended but not yet present in Kreis src/theme.json pages[]"
+  },
+  "slugs": {
+    "privacy-policy": {
+      "en": "Privacy Policy",
+      "tr": "Gizlilik Politikası",
+      "de": "Datenschutz"
+    },
+    "terms-and-conditions": {
+      "en": "Terms & Conditions",
+      "tr": "Şartlar ve Koşullar",
+      "de": "AGB"
+    },
+    "cookie": {
+      "en": "Cookie Policy",
+      "tr": "Çerez Politikası",
+      "de": "Cookie-Richtlinie",
+      "note": "Kreis Footer.legalLinks only; theme typo Cookie Concent; no CUSTOM page in theme.json yet"
+    }
+  },
+  "sections": [
+    {
+      "order": 1,
+      "schemaId": "navigation-header-mega",
+      "scope": "global",
+      "required": true,
+      "kreisComponent": "Header"
+    },
+    {
+      "order": 2,
+      "schemaId": "page-content-main",
+      "scope": "instance",
+      "required": true,
+      "kreisComponents": ["Heading", "Text"],
+      "slots": ["baslik", "icerik", "sonGuncelleme", "bolumler"]
+    },
+    {
+      "order": 3,
+      "schemaId": "editorial-separator",
+      "scope": "instance",
+      "required": false,
+      "kreisComponent": "Separator"
+    },
+    {
+      "order": 4,
+      "schemaId": "footer-columns-newsletter",
+      "scope": "global",
+      "required": true,
+      "slot": "yasalLinkler",
+      "kreisComponent": "Footer.legalLinks (LIST_OF_LINK: label + PAGE link)"
+    }
+  ],
+  "footerLegalLinks": {
+    "schemaId": "footer-columns-newsletter",
+    "slot": "yasalLinkler",
+    "kreisProp": "legalLinks",
+    "editorCopy": {
+      "en": "Privacy, Terms links",
+      "tr": "Gizlilik, Şartlar linkleri",
+      "de": "Datenschutz-, Bedingungen-Links"
+    },
+    "typicalItems": [
+      {
+        "etiket": { "en": "Privacy Policy", "tr": "Gizlilik Politikası", "de": "Datenschutz" },
+        "link": "/pages/privacy-policy"
+      },
+      {
+        "etiket": { "en": "Terms & Conditions", "tr": "Şartlar ve Koşullar", "de": "AGB" },
+        "link": "/pages/terms-and-conditions"
+      },
+      {
+        "etiket": { "en": "Cookie Policy", "tr": "Çerez Politikası", "de": "Cookie-Richtlinie" },
+        "link": "/pages/cookie",
+        "note": "footer-only in Kreis"
+      }
+    ]
+  },
+  "contactLegalConsent": {
+    "schemaId": "lead-capture-form",
+    "slot": "onayMaddeleri",
+    "kreisComponent": "ContactForm.approvalItems",
+    "kreisDefaultHtml": "I have read and agree to the <a href=\"/pages/privacy-policy\">Privacy Policy</a> and <a href=\"/pages/terms-and-conditions\">Terms &amp; Conditions</a>.",
+    "editorCopy": {
+      "en": "Approval Items",
+      "tr": "Onay Maddeleri",
+      "de": "Zustimmungsfelder"
+    }
+  },
+  "blockedEvidence": {
+    "contactLegalConsent": "Kreis ContactForm.approvalItems — no live IKAS storefront for 3vp; default HTML documented in contactLegalConsent.kreisDefaultHtml"
+  },
+  "evidenceObservations": [
+    "observations/functionhealth/default/policy/page-content-main.json",
+    "observations/functionhealth/default/policy/page-content-main-2.json",
+    "observations/takearecess/default/policy/page-content-main-2.json",
+    "observations/minion/default/home/footer-columns-newsletter.json"
+  ],
+  "_note": "Impressum / KVKK / GDPR / Widerruf templates intentionally omitted — not in Kreis-001."
+}

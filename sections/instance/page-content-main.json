@@ -3,21 +3,49 @@
   "kategori": "editorial",
   "varyant": "page-main",
   "scope": "instance",
-  "amac": "Statik sayfa ana içerik bloğu (başlık + metin)",
+  "amac": "Statik yasal ve içerik sayfası ana gövdesi (başlık + zengin metin)",
   "slots": {
     "baslik": {
       "tip": "text",
       "maxLen": 80,
       "zorunlu": true
     },
+    "sonGuncelleme": {
+      "tip": "text",
+      "maxLen": 40,
+      "zorunlu": false,
+      "not": "Last Updated satırı — functionhealth/beardbrand policy kanıtı"
+    },
     "icerik": {
       "tip": "richtext",
       "zorunlu": false
+    },
+    "bolumler": {
+      "tip": "array",
+      "zorunlu": false,
+      "min": 0,
+      "max": 24,
+      "item": {
+        "baslik": {
+          "tip": "text",
+          "maxLen": 120,
+          "zorunlu": true
+        },
+        "icerik": {
+          "tip": "richtext",
+          "zorunlu": true
+        }
+      },
+      "not": "Uzun yasal metinde h2 alt bölümler; Kreis Heading+Text tekrarı yerine"
     }
   },
   "styleKnobs": {
+    "layout": "single|sections",
     "hizalama": "left|center",
-    "genislik": "narrow|wide"
+    "genislik": "narrow|wide",
+    "baslikGoster": true,
+    "sonGuncellemeGoster": true,
+    "yogunluk": "compact|comfortable"
   },
   "dataBindings": [],
   "actions": [
@@ -28,5 +56,5 @@
   ],
   "bagimliliklar": [],
   "responsive": "Standart stack; ikinci kolon bu karede yok.",
-  "_knobNote": "Hyper sol geniş. Vogue ABOUT orta + dar gövde. Foto richtext."
+  "_knobNote": "Kreis Heading+Text → baslik+icerik. layout sections = bolumler dizisi aktif. Hyper sol geniş; Vogue ABOUT orta dar gövde."
 }

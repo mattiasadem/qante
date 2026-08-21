@@ -92,6 +92,7 @@ export const SCHEMA_PRIORITY = [
   "media-scrolling-gallery",
   "lead-capture-form",
   "page-content-main",
+  "editorial-separator",
   "blog-list-main",
   "blog-post-main",
   "navigation-breadcrumbs",
