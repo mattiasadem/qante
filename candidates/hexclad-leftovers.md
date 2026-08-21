@@ -69,3 +69,19 @@ Karar: onay bekliyor
 - Help Center `https://support.hexclad.com` dış host
 - Restaurant `https://hexcladrestaurant.com/` · Careers dış
 - Newsletter / warranty activate / contact portal — PII yok
+
+---
+
+ADAY: hexclad-listicle-fathers-day-readmore  
+Gerekçe: `/blogs/posts/fathers-day-gift-ideas-for-home-cooks` altında `#shopify-section-template--19294934892678__14295a1e-*` “Read more” blog carousel. Listicle gövdesinden ayrı Shopify section.  
+Örnekler: https://hexclad.com/blogs/posts/fathers-day-gift-ideas-for-home-cooks  
+Öneri: `blog-list-main` reuse — bu tur listicle-fathers-day obs setine dahil edilmedi  
+Karar: onay bekliyor
+
+---
+
+## Listicle-advertorial (2026-08-21)
+
+- `observations/hexclad/default/listicle-fathers-day/` — 5 obs · 15 PNG · `candidates/listicle-advertorial.md`
+- URL: https://hexclad.com/blogs/posts/fathers-day-gift-ideas-for-home-cooks
+- `product-showcase-featured` yok (inline link only) · FAQ statik · listicle maddeleri tek article richtext
