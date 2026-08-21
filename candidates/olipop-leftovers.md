@@ -76,3 +76,11 @@ Gerekçe: PDP `#shopify-section-switch-to-subscription-interstitial` h=0 (modal)
 Örnekler: PDP Add to Cart sonrası  
 Öneri: interact sonrası  
 Karar: onay bekliyor
+
+---
+
+ADAY: olipop-listicle-cheat-sheet-sidebar  
+Gerekçe: `/blogs/digest/get-to-know-the-olipop-flavors` — `.blog-article-cheat-sheet` sticky TOC (19 flavor anchor list). Desktop-only (`lg-plus:tw-block`). Feature/sibling; `blog-post-main` delta'da not edildi.  
+Örnekler: https://drinkolipop.com/blogs/digest/get-to-know-the-olipop-flavors  
+Öneri: feature (section değil)  
+Karar: onay bekliyor

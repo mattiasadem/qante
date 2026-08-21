@@ -16,10 +16,10 @@
 | Capture | resmi `scripts/capture-observation.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Parallel | yalnız `observations/olipop/` · `evidence/olipop/` · `todo/olipop.md` · `candidates/olipop-leftovers.md` |
-| Gözlem / kanıt | 25 obs · **71 PNG** |
+| Gözlem / kanıt | 30 obs · **86 PNG** |
 
 **Kapsam satırı:**  
-`OLIPOP · default · Production\|ehouse (Olipop 1.0 custom) · home→PDP→PLP→search→cart drawer→blog→our-story→footer · 25 obs · 71 PNG · 0 yeni şema · leftover: search drawer Liquid error / cart redirect / hybrid PLP`
+`OLIPOP · default · Production\|ehouse (Olipop 1.0 custom) · home→PDP→PLP→search→cart drawer→blog→our-story→footer · listicle-advertorial flavors · 30 obs · 86 PNG · 0 yeni şema · leftover: search drawer Liquid error / cart redirect / hybrid PLP / cheat-sheet sidebar`
 
 ---
 
@@ -36,6 +36,7 @@
 | Blog list `/blogs/digest` | [x] obs | [x] |
 | Blog post CEO message | [x] obs | [x] |
 | Content `/pages/our-story` | [x] obs | [x] |
+| Listicle `/blogs/digest/get-to-know-the-olipop-flavors` | [x] obs | [x] |
 | Footer newsletter (home scroll) | [x] obs | [x] |
 | Privacy policy | ⛔ leftover | — |
 | `/cart` sayfası | ⛔ redirect PLP | drawer obs |
@@ -71,6 +72,11 @@
 | 23 | blog-post-main | blog-post | [x] | [x] | [x] | [x] #MainContent |
 | 24 | hero-slideshow | about-brand | [x] | [x] | [x] | [x] our-story hero |
 | 25 | editorial-rich-text | about-brand | [x] | [x] | [x] | [x] our-story body |
+| 26 | editorial-image-with-text | listicle-flavors | [x] | [x] | [x] | [x] article banner |
+| 27 | blog-post-main | listicle-flavors | [x] | [x] | [x] | [x] named flavor roster |
+| 28 | product-showcase-grid-featured | listicle-flavors | [x] | [x] | [x] | [x] Featured Pops |
+| 29 | blog-list-main | listicle-flavors | [x] | [x] | [x] | [x] Related Articles |
+| 30 | lead-capture-newsletter-band | listicle-flavors | [x] | [x] | [x] | [x] Digest subscribe |
 
 ---
 
@@ -83,6 +89,7 @@
 ## Evidence backlog
 
 - [x] Mod A walk home → PDP → collection → search → cart drawer → blog → our-story → footer
-- [x] Resmi 3vp capture-observation (71 PNG)
+- [x] Listicle-advertorial walk `/blogs/digest/get-to-know-the-olipop-flavors` (5 obs · 15 PNG)
+- [x] Resmi 3vp capture-observation (86 PNG)
 - [x] `npm run validate` temiz
 - [ ] Interact (mega hover, tab toggle, FAQ) — sonraki tur
