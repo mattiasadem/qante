@@ -233,6 +233,9 @@ try {
               el.open();
             } catch {}
           }
+          if (getComputedStyle(el).display === "none") {
+            el.style.setProperty("display", "block", "important");
+          }
         }
         document.documentElement.classList.add(
           "overflow-hidden",
