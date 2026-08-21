@@ -1,0 +1,56 @@
+{
+  "observationId": "allbirds.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "allbirds",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.allbirds.com/",
+  "selector": ".header-mobile-menu",
+  "captureMode": "viewport",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/allbirds/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/allbirds/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://www.allbirds.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button[aria-label=\"Open main menu\"]",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "NEW ARRIVALS / SHOP ALL / MEN / WOMEN / SALE üst seviye"
+    }
+  ],
+  "stateFindings": {
+    "open": "Tam ekran mobil drawer: NEW ARRIVALS, SHOP ALL, MEN/WOMEN/SALE akordeon okları."
+  },
+  "missingStates": [],
+  "notlar": "Mobil/tablet hamburger; MEN/WOMEN/SALE nested.",
+  "delta": "Desktop mega ayrı observation. Alt akordeon açılmadı.",
+  "capture": {
+    "url": "https://www.allbirds.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-21T11:13:45.410Z"
+  }
+}

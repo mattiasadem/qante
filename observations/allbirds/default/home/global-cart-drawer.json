@@ -1,0 +1,91 @@
+{
+  "observationId": "allbirds.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "allbirds",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.allbirds.com/",
+  "selector": ".z-takeover.fixed.top-0.right-0",
+  "captureMode": "viewport",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/allbirds/default/home/global-cart-drawer.filled.tree-runner-qty1.1440.png",
+    "evidence/allbirds/default/home/global-cart-drawer.filled.tree-runner-qty1.375.png",
+    "evidence/allbirds/default/home/global-cart-drawer.filled.tree-runner-qty1.768.png",
+    "evidence/allbirds/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/allbirds/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/allbirds/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.allbirds.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button[aria-label=\"View Cart\"]:visible",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Your cart is empty + SHOP WOMENS/MENS/SOCKS/SALE linkleri"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.allbirds.com/products/mens-tree-runner-nz-medium-grey",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button[aria-label=\"Select size 10\"]",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button:has-text(\"Add to Cart - $100\")",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button[aria-label=\"View Cart\"]:visible",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "tree-runner-qty1",
+      "not": "Men's Tree Runner NZ qty 1 + recommended socks upsell"
+    }
+  ],
+  "stateFindings": {
+    "initial": "CART (0); free-shipping progress; empty state koleksiyon linkleri.",
+    "filled": "CART (1); Tree Runner NZ Medium Grey size 10 $100; You've earned free shipping; RECOMMENDED FOR YOU socks."
+  },
+  "missingStates": [],
+  "notlar": "Vue cart drawer sağ panel. /cart → ?openCartDrawer=true home.",
+  "delta": "Boş state SHOP WOMENS/MENS/SOCKS/SALE linkleri. Upsell socks carousel dolu sepette.",
+  "capture": {
+    "url": "https://www.allbirds.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-21T11:13:09.631Z"
+  }
+}
