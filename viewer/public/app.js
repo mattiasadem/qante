@@ -14,6 +14,17 @@ const DIM_LABEL = {
   kaynakTip: "Kaynak",
 };
 const KAYNAK_TIP_LABEL = { shopify: "Shopify", dtc: "DTC", ikas: "ikas" };
+const SAYFA_LABEL = {
+  policy: "Legal / Yasal",
+  "faq-support": "FAQ / Destek",
+  "about-brand": "About / Hakkımızda",
+  "listicle-advertorial": "Listicle",
+  "landing-campaign": "Landing",
+  "product-detail": "PDP",
+  "blog-post": "Blog yazısı",
+  "blog-list": "Blog listesi",
+  "cart-drawer": "Cart drawer",
+};
 
 /** Varsayılan açık facet’ler — tema ağacı kritik (Hyper ailesi burada) */
 const DEFAULT_OPEN_FACETS = ["kaynakTip", "endustri", "tema", "sayfa", "kategori"];
@@ -464,15 +475,27 @@ function activeChips() {
   return chips.length ? `<div class="active-chips">${chips.join("")}</div>` : "";
 }
 
+function sayfaLabel(value) {
+  if (SAYFA_LABEL[value]) return SAYFA_LABEL[value];
+  const fromTax = stats?.taxonomy?.pageTypeLabels?.[value];
+  if (fromTax) {
+    const tr = fromTax.tr || "";
+    const en = fromTax.en || value;
+    return tr && tr !== en ? `${en} / ${tr}` : en;
+  }
+  return value;
+}
+
 function facetBlock(dim) {
   const opts = facets[dim] || [];
   if (!opts.length) return "";
   const sel = new Set(state[dim]);
+  const labelOf = dim === "sayfa" ? sayfaLabel : (v) => v;
   const body = opts
     .map(
       (o) => `<label class="facet-opt${o.count ? "" : " zero"}">
         <input type="checkbox" data-dim="${dim}" value="${esc(o.value)}" ${sel.has(o.value) ? "checked" : ""} />
-        <span>${esc(o.value)}</span>
+        <span>${esc(labelOf(o.value))}</span>
         <span class="n">${o.count}</span>
       </label>`
     )

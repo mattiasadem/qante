@@ -78,6 +78,7 @@ const routes = {
         file: inv.taxonomy.file,
         categoryCount: inv.taxonomy.categories.length,
         pageTypeCount: inv.taxonomy.pageTypes.length,
+        pageTypeLabels: inv.taxonomy.pageTypeLabels || {},
       },
       viewportSet: inv.viewportSet,
       groups: Object.entries(GROUPS).map(([k, v]) => ({ value: k, label: v.label })),
