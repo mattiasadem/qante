@@ -2,7 +2,7 @@
 
 *Kaynak:* https://www.awaytravel.com · *Preset:* default · *Slug:* away
 
-**Şu anki odak:** Mod A kapalı — statik walk + resmi 3vp
+**Şu anki odak:** Mod A + listicle-advertorial walk kapalı
 
 ---
 
@@ -14,7 +14,7 @@
 | Capture | resmi `scripts/capture-observation.mjs` |
 | Shop | `766ad1-ab.myshopify.com` · theme id `190642716856` · `schema_name` Away · `schema_version` 1.244.0 · `theme_store_id` null · role `main` |
 | Platform | Canlı Shopify (custom Away theme, Theme Store değil) |
-| Kapsam satırı | Away · default · home→PDP carry-on→PLP luggage→search carry→cart page→our-story→faqs→footer · 27 obs · 80 PNG · 0 yeni şema · leftover: candidates/away-leftovers.md |
+| Kapsam satırı | Away · default · home→PDP→PLP→search→cart→our-story→faqs→listicle best-travel-gifts→footer · 30 obs · 89 PNG · 0 yeni şema · leftover: candidates/away-leftovers.md + listicle-advertorial.md |
 
 ---
 
@@ -31,14 +31,15 @@
 | Cart `/cart` empty | [x] | [x] |
 | About `/pages/our-story` | [x] | [x] |
 | FAQ `/pages/faqs` (Gladly) | [x] | [x] |
-| Blog / contact / policy | ⛔ leftover | — |
+| Listicle `/blogs/the-away-pages/best-travel-gifts` | [x] | [x] |
+| Blog index / contact / policy | ⛔ leftover | — |
 | Checkout / login / newsletter submit | ⛔ PII stop | — |
 
 ---
 
 ## Bileşen roster
 
-27 observation · 0 yeni şema · reuse only
+30 observation · 0 yeni şema · reuse only
 
 | # | id | sayfa | Done |
 |---|---|---|---|
@@ -69,6 +70,9 @@
 | 25 | editorial-image-with-text.3 | about-brand | [x] |
 | 26 | editorial-custom-content | about-brand | [x] |
 | 27 | faq-collapsible-tabs | faq-support | [x] |
+| 28 | blog-post-main | listicle-best-travel-gifts | [x] |
+| 29 | blog-post-main.2 | listicle-best-travel-gifts | [x] |
+| 30 | blog-list-main | listicle-best-travel-gifts | [x] |
 
 ---
 
@@ -78,7 +82,7 @@
 
 - Cart drawer yok; `/cart` sayfası
 - PDP alt bloklar headless hydrate yok (reviews hero, trust bullets, product FAQ)
-- Blog 404; contact GemPages; policy redirect
+- Blog index 404; listicle `/blogs/the-away-pages/best-travel-gifts` ✅ · contact GemPages; policy redirect
 - Mega hover, filter panel changed, Gladly/Mopinion
 
 ---
@@ -88,4 +92,5 @@
 - [x] Home + chrome 3vp
 - [x] PDP / PLP / search / cart 3vp
 - [x] our-story + faqs 3vp
+- [x] listicle best-travel-gifts 3vp
 - [x] `npm run validate` 0 error

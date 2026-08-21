@@ -27,13 +27,26 @@ Karar: leftover — şema yok
 
 ---
 
-ADAY: away-blog  
-Gerekçe: `/blogs/the-away-report`, `/blogs/news`, `/blogs/journal` → 404. Footer'da blog linki yok. `blog-list-main` / `blog-post-main` kanıtsız.  
-Karar: leftover — rota yok
+ADAY: away-blog-index  
+Gerekçe: `/blogs/the-away-report`, `/blogs/news`, `/blogs/journal` → 404. Footer'da blog index linki yok. Listicle claiming: `/blogs/the-away-pages/best-travel-gifts` → `observations/away/default/listicle-best-travel-gifts/`.  
+Karar: leftover — blog index yok; listicle sayfası envanterlendi
 
 ---
 
-ADAY: away-about-faq-404  
+ADAY: away-listicle-persona-inline-products  
+Gerekçe: Listicle persona blokları h2+paragraf; ürün yalnız inline `<a href="/products/…">` — kart/embed yok. `product-showcase-featured` / `editorial-image-with-text` uymadı. Persona item'lar `blog-post-main.icerik` delta.  
+Örnekler: https://www.awaytravel.com/blogs/the-away-pages/best-travel-gifts  
+Karar: leftover — claiming `blog-post-main` + `blog-post-main.2`; detay `candidates/listicle-advertorial.md`
+
+---
+
+ADAY: away-listicle-share-footer  
+Gerekçe: `.blog-article__footer` Facebook/Twitter/Pinterest share satırı. Taksonomide share band yok.  
+Örnekler: https://www.awaytravel.com/blogs/the-away-pages/best-travel-gifts  
+Karar: leftover
+
+---
+
 Gerekçe: `/pages/about`, `/pages/faq` → 404. Canlı: `/pages/our-story` (about), `/pages/faqs` (FAQ).  
 Karar: leftover — standart URL'ler yok
 
