@@ -3,8 +3,8 @@
 *Kaynak:* Kreis-001 remote (`mattiasadem/Kreis-001`) · *Preset:* `kreis-shaped` (referans, tema değil)  
 *Canlı kanıt:* functionhealth · takearecess · minion footer (repo içi markalar)
 
-**Durum:** policy pageType recipe + şema zenginleştirme  
-**PR:** `cursor/legal-policy-page-recipe-f5d2` — draft
+**Durum:** policy pageType recipe + 3-col sticky layout (Main spec)  
+**PR:** #317 — draft
 
 ---
 
@@ -12,13 +12,13 @@
 
 | | |
 |---|---|
-| Page recipe | `page-recipes/policy.json` |
-| Evidence kökü | `evidence/functionhealth/default/policy/` · `evidence/takearecess/default/policy/` |
-| Şema | **1 yeni** (`editorial-separator`) · **3 güncellenen** (`page-content-main`, `lead-capture-form`, `footer-columns-newsletter`) |
-| Validate | `node scripts/validate-schemas.mjs` → 0 error |
+| Page recipe | `page-recipes/policy.json` — **three-column-sticky** |
+| Layout wrapper | `sections/page-template/policy-page-layout.json` |
+| Rails | `policy-toc-nav` (sol) · `policy-sibling-nav` (sağ) |
+| Evidence | functionhealth/takearecess center body · im8health partial sibling nav · **3-col 3vp blocked** |
 
 **Kapsam satırı:**  
-`Legal/policy · Kreis CUSTOM recipe · page-content-main + editorial-separator + footer yasalLinkler + contact onayMaddeleri · functionhealth/takearecess/minion kanıt · Kreis contact SS blocked`
+`Legal/policy · Main 3-col sticky TOC|body|sibling · policy-page-layout + rails · Kreis Heading+Text center · footer yasalLinkler ayrı · 3-col live 3vp Açık soru`
 
 ---
 
@@ -26,15 +26,13 @@
 
 | # | İş | Done |
 |---|---|---|
-| 1 | `page-recipes/policy.json` — Kreis Header→Heading→Text→Footer stack | [x] |
-| 2 | `taxonomy/v0.1.0.json` — pageTypeLabels policy=Legal/Yasal | [x] |
-| 3 | `page-content-main` — sonGuncelleme, bolumler, 6 knob | [x] |
-| 4 | `editorial-separator` — yeni şema | [x] |
-| 5 | `lead-capture-form.onayMaddeleri` + onayGoster knob | [x] |
-| 6 | `footer-columns-newsletter.yasalLinkler` locale notu | [x] |
-| 7 | Viewer — policy facet Legal / Yasal | [x] |
-| 8 | Observations + 3vp capture (functionhealth terms, waterboy privacy refresh) | [x] |
-| 9 | Kreis contact onay — blocked (page-recipes/policy.json) | [x] |
+| 1 | `page-recipes/policy.json` — 3-col shell (not single stack) | [x] |
+| 2 | `policy-page-layout` page-template (kolon 3, solSticky, sagSticky) | [x] |
+| 3 | `policy-toc-nav` — items etiket+anchor, sticky+side left | [x] |
+| 4 | `policy-sibling-nav` — items etiket+link, sticky+side right | [x] |
+| 5 | `page-content-main.bolumler[].anchor` ↔ TOC binding | [x] |
+| 6 | im8health delta — partial sibling nav, 3-col blocked | [x] |
+| 7 | Validator 0 error on touched schemas | [x] |
 
 ---
 

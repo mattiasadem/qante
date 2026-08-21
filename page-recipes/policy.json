@@ -5,17 +5,46 @@
     "tr": "Yasal",
     "de": "Rechtliches"
   },
-  "source": "Kreis-001 IKAS CUSTOM pages (remote inspection via GitHub raw; theme code not cloned)",
+  "source": "Main 3-column sticky spec (authoritative) + Kreis-001 CUSTOM intent (remote; single-column Heading+Text in theme.json today)",
+  "layout": {
+    "type": "three-column-sticky",
+    "columns": {
+      "left": {
+        "role": "in-page-toc",
+        "schemaId": "policy-toc-nav",
+        "sticky": true,
+        "description": "This page's content headings as anchor links jumping to middle-column sections"
+      },
+      "center": {
+        "role": "legal-body",
+        "schemaIds": ["page-content-main", "editorial-separator"],
+        "description": "Heading + Text (Kreis); optional Separator between body blocks"
+      },
+      "right": {
+        "role": "sibling-policy-links",
+        "schemaId": "policy-sibling-nav",
+        "sticky": true,
+        "description": "Links to other legal pages (Privacy, Terms, Cookie) — not footer yasalLinkler"
+      }
+    },
+    "wrapper": {
+      "schemaId": "policy-page-layout",
+      "scope": "page-template",
+      "styleKnobs": ["layout three-column|stacked", "kolon 3", "solSticky", "sagSticky", "mobilAccordion"]
+    },
+    "mobile": "Left/right sticky rails collapse — typically TOC + sibling nav become top/bottom accordion (mobilAccordion on wrapper and rails; not a fourth layout invented)"
+  },
   "ikasPageShape": {
     "type": "CUSTOM",
     "stack": [
       "Header",
-      "Heading",
-      "Text",
-      "Separator (optional)",
+      "policy-page-layout",
+      "  policy-toc-nav (left sticky)",
+      "  page-content-main (+ optional editorial-separator)",
+      "  policy-sibling-nav (right sticky)",
       "Footer"
     ],
-    "note": "Privacy / Terms / Cookie CUSTOM pages are intended but not yet present in Kreis src/theme.json pages[]"
+    "note": "Kreis theme.json pages[] still lacks Privacy/Terms/Cookie CUSTOM pages; Main 3-col supersedes prior single-stack recipe"
   },
   "slugs": {
     "privacy-policy": {
@@ -32,7 +61,7 @@
       "en": "Cookie Policy",
       "tr": "Çerez Politikası",
       "de": "Cookie-Richtlinie",
-      "note": "Kreis Footer.legalLinks only; theme typo Cookie Concent; no CUSTOM page in theme.json yet"
+      "note": "Kreis Footer.legalLinks only; theme typo Cookie Concent"
     }
   },
   "sections": [
@@ -45,28 +74,49 @@
     },
     {
       "order": 2,
-      "schemaId": "page-content-main",
-      "scope": "instance",
+      "schemaId": "policy-page-layout",
+      "scope": "page-template",
       "required": true,
-      "kreisComponents": ["Heading", "Text"],
-      "slots": ["baslik", "icerik", "sonGuncelleme", "bolumler"]
+      "children": [
+        {
+          "column": "left",
+          "schemaId": "policy-toc-nav",
+          "required": true
+        },
+        {
+          "column": "center",
+          "schemaId": "page-content-main",
+          "required": true,
+          "kreisComponents": ["Heading", "Text"],
+          "slots": ["baslik", "sonGuncelleme", "icerik", "bolumler"]
+        },
+        {
+          "column": "center",
+          "schemaId": "editorial-separator",
+          "required": false,
+          "kreisComponent": "Separator"
+        },
+        {
+          "column": "right",
+          "schemaId": "policy-sibling-nav",
+          "required": true
+        }
+      ]
     },
     {
       "order": 3,
-      "schemaId": "editorial-separator",
-      "scope": "instance",
-      "required": false,
-      "kreisComponent": "Separator"
-    },
-    {
-      "order": 4,
       "schemaId": "footer-columns-newsletter",
       "scope": "global",
       "required": true,
       "slot": "yasalLinkler",
-      "kreisComponent": "Footer.legalLinks (LIST_OF_LINK: label + PAGE link)"
+      "kreisComponent": "Footer.legalLinks"
     }
   ],
+  "tocBinding": {
+    "from": "page-content-main.bolumler[]",
+    "to": "policy-toc-nav.items[]",
+    "map": "etiket ← baslik · anchor ← anchor (or baslik slug)"
+  },
   "footerLegalLinks": {
     "schemaId": "footer-columns-newsletter",
     "slot": "yasalLinkler",
@@ -90,7 +140,8 @@
         "link": "/pages/cookie",
         "note": "footer-only in Kreis"
       }
-    ]
+    ],
+    "distinctFrom": "policy-sibling-nav.items — footer is site-wide; right rail is on-page sibling nav"
   },
   "contactLegalConsent": {
     "schemaId": "lead-capture-form",
@@ -104,13 +155,18 @@
     }
   },
   "blockedEvidence": {
-    "contactLegalConsent": "Kreis ContactForm.approvalItems — no live IKAS storefront for 3vp; default HTML documented in contactLegalConsent.kreisDefaultHtml"
+    "threeColumnSticky": "Main spec authoritative. Kreis theme.json has no CUSTOM legal page. Live scan: im8health privacy has yan sibling nav (partial) but left TOC sticky + full 3-col not verified — no fake 3vp.",
+    "contactLegalConsent": "Kreis ContactForm.approvalItems — no live IKAS storefront for 3vp"
   },
   "evidenceObservations": [
     "observations/functionhealth/default/policy/page-content-main.json",
     "observations/functionhealth/default/policy/page-content-main-2.json",
     "observations/takearecess/default/policy/page-content-main-2.json",
-    "observations/minion/default/home/footer-columns-newsletter.json"
+    "observations/minion/default/home/footer-columns-newsletter.json",
+    "observations/im8health/default/policy/page-content-main.json"
   ],
-  "_note": "Impressum / KVKK / GDPR / Widerruf templates intentionally omitted — not in Kreis-001."
+  "acikSoru": [
+    "Canlı tam 3-col sticky TOC|body|sibling örneği envanterlenecek marka — im8health yalnızca sağ yan nav kısmi kanıt"
+  ],
+  "_note": "Impressum / KVKK / GDPR / Widerruf omitted — not in Kreis-001."
 }

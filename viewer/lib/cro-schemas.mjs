@@ -111,6 +111,9 @@ export const SCHEMA_CLASSIFICATION = Object.freeze({
   "editorial-separator": { lane: "vitrine" },
   "editorial-timeline": { lane: "vitrine" },
   "page-content-main": { lane: "vitrine" },
+  "policy-page-layout": { lane: "vitrine" },
+  "policy-sibling-nav": { lane: "vitrine" },
+  "policy-toc-nav": { lane: "vitrine" },
 
   // --- Vitrine: features / trust / press logos ---
   "features-multicolumn": { lane: "vitrine" },

@@ -86,7 +86,7 @@ describe("schema allowlist", () => {
 
   it("classifies every on-disk schemaId and nothing else", () => {
     assert.deepEqual(mapIds, diskIds);
-    assert.equal(diskIds.length, 66);
+    assert.equal(diskIds.length, 69);
   });
 
   it("assigns cro | vitrine; cro has exactly one closed type", () => {
@@ -104,7 +104,7 @@ describe("schema allowlist", () => {
     }
   });
 
-  it("counts 11 cro / 55 vitrine / 18 awaiting", () => {
+  it("counts 11 cro / 58 vitrine / 18 awaiting", () => {
     const c = allowlistCounts();
     assert.deepEqual(c, { schemas: 65, cro: 11, vitrine: 54, awaiting: 18 });
   });
@@ -124,9 +124,9 @@ describe("schema allowlist", () => {
     const md = fs.readFileSync(path.join(ROOT, "candidates/cro-types.md"), "utf8");
     const missing = diskIds.filter((id) => !md.includes(`\`${id}\``));
     assert.deepEqual(missing, []);
-    assert.match(md, /66 şema/);
+    assert.match(md, /69 şema/);
     assert.match(md, /11 CRO/);
-    assert.match(md, /55 vitrine/);
+    assert.match(md, /58 vitrine/);
     assert.match(md, /18 awaiting/);
   });
 

@@ -1,0 +1,51 @@
+{
+  "id": "policy-sibling-nav",
+  "kategori": "navigation",
+  "varyant": "policy-siblings",
+  "scope": "instance",
+  "amac": "Yasal sayfa sağ yapışkan kardeş sayfa linkleri (Privacy, Terms, Cookie)",
+  "slots": {
+    "baslik": {
+      "tip": "text",
+      "maxLen": 40,
+      "zorunlu": false,
+      "not": "en: Legal · tr: Yasal · de: Rechtliches"
+    },
+    "items": {
+      "tip": "array",
+      "zorunlu": true,
+      "min": 1,
+      "max": 8,
+      "item": {
+        "etiket": {
+          "tip": "text",
+          "maxLen": 40,
+          "zorunlu": true
+        },
+        "link": {
+          "tip": "link",
+          "zorunlu": true
+        }
+      },
+      "not": "Footer yasalLinkler değil — sayfa içi kardeş nav. im8health yan nav kısmi kanıt."
+    }
+  },
+  "styleKnobs": {
+    "sticky": true,
+    "side": "left|right",
+    "layout": "list|compact",
+    "mobilAccordion": true,
+    "hizalama": "left|center",
+    "aktifSayfaVurgula": true
+  },
+  "dataBindings": [],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "responsive": "Mobilde sticky kalkar; accordion veya footer-adjacent link list.",
+  "_knobNote": "Footer.legalLinks site geneli; bu rail yalnız policy CUSTOM sibling pages. side default right."
+}

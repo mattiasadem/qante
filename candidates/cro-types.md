@@ -2,7 +2,7 @@
 
 Viewer **CRO** sekmesi (`?view=cro`) bu kapalı tipi tarar. Status walk listesi değil — envanterde hangi funnel bloğunun durduğuna bakmak için katalog.
 
-**Sayılar (on-disk şema, `_template` hariç):** 66 şema · **11 CRO** · **55 vitrine** · **18 awaiting**
+**Sayılar (on-disk şema, `_template` hariç):** 69 şema · **11 CRO** · **58 vitrine** · **18 awaiting**
 
 Kaynak: `viewer/lib/cro-schemas.mjs` (schemaId allowlist). Sınıflandırıcı: `viewer/lib/cro.mjs`. `kategori` section ailesidir, “bu CRO mu?” değildir. Yeni tema yürüyüşü yok.
 
@@ -46,7 +46,7 @@ PDP commerce (buy box, CRO tipi değil): `product-info-main` · `product-info-ta
 
 Hero / promo: `hero-slideshow` · `media-lookbook-banner` · `media-lookbook-slider` · `media-mosaic-grid` · `media-video-hero` · `promo-announcement-bar` · `promo-banner-tabs` · `promo-grid-banner` · `promo-scrolling-marquee` · `promo-spotlight-tab`
 
-Editorial / blog: `blog-list-main` · `blog-post-main` · `editorial-custom-content` · `editorial-dynamic-grid` · `editorial-highlight-text-image` · `editorial-image-with-text` · `editorial-image-with-text-overlay` · `editorial-images-scroll` · `editorial-layered-images` · `editorial-rich-text` · `editorial-separator` · `editorial-timeline` · `page-content-main`
+Editorial / blog: `blog-list-main` · `blog-post-main` · `editorial-custom-content` · `editorial-dynamic-grid` · `editorial-highlight-text-image` · `editorial-image-with-text` · `editorial-image-with-text-overlay` · `editorial-images-scroll` · `editorial-layered-images` · `editorial-rich-text` · `editorial-separator` · `editorial-timeline` · `page-content-main` · `policy-page-layout` · `policy-sibling-nav` · `policy-toc-nav`
 
 Features / trust / basın: `features-multicolumn` · `features-slider-multicolumn` · `social-proof-brand-logos` · `trust-contact-icon-band` · `trust-icon-row`
 
@@ -75,6 +75,9 @@ Default seçildi; emin olunamayanlar. Onay sonrası allowlist’i düzelt.
 | `editorial-image-with-text` | vitrine | Editorial split; how-it's-made / sourcing / how-to reuse. |
 | `page-content-main` | vitrine | Generic sayfa gövdesi; guarantee / policy sayfaları bunu reuse ediyor. |
 | `editorial-separator` | vitrine | Policy/statik sayfa bölüm ayırıcı; Kreis Separator map. |
+| `policy-page-layout` | vitrine | page-template 3-col kabuk; solSticky + sagSticky + mobilAccordion. |
+| `policy-toc-nav` | vitrine | Sol sticky in-page TOC; items etiket+anchor. |
+| `policy-sibling-nav` | vitrine | Sağ sticky kardeş policy linkleri; footer yasalLinkler değil. |
 | `hero-slideshow` | vitrine | Hero vitrine; birkaç slayt back-in-stock kopyası, scarcity section değil. |
 | `promo-spotlight-tab` | vitrine | Kenar teklif sekmesi scarcity olabilir; tip/şema yok. |
 
