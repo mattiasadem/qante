@@ -1,0 +1,62 @@
+{
+  "observationId": "allbirds.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "allbirds",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.allbirds.com/",
+  "selector": "#shopify-section-sections--16476871000144__header .absolute.top-5.right-5.left-5",
+  "captureMode": "viewport",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/allbirds/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/allbirds/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/allbirds/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/allbirds/default/home/navigation-header-mega.open.men-mega.1440.png"
+  ],
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.allbirds.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Sticky bar: NEW ARRIVALS, SHOP ALL, MEN/WOMEN/SALE, search, cart 0"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button:visible:has-text(\"MEN\")",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "men-mega",
+      "not": "MEN click → Shoes/Apparel kolonları + Customer Favorites kartları"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Logo; NEW ARRIVALS; SHOP ALL; MEN/WOMEN/SALE; search icon; View Cart 0. Mega kapalı.",
+    "open": "1440 MEN click: New Arrivals/Bestsellers/Leather Alternatives + Men's Shoes alt linkler + Customer Favorites görsel kartları."
+  },
+  "missingStates": [],
+  "notlar": "Sticky header; MEN/WOMEN/SALE button mega. Search header'da link (predictive overlay yok).",
+  "delta": "Mega hover değil click ile açılır. Locale switch yok. Free-shipping progress header'da cart badge yanında.",
+  "capture": {
+    "url": "https://www.allbirds.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-21T11:09:49.117Z"
+  }
+}
