@@ -25,6 +25,7 @@
 | Obvi (Platter custom) | [`obvi.md`](./obvi.md) | ✅ kapalı — 51 obs · community/team/FAQ/contact/policy · 404/scratch kayıtlı · **main'e merge yok** |
 | Bandit Running | [`bandit.md`](./bandit.md) | ✅ default — `bandit-ecomm/main` · DTC-69 #2 · statik 3vp + mega/search/cart/menu · 0 yeni şema |
 | Local (Krown) | [`local.md`](./local.md) | ✅ default — `local-build/light` · resmi 3vp + interact · 45 obs · 154 PNG · 0 yeni şema |
+| Away | [`away.md`](./away.md) | ✅ default — awaytravel.com · Mod A · 27 obs · 80 PNG · 0 yeni şema · leftover: away-leftovers.md |
 
 **Interact (discover sonrası derinlik):** [`interact.md`](./interact.md) — kapalı kare yalanı; Stretch + Cocoon/Balance shop-the-look kapandı.
 
