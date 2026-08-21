@@ -4,6 +4,7 @@
  * Usage:
  *   node capture-observation.mjs ../observations/hyper/default/home/hero-slideshow.json
  *   node capture-observation.mjs <obs.json> --url https://...
+ *   node capture-observation.mjs <obs.json> --headed                 # Cloudflare / bot wall
  *
  * Observation alanları:
  *   selector (zorunlu), kaynak, preset, sayfa, schemaId, observationId
@@ -27,6 +28,7 @@ const qanteRoot = path.resolve(__dirname, "..");
 const DEFAULT_URLS = {
   hyper: "https://hyper-theme-demo.myshopify.com/",
   impulse: "https://impulse-theme-fashion.myshopify.com/",
+  ridge: "https://ridge.com/",
 };
 
 const viewports = JSON.parse(
@@ -34,9 +36,10 @@ const viewports = JSON.parse(
 ).viewports;
 
 function parseArgs(argv) {
-  const args = { obsPath: null, url: null };
+  const args = { obsPath: null, url: null, headed: false };
   for (let i = 2; i < argv.length; i++) {
     if (argv[i] === "--url") args.url = argv[++i];
+    else if (argv[i] === "--headed") args.headed = true;
     else if (!args.obsPath) args.obsPath = argv[i];
   }
   return args;
@@ -56,10 +59,10 @@ function evidenceRel(obs, filename) {
   return `evidence/${obs.kaynak}/${obs.preset}/${obs.sayfa}/${filename}`;
 }
 
-const { obsPath, url: urlArg } = parseArgs(process.argv);
+const { obsPath, url: urlArg, headed } = parseArgs(process.argv);
 if (!obsPath) {
   console.error(
-    "Usage: node capture-observation.mjs <observation.json> [--url https://...]"
+    "Usage: node capture-observation.mjs <observation.json> [--url https://...] [--headed]"
   );
   process.exit(1);
 }
@@ -83,7 +86,10 @@ const slug = obs.evidenceSlug || obs.schemaId || "section";
 const outDir = evidenceDir(obs);
 fs.mkdirSync(outDir, { recursive: true });
 
-const browser = await chromium.launch({ headless: true });
+const browser = await chromium.launch({
+  headless: !headed,
+  args: headed ? ["--disable-blink-features=AutomationControlled"] : [],
+});
 const evidence = [];
 const results = [];
 
@@ -96,7 +102,18 @@ try {
       deviceScaleFactor: 1,
       isMobile: false,
       hasTouch: false,
+      ...(headed
+        ? {
+            userAgent:
+              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+          }
+        : {}),
     });
+    if (headed) {
+      await page.addInitScript(() => {
+        Object.defineProperty(navigator, "webdriver", { get: () => false });
+      });
+    }
 
     const warmupUrl = obs.warmupUrl || obs.capture?.warmupUrl || null;
     if (warmupUrl) {
