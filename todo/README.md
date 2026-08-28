@@ -25,7 +25,7 @@
 | Obvi (Platter custom) | [`obvi.md`](./obvi.md) | ✅ kapalı — 51 obs · community/team/FAQ/contact/policy · 404/scratch kayıtlı · **main'e merge yok** |
 | Bandit Running | [`bandit.md`](./bandit.md) | ✅ default — `bandit-ecomm/main` · DTC-69 #2 · statik 3vp + mega/search/cart/menu · 0 yeni şema |
 | Local (Krown) | [`local.md`](./local.md) | ✅ default — `local-build/light` · resmi 3vp + interact · 45 obs · 154 PNG · 0 yeni şema |
-| Rare Beauty | [`rarebeauty.md`](./rarebeauty.md) | ✅ Mod A — home→PDP→PLP→search→drawer→content→footer · 27 obs · 80 PNG · 0 yeni şema |
+| Vuori | [`vuori.md`](./vuori.md) | ✅ Mod A — Next.js headless Shopify · 27 obs · 81 PNG · 0 yeni şema · cart sayfa (drawer yok) |
 
 **Interact (discover sonrası derinlik):** [`interact.md`](./interact.md) — kapalı kare yalanı; Stretch + Cocoon/Balance shop-the-look kapandı.
 
