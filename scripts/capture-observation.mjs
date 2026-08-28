@@ -4,6 +4,7 @@
  * Usage:
  *   node capture-observation.mjs ../observations/hyper/default/home/hero-slideshow.json
  *   node capture-observation.mjs <obs.json> --url https://...
+ *   node capture-observation.mjs <obs.json> --headed                 # Cloudflare / bot wall
  *
  * Observation alanları:
  *   selector (zorunlu), kaynak, preset, sayfa, schemaId, observationId
@@ -27,6 +28,7 @@ const qanteRoot = path.resolve(__dirname, "..");
 const DEFAULT_URLS = {
   hyper: "https://hyper-theme-demo.myshopify.com/",
   impulse: "https://impulse-theme-fashion.myshopify.com/",
+  ridge: "https://ridge.com/",
 };
 
 const viewports = JSON.parse(
@@ -34,9 +36,10 @@ const viewports = JSON.parse(
 ).viewports;
 
 function parseArgs(argv) {
-  const args = { obsPath: null, url: null };
+  const args = { obsPath: null, url: null, headed: false };
   for (let i = 2; i < argv.length; i++) {
     if (argv[i] === "--url") args.url = argv[++i];
+    else if (argv[i] === "--headed") args.headed = true;
     else if (!args.obsPath) args.obsPath = argv[i];
   }
   return args;
@@ -56,10 +59,10 @@ function evidenceRel(obs, filename) {
   return `evidence/${obs.kaynak}/${obs.preset}/${obs.sayfa}/${filename}`;
 }
 
-const { obsPath, url: urlArg } = parseArgs(process.argv);
+const { obsPath, url: urlArg, headed } = parseArgs(process.argv);
 if (!obsPath) {
   console.error(
-    "Usage: node capture-observation.mjs <observation.json> [--url https://...]"
+    "Usage: node capture-observation.mjs <observation.json> [--url https://...] [--headed]"
   );
   process.exit(1);
 }
@@ -83,14 +86,10 @@ const slug = obs.evidenceSlug || obs.schemaId || "section";
 const outDir = evidenceDir(obs);
 fs.mkdirSync(outDir, { recursive: true });
 
-const headed =
-  process.env.QANTE_HEADED === "1" || process.env.QANTE_HEADED === "true";
 const browser = await chromium.launch({
   headless: !headed,
   args: headed ? ["--disable-blink-features=AutomationControlled"] : [],
 });
-const headedUserAgent =
-  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36";
 const evidence = [];
 const results = [];
 
@@ -103,8 +102,18 @@ try {
       deviceScaleFactor: 1,
       isMobile: false,
       hasTouch: false,
-      ...(headed ? { userAgent: headedUserAgent } : {}),
+      ...(headed
+        ? {
+            userAgent:
+              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+          }
+        : {}),
     });
+    if (headed) {
+      await page.addInitScript(() => {
+        Object.defineProperty(navigator, "webdriver", { get: () => false });
+      });
+    }
 
     const warmupUrl = obs.warmupUrl || obs.capture?.warmupUrl || null;
     if (warmupUrl) {
@@ -116,16 +125,6 @@ try {
     const target = new URL(url);
     await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
     await page.waitForTimeout(3500);
-
-    // Cloudflare / bot interstitial — kısa bekle + reload (DTC storefront)
-    for (let cf = 0; cf < 6; cf++) {
-      const title = await page.title().catch(() => "");
-      if (!/just a moment/i.test(title)) break;
-      console.warn(`Cloudflare challenge (${vp.id}), wait ${8 + cf * 4}s…`);
-      await page.waitForTimeout(8000 + cf * 4000);
-      await page.reload({ waitUntil: "domcontentloaded", timeout: 90000 }).catch(() => {});
-      await page.waitForTimeout(3500);
-    }
 
     // Mobil/tablet redirect veya overlay click ile sayfa kaydıysa home'a geri al
     const landed = new URL(page.url());
@@ -250,9 +249,6 @@ try {
             try {
               el.open();
             } catch {}
-          }
-          if (getComputedStyle(el).display === "none") {
-            el.style.setProperty("display", "block", "important");
           }
         }
         document.documentElement.classList.add(
@@ -395,8 +391,6 @@ try {
     });
 
     await page.close();
-    // Cloudflare / bot walls: ardışık viewport yüklemeleri arasında nefes
-    await new Promise((r) => setTimeout(r, 5000));
   }
 
   // observation.evidence güncelle (3 viewport path)

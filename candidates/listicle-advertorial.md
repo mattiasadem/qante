@@ -1,34 +1,42 @@
-# ADAY: listicle-advertorial — Seed Cultured gaps
+# Aday — listicle-advertorial (sayfa tipi)
 
-**Durum:** bekliyor · **Kaynak:** Seed (seed.com) · Cultured WordPress · `listicle-gi-tips` · 2026-08-21
+Ridge `listicle-5-last-minute-gifts` keşfinde şemaya sığmayan / ayrı schemaId gerektiren kalıplar.
 
-## Gerekçe
+---
 
-`listicle-advertorial` sayfa tipi taksonomide var; mevcut şemalar (`blog-post-main`, `editorial-rich-text`, `editorial-image-with-text`) gövde + intro + summary kutusu için reuse edildi. Aşağıdaki bloklar ayrı section şeması gerektiriyor veya tekrarlayan listicle atomları mevcut slot setine sığmıyor.
+ADAY: listicle-shop-the-list  
+Gerekçe: Numaralı H2 blokları (1–5) her biri ürün anlatımı + “Shop …” CTA linki. `blog-post-main` `icerik` slotuna sığdırılabilir ama tekrarlayan item yapısı (başlık, fiyat, bullet, shop link) ayrı section ailesi adayı.  
+Örnekler: https://ridge.com/a/blog/5-last-minute-gifts-to-get-from-ridge-this-holiday-season (Wallet, Power Bank, Rings, Long Haul Kit, Daily Survival Kit)  
+Öneri: Yeni `instance` şema — `items[]` (baslik, metin, cta, link ref) + `styleKnobs` layout  
+Karar: onay bekliyor
 
-## Şemaya sığmayan / aday bloklar
+---
 
-| Blok | DOM / davranış | Öneri |
+ADAY: listicle-table-of-contents  
+Gerekçe: “Table of Contents” anchor listesi article gövdesinde; blog-post içi leftover değil — ayrı navigasyon bloğu.  
+Örnekler: Ridge listicle TOC (9 anchor + alt maddeler)  
+Öneri: `blog-post-main` delta veya editorial-nav TOC varyantı  
+Karar: onay bekliyor
+
+---
+
+ADAY: dib-listicle-app-host  
+Gerekçe: İçerik `#dib-posts` / `#dib-template-2` üçüncü parti DIB embed; Shopify `shopify-section` değil.  
+Örnekler: `#main-content > #dib-posts`  
+Öneri: Platform/app leftover — şema icat yok; observation `delta`  
+Karar: onay bekliyor
+
+---
+
+## Bilinçli reuse (yeni schemaId yok)
+
+| schemaId | Ridge selector | Not |
 |---|---|---|
-| Share toolbar | Intro içi Facebook/Twitter/LinkedIn/email/PDF | `navigation` feature veya `promo` aday — global chrome değil, makale içi |
-| Expert review strip | "Expert Review By" + reviewer link | `trust` veya editorial meta — blog-post-main `delta` |
-| Seed Digest callout | H2 + bullet list (4 D özeti) | Tekrarlayan `editorial-rich-text` varyantı; ayrı wrapper yok |
-| Numaralı ipucu atomu | H2 (1–4) + gövde + "The Seed Difference" H3 + EXPLORE FURTHER link | Listicle item şeması adayı — şu an blog-post-main richtext içinde |
-| Summary highlight box | `.block-hightlight-box` ×4 | Tek şema reuse; dördüncü instance observation değil |
-| Citations accordion | `.blog-detail-content__citations-container` + genişletilmiş liste | `editorial` veya `faq` aday |
-| Filed-under tags | `.cultured-section--tags` | `collection-nav` veya editorial meta aday |
-| Author / reviewer bio | `.cultured-section--bio` (Written By + Reviewed By) | `editorial-timeline` / trust bio aday |
-| Next article card | `.cultured-section--next` | `blog-list-main` kart reuse aday |
-| Related articles grid | `.cultured-section--related` + `.theme-posts-grid--3` | `blog-list-main` veya `product-showcase-grid-featured` benzeri — **ürün grid değil**, makale grid |
-| Inline shop CTAs | `daily-synbiotic` metin linkleri gövde içinde | Ayrı `cta-band` yok; advertorial beklentisi inline link |
+| `blog-post-main` | `#dib-post-single` | Numaralı 1–5 shop-the-list + intro/closing |
+| `faq-collapsible-tabs` | `#dib-post-single .dib-faq` | 9 FAQ accordion |
+| `blog-list-main` | `.dib-related` | 3 related article kart |
 
-## Platform notu
+## Bilinçli atlanan (bu sayfa turu)
 
-- Non-Shopify Cultured (WordPress) · Cloudflare bot koruması · headless capture başarısız → `QANTE_HEADED=1` ile resmi script
-- Ürün grid yok (beklentiyle uyumlu); shop yalnız inline link
-
-## Karar
-
-- [ ] Onayla → yeni listicle atom / citations / related şemaları
-- [ ] Reddet — mevcut 3 şema yeterli
-- [ ] Ertele
+- Global header / footer / announcement — storefront walk değil; yalnız listicle-advertorial
+- Newsletter / form submit — PII stop
