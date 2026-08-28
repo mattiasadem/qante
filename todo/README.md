@@ -25,6 +25,27 @@
 | Obvi (Platter custom) | [`obvi.md`](./obvi.md) | ✅ kapalı — 51 obs · community/team/FAQ/contact/policy · 404/scratch kayıtlı · **main'e merge yok** |
 | Bandit Running | [`bandit.md`](./bandit.md) | ✅ default — `bandit-ecomm/main` · DTC-69 #2 · statik 3vp + mega/search/cart/menu · 0 yeni şema |
 | Local (Krown) | [`local.md`](./local.md) | ✅ default — `local-build/light` · resmi 3vp + interact · 45 obs · 154 PNG · 0 yeni şema |
+| Mejuri | [`mejuri.md`](./mejuri.md) | ✅ Mod A — headless custom · 18 obs · 54 PNG · 0 yeni şema |
+| Outdoor Voices | [`outdoorvoices.md`](./outdoorvoices.md) | ✅ default — outdoorvoices.com · 27 obs · 90 PNG · 0 yeni şema |
+| Everlane | [`everlane.md`](./everlane.md) | ✅ Mod A — Dawn 15.3.0 + Builder.io · 27 obs · 80 PNG · 0 yeni şema |
+| OLIPOP | [`olipop.md`](./olipop.md) | ✅ Mod A — 30 obs · 86 PNG · listicle-flavors · 0 yeni şema |
+| SKIMS | [`skims.md`](./skims.md) | ✅ first inventory — Hydrogen/Oxygen · 22 obs · 66 kanıt · 0 yeni şema |
+| Rothy's | [`rothys.md`](./rothys.md) | ✅ Mod A — DNA theme · 38 obs · 111 PNG · 0 yeni şema |
+| Liquid Death | [`liquiddeath.md`](./liquiddeath.md) | ✅ Mod A — 28 obs · 83 PNG · 0 yeni şema |
+| Glossier | [`glossier.md`](./glossier.md) | ✅ Mod A — 23 obs · 69 PNG · 0 yeni şema |
+| Poppi | [`poppi.md`](./poppi.md) | ✅ Mod A — 30 obs · 87 PNG · 0 yeni şema |
+| Brooklinen | [`brooklinen.md`](./brooklinen.md) | ✅ Mod A — 38 obs · 114 PNG · 0 yeni şema |
+| Rare Beauty | [`rarebeauty.md`](./rarebeauty.md) | ✅ Mod A — 27 obs · 80 PNG · 0 yeni şema |
+| Vuori | [`vuori.md`](./vuori.md) | ✅ Mod A — Next.js headless Shopify · 27 obs · 81 PNG · cart sayfa (drawer yok) |
+| Casper | [`casper.md`](./casper.md) | ✅ Mod A — 39 obs · 117 PNG · listicle-advertorial · 0 yeni şema |
+| Away | [`away.md`](./away.md) | ✅ default — awaytravel.com · 30 obs · 89 PNG · listicle-advertorial · 0 yeni şema |
+| Caraway | [`caraway.md`](./caraway.md) | ✅ listicle-advertorial — best-kitchen-gifts · 4 obs · 12 PNG · 0 yeni şema |
+| Seed (Cultured) | [`seed.md`](./seed.md) | ✅ listicle-gi-tips · 3 obs · 9 PNG · DTC non-Shopify |
+| Ridge | [`ridge.md`](./ridge.md) | ✅ listicle-advertorial — 3 obs · 9 PNG · 0 yeni şema · DIB embed |
+| Into The Gloss | [`intothegloss.md`](./intothegloss.md) | ✅ listicle-holiday-2025 · 9 obs · 27 PNG · 0 yeni şema · Next.js editorial |
+| HexClad | [`hexclad.md`](./hexclad.md) | ✅ listicle-fathers-day · 5 obs · 15 PNG · 0 yeni şema |
+| Allbirds | [`allbirds.md`](./allbirds.md) | 🟡 Mod A — 30 obs · ~90 PNG · partial capture (search blocked) |
+| Legal / policy (Kreis recipe) | [`policy-legal.md`](./policy-legal.md) | ✅ page-recipes/policy · 3-col sticky TOC \| content \| sibling nav |
 
 **Interact (discover sonrası derinlik):** [`interact.md`](./interact.md) — kapalı kare yalanı; Stretch + Cocoon/Balance shop-the-look kapandı.
 

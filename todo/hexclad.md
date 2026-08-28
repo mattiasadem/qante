@@ -109,3 +109,4 @@
 - [x] Header mega / search 1440 / cart boş+dolu / mobile menu
 - [x] PDP / PLP / search / cart 3vp
 - [x] Content templates 3vp
+- [x] Listicle `/blogs/posts/fathers-day-gift-ideas-for-home-cooks` · `listicle-fathers-day` · 5 obs · 15 PNG

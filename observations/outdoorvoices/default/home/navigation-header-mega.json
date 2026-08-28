@@ -1,0 +1,61 @@
+{
+  "observationId": "outdoorvoices.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "outdoorvoices",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.outdoorvoices.com/",
+  "selector": "sticky-header.header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/outdoorvoices/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/outdoorvoices/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/outdoorvoices/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/outdoorvoices/default/home/navigation-header-mega.open.women-mega.1440.png"
+  ],
+  "notlar": "Sticky bar: Women / Men / OV Extra Sale; ortada Outdoor Voices logo; Search + Cart. 1440 Women hover → mega kolonlar + promo görseller.",
+  "delta": "Custom theme Outdoor Voices Theme 0.1.0 (theme_store_id null). shop outdoor-voices.myshopify.com. Mega .mega-menu absolute panel.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.outdoorvoices.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": ".header__main-nav-link:has-text(\"Women\")",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "women-mega"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Promo + Women/Men/OV Extra Sale + logo + Search/Cart. Mega kapalı.",
+    "open": "1440 Women hover: tier-2/3 kolonlar + sağda 2 promo görsel bloğu."
+  },
+  "missingStates": [],
+  "interactionNote": "",
+  "capture": {
+    "url": "https://www.outdoorvoices.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-20T23:03:44.292Z"
+  }
+}

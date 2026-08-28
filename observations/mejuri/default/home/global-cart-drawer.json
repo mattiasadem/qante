@@ -1,0 +1,31 @@
+{
+  "observationId": "mejuri.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "mejuri",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://mejuri.com/",
+  "selector": "[data-testid=\"mini-cart\"]",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/mejuri/default/home/global-cart-drawer.375.png",
+    "evidence/mejuri/default/home/global-cart-drawer.768.png",
+    "evidence/mejuri/default/home/global-cart-drawer.1440.png"
+  ],
+  "notlar": "Sağ drawer ~480px (role=dialog). Boş: YOUR BAG + SHOP ALL kategori kartları + These items are selling fast (ürün önerileri). Header Bag butonu açar.",
+  "delta": "Custom headless storefront. Shopify.shop / Shopify.theme / schema_name / schema_version / theme_store_id yok (uydurulmadı). Yalnız customerPrivacy + trackingConsent (@shopify/consent-tracking-api v0.2). #shopify-section-* yok. data-testid=mini-cart. /cart sayfa yok. Checkout tıklanmadı.",
+  "captureMode": "viewport",
+  "prepareClick": "header button[data-testid=\"modal-trigger\"]:has-text(\"Bag\")",
+  "capture": {
+    "url": "https://mejuri.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "viewport",
+    "updatedAt": "2026-08-20T22:46:23.410Z",
+    "prepareClick": "header button[data-testid=\"modal-trigger\"]:has-text(\"Bag\")"
+  }
+}

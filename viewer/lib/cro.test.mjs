@@ -24,7 +24,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..")
 
 function onDiskSchemaIds() {
   const ids = [];
-  for (const scope of ["global", "instance"]) {
+  for (const scope of ["global", "instance", "page-template"]) {
     const dir = path.join(ROOT, "sections", scope);
     if (!fs.existsSync(dir)) continue;
     for (const name of fs.readdirSync(dir)) {
@@ -86,7 +86,7 @@ describe("schema allowlist", () => {
 
   it("classifies every on-disk schemaId and nothing else", () => {
     assert.deepEqual(mapIds, diskIds);
-    assert.equal(diskIds.length, 65);
+    assert.equal(diskIds.length, 69);
   });
 
   it("assigns cro | vitrine; cro has exactly one closed type", () => {
@@ -104,9 +104,9 @@ describe("schema allowlist", () => {
     }
   });
 
-  it("counts 11 cro / 54 vitrine / 18 awaiting", () => {
+  it("counts 11 cro / 58 vitrine / 18 awaiting", () => {
     const c = allowlistCounts();
-    assert.deepEqual(c, { schemas: 65, cro: 11, vitrine: 54, awaiting: 18 });
+    assert.deepEqual(c, { schemas: 69, cro: 11, vitrine: 58, awaiting: 18 });
   });
 
   it("lists awaiting rows that already have a default in the map", () => {
@@ -124,9 +124,9 @@ describe("schema allowlist", () => {
     const md = fs.readFileSync(path.join(ROOT, "candidates/cro-types.md"), "utf8");
     const missing = diskIds.filter((id) => !md.includes(`\`${id}\``));
     assert.deepEqual(missing, []);
-    assert.match(md, /65 şema/);
+    assert.match(md, /69 şema/);
     assert.match(md, /11 CRO/);
-    assert.match(md, /54 vitrine/);
+    assert.match(md, /58 vitrine/);
     assert.match(md, /18 awaiting/);
   });
 
@@ -437,9 +437,9 @@ describe("buildCro", () => {
     const bestsellers = out.types.find((t) => t.id === "bestsellers-trending");
     assert.equal(bestsellers.count, 0);
     assert.deepEqual(out.counts.allowlist, {
-      schemas: 65,
+      schemas: 69,
       cro: 11,
-      vitrine: 54,
+      vitrine: 58,
       awaiting: 18,
     });
   });
