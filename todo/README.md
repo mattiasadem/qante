@@ -25,7 +25,7 @@
 | Obvi (Platter custom) | [`obvi.md`](./obvi.md) | ✅ kapalı — 51 obs · community/team/FAQ/contact/policy · 404/scratch kayıtlı · **main'e merge yok** |
 | Bandit Running | [`bandit.md`](./bandit.md) | ✅ default — `bandit-ecomm/main` · DTC-69 #2 · statik 3vp + mega/search/cart/menu · 0 yeni şema |
 | Local (Krown) | [`local.md`](./local.md) | ✅ default — `local-build/light` · resmi 3vp + interact · 45 obs · 154 PNG · 0 yeni şema |
-| Legal / policy (Kreis recipe) | [`policy-legal.md`](./policy-legal.md) | 🟡 draft — page-recipes/policy · 1 yeni şema · Kreis-shaped grammar |
+| Allbirds | [`allbirds.md`](./allbirds.md) | ⬜ Mod A draft — 30 obs · ~90 PNG · 0 yeni şema · capture partial |
 
 **Interact (discover sonrası derinlik):** [`interact.md`](./interact.md) — kapalı kare yalanı; Stretch + Cocoon/Balance shop-the-look kapandı.
 
