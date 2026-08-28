@@ -202,6 +202,14 @@ export function handleRequest(req, res) {
       return serveStatic(res, path.join(PUBLIC_DIR, "qante-apps.html"));
     }
 
+    if (
+      p === "/qante-landing-hero1" ||
+      p === "/qante-landing-hero1/" ||
+      p === "/qante-landing-hero1.html"
+    ) {
+      return serveStatic(res, path.join(PUBLIC_DIR, "qante-landing-hero1.html"));
+    }
+
     let file = safeJoin(PUBLIC_DIR, p);
     if (!file || !fs.existsSync(file) || fs.statSync(file).isDirectory()) {
       file = safeJoin(ROOT, p);
