@@ -1,0 +1,31 @@
+{
+  "id": "policy-page-layout",
+  "kategori": "editorial",
+  "varyant": "policy-three-column",
+  "scope": "page-template",
+  "amac": "Yasal sayfa üç kolon kabuğu: sol TOC + gövde + sağ kardeş linkler",
+  "slots": {},
+  "styleKnobs": {
+    "layout": "three-column|stacked",
+    "kolon": [3],
+    "genislik": "narrow|wide",
+    "solSticky": true,
+    "sagSticky": true,
+    "mobilAccordion": true,
+    "yogunluk": "compact|comfortable"
+  },
+  "dataBindings": [],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [
+    "policy-toc-nav",
+    "page-content-main",
+    "policy-sibling-nav"
+  ],
+  "responsive": "Mobilde three-column → stacked; sol/sag sticky rail'ler accordion veya üst/alt nav olarak düşer.",
+  "_knobNote": "solSticky/sagSticky Main spec — child rail şemalarında sticky+side tekrarlanır. Kreis theme.json'da henüz yok; Main authoritative."
+}

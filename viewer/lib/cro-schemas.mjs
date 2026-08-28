@@ -108,8 +108,12 @@ export const SCHEMA_CLASSIFICATION = Object.freeze({
   "editorial-images-scroll": { lane: "vitrine" },
   "editorial-layered-images": { lane: "vitrine" },
   "editorial-rich-text": { lane: "vitrine" },
+  "editorial-separator": { lane: "vitrine" },
   "editorial-timeline": { lane: "vitrine" },
   "page-content-main": { lane: "vitrine" },
+  "policy-page-layout": { lane: "vitrine" },
+  "policy-sibling-nav": { lane: "vitrine" },
+  "policy-toc-nav": { lane: "vitrine" },
 
   // --- Vitrine: features / trust / press logos ---
   "features-multicolumn": { lane: "vitrine" },

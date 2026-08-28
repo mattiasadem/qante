@@ -112,19 +112,20 @@ export function resolveListedEvidence(root, listedPath, env = process.env) {
 
 function loadTaxonomy(root) {
   const dir = path.join(root, "taxonomy");
-  if (!fs.existsSync(dir)) return { version: null, categories: [], pageTypes: [] };
+  if (!fs.existsSync(dir)) return { version: null, categories: [], pageTypes: [], pageTypeLabels: {} };
   const files = fs
     .readdirSync(dir)
     .filter((f) => f.endsWith(".json"))
     .sort();
   const latest = files[files.length - 1];
-  if (!latest) return { version: null, categories: [], pageTypes: [] };
+  if (!latest) return { version: null, categories: [], pageTypes: [], pageTypeLabels: {} };
   const { data } = readJson(path.join(dir, latest));
   return {
     version: data?.version || latest.replace(/\.json$/, ""),
     file: `taxonomy/${latest}`,
     categories: data?.categories || [],
     pageTypes: data?.pageTypes || [],
+    pageTypeLabels: data?.pageTypeLabels || {},
     candidateQueue: data?.candidateQueue || [],
   };
 }

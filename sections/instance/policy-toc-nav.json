@@ -1,0 +1,53 @@
+{
+  "id": "policy-toc-nav",
+  "kategori": "navigation",
+  "varyant": "policy-toc",
+  "scope": "instance",
+  "amac": "Yasal sayfa sol yapışkan içindekiler — orta kolon bölüm başlıklarına atlama",
+  "slots": {
+    "baslik": {
+      "tip": "text",
+      "maxLen": 40,
+      "zorunlu": false,
+      "not": "en: On this page · tr: Bu sayfada · de: Auf dieser Seite"
+    },
+    "items": {
+      "tip": "array",
+      "zorunlu": true,
+      "min": 1,
+      "max": 24,
+      "item": {
+        "etiket": {
+          "tip": "text",
+          "maxLen": 120,
+          "zorunlu": true
+        },
+        "anchor": {
+          "tip": "text",
+          "maxLen": 80,
+          "zorunlu": true,
+          "not": "Sayfa içi fragment (#slug); page-content-main.bolumler[].anchor ile eşleşir"
+        }
+      },
+      "not": "Merchant veya editör page-content-main.bolumler baslik/anchor'dan doldurur"
+    }
+  },
+  "styleKnobs": {
+    "sticky": true,
+    "side": "left|right",
+    "layout": "list|accordion",
+    "mobilAccordion": true,
+    "hizalama": "left|center",
+    "yogunluk": "compact|comfortable"
+  },
+  "dataBindings": [],
+  "actions": [
+    "navigate"
+  ],
+  "hookNoktalari": [
+    "mount:section.after"
+  ],
+  "bagimliliklar": [],
+  "responsive": "Mobilde sticky kalkar; layout accordion veya üst yatay nav olur.",
+  "_knobNote": "Kreis Heading+Text tek kolon; Main 3-col sol rail. side default left. Canlı 3vp yok — Açık soru."
+}
