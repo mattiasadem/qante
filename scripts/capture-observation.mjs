@@ -83,7 +83,14 @@ const slug = obs.evidenceSlug || obs.schemaId || "section";
 const outDir = evidenceDir(obs);
 fs.mkdirSync(outDir, { recursive: true });
 
-const browser = await chromium.launch({ headless: true });
+const headed =
+  process.env.QANTE_HEADED === "1" || process.env.QANTE_HEADED === "true";
+const browser = await chromium.launch({
+  headless: !headed,
+  args: headed ? ["--disable-blink-features=AutomationControlled"] : [],
+});
+const headedUserAgent =
+  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36";
 const evidence = [];
 const results = [];
 
@@ -96,6 +103,7 @@ try {
       deviceScaleFactor: 1,
       isMobile: false,
       hasTouch: false,
+      ...(headed ? { userAgent: headedUserAgent } : {}),
     });
 
     const warmupUrl = obs.warmupUrl || obs.capture?.warmupUrl || null;

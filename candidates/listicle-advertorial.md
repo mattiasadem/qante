@@ -1,27 +1,34 @@
-# Aday — listicle-advertorial
+# ADAY: listicle-advertorial — Seed Cultured gaps
 
-Sayfa tipi `listicle-advertorial` için şemaya sığmayan veya tek şema ile tam karşılanmayan gözlemler.
+**Durum:** bekliyor · **Kaynak:** Seed (seed.com) · Cultured WordPress · `listicle-gi-tips` · 2026-08-21
 
----
+## Gerekçe
 
-ADAY: listicle-numbered-best-of
-Gerekçe: Caraway `/blog/best-kitchen-gifts` — numaralı 1–11 luxury best-of maddeleri kendi marka SKU’larına inline prose linklerle blog gövdesinde (`blog-post-main.icerik`). Ayrı `product-showcase-featured` / grid section yok; her madde H3 + paragraf + ürün adı linki.
-Örnekler: https://www.carawayhome.com/blog/best-kitchen-gifts
-Öneri: `blog-post-main` reuse + delta; veya gelecekte `editorial-listicle-ranked` varyantı (numara slot + ref product min/max)
-Karar: onay bekliyor — bu turda yeni schemaId açılmadı
+`listicle-advertorial` sayfa tipi taksonomide var; mevcut şemalar (`blog-post-main`, `editorial-rich-text`, `editorial-image-with-text`) gövde + intro + summary kutusu için reuse edildi. Aşağıdaki bloklar ayrı section şeması gerektiriyor veya tekrarlayan listicle atomları mevcut slot setine sığmıyor.
 
----
+## Şemaya sığmayan / aday bloklar
 
-ADAY: inline-empty-cart-sidebar
-Gerekçe: Sayfa yüklenince `main > div` (600px genişlik) sağda boş sepet + ürün öneri kartları (Cookware Set, Food Storage, Bundles). 1440’ta viewport dışında (x=1440); mobilde overlay. `global-cart-drawer` partial fit — her zaman açık sidebar, raffle promo üstünde.
-Örnekler: https://www.carawayhome.com/blog/best-kitchen-gifts
-Öneri: interact pass veya ayrı obs `global-cart-drawer` + `captureMode: viewport` + prepareClick cart icon
-Karar: onay bekliyor — bu turda 3VP capture edilmedi
+| Blok | DOM / davranış | Öneri |
+|---|---|---|
+| Share toolbar | Intro içi Facebook/Twitter/LinkedIn/email/PDF | `navigation` feature veya `promo` aday — global chrome değil, makale içi |
+| Expert review strip | "Expert Review By" + reviewer link | `trust` veya editorial meta — blog-post-main `delta` |
+| Seed Digest callout | H2 + bullet list (4 D özeti) | Tekrarlayan `editorial-rich-text` varyantı; ayrı wrapper yok |
+| Numaralı ipucu atomu | H2 (1–4) + gövde + "The Seed Difference" H3 + EXPLORE FURTHER link | Listicle item şeması adayı — şu an blog-post-main richtext içinde |
+| Summary highlight box | `.block-hightlight-box` ×4 | Tek şema reuse; dördüncü instance observation değil |
+| Citations accordion | `.blog-detail-content__citations-container` + genişletilmiş liste | `editorial` veya `faq` aday |
+| Filed-under tags | `.cultured-section--tags` | `collection-nav` veya editorial meta aday |
+| Author / reviewer bio | `.cultured-section--bio` (Written By + Reviewed By) | `editorial-timeline` / trust bio aday |
+| Next article card | `.cultured-section--next` | `blog-list-main` kart reuse aday |
+| Related articles grid | `.cultured-section--related` + `.theme-posts-grid--3` | `blog-list-main` veya `product-showcase-grid-featured` benzeri — **ürün grid değil**, makale grid |
+| Inline shop CTAs | `daily-synbiotic` metin linkleri gövde içinde | Ayrı `cta-band` yok; advertorial beklentisi inline link |
 
----
+## Platform notu
 
-ADAY: caraway-custom-react-platform
-Gerekçe: Caraway headless/custom React; `#shopify-section-*` yok. Selector’lar `#global-promo-bar`, `#main-nav`, `section:has(h1)`, `footer`.
-Örnekler: https://www.carawayhome.com/blog/best-kitchen-gifts
-Öneri: `kaynak` map’te platform notu; selector stabilitesi için data-testid PR (merchant)
-Karar: onay bekliyor
+- Non-Shopify Cultured (WordPress) · Cloudflare bot koruması · headless capture başarısız → `QANTE_HEADED=1` ile resmi script
+- Ürün grid yok (beklentiyle uyumlu); shop yalnız inline link
+
+## Karar
+
+- [ ] Onayla → yeni listicle atom / citations / related şemaları
+- [ ] Reddet — mevcut 3 şema yeterli
+- [ ] Ertele
