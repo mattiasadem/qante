@@ -1,18 +1,26 @@
 /**
- * Qante mark hero — pointer-driven bloom on a 5×5 outline grid.
+ * Qante mark hero — 8×8 double-cell border frame with on-grid pip.
  */
 
-const OUTLINE = [
-  [0, 0], [0, 1], [0, 2], [0, 3], [0, 4],
-  [1, 0], [1, 4],
-  [2, 0], [2, 4],
-  [3, 0], [3, 4],
-  [4, 0], [4, 1], [4, 2], [4, 3],
-];
+const GRID = 8;
+const GAP = { r: 7, c: 7 };
 
-const GAP = { r: 4, c: 4 };
+function buildDoubleBorder(size) {
+  const coords = [];
+  const last = size - 1;
+  for (let r = 0; r < size; r += 1) {
+    for (let c = 0; c < size; c += 1) {
+      if (r === GAP.r && c === GAP.c) continue;
+      const onOuter = r === 0 || r === last || c === 0 || c === last;
+      const onInner = r === 1 || r === last - 1 || c === 1 || c === last - 1;
+      if (onOuter || onInner) coords.push([r, c]);
+    }
+  }
+  return coords;
+}
 
-const GRID = 5;
+const CELLS = buildDoubleBorder(GRID);
+
 const hero = document.getElementById("hero");
 const mark = document.getElementById("mark");
 const gridEl = document.getElementById("mark-grid");
@@ -30,9 +38,9 @@ for (let r = 0; r < GRID; r += 1) {
     const slot = document.createElement("div");
     slot.className = "mark__slot";
     const key = `${r},${c}`;
-    const onOutline = OUTLINE.some(([rr, cc]) => rr === r && cc === c);
+    const isLit = CELLS.some(([rr, cc]) => rr === r && cc === c);
     const isPip = r === GAP.r && c === GAP.c;
-    if (onOutline) {
+    if (isLit) {
       const cell = document.createElement("div");
       cell.className = "mark__cell";
       cells.set(key, {

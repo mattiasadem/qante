@@ -210,6 +210,30 @@ export function handleRequest(req, res) {
       return serveStatic(res, path.join(PUBLIC_DIR, "qante-landing-hero1.html"));
     }
 
+    if (
+      p === "/qante-landing-hero2" ||
+      p === "/qante-landing-hero2/" ||
+      p === "/qante-landing-hero2.html"
+    ) {
+      return serveStatic(res, path.join(PUBLIC_DIR, "qante-landing-hero2.html"));
+    }
+
+    if (
+      p === "/qante-landing-hero3" ||
+      p === "/qante-landing-hero3/" ||
+      p === "/qante-landing-hero3.html"
+    ) {
+      return serveStatic(res, path.join(PUBLIC_DIR, "qante-landing-hero3.html"));
+    }
+
+    if (
+      p === "/qante-landing-hero4" ||
+      p === "/qante-landing-hero4/" ||
+      p === "/qante-landing-hero4.html"
+    ) {
+      return serveStatic(res, path.join(PUBLIC_DIR, "qante-landing-hero4.html"));
+    }
+
     let file = safeJoin(PUBLIC_DIR, p);
     if (!file || !fs.existsSync(file) || fs.statSync(file).isDirectory()) {
       file = safeJoin(ROOT, p);
