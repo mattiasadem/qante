@@ -1,18 +1,29 @@
 /**
- * Qante mark hero — pointer-driven bloom on a 5×5 outline grid.
+ * Qante mark hero — 7×7 outline plus interior awake squares, on-grid pip.
  */
 
-const OUTLINE = [
-  [0, 0], [0, 1], [0, 2], [0, 3], [0, 4],
-  [1, 0], [1, 4],
-  [2, 0], [2, 4],
-  [3, 0], [3, 4],
-  [4, 0], [4, 1], [4, 2], [4, 3],
+const GRID = 7;
+const GAP = { r: 6, c: 6 };
+
+function buildOutline(size) {
+  const coords = [];
+  for (let c = 0; c < size; c += 1) coords.push([0, c]);
+  for (let r = 1; r < size - 1; r += 1) {
+    coords.push([r, 0], [r, size - 1]);
+  }
+  for (let c = 0; c < size - 1; c += 1) coords.push([size - 1, c]);
+  return coords;
+}
+
+const OUTLINE = buildOutline(GRID);
+
+/** Interior awake squares — cross plus inner diamond, not a solid fill. */
+const INTERIOR = [
+  [2, 2], [2, 3], [2, 4],
+  [3, 2], [3, 3], [3, 4],
+  [4, 2], [4, 3], [4, 4],
 ];
 
-const GAP = { r: 4, c: 4 };
-
-const GRID = 5;
 const hero = document.getElementById("hero");
 const mark = document.getElementById("mark");
 const gridEl = document.getElementById("mark-grid");
@@ -22,27 +33,36 @@ let pipEl;
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
-/** @type {Map<string, { el: HTMLElement, r: number, c: number, phase: number, speed: number, lit: number, glow: number }>} */
+/** @type {Map<string, { el: HTMLElement, r: number, c: number, phase: number, speed: number, lit: number, glow: number, inner?: boolean }>} */
 const cells = new Map();
+
+function isActive(r, c) {
+  return OUTLINE.some(([rr, cc]) => rr === r && cc === c)
+    || INTERIOR.some(([rr, cc]) => rr === r && cc === c);
+}
+
+function isInner(r, c) {
+  return INTERIOR.some(([rr, cc]) => rr === r && cc === c);
+}
 
 for (let r = 0; r < GRID; r += 1) {
   for (let c = 0; c < GRID; c += 1) {
     const slot = document.createElement("div");
     slot.className = "mark__slot";
     const key = `${r},${c}`;
-    const onOutline = OUTLINE.some(([rr, cc]) => rr === r && cc === c);
     const isPip = r === GAP.r && c === GAP.c;
-    if (onOutline) {
+    if (isActive(r, c)) {
       const cell = document.createElement("div");
-      cell.className = "mark__cell";
+      cell.className = isInner(r, c) ? "mark__cell mark__cell--inner" : "mark__cell";
       cells.set(key, {
         el: cell,
         r,
         c,
+        inner: isInner(r, c),
         phase: Math.random() * Math.PI * 2,
         speed: 0.55 + Math.random() * 0.75,
-        lit: 0.48,
-        glow: 0.28,
+        lit: isInner(r, c) ? 0.36 : 0.48,
+        glow: isInner(r, c) ? 0.2 : 0.28,
       });
       slot.appendChild(cell);
     } else if (isPip) {
@@ -126,7 +146,7 @@ function cellCenter(cell) {
 
 function applyStatic() {
   for (const cell of cells.values()) {
-    setCellStyle(cell, 0.52, 0.28);
+    setCellStyle(cell, cell.inner ? 0.4 : 0.52, cell.inner ? 0.22 : 0.28);
   }
   setPipStyle(0.65, 0.38);
 }
@@ -136,7 +156,9 @@ function tick(time) {
   const activePointer = canHover ? pointer : null;
 
   for (const cell of cells.values()) {
-    const idle = 0.4 + 0.16 * Math.sin(t * cell.speed + cell.phase);
+    const base = cell.inner ? 0.32 : 0.4;
+    const amp = cell.inner ? 0.12 : 0.16;
+    const idle = base + amp * Math.sin(t * cell.speed + cell.phase);
     let target = idle;
     let glow = idle * 0.55;
 
@@ -144,8 +166,8 @@ function tick(time) {
       const center = cellCenter(cell);
       const boost = proximity(activePointer.x, activePointer.y, center.x, center.y, cellSize * 3.8);
       const wave = ripple(activePointer.x, activePointer.y, center.x, center.y, t);
-      target = clamp(idle + boost * 0.52 + wave * boost, 0.34, 1);
-      glow = clamp(idle * 0.45 + boost * 0.95 + wave * 0.35, 0.2, 1);
+      target = clamp(idle + boost * 0.52 + wave * boost, 0.28, 1);
+      glow = clamp(idle * 0.45 + boost * 0.95 + wave * 0.35, 0.15, 1);
     }
 
     const ease = activePointer ? 0.16 : 0.07;

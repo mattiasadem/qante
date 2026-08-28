@@ -1,18 +1,22 @@
 /**
- * Qante mark hero — pointer-driven bloom on a 5×5 outline grid.
+ * Qante mark hero — 7×7 outline grid with on-grid pip.
  */
 
-const OUTLINE = [
-  [0, 0], [0, 1], [0, 2], [0, 3], [0, 4],
-  [1, 0], [1, 4],
-  [2, 0], [2, 4],
-  [3, 0], [3, 4],
-  [4, 0], [4, 1], [4, 2], [4, 3],
-];
+const GRID = 7;
+const GAP = { r: 6, c: 6 };
 
-const GAP = { r: 4, c: 4 };
+function buildOutline(size) {
+  const coords = [];
+  for (let c = 0; c < size; c += 1) coords.push([0, c]);
+  for (let r = 1; r < size - 1; r += 1) {
+    coords.push([r, 0], [r, size - 1]);
+  }
+  for (let c = 0; c < size - 1; c += 1) coords.push([size - 1, c]);
+  return coords;
+}
 
-const GRID = 5;
+const OUTLINE = buildOutline(GRID);
+
 const hero = document.getElementById("hero");
 const mark = document.getElementById("mark");
 const gridEl = document.getElementById("mark-grid");

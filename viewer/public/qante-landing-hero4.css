@@ -61,8 +61,8 @@ body {
 
 .mark__grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(7, 1fr);
   gap: calc(var(--cell-size, 0px) * 0.14);
   width: 100%;
   height: 100%;
@@ -89,6 +89,10 @@ body {
     drop-shadow(0 0 calc(4px + var(--glow, 0.2) * 18px) rgba(255, 255, 255, calc(0.25 + var(--glow, 0.2) * 0.75)))
     drop-shadow(0 0 calc(1px + var(--glow, 0.2) * 8px) rgba(255, 255, 255, calc(0.15 + var(--glow, 0.2) * 0.55)));
   transition: none;
+}
+
+.mark__cell--inner {
+  opacity: var(--lit, 0.38);
 }
 
 .mark__pip {
