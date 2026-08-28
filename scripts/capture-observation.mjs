@@ -126,6 +126,16 @@ try {
     await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
     await page.waitForTimeout(3500);
 
+    // Cloudflare / bot interstitial — kısa bekle + reload (DTC storefront)
+    for (let cf = 0; cf < 6; cf++) {
+      const title = await page.title().catch(() => "");
+      if (!/just a moment/i.test(title)) break;
+      console.warn(`Cloudflare challenge (${vp.id}), wait ${8 + cf * 4}s…`);
+      await page.waitForTimeout(8000 + cf * 4000);
+      await page.reload({ waitUntil: "domcontentloaded", timeout: 90000 }).catch(() => {});
+      await page.waitForTimeout(3500);
+    }
+
     // Mobil/tablet redirect veya overlay click ile sayfa kaydıysa home'a geri al
     const landed = new URL(page.url());
     if (
@@ -249,6 +259,9 @@ try {
             try {
               el.open();
             } catch {}
+          }
+          if (getComputedStyle(el).display === "none") {
+            el.style.setProperty("display", "block", "important");
           }
         }
         document.documentElement.classList.add(
@@ -391,6 +404,8 @@ try {
     });
 
     await page.close();
+    // Cloudflare / bot walls: ardışık viewport yüklemeleri arasında nefes
+    await new Promise((r) => setTimeout(r, 5000));
   }
 
   // observation.evidence güncelle (3 viewport path)

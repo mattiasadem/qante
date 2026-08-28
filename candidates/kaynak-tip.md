@@ -5,7 +5,7 @@ This is a **kaynak → source** map. Store name stays `kaynak` (Tema). Endüstri
 
 *Param:* `kaynakTip` (comma-separated: `shopify`, `dtc`, `ikas`)  
 *UI label:* Kaynak  
-*Coverage:* **147 / 147** disk `kaynak` mapped · **0 untagged** · **0 awaiting**
+*Coverage:* **177 / 177** disk `kaynak` mapped · **0 untagged** · **0 awaiting**
 
 Code: `viewer/lib/sources.mjs` (consumed by inventory + facets). Observation JSON is not rewritten.
 
@@ -25,26 +25,26 @@ A live store that happens to use a Shopify theme is **DTC**, not Shopify: `beard
 
 | Source | Stores |
 |---|---|
-| Shopify | 69 |
-| DTC | 66 |
+| Shopify | 80 |
+| DTC | 85 |
 | ikas | 12 |
-| Total | 147 |
+| Total | 177 |
 
 ## ikas (12)
 
 `ali` · `alina` · `asil` · `ata` · `ediz-ege` · `eylul` · `kerem` · `kumsal` · `market` · `selim` · `serel` · `sumru`
 
-## DTC (66)
+## DTC (85)
 
 Live brands from the DTC-69 list plus other live-store walks. Not official theme demos.
 
-`amberjack` · `atoms` · `bachans` · `bandit` · `beardbrand` · `bleame` · `boka` · `brez` · `buckmason` · `chamberlaincoffee` · `chomps` · `cometeer` · `comradsocks` · `cuts` · `cymbiotika` · `davidprotein` · `desoi` · `dieux` · `drinktrip` · `dukecannon` · `fellow` · `flamingoestate` · `flybyjing` · `functionhealth` · `ghia` · `graza` · `greatjonesgoods` · `gruns` · `hellobubble` · `herocosmetics` · `hexclad` · `hiyo` · `im8health` · `javy` · `kettleandfire` · `kizik` · `lemme` · `madeincookware` · `magicmind` · `magicspoon` · `materialkitchen` · `moom` · `moonjuice` · `necessaire` · `novoslabs` · `obvi` · `omsom` · `onceuponafarm` · `onnit` · `pamos` · `partakefoods` · `primalqueen` · `representclo` · `rhone` · `shinesty` · `starface` · `takearecess` · `tenthousand` · `topicals` · `trueclassictees` · `vegamour` · `vessi` · `vollebak` · `waterboy` · `westernrise` · `xeroshoes`
+`allbirds` · `amberjack` · `atoms` · `away` · `bachans` · `bandit` · `beardbrand` · `bleame` · `boka` · `brez` · `brooklinen` · `buckmason` · `caraway` · `casper` · `chamberlaincoffee` · `chomps` · `cometeer` · `comradsocks` · `cuts` · `cymbiotika` · `davidprotein` · `desoi` · `dieux` · `drinktrip` · `dukecannon` · `everlane` · `fellow` · `flamingoestate` · `flybyjing` · `functionhealth` · `ghia` · `glossier` · `graza` · `greatjonesgoods` · `gruns` · `hellobubble` · `herocosmetics` · `hexclad` · `hiyo` · `im8health` · `intothegloss` · `javy` · `kettleandfire` · `kizik` · `lemme` · `liquiddeath` · `madeincookware` · `magicmind` · `magicspoon` · `materialkitchen` · `mejuri` · `moom` · `moonjuice` · `necessaire` · `novoslabs` · `obvi` · `olipop` · `omsom` · `onceuponafarm` · `onnit` · `outdoorvoices` · `pamos` · `partakefoods` · `poppi` · `primalqueen` · `rarebeauty` · `representclo` · `ridge` · `rhone` · `rothys` · `seed` · `shinesty` · `skims` · `starface` · `takearecess` · `tenthousand` · `topicals` · `trueclassictees` · `vegamour` · `vessi` · `vollebak` · `vuori` · `waterboy` · `westernrise` · `xeroshoes`
 
-## Shopify (69)
+## Shopify (80)
 
 Official Theme Store demo slugs inventoried on disk — including `shopify-themes.md` done official demos and other first-party / Theme Store demo slugs (not live-brand walks).
 
-`atelier` · `atlas` · `awaken` · `be-yours` · `blockshop` · `borders` · `bricks` · `broadcast` · `canopy` · `colorblock` · `combine` · `concept` · `craft` · `crave` · `dawn` · `district` · `dwell` · `eclipse` · `empire` · `envy` · `eurus` · `expanse` · `fabric` · `flow` · `heritage` · `highlight` · `homage` · `horizon` · `hyper` · `impact` · `impulse` · `kingdom` · `local` · `maker` · `minion` · `motion` · `origin` · `palo-alto` · `pebble` · `pipeline` · `pitch` · `prestige` · `publisher` · `purevea` · `refresh` · `ride` · `rise` · `ritual` · `savor` · `sense` · `showcase` · `sleek` · `spotlight` · `stack` · `stiletto` · `stretch` · `studio` · `symmetry` · `taiga` · `taste` · `tinker` · `trade` · `triumph` · `venue` · `vessel` · `warehouse` · `wonder` · `woodstock` · `zest`
+`alchemy` · `atelier` · `atlas` · `awaken` · `beautify` · `be-yours` · `blockshop` · `boost` · `borders` · `bricks` · `broadcast` · `canopy` · `colorblock` · `combine` · `concept` · `craft` · `crave` · `dawn` · `district` · `drop` · `dwell` · `eclipse` · `empire` · `enterprise` · `envy` · `eurus` · `expanse` · `exhibit` · `fabric` · `flow` · `heritage` · `highlight` · `homage` · `honey` · `horizon` · `hyper` · `ignite` · `impact` · `impulse` · `kingdom` · `local` · `maker` · `minion` · `motion` · `origin` · `palo-alto` · `pebble` · `pipeline` · `pitch` · `prestige` · `publisher` · `purevea` · `refresh` · `ride` · `rise` · `ritual` · `savor` · `sense` · `showcase` · `sleek` · `spotlight` · `stack` · `startup` · `stiletto` · `stockist` · `streamline` · `stretch` · `studio` · `symmetry` · `taiga` · `taste` · `tinker` · `trade` · `triumph` · `venue` · `vessel` · `warehouse` · `wonder` · `woodstock` · `zest`
 
 ## Awaiting user approval
 

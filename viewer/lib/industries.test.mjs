@@ -85,7 +85,7 @@ describe("kaynak coverage", () => {
     })
     .sort();
 
-  it("maps every observation kaynak (147/147, none untagged)", () => {
+  it("maps every observation kaynak (177/177, none untagged)", () => {
     const leftover = [];
     for (const kaynak of onDisk) {
       const mapped = Object.hasOwn(KAYNAK_INDUSTRIES, kaynak);

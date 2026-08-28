@@ -24,7 +24,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..")
 
 function onDiskSchemaIds() {
   const ids = [];
-  for (const scope of ["global", "instance"]) {
+  for (const scope of ["global", "instance", "page-template"]) {
     const dir = path.join(ROOT, "sections", scope);
     if (!fs.existsSync(dir)) continue;
     for (const name of fs.readdirSync(dir)) {
@@ -106,7 +106,7 @@ describe("schema allowlist", () => {
 
   it("counts 11 cro / 58 vitrine / 18 awaiting", () => {
     const c = allowlistCounts();
-    assert.deepEqual(c, { schemas: 65, cro: 11, vitrine: 54, awaiting: 18 });
+    assert.deepEqual(c, { schemas: 69, cro: 11, vitrine: 58, awaiting: 18 });
   });
 
   it("lists awaiting rows that already have a default in the map", () => {
@@ -437,9 +437,9 @@ describe("buildCro", () => {
     const bestsellers = out.types.find((t) => t.id === "bestsellers-trending");
     assert.equal(bestsellers.count, 0);
     assert.deepEqual(out.counts.allowlist, {
-      schemas: 65,
+      schemas: 69,
       cro: 11,
-      vitrine: 54,
+      vitrine: 58,
       awaiting: 18,
     });
   });
