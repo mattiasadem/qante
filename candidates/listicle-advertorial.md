@@ -1,36 +1,27 @@
-# Listicle-advertorial — cross-theme adaylar
+# Aday — listicle-advertorial
 
-*Taksonomi pageType:* `listicle-advertorial`  
-*Amaç:* Reklam/listicle LP'lerde tekrarlayan persona/ürün blokları — şema reuse notları.
-
----
-
-## Away · best-travel-gifts
-
-*URL:* https://www.awaytravel.com/blogs/the-away-pages/best-travel-gifts  
-*Observations:* `observations/away/default/listicle-best-travel-gifts/`  
-*Kanıt:* 3 obs · 9 PNG · 0 yeni şema
-
-| Görülen blok | schemaId | Karar |
-|---|---|---|
-| Article shell (title, meta, kapak, breadcrumbs) | `blog-post-main` | reuse · `.blog-article` |
-| Persona h2 segmentleri (4× + intro/outro) | `blog-post-main` · `icerik` items | reuse · tek `.blog-article__content`; ayrı DOM kabı yok |
-| Inline `/products/` linkleri | — | leftover · `product-showcase-featured` kart yok |
-| You may also like | `blog-list-main` | reuse · `.related-articles` |
-| Share footer (Facebook/Twitter/Pinterest) | — | leftover · şema yok |
-
-**Persona örnekleri (richtext item, ayrı observation yok):**
-- For the Frequent Flyer: The Bigger Carry-On
-- For the Organized Packer: The Insider Packing Cubes
-- For the Weekend Warrior: The Featherlight Weekender
-- For the Everyday Explorer: The Mini Crossbody
+Sayfa tipi `listicle-advertorial` için şemaya sığmayan veya tek şema ile tam karşılanmayan gözlemler.
 
 ---
 
-## Diğer temalar (henüz claiming yok)
+ADAY: listicle-numbered-best-of
+Gerekçe: Caraway `/blog/best-kitchen-gifts` — numaralı 1–11 luxury best-of maddeleri kendi marka SKU’larına inline prose linklerle blog gövdesinde (`blog-post-main.icerik`). Ayrı `product-showcase-featured` / grid section yok; her madde H3 + paragraf + ürün adı linki.
+Örnekler: https://www.carawayhome.com/blog/best-kitchen-gifts
+Öneri: `blog-post-main` reuse + delta; veya gelecekte `editorial-listicle-ranked` varyantı (numara slot + ref product min/max)
+Karar: onay bekliyor — bu turda yeni schemaId açılmadı
 
-| Tema | URL örneği | Not |
-|---|---|---|
-| Boka | `/pages/ela-mint-static-listicle` | `candidates/boka-leftovers.md` |
-| Comrad | pages.json listicle LP'leri | `candidates/comradsocks-leftovers.md` |
-| IM8 | sitemap kampanya/listicle | `candidates/im8health-leftovers.md` |
+---
+
+ADAY: inline-empty-cart-sidebar
+Gerekçe: Sayfa yüklenince `main > div` (600px genişlik) sağda boş sepet + ürün öneri kartları (Cookware Set, Food Storage, Bundles). 1440’ta viewport dışında (x=1440); mobilde overlay. `global-cart-drawer` partial fit — her zaman açık sidebar, raffle promo üstünde.
+Örnekler: https://www.carawayhome.com/blog/best-kitchen-gifts
+Öneri: interact pass veya ayrı obs `global-cart-drawer` + `captureMode: viewport` + prepareClick cart icon
+Karar: onay bekliyor — bu turda 3VP capture edilmedi
+
+---
+
+ADAY: caraway-custom-react-platform
+Gerekçe: Caraway headless/custom React; `#shopify-section-*` yok. Selector’lar `#global-promo-bar`, `#main-nav`, `section:has(h1)`, `footer`.
+Örnekler: https://www.carawayhome.com/blog/best-kitchen-gifts
+Öneri: `kaynak` map’te platform notu; selector stabilitesi için data-testid PR (merchant)
+Karar: onay bekliyor
