@@ -20,7 +20,7 @@ const pipEl = document.getElementById("pip");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
-/** @type {Map<string, { el: HTMLElement, r: number, c: number, phase: number, speed: number, lit: number }>} */
+/** @type {Map<string, { el: HTMLElement, r: number, c: number, phase: number, speed: number, lit: number, glow: number }>} */
 const cells = new Map();
 
 for (let r = 0; r < 5; r += 1) {
@@ -39,6 +39,7 @@ for (let r = 0; r < 5; r += 1) {
         phase: Math.random() * Math.PI * 2,
         speed: 0.55 + Math.random() * 0.75,
         lit: 0.48,
+        glow: 0.28,
       });
       slot.appendChild(cell);
     }
@@ -139,13 +140,10 @@ function tick(time) {
       glow = clamp(idle * 0.45 + boost * 0.95 + wave * 0.35, 0.2, 1);
     }
 
-    cell.lit = lerp(cell.lit, target, activePointer ? 0.16 : 0.07);
-    const cellGlow = lerp(
-      Number(cell.el.style.getPropertyValue("--glow") || glow),
-      glow,
-      activePointer ? 0.16 : 0.07
-    );
-    setCellStyle(cell, cell.lit, cellGlow);
+    const ease = activePointer ? 0.16 : 0.07;
+    cell.lit = lerp(cell.lit, target, ease);
+    cell.glow = lerp(cell.glow, glow, ease);
+    setCellStyle(cell, cell.lit, cell.glow);
   }
 
   const idlePip = 0.5 + 0.14 * Math.sin(t * 0.42 + 1.2);
