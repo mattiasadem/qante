@@ -1,0 +1,82 @@
+{
+  "observationId": "outdoorvoices.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "outdoorvoices",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://www.outdoorvoices.com/products/w-rectrek-zip-pant-pink-dust",
+  "selector": "#shopify-section-template--21402058784846__main-product",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/outdoorvoices/default/product-detail/product-info-main.changed.size-m.1440.png",
+    "evidence/outdoorvoices/default/product-detail/product-info-main.changed.size-m.375.png",
+    "evidence/outdoorvoices/default/product-detail/product-info-main.changed.size-m.768.png",
+    "evidence/outdoorvoices/default/product-detail/product-info-main.initial.buybox.1440.png",
+    "evidence/outdoorvoices/default/product-detail/product-info-main.initial.buybox.375.png",
+    "evidence/outdoorvoices/default/product-detail/product-info-main.initial.buybox.768.png"
+  ],
+  "notlar": "RecTrek Zip Pant buy box: breadcrumb, yıldız 4.6, renk swatch, beden pill, Add to Bag $148.",
+  "delta": "Okendo yıldız buy box içinde. Galeri + sticky info; breadcrumb ayrı navigation-breadcrumbs yok.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.outdoorvoices.com/products/w-rectrek-zip-pant-pink-dust",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21402058784846__main-product .product-form__atc",
+      "capture": true,
+      "etiket": "buybox"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".product-form__option-popup-trigger-button",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button.product-form__option-button:has-text(\"M\")",
+      "capture": true,
+      "etiket": "size-m"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Pink Dust swatch; beden seçili/değil; Add to Bag $148.",
+    "changed": "İkinci beden pill seçili — fiyat/CTA aynı kalabilir."
+  },
+  "missingStates": [],
+  "interactionNote": "",
+  "capture": {
+    "url": "https://www.outdoorvoices.com/products/w-rectrek-zip-pant-pink-dust",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-20T23:10:37.050Z"
+  }
+}

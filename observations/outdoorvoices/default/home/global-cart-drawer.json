@@ -1,0 +1,122 @@
+{
+  "observationId": "outdoorvoices.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "outdoorvoices",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.outdoorvoices.com/",
+  "selector": ".mini-cart__content-wrapper",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/outdoorvoices/default/home/global-cart-drawer.filled.rectrek.1440.png",
+    "evidence/outdoorvoices/default/home/global-cart-drawer.filled.rectrek.375.png",
+    "evidence/outdoorvoices/default/home/global-cart-drawer.filled.rectrek.768.png",
+    "evidence/outdoorvoices/default/home/global-cart-drawer.initial.bos.1440.png",
+    "evidence/outdoorvoices/default/home/global-cart-drawer.initial.bos.375.png",
+    "evidence/outdoorvoices/default/home/global-cart-drawer.initial.bos.768.png"
+  ],
+  "notlar": "Sağ mini-cart drawer. Boş: Your Bag Is Empty + Shop Women/Men. $100 free shipping bandı.",
+  "delta": "Section #shopify-section-mini-cart h=0; görünür kutu .mini-cart__content-wrapper. /cart sayfa yok — drawer only.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.outdoorvoices.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".header__cart-icon",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bos"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://www.outdoorvoices.com/products/w-rectrek-zip-pant-pink-dust",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Okendo oke-modal kapat"
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": ".product-form__option-popup-trigger-button",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.product-form__option-button:has-text(\"M\")",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "button.product-form__atc:has-text(\"Add to Bag\")",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Okendo post-ATC modal"
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": ".header__cart-icon",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "rectrek"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your Bag Is Empty; Shop Women / Shop Men CTA.",
+    "filled": "RecTrek Zip Pant satırı + qty/fiyat (ATC sonrası)."
+  },
+  "missingStates": [],
+  "interactionNote": "",
+  "capture": {
+    "url": "https://www.outdoorvoices.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-20T23:09:34.976Z"
+  }
+}

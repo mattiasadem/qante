@@ -1,0 +1,79 @@
+{
+  "observationId": "outdoorvoices.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "outdoorvoices",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.outdoorvoices.com/",
+  "selector": "[id^=\"df-hook-layer\"]",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/outdoorvoices/default/home/global-predictive-search.initial.popular.1440.png",
+    "evidence/outdoorvoices/default/home/global-predictive-search.initial.popular.375.png",
+    "evidence/outdoorvoices/default/home/global-predictive-search.initial.popular.768.png",
+    "evidence/outdoorvoices/default/home/global-predictive-search.input.pant.1440.png",
+    "evidence/outdoorvoices/default/home/global-predictive-search.input.pant.375.png",
+    "evidence/outdoorvoices/default/home/global-predictive-search.input.pant.768.png"
+  ],
+  "notlar": "Search butonu → Doofinder .dfd-layer overlay; Popular searches chip listesi.",
+  "delta": "Shopify predictive değil — Doofinder (df-hook-layer). input state'te pant yazılınca öneri/ürün gelmeyebilir.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.outdoorvoices.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".header__search-button",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "popular"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": ".dfd-layer input[type=\"search\"], .dfd-layer input",
+      "value": "pant",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "pant"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Popular searches: skort, cloudknit, dress, shorts…",
+    "input": "pant yazılı; tam sonuç /search?q=pant sayfasında."
+  },
+  "missingStates": [],
+  "interactionNote": "",
+  "capture": {
+    "url": "https://www.outdoorvoices.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-20T23:06:18.576Z"
+  }
+}
