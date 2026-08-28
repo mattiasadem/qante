@@ -1,55 +1,46 @@
-# Listicle-advertorial — aday & gap notları
+# Listicle-advertorial — şema adayları / boşluklar
 
-*Sayfa tipi:* `listicle-advertorial` (taxonomy v0.1.0)  
-*İlk kanıt:* Into The Gloss · Holiday Gift Guide 2025
+*Taksonomi pageType:* `listicle-advertorial` (v0.1.0)  
+*Tarih:* 2026-08-21
+
+Şema icat edilmedi. Mevcut tiplere observation + `delta` yazıldıysa burada tekrarlanmaz.
 
 ---
 
-## ADAY: editorial-listicle-category-block
-
-Gerekçe: Named-category editorial gift guide grameri — kategori başlığı (h2) + ürün carousel (slick Previous/Next) + uzun editoryal prose tek DOM bloğunda (`RichBlocks_block`). Mevcut `editorial-custom-content` bloklar[] dizisi ile birebir oturmuyor; `product-showcase-*` vitrin şemaları prose slot'u taşımıyor; `media-lookbook-slider` hotspot/lookbook semantiği taşıyor, gift-guide değil.
-
-Örnekler:
-- https://intothegloss.com/2025/11/holiday-gift-guide-2025 — THE WEARABLES · THE INNOVATIONS · PURE COMFORT · THE HOME STUFF · THE SMALL WONDERS · THE SCENTS
-
-Öneri: Yeni `editorial` varyant veya `listicle-advertorial` alt-şema — slots: `kategoriBaslik` (text) · `urunler` (ref[] veya DataSource.productList manual) · `metin` (richtext) · opsiyonel `ustEtiket`. styleKnobs: `layout: slider|grid` · `okGoster` · `noktaGoster` · `hizalama`.
-
+ADAY: listicle-item-block  
+Gerekçe: HexClad Posts listicle (`/blogs/posts/fathers-day-gift-ideas-for-home-cooks`) tek `mod_article_new` Shopify section içinde H2 **“{Product}: For the Dad Who {persona}”** + copy + opsiyonel inline `<img>` + metin içi `/products/` linkleri. Ayrı section yok; `editorial-image-with-text` yan-yana layout değil.  
+Örnekler: https://hexclad.com/blogs/posts/fathers-day-gift-ideas-for-home-cooks  
+Öneri: ertele — `editorial-image-with-text` + `editorial-rich-text` delta ile temsil  
 Karar: onay bekliyor
 
-Geçici eşleme: `editorial-custom-content` (delta ile) — `observations/intothegloss/default/listicle-holiday-2025/editorial-custom-content*.json`
+---
+
+ADAY: listicle-toc-anchor-list  
+Gerekçe: “Table of Contents” H2 + düz `<ul>`; anchor/hash link yok, sticky TOC yok. `editorial-rich-text` UL kırpımı alındı.  
+Örnekler: https://hexclad.com/blogs/posts/fathers-day-gift-ideas-for-home-cooks  
+Öneri: `editorial-rich-text` reuse  
+Karar: onay bekliyor
 
 ---
 
-## ADAY: post-hero-listicle-intro
-
-Gerekçe: ITG PostHero üç kolon: başlık + intro paragraf + byline/foto kredisi. `blog-post-main` başlık+meta+icerik bekler; burada intro listicle hero'su, gövde ayrı RichBlocks.
-
-Örnekler:
-- https://intothegloss.com/2025/11/holiday-gift-guide-2025 — `.PostHero_wrap`
-
-Öneri: `blog-post-main` delta yeterli mi yoksa `hero`/`editorial` varyant mı — taksonomi onayına bırak.
-
-Karar: onay bekliyor · geçici eşleme `blog-post-main`
+ADAY: listicle-inline-product-card  
+Gerekçe: Sayfada `product-showcase-featured` buy box / fiyat / ATC kartı yok — yalnızca richtext içi ürün hyperlinkleri. Taksonomide listicle “product cards” grameri bu sitede kart UI değil.  
+Örnekler: https://hexclad.com/blogs/posts/fathers-day-gift-ideas-for-home-cooks  
+Öneri: ertele — ayrı `product-showcase-featured` observation yok  
+Karar: onay bekliyor
 
 ---
 
-## Leftover (3vp yok)
-
-| Parça | Sebep |
-|---|---|
-| Glossier promo şeridi (header üstü) | `navigation-header-mega` karesinde; ayrı `promo-announcement-bar` observation açılmadı |
-| `page_richTagWrap` — "More: HOLIDAY" | Alt etiket bandı; tek satır, ayrı section sınırı belirsiz |
-| OneTrust cookie banner | PII / overlay — dismiss sonrası kanıt alınmadı |
-| Ürün kartı hover / slick slide değişimi | Statik 3vp envanter; interact backlog |
+ADAY: listicle-static-faq  
+Gerekçe: “FAQs” H2 + H3 soru + P cevap; accordion/sekme/`emit:accordion.toggle` yok. `faq-collapsible-tabs` delta ile statik Q&A.  
+Örnekler: https://hexclad.com/blogs/posts/fathers-day-gift-ideas-for-home-cooks  
+Öneri: `faq-collapsible-tabs` reuse + delta  
+Karar: onay bekliyor
 
 ---
 
-## intothegloss · listicle-holiday-2025 envanter özeti
+## Bilinçli atlananlar
 
-| schemaId | # | Not |
-|---|---|---|
-| navigation-header-mega | 1 | Editorial nav + Glossier CTA, mega yok |
-| blog-post-main | 1 | PostHero listicle intro |
-| editorial-custom-content | 6 | Named-category blocks (gap yukarıda) |
-| footer-columns-newsletter | 1 | Newsletter yok, link bandı |
-| **Toplam** | **9 obs · 27 PNG** | Yeni schemaId yok |
+- Alt “Read more” carousel `#shopify-section-template--19294934892678__14295a1e-*` — `blog-list-main` reuse mümkün; bu tur yalnız listicle gövdesi
+- Newsletter footer band — PII yok
+- 5 listicle maddenin 3’ünde inline görsel yok (Knife Set, BBQ, Apron metin-only kısımları `editorial-image-with-text-2` dışında ayrı obs yok)
