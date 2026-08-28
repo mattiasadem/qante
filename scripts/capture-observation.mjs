@@ -384,6 +384,8 @@ try {
     });
 
     await page.close();
+    // Cloudflare / bot walls: ardışık viewport yüklemeleri arasında nefes
+    await new Promise((r) => setTimeout(r, 5000));
   }
 
   // observation.evidence güncelle (3 viewport path)
