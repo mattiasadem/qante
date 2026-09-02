@@ -8,9 +8,13 @@
   "selector": "#header-search",
   "evidenceSlug": "global-predictive-search",
   "evidence": [
+    "evidence/xoxo/default/home/global-predictive-search.1440.png",
     "evidence/xoxo/default/home/global-predictive-search.375.png",
     "evidence/xoxo/default/home/global-predictive-search.768.png",
-    "evidence/xoxo/default/home/global-predictive-search.1440.png"
+    "evidence/xoxo/default/home/global-predictive-search.input.arama-shirt.1440.png",
+    "evidence/xoxo/default/home/global-predictive-search.open.arama-acik.1440.png",
+    "evidence/xoxo/default/home/global-predictive-search.open.arama-acik.375.png",
+    "evidence/xoxo/default/home/global-predictive-search.open.arama-acik.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "details-modal#header-search + predictive-search.search-modal__form. Input #Search-In-Modal.",
@@ -25,8 +29,73 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T17:33:37.812Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:17:37.976Z",
     "prepareClick": "#header-search summary.header__icon--search"
+  },
+  "interactionStates": [
+    "initial",
+    "input",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://pandora-full-fashion.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "scrollTo",
+      "selector": "#header-search",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 700,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik",
+      "not": "Boş Search overlay. 375/768 #Search-In-Modal-1; 1440 #Search-In-Modal."
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal-1, #Search-In-Modal",
+      "value": "shirt",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-shirt",
+      "not": "katalogSorgu shirt. Beklenen: PRODUCTS listesi."
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375/768 iki deneme (forceOpen details; sonra ikon tık): kare kapalı homepage. 1440 1. deneme forceOpen açık — o PNG duruyor. 2. deneme 1440 scrollTo #header-search timeout."
+    },
+    {
+      "state": "input",
+      "sebep": "375/768 #Search-In-Modal-1 resmi capture'da hidden. Probe'da ikon tık + shirt PRODUCTS verdi; ikinci resmi deneme aynı. 1440 1. deneme PNG duruyor."
+    }
+  ],
+  "interactionNote": "katalogSorgu shirt. 1440 #Search-In-Modal. 375/768 #Search-In-Modal-1 (0×0 kardeş #Search-In-Modal). Submit yok.",
+  "stateFindings": {
+    "open": "1440: header yerine üst Search input (placeholder Search) + X. Henüz PRODUCTS yok. 375/768 resmi kareler kapalı homepage.",
+    "input": "1440 fill shirt: PRODUCTS (Black T Shirt Trendy Design … All I Know So Far Tan Pocketed Fuzzy Sweater) + Search for “shirt”. SUGGESTIONS başlığı yok."
   }
 }

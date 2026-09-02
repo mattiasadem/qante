@@ -16,7 +16,7 @@ Title: `Pandora Full Fashion (password: 1)`
 
 **Password:** `/` **302** → `/password`. Vendor ürün sayfası: “Please enter password `1` to view demo.” Aynı host — başka vitrin yok. Auth: `observations/xoxo/_auth.json`.
 
-**Durum:** Mod A walk + 3vp + shopper interact  
+**Durum:** Mod A walk + 3vp + shopper interact (stateFindings yazıldı)  
 **PR:** draft — main’e merge yok
 
 ---
@@ -107,15 +107,15 @@ Title: `Pandora Full Fashion (password: 1)`
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | initial / More | mega yok — More dropdown |
-| global-menu-drawer | open | 375/768 hamburger |
-| global-predictive-search | open / input | `shirt` |
-| global-cart-drawer | initial / filled / changed | ATC sneaker |
-| cart-page-main | initial / filled / changed | boş → satır → adet |
-| product-info-main | initial / changed | accordion (swatch yok) |
-| product-showcase-grid-featured | hover | 2. görsel |
-| product-showcase-grid-plp | open / changed | filtre |
-| faq-collapsible-tabs | initial / changed | ilk soru |
+| navigation-header-mega | initial / More | mega yok — More resmi karede yok (2 deneme) |
+| global-menu-drawer | open | 375/768 kare homepage (2 deneme) |
+| global-predictive-search | open / input | 1440 shirt PRODUCTS; 375/768 missing |
+| global-cart-drawer | initial / filled / changed | boş → $229 → $458 |
+| cart-page-main | initial / filled / changed | boş → satır → adet 2 |
+| product-info-main | initial / changed | sweater Khakhi → Dark Red |
+| product-showcase-grid-featured | hover | 2. görsel resmi karede yok |
+| product-showcase-grid-plp | open / changed | 375 Filter drawer; 1440 Black 5/25 |
+| faq-collapsible-tabs | initial / changed | ilk soru + lorem |
 
 Stop: email / account / checkout / newsletter submit / contact SUBMIT / PII / kupon PAN40 kullanma
 
@@ -129,8 +129,8 @@ Stop: email / account / checkout / newsletter submit / contact SUBMIT / PII / ku
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact hamburger / search / cart / FAQ / hover / filtre / accordion
-- [ ] PNG bak → stateFindings
-- [ ] `node scripts/validate-schemas.mjs`
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact cart / FAQ / PDP swatch / PLP 1440 + 375 filter open
+- [x] PNG bak → stateFindings (menu/search 375 / hover / More missingStates)
+- [x] `node scripts/validate-schemas.mjs` — 0 error
 - [x] Email / account / checkout / newsletter submit — **yapılmayacak**

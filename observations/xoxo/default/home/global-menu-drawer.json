@@ -8,7 +8,9 @@
   "selector": "#menu-drawer",
   "evidenceSlug": "global-menu-drawer",
   "evidence": [
-    "evidence/xoxo/default/home/global-menu-drawer.768.png"
+    "evidence/xoxo/default/home/global-menu-drawer.768.png",
+    "evidence/xoxo/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/xoxo/default/home/global-menu-drawer.open.hamburger.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "#menu-drawer Dawn drawer. Home/Men/Women/Kids/Sale + About/Faq/Contact + Wishlist. 1440'ta inline nav birincil; hamburger 375/768.",
@@ -23,8 +25,77 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T17:32:07.450Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:15:46.724Z",
     "prepareClick": "#Details-menu-drawer-container > summary"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://pandora-full-fashion.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "scrollTo",
+      "selector": "#Details-menu-drawer-container",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false,
+      "not": "Settle tam sayfa kaydırıyor; hamburger'a dön"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-menu-drawer-container",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false,
+      "not": "details[open] — Dawn menu-opening native click'te geliyor"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 800,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Beklenen: Home/Men/Women/Kids/Sale/About/Faq/Contact + Wishlist."
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "İki deneme. Probe: 375 click → #menu-drawer 375×690 Home/Men/Women/Kids/Sale/About/Faq/Contact + Wishlist. Resmi 375/768 kareleri kapalı homepage (hamburger üç çizgi). 1440 hamburger gizli."
+    },
+    {
+      "state": "changed",
+      "sebep": "Drawer düz liste — nested summary/akordeon yok. Denenmedi."
+    }
+  ],
+  "interactionNote": "Settle kaydırma sonrası click+forceOpen details resmi karede drawer tutmadı. Yazılı <a> / Log in tıklanmadı. Şema yok.",
+  "stateFindings": {}
 }

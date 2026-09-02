@@ -51,22 +51,36 @@ Karar: onay bekliyor
 ---
 
 ADAY: xoxo-pdp-accordion-in-main  
-Gerekçe: Additional Information / Shipping & Returns / Exclusive Offers `product-info-main` içinde. Ayrı `product-info-tabs` section yok. Interact `changed` main’de.  
+Gerekçe: Additional Information / Shipping & Returns / Exclusive Offers `product-info-main` içinde. Ayrı `product-info-tabs` section yok. Accordion tıklanmadı (swatch interact sweater’da).  
 Öneri: leftover — ayrı şema yok  
 Karar: onay bekliyor
 
 ---
 
 ADAY: xoxo-no-mega  
-Gerekçe: `details.mega-menu` 0. 1440 inline Home/Men/Women/Kids/Sale/More. More = About/Faq/Contact dropdown, kolon/görsel mega değil.  
+Gerekçe: `details.mega-menu` 0. 1440 inline Home/Men/Women/Kids/Sale/More. More = About/Faq/Contact (`list-menu--disclosure`). İki resmi More karesi dropdown yazısını tutmadı.  
 Öneri: leftover — mega grammar yok  
 Karar: onay bekliyor
 
 ---
 
 ADAY: xoxo-no-variant-swatch  
-Gerekçe: Sneaker / Hats / Tee PDP’de Color/Size fieldset yok. Quantity stepper var. `emit:variant.change` bu katalogda kanıtlanamadı.  
-Öneri: leftover  
+Gerekçe: Sneaker / Hats / Tee PDP’de Color/Size yok. Sweater PDP’de Color (Khakhi→Dark Red) + Size S/L/M/XL kanıtlandı — `product-info-main` interact.  
+Öneri: leftover — katalog karışık; şema zaten swatch  
+Karar: onay bekliyor
+
+---
+
+ADAY: xoxo-dual-shipping-threshold  
+Gerekçe: Cart drawer Free Shipping! $500 + Express Shipping! $800. Şemada tek `kargoEsigi`. Şemaya dokunulmadı.  
+Öneri: leftover — delta  
+Karar: onay bekliyor
+
+---
+
+ADAY: xoxo-overlay-capture-miss  
+Gerekçe: Hamburger + 375/768 search resmi kareleri kapalı homepage (iki deneme). Probe drawer/search açıyor; `capture-interaction` settle sonrası tutmuyor.  
+Öneri: leftover — Dawn overlay  
 Karar: onay bekliyor
 
 ---

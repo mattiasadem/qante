@@ -8,9 +8,13 @@
   "selector": "#shopify-section-template--24474886340914__c27da1df-6ef7-4001-a46a-b645a1ec57a6",
   "evidenceSlug": "product-showcase-grid-featured",
   "evidence": [
+    "evidence/xoxo/default/home/product-showcase-grid-featured.1440.png",
     "evidence/xoxo/default/home/product-showcase-grid-featured.375.png",
     "evidence/xoxo/default/home/product-showcase-grid-featured.768.png",
-    "evidence/xoxo/default/home/product-showcase-grid-featured.1440.png"
+    "evidence/xoxo/default/home/product-showcase-grid-featured.hover.kart-hover.1440.png",
+    "evidence/xoxo/default/home/product-showcase-grid-featured.initial.ilk-hal.1440.png",
+    "evidence/xoxo/default/home/product-showcase-grid-featured.initial.ilk-hal.375.png",
+    "evidence/xoxo/default/home/product-showcase-grid-featured.initial.ilk-hal.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Your Festival. Kart: vendor, ad, fiyat, Add to wishlist, Add to cart. Sneaker $229 / Hats $129 / Black T Shirt $108. Kartta 2. görsel (hover adayı).",
@@ -23,7 +27,46 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T17:37:28.289Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:19:00.760Z"
+  },
+  "interactionStates": [
+    "initial",
+    "hover"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-full-fashion.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24474886340914__c27da1df-6ef7-4001-a46a-b645a1ec57a6",
+      "capture": false
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#shopify-section-template--24474886340914__c27da1df-6ef7-4001-a46a-b645a1ec57a6 .grid__item .card",
+      "viewports": [
+        "1440"
+      ],
+      "value": 1200,
+      "capture": true,
+      "captureMode": "section",
+      "etiket": "kart-hover",
+      "not": "Probe: 1. görsel opacity 1→0, 2. görsel 0→1. quick-add kutu 0."
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "İki resmi 1440 kare initial ile aynı (sneaker 1. görsel, quick-add yok). Probe: .card hover 1. img opacity 1→0 / 2. img 0→1; quick-add kutu 0. Screenshot hover tutmadı."
+    }
+  ],
+  "interactionNote": "375/768 hover yok. Quick view overlay yok. hizliEkleGoster şemada var — yeni şema yok.",
+  "stateFindings": {}
 }

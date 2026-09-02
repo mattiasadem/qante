@@ -201,3 +201,15 @@ Temsilci tarandı. Şema uydurulmadı. Form / kupon / ülke seçimi gönderilmed
 - [ ] `product-showcase-tabs` — Best seller missingStates (New Arrival kaldı)
 - [ ] `faq-collapsible-tabs` — accordion missingStates
 - [ ] `product-showcase-grid-plp` — Color Apply missingStates
+
+## XOXO / Odzi (Speedo) · default
+
+- [x] `global-cart-drawer` — boş / sneaker $229 / adet 2 $458; Free $500 · Express $800
+- [x] `cart-page-main` — empty / $229 / $458
+- [x] `product-info-main` — sweater Khakhi → Dark Red ($48)
+- [x] `faq-collapsible-tabs` — ilk soru + lorem
+- [x] `product-showcase-grid-plp` — 1440 Black 25→5; 375/768 Filter and sort `open`
+- [x] `global-predictive-search` — 1440 shirt PRODUCTS; 375/768 missingStates
+- [ ] `global-menu-drawer` — open missingStates (375/768 kare homepage)
+- [ ] `navigation-header-mega` — More dropdown resmi karede yok
+- [ ] `product-showcase-grid-featured` — hover 2. görsel resmi karede yok

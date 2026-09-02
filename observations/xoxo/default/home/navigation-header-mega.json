@@ -8,9 +8,13 @@
   "selector": "#shopify-section-sections--24474886963506__header",
   "evidenceSlug": "navigation-header-mega",
   "evidence": [
+    "evidence/xoxo/default/home/navigation-header-mega.1440.png",
     "evidence/xoxo/default/home/navigation-header-mega.375.png",
     "evidence/xoxo/default/home/navigation-header-mega.768.png",
-    "evidence/xoxo/default/home/navigation-header-mega.1440.png"
+    "evidence/xoxo/default/home/navigation-header-mega.initial.ilk-hal.1440.png",
+    "evidence/xoxo/default/home/navigation-header-mega.initial.ilk-hal.375.png",
+    "evidence/xoxo/default/home/navigation-header-mega.initial.ilk-hal.768.png",
+    "evidence/xoxo/default/home/navigation-header-mega.open.more-dropdown.1440.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Logo + Home/Men/Women/Kids/Sale/More. More altında About/Faq/Contact. Search details-modal#header-search. Cart a#cart-icon-bubble → /cart. Log in. Mega panel yok (mega:0).",
@@ -22,8 +26,53 @@
       "768",
       "1440"
     ],
-    "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T17:36:31.457Z"
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:18:18.884Z"
+  },
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-full-fashion.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "a.header__menu-item:has-text('More')",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 500,
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "section",
+      "captureSelector": "header .list-menu--disclosure",
+      "etiket": "more-dropdown",
+      "not": "About / Faq / Contact. Viewport scrollTo hover'ı düşürüyor — section kutu."
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "Mega yok. More 1. deneme viewport kare homepage (forceOpen .site-nav__dropdown h:0). 2. deneme section .list-menu--disclosure koyu boş kırpım — About/Faq/Contact yazısı yok. Probe hover h:117 About/Faq/Contact."
+    }
+  ],
+  "interactionNote": "Mega 0. More href #. Account/wishlist tıklanmadı. 375/768 hamburger ayrı obs.",
+  "stateFindings": {
+    "initial": "1440: XOXO + Home/Men/Women/Kids/Sale/More inline. Mega kolon/görsel yok. 375/768 hamburger + arama ikonu."
   }
 }

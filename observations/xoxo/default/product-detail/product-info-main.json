@@ -8,13 +8,19 @@
   "selector": "#shopify-section-template--24474886635826__main",
   "evidenceSlug": "product-info-main",
   "evidence": [
+    "evidence/xoxo/default/product-detail/product-info-main.1440.png",
     "evidence/xoxo/default/product-detail/product-info-main.375.png",
     "evidence/xoxo/default/product-detail/product-info-main.768.png",
-    "evidence/xoxo/default/product-detail/product-info-main.1440.png"
+    "evidence/xoxo/default/product-detail/product-info-main.changed.renk-2.1440.png",
+    "evidence/xoxo/default/product-detail/product-info-main.changed.renk-2.375.png",
+    "evidence/xoxo/default/product-detail/product-info-main.changed.renk-2.768.png",
+    "evidence/xoxo/default/product-detail/product-info-main.initial.sweater-khakhi.1440.png",
+    "evidence/xoxo/default/product-detail/product-info-main.initial.sweater-khakhi.375.png",
+    "evidence/xoxo/default/product-detail/product-info-main.initial.sweater-khakhi.768.png"
   ],
   "storefrontPassword": "1",
-  "notlar": "Fashion Running Sneaker Shoes $229. Galeri 6 medya. People are viewing / Availability 100 / Estimated delivery / Hurry up countdown 00. Quantity stepper. Add to cart + BUY IT NOW. Accordion: Additional Information / Shipping & Returns / Exclusive Offers. Secure Payments. Wishlist. Buy it now tıklanmadı.",
-  "delta": "Renk/beden swatch yok (bu PDP + hats + tee taranan). Accordion product-info-tabs ayrı section değil — main içinde. Countdown 00 sabit.",
+  "notlar": "Statik PDP sneaker $229 (swatch yok). Interact sweater /products/all-i-know-so-far-tan-pocketed-fuzzy-sweater: Color Khakhi→Dark Red, Size S/L/M/XL, $78→$48, ATC + BUY IT NOW. Accordion .product__accordion.",
+  "delta": "Sneaker PDP'de Color/Size yok. Sweater'da daire swatch + beden pill. Countdown 604 gün. Accordion product-info-tabs ayrı section değil. BUY IT NOW tıklanmadı.",
   "capture": {
     "url": "https://pandora-full-fashion.myshopify.com/products/fashion-running-sneaker-shoes",
     "viewports": [
@@ -23,7 +29,35 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T17:44:42.200Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:08:52.889Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-full-fashion.myshopify.com/products/all-i-know-so-far-tan-pocketed-fuzzy-sweater",
+      "capture": true,
+      "etiket": "sweater-khakhi",
+      "not": "Color Khakhi + Size. Swatch kanıtı (sneaker'da yok)."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='template--24474886635826__main-1-1']",
+      "capture": true,
+      "etiket": "renk-2",
+      "not": "İkinci Color swatch. Beklenen: Color etiketi / galeri değişir."
+    }
+  ],
+  "missingStates": [],
+  "interactionNote": "Swatch kanıtı sweater PDP. Sneaker leftover. Accordion tıklanmadı. Wishlist tıklanmadı.",
+  "stateFindings": {
+    "initial": "Sweater $48 ($78 üstü çizili). Color: Khakhi + 4 daire swatch (ilki seçili). Size S seçili · L M XL. 25–40 people viewing / 1000 in stock / Estimated delivery Sep 9–17 2026 / Hurry up 604 Days. ATC + BUY IT NOW. Accordion kapalı.",
+    "changed": "Color: Dark Red. Galeri koyu kırmızı kazak (gözlüklü model). Size S aynı. Fiyat $48 aynı. BUY IT NOW tıklanmadı."
   }
 }
