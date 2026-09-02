@@ -57,6 +57,7 @@
 | Plantrex (Speedo) | [`plantrex.md`](./plantrex.md) | ✅ default — official `pandora-flower.myshopify.com` · vendor password `1` · 28 obs · 132 PNG · 0 yeni şema |
 | Sachue (Speedo) | [`sachue.md`](./sachue.md) | ✅ first inventory — official demo pandora-beauty-store · 41 obs · 168 PNG · 0 yeni şema · interact |
 | Seabikini (Speedo Themes) | [`seabikini.md`](./seabikini.md) | ✅ first inventory — fashion-store-clean-11 · 39 obs · 162 PNG · 0 yeni şema · interact |
+| Digitech (Speedo) | [`digitech.md`](./digitech.md) | ✅ first inventory — Digital Gallery Shop V-1.5.0 · password `1` · 38 obs · 141 PNG · 0 yeni şema · interact |
 | Tormeti (Speedo) | [`tormeti.md`](./tormeti.md) | 🟡 first inventory — Pandora_Jewellery 1.5.0 · public /password 1 · 36 obs · 0 yeni şema · mega/cart/PDP interact · search/menu overlay missing |
 | Vedzila (Speedo) | [`vedzila.md`](./vedzila.md) | 🟡 first inventory + interact — vedzila-organic.myshopify.com · password `1` · 45 obs · 0 yeni şema · search input missing |
 | Wearix (Speedo / Pandora) | [`wearix.md`](./wearix.md) | 🟡 default — 35 obs · 143 PNG · 0 yeni şema · cart/PDP/FAQ interact; mega/search/menu overlay missingStates |
