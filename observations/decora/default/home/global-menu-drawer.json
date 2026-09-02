@@ -8,7 +8,9 @@
   "selector": "#menu-drawer",
   "evidenceSlug": "global-menu-drawer",
   "evidence": [
-    "evidence/decora/default/home/global-menu-drawer.768.png"
+    "evidence/decora/default/home/global-menu-drawer.768.png",
+    "evidence/decora/default/home/global-menu-drawer.changed.shop-akordeon.768.png",
+    "evidence/decora/default/home/global-menu-drawer.open.hamburger.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "details#Details-menu-drawer-container → #menu-drawer. Shop alt akordeon. 1440 hamburger 0×0.",
@@ -23,8 +25,67 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T19:33:22.660Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:14:39.009Z",
     "prepareClick": "summary.header__icon--menu"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://pandora-furniture-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2200,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Shop Contact About Us Blog Faqs + Wishlist/Log in",
+      "value": 2000
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-menu-drawer-menu-item-1 > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-akordeon",
+      "not": "Shop boş ok — alt koleksiyon linkleri",
+      "value": 1500
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "İki deneme. 375: #menu-drawer capture 0px (newsletter/opener tık drawer açmadı). 768 viewport hamburger karesi homepage — drawer paneli yok, byte-eş 210838. 1440 hamburger 0×0 beklenen."
+    },
+    {
+      "state": "changed",
+      "sebep": "375 sıfır kutu. 768 shop-akordeon karesi yine homepage; alt menü görünmedi."
+    }
+  ],
+  "interactionNote": "1440 hamburger 0×0. Probe 375 tıkta Shop/Contact/About Us/Blog/Faqs + Wishlist/Log in gördü; resmi karede drawer yok. Log in tıklanmadı. Tormeti aynı Speedo çatalında aynı overlay tuzağı."
 }

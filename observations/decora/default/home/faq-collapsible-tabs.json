@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--24649680224568__1663676130f16e8b3b",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/decora/default/home/faq-collapsible-tabs.1440.png",
     "evidence/decora/default/home/faq-collapsible-tabs.375.png",
     "evidence/decora/default/home/faq-collapsible-tabs.768.png",
-    "evidence/decora/default/home/faq-collapsible-tabs.1440.png"
+    "evidence/decora/default/home/faq-collapsible-tabs.changed.shipping-acik.1440.png",
+    "evidence/decora/default/home/faq-collapsible-tabs.changed.shipping-acik.375.png",
+    "evidence/decora/default/home/faq-collapsible-tabs.changed.shipping-acik.768.png",
+    "evidence/decora/default/home/faq-collapsible-tabs.initial.kapali.1440.png",
+    "evidence/decora/default/home/faq-collapsible-tabs.initial.kapali.375.png",
+    "evidence/decora/default/home/faq-collapsible-tabs.initial.kapali.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Faqs: What Shipping Methods Are Available? / shipping times / payment methods / exchanges returns. ~364px.",
@@ -23,7 +29,52 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T19:29:24.116Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T19:57:44.295Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-furniture-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2200,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24649680224568__1663676130f16e8b3b",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "Dört soru kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-1663676129b73b922e-0-template--24649680224568__1663676130f16e8b3b > summary",
+      "capture": true,
+      "etiket": "shipping-acik",
+      "not": "İlk soru açık"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Dört soru kapalı, sağda +.",
+    "changed": "Capture karesi initial ile aynı — accordion açık görünmedi."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "İki capture denemesi. PNG byte-eş initial. Probe DOM open gördü; resmi kare değişmedi. Üçüncü yok."
+    }
+  ],
+  "interactionNote": "Home FAQ. Probe 364→429px ama capture karesi değişmedi."
 }

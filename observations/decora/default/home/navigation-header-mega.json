@@ -8,9 +8,13 @@
   "selector": "#site-header",
   "evidenceSlug": "navigation-header-mega",
   "evidence": [
+    "evidence/decora/default/home/navigation-header-mega.1440.png",
     "evidence/decora/default/home/navigation-header-mega.375.png",
     "evidence/decora/default/home/navigation-header-mega.768.png",
-    "evidence/decora/default/home/navigation-header-mega.1440.png"
+    "evidence/decora/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/decora/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/decora/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/decora/default/home/navigation-header-mega.open.shop-mega.1440.png"
   ],
   "storefrontPassword": "1",
   "notlar": "header_1: geniş arama + All Categories + Shop/Contact/About Us/Blog/Faqs. Search/Log in/Cart. Shop → details#Details-HeaderMenu-1 mega. Section wrapper shopify-section h değişir; selector #site-header.",
@@ -24,7 +28,52 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T19:36:15.672Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:03:30.038Z"
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-furniture-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2200,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Mega kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "details.mega-menu#Details-HeaderMenu-1",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "forceOpen Shop mega — hover karede panel durmadı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440: DECORA LUXURIES + geniş Search + All Categories + Shop/Contact/About Us/Blog/Faqs. Mega kapalı; hemen altında hero SPRING COLLECTIONS / END SEASONS.",
+    "open": "1440 Shop mega (#MegaMenu-Content-1): 6 image+text kart — Home Office · Living Room · Kitchen · Bedroom · Small Furniture · Outdoor. Hover tek başına karede durmadı; forceOpen details.mega-menu#Details-HeaderMenu-1."
+  },
+  "missingStates": [],
+  "interactionNote": "İki #Details-HeaderMenu-1 var (All Categories + Shop). Unique: details.mega-menu#Details-HeaderMenu-1. Account tıklanmadı."
 }

@@ -37,9 +37,17 @@ Karar: onay bekliyor
 ---
 
 ADAY: decora-newsletter-popup  
-Gerekçe: `#shopify-section-newsletter-popup` h=0. Get the newsletter Get 10% off. PII, dur.  
-Örnekler: overlay-group newsletter-popup  
-Öneri: leftover — gizli popup  
+Gerekçe: `#shopify-section-newsletter-popup` statikte h=0. Interact 375'te “Get the newsletter Get 10% off” + Email + SUBSCRIBE göründü (PII, dur / gönderilmedi).  
+Örnekler: overlay-group newsletter-popup · 375 cart initial ilk kare  
+Öneri: leftover — gecikmeli popup  
+Karar: onay bekliyor
+
+---
+
+ADAY: decora-menu-drawer-capture  
+Gerekçe: 375 hamburger tık #menu-drawer 0px; 768 viewport karesi homepage (drawer yok). Probe 375×627 Shop/Contact/About Us gördü. Tormeti aynı Speedo çatalı.  
+Örnekler: `#menu-drawer` · `#Details-menu-drawer-container`  
+Öneri: leftover — overlay capture  
 Karar: onay bekliyor
 
 ---

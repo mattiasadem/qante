@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--24649680879928__main",
   "evidenceSlug": "product-info-main",
   "evidence": [
+    "evidence/decora/default/product-detail/product-info-main.1440.png",
     "evidence/decora/default/product-detail/product-info-main.375.png",
     "evidence/decora/default/product-detail/product-info-main.768.png",
-    "evidence/decora/default/product-detail/product-info-main.1440.png"
+    "evidence/decora/default/product-detail/product-info-main.changed.color-gray.1440.png",
+    "evidence/decora/default/product-detail/product-info-main.changed.color-gray.375.png",
+    "evidence/decora/default/product-detail/product-info-main.changed.color-gray.768.png",
+    "evidence/decora/default/product-detail/product-info-main.initial.ilk-hal.1440.png",
+    "evidence/decora/default/product-detail/product-info-main.initial.ilk-hal.375.png",
+    "evidence/decora/default/product-detail/product-info-main.initial.ilk-hal.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Wembley Dining Table $206→$156. Galeri + Size pills Small/Medium/Large + Color swatch Brown/Gray + qty + ADD TO CART. Availability / people viewing. Accordion: Additional Information / Shipping & Returns / Exclusive Offers / Secure Payments (buy box içinde).",
@@ -23,7 +29,47 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T19:45:48.989Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T19:56:41.503Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-furniture-2.myshopify.com/products/wembley-dining-table",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2200,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24649680879928__main",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Color Brown · Size Small · $156"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='template--24649680879928__main-2-1']",
+      "capture": true,
+      "etiket": "color-gray",
+      "not": "Brown → Gray"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Wembley Dining Table · $156 ~~$206~~ · Size Small (kahverengi pill) · Color: Brown (koyu ahşap ana görsel + seçili swatch) · Hurry up countdown · ADD TO CART / BUY IT NOW · Availability 674 · Additional Information / Shipping & Returns / Exclusive Offers / Secure Payments kapalı.",
+    "changed": "Color: Gray — ana görsel açık ahşap; ikinci swatch seçili. Size Small ve $156 aynı. Galeri ilk thumb hâlâ koyu ahşap çerçeveli."
+  },
+  "missingStates": [],
+  "interactionNote": "Buy it now / Size Guide / Wishlist tıklanmadı. Size pill yoklandı değil. Şemaya dokunulmadı — swatch zaten tipte."
 }

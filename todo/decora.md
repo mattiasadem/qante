@@ -13,7 +13,7 @@
 `theme_store_id` = **null** · `handle` = `"null"` · `style.id` / `style.handle` = **null**  
 Walk host = `Shopify.shop` = `pandora-furniture-2.myshopify.com` · locale `en` · country `US` · currency `USD`
 
-**Durum:** Mod A 38 obs + resmi 3vp (110 PNG) — interact sırada  
+**Durum:** Mod A 38 obs + resmi 3vp + interact (mega / search 1440 / cart drawer+page / PDP Color) — menu drawer, tabs, home FAQ `missingStates`  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -29,7 +29,7 @@ Walk host = `Shopify.shop` = `pandora-furniture-2.myshopify.com` · locale `en` 
 | Parallel | yalnız `observations/decora/`, `evidence/decora/`, `todo/decora.md`, `candidates/decora-leftovers.md`, unlock host map |
 
 **Kapsam satırı:**  
-`Decora · default · Pandora-furniture-2-v-1-5-0 / schema_name Pandora furniture 2 1.5.0 · theme_store_id null · shop pandora-furniture-2.myshopify.com · password 1 (vendor-published) · home→PLP /collections/all→PDP Wembley Dining Table→search chair→collections→cart→about/contact/faqs→news+post · 38 obs · 0 yeni şema · leftover: candidates/decora-leftovers.md`
+`Decora · default · Pandora-furniture-2-v-1-5-0 / schema_name Pandora furniture 2 1.5.0 · theme_store_id null · shop pandora-furniture-2.myshopify.com · password 1 (vendor-published) · home→PLP /collections/all→PDP Wembley Dining Table→search chair→collections→cart→about/contact/faqs→news+post · 38 obs · 0 yeni şema · interact: mega open · search chair 1440 · cart drawer empty/filled/qty · cart page empty/filled/qty · PDP Color Gray · leftover: candidates/decora-leftovers.md`
 
 ---
 
@@ -38,15 +38,15 @@ Walk host = `Shopify.shop` = `pandora-furniture-2.myshopify.com` · locale `en` 
 | Şablon | Durum | 3vp |
 |---|---|---|
 | Home roster (announcement→footer) | [x] obs | [x] capture |
-| Shop mega hover 1440 | [ ] interact | [ ] |
-| Predictive search `chair` | [ ] interact | [ ] |
-| Mobile menu 375 + 768 | [ ] interact | [ ] |
-| Cart drawer empty + filled + qty | [ ] interact | [ ] |
-| PDP Wembley Color Brown→Gray | [ ] interact | [ ] |
+| Shop mega hover 1440 | [x] interact | [x] open (forceOpen image mega) |
+| Predictive search `chair` | [x] interact | [x] 1440 · 375/768 missing |
+| Mobile menu 375 + 768 | [x] denendi | missingStates — karede drawer yok |
+| Cart drawer empty + filled + qty | [x] interact | [x] |
+| PDP Wembley Color Brown→Gray | [x] interact | [x] |
 | PLP `/collections/all` | [x] obs | [x] capture |
 | Collections `/collections` | [x] obs | [x] capture |
 | Search `/search?q=chair` | [x] obs | [x] capture |
-| Cart page empty + filled + qty | [ ] interact | [ ] |
+| Cart page empty + filled + qty | [x] interact | [x] |
 | About `/pages/about-us` | [x] obs | [x] capture |
 | Contact form (submit yok) | [x] obs | [x] capture |
 | FAQ `/pages/faqs` | [x] obs | [x] capture |
@@ -89,9 +89,9 @@ Walk host = `Shopify.shop` = `pandora-furniture-2.myshopify.com` · locale `en` 
 | 2 | product-showcase-grid-plp | collection | [x] | [x] 3vp |
 | 3 | collection-nav-grid | collections | [x] | [x] 3vp |
 | 4 | search-results | search | [x] | [x] 3vp |
-| 5 | cart-page-main | cart | [x] | [x] 3vp · interact sırada |
+| 5 | cart-page-main | cart | [x] | [x] 3vp · empty/filled/qty |
 | 6 | product-showcase-grid-featured | cart | [x] | [x] 3vp |
-| 7 | product-info-main | product-detail | [x] | [x] 3vp · interact Color Gray |
+| 7 | product-info-main | product-detail | [x] | [x] 3vp · Color Brown→Gray |
 | 8 | features-multicolumn | product-detail | [x] | [x] 3vp |
 | 9 | editorial-image-with-text | product-detail | [x] | [x] 3vp |
 | 10 | editorial-image-with-text-overlay | product-detail | [x] | [x] 3vp |
@@ -104,14 +104,14 @@ Walk host = `Shopify.shop` = `pandora-furniture-2.myshopify.com` · locale `en` 
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | open | [ ] 1440 Shop mega |
-| global-predictive-search | input | [ ] `chair` |
-| global-menu-drawer | open | [ ] 375+768 |
-| global-cart-drawer | filled + changed | [ ] |
-| cart-page-main | filled + changed | [ ] |
-| product-info-main | changed | [ ] Color Gray |
-| product-showcase-tabs | hover / changed | [ ] |
-| faq-collapsible-tabs | changed | [ ] |
+| navigation-header-mega | open | [x] 1440 6 image+text kart |
+| global-predictive-search | input | [x] 1440 `chair` · 375/768 missing |
+| global-menu-drawer | open | missingStates — 375 0px · 768 homepage |
+| global-cart-drawer | initial + filled + changed | [x] boş / Wembley 1 / adet 2 |
+| cart-page-main | initial + filled + changed | [x] boş / Wembley 1 / adet 2 |
+| product-info-main | changed | [x] Color Brown→Gray |
+| product-showcase-tabs | changed | missingStates — kare BEST SELLERS kaldı |
+| faq-collapsible-tabs | changed | missingStates — PNG byte-eş |
 
 ---
 
@@ -124,5 +124,5 @@ Walk host = `Shopify.shop` = `pandora-furniture-2.myshopify.com` · locale `en` 
 ## Evidence backlog
 
 - [x] Resmi 3vp `capture-observation.mjs` (38 obs · 110 PNG; menu 1440 + search 375/768 zero-size → interact)
-- [ ] Interact capture
-- [ ] `node scripts/validate-schemas.mjs`
+- [x] Interact capture (mega / search 1440 / cart drawer+page / PDP; menu/tabs/FAQ missingStates)
+- [x] `node scripts/validate-schemas.mjs`

@@ -8,9 +8,18 @@
   "selector": "#CartDrawer",
   "evidenceSlug": "global-cart-drawer",
   "evidence": [
+    "evidence/decora/default/home/global-cart-drawer.1440.png",
     "evidence/decora/default/home/global-cart-drawer.375.png",
     "evidence/decora/default/home/global-cart-drawer.768.png",
-    "evidence/decora/default/home/global-cart-drawer.1440.png"
+    "evidence/decora/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/decora/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/decora/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/decora/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/decora/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/decora/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/decora/default/home/global-cart-drawer.initial.sepet-bos.1440.png",
+    "evidence/decora/default/home/global-cart-drawer.initial.sepet-bos.375.png",
+    "evidence/decora/default/home/global-cart-drawer.initial.sepet-bos.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "CART-DRAWER. Boş kare + Continue shopping. Dolu interact.",
@@ -25,8 +34,87 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T19:31:51.765Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:15:15.183Z",
     "prepareClick": "#cart-icon-bubble"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-furniture-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": false,
+      "not": "Cart ikon"
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş drawer — forceOpen cart-drawer host (tık karede durmadı)"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://pandora-furniture-2.myshopify.com/products/wembley-dining-table",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--24649680879928__main",
+      "capture": false,
+      "not": "Wembley Dining Table ATC"
+    },
+    {
+      "state": "filled",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer — 375 ikon drawer altında kaldı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart · Back · Free Shipping! $500 + Express Shipping! $800 gri progress · Your cart is empty · CONTINUE SHOPPING · Have an account? Log in to check out faster. Checkout yok.",
+    "filled": "Wembley Dining Table · Size Small · Color Brown · adet 1 · $156 · çöp · yeşil progress $500'e doğru · Best seller / Order special instructions akordeon · Estimated total $156.00 USD · CHECK OUT · View cart.",
+    "changed": "Aynı satır adet 2 · Estimated total $312.00 USD. 375/768/1440."
+  },
+  "missingStates": [],
+  "interactionNote": "İlk tık+viewport boş kare homepage/newsletter verdi. Retry forceOpen cart-drawer host boş paneli gösterdi. 375 filled: ATC sonrası ikon drawer altında — forceOpen. Checkout / Log in tıklanmadı."
 }

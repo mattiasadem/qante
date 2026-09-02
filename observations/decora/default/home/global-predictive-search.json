@@ -8,7 +8,9 @@
   "selector": "predictive-search",
   "evidenceSlug": "global-predictive-search",
   "evidence": [
-    "evidence/decora/default/home/global-predictive-search.1440.png"
+    "evidence/decora/default/home/global-predictive-search.1440.png",
+    "evidence/decora/default/home/global-predictive-search.initial.arama-bos.1440.png",
+    "evidence/decora/default/home/global-predictive-search.input.arama-chair.1440.png"
   ],
   "storefrontPassword": "1",
   "notlar": "1440 header içinde geniş predictive-search (~949×42). details-modal#header-search 0×0. Interact fill chair.",
@@ -23,8 +25,62 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T19:35:15.492Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:00:39.717Z",
     "prepareClick": "details-modal.header__search summary, .header__icon--search, predictive-search input[type='search']"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-furniture-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2200,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "viewports": [
+        "1440"
+      ],
+      "not": "1440 inline search boş"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "predictive-search input[type='search']",
+      "value": "chair",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-chair",
+      "viewports": [
+        "1440"
+      ],
+      "not": "katalogSorgu=chair (Duane Chair / Lionel Lounge Chair)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440 header içinde geniş Search input, sonuç listesi yok.",
+    "input": "chair: SUGGESTIONS chair/Chairs + PRODUCTS Duane Chair, Lionel Lounge Chair, Jasmi Dining Chair… + Search for “chair”."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "375/768: #Search-In-Modal opener yoklandı, input görünür kalmadı. Yalnız 1440 inline fill chair karesi var."
+    }
+  ],
+  "interactionNote": "1440 inline predictive-search. 375/768 modal opener yoklandı, input görünür kalmadı. Form submit yok."
 }
