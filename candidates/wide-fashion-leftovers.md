@@ -19,6 +19,8 @@ shop `fashion-store-clean-5.myshopify.com` · password `1` (aynı host)
 | Newsletter Email / contact SEND / blog comment | PII — dur. |
 | Checkout / Buy it now | dur. |
 | PLP facet/sort interact | Filter DOM’da var; bu turda çekilmedi. |
+| Cart drawer “Best seller” accordion | Dolu drawer’da kapalı göründü; açılmadı. |
+| Menu drawer locale/currency | 375/768 drawer’da USD / English görünür; tıklanmadı (footer leftover ile aynı). |
 | Country/region + language | Footer disclosure — leftover. |
 | PDP empty related placeholder | 0-size section yukarıda. |
 | before-after-slider / bundle / countdown / compare / quiz | Section yok. Şema uydurulmadı. |

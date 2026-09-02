@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--21734253789485__fe3efae2-131f-4aca-bdc0-0dc718364dda",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/wide-fashion/default/home/faq-collapsible-tabs.1440.png",
     "evidence/wide-fashion/default/home/faq-collapsible-tabs.375.png",
     "evidence/wide-fashion/default/home/faq-collapsible-tabs.768.png",
-    "evidence/wide-fashion/default/home/faq-collapsible-tabs.1440.png"
+    "evidence/wide-fashion/default/home/faq-collapsible-tabs.changed.hipoalerjenik-acik.1440.png",
+    "evidence/wide-fashion/default/home/faq-collapsible-tabs.changed.hipoalerjenik-acik.375.png",
+    "evidence/wide-fashion/default/home/faq-collapsible-tabs.changed.hipoalerjenik-acik.768.png",
+    "evidence/wide-fashion/default/home/faq-collapsible-tabs.initial.kapali.1440.png",
+    "evidence/wide-fashion/default/home/faq-collapsible-tabs.initial.kapali.375.png",
+    "evidence/wide-fashion/default/home/faq-collapsible-tabs.initial.kapali.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "❔Frequently Asked Questions — jewelry/shipping/custom (demo metin, giyim vitrinine uyumsuz).",
@@ -23,7 +29,42 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T15:50:04.125Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:15:11.615Z"
+  },
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://fashion-store-clean-5.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21734253789485__fe3efae2-131f-4aca-bdc0-0dc718364dda",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "Tüm sorular +"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-template--17575587217690__fe3efae2-131f-4aca-bdc0-0dc718364dda-1674208802ed7d97df-0-template--21734253789485__fe3efae2-131f-4aca-bdc0-0dc718364dda > summary",
+      "value": 700,
+      "capture": true,
+      "etiket": "hipoalerjenik-acik",
+      "not": "İlk soru açık, cevap görünür."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Frequently Asked Questions. Beş soru, hepsi + kapalı.",
+    "changed": "İlk soru açık (−): “Are your jewelry hypoallergenic?” + nickel-free cevap. Diğerleri + kapalı."
+  },
+  "missingStates": [],
+  "interactionNote": "Accordion = changed. Yalnız ilk soru yoklandı. Demo metin mücevher; giyim vitrinine uyumsuz.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ]
 }

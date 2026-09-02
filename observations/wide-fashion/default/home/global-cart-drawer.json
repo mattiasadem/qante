@@ -8,9 +8,15 @@
   "selector": "#CartDrawer",
   "evidenceSlug": "global-cart-drawer",
   "evidence": [
+    "evidence/wide-fashion/default/home/global-cart-drawer.1440.png",
     "evidence/wide-fashion/default/home/global-cart-drawer.375.png",
     "evidence/wide-fashion/default/home/global-cart-drawer.768.png",
-    "evidence/wide-fashion/default/home/global-cart-drawer.1440.png"
+    "evidence/wide-fashion/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/wide-fashion/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/wide-fashion/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/wide-fashion/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/wide-fashion/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/wide-fashion/default/home/global-cart-drawer.filled.sepete-eklendi.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Dawn cart-drawer. Boş: Your cart is empty + Continue shopping. Login satırı var, tıklanmadı.",
@@ -25,8 +31,60 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T15:52:52.224Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:20:09.044Z",
     "prepareClick": "a#cart-icon-bubble"
-  }
+  },
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://fashion-store-clean-5.myshopify.com/products/women-black-white-flower-design-dress",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit",
+      "capture": false,
+      "not": "Flower dress ATC"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://fashion-store-clean-5.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a#cart-icon-bubble",
+      "value": 1200,
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "captureMode": "viewport",
+      "not": "Dolu drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus'], #CartDrawer .quantity__button:not(.disabled)",
+      "value": 1000,
+      "capture": true,
+      "etiket": "adet-artti",
+      "captureMode": "viewport",
+      "not": "Qty +1"
+    }
+  ],
+  "stateFindings": {
+    "filled": "Dolu drawer: Your cart. Flower dress Size S, qty 1, $130. Yeşil kargo çubuğu Free shipping! / Express shipping!. Best seller akordeon kapalı. Estimated total $130.00 USD. CHECK OUT + View Cart.",
+    "changed": "Qty 2, estimated total $260.00 USD. Ürün ve Size S aynı. Checkout tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC `button.product-form__submit` (ui; AJAX fallback yok). Checkout / login tıklanmadı. Boş kare statik evidence.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ]
 }

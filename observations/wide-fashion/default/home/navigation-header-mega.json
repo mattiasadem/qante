@@ -8,9 +8,13 @@
   "selector": "#shopify-section-sections--21734254182701__header",
   "evidenceSlug": "navigation-header-mega",
   "evidence": [
+    "evidence/wide-fashion/default/home/navigation-header-mega.1440.png",
     "evidence/wide-fashion/default/home/navigation-header-mega.375.png",
     "evidence/wide-fashion/default/home/navigation-header-mega.768.png",
-    "evidence/wide-fashion/default/home/navigation-header-mega.1440.png"
+    "evidence/wide-fashion/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/wide-fashion/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/wide-fashion/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/wide-fashion/default/home/navigation-header-mega.open.shop-dropdown.1440.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Dawn sticky-header, logo ortada. Home / Shop (details) / Our Story / Contact Us / Faq’s / Blog + search / login / wishlist / cart.",
@@ -22,8 +26,49 @@
       "768",
       "1440"
     ],
-    "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T15:58:53.810Z"
-  }
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:27:20.536Z"
+  },
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://fashion-store-clean-5.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "etiket": "bar",
+      "captureMode": "section",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-2 > summary",
+      "value": 1200,
+      "capture": true,
+      "etiket": "shop-dropdown",
+      "captureMode": "viewport",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Hover only — click /collections/all'a kaçar."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Kapalı header: logo ortada; Home altı çizili; Shop chevron; Our Story / Contact Us / Faq’s / Blog. Arama, hesap, wishlist 0, sepet. Mega panel yok.",
+    "open": "1440 Shop hover: dikey beyaz dropdown — Best Seller, New Arrival, Dress Collection, T-Shirts, Jacket. Mega kolon/görsel yok. 375/768 hamburger ayrı (global-menu-drawer)."
+  },
+  "missingStates": [],
+  "interactionNote": "Shop tıklanınca /collections/all. Yalnız hover `#Details-HeaderMenu-2 > summary`. İlk çekimde dropdown karede yoktu; hover 1200ms ile bir kez daha çekildi, liste göründü."
 }

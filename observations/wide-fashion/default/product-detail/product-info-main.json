@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--21734254051629__main",
   "evidenceSlug": "product-info-main",
   "evidence": [
+    "evidence/wide-fashion/default/product-detail/product-info-main.1440.png",
     "evidence/wide-fashion/default/product-detail/product-info-main.375.png",
     "evidence/wide-fashion/default/product-detail/product-info-main.768.png",
-    "evidence/wide-fashion/default/product-detail/product-info-main.1440.png"
+    "evidence/wide-fashion/default/product-detail/product-info-main.changed.size-m.1440.png",
+    "evidence/wide-fashion/default/product-detail/product-info-main.changed.size-m.375.png",
+    "evidence/wide-fashion/default/product-detail/product-info-main.changed.size-m.768.png",
+    "evidence/wide-fashion/default/product-detail/product-info-main.initial.size-s.1440.png",
+    "evidence/wide-fashion/default/product-detail/product-info-main.initial.size-s.375.png",
+    "evidence/wide-fashion/default/product-detail/product-info-main.initial.size-s.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Women Black & White Flower design Dress. Galeri sol + buy box. Size S/M/L/XL + adet + ADD TO CART. $140→$130.",
@@ -23,7 +29,42 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T16:07:24.710Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:28:07.685Z"
+  },
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://fashion-store-clean-5.myshopify.com/products/women-black-white-flower-design-dress",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21734254051629__main",
+      "capture": true,
+      "etiket": "size-s",
+      "not": "Size S seçili"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='template--21734254051629__main-1-1']",
+      "value": 900,
+      "capture": true,
+      "etiket": "size-m",
+      "not": "Size S→M. Fiyat/stok aynı kalabilir."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Women Black & White Flower design Dress. Size S seçili (kalın çerçeve). $140→$130, Sale, 700 in stock. Qty 1. ADD TO CART + BUY IT NOW. Materials / Shipping & Returns kapalı (+).",
+    "changed": "375/768/1440 Size M seçili (kalın çerçeve). Fiyat $130 ve stok 700 aynı. Galeri aynı çiçekli elbise. Size Guide / Buy it now / Materials tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "İlk deneme `input[name=Size][value=M]` çipi değiştirmedi (kareler özdeş). `label[for=template--21734254051629__main-1-1]` ile bir kez daha çekildi; M göründü.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ]
 }

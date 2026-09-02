@@ -14,7 +14,7 @@ shop `fashion-store-clean-5.myshopify.com`
 
 **Password:** Speedo ürün sayfası “Please enter password `1` to view demo.” Aynı host `/password` — public storefront-unlock. Başka host yok.
 
-**Durum:** Mod A walk + resmi 3vp + interact · validate · draft PR  
+**Durum:** Mod A walk + resmi 3vp + interact (8 bileşen) · validate 0 error · draft PR  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -30,7 +30,7 @@ shop `fashion-store-clean-5.myshopify.com`
 | Parallel | yalnız `observations/wide-fashion/`, `evidence/wide-fashion/`, `todo/wide-fashion.md`, `candidates/wide-fashion-leftovers.md` + storefront unlock helper |
 
 **Kapsam satırı:**  
-`Wide Fashion · default · Fashion-store-clean-5 V-1.2.0 / schema_name Fashion store clean-5 1.2.0 · theme_store_id null · shop fashion-store-clean-5.myshopify.com · password 1 · home→PDP flower-dress Size S→M→PLP all→search dress→cart empty/filled→collections→our-story→contact→faqs→news+article→404 · 42 obs · 0 yeni şema · leftover: candidates/wide-fashion-leftovers.md`
+`Wide Fashion · default · Fashion-store-clean-5 V-1.2.0 / schema_name Fashion store clean-5 1.2.0 · theme_store_id null · shop fashion-store-clean-5.myshopify.com · password 1 · home→PDP flower-dress Size S→M→PLP all→search dress→cart empty/filled→collections→our-story→contact→faqs→news+article→404 · 42 obs · 0 yeni şema · 169 PNG (125 statik + 44 interact) · leftover: candidates/wide-fashion-leftovers.md`
 
 ---
 
@@ -38,20 +38,20 @@ shop `fashion-store-clean-5.myshopify.com`
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home — announcement×2 / header / slideshow / welcome / collections / quote / promo tiles / featured / Maria / blog / reviews / newsletter / FAQ / USP / Instagram / footer | roster | [ ] |
-| Cart drawer boş | roster | [ ] |
-| Menu drawer 375+768 | roster | [ ] |
-| Predictive search host | roster | [ ] |
-| PDP `/products/women-black-white-flower-design-dress` | roster | [ ] |
-| PLP `/collections/all` | roster | [ ] |
-| Search `/search?q=dress` | roster | [ ] |
-| Cart `/cart` empty | roster | [ ] |
-| Collections index `/collections` | roster | [ ] |
-| Our Story `/pages/our-story` | roster | [ ] |
-| Contact `/pages/contact` (submit yok) | roster | [ ] |
-| FAQs `/pages/faqs` | roster | [ ] |
-| Blog `/blogs/news` + article | roster | [ ] |
-| 404 | roster | [ ] |
+| Home — announcement×2 / header / slideshow / welcome / collections / quote / promo tiles / featured / Maria / blog / reviews / newsletter / FAQ / USP / Instagram / footer | roster | [x] |
+| Cart drawer boş | roster | [x] |
+| Menu drawer 375+768 | roster | [x] 1440 zero-size |
+| Predictive search host | roster | [x] |
+| PDP `/products/women-black-white-flower-design-dress` | roster | [x] |
+| PLP `/collections/all` | roster | [x] |
+| Search `/search?q=dress` | roster | [x] |
+| Cart `/cart` empty | roster | [x] |
+| Collections index `/collections` | roster | [x] |
+| Our Story `/pages/our-story` | roster | [x] |
+| Contact `/pages/contact` (submit yok) | roster | [x] |
+| FAQs `/pages/faqs` | roster | [x] |
+| Blog `/blogs/news` + article | roster | [x] |
+| 404 | roster | [x] |
 | Email / account / checkout / newsletter submit / wishlist | ⛔ PII | — |
 
 ---
@@ -98,14 +98,14 @@ shop `fashion-store-clean-5.myshopify.com`
 
 | Bileşen | State | Durum |
 |---|---|---|
-| navigation-header-mega | open Shop 1440 | [ ] |
-| global-menu-drawer | open 375/768 | [ ] |
-| global-predictive-search | open + input `dress` | [ ] |
-| global-cart-drawer | filled + qty | [ ] |
-| cart-page-main | filled | [ ] |
-| product-info-main | changed Size S→M | [ ] |
-| product-showcase-grid-featured | hover kart | [ ] |
-| faq-collapsible-tabs | changed accordion | [ ] |
+| navigation-header-mega | open Shop 1440 | [x] hover dropdown 5 link |
+| global-menu-drawer | open 375/768 + Shop submenu | [x] |
+| global-predictive-search | open + input `women` | [x] SUGGESTIONS + PRODUCTS |
+| global-cart-drawer | filled + qty 1→2 | [x] $130→$260 |
+| cart-page-main | filled + qty 1→2 | [x] $130→$260 |
+| product-info-main | changed Size S→M | [x] fiyat/stok aynı |
+| product-showcase-grid-featured | hover kart | [x] CHOOSE OPTIONS + wishlist |
+| faq-collapsible-tabs | changed accordion | [x] ilk soru açık |
 
 ---
 
@@ -117,6 +117,6 @@ shop `fashion-store-clean-5.myshopify.com`
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact (`capture-interaction.mjs`)
-- [ ] `npm run validate` — 0 error
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact (`capture-interaction.mjs`) — 8 bileşen, stateFindings yazılı
+- [x] `node scripts/validate-schemas.mjs` — 0 error · 13 warn (önceki şemalar)
