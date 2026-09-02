@@ -26,7 +26,7 @@
 | Evidence kökü | `evidence/handmade-clay/default/` |
 | Capture | `scripts/run-handmade-clay-captures.mjs` + `capture-observation.mjs` + `capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
-| Observation | **39** (10 interact) |
+| Observation | **40** (10 interact) |
 | Parallel | `observations/handmade-clay/`, `evidence/handmade-clay/`, `todo/handmade-clay.md`, `candidates/handmade-clay-leftovers.md` |
 
 **Kapsam satırı:**  
@@ -93,5 +93,5 @@
 
 ## Evidence backlog
 
-- [x] Official 3vp static + interact (142 PNG)
+- [x] Official 3vp static + interact (143 PNG)
 - [x] `node scripts/validate-schemas.mjs` — 0 error
