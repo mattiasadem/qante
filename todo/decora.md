@@ -13,7 +13,7 @@
 `theme_store_id` = **null** · `handle` = `"null"` · `style.id` / `style.handle` = **null**  
 Walk host = `Shopify.shop` = `pandora-furniture-2.myshopify.com` · locale `en` · country `US` · currency `USD`
 
-**Durum:** Mod A observation yazıldı — 3vp capture + interact sırada  
+**Durum:** Mod A 38 obs + resmi 3vp (110 PNG) — interact sırada  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -37,20 +37,20 @@ Walk host = `Shopify.shop` = `pandora-furniture-2.myshopify.com` · locale `en` 
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | [x] obs | [ ] capture |
+| Home roster (announcement→footer) | [x] obs | [x] capture |
 | Shop mega hover 1440 | [ ] interact | [ ] |
 | Predictive search `chair` | [ ] interact | [ ] |
 | Mobile menu 375 + 768 | [ ] interact | [ ] |
 | Cart drawer empty + filled + qty | [ ] interact | [ ] |
 | PDP Wembley Color Brown→Gray | [ ] interact | [ ] |
-| PLP `/collections/all` | [x] obs | [ ] capture |
-| Collections `/collections` | [x] obs | [ ] capture |
-| Search `/search?q=chair` | [x] obs | [ ] capture |
+| PLP `/collections/all` | [x] obs | [x] capture |
+| Collections `/collections` | [x] obs | [x] capture |
+| Search `/search?q=chair` | [x] obs | [x] capture |
 | Cart page empty + filled + qty | [ ] interact | [ ] |
-| About `/pages/about-us` | [x] obs | [ ] capture |
-| Contact form (submit yok) | [x] obs | [ ] capture |
-| FAQ `/pages/faqs` | [x] obs | [ ] capture |
-| News + open-concept post | [x] obs | [ ] capture |
+| About `/pages/about-us` | [x] obs | [x] capture |
+| Contact form (submit yok) | [x] obs | [x] capture |
+| FAQ `/pages/faqs` | [x] obs | [x] capture |
+| News + open-concept post | [x] obs | [x] capture |
 | Map / account / checkout / newsletter submit | ⛔ leftover / dur | — |
 
 ---
@@ -85,18 +85,18 @@ Walk host = `Shopify.shop` = `pandora-furniture-2.myshopify.com` · locale `en` 
 
 | # | id | sayfa | JSON | Done |
 |---|---|---|---|---|
-| 1 | collection-banner | collection | [x] | [ ] 3vp |
-| 2 | product-showcase-grid-plp | collection | [x] | [ ] 3vp |
-| 3 | collection-nav-grid | collections | [x] | [ ] 3vp |
-| 4 | search-results | search | [x] | [ ] 3vp |
-| 5 | cart-page-main | cart | [x] | [ ] 3vp + interact |
-| 6 | product-showcase-grid-featured | cart | [x] | [ ] 3vp |
-| 7 | product-info-main | product-detail | [x] | [ ] interact Color Gray |
-| 8 | features-multicolumn | product-detail | [x] | [ ] 3vp |
-| 9 | editorial-image-with-text | product-detail | [x] | [ ] 3vp |
-| 10 | editorial-image-with-text-overlay | product-detail | [x] | [ ] 3vp |
-| 11 | product-showcase-related | product-detail | [x] | [ ] 3vp |
-| 12 | about/contact/faq/blog | content | [x] | [ ] 3vp |
+| 1 | collection-banner | collection | [x] | [x] 3vp |
+| 2 | product-showcase-grid-plp | collection | [x] | [x] 3vp |
+| 3 | collection-nav-grid | collections | [x] | [x] 3vp |
+| 4 | search-results | search | [x] | [x] 3vp |
+| 5 | cart-page-main | cart | [x] | [x] 3vp · interact sırada |
+| 6 | product-showcase-grid-featured | cart | [x] | [x] 3vp |
+| 7 | product-info-main | product-detail | [x] | [x] 3vp · interact Color Gray |
+| 8 | features-multicolumn | product-detail | [x] | [x] 3vp |
+| 9 | editorial-image-with-text | product-detail | [x] | [x] 3vp |
+| 10 | editorial-image-with-text-overlay | product-detail | [x] | [x] 3vp |
+| 11 | product-showcase-related | product-detail | [x] | [x] 3vp |
+| 12 | about/contact/faq/blog | content | [x] | [x] 3vp |
 
 ---
 
@@ -123,6 +123,6 @@ Walk host = `Shopify.shop` = `pandora-furniture-2.myshopify.com` · locale `en` 
 
 ## Evidence backlog
 
-- [ ] Resmi 3vp `capture-observation.mjs` (38 obs)
+- [x] Resmi 3vp `capture-observation.mjs` (38 obs · 110 PNG; menu 1440 + search 375/768 zero-size → interact)
 - [ ] Interact capture
 - [ ] `node scripts/validate-schemas.mjs`
