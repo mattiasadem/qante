@@ -60,6 +60,7 @@
 | Tormeti (Speedo) | [`tormeti.md`](./tormeti.md) | 🟡 first inventory — Pandora_Jewellery 1.5.0 · public /password 1 · 36 obs · 0 yeni şema · mega/cart/PDP interact · search/menu overlay missing |
 | Vedzila (Speedo) | [`vedzila.md`](./vedzila.md) | 🟡 first inventory + interact — vedzila-organic.myshopify.com · password `1` · 45 obs · 0 yeni şema · search input missing |
 | Wearix (Speedo / Pandora) | [`wearix.md`](./wearix.md) | 🟡 default — 35 obs · 143 PNG · 0 yeni şema · cart/PDP/FAQ interact; mega/search/menu overlay missingStates |
+| XOXO / Odzi (Speedo) | [`xoxo.md`](./xoxo.md) | 🟡 first inventory — official `pandora-full-fashion.myshopify.com` · Pandora-full-fashion V-1.5.0 · vendor password `1` · 0 yeni şema |
 | Legal / policy (Kreis recipe) | [`policy-legal.md`](./policy-legal.md) | ✅ page-recipes/policy · 3-col sticky TOC \| content \| sibling nav |
 
 **Interact (discover sonrası derinlik):** [`interact.md`](./interact.md) — kapalı kare yalanı; Stretch + Cocoon/Balance shop-the-look kapandı.
