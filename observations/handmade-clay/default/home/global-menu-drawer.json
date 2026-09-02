@@ -1,0 +1,90 @@
+{
+  "observationId": "handmade-clay.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "handmade-clay",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://luxury-handmade-ultimate.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/handmade-clay/default/home/global-menu-drawer.changed.shop-akordeon.768.png",
+    "evidence/handmade-clay/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "details#Details-menu-drawer-container. Shop nested accordion.",
+  "delta": "Shopify.theme.name Luxury-handmade-ultimate V-1-5-0 · schema_name luxury_handmade_ultimate · schema_version 1.5.0 · theme_store_id null · role main · id 173445611830 · shop luxury-handmade-ultimate.myshopify.com · Dawn-like OS 2.0. Vendor-published demo password 1 (public storefront unlock).",
+  "capture": {
+    "url": "https://luxury-handmade-ultimate.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T19:22:13.002Z",
+    "prepareClick": "summary.header__icon--menu"
+  },
+  "captureMode": "viewport",
+  "prepareClick": "summary.header__icon--menu",
+  "interactionStates": [
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://luxury-handmade-ultimate.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "summary.header__icon--menu",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Drawer açık; 1440 hamburger 0×0."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-menu-drawer-menu-item-2 > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-akordeon",
+      "not": "Shop nested — Earrings / Necklace / Rings / Bracelet."
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: Home, Shop →, Our Story, Contact, Faq's, Blog; Log in + locale + sosyal.",
+    "changed": "Shop → geri oku + Earrings / Necklace / Rings / Bracelet. URL home."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "capture (375): zero-size / eşleşmedi: #menu-drawer"
+    },
+    {
+      "state": "changed",
+      "sebep": "capture (375): zero-size / eşleşmedi: #menu-drawer"
+    }
+  ],
+  "interactionNote": "Log in / locale tıklanmadı."
+}
