@@ -5,12 +5,77 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://tormeti-fashi.myshopify.com/",
-  "selector": "details-modal.header__search",
+  "selector": "#site-header",
   "evidenceSlug": "global-predictive-search",
   "evidence": [],
   "storefrontPassword": "1",
-  "notlar": "header search modal · form.search-modal__form action=/search name=q.",
-  "delta": "Dawn details-modal. Interact fill katalogSorgu. Tema (görülen, uydurulmadı): Shopify.theme.name Pandora-jewellery V-1.5.0 final · schema_name Pandora_Jewellery · schema_version 1.5.0 · theme_store_id null · role main · id 143506604249 · shop tormeti-fashi.myshopify.com · vendor Speedo Themes · slug tormeti · public storefront unlock /password 1 (Speedo ürün sayfası).",
+  "notlar": ".search-modal Dawn overlay. Opener details-modal.header__search summary. form name=q.",
+  "delta": "details-modal host 25×22; açık kutu .search-modal. Tema (görülen, uydurulmadı): Shopify.theme.name Pandora-jewellery V-1.5.0 final · schema_name Pandora_Jewellery · schema_version 1.5.0 · theme_store_id null · role main · id 143506604249 · shop tormeti-fashi.myshopify.com · vendor Speedo Themes · slug tormeti · public storefront unlock /password 1 (Speedo ürün sayfası).",
   "captureMode": "viewport",
-  "prepareClick": "details-modal.header__search > details > summary"
+  "prepareClick": "details-modal.header__search summary",
+  "capture": {
+    "url": "https://tormeti-fashi.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T13:54:40.338Z",
+    "prepareClick": "details-modal.header__search > details > summary"
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://tormeti-fashi.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "details-modal.header__search summary",
+      "capture": false,
+      "not": "Search ikon"
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "details-modal.header__search",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Boş search modal"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal-1",
+      "value": "diamond",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-diamond",
+      "not": "katalogSorgu=diamond"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "katalogSorgu=diamond (scan). İlk koşu .search-modal zero-size; forceOpen + #Search-In-Modal-1. Submit yok."
 }
