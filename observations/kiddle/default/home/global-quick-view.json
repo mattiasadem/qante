@@ -5,12 +5,12 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://toyon-toys-3.myshopify.com/",
-  "selector": "quick-add-modal",
+  "selector": "quick-add-modal[open]",
   "evidenceSlug": "global-quick-view",
   "evidence": [
+    "evidence/kiddle/default/home/global-quick-view.1440.png",
     "evidence/kiddle/default/home/global-quick-view.375.png",
-    "evidence/kiddle/default/home/global-quick-view.768.png",
-    "evidence/kiddle/default/home/global-quick-view.1440.png"
+    "evidence/kiddle/default/home/global-quick-view.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Kart QUICK SHOP → Dawn quick-add-modal (Best Seller sekmesi). Birden fazla host.",
@@ -26,8 +26,65 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T20:06:01.098Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:38:57.475Z",
     "prepareClick": "#shopify-section-template--18212694524124__homepage_product_tab_wd7ikC .quick-add__submit"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "selector": null,
+      "value": "https://toyon-toys-3.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--18212694524124__homepage_product_tab_wd7ikC",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#CardLink-template--18212694524124__homepage_product_tab_wd7ikC-8577685323996",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#quick-add-template--18212694524124__homepage_product_tab_wd7ikC8577685323996-submit",
+      "value": 1200,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#QuickAdd-8577685323996",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "selector": null,
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#QuickAdd-8577685323996",
+      "etiket": "quick-shop",
+      "not": "Quick add modal"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "capture (375): zero-size / eşleşmedi: quick-add-modal[open]"
+    }
+  ],
+  "interactionNote": "Dawn quick-add-modal. ATC/checkout yok."
 }

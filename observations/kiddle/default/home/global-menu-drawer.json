@@ -8,7 +8,9 @@
   "selector": "#menu-drawer",
   "evidenceSlug": "global-menu-drawer",
   "evidence": [
-    "evidence/kiddle/default/home/global-menu-drawer.768.png"
+    "evidence/kiddle/default/home/global-menu-drawer.768.png",
+    "evidence/kiddle/default/home/global-menu-drawer.changed.discover-drill.768.png",
+    "evidence/kiddle/default/home/global-menu-drawer.open.hamburger-acik.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "header-drawer data-breakpoint=tablet. #Details-menu-drawer-container summary (hamburger) → #menu-drawer. HOME / SHOP ALL / TOYS / KIDS CARE / ABOUT / DISCOVER.",
@@ -23,8 +25,66 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T20:27:13.113Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:34:19.512Z",
     "prepareClick": "#Details-menu-drawer-container > summary"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "selector": null,
+      "value": "https://toyon-toys-3.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-menu-drawer-container",
+      "capture": false,
+      "viewports": ["375", "768"]
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger-acik",
+      "viewports": ["375", "768"],
+      "not": "Hamburger drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-menu-drawer-menu-item-6 > summary",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "discover-drill",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Discover summary — CONTACT / FAQ'S / BLOG. Yazılı Shop All <a> değil."
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "capture (375): zero-size / eşleşmedi: #menu-drawer"
+    },
+    {
+      "state": "changed",
+      "sebep": "capture (375): zero-size / eşleşmedi: #menu-drawer"
+    }
+  ],
+  "interactionNote": "1440 hamburger yok — static skip. Shop All drawer'da yazılı <a> /collections/all."
 }

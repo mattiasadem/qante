@@ -24,8 +24,68 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T20:28:38.331Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:35:27.839Z",
     "prepareClick": "summary.header__icon--search"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "input",
+      "action": "goto",
+      "selector": null,
+      "value": "https://toyon-toys-3.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "value": 800,
+      "capture": false,
+      "viewports": ["375", "768"],
+      "not": "Mobil search ikonu"
+    },
+    {
+      "state": "input",
+      "action": "forceOpen",
+      "selector": "details-modal.header__search",
+      "capture": false,
+      "viewports": ["375", "768"]
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "rainbow",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "predictive-search",
+      "etiket": "arama-sonucu",
+      "viewports": ["375", "768"],
+      "not": "katalogSorgu rainbow — Rainbow Pop It"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Template",
+      "value": "rainbow",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-inline",
+      "viewports": ["1440"],
+      "not": "1440 header inline Search-In-Template"
+    }
+    ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "adım 2 (fill #Search-In-Modal): locator.waitFor: Timeout 12000ms exceeded.\nCall log:\n  - waiting for locator('#Search-In-Modal').first() to be visible\n    28 × locator resolved to hidden <input name=\"q\" value=\"\" type=\"search\" role=\"combobox\" autocorrect=\"off\" autocomplete=\"off\" spellcheck=\"false\" id=\"Search-In-Modal\" autocapitalize=\"off\" aria-expanded=\"false\" placeholder=\"Search...\" aria-haspopup=\"listbox\" aria-autocomplete=\"list\" class=\"search__input field__input\" aria-owns=\"predictive-search-results\" aria-controls=\"predictive-search-results\"/>\n"
+    }
+  ],
+  "interactionNote": "katalogSorgu rainbow (Rainbow Pop It). 1440 modal 0×0 — inline input."
 }

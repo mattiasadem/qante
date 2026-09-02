@@ -8,9 +8,15 @@
   "selector": "#CartDrawer",
   "evidenceSlug": "global-cart-drawer",
   "evidence": [
+    "evidence/kiddle/default/home/global-cart-drawer.1440.png",
     "evidence/kiddle/default/home/global-cart-drawer.375.png",
     "evidence/kiddle/default/home/global-cart-drawer.768.png",
-    "evidence/kiddle/default/home/global-cart-drawer.1440.png"
+    "evidence/kiddle/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/kiddle/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/kiddle/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/kiddle/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/kiddle/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/kiddle/default/home/global-cart-drawer.filled.sepete-eklendi.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Dawn #CartDrawer / cart-drawer.is-empty. Opener #cart-icon-bubble href=/cart.",
@@ -25,8 +31,53 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T20:01:43.253Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:40:07.831Z",
     "prepareClick": "#cart-icon-bubble"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "selector": null,
+      "value": "https://toyon-toys-3.myshopify.com/products/128pcs-big-coloring-trunk-1",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit",
+      "value": null,
+      "capture": false,
+      "not": "Coloring Trunk ADD TO CART"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": null,
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC sonrası drawer. Kapalıysa #cart-icon-bubble."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 2"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "CHECK OUT tıklanmadı."
 }
