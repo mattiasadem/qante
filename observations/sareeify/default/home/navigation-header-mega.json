@@ -1,0 +1,106 @@
+{
+  "observationId": "sareeify.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "sareeify",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://speedo-sarees.myshopify.com/",
+  "selector": "#shopify-section-sections--23960746721585__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/sareeify/default/home/navigation-header-mega.changed.sarees-mega-acik.1440.png",
+    "evidence/sareeify/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/sareeify/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/sareeify/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/sareeify/default/home/navigation-header-mega.open.shop-mega-acik.1440.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Logo + SHOP/SAREES/COLLECTIONS/LENGHA CHOLI mega. Wishlist 0 · Compare 0 · Log in · Cart.",
+  "delta": "Dawn details.mega-menu. Wishlist/Compare header chrome. Shopify.theme.name Speedo-Sarees V 1.5.0 · schema_name speedo_sarees · schema_version 1.5.0 · theme_store_id null · role main · id 175007367473 · shop speedo-sarees.myshopify.com · Speedo Themes third-party (Theme Store official değil). storefrontPassword=1 (speedothemes.com product page).",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://speedo-sarees.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Kapalı header — mega panel yok"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "details#Details-HeaderMenu-1",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "selector": "#MegaMenu-Content-1",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega-acik",
+      "not": "SHOP mega: Party Wear · Dress · Traditional · Lehenga Choli · Gowns · Sharara"
+    },
+    {
+      "state": "changed",
+      "action": "mouseMove",
+      "value": "20,400",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "forceOpen",
+      "selector": "details#Details-HeaderMenu-2",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "selector": "#MegaMenu-Content-2",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sarees-mega-acik",
+      "not": "SAREES mega: Indian Saree · Coctail Saree · Party Wear · Cotton Saree + 4 görsel kart"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440: logo + SHOP/SAREES/COLLECTIONS/LENGHA CHOLI + search/wishlist/compare/login/cart. Mega kapalı.",
+    "open": "1440 SHOP mega: Party Wear · Dress · Traditional · Lehenga Choli · Gowns · Sharara kolon linkleri.",
+    "changed": "1440 SAREES mega: Indian Saree · Coctail Saree · Party Wear · Cotton Saree + 4 görsel kart."
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 hamburger → global-menu-drawer. Mega yalnız 1440 details#Details-HeaderMenu-1/2.",
+  "capture": {
+    "url": "https://speedo-sarees.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T19:11:43.105Z"
+  }
+}

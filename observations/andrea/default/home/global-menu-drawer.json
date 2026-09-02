@@ -1,0 +1,95 @@
+{
+  "observationId": "andrea.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "andrea",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://women-beauty-7.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/andrea/default/home/global-menu-drawer.768.png",
+    "evidence/andrea/default/home/global-menu-drawer.open.hamburger-acik.375.png",
+    "evidence/andrea/default/home/global-menu-drawer.open.hamburger-acik.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "375/768 hamburger #Details-menu-drawer-container > summary → #menu-drawer. 1440 0×0.",
+  "delta": "1440 inline nav; drawer yalnız dar viewport. Account tıklanmadı.",
+  "captureMode": "viewport",
+  "prepareClick": "#Details-menu-drawer-container > summary",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "selector": null,
+      "value": "https://women-beauty-7.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary",
+      "value": 800,
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Hamburger summary"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "header-drawer",
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Dawn menu-opening host"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-menu-drawer-container",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#menu-drawer",
+      "etiket": "hamburger-acik",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Retry: click kare homepage kaldı; forceOpen pin. Shop yazılı <a href=/collections/all> — tıklanmadı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "375/768: hamburger kapalı; header + hero. #menu-drawer statik karede 0px veya görünmez."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1. deneme click: 375 zero-size, 768 homepage. Retry click + forceOpen header-drawer + #Details-menu-drawer-container: 375 karartılmış homepage (drawer satırı yok); 768 statik homepage ile aynı piksel. Shop #HeaderDrawer-shop yazılı <a href=/collections/all> — drill yok. Üçüncü deneme yok."
+    },
+    {
+      "state": "changed",
+      "sebep": "Shop expander yok; yazılı link /collections/all'a gider. Tıklanmadı."
+    }
+  ],
+  "interactionNote": "1440 hamburger 0×0. Account/locale tıklanmadı. forceOpen kutu büyüttü ama kare homepage kaldı.",
+  "capture": {
+    "url": "https://women-beauty-7.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:30:23.089Z",
+    "prepareClick": "#Details-menu-drawer-container > summary"
+  }
+}

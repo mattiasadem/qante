@@ -1,0 +1,129 @@
+{
+  "observationId": "elektro.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "elektro",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://sonix-electronics-store-2.myshopify.com/",
+  "selector": "details-modal.header__search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/elektro/default/home/global-predictive-search.375.png",
+    "evidence/elektro/default/home/global-predictive-search.768.png",
+    "evidence/elektro/default/home/global-predictive-search.input.arama-sonucu.1440.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "details-modal.header__search · #Search-In-Modal. Kapalıda 0px — açık kare interact.",
+  "delta": "Submit yok. katalogSorgu speaker. Shopify.theme.name Elektro-v-1-5-0-latest-updates-new-speed · schema_name Elektro · schema_version 1.5.0 · theme_store_id null · role main · id 136395325505 · shop sonix-electronics-store-2.myshopify.com · Speedo Themes third-party (Theme Store official değil) · public storefront unlock /password 1 (vendor Live Demo).",
+  "captureMode": "viewport",
+  "prepareClick": "details-modal.header__search summary",
+  "capture": {
+    "url": "https://sonix-electronics-store-2.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:44:31.263Z",
+    "prepareClick": "details-modal.header__search summary"
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "input",
+      "action": "goto",
+      "value": "https://sonix-electronics-store-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "#Search-In-Template",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "Masaüstü inline arama"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Template",
+      "value": "speaker",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "header#site-header",
+      "etiket": "arama-sonucu",
+      "not": "katalogSorgu speaker — details-modal 1440 0px"
+    },
+    {
+      "state": "input",
+      "action": "scrollTo",
+      "selector": "details-modal.header__search",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "details-modal.header__search summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 800,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "speaker",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "header#site-header",
+      "etiket": "arama-sonucu",
+      "not": "Modal fill speaker"
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "375/768: iki resmi deneme (summary.header__icon--search, sonra details-modal.header__search summary). #Search-In-Modal hidden kaldı; fill timeout. 1440 input PNG var — bu missing yalnız tablet/mobil."
+    }
+  ],
+  "stateFindings": {
+    "input": "1440 #Search-In-Template 'speaker': PRODUCTS — Jbl Clip Portable Wireless Bluetooth Speaker + Apple HomePod Mini with Siri Assistant Smart Speaker. Alt 'Search for speaker'. Submit yok."
+  },
+  "interactionNote": "375/768 modal resmi karede açılmadı. Submit/Enter yok."
+}

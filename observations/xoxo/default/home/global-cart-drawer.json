@@ -1,0 +1,106 @@
+{
+  "observationId": "xoxo.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "xoxo",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pandora-full-fashion.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/xoxo/default/home/global-cart-drawer.1440.png",
+    "evidence/xoxo/default/home/global-cart-drawer.375.png",
+    "evidence/xoxo/default/home/global-cart-drawer.768.png",
+    "evidence/xoxo/default/home/global-cart-drawer.changed.adet-2.1440.png",
+    "evidence/xoxo/default/home/global-cart-drawer.changed.adet-2.375.png",
+    "evidence/xoxo/default/home/global-cart-drawer.changed.adet-2.768.png",
+    "evidence/xoxo/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/xoxo/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/xoxo/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/xoxo/default/home/global-cart-drawer.initial.sepet-bos.1440.png",
+    "evidence/xoxo/default/home/global-cart-drawer.initial.sepet-bos.375.png",
+    "evidence/xoxo/default/home/global-cart-drawer.initial.sepet-bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "cart-drawer.is-empty. Opener a#cart-icon-bubble. Boş uyarı + koleksiyon kartları (drawer__warnings--has-collection).",
+  "delta": "Dawn cart-drawer. İki kargo eşiği (Free $500 / Express $800) — şemada tek kargoEsigi; şemaya dokunulmadı. Checkout / Log in tıklanmadı.",
+  "captureMode": "viewport",
+  "prepareClick": "a#cart-icon-bubble",
+  "capture": {
+    "url": "https://pandora-full-fashion.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:00:55.942Z",
+    "prepareClick": "a#cart-icon-bubble"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-full-fashion.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 600,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş drawer. Beklenen: Your cart is empty / Continue shopping."
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://pandora-full-fashion.myshopify.com/products/fashion-running-sneaker-shoes",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Sneaker $229 adet 1. Checkout tıklanmadı."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "cart-drawer button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-2",
+      "not": "Adet 1→2, $229→$458."
+    }
+  ],
+  "missingStates": [],
+  "interactionNote": "addToCart UI (üç viewport). Statik prepareClick kapalı homepage idi. İki kargo eşiği delta.",
+  "stateFindings": {
+    "initial": "3vp: sağ çekmece Your cart + Back >. Free Shipping! $500.00 + Express Shipping! $800.00 (boş bar). Your cart is empty + Continue shopping + Have an account? Log in to check out faster. Checkout yok.",
+    "filled": "3vp ATC Fashion Running Sneaker Shoes $229 adet 1. Bar yeşil ~1/3. Best seller + Order special instructions kapalı. Estimated total $229.00 USD. Check out + View cart. Checkout tıklanmadı.",
+    "changed": "3vp plus → adet 2, Estimated total $458.00 USD. Satır fiyatı hâlâ $229.00."
+  }
+}

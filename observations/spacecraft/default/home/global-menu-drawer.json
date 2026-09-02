@@ -1,0 +1,88 @@
+{
+  "observationId": "spacecraft.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "spacecraft",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pandora-furniture-3.myshopify.com/",
+  "selector": "#menu-drawer",
+  "storefrontPassword": "1",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/spacecraft/default/home/global-menu-drawer.768.png",
+    "evidence/spacecraft/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/spacecraft/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "375/768 hamburger #Details-menu-drawer-container. 1440 inline nav — drawer 0-size.",
+  "delta": "Shopify.theme.name Pandora-furniture-3 V-1.5.0 · id 170818404632 · schema_name pandora_furniture_3 · schema_version 1.5.0 · theme_store_id null · role main · shop pandora-furniture-3.myshopify.com · Speedo listing slug spacecraft · Dawn menu-drawer. 1440 static atlanabilir. Yeni şema yok.",
+  "captureMode": "viewport",
+  "prepareClick": "#Details-menu-drawer-container > summary.header__icon--menu",
+  "capture": {
+    "url": "https://pandora-furniture-3.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:10:46.413Z",
+    "prepareClick": "#Details-menu-drawer-container > summary.header__icon--menu"
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://pandora-furniture-3.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary.header__icon--menu",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false,
+      "not": "Hamburger — forceOpen açık drawer'ı kapatıyor"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 800,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Açık drawer; Shop yazılı <a>"
+    }
+  ],
+  "stateFindings": {
+    "open": ""
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "İlk click+forceOpen 375/768 PNG kapalı homepage. Retry yalnız click summary.header__icon--menu: 375 #menu-drawer zero-size; 768 open.hamburger PNG kapalı homepage ile md5 aynı (349544B). forceOpen açık overlay’i kapatıyor. Üçüncü deneme yok."
+    },
+    {
+      "state": "changed",
+      "sebep": "Shop yazılı <a> — #Details-menu-drawer-menu-item-2 yok (boş ok/akordeon yok). Yazılı link tıklanmadı."
+    }
+  ],
+  "interactionNote": "Log in tıklanmadı. 1440 hamburger 0-size — N/A (inline nav). Yeni şema yok."
+}

@@ -1,0 +1,79 @@
+{
+  "observationId": "elektro.default.home.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "elektro",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://sonix-electronics-store-2.myshopify.com/",
+  "selector": "#shopify-section-template--17206180151361__collapsible_content_4fhKMf",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/elektro/default/home/faq-collapsible-tabs.1440.png",
+    "evidence/elektro/default/home/faq-collapsible-tabs.375.png",
+    "evidence/elektro/default/home/faq-collapsible-tabs.768.png",
+    "evidence/elektro/default/home/faq-collapsible-tabs.changed.soru-acik.1440.png",
+    "evidence/elektro/default/home/faq-collapsible-tabs.changed.soru-acik.375.png",
+    "evidence/elektro/default/home/faq-collapsible-tabs.changed.soru-acik.768.png",
+    "evidence/elektro/default/home/faq-collapsible-tabs.initial.kapali.1440.png",
+    "evidence/elektro/default/home/faq-collapsible-tabs.initial.kapali.375.png",
+    "evidence/elektro/default/home/faq-collapsible-tabs.initial.kapali.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Frequently Asked Questions — hoparlör warranty / Bluetooth. collapsible_content.",
+  "delta": "Home instance. /pages/faq home'a düşüyor — ayrı FAQ sayfası yok. Shopify.theme.name Elektro-v-1-5-0-latest-updates-new-speed · schema_name Elektro · schema_version 1.5.0 · theme_store_id null · role main · id 136395325505 · shop sonix-electronics-store-2.myshopify.com · Speedo Themes third-party (Theme Store official değil) · public storefront unlock /password 1 (vendor Live Demo).",
+  "capture": {
+    "url": "https://sonix-electronics-store-2.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:37:11.662Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sonix-electronics-store-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17206180151361__collapsible_content_4fhKMf",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "Dört soru kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-collapsible_row_mi9tGp-template--17206180151361__collapsible_content_4fhKMf > summary",
+      "capture": true,
+      "etiket": "soru-acik",
+      "not": "İlk soru: What distinguishes your speakers…"
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "İki resmi deneme. 1) details:nth-of-type(1)>summary 2) #Details-collapsible_row_mi9tGp-…>summary. changed PNG byte=initial (dört soru kapalı, caret aşağı). Üçüncü yok."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Frequently Asked Questions. Dört kapalı satır: distinguishes speakers / warranty / multiple Bluetooth / waterproof. Caret aşağı. Cevap yok."
+  },
+  "interactionNote": "openFirst yok. allowMultipleOpen yoklandı değil. Şema yok."
+}

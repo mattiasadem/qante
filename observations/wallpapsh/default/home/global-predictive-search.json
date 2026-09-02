@@ -1,0 +1,69 @@
+{
+  "kaynak": "wallpapsh",
+  "preset": "default",
+  "storefrontPassword": "1",
+  "evidence": [
+    "evidence/wallpapsh/default/home/global-predictive-search.1440.png",
+    "evidence/wallpapsh/default/home/global-predictive-search.375.png",
+    "evidence/wallpapsh/default/home/global-predictive-search.768.png",
+    "evidence/wallpapsh/default/home/global-predictive-search.input.arama-sonucu.1440.png"
+  ],
+  "observationId": "wallpapsh.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "sayfa": "home",
+  "url": "https://pandora-wallpaper.myshopify.com/",
+  "selector": "#header-search",
+  "evidenceSlug": "global-predictive-search",
+  "notlar": "details-modal#header-search · Search ikonu. Kapalı kare küçük.",
+  "delta": "Yazınca öneri interact. Kapalı host yanıltır — prepareClick Search.",
+  "capture": {
+    "url": "https://pandora-wallpaper.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "prepareClick": "summary.header__icon--search",
+    "updatedAt": "2026-09-02T18:59:43.644Z"
+  },
+  "captureMode": "viewport",
+  "prepareClick": "summary.header__icon--search",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "input",
+      "action": "goto",
+      "selector": null,
+      "value": "https://pandora-wallpaper.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "forceOpen",
+      "selector": "#header-search details",
+      "value": 800,
+      "capture": false,
+      "not": "Search details open"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal-1",
+      "value": "pink",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "katalogSorgu pink"
+    }
+  ],
+  "stateFindings": {
+    "input": "1440: beyaz Search modal, kutu `pink`, PRODUCTS 10 satır (Hobby Pink, Koko Pink, Dusky Pink Terrazzo Wallpaper Mural…), altta Search for 'pink' →. Arka homepage karartılı."
+  },
+  "missingStates": [],
+  "interactionNote": "375/768: forceOpen #header-search details sonrası #Search-In-Modal-1 gizli kaldı (ikinci deneme). Submit yok. katalogSorgu pink. İki Search summary var."
+}

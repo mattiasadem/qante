@@ -1,0 +1,80 @@
+{
+  "observationId": "sonix.default.home.hero-slideshow",
+  "schemaId": "hero-slideshow",
+  "kaynak": "sonix",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://sonix-electronics-store.myshopify.com/",
+  "selector": "#shopify-section-template--22992854516012__3b7cb796-4e44-4edc-96f9-002a08ba8170",
+  "evidenceSlug": "hero-slideshow",
+  "evidence": [
+    "evidence/sonix/default/home/hero-slideshow.1440.png",
+    "evidence/sonix/default/home/hero-slideshow.375.png",
+    "evidence/sonix/default/home/hero-slideshow.768.png",
+    "evidence/sonix/default/home/hero-slideshow.changed.slayt-2.1440.png",
+    "evidence/sonix/default/home/hero-slideshow.changed.slayt-2.375.png",
+    "evidence/sonix/default/home/hero-slideshow.changed.slayt-2.768.png",
+    "evidence/sonix/default/home/hero-slideshow.initial.slayt-1.1440.png",
+    "evidence/sonix/default/home/hero-slideshow.initial.slayt-1.375.png",
+    "evidence/sonix/default/home/hero-slideshow.initial.slayt-1.768.png"
+  ],
+  "storePassword": "1",
+  "notlar": "PLAYSTATION VR / IPHONE 15 PRO MAX / NEW APPLE SMARTPHONE. SHOP NOW → /collections/all. slideshow-component + nokta. Ok 0×0.",
+  "delta": "Metin slayt üzerinde. Slayt <a> koleksiyona gider. Next/prev gizli; nokta 30×30.",
+  "capture": {
+    "url": "https://sonix-electronics-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:20:09.982Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sonix-electronics-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--22992854516012__3b7cb796-4e44-4edc-96f9-002a08ba8170",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "etiket": "slayt-1",
+      "not": "PLAYSTATION VR — nokta 1 aktif"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[aria-label='Load slide 2 of 3']",
+      "value": 2000,
+      "capture": true,
+      "etiket": "slayt-2",
+      "not": "IPHONE 15 PRO MAX. Ok 0×0 — nokta. Slayt <a> tıklanmadı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "PLAYSTATION VR + PS Camera alt metin + SHOP NOW. Sol VR headset, sağ beyaz kamera. Nokta 1 dolu. Ok 0×0."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "İki resmi çekimde de nokta 2 tık sonrası kare hâlâ slayt 1 (PLAYSTATION VR, nokta 1 aktif). Yoklamada DOM değişiyor (slayt 2 aria-hidden=false) ama SS pikseli değişmedi. Üçüncü deneme yok."
+    }
+  ],
+  "interactionNote": "SHOP NOW / slayt <a> /collections/all — basılmadı. Next/prev gizli."
+}

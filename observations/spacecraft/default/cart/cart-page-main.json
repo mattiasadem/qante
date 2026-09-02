@@ -1,0 +1,94 @@
+{
+  "observationId": "spacecraft.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "spacecraft",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://pandora-furniture-3.myshopify.com/cart",
+  "selector": "#shopify-section-template--23211687706904__cart-items",
+  "storefrontPassword": "1",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/spacecraft/default/cart/cart-page-main.1440.png",
+    "evidence/spacecraft/default/cart/cart-page-main.375.png",
+    "evidence/spacecraft/default/cart/cart-page-main.768.png",
+    "evidence/spacecraft/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/spacecraft/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/spacecraft/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/spacecraft/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/spacecraft/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/spacecraft/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/spacecraft/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/spacecraft/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/spacecraft/default/cart/cart-page-main.initial.sepet-bos.768.png"
+  ],
+  "notlar": "Boş: Your cart is empty / Continue Shopping / Have an account? Log in. cart-footer h=0 boşken.",
+  "delta": "Shopify.theme.name Pandora-furniture-3 V-1.5.0 · id 170818404632 · schema_name pandora_furniture_3 · schema_version 1.5.0 · theme_store_id null · role main · shop pandora-furniture-3.myshopify.com · Speedo listing slug spacecraft · Dawn cart-items. Checkout tıklanmadı. Yeni şema yok.",
+  "capture": {
+    "url": "https://pandora-furniture-3.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T19:56:04.911Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-furniture-3.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepet-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://pandora-furniture-3.myshopify.com/products/landskrona-3-seat-sofa",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--23211688493336__main",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://pandora-furniture-3.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + Continue Shopping + Have an account? Log in to check out faster (tıklanmadı).",
+    "filled": "Your cart. PRODUCT / QUANTITY / TOTAL. Landskrona 3-seat Sofa · $3,000.00 · Color: Light Green · Seat: 3-Seat · qty 1 · satır $3,000.00 + çöp. Section kadrajında estimated/Check Out yok (cart-footer leftover).",
+    "changed": "Qty 2. Satır TOTAL $6,000.00. Check Out tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart UI sonra /cart. Checkout / Log in tıklanmadı. Yeni şema yok."
+}

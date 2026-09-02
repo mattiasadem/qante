@@ -1,0 +1,66 @@
+{
+  "observationId": "bevaria.default.collection.product-showcase-grid-plp",
+  "schemaId": "product-showcase-grid-plp",
+  "kaynak": "bevaria",
+  "preset": "default",
+  "sayfa": "collection",
+  "url": "https://beverages-online-store.myshopify.com/collections/best-selling",
+  "selector": "#shopify-section-template--19375490892031__product-grid",
+  "evidenceSlug": "product-showcase-grid-plp",
+  "evidence": [
+    "evidence/bevaria/default/collection/product-showcase-grid-plp.1440.png",
+    "evidence/bevaria/default/collection/product-showcase-grid-plp.375.png",
+    "evidence/bevaria/default/collection/product-showcase-grid-plp.768.png",
+    "evidence/bevaria/default/collection/product-showcase-grid-plp.changed.flavour-cranberry.1440.png",
+    "evidence/bevaria/default/collection/product-showcase-grid-plp.initial.filtre-yok.1440.png",
+    "evidence/bevaria/default/collection/product-showcase-grid-plp.initial.filtre-yok.375.png",
+    "evidence/bevaria/default/collection/product-showcase-grid-plp.initial.filtre-yok.768.png"
+  ],
+  "notlar": "Filters (Flavour / Size / Availability / Price) + ürün ızgarası. Breadcrumb Home / Best Selling.",
+  "delta": "Shopify.theme.name Bevaria-v-1-5-0-latest-updates-new · schema_name Bevaria · schema_version 1.5.0 · theme_store_id null · role main · id 150290759935 · shop beverages-online-store.myshopify.com · Speedo Themes OS 2.0 third-party. Vendor-published demo password 1 (public storefront unlock). Official host only. product-grid. Filtre interact.",
+  "storefrontPassword": "1",
+  "capture": {
+    "url": "https://beverages-online-store.myshopify.com/collections/best-selling",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T19:11:54.213Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://beverages-online-store.myshopify.com/collections/best-selling",
+      "capture": true,
+      "etiket": "filtre-yok",
+      "not": "10 products, filtre kapalı seçim."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='Filter-filter.v.option.flavour-1']",
+      "capture": true,
+      "etiket": "flavour-cranberry",
+      "not": "Cranberry checkbox. Beklenen: Remove filter + URL flavour=Cranberry."
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "375/768 Flavour checkbox görünür değil (desktop sidebar). 1440 yakalandı. Mobil filtre drawer ikinci denemede de açılmadı — uydurulmadı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Home / Best Selling. 1440 sol Flavour/Size/Availability/Price. 10 products · Featured · 4 kolon. 10 kart (Lauder…PURA). 375/768 ızgara; sidebar yok.",
+    "changed": "1440: Flavour Cranberry rozeti + Remove all. Cranberry (1) işaretli. 1 of 10 products. Tek kart PURA $90 (görsel hâlâ Cucumber & Lime kutu). 375/768 changed yok."
+  },
+  "interactionNote": "1440 sidebar. 375/768 Filter-filter.v.option.flavour-1 görünür değil. Filtre drawer ikinci kez zorlanmadı."
+}

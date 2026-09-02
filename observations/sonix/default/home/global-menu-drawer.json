@@ -1,0 +1,93 @@
+{
+  "observationId": "sonix.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "sonix",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://sonix-electronics-store.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/sonix/default/home/global-menu-drawer.375.png",
+    "evidence/sonix/default/home/global-menu-drawer.768.png",
+    "evidence/sonix/default/home/global-menu-drawer.open.hamburger-acik.375.png",
+    "evidence/sonix/default/home/global-menu-drawer.open.hamburger-acik.768.png"
+  ],
+  "storePassword": "1",
+  "notlar": "375/768 hamburger. HOME / SHOP / FEATURES / OUR STORE / ABOUT US / CONTACT US + Wishlist/Compare/Log in + USD/English.",
+  "delta": "1440 hamburger 0×0 — mega header'da. details#Details-menu-drawer-container.",
+  "captureMode": "viewport",
+  "prepareForceOpen": true,
+  "capture": {
+    "url": "https://sonix-electronics-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:43:42.532Z"
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://sonix-electronics-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "summary.header__icon--menu",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-menu-drawer-container",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false,
+      "not": "Tık sonrası açık tut — kapalı kare yalan söylemesin"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#menu-drawer",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 700,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger-acik",
+      "not": "HOME/SHOP/FEATURES listesi"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 koyu çekmece: X kapat, SHOP BY CATEGORY, HOME / SHOP / FEATURES / OUR STORE / ABOUT US / CONTACT US, 0 WISHLIST, 0 COMPARE, LOG IN, USD, English. 768'de sağda loş homepage. SHOP/FEATURES <a> tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 N/A. forceOpen + menu-opening. Wishlist/Compare leftover. Login tıklanmadı."
+}

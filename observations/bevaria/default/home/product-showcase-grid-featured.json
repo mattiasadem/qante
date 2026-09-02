@@ -1,0 +1,87 @@
+{
+  "observationId": "bevaria.default.home.product-showcase-grid-featured",
+  "schemaId": "product-showcase-grid-featured",
+  "kaynak": "bevaria",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://beverages-online-store.myshopify.com/",
+  "selector": "#shopify-section-template--19375491154175__featured_collection_jAK8tq",
+  "evidenceSlug": "product-showcase-grid-featured",
+  "evidence": [
+    "evidence/bevaria/default/home/product-showcase-grid-featured.1440.png",
+    "evidence/bevaria/default/home/product-showcase-grid-featured.375.png",
+    "evidence/bevaria/default/home/product-showcase-grid-featured.768.png",
+    "evidence/bevaria/default/home/product-showcase-grid-featured.hover.hover-atc.1440.png",
+    "evidence/bevaria/default/home/product-showcase-grid-featured.initial.ilk-hal.1440.png",
+    "evidence/bevaria/default/home/product-showcase-grid-featured.initial.ilk-hal.375.png",
+    "evidence/bevaria/default/home/product-showcase-grid-featured.initial.ilk-hal.768.png"
+  ],
+  "notlar": "Best Selling + alt metin. Ürün kartları (Lauder Advanced Night Megic Drink $399→$210). featured-product-section.",
+  "delta": "Shopify.theme.name Bevaria-v-1-5-0-latest-updates-new · schema_name Bevaria · schema_version 1.5.0 · theme_store_id null · role main · id 150290759935 · shop beverages-online-store.myshopify.com · Speedo Themes OS 2.0 third-party. Vendor-published demo password 1 (public storefront unlock). Official host only. featured_collection. Quick-add kartta var. Sekme metni kapalı karede yok.",
+  "storefrontPassword": "1",
+  "capture": {
+    "url": "https://beverages-online-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T19:32:31.622Z"
+  },
+  "interactionStates": [
+    "initial",
+    "hover"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://beverages-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19375491154175__featured_collection_jAK8tq",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Best Selling kartlar."
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#shopify-section-template--19375491154175__featured_collection_jAK8tq .card-wrapper",
+      "value": 1500,
+      "capture": false,
+      "etiket": "hover-atc",
+      "not": "1. hover kare initial ile aynı byte. Retry uzun hover.",
+      "viewports": [
+        "1440"
+      ]
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#shopify-section-template--19375491154175__featured_collection_jAK8tq .card__inner",
+      "value": 1200,
+      "capture": true,
+      "etiket": "hover-atc",
+      "not": "İkinci hover .card__inner. ATC 35×35 visibility:hidden kaldıysa missing.",
+      "viewports": [
+        "1440"
+      ]
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "İkinci hover (.card-wrapper + .card__inner, 1440) Add To Cart yazısı göstermedi. quick-add__submit 35×35 visibility:hidden kaldı. 375/768 hover yoklandı değil."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Best Selling + soğuk pres metin. 4 kart (Lauder $210/$399, Elixjer $220/$320, Paris Revitalift $230/$330, Elixir Mead $215/$315) + View All. ATC yazısı yok."
+  },
+  "interactionNote": "Hover iki deneme; kare initial ile aynı iskelet. Quick view dialog yoklandı değil. Şema yok."
+}

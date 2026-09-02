@@ -1,0 +1,75 @@
+{
+  "observationId": "bicycle.default.product-detail.product-info-tabs",
+  "schemaId": "product-info-tabs",
+  "kaynak": "bicycle",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://bicycle-online-store-1.myshopify.com/products/norco-sight-a-framekit-29",
+  "selector": "#shopify-section-template--16095886934151__79582f51-5736-4bff-b870-bba69393ad36",
+  "evidenceSlug": "product-info-tabs",
+  "evidence": [
+    "evidence/bicycle/default/product-detail/product-info-tabs.1440.png",
+    "evidence/bicycle/default/product-detail/product-info-tabs.375.png",
+    "evidence/bicycle/default/product-detail/product-info-tabs.768.png",
+    "evidence/bicycle/default/product-detail/product-info-tabs.changed.additional.1440.png",
+    "evidence/bicycle/default/product-detail/product-info-tabs.changed.additional.375.png",
+    "evidence/bicycle/default/product-detail/product-info-tabs.changed.additional.768.png",
+    "evidence/bicycle/default/product-detail/product-info-tabs.initial.description.1440.png",
+    "evidence/bicycle/default/product-detail/product-info-tabs.initial.description.375.png",
+    "evidence/bicycle/default/product-detail/product-info-tabs.initial.description.768.png"
+  ],
+  "notlar": "custom_product__tab. DESCRIPTION / ADDITIONAL INFORMATION / SHIPPING AND DELIVERY. Lorem placeholder.",
+  "delta": "Speedo custom product tabs. Accordion/tab interact. Shopify.theme.name Bicycle V-1.5.0 · schema_name Bicycle · schema_version 1.5.0 · theme_store_id null · role main · id 130165440647 · shop bicycle-online-store-1.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock).",
+  "storefrontPassword": "1",
+  "capture": {
+    "url": "https://bicycle-online-store-1.myshopify.com/products/norco-sight-a-framekit-29",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T19:09:40.538Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://bicycle-online-store-1.myshopify.com/products/norco-sight-a-framekit-29",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16095886934151__79582f51-5736-4bff-b870-bba69393ad36",
+      "capture": true,
+      "etiket": "description",
+      "not": "DESCRIPTION aktif"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--16095886934151__79582f51-5736-4bff-b870-bba69393ad36 a[href='#tab2']",
+      "capture": true,
+      "etiket": "additional",
+      "not": "ADDITIONAL INFORMATION"
+    }
+  ],
+  "stateFindings": {
+    "initial": "DESCRIPTION aktif (siyah tab). ADDITIONAL INFORMATION + SHIPPING AND DELIVERY gri. İçerik lorem.",
+    "changed": "ADDITIONAL INFORMATION aktif (siyah tab, beyaz yazı). Lorem paragraf + 3 madde. URL aynı kaldı (#tab2)."
+  },
+  "missingStates": [],
+  "interactionNote": "Tab <a href=#tab2>. Sayfa değişmedi. SHIPPING AND DELIVERY tıklanmadı."
+}

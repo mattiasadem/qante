@@ -1,0 +1,76 @@
+{
+  "observationId": "sonix.default.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "sonix",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "url": "https://sonix-electronics-store.myshopify.com/pages/faqs",
+  "selector": "#shopify-section-template--22992854679852__cb435de1-8958-455d-8843-8a9ef3413466",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/sonix/default/faq-support/faq-collapsible-tabs.1440.png",
+    "evidence/sonix/default/faq-support/faq-collapsible-tabs.375.png",
+    "evidence/sonix/default/faq-support/faq-collapsible-tabs.768.png",
+    "evidence/sonix/default/faq-support/faq-collapsible-tabs.changed.ikinci-soru.1440.png",
+    "evidence/sonix/default/faq-support/faq-collapsible-tabs.changed.ikinci-soru.375.png",
+    "evidence/sonix/default/faq-support/faq-collapsible-tabs.changed.ikinci-soru.768.png",
+    "evidence/sonix/default/faq-support/faq-collapsible-tabs.initial.ilk-acik.1440.png",
+    "evidence/sonix/default/faq-support/faq-collapsible-tabs.initial.ilk-acik.375.png",
+    "evidence/sonix/default/faq-support/faq-collapsible-tabs.initial.ilk-acik.768.png"
+  ],
+  "storePassword": "1",
+  "notlar": "Frequently asked question. 4 madde: styles / fit / swap / I signed up. İlk cevap açık.",
+  "delta": "Kategori tab yok. Interact: ikinci soru. details:nth-of-type(2) eşleşmez — id* collapsible_row-2.",
+  "capture": {
+    "url": "https://sonix-electronics-store.myshopify.com/pages/faqs",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:23:40.009Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sonix-electronics-store.myshopify.com/pages/faqs",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--22992854679852__cb435de1-8958-455d-8843-8a9ef3413466",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "etiket": "ilk-acik",
+      "not": "İlk soru açık"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "details[id*='collapsible_row-2'] summary",
+      "value": 700,
+      "capture": true,
+      "etiket": "ikinci-soru",
+      "not": "I like my styles but they don't fit!"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Frequently asked question. İlk madde açık (styles + lorem). 2–4 kapalı: fit / swap / I signed up. İkon + chevron.",
+    "changed": "İkinci madde de açık (I like my styles but they don't fit! + lorem). Birden fazla details aynı anda açık. 3–4 kapalı."
+  },
+  "missingStates": [],
+  "interactionNote": "details[id*='collapsible_row-2'] summary. Form/PII yok. Kategori tab yok."
+}
