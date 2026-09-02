@@ -366,7 +366,7 @@ async function forceOpenInDocument(sel) {
     el.hidden = false;
     el.removeAttribute("hidden");
     el.style.removeProperty("display");
-    el.classList.add("active", "open", "is-open");
+    el.classList.add("active", "open", "is-open", "menu-opening");
     el.classList.remove("drawer--loading", "loading", "is-loading");
     el.setAttribute("open", "");
     el.setAttribute("aria-hidden", "false");
