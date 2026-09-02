@@ -14,7 +14,7 @@ shop `pandora-furniture.myshopify.com`
 
 **Şifre:** Canlı `/password` duvarı. Vendor demo şifresi `1` — aynı host. Başka host yok.
 
-**Durum:** Mod A walk + resmi 3vp + interact (devam)  
+**Durum:** Mod A walk + resmi 3vp + interact findings yazıldı  
 **PR:** draft (bu branch) · **main'e merge yok**
 
 ---
@@ -31,7 +31,7 @@ shop `pandora-furniture.myshopify.com`
 | Parallel | yalnız `observations/roomify/`, `evidence/roomify/`, `todo/roomify.md`, `candidates/roomify-leftovers.md` + capture unlock helper |
 
 **Kapsam satırı:**  
-`Roomify · default · Pandora-furniture V-1.5.0 / schema_name Pandora_furniture 1.5.0 · theme_store_id null · home→PDP Thompson Bed→PLP Home Office→/collections→search sofa→cart→about/contact→news+article→404 · 39 obs · 0 yeni şema · leftover: candidates/roomify-leftovers.md`
+`Roomify · default · Pandora-furniture V-1.5.0 / schema_name Pandora_furniture 1.5.0 · theme_store_id null · home→PDP Thompson Bed→PLP Home Office→/collections→search sofa→cart→about/contact→news+article→404 · 39 obs · 166 PNG · 0 yeni şema · leftover: candidates/roomify-leftovers.md`
 
 ---
 
@@ -39,20 +39,20 @@ shop `pandora-furniture.myshopify.com`
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | roster + capture | [ ] |
-| Header kapalı + Shop menü 1440 | interact | [ ] |
-| Predictive search `sofa` | interact 3vp | [ ] |
-| Mobile hamburger 375 + 768 | interact | [ ] |
-| Cart drawer empty + filled + qty | interact | [ ] |
-| PDP Thompson Bed Size/Color | interact | [ ] |
-| PLP `/collections/home-office` | roster + capture | [ ] |
-| Collections index `/collections` | roster + capture | [ ] |
-| Search `/search?q=sofa` | roster + capture | [ ] |
-| Cart `/cart` empty + filled + qty | interact | [ ] |
-| About `/pages/about-us` | roster + capture | [ ] |
-| Contact form (submit yok) | roster + capture | [ ] |
-| News + article | roster + capture | [ ] |
-| 404 | roster + capture | [ ] |
+| Home roster (announcement→footer) | roster + capture | [x] |
+| Header kapalı + Shop menü 1440 | interact | [x] |
+| Predictive search `sofa` | interact 3vp | [x] |
+| Mobile hamburger 375 + 768 | interact | [x] missingStates |
+| Cart drawer empty + filled + qty | interact | [x] filled+qty; boş drawer yok |
+| PDP Thompson Bed Size/Color | interact | [x] initial; changed missing |
+| PLP `/collections/home-office` | roster + capture | [x] |
+| Collections index `/collections` | roster + capture | [x] |
+| Search `/search?q=sofa` | roster + capture | [x] |
+| Cart `/cart` empty + filled + qty | interact | [x] |
+| About `/pages/about-us` | roster + capture | [x] |
+| Contact form (submit yok) | roster + capture | [x] |
+| News + article | roster + capture | [x] |
+| 404 | roster + capture | [x] |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -88,45 +88,45 @@ shop `pandora-furniture.myshopify.com`
 
 | # | id | sayfa | Screenshot | Not | JSON | Done |
 |---|---|---|---|---|---|---|
-| 1 | promo-announcement-bar | home | [ ] | [x] | reuse | [ ] |
-| 2 | navigation-header-mega | home | [ ] | [x] | reuse | [ ] |
-| 3 | hero-slideshow | home | [ ] | [x] | reuse | [ ] |
-| 4 | collection-nav-icon-buttons | home | [ ] | [x] | reuse | [ ] |
-| 5 | editorial-rich-text | home | [ ] | [x] | reuse | [ ] |
-| 6 | collection-nav-image-cards | home | [ ] | [x] | reuse | [ ] |
-| 7 | product-showcase-tabs | home | [ ] | [x] | reuse | [ ] |
-| 8 | editorial-image-with-text-overlay | home | [ ] | [x] | reuse | [ ] |
-| 9 | promo-grid-banner | home | [ ] | [x] | reuse | [ ] |
-| 10 | testimonial-quote-carousel | home | [ ] | [x] | reuse | [ ] |
-| 11 | blog-list-main | home | [ ] | [x] | reuse | [ ] |
-| 12 | faq-collapsible-tabs | home | [ ] | [x] | reuse | [ ] |
-| 13 | editorial-image-with-text-overlay.2 | home | [ ] | [x] | reuse | [ ] |
-| 14 | media-shop-the-feed | home | [ ] | [x] | reuse | [ ] |
-| 15 | trust-icon-row | home | [ ] | [x] | reuse | [ ] |
-| 16 | footer-columns-newsletter | home | [ ] | [x] | reuse | [ ] |
-| 17 | global-predictive-search | home | [ ] | [x] | reuse | [ ] |
-| 18 | global-menu-drawer | home | [ ] | [x] | reuse | [ ] |
-| 19 | global-cart-drawer | home | [ ] | [x] | reuse | [ ] |
-| 20 | product-info-main | product-detail | [ ] | [x] | reuse | [ ] |
-| 21 | trust-icon-row | product-detail | [ ] | [x] | reuse | [ ] |
-| 22 | editorial-image-with-text | product-detail | [ ] | [x] | reuse | [ ] |
-| 23 | editorial-image-with-text.2 | product-detail | [ ] | [x] | reuse | [ ] |
-| 24 | product-showcase-related | product-detail | [ ] | [x] | reuse | [ ] |
-| 25 | collection-banner | collection | [ ] | [x] | reuse | [ ] |
-| 26 | product-showcase-grid-plp | collection | [ ] | [x] | reuse | [ ] |
-| 27 | collection-nav-grid | collections | [ ] | [x] | reuse | [ ] |
-| 28 | search-results | search | [ ] | [x] | reuse | [ ] |
-| 29 | cart-page-main | cart | [ ] | [x] | reuse | [ ] |
-| 30 | product-showcase-grid-featured | cart | [ ] | [x] | reuse | [ ] |
-| 31 | editorial-image-with-text-overlay | about-brand | [ ] | [x] | reuse | [ ] |
-| 32 | editorial-image-with-text | about-brand | [ ] | [x] | reuse | [ ] |
-| 33 | features-multicolumn | about-brand | [ ] | [x] | reuse | [ ] |
-| 34 | editorial-image-with-text.2 | about-brand | [ ] | [x] | reuse | [ ] |
-| 35 | editorial-image-with-text-overlay | contact | [ ] | [x] | reuse | [ ] |
-| 36 | lead-capture-form | contact | [ ] | [x] | reuse | [ ] |
-| 37 | blog-list-main | blog-list | [ ] | [x] | reuse | [ ] |
-| 38 | blog-post-main | blog-post | [ ] | [x] | reuse | [ ] |
-| 39 | page-content-main | not-found | [ ] | [x] | reuse | [ ] |
+| 1 | promo-announcement-bar | home | [x] | [x] | reuse | [x] |
+| 2 | navigation-header-mega | home | [x] | [x] | reuse | [x] |
+| 3 | hero-slideshow | home | [x] | [x] | reuse | [x] |
+| 4 | collection-nav-icon-buttons | home | [x] | [x] | reuse | [x] |
+| 5 | editorial-rich-text | home | [x] | [x] | reuse | [x] |
+| 6 | collection-nav-image-cards | home | [x] | [x] | reuse | [x] |
+| 7 | product-showcase-tabs | home | [x] | [x] | reuse | [x] |
+| 8 | editorial-image-with-text-overlay | home | [x] | [x] | reuse | [x] |
+| 9 | promo-grid-banner | home | [x] | [x] | reuse | [x] |
+| 10 | testimonial-quote-carousel | home | [x] | [x] | reuse | [x] |
+| 11 | blog-list-main | home | [x] | [x] | reuse | [x] |
+| 12 | faq-collapsible-tabs | home | [x] | [x] | reuse | [x] |
+| 13 | editorial-image-with-text-overlay.2 | home | [x] | [x] | reuse | [x] |
+| 14 | media-shop-the-feed | home | [x] | [x] | reuse | [x] |
+| 15 | trust-icon-row | home | [x] | [x] | reuse | [x] |
+| 16 | footer-columns-newsletter | home | [x] | [x] | reuse | [x] |
+| 17 | global-predictive-search | home | [x] | [x] | reuse | [x] |
+| 18 | global-menu-drawer | home | [x] | [x] | reuse | [x] |
+| 19 | global-cart-drawer | home | [x] | [x] | reuse | [x] |
+| 20 | product-info-main | product-detail | [x] | [x] | reuse | [x] |
+| 21 | trust-icon-row | product-detail | [x] | [x] | reuse | [x] |
+| 22 | editorial-image-with-text | product-detail | [x] | [x] | reuse | [x] |
+| 23 | editorial-image-with-text.2 | product-detail | [x] | [x] | reuse | [x] |
+| 24 | product-showcase-related | product-detail | [x] | [x] | reuse | [x] |
+| 25 | collection-banner | collection | [x] | [x] | reuse | [x] |
+| 26 | product-showcase-grid-plp | collection | [x] | [x] | reuse | [x] |
+| 27 | collection-nav-grid | collections | [x] | [x] | reuse | [x] |
+| 28 | search-results | search | [x] | [x] | reuse | [x] |
+| 29 | cart-page-main | cart | [x] | [x] | reuse | [x] |
+| 30 | product-showcase-grid-featured | cart | [x] | [x] | reuse | [x] |
+| 31 | editorial-image-with-text-overlay | about-brand | [x] | [x] | reuse | [x] |
+| 32 | editorial-image-with-text | about-brand | [x] | [x] | reuse | [x] |
+| 33 | features-multicolumn | about-brand | [x] | [x] | reuse | [x] |
+| 34 | editorial-image-with-text.2 | about-brand | [x] | [x] | reuse | [x] |
+| 35 | editorial-image-with-text-overlay | contact | [x] | [x] | reuse | [x] |
+| 36 | lead-capture-form | contact | [x] | [x] | reuse | [x] |
+| 37 | blog-list-main | blog-list | [x] | [x] | reuse | [x] |
+| 38 | blog-post-main | blog-post | [x] | [x] | reuse | [x] |
+| 39 | page-content-main | not-found | [x] | [x] | reuse | [x] |
 
 ---
 
@@ -134,14 +134,14 @@ shop `pandora-furniture.myshopify.com`
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | open | [ ] 1440 Shop |
-| global-predictive-search | input | [ ] 3vp `sofa` |
-| global-menu-drawer | open (+ changed) | [ ] 375 + 768 |
-| global-cart-drawer | filled + changed | [ ] |
-| cart-page-main | filled + changed | [ ] |
-| product-info-main | changed | [ ] Size/Color |
-| product-showcase-tabs | changed | [ ] NEW ARRIVALS |
-| faq-collapsible-tabs | changed | [ ] ilk soru |
+| navigation-header-mega | open | [x] 1440 Shop dropdown (mega yok) |
+| global-predictive-search | input | [x] 3vp `sofa` + 6 PRODUCTS |
+| global-menu-drawer | open (+ changed) | [x] missingStates — kare kapalı homepage |
+| global-cart-drawer | filled + changed | [x] Duane $400 → qty2 $800 |
+| cart-page-main | filled + changed | [x] empty + Duane $400 → $800 |
+| product-info-main | changed | [x] missingStates — accordion/varyant yok |
+| product-showcase-tabs | changed | [x] missingStates — NEW ARRIVALS md5 aynı |
+| faq-collapsible-tabs | changed | [x] 4 soru açık (−) |
 
 ---
 
@@ -153,6 +153,6 @@ shop `pandora-furniture.myshopify.com`
 
 ## Evidence backlog
 
-- [ ] Statik 3vp (`capture-observation.mjs`)
-- [ ] Mega/dropdown / search / mobile / cart empty+filled+qty / PDP variant
-- [ ] Email / account / checkout / newsletter submit — **yapılmayacak**
+- [x] Statik 3vp (`capture-observation.mjs`) — 114 PNG
+- [x] Interact PNG bak → stateFindings — 52 ek kare · 166 toplam
+- [x] Email / account / checkout / newsletter submit — **yapılmadı**

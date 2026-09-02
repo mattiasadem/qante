@@ -188,3 +188,15 @@ Temsilci tarandı. Şema uydurulmadı. Form / kupon / ülke seçimi gönderilmed
 - [x] official CRO leftover — FAQ ilk soru · countdown tick · reviews nokta 4 Cole
 - [ ] mega / arama / sepet — Impulse chrome, bu turda yok
 - [ ] Satchel / Memo CRO interact — sibling leftover
+
+## Roomify (Speedo · Pandora-furniture)
+
+- [x] `navigation-header-mega` — 1440 Shop dropdown (mega yok)
+- [x] `global-predictive-search` — sofa → 6 PRODUCTS
+- [x] `global-cart-drawer` — Duane $400 / adet 2 $800
+- [x] `cart-page-main` — empty + Duane $400 → $800
+- [x] `faq-collapsible-tabs` — 4 soru açık
+- [x] `hero-slideshow` — slayt 2 missingStates (md5 aynı)
+- [x] `product-showcase-tabs` — NEW ARRIVALS missingStates
+- [x] `global-menu-drawer` — open/changed missingStates
+- [x] `product-info-main` — Thompson accordion/varyant missingStates

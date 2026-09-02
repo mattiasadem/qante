@@ -183,7 +183,7 @@ function iframeHostSelector(selector) {
 async function settle(page, url) {
   const target = new URL(url);
   await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
-  await unlockStorefrontPassword(page, obs);
+  await unlockStorefrontPassword(page, obs, url);
   await page.waitForTimeout(3500);
 
   const landed = new URL(page.url());

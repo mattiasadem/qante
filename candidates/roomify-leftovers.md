@@ -74,9 +74,17 @@ Karar: onay bekliyor
 ---
 
 ADAY: roomify-header-no-mega  
-Gerekçe: `.mega-menu` 0. Shop = `details#Details-HeaderMenu-2`. Dawn-benzeri dropdown adayı.  
+Gerekçe: `.mega-menu` 0. Shop = `details#Details-HeaderMenu-2`. Interact 1440: Home Office / Living room / kitchen / Bedroom / Small furniture — kolon/görsel yok.  
 Örnekler: header Shop  
-Öneri: leftover — mega yok; interact dropdown  
+Öneri: leftover — mega yok; dropdown kanıtlandı  
+Karar: onay bekliyor
+
+---
+
+ADAY: roomify-home-tab-empty-panels  
+Gerekçe: Trendy Collection `home-page-tab`. NEW ARRIVALS `#…-tab-2` display:none; iç HTML CSS dump (ürün yok). Click / probe piksel değiştirmedi.  
+Örnekler: https://pandora-furniture.myshopify.com/ home product-showcase-tabs  
+Öneri: leftover — boş sekme paneli  
 Karar: onay bekliyor
 
 ---

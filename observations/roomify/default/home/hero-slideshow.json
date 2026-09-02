@@ -9,9 +9,15 @@
   "storefrontPassword": "1",
   "evidenceSlug": "hero-slideshow",
   "evidence": [
+    "evidence/roomify/default/home/hero-slideshow.1440.png",
     "evidence/roomify/default/home/hero-slideshow.375.png",
     "evidence/roomify/default/home/hero-slideshow.768.png",
-    "evidence/roomify/default/home/hero-slideshow.1440.png"
+    "evidence/roomify/default/home/hero-slideshow.changed.slide-2.1440.png",
+    "evidence/roomify/default/home/hero-slideshow.changed.slide-2.375.png",
+    "evidence/roomify/default/home/hero-slideshow.changed.slide-2.768.png",
+    "evidence/roomify/default/home/hero-slideshow.initial.slide-1.1440.png",
+    "evidence/roomify/default/home/hero-slideshow.initial.slide-1.375.png",
+    "evidence/roomify/default/home/hero-slideshow.initial.slide-1.768.png"
   ],
   "notlar": "slideshow-component. DECOR INSPIRATION + Discover our collection… + SHOP NOW. 2 slayt (Load slide 1/2). 4 img.",
   "delta": "Dawn slideshow-component + mobile-text-below. Yeni şema yok.",
@@ -23,7 +29,52 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T15:46:24.343Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:21:26.038Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-furniture.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17748079968413__165665788459900955",
+      "capture": true,
+      "etiket": "slide-1",
+      "not": "DECOR INSPIRATION slayt 1. SHOP NOW tıklanmadı."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--17748079968413__165665788459900955 button[aria-label='Load slide 2 of 2']",
+      "capture": true,
+      "etiket": "slide-2",
+      "not": "Load slide 2 of 2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Slayt 1: oturma odası görseli + DECOR INSPIRATION + Discover our collection of beautiful furniture designed for easy living. + SHOP NOW →. İki nokta, ilki dolu. 375 metin görselin altında.",
+    "changed": ""
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "button[aria-label='Load slide 2 of 2'] tıklandı; 375/768/1440 PNG slide-1 ile md5 aynı (DECOR INSPIRATION + ilk nokta dolu). İkinci slayt karede yok. Üçüncü deneme yok."
+    }
+  ],
+  "interactionNote": "SHOP NOW <a> tıklanmadı. İki nokta DOM’da var; piksel değişmedi. Yeni şema yok."
 }

@@ -4,29 +4,97 @@
   "kaynak": "roomify",
   "preset": "default",
   "sayfa": "home",
-  "url": "https://pandora-furniture.myshopify.com/",
+  "url": "https://pandora-furniture.myshopify.com/products/duane-chair",
   "selector": "#CartDrawer",
   "storefrontPassword": "1",
   "evidenceSlug": "global-cart-drawer",
   "evidence": [
+    "evidence/roomify/default/home/global-cart-drawer.1440.png",
     "evidence/roomify/default/home/global-cart-drawer.375.png",
     "evidence/roomify/default/home/global-cart-drawer.768.png",
-    "evidence/roomify/default/home/global-cart-drawer.1440.png"
+    "evidence/roomify/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/roomify/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/roomify/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/roomify/default/home/global-cart-drawer.filled.duane-eklendi.1440.png",
+    "evidence/roomify/default/home/global-cart-drawer.filled.duane-eklendi.375.png",
+    "evidence/roomify/default/home/global-cart-drawer.filled.duane-eklendi.768.png"
   ],
   "notlar": "cart-drawer + #CartDrawer. Header #cart-icon-bubble aria-haspopup=dialog. Boş kare prepareClick.",
   "delta": "Dawn cart-notification değil — gerçek cart-drawer (Free/Express shipping eşikleri). Yeni şema yok.",
   "captureMode": "viewport",
   "prepareClick": "#cart-icon-bubble",
   "capture": {
-    "url": "https://pandora-furniture.myshopify.com/",
+    "url": "https://pandora-furniture.myshopify.com/products/duane-chair",
     "viewports": [
       "375",
       "768",
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T15:51:36.510Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:13:26.758Z",
     "prepareClick": "#cart-icon-bubble"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://pandora-furniture.myshopify.com/products/duane-chair",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'], form[action*='/cart/add'] button[type='submit']",
+      "capture": false,
+      "not": "Duane Chair varsayılan Size Small / Color Brown"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": "cart-drawer.active, #CartDrawer",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "duane-eklendi",
+      "not": "Dolu cart-drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus'], cart-drawer button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +1"
+    }
+  ],
+  "stateFindings": {
+    "filled": "Sağ #CartDrawer. Your cart + Back >. Free Shipping! $500.00 (yeşil bar kısmi) + Express Shipping! $800.00. Duane Chair · Size: Small, Color: Brown · qty 1 · $400.00 + çöp. Best seller / Order special instructions kapalı. Estimated total $400.00 USD. CHECK OUT + View cart (tıklanmadı).",
+    "changed": "Qty 2. Estimated total $800.00 USD. Express eşiği dolu. CHECK OUT tıklanmadı."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "Boş drawer static prepareClick kapalı homepage kaldı (#cart-icon-bubble <a href=/cart>). Dolu hâl ATC ile açıldı."
+    }
+  ],
+  "interactionNote": "ATC UI Duane Chair default Small/Brown. Checkout / View cart tıklanmadı. Yeni şema yok (boş↔dolu aynı component)."
 }

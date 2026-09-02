@@ -9,9 +9,13 @@
   "storefrontPassword": "1",
   "evidenceSlug": "navigation-header-mega",
   "evidence": [
+    "evidence/roomify/default/home/navigation-header-mega.1440.png",
     "evidence/roomify/default/home/navigation-header-mega.375.png",
     "evidence/roomify/default/home/navigation-header-mega.768.png",
-    "evidence/roomify/default/home/navigation-header-mega.1440.png"
+    "evidence/roomify/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/roomify/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/roomify/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/roomify/default/home/navigation-header-mega.open.shop-dropdown.1440.png"
   ],
   "notlar": "Logo Pandora + Home / Shop / New Arrival / Our story / Contact us / More. Search + Log in + cart. 375 hamburger.",
   "delta": "Mega panel yok (query .mega-menu 0). Shop = Details-HeaderMenu-2. 375/768 hamburger ayrı global-menu-drawer. Log in PII — dur.",
@@ -22,8 +26,64 @@
       "768",
       "1440"
     ],
-    "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T15:46:24.187Z"
-  }
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:08:44.597Z"
+  },
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-furniture.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Dropdown kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-2 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "Shop click /collections/all'a gider — hover. Mega yok."
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-HeaderMenu-2",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-dropdown",
+      "not": "details#Details-HeaderMenu-2 forceOpen. HeaderMenu-MenuList-2."
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440: announcement + Home / Shop / New Arrival · ROOMIFY LIGHTEN · Our story / Contact us / More. Search + wishlist 0 + account + cart 0. Shop chevron kapalı, dropdown yok. 375/768: hamburger + logo + search/cart; mega yok.",
+    "open": "1440 Shop hover + forceOpen #Details-HeaderMenu-2: dikey dropdown — Home Office · Living room · kitchen · Bedroom · Small furniture. Kolon/görsel/promo yok (mega değil)."
+  },
+  "missingStates": [],
+  "interactionNote": "Shop <a> /collections/all’a gider — tıklanmadı. Log in / wishlist dur. 375/768 açık menü global-menu-drawer. Yeni şema yok."
 }

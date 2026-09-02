@@ -46,7 +46,7 @@
 | HexClad | [`hexclad.md`](./hexclad.md) | ✅ listicle-fathers-day · 5 obs · 15 PNG · 0 yeni şema |
 | Allbirds | [`allbirds.md`](./allbirds.md) | 🟡 Mod A — 30 obs · ~90 PNG · partial capture (search blocked) |
 | Legal / policy (Kreis recipe) | [`policy-legal.md`](./policy-legal.md) | ✅ page-recipes/policy · 3-col sticky TOC \| content \| sibling nav |
-| Roomify (Speedo · furniture) | [`roomify.md`](./roomify.md) | 🟡 Mod A — pandora-furniture.myshopify.com · password `1` · 39 obs · 0 yeni şema |
+| Roomify (Speedo · furniture) | [`roomify.md`](./roomify.md) | 🟡 default — 39 obs · 166 PNG · 0 yeni şema · interact findings (menu/tabs/hero/PDP changed missing) |
 
 **Interact (discover sonrası derinlik):** [`interact.md`](./interact.md) — kapalı kare yalanı; Stretch + Cocoon/Balance shop-the-look kapandı.
 

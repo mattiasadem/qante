@@ -4,7 +4,7 @@
  * Only runs when the page is the password form — not a customer account form.
  */
 
-export async function unlockStorefrontPassword(page, obs = {}) {
+export async function unlockStorefrontPassword(page, obs = {}, intendedUrl = null) {
   const password =
     obs.storefrontPassword || obs.capture?.storefrontPassword || null;
   if (!password) return false;
@@ -31,5 +31,19 @@ export async function unlockStorefrontPassword(page, obs = {}) {
     await field.press("Enter").catch(() => {});
   }
   await page.waitForTimeout(2000);
+
+  if (intendedUrl) {
+    const want = new URL(intendedUrl);
+    const now = new URL(page.url());
+    const samePath =
+      want.pathname.replace(/\/$/, "") === now.pathname.replace(/\/$/, "");
+    if (now.origin === want.origin && !samePath) {
+      await page.goto(intendedUrl, {
+        waitUntil: "domcontentloaded",
+        timeout: 90000,
+      });
+      await page.waitForTimeout(1500);
+    }
+  }
   return true;
 }

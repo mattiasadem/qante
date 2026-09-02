@@ -9,9 +9,15 @@
   "storefrontPassword": "1",
   "evidenceSlug": "product-showcase-tabs",
   "evidence": [
+    "evidence/roomify/default/home/product-showcase-tabs.1440.png",
     "evidence/roomify/default/home/product-showcase-tabs.375.png",
     "evidence/roomify/default/home/product-showcase-tabs.768.png",
-    "evidence/roomify/default/home/product-showcase-tabs.1440.png"
+    "evidence/roomify/default/home/product-showcase-tabs.changed.new-arrivals.1440.png",
+    "evidence/roomify/default/home/product-showcase-tabs.changed.new-arrivals.375.png",
+    "evidence/roomify/default/home/product-showcase-tabs.changed.new-arrivals.768.png",
+    "evidence/roomify/default/home/product-showcase-tabs.initial.best-sellers.1440.png",
+    "evidence/roomify/default/home/product-showcase-tabs.initial.best-sellers.375.png",
+    "evidence/roomify/default/home/product-showcase-tabs.initial.best-sellers.768.png"
   ],
   "notlar": "Trendy Collection. Sekmeler BEST SELLERS / NEW ARRIVALS / TOP TRENDING. Kartlarda ADD TO WISHLIST + ADD TO CART. Thompson Bed ilk kart.",
   "delta": "home-page-tab. Quick view overlay yoklandı değil. Yeni şema yok.",
@@ -23,7 +29,52 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T15:48:17.939Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:10:57.333Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-furniture.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17748079968413__165666889162d379a4",
+      "capture": true,
+      "etiket": "best-sellers",
+      "not": "BEST SELLERS aktif — Thompson Bed ilk kart"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "a.button[href='#template--17748079968413__165666889162d379a4-tab-2']",
+      "capture": true,
+      "etiket": "new-arrivals",
+      "not": "NEW ARRIVALS sekmesi — kart seti değişmeli"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Trendy Collection + Lorem Ipsum…. Sekmeler BEST SELLERS (dolu) / NEW ARRIVALS / TOP TRENDING. Kartlar Thompson Bed $751/$850 + Wembley Dining Table $156/$206. SHOP NOW →.",
+    "changed": ""
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "NEW ARRIVALS a.button[href=#…tab-2] tıklandı; 3vp PNG BEST SELLERS ile md5 aynı. Probe: native click timeout; tab-2 display:none ve içi CSS dump (ürün yok). Üçüncü deneme yok."
+    }
+  ],
+  "interactionNote": "SHOP NOW / kart / wishlist tıklanmadı. home-page-tab. Yeni şema yok."
 }

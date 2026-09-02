@@ -119,14 +119,14 @@ try {
     const warmupUrl = obs.warmupUrl || obs.capture?.warmupUrl || null;
     if (warmupUrl) {
       await page.goto(warmupUrl, { waitUntil: "domcontentloaded", timeout: 90000 });
-      await unlockStorefrontPassword(page, obs);
+      await unlockStorefrontPassword(page, obs, warmupUrl);
       await page.waitForTimeout(2000);
       await dismissAllOverlays(page);
     }
 
     const target = new URL(url);
     await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
-    await unlockStorefrontPassword(page, obs);
+    await unlockStorefrontPassword(page, obs, url);
     await page.waitForTimeout(3500);
 
     // Cloudflare / bot interstitial — kısa bekle + reload (DTC storefront)
