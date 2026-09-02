@@ -8,9 +8,18 @@
   "selector": "#CartDrawer",
   "evidenceSlug": "global-cart-drawer",
   "evidence": [
+    "evidence/look/default/home/global-cart-drawer.1440.png",
     "evidence/look/default/home/global-cart-drawer.375.png",
     "evidence/look/default/home/global-cart-drawer.768.png",
-    "evidence/look/default/home/global-cart-drawer.1440.png"
+    "evidence/look/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/look/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/look/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/look/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/look/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/look/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/look/default/home/global-cart-drawer.initial.bos.1440.png",
+    "evidence/look/default/home/global-cart-drawer.initial.bos.375.png",
+    "evidence/look/default/home/global-cart-drawer.initial.bos.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "cart-drawer #CartDrawer. Boş: Your cart is empty. #cart-icon-bubble.",
@@ -23,10 +32,94 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T17:16:39.399Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T17:46:09.049Z",
     "prepareClick": "#cart-icon-bubble"
   },
   "captureMode": "viewport",
-  "prepareClick": "#cart-icon-bubble"
+  "prepareClick": "#cart-icon-bubble",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://goggles-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "#CartDrawer",
+      "capture": true,
+      "captureMode": "section",
+      "captureSelector": "#CartDrawer",
+      "etiket": "bos",
+      "not": "Boş cart drawer — tık visibility:hidden bırakır"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://goggles-online-store.myshopify.com/products/hipe-full-rim-ray-ban-frames",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add'], button[name='add']",
+      "capture": false,
+      "not": "ADD TO CART — drawer beklenir"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "HIPE $90 satır"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus'], #CartDrawer .quantity__button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "qty 1 → 2"
+    }
+  ],
+  "stateFindings": {
+    "filled": "1440 YOUR CART: HIPE FULL RIM RAY-BAN FRAMES Square/Clear $90 qty 1; Free Shipping $100 / Express $150 bar; Estimated total $90 USD; CHECK OUT. Solunda sibling YOU MAY LIKE çekmecesi (öneri listesi + ADD TO CART). 375 tek çekmece: YOUR CART + in-drawer YOU MAY LIKE chevron; CHECK OUT.",
+    "changed": "Aynı satır qty 2, satır ve estimated total $180.00 USD. CHECK OUT duruyor; tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "Boş open ilk kare homepage kaldı (tık visibility:hidden). Retry forceOpen cart-drawer + #CartDrawer section. ATC UI path — drawer + YOU MAY LIKE birlikte açıldı. Checkout / Log in tıklanmadı. Antique/Redwood sold out — default Square/Clear. 1440 YOU MAY LIKE sibling leftover (şema yok)."
 }

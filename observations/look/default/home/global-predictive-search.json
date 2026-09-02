@@ -8,12 +8,15 @@
   "selector": "details:has(#Search-In-Modal)",
   "evidenceSlug": "global-predictive-search",
   "evidence": [
+    "evidence/look/default/home/global-predictive-search.1440.png",
     "evidence/look/default/home/global-predictive-search.375.png",
     "evidence/look/default/home/global-predictive-search.768.png",
-    "evidence/look/default/home/global-predictive-search.1440.png"
+    "evidence/look/default/home/global-predictive-search.initial.modal-bos.1440.png",
+    "evidence/look/default/home/global-predictive-search.initial.modal-bos.375.png",
+    "evidence/look/default/home/global-predictive-search.initial.modal-bos.768.png"
   ],
   "storefrontPassword": "1",
-  "notlar": "summary.header__icon--search → #Search-In-Modal. Predictive host.",
+  "notlar": "summary.header__icon--search → #Search-In-Modal. Predictive host. #header-search yok.",
   "delta": "Öneri listesi interact. Submit yok. Shopify.theme.name Look V-1.5.0 · schema_name Look · schema_version 1.5.0 · theme_store_id null · role main · id 143012102385 · shop goggles-online-store.myshopify.com · Speedo Look official demo (vendor-published password 1).",
   "capture": {
     "url": "https://goggles-online-store.myshopify.com/",
@@ -23,10 +26,59 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T17:19:10.348Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T17:42:42.742Z",
     "prepareClick": "summary.header__icon--search"
   },
-  "captureMode": "viewport",
-  "prepareClick": "summary.header__icon--search"
+  "captureMode": "section",
+  "prepareClick": "summary.header__icon--search",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://goggles-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "capture": false,
+      "not": "Tık tek başına details[open] false kalabilir"
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "details:has(#Search-In-Modal)",
+      "capture": true,
+      "captureMode": "section",
+      "captureSelector": ".search-modal",
+      "etiket": "modal-bos",
+      "not": "Boş arama çubuğu (Search placeholder)"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "goggle",
+      "capture": true,
+      "captureMode": "section",
+      "captureSelector": ".search-modal",
+      "etiket": "goggle",
+      "not": "katalogSorgu goggle — PRODUCTS listesi"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "katalogSorgu=goggle (search sayfası 15 sonuç). İlk fill #Search-In-Modal hidden timeout — tık modalı açmadı. Retry: forceOpen details + section .search-modal. Submit / Search for \"goggle\" tıklanmadı."
 }

@@ -40,21 +40,21 @@ Walk host + `Shopify.shop` = `goggles-online-store.myshopify.com` · locale `en`
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | [x] obs | [ ] capture |
-| Shop mega hover 1440 | [ ] interact | [ ] |
-| Predictive search `goggle` | [ ] interact | [ ] |
-| Mobile menu 375 + 768 | [ ] interact | [ ] |
-| Cart drawer empty + filled + qty | [ ] interact | [ ] |
-| PDP HIPE Color Antique | [ ] interact | [ ] |
-| PLP `/collections/sunglasses` | [x] obs | [ ] capture |
-| Collections `/collections` | [x] obs | [ ] capture |
-| Search `/search?q=goggle` | [x] obs | [ ] capture |
-| Cart page empty + filled | [x] obs | [ ] capture + interact |
-| About `/pages/about-us` | [x] obs | [ ] capture |
-| Contact `/pages/contact-us` (submit yok) | [x] obs | [ ] capture |
-| FAQ `/pages/faqs` | [x] obs | [ ] capture + interact |
-| News + YOUR VISION IS OUR MISSION | [x] obs | [ ] capture |
-| 404 | [x] obs | [ ] capture |
+| Home roster (announcement→footer) | [x] obs | [x] capture |
+| Shop mega hover 1440 | [ ] interact retry section | forceOpen; viewport kapanıyordu |
+| Predictive search `goggle` | [ ] interact retry | forceOpen + fill |
+| Mobile menu 375 + 768 | [ ] interact retry | forceOpen section |
+| Cart drawer empty + filled + qty | [x] filled/changed · [ ] empty retry | HIPE $90→$180 |
+| PDP HIPE Color Charcoal | [x] interact | Antique sold out |
+| PLP `/collections/sunglasses` | [x] obs | [x] capture |
+| Collections `/collections` | [x] obs | [x] capture |
+| Search `/search?q=goggle` | [x] obs | [x] capture |
+| Cart page empty + filled | [x] obs | [x] empty 3vp · filled interact |
+| About `/pages/about-us` | [x] obs | [x] capture |
+| Contact `/pages/contact-us` (submit yok) | [x] obs | [x] capture |
+| FAQ `/pages/faqs` | [x] obs | [x] capture · interact |
+| News + YOUR VISION IS OUR MISSION | [x] obs | [x] capture |
+| 404 | [x] obs | [x] capture |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -124,8 +124,9 @@ Stop: email / account / checkout / newsletter submit / contact SUBMIT / PII
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact mega / search / hamburger / cart / PDP / FAQ
-- [ ] PNG bak → stateFindings
+- [x] Official 3vp static (`capture-observation.mjs`) — 121 PNG; menu 375/1440 zero-size (interact)
+- [x] Cart page / PDP Color Charcoal / FAQ Q2 / tabs ADDITIONAL — PNG + stateFindings
+- [ ] Interact retry: mega section · search forceOpen · hamburger · cart empty
+- [ ] PLP Color Black 1440
 - [ ] `node scripts/validate-schemas.mjs`
 - [x] Email / account / checkout / newsletter submit — **yapılmayacak**

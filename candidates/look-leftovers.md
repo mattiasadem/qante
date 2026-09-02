@@ -95,3 +95,19 @@ Gerekçe: Header country/region (CAD/EUR/USD) + dil (EN/FR/DE/ES). `dilGosterim`
 Örnekler: header  
 Öneri: leftover — chrome  
 Karar: onay bekliyor
+
+---
+
+ADAY: look-you-may-like-sibling  
+Gerekçe: ATC sonrası 1440'ta `#CartDrawer` yanı sıra ayrı "YOU MAY LIKE" çekmecesi (öneri + ADD TO CART). 375'te aynı başlık drawer içinde collapsible. `global-cart-drawer.onerilerBasligi` slotu var; ayrı schema yok.  
+Örnekler: PDP ATC → filled cart drawer  
+Öneri: leftover — sibling overlay  
+Karar: onay bekliyor
+
+---
+
+ADAY: look-social-proof-toast  
+Gerekçe: "Someone liked and Buy {ürün} … From {şehir} Verified" toast birçok kareye sızıyor. newsletter-popup ile aynı aile; dismiss-overlays öldürmüyor.  
+Örnekler: home / PLP / PDP / blog  
+Öneri: leftover — app toast  
+Karar: onay bekliyor
