@@ -13,7 +13,7 @@
 
 **Unlock:** Vendor ürün sayfası + storefront title `beverages-online-store (password: 1)`. Public storefront password `1` girildi → `/` açıldı. Başka host yok.
 
-**Durum:** Mod A roster yazıldı — 50 obs · 0 yeni şema · 3vp + interact sırada  
+**Durum:** Mod A 50 obs + static 3vp (147 PNG; menu 1440 + home slider 375 skip) · interact sırada  
 **PR:** draft · **main’e merge yok**
 
 ---
@@ -37,20 +37,20 @@
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | [x] obs | [ ] static |
+| Home roster (announcement→footer) | [x] obs | [x] static (slider 375 leftover) |
 | Header Shop mega 1440 | [ ] interact | [ ] |
 | Predictive search `energy` | [ ] interact | [ ] |
 | Mobile menu 375 + 768 | [ ] interact | [ ] |
 | Cart drawer empty + filled + qty | [ ] interact | [ ] |
-| PDP PURA flavour swatch | [x] obs | [ ] + changed |
-| PLP `/collections/best-selling` | [x] obs | [ ] + filter |
-| Collections `/collections` | [x] obs | [ ] |
-| Search `/search?q=energy` | [x] obs | [ ] |
-| Cart page empty + filled | [x] obs | [ ] interact |
-| FAQ `/pages/faq` | [x] obs | [ ] + accordion |
-| Contact `/pages/contact` (submit yok) | [x] obs | [ ] |
-| Our Story + About layout 1 | [x] obs | [ ] |
-| News + vegan article | [x] obs | [ ] |
+| PDP PURA flavour swatch | [x] obs | [x] static · changed sırada |
+| PLP `/collections/best-selling` | [x] obs | [x] static · filter sırada |
+| Collections `/collections` | [x] obs | [x] |
+| Search `/search?q=energy` | [x] obs | [x] static |
+| Cart page empty + filled | [x] obs | [x] empty · filled sırada |
+| FAQ `/pages/faq` | [x] obs | [x] static · accordion sırada |
+| Contact `/pages/contact` (submit yok) | [x] obs | [x] |
+| Our Story + About layout 1 | [x] obs | [x] |
+| News + vegan article | [x] obs | [x] |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -90,6 +90,6 @@
 
 ## Evidence backlog
 
-- [ ] Official 3vp static
+- [x] Official 3vp static (147 PNG; menu 1440 zero; slider 375 zero)
 - [ ] Interact header / search / menu / cart / featured hover / FAQ / PDP flavour / PLP filter / cart page
 - [ ] `node scripts/validate-schemas.mjs` — 0 error (şema değişmedi)

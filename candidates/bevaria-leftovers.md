@@ -121,6 +121,30 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: bevaria-home-categories-slider-375-zero  
+Gerekçe: Home `categories_slider_txebkg` 375'te bounding box 0 — capture skip. 768/1440 daire şerit var.  
+Örnekler: home collection-nav-slider  
+Öneri: leftover — mobil gizli  
+Karar: onay bekliyor
+
+---
+
+ADAY: bevaria-sales-toast  
+Gerekçe: Köşe “Someone liked and Buy …” toast (Verified). Overlay dismiss kaçırdı; PII/app. Şema yok.  
+Örnekler: blog-post / PDP / PLP 1440 kareleri  
+Öneri: leftover — üçüncü taraf toast  
+Karar: onay bekliyor
+
+---
+
+ADAY: bevaria-overlay-static-closed  
+Gerekçe: Static prepareClick cart/search/menu drawer açmadı (Dawn details). Kapalı homepage kare. Interact forceOpen.  
+Örnekler: global-cart-drawer · global-predictive-search · global-menu-drawer  
+Öneri: leftover — kapalı kare yalan  
+Karar: onay bekliyor
+
+---
+
 ADAY: bevaria-search-wine-empty  
 Gerekçe: `/search?q=wine` 0 sonuç. Envanter `q=energy` (8 sonuç).  
 Örnekler: /search?q=wine  
