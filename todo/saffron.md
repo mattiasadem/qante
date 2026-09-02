@@ -13,7 +13,7 @@
 shop `midnight-perfume.myshopify.com`  
 Sayfa başlığı: **Saffron Perfume - Shopify Perfume Themes**
 
-**Durum:** Mod A walk + resmi 3vp + interact (nav/search/cart/PDP/FAQ)  
+**Durum:** Mod A walk + resmi 3vp + interact kapandı  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -27,10 +27,11 @@ Sayfa başlığı: **Saffron Perfume - Shopify Perfume Themes**
 | Unlock | `scripts/unlock-storefront.mjs` — `/password` + `1` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Parallel | yalnız `observations/saffron/`, `evidence/saffron/`, `todo/saffron.md`, `candidates/saffron-leftovers.md`, capture unlock helper |
-| Observation | **39** (hedef) |
+| Observation | **39** |
+| Evidence | **167 PNG** (51 interact karesi) |
 
-**Kapsam satırı (bitince):**  
-`Saffron · default · Midnight-perfume V-1.5.0 / schema_name midnight_perfume 1.5.0 · theme_store_id null · Speedo third-party · password 1 · home→PDP Jasmine→PLP best-seller→search perfume→cart→our-story/contact/faqs→blog→footer · 39 obs · 0 yeni şema · leftover: candidates/saffron-leftovers.md`
+**Kapsam satırı:**  
+`Saffron · default · Midnight-perfume V-1.5.0 / schema_name midnight_perfume 1.5.0 · theme_store_id null · Speedo third-party · password 1 · home→PDP Jasmine→PLP best-seller→search perfume→cart→our-story/contact/faqs→blog→footer · 39 obs · 167 PNG · 0 yeni şema · leftover: candidates/saffron-leftovers.md`
 
 ---
 
@@ -38,20 +39,20 @@ Sayfa başlığı: **Saffron Perfume - Shopify Perfume Themes**
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home + announcement/header/footer + conversion | roster | [ ] |
-| Mega Shop 1440 | interact | [ ] |
-| Predictive search `jasmine` | interact 3vp | [ ] |
-| Mobile menu 375 | interact | [ ] |
-| Mobile menu 768 | interact | [ ] |
-| Cart drawer empty + filled + qty | interact 3vp | [ ] |
-| PDP Jasmine Size 50ml→100ml | interact 3vp | [ ] |
-| PLP `/collections/best-seller` | roster | [ ] |
-| Search `/search?q=perfume` (21) | roster | [ ] |
-| Cart page empty + filled + qty | interact 3vp | [ ] |
-| Our Story `/pages/our-story` | roster | [ ] |
-| Contact `/pages/contact` (submit yok) | roster | [ ] |
-| FAQ `/pages/faqs` | roster + interact | [ ] |
-| Blog `/blogs/news` + Ut enim… | roster | [ ] |
+| Home + announcement/header/footer + conversion | roster | [x] |
+| Mega Shop 1440 | interact | [x] |
+| Predictive search `perfume` | interact 3vp | [x] |
+| Mobile menu 375 | interact | [x] |
+| Mobile menu 768 | interact | [x] |
+| Cart drawer empty + filled + qty | interact 3vp | [x] |
+| PDP Jasmine Size 50ml→100ml | interact 3vp | [x] |
+| PLP `/collections/best-seller` | roster | [x] |
+| Search `/search?q=perfume` (21) | roster | [x] |
+| Cart page empty + filled + qty | interact 3vp | [x] |
+| Our Story `/pages/our-story` | roster | [x] |
+| Contact `/pages/contact` (submit yok) | roster | [x] |
+| FAQ `/pages/faqs` | roster + interact | [x] |
+| Blog `/blogs/news` + Ut enim… | roster | [x] |
 | 404 leftover | leftover | — |
 | Policy pages (no main section) | leftover | — |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
@@ -67,8 +68,8 @@ Sayfa başlığı: **Saffron Perfume - Shopify Perfume Themes**
 | 3 | announcement-bar-section `8ad69381` | `promo-announcement-bar.2` | reuse |
 | 4 | slide-show `8c77ee53` | `hero-slideshow` | reuse |
 | 5 | `bd1f6a88` Welcome | `editorial-rich-text` | reuse |
-| 6 | featured_collection | `product-showcase-grid-featured` | reuse · QuickAdd leftover |
-| 7 | `cc09d110` quote | `editorial-image-with-text-overlay` | reuse |
+| 6 | featured_collection | `product-showcase-grid-featured` | reuse · hover + QuickAdd leftover |
+| 7 | `cc09d110` quote | `editorial-rich-text.2` | reuse (overlay değil) |
 | 8 | section-collection-list `1740af2e` | `collection-nav-grid` | reuse |
 | 9 | `4c3d8f88` Maria | `editorial-image-with-text` | reuse |
 | 10 | `a5bd3b43` Latest Blog | `blog-list-main` | reuse |

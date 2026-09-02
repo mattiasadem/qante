@@ -45,7 +45,7 @@
 | Into The Gloss | [`intothegloss.md`](./intothegloss.md) | ✅ listicle-holiday-2025 · 9 obs · 27 PNG · 0 yeni şema · Next.js editorial |
 | HexClad | [`hexclad.md`](./hexclad.md) | ✅ listicle-fathers-day · 5 obs · 15 PNG · 0 yeni şema |
 | Allbirds | [`allbirds.md`](./allbirds.md) | 🟡 Mod A — 30 obs · ~90 PNG · partial capture (search blocked) |
-| Saffron (Speedo · Midnight Perfume) | [`saffron.md`](./saffron.md) | 🟡 first inventory — password `1` · 39 obs · 0 yeni şema · draft |
+| Saffron (Speedo · Midnight Perfume) | [`saffron.md`](./saffron.md) | ✅ first inventory — password `1` · 39 obs · 167 PNG · 0 yeni şema · draft |
 | Legal / policy (Kreis recipe) | [`policy-legal.md`](./policy-legal.md) | ✅ page-recipes/policy · 3-col sticky TOC \| content \| sibling nav |
 
 **Interact (discover sonrası derinlik):** [`interact.md`](./interact.md) — kapalı kare yalanı; Stretch + Cocoon/Balance shop-the-look kapandı.

@@ -74,6 +74,14 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: saffron-cart-footer  
+Gerekçe: `#shopify-section-…__cart-footer` boşken 0px (ayrı observation yok). Dolu sepetta estimated total + CHECK OUT bu section’da; `cart-page-main` selector yalnız `cart-items`. Checkout tıklanmadı.  
+Örnekler: https://midnight-perfume.myshopify.com/cart  
+Öneri: leftover — dolu footer / checkout  
+Karar: onay bekliyor
+
+---
+
 ADAY: saffron-buy-it-now  
 Gerekçe: PDP `BUY IT NOW` checkout’a gider — tıklanmadı.  
 Örnekler: https://midnight-perfume.myshopify.com/products/jasmine-and-ambretta-floral-fragrance-for-women  

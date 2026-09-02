@@ -10,7 +10,16 @@
   "evidence": [
     "evidence/saffron/default/cart/cart-page-main.1440.png",
     "evidence/saffron/default/cart/cart-page-main.375.png",
-    "evidence/saffron/default/cart/cart-page-main.768.png"
+    "evidence/saffron/default/cart/cart-page-main.768.png",
+    "evidence/saffron/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/saffron/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/saffron/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/saffron/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/saffron/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/saffron/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/saffron/default/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/saffron/default/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/saffron/default/cart/cart-page-main.initial.cart-bos.768.png"
   ],
   "storePassword": "1",
   "notlar": "Boş: Your cart is empty / CONTINUE SHOPPING. cart-footer h=0.",
@@ -80,23 +89,10 @@
   ],
   "stateFindings": {
     "initial": "Your cart is empty + CONTINUE SHOPPING + Have an account? Log in to check out faster. cart-footer boşken 0px.",
-    "filled": "",
-    "changed": ""
+    "filled": "Your cart + Continue shopping. Satır: Jasmine… $100 Size 50ml qty 1, TOTAL $100. PRODUCT/QUANTITY/TOTAL başlıkları. Checkout cart-footer’da (bu selector cart-items).",
+    "changed": "Aynı satır qty 2, TOTAL $200.00."
   },
-  "missingStates": [
-    {
-      "state": "initial",
-      "sebep": "capture (375): zero-size / eşleşmedi: #shopify-section-template--23390875550009__cart-items"
-    },
-    {
-      "state": "filled",
-      "sebep": "adım 4 (addToCart button.product-form__submit): sepete eklenemedi: varyant id bulunamadı"
-    },
-    {
-      "state": "changed",
-      "sebep": "adım 6 (click #shopify-section-template--23390875550009__cart-items button[name='plus'], button[name='plus']): selector eşleşmedi: #shopify-section-template--23390875550009__cart-items button[name='plus'], button[name='plus']"
-    }
-  ],
+  "missingStates": [],
   "interactionNote": "Checkout tıklanmadı. /cart/clear yok (Cloudflare). ATC sonrası /cart. Yeni context boş sepet.",
   "capture": {
     "url": "https://midnight-perfume.myshopify.com/cart",
@@ -107,6 +103,6 @@
     ],
     "mode": "section",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-02T16:02:07.435Z"
+    "updatedAt": "2026-09-02T16:21:39.980Z"
   }
 }

@@ -11,8 +11,11 @@
     "evidence/saffron/default/home/global-cart-drawer.1440.png",
     "evidence/saffron/default/home/global-cart-drawer.375.png",
     "evidence/saffron/default/home/global-cart-drawer.768.png",
+    "evidence/saffron/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/saffron/default/home/global-cart-drawer.changed.adet-artti.375.png",
     "evidence/saffron/default/home/global-cart-drawer.changed.adet-artti.768.png",
     "evidence/saffron/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/saffron/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
     "evidence/saffron/default/home/global-cart-drawer.filled.sepete-eklendi.768.png"
   ],
   "storePassword": "1",
@@ -106,24 +109,11 @@
   ],
   "stateFindings": {
     "initial": "Your cart + X. Free Shipping! $100 / Express Shipping! $150 gri bar. Your cart is empty + CONTINUE SHOPPING. Altta Have an account? Log in to check out faster.",
-    "filled": "1440/768: Jasmine and ambretta… Size 50ml $100 qty 1. Free shipping dolu, Express $150 kısmi. Best seller akordeon. Estimated total $100.00 USD. CHECK OUT + View Cart. 375 yeniden.",
-    "changed": "768: qty 2, total $200.00 USD, her iki kargo eşiği yeşil. 375/1440 yeniden."
+    "filled": "3vp: Jasmine and ambretta… Size 50ml $100 qty 1. Free shipping dolu, Express $150 kısmi. Best seller akordeon. Estimated total $100.00 USD. CHECK OUT + View Cart.",
+    "changed": "3vp: qty 2, total $200.00 USD, her iki kargo eşiği yeşil. PDP ‘Quantity (2 in cart)’."
   },
-  "missingStates": [
-    {
-      "state": "initial",
-      "sebep": "adım 1 (click #cart-icon-bubble): selector eşleşmedi: #cart-icon-bubble"
-    },
-    {
-      "state": "filled",
-      "sebep": "adım 4 (addToCart button.product-form__submit): sepete eklenemedi: varyant id bulunamadı"
-    },
-    {
-      "state": "changed",
-      "sebep": "adım 6 (click #CartDrawer button[name='plus']): selector eşleşmedi: #CartDrawer button[name='plus']"
-    }
-  ],
-  "interactionNote": "Checkout tıklanmadı. /cart/clear yok — yeni Playwright context boş sepet. ATC UI; form hidden id 45321394356537.",
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı. /cart/clear yok — yeni Playwright context boş sepet. ATC UI (3vp). 768 boş-icon tık bir koşuda kaçtı; boş drawer statik 3vp. form hidden id 45321394356537.",
   "capture": {
     "url": "https://midnight-perfume.myshopify.com/",
     "viewports": [
@@ -133,6 +123,6 @@
     ],
     "mode": "viewport",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-02T16:07:58.166Z"
+    "updatedAt": "2026-09-02T16:19:15.040Z"
   }
 }
