@@ -15,7 +15,7 @@ Title: `Lingerie - Best Shopify Lingerie Store – fashion-store-clean-21`
 Storefront password (ürün sayfasında yayın): **`1`** — aynı host `/password`, başka vitrin yok.  
 Auth: `observations/lingerie/_auth.json`.
 
-**Durum:** Mod A walk + resmi 3vp + interact  
+**Durum:** Mod A walk + resmi 3vp + interact (stateFindings yazıldı)  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -31,7 +31,7 @@ Auth: `observations/lingerie/_auth.json`.
 | Parallel | yalnız `observations/lingerie/`, `evidence/lingerie/`, `todo/lingerie.md`, `candidates/lingerie-leftovers.md` + `unlock-storefront` host satırı |
 
 **Kapsam satırı:**  
-`Lingerie · default · Lingerie-v-1-5-0-latest-updates-new / schema_name Lingerie 1.5.0 · theme_store_id null · shop fashion-store-clean-21.myshopify.com · Speedo Themes · password 1 · home→PDP Maaji White→Orange→PLP /collections/all→/collections→search bikini→cart empty+filled→about-layout-1→faq→contact→news+article→404 · 48 obs · 0 yeni şema · leftover: candidates/lingerie-leftovers.md`
+`Lingerie · default · Lingerie-v-1-5-0-latest-updates-new / schema_name Lingerie 1.5.0 · theme_store_id null · shop fashion-store-clean-21.myshopify.com · Speedo Themes · password 1 · home→PDP Maaji White→Orange→PLP /collections/all→/collections→search bikini→cart empty+filled→about-layout-1→faq→contact→news+article→404 · 48 obs · ~187 PNG · 0 yeni şema · leftover: candidates/lingerie-leftovers.md`
 
 ---
 
@@ -39,21 +39,21 @@ Auth: `observations/lingerie/_auth.json`.
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) + overlays | roster | capture |
-| Mega Shop / Category 1440 | roster | interact |
-| Predictive search `bikini` | roster | interact |
-| Mobile + 1440 hamburger | roster | interact |
-| Cart drawer empty + filled + qty | roster | interact |
-| PDP Color White→Orange (Maaji) | roster | interact |
-| PLP `/collections/all` | roster | capture |
-| Collections `/collections` | roster | capture |
-| Search `/search?q=bikini` | roster | capture |
-| Cart page empty + filled + qty | roster | interact |
-| About `/pages/about-layout-1` (`/pages/about-us` 404) | roster | capture |
-| Contact form (submit yok) | roster | capture |
-| FAQ `/pages/faq` | roster | capture + interact |
-| News + sweetness-and-comfort article | roster | capture |
-| 404 | roster | capture |
+| Home roster (announcement→footer) + overlays | roster | 3vp |
+| Mega Shop / Category 1440 | roster | 3vp + interact |
+| Predictive search `bikini` | roster | 3vp + interact |
+| Mobile + 1440 hamburger | roster | 3vp + interact |
+| Cart drawer empty + filled + qty | roster | 3vp + interact |
+| PDP Color White→Orange (Maaji) | roster | 3vp + interact |
+| PLP `/collections/all` | roster | 3vp |
+| Collections `/collections` | roster | 3vp |
+| Search `/search?q=bikini` | roster | 3vp |
+| Cart page empty + filled + qty | roster | 3vp + interact |
+| About `/pages/about-layout-1` (`/pages/about-us` 404) | roster | 3vp |
+| Contact form (submit yok) | roster | 3vp |
+| FAQ `/pages/faq` | roster | 3vp + interact |
+| News + sweetness-and-comfort article | roster | 3vp |
+| 404 | roster | 3vp |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -87,16 +87,16 @@ Auth: `observations/lingerie/_auth.json`.
 
 | # | id | sayfa | Screenshot | Not | JSON | Done |
 |---|---|---|---|---|---|---|
-| 1–18 | home + overlays | home | [ ] | [x] | reuse | [ ] |
-| 19–27 | PDP main/tabs/video/IWT/trust/banner/FAQ/marquee | product-detail | [ ] | [x] | reuse | [ ] |
-| 28–30 | banner + slider + PLP grid | collection | [ ] | [x] | reuse | [ ] |
-| 31 | collection-nav-grid | collections | [ ] | [x] | reuse | [ ] |
-| 32 | search-results | search | [ ] | [x] | reuse | [ ] |
-| 33 | cart-page-main | cart | [ ] | [x] | reuse | [ ] |
-| 34–40 | about-layout-1 | about-brand | [ ] | [x] | reuse | [ ] |
-| 41–42 | FAQ banner + accordion | faq-support | [ ] | [x] | reuse | [ ] |
-| 43–45 | contact banner / office / form | contact | [ ] | [x] | reuse | [ ] |
-| 46–48 | news + article + 404 | blog-* / not-found | [ ] | [x] | reuse | [ ] |
+| 1–18 | home + overlays | home | [x] | [x] | reuse | [x] |
+| 19–27 | PDP main/tabs/video/IWT/trust/banner/FAQ/marquee | product-detail | [x] | [x] | reuse | [x] |
+| 28–30 | banner + slider + PLP grid | collection | [x] | [x] | reuse | [x] |
+| 31 | collection-nav-grid | collections | [x] | [x] | reuse | [x] |
+| 32 | search-results | search | [x] | [x] | reuse | [x] |
+| 33 | cart-page-main | cart | [x] | [x] | reuse | [x] |
+| 34–40 | about-layout-1 | about-brand | [x] | [x] | reuse | [x] |
+| 41–42 | FAQ banner + accordion | faq-support | [x] | [x] | reuse | [x] |
+| 43–45 | contact banner / office / form | contact | [x] | [x] | reuse | [x] |
+| 46–48 | news + article + 404 | blog-* / not-found | [x] | [x] | reuse | [x] |
 
 ---
 
@@ -104,13 +104,13 @@ Auth: `observations/lingerie/_auth.json`.
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | initial / open / changed | Shop mega + Category mega 1440 |
-| global-menu-drawer | open / changed | hamburger 375/768/1440 |
-| global-predictive-search | open + input | `bikini` |
-| global-cart-drawer | initial / filled / changed | boş → Maaji → qty |
-| cart-page-main | initial / filled / changed | boş → Maaji → qty |
-| product-info-main | initial / changed | Color White→Orange |
-| faq-collapsible-tabs | initial / changed | Q2 |
+| navigation-header-mega | initial / open / changed | Shop mega 6 kart + Category mega liste 1440 |
+| global-menu-drawer | open | hamburger 375/768/1440 — Shop accordion yok (link leftover) |
+| global-predictive-search | open + input | `bikini` PRODUCTS; 1440 `#Search-In-Template` |
+| global-cart-drawer | initial / filled / changed | boş → Maaji White $80 → qty 2 / $160 |
+| cart-page-main | initial / filled / changed | boş → Maaji qty 1 → qty 2 / $160 |
+| product-info-main | initial / changed | Color White→Orange (görsel değişti) |
+| faq-collapsible-tabs | initial / changed | Q1 açık; Q2 de açıldı |
 
 Stop: email / account / checkout / newsletter submit / contact SUBMIT / PII
 
@@ -124,8 +124,8 @@ Stop: email / account / checkout / newsletter submit / contact SUBMIT / PII
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact mega / hamburger / search / cart / PDP Color / FAQ
-- [ ] PNG bak → stateFindings
-- [ ] `node scripts/validate-schemas.mjs`
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact mega / hamburger / search / cart / PDP Color / FAQ
+- [x] PNG bak → stateFindings
+- [x] `node scripts/validate-schemas.mjs`
 - [x] Email / account / checkout / newsletter submit — **yapılmayacak**

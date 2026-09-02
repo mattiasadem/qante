@@ -116,9 +116,17 @@ Karar: onay bekliyor
 ---
 
 ADAY: lingerie-search-1440-zero  
-Gerekçe: Statik `details:has(#Search-In-Modal)` 1440’te 0px (skipped). 375/768 header search açık. Interact forceOpen.  
+Gerekçe: Statik `details:has(#Search-In-Modal)` 1440’te 0px (skipped). Interact: 375/768 modal; 1440 inline `#Search-In-Template` + `predictive-search.header-search_box` (bikini PRODUCTS). Modal selector masaüstünde hâlâ 0px.  
 Örnekler: home search  
-Öneri: leftover — masaüstü selector  
+Öneri: leftover — masaüstü selector / ayrı inline host  
+Karar: onay bekliyor
+
+---
+
+ADAY: lingerie-menu-drawer-shop-link  
+Gerekçe: `#menu-drawer` içinde Shop `#HeaderDrawer-shop` yazılı `<a href=/collections/all>`. `details#Details-menu-drawer-menu-item-2` yok. İlk interact 768/1440 PLP’ye kaçtı; 375 drawer 0px. Probe: expander yok — `changed` çekilmedi.  
+Örnekler: hamburger open kareleri  
+Öneri: leftover — link, akordeon değil  
 Karar: onay bekliyor
 
 ---

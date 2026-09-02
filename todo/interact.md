@@ -20,6 +20,7 @@ Aynı chrome’u preset’te tekrar çekme (Allure drawer = diğer Prestige). Ye
 | Impact Cocoon / Balance | shop-the-look hotspot (Vase→Plica · Bra→Leggings) · Balance PDP Sizing accordion |
 | Symmetry default | lookbook hotspot Heavy Rotation · customer-help FAQ size guide |
 | Sachue (Speedo) default | Shop disclosure 1440 · search `nail` · hamburger Shop drill · cart drawer+sayfa $26→$52 · PDP Multi Color · tabs NEW ARRIVALS · FAQ · announcement 768/1440 (375 next gizli) |
+| Lingerie (Speedo) default | Shop+Category mega 1440 · search `bikini` · hamburger (Shop link leftover) · cart drawer+sayfa $80→$160 · PDP White→Orange · FAQ Q2 |
 
 ---
 
