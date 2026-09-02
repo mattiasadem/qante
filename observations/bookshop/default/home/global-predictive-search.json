@@ -1,0 +1,82 @@
+{
+  "observationId": "bookshop.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "bookshop",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://book-online-store-1.myshopify.com/",
+  "selector": "details-modal.header__search",
+  "storefrontPassword": "1",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/bookshop/default/home/global-predictive-search.1440.png",
+    "evidence/bookshop/default/home/global-predictive-search.375.png",
+    "evidence/bookshop/default/home/global-predictive-search.768.png",
+    "evidence/bookshop/default/home/global-predictive-search.initial.arama-bos.1440.png",
+    "evidence/bookshop/default/home/global-predictive-search.initial.arama-bos.375.png",
+    "evidence/bookshop/default/home/global-predictive-search.initial.arama-bos.768.png",
+    "evidence/bookshop/default/home/global-predictive-search.input.arama-cookbook.1440.png",
+    "evidence/bookshop/default/home/global-predictive-search.input.arama-cookbook.375.png",
+    "evidence/bookshop/default/home/global-predictive-search.input.arama-cookbook.768.png"
+  ],
+  "notlar": "Search modal; input #Search-In-Modal placeholder Search. Kapalı kare ikon.",
+  "delta": "Predictive form w=0 kapalı. Dolu sonuç interact.",
+  "prepareClick": "details-modal.header__search summary.header__icon--search",
+  "prepareForceOpen": true,
+  "captureMode": "viewport",
+  "capture": {
+    "url": "https://book-online-store-1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:40:59.910Z",
+    "prepareClick": "summary.header__icon--search"
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://book-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "details-modal.header__search details",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "İkon tık headless'te modal açmadı — inner details forceOpen"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "cookbook",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-cookbook",
+      "not": "katalogSorgu=cookbook (Cookbook: 100 recipes…)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Açık modal: Search placeholder + büyüteç + sağda X. Sonuç listesi yok. Arka plan dim.",
+    "input": "cookbook. PRODUCTS: Cookbook: 100 recipes and inspiration for cooking; Book for Healthy Diet Plan for Healthy Lifestyle; Good Energy: Book for Fitness & Health; Increase Health Inside Guide Book; A5 magazine catalogue mockup book. Altta Search for \"cookbook\" →. Submit yok."
+  },
+  "missingStates": [],
+  "interactionNote": "İkon tık headless'te modal açmadı — inner details forceOpen. Scan katalogSorgu=book; ürün adından cookbook yazıldı."
+}

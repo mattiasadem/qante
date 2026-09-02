@@ -1,0 +1,87 @@
+{
+  "observationId": "saffron.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "saffron",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://midnight-perfume.myshopify.com/",
+  "selector": "details-modal.header__search .search-modal",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/saffron/default/home/global-predictive-search.1440.png",
+    "evidence/saffron/default/home/global-predictive-search.375.png",
+    "evidence/saffron/default/home/global-predictive-search.768.png",
+    "evidence/saffron/default/home/global-predictive-search.initial.search-bos.1440.png",
+    "evidence/saffron/default/home/global-predictive-search.initial.search-bos.375.png",
+    "evidence/saffron/default/home/global-predictive-search.initial.search-bos.768.png",
+    "evidence/saffron/default/home/global-predictive-search.input.perfume.1440.png",
+    "evidence/saffron/default/home/global-predictive-search.input.perfume.375.png",
+    "evidence/saffron/default/home/global-predictive-search.input.perfume.768.png"
+  ],
+  "storePassword": "1",
+  "notlar": "Search modal; input name=q placeholder=Search. predictive-search var.",
+  "delta": "Dawn details-modal.header__search. Öneri listesi fill ile.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://midnight-perfume.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "details-modal.header__search summary",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Boş search modal"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "selector": "#Search-In-Modal-1",
+      "value": 12000,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal-1",
+      "value": "perfume",
+      "capture": false,
+      "not": "katalogSorgu scan: perfume — görünür input #Search-In-Modal-1"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "perfume",
+      "not": "Öneri/ürün listesi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Beyaz modal: Search placeholder + büyüteç + sağda X. Öneri/ürün listesi yok.",
+    "input": "‘perfume’ yazılı. SUGGESTIONS: perfume, citrus perfume, magnolia flower perfume, modern chypre perfume, fruity fragrance perfume. PRODUCTS: Secret Love flower Perfume, Authentically Italian Citrus Perfume, Gourmand and fresh chypre Perfume, Elegance of modern chypre Perfume, La french Woody saffron Perfume. 1440/768 iki kolon + Search for ‘perfume’; 375 dikey (öneri sonra ürün)."
+  },
+  "missingStates": [],
+  "interactionNote": "Enter/submit yok. Fill #Search-In-Modal-1 (görünür); #Search-In-Modal gizli. Katalog perfume.",
+  "capture": {
+    "url": "https://midnight-perfume.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:17:05.297Z"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "observationId": "coffee-culture.default.home.product-showcase-grid-featured",
+  "schemaId": "product-showcase-grid-featured",
+  "kaynak": "coffee-culture",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://coffee-prime-2.myshopify.com/",
+  "selector": "#shopify-section-template--24587460215067__0617c2f2-69ec-4df8-a506-b2616d4e1db4",
+  "evidenceSlug": "product-showcase-grid-featured",
+  "evidence": [
+    "evidence/coffee-culture/default/home/product-showcase-grid-featured.1440.png",
+    "evidence/coffee-culture/default/home/product-showcase-grid-featured.375.png",
+    "evidence/coffee-culture/default/home/product-showcase-grid-featured.768.png",
+    "evidence/coffee-culture/default/home/product-showcase-grid-featured.hover.quick-shop.1440.png",
+    "evidence/coffee-culture/default/home/product-showcase-grid-featured.initial.ilk-hal.1440.png",
+    "evidence/coffee-culture/default/home/product-showcase-grid-featured.initial.ilk-hal.375.png",
+    "evidence/coffee-culture/default/home/product-showcase-grid-featured.initial.ilk-hal.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Best Selling. Espresso Coffee Beans Bag $399→$150 + New Trending Coffee Cups.",
+  "delta": "Dawn featured collection. Kart hover interact ayrı. Speedo Coffee Culture 1.5.0 third-party (theme_store_id null). Storefront password 1 is vendor-published on speedothemes.com product page. Shopify.theme.name coffee-culture-v-1-5-0-latest-updates-new · schema_name Coffee culture · schema_version 1.5.0 · theme_store_id null · role main · id 178172789019 · shop coffee-prime-2.myshopify.com. Platform adı dataBindings'e yazılmadı.",
+  "capture": {
+    "url": "https://coffee-prime-2.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T17:42:39.509Z"
+  },
+  "interactionStates": [
+    "initial",
+    "hover"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://coffee-prime-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24587460215067__0617c2f2-69ec-4df8-a506-b2616d4e1db4",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Best Selling grid"
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#shopify-section-template--24587460215067__0617c2f2-69ec-4df8-a506-b2616d4e1db4 .card-wrapper .card__inner",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "İlk kart hover"
+    },
+    {
+      "state": "hover",
+      "action": "waitFor",
+      "value": 700,
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "quick-shop",
+      "not": "Quick Shop yazısı — viewport"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Best Selling · 4 kart: Espresso Coffee Beans Bag $150/$399 · New Trending Coffee Cups $110 · Espresso Coffee Powder Bag $240 · Patch Roast Coffee Bags $220/$399 · VIEW ALL. Toast overlay dim."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "İki deneme. Probe .card-wrapper innerText Quick Shop diyor; resmi karede buton yok. 1. viewport Best Selling dim (toast). 2. viewport scrollTo(0) hero'ya kaçtı — o PNG geri alındı. 375/768 hover yok (parmak)."
+    }
+  ],
+  "interactionNote": "Quick Shop tıklanmadı. 375/768 hover çekilmedi."
+}

@@ -1,0 +1,67 @@
+{
+  "observationId": "luxe-luxuries.default.collection.global-quick-view",
+  "schemaId": "global-quick-view",
+  "kaynak": "luxe-luxuries",
+  "preset": "default",
+  "sayfa": "collection",
+  "url": "https://watchez-online-store.myshopify.com/collections/best-sellers",
+  "selector": "quick-add-modal",
+  "evidenceSlug": "global-quick-view",
+  "evidence": [
+    "evidence/luxe-luxuries/default/collection/global-quick-view.1440.png",
+    "evidence/luxe-luxuries/default/collection/global-quick-view.375.png",
+    "evidence/luxe-luxuries/default/collection/global-quick-view.768.png",
+    "evidence/luxe-luxuries/default/collection/global-quick-view.open.quick-add-acik.1440.png",
+    "evidence/luxe-luxuries/default/collection/global-quick-view.open.quick-add-acik.375.png",
+    "evidence/luxe-luxuries/default/collection/global-quick-view.open.quick-add-acik.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "PLP Quick add → Dawn quick-add-modal.",
+  "delta": "Tam galeri quick-view değil; form modal. Kapalı kutu büyük olabilir.",
+  "captureMode": "viewport",
+  "prepareClick": ".quick-add__submit",
+  "capture": {
+    "url": "https://watchez-online-store.myshopify.com/collections/best-sellers",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:16:25.296Z",
+    "prepareClick": ".quick-add__submit"
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://watchez-online-store.myshopify.com/collections/best-sellers",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": ".quick-add__submit",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "quick-add-acik",
+      "not": "İlk kart Quick add modal"
+    }
+  ],
+  "stateFindings": {
+    "open": "Kids Orange Multi Function Watch modal. $150→$120, 400 in stock, estimated delivery, Color Orange/White kare swatch, Watch Type Digital, qty 1, Add To Cart, BUY IT NOW, Offers, View full details. 1440/768 galeri+buy box yan yana; 375 görsel üstte."
+  },
+  "missingStates": [],
+  "interactionNote": "BUY IT NOW / checkout tıklanmadı. Dawn quick-add-modal; tam PDP galeri + form."
+}

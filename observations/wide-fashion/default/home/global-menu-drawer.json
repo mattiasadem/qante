@@ -1,0 +1,82 @@
+{
+  "observationId": "wide-fashion.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "wide-fashion",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://fashion-store-clean-5.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/wide-fashion/default/home/global-menu-drawer.375.png",
+    "evidence/wide-fashion/default/home/global-menu-drawer.768.png",
+    "evidence/wide-fashion/default/home/global-menu-drawer.changed.shop-submenu.375.png",
+    "evidence/wide-fashion/default/home/global-menu-drawer.changed.shop-submenu.768.png",
+    "evidence/wide-fashion/default/home/global-menu-drawer.open.menu-acik.375.png",
+    "evidence/wide-fashion/default/home/global-menu-drawer.open.menu-acik.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Hamburger → Home / Shop (submenu) / Our Story / Contact / Faq’s / Blog + Log in.",
+  "delta": "1440 hamburger Dawn large-up gizli — capture 1440 zero-size atlandı. Shop submenu `details#Details-menu-drawer-menu-item-2`. Account tıklanmadı.",
+  "captureMode": "viewport",
+  "prepareClick": "header-drawer summary.header__icon--menu, #Details-menu-drawer-container > summary",
+  "capture": {
+    "url": "https://fashion-store-clean-5.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:18:37.838Z",
+    "prepareClick": "header-drawer summary.header__icon--menu, #Details-menu-drawer-container > summary"
+  },
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://fashion-store-clean-5.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary",
+      "value": 800,
+      "capture": true,
+      "etiket": "menu-acik",
+      "captureMode": "viewport",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Hamburger. 1440 gizli."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#HeaderDrawer-shop",
+      "value": 700,
+      "capture": true,
+      "etiket": "shop-submenu",
+      "captureMode": "viewport",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Shop summary — yazılı <a> değil."
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 hamburger: Home (gri satır), Shop →, Our Story, Contact Us, Faq’s, Blog. Altta Log in, USD $ | United States, English, Facebook/Pinterest/Instagram. Sayfa arkada.",
+    "changed": "Shop submenu: geri ← Shop + Best Seller / New Arrival / Dress Collection / T-Shirts / Jacket. Koleksiyon sayfasına kaçılmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 hamburger Dawn large-up gizli — open/changed yalnız 375/768. Account/Log in tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ]
+}

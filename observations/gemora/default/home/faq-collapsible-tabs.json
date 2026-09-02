@@ -1,0 +1,81 @@
+{
+  "observationId": "gemora.default.home.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "gemora",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://jewelry-online-shop1.myshopify.com/",
+  "selector": "#shopify-section-template--24653292470590__38d870b7-7beb-4c1c-af20-fd5eae71feb5",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/gemora/default/home/faq-collapsible-tabs.1440.png",
+    "evidence/gemora/default/home/faq-collapsible-tabs.375.png",
+    "evidence/gemora/default/home/faq-collapsible-tabs.768.png",
+    "evidence/gemora/default/home/faq-collapsible-tabs.changed.kargo-acik.1440.png",
+    "evidence/gemora/default/home/faq-collapsible-tabs.changed.kargo-acik.375.png",
+    "evidence/gemora/default/home/faq-collapsible-tabs.changed.kargo-acik.768.png",
+    "evidence/gemora/default/home/faq-collapsible-tabs.initial.faq-kapali.1440.png",
+    "evidence/gemora/default/home/faq-collapsible-tabs.initial.faq-kapali.375.png",
+    "evidence/gemora/default/home/faq-collapsible-tabs.initial.faq-kapali.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "FAQ's. 4 accordion: What Shipping Methods Are Available? · shipping times and costs · payment methods · exchanges, returns and refunds.",
+  "delta": "Home instance. FAQ sayfasında aynı sorular tekrar.",
+  "capture": {
+    "url": "https://jewelry-online-shop1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:35:03.991Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://jewelry-online-shop1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24653292470590__38d870b7-7beb-4c1c-af20-fd5eae71feb5",
+      "capture": true,
+      "etiket": "faq-kapali",
+      "not": "Accordion kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-template--17446585565502__38d870b7-7beb-4c1c-af20-fd5eae71feb5-16733447036e91cecf-0-template--24653292470590__38d870b7-7beb-4c1c-af20-fd5eae71feb5 > summary",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "forceOpen",
+      "selector": "#Details-template--17446585565502__38d870b7-7beb-4c1c-af20-fd5eae71feb5-16733447036e91cecf-0-template--24653292470590__38d870b7-7beb-4c1c-af20-fd5eae71feb5",
+      "capture": true,
+      "etiket": "kargo-acik",
+      "not": "İlk soru What Shipping Methods Are Available?"
+    }
+  ],
+  "stateFindings": {
+    "initial": "FAQ's. 4 satır kapalı, chevron aşağı: Shipping Methods / shipping times / payment methods / exchanges.",
+    "changed": "İlk satır açık, chevron yukarı. Cevap: Male evening subdue heaven Is, seas great creepeth… Diğer üçü kapalı. 375/768/1440 aynı."
+  },
+  "missingStates": [],
+  "interactionNote": "Playwright click summary open bırakmadı; forceOpen details cevap metnini gösterdi. Yeni merchant alanı yok — mevcut faq-collapsible-tabs."
+}

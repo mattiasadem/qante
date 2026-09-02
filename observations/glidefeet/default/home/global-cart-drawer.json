@@ -1,0 +1,82 @@
+{
+  "observationId": "glidefeet.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "glidefeet",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://glidefeet.myshopify.com/products/mens-air-huarache-casual-shoes",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/glidefeet/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/glidefeet/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/glidefeet/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/glidefeet/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/glidefeet/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/glidefeet/default/home/global-cart-drawer.filled.sepete-eklendi.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "#CartDrawer. ATC sonrası YOUR CART + Free Shipping $100 + Huarache $99.99 Black/8. Checkout tıklanmadı.",
+  "delta": "Dawn cart-drawer (notification yok). Shopify.theme.name Glidefeet-v-1-5-0 · schema_name Glidefeet · schema_version 1.5.0 · theme_store_id null · role main · id 170474012955 · shop glidefeet.myshopify.com. Vendor Speedo Themes (third-party, Theme Store official değil). Storefront password 1 (vendor product page).",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://glidefeet.myshopify.com/products/mens-air-huarache-casual-shoes",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--23179412504859__main",
+      "capture": false,
+      "not": "Huarache Black/8 $99.99"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer — satır + $99.99"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus'], #CartDrawer .quantity__button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2, toplam $199.98 beklenir"
+    }
+  ],
+  "stateFindings": {
+    "filled": "Sağ drawer YOUR CART + X. Free Shipping! $100.00 + kamyon bar. Huarache Color Black Size 8 qty 1 · $99.99 + çöp. Estimated total $99.99 USD · CHECK OUT. 1440 sağ ~1/3, PDP karartılı (150 in stock, Size 8, 1 in cart). 375 tam yükseklik aynı satır. Checkout tıklanmadı.",
+    "changed": "Plus: qty 2 · satır $199.98 · Estimated total $199.98 USD. PDP \"(2 in cart)\". Free Shipping bar dolu. Header rozet 2. Checkout tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart UI. Checkout tıklanmadı. Fallback kullanılmadı (probe item_count 1).",
+  "capture": {
+    "url": "https://glidefeet.myshopify.com/products/mens-air-huarache-casual-shoes",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:39:36.819Z"
+  }
+}

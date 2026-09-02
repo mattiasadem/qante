@@ -1,0 +1,77 @@
+{
+  "observationId": "nutronix.default.collection.product-showcase-grid-plp",
+  "schemaId": "product-showcase-grid-plp",
+  "kaynak": "nutronix",
+  "preset": "default",
+  "sayfa": "collection",
+  "url": "https://speedo-nutronix.myshopify.com/collections/best-sellers",
+  "selector": "#shopify-section-template--23257313476902__product-grid",
+  "evidenceSlug": "product-showcase-grid-plp",
+  "evidence": [
+    "evidence/nutronix/default/collection/product-showcase-grid-plp.1440.png",
+    "evidence/nutronix/default/collection/product-showcase-grid-plp.375.png",
+    "evidence/nutronix/default/collection/product-showcase-grid-plp.768.png",
+    "evidence/nutronix/default/collection/product-showcase-grid-plp.changed.brand-fullwell.1440.png",
+    "evidence/nutronix/default/collection/product-showcase-grid-plp.initial.filtre-kapali.1440.png",
+    "evidence/nutronix/default/collection/product-showcase-grid-plp.initial.filtre-kapali.768.png"
+  ],
+  "notlar": "Filters: Brand (FullWell/Garden of Life/HUM/NOW) + ızgara. Wishlist/ATC kart.",
+  "delta": "product-grid. Facet Brand. Sort görünümü interact. Shopify.theme.name Speedo-nutronix-v-1-5-0 · id 170790388006 · schema_name Speedo nutronix · schema_version 1.5.0 · theme_store_id null · role main · shop speedo-nutronix.myshopify.com · walk https://speedo-nutronix.myshopify.com/ · Speedo Themes third-party (not Theme Store) · public demo password 1",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://speedo-nutronix.myshopify.com/collections/best-sellers",
+      "capture": true,
+      "etiket": "filtre-kapali",
+      "not": "8 Products · Brand açık · ızgara"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='Filter-filter.p.vendor-1']",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "Brand FullWell (1)"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "brand-fullwell",
+      "not": "Vendor FullWell — ürün sayısı düşmeli"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440: Filters + Brand açık (FullWell…Thorne) + 8 Products 3 kolon ızgara, Sale rozeti. 768: aynı toolbar + ızgara (interact initial).",
+    "changed": "1440 FullWell: Remove All + Brand: FullWell chip, 1 of 8 Products, tek kart Resveratrol 1000mg Pack Of 2 $29.95→$26.95."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "375/768 masaüstü Brand checkbox gizli (Dawn small-hide / label not visible). Mobil filter drawer bu turda açılmadı."
+    }
+  ],
+  "interactionNote": "Sort ve grid-toggle tıklanmadı. Wishlist leftover.",
+  "capture": {
+    "url": "https://speedo-nutronix.myshopify.com/collections/best-sellers",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T17:35:48.003Z"
+  }
+}

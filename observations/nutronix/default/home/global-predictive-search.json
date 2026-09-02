@@ -1,0 +1,109 @@
+{
+  "observationId": "nutronix.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "nutronix",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://speedo-nutronix.myshopify.com/",
+  "selector": "details-modal.header__search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/nutronix/default/home/global-predictive-search.1440.png",
+    "evidence/nutronix/default/home/global-predictive-search.375.png",
+    "evidence/nutronix/default/home/global-predictive-search.768.png",
+    "evidence/nutronix/default/home/global-predictive-search.initial.search-bos.1440.png",
+    "evidence/nutronix/default/home/global-predictive-search.initial.search-bos.375.png",
+    "evidence/nutronix/default/home/global-predictive-search.initial.search-bos.768.png",
+    "evidence/nutronix/default/home/global-predictive-search.input.quercetin.1440.png",
+    "evidence/nutronix/default/home/global-predictive-search.input.quercetin.375.png",
+    "evidence/nutronix/default/home/global-predictive-search.input.quercetin.768.png"
+  ],
+  "notlar": "details-modal.header__search · input #Search-In-Modal-1. katalogSorgu quercetin.",
+  "delta": "predictive-search var (2). Dawn search modal. Shopify.theme.name Speedo-nutronix-v-1-5-0 · id 170790388006 · schema_name Speedo nutronix · schema_version 1.5.0 · theme_store_id null · role main · shop speedo-nutronix.myshopify.com · walk https://speedo-nutronix.myshopify.com/ · Speedo Themes third-party (not Theme Store) · public demo password 1",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://speedo-nutronix.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "details-modal.header__search summary.header__icon--search",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "details-modal.header__search details",
+      "capture": false,
+      "not": "İlk tık details.open bırakmadı — retry forceOpen"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "search-bos",
+      "not": "Boş search modal — input Search"
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "details-modal.header__search summary.header__icon--search",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "forceOpen",
+      "selector": "details-modal.header__search details",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 400,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal-1",
+      "value": "quercetin",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "quercetin",
+      "not": "PRODUCTS listesi + Search for quercetin 6 results"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Search modal açık, input boş (placeholder Search), sağda büyüteç + X. Arka plan karartılı hero. PRODUCTS listesi yok.",
+    "input": "quercetin → PRODUCTS: Fisetin With Quercetin 650mg, Fisetin With Quercetin Zinc Booster, Gummies ×2, Vertigo Relief ×2. Search for \"quercetin\". 375/1440 aynı liste."
+  },
+  "missingStates": [],
+  "interactionNote": "İlk search-bos karesi kapalı anasayfa — tık details.open yapmadı. Retry: forceOpen details. Newsletter PII, submit yok.",
+  "capture": {
+    "url": "https://speedo-nutronix.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T17:29:46.623Z"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "observationId": "wide-fashion.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "wide-fashion",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://fashion-store-clean-5.myshopify.com/",
+  "selector": "#Search-In-Modal-1",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/wide-fashion/default/home/global-predictive-search.1440.png",
+    "evidence/wide-fashion/default/home/global-predictive-search.375.png",
+    "evidence/wide-fashion/default/home/global-predictive-search.768.png",
+    "evidence/wide-fashion/default/home/global-predictive-search.input.arama-sonucu.1440.png",
+    "evidence/wide-fashion/default/home/global-predictive-search.input.arama-sonucu.375.png",
+    "evidence/wide-fashion/default/home/global-predictive-search.input.arama-sonucu.768.png",
+    "evidence/wide-fashion/default/home/global-predictive-search.open.modal-acik.1440.png",
+    "evidence/wide-fashion/default/home/global-predictive-search.open.modal-acik.375.png",
+    "evidence/wide-fashion/default/home/global-predictive-search.open.modal-acik.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Header büyüteç → Dawn search modal. #Search-In-Modal-1 + predictive-search--header.",
+  "delta": "Kapalı kare 0-size. Yazma interact'te (katalog: dress).",
+  "captureMode": "viewport",
+  "prepareClick": "summary.header__icon--search",
+  "capture": {
+    "url": "https://fashion-store-clean-5.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:17:53.807Z",
+    "prepareClick": "summary.header__icon--search"
+  },
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://fashion-store-clean-5.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "value": 800,
+      "capture": true,
+      "etiket": "modal-acik",
+      "captureMode": "viewport",
+      "not": "Boş search modal"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal-1",
+      "value": "women",
+      "capture": true,
+      "etiket": "arama-sonucu",
+      "captureMode": "viewport",
+      "not": "scan.katalogSorgu women"
+    }
+  ],
+  "stateFindings": {
+    "open": "Büyüteç sonrası boş search modal: placeholder Search, kapat X. Öneri/ürün yok.",
+    "input": "`women` yazılınca SUGGESTIONS: women black / beautiful women / womens 2 piece set. PRODUCTS: Flower design Dress, Fit and Flare Dress, Off The Shoulder Party Dresses (375’te iki ürün). Altta Search for “women” →."
+  },
+  "missingStates": [],
+  "interactionNote": "details-modal.header__search 2 eşleşme; fill/capture #Search-In-Modal-1. katalogSorgu `women` (dress ezber değil). Submit yok.",
+  "interactionStates": [
+    "initial",
+    "input",
+    "open"
+  ]
+}

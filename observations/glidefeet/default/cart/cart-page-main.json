@@ -1,0 +1,110 @@
+{
+  "observationId": "glidefeet.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "glidefeet",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://glidefeet.myshopify.com/cart",
+  "selector": "#shopify-section-template--23179411849499__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/glidefeet/default/cart/cart-page-main.1440.png",
+    "evidence/glidefeet/default/cart/cart-page-main.375.png",
+    "evidence/glidefeet/default/cart/cart-page-main.768.png",
+    "evidence/glidefeet/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/glidefeet/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/glidefeet/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/glidefeet/default/cart/cart-page-main.filled.huarache-qty1.1440.png",
+    "evidence/glidefeet/default/cart/cart-page-main.filled.huarache-qty1.375.png",
+    "evidence/glidefeet/default/cart/cart-page-main.filled.huarache-qty1.768.png",
+    "evidence/glidefeet/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/glidefeet/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/glidefeet/default/cart/cart-page-main.initial.sepet-bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Boş: Your cart is empty · CONTINUE SHOPPING · Have an account? Log in to check out faster. Log in tıklanmadı.",
+  "delta": "Dawn cart-items. Sibling cart-footer h=0 boşken. Dolu hâl interact. Shopify.theme.name Glidefeet-v-1-5-0 · schema_name Glidefeet · schema_version 1.5.0 · theme_store_id null · role main · id 170474012955 · shop glidefeet.myshopify.com. Vendor Speedo Themes (third-party, Theme Store official değil). Storefront password 1 (vendor product page).",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://glidefeet.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://glidefeet.myshopify.com/products/mens-air-huarache-casual-shoes",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--23179412504859__main",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://glidefeet.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "huarache-qty1",
+      "not": "Dolu cart satırı $99.99"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "cart-items button[name='plus'], quantity-input button[name='plus'], button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + CONTINUE SHOPPING + Have an account? Log in… Satır yok. Header cart 0.",
+    "filled": "Your cart. Huarache Color Black Size 8 qty 1 · $99.99. Estimated total $99.99 USD + CHECK OUT. Header rozet 1. Continue shopping.",
+    "changed": "Plus: qty 2 · satır $199.98 · Estimated total $199.98 USD. Header rozet 2. Checkout tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart UI. Checkout/login tıklanmadı. Sibling cart-footer leftover.",
+  "capture": {
+    "url": "https://glidefeet.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:42:53.633Z"
+  }
+}
