@@ -1,0 +1,105 @@
+{
+  "observationId": "zaba.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "zaba",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://speedo-toys-dropship.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/zaba/default/home/global-menu-drawer.375.png",
+    "evidence/zaba/default/home/global-menu-drawer.768.png",
+    "evidence/zaba/default/home/global-menu-drawer.initial.kapali.375.png",
+    "evidence/zaba/default/home/global-menu-drawer.initial.kapali.768.png",
+    "evidence/zaba/default/home/global-menu-drawer.open.menu-acik.375.png",
+    "evidence/zaba/default/home/global-menu-drawer.open.menu-acik.768.png"
+  ],
+  "notlar": "Mobile/tablet hamburger drawer — Shop / Blogs / Explore / Our Story / Faq's / Contact.",
+  "delta": "Shopify.theme.name speedo-toys-dropship-v-1-5-0 · schema_name speedo_toys_dropship · schema_version 1.5.0 · theme_store_id null · role main · id 175126708505 · walk speedo-toys-dropship.myshopify.com · Shopify.shop speedo-toys-dropship.myshopify.com · locale en · country US · currency USD · Speedo Themes third-party ZABA (not Theme Store). Storefront unlock password 1.",
+  "capture": {
+    "url": "https://speedo-toys-dropship.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T21:15:37.056Z"
+  },
+  "captureMode": "viewport",
+  "storefrontPassword": "1",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://speedo-toys-dropship.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "body",
+      "etiket": "kapali",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Drawer kapalı"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 1000,
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ]
+    },
+    {
+      "state": "open",
+      "action": "scrollTo",
+      "selector": "#menu-drawer",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#menu-drawer",
+      "etiket": "menu-acik",
+      "not": "Hamburger drawer açık — nav linkleri"
+    }
+  ],
+  "stateFindings": {
+    "initial": "375/768 drawer kapalı — hamburger görünür.",
+    "open": "Menu drawer açık: Shop / Blogs / Explore / Our Story / Faq's / Contact."
+  },
+  "missingStates": [],
+  "interactionNote": "1440'da hamburger gizli — yalnız 375/768."
+}

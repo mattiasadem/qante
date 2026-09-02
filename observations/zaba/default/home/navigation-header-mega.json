@@ -1,0 +1,107 @@
+{
+  "observationId": "zaba.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "zaba",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://speedo-toys-dropship.myshopify.com/",
+  "selector": "#shopify-section-sections--24054460612889__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/zaba/default/home/navigation-header-mega.1440.png",
+    "evidence/zaba/default/home/navigation-header-mega.375.png",
+    "evidence/zaba/default/home/navigation-header-mega.768.png",
+    "evidence/zaba/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/zaba/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/zaba/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/zaba/default/home/navigation-header-mega.open.explore-acik.1440.png"
+  ],
+  "notlar": "Logo center. Menu: Shop (#simple_product) / Blogs / Our Story / Faq's / Contact + Explore disclosure. Search + Log in + cart. Hamburger <990px.",
+  "delta": "Explore dropdown (not full mega grid): Our Story / Faq's / Contact. No SHOP BY CATEGORY side panel. Shop anchor #simple_product. Shopify.theme.name speedo-toys-dropship-v-1-5-0 · schema_name speedo_toys_dropship · schema_version 1.5.0 · theme_store_id null · role main · id 175126708505 · walk speedo-toys-dropship.myshopify.com · Shopify.shop speedo-toys-dropship.myshopify.com · locale en · country US · currency USD · Speedo Themes third-party ZABA (not Theme Store). Storefront unlock password 1.",
+  "capture": {
+    "url": "https://speedo-toys-dropship.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T21:13:33.420Z"
+  },
+  "captureMode": "viewport",
+  "storefrontPassword": "1",
+  "katalogSorgu": "toyoma",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://speedo-toys-dropship.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Explore disclosure kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-3 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-HeaderMenu-3",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 600,
+      "capture": false,
+      "viewports": [
+        "1440"
+      ]
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#HeaderMenu-MenuList-3",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "explore-acik",
+      "not": "Explore disclosure — Our Story / Faq's / Contact"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Kapalı header: Shop / Blogs / Our Story / Faq's / Contact + Explore caret. Search + Log in + cart.",
+    "open": "1440 Explore disclosure açık: Our Story · Faq's · Contact alt menü."
+  },
+  "missingStates": [],
+  "interactionNote": "Account/Log in tıklanmadı. Mega grid yok — disclosure dropdown."
+}

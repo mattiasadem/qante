@@ -1,0 +1,119 @@
+{
+  "observationId": "zaba.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "zaba",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://speedo-toys-dropship.myshopify.com/cart",
+  "selector": "#shopify-section-template--24054431908121__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/zaba/default/cart/cart-page-main.1440.png",
+    "evidence/zaba/default/cart/cart-page-main.375.png",
+    "evidence/zaba/default/cart/cart-page-main.768.png",
+    "evidence/zaba/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/zaba/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/zaba/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/zaba/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/zaba/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/zaba/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/zaba/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/zaba/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/zaba/default/cart/cart-page-main.initial.sepet-bos.768.png"
+  ],
+  "notlar": "Your cart — empty default; TOYOMA line after ATC; qty stepper.",
+  "delta": "No cart drawer — page only. Shopify.theme.name speedo-toys-dropship-v-1-5-0 · schema_name speedo_toys_dropship · schema_version 1.5.0 · theme_store_id null · role main · id 175126708505 · walk speedo-toys-dropship.myshopify.com · Shopify.shop speedo-toys-dropship.myshopify.com · locale en · country US · currency USD · Speedo Themes third-party ZABA (not Theme Store). Storefront unlock password 1.",
+  "capture": {
+    "url": "https://speedo-toys-dropship.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T21:18:10.996Z"
+  },
+  "captureMode": "section",
+  "storefrontPassword": "1",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://speedo-toys-dropship.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24054431908121__cart-items",
+      "capture": true,
+      "etiket": "sepet-bos",
+      "not": "Your cart is empty"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://speedo-toys-dropship.myshopify.com/products/toyoma-monster-drift-legion-car-4x4",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--24054432399641__main",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://speedo-toys-dropship.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24054431908121__cart-items",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "TOYOMA satırı $50"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], .quantity__button[name='plus'], button[aria-label*='Increase' i]",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty · Continue shopping.",
+    "filled": "TOYOMA MONSTER DRIFT LEGION CAR 4X4 · $50.00 · qty 1.",
+    "changed": "Qty 2 · estimated total $100.00. Checkout tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart cart/add.js fallback kullanıldı. Checkout/login tıklanmadı. Cart drawer yok."
+}
