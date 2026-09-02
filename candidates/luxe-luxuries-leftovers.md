@@ -87,5 +87,7 @@ Karar: onay bekliyor
 | Password | Public `1`. Capture `storefrontPassword` + `scripts/unlock-storefront.mjs`. |
 | Katalog | Saatler; PDP Access Gen 5e MKGO Smartwatch White/Rose gold $180. PLP Best Sellers 6 ürün. |
 | Search | `watch` 36. Predictive `retro`. |
-| Header | 1440 SHOP mega + mega_image_with_text. Hamburger tablet breakpoint. |
+| Header | 1440 SHOP mega + mega_image_with_text. Hamburger tablet breakpoint. dismissAllOverlays hamburger tıkını kırıyor → forceOpen + menu-opening. |
 | Title | Storefront title “… (password: 1)” — vendor demo. |
+| Search hosts | İki #header-search. 375/768 input #Search-In-Modal-1; 1440 #Search-In-Modal. Özet tık açmaz. |
+| Cart drawer | Free Shipping $500 + Express $800 çift eşik — mevcut kargoEsigi; şema dokunulmadı. |

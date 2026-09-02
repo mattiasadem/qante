@@ -26,7 +26,7 @@
     ],
     "mode": "viewport",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-02T15:56:39.857Z",
+    "updatedAt": "2026-09-02T16:17:32.595Z",
     "prepareClick": "header-drawer summary.header__icon--menu"
   },
   "interactionStates": [
@@ -48,22 +48,22 @@
     },
     {
       "state": "open",
-      "action": "click",
-      "selector": "#header-menu",
-      "value": 1600,
+      "action": "forceOpen",
+      "selector": "#Details-menu-drawer-container",
       "viewports": [
         "375",
         "768"
       ],
       "capture": true,
-      "captureMode": "viewport",
+      "captureMode": "section",
+      "captureSelector": "#menu-drawer",
       "etiket": "menu-acik",
-      "not": "Hamburger #header-menu — details.menu-opening. forceOpen menu-opening eklemez."
+      "not": "dismissAllOverlays hamburger tıkını kırıyor; details.open + menu-opening."
     }
   ],
   "stateFindings": {
-    "open": ""
+    "open": "375/768 sol drawer: SHOP (sağ ok) / OUR STORY / FAQ'S / CONTACT / KID'S WATCH / SMART WATCH / SPORT WATCH, Wishlist 0, United States | USD $, English, X/Facebook/Instagram/YouTube. 1440 hamburger yok."
   },
   "missingStates": [],
-  "interactionNote": "Log in tıklanmadı. 1440 hamburger 0px. 1. deneme forceOpen+section homepage verdi (kapalı #menu-drawer visibility:hidden). 2. deneme #header-menu tık + viewport."
+  "interactionNote": "Log in tıklanmadı. 1440 hamburger 0px. dismissAllOverlays hamburger tıkını kırıyor; details.open + menu-opening (forceOpen) açtı. SHOP expander tıklanmadı (kaçış)."
 }

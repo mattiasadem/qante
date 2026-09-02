@@ -45,7 +45,7 @@
 | Into The Gloss | [`intothegloss.md`](./intothegloss.md) | ✅ listicle-holiday-2025 · 9 obs · 27 PNG · 0 yeni şema · Next.js editorial |
 | HexClad | [`hexclad.md`](./hexclad.md) | ✅ listicle-fathers-day · 5 obs · 15 PNG · 0 yeni şema |
 | Allbirds | [`allbirds.md`](./allbirds.md) | 🟡 Mod A — 30 obs · ~90 PNG · partial capture (search blocked) |
-| Luxe Luxuries (Speedo) | [`luxe-luxuries.md`](./luxe-luxuries.md) | 🟡 Mod A — Watchez-online-store 1.5.0 · password `1` · draft |
+| Luxe Luxuries (Speedo) | [`luxe-luxuries.md`](./luxe-luxuries.md) | ✅ Mod A + interact — Watchez-online-store 1.5.0 · password `1` · 43 obs · 0 yeni şema · draft PR |
 | Legal / policy (Kreis recipe) | [`policy-legal.md`](./policy-legal.md) | ✅ page-recipes/policy · 3-col sticky TOC \| content \| sibling nav |
 
 **Interact (discover sonrası derinlik):** [`interact.md`](./interact.md) — kapalı kare yalanı; Stretch + Cocoon/Balance shop-the-look kapandı.

@@ -27,10 +27,11 @@ shop `watchez-online-store.myshopify.com`
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **43** |
+| Evidence | **167** PNG (127 statik 3vp + interact) |
 | Parallel | yalnız `observations/luxe-luxuries/`, `evidence/luxe-luxuries/`, `todo/luxe-luxuries.md`, `candidates/luxe-luxuries-leftovers.md` + Speedo password helper |
 
-**Kapsam satırı (hedef):**  
-`Luxe Luxuries · default · Watchez-online-store V-1.5.0 / schema_name watchez_online_store 1.5.0 · theme_store_id null · shop watchez-online-store.myshopify.com · password 1 · home→PDP Access Gen 5e White/Rose gold→PLP best-sellers→search watch→cart empty/filled→collections→about-us→contact→faqs→news+Rolex post→404 · 43 obs · 0 yeni şema · leftover: candidates/luxe-luxuries-leftovers.md`
+**Kapsam satırı:**  
+`Luxe Luxuries · default · Watchez-online-store V-1.5.0 / schema_name watchez_online_store 1.5.0 · theme_store_id null · shop watchez-online-store.myshopify.com · password 1 · home→PDP Access Gen 5e White/Rose gold→PLP best-sellers→search watch→cart empty/filled→collections→about-us→contact→faqs→news+Rolex post→404 · 43 obs · 0 yeni şema · interact: mega/menu/search/cart/PDP/FAQ/PLP hover/QV · leftover: candidates/luxe-luxuries-leftovers.md`
 
 ---
 
@@ -99,15 +100,15 @@ shop `watchez-online-store.myshopify.com`
 
 | Bileşen | State | Durum |
 |---|---|---|
-| navigation-header-mega | open SHOP mega 1440 | [ ] |
-| global-menu-drawer | open 375/768 | [ ] |
-| global-predictive-search | open + input `retro` | [ ] |
-| global-cart-drawer | filled + qty | [ ] |
-| cart-page-main | filled | [ ] |
-| product-info-main | changed White→Rose gold | [ ] |
-| product-showcase-grid-plp | hover kart | [ ] |
-| faq-collapsible-tabs | changed accordion | [ ] |
-| global-quick-view | open | [ ] |
+| navigation-header-mega | open SHOP mega 1440 | [x] |
+| global-menu-drawer | open 375/768 | [x] |
+| global-predictive-search | open + input `retro` | [x] |
+| global-cart-drawer | filled + qty | [x] |
+| cart-page-main | filled | [x] |
+| product-info-main | changed White→Rose gold | [x] |
+| product-showcase-grid-plp | hover kart | [x] ikinci görsel |
+| faq-collapsible-tabs | changed accordion | [x] |
+| global-quick-view | open | [x] |
 
 ---
 
@@ -120,5 +121,5 @@ shop `watchez-online-store.myshopify.com`
 ## Evidence backlog
 
 - [x] Official 3vp static (`capture-observation.mjs`) — 127 PNG; menu 375/1440 skip
-- [ ] Interact (`capture-interaction.mjs`)
-- [ ] `npm run validate` — 0 error
+- [x] Interact (`capture-interaction.mjs`) — mega / menu / search retro / cart drawer+page / PDP variant / FAQ / PLP hover / QV
+- [x] `npm run validate` — 0 error
