@@ -69,9 +69,17 @@ Karar: onay bekliyor
 ---
 
 ADAY: bicycle-quick-shop-no-quick-view  
-Gerekçe: Featured/PLP kartlarda QUICK SHOP yazısı (6). `#QuickView` / `quick-view` overlay DOM’da yok. Hover interact — overlay yoksa leftover.  
+Gerekçe: Featured hover 1440 ilk kartta siyah QUICK SHOP bar + wishlist/compare ikon görünür. `#QuickView` / `quick-view` overlay DOM’da yok — bar tıklanmadı (dialog üretmez).  
 Örnekler: home `featured_collection_h498CU`  
 Öneri: leftover — quick-view overlay yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: bicycle-you-may-like-after-atc  
+Gerekçe: ATC sonrası cart drawer ile birlikte YOU MAY LIKE öneri listesi (Trek fuel / Yt capra / Woom 5…). 375 drawer içinde accordion; 1440 karede merkez overlay. Ayrı schema yok. Checkout tıklanmadı.  
+Örnekler: `#CartDrawer` + ATC Norco framekit  
+Öneri: leftover — upsell overlay  
 Karar: onay bekliyor
 
 ---

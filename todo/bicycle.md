@@ -14,7 +14,7 @@
 Title: `Bicycle - Best Shopify Bicycle Store – bicycle-online-store-1 (password: 1)`  
 Storefront password (ürün sayfasında yayın): **`1`** — “Please enter password "1" to view demo.” Aynı host `/password`, başka vitrin yok.
 
-**Durum:** Mod A walk + resmi 3vp + interact (pixel-check)  
+**Durum:** Mod A walk + resmi 3vp + interact (pixel-check) — **kapandı**  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -30,7 +30,7 @@ Storefront password (ürün sayfasında yayın): **`1`** — “Please enter pas
 | Parallel | yalnız `observations/bicycle/`, `evidence/bicycle/`, `todo/bicycle.md`, `candidates/bicycle-leftovers.md` + unlock host + zenon dismiss |
 
 **Kapsam satırı:**  
-`Bicycle · default · Bicycle V-1.5.0 / schema_name Bicycle 1.5.0 · theme_store_id null · shop bicycle-online-store-1.myshopify.com · Speedo Themes · password 1 (vendor) · home→PDP norco-sight-a-framekit-29 Color→PLP /collections/all→/collections→search bike→cart empty+filled→about-us→faqs→contact→news+article→404 · 41 obs · 0 yeni şema · leftover: candidates/bicycle-leftovers.md`
+`Bicycle · default · Bicycle V-1.5.0 / schema_name Bicycle 1.5.0 · theme_store_id null · shop bicycle-online-store-1.myshopify.com · Speedo Themes · password 1 (vendor) · home→PDP norco-sight-a-framekit-29 Color Gold→PLP Color Black→/collections→search bike→cart empty+filled+qty→about-us→faqs Q2→contact→news+article→404 · mega/search/menu/cart/PDP/FAQ/tabs/hover/PLP · 41 obs · 178 PNG · 0 yeni şema · leftover: candidates/bicycle-leftovers.md`
 
 ---
 
@@ -39,19 +39,19 @@ Storefront password (ürün sayfasında yayın): **`1`** — “Please enter pas
 | Şablon | Durum | 3vp |
 |---|---|---|
 | Home roster (announcement→footer) | roster | [x] capture |
-| Mega SHOP ALL 1440 | roster | [ ] interact (steps yazıldı) |
-| Predictive search `bike` | roster | [ ] interact (steps yazıldı) |
-| Mobile menu 375 + 768 | roster | [ ] interact (steps yazıldı) |
-| Cart drawer empty + filled + qty | roster | [ ] interact (steps yazıldı) |
-| PDP Color Hibiscus Leaf→Gold | roster | [ ] interact (steps yazıldı) |
-| Featured QUICK SHOP hover | roster | [ ] interact (steps yazıldı) |
-| PLP `/collections/all` + filter | roster | [x] capture · [ ] interact (steps yazıldı) |
+| Mega SHOP ALL 1440 | roster | [x] interact · 6 image card |
+| Predictive search `bike` | roster | [x] interact · PRODUCTS listesi |
+| Mobile menu 375 + 768 | roster | [x] interact · changed yok (düz link) |
+| Cart drawer empty + filled + qty | roster | [x] interact · 1→2 $80→$160 |
+| PDP Color Hibiscus Leaf→Gold | roster | [x] interact · görsel değişti |
+| Featured QUICK SHOP hover | roster | [x] interact · bar var, overlay yok |
+| PLP `/collections/all` + filter | roster | [x] capture + interact Color Black |
 | Collections `/collections` | roster | [x] capture |
 | Search `/search?q=bike` | roster | [x] capture |
-| Cart page empty + filled + qty | roster | [ ] interact (steps yazıldı) |
+| Cart page empty + filled + qty | roster | [x] interact · 1→2 $80→$160 |
 | About `/pages/about-us` | roster | [x] capture |
 | Contact form (submit yok) | roster | [x] capture |
-| FAQ `/pages/faqs` | roster | [x] capture · [ ] interact (steps yazıldı) |
+| FAQ `/pages/faqs` | roster | [x] capture + interact Q2 |
 | News + launching-a-new-collection | roster | [x] capture |
 | 404 `/pages/contact-us` | roster | [x] capture |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
@@ -87,15 +87,15 @@ Storefront password (ürün sayfasında yayın): **`1`** — “Please enter pas
 
 | # | id | sayfa | Screenshot | Not | JSON | Done |
 |---|---|---|---|---|---|---|
-| 1–18 | home + overlays | home | [x] 3vp | [x] | reuse | [ ] interact |
-| 19–24 | product-info + tabs + IWT + related + multi | product-detail | [x] 3vp | [x] | reuse | [ ] interact |
-| 25–26 | banner + grid | collection | [x] 3vp | [x] | reuse | [ ] interact |
+| 1–18 | home + overlays | home | [x] 3vp + interact | [x] | reuse | [x] |
+| 19–24 | product-info + tabs + IWT + related + multi | product-detail | [x] 3vp + Color/tabs | [x] | reuse | [x] |
+| 25–26 | banner + grid | collection | [x] 3vp + Color Black | [x] | reuse | [x] |
 | 27 | collections index | collections | [x] 3vp | [x] | reuse | [x] |
 | 28 | search bike | search | [x] 3vp | [x] | reuse | [x] |
-| 29 | cart | cart | [x] 3vp | [x] | reuse | [ ] interact |
+| 29 | cart | cart | [x] 3vp + filled/qty | [x] | reuse | [x] |
 | 30–31 | overlay + form | contact | [x] 3vp | [x] | reuse | [x] |
 | 32–37 | about blocks | about-brand | [x] 3vp | [x] | reuse | [x] |
-| 38–39 | overlay + FAQ | faq-support | [x] 3vp | [x] | reuse | [ ] interact |
+| 38–39 | overlay + FAQ | faq-support | [x] 3vp + Q2 | [x] | reuse | [x] |
 | 40–41 | news + article | blog | [x] 3vp | [x] | reuse | [x] |
 | 42 | 404 | not-found | [x] 3vp | [x] | reuse | [x] |
 
@@ -110,6 +110,6 @@ Storefront password (ürün sayfasında yayın): **`1`** — “Please enter pas
 ## Evidence backlog
 
 - [x] Official 3vp static (`capture-observation.mjs`) — 122 PNG (menu 1440 zero-size skip)
-- [ ] Interact mega / search / menu / cart / PDP Color / FAQ / featured hover / PLP filter — steps yazıldı, capture sırada
-- [ ] PNG bak → stateFindings
-- [ ] `node scripts/validate-schemas.mjs` — 0 error
+- [x] Interact mega / search / menu / cart / PDP Color / FAQ / featured hover / tabs / PLP filter
+- [x] PNG bak → stateFindings (şema değişmedi)
+- [x] `node scripts/validate-schemas.mjs` — 0 error (69 şema, 13 pre-existing warn)
