@@ -38,20 +38,20 @@ shop `watchez-online-store.myshopify.com`
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home — announcement / offer / header / slideshow / rich / featured / banners / tabs / overlay / IG / footer | roster | [ ] |
-| Cart drawer boş | roster | [ ] |
-| Menu drawer 375+768 | roster | [ ] |
-| Predictive search host | roster | [ ] |
-| PDP `/products/access-gen-5e-mkgo-gray-rubber-smartwatch` | roster | [ ] |
-| PLP `/collections/best-sellers` + quick-add | roster | [ ] |
-| Search `/search?q=watch` | roster | [ ] |
-| Cart `/cart` empty + featured | roster | [ ] |
-| Collections `/collections` | roster | [ ] |
-| About `/pages/about-us` | roster | [ ] |
-| Contact `/pages/contact` (submit yok) | roster | [ ] |
-| FAQs `/pages/faqs` | roster | [ ] |
-| Blog `/blogs/news` + Rolex post | roster | [ ] |
-| 404 | roster | [ ] |
+| Home — announcement / offer / header / slideshow / rich / featured / banners / tabs / overlay / IG / footer | roster | [x] |
+| Cart drawer boş | roster | [x] kapalı kare |
+| Menu drawer 375+768 | roster | [x] 768 only; interact |
+| Predictive search host | roster | [x] kapalı kare |
+| PDP `/products/access-gen-5e-mkgo-gray-rubber-smartwatch` | roster | [x] |
+| PLP `/collections/best-sellers` + quick-add | roster | [x] |
+| Search `/search?q=watch` | roster | [x] |
+| Cart `/cart` empty + featured | roster | [x] |
+| Collections `/collections` | roster | [x] |
+| About `/pages/about-us` | roster | [x] |
+| Contact `/pages/contact` (submit yok) | roster | [x] |
+| FAQs `/pages/faqs` | roster | [x] |
+| Blog `/blogs/news` + Rolex post | roster | [x] |
+| 404 | roster | [x] |
 | Email / account / checkout / newsletter submit | ⛔ PII | — |
 
 ---
@@ -119,6 +119,6 @@ shop `watchez-online-store.myshopify.com`
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
+- [x] Official 3vp static (`capture-observation.mjs`) — 127 PNG; menu 375/1440 skip
 - [ ] Interact (`capture-interaction.mjs`)
 - [ ] `npm run validate` — 0 error
