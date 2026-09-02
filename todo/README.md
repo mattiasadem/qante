@@ -86,6 +86,7 @@
 | Lingerie (Speedo Themes) | [`lingerie.md`](./lingerie.md) | ✅ first inventory — fashion-store-clean-21 · Lingerie 1.5.0 · password `1` · 48 obs · ~187 PNG · 0 yeni şema · interact · menu Shop accordion leftover |
 | Look (Speedo) | [`look.md`](./look.md) | ✅ first inventory + interact — `goggles-online-store` · Look V-1.5.0 · password `1` · 41 obs · 0 yeni şema · mega/cart/search/PDP/FAQ/PLP alındı · hamburger missingStates |
 | Sareeify (Speedo) | [`sareeify.md`](./sareeify.md) | ✅ first inventory — speedo-sarees.myshopify.com · password `1` · 39 obs · 141 PNG · 0 yeni şema · interact |
+| Socks (Speedo · Socks And Fashion) | [`socks.md`](./socks.md) | 🟡 first inventory + interact — official `socks-online-store-1.myshopify.com` · schema_name Socks 1.5.0 · password `1` · 46 obs · 0 yeni şema |
 | Sonix (Speedo) | [`sonix.md`](./sonix.md) | ✅ Mod A + interact — default · sonix-electronics-store · password `1` · 39 obs · 0 yeni şema |
 | Spacecraft (Speedo · home decor) | [`spacecraft.md`](./spacecraft.md) | 🟡 first inventory + interact — `pandora-furniture-3` · Pandora-furniture-3 V-1.5.0 · password `1` · 39 obs · 164 PNG · 0 yeni şema · search/cart/PDP/FAQ alındı; mega/menu/hover/tabs missing |
 | WALLPAPSH (Speedo) | [`wallpapsh.md`](./wallpapsh.md) | ✅ first inventory + interact — official `pandora-wallpaper.myshopify.com` · password `1` · 41 obs · 156 PNG · 0 yeni şema · menu/tabs/search-mobile missingStates |
