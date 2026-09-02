@@ -162,6 +162,19 @@ export async function dismissAllOverlays(page, { rounds = 8 } = {}) {
         el.hidden = true;
       });
 
+      // Speedo / Dawn zenon newsletter overlay (vendor demo password hosts)
+      document
+        .querySelectorAll(
+          "#shopify-section-newsletter-popup, .zenon_popup, .popup_inside, .popup-active"
+        )
+        .forEach((el) => {
+          el.style?.setProperty("display", "none", "important");
+          el.hidden = true;
+          el.removeAttribute("open");
+        });
+      document.body.classList.remove("popup-active");
+      document.documentElement.classList.remove("popup-active");
+
       document.body.style.overflow = "auto";
       document.documentElement.style.overflow = "auto";
     });
