@@ -8,9 +8,82 @@
   "selector": "details-modal.header__search",
   "storefrontPassword": "1",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/spacecraft/default/home/global-predictive-search.375.png",
+    "evidence/spacecraft/default/home/global-predictive-search.768.png",
+    "evidence/spacecraft/default/home/global-predictive-search.1440.png"
+  ],
   "notlar": "Header büyüteç → details-modal#header-search. predictive-search var.",
   "delta": "Shopify.theme.name Pandora-furniture-3 V-1.5.0 · id 170818404632 · schema_name pandora_furniture_3 · schema_version 1.5.0 · theme_store_id null · role main · shop pandora-furniture-3.myshopify.com · Speedo listing slug spacecraft · Dawn header search. Submit /search ayrı. Yeni şema yok.",
   "captureMode": "viewport",
-  "prepareClick": "details-modal.header__search > details > summary, summary.header__icon--search"
+  "prepareClick": "details-modal.header__search > details > summary, summary.header__icon--search",
+  "capture": {
+    "url": "https://pandora-furniture-3.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "viewport",
+    "updatedAt": "2026-09-02T19:32:26.917Z",
+    "prepareClick": "details-modal.header__search > details > summary, summary.header__icon--search"
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-furniture-3.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "details-modal.header__search > details > summary, summary.header__icon--search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Boş search modal"
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "details-modal.header__search > details > summary, summary.header__icon--search",
+      "capture": false,
+      "not": "Modalı tekrar aç"
+    },
+    {
+      "state": "input",
+      "action": "forceOpen",
+      "selector": "details-modal.header__search details",
+      "capture": false,
+      "not": "details open"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "details-modal.header__search input[name='q']",
+      "value": "sofa",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sofa",
+      "not": "katalogSorgu=sofa"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "input": ""
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu=sofa. Submit/PII yok."
 }
