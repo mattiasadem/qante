@@ -7,10 +7,67 @@
   "url": "https://bicycle-online-store-1.myshopify.com/",
   "selector": "#menu-drawer",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/bicycle/default/home/global-menu-drawer.375.png",
+    "evidence/bicycle/default/home/global-menu-drawer.768.png"
+  ],
   "notlar": "#menu-drawer. HOME / SHOP ALL / ABOUT / BLOG / CONTACT + Wishlist / Compare / Log in / locale. header-drawer data-breakpoint=tablet — 1440 hamburger yok.",
   "delta": "1440 drawer kapalı (inline mega). Open 375/768 interact. Shopify.theme.name Bicycle V-1.5.0 · schema_name Bicycle · schema_version 1.5.0 · theme_store_id null · role main · id 130165440647 · shop bicycle-online-store-1.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock).",
   "storefrontPassword": "1",
   "captureMode": "viewport",
-  "prepareClick": "#Details-menu-drawer-container > summary.header__icon--menu"
+  "prepareClick": "#Details-menu-drawer-container > summary.header__icon--menu",
+  "capture": {
+    "url": "https://bicycle-online-store-1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "viewport",
+    "updatedAt": "2026-09-02T18:42:35.155Z",
+    "prepareClick": "#Details-menu-drawer-container > summary.header__icon--menu"
+  },
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://bicycle-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary.header__icon--menu",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "1440 hamburger display:none — yalnız 375/768."
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "SHOP ALL drawer’da düz <a href=/collections/all> — nested expander yok (navExpanders boş)."
+    },
+    {
+      "state": "open",
+      "sebep": "1440 hamburger yok (header-drawer data-breakpoint=tablet). Mega ayrı header observation."
+    }
+  ],
+  "interactionNote": "1440 drawer zero-size. Log in / wishlist tıklanmadı."
 }

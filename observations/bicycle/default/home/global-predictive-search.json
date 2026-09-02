@@ -7,10 +7,66 @@
   "url": "https://bicycle-online-store-1.myshopify.com/",
   "selector": "details:has(#Search-In-Modal)",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/bicycle/default/home/global-predictive-search.375.png",
+    "evidence/bicycle/default/home/global-predictive-search.768.png",
+    "evidence/bicycle/default/home/global-predictive-search.1440.png"
+  ],
   "notlar": "details-modal.header__search. #Search-In-Modal name=q placeholder Search. Submit yok.",
   "delta": "Dawn predictive modal. Öneri listesi interact. Shopify.theme.name Bicycle V-1.5.0 · schema_name Bicycle · schema_version 1.5.0 · theme_store_id null · role main · id 130165440647 · shop bicycle-online-store-1.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock).",
   "storefrontPassword": "1",
   "captureMode": "viewport",
-  "prepareClick": "summary.header__icon--search"
+  "prepareClick": "summary.header__icon--search",
+  "capture": {
+    "url": "https://bicycle-online-store-1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "viewport",
+    "updatedAt": "2026-09-02T18:43:38.566Z",
+    "prepareClick": "summary.header__icon--search"
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://bicycle-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "modal-bos",
+      "not": "Arama modalı boş"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal, .search-modal input[name='q']",
+      "value": "bike",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bike",
+      "not": "katalogSorgu bike"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "katalogSorgu=bike. Submit / hesap yok."
 }

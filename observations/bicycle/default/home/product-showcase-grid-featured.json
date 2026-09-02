@@ -7,8 +7,63 @@
   "url": "https://bicycle-online-store-1.myshopify.com/",
   "selector": "#shopify-section-template--16095886606471__featured_collection_h498CU",
   "evidenceSlug": "product-showcase-grid-featured",
-  "evidence": [],
+  "evidence": [
+    "evidence/bicycle/default/home/product-showcase-grid-featured.375.png",
+    "evidence/bicycle/default/home/product-showcase-grid-featured.768.png",
+    "evidence/bicycle/default/home/product-showcase-grid-featured.1440.png"
+  ],
   "notlar": "Best Sellers. QUICK SHOP kartlarda (6). Norco / Schwinn / Apache… featured-collection. Quick-view overlay DOM’da yok.",
   "delta": "Dawn featured-collection. QUICK SHOP yazısı var; #QuickView yok. Hover interact. Shopify.theme.name Bicycle V-1.5.0 · schema_name Bicycle · schema_version 1.5.0 · theme_store_id null · role main · id 130165440647 · shop bicycle-online-store-1.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock).",
-  "storefrontPassword": "1"
+  "storefrontPassword": "1",
+  "capture": {
+    "url": "https://bicycle-online-store-1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "margin-box+minPad8",
+    "updatedAt": "2026-09-02T18:18:23.804Z"
+  },
+  "interactionStates": [
+    "initial",
+    "hover"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://bicycle-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16095886606471__featured_collection_h498CU",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Best Sellers 1440 4 kart; QUICK SHOP kapalı."
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#Slide-template--16095886606471__featured_collection_h498CU-1 .card, #shopify-section-template--16095886606471__featured_collection_h498CU .grid__item",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "kart-hover",
+      "not": "İlk kart. Probe: Quick shop opacity 0 kaldı — PNG bak."
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Hover kart. Quick-view overlay yok. 375/768 hover beklenmez."
 }

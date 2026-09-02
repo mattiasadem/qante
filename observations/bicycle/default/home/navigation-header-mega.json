@@ -7,8 +7,76 @@
   "url": "https://bicycle-online-store-1.myshopify.com/",
   "selector": "#shopify-section-sections--16095887196295__header",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
+  "evidence": [
+    "evidence/bicycle/default/home/navigation-header-mega.375.png",
+    "evidence/bicycle/default/home/navigation-header-mega.768.png",
+    "evidence/bicycle/default/home/navigation-header-mega.1440.png"
+  ],
   "notlar": "header--middle-center. 1440 inline: HOME · SHOP ALL (details#Details-HeaderMenu-2.mega-menu) · ABOUT · BLOG · CONTACT. Search + cart + account. Wishlist/Compare drawer metninde. Hamburger header-drawer data-breakpoint=tablet — 1440 display:none.",
   "delta": "Mega VAR: details#Details-HeaderMenu-2 summary → MegaMenu-Content-2 (mens/womens/kids/accessories/electric/mtb). Seabikini’den fark: 1440 hamburger yok, inline + mega. Shopify.theme.name Bicycle V-1.5.0 · schema_name Bicycle · schema_version 1.5.0 · theme_store_id null · role main · id 130165440647 · shop bicycle-online-store-1.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock).",
-  "storefrontPassword": "1"
+  "storefrontPassword": "1",
+  "capture": {
+    "url": "https://bicycle-online-store-1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "margin-box+minPad8",
+    "updatedAt": "2026-09-02T18:09:01.679Z"
+  },
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://bicycle-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Mega kapalı header. 375/768 hamburger ayrı global-menu-drawer."
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-2 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "Hover önce; click <a href=/collections/all> sayfaya gider."
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "details#Details-HeaderMenu-2",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mega-shop-all",
+      "not": "Hover details.open bırakmadı — forceOpen. Mega image cards."
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Hover summary yetmedi; forceOpen details#Details-HeaderMenu-2. 375/768 hamburger ayrı drawer."
 }

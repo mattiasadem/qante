@@ -89,3 +89,11 @@ Gerekçe: `header-drawer data-breakpoint="tablet"`. 1440 hamburger display:none;
 Örnekler: `#Details-menu-drawer-container`  
 Öneri: leftover — cihaz kırılımı  
 Karar: onay bekliyor
+
+---
+
+ADAY: bicycle-footer-desktop-scroll-reveal  
+Gerekçe: 1440 `.footer-block` computed opacity **0.01** (scroll-reveal). Resmi `capture-observation` 4 viewport lazy pass footer’a (≈6740px) yetişmiyor; `scrollIntoView` animasyonu tetiklemiyor. 1440 karede kolonlar neredeyse görünmez, yalnız copyright / locale / ödeme. 375/768 accordion footer tam. DOM metni QUICK LINKS / SHOP / SIGN UP FOR 15% OFF / INFORMATION / SUPPORT.  
+Örnekler: `#shopify-section-sections--16095887163527__footer`  
+Öneri: leftover — capture/animasyon, şema değil  
+Karar: onay bekliyor

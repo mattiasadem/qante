@@ -38,22 +38,22 @@ Storefront password (ürün sayfasında yayın): **`1`** — “Please enter pas
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | roster | [ ] capture |
-| Mega SHOP ALL 1440 | roster | [ ] interact |
-| Predictive search `bike` | roster | [ ] interact |
-| Mobile menu 375 + 768 | roster | [ ] interact |
-| Cart drawer empty + filled + qty | roster | [ ] interact |
-| PDP Color Hibiscus Leaf→Gold | roster | [ ] interact |
-| Featured QUICK SHOP hover | roster | [ ] interact |
-| PLP `/collections/all` + filter | roster | [ ] capture / interact |
-| Collections `/collections` | roster | [ ] capture |
-| Search `/search?q=bike` | roster | [ ] capture |
-| Cart page empty + filled + qty | roster | [ ] interact |
-| About `/pages/about-us` | roster | [ ] capture |
-| Contact form (submit yok) | roster | [ ] capture |
-| FAQ `/pages/faqs` | roster | [ ] capture + interact |
-| News + launching-a-new-collection | roster | [ ] capture |
-| 404 `/pages/contact-us` | roster | [ ] capture |
+| Home roster (announcement→footer) | roster | [x] capture |
+| Mega SHOP ALL 1440 | roster | [ ] interact (steps yazıldı) |
+| Predictive search `bike` | roster | [ ] interact (steps yazıldı) |
+| Mobile menu 375 + 768 | roster | [ ] interact (steps yazıldı) |
+| Cart drawer empty + filled + qty | roster | [ ] interact (steps yazıldı) |
+| PDP Color Hibiscus Leaf→Gold | roster | [ ] interact (steps yazıldı) |
+| Featured QUICK SHOP hover | roster | [ ] interact (steps yazıldı) |
+| PLP `/collections/all` + filter | roster | [x] capture · [ ] interact (steps yazıldı) |
+| Collections `/collections` | roster | [x] capture |
+| Search `/search?q=bike` | roster | [x] capture |
+| Cart page empty + filled + qty | roster | [ ] interact (steps yazıldı) |
+| About `/pages/about-us` | roster | [x] capture |
+| Contact form (submit yok) | roster | [x] capture |
+| FAQ `/pages/faqs` | roster | [x] capture · [ ] interact (steps yazıldı) |
+| News + launching-a-new-collection | roster | [x] capture |
+| 404 `/pages/contact-us` | roster | [x] capture |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -87,17 +87,17 @@ Storefront password (ürün sayfasında yayın): **`1`** — “Please enter pas
 
 | # | id | sayfa | Screenshot | Not | JSON | Done |
 |---|---|---|---|---|---|---|
-| 1–18 | home + overlays | home | [ ] | [x] | reuse | [ ] |
-| 19–24 | product-info + tabs + IWT + related + multi | product-detail | [ ] | [x] | reuse | [ ] |
-| 25–26 | banner + grid | collection | [ ] | [x] | reuse | [ ] |
-| 27 | collections index | collections | [ ] | [x] | reuse | [ ] |
-| 28 | search bike | search | [ ] | [x] | reuse | [ ] |
-| 29 | cart | cart | [ ] | [x] | reuse | [ ] |
-| 30–31 | overlay + form | contact | [ ] | [x] | reuse | [ ] |
-| 32–37 | about blocks | about-brand | [ ] | [x] | reuse | [ ] |
-| 38–39 | overlay + FAQ | faq-support | [ ] | [x] | reuse | [ ] |
-| 40–41 | news + article | blog | [ ] | [x] | reuse | [ ] |
-| 42 | 404 | not-found | [ ] | [x] | reuse | [ ] |
+| 1–18 | home + overlays | home | [x] 3vp | [x] | reuse | [ ] interact |
+| 19–24 | product-info + tabs + IWT + related + multi | product-detail | [x] 3vp | [x] | reuse | [ ] interact |
+| 25–26 | banner + grid | collection | [x] 3vp | [x] | reuse | [ ] interact |
+| 27 | collections index | collections | [x] 3vp | [x] | reuse | [x] |
+| 28 | search bike | search | [x] 3vp | [x] | reuse | [x] |
+| 29 | cart | cart | [x] 3vp | [x] | reuse | [ ] interact |
+| 30–31 | overlay + form | contact | [x] 3vp | [x] | reuse | [x] |
+| 32–37 | about blocks | about-brand | [x] 3vp | [x] | reuse | [x] |
+| 38–39 | overlay + FAQ | faq-support | [x] 3vp | [x] | reuse | [ ] interact |
+| 40–41 | news + article | blog | [x] 3vp | [x] | reuse | [x] |
+| 42 | 404 | not-found | [x] 3vp | [x] | reuse | [x] |
 
 ---
 
@@ -109,7 +109,7 @@ Storefront password (ürün sayfasında yayın): **`1`** — “Please enter pas
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact mega / search / menu / cart / PDP Color / FAQ / featured hover / PLP filter
+- [x] Official 3vp static (`capture-observation.mjs`) — 122 PNG (menu 1440 zero-size skip)
+- [ ] Interact mega / search / menu / cart / PDP Color / FAQ / featured hover / PLP filter — steps yazıldı, capture sırada
 - [ ] PNG bak → stateFindings
 - [ ] `node scripts/validate-schemas.mjs` — 0 error
