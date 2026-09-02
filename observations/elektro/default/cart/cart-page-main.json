@@ -8,9 +8,18 @@
   "selector": "#shopify-section-template--17206179758145__cart-items",
   "evidenceSlug": "cart-page-main",
   "evidence": [
+    "evidence/elektro/default/cart/cart-page-main.1440.png",
     "evidence/elektro/default/cart/cart-page-main.375.png",
     "evidence/elektro/default/cart/cart-page-main.768.png",
-    "evidence/elektro/default/cart/cart-page-main.1440.png"
+    "evidence/elektro/default/cart/cart-page-main.changed.adet-2.1440.png",
+    "evidence/elektro/default/cart/cart-page-main.changed.adet-2.375.png",
+    "evidence/elektro/default/cart/cart-page-main.changed.adet-2.768.png",
+    "evidence/elektro/default/cart/cart-page-main.filled.jbl-satir.1440.png",
+    "evidence/elektro/default/cart/cart-page-main.filled.jbl-satir.375.png",
+    "evidence/elektro/default/cart/cart-page-main.filled.jbl-satir.768.png",
+    "evidence/elektro/default/cart/cart-page-main.initial.bos.1440.png",
+    "evidence/elektro/default/cart/cart-page-main.initial.bos.375.png",
+    "evidence/elektro/default/cart/cart-page-main.initial.bos.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Your cart is empty · Continue Shopping · Have an account? Log in. cart-footer boşta 0px.",
@@ -23,7 +32,83 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T17:21:38.840Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:29:54.460Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sonix-electronics-store-2.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17206179758145__cart-items",
+      "capture": true,
+      "etiket": "bos",
+      "not": "Your cart is empty"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://sonix-electronics-store-2.myshopify.com/products/philips-soundbar",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#product-form-template--17206180741185__main button.product-form__submit",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://sonix-electronics-store-2.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17206179758145__cart-items",
+      "capture": true,
+      "etiket": "jbl-satir",
+      "not": "JBL Clip satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], .quantity__button[name='plus']",
+      "capture": true,
+      "etiket": "adet-2",
+      "not": "Adet 1→2"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {},
+  "interactionNote": "Checkout tıklanmadı."
 }

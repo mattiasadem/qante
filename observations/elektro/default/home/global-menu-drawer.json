@@ -8,13 +8,15 @@
   "selector": "#menu-drawer",
   "evidenceSlug": "global-menu-drawer",
   "evidence": [
-    "evidence/elektro/default/home/global-menu-drawer.768.png"
+    "evidence/elektro/default/home/global-menu-drawer.768.png",
+    "evidence/elektro/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/elektro/default/home/global-menu-drawer.open.hamburger.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "header-drawer data-breakpoint=tablet. #Details-menu-drawer-container. 1440'te 0px.",
   "delta": "Masaüstü hamburger yok; 375/768 interact. Shopify.theme.name Elektro-v-1-5-0-latest-updates-new-speed · schema_name Elektro · schema_version 1.5.0 · theme_store_id null · role main · id 136395325505 · shop sonix-electronics-store-2.myshopify.com · Speedo Themes third-party (Theme Store official değil) · public storefront unlock /password 1 (vendor Live Demo).",
   "captureMode": "viewport",
-  "prepareClick": "summary.header__icon--menu",
+  "prepareClick": "#Details-menu-drawer-container > summary.header__icon--menu",
   "capture": {
     "url": "https://sonix-electronics-store-2.myshopify.com/",
     "viewports": [
@@ -23,8 +25,71 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T17:38:35.675Z",
-    "prepareClick": "summary.header__icon--menu"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:22:23.828Z",
+    "prepareClick": "#Details-menu-drawer-container > summary.header__icon--menu"
+  },
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://sonix-electronics-store-2.myshopify.com/",
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ]
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ]
+    },
+    {
+      "state": "open",
+      "action": "scrollTo",
+      "selector": "#Details-menu-drawer-container",
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Hamburger ekranda kalsın"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary.header__icon--menu",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false,
+      "not": "Tema JS menu-opening ekler — forceOpen yetmez"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 900,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Açık drawer: Shop/Best Sellers/Themes/Collections/Shop By"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {},
+  "interactionNote": "1440'te #menu-drawer 0px. Yazılı Shop <a> koleksiyona gider — tıklanmadı."
 }

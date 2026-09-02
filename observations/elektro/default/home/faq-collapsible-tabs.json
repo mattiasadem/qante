@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--17206180151361__collapsible_content_4fhKMf",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/elektro/default/home/faq-collapsible-tabs.1440.png",
     "evidence/elektro/default/home/faq-collapsible-tabs.375.png",
     "evidence/elektro/default/home/faq-collapsible-tabs.768.png",
-    "evidence/elektro/default/home/faq-collapsible-tabs.1440.png"
+    "evidence/elektro/default/home/faq-collapsible-tabs.changed.soru-acik.1440.png",
+    "evidence/elektro/default/home/faq-collapsible-tabs.changed.soru-acik.375.png",
+    "evidence/elektro/default/home/faq-collapsible-tabs.changed.soru-acik.768.png",
+    "evidence/elektro/default/home/faq-collapsible-tabs.initial.kapali.1440.png",
+    "evidence/elektro/default/home/faq-collapsible-tabs.initial.kapali.375.png",
+    "evidence/elektro/default/home/faq-collapsible-tabs.initial.kapali.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Frequently Asked Questions — hoparlör warranty / Bluetooth. collapsible_content.",
@@ -23,7 +29,44 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T17:34:34.980Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:23:19.279Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sonix-electronics-store-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17206180151361__collapsible_content_4fhKMf",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "Dört soru kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-collapsible_row_mi9tGp-template--17206180151361__collapsible_content_4fhKMf > summary",
+      "capture": true,
+      "etiket": "soru-acik",
+      "not": "İlk soru: What distinguishes your speakers…"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {},
+  "interactionNote": "openFirst yok — hepsi kapalı. allowMultipleOpen yoklandı tek tık."
 }

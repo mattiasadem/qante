@@ -8,9 +8,13 @@
   "selector": "#shopify-section-template--17206180151361__0617c2f2-69ec-4df8-a506-b2616d4e1db4",
   "evidenceSlug": "product-showcase-grid-featured",
   "evidence": [
+    "evidence/elektro/default/home/product-showcase-grid-featured.1440.png",
     "evidence/elektro/default/home/product-showcase-grid-featured.375.png",
     "evidence/elektro/default/home/product-showcase-grid-featured.768.png",
-    "evidence/elektro/default/home/product-showcase-grid-featured.1440.png"
+    "evidence/elektro/default/home/product-showcase-grid-featured.hover.hover-quick-add.1440.png",
+    "evidence/elektro/default/home/product-showcase-grid-featured.initial.ilk-hal.1440.png",
+    "evidence/elektro/default/home/product-showcase-grid-featured.initial.ilk-hal.375.png",
+    "evidence/elektro/default/home/product-showcase-grid-featured.initial.ilk-hal.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "featured-product-section Best Selling: Onix 43\" TV $530, JBL Clip $399→$310, Nvidia Shield, Lian Li, Boss projector.",
@@ -23,7 +27,47 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T17:48:06.996Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:24:10.102Z"
+  },
+  "interactionStates": [
+    "initial",
+    "hover"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sonix-electronics-store-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17206180151361__0617c2f2-69ec-4df8-a506-b2616d4e1db4",
+      "capture": true,
+      "etiket": "ilk-hal"
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#shopify-section-template--17206180151361__0617c2f2-69ec-4df8-a506-b2616d4e1db4 .card-wrapper.product-card-wrapper",
+      "value": 1800,
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "hover-quick-add",
+      "not": "Onix kartı — Add To Cart + wishlist/compare"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {},
+  "interactionNote": "Hover 1440: quick-add yazısı. 2. görsel değişimi yoklandı."
 }

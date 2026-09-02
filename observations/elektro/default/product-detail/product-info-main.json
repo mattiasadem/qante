@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--17206180741185__main",
   "evidenceSlug": "product-info-main",
   "evidence": [
+    "evidence/elektro/default/product-detail/product-info-main.1440.png",
     "evidence/elektro/default/product-detail/product-info-main.375.png",
     "evidence/elektro/default/product-detail/product-info-main.768.png",
-    "evidence/elektro/default/product-detail/product-info-main.1440.png"
+    "evidence/elektro/default/product-detail/product-info-main.changed.color-black.1440.png",
+    "evidence/elektro/default/product-detail/product-info-main.changed.color-black.375.png",
+    "evidence/elektro/default/product-detail/product-info-main.changed.color-black.768.png",
+    "evidence/elektro/default/product-detail/product-info-main.initial.grayish-blue.1440.png",
+    "evidence/elektro/default/product-detail/product-info-main.initial.grayish-blue.375.png",
+    "evidence/elektro/default/product-detail/product-info-main.initial.grayish-blue.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Jbl Clip Portable Wireless Bluetooth Speaker. Color: Grayish Blue / Black / White / Gray. Qty stepper + ATC. Handle philips-soundbar.",
@@ -23,7 +29,44 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T18:01:54.408Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:25:24.223Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sonix-electronics-store-2.myshopify.com/products/philips-soundbar",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17206180741185__main",
+      "capture": true,
+      "etiket": "grayish-blue",
+      "not": "Color Grayish Blue default"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for=\"template--17206180741185__main-1-1\"]",
+      "capture": true,
+      "etiket": "color-black",
+      "not": "Color → Black"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {},
+  "interactionNote": "Buy it now tıklanmadı. Handle philips-soundbar = JBL Clip."
 }

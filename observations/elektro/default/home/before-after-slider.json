@@ -25,5 +25,44 @@
     "mode": "section",
     "method": "margin-box+minPad8",
     "updatedAt": "2026-09-02T17:30:33.944Z"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sonix-electronics-store-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17206180151361__before_after_G7rNQK",
+      "capture": true,
+      "etiket": "orta",
+      "not": "Ayırıcı ~%50 — boyunluk sol / case sağ"
+    },
+    {
+      "state": "changed",
+      "action": "drag",
+      "selector": "#shopify-section-template--17206180151361__before_after_G7rNQK .before-after-image--divider",
+      "dragContainer": "#shopify-section-template--17206180151361__before_after_G7rNQK",
+      "value": "pct:80",
+      "capture": true,
+      "etiket": "after-genis",
+      "not": "Tutamacı sağa — after (earbud case) genişler"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {},
+  "interactionNote": "Divider 4px. İlk kare ~%50."
 }

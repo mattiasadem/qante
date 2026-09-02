@@ -27,5 +27,82 @@
     "method": "viewport",
     "updatedAt": "2026-09-02T17:40:03.717Z",
     "prepareClick": "summary.header__icon--search"
-  }
+  },
+  "interactionStates": [
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "input",
+      "action": "goto",
+      "value": "https://sonix-electronics-store-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "#Search-In-Template",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "Masaüstü inline arama"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Template",
+      "value": "speaker",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "katalogSorgu speaker"
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 600,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "speaker",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "Modal fill speaker"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {},
+  "interactionNote": "1440 #Search-In-Template görünür; 375/768 #Search-In-Modal. Submit yok."
 }
