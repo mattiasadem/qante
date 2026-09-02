@@ -15,7 +15,7 @@ Sayfa başlığı: **Beautifly - Beauty and Cosmetics Theme – Women Beauty 6 (
 
 **Password:** Speedo ürün sayfası “Please enter password `1` to view demo.” Aynı host `/password` — public storefront-unlock. Başka host yok.
 
-**Durum:** 🟡 Mod A observations yazıldı · 3vp capture + interact sırada  
+**Durum:** 🟡 Mod A 3vp static bitti · interact sırada  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -40,21 +40,21 @@ Sayfa başlığı: **Beautifly - Beauty and Cosmetics Theme – Women Beauty 6 (
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | [x] obs | [ ] capture |
+| Home roster (announcement→footer) | [x] obs | [x] capture |
 | Shop All mega 1440 | [ ] interact | [ ] |
 | Predictive search `cream` | [ ] interact | [ ] |
 | Mobile menu 375+768 | [ ] interact | [ ] |
 | Cart drawer empty + filled + qty | [ ] interact | [ ] |
 | PDP Perfume Size 50→100ml | [ ] interact | [ ] |
-| PLP `/collections/makeup` | [x] obs | [ ] capture |
-| Collections `/collections` | [x] obs | [ ] capture |
-| Search `/search?q=cream` | [x] obs | [ ] capture |
+| PLP `/collections/makeup` | [x] obs | [x] capture |
+| Collections `/collections` | [x] obs | [x] capture |
+| Search `/search?q=cream` | [x] obs | [x] capture |
 | Cart `/cart` empty + filled | [ ] interact | [ ] |
-| About `/pages/about-us` | [x] obs | [ ] capture |
-| Contact `/pages/contact` (submit yok) | [x] obs | [ ] capture |
-| FAQ `/pages/faqs` | [x] obs | [ ] interact |
-| Blog `/blogs/news` + makeup post | [x] obs | [ ] capture |
-| 404 | [x] obs | [ ] capture |
+| About `/pages/about-us` | [x] obs | [x] capture |
+| Contact `/pages/contact` (submit yok) | [x] obs | [x] capture |
+| FAQ `/pages/faqs` | [x] obs | [x] static · [ ] interact |
+| Blog `/blogs/news` + makeup post | [x] obs | [x] capture |
+| 404 | [x] obs | [x] capture |
 | Email / account / checkout / newsletter submit | ⛔ PII | — |
 
 ---
@@ -115,7 +115,7 @@ Aynı tip = şemaya dokunma, observation + delta. Yeni şema yok.
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
+- [x] Official 3vp static (`capture-observation.mjs`) — 119 PNG; menu 768-only; search 1440-only; cart/menu open kaçtı
 - [ ] Interact mega / search / menu / cart / PDP size / FAQ / PLP hover
 - [ ] PNG bak → stateFindings
 - [ ] `node scripts/validate-schemas.mjs` — şema dokunulmadı
