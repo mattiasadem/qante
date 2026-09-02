@@ -15,11 +15,16 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { dismissAllOverlays } from "./dismiss-overlays.mjs";
+import {
+  ensureStorefrontUnlocked,
+  storefrontPasswordFor,
+} from "./unlock-storefront.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DEFAULT_URLS = {
   hyper: "https://hyper-theme-demo.myshopify.com/",
   impulse: "https://impulse-theme-fashion.myshopify.com/",
+  plantrex: "https://pandora-flower.myshopify.com/",
 };
 
 function parseArgs(argv) {
@@ -49,8 +54,27 @@ const browser = await chromium.launch({ headless: true });
 const page = await browser.newPage({ viewport: { width: VP[0], height: VP[1] } });
 
 try {
+  if (storefrontPasswordFor(obs)) {
+    await ensureStorefrontUnlocked(page, {
+      url,
+      kaynak: obs.kaynak,
+      password: storefrontPasswordFor(obs),
+    });
+  }
   await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
   await page.waitForTimeout(3000);
+  if (
+    storefrontPasswordFor(obs) &&
+    /\/password(?:\/|$|\?)/.test(new URL(page.url()).pathname)
+  ) {
+    await ensureStorefrontUnlocked(page, {
+      url,
+      kaynak: obs.kaynak,
+      password: storefrontPasswordFor(obs),
+    });
+    await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
+    await page.waitForTimeout(2000);
+  }
   await dismissAllOverlays(page);
   const rootLoc = page.locator(selector).first();
   await rootLoc.waitFor({ state: "attached", timeout: 12000 }).catch(() => {});

@@ -31,6 +31,8 @@ export async function dismissAllOverlays(page, { rounds = 8 } = {}) {
       'button[aria-label*="close" i]',
       '[aria-label*="Dismiss" i]',
       ".popup-close",
+      ".close_popup",
+      ".newsletter-popup .close_popup",
       ".modal__close",
       ".modal-close",
       "[data-popup-close]",

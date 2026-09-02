@@ -21,6 +21,10 @@ import {
   assertCleanForScreenshot,
 } from "./dismiss-overlays.mjs";
 import { screenshotSectionWithPadding } from "./screenshot-section.mjs";
+import {
+  ensureStorefrontUnlocked,
+  storefrontPasswordFor,
+} from "./unlock-storefront.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const qanteRoot = path.resolve(__dirname, "..");
@@ -29,6 +33,7 @@ const DEFAULT_URLS = {
   hyper: "https://hyper-theme-demo.myshopify.com/",
   impulse: "https://impulse-theme-fashion.myshopify.com/",
   ridge: "https://ridge.com/",
+  plantrex: "https://pandora-flower.myshopify.com/",
 };
 
 const viewports = JSON.parse(
@@ -115,6 +120,21 @@ try {
       });
     }
 
+    if (storefrontPasswordFor(obs)) {
+      const unlocked = await ensureStorefrontUnlocked(page, {
+        url,
+        kaynak: obs.kaynak,
+        password: storefrontPasswordFor(obs),
+      });
+      if (!unlocked) {
+        const lockedUrl = page.url();
+        await page.close();
+        throw new Error(
+          `Storefront password unlock failed (${vp.id}): still on ${lockedUrl}`
+        );
+      }
+    }
+
     const warmupUrl = obs.warmupUrl || obs.capture?.warmupUrl || null;
     if (warmupUrl) {
       await page.goto(warmupUrl, { waitUntil: "domcontentloaded", timeout: 90000 });
@@ -137,6 +157,23 @@ try {
     }
 
     // Mobil/tablet redirect veya overlay click ile sayfa kaydıysa home'a geri al
+    if (
+      storefrontPasswordFor(obs) &&
+      /\/password(?:\/|$|\?)/.test(new URL(page.url()).pathname)
+    ) {
+      const unlocked = await ensureStorefrontUnlocked(page, {
+        url,
+        kaynak: obs.kaynak,
+        password: storefrontPasswordFor(obs),
+      });
+      if (!unlocked) {
+        await page.close();
+        throw new Error(`Storefront still locked after goto (${vp.id})`);
+      }
+      await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
+      await page.waitForTimeout(2000);
+    }
+
     const landed = new URL(page.url());
     if (
       landed.origin === target.origin &&

@@ -41,6 +41,10 @@ import {
   assertCleanForScreenshot,
 } from "./dismiss-overlays.mjs";
 import { screenshotSectionWithPadding } from "./screenshot-section.mjs";
+import {
+  ensureStorefrontUnlocked,
+  storefrontPasswordFor,
+} from "./unlock-storefront.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const qanteRoot = path.resolve(__dirname, "..");
@@ -48,6 +52,7 @@ const qanteRoot = path.resolve(__dirname, "..");
 const DEFAULT_URLS = {
   hyper: "https://hyper-theme-demo.myshopify.com/",
   impulse: "https://impulse-theme-fashion.myshopify.com/",
+  plantrex: "https://pandora-flower.myshopify.com/",
 };
 
 const STATES = ["initial", "hover", "input", "open", "filled", "changed"];
@@ -181,8 +186,28 @@ function iframeHostSelector(selector) {
 
 async function settle(page, url) {
   const target = new URL(url);
+  if (storefrontPasswordFor(obs)) {
+    const unlocked = await ensureStorefrontUnlocked(page, {
+      url,
+      kaynak: obs.kaynak,
+      password: storefrontPasswordFor(obs),
+    });
+    if (!unlocked) throw new Error(`Storefront password unlock failed: ${page.url()}`);
+  }
   await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
   await page.waitForTimeout(3500);
+  if (
+    storefrontPasswordFor(obs) &&
+    /\/password(?:\/|$|\?)/.test(new URL(page.url()).pathname)
+  ) {
+    await ensureStorefrontUnlocked(page, {
+      url,
+      kaynak: obs.kaynak,
+      password: storefrontPasswordFor(obs),
+    });
+    await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
+    await page.waitForTimeout(2000);
+  }
 
   const landed = new URL(page.url());
   if (
