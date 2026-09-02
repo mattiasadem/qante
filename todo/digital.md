@@ -26,11 +26,11 @@ shop `digital-gallery-shop-2.myshopify.com` · locale `en` · country `US` · cu
 | Evidence kökü | `evidence/digital/default/` |
 | Capture | `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` + `unlock-storefront.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
-| Observation | **40** |
+| Observation | **39** |
 | Parallel | yalnız `observations/digital/`, `evidence/digital/`, `todo/digital.md`, `candidates/digital-leftovers.md` + unlock host |
 
 **Kapsam satırı:**  
-`Digital · default · digital-v-1-5-0-latest-updates-new / schema_name Digital 1.5.0 · theme_store_id null · shop digital-gallery-shop-2.myshopify.com · password 1 · home→PDP health-wellness→PLP /collections/all→collections→search digital→cart→contact/faq→news+post→our-story→404 · 40 obs · 0 yeni şema · leftover: candidates/digital-leftovers.md`
+`Digital · default · digital-v-1-5-0-latest-updates-new / schema_name Digital 1.5.0 · theme_store_id null · shop digital-gallery-shop-2.myshopify.com · password 1 · home→PDP health-wellness→PLP /collections/all→collections→search digital→cart→contact/faq→news+post→our-story→404 · 39 obs · 113 PNG · 0 yeni şema · leftover: candidates/digital-leftovers.md`
 
 ---
 
@@ -38,21 +38,21 @@ shop `digital-gallery-shop-2.myshopify.com` · locale `en` · country `US` · cu
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | [x] obs | [ ] static |
+| Home roster (announcement→footer) | [x] obs | [x] static |
 | Header SHOP mega 1440 | [ ] interact | [ ] |
 | Predictive search `digital` | [ ] interact | [ ] |
 | Mobile menu 375 + 768 | [ ] interact | [ ] |
 | Cart drawer empty + filled + qty | [ ] interact | [ ] |
-| PDP Health And Wellness (varyant yok) | [x] obs | [ ] + tabs |
-| PLP `/collections/all` | [x] obs | [ ] + hover/filter |
-| Collections `/collections` | [x] obs | [ ] |
-| Search `/search?q=digital` | [x] obs | [ ] |
-| Cart `/cart` empty + filled | [x] obs empty | [ ] |
-| Contact `/pages/contact` (submit yok) | [x] obs | [ ] |
-| FAQ `/pages/faq` | [x] obs | [ ] accordion |
-| News + membership post | [x] obs | [ ] |
-| Our Story `/pages/our-story` | [x] obs | [ ] |
-| 404 | [x] obs | [ ] |
+| PDP Health And Wellness (varyant yok) | [x] obs | [x] static |
+| PLP `/collections/all` | [x] obs | [x] static |
+| Collections `/collections` | [x] obs | [x] |
+| Search `/search?q=digital` | [x] obs | [x] |
+| Cart `/cart` empty + filled | [x] obs empty | [x] empty |
+| Contact `/pages/contact` (submit yok) | [x] obs | [x] |
+| FAQ `/pages/faq` | [x] obs | [x] static |
+| News + membership post | [x] obs | [x] |
+| Our Story `/pages/our-story` | [x] obs | [x] |
+| 404 | [x] obs | [x] |
 | About/contact layout 1–4 / wishlist / compare | leftover | — |
 | Email / account / checkout / newsletter submit | ⛔ PII | — |
 
@@ -65,7 +65,7 @@ shop `digital-gallery-shop-2.myshopify.com` · locale `en` · country `US` · cu
 | 1 | `announcement_bar_fHNTbB` | `promo-announcement-bar` | reuse |
 | 2 | `header` | `navigation-header-mega` | reuse · SHOP/THEMES mega |
 | 3 | `3b7cb796…` | `hero-slideshow` | reuse |
-| 4 | `collection_slider_yqTHJd` | `collection-nav-slider` | reuse |
+| 4 | `collection_slider_yqTHJd` | `collection-nav-icon-buttons` | reuse · ikon daire |
 | 5 | `shopable_videos_LBBUfC` | `media-shop-the-feed` | reuse |
 | 6 | `featured_collection_aaAnaN` | `product-showcase-grid-featured` | reuse |
 | 7 | `deal_image_banner_ca9Mjy` | `promo-banner-countdown` | reuse |
@@ -92,7 +92,7 @@ shop `digital-gallery-shop-2.myshopify.com` · locale `en` · country `US` · cu
 
 ## Evidence backlog
 
-- [ ] Official 3vp static
+- [x] Official 3vp static — 113 PNG (quick-view fail leftover)
 - [ ] Interact header / search / menu / cart / featured / FAQ / PDP tabs / PLP
 - [ ] PDP variant — **yok** (products.json hepsi Default Title)
 - [ ] `node scripts/validate-schemas.mjs` — 0 error

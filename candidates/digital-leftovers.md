@@ -119,6 +119,14 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: digital-quick-view-host  
+Gerekçe: PLP probe `quick:true` (modal-opener / quick-add). Statik capture `quick-add-modal, [id*='quick-view']` 375'te eşleşmedi. Observation silindi.  
+Örnekler: https://digital-gallery-shop-2.myshopify.com/collections/all  
+Öneri: leftover — overlay selector yok  
+Karar: onay bekliyor
+
+---
+
 ADAY: digital-articles-json-404  
 Gerekçe: `/blogs/news/articles.json` 404. HTML `/blogs/news` + article URL’leri var.  
 Öneri: leftover — endpoint  
