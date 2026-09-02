@@ -37,6 +37,7 @@
 | Brooklinen | [`brooklinen.md`](./brooklinen.md) | ✅ Mod A — 38 obs · 114 PNG · 0 yeni şema |
 | Rare Beauty | [`rarebeauty.md`](./rarebeauty.md) | ✅ Mod A — 27 obs · 80 PNG · 0 yeni şema |
 | Vuori | [`vuori.md`](./vuori.md) | ✅ Mod A — Next.js headless Shopify · 27 obs · 81 PNG · cart sayfa (drawer yok) |
+| Vedzila (Speedo) | [`vedzila.md`](./vedzila.md) | 🟡 first inventory — vedzila-organic.myshopify.com · password `1` · 45 obs · 0 yeni şema |
 | Casper | [`casper.md`](./casper.md) | ✅ Mod A — 39 obs · 117 PNG · listicle-advertorial · 0 yeni şema |
 | Away | [`away.md`](./away.md) | ✅ default — awaytravel.com · 30 obs · 89 PNG · listicle-advertorial · 0 yeni şema |
 | Caraway | [`caraway.md`](./caraway.md) | ✅ listicle-advertorial — best-kitchen-gifts · 4 obs · 12 PNG · 0 yeni şema |
