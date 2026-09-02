@@ -12,6 +12,7 @@
 
 export const PUBLIC_DEMO_PASSWORDS = {
   "adlwin-store.myshopify.com": "1",
+  "coffee-prime-2.myshopify.com": "1",
   "fashion-store-clean-11.myshopify.com": "1",
   "fashion-store-clean-20.myshopify.com": "1",
   "hubble-nutrition.myshopify.com": "1",
