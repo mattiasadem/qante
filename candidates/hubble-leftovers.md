@@ -40,6 +40,14 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: hubble-hidden-search  
+Gerekçe: `details-modal.header__search` class=`hidden`. `summary.header__icon--search` DOM’da ama görünür değil (375/768/1440). Statik 3vp zero-size; interact click/fill fail. `/search?q=chai` sayfası `search-results` olarak alındı.  
+Örnekler: https://hubble-nutrition.myshopify.com/  
+Öneri: leftover — gizlenmiş Dawn search  
+Karar: onay bekliyor
+
+---
+
 ADAY: hubble-account-checkout  
 Gerekçe: Header Log in `/account/login`. Checkout / newsletter Submit. PII / ödeme.  
 Örnekler: https://hubble-nutrition.myshopify.com/account/login  

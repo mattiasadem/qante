@@ -7,8 +7,69 @@
   "url": "https://hubble-nutrition.myshopify.com/cart",
   "selector": "#shopify-section-template--21797543084340__cart-items",
   "evidenceSlug": "cart-page-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/hubble/default/cart/cart-page-main.1440.png",
+    "evidence/hubble/default/cart/cart-page-main.375.png",
+    "evidence/hubble/default/cart/cart-page-main.768.png",
+    "evidence/hubble/default/cart/cart-page-main.filled.chai-satir.1440.png",
+    "evidence/hubble/default/cart/cart-page-main.filled.chai-satir.375.png",
+    "evidence/hubble/default/cart/cart-page-main.filled.chai-satir.768.png",
+    "evidence/hubble/default/cart/cart-page-main.initial.bos.1440.png",
+    "evidence/hubble/default/cart/cart-page-main.initial.bos.375.png",
+    "evidence/hubble/default/cart/cart-page-main.initial.bos.768.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "Boş sepet: Your cart is empty + Continue shopping + Have an account?",
-  "delta": "cart-footer ayrı section (boş/0-size) leftover. Dolu hâl interact."
+  "delta": "cart-footer ayrı section (boş/0-size) leftover. Dolu hâl interact.",
+  "capture": {
+    "url": "https://hubble-nutrition.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:19:52.229Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hubble-nutrition.myshopify.com/cart",
+      "capture": true,
+      "etiket": "bos",
+      "not": "Your cart is empty"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://hubble-nutrition.myshopify.com/products/hubble-nutrition-mushroom-chai",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'].product-form__submit",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://hubble-nutrition.myshopify.com/cart",
+      "capture": true,
+      "etiket": "chai-satir",
+      "not": "Dolu sepet sayfası"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + Continue shopping + Have an account?",
+    "filled": "Satır: Mushroom Chai $25 · Size: 30 Servings · adet 1 · TOTAL $25. Çöp ikonu. Checkout bu kırpımda altta."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı."
 }

@@ -7,10 +7,97 @@
   "url": "https://hubble-nutrition.myshopify.com/",
   "selector": "#CartDrawer",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/hubble/default/home/global-cart-drawer.1440.png",
+    "evidence/hubble/default/home/global-cart-drawer.375.png",
+    "evidence/hubble/default/home/global-cart-drawer.768.png",
+    "evidence/hubble/default/home/global-cart-drawer.changed.adet-2.1440.png",
+    "evidence/hubble/default/home/global-cart-drawer.changed.adet-2.375.png",
+    "evidence/hubble/default/home/global-cart-drawer.changed.adet-2.768.png",
+    "evidence/hubble/default/home/global-cart-drawer.filled.chai-eklendi.1440.png",
+    "evidence/hubble/default/home/global-cart-drawer.filled.chai-eklendi.375.png",
+    "evidence/hubble/default/home/global-cart-drawer.filled.chai-eklendi.768.png",
+    "evidence/hubble/default/home/global-cart-drawer.initial.bos.1440.png",
+    "evidence/hubble/default/home/global-cart-drawer.initial.bos.375.png",
+    "evidence/hubble/default/home/global-cart-drawer.initial.bos.768.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "Boş cart-drawer. Your cart is empty + Continue shopping + Free Shipping $100 / Express $150.",
   "delta": "Dawn cart-drawer (notification değil). Checkout tıklanmadı.",
   "captureMode": "viewport",
-  "prepareClick": "a.header__icon--cart"
+  "prepareClick": "a.header__icon--cart",
+  "capture": {
+    "url": "https://hubble-nutrition.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:18:00.821Z",
+    "prepareClick": "a.header__icon--cart"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hubble-nutrition.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.header__icon--cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bos",
+      "not": "Boş drawer + kargo eşikleri"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://hubble-nutrition.myshopify.com/products/hubble-nutrition-mushroom-chai",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'].product-form__submit",
+      "capture": false,
+      "not": "PDP ATC — drawer açılır"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#CartDrawer",
+      "etiket": "chai-eklendi",
+      "not": "Dolu drawer: Mushroom Chai 30 Servings $25"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#CartDrawer",
+      "etiket": "adet-2",
+      "not": "Adet +1 → toplam güncellenir"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boş drawer: Your cart is empty + Continue shopping + Log in. Free Shipping $100 / Express $150 eşik çubuğu.",
+    "filled": "Hubble Nutrition Mushroom Chai · Size: 30 Servings · $25 · adet 1. Estimated total $25.00 USD. Check out. Kargo çubuğu yeşil.",
+    "changed": "Adet 2 · satır $50.00 · Estimated total $50.00 USD. Aynı kargo eşikleri."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC UI (button[name=add].product-form__submit). Checkout tıklanmadı."
 }

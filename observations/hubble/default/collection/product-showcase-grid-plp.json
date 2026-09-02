@@ -7,8 +7,62 @@
   "url": "https://hubble-nutrition.myshopify.com/collections/all",
   "selector": "#shopify-section-template--21797543117108__product-grid",
   "evidenceSlug": "product-showcase-grid-plp",
-  "evidence": [],
+  "evidence": [
+    "evidence/hubble/default/collection/product-showcase-grid-plp.1440.png",
+    "evidence/hubble/default/collection/product-showcase-grid-plp.375.png",
+    "evidence/hubble/default/collection/product-showcase-grid-plp.768.png",
+    "evidence/hubble/default/collection/product-showcase-grid-plp.hover.ikinci-gorsel.1440.png",
+    "evidence/hubble/default/collection/product-showcase-grid-plp.hover.ikinci-gorsel.375.png",
+    "evidence/hubble/default/collection/product-showcase-grid-plp.hover.ikinci-gorsel.768.png",
+    "evidence/hubble/default/collection/product-showcase-grid-plp.initial.ilk-hal.1440.png",
+    "evidence/hubble/default/collection/product-showcase-grid-plp.initial.ilk-hal.375.png",
+    "evidence/hubble/default/collection/product-showcase-grid-plp.initial.ilk-hal.768.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "1 ürün. Filter Size/Availability/Price + Sort. Quick add butonu var.",
-  "delta": "Tek kart. Dawn facet filter. Quick-add-modal host."
+  "delta": "Tek kart. Dawn facet filter. Quick-add-modal host.",
+  "capture": {
+    "url": "https://hubble-nutrition.myshopify.com/collections/all",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:20:39.429Z"
+  },
+  "interactionStates": [
+    "initial",
+    "hover"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hubble-nutrition.myshopify.com/collections/all",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Şişe görseli"
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#shopify-section-template--21797543117108__product-grid .card__media",
+      "capture": true,
+      "etiket": "ikinci-gorsel",
+      "not": "Group14426 → Rectangle4078 (bardak)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440: sol Size/Availability/Price facet (Size açık) + 1 kart şişe + Sale + Choose options. 375: Filter and sort.",
+    "hover": "1440: kart görseli bardak/çay (Rectangle4078). Title altı çizili. Choose options duruyor."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "375 ve 768 kare şişede kaldı — ikinci görsel yalnız 1440. Parmak hover yok."
+    }
+  ],
+  "interactionNote": "Choose options her zaman görünür. Size filtresi default açık (Dawn facet). Filter tık interact yok."
 }
