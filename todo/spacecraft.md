@@ -14,8 +14,8 @@
 `theme_store_id` = **null** · `handle` = `"null"` · `style.id` / `style.handle` = **null**  
 Walk host = `Shopify.shop` = `pandora-furniture-3.myshopify.com` · locale `en` · country `US` · currency `USD`
 
-**Durum:** Mod A walk + resmi 3vp + interact (devam)  
-**PR:** draft · **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact findings  
+**PR:** draft https://github.com/mattiasadem/qante/pull/365 · **main'e merge yok**
 
 ---
 
@@ -27,10 +27,11 @@ Walk host = `Shopify.shop` = `pandora-furniture-3.myshopify.com` · locale `en` 
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` + `scripts/unlock-storefront.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **39** |
+| Evidence | **164 PNG** (statik 3vp + interact) |
 | Parallel | yalnız `observations/spacecraft/`, `evidence/spacecraft/`, `todo/spacecraft.md`, `candidates/spacecraft-leftovers.md`, unlock host satırı |
 
 **Kapsam satırı:**  
-`Spacecraft · default · Pandora-furniture-3 V-1.5.0 / schema_name pandora_furniture_3 1.5.0 · theme_store_id null · shop pandora-furniture-3.myshopify.com · password 1 (vendor-published) · home→PDP Landskrona→PLP /collections/all→/collections→search chair→cart→our-story/contact/faqs→news+post · 39 obs · 0 yeni şema · leftover: candidates/spacecraft-leftovers.md`
+`Spacecraft · default · Pandora-furniture-3 V-1.5.0 / schema_name pandora_furniture_3 1.5.0 · theme_store_id null · shop pandora-furniture-3.myshopify.com · password 1 (vendor-published) · home→PDP Landskrona→PLP /collections/all→/collections→search chair→cart→our-story/contact/faqs→news+post · 39 obs · 164 PNG · 0 yeni şema · interact: search sofa + cart drawer/page filled qty2 + PDP Dark Grey + FAQ open · missing: mega hover, hamburger open, featured hover, Best Seller tab · leftover: candidates/spacecraft-leftovers.md`
 
 ---
 
@@ -38,17 +39,17 @@ Walk host = `Shopify.shop` = `pandora-furniture-3.myshopify.com` · locale `en` 
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | [x] obs | [ ] capture |
-| Shop mega hover 1440 | [ ] interact | [ ] |
-| Predictive search `sofa` | [ ] interact | [ ] |
-| Mobile menu 375 + 768 | [ ] interact | [ ] |
-| Cart drawer empty + filled + qty | [ ] interact | [ ] |
-| PDP Landskrona Color | [ ] interact Dark Grey | [ ] |
-| PLP `/collections/all` | [x] obs | [ ] capture |
-| Collections `/collections` | [x] obs | [ ] capture |
-| Search `/search?q=chair` | [x] obs | [ ] capture |
-| Cart page empty + filled + qty | [ ] interact | [ ] |
-| Our Story / Contact / FAQ / News+post | [x] obs | [ ] capture |
+| Home roster (announcement→footer) | [x] obs | [x] capture |
+| Shop mega hover 1440 | [x] interact — missing (PNG kapalı) | [x] |
+| Predictive search `sofa` | [x] interact input | [x] |
+| Mobile menu 375 + 768 | [x] interact — missing (PNG kapalı) | [x] |
+| Cart drawer empty + filled + qty | [x] filled+changed; empty missing | [x] |
+| PDP Landskrona Color | [x] Dark Grey | [x] |
+| PLP `/collections/all` | [x] obs | [x] capture |
+| Collections `/collections` | [x] obs | [x] capture |
+| Search `/search?q=chair` | [x] obs | [x] capture |
+| Cart page empty + filled + qty | [x] interact | [x] |
+| Our Story / Contact / FAQ / News+post | [x] obs | [x] capture |
 | Map / wishlist / account / checkout / newsletter submit | ⛔ leftover / dur | — |
 
 ---
@@ -79,20 +80,20 @@ Walk host = `Shopify.shop` = `pandora-furniture-3.myshopify.com` · locale `en` 
 
 | # | id | sayfa | JSON | Done |
 |---|---|---|---|---|
-| 1 | collection-banner | collection | [x] | [ ] 3vp |
-| 2 | product-showcase-grid-plp | collection | [x] | [ ] 3vp |
-| 3 | collection-nav-grid | collections | [x] | [ ] 3vp |
-| 4 | search-results | search | [x] | [ ] 3vp |
-| 5 | cart-page-main | cart | [x] | [ ] 3vp + interact |
-| 6 | product-showcase-grid-featured | cart | [x] | [ ] 3vp |
-| 7 | product-info-main | product-detail | [x] | [ ] interact Dark Grey |
-| 8 | editorial-image-with-text | product-detail | [x] | [ ] 3vp |
-| 9 | editorial-image-with-text-overlay | product-detail | [x] | [ ] 3vp |
-| 10 | product-showcase-related | product-detail | [x] | [ ] 3vp |
-| 11 | page-content-main + IWT + form | contact | [x] | [ ] 3vp |
-| 12 | our-story stack | about-brand | [x] | [ ] 3vp |
-| 13 | FAQ ×2 | faq-support | [x] | [ ] 3vp |
-| 14 | blog-list + blog-post | blog | [x] | [ ] 3vp |
+| 1 | collection-banner | collection | [x] | [x] 3vp |
+| 2 | product-showcase-grid-plp | collection | [x] | [x] 3vp |
+| 3 | collection-nav-grid | collections | [x] | [x] 3vp |
+| 4 | search-results | search | [x] | [x] 3vp |
+| 5 | cart-page-main | cart | [x] | [x] 3vp + interact |
+| 6 | product-showcase-grid-featured | cart | [x] | [x] 3vp |
+| 7 | product-info-main | product-detail | [x] | [x] interact Dark Grey |
+| 8 | editorial-image-with-text | product-detail | [x] | [x] 3vp |
+| 9 | editorial-image-with-text-overlay | product-detail | [x] | [x] 3vp |
+| 10 | product-showcase-related | product-detail | [x] | [x] 3vp |
+| 11 | page-content-main + IWT + form | contact | [x] | [x] 3vp |
+| 12 | our-story stack | about-brand | [x] | [x] 3vp |
+| 13 | FAQ ×2 | faq-support | [x] | [x] 3vp + first accordion |
+| 14 | blog-list + blog-post | blog | [x] | [x] 3vp |
 
 ---
 
@@ -100,15 +101,15 @@ Walk host = `Shopify.shop` = `pandora-furniture-3.myshopify.com` · locale `en` 
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | open | [ ] 1440 Shop mega |
-| global-predictive-search | input | [ ] `sofa` |
-| global-menu-drawer | open | [ ] 375+768 |
-| global-cart-drawer | filled + changed | [ ] |
-| cart-page-main | filled + changed | [ ] |
-| product-info-main | changed | [ ] Color Dark Grey |
-| product-showcase-grid-featured | hover | [ ] |
-| product-showcase-tabs | changed | [ ] Best Seller |
-| faq-collapsible-tabs | changed | [ ] |
+| navigation-header-mega | open | missing — hover 1200ms retry PNG kapalı homepage |
+| global-predictive-search | input | [x] `sofa` · 8 ürün · initial boş modal missing |
+| global-menu-drawer | open | missing — 375 zero-size; 768 kapalı homepage · Shop yazılı `<a>` |
+| global-cart-drawer | filled + changed | [x] Landskrona $3,000 → qty2 $6,000 · empty click missing |
+| cart-page-main | filled + changed | [x] aynı satır / TOTAL $6,000 |
+| product-info-main | changed | [x] Color Dark Grey |
+| product-showcase-grid-featured | hover | missing — overlay kiremit aynı |
+| product-showcase-tabs | changed | missing — Best Seller PNG = New Arrival |
+| faq-collapsible-tabs | changed | [x] Shipping Methods açık |
 
 ---
 
@@ -120,6 +121,6 @@ Walk host = `Shopify.shop` = `pandora-furniture-3.myshopify.com` · locale `en` 
 
 ## Evidence backlog
 
-- [ ] Resmi 3vp `capture-observation.mjs` (39 obs)
-- [ ] Interact capture
-- [ ] `node scripts/validate-schemas.mjs`
+- [x] Resmi 3vp `capture-observation.mjs` (39 obs)
+- [x] Interact capture + findings (bir retry; üçüncü yok)
+- [x] `node scripts/validate-schemas.mjs`
