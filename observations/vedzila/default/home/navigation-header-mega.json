@@ -15,6 +15,58 @@
   "storefrontPassword": "1",
   "notlar": "Logo + Home/Shop/About Us/Blog/FAQ/Contact + language + search + account + cart. Shop = details#Details-HeaderMenu-2.mega-menu (görsel kolonlar).",
   "delta": "Dawn-benzeri mega: details#Details-HeaderMenu-2 summary Shop. Mega görseller mega-menu-1..5. Locale English/Français (değiştirilmedi).",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://vedzila-organic.myshopify.com/",
+      "capture": true,
+      "etiket": "mega-kapali",
+      "not": "Shop mega kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-2 > summary",
+      "value": 1200,
+      "capture": false,
+      "viewports": [
+        "1440"
+      ],
+      "not": "Shop summary hover — click /collections/all'a gider"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "selector": "#MegaMenu-Content-1",
+      "value": 5000,
+      "capture": false,
+      "viewports": [
+        "1440"
+      ],
+      "not": "Mega panel görünür"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#MegaMenu-Content-1",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "İmleç panelde — görsel kartlar (Shower Gel / Hair Oil…)"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Yoklama: Shop hover mega açar; Shop click /collections/all. 375/768 hamburger ayrı observation.",
   "capture": {
     "url": "https://vedzila-organic.myshopify.com/",
     "viewports": [

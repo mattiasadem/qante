@@ -15,6 +15,37 @@
   "storefrontPassword": "1",
   "notlar": "FAQs About Ultra Smoothing Shampoo — 5 soru kapalı + VIEW ALL.",
   "delta": "Home accordion kapalı (soru listesi). VIEW ALL → /pages/faq. İlk öğe açık değil.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://vedzila-organic.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--23865698517276__ac142051-904d-4bcb-9d08-2d41fa3d3bee",
+      "capture": true,
+      "etiket": "faq-kapali",
+      "not": "5 soru kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--23865698517276__ac142051-904d-4bcb-9d08-2d41fa3d3bee details > summary",
+      "capture": true,
+      "etiket": "faq-acik",
+      "not": "İlk soru — cevap yüksekliği artmalı"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "VIEW ALL tıklanmadı (/pages/faq ayrı). openFirst=false bu preset'te.",
   "capture": {
     "url": "https://vedzila-organic.myshopify.com/",
     "viewports": [

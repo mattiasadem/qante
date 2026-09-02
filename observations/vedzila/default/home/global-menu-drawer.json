@@ -15,6 +15,33 @@
   "delta": "Dawn header-drawer. 1440 opener 0×0 — kare boş/skip olabilir.",
   "prepareClick": "#Details-menu-drawer-container > summary.header__icon--menu",
   "captureMode": "viewport",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://vedzila-organic.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary.header__icon--menu",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Kapalı #menu-drawer w=0 — forceOpen tuzağı; yalnız tık"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Yazılı Shop <a> tıklanmadı. 1440 hamburger 0×0. Locale English tıklanmadı.",
   "capture": {
     "url": "https://vedzila-organic.myshopify.com/",
     "viewports": [

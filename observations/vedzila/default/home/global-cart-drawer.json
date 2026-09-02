@@ -17,6 +17,62 @@
   "delta": "cart-drawer.drawer is-empty. Checkout tıklanmadı.",
   "prepareClick": "#cart-icon-bubble",
   "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://vedzila-organic.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş drawer — kapalı host viewport doldurur, tık şart"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://vedzila-organic.myshopify.com/products/chilli-horsetail-black-seed-hair-oil",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add']",
+      "capture": false,
+      "not": "Chilli Hair Oil default 100 ml"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC drawer açıyor (yoklama)"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı. ATC UI; fallback olursa not.",
   "capture": {
     "url": "https://vedzila-organic.myshopify.com/",
     "viewports": [

@@ -17,6 +17,47 @@
   "delta": "Dawn details-modal.header__search. Statik host; sonuç interact.",
   "prepareClick": "details-modal.header__search summary.header__icon--search",
   "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://vedzila-organic.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "details-modal.header__search summary.header__icon--search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Boş search modal — host kutu 20×20, viewport"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal-1",
+      "value": "oil",
+      "capture": false,
+      "not": "katalog: Hair Oil / Facial Oil — walk q=oil (scan ayrıca hair önerdi)"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-oil",
+      "not": "Öneri + ürün satırı"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "İki search input: görünür #Search-In-Modal-1. details-modal.header__search 2 eşleşme (20×20 + 0×0) — viewport. Submit yok.",
   "capture": {
     "url": "https://vedzila-organic.myshopify.com/",
     "viewports": [
