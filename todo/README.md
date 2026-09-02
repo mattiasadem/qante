@@ -5,6 +5,7 @@
 
 | Tema | Dosya | Durum |
 |---|---|---|
+| PawPets (Speedo) | [`pawpets.md`](./pawpets.md) | 🟡 first inventory — Mightypetz 1.5.0 · 39 obs · 0 yeni şema · draft |
 | Hyper (Shopify) | [`hyper.md`](./hyper.md) | ✅ **default tamam** — 45 şema · 80 evidence · compare dolu |
 | Hyper · Ceramide | [`hyper-ceramide.md`](./hyper-ceramide.md) | ✅ delta — 5 yeni şema · 5 obs |
 | Prestige · Allure | [`prestige.md`](./prestige.md) | ✅ Allure 9 sayfa · 66 obs · 4 yeni şema · dolu cart |

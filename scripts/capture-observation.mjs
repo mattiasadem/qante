@@ -21,6 +21,10 @@ import {
   assertCleanForScreenshot,
 } from "./dismiss-overlays.mjs";
 import { screenshotSectionWithPadding } from "./screenshot-section.mjs";
+import {
+  resolveStorefrontPassword,
+  unlockStorefrontIfNeeded,
+} from "./storefront-password.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const qanteRoot = path.resolve(__dirname, "..");
@@ -29,6 +33,7 @@ const DEFAULT_URLS = {
   hyper: "https://hyper-theme-demo.myshopify.com/",
   impulse: "https://impulse-theme-fashion.myshopify.com/",
   ridge: "https://ridge.com/",
+  pawpets: "https://petz-online-store-2.myshopify.com/",
 };
 
 const viewports = JSON.parse(
@@ -85,6 +90,7 @@ if (!url) {
 const slug = obs.evidenceSlug || obs.schemaId || "section";
 const outDir = evidenceDir(obs);
 fs.mkdirSync(outDir, { recursive: true });
+const storefrontPassword = resolveStorefrontPassword(obs);
 
 const browser = await chromium.launch({
   headless: !headed,
@@ -118,12 +124,16 @@ try {
     const warmupUrl = obs.warmupUrl || obs.capture?.warmupUrl || null;
     if (warmupUrl) {
       await page.goto(warmupUrl, { waitUntil: "domcontentloaded", timeout: 90000 });
+      await unlockStorefrontIfNeeded(page, storefrontPassword, {
+        returnUrl: warmupUrl,
+      });
       await page.waitForTimeout(2000);
       await dismissAllOverlays(page);
     }
 
     const target = new URL(url);
     await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
+    await unlockStorefrontIfNeeded(page, storefrontPassword, { returnUrl: url });
     await page.waitForTimeout(3500);
 
     // Cloudflare / bot interstitial — kısa bekle + reload (DTC storefront)
@@ -148,6 +158,7 @@ try {
       await page.goto(url, { waitUntil: "networkidle", timeout: 90000 }).catch(() =>
         page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 })
       );
+      await unlockStorefrontIfNeeded(page, storefrontPassword, { returnUrl: url });
       await page.waitForTimeout(2500);
     }
 
@@ -164,6 +175,9 @@ try {
           `Dismiss sonrası URL kaydı (${vp.id}): ${afterDismiss.pathname} → geri`
         );
         await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
+        await unlockStorefrontIfNeeded(page, storefrontPassword, {
+          returnUrl: url,
+        });
         await page.waitForTimeout(2500);
         continue;
       }

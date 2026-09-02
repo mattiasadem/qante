@@ -41,6 +41,10 @@ import {
   assertCleanForScreenshot,
 } from "./dismiss-overlays.mjs";
 import { screenshotSectionWithPadding } from "./screenshot-section.mjs";
+import {
+  resolveStorefrontPassword,
+  unlockStorefrontIfNeeded,
+} from "./storefront-password.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const qanteRoot = path.resolve(__dirname, "..");
@@ -48,6 +52,7 @@ const qanteRoot = path.resolve(__dirname, "..");
 const DEFAULT_URLS = {
   hyper: "https://hyper-theme-demo.myshopify.com/",
   impulse: "https://impulse-theme-fashion.myshopify.com/",
+  pawpets: "https://petz-online-store-2.myshopify.com/",
 };
 
 const STATES = ["initial", "hover", "input", "open", "filled", "changed"];
@@ -147,6 +152,7 @@ if (!baseUrl) {
 const slug = obs.evidenceSlug || obs.schemaId || "section";
 const outDir = path.join(qanteRoot, "evidence", obs.kaynak, obs.preset, obs.sayfa);
 fs.mkdirSync(outDir, { recursive: true });
+const storefrontPassword = resolveStorefrontPassword(obs);
 
 const evidenceRel = (filename) =>
   `evidence/${obs.kaynak}/${obs.preset}/${obs.sayfa}/${filename}`;
@@ -182,6 +188,7 @@ function iframeHostSelector(selector) {
 async function settle(page, url) {
   const target = new URL(url);
   await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
+  await unlockStorefrontIfNeeded(page, storefrontPassword, { returnUrl: url });
   await page.waitForTimeout(3500);
 
   const landed = new URL(page.url());
@@ -192,6 +199,7 @@ async function settle(page, url) {
     await page
       .goto(url, { waitUntil: "networkidle", timeout: 90000 })
       .catch(() => page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 }));
+    await unlockStorefrontIfNeeded(page, storefrontPassword, { returnUrl: url });
     await page.waitForTimeout(2500);
   }
 
@@ -203,6 +211,7 @@ async function settle(page, url) {
     afterDismiss.pathname.replace(/\/$/, "") !== target.pathname.replace(/\/$/, "")
   ) {
     await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
+    await unlockStorefrontIfNeeded(page, storefrontPassword, { returnUrl: url });
     await page.waitForTimeout(2500);
     await dismissAllOverlays(page);
   }
