@@ -7,11 +7,81 @@
   "url": "https://jewelry-online-shop-4.myshopify.com/",
   "selector": "#Details-menu-drawer-container",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/olelia/default/home/global-menu-drawer.375.png",
+    "evidence/olelia/default/home/global-menu-drawer.768.png"
+  ],
   "storefrontPassword": "1",
-  "notlar": "details#Details-menu-drawer-container. Hidden at 1440. 375/768 hamburger summary.header__icon--menu. Log in not clicked.",
-  "delta": "Speedo Olelia 1.5.0 third-party (theme_store_id null). Storefront password 1 is vendor-published on speedothemes.com product page. Shopify.theme.name Olelia-v-1-5-0-latest-updates new · schema_name Olelia · schema_version 1.5.0 · theme_store_id null · role main · id 146057625765 · walk jewelry-online-shop-4.myshopify.com.",
+  "notlar": "details#Details-menu-drawer-container. Hidden at 1440. 375/768 hamburger summary.header__icon--menu. Log in not clicked. Static 1440 zero-size (hamburger gizli).",
+  "delta": "Speedo Olelia 1.5.0 third-party (theme_store_id null). Storefront password 1 is vendor-published on speedothemes.com product page. Shopify.theme.name Olelia-v-1-5-0-latest-updates new \u00b7 schema_name Olelia \u00b7 schema_version 1.5.0 \u00b7 theme_store_id null \u00b7 role main \u00b7 id 146057625765 \u00b7 walk jewelry-online-shop-4.myshopify.com.",
   "captureMode": "viewport",
   "prepareClick": "header summary.header__icon--menu",
-  "prepareForceOpen": true
+  "prepareForceOpen": true,
+  "capture": {
+    "url": "https://jewelry-online-shop-4.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "viewport",
+    "updatedAt": "2026-09-02T13:39:03.811Z",
+    "prepareClick": "header summary.header__icon--menu"
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://jewelry-online-shop-4.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Drawer kapal\u0131"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header summary.header__icon--menu",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger-acik",
+      "not": "Mobil/tablet hamburger"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "open": ""
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger yok; mega header'da. Static 1440 zero-size."
+    }
+  ],
+  "interactionNote": "Log in / wishlist / compare t\u0131klanmad\u0131. 1440 menu drawer yok."
 }

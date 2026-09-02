@@ -7,8 +7,97 @@
   "url": "https://jewelry-online-shop-4.myshopify.com/cart",
   "selector": "#shopify-section-template--18711811326117__cart-items",
   "evidenceSlug": "cart-page-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/olelia/default/cart/cart-page-main.375.png",
+    "evidence/olelia/default/cart/cart-page-main.768.png",
+    "evidence/olelia/default/cart/cart-page-main.1440.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "cart-items empty: Your cart is empty / Continue Shopping / Have an account? Log in. Sibling cart-footer #main-cart-footer h=0 when empty (Estimated total / Check out hidden).",
-  "delta": "Speedo Olelia 1.5.0 third-party (theme_store_id null). Storefront password 1 is vendor-published on speedothemes.com product page. Shopify.theme.name Olelia-v-1-5-0-latest-updates new · schema_name Olelia · schema_version 1.5.0 · theme_store_id null · role main · id 146057625765 · walk jewelry-online-shop-4.myshopify.com. cart-items + cart-footer are split sections; one schema cart-page-main. Account/checkout not clicked."
+  "delta": "Speedo Olelia 1.5.0 third-party (theme_store_id null). Storefront password 1 is vendor-published on speedothemes.com product page. Shopify.theme.name Olelia-v-1-5-0-latest-updates new \u00b7 schema_name Olelia \u00b7 schema_version 1.5.0 \u00b7 theme_store_id null \u00b7 role main \u00b7 id 146057625765 \u00b7 walk jewelry-online-shop-4.myshopify.com. cart-items + cart-footer are split sections; one schema cart-page-main. Account/checkout not clicked.",
+  "capture": {
+    "url": "https://jewelry-online-shop-4.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "margin-box+minPad8",
+    "updatedAt": "2026-09-02T13:36:16.293Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://jewelry-online-shop-4.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--18711811326117__cart-items",
+      "capture": true,
+      "etiket": "sepet-bos",
+      "not": "Bo\u015f cart sayfas\u0131"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://jewelry-online-shop-4.myshopify.com/products/gold-diamond-pendant-necklace",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--18711812309157__main button.product-form__submit[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://jewelry-online-shop-4.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart sayfas\u0131"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "cart-items button[name='plus'], #shopify-section-template--18711811326117__cart-items button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet 1\u21922"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "filled": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Account / checkout t\u0131klanmad\u0131. Sibling cart-footer doluyken g\u00f6r\u00fcn\u00fcr."
 }
