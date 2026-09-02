@@ -8,9 +8,13 @@
   "selector": "#shopify-section-template--24653292175678__product-grid",
   "evidenceSlug": "product-showcase-grid-plp",
   "evidence": [
+    "evidence/gemora/default/collection/product-showcase-grid-plp.1440.png",
     "evidence/gemora/default/collection/product-showcase-grid-plp.375.png",
     "evidence/gemora/default/collection/product-showcase-grid-plp.768.png",
-    "evidence/gemora/default/collection/product-showcase-grid-plp.1440.png"
+    "evidence/gemora/default/collection/product-showcase-grid-plp.changed.color-gold.1440.png",
+    "evidence/gemora/default/collection/product-showcase-grid-plp.initial.filtre-yok.1440.png",
+    "evidence/gemora/default/collection/product-showcase-grid-plp.initial.filtre-yok.375.png",
+    "evidence/gemora/default/collection/product-showcase-grid-plp.initial.filtre-yok.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Filter: Color (Gold/Rose Gold/Silver) Size Brand Availability Price. Kart ızgara + Add To Wishlist. menu-drawer.mobile-facets__wrapper 375. quick-add-modal.",
@@ -23,8 +27,8 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T15:45:46.830Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:42:34.839Z"
   },
   "interactionStates": [
     "initial",
@@ -47,6 +51,16 @@
     },
     {
       "state": "changed",
+      "action": "forceOpen",
+      "selector": "#Details-filter\\.v\\.option.color-template--24653292175678__product-grid",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "changed",
       "action": "click",
       "selector": "label[for='Filter-filter.v.option.color-1']",
       "viewports": [
@@ -60,7 +74,16 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": ".mobile-facets__open, facet-filters-form .mobile-facets__open",
+      "selector": ".mobile-facets__open",
+      "viewports": [
+        "375"
+      ],
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "forceOpen",
+      "selector": ".mobile-facets__wrapper, menu-drawer.mobile-facets__wrapper",
       "viewports": [
         "375"
       ],
@@ -87,7 +110,10 @@
       "not": "Mobil Color Gold"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "Filter: Color açık (Gold 3 / Rose Gold 2 / Silver 3 / White Gold 2); Size Brand Availability Price kapalı. 6 Products · Best selling · 3 sütun. Kartlar: Chain Ring, Classic Rings, Leaf Band, …",
+    "changed": "1440 Color Gold: Remove All + chip Color: Gold; Gold işaretli; 3 Of 6 Products; Leaf Band Ring $70 · Classic Rings $75 · Silver And Gold Plated Ring $55 sale."
+  },
   "missingStates": [],
-  "interactionNote": "Probe 1440: Gold → ?filter.v.option.color=Gold, 6→3 kart, ilk Leaf Band Ring. Sort/checkout yok."
+  "interactionNote": "changed 1440 kanıtlı. 375 mobil Gold iki denemede viewport dışı; 768 Color facet kapalı, Gold label görünür değil. Sort değiştirilmedi."
 }

@@ -14,8 +14,8 @@
 
 *Password wall:* vendor ürün sayfası “Please enter password `1` to view demo.” Aynı host `/password` — public storefront unlock.
 
-**Durum:** Mod A roster + resmi 3vp · interact adımları yazıldı, çekim sırada  
-**PR:** draft — main’e merge yok
+**Durum:** Mod A roster + resmi 3vp + interact pixel-check · 0 yeni şema  
+**PR:** draft https://github.com/mattiasadem/qante/pull/342 — main’e merge yok
 
 ---
 
@@ -30,7 +30,7 @@
 | Parallel | yalnız `observations/gemora/`, `evidence/gemora/`, `todo/gemora.md`, `candidates/gemora-leftovers.md`, capture unlock helper |
 
 **Kapsam satırı:**  
-`Gemora · default · jewelry-online-shop1-v-1-5-0 / Jewelry_online_shop1 1.5.0 · theme_store_id null · Speedo · home→PDP→PLP→collections→search→cart→our-story→contact→faq→blog→404 · 42 obs · 0 yeni şema · leftover: candidates/gemora-leftovers.md`
+`Gemora · default · jewelry-online-shop1-v-1-5-0 / Jewelry_online_shop1 1.5.0 · theme_store_id null · Speedo · home→PDP→PLP→collections→search→cart→our-story→contact→faq→blog→404 · 42 obs · 0 yeni şema · interact: mega/FAQ/PDP/PLP1440/cart-page/cart-drawer-filled · missing: search-input, menu-drawer, tabs, hero-slide · leftover: candidates/gemora-leftovers.md`
 
 ---
 
@@ -39,18 +39,18 @@
 | Şablon | Durum | 3vp |
 |---|---|---|
 | Home roster (announcement→footer) | roster + 3vp | [x] |
-| Mega SHOP 1440 | roster + 3vp kapalı | [ ] interact |
-| Predictive search `ring` | roster + 3vp kapalı | [ ] interact |
-| Mobile menu 375+768 | 768 homepage kare | [ ] interact |
-| Cart drawer empty + filled | empty 3vp | [ ] interact filled |
-| PDP earrings Yellow Gold→White Gold | roster + 3vp | [ ] interact |
-| PLP `/collections/rings` | roster + 3vp | [x] |
+| Mega SHOP 1440 | roster + 3vp kapalı | [x] open 5 kart |
+| Predictive search `ring` | roster + 3vp kapalı | [ ] input missing (fill hidden) |
+| Mobile menu 375+768 | 768 homepage kare | [ ] open/changed missing |
+| Cart drawer empty + filled | empty 3vp | [x] filled/qty; boş boyanmadı |
+| PDP earrings Yellow Gold→White Gold | roster + 3vp | [x] White Gold |
+| PLP `/collections/rings` | roster + 3vp | [x] Gold 1440 |
 | Collections `/collections` | roster + 3vp | [x] |
 | Search `/search?q=ring` | roster + 3vp | [x] |
-| Cart `/cart` empty + filled | empty 3vp | [ ] interact filled |
+| Cart `/cart` empty + filled | empty 3vp | [x] filled + qty2 |
 | Our Story `/pages/our-story` | roster + 3vp | [x] |
 | Contact form (Send yok) | roster + 3vp | [x] |
-| FAQ `/pages/faqs` | roster + 3vp | [ ] interact accordion |
+| FAQ `/pages/faqs` | roster + 3vp | home accordion [x]; sayfa accordion yoklandı değil |
 | News + article | roster + 3vp | [x] |
 | 404 | roster + 3vp | [x] |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
@@ -102,20 +102,20 @@
 
 ---
 
-## Interact
+## Interact (pixel-check)
 
 | Bileşen | State | Durum |
 |---|---|---|
-| navigation-header-mega | open 1440 | adımlar yazıldı — çekim sırada |
-| global-menu-drawer | open/changed 375+768 | adımlar yazıldı — çekim sırada |
-| global-predictive-search | input `ring` | adımlar yazıldı — çekim sırada |
-| global-cart-drawer | initial/filled/changed | adımlar yazıldı — çekim sırada |
-| cart-page-main | initial/filled/changed | adımlar yazıldı — çekim sırada |
-| product-info-main | changed White Gold | adımlar yazıldı — çekim sırada |
-| product-showcase-tabs | hover + Best Seller | adımlar yazıldı — çekim sırada |
-| faq-collapsible-tabs | changed forceOpen | adımlar yazıldı — çekim sırada |
-| hero-slideshow | changed slayt 2 | adımlar yazıldı — çekim sırada |
-| product-showcase-grid-plp | changed Color Gold | adımlar yazıldı — çekim sırada |
+| navigation-header-mega | open 1440 | 5 koleksiyon kartı (Necklace/Rings/Earrings/Bracelets/Pendants) |
+| global-menu-drawer | open/changed | missing — PNG homepage; probe drawer vardı |
+| global-predictive-search | input `ring` | missing — fill hidden; probe 6+4 sonuç |
+| global-cart-drawer | filled/changed | ATC drawer $75 → qty2 $150; boş drawer boyanmadı |
+| cart-page-main | empty/filled/changed | empty → Earrings $75 → qty2 $150 |
+| product-info-main | changed | Color: White Gold (fiyat/galeri aynı) |
+| product-showcase-tabs | hover + Best Seller | missing — New Arrival kaldı; hover byte-aynı |
+| faq-collapsible-tabs | changed | ilk cevap açık (Male evening…) |
+| hero-slideshow | changed | missing — 2 slayt aynı kopya, byte-aynı |
+| product-showcase-grid-plp | changed 1440 | Gold 6→3; 375/768 filtre tık fail |
 
 ---
 
@@ -129,5 +129,5 @@
 
 - [x] Resmi 3vp `capture-observation.mjs` (password unlock) · 124 PNG · menu-drawer 375/1440 zero-size
 - [x] Interact scan + probe (password unlock) · adımlar 10 observation
-- [ ] Interact `capture-interaction.mjs` → pixel-check → stateFindings
-- [ ] `node scripts/validate-schemas.mjs`
+- [x] Interact `capture-interaction.mjs` → pixel-check → stateFindings
+- [x] `node scripts/validate-schemas.mjs`

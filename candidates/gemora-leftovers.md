@@ -18,9 +18,9 @@ Karar: onay bekliyor
 ---
 
 ADAY: gemora-quick-add-modal  
-Gerekçe: `QUICK-ADD-MODAL#QuickAdd-{id}` kart ATC host. `global-quick-view` tam QV değil; Dawn quick-add. Statik karede kapalı.  
+Gerekçe: `QUICK-ADD-MODAL#QuickAdd-{id}` kart ATC host. Tabs hover PNG byte-aynı initial — quick-add / 2. görsel karede yok.  
 Örnekler: home New Arrivals, PLP, related  
-Öneri: leftover — interact’te piksel değişirse `global-quick-view` observation  
+Öneri: leftover  
 Karar: onay bekliyor
 
 ---
@@ -89,9 +89,17 @@ Karar: onay bekliyor
 ---
 
 ADAY: gemora-menu-drawer-375  
-Gerekçe: `#menu-drawer` 375/1440 zero-size (Dawn transform). 768 viewport homepage (çekmece görünmedi). forceOpen + prepareClick denendi. Interact ikinci deneme.  
+Gerekçe: Interact 2 deneme: 375/768 PNG homepage (çekmece yok). Probe click 375×686 HOME/SHOP… + SHOP drill (Bracelets Diamonds Earrings Pendants) URL değişmedi; capture forceOpen Dawn transform'u boyamadı. SHOP summary viewport dışı.  
 Örnekler: home header-drawer  
-Öneri: leftover / interact  
+Öneri: leftover — açık çekmece karesi yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: gemora-predictive-search-input  
+Gerekçe: `#Search-In-Modal-1` capture fill'de hidden (2 deneme). Ayrı probe force-fill `ring` → 6 öneri + 4 ürün. Overlay kare yazılamadı.  
+Örnekler: header details-modal#header-search  
+Öneri: leftover — input state  
 Karar: onay bekliyor
 
 ---

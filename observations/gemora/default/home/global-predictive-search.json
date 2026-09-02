@@ -8,9 +8,12 @@
   "selector": "details-modal#header-search",
   "evidenceSlug": "global-predictive-search",
   "evidence": [
+    "evidence/gemora/default/home/global-predictive-search.1440.png",
     "evidence/gemora/default/home/global-predictive-search.375.png",
     "evidence/gemora/default/home/global-predictive-search.768.png",
-    "evidence/gemora/default/home/global-predictive-search.1440.png"
+    "evidence/gemora/default/home/global-predictive-search.initial.arama-bos.1440.png",
+    "evidence/gemora/default/home/global-predictive-search.initial.arama-bos.375.png",
+    "evidence/gemora/default/home/global-predictive-search.initial.arama-bos.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Büyüteç summary.header__icon--search → details-modal#header-search + predictive-search.search-modal__form.",
@@ -25,8 +28,8 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T16:01:50.822Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:43:02.484Z",
     "prepareClick": "details-modal#header-search > summary"
   },
   "interactionStates": [
@@ -50,10 +53,22 @@
       "state": "initial",
       "action": "click",
       "selector": "header summary.header__icon--search",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "header details-modal#header-search",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "arama-bos",
-      "not": "Boş arama modal"
+      "not": "Boş arama modal — forceOpen details-modal"
+    },
+    {
+      "state": "input",
+      "action": "forceOpen",
+      "selector": "header details-modal#header-search",
+      "capture": false
     },
     {
       "state": "input",
@@ -63,10 +78,17 @@
       "capture": true,
       "captureMode": "viewport",
       "etiket": "arama-ring",
-      "not": "katalogSorgu=ring (PLP scan + vitrin ürün adı)"
+      "not": "katalogSorgu=ring"
     }
   ],
-  "stateFindings": {},
-  "missingStates": [],
-  "interactionNote": "Submit /search ayrı observation. Account yok. details-modal#header-search 2 eşleşme (biri 0×0); opener header summary.header__icon--search. Probe: ring → 6 öneri + 4 ürün."
+  "stateFindings": {
+    "initial": "Click + forceOpen details-modal sonrası kare hâlâ kapalı homepage (arama overlay yok). #Search-In-Modal-1 DOM'da hidden."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "İki deneme: fill #Search-In-Modal-1 visible olmadı (Playwright hidden). Ayrı probe'da force fill ring → 6 öneri + 4 ürün görüldü; capture script fill visible bekliyor. Üçüncü deneme yok."
+    }
+  ],
+  "interactionNote": "katalogSorgu=ring (PLP scan + vitrin). Submit /search ayrı observation. Account yok. details-modal#header-search 2 eşleşme (biri 0×0)."
 }
