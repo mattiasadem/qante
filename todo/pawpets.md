@@ -14,7 +14,7 @@
 Walk host + `Shopify.shop` = `petz-online-store-2.myshopify.com` · locale `en` · country `US` · currency `USD`  
 Storefront password (vendor product page): **`1`** — bu hostta girildi.
 
-**Durum:** Mod A walk + resmi 3vp + interact + validate  
+**Durum:** Mod A walk + resmi 3vp + interact (retry: search/menu/hero/boş drawer) + validate  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -38,21 +38,21 @@ Storefront password (vendor product page): **`1`** — bu hostta girildi.
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | [x] obs | [ ] capture |
-| Shop details hover 1440 | [ ] interact | [ ] |
-| Predictive search `omega` | [ ] interact | [ ] |
-| Mobile menu 375 + 768 | [ ] interact | [ ] |
-| Cart drawer empty + filled + qty | [ ] interact | [ ] |
-| PDP Max Omega-3 Size 10kg→20kg | [ ] interact | [ ] |
-| PLP `/collections/all` | [x] obs | [ ] capture |
-| Collections `/collections` | [x] obs | [ ] capture |
-| Search `/search?q=dog` | [x] obs | [ ] capture |
-| Cart page empty + filled | [ ] interact | [ ] |
-| About `/pages/about-us` | [x] obs | [ ] capture |
-| Contact form (submit yok) | [x] obs | [ ] capture |
-| FAQ `/pages/faqs` | [x] obs | [ ] capture |
-| News + Local Rescues post | [x] obs | [ ] capture |
-| 404 `/pages/about` | [x] obs | [ ] capture |
+| Home roster (announcement→footer) | [x] obs | [x] capture |
+| Shop details 1440 | [x] interact | RABBIT/FISH/CHEMELON |
+| Predictive search `omega` | [ ] retry | popup-active yuttu |
+| Mobile menu 375 + 768 | [ ] retry | 768 open=kapalı hash |
+| Cart drawer empty + filled + qty | [x] filled/qty · empty retry | dolu $44.95→$89.90 |
+| PDP Max Omega-3 Size 10kg→20kg | [x] interact | 200→400 stok, $44.95 |
+| PLP `/collections/all` | [x] obs | [x] capture |
+| Collections `/collections` | [x] obs | [x] capture |
+| Search `/search?q=dog` | [x] obs | [x] capture |
+| Cart page empty + filled | [x] interact | empty + Max Omega-3 |
+| About `/pages/about-us` | [x] obs | [x] capture |
+| Contact form (submit yok) | [x] obs | [x] capture |
+| FAQ `/pages/faqs` | [x] interact | 1. açık; 2. de açık |
+| News + Local Rescues post | [x] obs | [x] capture |
+| 404 `/pages/about` | [x] obs | [x] capture |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -89,5 +89,6 @@ Storefront password (vendor product page): **`1`** — bu hostta girildi.
 
 ## Evidence backlog
 
-- [ ] resmi 3vp batch
-- [ ] interact: mega / search / menu / cart drawer / cart page / PDP size / FAQ / tabs
+- [x] resmi 3vp batch (~158 PNG)
+- [x] interact yazıldı: mega, featured hover (token), cart filled/qty, cart page, PDP size, FAQ, tabs
+- [ ] retry 1: search / menu 375+768 / hero slayt-2 / boş cart drawer

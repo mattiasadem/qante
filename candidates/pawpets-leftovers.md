@@ -28,9 +28,9 @@ Karar: onay bekliyor
 ---
 
 ADAY: pawpets-newsletter-popup  
-Gerekçe: `#shopify-section-newsletter-popup` h=0. Get the newsletter Get 10% off + Subscribe. PII, dur.  
+Gerekçe: `#shopify-section-newsletter-popup` / `.zenon_popup`. Get the newsletter Get 10% off + Subscribe. PII, dur. Görünür kutu kapanınca `body.popup-active` kalırsa tüm tıklamalar BODY'ye gider (search/menu/hero). Capture `img.close_popup` + class kaldırma.  
 Örnekler: home overlay  
-Öneri: leftover — gizli popup  
+Öneri: leftover — gizli popup + pointer trap  
 Karar: onay bekliyor
 
 ---

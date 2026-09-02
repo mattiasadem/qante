@@ -5,11 +5,82 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://petz-online-store-2.myshopify.com/",
-  "selector": "predictive-search.search-modal__form, .search-modal",
+  "selector": ".search-modal",
   "evidenceSlug": "global-predictive-search",
   "evidence": [],
   "notlar": "Search-In-Modal + predictive-search--header. Kapalı kutu ~0px. Interact fill omega.",
   "delta": "Dawn details-modal arama. Kapalı kare yanıltır. Shopify.theme.name Mightypetz V-1.5.0 · schema_name Mightypetz · schema_version 1.5.0 · theme_store_id null · role main · id 171030774048 · walk+shop petz-online-store-2.myshopify.com · Speedo PawPets (üçüncü taraf OS 2.0, Theme Store resmi değil).",
   "captureMode": "viewport",
-  "prepareClick": "summary.header__icon--search"
+  "prepareClick": "summary.header__icon--search",
+  "capture": {
+    "url": "https://petz-online-store-2.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:48:33.049Z",
+    "prepareClick": "summary.header__icon--search"
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://petz-online-store-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Büyüteç — boş search modal"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "omega",
+      "capture": false,
+      "not": "katalogSorgu=omega (Max Omega-3 Soft Chews)"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-omega",
+      "not": "Predictive öneri / ürün listesi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "input": ""
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "İlk koşu: .search-modal kapalı ~32×2 opacity 0. body.popup-active tıklamayı yutuyor; details-modal açılmadı."
+    },
+    {
+      "state": "input",
+      "sebep": "İlk koşu: #Search-In-Modal ata opacity 0 — fill visible timeout. Retry: popup-active kaldırıldıktan sonra tık + omega."
+    }
+  ],
+  "interactionNote": "katalogSorgu omega (Max Omega-3). Submit/hesap yok. Kapalı kare 0px — viewport ancak modal açıkken anlamlı."
 }

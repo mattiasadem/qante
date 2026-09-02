@@ -36,6 +36,7 @@ export async function dismissAllOverlays(page, { rounds = 8 } = {}) {
       "[data-popup-close]",
       "[class*='newsletter'] button[class*='close']",
       "[class*='popup'] button[class*='close']",
+      "img.close_popup",
     ];
 
     for (const sel of clickSelectors) {
@@ -161,6 +162,14 @@ export async function dismissAllOverlays(page, { rounds = 8 } = {}) {
         el.removeAttribute("open");
         el.hidden = true;
       });
+
+      // Speedo / Zenon newsletter: hide the box but leave body.popup-active
+      // and the popup still intercepts pointer events (search/menu/hero).
+      document.querySelectorAll(".zenon_popup, .popup_inside").forEach((el) => {
+        el.style?.setProperty("display", "none", "important");
+        el.hidden = true;
+      });
+      document.body.classList.remove("popup-active");
 
       document.body.style.overflow = "auto";
       document.documentElement.style.overflow = "auto";
