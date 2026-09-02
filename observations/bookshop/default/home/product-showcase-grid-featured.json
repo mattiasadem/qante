@@ -61,7 +61,15 @@
       "not": "İkinci görsel / wishlist / ADD TO CART"
     }
   ],
-  "stateFindings": {},
-  "missingStates": [],
-  "interactionNote": "375/768 hover parmakta yok — 1440. Quick-view dialog değil, quick-add."
+  "stateFindings": {
+    "initial": "Best Sellers 5 kart. Sale rozeti + fiyat/üstü çizili. VIEW ALL. Quick-view dialog yok.",
+    "hover": "Resmi 1440 hover karesi initial ile aynı (byte). Probe: ilk kart 2. görsel opacity 0→1. ADD TO CART DOM'da rest'te. Token — şema yok."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "1440 hover PNG initial ile aynı. Capture scroll :hover kaybediyor. Probe 2. görsel swap; quick-view dialog yok."
+    }
+  ],
+  "interactionNote": "375/768 hover parmakta yok. Quick-add submit, quick-view overlay kanıtı yok."
 }

@@ -5,7 +5,7 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://book-online-store-1.myshopify.com/",
-  "selector": "#CartDrawer",
+  "selector": "cart-drawer",
   "storefrontPassword": "1",
   "evidenceSlug": "global-cart-drawer",
   "evidence": [
@@ -35,8 +35,8 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "interaction-steps",
-    "updatedAt": "2026-09-02T16:23:07.059Z",
+    "method": "viewport",
+    "updatedAt": "2026-09-02T16:44:13.699Z",
     "prepareClick": "#cart-icon-bubble"
   },
   "interactionStates": [
@@ -60,12 +60,12 @@
     },
     {
       "state": "open",
-      "action": "click",
-      "selector": "#cart-icon-bubble",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "sepet-bos",
-      "not": "Boş #CartDrawer"
+      "not": "İkon tık drawer açmadı (href=/cart preventDefault). Parent cart-drawer active."
     },
     {
       "state": "filled",
@@ -111,7 +111,11 @@
       "not": "Drawer adet +1"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "open": "Sağ panel. Your cart is empty. CONTINUE SHOPPING. Have an account? Log in to check out faster. Checkout yok.",
+    "filled": "YOUR CART. Cookbook: 100 recipes… qty 1 $250. Free shipping! / Express shipping! bar. Estimated total $250.00 USD. CHECK OUT. 1440'ta ayrıca YOU MAY LIKE overlay (World Book Day, Forest Day Journal + ADD TO CART). 375/768 YOU MAY LIKE accordion kapalı.",
+    "changed": "Aynı satır qty 2, satır $500, estimated $500.00 USD."
+  },
   "missingStates": [],
-  "interactionNote": "#cart-icon-bubble href=/cart; drawer JS ile açılıyor. Checkout/login tıklanmadı."
+  "interactionNote": "#cart-icon-bubble tık boş drawer açmadı (href=/cart). Boş = forceOpen cart-drawer. ATC via UI drawer'ı açtı. Checkout/login tıklanmadı. YOU MAY LIKE leftover (şema oneriler zaten var)."
 }

@@ -14,7 +14,10 @@
     "evidence/bookshop/default/home/global-predictive-search.768.png",
     "evidence/bookshop/default/home/global-predictive-search.initial.arama-bos.1440.png",
     "evidence/bookshop/default/home/global-predictive-search.initial.arama-bos.375.png",
-    "evidence/bookshop/default/home/global-predictive-search.initial.arama-bos.768.png"
+    "evidence/bookshop/default/home/global-predictive-search.initial.arama-bos.768.png",
+    "evidence/bookshop/default/home/global-predictive-search.input.arama-cookbook.1440.png",
+    "evidence/bookshop/default/home/global-predictive-search.input.arama-cookbook.375.png",
+    "evidence/bookshop/default/home/global-predictive-search.input.arama-cookbook.768.png"
   ],
   "notlar": "Search modal; input #Search-In-Modal placeholder Search. Kapalı kare ikon.",
   "delta": "Predictive form w=0 kapalı. Dolu sonuç interact.",
@@ -30,7 +33,7 @@
     ],
     "mode": "viewport",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-02T16:21:58.251Z",
+    "updatedAt": "2026-09-02T16:40:59.910Z",
     "prepareClick": "summary.header__icon--search"
   },
   "interactionStates": [
@@ -52,12 +55,12 @@
     },
     {
       "state": "initial",
-      "action": "click",
-      "selector": "details-modal.header__search summary.header__icon--search",
+      "action": "forceOpen",
+      "selector": "details-modal.header__search details",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "arama-bos",
-      "not": "Boş search modal"
+      "not": "İkon tık headless'te modal açmadı — inner details forceOpen"
     },
     {
       "state": "input",
@@ -70,12 +73,10 @@
       "not": "katalogSorgu=cookbook (Cookbook: 100 recipes…)"
     }
   ],
-  "stateFindings": {},
-  "missingStates": [
-    {
-      "state": "input",
-      "sebep": "adım 3 (fill #Search-In-Modal): locator.waitFor: Timeout 12000ms exceeded.\nCall log:\n  - waiting for locator('#Search-In-Modal').first() to be visible\n    28 × locator resolved to hidden <input name=\"q\" value=\"\" type=\"search\" role=\"combobox\" autocorrect=\"off\" autocomplete=\"off\" spellcheck=\"false\" id=\"Search-In-Modal\" placeholder=\"Search\" autocapitalize=\"off\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-autocomplete=\"list\" class=\"search__input field__input\" aria-owns=\"predictive-search-results\" aria-controls=\"predictive-search-results\"/>\n"
-    }
-  ],
-  "interactionNote": "Submit yok. Scan katalogSorgu=book — ürün adından cookbook yazıldı."
+  "stateFindings": {
+    "initial": "Açık modal: Search placeholder + büyüteç + sağda X. Sonuç listesi yok. Arka plan dim.",
+    "input": "cookbook. PRODUCTS: Cookbook: 100 recipes and inspiration for cooking; Book for Healthy Diet Plan for Healthy Lifestyle; Good Energy: Book for Fitness & Health; Increase Health Inside Guide Book; A5 magazine catalogue mockup book. Altta Search for \"cookbook\" →. Submit yok."
+  },
+  "missingStates": [],
+  "interactionNote": "İkon tık headless'te modal açmadı — inner details forceOpen. Scan katalogSorgu=book; ürün adından cookbook yazıldı."
 }

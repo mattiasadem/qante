@@ -12,10 +12,11 @@
     "evidence/bookshop/default/home/global-menu-drawer.1440.png",
     "evidence/bookshop/default/home/global-menu-drawer.768.png",
     "evidence/bookshop/default/home/global-menu-drawer.open.hamburger.1440.png",
+    "evidence/bookshop/default/home/global-menu-drawer.open.hamburger.375.png",
     "evidence/bookshop/default/home/global-menu-drawer.open.hamburger.768.png"
   ],
   "notlar": "Hamburger drawer: koleksiyon linkleri, wishlist/compare, hesap, locale. Header drawer-menu — 1440'ta da opener var.",
-  "delta": "Drawer menü metinleri boş görünen koleksiyon satırları (ikon-only?). Yazılı Home/Shop satırları header'da.",
+  "delta": "Header drawer-menu — hamburger 1440'ta da var. Drawer yazıları koleksiyon adları (Religion…Travel), Home/Shop header'da. 375 altta Log in + USD + English + sosyal.",
   "prepareClick": "#Details-menu-drawer-container > summary.header__icon--menu",
   "prepareForceOpen": true,
   "captureMode": "viewport",
@@ -27,8 +28,8 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "interaction-steps",
-    "updatedAt": "2026-09-02T16:20:34.332Z",
+    "method": "viewport",
+    "updatedAt": "2026-09-02T16:48:30.115Z",
     "prepareClick": "#Details-menu-drawer-container > summary.header__icon--menu"
   },
   "interactionStates": [
@@ -50,8 +51,8 @@
     },
     {
       "state": "open",
-      "action": "click",
-      "selector": "#Details-menu-drawer-container > summary.header__icon--menu",
+      "action": "forceOpen",
+      "selector": "#Details-menu-drawer-container",
       "viewports": [
         "375",
         "768",
@@ -60,15 +61,17 @@
       "capture": true,
       "captureMode": "viewport",
       "etiket": "hamburger",
-      "not": "Header drawer-menu — hamburger 1440'ta da var"
+      "not": "Parent details open — #menu-drawer kapalıyken off-screen/0px"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "open": "Sol drawer. Religion and Spirituality / Arts and Humanities / Business and Finance / Science and Technology / Travel. Wishlist 0 + Compare 0. 375: Log in, USD, English, sosyal ikonlar. Hamburger X. Collection <a> tıklanmadı."
+  },
   "missingStates": [
     {
-      "state": "open",
-      "sebep": "capture (375): zero-size / eşleşmedi: #menu-drawer"
+      "state": "initial",
+      "sebep": "Statik 375 #menu-drawer kapalıyken 0px — açık kare interact open.hamburger.375"
     }
   ],
-  "interactionNote": "Statik 375 #menu-drawer zero-size. Interact tık ile açık kare. Collection <a> tıklanmadı."
+  "interactionNote": "Settle sonrası hamburger tık details açmıyor. forceOpen details + menu-opening class (Dawn). Collection/Log in tıklanmadı."
 }

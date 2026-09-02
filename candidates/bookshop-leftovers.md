@@ -12,7 +12,7 @@
 
 | Madde | Ne oldu |
 |---|---|
-| Newsletter popup `#shopify-section-newsletter-popup` | 0px — “Someone liked and Buy” social-proof overlay. Observation yok |
+| Social-proof popup `#shopify-section-newsletter-popup` | “Someone liked and Buy … Minutes Ago From {şehir}” + Verified. Home/PLP/search/cart karelerinde görünür. Observation yok |
 | Meet the team `meet_the_team_bm4Pmb` | Our Book Author: Neil Gaiman / Jane Austen / Leo Tolstoy / Agatha Christie / Stephen King. Taksonomide team/author mosaic yok — aday |
 | About `multirow_Wn9nLx` | İki stacked image+text (BEST SELLERS / FAVORITE). Tek section iki çift — leftover |
 | About `custom_image_4y4b9y` | Our Book Author + 5 görsel (home team’in about kopyası) |
@@ -21,11 +21,13 @@
 | Wishlist `/pages/wishlist` | “No products were added to your wishlist.” Boş custom page — `product-showcase-favorites` slider değil |
 | Compare `/pages/compare` | “There are no products available to compare.” Sayfa; drawer değil. `global-compare-drawer` uydurulmadı |
 | Cart footer `cart-footer` | Boş sepetken 0px |
-| Account / login | Header Log in — tıklanmadı |
-| Checkout | Cart Check out — tıklanmadı |
+| Cart drawer YOU MAY LIKE | ATC sonrası 1440 overlay + 375/768 accordion. Şema `oneriler` zaten var — yeni şema yok |
+| Account / login | Header Log in / drawer Log in — tıklanmadı |
+| Checkout | Cart / drawer Check out — tıklanmadı |
 | Newsletter Subscribe / contact Send | PII — dur |
 | Policy / Terms of Service | Footer link; walk dışı |
-| Quick-view dialog | PLP `quick-add__submit` = ADD TO CART. `#QuickAdd` var; ayrı quick-view overlay kanıtı yok |
+| Quick-view dialog | PLP/home `quick-add__submit` = ADD TO CART. `#QuickAdd` var; ayrı quick-view overlay kanıtı yok |
+| Kart hover 2. görsel | Probe’da opacity swap; resmi hover karesi rest ile aynı. Token |
 
 ## Aday (yeni şema yok)
 
@@ -38,7 +40,5 @@
 ## Açık soru
 
 - PDP buy box countdown + stok + teslimat tarihi — `product-info-main` delta; ayrı şema mı?
-- Testimonial yanında ürün kartı — şemaya slot mu, leftover mı? Delta’ya yazıldı.
-- Mega Shop paneli görsel/promo içeriyor mu? Interact’te bakılacak.
-- Kart hover ikinci görsel / quick-add — interact.
+- Testimonial kartında ürün thumb+fiyat — şemada ürün slotu yok; delta. Yeni şema değil.
 - Tüm ürünler tek varyant — `emit:variant.change` kanıtı yok.

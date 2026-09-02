@@ -260,7 +260,7 @@ try {
         for (const el of els) {
           el.hidden = false;
           el.removeAttribute("hidden");
-          el.classList.add("active", "open", "is-open");
+          el.classList.add("active", "open", "is-open", "menu-opening");
           el.classList.remove("drawer--loading", "loading", "is-loading");
           el.setAttribute("open", "");
           el.setAttribute("aria-hidden", "false");
@@ -314,7 +314,7 @@ try {
         for (const el of els) {
           el.hidden = false;
           el.removeAttribute("hidden");
-          el.classList.add("active", "open", "is-open");
+          el.classList.add("active", "open", "is-open", "menu-opening");
           el.classList.remove("drawer--loading", "loading", "is-loading");
           el.setAttribute("open", "");
           el.setAttribute("aria-hidden", "false");
