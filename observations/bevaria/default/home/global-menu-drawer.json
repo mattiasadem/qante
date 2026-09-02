@@ -26,7 +26,7 @@
     ],
     "mode": "viewport",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-02T19:07:37.878Z",
+    "updatedAt": "2026-09-02T19:33:39.576Z",
     "prepareClick": "#Details-menu-drawer-container > summary"
   },
   "interactionStates": [
@@ -85,7 +85,14 @@
       "not": "Click + forceOpen. CSS görünürlük details[open].menu-opening > .menu-drawer."
     }
   ],
-  "missingStates": [],
-  "stateFindings": {},
-  "interactionNote": "1. open kare kapalı homepage (hero MEGIC DRINK). CSS: .js details[open].menu-opening > .menu-drawer. Official forceOpen menu-opening yazmaz. header-drawer.openMenuDrawer resmi action değil. 1440 hamburger yok."
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375/768 ikinci deneme (hamburger click + forceOpen details/#menu-drawer) hâlâ kapalı homepage (MEGIC DRINK + hamburger). CSS: .js details[open].menu-opening > .menu-drawer görünür. Official forceOpen menu-opening yazmaz. header-drawer.openMenuDrawer resmi action değil. 1440 hamburger 0×0."
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 kareler kapalı homepage: hamburger + BEVARIA + search/cart + hero MEGIC DRINK. Drawer metni (Shop / Wishlist / Compare / Log in) piksede yok."
+  },
+  "interactionNote": "İki deneme: forceOpen, sonra click+forceOpen. İkisi de kapalı homepage. Account/wishlist tıklanmadı. 1440 N/A."
 }

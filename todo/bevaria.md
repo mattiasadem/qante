@@ -13,7 +13,7 @@
 
 **Unlock:** Vendor ürün sayfası + storefront title `beverages-online-store (password: 1)`. Public storefront password `1` girildi → `/` açıldı. Başka host yok.
 
-**Durum:** Mod A 50 obs + static 3vp + interact (search/cart/PDP flavour/FAQ/PLP 1440). Mega/menu/hover 1. kare kapalı — retry sırada.  
+**Durum:** Mod A + interact kapandı. 50 obs · 0 yeni şema · ~203 PNG · mega open (kare kartlar) · menu/hover missingStates  
 **PR:** draft · **main’e merge yok**
 
 ---
@@ -29,7 +29,7 @@
 | Parallel | `observations/bevaria/`, `evidence/bevaria/`, `todo/bevaria.md`, `candidates/bevaria-leftovers.md`, `scripts/unlock-storefront.mjs` |
 
 **Kapsam satırı:**  
-`Bevaria · default · Bevaria-v-1-5-0-latest-updates-new / schema_name Bevaria 1.5.0 · theme_store_id null · password 1 (vendor-published) · home→PDP PURA→PLP best-selling→collections→search energy→cart→faq/contact/our-story/about-layout-1→news+post · 50 obs · 0 yeni şema · interact: search energy / cart drawer+page / PDP flavour+FAQ / FAQ page / PLP Cranberry 1440 · mega/menu/hover retry · leftover: candidates/bevaria-leftovers.md`
+`Bevaria · default · Bevaria-v-1-5-0-latest-updates-new / schema_name Bevaria 1.5.0 · theme_store_id null · password 1 (vendor-published) · home→PDP PURA→PLP best-selling→collections→search energy→cart→faq/contact/our-story/about-layout-1→news+post · 50 obs · 0 yeni şema · interact: mega Shop 6 kart / search energy / cart drawer+page / PDP flavour+FAQ / FAQ page / PLP Cranberry 1440 · missing: menu open, featured hover, PLP 375 filter, PDP tabs · leftover: candidates/bevaria-leftovers.md`
 
 ---
 
@@ -38,9 +38,9 @@
 | Şablon | Durum | 3vp |
 |---|---|---|
 | Home roster (announcement→footer) | [x] obs | [x] static (slider 375 leftover) |
-| Header Shop mega 1440 | [x] obs · 1. open kapalı | [x] static · retry sırada |
+| Header Shop mega 1440 | [x] interact | [x] 6 kare koleksiyon kartı |
 | Predictive search `energy` | [x] interact | [x] open + input 3vp |
-| Mobile menu 375 + 768 | [x] obs · 1. open kapalı | [x] static · retry sırada |
+| Mobile menu 375 + 768 | [x] missingStates | [x] iki kare kapalı homepage |
 | Cart drawer empty + filled + qty | [x] interact | [x] 3vp |
 | PDP PURA flavour swatch | [x] interact | [x] initial + Pomegranate |
 | PLP `/collections/best-selling` | [x] interact 1440 | [x] Cranberry 1440 · 375/768 leftover |
@@ -91,6 +91,6 @@
 ## Evidence backlog
 
 - [x] Official 3vp static (147 PNG; menu 1440 zero; slider 375 zero)
-- [x] Interact search / cart drawer+page / PDP flavour+FAQ / FAQ page / PLP 1440
-- [ ] Mega / menu / featured hover — 1. kare değişmedi; bir retry
-- [ ] `node scripts/validate-schemas.mjs` — 0 error (şema değişmedi)
+- [x] Interact search / cart / PDP flavour+FAQ / FAQ page / PLP 1440 / mega Shop
+- [x] Menu open + featured hover — ikinci deneme de piksede yok; missingStates
+- [x] `node scripts/validate-schemas.mjs` — 0 error (şema değişmedi)

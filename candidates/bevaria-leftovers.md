@@ -166,3 +166,19 @@ Gerekçe: `/search?q=wine` 0 sonuç. Envanter `q=energy` (8 sonuç).
 Örnekler: /search?q=wine  
 Öneri: leftover — boş arama  
 Karar: onay bekliyor
+
+---
+
+ADAY: bevaria-menu-drawer-menu-opening  
+Gerekçe: Mobil drawer CSS `.js details[open].menu-opening > .menu-drawer`. Official forceOpen `menu-opening` yazmaz; hamburger click + forceOpen iki karede kapalı homepage. header-drawer.openMenuDrawer resmi action değil.  
+Örnekler: #menu-drawer 375/768  
+Öneri: leftover — open yakalanmadı  
+Karar: onay bekliyor
+
+---
+
+ADAY: bevaria-featured-hover-atc  
+Gerekçe: Best Selling kart hover iki deneme ATC yazısı göstermedi. DOM’da quick-add 35×35 visibility:hidden.  
+Örnekler: featured_collection_jAK8tq  
+Öneri: leftover — hover  
+Karar: onay bekliyor

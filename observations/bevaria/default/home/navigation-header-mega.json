@@ -29,7 +29,7 @@
     ],
     "mode": "viewport",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-02T19:05:15.274Z"
+    "updatedAt": "2026-09-02T19:31:44.960Z"
   },
   "interactionStates": [
     "initial",
@@ -61,7 +61,9 @@
       "state": "open",
       "action": "hover",
       "selector": "#Details-HeaderMenu-1 > summary",
-      "viewports": ["1440"],
+      "viewports": [
+        "1440"
+      ],
       "capture": false,
       "not": "1. kare hover yalnız kapalı homepage. Click Shop /collections/all."
     },
@@ -69,21 +71,27 @@
       "state": "open",
       "action": "forceOpen",
       "selector": "#Details-HeaderMenu-1",
-      "viewports": ["1440"],
+      "viewports": [
+        "1440"
+      ],
       "capture": false
     },
     {
       "state": "open",
       "action": "forceOpen",
       "selector": "#MegaMenu-Content-1",
-      "viewports": ["1440"],
+      "viewports": [
+        "1440"
+      ],
       "capture": false
     },
     {
       "state": "open",
       "action": "waitFor",
       "value": 700,
-      "viewports": ["1440"],
+      "viewports": [
+        "1440"
+      ],
       "capture": true,
       "captureMode": "viewport",
       "etiket": "shop-mega",
@@ -92,7 +100,8 @@
   ],
   "missingStates": [],
   "stateFindings": {
-    "initial": "1440: Shop / Best Sellers / Themes / Collections / Shop By + BEVARIA + search/wishlist/account/cart; announcement 20% email. 375/768: hamburger + logo + search + cart; mega yok."
+    "initial": "1440: Shop / Best Sellers / Themes / Collections / Shop By + BEVARIA + search/wishlist/account/cart; announcement 20% email. Altta daire koleksiyon şerit (turuncu halka). 375/768: hamburger + logo + search + cart; mega yok.",
+    "open": "1440 Shop mega: header altında 6 kare koleksiyon kartı — Monster Drink, BCAA ENERGY, Limca Soda, Watermelon Juice, Sugar-Free Drinks, Organic Drinks. Home slider daire+halka; bu bant kare. Hover yalnız kapalı kaldı; forceOpen #Details-HeaderMenu-1 + #MegaMenu-Content-1 açtı."
   },
-  "interactionNote": "1. open kare hover ile kapalı homepage kaldı. Retry forceOpen #Details-HeaderMenu-1 + #MegaMenu-Content-1. Click Shop yasak (/collections/all). Account/wishlist tıklanmadı."
+  "interactionNote": "Click Shop /collections/all — tıklanmadı. Account/wishlist tıklanmadı. 375/768 mega yok (hamburger ayrı obs)."
 }
