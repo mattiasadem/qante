@@ -25,5 +25,48 @@
     "mode": "section",
     "method": "margin-box+minPad8",
     "updatedAt": "2026-09-02T19:30:39.810Z"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://women-beauty-6.myshopify.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-1 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "Shop All hover — kutu büyümeyebilir"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-HeaderMenu-1",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-all-mega",
+      "not": "Shop All 6 kolon: Haircare / Makeup Kit / Nail Polish / Eyebrow Brush / Lipstick / Fragrance"
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375/768 mega yok — hamburger global-menu-drawer"
+    }
+  ],
+  "interactionNote": "Features mega leftover (tema satış listesi). Shop All merch mega."
 }

@@ -26,5 +26,45 @@
     "method": "viewport",
     "updatedAt": "2026-09-02T19:28:59.721Z",
     "prepareClick": ".header__icon--menu"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://women-beauty-6.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#shopify-section-sections--17814604087523__header",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "etiket": "kapali",
+      "not": "#menu-drawer kapalı; header host"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": ".header__icon--menu",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "375/768 drawer. Scan: 375×696 Shop All… Log in"
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger 0×0"
+    }
+  ],
+  "interactionNote": "Drawer details expander yok (scan details=[]). Yazılı <a> tıklanmadı."
 }

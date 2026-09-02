@@ -23,5 +23,62 @@
     "mode": "section",
     "method": "margin-box+minPad8",
     "updatedAt": "2026-09-02T19:30:06.806Z"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "open",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://women-beauty-6.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "ikon",
+      "not": "1440 inline bar; 375/768 ikon"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": ".header__icon--search",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik",
+      "not": "Mobil search modal"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Template",
+      "value": "cream",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cream",
+      "not": "katalogSorgu cream — inline bar"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "cream",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cream",
+      "not": "katalogSorgu cream — modal"
+    }
+  ],
+  "interactionNote": "1440 #Search-In-Template; 375/768 ikon + #Search-In-Modal. Submit yok."
 }

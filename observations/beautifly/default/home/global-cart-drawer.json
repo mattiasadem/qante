@@ -28,5 +28,65 @@
     "method": "viewport",
     "updatedAt": "2026-09-02T19:28:45.628Z",
     "prepareClick": "#cart-icon-bubble"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://women-beauty-6.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bos",
+      "not": "Boş çekmece"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://women-beauty-6.myshopify.com/products/bottle-of-perfume-with-flowers-on-color",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--17814603956451__main button[name='add']",
+      "capture": false,
+      "not": "PDP ATC — global name=add QuickAdd tuzağı"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "dolu",
+      "not": "Perfume satırı $95"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-2",
+      "not": "Adet +"
+    }
+  ],
+  "interactionNote": "addToCart → PDP main button[name=add]. Checkout yok."
 }

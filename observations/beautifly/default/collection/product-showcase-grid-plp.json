@@ -25,5 +25,37 @@
     "mode": "section",
     "method": "margin-box+minPad8",
     "updatedAt": "2026-09-02T19:23:21.378Z"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "hover"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://women-beauty-6.myshopify.com/collections/makeup",
+      "capture": true,
+      "etiket": "grid",
+      "not": "9 ürün grid"
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#product-grid .grid__item",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "kart-hover",
+      "not": "Scan: 2 img + QUICK SHOP / wishlist / compare"
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "375/768 parmakta hover yok — yoklanır, uydurulmaz"
+    }
+  ],
+  "interactionNote": "QUICK SHOP tıklanmadı (overlay leftover). Wishlist/compare leftover."
 }
