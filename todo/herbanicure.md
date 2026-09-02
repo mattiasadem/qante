@@ -15,7 +15,7 @@ shop `herbanicure.myshopify.com`
 **Password:** Speedo ürün sayfası “Please enter password `1` to view demo.” Aynı host `/password` — public storefront-unlock.
 
 **Durum:** Mod A walk + resmi 3vp + interact + validate  
-**PR:** draft · **main'e merge yok**
+**PR:** https://github.com/mattiasadem/qante/pull/386 (draft · **main'e merge yok**)
 
 ---
 
