@@ -41,6 +41,7 @@ export const PUBLIC_DEMO_PASSWORDS = {
   "vedzila-organic.myshopify.com": "1",
   "watchez-online-store.myshopify.com": "1",
   "women-beauty-8.myshopify.com": "1",
+  "women-beauty-3.myshopify.com": "1",
 };
 
 /** Playwright default UA triggers Shopify checkpoint after a burst. */
