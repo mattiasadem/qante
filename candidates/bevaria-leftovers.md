@@ -138,9 +138,25 @@ Karar: onay bekliyor
 ---
 
 ADAY: bevaria-overlay-static-closed  
-Gerekçe: Static prepareClick cart/search/menu drawer açmadı (Dawn details). Kapalı homepage kare. Interact forceOpen.  
+Gerekçe: Static prepareClick cart/search/menu drawer açmadı (Dawn details). Kapalı homepage kare. Interact: cart + search forceOpen ile açıldı; menu 1. kare hâlâ kapalı.  
 Örnekler: global-cart-drawer · global-predictive-search · global-menu-drawer  
 Öneri: leftover — kapalı kare yalan  
+Karar: onay bekliyor
+
+---
+
+ADAY: bevaria-pdp-tabs-changed  
+Gerekçe: Description / Additional Information / Shipping And Delivery. role=tab unique id yok. Kör click yok. Static Description açık.  
+Örnekler: product-info-tabs PDP  
+Öneri: leftover — changed yakalanmadı  
+Karar: onay bekliyor
+
+---
+
+ADAY: bevaria-plp-filter-375-768  
+Gerekçe: Flavour Cranberry checkbox yalnız 1440 sidebar’da görünür. 375/768 click “not visible”. Mobil filtre drawer ikinci kez zorlanmadı.  
+Örnekler: /collections/best-selling  
+Öneri: leftover — mobil filtre  
 Karar: onay bekliyor
 
 ---

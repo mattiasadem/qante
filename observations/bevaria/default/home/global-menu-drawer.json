@@ -8,7 +8,9 @@
   "selector": "#menu-drawer",
   "evidenceSlug": "global-menu-drawer",
   "evidence": [
-    "evidence/bevaria/default/home/global-menu-drawer.768.png"
+    "evidence/bevaria/default/home/global-menu-drawer.768.png",
+    "evidence/bevaria/default/home/global-menu-drawer.open.mobil-menu-acik.375.png",
+    "evidence/bevaria/default/home/global-menu-drawer.open.mobil-menu-acik.768.png"
   ],
   "notlar": "Hamburger #Details-menu-drawer-container → #menu-drawer. 1440 gizli (0×0).",
   "delta": "Shopify.theme.name Bevaria-v-1-5-0-latest-updates-new · schema_name Bevaria · schema_version 1.5.0 · theme_store_id null · role main · id 150290759935 · shop beverages-online-store.myshopify.com · Speedo Themes OS 2.0 third-party. Vendor-published demo password 1 (public storefront unlock). Official host only. Dawn menu-drawer. 1440 hamburger yok.",
@@ -23,11 +25,12 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T18:33:54.927Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T19:07:37.878Z",
     "prepareClick": "#Details-menu-drawer-container > summary"
   },
   "interactionStates": [
+    "initial",
     "open"
   ],
   "interactionSteps": [
@@ -36,6 +39,27 @@
       "action": "goto",
       "value": "https://beverages-online-store.myshopify.com/",
       "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2000,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header-drawer summary.header__icon--menu, #Details-menu-drawer-container > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false,
+      "not": "1. kare forceOpen kapalı homepage. Dawn hamburger click retry."
     },
     {
       "state": "open",
@@ -58,19 +82,10 @@
       "capture": true,
       "captureMode": "viewport",
       "etiket": "mobil-menu-acik",
-      "not": "Hamburger forceOpen. Beklenen: Shop… + Wishlist/Compare/Log in."
+      "not": "Click + forceOpen. CSS görünürlük details[open].menu-opening > .menu-drawer."
     }
   ],
-  "missingStates": [
-    {
-      "state": "open",
-      "sebep": "1440 #menu-drawer 0px — hamburger yok"
-    },
-    {
-      "state": "changed",
-      "sebep": "Drawer içinde boş chevron/summary yoklandı değil — satırlar yazılı link"
-    }
-  ],
+  "missingStates": [],
   "stateFindings": {},
-  "interactionNote": "forceOpen details + #menu-drawer. Account/wishlist tıklanmadı."
+  "interactionNote": "1. open kare kapalı homepage (hero MEGIC DRINK). CSS: .js details[open].menu-opening > .menu-drawer. Official forceOpen menu-opening yazmaz. header-drawer.openMenuDrawer resmi action değil. 1440 hamburger yok."
 }

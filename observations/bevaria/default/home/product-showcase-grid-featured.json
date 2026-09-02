@@ -8,9 +8,13 @@
   "selector": "#shopify-section-template--19375491154175__featured_collection_jAK8tq",
   "evidenceSlug": "product-showcase-grid-featured",
   "evidence": [
+    "evidence/bevaria/default/home/product-showcase-grid-featured.1440.png",
     "evidence/bevaria/default/home/product-showcase-grid-featured.375.png",
     "evidence/bevaria/default/home/product-showcase-grid-featured.768.png",
-    "evidence/bevaria/default/home/product-showcase-grid-featured.1440.png"
+    "evidence/bevaria/default/home/product-showcase-grid-featured.hover.hover-atc.1440.png",
+    "evidence/bevaria/default/home/product-showcase-grid-featured.initial.ilk-hal.1440.png",
+    "evidence/bevaria/default/home/product-showcase-grid-featured.initial.ilk-hal.375.png",
+    "evidence/bevaria/default/home/product-showcase-grid-featured.initial.ilk-hal.768.png"
   ],
   "notlar": "Best Selling + alt metin. Ürün kartları (Lauder Advanced Night Megic Drink $399→$210). featured-product-section.",
   "delta": "Shopify.theme.name Bevaria-v-1-5-0-latest-updates-new · schema_name Bevaria · schema_version 1.5.0 · theme_store_id null · role main · id 150290759935 · shop beverages-online-store.myshopify.com · Speedo Themes OS 2.0 third-party. Vendor-published demo password 1 (public storefront unlock). Official host only. featured_collection. Quick-add kartta var. Sekme metni kapalı karede yok.",
@@ -23,8 +27,8 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T18:40:30.233Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T19:08:31.862Z"
   },
   "interactionStates": [
     "initial",
@@ -49,20 +53,30 @@
       "state": "hover",
       "action": "hover",
       "selector": "#shopify-section-template--19375491154175__featured_collection_jAK8tq .card-wrapper",
+      "value": 1500,
+      "capture": false,
+      "etiket": "hover-atc",
+      "not": "1. hover kare initial ile aynı byte. Retry uzun hover.",
+      "viewports": [
+        "1440"
+      ]
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#shopify-section-template--19375491154175__featured_collection_jAK8tq .card__inner",
+      "value": 1200,
       "capture": true,
       "etiket": "hover-atc",
-      "not": "Hover → Add To Cart görünür. 375/768 değişmeyebilir.",
+      "not": "İkinci hover .card__inner. ATC 35×35 visibility:hidden kaldıysa missing.",
       "viewports": [
         "1440"
       ]
     }
   ],
-  "missingStates": [
-    {
-      "state": "hover",
-      "sebep": "375/768 parmakta hover yok — 1440 denendi"
-    }
-  ],
-  "stateFindings": {},
-  "interactionNote": "Hover Add To Cart. Quick view dialog yoklandı değil."
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Best Selling + soğuk pres metin. 4 kart (Lauder $210/$399, Elixjer, Paris Revitalift, Elixir Mead) + View All. ATC yazısı yok."
+  },
+  "interactionNote": "1. hover PNG initial ile aynı (165592B). quick-add__submit 35×35 visibility:hidden. Quick view yoklandı değil."
 }
