@@ -8,7 +8,61 @@
   "storefrontPassword": "1",
   "selector": "#site-header",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
+  "evidence": [
+    "evidence/pmg/default/home/navigation-header-mega.375.png",
+    "evidence/pmg/default/home/navigation-header-mega.768.png",
+    "evidence/pmg/default/home/navigation-header-mega.1440.png"
+  ],
   "notlar": "sticky-header#site-header. Logo + HOME / SHOP ALL / ABOUT / SUPPORT / NEWS + wishlist/compare sayaç + Log in + Cart. Country/region + language drawer içinde. Announcement bar yok. Home'da shopify-section wrapper 0px (fixed overlay); #site-header 90px.",
-  "delta": "Shopify.theme.name PMG Game Store V-1.5.0 · id 123907113009 · schema_name PMG game store · schema_version 1.5.0 · theme_store_id null · role main · shop gamming-store-1.myshopify.com. Gerçek mega: #Details-HeaderMenu-2 > summary SHOP ALL → #MegaMenu-Content-2. Wishlist/compare header utility. Account tıklanmadı."
+  "delta": "Shopify.theme.name PMG Game Store V-1.5.0 · id 123907113009 · schema_name PMG game store · schema_version 1.5.0 · theme_store_id null · role main · shop gamming-store-1.myshopify.com. Gerçek mega: #Details-HeaderMenu-2 > summary SHOP ALL → #MegaMenu-Content-2. Wishlist/compare header utility. Account tıklanmadı.",
+  "capture": {
+    "url": "https://gamming-store-1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "margin-box+minPad8",
+    "updatedAt": "2026-09-02T16:01:28.874Z"
+  },
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://gamming-store-1.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali-header",
+      "not": "SHOP ALL kapalı"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-2 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-all-mega",
+      "not": "Hover — tıklama /collections/all'a kaçar"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440: PMG logo + HOME (yeşil) / SHOP ALL chevron / ABOUT / SUPPORT / NEWS + search/wishlist/account/cart. 375/768: hamburger + logo + search + cart.",
+    "open": ""
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "1440 mega hover=open; ayrı hover karesi yok"
+    }
+  ],
+  "interactionNote": "SHOP ALL summary tıklanınca /collections/all. Yalnız hover. Account/wishlist tıklanmadı."
 }

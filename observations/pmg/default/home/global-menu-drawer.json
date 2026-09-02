@@ -8,9 +8,57 @@
   "storefrontPassword": "1",
   "selector": "#menu-drawer",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/pmg/default/home/global-menu-drawer.768.png"
+  ],
   "notlar": "header-drawer #Details-menu-drawer-container → #menu-drawer. 1440'ta hamburger gizli olabilir.",
   "delta": "Shopify.theme.name PMG Game Store V-1.5.0 · id 123907113009 · schema_name PMG game store · schema_version 1.5.0 · theme_store_id null · role main · shop gamming-store-1.myshopify.com. Mobil drawer; country/language formları drawer içinde.",
   "captureMode": "viewport",
-  "prepareClick": "#Details-menu-drawer-container > summary"
+  "prepareClick": "#Details-menu-drawer-container > summary",
+  "capture": {
+    "url": "https://gamming-store-1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "viewport",
+    "updatedAt": "2026-09-02T16:35:57.481Z",
+    "prepareClick": "#Details-menu-drawer-container > summary"
+  },
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://gamming-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger-acik",
+      "not": "Mobil drawer"
+    }
+  ],
+  "stateFindings": {
+    "open": ""
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger yok — N/A"
+    }
+  ],
+  "interactionNote": "1440 inline mega; drawer yalnız 375/768."
 }

@@ -8,9 +8,84 @@
   "storefrontPassword": "1",
   "selector": "#CartDrawer",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/pmg/default/home/global-cart-drawer.375.png",
+    "evidence/pmg/default/home/global-cart-drawer.768.png",
+    "evidence/pmg/default/home/global-cart-drawer.1440.png"
+  ],
   "notlar": "cart-drawer#CartDrawer. Opener #cart-icon-bubble href=/cart. Boş hâl is-empty.",
   "delta": "Shopify.theme.name PMG Game Store V-1.5.0 · id 123907113009 · schema_name PMG game store · schema_version 1.5.0 · theme_store_id null · role main · shop gamming-store-1.myshopify.com. Dawn cart-drawer. Checkout tıklanmadı.",
   "captureMode": "viewport",
-  "prepareClick": "#cart-icon-bubble"
+  "prepareClick": "#cart-icon-bubble",
+  "capture": {
+    "url": "https://gamming-store-1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "viewport",
+    "updatedAt": "2026-09-02T16:03:51.436Z",
+    "prepareClick": "#cart-icon-bubble"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://gamming-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://gamming-store-1.myshopify.com/products/gaming-keyboard",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1600,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC drawer açar"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus'], cart-drawer button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "filled": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "ATC UI drawer açtı. Checkout tıklanmadı."
 }
