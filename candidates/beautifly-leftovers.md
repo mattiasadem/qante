@@ -89,3 +89,19 @@ Gerekçe: PDP checkout / BUY IT NOW tıklanmadı.
 Örnekler: perfume PDP  
 Öneri: leftover — checkout  
 Karar: onay bekliyor
+
+---
+
+ADAY: beautifly-cart-you-may-like  
+Gerekçe: Dolu cart drawer’da YOU MAY LIKE. 1440 sol panel (thumb + ADD TO CART); 375/768 kapalı akordeon. Boş drawer’da yok. `global-cart-drawer.oneriler` slotu zaten var — yeni şema değil.  
+Örnekler: filled cart drawer 1440/375/768  
+Öneri: leftover — mevcut oneriler  
+Karar: onay bekliyor
+
+---
+
+ADAY: beautifly-menu-drawer-open  
+Gerekçe: Hamburger interact iki denemede viewport karesi kapalı homepage kaldı. Probe’ta details.menu-opening + Shop All…LOG IN açıldı. Capture Dawn transform’u kaçırdı. Üçüncü deneme yok.  
+Örnekler: evidence …/global-menu-drawer.open.hamburger.{375,768}.png (kapalı kare)  
+Öneri: leftover — missingStates.open  
+Karar: onay bekliyor

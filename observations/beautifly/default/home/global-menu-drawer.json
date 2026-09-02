@@ -8,7 +8,11 @@
   "selector": "#menu-drawer",
   "evidenceSlug": "global-menu-drawer",
   "evidence": [
-    "evidence/beautifly/default/home/global-menu-drawer.768.png"
+    "evidence/beautifly/default/home/global-menu-drawer.768.png",
+    "evidence/beautifly/default/home/global-menu-drawer.initial.kapali.375.png",
+    "evidence/beautifly/default/home/global-menu-drawer.initial.kapali.768.png",
+    "evidence/beautifly/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/beautifly/default/home/global-menu-drawer.open.hamburger.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Statik yalnız 768 viewport (375/1440 zero-size). prepareClick drawer’ı açmadı — hamburger görünür, panel kapalı.",
@@ -23,14 +27,16 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T19:28:59.721Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T19:52:54.147Z",
     "prepareClick": ".header__icon--menu"
   },
   "interactionStates": [
-    "initial",
-    "open"
+    "initial"
   ],
+  "stateFindings": {
+    "initial": "375/768: hamburger + Beautifly + search / cart. #menu-drawer kapalı; hero We Care Your Healthy Skin görünür."
+  },
   "interactionSteps": [
     {
       "state": "initial",
@@ -54,17 +60,30 @@
         "375",
         "768"
       ],
+      "value": 2000,
+      "capture": false,
+      "not": "summary → details#Details-menu-drawer-container.menu-opening"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-menu-drawer-container",
+      "viewports": [
+        "375",
+        "768"
+      ],
       "capture": true,
       "captureMode": "viewport",
+      "captureSelector": "#shopify-section-sections--17814604087523__header",
       "etiket": "hamburger",
-      "not": "375/768 drawer. Scan: 375×696 Shop All… Log in"
+      "not": "375/768 drawer. Probe: Shop All… Faq's · Wishlist · Compare · LOG IN"
     }
   ],
   "missingStates": [
     {
       "state": "open",
-      "sebep": "1440 hamburger 0×0"
+      "sebep": "İki deneme (click .header__icon--menu + forceOpen #Details-menu-drawer-container). Probe’ta details.menu-opening ve #menu-drawer 375×696 Shop All…LOG IN açıldı; capture viewport karesi hamburger kapalı homepage (We Care Your Healthy Skin). Dawn transform menu-opening olmadan off-screen. Üçüncü deneme yok."
     }
   ],
-  "interactionNote": "Drawer details expander yok (scan details=[]). Yazılı <a> tıklanmadı."
+  "interactionNote": "1440 hamburger 0×0. Yazılı <a> / Wishlist / Compare / LOG IN tıklanmadı. Probe metin: Shop All Features Makeup Skincare Haircare Bath & Body About Us Contact Us Faq's · Wishlist · Compare · LOG IN · USD $ · English."
 }

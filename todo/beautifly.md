@@ -15,7 +15,7 @@ Sayfa başlığı: **Beautifly - Beauty and Cosmetics Theme – Women Beauty 6 (
 
 **Password:** Speedo ürün sayfası “Please enter password `1` to view demo.” Aynı host `/password` — public storefront-unlock. Başka host yok.
 
-**Durum:** 🟡 Mod A 3vp static bitti · interact sırada  
+**Durum:** ✅ Mod A 3vp + interact · hamburger `open` missingStates  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -32,7 +32,7 @@ Sayfa başlığı: **Beautifly - Beauty and Cosmetics Theme – Women Beauty 6 (
 | Parallel | yalnız `observations/beautifly/`, `evidence/beautifly/`, `todo/beautifly.md`, `candidates/beautifly-leftovers.md`, unlock host |
 
 **Kapsam satırı:**  
-`Beautifly · default · Beautifly-v-1-5-0 / schema_name Beautifly 1.5.0 · theme_store_id null · shop women-beauty-6.myshopify.com · password 1 · home→PDP perfume Size 50/100/200ml→PLP makeup→/collections→search cream→cart→about-us (IWT×2+overlay×2)·contact·faqs accordion→news+makeup post→404 · 41 obs · 0 yeni şema · leftover: candidates/beautifly-leftovers.md`
+`Beautifly · default · Beautifly-v-1-5-0 / schema_name Beautifly 1.5.0 · theme_store_id null · shop women-beauty-6.myshopify.com · password 1 · home→PDP perfume Size 50/100/200ml→PLP makeup→/collections→search cream→cart→about-us (IWT×2+overlay×2)·contact·faqs accordion→news+makeup post→404 · 41 obs · 175 PNG · 0 yeni şema · leftover: candidates/beautifly-leftovers.md · menu open missingStates`
 
 ---
 
@@ -41,18 +41,18 @@ Sayfa başlığı: **Beautifly - Beauty and Cosmetics Theme – Women Beauty 6 (
 | Şablon | Durum | 3vp |
 |---|---|---|
 | Home roster (announcement→footer) | [x] obs | [x] capture |
-| Shop All mega 1440 | [ ] interact | [ ] |
-| Predictive search `cream` | [ ] interact | [ ] |
-| Mobile menu 375+768 | [ ] interact | [ ] |
-| Cart drawer empty + filled + qty | [ ] interact | [ ] |
-| PDP Perfume Size 50→100ml | [ ] interact | [ ] |
+| Shop All mega 1440 | [x] interact | [x] 6 kolon |
+| Predictive search `cream` | [x] interact | [x] 375/768/1440 |
+| Mobile menu 375+768 | [ ] missingStates | probe açıldı; capture kapalı kare |
+| Cart drawer empty + filled + qty | [x] interact | [x] 3vp |
+| PDP Perfume Size 50→100ml | [x] interact | [x] 50→100 / 65→89 stock |
 | PLP `/collections/makeup` | [x] obs | [x] capture |
 | Collections `/collections` | [x] obs | [x] capture |
 | Search `/search?q=cream` | [x] obs | [x] capture |
-| Cart `/cart` empty + filled | [ ] interact | [ ] |
+| Cart `/cart` empty + filled | [x] interact | [x] 3vp qty 1→2 |
 | About `/pages/about-us` | [x] obs | [x] capture |
 | Contact `/pages/contact` (submit yok) | [x] obs | [x] capture |
-| FAQ `/pages/faqs` | [x] obs | [x] static · [ ] interact |
+| FAQ `/pages/faqs` | [x] obs | [x] static + changed (2 açık) |
 | Blog `/blogs/news` + makeup post | [x] obs | [x] capture |
 | 404 | [x] obs | [x] capture |
 | Email / account / checkout / newsletter submit | ⛔ PII | — |
@@ -115,7 +115,8 @@ Aynı tip = şemaya dokunma, observation + delta. Yeni şema yok.
 
 ## Evidence backlog
 
-- [x] Official 3vp static (`capture-observation.mjs`) — 119 PNG; menu 768-only; search 1440-only; cart/menu open kaçtı
-- [ ] Interact mega / search / menu / cart / PDP size / FAQ / PLP hover
-- [ ] PNG bak → stateFindings
-- [ ] `node scripts/validate-schemas.mjs` — şema dokunulmadı
+- [x] Official 3vp static (`capture-observation.mjs`) — 119 PNG
+- [x] Interact mega / search / cart empty+filled+qty / PDP size / FAQ / PLP hover / cart page — 175 PNG toplam
+- [x] PNG bak → stateFindings
+- [x] Menu `open` iki deneme kapalı homepage → missingStates (üçüncü yok)
+- [x] `node scripts/validate-schemas.mjs` — 0 error · şema dokunulmadı

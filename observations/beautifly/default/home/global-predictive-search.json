@@ -5,10 +5,18 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://women-beauty-6.myshopify.com/",
-  "selector": "predictive-search",
+  "selector": "details-modal.header__search",
   "evidenceSlug": "global-predictive-search",
   "evidence": [
-    "evidence/beautifly/default/home/global-predictive-search.1440.png"
+    "evidence/beautifly/default/home/global-predictive-search.1440.png",
+    "evidence/beautifly/default/home/global-predictive-search.initial.ikon.1440.png",
+    "evidence/beautifly/default/home/global-predictive-search.initial.ikon.375.png",
+    "evidence/beautifly/default/home/global-predictive-search.initial.ikon.768.png",
+    "evidence/beautifly/default/home/global-predictive-search.input.cream.1440.png",
+    "evidence/beautifly/default/home/global-predictive-search.input.cream.375.png",
+    "evidence/beautifly/default/home/global-predictive-search.input.cream.768.png",
+    "evidence/beautifly/default/home/global-predictive-search.open.arama-acik.375.png",
+    "evidence/beautifly/default/home/global-predictive-search.open.arama-acik.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "1440 inline Search for a product or brand… (548×38). details-modal.header__search ikon 0×0.",
@@ -21,13 +29,13 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T19:30:06.806Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:02:10.127Z"
   },
   "interactionStates": [
     "initial",
-    "open",
-    "input"
+    "input",
+    "open"
   ],
   "interactionSteps": [
     {
@@ -36,8 +44,9 @@
       "value": "https://women-beauty-6.myshopify.com/",
       "capture": true,
       "captureMode": "viewport",
+      "captureSelector": "#shopify-section-sections--17814604087523__header",
       "etiket": "ikon",
-      "not": "1440 inline bar; 375/768 ikon"
+      "not": "1440 inline bar; 375/768 ikon. predictive-search 375’te 0×0"
     },
     {
       "state": "open",
@@ -47,10 +56,22 @@
         "375",
         "768"
       ],
+      "capture": false,
+      "not": "Mobil summary — theme JS modal’ı kaçırabilir"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "details-modal.header__search details",
+      "viewports": [
+        "375",
+        "768"
+      ],
       "capture": true,
       "captureMode": "viewport",
+      "captureSelector": "#shopify-section-sections--17814604087523__header",
       "etiket": "arama-acik",
-      "not": "Mobil search modal"
+      "not": "Probe: .search-modal 375×76 + #Search-In-Modal görünür"
     },
     {
       "state": "input",
@@ -62,6 +83,7 @@
       ],
       "capture": true,
       "captureMode": "viewport",
+      "captureSelector": "#shopify-section-sections--17814604087523__header",
       "etiket": "cream",
       "not": "katalogSorgu cream — inline bar"
     },
@@ -76,9 +98,16 @@
       ],
       "capture": true,
       "captureMode": "viewport",
+      "captureSelector": "#shopify-section-sections--17814604087523__header",
       "etiket": "cream",
       "not": "katalogSorgu cream — modal"
     }
   ],
-  "interactionNote": "1440 #Search-In-Template; 375/768 ikon + #Search-In-Modal. Submit yok."
+  "stateFindings": {
+    "initial": "375/768: kapalı büyüteç (header sağ). 1440: inline Search for a product or brand… + kare büyüteç; yazılmış sorgu yok.",
+    "open": "375/768: üst search input boş (placeholder Search for a product or brand…) + sağda X. Öneri listesi yok. Home hero karartılmış.",
+    "input": "q=cream. SUGGESTIONS: cream · suncare uv protection cream. PRODUCTS 8 thumb: High White Skin Care Round Frosted Face Cream · Suncare Uv Protection Cream · Beautifly My Glow Cream Cushion · Beautifly Hand And Body Lotion · Glossy Body Lotion Milky Melon · Beautifly Face Wash · Elovera Sunscreen Tube · Cosmetic Lotion Bottle Packaging Mockup. Alt: Search for “cream”. Submit / Enter yok."
+  },
+  "interactionNote": "1440 #Search-In-Template; 375/768 ikon + forceOpen details-modal.header__search details + #Search-In-Modal. predictive-search 375’te 0×0 — captureSelector header. Submit yok.",
+  "missingStates": []
 }
