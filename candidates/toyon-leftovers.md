@@ -26,6 +26,14 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: toyon-social-proof-popup  
+Gerekçe: “Someone liked and Buy {ürün} {N} Minutes Ago From {şehir}” küçük overlay (blog list, PDP, PLP, search karelerinde). PII değil ama unique schema yok; dismiss bazen kaçırıyor.  
+Örnekler: blog-list-main.1440 · product-info-main.1440 · product-showcase-grid-plp.1440  
+Öneri: leftover — social-proof toast  
+Karar: onay bekliyor
+
+---
+
 ADAY: toyon-newsletter-popup  
 Gerekçe: `#shopify-section-newsletter-popup` h=0. “Get the newsletter Get 10% off.” PII, dur.  
 Örnekler: overlay-group newsletter-popup  

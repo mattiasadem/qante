@@ -13,7 +13,7 @@
 
 **Unlock:** Vendor ürün sayfası demo password `1`. Title `TOYON TOYS (password: 1)`. Public storefront unlock; hesap değil. Başka host yok (`toyon-toys-2` Critters — bu walk değil).
 
-**Durum:** Mod A 41 obs yazıldı · 3vp capture + interact sırada  
+**Durum:** Mod A 41 obs · 121 static 3vp · interact sırada  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -37,21 +37,21 @@
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | [x] obs | [ ] static |
+| Home roster (announcement→footer) | [x] obs | [x] static |
 | Header Shop / Shop By Age 1440 | [ ] interact | [ ] |
 | Predictive search `teddy` | [ ] interact | [ ] |
 | Mobile menu 375 + 768 | [ ] interact | [ ] |
 | Cart drawer empty + filled + qty | [ ] interact | [ ] |
 | PDP Baby Teddy Color Brown→Green | [ ] interact | [ ] |
-| PLP `/collections/best-sellers` | [x] obs | [ ] static |
-| Collections `/collections` | [x] obs | [ ] static |
-| Search `/search?q=teddy` | [x] obs | [ ] static |
+| PLP `/collections/best-sellers` | [x] obs | [x] static |
+| Collections `/collections` | [x] obs | [x] static |
+| Search `/search?q=teddy` | [x] obs | [x] static |
 | Cart page empty + filled + qty | [ ] interact | [ ] |
-| Our Story `/pages/our-story` | [x] obs | [ ] static |
-| Contact form (submit yok) | [x] obs | [ ] static |
-| FAQ `/pages/faqs` | [x] obs | [ ] static |
-| News + publishing post | [x] obs | [ ] static |
-| 404 | [x] obs | [ ] static |
+| Our Story `/pages/our-story` | [x] obs | [x] static |
+| Contact form (submit yok) | [x] obs | [x] static |
+| FAQ `/pages/faqs` | [x] obs | [x] static |
+| News + publishing post | [x] obs | [x] static |
+| 404 | [x] obs | [x] static |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -89,6 +89,6 @@
 
 ## Evidence backlog
 
-- [ ] Official 3vp static
+- [x] Official 3vp static (121 PNG; menu 375/1440 zero-size)
 - [ ] Interact header / search / menu / cart / PDP variant / FAQ / PLP filter
 - [ ] `node scripts/validate-schemas.mjs` — 0 error
