@@ -8,7 +8,8 @@
   "selector": "predictive-search.search-modal__form",
   "evidenceSlug": "global-predictive-search",
   "evidence": [
-    "evidence/digital/default/home/global-predictive-search.1440.png"
+    "evidence/digital/default/home/global-predictive-search.1440.png",
+    "evidence/digital/default/home/global-predictive-search.input.arama-course.1440.png"
   ],
   "storefrontPassword": "1",
   "notlar": "1440'ta header içinde 400px arama kutusu (Search). Mobilde details-modal ikon.",
@@ -22,7 +23,67 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T17:46:07.714Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:47:20.362Z"
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "input",
+      "action": "goto",
+      "value": "https://digital-gallery-shop-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Template",
+      "value": "course",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-course",
+      "not": "1440 inline #Search-In-Template. katalogSorgu course."
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "details-modal.header__search summary.header__icon--search",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false,
+      "not": "Retry: ikon → #Search-In-Modal görünür (probe)"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "course",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-course",
+      "not": "Retry yalnız #Search-In-Modal. Beklenen: PRODUCTS listesi"
+    }
+  ],
+  "stateFindings": {
+    "input": "1440 inline fill course: PRODUCTS listesi (Website Design And Development Course, Graphic Design Courses & Classes, English Course… ~10 satır) + Search for “course”. 375/768 modal input hidden kaldı."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "375/768 iki resmi deneme. Birinci: compound selector #Search-In-Template (gizli) first. İkinci: ikon tık + yalnız #Search-In-Modal — input hidden. Üçüncü yok. 1440 alındı."
+    }
+  ],
+  "interactionNote": "katalogSorgu course (scan). Submit yok. Mobil overlay leftover."
 }

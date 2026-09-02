@@ -14,7 +14,7 @@ shop `digital-gallery-shop-2.myshopify.com` · locale `en` · country `US` · cu
 
 **Unlock:** `/` **302** → `/password`. Dawn `details.password-modal` + “Enter using password”. Vendor şifresi ürün sayfasında: **`1`**. Aynı host — başka demo uydurulmadı.
 
-**Durum:** Mod A walk + observation yazıldı · 3vp capture + interact sırada  
+**Durum:** Mod A walk + 3vp + interact (shopper states) · şema yok  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -27,10 +27,11 @@ shop `digital-gallery-shop-2.myshopify.com` · locale `en` · country `US` · cu
 | Capture | `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` + `unlock-storefront.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **39** |
+| PNG | **148** (113 statik 3vp + 35 interact) |
 | Parallel | yalnız `observations/digital/`, `evidence/digital/`, `todo/digital.md`, `candidates/digital-leftovers.md` + unlock host |
 
 **Kapsam satırı:**  
-`Digital · default · digital-v-1-5-0-latest-updates-new / schema_name Digital 1.5.0 · theme_store_id null · shop digital-gallery-shop-2.myshopify.com · password 1 · home→PDP health-wellness→PLP /collections/all→collections→search digital→cart→contact/faq→news+post→our-story→404 · 39 obs · 113 PNG · 0 yeni şema · leftover: candidates/digital-leftovers.md`
+`Digital · default · digital-v-1-5-0-latest-updates-new / schema_name Digital 1.5.0 · theme_store_id null · shop digital-gallery-shop-2.myshopify.com · password 1 · home→PDP health-wellness→PLP /collections/all→collections→search digital→cart→contact/faq→news+post→our-story→404 · 39 obs · 148 PNG · 0 yeni şema · leftover: candidates/digital-leftovers.md`
 
 ---
 
@@ -39,17 +40,20 @@ shop `digital-gallery-shop-2.myshopify.com` · locale `en` · country `US` · cu
 | Şablon | Durum | 3vp |
 |---|---|---|
 | Home roster (announcement→footer) | [x] obs | [x] static |
-| Header SHOP mega 1440 | [ ] interact | [ ] |
-| Predictive search `digital` | [ ] interact | [ ] |
-| Mobile menu 375 + 768 | [ ] interact | [ ] |
-| Cart drawer empty + filled + qty | [ ] interact | [ ] |
+| Header SHOP mega 1440 | [x] interact | [x] forceOpen image cards |
+| Predictive search `course` | [x] 1440 PRODUCTS | [ ] 375/768 missingStates |
+| Mobile menu 375 + 768 | [ ] leftover | iki deneme, üçüncü yok |
+| Cart drawer empty | [ ] leftover | iki deneme homepage |
+| Cart drawer filled + qty | [x] interact | $89 → $178 · ATC ui |
 | PDP Health And Wellness (varyant yok) | [x] obs | [x] static |
-| PLP `/collections/all` | [x] obs | [x] static |
+| PDP tabs Additional Information | [x] interact | [x] |
+| PLP `/collections/all` hover | [x] interact | 1440 ok + kalp/büyüteç/çanta |
+| Featured Best Selling hover | [ ] missingStates | iki 1440, ikon yok |
 | Collections `/collections` | [x] obs | [x] |
 | Search `/search?q=digital` | [x] obs | [x] |
-| Cart `/cart` empty + filled | [x] obs empty | [x] empty |
+| Cart `/cart` empty + filled | [x] interact | [x] |
 | Contact `/pages/contact` (submit yok) | [x] obs | [x] |
-| FAQ `/pages/faq` | [x] obs | [x] static |
+| FAQ `/pages/faq` ikinci soru | [x] interact | allowMultipleOpen |
 | News + membership post | [x] obs | [x] |
 | Our Story `/pages/our-story` | [x] obs | [x] |
 | 404 | [x] obs | [x] |
@@ -63,11 +67,11 @@ shop `digital-gallery-shop-2.myshopify.com` · locale `en` · country `US` · cu
 | # | Digital / id | QANTE schemaId | Karar |
 |---|---|---|---|
 | 1 | `announcement_bar_fHNTbB` | `promo-announcement-bar` | reuse |
-| 2 | `header` | `navigation-header-mega` | reuse · SHOP/THEMES mega |
+| 2 | `header` | `navigation-header-mega` | reuse · SHOP görsel kart mega |
 | 3 | `3b7cb796…` | `hero-slideshow` | reuse |
 | 4 | `collection_slider_yqTHJd` | `collection-nav-icon-buttons` | reuse · ikon daire |
 | 5 | `shopable_videos_LBBUfC` | `media-shop-the-feed` | reuse |
-| 6 | `featured_collection_aaAnaN` | `product-showcase-grid-featured` | reuse |
+| 6 | `featured_collection_aaAnaN` | `product-showcase-grid-featured` | reuse · hover missing |
 | 7 | `deal_image_banner_ca9Mjy` | `promo-banner-countdown` | reuse |
 | 8 | `custom_announcement_bar_HXkCB7` | `promo-scrolling-marquee` | reuse |
 | 9 | `brand_logo_YGTJDe` | `social-proof-brand-logos` | reuse |
@@ -77,9 +81,9 @@ shop `digital-gallery-shop-2.myshopify.com` · locale `en` · country `US` · cu
 | 13 | `multicolumn_6caJ4H` | `features-multicolumn` | reuse |
 | 14 | `custom_instagram_PxAb4p` | `media-mosaic-grid` | reuse |
 | 15 | `footer` | `footer-columns-newsletter` | reuse |
-| 16 | `#CartDrawer` | `global-cart-drawer` | reuse |
-| 17 | `#menu-drawer` | `global-menu-drawer` | reuse |
-| 18 | `predictive-search` | `global-predictive-search` | reuse · 1440 inline |
+| 16 | `#CartDrawer` | `global-cart-drawer` | reuse · filled/changed |
+| 17 | `#menu-drawer` | `global-menu-drawer` | reuse · open leftover |
+| 18 | `predictive-search` | `global-predictive-search` | reuse · 1440 input |
 | — | `#newsletter-popup` h=0 | — | leftover PII |
 
 ---
@@ -93,6 +97,7 @@ shop `digital-gallery-shop-2.myshopify.com` · locale `en` · country `US` · cu
 ## Evidence backlog
 
 - [x] Official 3vp static — 113 PNG (quick-view fail leftover)
-- [ ] Interact header / search / menu / cart / featured / FAQ / PDP tabs / PLP
-- [ ] PDP variant — **yok** (products.json hepsi Default Title)
-- [ ] `node scripts/validate-schemas.mjs` — 0 error
+- [x] Interact header / search 1440 / cart filled / featured (missing) / FAQ / PDP tabs / PLP / cart sayfa
+- [x] PDP variant — **yok** (products.json hepsi Default Title)
+- [ ] Menu open · search 375/768 · cart empty · featured hover — leftover / missingStates
+- [x] `node scripts/validate-schemas.mjs` — 0 error (Digital şema yok)

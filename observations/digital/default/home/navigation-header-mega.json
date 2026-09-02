@@ -8,9 +8,13 @@
   "selector": "#shopify-section-sections--24481723613491__header",
   "evidenceSlug": "navigation-header-mega",
   "evidence": [
+    "evidence/digital/default/home/navigation-header-mega.1440.png",
     "evidence/digital/default/home/navigation-header-mega.375.png",
     "evidence/digital/default/home/navigation-header-mega.768.png",
-    "evidence/digital/default/home/navigation-header-mega.1440.png"
+    "evidence/digital/default/home/navigation-header-mega.initial.ilk-hal.1440.png",
+    "evidence/digital/default/home/navigation-header-mega.initial.ilk-hal.375.png",
+    "evidence/digital/default/home/navigation-header-mega.initial.ilk-hal.768.png",
+    "evidence/digital/default/home/navigation-header-mega.open.shop-mega-acik.1440.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Logo + HOME/SHOP/THEMES/COLLECTIONS/CATEGORY + inline Search + wishlist/compare/account + Cart. 1440 inline.",
@@ -22,8 +26,60 @@
       "768",
       "1440"
     ],
-    "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T17:50:11.384Z"
-  }
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:31:06.276Z"
+  },
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://digital-gallery-shop-2.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "ilk-hal",
+      "not": "Kapalı header 3vp"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-2 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-HeaderMenu-2",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "selector": "#MegaMenu-Content-1",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega-acik",
+      "not": "Retry forceOpen. Beklenen: Graphic Design / Finance / Development"
+    }
+  ],
+  "stateFindings": {
+    "initial": "3vp kapalı: DIGITAL logo · HOME (altı çizili) / SHOP / THEMES / COLLECTIONS / CATEGORY. 1440 inline Search + wishlist 0 / hesap / sepet. 375/768 hamburger + Search + sepet.",
+    "open": "1440 forceOpen SHOP: altı görsel kart — Graphic Design, Finance, Development, Marketing, Life Style, Management. Metin kolon yok."
+  },
+  "missingStates": [],
+  "interactionNote": "SHOP summary hover tek başına kapalı kaldı. İkinci deneme forceOpen #Details-HeaderMenu-2 + #MegaMenu-Content-1 açtı. 375/768 mega yok (hamburger)."
 }

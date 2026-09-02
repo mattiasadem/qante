@@ -8,15 +8,24 @@
   "selector": "#CartDrawer",
   "evidenceSlug": "global-cart-drawer",
   "evidence": [
+    "evidence/digital/default/home/global-cart-drawer.1440.png",
     "evidence/digital/default/home/global-cart-drawer.375.png",
     "evidence/digital/default/home/global-cart-drawer.768.png",
-    "evidence/digital/default/home/global-cart-drawer.1440.png"
+    "evidence/digital/default/home/global-cart-drawer.changed.adet-2.1440.png",
+    "evidence/digital/default/home/global-cart-drawer.changed.adet-2.375.png",
+    "evidence/digital/default/home/global-cart-drawer.changed.adet-2.768.png",
+    "evidence/digital/default/home/global-cart-drawer.filled.kurs-eklendi.1440.png",
+    "evidence/digital/default/home/global-cart-drawer.filled.kurs-eklendi.375.png",
+    "evidence/digital/default/home/global-cart-drawer.filled.kurs-eklendi.768.png",
+    "evidence/digital/default/home/global-cart-drawer.initial.bos.1440.png",
+    "evidence/digital/default/home/global-cart-drawer.initial.bos.375.png",
+    "evidence/digital/default/home/global-cart-drawer.initial.bos.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Dawn cart-drawer.shipping. Boş kare prepareClick ile.",
   "delta": "Checkout tıklanmadı. Filled interact'te.",
   "captureMode": "viewport",
-  "prepareClick": "a.header__icon--cart",
+  "prepareClick": "#cart-icon-bubble",
   "capture": {
     "url": "https://digital-gallery-shop-2.myshopify.com/",
     "viewports": [
@@ -25,8 +34,82 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T17:42:47.113Z",
-    "prepareClick": "a.header__icon--cart"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:49:51.253Z",
+    "prepareClick": "#cart-icon-bubble"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://digital-gallery-shop-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": false,
+      "not": "Retry: #cart-icon-bubble (probe drawer.active)"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 1600,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bos",
+      "not": "Boş YOUR CART + Continue Shopping"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://digital-gallery-shop-2.myshopify.com/products/health-and-wellness-a-comprehensive-complete-guide",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--24481723056435__main product-form button[name='add'], #shopify-section-template--24481723056435__main button[name='add']",
+      "capture": false,
+      "not": "PDP ATC"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#CartDrawer",
+      "etiket": "kurs-eklendi",
+      "not": "Health And Wellness satırı + $89"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#CartDrawer",
+      "etiket": "adet-2",
+      "not": "Adet 2 · toplam $178"
+    }
+  ],
+  "stateFindings": {
+    "initial": "İki resmi tık (#cart-icon-bubble) sonrası 3vp kare homepage ile aynı — YOUR CART paneli piksede yok.",
+    "filled": "375/768: YOUR CART · Health And Wellness $89 · adet 1 · Estimated total $89.00 USD · Check Out. YOU MAY LIKE kapalı akordeon. 1440: aynı satır + ortada YOU MAY LIKE modal (kurs listesi + Add To Cart).",
+    "changed": "Plus → adet 2 · satır $178.00 · Estimated total $178.00 USD. 375/768 kargo barı dolu. Checkout tıklanmadı."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "İki resmi deneme (a.header__icon--cart, sonra #cart-icon-bubble + 1600ms). Viewport kare homepage; boş drawer boyanmadı. Üçüncü yok. Dolu hâller ATC ile geldi."
+    }
+  ],
+  "interactionNote": "filled/addToCart → ui (Health And Wellness PDP). 1440 ATC ayrıca ortalanmış YOU MAY LIKE modal açıyor — leftover, yeni şema değil (oneriler slotu zaten var). Checkout / Log in yok."
 }

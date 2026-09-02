@@ -8,9 +8,10 @@
   "selector": "#shopify-section-template--24481721876787__featured_collection_aaAnaN",
   "evidenceSlug": "product-showcase-grid-featured",
   "evidence": [
+    "evidence/digital/default/home/product-showcase-grid-featured.1440.png",
     "evidence/digital/default/home/product-showcase-grid-featured.375.png",
     "evidence/digital/default/home/product-showcase-grid-featured.768.png",
-    "evidence/digital/default/home/product-showcase-grid-featured.1440.png"
+    "evidence/digital/default/home/product-showcase-grid-featured.hover.kart-hover.1440.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Best Selling. Math Course $89 + English Course + diğer kurs kartları.",
@@ -23,7 +24,46 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T17:51:11.819Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:33:55.005Z"
+  },
+  "interactionStates": [
+    "initial",
+    "hover"
+  ],
+  "interactionSteps": [
+    {
+      "state": "hover",
+      "action": "goto",
+      "value": "https://digital-gallery-shop-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "hover",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24481721876787__featured_collection_aaAnaN",
+      "capture": false
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#Slide-template--24481721876787__featured_collection_aaAnaN-1 .card, #Slide-template--24481721876787__featured_collection_aaAnaN-1 .card__inner, #Slide-template--24481721876787__featured_collection_aaAnaN-1 .card__media",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "kart-hover",
+      "not": "Quick-add / ikinci görsel. 375/768 missing olabilir"
+    }
+  ],
+  "stateFindings": {
+    "hover": "1440 hover karesi Best Selling 3×2 grid (Math $89 … View All). Ok / wishlist / quick-view / bag yok — PLP hover’daki ikon sırası burada boyanmadı."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "İki resmi 1440 hover (kart + card__inner/media). Pikselde hover kontrolü yok. 375/768 parmakta hover yok — denenmedi. Üçüncü yok."
+    }
+  ],
+  "interactionNote": "PLP aynı tema kartında hover ikonları görüldü; home featured’da iki denemede çıkmadı."
 }

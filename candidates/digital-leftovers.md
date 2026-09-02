@@ -131,3 +131,39 @@ ADAY: digital-articles-json-404
 Gerekçe: `/blogs/news/articles.json` 404. HTML `/blogs/news` + article URL’leri var.  
 Öneri: leftover — endpoint  
 Karar: onay bekliyor
+
+---
+
+ADAY: digital-you-may-like  
+Gerekçe: PDP Add to cart 1440’ta ortalanmış “YOU MAY LIKE” modal (kurs listesi + Add To Cart) + sağ YOUR CART drawer. 375/768 drawer içinde kapalı “YOU MAY LIKE” akordeon. `global-cart-drawer.oneriler` ile aynı içerik; ayrı şema yazılmadı.  
+Örnekler: https://digital-gallery-shop-2.myshopify.com/products/health-and-wellness-a-comprehensive-complete-guide  
+Öneri: leftover — ATC overlay varyantı  
+Karar: onay bekliyor
+
+---
+
+ADAY: digital-menu-drawer-open  
+Gerekçe: 375/768 hamburger iki resmi deneme. 375 `#menu-drawer` zero-size. 768 open PNG kapalı homepage ile byte-aynı. Üçüncü yok.  
+Öneri: leftover — open kare alınamadı  
+Karar: onay bekliyor
+
+---
+
+ADAY: digital-search-modal-mobile  
+Gerekçe: 375/768 predictive input iki resmi deneme hidden kaldı (`#Search-In-Modal`). 1440 inline `#Search-In-Template` PRODUCTS alındı.  
+Öneri: leftover — mobil overlay  
+Karar: onay bekliyor
+
+---
+
+ADAY: digital-cart-drawer-empty  
+Gerekçe: Boş drawer iki resmi tık (`a.header__icon--cart`, `#cart-icon-bubble`). Viewport kare homepage. Dolu drawer ATC ile geldi.  
+Öneri: leftover — boş open boyanmadı  
+Karar: onay bekliyor
+
+---
+
+ADAY: digital-featured-hover  
+Gerekçe: Home Best Selling 1440 hover iki resmi; ok/wishlist/bag yok. PLP aynı kart tipinde hover ikonları görüldü.  
+Öneri: leftover — home hover  
+Karar: onay bekliyor
