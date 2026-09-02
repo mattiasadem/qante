@@ -3,9 +3,14 @@
   "preset": "default",
   "storefrontPassword": "1",
   "evidence": [
+    "evidence/wallpapsh/default/home/promo-announcement-bar.1440.png",
     "evidence/wallpapsh/default/home/promo-announcement-bar.375.png",
     "evidence/wallpapsh/default/home/promo-announcement-bar.768.png",
-    "evidence/wallpapsh/default/home/promo-announcement-bar.1440.png"
+    "evidence/wallpapsh/default/home/promo-announcement-bar.changed.mesaj-2.1440.png",
+    "evidence/wallpapsh/default/home/promo-announcement-bar.changed.mesaj-2.768.png",
+    "evidence/wallpapsh/default/home/promo-announcement-bar.initial.mesaj-1.1440.png",
+    "evidence/wallpapsh/default/home/promo-announcement-bar.initial.mesaj-1.375.png",
+    "evidence/wallpapsh/default/home/promo-announcement-bar.initial.mesaj-1.768.png"
   ],
   "observationId": "wallpapsh.default.home.promo-announcement-bar",
   "schemaId": "promo-announcement-bar",
@@ -23,7 +28,44 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T18:36:00.199Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:49:08.930Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "selector": null,
+      "value": "https://pandora-wallpaper.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "selector": null,
+      "value": 400,
+      "capture": true,
+      "etiket": "mesaj-1",
+      "not": "Free Shipping…"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-sections--21433102696471__announcement-bar .slider-button--next",
+      "value": 900,
+      "capture": true,
+      "etiket": "mesaj-2",
+      "not": "Next announcement"
+    }
+  ],
+  "stateFindings": {
+    "initial": "3vp: New Offers This Weekend Only To Get 50%. Sol/sağ chevron. Timer yok.",
+    "changed": "768/1440: Free Shipping On Domestic Orders Over $150. Aynı chevron’lar."
+  },
+  "missingStates": [],
+  "interactionNote": "375 next ok gizli (kare yok). İlk kare New Offers — auto-rotate olabilir; next sonrası Free Shipping."
 }

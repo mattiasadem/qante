@@ -14,7 +14,7 @@
 
 **Unlock:** Vendor ürün sayfası “Please enter password "1" to view demo.” Aynı host `/password` — public storefront unlock. Başka host yok.
 
-**Durum:** 🟡 Mod A 41 obs + 121 static 3vp yazıldı — interact sırada  
+**Durum:** ✅ Mod A + interact — 41 obs · 156 PNG · 0 yeni şema  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -39,18 +39,18 @@
 | Şablon | Durum | 3vp |
 |---|---|---|
 | Home roster (announcement→footer) | [x] obs | [x] capture |
-| Header SHOP BY ROOM 1440 | [x] obs | [ ] interact |
-| Predictive search | [x] obs | [ ] interact |
-| Mobile menu 375 + 768 | [x] obs | [ ] interact |
-| Cart drawer empty + filled + qty | [x] obs | [ ] interact |
-| PDP Hobby Pink Size/Color | [x] obs | [ ] interact |
+| Header SHOP BY ROOM 1440 | [x] obs | [x] open (forceOpen; hover yok) |
+| Predictive search | [x] obs | [x] 1440 `pink` · 375/768 input gizli |
+| Mobile menu 375 + 768 | [x] obs | [ ] missingStates — drawer karede yok |
+| Cart drawer empty + filled + qty | [x] obs | [x] filled qty1 $80 · changed qty2 $160 |
+| PDP Hobby Pink Size/Color | [x] obs | [x] Color Black→Pink |
 | PLP `/collections/new-arrivals` | [x] obs | [x] capture |
 | Collections `/collections` | [x] obs | [x] capture |
 | Search `/search?q=wallpaper` | [x] obs | [x] capture |
-| Cart `/cart` empty | [x] obs | [ ] + filled |
+| Cart `/cart` empty | [x] obs | [x] filled + qty 2 |
 | About `/pages/about-us-1` | [x] obs | [x] capture |
 | Contact `/pages/contact` (submit yok) | [x] obs | [x] capture |
-| FAQ `/pages/faq` | [x] obs | [ ] interact |
+| FAQ `/pages/faq` | [x] obs | [x] ilk soru açık |
 | Blog `/blogs/news` + article | [x] obs | [x] capture |
 | Email / account / checkout / newsletter submit | ⛔ PII | — |
 
@@ -91,6 +91,15 @@
 ## Evidence backlog
 
 - [x] Official 3vp static (`capture-observation.mjs`) — 41/41 · 121 PNG · overlay kapalı kare homepage (menu/search/cart)
-- [ ] Interact mega / search / cart / menu / PDP swatch / tabs / FAQ
-- [ ] PNG bak → stateFindings
-- [ ] `node scripts/validate-schemas.mjs`
+- [x] Interact — mega 1440 · search 1440 · cart drawer+page · PDP Pink · FAQ · announcement 768/1440
+- [x] PNG bak → stateFindings (şema yok; mevcut tipler yeter)
+- [x] `node scripts/validate-schemas.mjs`
+- [ ] missingStates: hamburger drawer · TRENDY COLLECTION sekme · search 375/768
+
+## Interact özet
+
+Alınan: SHOP BY ROOM 6 görsel kart (1440 forceOpen); Search `pink` PRODUCTS (1440); cart drawer/sayfa Hobby Pink 8×8 Black $80→$160; PDP Color Pink; FAQ ilk soru −; announcement New Offers ↔ Free Shipping (768/1440).
+
+Açık: hamburger kare homepage; sekme BEST SELLERS’da kaldı; arama 375/768 input gizli. Üçüncü deneme yok.
+
+Şema: 0 değişiklik.

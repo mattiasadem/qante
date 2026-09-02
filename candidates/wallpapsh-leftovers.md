@@ -77,9 +77,9 @@ Karar: onay bekliyor
 ---
 
 ADAY: wallpapsh-cart-footer-empty  
-Gerekçe: `#shopify-section-template--21433101647895__cart-footer` boş sepette h=0.  
+Gerekçe: `#shopify-section-template--21433101647895__cart-footer` boş sepette h=0. Dolu cart-items crop’ta CHECK OUT yok.  
 Örnekler: /cart  
-Öneri: leftover — totals chrome dolu hâlde bakılacak  
+Öneri: leftover — totals chrome  
 Karar: onay bekliyor
 
 ---
@@ -153,3 +153,19 @@ Gerekçe: `/blogs/news/articles.json` 404. HTML `/blogs/news` ve `/blogs/news/10
 Örnekler: blog walk  
 Öneri: leftover — API yok, HTML var  
 Karar: onay bekliyor
+
+---
+
+ADAY: wallpapsh-menu-drawer-overlay  
+Gerekçe: 375/768 hamburger interact — `#menu-drawer` 375 zero-size; 768 kare kapalı homepage. forceOpen ikinci deneme aynı. Drawer grammar mevcut (`global-menu-drawer`); yeni şema yok.  
+Örnekler: `#header-menu` · `#menu-drawer`  
+Öneri: leftover — overlay karede yok  
+Karar: observation missingStates
+
+---
+
+ADAY: wallpapsh-trendy-tabs-unchanged  
+Gerekçe: TRENDY COLLECTION BEST SELLERS / NEW ARRIVALS / TOP TRENDING. İki deneme BEST SELLERS’da kaldı (hash link sonra gizli panel). Şemaya tab action eklenmedi.  
+Örnekler: home `#shopify-section-template--21433102073879__165666889162d379a4`  
+Öneri: leftover — sekme değişmedi  
+Karar: observation missingStates

@@ -3,9 +3,13 @@
   "preset": "default",
   "storefrontPassword": "1",
   "evidence": [
+    "evidence/wallpapsh/default/home/navigation-header-mega.1440.png",
     "evidence/wallpapsh/default/home/navigation-header-mega.375.png",
     "evidence/wallpapsh/default/home/navigation-header-mega.768.png",
-    "evidence/wallpapsh/default/home/navigation-header-mega.1440.png"
+    "evidence/wallpapsh/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/wallpapsh/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/wallpapsh/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/wallpapsh/default/home/navigation-header-mega.open.shop-by-room.1440.png"
   ],
   "observationId": "wallpapsh.default.home.navigation-header-mega",
   "schemaId": "navigation-header-mega",
@@ -23,7 +27,48 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T18:35:27.757Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:58:34.933Z"
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "selector": null,
+      "value": "https://pandora-wallpaper.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "selector": null,
+      "value": 400,
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-HeaderMenu-2",
+      "value": 900,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-by-room",
+      "viewports": [
+        "1440"
+      ],
+      "not": "SHOP BY ROOM mega — 6 görsel kart. Yazılı <a> tıklanmadı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Kapalı header: Search + wishlist 0 | HOME (altı çizili) SHOP BY ROOM COLLECTION | WALLPAPSH | HOW TO ABOUT US MORE | Log in + sepet. Mega panel yok.",
+    "open": "1440 forceOpen #Details-HeaderMenu-2: header altında 6 görsel kart BEDROOM / FLOWER / LIVING ROOM / NATURE / KIDSROOM / KITCHEN; altında hero + OUR STORY. 375/768 mega yok (hamburger ayrı schema)."
+  },
+  "missingStates": [],
+  "interactionNote": "Summary hover paneli açmadı. İkinci deneme forceOpen #Details-HeaderMenu-2 — 1440 alındı. Yazılı <a> tıklanmadı."
 }

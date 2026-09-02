@@ -3,9 +3,15 @@
   "preset": "default",
   "storefrontPassword": "1",
   "evidence": [
+    "evidence/wallpapsh/default/cart/cart-page-main.1440.png",
     "evidence/wallpapsh/default/cart/cart-page-main.375.png",
     "evidence/wallpapsh/default/cart/cart-page-main.768.png",
-    "evidence/wallpapsh/default/cart/cart-page-main.1440.png"
+    "evidence/wallpapsh/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/wallpapsh/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/wallpapsh/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/wallpapsh/default/cart/cart-page-main.filled.dolu-sepet.1440.png",
+    "evidence/wallpapsh/default/cart/cart-page-main.filled.dolu-sepet.375.png",
+    "evidence/wallpapsh/default/cart/cart-page-main.filled.dolu-sepet.768.png"
   ],
   "observationId": "wallpapsh.default.cart.cart-page-main",
   "schemaId": "cart-page-main",
@@ -23,7 +29,52 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T18:30:08.740Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:54:55.612Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "selector": null,
+      "value": "https://pandora-wallpaper.myshopify.com/products/wall-sticker-home-decor-backsplash-wallpaper-bathroom-kitchen",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit",
+      "value": null,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "selector": null,
+      "value": "https://pandora-wallpaper.myshopify.com/cart",
+      "capture": true,
+      "etiket": "dolu-sepet",
+      "not": "Dolu cart sayfası"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus']",
+      "value": 1200,
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "filled": "3vp: Your cart. PRODUCT / QUANTITY / TOTAL. Hobby Pink $80 Size 8 x 8 Color Black qty 1. Satır total $80.00.",
+    "changed": "3vp: qty 2, satır total $160.00. Aynı ürün."
+  },
+  "missingStates": [],
+  "interactionNote": "Boş kare static. CHECK OUT bu section crop’ta yok (cart-footer leftover). ATC UI."
 }

@@ -3,9 +3,12 @@
   "preset": "default",
   "storefrontPassword": "1",
   "evidence": [
+    "evidence/wallpapsh/default/home/product-showcase-tabs.1440.png",
     "evidence/wallpapsh/default/home/product-showcase-tabs.375.png",
     "evidence/wallpapsh/default/home/product-showcase-tabs.768.png",
-    "evidence/wallpapsh/default/home/product-showcase-tabs.1440.png"
+    "evidence/wallpapsh/default/home/product-showcase-tabs.changed.new-arrivals.1440.png",
+    "evidence/wallpapsh/default/home/product-showcase-tabs.changed.new-arrivals.375.png",
+    "evidence/wallpapsh/default/home/product-showcase-tabs.changed.new-arrivals.768.png"
   ],
   "observationId": "wallpapsh.default.home.product-showcase-tabs",
   "schemaId": "product-showcase-tabs",
@@ -23,7 +26,44 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T18:35:30.919Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T19:02:37.174Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "selector": null,
+      "value": "https://pandora-wallpaper.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21433102073879__165666889162d379a4",
+      "value": null,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#template--21433102073879__165666889162d379a4-tab-2",
+      "value": 1500,
+      "capture": true,
+      "etiket": "new-arrivals",
+      "not": "NEW ARRIVALS sekmesi — hash, sayfa kaçmaz"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "İlk çekim BEST SELLERS ile özdeş (NEW ARRIVALS seçilmedi). İkinci deneme #…-tab-2 gizli panel div’ine tıklandı, görünür değil. Üçüncü deneme yok."
+    }
+  ],
+  "interactionNote": "Newsletter popup kareyi karartıyor. Sekme değişmedi — şemaya tab action eklenmedi."
 }

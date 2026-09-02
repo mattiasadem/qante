@@ -3,7 +3,8 @@
   "preset": "default",
   "storefrontPassword": "1",
   "evidence": [
-    "evidence/wallpapsh/default/home/global-menu-drawer.768.png"
+    "evidence/wallpapsh/default/home/global-menu-drawer.768.png",
+    "evidence/wallpapsh/default/home/global-menu-drawer.open.hamburger-acik.768.png"
   ],
   "observationId": "wallpapsh.default.home.global-menu-drawer",
   "schemaId": "global-menu-drawer",
@@ -21,10 +22,76 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
+    "method": "interaction-steps",
     "prepareClick": "#header-menu",
-    "updatedAt": "2026-09-02T18:34:34.564Z"
+    "updatedAt": "2026-09-02T19:01:00.926Z"
   },
   "captureMode": "viewport",
-  "prepareClick": "#header-menu"
+  "prepareClick": "#header-menu",
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "selector": null,
+      "value": "https://pandora-wallpaper.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#header-menu",
+      "value": 400,
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Hamburger"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#menu-drawer",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger-acik",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Hamburger drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#menu-drawer details.mega-menu > summary",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-by-room-drill",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "SHOP BY ROOM details summary — yazılı koleksiyon <a> değil"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375: #menu-drawer zero-size. 768 kare homepage (hamburger kapalı, drawer yok). click #header-menu + forceOpen ikinci deneme aynı."
+    },
+    {
+      "state": "changed",
+      "sebep": "#menu-drawer details.mega-menu > summary yok. Drawer açılmadığı için drill yok. Üçüncü deneme yok."
+    }
+  ],
+  "interactionNote": "1440 hamburger 0×0 (inline nav). 768 open PNG yazıldı ama kapalı homepage — open sayılmaz."
 }
