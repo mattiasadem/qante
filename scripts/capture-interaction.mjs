@@ -41,6 +41,10 @@ import {
   assertCleanForScreenshot,
 } from "./dismiss-overlays.mjs";
 import { screenshotSectionWithPadding } from "./screenshot-section.mjs";
+import {
+  unlockStorefront,
+  storefrontPasswordFrom,
+} from "./unlock-storefront.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const qanteRoot = path.resolve(__dirname, "..");
@@ -182,7 +186,13 @@ function iframeHostSelector(selector) {
 async function settle(page, url) {
   const target = new URL(url);
   await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
-  await page.waitForTimeout(3500);
+  await page.waitForTimeout(2000);
+  const unlocked = await unlockStorefront(page, storefrontPasswordFrom(obs));
+  if (unlocked) {
+    await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
+    await page.waitForTimeout(2000);
+  }
+  await page.waitForTimeout(1500);
 
   const landed = new URL(page.url());
   if (
@@ -602,12 +612,24 @@ async function runStep(page, step) {
           break;
         }
       }
-      await el.waitFor({ state: "visible", timeout: 12000 });
-      await el.click({ force: true }).catch(() => {});
+      await el.waitFor({ state: "attached", timeout: 12000 });
       if (step.value == null || String(step.value).trim() === "") {
         throw new Error("fill value yok — katalog kelimesi yaz (scan.katalogSorgu); chair sabit değil");
       }
-      await el.fill(String(step.value));
+      const vis = await el.isVisible().catch(() => false);
+      try {
+        if (!vis) throw new Error("not visible");
+        await el.click({ force: true }).catch(() => {});
+        await el.fill(String(step.value), { timeout: 4000 });
+      } catch {
+        // Dawn search modal: kutu ekranda ama fill actionable değil
+        await el.evaluate((n, v) => {
+          n.focus();
+          n.value = v;
+          n.dispatchEvent(new Event("input", { bubbles: true }));
+          n.dispatchEvent(new Event("keyup", { bubbles: true }));
+        }, String(step.value));
+      }
       await page.waitForTimeout(1600);
       return null;
     }
@@ -623,6 +645,15 @@ async function runStep(page, step) {
       return null;
     }
     case "press":
+      if (sel) {
+        const parsed = splitIframeSelector(sel);
+        const el = (parsed?.kind === "inner"
+          ? (await locateInFrame(page, parsed)).loc
+          : resolveLocator(page, sel)
+        ).first();
+        await el.waitFor({ state: "attached", timeout: 12000 });
+        await el.focus().catch(() => {});
+      }
       await page.keyboard.press(String(step.value || "Enter"));
       await page.waitForTimeout(1400);
       return null;

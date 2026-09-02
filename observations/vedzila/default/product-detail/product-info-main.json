@@ -1,0 +1,70 @@
+{
+  "observationId": "vedzila.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "vedzila",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://vedzila-organic.myshopify.com/products/chilli-horsetail-black-seed-hair-oil",
+  "selector": "#shopify-section-template--23865698779420__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/vedzila/default/product-detail/product-info-main.1440.png",
+    "evidence/vedzila/default/product-detail/product-info-main.375.png",
+    "evidence/vedzila/default/product-detail/product-info-main.768.png",
+    "evidence/vedzila/default/product-detail/product-info-main.changed.size-200.1440.png",
+    "evidence/vedzila/default/product-detail/product-info-main.changed.size-200.375.png",
+    "evidence/vedzila/default/product-detail/product-info-main.changed.size-200.768.png",
+    "evidence/vedzila/default/product-detail/product-info-main.initial.size-100.1440.png",
+    "evidence/vedzila/default/product-detail/product-info-main.initial.size-100.375.png",
+    "evidence/vedzila/default/product-detail/product-info-main.initial.size-100.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "BODY CARE + Chilli Hair Oil $20 / $22. Size dropdown 100/200/400 ml. ATC + Buy it now + wishlist.",
+  "delta": "product-info + variant-selects dropdown (swatch yok). Buy it now / wishlist leftover. Quantity stepper.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://vedzila-organic.myshopify.com/products/chilli-horsetail-black-seed-hair-oil",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--23865698779420__main",
+      "capture": true,
+      "etiket": "size-100",
+      "not": "Size 100 ml | 6.8 fl.oz — $20 / $22"
+    },
+    {
+      "state": "changed",
+      "action": "select",
+      "selector": "#Option-template--23865698779420__main-0",
+      "value": "200 ml | 6.8 fl.oz",
+      "capture": true,
+      "etiket": "size-200",
+      "not": "200 ml — yoklama $40"
+    }
+  ],
+  "stateFindings": {
+    "initial": "BODY CARE + Chilli, Horsetail & Black Seed Hair Oil. $20.00 üzeri $22.00. 9% OFF. Size 100 ml | 6.8 fl.oz. Qty 1. ADD TO CART + Buy it now + Add To Wishlist. Description açık (lip scrub lorem).",
+    "changed": "Size 200 ml | 6.8 fl.oz. Fiyat $40.00 (üstü çizili yok). 9% OFF rozeti duruyor. Buy it now / wishlist tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "Swatch yok — #Option-template--23865698779420__main-0 select. ATC bu observation'da yok (drawer ayrı).",
+  "capture": {
+    "url": "https://vedzila-organic.myshopify.com/products/chilli-horsetail-black-seed-hair-oil",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:58:39.168Z"
+  }
+}
