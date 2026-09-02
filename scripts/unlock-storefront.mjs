@@ -26,6 +26,7 @@ export const PUBLIC_DEMO_PASSWORDS = {
   "speedo-candles-store.myshopify.com": "1",
   "tormeti-fashi.myshopify.com": "1",
   "vedzila-organic.myshopify.com": "1",
+  "food-online-store-1.myshopify.com": "1",
 };
 
 /** Playwright default UA triggers Shopify checkpoint after a burst. */
