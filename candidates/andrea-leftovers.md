@@ -113,3 +113,35 @@ Gerekçe: PDP BUY IT NOW / shopify-payment-button. Checkout — tıklanmadı.
 Örnekler: product-info-main  
 Öneri: leftover — checkout  
 Karar: onay bekliyor
+
+---
+
+ADAY: andrea-contact-google-map  
+Gerekçe: `/pages/contact` lead-capture-form aynı section içinde Google Map (Workiva, 2900 University Blvd, Ames IA). Form SUBMIT tıklanmadı.  
+Örnekler: `#shopify-section-template--22863739683096` civarı / contact lead-capture-form  
+Öneri: leftover — form + harita aynı blok  
+Karar: onay bekliyor
+
+---
+
+ADAY: andrea-pdp-buybox-accordions  
+Gerekçe: product-info-main altında EXTRA INFORMATION / SHIPPING & RETURNS / MATERIALS (ikon +). Ayrı `product-info-tabs` (DESCRIPTION / ADDITIONAL INFORMATION / SHIPPING AND DELIVERY) değil. Interact tabs'ta; buy-box accordion açılmadı.  
+Örnekler: product-info-main  
+Öneri: leftover — buy-box accordion  
+Karar: onay bekliyor
+
+---
+
+ADAY: andrea-you-may-like-upsell  
+Gerekçe: ADD TO CART sonrası 1440 ortada YOU MAY LIKE modal (ürün listesi + ADD TO CART). 375 cart drawer içinde YOU MAY LIKE akordeon. Yeni şema yok.  
+Örnekler: ATC → global-cart-drawer filled  
+Öneri: leftover — ATC upsell overlay  
+Karar: onay bekliyor
+
+---
+
+ADAY: andrea-drawer-shop-link  
+Gerekçe: `#HeaderDrawer-shop` yazılı `<a href="/collections/all">`. Expander yok; tıklanınca PLP. Drill `changed` yok.  
+Örnekler: #menu-drawer  
+Öneri: leftover — yazılı nav link  
+Karar: onay bekliyor

@@ -43,20 +43,33 @@
     {
       "state": "open",
       "action": "hover",
-      "selector": "#Details-HeaderMenu-2 > summary",
+      "selector": "#Details-HeaderMenu-2",
       "value": 900,
+      "capture": false,
+      "viewports": [
+        "1440"
+      ],
+      "not": "Shop hover — tıklama /collections/all'a gider"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-HeaderMenu-2",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "shop-mega",
       "viewports": [
         "1440"
       ],
-      "not": "Shop hover mega. Tıklanmadı."
+      "not": "Retry: hover kare homepage kaldı; forceOpen pin. Beklenen: FACECARE/MAKEUP/MASCARA kolonları."
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "375: hamburger + ANDREA + search/bag. 768: hamburger + logo + bag; alt SHOP BY CATEGORY + inline search. 1440: sosyal + ANDREA + wishlist 0 / bag; alt HOME SHOP FEATURES CONTACT US ABOUT US + inline search. Mega kapalı.",
+    "open": "1440 Shop hover+forceOpen: 6 kolon FACECARE / MAKEUP / MASCARA / BODY CARE / MOISTURIZER / NAILS — her birinde görsel + başlık + ürün cümlesi (Vitamin C Facial…, Professional Makeup Kit…). SHOP açık. Tıklanmadı."
+  },
   "missingStates": [],
-  "interactionNote": "375/768 Shop mega yok — hamburger ayrı schema. FEATURES mega leftover.",
+  "interactionNote": "1. deneme hover Shop mega boyamadı (viewport homepage). Retry hover+forceOpen #Details-HeaderMenu-2 pin. 375/768 mega yok — hamburger ayrı schema. FEATURES leftover. Account tıklanmadı.",
   "capture": {
     "url": "https://women-beauty-7.myshopify.com/",
     "viewports": [
@@ -66,6 +79,6 @@
     ],
     "mode": "section",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-02T18:12:04.201Z"
+    "updatedAt": "2026-09-02T18:28:32.151Z"
   }
 }

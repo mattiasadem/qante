@@ -11,6 +11,9 @@
     "evidence/andrea/default/product-detail/product-info-tabs.1440.png",
     "evidence/andrea/default/product-detail/product-info-tabs.375.png",
     "evidence/andrea/default/product-detail/product-info-tabs.768.png",
+    "evidence/andrea/default/product-detail/product-info-tabs.changed.additional-information.1440.png",
+    "evidence/andrea/default/product-detail/product-info-tabs.changed.additional-information.375.png",
+    "evidence/andrea/default/product-detail/product-info-tabs.changed.additional-information.768.png",
     "evidence/andrea/default/product-detail/product-info-tabs.initial.description.1440.png",
     "evidence/andrea/default/product-detail/product-info-tabs.initial.description.375.png",
     "evidence/andrea/default/product-detail/product-info-tabs.initial.description.768.png"
@@ -42,21 +45,19 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": "#shopify-section-template--22863739846936__79582f51-5736-4bff-b870-bba69393ad36 a:nth-of-type(2)",
+      "selector": "a[href='#tab2']",
       "value": 800,
       "capture": true,
       "etiket": "additional-information",
-      "not": "ADDITIONAL INFORMATION sekmesi"
+      "not": "Retry: a:nth-of-type(2) eşleşmedi. a[href='#tab2'] = ADDITIONAL INFORMATION"
     }
   ],
-  "stateFindings": {},
-  "missingStates": [
-    {
-      "state": "changed",
-      "sebep": "adım 2 (click #shopify-section-template--22863739846936__79582f51-5736-4bff-b870-bba69393ad36 a:nth-of-type(2)): selector eşleşmedi: #shopify-section-template--22863739846936__79582f51-5736-4bff-b870-bba69393ad36 a:nth-of-type(2)"
-    }
-  ],
-  "interactionNote": "SHIPPING AND DELIVERY bu turda açılmadı.",
+  "stateFindings": {
+    "initial": "DESCRIPTION siyah/aktif. Kutu lorem (Dictum varius…). ADDITIONAL INFORMATION ve SHIPPING AND DELIVERY gri.",
+    "changed": "ADDITIONAL INFORMATION siyah/aktif. Kutu Maecenas… + 3 madde. DESCRIPTION ve SHIPPING AND DELIVERY gri. 375 sekmeler dikey istif."
+  },
+  "missingStates": [],
+  "interactionNote": "1. deneme a:nth-of-type(2) eşleşmedi. Retry a[href='#tab2']. SHIPPING AND DELIVERY (#tab3) açılmadı.",
   "capture": {
     "url": "https://women-beauty-7.myshopify.com/products/andrea-glitter-nail-polish-paint-multi-color",
     "viewports": [
@@ -66,6 +67,6 @@
     ],
     "mode": "section",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-02T18:16:26.427Z"
+    "updatedAt": "2026-09-02T18:31:15.773Z"
   }
 }

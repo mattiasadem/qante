@@ -8,7 +8,10 @@
   "selector": "details-modal.header__search",
   "evidenceSlug": "global-predictive-search",
   "evidence": [
-    "evidence/andrea/default/home/global-predictive-search.375.png"
+    "evidence/andrea/default/home/global-predictive-search.375.png",
+    "evidence/andrea/default/home/global-predictive-search.input.arama-sonucu.1440.png",
+    "evidence/andrea/default/home/global-predictive-search.input.arama-sonucu.375.png",
+    "evidence/andrea/default/home/global-predictive-search.input.arama-sonucu.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "details-modal.header__search + PREDICTIVE-SEARCH. 1440 ayrıca inline header-search_box. Kapalı modal 0×0.",
@@ -33,7 +36,20 @@
       "selector": "summary.header__icon--search",
       "value": 800,
       "capture": false,
-      "not": "Search modal aç"
+      "viewports": [
+        "375"
+      ],
+      "not": "375 büyüteç"
+    },
+    {
+      "state": "input",
+      "action": "forceOpen",
+      "selector": "details-modal.header__search details",
+      "capture": false,
+      "viewports": [
+        "375"
+      ],
+      "not": "Retry: click sonrası #Search-In-Modal hidden kaldı"
     },
     {
       "state": "input",
@@ -43,17 +59,32 @@
       "capture": true,
       "captureMode": "viewport",
       "etiket": "arama-sonucu",
-      "not": "katalogSorgu cream — 8 sonuç sayfa"
-    }
-  ],
-  "stateFindings": {},
-  "missingStates": [
+      "viewports": [
+        "375"
+      ],
+      "not": "katalogSorgu cream — modal"
+    },
     {
       "state": "input",
-      "sebep": "adım 2 (fill #Search-In-Modal): locator.waitFor: Timeout 12000ms exceeded.\nCall log:\n  - waiting for locator('#Search-In-Modal').first() to be visible\n    28 × locator resolved to hidden <input name=\"q\" value=\"\" type=\"search\" role=\"combobox\" autocorrect=\"off\" autocomplete=\"off\" spellcheck=\"false\" id=\"Search-In-Modal\" placeholder=\"Search\" autocapitalize=\"off\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-autocomplete=\"list\" class=\"search__input field__input\" aria-owns=\"predictive-search-results\" aria-controls=\"predictive-search-results\"/>\n"
+      "action": "fill",
+      "selector": "#Search-In-Template",
+      "value": "cream",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#Search-In-Template",
+      "etiket": "arama-sonucu",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "not": "katalogSorgu cream — inline kutu 158×30. captureSelector: modal host 768/1440 0px."
     }
   ],
-  "interactionNote": "Fill #Search-In-Modal (kapalı 0×0). 1440 inline #Search-In-Template leftover.",
+  "stateFindings": {
+    "input": "katalogSorgu cream. 375 modal: Search=cream + X; PRODUCTS 8 satır (Skin Brightening Cream for Skin Fairness, High White Skin Care Round Frosted Face Cream, Curology Skincare Pegmento Foaming Cream, Advanced Hydration Self-Tan Facial Creme, Beautifly Hand and Body Lotion, Different Type of Makeup Brushes Kit, Calming Moisturizer Serum, Natural Oils for Optimal Moisturizes Body) + Search for \"cream\". 768/1440 inline kutu cream + aynı 8 PRODUCTS dropdown."
+  },
+  "missingStates": [],
+  "interactionNote": "1. deneme fill #Search-In-Modal timeout (hidden). Retry: 375 forceOpen details + #Search-In-Modal; 768/1440 inline #Search-In-Template (modal host 0px). Submit yok.",
   "capture": {
     "url": "https://women-beauty-7.myshopify.com/",
     "viewports": [
@@ -63,7 +94,7 @@
     ],
     "mode": "viewport",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-02T18:13:00.252Z",
+    "updatedAt": "2026-09-02T18:33:37.351Z",
     "prepareClick": "summary.header__icon--search"
   }
 }
