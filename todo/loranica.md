@@ -15,8 +15,8 @@ Sayfa başlığı: **Best Shopify Loranica Beauty Care Store – Women Beauty 5 
 
 **Password:** Speedo ürün sayfası “Please enter password `1` to view demo.” Aynı host `/password` — public storefront-unlock. Başka host yok.
 
-**Durum:** 🟡 Mod A 3vp + interact 1. tur · retry: menu forceOpen / search inner details / cart plus / featured .card__inner  
-**PR:** draft · **main'e merge yok**
+**Durum:** ✅ Mod A 3vp + interact (şema yok) · menu open/changed + featured hover missingStates  
+**PR:** draft https://github.com/mattiasadem/qante/pull/373 · **main'e merge yok**
 
 ---
 
@@ -40,21 +40,21 @@ Sayfa başlığı: **Best Shopify Loranica Beauty Care Store – Women Beauty 5 
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home + announcement/header/hero/featured/rich-text/categories/best-selling/banners/trust/overlay/blog/footer | roster | [ ] |
+| Home + announcement/header/hero/featured/rich-text/categories/best-selling/banners/trust/overlay/blog/footer | roster | [x] |
 | Mega 1440 | yok — hamburger all vp | leftover |
-| Predictive search `cream`/`nail` | interact sırada | [ ] |
-| Mobile + 1440 menu drawer | interact sırada | [ ] |
-| Cart drawer empty + filled + qty | interact sırada | [ ] |
-| PDP Extra Lip Tint Color Rose gold→Pink | interact sırada | [ ] |
-| PLP `/collections/new-arrival` | roster | [ ] |
-| Collections `/collections` | roster | [ ] |
-| Search `/search?q=cream` | roster | [ ] |
-| Cart `/cart` empty + filled | interact sırada | [ ] |
-| About `/pages/about-us` | roster | [ ] |
-| Contact `/pages/contact` (submit yok) | roster | [ ] |
-| FAQ `/pages/faqs` | roster + interact | [ ] |
-| Blog `/blogs/news` + lazy-skincare post | roster | [ ] |
-| 404 leftover | roster | [ ] |
+| Predictive search `skincare` | interact — 9 PRODUCTS | [x] |
+| Mobile + 1440 menu drawer | missingStates (2 deneme) | [x] |
+| Cart drawer empty + filled + qty 2 | interact | [x] |
+| PDP Extra Lip Tint Color Rose gold→Pink | interact | [x] |
+| PLP `/collections/new-arrival` | roster | [x] |
+| Collections `/collections` | roster | [x] |
+| Search `/search?q=cream` | roster | [x] |
+| Cart `/cart` empty + filled + qty 2 | interact | [x] |
+| About `/pages/about-us` | roster | [x] |
+| Contact `/pages/contact` (submit yok) | roster | [x] |
+| FAQ `/pages/faqs` | roster + Q2 açık | [x] |
+| Blog `/blogs/news` + lazy-skincare post | roster | [x] |
+| 404 leftover | roster | [x] |
 | Email / account / checkout / newsletter submit | ⛔ PII | — |
 
 ---
@@ -66,7 +66,7 @@ Sayfa başlığı: **Best Shopify Loranica Beauty Care Store – Women Beauty 5 
 | 1 | c46903b8 announcement swiper | `promo-announcement-bar` | reuse |
 | 2 | header | `navigation-header-mega` | reuse · hamburger 1440 (mega yok) |
 | 3 | 3b7cb796 slideshow | `hero-slideshow` | reuse |
-| 4 | featured_collection SHOP TEES | `product-showcase-grid-featured` | reuse |
+| 4 | featured_collection SHOP TEES | `product-showcase-grid-featured` | reuse · hover missing |
 | 5 | f585c67b rich-text | `editorial-rich-text` | reuse |
 | 6 | 07468762 SHOP BY CATEGORY | `collection-nav-image-cards` | reuse |
 | 7 | 74b4724b BEST SELLING | `product-showcase-grid-featured.2` | reuse |
@@ -75,9 +75,9 @@ Sayfa başlığı: **Best Shopify Loranica Beauty Care Store – Women Beauty 5 
 | 10 | c5bb1ddd 100% NATURAL SKINCARE | `editorial-image-with-text-overlay` | reuse |
 | 11 | 1f806fa0 LATEST NEWS | `blog-list-main` | reuse |
 | 12 | footer | `footer-columns-newsletter` | reuse |
-| 13 | #CartDrawer | `global-cart-drawer` | reuse · interact |
-| 14 | #menu-drawer | `global-menu-drawer` | reuse · 375/768/1440 |
-| 15 | details-modal.header__search | `global-predictive-search` | reuse · interact |
+| 13 | #CartDrawer | `global-cart-drawer` | reuse · filled + qty 2 |
+| 14 | #menu-drawer | `global-menu-drawer` | reuse · open/changed missing |
+| 15 | details-modal.header__search | `global-predictive-search` | reuse · skincare 9 |
 | — | newsletter-popup h=0 | leftover | — |
 | — | /pages/wishlist | leftover | — |
 
@@ -112,7 +112,6 @@ Aynı tip = şemaya dokunma, observation + delta. Yeni şema yok.
 ## Evidence backlog
 
 - [x] Official 3vp static (`capture-observation.mjs`)
-- [x] Interact 1. tur (PDP Pink, tabs, FAQ, cart filled kanıtlı)
-- [ ] Retry menu forceOpen / search fill / cart plus / featured hover
-- [x] PNG bak → stateFindings (doğrulananlar)
-- [ ] `node scripts/validate-schemas.mjs` — şema dokunulmadı
+- [x] Interact menu / search / cart / PDP swatch / FAQ / hover
+- [x] PNG bak → stateFindings
+- [x] `node scripts/validate-schemas.mjs` — şema dokunulmadı

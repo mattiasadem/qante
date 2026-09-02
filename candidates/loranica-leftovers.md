@@ -89,3 +89,19 @@ Gerekçe: Footer SIGN UP FOR 15% OFF. Email submit PII stop.
 Örnekler: footer  
 Öneri: leftover — form submit yok  
 Karar: duruldu
+
+---
+
+ADAY: loranica-menu-drawer-capture  
+Gerekçe: Probe hamburger tıkı drawer’ı x=0’a getirir (Home / Shop / Best Seller / …). Resmi `capture-interaction` 1. tur kapalı homepage; 2. tur forceOpen `#Details-menu-drawer-container` + `#menu-drawer` viewport karesi hâlâ homepage (375 karartı var, panel yok). Dawn `menu-opening` class’ı script forceOpen’da yok. Shop `#HeaderDrawer-shop` viewport dışı.  
+Örnekler: #menu-drawer · #Details-menu-drawer-container  
+Öneri: leftover — open/changed missingStates; şema yok  
+Karar: iki deneme bitti
+
+---
+
+ADAY: loranica-featured-hover  
+Gerekçe: Scan 12 medya kutusunda 2+ img. 1440 hover `.card__media` ve `.card__inner` PNG’leri static 1440 ile byte-aynı (89629). İkinci görsel / Quick View görünmedi.  
+Örnekler: home featured SHOP TEES  
+Öneri: leftover — hover missingStates  
+Karar: iki deneme bitti

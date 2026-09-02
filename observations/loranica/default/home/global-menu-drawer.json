@@ -13,6 +13,7 @@
     "evidence/loranica/default/home/global-menu-drawer.changed.shop-drill.1440.png",
     "evidence/loranica/default/home/global-menu-drawer.changed.shop-drill.768.png",
     "evidence/loranica/default/home/global-menu-drawer.open.hamburger-acik.1440.png",
+    "evidence/loranica/default/home/global-menu-drawer.open.hamburger-acik.375.png",
     "evidence/loranica/default/home/global-menu-drawer.open.hamburger-acik.768.png"
   ],
   "storefrontPassword": "1",
@@ -29,7 +30,7 @@
     ],
     "mode": "viewport",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-02T20:35:01.366Z",
+    "updatedAt": "2026-09-02T20:51:00.202Z",
     "prepareClick": "summary.header__icon--menu"
   },
   "interactionStates": [
@@ -80,23 +81,24 @@
     },
     {
       "state": "changed",
-      "action": "click",
-      "selector": "#Details-menu-drawer-menu-item-2 > summary",
-      "value": 400,
-      "capture": false,
-      "not": "Shop disclosure — yazılı <a> değil"
-    },
-    {
-      "state": "changed",
       "action": "forceOpen",
       "selector": "#Details-menu-drawer-menu-item-2",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "shop-drill",
-      "not": "Skin Care / Makeup / Cosmetics / Nail Lacquer"
+      "not": "Shop click viewport dışı — forceOpen drill. Skin Care / Makeup / Cosmetics / Nail Lacquer. Yazılı <a> değil."
     }
   ],
   "stateFindings": {},
-  "missingStates": [],
-  "interactionNote": "1. deneme click-only: 768/1440 kapalı homepage (kutu 400×968 x=-336). 375 0-size. Retry forceOpen details + #menu-drawer. Wishlist/Log in tıklanmadı."
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1. click-only: 768/1440 kapalı homepage (kutu 400×968 x=-336), 375 0-size. 2. click + forceOpen #Details-menu-drawer-container + #menu-drawer: 375 karartılı homepage (drawer paneli yok); 768/1440 yine NATURAL SKINCARE COLLECTION homepage. Probe’da tık x=0 Home/Shop/Best Seller yazdı; resmi capture Dawn transform’u boyamadı (menu-opening class forceOpen’da yok). Üçüncü deneme yok."
+    },
+    {
+      "state": "changed",
+      "sebep": "Shop summary #HeaderDrawer-shop capture’da viewport dışı. forceOpen #Details-menu-drawer-menu-item-2 yazıldı ama open karesi drawer göstermediği için drill PNG yok. Probe’da Skin Care / Makeup / Cosmetics / Nail Lacquer. Üçüncü deneme yok."
+    }
+  ],
+  "interactionNote": "Wishlist / Log in tıklanmadı. Yazılı <a> tıklanmadı. 1440 hamburger var (mega yok). Yeni şema yok. leftover: loranica-menu-drawer-capture."
 }
