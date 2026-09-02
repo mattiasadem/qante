@@ -92,6 +92,38 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: kiddle-atc-you-may-like
+Gerekçe: PDP ADD TO CART 1440’ta ortada **YOU MAY LIKE** modal (5 ürün + sarı ADD TO CART + oyuncak blokları footer) ile birlikte cart drawer açılıyor. 375 drawer içinde YOU MAY LIKE kapalı akordeon. Ayrı schema yok; cart-drawer filled karesinde görüldü.
+Örnekler: https://toyon-toys-3.myshopify.com/products/128pcs-big-coloring-trunk-1 ATC
+Öneri: leftover — upsell modal
+Karar: onay bekliyor
+
+---
+
+ADAY: kiddle-menu-drawer-menu-opening
+Gerekçe: Hamburger tık + forceOpen details/#menu-drawer 375/768 karede drawer göstermedi. Dawn `menu-opening` class olmadan #menu-drawer 375’te 0×w / visibility:hidden, 768’de ekran dışı. Probe’da class eklenince HOME…DISCOVER + WISHLIST 0 + COMPARE 0 görüldü; capture adımı o class’ı yazamaz. missingStates.
+Örnekler: home header-drawer
+Öneri: leftover — overlay açılmadı
+Karar: onay bekliyor
+
+---
+
+ADAY: kiddle-quick-shop-modal
+Gerekçe: QUICK SHOP tık `quick-add-modal[open]` üretmedi (3vp zero-size). forceOpen boş kabuk; show() ModalDialog içinde patlıyor. CardLink id çift. missingStates.
+Örnekler: home BEST SELLER Baby cartoon scooter
+Öneri: leftover — QV open yok
+Karar: onay bekliyor
+
+---
+
+ADAY: kiddle-product-tabs-play
+Gerekçe: PLAY tık (ul.tabs a[href='#tab-2']) iki denemede ESSENTIALS’ta kaldı. #tab-2 display:none, içerik ürün değil CSS. missingStates.
+Örnekler: home homepage_product_tab_wd7ikC
+Öneri: leftover — sekme değişmedi
+Karar: onay bekliyor
+
+---
+
 ADAY: kiddle-copy-pet-bleed  
 Gerekçe: Kids vitrinde pet/herding kopyası: CANINE COGNITION, GET HERDING, UNBOX YOUR HEALTHY FOOD, SNIFF AND SEEK, FAQ Doghouse, BELOVED COMPANIONS. Şema değil; demo içerik.  
 Örnekler: home WHY KIDDLE · PDP banners · about · FAQ  

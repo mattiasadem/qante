@@ -13,7 +13,7 @@
 `Shopify.shop` = `toyon-toys-3.myshopify.com` · locale `en` · country `US` · currency `USD`  
 Storefront password (ürün sayfasında yayınlı): **`1`** — aynı host, başka demo uydurulmadı.
 
-**Durum:** 🟡 Mod A observation yazıldı · 3vp capture + interact sırada  
+**Durum:** ✅ Mod A + interact — 43 obs · ~161 PNG · 0 yeni şema  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -37,22 +37,22 @@ Storefront password (ürün sayfasında yayınlı): **`1`** — aynı host, baş
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (header→footer) | [x] obs | [ ] capture |
-| Header Shop All / Discover 1440 | [x] obs | [ ] interact |
-| Predictive search host | [x] obs | [ ] interact |
-| Mobile menu drawer 375/768 | [x] obs | [ ] interact |
-| Cart drawer empty | [x] obs | [ ] + filled/changed |
-| Quick shop modal | [x] obs | [ ] open |
-| PDP `/products/128pcs-big-coloring-trunk-1` | [x] obs | [ ] Size/Color |
-| PLP `/collections/all` | [x] obs | [ ] |
-| Collections index `/collections` | [x] obs | [ ] |
-| Search `/search?q=toy` | [x] obs | [ ] |
-| Cart `/cart` empty | [x] obs | [ ] + filled/changed |
-| About `/pages/about-us` | [x] obs | [ ] |
-| Contact `/pages/contact` (submit yok) | [x] obs | [ ] |
-| FAQ `/pages/faqs` | [x] obs | [ ] accordion |
-| Blog list `/blogs/news` + article | [x] obs | [ ] |
-| 404 | [x] obs | [ ] |
+| Home roster (header→footer) | [x] obs | [x] capture |
+| Header Shop All / Discover 1440 | [x] obs | [x] Shop All mega |
+| Predictive search host | [x] obs | [x] rainbow input |
+| Mobile menu drawer 375/768 | [x] obs | [x] missingStates |
+| Cart drawer empty | [x] obs | [x] filled + changed |
+| Quick shop modal | [x] obs | [x] missingStates |
+| PDP `/products/128pcs-big-coloring-trunk-1` | [x] obs | [x] Color Red |
+| PLP `/collections/all` | [x] obs | [x] |
+| Collections index `/collections` | [x] obs | [x] |
+| Search `/search?q=toy` | [x] obs | [x] |
+| Cart `/cart` empty | [x] obs | [x] filled + changed |
+| About `/pages/about-us` | [x] obs | [x] |
+| Contact `/pages/contact` (submit yok) | [x] obs | [x] |
+| FAQ `/pages/faqs` | [x] obs | [x] ilk soru |
+| Blog list `/blogs/news` + article | [x] obs | [x] |
+| 404 | [x] obs | [x] |
 | Email / account / checkout / newsletter submit | ⛔ PII | — |
 
 ---
@@ -61,14 +61,14 @@ Storefront password (ürün sayfasında yayınlı): **`1`** — aynı host, baş
 
 | # | Section id | QANTE schemaId | Karar |
 |---|---|---|---|
-| 1 | `__header` | `navigation-header-mega` | reuse · mega yok · disclosure |
-| 2 | `#menu-drawer` | `global-menu-drawer` | reuse · prepareClick hamburger |
-| 3 | `details-modal.header__search` | `global-predictive-search` | reuse · prepareClick Search |
-| 4 | `#CartDrawer` | `global-cart-drawer` | reuse · prepareClick `#cart-icon-bubble` |
-| 5 | `quick-add-modal` | `global-quick-view` | reuse · QUICK SHOP |
+| 1 | `__header` | `navigation-header-mega` | reuse · Shop All mega 1440 |
+| 2 | `#menu-drawer` | `global-menu-drawer` | reuse · open/changed missingStates |
+| 3 | `details-modal.header__search` | `global-predictive-search` | reuse · rainbow |
+| 4 | `#CartDrawer` | `global-cart-drawer` | reuse · $79 → $158 |
+| 5 | `quick-add-modal` | `global-quick-view` | reuse · open missingStates |
 | 6 | `__3b7cb796…` slideshow | `hero-slideshow` | reuse · EASY STUDY |
 | 7 | `__multicolumn_Fb6EtW` | `features-multicolumn` | reuse · WHY KIDDLE? |
-| 8 | `__homepage_product_tab_wd7ikC` | `product-showcase-tabs` | reuse · BEST SELLER/ESSENTIALS/PLAY/SALE OFF |
+| 8 | `__homepage_product_tab_wd7ikC` | `product-showcase-tabs` | reuse · PLAY missingStates |
 | 9 | `__section_sub_banner_CGUyed` | `promo-grid-banner` | reuse · 2 kolon |
 | 10 | `__image_with_text_list_UApkzV` | `editorial-image-with-text` | reuse · IGNITE THE JOY |
 | 11 | `__0617c2f2…` featured | `product-showcase-grid-featured` | reuse · FEATURE PRODUCT |
@@ -83,21 +83,21 @@ Storefront password (ürün sayfasında yayınlı): **`1`** — aynı host, baş
 
 ---
 
-## Interact (shopper-state) — sırada
+## Interact (shopper-state)
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | open 1440 | [ ] Shop All / Discover |
-| global-predictive-search | input | [ ] katalogSorgu |
-| global-menu-drawer | open + changed 375/768 | [ ] hamburger + Discover |
-| global-cart-drawer | filled + changed | [ ] |
-| cart-page-main | filled + changed | [ ] |
-| product-info-main | changed | [ ] Size/Color |
-| product-showcase-tabs | changed | [ ] ESSENTIALS→PLAY |
-| faq-collapsible-tabs | changed | [ ] ilk soru |
-| global-quick-view | open | [ ] QUICK SHOP |
+| navigation-header-mega | open 1440 | [x] 6 koleksiyon karesi |
+| global-predictive-search | input | [x] rainbow · 2 ürün |
+| global-menu-drawer | open + changed 375/768 | [x] missingStates — menu-opening |
+| global-cart-drawer | filled + changed | [x] $79 → $158 · 1440 YOU MAY LIKE modal |
+| cart-page-main | filled + changed | [x] $79 → $158 |
+| product-info-main | changed | [x] Color Blue → Red · $79 aynı |
+| product-showcase-tabs | changed | [x] missingStates — PLAY tık ESSENTIALS |
+| faq-collapsible-tabs | changed | [x] ilk soru açık |
+| global-quick-view | open | [x] missingStates — modal[open] yok |
 
-Şema upgrade yok beklenir — boş↔dolu / açık↔kapalı / sekme / swatch.
+Şema upgrade yok — boş↔dolu / açık↔kapalı / swatch. Kanıtsız slot yok.
 
 ---
 
@@ -109,7 +109,7 @@ Storefront password (ürün sayfasında yayınlı): **`1`** — aynı host, baş
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact mega / search / cart / menu / PDP swatch / tabs / FAQ / QV
-- [ ] PNG bak → stateFindings
-- [ ] `node scripts/validate-schemas.mjs` — şema dokunulmadı
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact mega / search / cart / PDP swatch / FAQ; menu / tabs / QV missingStates
+- [x] PNG bak → stateFindings
+- [x] `node scripts/validate-schemas.mjs` — şema dokunulmadı

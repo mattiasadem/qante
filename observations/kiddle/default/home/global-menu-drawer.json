@@ -9,12 +9,14 @@
   "evidenceSlug": "global-menu-drawer",
   "evidence": [
     "evidence/kiddle/default/home/global-menu-drawer.768.png",
+    "evidence/kiddle/default/home/global-menu-drawer.changed.discover-drill.375.png",
     "evidence/kiddle/default/home/global-menu-drawer.changed.discover-drill.768.png",
+    "evidence/kiddle/default/home/global-menu-drawer.open.hamburger-acik.375.png",
     "evidence/kiddle/default/home/global-menu-drawer.open.hamburger-acik.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "header-drawer data-breakpoint=tablet. #Details-menu-drawer-container summary (hamburger) → #menu-drawer. HOME / SHOP ALL / TOYS / KIDS CARE / ABOUT / DISCOVER.",
-  "delta": "1440 drawer 0×0 (inline nav). Discover alt öğe interact. Account tıklanmadı.",
+  "delta": "1440 drawer 0×0 (inline nav). Discover alt öğe. Account tıklanmadı. Wishlist 0 + Compare 0 drawer içinde.",
   "captureMode": "viewport",
   "prepareClick": "#Details-menu-drawer-container > summary",
   "capture": {
@@ -26,13 +28,11 @@
     ],
     "mode": "viewport",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-02T20:34:19.512Z",
-    "prepareClick": "#Details-menu-drawer-container > summary"
+    "prepareClick": "#Details-menu-drawer-container > summary",
+    "updatedAt": "2026-09-02T21:00:17.075Z"
   },
   "interactionStates": [
-    "initial",
-    "open",
-    "changed"
+    "initial"
   ],
   "interactionSteps": [
     {
@@ -47,24 +47,51 @@
       "action": "forceOpen",
       "selector": "#Details-menu-drawer-container",
       "capture": false,
-      "viewports": ["375", "768"]
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Click summary Dawn JS'i tetiklemiyor; click forceOpen sonrası details'i kapatır."
     },
     {
       "state": "open",
-      "action": "click",
-      "selector": "#Details-menu-drawer-container > summary",
-      "value": 800,
+      "action": "forceOpen",
+      "selector": "#menu-drawer",
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ]
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "selector": null,
+      "value": 700,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "hamburger-acik",
-      "viewports": ["375", "768"],
+      "viewports": [
+        "375",
+        "768"
+      ],
       "not": "Hamburger drawer"
     },
     {
       "state": "changed",
-      "action": "click",
-      "selector": "#Details-menu-drawer-menu-item-6 > summary",
-      "value": 1200,
+      "action": "forceOpen",
+      "selector": "#Details-menu-drawer-menu-item-6",
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ]
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "selector": null,
+      "value": 700,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "discover-drill",
@@ -72,19 +99,19 @@
         "375",
         "768"
       ],
-      "not": "Discover summary — CONTACT / FAQ'S / BLOG. Yazılı Shop All <a> değil."
+      "not": "Discover summary — CONTACT / FAQ'S / BLOG"
     }
   ],
   "stateFindings": {},
   "missingStates": [
     {
       "state": "open",
-      "sebep": "capture (375): zero-size / eşleşmedi: #menu-drawer"
+      "sebep": "İkinci deneme: hamburger tık + forceOpen details/#menu-drawer. 375/768 kare hâlâ kapalı homepage (EASY STUDY). Dawn görünürlük menu-opening class istiyor; forceOpen onu eklemez. Playwright click details.open bırakmıyor. Üçüncü yok."
     },
     {
       "state": "changed",
-      "sebep": "capture (375): zero-size / eşleşmedi: #menu-drawer"
+      "sebep": "Discover drill açık drawer olmadan görünmez. open ile aynı kapalı homepage. Üçüncü yok."
     }
   ],
-  "interactionNote": "1440 hamburger yok — static skip. Shop All drawer'da yazılı <a> /collections/all."
+  "interactionNote": "1440 hamburger yok — static skip. Shop All drawer'da yazılı <a> /collections/all. Probe'da menu-opening class ile HOME/SHOP ALL/DISCOVER + WISHLIST 0 + COMPARE 0 görüldü; capture adımı o class'ı yazamaz. LOG IN tıklanmadı."
 }

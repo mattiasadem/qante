@@ -9,10 +9,13 @@
   "evidenceSlug": "global-predictive-search",
   "evidence": [
     "evidence/kiddle/default/home/global-predictive-search.375.png",
-    "evidence/kiddle/default/home/global-predictive-search.768.png"
+    "evidence/kiddle/default/home/global-predictive-search.768.png",
+    "evidence/kiddle/default/home/global-predictive-search.input.arama-inline.1440.png",
+    "evidence/kiddle/default/home/global-predictive-search.input.arama-sonucu.375.png",
+    "evidence/kiddle/default/home/global-predictive-search.input.arama-sonucu.768.png"
   ],
   "storefrontPassword": "1",
-  "notlar": "details-modal.header__search · predictive-search · input[name=q] Search... Kapalı kare 0×0.",
+  "notlar": "details-modal.header__search · predictive-search · input[name=q] Search... Kapalı kare 0×0. 1440 inline #Search-In-Template.",
   "delta": "Yazınca öneri interact. Kapalı host boş.",
   "captureMode": "viewport",
   "prepareClick": "summary.header__icon--search",
@@ -25,8 +28,8 @@
     ],
     "mode": "viewport",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-02T20:35:27.839Z",
-    "prepareClick": "summary.header__icon--search"
+    "prepareClick": "summary.header__icon--search",
+    "updatedAt": "2026-09-02T20:58:54.062Z"
   },
   "interactionStates": [
     "initial",
@@ -42,19 +45,24 @@
     },
     {
       "state": "input",
-      "action": "click",
-      "selector": "summary.header__icon--search",
-      "value": 800,
+      "action": "forceOpen",
+      "selector": "details-modal.header__search",
       "capture": false,
-      "viewports": ["375", "768"],
-      "not": "Mobil search ikonu"
+      "viewports": [
+        "375",
+        "768"
+      ]
     },
     {
       "state": "input",
       "action": "forceOpen",
-      "selector": "details-modal.header__search",
+      "selector": "details-modal.header__search details",
       "capture": false,
-      "viewports": ["375", "768"]
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "İç details açık olmadan #Search-In-Modal gizli kalır"
     },
     {
       "state": "input",
@@ -63,9 +71,11 @@
       "value": "rainbow",
       "capture": true,
       "captureMode": "viewport",
-      "captureSelector": "predictive-search",
       "etiket": "arama-sonucu",
-      "viewports": ["375", "768"],
+      "viewports": [
+        "375",
+        "768"
+      ],
       "not": "katalogSorgu rainbow — Rainbow Pop It"
     },
     {
@@ -75,17 +85,17 @@
       "value": "rainbow",
       "capture": true,
       "captureMode": "viewport",
+      "captureSelector": "header.header",
       "etiket": "arama-inline",
-      "viewports": ["1440"],
-      "not": "1440 header inline Search-In-Template"
-    }
-    ],
-  "stateFindings": {},
-  "missingStates": [
-    {
-      "state": "input",
-      "sebep": "adım 2 (fill #Search-In-Modal): locator.waitFor: Timeout 12000ms exceeded.\nCall log:\n  - waiting for locator('#Search-In-Modal').first() to be visible\n    28 × locator resolved to hidden <input name=\"q\" value=\"\" type=\"search\" role=\"combobox\" autocorrect=\"off\" autocomplete=\"off\" spellcheck=\"false\" id=\"Search-In-Modal\" autocapitalize=\"off\" aria-expanded=\"false\" placeholder=\"Search...\" aria-haspopup=\"listbox\" aria-autocomplete=\"list\" class=\"search__input field__input\" aria-owns=\"predictive-search-results\" aria-controls=\"predictive-search-results\"/>\n"
+      "viewports": [
+        "1440"
+      ],
+      "not": "1440 header inline Search-In-Template — modal 0×0"
     }
   ],
-  "interactionNote": "katalogSorgu rainbow (Rainbow Pop It). 1440 modal 0×0 — inline input."
+  "stateFindings": {
+    "input": "375/768: modal açık, sorgu rainbow. PRODUCTS — Rainbow Pop It + Zyozi Animal Safari Jungle Cupcake Toppers Multicolour · Search for “rainbow”. 1440: inline Search-In-Template aynı iki ürün + Search for “rainbow”."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu rainbow (Rainbow Pop It / vitrin adı). 1440 modal 0×0 — inline input. İkon tıklaması modalı açmıyor; iç details forceOpen şart."
 }
