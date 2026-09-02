@@ -8,12 +8,75 @@
   "selector": "#shopify-section-sections--23257314492710__header",
   "evidenceSlug": "navigation-header-mega",
   "evidence": [
+    "evidence/nutronix/default/home/navigation-header-mega.1440.png",
     "evidence/nutronix/default/home/navigation-header-mega.375.png",
     "evidence/nutronix/default/home/navigation-header-mega.768.png",
-    "evidence/nutronix/default/home/navigation-header-mega.1440.png"
+    "evidence/nutronix/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/nutronix/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/nutronix/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/nutronix/default/home/navigation-header-mega.open.supplements-mega.1440.png"
   ],
-  "notlar": "Logo Nutronix + Home / Supplements (mega) / Vitamins / About Us / Contact / Faqs. Sağ: search modal + account + wishlist + cart. Mega görseller mega-menu-1..5.png.",
-  "delta": "details.mega-menu#Details-HeaderMenu-2. Cart a.header__icon--cart → cart-drawer.active. Search details-modal.header__search. Account / login tıklanmadı. Shopify.theme.name Speedo-nutronix-v-1-5-0 · id 170790388006 · schema_name Speedo nutronix · schema_version 1.5.0 · theme_store_id null · role main · shop speedo-nutronix.myshopify.com · walk https://speedo-nutronix.myshopify.com/ · Speedo Themes third-party (not Theme Store) · public demo password 1",
+  "notlar": "Logo Nutronix + Home / Supplements (mega) / Vitamins / About Us / Contact / Faqs. Sağ: search + account + wishlist + cart.",
+  "delta": "details.mega-menu#Details-HeaderMenu-2. 1440 hover 5 koleksiyon kartı. Account tıklanmadı. Shopify.theme.name Speedo-nutronix-v-1-5-0 · id 170790388006 · schema_name Speedo nutronix · schema_version 1.5.0 · theme_store_id null · role main · shop speedo-nutronix.myshopify.com · walk https://speedo-nutronix.myshopify.com/ · Speedo Themes third-party (not Theme Store) · public demo password 1",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://speedo-nutronix.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bar",
+      "not": "Mega kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-2 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "Supplements hover — tıklama /collections/all'a kaçar"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-HeaderMenu-2",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 800,
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "supplements-mega",
+      "not": "5 koleksiyon kartı: Health Routines / Multivitamin Capsule / Health Supplement / High Protein Foods / Diet Food"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Kapalı şerit: logo NUTRONIX, Home / Supplements / Vitamins / About Us / Contact / Faqs, search + wishlist + account + cart. Mega paneli yok.",
+    "open": "1440 Supplements hover: 5 görsel kart — Health Routines, Multivitamin Capsule, Health Supplement, High Protein Foods, Diet Food."
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 mega header'da değil — global-menu-drawer. Account/login tıklanmadı.",
   "capture": {
     "url": "https://speedo-nutronix.myshopify.com/",
     "viewports": [
@@ -22,7 +85,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T17:03:43.867Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T17:18:52.612Z"
   }
 }
