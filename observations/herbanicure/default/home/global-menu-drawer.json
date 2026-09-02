@@ -1,0 +1,63 @@
+{
+  "observationId": "herbanicure.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "herbanicure",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://herbanicure.myshopify.com",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/herbanicure/default/home/global-menu-drawer.375.png",
+    "evidence/herbanicure/default/home/global-menu-drawer.768.png",
+    "evidence/herbanicure/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/herbanicure/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Hamburger menü drawer.",
+  "delta": "Düz linkler; mega yok.",
+  "capture": {
+    "url": "https://herbanicure.myshopify.com",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T21:08:23.299Z",
+    "prepareClick": "header-drawer summary.header__icon--menu, #Details-menu-drawer-container > summary"
+  },
+  "captureMode": "viewport",
+  "prepareClick": "header-drawer summary.header__icon--menu, #Details-menu-drawer-container > summary",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://herbanicure.myshopify.com",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header-drawer summary.header__icon--menu, #Details-menu-drawer-container > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Home/Shop/About us/Brands/Contact + Log in"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: düz linkler; mega/akordeon yok."
+  },
+  "interactionNote": "1440 hamburger yok.",
+  "missingStates": []
+}

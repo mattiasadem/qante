@@ -1,0 +1,69 @@
+{
+  "observationId": "herbanicure.default.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "herbanicure",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "url": "https://herbanicure.myshopify.com/pages/faq",
+  "selector": "#shopify-section-template--21845677277482__c4d0abac-cb42-461a-a0b7-40d09d151673",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/herbanicure/default/faq-support/faq-collapsible-tabs.1440.png",
+    "evidence/herbanicure/default/faq-support/faq-collapsible-tabs.375.png",
+    "evidence/herbanicure/default/faq-support/faq-collapsible-tabs.768.png",
+    "evidence/herbanicure/default/faq-support/faq-collapsible-tabs.changed.payment.1440.png",
+    "evidence/herbanicure/default/faq-support/faq-collapsible-tabs.changed.payment.375.png",
+    "evidence/herbanicure/default/faq-support/faq-collapsible-tabs.changed.payment.768.png",
+    "evidence/herbanicure/default/faq-support/faq-collapsible-tabs.initial.orders.1440.png",
+    "evidence/herbanicure/default/faq-support/faq-collapsible-tabs.initial.orders.375.png",
+    "evidence/herbanicure/default/faq-support/faq-collapsible-tabs.initial.orders.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Have Any Questions? ORDERS/PAYMENT/POINTS/RETURNS/SHIPPING sekmeleri.",
+  "delta": "faq-templates.css; panel-heading grupları.",
+  "capture": {
+    "url": "https://herbanicure.myshopify.com/pages/faq",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T21:12:01.518Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://herbanicure.myshopify.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21845677277482__c4d0abac-cb42-461a-a0b7-40d09d151673",
+      "capture": true,
+      "etiket": "orders",
+      "not": "ORDERS aktif"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".panel-heading.faq_group_3",
+      "capture": true,
+      "etiket": "payment",
+      "not": "PAYMENT sekmesi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "ORDERS aktif; sipariş SSS listesi görünür.",
+    "changed": "PAYMENT aktif; ödeme soruları."
+  },
+  "interactionNote": "faq-templates panel-heading; details değil.",
+  "missingStates": []
+}

@@ -1,0 +1,103 @@
+{
+  "observationId": "herbanicure.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "herbanicure",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://herbanicure.myshopify.com",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/herbanicure/default/home/global-cart-drawer.1440.png",
+    "evidence/herbanicure/default/home/global-cart-drawer.375.png",
+    "evidence/herbanicure/default/home/global-cart-drawer.768.png",
+    "evidence/herbanicure/default/home/global-cart-drawer.changed.adet-2.1440.png",
+    "evidence/herbanicure/default/home/global-cart-drawer.changed.adet-2.375.png",
+    "evidence/herbanicure/default/home/global-cart-drawer.changed.adet-2.768.png",
+    "evidence/herbanicure/default/home/global-cart-drawer.filled.kratom-eklendi.1440.png",
+    "evidence/herbanicure/default/home/global-cart-drawer.filled.kratom-eklendi.375.png",
+    "evidence/herbanicure/default/home/global-cart-drawer.filled.kratom-eklendi.768.png",
+    "evidence/herbanicure/default/home/global-cart-drawer.initial.bos.1440.png",
+    "evidence/herbanicure/default/home/global-cart-drawer.initial.bos.375.png",
+    "evidence/herbanicure/default/home/global-cart-drawer.initial.bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "cart-drawer overlay.",
+  "delta": "Dawn cart-drawer.",
+  "capture": {
+    "url": "https://herbanicure.myshopify.com",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T21:07:39.737Z",
+    "prepareClick": "a.header__icon--cart"
+  },
+  "captureMode": "viewport",
+  "prepareClick": "a.header__icon--cart",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://herbanicure.myshopify.com",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.header__icon--cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://herbanicure.myshopify.com/products/100-organically-grown-king-kratom-extract-powder",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'].product-form__submit",
+      "capture": false,
+      "not": "PDP ATC"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#CartDrawer",
+      "etiket": "kratom-eklendi",
+      "not": "King Kratom Extract Powder $14.95"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#CartDrawer",
+      "etiket": "adet-2",
+      "not": "Adet 2 → $29.90"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boş drawer: Your cart is empty + Continue shopping.",
+    "filled": "King Kratom Extract Powder · $14.95 · adet 1.",
+    "changed": "Adet 2 · satır $29.90 · Estimated total güncellendi."
+  },
+  "interactionNote": "Checkout tıklanmadı.",
+  "missingStates": []
+}
