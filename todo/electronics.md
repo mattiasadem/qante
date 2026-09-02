@@ -15,7 +15,7 @@ Walk host = `Shopify.shop` = **speedo-electro-dropship.myshopify.com**
 `/` **302** → `/password` · title `speedo-electro-dropship (password: 1)`  
 Public storefront-unlock `1` — başka host yok.
 
-**Durum:** 🟡 Mod A roster yazıldı — 3vp capture + interact sırada  
+**Durum:** 🟡 Mod A 3vp capture bitti (115 PNG) — interact sırada  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -39,20 +39,20 @@ Public storefront-unlock `1` — başka host yok.
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announce→footer) | [x] obs | [ ] capture |
+| Home roster (announce→footer) | [x] obs | [x] capture |
 | EXPLORE dropdown 1440 | [ ] interact | — |
 | Predictive search `jbl` | [ ] interact | — |
 | Mobile hamburger 375+768 | [ ] interact | — |
 | Cart notification + cart page filled | [ ] interact | — |
 | PDP COLOR Black→Blue | [ ] interact | — |
-| PLP `/collections/frontpage` | [x] obs | [ ] capture |
-| Collections `/collections` | [x] obs | [ ] capture |
-| Search `/search?q=jbl` | [x] obs | [ ] capture |
-| Cart `/cart` empty | [x] obs | [ ] capture |
-| Our Story `/pages/our-story` | [x] obs | [ ] capture |
-| Contact form (submit yok) | [x] obs | [ ] capture |
-| FAQ `/pages/faq-s` | [x] obs | [ ] capture |
-| News + article | [x] obs | [ ] capture |
+| PLP `/collections/frontpage` | [x] obs | [x] capture |
+| Collections `/collections` | [x] obs | [x] capture |
+| Search `/search?q=jbl` | [x] obs | [x] capture |
+| Cart `/cart` empty | [x] obs | [x] capture |
+| Our Story `/pages/our-story` | [x] obs | [x] capture |
+| Contact form (submit yok) | [x] obs | [x] capture |
+| FAQ `/pages/faq-s` | [x] obs | [x] capture |
+| News + article | [x] obs | [x] capture |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -94,5 +94,5 @@ Public storefront-unlock `1` — başka host yok.
 
 ## Evidence backlog
 
-- [ ] resmi 3vp `capture-observation.mjs`
+- [x] resmi 3vp `capture-observation.mjs` (115 PNG; search overlay + menu 375/1440 zero-size → interact)
 - [ ] interact: EXPLORE / search jbl / hamburger / cart filled / PDP COLOR / FAQ
