@@ -25,5 +25,51 @@
     "mode": "section",
     "method": "margin-box+minPad8",
     "updatedAt": "2026-09-02T16:04:38.833Z"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "hover",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://jewelry-online-shop1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24653292470590__165666889162d379a4",
+      "capture": true,
+      "etiket": "new-arrival",
+      "not": "New Arrival aktif"
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#shopify-section-template--24653292470590__165666889162d379a4 .grid__item .card, #shopify-section-template--24653292470590__165666889162d379a4 .card-wrapper",
+      "capture": true,
+      "etiket": "kart-hover",
+      "not": "Kart hover: quick-add / 2. görsel"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--24653292470590__165666889162d379a4 a.button--secondary[href='#template--24653292470590__165666889162d379a4-tab-2']",
+      "capture": true,
+      "etiket": "best-seller",
+      "not": "Best Seller in-page tab — View All /collections/* değil"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "View All /collections/latest ve /collections/best-seller tıklanmadı. Probe: Best Seller href tık active class değiştirmedi, ilk kart aynı Earrings. Piksel bak; aynıysa missingStates."
 }

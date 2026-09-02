@@ -15,7 +15,7 @@
   "storefrontPassword": "1",
   "notlar": "Sticky header--top-center. 1440: HOME · SHOP (details#Details-HeaderMenu-2.mega-menu) · OUR STORY · CONTACT US · FAQ'S · MORE; sağda search + Log in + #cart-icon-bubble. Logo. 375 hamburger header-drawer.",
   "delta": "Mega var: SHOP → details.mega-menu. 375/768 hamburger ayrı global-menu-drawer. Log in PII yoklandı değil. Wishlist sayacı 0. Shopify.theme.name jewelry-online-shop1-v-1-5-0 · schema_name Jewelry_online_shop1 · schema_version 1.5.0 · theme_store_id null · role main · id 178835947838 · shop jewelry-online-shop1.myshopify.com. Vendor Speedo Themes (third-party OS 2.0, not Theme Store). Live demo jewelry-online-shop1.myshopify.com. Storefront password wall; vendor publishes public demo password 1 on speedothemes.com product page. Slug gemora · preset default.",
-  "captureMode": "section",
+  "captureMode": "viewport",
   "capture": {
     "url": "https://jewelry-online-shop1.myshopify.com/",
     "viewports": [
@@ -26,5 +26,56 @@
     "mode": "section",
     "method": "margin-box+minPad8",
     "updatedAt": "2026-09-02T16:03:42.872Z"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://jewelry-online-shop1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Mega kapalı"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-2 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-HeaderMenu-2",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "SHOP mega — summary içindeki /collections/all linkine tıklama"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "SHOP summary bir <a href=/collections/all> taşıyor; click koleksiyona kaçar. Probe: hover tek başına paneli açtı (1440×447, 5 koleksiyon kartı). Capture için forceOpen. Log in tıklanmadı."
 }

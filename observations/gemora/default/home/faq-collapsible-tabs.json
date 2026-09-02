@@ -25,5 +25,48 @@
     "mode": "section",
     "method": "margin-box+minPad8",
     "updatedAt": "2026-09-02T15:57:30.323Z"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://jewelry-online-shop1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24653292470590__38d870b7-7beb-4c1c-af20-fd5eae71feb5",
+      "capture": true,
+      "etiket": "faq-kapali",
+      "not": "Accordion kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-template--17446585565502__38d870b7-7beb-4c1c-af20-fd5eae71feb5-16733447036e91cecf-0-template--24653292470590__38d870b7-7beb-4c1c-af20-fd5eae71feb5 > summary",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "forceOpen",
+      "selector": "#Details-template--17446585565502__38d870b7-7beb-4c1c-af20-fd5eae71feb5-16733447036e91cecf-0-template--24653292470590__38d870b7-7beb-4c1c-af20-fd5eae71feb5",
+      "capture": true,
+      "etiket": "kargo-acik",
+      "not": "İlk soru What Shipping Methods Are Available?"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Probe: Playwright click summary open=false bıraktı; details.open=true cevap metnini gösterdi (Male evening subdue…). Capture forceOpen. Scan hover önerisi kullanılmadı."
 }

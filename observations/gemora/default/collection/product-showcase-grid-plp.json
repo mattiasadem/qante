@@ -25,5 +25,69 @@
     "mode": "section",
     "method": "margin-box+minPad8",
     "updatedAt": "2026-09-02T15:45:46.830Z"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://jewelry-online-shop1.myshopify.com/collections/rings",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "etiket": "filtre-yok",
+      "not": "6 products, Color açık"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='Filter-filter.v.option.color-1']",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "color-gold",
+      "not": "Color Gold (3)"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".mobile-facets__open, facet-filters-form .mobile-facets__open",
+      "viewports": [
+        "375"
+      ],
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 800,
+      "viewports": [
+        "375"
+      ],
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='Filter-filter.v.option.color-mobile-1']",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "etiket": "color-gold",
+      "not": "Mobil Color Gold"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Probe 1440: Gold → ?filter.v.option.color=Gold, 6→3 kart, ilk Leaf Band Ring. Sort/checkout yok."
 }

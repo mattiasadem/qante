@@ -27,5 +27,62 @@
     "method": "viewport",
     "updatedAt": "2026-09-02T16:19:44.200Z",
     "prepareClick": "header-drawer summary"
-  }
+  },
+  "interactionStates": [
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://jewelry-online-shop1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 600,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Mobil menü HOME/SHOP/…"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-menu-drawer-menu-item-2 > summary, #HeaderDrawer-shop",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-akordeon",
+      "not": "SHOP drill — yazılı <a> değil boş summary"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "1440 hamburger gizli. Probe 375: click hamburger 375×686 HOME SHOP OUR STORY CONTACT US FAQ'S BLOG; SHOP summary <a> yok, drill Bracelets Diamonds Earrings Pendants, URL değişmedi."
 }

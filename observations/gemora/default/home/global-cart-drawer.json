@@ -5,7 +5,7 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://jewelry-online-shop1.myshopify.com/",
-  "selector": "cart-drawer",
+  "selector": "#CartDrawer",
   "evidenceSlug": "global-cart-drawer",
   "evidence": [
     "evidence/gemora/default/home/global-cart-drawer.375.png",
@@ -29,5 +29,96 @@
     "method": "viewport",
     "updatedAt": "2026-09-02T15:59:28.150Z",
     "prepareClick": "#cart-icon-bubble"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://jewelry-online-shop1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a#cart-icon-bubble",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "#CartDrawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://jewelry-online-shop1.myshopify.com/products/18k-yellow-gold-luxury-diamond-earrings",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--24653292798270__main button.product-form__submit[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a#cart-icon-bubble",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "forceOpen",
+      "selector": "#CartDrawer",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Earrings satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Qty 1→2"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Check Out / Log in tıklanmadı. BUY IT NOW tıklanmadı. Probe: ATC UI ile item_count 0→1, drawer 400px Earrings $75."
 }

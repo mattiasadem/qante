@@ -28,5 +28,45 @@
     "method": "viewport",
     "updatedAt": "2026-09-02T16:01:50.822Z",
     "prepareClick": "details-modal#header-search > summary"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://jewelry-online-shop1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header summary.header__icon--search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Boş arama modal"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal-1",
+      "value": "ring",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-ring",
+      "not": "katalogSorgu=ring (PLP scan + vitrin ürün adı)"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Submit /search ayrı observation. Account yok. details-modal#header-search 2 eşleşme (biri 0×0); opener header summary.header__icon--search. Probe: ring → 6 öneri + 4 ürün."
 }

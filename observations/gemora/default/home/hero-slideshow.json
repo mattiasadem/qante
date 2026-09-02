@@ -25,5 +25,36 @@
     "mode": "section",
     "method": "margin-box+minPad8",
     "updatedAt": "2026-09-02T15:31:07.280Z"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://jewelry-online-shop1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "etiket": "slayt-1",
+      "not": "Load slide 1 aktif"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--24653292470590__165665788459900955 button[aria-label='Load slide 2 of 2']",
+      "capture": true,
+      "etiket": "slayt-2",
+      "not": "İkinci slayt noktası (oklar gizli)"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "İki slayt aynı kopya (MADE FOR YOUR SHADE). Oklar gorunur=false. Piksel bak."
 }

@@ -46,7 +46,7 @@
 | HexClad | [`hexclad.md`](./hexclad.md) | ✅ listicle-fathers-day · 5 obs · 15 PNG · 0 yeni şema |
 | Allbirds | [`allbirds.md`](./allbirds.md) | 🟡 Mod A — 30 obs · ~90 PNG · partial capture (search blocked) |
 | Legal / policy (Kreis recipe) | [`policy-legal.md`](./policy-legal.md) | ✅ page-recipes/policy · 3-col sticky TOC \| content \| sibling nav |
-| Gemora (Speedo, jewelry) | [`gemora.md`](./gemora.md) | 🟡 first inventory — jewelry-online-shop1 · 42 obs · 0 yeni şema · password `1` |
+| Gemora (Speedo, jewelry) | [`gemora.md`](./gemora.md) | 🟡 first inventory + interact adımları — jewelry-online-shop1 · 42 obs · 0 yeni şema · password `1` |
 
 **Interact (discover sonrası derinlik):** [`interact.md`](./interact.md) — kapalı kare yalanı; Stretch + Cocoon/Balance shop-the-look kapandı.
 

@@ -14,7 +14,7 @@
 
 *Password wall:* vendor ürün sayfası “Please enter password `1` to view demo.” Aynı host `/password` — public storefront unlock.
 
-**Durum:** Mod A roster + resmi 3vp (41 tam · menu-drawer 768) · interact sırada  
+**Durum:** Mod A roster + resmi 3vp · interact adımları yazıldı, çekim sırada  
 **PR:** draft — main’e merge yok
 
 ---
@@ -102,20 +102,20 @@
 
 ---
 
-## Interact (sırada)
+## Interact
 
-| Bileşen | State | Beklenen |
+| Bileşen | State | Durum |
 |---|---|---|
-| navigation-header-mega | open 1440 | SHOP mega panel |
-| global-menu-drawer | open/changed 375+768 | hamburger + SHOP drill |
-| global-predictive-search | input | `ring` öneri |
-| global-cart-drawer | initial/filled/changed | boş → ATC earrings → adet |
-| cart-page-main | initial/filled/changed | boş → satır → qty |
-| product-info-main | changed | Yellow Gold → White Gold |
-| product-showcase-tabs | changed | New Arrival → Best Seller |
-| faq-collapsible-tabs | changed | ilk soru açık |
-| hero-slideshow | changed | slayt 1→2 |
-| product-showcase-grid-plp | changed | Color Gold filtre |
+| navigation-header-mega | open 1440 | adımlar yazıldı — çekim sırada |
+| global-menu-drawer | open/changed 375+768 | adımlar yazıldı — çekim sırada |
+| global-predictive-search | input `ring` | adımlar yazıldı — çekim sırada |
+| global-cart-drawer | initial/filled/changed | adımlar yazıldı — çekim sırada |
+| cart-page-main | initial/filled/changed | adımlar yazıldı — çekim sırada |
+| product-info-main | changed White Gold | adımlar yazıldı — çekim sırada |
+| product-showcase-tabs | hover + Best Seller | adımlar yazıldı — çekim sırada |
+| faq-collapsible-tabs | changed forceOpen | adımlar yazıldı — çekim sırada |
+| hero-slideshow | changed slayt 2 | adımlar yazıldı — çekim sırada |
+| product-showcase-grid-plp | changed Color Gold | adımlar yazıldı — çekim sırada |
 
 ---
 
@@ -128,5 +128,6 @@
 ## Evidence backlog
 
 - [x] Resmi 3vp `capture-observation.mjs` (password unlock) · 124 PNG · menu-drawer 375/1440 zero-size
-- [ ] Interact scan → capture → pixel-check
+- [x] Interact scan + probe (password unlock) · adımlar 10 observation
+- [ ] Interact `capture-interaction.mjs` → pixel-check → stateFindings
 - [ ] `node scripts/validate-schemas.mjs`
