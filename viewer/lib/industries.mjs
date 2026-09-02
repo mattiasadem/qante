@@ -163,6 +163,7 @@ export const KAYNAK_INDUSTRIES = Object.freeze({
   concept: [BEAUTY],
   craft: [HOME, ART],
   crave: [FOOD],
+  critters: [FLOWERS],
   dawn: [FASHION],
   district: [FASHION],
   drop: [FASHION],

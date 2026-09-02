@@ -5,7 +5,7 @@ This is a **kaynak → source** map. Store name stays `kaynak` (Tema). Endüstri
 
 *Param:* `kaynakTip` (comma-separated: `shopify`, `dtc`, `ikas`)  
 *UI label:* Kaynak  
-*Coverage:* **177 / 177** disk `kaynak` mapped · **0 untagged** · **0 awaiting**
+*Coverage:* **178 / 178** disk `kaynak` mapped · **0 untagged** · **0 awaiting**
 
 Code: `viewer/lib/sources.mjs` (consumed by inventory + facets). Observation JSON is not rewritten.
 
@@ -25,10 +25,10 @@ A live store that happens to use a Shopify theme is **DTC**, not Shopify: `beard
 
 | Source | Stores |
 |---|---|
-| Shopify | 80 |
+| Shopify | 81 |
 | DTC | 85 |
 | ikas | 12 |
-| Total | 177 |
+| Total | 178 |
 
 ## ikas (12)
 
@@ -44,7 +44,7 @@ Live brands from the DTC-69 list plus other live-store walks. Not official theme
 
 Official Theme Store demo slugs inventoried on disk — including `shopify-themes.md` done official demos and other first-party / Theme Store demo slugs (not live-brand walks).
 
-`alchemy` · `atelier` · `atlas` · `awaken` · `beautify` · `be-yours` · `blockshop` · `boost` · `borders` · `bricks` · `broadcast` · `canopy` · `colorblock` · `combine` · `concept` · `craft` · `crave` · `dawn` · `district` · `drop` · `dwell` · `eclipse` · `empire` · `enterprise` · `envy` · `eurus` · `expanse` · `exhibit` · `fabric` · `flow` · `heritage` · `highlight` · `homage` · `honey` · `horizon` · `hyper` · `ignite` · `impact` · `impulse` · `kingdom` · `local` · `maker` · `minion` · `motion` · `origin` · `palo-alto` · `pebble` · `pipeline` · `pitch` · `prestige` · `publisher` · `purevea` · `refresh` · `ride` · `rise` · `ritual` · `savor` · `sense` · `showcase` · `sleek` · `spotlight` · `stack` · `startup` · `stiletto` · `stockist` · `streamline` · `stretch` · `studio` · `symmetry` · `taiga` · `taste` · `tinker` · `trade` · `triumph` · `venue` · `vessel` · `warehouse` · `wonder` · `woodstock` · `zest`
+`alchemy` · `atelier` · `atlas` · `awaken` · `beautify` · `be-yours` · `blockshop` · `boost` · `borders` · `bricks` · `broadcast` · `canopy` · `colorblock` · `combine` · `concept` · `craft` · `crave` · `critters` · `dawn` · `district` · `drop` · `dwell` · `eclipse` · `empire` · `enterprise` · `envy` · `eurus` · `expanse` · `exhibit` · `fabric` · `flow` · `heritage` · `highlight` · `homage` · `honey` · `horizon` · `hyper` · `ignite` · `impact` · `impulse` · `kingdom` · `local` · `maker` · `minion` · `motion` · `origin` · `palo-alto` · `pebble` · `pipeline` · `pitch` · `prestige` · `publisher` · `purevea` · `refresh` · `ride` · `rise` · `ritual` · `savor` · `sense` · `showcase` · `sleek` · `spotlight` · `stack` · `startup` · `stiletto` · `stockist` · `streamline` · `stretch` · `studio` · `symmetry` · `taiga` · `taste` · `tinker` · `trade` · `triumph` · `venue` · `vessel` · `warehouse` · `wonder` · `woodstock` · `zest`
 
 ## Awaiting user approval
 

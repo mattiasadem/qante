@@ -142,6 +142,7 @@ Mapped from the **walked demo catalog** or an obvious official preset vertical. 
 | concept | Beauty & Health | cosmetics / skincare collections |
 | craft | Home & Furniture, Art & Handcraft | Fable ceramics |
 | crave | Food & Beverage | pantry / meal starters |
+| critters | Flowers & Gifts | Speedo kids toys demo — toys chip yok; hediye/oyuncak |
 | dawn | Fashion & Clothing | Bags / Shoes nav |
 | district | Fashion & Clothing | tees / lookbook |
 | dwell | Home & Furniture | Bedding / Bath / Decor |
