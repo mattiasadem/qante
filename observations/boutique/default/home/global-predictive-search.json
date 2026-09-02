@@ -8,9 +8,15 @@
   "selector": "details:has(#Search-In-Modal)",
   "evidenceSlug": "global-predictive-search",
   "evidence": [
+    "evidence/boutique/default/home/global-predictive-search.1440.png",
     "evidence/boutique/default/home/global-predictive-search.375.png",
     "evidence/boutique/default/home/global-predictive-search.768.png",
-    "evidence/boutique/default/home/global-predictive-search.1440.png"
+    "evidence/boutique/default/home/global-predictive-search.initial.modal-bos.1440.png",
+    "evidence/boutique/default/home/global-predictive-search.initial.modal-bos.375.png",
+    "evidence/boutique/default/home/global-predictive-search.initial.modal-bos.768.png",
+    "evidence/boutique/default/home/global-predictive-search.input.dress.1440.png",
+    "evidence/boutique/default/home/global-predictive-search.input.dress.375.png",
+    "evidence/boutique/default/home/global-predictive-search.input.dress.768.png"
   ],
   "notlar": "Search summary → .search-modal form action=/search. Predictive host Dawn modal.",
   "delta": "Öneri listesi interact’te. Submit yok. Shopify.theme.name Boutique-v-1-5-0 · schema_name Boutique · schema_version 1.5.0 · theme_store_id null · role main · id 170605216055 · shop fashion-store-clean-10.myshopify.com · Speedo Themes third-party (Theme Store official değil).",
@@ -25,8 +31,8 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T18:21:10.935Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:55:55.494Z",
     "prepareClick": "summary.header__icon--search"
   },
   "interactionStates": [
@@ -48,8 +54,15 @@
     },
     {
       "state": "initial",
-      "action": "click",
-      "selector": "summary.header__icon--search",
+      "action": "forceOpen",
+      "selector": "details:has(#Search-In-Modal)",
+      "capture": false,
+      "not": "Dawn details.open — click summary modalı açmadı (probe)"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 800,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "modal-bos",
@@ -66,7 +79,10 @@
       "not": "katalogSorgu dress — ürün önerisi"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "Search modal boş — placeholder Search, sağda X. Hero SUMMER COLLECTION arkada karartılmış. Öneri/ürün yok. 375/768/1440.",
+    "input": "q=dress. SUGGESTIONS: dress · long dress · black line dress · short summer dress · party white dress. PRODUCTS (5): WOMAN WEARING PARTY WHITE DRESS · BEAUTIFUL WOMAN IN ELEGANT DRESS · PARTY WEAR WOMAN LONG DRESS · WOMAN WEAR WHITE AND BLACK LINE DRESS · PARTY WEAR LONG FLORAL DRESS. Altta Search for “dress”. Form submit yok. 1440 iki kolon; 375 dikey yığın."
+  },
   "missingStates": [],
-  "interactionNote": "katalogSorgu=dress (PLP/search 15 sonuç). Submit / hesap yok."
+  "interactionNote": "katalogSorgu=dress (PLP/search 15 sonuç). İlk click #Search-In-Modal hidden; retry forceOpen details:has(#Search-In-Modal) sonra fill. Submit / hesap yok."
 }

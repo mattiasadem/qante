@@ -76,9 +76,25 @@ Karar: onay bekliyor
 ---
 
 ADAY: boutique-menu-drawer-375-static  
-Gerekçe: `capture-observation` 375’te `#menu-drawer` zero-size (prepareClick sonrası kutu yok). 768/1440 viewport karesi hamburger kapalı homepage’e düştü — overlay açılmadı. Interact `open` 375’i alacak.  
+Gerekçe: `capture-observation` 375’te `#menu-drawer` zero-size (prepareClick sonrası kutu yok). 768/1440 viewport karesi hamburger kapalı homepage’e düştü — overlay açılmadı.  
 Örnekler: `evidence/boutique/default/home/global-menu-drawer.768.png`  
 Öneri: leftover — static overlay  
+Karar: onay bekliyor
+
+---
+
+ADAY: boutique-menu-drawer-open-fail  
+Gerekçe: Interact iki deneme. Playwright click `#Details-menu-drawer-container > summary` `details.open` yapmadı (`visibility:hidden`, x=-336). `forceOpen` aynı details — Dawn `menu-opening` eklenmedi. 375/768/1440 `open.hamburger` kareleri kapalı homepage. Shop `#HeaderDrawer-shop` viewport dışı. Probe-only (resmi evidence değil): `details.open` + `classList.add('menu-opening')` Home / Shop / Best Seller / New Arrival / Men’s / Women’s / Children’s / Wishlist 0 / Log in gösterir. Üçüncü resmi deneme yok.  
+Örnekler: `evidence/boutique/default/home/global-menu-drawer.open.hamburger.1440.png`  
+Öneri: leftover — Dawn drawer overlay click  
+Karar: onay bekliyor
+
+---
+
+ADAY: boutique-cart-drawer-empty-fail  
+Gerekçe: Interact iki deneme. click `#cart-icon-bubble` boş drawer açmadı. `forceOpen` `#CartDrawer` iç div’e denk geldi (host `<cart-drawer>` değil). `initial.bos` 375/768/1440 kapalı homepage. Dolu + qty ATC sonrası alındı (YOUR CART · Pink · S · $79 → $158).  
+Örnekler: `evidence/boutique/default/home/global-cart-drawer.initial.bos.1440.png`  
+Öneri: leftover — boş cart overlay  
 Karar: onay bekliyor
 
 ---

@@ -8,9 +8,18 @@
   "selector": "#CartDrawer",
   "evidenceSlug": "global-cart-drawer",
   "evidence": [
+    "evidence/boutique/default/home/global-cart-drawer.1440.png",
     "evidence/boutique/default/home/global-cart-drawer.375.png",
     "evidence/boutique/default/home/global-cart-drawer.768.png",
-    "evidence/boutique/default/home/global-cart-drawer.1440.png"
+    "evidence/boutique/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/boutique/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/boutique/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/boutique/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/boutique/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/boutique/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/boutique/default/home/global-cart-drawer.initial.bos.1440.png",
+    "evidence/boutique/default/home/global-cart-drawer.initial.bos.375.png",
+    "evidence/boutique/default/home/global-cart-drawer.initial.bos.768.png"
   ],
   "notlar": "cart-drawer empty. Your cart / Check out. #cart-icon-bubble href=/cart Dawn intercept.",
   "delta": "Boş drawer. Dolu hâl interact. Shopify.theme.name Boutique-v-1-5-0 · schema_name Boutique · schema_version 1.5.0 · theme_store_id null · role main · id 170605216055 · shop fashion-store-clean-10.myshopify.com · Speedo Themes third-party (Theme Store official değil).",
@@ -25,8 +34,8 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T18:18:20.539Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:58:10.280Z",
     "prepareClick": "#cart-icon-bubble"
   },
   "interactionStates": [
@@ -49,8 +58,15 @@
     },
     {
       "state": "initial",
-      "action": "click",
-      "selector": "#cart-icon-bubble",
+      "action": "forceOpen",
+      "selector": "#CartDrawer",
+      "capture": false,
+      "not": "Dawn cart-drawer.active — click #cart-icon-bubble boş drawer açmadı (probe)"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 800,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "bos",
@@ -94,7 +110,15 @@
       "not": "qty 1 → 2"
     }
   ],
-  "stateFindings": {},
-  "missingStates": [],
-  "interactionNote": "Checkout / Log in tıklanmadı. addToCart UI yolu."
+  "stateFindings": {
+    "filled": "YOUR CART. PARTY WEAR LONG FLORAL DRESS · Color Pink · Size S · qty 1 · $79. Free-shipping bar $100.00. Estimated total $79.00 USD. CHECK OUT (tıklanmadı). ADD TO CART drawer’ı PDP’de açtı. 375 tam genişlik drawer.",
+    "changed": "qty 2 · satır $158.00 · Estimated total $158.00 USD. Bar “Free shipping!”. PDP “Quantity (2 in cart)”."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "İki deneme. click #cart-icon-bubble boş drawer açmadı. forceOpen #CartDrawer iç div’e denk geldi (host <cart-drawer> değil) — boş panel görünmedi. 375/768/1440 bos kareleri kapalı homepage (SUMMER COLLECTION). Dolu hâl ATC ile alındı."
+    }
+  ],
+  "interactionNote": "Checkout / Log in tıklanmadı. filled/addToCart → ui — /cart/add.js fallback görünmedi."
 }

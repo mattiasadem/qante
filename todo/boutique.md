@@ -14,7 +14,7 @@
 Title: `Latest Shopify Fashion Store – Fashion Store Clean 10 (password: 1)`  
 Storefront password (ürün sayfasında yayın): **`1`** — aynı host `/password`, başka vitrin yok.
 
-**Durum:** Mod A walk + resmi 3vp (113 PNG) + interact sırada  
+**Durum:** Mod A walk + resmi 3vp (113 PNG) + interact (44 kare) · **157 PNG** · 0 yeni şema  
 **PR:** https://github.com/mattiasadem/qante/pull/360 · draft · **main'e merge yok**
 
 ---
@@ -30,7 +30,7 @@ Storefront password (ürün sayfasında yayın): **`1`** — aynı host `/passwo
 | Parallel | yalnız `observations/boutique/`, `evidence/boutique/`, `todo/boutique.md`, `candidates/boutique-leftovers.md` + `unlock-storefront` host |
 
 **Kapsam satırı:**  
-`Boutique · default · Boutique-v-1-5-0 / schema_name Boutique 1.5.0 · theme_store_id null · shop fashion-store-clean-10.myshopify.com · Speedo Themes · home→PDP party-wear-long-floral-dress→PLP /collections/all→/collections→search dress→cart empty+filled→about-us→faqs→contact→news+article→404 · 38 obs · 0 yeni şema · leftover: candidates/boutique-leftovers.md`
+`Boutique · default · Boutique-v-1-5-0 / schema_name Boutique 1.5.0 · theme_store_id null · shop fashion-store-clean-10.myshopify.com · Speedo Themes · home→PDP party-wear-long-floral-dress→PLP /collections/all→/collections→search dress→cart empty+filled→about-us→faqs→contact→news+article→404 · 38 obs · 157 PNG · 0 yeni şema · leftover: candidates/boutique-leftovers.md`
 
 ---
 
@@ -40,17 +40,17 @@ Storefront password (ürün sayfasında yayın): **`1`** — aynı host `/passwo
 |---|---|---|
 | Home + announcement/header/hero/featured/rich/cats/best/multirow/trust/IWT-2/news/footer | roster | [x] capture |
 | Mega | ⛔ yok (Dawn drawer-menu, hamburger 1440) | leftover |
-| Predictive search `dress` | roster | [ ] interact |
-| Mobile + 1440 hamburger | roster | [ ] interact |
-| Cart drawer empty + filled + qty | roster | [ ] interact |
-| PDP Color Pink→Yellow / Size S→M | roster | [ ] interact |
+| Predictive search `dress` | roster | [x] interact |
+| Mobile + 1440 hamburger | roster | [x] interact · open/changed **missingStates** |
+| Cart drawer empty + filled + qty | roster | [x] filled/changed · empty **missingStates** |
+| PDP Color Pink→Yellow / Size S→M | roster | [x] Pink→Yellow · Size S→M yoklandı değil |
 | PLP `/collections/all` | roster | [x] capture |
 | Collections `/collections` | roster | [x] capture |
 | Search `/search?q=dress` | roster | [x] capture |
-| Cart page empty + filled + qty | roster | [ ] interact |
+| Cart page empty + filled + qty | roster | [x] interact |
 | About `/pages/about-us` | roster | [x] capture |
 | Contact form (submit yok) | roster | [x] capture |
-| FAQ `/pages/faqs` (`/pages/faq` 404) | roster | [x] static · [ ] interact |
+| FAQ `/pages/faqs` (`/pages/faq` 404) | roster | [x] static + interact (Q1+Q2 açık) |
 | News + favorite-looks-from-fashion-week | roster | [x] capture |
 | 404 | roster | [x] capture |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
@@ -74,9 +74,9 @@ Storefront password (ürün sayfasında yayın): **`1`** — aynı host `/passwo
 | 11 | `__1f806fa0` LATEST NEWS | `blog-list-main` | reuse |
 | 12 | footer | `footer-columns-newsletter` | reuse · submit yok |
 | 13 | newsletter-popup | — | leftover · canlı zenon / PII |
-| 14 | #menu-drawer | `global-menu-drawer` | reuse · 375/768/**1440** |
-| 15 | .search-modal | `global-predictive-search` | reuse |
-| 16 | #CartDrawer | `global-cart-drawer` | reuse |
+| 14 | #menu-drawer | `global-menu-drawer` | reuse · 375/768/**1440** · open missing |
+| 15 | .search-modal | `global-predictive-search` | reuse · dress SUGGESTIONS+PRODUCTS |
+| 16 | #CartDrawer | `global-cart-drawer` | reuse · filled/changed · empty missing |
 
 ---
 
@@ -101,13 +101,13 @@ Storefront password (ürün sayfasında yayın): **`1`** — aynı host `/passwo
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | initial | mega yok — hamburger 1440 |
-| global-menu-drawer | open / changed | [ ] 375/768/1440 + Shop nested |
-| global-predictive-search | initial + input | [ ] boş modal + `dress` |
-| global-cart-drawer | initial / filled / changed | [ ] boş → dolu → qty |
-| cart-page-main | initial / filled / changed | [ ] boş → dolu → qty |
-| product-info-main | initial / changed | [ ] Color Pink→Yellow |
-| faq-collapsible-tabs | initial / changed | [ ] Q2 açık |
+| navigation-header-mega | initial | mega yok — hamburger 1440; 375/768 sosyal yok |
+| global-menu-drawer | open / changed | **missingStates** — click + forceOpen drawer açmadı; Shop viewport dışı |
+| global-predictive-search | initial + input | boş Search+X · `dress` SUGGESTIONS + 5 PRODUCTS |
+| global-cart-drawer | initial / filled / changed | empty **missing** · ATC YOUR CART Pink S $79 → qty2 $158 |
+| cart-page-main | initial / filled / changed | empty · same line $79 → $158 · checkout sibling leftover |
+| product-info-main | initial / changed | Pink floral → Yellow swatch; Size S; galeri değişti |
+| faq-collapsible-tabs | initial / changed | Q1 default açık; Q2 tık → Q1+Q2 (allowMultipleOpen) |
 
 Stop: email / account / checkout / newsletter submit / contact SUBMIT / PII
 
@@ -121,8 +121,8 @@ Stop: email / account / checkout / newsletter submit / contact SUBMIT / PII
 
 ## Evidence backlog
 
-- [x] Official 3vp static (`capture-observation.mjs`) — 113 PNG; menu-drawer 375 zero-size (interact open)
-- [ ] Interact hamburger / search / cart / PDP variant / FAQ
-- [ ] PNG bak → stateFindings
-- [ ] `node scripts/validate-schemas.mjs`
+- [x] Official 3vp static (`capture-observation.mjs`) — 113 PNG; menu-drawer 375 zero-size
+- [x] Interact hamburger / search / cart / PDP variant / FAQ — 44 kare
+- [x] PNG bak → stateFindings
+- [x] `node scripts/validate-schemas.mjs`
 - [x] Email / account / checkout / newsletter submit — **yapılmayacak**
