@@ -21,6 +21,7 @@ import {
   assertCleanForScreenshot,
 } from "./dismiss-overlays.mjs";
 import { screenshotSectionWithPadding } from "./screenshot-section.mjs";
+import { unlockStorefrontIfNeeded } from "./unlock-storefront.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const qanteRoot = path.resolve(__dirname, "..");
@@ -29,6 +30,7 @@ const DEFAULT_URLS = {
   hyper: "https://hyper-theme-demo.myshopify.com/",
   impulse: "https://impulse-theme-fashion.myshopify.com/",
   ridge: "https://ridge.com/",
+  pmg: "https://gamming-store-1.myshopify.com/",
 };
 
 const viewports = JSON.parse(
@@ -115,16 +117,21 @@ try {
       });
     }
 
+    const storefrontPassword =
+      obs.storefrontPassword || obs.capture?.storefrontPassword || "1";
+
     const warmupUrl = obs.warmupUrl || obs.capture?.warmupUrl || null;
     if (warmupUrl) {
       await page.goto(warmupUrl, { waitUntil: "domcontentloaded", timeout: 90000 });
       await page.waitForTimeout(2000);
+      await unlockStorefrontIfNeeded(page, storefrontPassword);
       await dismissAllOverlays(page);
     }
 
     const target = new URL(url);
     await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
     await page.waitForTimeout(3500);
+    await unlockStorefrontIfNeeded(page, storefrontPassword);
 
     // Cloudflare / bot interstitial — kısa bekle + reload (DTC storefront)
     for (let cf = 0; cf < 6; cf++) {
@@ -149,6 +156,7 @@ try {
         page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 })
       );
       await page.waitForTimeout(2500);
+      await unlockStorefrontIfNeeded(page, storefrontPassword);
     }
 
     // Overlay dismiss bazen CTA/link'e tıklayabiliyor — stabilize olana kadar geri al
@@ -165,6 +173,7 @@ try {
         );
         await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
         await page.waitForTimeout(2500);
+        await unlockStorefrontIfNeeded(page, storefrontPassword);
         continue;
       }
       break;

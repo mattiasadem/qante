@@ -41,6 +41,7 @@ import {
   assertCleanForScreenshot,
 } from "./dismiss-overlays.mjs";
 import { screenshotSectionWithPadding } from "./screenshot-section.mjs";
+import { unlockStorefrontIfNeeded } from "./unlock-storefront.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const qanteRoot = path.resolve(__dirname, "..");
@@ -48,6 +49,7 @@ const qanteRoot = path.resolve(__dirname, "..");
 const DEFAULT_URLS = {
   hyper: "https://hyper-theme-demo.myshopify.com/",
   impulse: "https://impulse-theme-fashion.myshopify.com/",
+  pmg: "https://gamming-store-1.myshopify.com/",
 };
 
 const STATES = ["initial", "hover", "input", "open", "filled", "changed"];
@@ -180,9 +182,12 @@ function iframeHostSelector(selector) {
 // ─── Sayfa hazırlığı (capture-observation.mjs ile aynı davranış) ───────────
 
 async function settle(page, url) {
+  const storefrontPassword =
+    obs.storefrontPassword || obs.capture?.storefrontPassword || "1";
   const target = new URL(url);
   await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
   await page.waitForTimeout(3500);
+  await unlockStorefrontIfNeeded(page, storefrontPassword);
 
   const landed = new URL(page.url());
   if (
@@ -193,6 +198,7 @@ async function settle(page, url) {
       .goto(url, { waitUntil: "networkidle", timeout: 90000 })
       .catch(() => page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 }));
     await page.waitForTimeout(2500);
+    await unlockStorefrontIfNeeded(page, storefrontPassword);
   }
 
   await dismissAllOverlays(page);
@@ -204,6 +210,7 @@ async function settle(page, url) {
   ) {
     await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
     await page.waitForTimeout(2500);
+    await unlockStorefrontIfNeeded(page, storefrontPassword);
     await dismissAllOverlays(page);
   }
 
@@ -217,6 +224,7 @@ async function settle(page, url) {
     if (gone) {
       await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
       await page.waitForTimeout(4500);
+      await unlockStorefrontIfNeeded(page, storefrontPassword);
     }
   } else {
     // Lazy section hydrate (lightbox sayfasında kaydırma gerekmez)
