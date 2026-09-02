@@ -7,10 +7,77 @@
   "url": "https://women-beauty-7.myshopify.com/",
   "selector": "#CartDrawer",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/andrea/default/home/global-cart-drawer.1440.png",
+    "evidence/andrea/default/home/global-cart-drawer.375.png",
+    "evidence/andrea/default/home/global-cart-drawer.768.png",
+    "evidence/andrea/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/andrea/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/andrea/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/andrea/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/andrea/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/andrea/default/home/global-cart-drawer.filled.sepete-eklendi.768.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "Dawn #CartDrawer. Opener #cart-icon-bubble href=/cart. Boş hâl.",
   "delta": "href=/cart — JS yakalamazsa /cart'a kaçar. filled interact.",
   "captureMode": "viewport",
-  "prepareClick": "#cart-icon-bubble"
+  "prepareClick": "#cart-icon-bubble",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "selector": null,
+      "value": "https://women-beauty-7.myshopify.com/products/andrea-glitter-nail-polish-paint-multi-color",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit",
+      "value": null,
+      "capture": false,
+      "not": "Glitter nail ADD TO CART"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": null,
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC sonrası drawer. Kapalıysa #cart-icon-bubble."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 2"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "CHECK OUT tıklanmadı.",
+  "capture": {
+    "url": "https://women-beauty-7.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:18:34.575Z",
+    "prepareClick": "#cart-icon-bubble"
+  }
 }

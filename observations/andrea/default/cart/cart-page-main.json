@@ -7,8 +7,84 @@
   "url": "https://women-beauty-7.myshopify.com/cart",
   "selector": "#shopify-section-template--22863739224344__cart-items",
   "evidenceSlug": "cart-page-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/andrea/default/cart/cart-page-main.1440.png",
+    "evidence/andrea/default/cart/cart-page-main.375.png",
+    "evidence/andrea/default/cart/cart-page-main.768.png",
+    "evidence/andrea/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/andrea/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/andrea/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/andrea/default/cart/cart-page-main.filled.sepet-dolu.1440.png",
+    "evidence/andrea/default/cart/cart-page-main.filled.sepet-dolu.375.png",
+    "evidence/andrea/default/cart/cart-page-main.filled.sepet-dolu.768.png",
+    "evidence/andrea/default/cart/cart-page-main.initial.bos.1440.png",
+    "evidence/andrea/default/cart/cart-page-main.initial.bos.375.png",
+    "evidence/andrea/default/cart/cart-page-main.initial.bos.768.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "Boş: Your cart is empty · CONTINUE SHOPPING.",
-  "delta": "cart-footer h=0 boşken. Dolu hâl interact."
+  "delta": "cart-footer h=0 boşken. Dolu hâl interact.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "selector": null,
+      "value": "https://women-beauty-7.myshopify.com/cart",
+      "capture": true,
+      "etiket": "bos",
+      "not": "Boş sepet — Your cart is empty"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "selector": null,
+      "value": "https://women-beauty-7.myshopify.com/products/andrea-glitter-nail-polish-paint-multi-color",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit",
+      "value": null,
+      "capture": false,
+      "not": "Glitter sepete"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "selector": null,
+      "value": "https://women-beauty-7.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepet-dolu",
+      "not": "Glitter satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus']",
+      "value": 1200,
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet 2"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı.",
+  "capture": {
+    "url": "https://women-beauty-7.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:20:41.863Z"
+  }
 }

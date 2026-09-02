@@ -7,10 +7,63 @@
   "url": "https://women-beauty-7.myshopify.com/",
   "selector": "details-modal.header__search",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/andrea/default/home/global-predictive-search.375.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "details-modal.header__search + PREDICTIVE-SEARCH. 1440 ayrıca inline header-search_box. Kapalı modal 0×0.",
   "delta": "Dawn search modal. Inline kutu 1440 leftover. input interact.",
   "captureMode": "viewport",
-  "prepareClick": "summary.header__icon--search"
+  "prepareClick": "summary.header__icon--search",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "input",
+      "action": "goto",
+      "selector": null,
+      "value": "https://women-beauty-7.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "value": 800,
+      "capture": false,
+      "not": "Search modal aç"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "cream",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "katalogSorgu cream — 8 sonuç sayfa"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "adım 2 (fill #Search-In-Modal): locator.waitFor: Timeout 12000ms exceeded.\nCall log:\n  - waiting for locator('#Search-In-Modal').first() to be visible\n    28 × locator resolved to hidden <input name=\"q\" value=\"\" type=\"search\" role=\"combobox\" autocorrect=\"off\" autocomplete=\"off\" spellcheck=\"false\" id=\"Search-In-Modal\" placeholder=\"Search\" autocapitalize=\"off\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-autocomplete=\"list\" class=\"search__input field__input\" aria-owns=\"predictive-search-results\" aria-controls=\"predictive-search-results\"/>\n"
+    }
+  ],
+  "interactionNote": "Fill #Search-In-Modal (kapalı 0×0). 1440 inline #Search-In-Template leftover.",
+  "capture": {
+    "url": "https://women-beauty-7.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:13:00.252Z",
+    "prepareClick": "summary.header__icon--search"
+  }
 }

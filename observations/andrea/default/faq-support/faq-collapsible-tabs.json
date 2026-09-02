@@ -7,8 +7,63 @@
   "url": "https://women-beauty-7.myshopify.com/pages/faqs",
   "selector": "#shopify-section-template--22863739683096__cb435de1-8958-455d-8843-8a9ef3413466",
   "evidenceSlug": "faq-collapsible-tabs",
-  "evidence": [],
+  "evidence": [
+    "evidence/andrea/default/faq-support/faq-collapsible-tabs.1440.png",
+    "evidence/andrea/default/faq-support/faq-collapsible-tabs.375.png",
+    "evidence/andrea/default/faq-support/faq-collapsible-tabs.768.png",
+    "evidence/andrea/default/faq-support/faq-collapsible-tabs.changed.ikinci-soru.1440.png",
+    "evidence/andrea/default/faq-support/faq-collapsible-tabs.changed.ikinci-soru.375.png",
+    "evidence/andrea/default/faq-support/faq-collapsible-tabs.changed.ikinci-soru.768.png",
+    "evidence/andrea/default/faq-support/faq-collapsible-tabs.initial.ilk-soru-acik.1440.png",
+    "evidence/andrea/default/faq-support/faq-collapsible-tabs.initial.ilk-soru-acik.375.png",
+    "evidence/andrea/default/faq-support/faq-collapsible-tabs.initial.ilk-soru-acik.768.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "Frequently asked question · Can I choose whichever styles I want? + accordion lorem.",
-  "delta": "Collapsible FAQ. İlk soru açık göründü."
+  "delta": "Collapsible FAQ. İlk soru açık göründü.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "selector": null,
+      "value": "https://women-beauty-7.myshopify.com/pages/faqs",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "selector": null,
+      "value": 400,
+      "capture": true,
+      "etiket": "ilk-soru-acik",
+      "not": "Can I choose… açık"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "[id*='collapsible_row-2'][id^='Summary']",
+      "value": 800,
+      "capture": true,
+      "etiket": "ikinci-soru",
+      "not": "I like my styles but they don't fit!"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "İlk details open=true. İkinci summary tık.",
+  "capture": {
+    "url": "https://women-beauty-7.myshopify.com/pages/faqs",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:17:23.244Z"
+  }
 }

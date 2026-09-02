@@ -7,10 +7,60 @@
   "url": "https://women-beauty-7.myshopify.com/",
   "selector": "#menu-drawer",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/andrea/default/home/global-menu-drawer.768.png",
+    "evidence/andrea/default/home/global-menu-drawer.open.hamburger-acik.768.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "375/768 hamburger #Details-menu-drawer-container > summary → #menu-drawer. 1440 0×0.",
   "delta": "1440 inline nav; drawer yalnız dar viewport. Account tıklanmadı.",
   "captureMode": "viewport",
-  "prepareClick": "#Details-menu-drawer-container > summary"
+  "prepareClick": "#Details-menu-drawer-container > summary",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "selector": null,
+      "value": "https://women-beauty-7.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger-acik",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Hamburger drawer"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "capture (375): zero-size / eşleşmedi: #menu-drawer"
+    }
+  ],
+  "interactionNote": "1440 hamburger 0×0. Account/locale tıklanmadı. Shop drill missingStates.",
+  "capture": {
+    "url": "https://women-beauty-7.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:13:56.403Z",
+    "prepareClick": "#Details-menu-drawer-container > summary"
+  }
 }
