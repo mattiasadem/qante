@@ -8,9 +8,18 @@
   "selector": "#shopify-section-template--23205602656536__cart-items",
   "evidenceSlug": "cart-page-main",
   "evidence": [
+    "evidence/luxe-luxuries/default/cart/cart-page-main.1440.png",
     "evidence/luxe-luxuries/default/cart/cart-page-main.375.png",
     "evidence/luxe-luxuries/default/cart/cart-page-main.768.png",
-    "evidence/luxe-luxuries/default/cart/cart-page-main.1440.png"
+    "evidence/luxe-luxuries/default/cart/cart-page-main.changed.adet-2.1440.png",
+    "evidence/luxe-luxuries/default/cart/cart-page-main.changed.adet-2.375.png",
+    "evidence/luxe-luxuries/default/cart/cart-page-main.changed.adet-2.768.png",
+    "evidence/luxe-luxuries/default/cart/cart-page-main.filled.dolu.1440.png",
+    "evidence/luxe-luxuries/default/cart/cart-page-main.filled.dolu.375.png",
+    "evidence/luxe-luxuries/default/cart/cart-page-main.filled.dolu.768.png",
+    "evidence/luxe-luxuries/default/cart/cart-page-main.initial.bos.1440.png",
+    "evidence/luxe-luxuries/default/cart/cart-page-main.initial.bos.375.png",
+    "evidence/luxe-luxuries/default/cart/cart-page-main.initial.bos.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Boş: Your cart is empty + Continue Shopping + Have an account?",
@@ -23,7 +32,75 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T15:31:54.834Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:00:38.665Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://watchez-online-store.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "etiket": "bos",
+      "not": "Boş sepet (statik ile aynı)"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://watchez-online-store.myshopify.com/products/access-gen-5e-mkgo-gray-rubber-smartwatch",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--23205603410200__main button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://watchez-online-store.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "etiket": "dolu",
+      "not": "Satır + toplam"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus']",
+      "capture": true,
+      "etiket": "adet-2",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + Continue Shopping + Have an account? Log in to check out faster.",
+    "filled": "Your cart tablosu PRODUCT / QUANTITY / TOTAL. Access Gen 5e MKGO Smartwatch · $180 · Color White · Watch Type Analogue-Digital · adet 1 · satır $180.",
+    "changed": "Adet 2; satır TOTAL $360."
+  },
+  "missingStates": [],
+  "interactionNote": "Log in / checkout tıklanmadı. ATC UI sonra /cart."
 }

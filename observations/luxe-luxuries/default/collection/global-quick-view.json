@@ -28,5 +28,36 @@
     "method": "viewport",
     "updatedAt": "2026-09-02T15:32:57.670Z",
     "prepareClick": ".quick-add__submit"
-  }
+  },
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://watchez-online-store.myshopify.com/collections/best-sellers",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": ".quick-add__submit",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "quick-add-acik",
+      "not": "İlk kart Quick add modal"
+    }
+  ],
+  "stateFindings": {
+    "open": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Statik prepareClick zaten modal açtı. Checkout tıklanmadı."
 }

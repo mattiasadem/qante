@@ -8,9 +8,15 @@
   "selector": "#CartDrawer",
   "evidenceSlug": "global-cart-drawer",
   "evidence": [
+    "evidence/luxe-luxuries/default/home/global-cart-drawer.1440.png",
     "evidence/luxe-luxuries/default/home/global-cart-drawer.375.png",
     "evidence/luxe-luxuries/default/home/global-cart-drawer.768.png",
-    "evidence/luxe-luxuries/default/home/global-cart-drawer.1440.png"
+    "evidence/luxe-luxuries/default/home/global-cart-drawer.changed.adet-2.1440.png",
+    "evidence/luxe-luxuries/default/home/global-cart-drawer.changed.adet-2.375.png",
+    "evidence/luxe-luxuries/default/home/global-cart-drawer.changed.adet-2.768.png",
+    "evidence/luxe-luxuries/default/home/global-cart-drawer.filled.dolu.1440.png",
+    "evidence/luxe-luxuries/default/home/global-cart-drawer.filled.dolu.375.png",
+    "evidence/luxe-luxuries/default/home/global-cart-drawer.filled.dolu.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Dawn cart-drawer. Statik kare kapalı host (viewport=home). Dolu/açık interact.",
@@ -25,8 +31,58 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T15:39:06.510Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:58:20.060Z",
     "prepareClick": "#cart-icon-bubble"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://watchez-online-store.myshopify.com/products/access-gen-5e-mkgo-gray-rubber-smartwatch",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--23205603410200__main button[name='add']",
+      "capture": false,
+      "not": "PDP ATC — drawer açılmalı"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "dolu",
+      "not": "Access Gen 5e satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-2",
+      "not": "Adet + → ara toplam"
+    }
+  ],
+  "stateFindings": {
+    "filled": "Sağ drawer Your cart. Access Gen 5e MKGO Smartwatch · Color White · Watch Type Analogue-Digital · adet 1 · $180. Free Shipping $500 (kısmi yeşil bar) + Express Shipping $800 (boş). Best seller akordeon kapalı. Estimated total $180 USD. Check Out + View cart.",
+    "changed": "Aynı satır adet 2; estimated total $360 USD. Kargo barları aynı eşikler."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı. ATC UI (PDP button[name=add]) drawer açtı. İkinci kargo eşiği (Express $800) mevcut kargoEsigi slotuna sığar — şema dokunulmadı."
 }

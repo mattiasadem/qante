@@ -8,7 +8,9 @@
   "selector": "#menu-drawer",
   "evidenceSlug": "global-menu-drawer",
   "evidence": [
-    "evidence/luxe-luxuries/default/home/global-menu-drawer.768.png"
+    "evidence/luxe-luxuries/default/home/global-menu-drawer.768.png",
+    "evidence/luxe-luxuries/default/home/global-menu-drawer.open.menu-acik.375.png",
+    "evidence/luxe-luxuries/default/home/global-menu-drawer.open.menu-acik.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "header-drawer data-breakpoint=tablet. Statik: 768 home karesi; 375/1440 zero-size skip.",
@@ -23,8 +25,45 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T15:39:11.824Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:56:39.857Z",
     "prepareClick": "header-drawer summary.header__icon--menu"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://watchez-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#header-menu",
+      "value": 1600,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "menu-acik",
+      "not": "Hamburger #header-menu — details.menu-opening. forceOpen menu-opening eklemez."
+    }
+  ],
+  "stateFindings": {
+    "open": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Log in tıklanmadı. 1440 hamburger 0px. 1. deneme forceOpen+section homepage verdi (kapalı #menu-drawer visibility:hidden). 2. deneme #header-menu tık + viewport."
 }
