@@ -7,10 +7,107 @@
   "url": "https://fashion-store-clean-11.myshopify.com/",
   "selector": "#CartDrawer",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/seabikini/default/home/global-cart-drawer.1440.png",
+    "evidence/seabikini/default/home/global-cart-drawer.375.png",
+    "evidence/seabikini/default/home/global-cart-drawer.768.png",
+    "evidence/seabikini/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/seabikini/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/seabikini/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/seabikini/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/seabikini/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/seabikini/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/seabikini/default/home/global-cart-drawer.initial.bos.1440.png",
+    "evidence/seabikini/default/home/global-cart-drawer.initial.bos.375.png",
+    "evidence/seabikini/default/home/global-cart-drawer.initial.bos.768.png"
+  ],
   "notlar": "cart-drawer empty. Your cart / Check out. #cart-icon-bubble href=/cart Dawn intercept.",
   "delta": "Boş drawer. Dolu hâl interact. Shopify.theme.name Seabikini-v-1-5-0 · schema_name Seabikini · schema_version 1.5.0 · theme_store_id null · role main · id 171062952255 · shop fashion-store-clean-11.myshopify.com · Speedo Themes third-party (Theme Store official değil).",
   "storefrontPassword": "1",
   "captureMode": "viewport",
-  "prepareClick": "#cart-icon-bubble"
+  "prepareClick": "#cart-icon-bubble",
+  "capture": {
+    "url": "https://fashion-store-clean-11.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:21:06.249Z",
+    "prepareClick": "#cart-icon-bubble"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://fashion-store-clean-11.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bos",
+      "not": "Boş cart drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://fashion-store-clean-11.myshopify.com/products/summer-swimwear-bathing-suit",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add'], button[name='add']",
+      "capture": false,
+      "not": "ADD TO CART — drawer beklenir"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "SUMMER SWIMWEAR satır"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus'], #CartDrawer .quantity__button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "qty 1 → 2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Sağ #CartDrawer boş: Your cart is empty · CONTINUE SHOPPING · Have an account? Log in to check out faster.",
+    "filled": "YOUR CART. SUMMER SWIMWEAR BATHING SUIT · Color Red · Size S · qty 1 · $59. Free-shipping bar ~$59 / $100.00. Estimated total $59.00 USD. CHECK OUT (tıklanmadı). ADD TO CART drawer’ı PDP’de açtı.",
+    "changed": "qty 2 · satır $118.00 · Estimated total $118.00 USD. Bar “Free shipping!” dolu. PDP “Quantity (2 in cart)”."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout / Log in tıklanmadı. addToCart UI yolu — drawer PDP’de açıldı, /cart/add.js fallback görünmedi."
 }

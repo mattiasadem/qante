@@ -34,6 +34,8 @@ export async function dismissAllOverlays(page, { rounds = 8 } = {}) {
       ".modal__close",
       ".modal-close",
       "[data-popup-close]",
+      "img.close_popup",
+      ".close_popup",
       "[class*='newsletter'] button[class*='close']",
       "[class*='popup'] button[class*='close']",
     ];
@@ -161,6 +163,14 @@ export async function dismissAllOverlays(page, { rounds = 8 } = {}) {
         el.removeAttribute("open");
         el.hidden = true;
       });
+
+      document.querySelectorAll(
+        ".zenon_popup, .popup_inside, .newsletter-popup"
+      ).forEach((el) => {
+        el.style?.setProperty("display", "none", "important");
+        el.hidden = true;
+      });
+      document.body.classList.remove("popup-active");
 
       document.body.style.overflow = "auto";
       document.documentElement.style.overflow = "auto";

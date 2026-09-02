@@ -22,6 +22,13 @@ const results = [];
 
 for (const file of files) {
   const rel = path.relative(root, file);
+  const obs = JSON.parse(fs.readFileSync(file, "utf8"));
+  const ev = obs.evidence || [];
+  if (ev.filter((p) => /\.(375|768|1440)\.png$/.test(p)).length >= 3) {
+    console.log("SKIP", rel);
+    results.push({ file: rel, ok: true, skipped: true });
+    continue;
+  }
   console.log("\n===", rel, "===");
   const started = Date.now();
   const code = await new Promise((resolve) => {

@@ -36,9 +36,9 @@ Karar: onay bekliyor
 ---
 
 ADAY: seabikini-newsletter-popup  
-Gerekçe: `#shopify-section-newsletter-popup` h=0. "Get the newsletter Get 10% off." PII, dur.  
+Gerekçe: Overlay-group `#shopify-section-newsletter-popup` roster’da h=0. Canlıda `.zenon_popup` / `.popup_inside` / `img.close_popup` + `body.popup-active` tıklamayı keser; `dismiss-overlays.mjs` kapatır. “Get the newsletter Get 10% off.” PII — submit yok.  
 Örnekler: overlay-group `newsletter-popup`  
-Öneri: leftover — gizli popup  
+Öneri: leftover — Speedo newsletter overlay  
 Karar: onay bekliyor
 
 ---
