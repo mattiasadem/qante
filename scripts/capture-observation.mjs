@@ -21,6 +21,10 @@ import {
   assertCleanForScreenshot,
 } from "./dismiss-overlays.mjs";
 import { screenshotSectionWithPadding } from "./screenshot-section.mjs";
+import {
+  resolveStorefrontPassword,
+  unlockStorefrontIfNeeded,
+} from "./unlock-storefront.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const qanteRoot = path.resolve(__dirname, "..");
@@ -29,6 +33,7 @@ const DEFAULT_URLS = {
   hyper: "https://hyper-theme-demo.myshopify.com/",
   impulse: "https://impulse-theme-fashion.myshopify.com/",
   ridge: "https://ridge.com/",
+  guccy: "https://fashion-store-clean-20.myshopify.com/",
 };
 
 const viewports = JSON.parse(
@@ -125,6 +130,16 @@ try {
     const target = new URL(url);
     await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
     await page.waitForTimeout(3500);
+    const storefrontPassword = resolveStorefrontPassword(obs, qanteRoot);
+    if (storefrontPassword) {
+      const unlocked = await unlockStorefrontIfNeeded(page, {
+        password: storefrontPassword,
+      });
+      if (unlocked) {
+        await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
+        await page.waitForTimeout(2000);
+      }
+    }
 
     // Cloudflare / bot interstitial — kısa bekle + reload (DTC storefront)
     for (let cf = 0; cf < 6; cf++) {
