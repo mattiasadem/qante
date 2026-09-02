@@ -1,7 +1,10 @@
 {
   "kaynak": "lingerie",
   "preset": "default",
-  "evidence": [],
+  "evidence": [
+    "evidence/lingerie/default/home/global-predictive-search.375.png",
+    "evidence/lingerie/default/home/global-predictive-search.768.png"
+  ],
   "storefrontPassword": "1",
   "delta": "Öneri interact. Submit yok. Shopify.theme.name Lingerie-v-1-5-0-latest-updates-new · schema_name Lingerie · schema_version 1.5.0 · theme_store_id null · role main · id 176524362023 · shop fashion-store-clean-21.myshopify.com · Speedo Themes third-party (Theme Store official değil).",
   "sayfa": "home",
@@ -10,7 +13,72 @@
   "selector": "details:has(#Search-In-Modal)",
   "captureMode": "viewport",
   "prepareClick": "summary.header__icon--search",
+  "prepareForceOpen": "details:has(#Search-In-Modal), .search-modal",
   "notlar": "Search summary → #Search-In-Modal. katalogSorgu bikini.",
   "observationId": "lingerie.default.home.global-predictive-search",
-  "evidenceSlug": "global-predictive-search"
+  "evidenceSlug": "global-predictive-search",
+  "capture": {
+    "url": "https://fashion-store-clean-21.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "viewport",
+    "updatedAt": "2026-09-02T17:33:47.317Z",
+    "prepareClick": "summary.header__icon--search"
+  },
+  "interactionStates": [
+    "open",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://fashion-store-clean-21.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "details:has(#Search-In-Modal)",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "selector": "#Search-In-Modal",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "modal-bos",
+      "not": "Arama modalı boş"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": ".search-modal input[type='search'], .search-modal input[name='q'], #Search-In-Modal",
+      "value": "bikini",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bikini",
+      "not": "katalogSorgu bikini"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {},
+  "interactionNote": "katalogSorgu=bikini. Submit / hesap yok."
 }

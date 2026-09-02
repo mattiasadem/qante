@@ -1,7 +1,11 @@
 {
   "kaynak": "lingerie",
   "preset": "default",
-  "evidence": [],
+  "evidence": [
+    "evidence/lingerie/default/cart/cart-page-main.375.png",
+    "evidence/lingerie/default/cart/cart-page-main.768.png",
+    "evidence/lingerie/default/cart/cart-page-main.1440.png"
+  ],
   "storefrontPassword": "1",
   "delta": "Dolu + qty interact. Checkout tıklanmadı. Shopify.theme.name Lingerie-v-1-5-0-latest-updates-new · schema_name Lingerie · schema_version 1.5.0 · theme_store_id null · role main · id 176524362023 · shop fashion-store-clean-21.myshopify.com · Speedo Themes third-party (Theme Store official değil).",
   "sayfa": "cart",
@@ -10,5 +14,68 @@
   "selector": "#shopify-section-template--24233888514343__cart-items",
   "notlar": "Boş: Your cart is empty · Continue Shopping · Log in. cart-footer sibling h=0.",
   "observationId": "lingerie.default.cart.cart-page-main",
-  "evidenceSlug": "cart-page-main"
+  "evidenceSlug": "cart-page-main",
+  "capture": {
+    "url": "https://fashion-store-clean-21.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "margin-box+minPad8",
+    "updatedAt": "2026-09-02T16:47:38.522Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://fashion-store-clean-21.myshopify.com/cart",
+      "capture": true,
+      "etiket": "bos",
+      "not": "Boş sepet sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://fashion-store-clean-21.myshopify.com/products/maaji-cloud-paradise-long-line-triangle-bikini-top",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add'], button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://fashion-store-clean-21.myshopify.com/cart",
+      "capture": true,
+      "etiket": "dolu",
+      "not": "Maaji satır + toplam"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], .quantity__button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "qty +1"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {},
+  "interactionNote": "Checkout / Log in tıklanmadı."
 }

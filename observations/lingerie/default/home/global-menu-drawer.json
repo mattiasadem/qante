@@ -1,7 +1,11 @@
 {
   "kaynak": "lingerie",
   "preset": "default",
-  "evidence": [],
+  "evidence": [
+    "evidence/lingerie/default/home/global-menu-drawer.375.png",
+    "evidence/lingerie/default/home/global-menu-drawer.768.png",
+    "evidence/lingerie/default/home/global-menu-drawer.1440.png"
+  ],
   "storefrontPassword": "1",
   "delta": "Mega + hamburger birlikte. Log in tıklanmadı. Shopify.theme.name Lingerie-v-1-5-0-latest-updates-new · schema_name Lingerie · schema_version 1.5.0 · theme_store_id null · role main · id 176524362023 · shop fashion-store-clean-21.myshopify.com · Speedo Themes third-party (Theme Store official değil).",
   "sayfa": "home",
@@ -12,5 +16,56 @@
   "prepareClick": "#Details-menu-drawer-container > summary",
   "notlar": "Hamburger → #menu-drawer. 1440'te de hamburger kutusu var (28px).",
   "observationId": "lingerie.default.home.global-menu-drawer",
-  "evidenceSlug": "global-menu-drawer"
+  "evidenceSlug": "global-menu-drawer",
+  "capture": {
+    "url": "https://fashion-store-clean-21.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "viewport",
+    "updatedAt": "2026-09-02T17:07:19.728Z",
+    "prepareClick": "#Details-menu-drawer-container > summary"
+  },
+  "interactionStates": [
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://fashion-store-clean-21.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Drawer açık — 375/768/1440 hamburger var"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-menu-drawer-menu-item-2 > summary, #HeaderDrawer-shop, details#Details-menu-drawer-menu-item-2 > summary",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-akordeon",
+      "not": "Shop nested koleksiyonlar"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {},
+  "interactionNote": "Log in tıklanmadı. 1440 hamburger kutusu probe'da 28px."
 }

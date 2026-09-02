@@ -1,7 +1,11 @@
 {
   "kaynak": "lingerie",
   "preset": "default",
-  "evidence": [],
+  "evidence": [
+    "evidence/lingerie/default/home/global-cart-drawer.375.png",
+    "evidence/lingerie/default/home/global-cart-drawer.768.png",
+    "evidence/lingerie/default/home/global-cart-drawer.1440.png"
+  ],
   "storefrontPassword": "1",
   "delta": "Boş drawer. Dolu hâl interact. Checkout tıklanmadı. Shopify.theme.name Lingerie-v-1-5-0-latest-updates-new · schema_name Lingerie · schema_version 1.5.0 · theme_store_id null · role main · id 176524362023 · shop fashion-store-clean-21.myshopify.com · Speedo Themes third-party (Theme Store official değil).",
   "sayfa": "home",
@@ -12,5 +16,91 @@
   "prepareClick": "#cart-icon-bubble",
   "notlar": "#CartDrawer. Opener #cart-icon-bubble. Boş + dolu interact.",
   "observationId": "lingerie.default.home.global-cart-drawer",
-  "evidenceSlug": "global-cart-drawer"
+  "evidenceSlug": "global-cart-drawer",
+  "capture": {
+    "url": "https://fashion-store-clean-21.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "viewport",
+    "updatedAt": "2026-09-02T17:06:15.437Z",
+    "prepareClick": "#cart-icon-bubble"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://fashion-store-clean-21.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "#CartDrawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bos",
+      "not": "Boş cart drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://fashion-store-clean-21.myshopify.com/products/maaji-cloud-paradise-long-line-triangle-bikini-top",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add'], button[name='add']",
+      "capture": false,
+      "not": "ADD TO CART — Maaji White"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Maaji satır"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus'], #CartDrawer .quantity__button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "qty 1 → 2"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {},
+  "interactionNote": "Checkout / Log in tıklanmadı."
 }

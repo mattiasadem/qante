@@ -107,6 +107,22 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: lingerie-sales-pop  
+Gerekçe: Sabit karelerde sol alt “Someone liked and Buy … Verified” toast. Section değil; dismiss bazen kaçırıyor.  
+Örnekler: home/PDP/PLP/footer evidence  
+Öneri: leftover — social-proof toast  
+Karar: onay bekliyor
+
+---
+
+ADAY: lingerie-search-1440-zero  
+Gerekçe: Statik `details:has(#Search-In-Modal)` 1440’te 0px (skipped). 375/768 header search açık. Interact forceOpen.  
+Örnekler: home search  
+Öneri: leftover — masaüstü selector  
+Karar: onay bekliyor
+
+---
+
 ADAY: lingerie-sports-404-link  
 Gerekçe: Nav’da `https://sports-online-store-1.myshopify.com/pages/404` — başka host, yürünmedi.  
 Örnekler: header Themes  
