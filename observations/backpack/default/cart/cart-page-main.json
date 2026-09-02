@@ -1,0 +1,82 @@
+{
+  "observationId": "backpack.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "backpack",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://adlwin-store.myshopify.com/cart",
+  "selector": "#shopify-section-cart-template",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "storefrontPassword": "1",
+  "captureMode": "viewport",
+  "notlar": "Boş: Your cart is currently empty + CONTINUE SHOPPING. Drawer yok. Dolu interact: dress ATC → /cart.",
+  "delta": "Debut cart-template. Mini-cart/drawer yok. Shopify.theme.name Theme export adlwin-com-adlwin-zenon… · schema_name Debut · schema_version 17.14.1 · theme_store_id null · role main · id 134700761330 · shop adlwin-store.myshopify.com · Speedo katalog Backpack OS 2.0; canlı JS Debut. storefrontPassword=1 (speedothemes.com product page).",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://adlwin-store.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://adlwin-store.myshopify.com/products/grey-green-floral-print-fit-and-flare-dress",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": ".product-form-template--16346511638770__product-template button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://adlwin-store.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "dress-qty1",
+      "not": "Dolu cart satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".qtyplus, button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +1"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Checkout/login tıklanmadı. ATC UI; fallback /cart/add.js interactionNote'a yazılır."
+}

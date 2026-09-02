@@ -1,0 +1,63 @@
+{
+  "observationId": "backpack.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "backpack",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://adlwin-store.myshopify.com/",
+  "selector": "#SearchDrawer",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "storefrontPassword": "1",
+  "captureMode": "viewport",
+  "notlar": "1440: #SearchDrawer header içi görünür arama (w≈875). Toggle 0×0. 375: .js-drawer-open-top + üst drawer. katalogSorgu=hoodie.",
+  "delta": "Debut SearchDrawer. 1440 input zaten açık; ikon tıklanamaz (0×0). Predictive markup var. Shopify.theme.name Theme export adlwin-com-adlwin-zenon… · schema_name Debut · schema_version 17.14.1 · theme_store_id null · role main · id 134700761330 · shop adlwin-store.myshopify.com.",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://adlwin-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".js-drawer-open-top",
+      "viewports": ["375", "768"],
+      "capture": false,
+      "not": "Mobil/tablet: üst arama drawer. 1440 toggle 0×0 — atlanır"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 600,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Boş Search placeholder"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": ".search-bar__input",
+      "value": "hoodie",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-hoodie",
+      "not": "katalogSorgu=hoodie"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "katalogSorgu hoodie. Submit/PII yok. 1440 fill doğrudan görünür input."
+}
