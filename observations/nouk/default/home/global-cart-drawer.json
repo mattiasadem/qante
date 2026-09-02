@@ -29,5 +29,62 @@
     "method": "viewport",
     "updatedAt": "2026-09-02T13:53:44.871Z",
     "prepareClick": "#cart-icon-bubble"
-  }
+  },
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://jewelry-online-shop-3.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": false,
+      "not": "role=button href=/cart — JS drawer; sayfa değişmemeli"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "selector": "cart-drawer.drawer.active",
+      "value": 8000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş drawer: Your cart is empty"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://jewelry-online-shop-3.myshopify.com/products/princess-diamond-earrings-stud-earrings",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--17443721609371__main button[name='add']",
+      "capture": false,
+      "not": "Princess stud ATC"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": "cart-drawer.drawer.active",
+      "value": 8000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer — checkout/login yok"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "cart-drawer button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ]
 }

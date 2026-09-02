@@ -25,5 +25,37 @@
     "method": "viewport",
     "updatedAt": "2026-09-02T13:56:19.800Z",
     "prepareClick": "#shopify-section-template--17443721281691__0617c2f2-69ec-4df8-a506-b2616d4e1db4 .quick-add__submit"
-  }
+  },
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://jewelry-online-shop-3.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17443721281691__0617c2f2-69ec-4df8-a506-b2616d4e1db4",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#quick-add-template--17443721281691__0617c2f2-69ec-4df8-a506-b2616d4e1db47855931261083-submit",
+      "capture": false,
+      "not": "SHOP STUD Princess Quick shop"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "selector": "#QuickAdd-7855931261083",
+      "value": 10000,
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#QuickAdd-7855931261083",
+      "etiket": "quick-shop",
+      "not": "Unique modal — quick-add-modal[open] çoklu host"
+    }
+  ]
 }
