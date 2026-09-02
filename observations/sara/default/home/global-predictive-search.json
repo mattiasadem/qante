@@ -1,0 +1,117 @@
+{
+  "observationId": "sara.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "sara",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://sara-toy-store.myshopify.com/",
+  "selector": "details-modal.header__search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/sara/default/home/global-predictive-search.1440.png",
+    "evidence/sara/default/home/global-predictive-search.375.png",
+    "evidence/sara/default/home/global-predictive-search.768.png",
+    "evidence/sara/default/home/global-predictive-search.initial.kapali.1440.png",
+    "evidence/sara/default/home/global-predictive-search.initial.kapali.375.png",
+    "evidence/sara/default/home/global-predictive-search.initial.kapali.768.png",
+    "evidence/sara/default/home/global-predictive-search.input.arama-toy.375.png",
+    "evidence/sara/default/home/global-predictive-search.input.arama-toy.768.png"
+  ],
+  "notlar": "Header search details-modal. Opener summary.header__icon--search.",
+  "delta": "Shopify.theme.name Sara-toys-shop V-1.2.0 · schema_name sara-toy-store · schema_version 1.2.0 · theme_store_id null · role main · id 164101292353 · walk sara-toy-store.myshopify.com · Shopify.shop sara-toy-store.myshopify.com · locale en · country US · currency USD · Speedo third-party catalog (not Theme Store). Storefront unlock password 1.",
+  "storefrontPassword": "1",
+  "capture": {
+    "url": "https://sara-toy-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:44:43.253Z"
+  },
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sara-toy-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "body",
+      "etiket": "kapali",
+      "not": "Search kapalı"
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "details-modal.header__search summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "forceOpen",
+      "selector": "details-modal.header__search",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input[name='q']",
+      "value": "toy",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-toy",
+      "not": "toy yazınca ürün önerileri"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input[name='q']",
+      "value": "toy",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-toy",
+      "not": "1440 search fill toy"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Search kapalı.",
+    "input": "toy yazınca predictive sonuçlar."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "adım 5 (fill input[name='q']): locator.waitFor: Timeout 12000ms exceeded.\nCall log:\n  - waiting for locator('input[name=\\'q\\']').first() to be visible\n    28 × locator resolved to hidden <input name=\"q\" value=\"\" type=\"search\" role=\"combobox\" autocorrect=\"off\" autocomplete=\"off\" spellcheck=\"false\" id=\"Search-In-Modal\" placeholder=\"Search\" autocapitalize=\"off\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-autocomplete=\"list\" class=\"search__input field__input\" aria-owns=\"predictive-search-results\" aria-controls=\"predictive-search-results\"/>\n"
+    }
+  ],
+  "interactionNote": "katalogSorgu toy (26 search sonucu ile uyumlu). Submit/checkout yok."
+}

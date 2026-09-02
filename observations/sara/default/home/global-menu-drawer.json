@@ -1,0 +1,105 @@
+{
+  "observationId": "sara.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "sara",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://sara-toy-store.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/sara/default/home/global-menu-drawer.768.png",
+    "evidence/sara/default/home/global-menu-drawer.initial.kapali.375.png",
+    "evidence/sara/default/home/global-menu-drawer.initial.kapali.768.png",
+    "evidence/sara/default/home/global-menu-drawer.open.menu-acik.375.png",
+    "evidence/sara/default/home/global-menu-drawer.open.menu-acik.768.png"
+  ],
+  "notlar": "Mobil hamburger menü drawer.",
+  "delta": "Shopify.theme.name Sara-toys-shop V-1.2.0 · schema_name sara-toy-store · schema_version 1.2.0 · theme_store_id null · role main · id 164101292353 · walk sara-toy-store.myshopify.com · Shopify.shop sara-toy-store.myshopify.com · locale en · country US · currency USD · Speedo third-party catalog (not Theme Store). Storefront unlock password 1.",
+  "storefrontPassword": "1",
+  "capture": {
+    "url": "https://sara-toy-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:45:43.547Z",
+    "prepareClick": "summary.header__icon--menu"
+  },
+  "captureMode": "viewport",
+  "prepareClick": "summary.header__icon--menu",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sara-toy-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "body",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "etiket": "kapali",
+      "not": "Drawer kapalı"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "summary.header__icon--menu",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ]
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#menu-drawer",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "menu-acik",
+      "not": "Hamburger menü açık"
+    }
+  ],
+  "stateFindings": {
+    "initial": "375/768 drawer kapalı.",
+    "open": "Welcome / Shop / About / Blog / Contact linkleri."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 hamburger 0px — open yalnız mobil."
+}
