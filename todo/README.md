@@ -46,7 +46,7 @@
 | HexClad | [`hexclad.md`](./hexclad.md) | ✅ listicle-fathers-day · 5 obs · 15 PNG · 0 yeni şema |
 | Allbirds | [`allbirds.md`](./allbirds.md) | 🟡 Mod A — 30 obs · ~90 PNG · partial capture (search blocked) |
 | Legal / policy (Kreis recipe) | [`policy-legal.md`](./policy-legal.md) | ✅ page-recipes/policy · 3-col sticky TOC \| content \| sibling nav |
-| Qreal (Speedo Cosmetic) | [`qreal.md`](./qreal.md) | 🟡 draft — first inventory + interact · women-beauty-8 · password 1 |
+| Qreal (Speedo Cosmetic) | [`qreal.md`](./qreal.md) | 🟡 draft — 52 obs · 203 PNG · 0 yeni şema · women-beauty-8 · password 1 |
 
 **Interact (discover sonrası derinlik):** [`interact.md`](./interact.md) — kapalı kare yalanı; Stretch + Cocoon/Balance shop-the-look kapandı.
 
