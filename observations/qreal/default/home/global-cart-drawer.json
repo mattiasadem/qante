@@ -7,10 +7,90 @@
   "url": "https://women-beauty-8.myshopify.com/",
   "selector": "#CartDrawer",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/qreal/default/home/global-cart-drawer.1440.png",
+    "evidence/qreal/default/home/global-cart-drawer.375.png",
+    "evidence/qreal/default/home/global-cart-drawer.768.png",
+    "evidence/qreal/default/home/global-cart-drawer.changed.adet-2.1440.png",
+    "evidence/qreal/default/home/global-cart-drawer.changed.adet-2.375.png",
+    "evidence/qreal/default/home/global-cart-drawer.changed.adet-2.768.png",
+    "evidence/qreal/default/home/global-cart-drawer.filled.dolu.1440.png",
+    "evidence/qreal/default/home/global-cart-drawer.filled.dolu.375.png",
+    "evidence/qreal/default/home/global-cart-drawer.filled.dolu.768.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "Dawn cart-drawer. Kapalı host; prepareClick #cart-icon-bubble boş sepet.",
   "delta": "CART-DRAWER #CartDrawer ~400px. Checkout tıklanmadı.",
   "captureMode": "viewport",
-  "prepareClick": "#cart-icon-bubble"
+  "prepareClick": "#cart-icon-bubble",
+  "capture": {
+    "url": "https://women-beauty-8.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T17:02:11.800Z",
+    "prepareClick": "#cart-icon-bubble"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://women-beauty-8.myshopify.com/",
+      "capture": false,
+      "not": "Unlock"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://women-beauty-8.myshopify.com/products/treatment-skin-care-organic-brightening-serum",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--17877886730300__main button[name='add']",
+      "capture": false,
+      "not": "PDP ATC — QuickAdd .first() tuzağı"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "dolu",
+      "not": "Serum satırı $85"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-2",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Statik boş kare: Your cart is empty + Continue Shopping + Have an account? Log in + YOU MAY LIKE Gorgeous Cosmos Glossy Lipstick $40.00 + Add To Cart. Log in tıklanmadı.",
+    "filled": "YOUR CART. Free Shipping! $100 / Express Shipping! $150 bar. Treatment Skin Care Organic Brightening Serum · Size: 50ml · $85.00 · qty 1. YOU MAY LIKE kapalı chevron. Estimated total $85.00 USD. Check Out (tıklanmadı).",
+    "changed": "qty 2. Satır $170.00 · Estimated total $170.00 USD. Check Out tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart → PDP #shopify-section-template--17877886730300__main button[name=add] (global name=add QuickAdd tuzağı). Checkout yok."
 }

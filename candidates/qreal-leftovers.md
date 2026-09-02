@@ -43,9 +43,9 @@ Karar: onay bekliyor
 ---
 
 ADAY: qreal-quick-add  
-Gerekçe: Home featured `QUICK-ADD-MODAL` `#QuickAdd-7813575671868` (Dawn quick-add). Ayrı şema yazılmadı.  
-Örnekler: https://women-beauty-8.myshopify.com/  
-Öneri: leftover — QuickAdd overlay  
+Gerekçe: Home featured `QUICK-ADD-MODAL` `#QuickAdd-7813575671868` (Dawn quick-add). PLP kart hover’da Quick View ikonu belirdi; tıklanmadı. Ayrı şema yazılmadı (`product-showcase-grid-plp` zaten `emit:product.quickView`).  
+Örnekler: https://women-beauty-8.myshopify.com/collections/best-selling  
+Öneri: leftover — QuickAdd / Quick View overlay  
 Karar: onay bekliyor
 
 ---

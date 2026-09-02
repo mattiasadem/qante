@@ -7,10 +7,72 @@
   "url": "https://women-beauty-8.myshopify.com/",
   "selector": "#menu-drawer",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/qreal/default/home/global-menu-drawer.375.png",
+    "evidence/qreal/default/home/global-menu-drawer.768.png",
+    "evidence/qreal/default/home/global-menu-drawer.initial.kapali.768.png",
+    "evidence/qreal/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/qreal/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "375 hamburger → Home/Shop/Best Sellers/Themes/Collections/Shop By + Wishlist/Compare/Log in/locale.",
   "delta": "1440 hamburger 0×0. forceOpen menu-opening gerekebilir.",
   "captureMode": "viewport",
-  "prepareClick": ".header__icon--menu"
+  "prepareClick": ".header__icon--menu",
+  "capture": {
+    "url": "https://women-beauty-8.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T17:01:15.070Z",
+    "prepareClick": ".header__icon--menu"
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://women-beauty-8.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#shopify-section-sections--17877887025212__header",
+      "etiket": "kapali",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Hamburger kapalı — #menu-drawer 0px; header host"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": ".header__icon--menu",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "375/768 drawer. 1440 hamburger 0×0 — atlandı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "768 (ve retry sonrası 375): hamburger + QREAL + search / account / cart. Drawer kapalı; kategori slider + hero görünür.",
+    "open": "375 tam panel + 768 sol çekmece: X + Home (gri) / Shop / Best Sellers / Themes / Collections / Shop By / Wishlist 0 / Compare 0 + Log in / USD / English + X·Facebook·Pinterest·Instagram. Log in tıklanmadı."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "375 ilk koşu: #menu-drawer zero-size. captureSelector header ile retry bekleniyor."
+    }
+  ],
+  "interactionNote": "1440 hamburger 0×0. Yazılı <a> ve Wishlist/Compare tıklanmadı."
 }

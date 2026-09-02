@@ -31,7 +31,7 @@ Sayfa başlığı: **Women Beauty 8**
 | Parallel | yalnız `observations/qreal/`, `evidence/qreal/`, `todo/qreal.md`, `candidates/qreal-leftovers.md` + Speedo password helper |
 
 **Kapsam satırı:**  
-`Qreal · default · Qreal-v-1-5-0-latest-updates-new / schema_name Qreal 1.5.0 · theme_store_id null · shop women-beauty-8.myshopify.com · password 1 · home→PDP Brightening Serum 50→100ml→PLP best-selling→search serum→cart→collections→about-layout-1/our-story→contact→faq→news+skincare post→404 · 0 yeni şema · leftover: candidates/qreal-leftovers.md`
+`Qreal · default · Qreal-v-1-5-0-latest-updates-new / schema_name Qreal 1.5.0 · theme_store_id null · shop women-beauty-8.myshopify.com · password 1 · home→PDP Brightening Serum 50→100ml→PLP best-selling hover→search foundation→cart filled+qty→collections→about-layout-1 (IWT + overlay×2)/our-story→contact→faq accordion→news+skincare post→404 · 52 obs · 0 yeni şema · leftover: candidates/qreal-leftovers.md`
 
 ---
 
@@ -39,22 +39,22 @@ Sayfa başlığı: **Women Beauty 8**
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home + announcement/header/hero/categories/featured/banners/videos/testimonials/countdown/blog/IG/newsletter/footer | roster | [ ] |
-| Mega Shop 1440 | interact | [ ] |
-| Predictive search `serum` | interact | [ ] |
-| Mobile menu 375+768 | interact | [ ] |
-| Cart drawer empty + filled + qty | interact | [ ] |
-| PDP Brightening Serum Size 50→100ml | interact | [ ] |
-| PLP `/collections/best-selling` | roster | [ ] |
-| Collections `/collections` | roster | [ ] |
-| Search `/search?q=serum` (3) | roster | [ ] |
-| Cart `/cart` empty + filled | interact | [ ] |
-| About `/pages/about-layout-1` (footer About Us) | roster | [ ] |
-| Our Story `/pages/our-story` | roster | [ ] |
-| Contact `/pages/contact` (submit yok) | roster | [ ] |
-| FAQ `/pages/faq` | roster + interact | [ ] |
-| Blog `/blogs/news` + skincare article | roster | [ ] |
-| 404 leftover | roster | [ ] |
+| Home + announcement/header/hero/categories/featured/banners/videos/testimonials/countdown/blog/IG/newsletter/footer | roster | [x] |
+| Mega Shop 1440 | interact | [x] forceOpen retry |
+| Predictive search `foundation` | interact | [x] |
+| Mobile menu 375+768 | interact | [x] |
+| Cart drawer empty + filled + qty | interact | [x] |
+| PDP Brightening Serum Size 50→100ml | interact | [x] |
+| PLP `/collections/best-selling` | roster + hover | [x] |
+| Collections `/collections` | roster | [x] |
+| Search `/search?q=serum` (3) | roster | [x] |
+| Cart `/cart` empty + filled | interact | [x] |
+| About `/pages/about-layout-1` (footer About Us) | roster | [x] IWT-2→overlay.2 |
+| Our Story `/pages/our-story` | roster | [x] |
+| Contact `/pages/contact` (submit yok) | roster | [x] |
+| FAQ `/pages/faq` | roster + interact | [x] |
+| Blog `/blogs/news` + skincare article | roster | [x] |
+| 404 leftover | roster | [x] |
 | Email / account / checkout / newsletter submit | ⛔ PII | — |
 
 ---
@@ -102,7 +102,7 @@ Sayfa başlığı: **Women Beauty 8**
 | cart | `/cart` | `cart-page-main` |
 | contact | `/pages/contact` | `editorial-rich-text` · `lead-capture-form` |
 | faq-support | `/pages/faq` | overlay · `faq-collapsible-tabs` |
-| about-brand | `/pages/about-layout-1` | overlay · IWT ×2 · features ×2 · logos |
+| about-brand | `/pages/about-layout-1` | overlay · overlay.2 (Finding Unique Cosmetic) · IWT About Me! · features ×2 · logos |
 | about-brand | `/pages/our-story` | `page-content-main` |
 | blog-list | `/blogs/news` | `blog-list-main` |
 | blog-post | `/blogs/news/discover-the-best-skincare-…` | `blog-post-main` |
@@ -120,6 +120,6 @@ Aynı tip = şemaya dokunma, observation + delta. Yeni şema yok.
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact mega · search · cart filled · PDP variant · FAQ · menu
-- [ ] `npm run validate`
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact mega (forceOpen retry) · search foundation · cart filled+qty · PDP 50→100ml · FAQ ikinci satır · menu 375/768 · PLP hover
+- [ ] `npm run validate` (commit sonrası)

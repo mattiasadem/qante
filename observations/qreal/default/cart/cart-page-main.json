@@ -7,8 +7,88 @@
   "url": "https://women-beauty-8.myshopify.com/cart",
   "selector": "#shopify-section-template--17877885714492__cart-items",
   "evidenceSlug": "cart-page-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/qreal/default/cart/cart-page-main.1440.png",
+    "evidence/qreal/default/cart/cart-page-main.375.png",
+    "evidence/qreal/default/cart/cart-page-main.768.png",
+    "evidence/qreal/default/cart/cart-page-main.changed.adet-2.1440.png",
+    "evidence/qreal/default/cart/cart-page-main.changed.adet-2.375.png",
+    "evidence/qreal/default/cart/cart-page-main.changed.adet-2.768.png",
+    "evidence/qreal/default/cart/cart-page-main.filled.dolu.1440.png",
+    "evidence/qreal/default/cart/cart-page-main.filled.dolu.375.png",
+    "evidence/qreal/default/cart/cart-page-main.filled.dolu.768.png",
+    "evidence/qreal/default/cart/cart-page-main.initial.bos.1440.png",
+    "evidence/qreal/default/cart/cart-page-main.initial.bos.375.png",
+    "evidence/qreal/default/cart/cart-page-main.initial.bos.768.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "Your cart is empty / Continue Shopping / Have an account? Log in. cart-footer h=0 boşken.",
-  "delta": "Boş kare. Dolu interact. Checkout yok."
+  "delta": "Boş kare. Dolu interact. Checkout yok.",
+  "capture": {
+    "url": "https://women-beauty-8.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T17:02:39.720Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://women-beauty-8.myshopify.com/cart",
+      "capture": true,
+      "etiket": "bos",
+      "not": "Boş sepet (statik ile aynı olabilir)"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://women-beauty-8.myshopify.com/products/treatment-skin-care-organic-brightening-serum",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--17877886730300__main button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://women-beauty-8.myshopify.com/cart",
+      "capture": true,
+      "etiket": "dolu",
+      "not": "Serum satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], .quantity__button[name='plus']",
+      "capture": true,
+      "etiket": "adet-2",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + Continue Shopping + Have an account? Log in to check out faster. Log in tıklanmadı.",
+    "filled": "Your cart + Continue shopping. PRODUCT / QUANTITY / TOTAL. Serum $85.00 · Size: 50ml · qty 1 · TOTAL $85.00. Pembe çöp ikonu.",
+    "changed": "qty 2. TOTAL $170.00."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart → PDP sonra /cart. Checkout / Log in tıklanmadı."
 }

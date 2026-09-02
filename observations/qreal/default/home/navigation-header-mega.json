@@ -7,8 +7,77 @@
   "url": "https://women-beauty-8.myshopify.com/",
   "selector": "#shopify-section-sections--17877887025212__header",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
+  "evidence": [
+    "evidence/qreal/default/home/navigation-header-mega.1440.png",
+    "evidence/qreal/default/home/navigation-header-mega.375.png",
+    "evidence/qreal/default/home/navigation-header-mega.768.png",
+    "evidence/qreal/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/qreal/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/qreal/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/qreal/default/home/navigation-header-mega.open.mega-shop.1440.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "Home / Shop / Best Sellers / Themes / Collections / Shop By + search + login + cart. Shop mega: Make Up, Perfume, Skin Cream, Nail Polish, Lipstick, Accessories kartları.",
-  "delta": "Dawn header + mega-menu details#Details-HeaderMenu-2. Wishlist/Compare header’da."
+  "delta": "Dawn header + mega-menu details#Details-HeaderMenu-2. Wishlist/Compare header’da.",
+  "capture": {
+    "url": "https://women-beauty-8.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T17:00:09.769Z"
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://women-beauty-8.myshopify.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-2 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "Shop summary hover — header kutusu 83px kalır"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-HeaderMenu-2",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mega-shop",
+      "not": "Hover karesi kolon göstermedi — forceOpen details[open] + viewport"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440: Home (altı çizili) / Shop / Best Sellers / Themes / Collections / Shop By + QREAL + search / wishlist 0 / account / cart. 375/768: hamburger + QREAL + search / account / cart. Mega kapalı."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "Hover-only 1440 karesi homepage (hero + kategori) — mega kolon yok. forceOpen retry bekleniyor."
+    },
+    {
+      "state": "hover",
+      "sebep": "open = Shop mega; ayrı hover state yok"
+    }
+  ],
+  "interactionNote": "Header kutusu 83px — captureMode viewport. 375/768 mega yok (hamburger global-menu-drawer)."
 }

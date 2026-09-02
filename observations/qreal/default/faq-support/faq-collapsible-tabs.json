@@ -7,8 +7,57 @@
   "url": "https://women-beauty-8.myshopify.com/pages/faq",
   "selector": "#shopify-section-template--17877886533692__cb435de1-8958-455d-8843-8a9ef3413466",
   "evidenceSlug": "faq-collapsible-tabs",
-  "evidence": [],
+  "evidence": [
+    "evidence/qreal/default/faq-support/faq-collapsible-tabs.1440.png",
+    "evidence/qreal/default/faq-support/faq-collapsible-tabs.375.png",
+    "evidence/qreal/default/faq-support/faq-collapsible-tabs.768.png",
+    "evidence/qreal/default/faq-support/faq-collapsible-tabs.changed.ikinci-soru.1440.png",
+    "evidence/qreal/default/faq-support/faq-collapsible-tabs.changed.ikinci-soru.375.png",
+    "evidence/qreal/default/faq-support/faq-collapsible-tabs.changed.ikinci-soru.768.png",
+    "evidence/qreal/default/faq-support/faq-collapsible-tabs.initial.ilk-acik.1440.png",
+    "evidence/qreal/default/faq-support/faq-collapsible-tabs.initial.ilk-acik.375.png",
+    "evidence/qreal/default/faq-support/faq-collapsible-tabs.initial.ilk-acik.768.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "Frequently asked question — Can I choose whichever styles I want? + Lorem.",
-  "delta": "Sayfa FAQ. PDP collapsible ayrı instance."
+  "delta": "Sayfa FAQ. PDP collapsible ayrı instance.",
+  "capture": {
+    "url": "https://women-beauty-8.myshopify.com/pages/faq",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T17:01:24.111Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://women-beauty-8.myshopify.com/pages/faq",
+      "capture": true,
+      "etiket": "ilk-acik",
+      "not": "İlk soru açık: Can I choose whichever styles I want?"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "[id='Details-template--20640852508978__cb435de1-8958-455d-8843-8a9ef3413466-collapsible_row-2-template--17877886533692__cb435de1-8958-455d-8843-8a9ef3413466'] > summary",
+      "capture": true,
+      "etiket": "ikinci-soru",
+      "not": "İkinci accordion: I like my styles but they don’t fit!"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Frequently asked question. İlk satır açık (tişört ikon): Can I choose whichever styles I want? + Lorem. 2–4 kapalı (ayakkabı / kutu / kişi).",
+    "changed": "İlk satır hâlâ açık + ikinci açık: I like my styles but they don’t fit! + Lorem (gri zemin, soru altı çizili). Exclusive accordion değil."
+  },
+  "missingStates": [],
+  "interactionNote": "İlk details zaten open; ilk summary tık kapatır — changed = ikinci satır."
 }
