@@ -8,7 +8,9 @@
   "selector": "#menu-drawer",
   "evidenceSlug": "global-menu-drawer",
   "evidence": [
-    "evidence/vedzila/default/home/global-menu-drawer.768.png"
+    "evidence/vedzila/default/home/global-menu-drawer.768.png",
+    "evidence/vedzila/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/vedzila/default/home/global-menu-drawer.open.hamburger.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "375/768 hamburger → #menu-drawer. 1440 hamburger gizli (mega var).",
@@ -27,8 +29,9 @@
     },
     {
       "state": "open",
-      "action": "click",
+      "action": "press",
       "selector": "#Details-menu-drawer-container > summary.header__icon--menu",
+      "value": "Enter",
       "viewports": [
         "375",
         "768"
@@ -36,12 +39,19 @@
       "capture": true,
       "captureMode": "viewport",
       "etiket": "hamburger",
-      "not": "Kapalı #menu-drawer w=0 — forceOpen tuzağı; yalnız tık"
+      "not": "Playwright force-click settle sonrası açmıyor; focus+Enter native details açar"
     }
   ],
-  "stateFindings": {},
-  "missingStates": [],
-  "interactionNote": "Yazılı Shop <a> tıklanmadı. 1440 hamburger 0×0. Locale English tıklanmadı.",
+  "stateFindings": {
+    "open": "375 koyu tam genişlik / 768 sol panel: Home, Shop, About Us, Blog, FAQ, Contact. Altta Language English + X / Facebook / Instagram. Shop expander yok — yazılı satır."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger 0×0 — mega navigation-header-mega."
+    }
+  ],
+  "interactionNote": "Yazılı Shop <a> tıklanmadı. force-click/mouse drawer açmadı; summary focus+Enter açtı. Locale tıklanmadı.",
   "capture": {
     "url": "https://vedzila-organic.myshopify.com/",
     "viewports": [
@@ -50,8 +60,8 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T14:35:54.105Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:09:25.297Z",
     "prepareClick": "#Details-menu-drawer-container > summary.header__icon--menu"
   }
 }

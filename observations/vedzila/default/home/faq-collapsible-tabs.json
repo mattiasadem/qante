@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--23865698517276__ac142051-904d-4bcb-9d08-2d41fa3d3bee",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/vedzila/default/home/faq-collapsible-tabs.1440.png",
     "evidence/vedzila/default/home/faq-collapsible-tabs.375.png",
     "evidence/vedzila/default/home/faq-collapsible-tabs.768.png",
-    "evidence/vedzila/default/home/faq-collapsible-tabs.1440.png"
+    "evidence/vedzila/default/home/faq-collapsible-tabs.changed.faq-acik.1440.png",
+    "evidence/vedzila/default/home/faq-collapsible-tabs.changed.faq-acik.375.png",
+    "evidence/vedzila/default/home/faq-collapsible-tabs.changed.faq-acik.768.png",
+    "evidence/vedzila/default/home/faq-collapsible-tabs.initial.faq-kapali.1440.png",
+    "evidence/vedzila/default/home/faq-collapsible-tabs.initial.faq-kapali.375.png",
+    "evidence/vedzila/default/home/faq-collapsible-tabs.initial.faq-kapali.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "FAQs About Ultra Smoothing Shampoo — 5 soru kapalı + VIEW ALL.",
@@ -36,16 +42,19 @@
     },
     {
       "state": "changed",
-      "action": "click",
-      "selector": "#shopify-section-template--23865698517276__ac142051-904d-4bcb-9d08-2d41fa3d3bee details > summary",
+      "action": "forceOpen",
+      "selector": "#Details-template--20282593149245__ac142051-904d-4bcb-9d08-2d41fa3d3bee-collapsible_row-1-template--23865698517276__ac142051-904d-4bcb-9d08-2d41fa3d3bee",
       "capture": true,
       "etiket": "faq-acik",
-      "not": "İlk soru — cevap yüksekliği artmalı"
+      "not": "İlk soru — Playwright click settle sonrası açmadı; details[open] cevap gösterir"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "FAQs About Ultra Smoothing Shampoo. 5 soru + ikon. VIEW ALL. Cevap yok.",
+    "changed": "1. What are the ingredients present in this smoothing smampoo? açık (−) — lorem cevap. 2–5 hâlâ +."
+  },
   "missingStates": [],
-  "interactionNote": "VIEW ALL tıklanmadı (/pages/faq ayrı). openFirst=false bu preset'te.",
+  "interactionNote": "VIEW ALL tıklanmadı (/pages/faq ayrı). openFirst=false. Playwright click accordion açmadı; forceOpen ilk details.",
   "capture": {
     "url": "https://vedzila-organic.myshopify.com/",
     "viewports": [
@@ -54,7 +63,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T14:34:16.695Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:11:22.754Z"
   }
 }

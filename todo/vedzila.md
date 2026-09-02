@@ -29,7 +29,7 @@ shop `vedzila-organic.myshopify.com`
 | Parallel | yalnız `observations/vedzila/`, `evidence/vedzila/`, `todo/vedzila.md`, `candidates/vedzila-leftovers.md`, capture password helper |
 
 **Kapsam satırı:**  
-`Vedzila · default · Copy of speedo-vedzila-organic-v-1-5-0 / schema_name vedzila-organic 1.5.0 · theme_store_id null · shop vedzila-organic.myshopify.com · home→PDP chilli-hair-oil→PLP hair-shampoo→collections→search oil→cart→about-us/contact→faq→blog news+post→footer→mobile · 45 obs · 0 yeni şema · leftover: candidates/vedzila-leftovers.md`
+`Vedzila · default · Copy of speedo-vedzila-organic-v-1-5-0 / schema_name vedzila-organic 1.5.0 · theme_store_id null · shop vedzila-organic.myshopify.com · home→PDP chilli-hair-oil→PLP hair-shampoo→collections→search oil→cart→about-us/contact→faq→blog news+post→footer→mobile · 45 obs · 0 yeni şema · interact: mega/menu/cart/PDP/FAQ · search input missing · leftover: candidates/vedzila-leftovers.md`
 
 ---
 
@@ -37,20 +37,20 @@ shop `vedzila-organic.myshopify.com`
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home + announcement/header/footer + conversion | roster | [ ] capture |
-| Mega Shop 1440 | interact | [ ] |
-| Predictive search `oil` | interact | [ ] |
-| Mobile menu 375/768 | interact | [ ] |
-| Cart drawer empty + filled + qty | interact | [ ] |
-| PDP Chilli Hair Oil Size 100→200 ml | interact | [ ] |
-| PLP `/collections/hair-shampoo` | roster | [ ] capture |
-| Collections index `/collections` | roster | [ ] capture |
-| Search `/search?q=oil` | roster | [ ] capture |
-| Cart page empty + filled + qty | interact | [ ] |
-| About `/pages/about-us` | roster | [ ] capture |
-| Contact `/pages/contact` (submit yok) | roster | [ ] capture |
-| FAQ `/pages/faq` | roster | [ ] capture |
-| Blog `/blogs/news` + hair-oil post | roster | [ ] capture |
+| Home + announcement/header/footer + conversion | roster | [x] capture |
+| Mega Shop 1440 | interact | [x] open (forceOpen) |
+| Predictive search `oil` | interact | [x] boş modal; input missing |
+| Mobile menu 375/768 | interact | [x] open |
+| Cart drawer empty + filled + qty | interact | [x] |
+| PDP Chilli Hair Oil Size 100→200 ml | interact | [x] |
+| PLP `/collections/hair-shampoo` | roster | [x] capture |
+| Collections index `/collections` | roster | [x] capture |
+| Search `/search?q=oil` | roster | [x] capture |
+| Cart page empty + filled + qty | interact | [x] |
+| About `/pages/about-us` | roster | [x] capture |
+| Contact `/pages/contact` (submit yok) | roster | [x] capture |
+| FAQ `/pages/faq` | roster | [x] capture |
+| Blog `/blogs/news` + hair-oil post | roster | [x] capture |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -93,8 +93,8 @@ shop `vedzila-organic.myshopify.com`
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact mega / search / menu / cart / PDP Size
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate` — 0 error
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact mega / menu / cart / PDP Size / FAQ — search input missing
+- [x] PNG bak → stateFindings
+- [x] `node scripts/validate-schemas.mjs`
 - [ ] Email / account / checkout / newsletter submit — **yapılmayacak**

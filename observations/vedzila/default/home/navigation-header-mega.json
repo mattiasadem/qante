@@ -8,9 +8,13 @@
   "selector": "#shopify-section-sections--23865693831452__header",
   "evidenceSlug": "navigation-header-mega",
   "evidence": [
+    "evidence/vedzila/default/home/navigation-header-mega.1440.png",
     "evidence/vedzila/default/home/navigation-header-mega.375.png",
     "evidence/vedzila/default/home/navigation-header-mega.768.png",
-    "evidence/vedzila/default/home/navigation-header-mega.1440.png"
+    "evidence/vedzila/default/home/navigation-header-mega.initial.mega-kapali.1440.png",
+    "evidence/vedzila/default/home/navigation-header-mega.initial.mega-kapali.375.png",
+    "evidence/vedzila/default/home/navigation-header-mega.initial.mega-kapali.768.png",
+    "evidence/vedzila/default/home/navigation-header-mega.open.shop-mega.1440.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Logo + Home/Shop/About Us/Blog/FAQ/Contact + language + search + account + cart. Shop = details#Details-HeaderMenu-2.mega-menu (görsel kolonlar).",
@@ -30,43 +34,48 @@
     },
     {
       "state": "open",
-      "action": "hover",
-      "selector": "#Details-HeaderMenu-2 > summary",
-      "value": 1200,
+      "action": "forceOpen",
+      "selector": "#Details-HeaderMenu-2",
       "capture": false,
       "viewports": [
         "1440"
       ],
-      "not": "Shop summary hover — click /collections/all'a gider"
+      "not": "Hover/click settle sonrası yapışmadı (click /collections/all). details[open] mega gösterir"
     },
     {
       "state": "open",
       "action": "waitFor",
-      "selector": "#MegaMenu-Content-1",
-      "value": 5000,
+      "value": 800,
       "capture": false,
       "viewports": [
         "1440"
-      ],
-      "not": "Mega panel görünür"
+      ]
     },
     {
       "state": "open",
       "action": "hover",
       "selector": "#MegaMenu-Content-1",
-      "value": 800,
+      "value": 600,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "shop-mega",
       "viewports": [
         "1440"
       ],
-      "not": "İmleç panelde — görsel kartlar (Shower Gel / Hair Oil…)"
+      "not": "Panel 1440×437 — Shower Gel / Hair Oil kartları"
     }
   ],
-  "stateFindings": {},
-  "missingStates": [],
-  "interactionNote": "Yoklama: Shop hover mega açar; Shop click /collections/all. 375/768 hamburger ayrı observation.",
+  "stateFindings": {
+    "initial": "Kapalı bar: Vedzila + Home (altı çizili) / Shop▾ / About Us / Blog / FAQ / Contact. Solda search, sağda English / hesap / sepet. Mega yok.",
+    "open": "1440 Shop: beş kare kart — Shower Gel, Massage Cream, Hair Oil, Herbals Cream, Body Care. Hepsi /collections/all."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375/768 mega yok — hamburger global-menu-drawer."
+    }
+  ],
+  "interactionNote": "Shop <a> click /collections/all. Playwright hover settle+Escape sonrası yapışmadı; forceOpen #Details-HeaderMenu-2. Locale değiştirilmedi.",
   "capture": {
     "url": "https://vedzila-organic.myshopify.com/",
     "viewports": [
@@ -75,7 +84,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T14:38:05.200Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:09:23.263Z"
   }
 }

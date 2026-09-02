@@ -37,10 +37,12 @@
 | cart-footer | Boş sepet 0px. Dolu hâl interact |
 | Quick view / compare | DOM’da quick-view yok |
 | Social proof toast | “Someone liked and Buy … Verified” — app popup, PDP/home karelerinde. Şema yok |
-| global-cart-drawer / menu static | Dawn host kutu viewport dolduruyor; kapalı kare homepage. Açık/dolu interact |
+| global-cart-drawer / menu static | Dawn host kutu viewport dolduruyor; kapalı kare homepage. Açık/dolu interact çekildi |
+| Featured card hover | ATC zaten görünür; ikinci görsel DOM'da. Hover kare değişmedi — state yok |
+| Predictive search `input` | Boş modal 3vp kanıtlı. q=oil öneri listesi resmi karede yok (homepage). Probe: 5 suggestion + 5 ürün |
 
 ## Açık soru
 
-- Shop mega kolon başlıkları interact karesinde doğrulanacak (`details#Details-HeaderMenu-2`).
-- 1440 hamburger 0×0 — menu drawer yalnız 375/768 anlamlı mı?
-- Size dropdown 100→200 ml fiyat $20→$40 bekleniyor (ürün JSON).
+- Shop mega: beş görsel kart (Shower Gel / Massage Cream / Hair Oil / Herbals Cream / Body Care) — kolon başlığı yok, hepsi `/collections/all`.
+- 1440 hamburger 0×0 — menu drawer yalnız 375/768.
+- Size 100→200 ml: karede $20/$22 → $40.00.

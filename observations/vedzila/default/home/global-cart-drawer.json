@@ -8,9 +8,18 @@
   "selector": "#CartDrawer",
   "evidenceSlug": "global-cart-drawer",
   "evidence": [
+    "evidence/vedzila/default/home/global-cart-drawer.1440.png",
     "evidence/vedzila/default/home/global-cart-drawer.375.png",
     "evidence/vedzila/default/home/global-cart-drawer.768.png",
-    "evidence/vedzila/default/home/global-cart-drawer.1440.png"
+    "evidence/vedzila/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/vedzila/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/vedzila/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/vedzila/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/vedzila/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/vedzila/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/vedzila/default/home/global-cart-drawer.initial.sepet-bos.1440.png",
+    "evidence/vedzila/default/home/global-cart-drawer.initial.sepet-bos.375.png",
+    "evidence/vedzila/default/home/global-cart-drawer.initial.sepet-bos.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Dawn cart-drawer. #cart-icon-bubble → #CartDrawer. Boş: Your cart is empty.",
@@ -31,12 +40,13 @@
     },
     {
       "state": "initial",
-      "action": "click",
+      "action": "press",
       "selector": "#cart-icon-bubble",
+      "value": "Enter",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "sepet-bos",
-      "not": "Boş drawer — kapalı host viewport doldurur, tık şart"
+      "not": "İkon force-click/forceOpen boş drawer göstermedi; focus+Enter active + empty copy"
     },
     {
       "state": "filled",
@@ -70,9 +80,13 @@
       "not": "Adet 1→2"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "Sağ drawer: Your cart is empty + CONTINUE SHOPPING + Have an account? Log in to check out faster. Log in tıklanmadı.",
+    "filled": "Your cart. Free Shipping! yeşil bar + $100.00. Chilli, Horsetail & Black Seed Hair Oil $20.00 · Size 100 ml | 6.8 fl.oz · adet 1. Estimated total $20.00 USD. CHECK OUT tıklanmadı.",
+    "changed": "Adet 2. Satır $40.00. Estimated total $40.00 USD. CHECK OUT dur."
+  },
   "missingStates": [],
-  "interactionNote": "Checkout tıklanmadı. ATC UI; fallback olursa not.",
+  "interactionNote": "Checkout tıklanmadı. ATC UI (3 vp). Boş drawer: force-click homepage; #cart-icon-bubble focus+Enter açtı.",
   "capture": {
     "url": "https://vedzila-organic.myshopify.com/",
     "viewports": [
@@ -81,8 +95,8 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T14:35:49.209Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:19:32.297Z",
     "prepareClick": "#cart-icon-bubble"
   }
 }
