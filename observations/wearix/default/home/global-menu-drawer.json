@@ -10,6 +10,7 @@
   "evidence": [
     "evidence/wearix/default/home/global-menu-drawer.768.png",
     "evidence/wearix/default/home/global-menu-drawer.changed.shop-akordeon.768.png",
+    "evidence/wearix/default/home/global-menu-drawer.open.hamburger-acik.375.png",
     "evidence/wearix/default/home/global-menu-drawer.open.hamburger-acik.768.png"
   ],
   "storefrontPassword": "1",
@@ -26,7 +27,7 @@
     ],
     "mode": "viewport",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-02T14:15:46.738Z",
+    "updatedAt": "2026-09-02T14:40:11.042Z",
     "prepareClick": "#header-menu"
   },
   "interactionStates": [
@@ -105,6 +106,15 @@
     }
   ],
   "stateFindings": {},
-  "missingStates": [],
-  "interactionNote": "1440 hamburger 0×0 — adım yok (mega ayrı). İlk 768 karesi kapalı homepage; 375 zero-size. Retry: scrollTo + forceOpen details + tık. Yazılı Shop <a> tıklanmadı."
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "İki deneme. Probe'da #header-menu tık 375: Home/Shop/Themes/Blog/About Us/Contact + Men/Women/Kids. Resmi 375/768 kareleri kapalı homepage (hamburger hâlâ üç çizgi). 1440 hamburger 0×0 — adım yok."
+    },
+    {
+      "state": "changed",
+      "sebep": "Shop akordeon (#HeaderDrawer-shop) drawer açık değilken viewport dışı. İkinci deneme click timeout. Yazılı Shop <a> tıklanmadı."
+    }
+  ],
+  "interactionNote": "1440 hamburger yok — mega ayrı observation. Yazılı Shop <a> tıklanmadı. Şema yok."
 }

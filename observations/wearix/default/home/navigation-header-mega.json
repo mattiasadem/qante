@@ -28,7 +28,7 @@
     ],
     "mode": "section",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-02T14:14:53.179Z"
+    "updatedAt": "2026-09-02T14:40:33.328Z"
   },
   "interactionStates": [
     "initial",
@@ -89,6 +89,11 @@
   "stateFindings": {
     "initial": "WEARIX CLOTHING STORE. Home altı çizili. Shop/Themes chevron. Blog / About Us / More. Sol arama + wishlist 0. Sağ hesap + sepet."
   },
-  "missingStates": [],
-  "interactionNote": "Shop details#Details-HeaderMenu-2. İlk open karesi homepage (viewport scrollTo 0 hover'ı kapattı). Retry: hover + mouseMove + #MegaMenu-Content-2 section. Themes mega leftover. Account/wishlist tıklanmadı."
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "İki deneme. Hover probe'da #MegaMenu-Content-2 1440×413 (Men/Women/Kids + 100% Real) açtı; resmi capture'da panel görünür değil (viewport scroll hover'ı kapatıyor; section crop 'element is not visible'). forceOpen class ekleyince details kapanıyor. Summary içinde /collections/all — tıklanmadı."
+    }
+  ],
+  "interactionNote": "Shop details#Details-HeaderMenu-2. Themes mega leftover. Account/wishlist tıklanmadı. Şema yok — aynı navigation-header-mega."
 }

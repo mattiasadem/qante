@@ -94,4 +94,11 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: wearix-cart-dual-threshold  
+Gerekçe: Cart drawer iki kargo eşiği (Free $500 / Express $800). `global-cart-drawer` tek `kargoEsigi`. Observation delta.  
+Öneri: leftover — şemaya dokunulmadı  
+Karar: onay bekliyor
+
+---
+
 Newsletter Subscribe / contact Send / checkout / Buy it now — PII/ödeme, dur.
