@@ -9,12 +9,14 @@
   "storefrontPassword": "1",
   "evidenceSlug": "global-menu-drawer",
   "evidence": [
-    "evidence/spacecraft/default/home/global-menu-drawer.768.png"
+    "evidence/spacecraft/default/home/global-menu-drawer.768.png",
+    "evidence/spacecraft/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/spacecraft/default/home/global-menu-drawer.open.hamburger.768.png"
   ],
   "notlar": "375/768 hamburger #Details-menu-drawer-container. 1440 inline nav — drawer 0-size.",
   "delta": "Shopify.theme.name Pandora-furniture-3 V-1.5.0 · id 170818404632 · schema_name pandora_furniture_3 · schema_version 1.5.0 · theme_store_id null · role main · shop pandora-furniture-3.myshopify.com · Speedo listing slug spacecraft · Dawn menu-drawer. 1440 static atlanabilir. Yeni şema yok.",
   "captureMode": "viewport",
-  "prepareClick": "#Details-menu-drawer-container > summary",
+  "prepareClick": "#Details-menu-drawer-container > summary.header__icon--menu",
   "capture": {
     "url": "https://pandora-furniture-3.myshopify.com/",
     "viewports": [
@@ -23,13 +25,13 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T19:30:53.379Z",
-    "prepareClick": "#Details-menu-drawer-container > summary"
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T19:51:29.626Z",
+    "prepareClick": "#Details-menu-drawer-container > summary.header__icon--menu"
   },
   "interactionStates": [
-    "open",
-    "changed"
+    "initial",
+    "open"
   ],
   "interactionSteps": [
     {
@@ -47,18 +49,18 @@
     {
       "state": "open",
       "action": "click",
-      "selector": "#Details-menu-drawer-container > summary",
+      "selector": "#Details-menu-drawer-container > summary.header__icon--menu",
       "viewports": [
         "375",
         "768"
       ],
       "capture": false,
-      "not": "Hamburger summary"
+      "not": "Hamburger — forceOpen açık drawer'ı kapatıyor"
     },
     {
       "state": "open",
-      "action": "forceOpen",
-      "selector": "#Details-menu-drawer-container",
+      "action": "waitFor",
+      "value": 800,
       "viewports": [
         "375",
         "768"
@@ -66,26 +68,18 @@
       "capture": true,
       "captureMode": "viewport",
       "etiket": "hamburger",
-      "not": "forceOpen details"
-    },
-    {
-      "state": "changed",
-      "action": "click",
-      "selector": "#Details-menu-drawer-menu-item-2 > summary",
-      "viewports": [
-        "375",
-        "768"
-      ],
-      "capture": true,
-      "captureMode": "viewport",
-      "etiket": "shop-akordeon",
-      "not": "Shop nested — yazılı <a> tıklanmadı"
+      "not": "Açık drawer; Shop yazılı <a>"
     }
   ],
   "stateFindings": {
     "open": "",
     "changed": ""
   },
-  "missingStates": [],
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "adım 4 (click #Details-menu-drawer-menu-item-2 > summary): selector eşleşmedi: #Details-menu-drawer-menu-item-2 > summary"
+    }
+  ],
   "interactionNote": "Log in tıklanmadı. 1440 hamburger 0-size. Yazılı <a> yok."
 }
