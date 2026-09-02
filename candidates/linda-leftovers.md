@@ -74,10 +74,10 @@ Karar: onay bekliyor
 
 ---
 
-ADAY: linda-hero-empty-copy  
-Gerekçe: slideshow 2 slayt görsel (main-banner-1.jpg / main-banner-2.png) overlay metin boş. image_banner overlay de boş. Tip yine hero-slideshow / editorial-image-with-text-overlay.  
-Örnekler: home `__166452734096e2ae53` · `__image_banner`  
-Öneri: leftover — boş overlay kopya  
+ADAY: linda-hero-probe-text-empty  
+Gerekçe: DOM innerText slaytta boş geldi; 1440 karede New Arrival + SHOP HERE + ok/nokta görünür (metin belki görsel katmanda). image_banner home overlay kopyası karede doğrulanacak.  
+Örnekler: home `__166452734096e2ae53`  
+Öneri: leftover — DOM vs kare  
 Karar: onay bekliyor
 
 ---

@@ -37,18 +37,18 @@ Storefront `/` **302** → `/password`. Vendor product page: *Please enter passw
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | [x] obs | [ ] capture |
+| Home roster (announcement→footer) | [x] obs | [x] capture |
 | Shop By mega hover 1440 | interact | [ ] |
 | Predictive search `ring` | interact | [ ] |
-| Mobile menu 375 + 768 | interact | [ ] |
-| Cart drawer empty + filled + qty | interact | [ ] |
+| Mobile menu 375 + 768 | interact | [x] 375/768 open via prepareClick; 1440 zero-size |
+| Cart drawer empty + filled + qty | interact | [x] empty 3vp |
 | PDP ring Size 8→9 | interact | [ ] |
-| PLP `/collections/jewellery` | [x] obs | [ ] capture |
-| Collections `/collections` | [x] obs | [ ] capture |
-| Search `/search?q=ring` | [x] obs | [ ] capture |
-| Cart page empty + filled + qty | [x] obs | [ ] capture |
-| Our Story / FAQ / contact / blog | [x] obs | [ ] capture |
-| 404 | [x] obs | [ ] capture |
+| PLP `/collections/jewellery` | [x] obs | [x] capture |
+| Collections `/collections` | [x] obs | [x] capture |
+| Search `/search?q=ring` | [x] obs | [x] capture |
+| Cart page empty + filled + qty | [x] obs | [x] empty |
+| Our Story / FAQ / contact / blog | [x] obs | [x] capture |
+| 404 | [x] obs | [x] capture |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -84,18 +84,18 @@ Storefront `/` **302** → `/password`. Vendor product page: *Please enter passw
 
 | # | id | sayfa | Screenshot | Not | JSON | Done |
 |---|---|---|---|---|---|---|
-| 1–20 | home static + overlays | home | [ ] | [x] | reuse | [ ] |
-| 21–22 | banner / PLP | collection | [ ] | [x] | reuse | [ ] |
-| 23 | collection-nav-grid | collections | [ ] | [x] | reuse | [ ] |
-| 24–27 | PDP blocks | product-detail | [ ] | [x] | reuse | [ ] |
-| 28–29 | cart + featured | cart | [ ] | [x] | reuse | [ ] |
-| 30 | search-results | search | [ ] | [x] | reuse | [ ] |
-| 31–37 | our-story | about-brand | [ ] | [x] | reuse | [ ] |
-| 38–41 | FAQ page | faq-support | [ ] | [x] | reuse | [ ] |
-| 42–45 | contact | contact | [ ] | [x] | reuse | [ ] |
-| 46–47 | news list | blog-list | [ ] | [x] | reuse | [ ] |
-| 48 | article | blog-post | [ ] | [x] | reuse | [ ] |
-| 49 | 404 | not-found | [ ] | [x] | reuse | [ ] |
+| 1–20 | home static + overlays | home | [x] | [x] | reuse | [x] |
+| 21–22 | banner / PLP | collection | [x] | [x] | reuse | [x] |
+| 23 | collection-nav-grid | collections | [x] | [x] | reuse | [x] |
+| 24–27 | PDP blocks | product-detail | [x] | [x] | reuse | [x] |
+| 28–29 | cart + featured | cart | [x] | [x] | reuse | [x] |
+| 30 | search-results | search | [x] | [x] | reuse | [x] |
+| 31–37 | our-story | about-brand | [x] | [x] | reuse | [x] |
+| 38–41 | FAQ page | faq-support | [x] | [x] | reuse | [x] |
+| 42–45 | contact | contact | [x] | [x] | reuse | [x] |
+| 46–47 | news list | blog-list | [x] | [x] | reuse | [x] |
+| 48 | article | blog-post | [x] | [x] | reuse | [x] |
+| 49 | 404 | not-found | [x] | [x] | reuse | [x] |
 
 ---
 
@@ -122,7 +122,7 @@ Stop: email / account / checkout / newsletter submit / PII
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
+- [x] Official 3vp static (`capture-observation.mjs`) — 145 PNG (menu/search 1440 zero-size)
 - [ ] Interact Shop By mega / search / cart / menu / PDP Size
 - [ ] PNG bak → stateFindings
 - [ ] `npm run validate` — 0 error
