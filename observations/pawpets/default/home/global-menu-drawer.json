@@ -9,7 +9,9 @@
   "evidenceSlug": "global-menu-drawer",
   "evidence": [
     "evidence/pawpets/default/home/global-menu-drawer.768.png",
+    "evidence/pawpets/default/home/global-menu-drawer.initial.kapali.375.png",
     "evidence/pawpets/default/home/global-menu-drawer.initial.kapali.768.png",
+    "evidence/pawpets/default/home/global-menu-drawer.open.hamburger-acik.375.png",
     "evidence/pawpets/default/home/global-menu-drawer.open.hamburger-acik.768.png"
   ],
   "notlar": "#Details-menu-drawer-container + #menu-drawer. 1440 hamburger 0px (tablet breakpoint). HOME/SHOP/DOGS…",
@@ -25,7 +27,7 @@
     ],
     "mode": "viewport",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-02T14:47:03.907Z",
+    "updatedAt": "2026-09-02T15:12:11.025Z",
     "prepareClick": "summary.header__icon--menu"
   },
   "interactionStates": [
@@ -74,14 +76,9 @@
     }
   ],
   "stateFindings": {
-    "initial": "768 kapalı: hamburger + PETZ SHOP logo + search/cart; drawer görünmüyor. 375 ilk koşuda #menu-drawer 0px.",
-    "open": ""
+    "initial": "375/768 kapalı: hamburger + PETZ SHOP logo + search/cart. Drawer yok. 1440 adım yok (hamburger 0px).",
+    "open": "375 tam ekran drawer: X kapat, HOME (gri satır), SHOP →, DOGS, CATS, BIRDS, Wishlist 0, Log in, USD $ ▾, En ▾, X/Facebook/Pinterest/Instagram. 768 aynı liste, homepage arkada dim."
   },
-  "missingStates": [
-    {
-      "state": "open",
-      "sebep": "İlk 768 open kare kapalı ile aynı hash — drawer kaymadı. 375 zero-size. Retry: popup-active kalkınca hamburger tık."
-    }
-  ],
-  "interactionNote": "1440 hamburger 0px (data-breakpoint=tablet). forceOpen yalnız details.open bırakıyor, drawer translate(-400px) kalıyor; menu-opening class şart."
+  "missingStates": [],
+  "interactionNote": "1440 hamburger 0px (data-breakpoint=tablet). forceOpen menu-opening eklemez. SHOP okuna basılmadı (alt menü). Hesap yok."
 }

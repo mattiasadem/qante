@@ -14,7 +14,7 @@
 Walk host + `Shopify.shop` = `petz-online-store-2.myshopify.com` · locale `en` · country `US` · currency `USD`  
 Storefront password (vendor product page): **`1`** — bu hostta girildi.
 
-**Durum:** Mod A walk + resmi 3vp + interact (retry: search/menu/hero/boş drawer) + validate  
+**Durum:** Mod A walk + resmi 3vp + interact (retry kapandı) + validate  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -40,9 +40,9 @@ Storefront password (vendor product page): **`1`** — bu hostta girildi.
 |---|---|---|
 | Home roster (announcement→footer) | [x] obs | [x] capture |
 | Shop details 1440 | [x] interact | RABBIT/FISH/CHEMELON |
-| Predictive search `omega` | [ ] retry | popup-active yuttu |
-| Mobile menu 375 + 768 | [ ] retry | 768 open=kapalı hash |
-| Cart drawer empty + filled + qty | [x] filled/qty · empty retry | dolu $44.95→$89.90 |
+| Predictive search `omega` | [x] interact | öneri + 3 ürün |
+| Mobile menu 375 + 768 | [x] interact | HOME/SHOP→/DOGS… |
+| Cart drawer empty + filled + qty | [x] interact | boş + $44.95→$89.90 |
 | PDP Max Omega-3 Size 10kg→20kg | [x] interact | 200→400 stok, $44.95 |
 | PLP `/collections/all` | [x] obs | [x] capture |
 | Collections `/collections` | [x] obs | [x] capture |
@@ -91,4 +91,4 @@ Storefront password (vendor product page): **`1`** — bu hostta girildi.
 
 - [x] resmi 3vp batch (~158 PNG)
 - [x] interact yazıldı: mega, featured hover (token), cart filled/qty, cart page, PDP size, FAQ, tabs
-- [ ] retry 1: search / menu 375+768 / hero slayt-2 / boş cart drawer
+- [x] retry 1: search omega / menu 375+768 / hero slayt-2 / boş cart drawer — pikseller değişti
