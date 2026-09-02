@@ -75,7 +75,7 @@
 | Saffron (Speedo · Midnight Perfume) | [`saffron.md`](./saffron.md) | ✅ first inventory — password `1` · 39 obs · 167 PNG · 0 yeni şema |
 | Shrilahome (Speedo) | [`shrilahome.md`](./shrilahome.md) | ✅ Mod A + interact — 38 obs · 166 PNG · 0 yeni şema · password `1` · menu/search overlay missing |
 | Wide Fashion (Speedo) | [`wide-fashion.md`](./wide-fashion.md) | 🟡 first inventory + interact — Fashion-store-clean-5 1.2.0 · 42 obs · 169 PNG · 0 yeni şema · password `1` |
-| Uvolox (Speedo) | [`uvolox.md`](./uvolox.md) | 🟡 first inventory + interact — uvolox-online · Uvolox-online V-1.2.0 · password `1` · 29 obs · 0 yeni şema |
+| Uvolox (Speedo) | [`uvolox.md`](./uvolox.md) | ✅ first inventory + interact — uvolox-online · Uvolox-online V-1.2.0 · password `1` · 29 obs · 126 PNG · 0 yeni şema |
 | Legal / policy (Kreis recipe) | [`policy-legal.md`](./policy-legal.md) | ✅ page-recipes/policy · 3-col sticky TOC \| content \| sibling nav |
 
 **Interact (discover sonrası derinlik):** [`interact.md`](./interact.md) — kapalı kare yalanı; Stretch + Cocoon/Balance shop-the-look kapandı.

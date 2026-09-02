@@ -8,9 +8,18 @@
   "selector": "#shopify-section-template--21687580524862__cart-items",
   "evidenceSlug": "cart-page-main",
   "evidence": [
+    "evidence/uvolox/default/cart/cart-page-main.1440.png",
     "evidence/uvolox/default/cart/cart-page-main.375.png",
     "evidence/uvolox/default/cart/cart-page-main.768.png",
-    "evidence/uvolox/default/cart/cart-page-main.1440.png"
+    "evidence/uvolox/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/uvolox/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/uvolox/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/uvolox/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/uvolox/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/uvolox/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/uvolox/default/cart/cart-page-main.initial.bos.1440.png",
+    "evidence/uvolox/default/cart/cart-page-main.initial.bos.375.png",
+    "evidence/uvolox/default/cart/cart-page-main.initial.bos.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Your cart is empty · Continue shopping · Have an account? Log in. #cart-footer h=0 boşken.",
@@ -23,8 +32,8 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T20:04:59.108Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:35:10.185Z"
   },
   "interactionStates": [
     "initial",
@@ -88,7 +97,11 @@
       "not": "qty 1 → 2"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "Your cart is empty + Continue shopping + Have an account? Log in to check out faster. Satır yok. cart-footer sibling bu kırpımda yok (boşken h=0).",
+    "filled": "Your cart. Ux classy t-shirt with dove logo · $85.00 · Size: Small · qty 1 · satır $85.00. Continue shopping + çöp. Checkout bu section kırpımında yok.",
+    "changed": "Plus: qty 2 · satır $170.00. Size Small aynı. Checkout / Log in tıklanmadı."
+  },
   "missingStates": [],
-  "interactionNote": "Cart drawer yok. Checkout / Log in tıklanmadı. addToCart sonra /cart."
+  "interactionNote": "Cart drawer yok — ATC UI sonra /cart. addToCart fallback değil (ui). Checkout/login tıklanmadı."
 }

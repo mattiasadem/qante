@@ -8,8 +8,11 @@
   "selector": "#menu-drawer",
   "evidenceSlug": "global-menu-drawer",
   "evidence": [
+    "evidence/uvolox/default/home/global-menu-drawer.1440.png",
     "evidence/uvolox/default/home/global-menu-drawer.768.png",
-    "evidence/uvolox/default/home/global-menu-drawer.1440.png"
+    "evidence/uvolox/default/home/global-menu-drawer.open.hamburger.1440.png",
+    "evidence/uvolox/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/uvolox/default/home/global-menu-drawer.open.hamburger.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Hamburger → #menu-drawer. WOMEN / MEN / COLLECTIONS / UVOLOX NEWS / CONTACT. header-drawer data-breakpoint=desktop — 1440 de drawer.",
@@ -24,11 +27,12 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T20:14:22.974Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:44:06.900Z",
     "prepareClick": "#Details-menu-drawer-container > summary"
   },
   "interactionStates": [
+    "initial",
     "open"
   ],
   "interactionSteps": [
@@ -48,13 +52,31 @@
       "state": "open",
       "action": "click",
       "selector": "#Details-menu-drawer-container > summary",
+      "viewports": [
+        "768",
+        "1440"
+      ],
       "capture": true,
       "captureMode": "viewport",
       "etiket": "hamburger",
       "not": "Drawer açık: WOMEN/MEN/COLLECTIONS/NEWS/CONTACT. Nested yok."
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header-drawer .icon-hamburger",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "375: summary 0px; tık .icon-hamburger (15×15). Native click menu-opening ekler."
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "open": "375: tam genişlik beyaz drawer — WOMEN / MEN / COLLECTIONS / UVOLOX NEWS / CONTACT (düz <a>, chevron yok). Alt gri bant: Log in + X/Facebook/Instagram/YouTube. Header X Menu + Search + UVOLOX + sepet. 768/1440: sol drawer, sağda karartılı hero; sosyal drawer altında; Log in header sağda. Nested yok."
+  },
   "missingStates": [],
-  "interactionNote": "navExpanders yok — düz <a>. 375 static zero-size (kapalı drawer). Account tıklanmadı."
+  "interactionNote": "375 summary 0×5 — Playwright outside viewport. Retry: header-drawer .icon-hamburger (15×15); native click menu-opening ekler. 768/1440 summary click. Account/Log in tıklanmadı. navExpanders yok."
 }
