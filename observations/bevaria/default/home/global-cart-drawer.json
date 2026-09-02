@@ -28,5 +28,103 @@
     "method": "viewport",
     "updatedAt": "2026-09-02T18:32:18.884Z",
     "prepareClick": "a#cart-icon-bubble"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://beverages-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "#CartDrawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer forceOpen. Beklenen: empty + YOU MAY LIKE."
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://beverages-online-store.myshopify.com/products/pura-mixed-flavors-low-sugar-soda-300ml",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductInfo-template--19375491743999__main button[name='add'], button[name='add']",
+      "capture": false,
+      "not": "PURA ATC. Checkout tıklanmadı."
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "forceOpen",
+      "selector": "#CartDrawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer. Beklenen: PURA satırı."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "forceOpen",
+      "selector": "#CartDrawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet + → ara toplam."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {},
+  "interactionNote": "Static prepareClick homepage kaldı. forceOpen. addToCart PDP button[name=add]. Checkout yok."
 }

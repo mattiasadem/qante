@@ -25,5 +25,57 @@
     "mode": "section",
     "method": "margin-box+minPad8",
     "updatedAt": "2026-09-02T18:12:13.327Z"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://beverages-online-store.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş cart sayfası."
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://beverages-online-store.myshopify.com/products/pura-mixed-flavors-low-sugar-soda-300ml",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://beverages-online-store.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart sayfası. Checkout tıklanmadı."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet artır."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {},
+  "interactionNote": "Checkout / kupon / hesap yok."
 }

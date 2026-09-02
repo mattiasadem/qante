@@ -26,5 +26,52 @@
     "mode": "viewport",
     "method": "viewport",
     "updatedAt": "2026-09-02T18:38:19.610Z"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://beverages-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Mega kapalı header. 375/768 hamburger ayrı drawer."
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-1 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "Hover summary — click <a href=/collections/all> sayfaya gider. Beklenen: 6 koleksiyon görseli."
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375/768 hamburger ayrı global-menu-drawer — header'da mega yok"
+    }
+  ],
+  "stateFindings": {},
+  "interactionNote": "Hover Shop summary. Click /collections/all'a gider. Log in / wishlist tıklanmadı."
 }

@@ -28,5 +28,63 @@
     "method": "viewport",
     "updatedAt": "2026-09-02T18:35:03.700Z",
     "prepareClick": "summary.header__icon--search"
-  }
+  },
+  "interactionStates": [
+    "open",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://beverages-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "details-modal.header__search details",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": ".search-modal",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "selector": "#Search-In-Modal",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik",
+      "not": "Search modal forceOpen. Static click kapalı homepage idi."
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "energy",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-energy",
+      "not": "katalogSorgu energy. Beklenen: PRODUCTS + Search for energy."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {},
+  "interactionNote": "katalogSorgu energy (PURA/Red Bull/Monster katalog). Submit yok. forceOpen details — static prepareClick açmadı."
 }

@@ -25,5 +25,44 @@
     "mode": "section",
     "method": "margin-box+minPad8",
     "updatedAt": "2026-09-02T18:40:30.233Z"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "hover"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://beverages-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19375491154175__featured_collection_jAK8tq",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Best Selling kartlar."
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#shopify-section-template--19375491154175__featured_collection_jAK8tq .card-wrapper",
+      "capture": true,
+      "etiket": "hover-atc",
+      "not": "Hover → Add To Cart görünür. 375/768 değişmeyebilir.",
+      "viewports": [
+        "1440"
+      ]
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "375/768 parmakta hover yok — 1440 denendi"
+    }
+  ],
+  "stateFindings": {},
+  "interactionNote": "Hover Add To Cart. Quick view dialog yoklandı değil."
 }

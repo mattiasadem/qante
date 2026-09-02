@@ -25,5 +25,30 @@
     "mode": "section",
     "method": "margin-box+minPad8",
     "updatedAt": "2026-09-02T18:15:55.128Z"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://beverages-online-store.myshopify.com/collections/best-selling",
+      "capture": true,
+      "etiket": "filtre-yok",
+      "not": "10 products, filtre kapalı seçim."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='Filter-filter.v.option.flavour-1']",
+      "capture": true,
+      "etiket": "flavour-cranberry",
+      "not": "Cranberry checkbox. Beklenen: Remove filter + URL flavour=Cranberry."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {},
+  "interactionNote": "1440 sidebar. 375 filtre drawer ayrı olabilir."
 }
