@@ -28,7 +28,7 @@
     ],
     "mode": "section",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-02T17:00:09.769Z"
+    "updatedAt": "2026-09-02T17:11:19.570Z"
   },
   "interactionStates": [
     "initial",
@@ -67,17 +67,18 @@
     }
   ],
   "stateFindings": {
-    "initial": "1440: Home (altı çizili) / Shop / Best Sellers / Themes / Collections / Shop By + QREAL + search / wishlist 0 / account / cart. 375/768: hamburger + QREAL + search / account / cart. Mega kapalı."
+    "initial": "1440: Home (altı çizili) / Shop / Best Sellers / Themes / Collections / Shop By + QREAL + search / wishlist 0 / account / cart. 375/768: hamburger + QREAL + search / account / cart. Mega kapalı.",
+    "open": "1440 Shop forceOpen: tam genişlik 6 kolon — Make Up / Perfume / Skin Cream / Nail Polish / Lipstick / Accessories (kare görsel + başlık + kısa metin). Hover tek başına kolonları kaçırdı."
   },
   "missingStates": [
     {
-      "state": "open",
-      "sebep": "Hover-only 1440 karesi homepage (hero + kategori) — mega kolon yok. forceOpen retry bekleniyor."
-    },
-    {
       "state": "hover",
       "sebep": "open = Shop mega; ayrı hover state yok"
+    },
+    {
+      "state": "open",
+      "sebep": "375/768 mega yok — hamburger global-menu-drawer"
     }
   ],
-  "interactionNote": "Header kutusu 83px — captureMode viewport. 375/768 mega yok (hamburger global-menu-drawer)."
+  "interactionNote": "Header kutusu 83px — captureMode viewport. İlk hover karesi boştu; forceOpen #Details-HeaderMenu-2 kolonları gösterdi."
 }

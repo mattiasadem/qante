@@ -15,8 +15,8 @@ Sayfa başlığı: **Women Beauty 8**
 
 **Password:** Speedo ürün sayfası “Please enter password `1` to view demo.” Aynı host `/password` — public storefront-unlock. Başka host yok.
 
-**Durum:** Mod A walk + resmi 3vp + interact  
-**PR:** draft · **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact · 52 obs · 203 PNG · validator 0 error  
+**PR:** draft #350 · **main'e merge yok**
 
 ---
 
@@ -122,4 +122,4 @@ Aynı tip = şemaya dokunma, observation + delta. Yeni şema yok.
 
 - [x] Official 3vp static (`capture-observation.mjs`)
 - [x] Interact mega (forceOpen retry) · search foundation · cart filled+qty · PDP 50→100ml · FAQ ikinci satır · menu 375/768 · PLP hover
-- [ ] `npm run validate` (commit sonrası)
+- [x] `npm run validate`
