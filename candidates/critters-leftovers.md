@@ -74,14 +74,6 @@ Karar: onay bekliyor
 
 ---
 
-ADAY: critters-footer-no-newsletter  
-Gerekçe: Footer Quick Links + Shop kolonları. Newsletter alanı ilk taramada yok.  
-Örnekler: `#shopify-section-sections--21777130684600__footer`  
-Öneri: leftover — columns-only  
-Karar: onay bekliyor
-
----
-
 ADAY: critters-account-login  
 Gerekçe: Header Log in → `/account/login`. Auth / PII. Tıklanmadı.  
 Örnekler: header  

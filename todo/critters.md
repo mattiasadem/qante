@@ -37,21 +37,21 @@ Storefront unlock: vendor publishes password `1` on the product page (public dem
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | [x] obs | [ ] capture |
+| Home roster (announcement→footer) | [x] obs | [x] capture |
 | Shop / category mega 1440 | [ ] interact | [ ] |
 | Predictive search `teddy` | [ ] interact | [ ] |
 | Mobile menu 375 + 768 | [ ] interact | [ ] |
 | Cart drawer empty + filled + qty | [ ] interact | [ ] |
 | PDP Teddy Size/Color change | [ ] interact | [ ] |
-| PLP `/collections/kids-toys` | [x] obs | [ ] capture |
-| Collections `/collections` | [x] obs | [ ] capture |
-| Search `/search?q=teddy` | [x] obs | [ ] capture |
+| PLP `/collections/kids-toys` | [x] obs | [x] capture |
+| Collections `/collections` | [x] obs | [x] capture |
+| Search `/search?q=teddy` | [x] obs | [x] capture |
 | Cart page empty + filled + qty | [ ] interact | [ ] |
-| About `/pages/about-us` | [x] obs | [ ] capture |
-| Contact form (submit yok) | [x] obs | [ ] capture |
-| FAQ `/pages/faq` | [x] obs | [ ] capture |
-| News + Toys & games post | [x] obs | [ ] capture |
-| 404 | [x] obs | [ ] capture |
+| About `/pages/about-us` | [x] obs | [x] capture |
+| Contact form (submit yok) | [x] obs | [x] capture |
+| FAQ `/pages/faq` | [x] obs | [x] capture |
+| News + Toys & games post | [x] obs | [x] capture |
+| 404 | [x] obs | [x] capture |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -73,7 +73,7 @@ Storefront unlock: vendor publishes password `1` on the product page (public dem
 | 11 | Latest News | `blog-list-main` | reuse |
 | 12 | logo_slider brands | `social-proof-brand-logos` | reuse |
 | 13 | multicolumn Free Shipping | `features-multicolumn` | reuse |
-| 14 | footer | `footer-columns-newsletter` | reuse · newsletter yok |
+| 14 | footer | `footer-columns-newsletter` | reuse · newsletter SIGN UP FOR 15% OFF |
 | 15 | newsletter-popup social proof | — | leftover 0px |
 | 16 | #CartDrawer | `global-cart-drawer` | reuse · interact |
 | 17 | predictive-search | `global-predictive-search` | reuse · interact |
@@ -85,18 +85,18 @@ Storefront unlock: vendor publishes password `1` on the product page (public dem
 
 | # | id | sayfa | Screenshot | Not | JSON | Done |
 |---|---|---|---|---|---|---|
-| 1–16 | home static + overlays | home | [ ] | [x] | reuse | [ ] |
-| 17 | product-info-main | product-detail | [ ] | [x] | reuse | [ ] |
-| 18–21 | tabs / latest / offer / related | product-detail | [ ] | [x] | reuse | [ ] |
-| 22–23 | banner + PLP | collection | [ ] | [x] | reuse | [ ] |
-| 24 | collection-nav-grid | collections | [ ] | [x] | reuse | [ ] |
-| 25 | search-results | search | [ ] | [x] | reuse | [ ] |
-| 26 | cart-page-main | cart | [ ] | [x] | reuse | [ ] |
-| 27–31 | title / IWT / team / rich / work | about-brand | [ ] | [x] | reuse | [ ] |
-| 32–34 | title + office + form | contact | [ ] | [x] | reuse | [ ] |
-| 35–36 | title + faq | faq-support | [ ] | [x] | reuse | [ ] |
-| 37–38 | list + post | blog-* | [ ] | [x] | reuse | [ ] |
-| 39 | page-content-main | not-found | [ ] | [x] | reuse | [ ] |
+| 1–16 | home static + overlays | home | [x] | [x] | reuse | [ ] |
+| 17 | product-info-main | product-detail | [x] | [x] | reuse | [ ] |
+| 18–21 | tabs / latest / offer / related | product-detail | [x] | [x] | reuse | [ ] |
+| 22–23 | banner + PLP | collection | [x] | [x] | reuse | [ ] |
+| 24 | collection-nav-grid | collections | [x] | [x] | reuse | [ ] |
+| 25 | search-results | search | [x] | [x] | reuse | [ ] |
+| 26 | cart-page-main | cart | [x] | [x] | reuse | [ ] |
+| 27–31 | title / IWT / team / rich / work | about-brand | [x] | [x] | reuse | [ ] |
+| 32–34 | title + office + form | contact | [x] | [x] | reuse | [ ] |
+| 35–36 | title + faq | faq-support | [x] | [x] | reuse | [ ] |
+| 37–38 | list + post | blog-* | [x] | [x] | reuse | [ ] |
+| 39 | page-content-main | not-found | [x] | [x] | reuse | [ ] |
 
 ---
 
