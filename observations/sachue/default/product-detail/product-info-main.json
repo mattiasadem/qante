@@ -8,13 +8,56 @@
   "selector": "#shopify-section-template--17492995342535__main",
   "evidenceSlug": "product-info-main",
   "evidence": [
+    "evidence/sachue/default/product-detail/product-info-main.1440.png",
     "evidence/sachue/default/product-detail/product-info-main.375.png",
     "evidence/sachue/default/product-detail/product-info-main.768.png",
-    "evidence/sachue/default/product-detail/product-info-main.1440.png"
+    "evidence/sachue/default/product-detail/product-info-main.changed.color-multi.1440.png",
+    "evidence/sachue/default/product-detail/product-info-main.changed.color-multi.375.png",
+    "evidence/sachue/default/product-detail/product-info-main.changed.color-multi.768.png",
+    "evidence/sachue/default/product-detail/product-info-main.initial.color-red.1440.png",
+    "evidence/sachue/default/product-detail/product-info-main.initial.color-red.375.png",
+    "evidence/sachue/default/product-detail/product-info-main.initial.color-red.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Stunna Lip Paint · $36→$26 · People are viewing · Availability 100 · delivery window · Sales End In countdown · Color Red/Multi Color swatch · qty stepper · ADD TO CART · BUY IT NOW · Description + accordion (Additional Information / Shipping & Returns / Exclusive Offers / Secure Payments / Share) · kupon FLAT15/30/300/500.",
   "delta": "Countdown + social-proof + kupon şeritleri buy box içinde (ayrı section değil). Accordion product-info-tabs değil — aynı shopify-section. QV yok. Wishlist leftover.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "selector": null,
+      "value": "https://pandora-beauty-store.myshopify.com/products/stunna-lip-paint-longwear-fluid-lip-color",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "selector": null,
+      "value": 500,
+      "capture": true,
+      "etiket": "color-red",
+      "not": "Color Red seçili $26"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='template--17492995342535__main-1-1']",
+      "value": 1500,
+      "capture": true,
+      "etiket": "color-multi",
+      "not": "Multi Color swatch — URL ?variant= değişir, sayfa PDP kalır"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Stunna $36→$26. Color: Red. Galeri tüp+applikatör. ADD TO CART + BUY IT NOW.",
+    "changed": "Color: Multi Color. URL ?variant=42702933164231. Ana görsel kol swatch ızgarası. Fiyat $26 aynı."
+  },
+  "missingStates": [],
+  "interactionNote": "BUY IT NOW / checkout tıklanmadı. Accordion Additional Information bu turda açılmadı.",
   "capture": {
     "url": "https://pandora-beauty-store.myshopify.com/products/stunna-lip-paint-longwear-fluid-lip-color",
     "viewports": [
@@ -23,7 +66,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T14:31:45.957Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:37:20.655Z"
   }
 }

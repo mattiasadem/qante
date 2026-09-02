@@ -8,13 +8,56 @@
   "selector": "#shopify-section-template--17492995047623__1663146074197fe346",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/sachue/default/home/faq-collapsible-tabs.1440.png",
     "evidence/sachue/default/home/faq-collapsible-tabs.375.png",
     "evidence/sachue/default/home/faq-collapsible-tabs.768.png",
-    "evidence/sachue/default/home/faq-collapsible-tabs.1440.png"
+    "evidence/sachue/default/home/faq-collapsible-tabs.changed.shipping-methods.1440.png",
+    "evidence/sachue/default/home/faq-collapsible-tabs.changed.shipping-methods.375.png",
+    "evidence/sachue/default/home/faq-collapsible-tabs.changed.shipping-methods.768.png",
+    "evidence/sachue/default/home/faq-collapsible-tabs.initial.kapali.1440.png",
+    "evidence/sachue/default/home/faq-collapsible-tabs.initial.kapali.375.png",
+    "evidence/sachue/default/home/faq-collapsible-tabs.initial.kapali.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "FAQS · What Shipping Methods… / shipping times / payment / exchanges. accordion 2-col tablet.",
   "delta": "Home collapsible-content__grid--reverse. Kategori sekmesi yok.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "selector": null,
+      "value": "https://pandora-beauty-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17492995047623__1663146074197fe346",
+      "value": null,
+      "capture": true,
+      "etiket": "kapali",
+      "not": "FAQ kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--17492995047623__1663146074197fe346 details:first-of-type > summary",
+      "value": 900,
+      "capture": true,
+      "etiket": "shipping-methods",
+      "not": "İlk soru açık"
+    }
+  ],
+  "stateFindings": {
+    "initial": "FAQS dört soru kapalı (chevron aşağı).",
+    "changed": "What Shipping Methods Are Available? açık + lorem cevap. Diğer üçü kapalı."
+  },
+  "missingStates": [],
+  "interactionNote": "",
   "capture": {
     "url": "https://pandora-beauty-store.myshopify.com/",
     "viewports": [
@@ -23,7 +66,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T14:27:02.885Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:39:17.136Z"
   }
 }

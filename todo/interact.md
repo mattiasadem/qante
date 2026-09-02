@@ -19,6 +19,7 @@ Aynı chrome’u preset’te tekrar çekme (Allure drawer = diğer Prestige). Ye
 | Impact Sound | mega · search · cart drawer · featured hover · cart sayfa · PLP filtre · FAQ · PDP swatch · lookbook Read more · alıntı Next · timeline 2017 |
 | Impact Cocoon / Balance | shop-the-look hotspot (Vase→Plica · Bra→Leggings) · Balance PDP Sizing accordion |
 | Symmetry default | lookbook hotspot Heavy Rotation · customer-help FAQ size guide |
+| Sachue (Speedo) default | Shop disclosure 1440 · search `nail` · hamburger Shop drill · cart drawer+sayfa $26→$52 · PDP Multi Color · tabs NEW ARRIVALS · FAQ · announcement 768/1440 (375 next gizli) |
 
 ---
 

@@ -8,13 +8,58 @@
   "selector": "#shopify-section-sections--17492995670215__header",
   "evidenceSlug": "navigation-header-mega",
   "evidence": [
+    "evidence/sachue/default/home/navigation-header-mega.1440.png",
     "evidence/sachue/default/home/navigation-header-mega.375.png",
     "evidence/sachue/default/home/navigation-header-mega.768.png",
-    "evidence/sachue/default/home/navigation-header-mega.1440.png"
+    "evidence/sachue/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/sachue/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/sachue/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/sachue/default/home/navigation-header-mega.open.shop-disclosure.1440.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Home · Shop (Lipstick/Serum/Concealer/Nails) · New Arrivals · About Us · Faq's · More. Logo · wishlist 0 · Log in · Search · Cart.",
-  "delta": "Dawn header--left-center. Shop = details disclosure liste (görsel mega kolon yok). Wishlist ikonu. Üst announcement ayrı section.",
+  "delta": "Dawn header--left-center. Shop = details disclosure liste (görsel mega kolon yok). Wishlist ikonu. Üst announcement ayrı section. Logo vitrinde Glamiza Beauty Care.",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "selector": null,
+      "value": "https://pandora-beauty-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "selector": null,
+      "value": 400,
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-2 > summary",
+      "value": 900,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-disclosure",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Shop hover — Lipstick/Serum/Concealer/Nails. Tıklanmadı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Glamiza BEAUTY CARE + Home/Shop/New Arrivals/About Us/Faq's/More + search/wishlist 0/account/cart. Shop kapalı.",
+    "open": "1440 Shop hover: Lipstick · Serum · Concealer · Nails (200×155 disclosure). Görsel mega kolon yok."
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 Shop disclosure yok — hamburger ayrı schema.",
   "capture": {
     "url": "https://pandora-beauty-store.myshopify.com/",
     "viewports": [
@@ -23,7 +68,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T14:29:37.589Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:37:16.940Z"
   }
 }

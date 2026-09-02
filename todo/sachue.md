@@ -13,7 +13,7 @@
 `Shopify.shop` = `pandora-beauty-store.myshopify.com`  
 Storefront password (ürün sayfasında yayınlı): **`1`** — aynı host, başka demo uydurulmadı.
 
-**Durum:** Mod A walk + resmi 3vp + shopper interact  
+**Durum:** ✅ Mod A walk + resmi 3vp + shopper interact + validate  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -25,10 +25,12 @@ Storefront password (ürün sayfasında yayınlı): **`1`** — aynı host, baş
 | Evidence kökü | `evidence/sachue/default/` |
 | Capture | `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` · `unlock-storefront.mjs` (`storefrontPassword: "1"`) |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
+| Observation | **41** |
+| Evidence PNG | **168** (122 static + 46 interact) |
 | Parallel | yalnız `observations/sachue/`, `evidence/sachue/`, `todo/sachue.md`, `candidates/sachue-leftovers.md`, capture password unlock |
 
 **Kapsam satırı:**  
-`Sachue · default · Pandora-beauty-store-v-1-5-0 / schema_name pandora_beauty_store 1.5.0 / theme_store_id null · home→PDP stunna-lip-paint→PLP new-arrivals→search cream→cart→about/contact/faq→blog→footer · 41 obs · 0 yeni şema · leftover: candidates/sachue-leftovers.md`
+`Sachue · default · Pandora-beauty-store-v-1-5-0 / schema_name pandora_beauty_store 1.5.0 / theme_store_id null · home→PDP stunna-lip-paint→PLP new-arrivals→search cream→cart→about/contact/faq→blog→footer · 41 obs · 168 PNG · 0 yeni şema · leftover: candidates/sachue-leftovers.md`
 
 ---
 
@@ -36,20 +38,20 @@ Storefront password (ürün sayfasında yayınlı): **`1`** — aynı host, baş
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | [x] | [ ] capture |
-| Header + Shop disclosure 1440 | [x] | [ ] |
-| Predictive search host | [x] | [ ] |
-| Mobile menu drawer 375/768 | [x] | [ ] |
-| Cart drawer empty | [x] | [ ] |
-| PDP `/products/stunna-lip-paint-longwear-fluid-lip-color` | [x] | [ ] |
-| PLP `/collections/new-arrivals` | [x] | [ ] |
-| Collections index `/collections` | [x] | [ ] |
-| Search `/search?q=cream` | [x] | [ ] |
-| Cart `/cart` empty | [x] | [ ] |
-| About `/pages/about-us` | [x] | [ ] |
-| Contact `/pages/contact` (submit yok) | [x] | [ ] |
-| FAQ `/pages/faqs` | [x] | [ ] |
-| Blog list `/blogs/news` + article | [x] | [ ] |
+| Home roster (announcement→footer) | [x] | [x] |
+| Header + Shop disclosure 1440 | [x] | [x] open |
+| Predictive search host | [x] | [x] input `nail` |
+| Mobile menu drawer 375/768 | [x] | [x] open + Shop drill |
+| Cart drawer empty | [x] | [x] + filled/changed |
+| PDP `/products/stunna-lip-paint-longwear-fluid-lip-color` | [x] | [x] Red→Multi Color |
+| PLP `/collections/new-arrivals` | [x] | [x] |
+| Collections index `/collections` | [x] | [x] |
+| Search `/search?q=cream` | [x] | [x] |
+| Cart `/cart` empty | [x] | [x] + filled/changed |
+| About `/pages/about-us` | [x] | [x] |
+| Contact `/pages/contact` (submit yok) | [x] | [x] |
+| FAQ `/pages/faqs` | [x] | [x] |
+| Blog list `/blogs/news` + article | [x] | [x] |
 | Email / account / checkout / newsletter submit | ⛔ PII | — |
 
 ---
@@ -82,14 +84,17 @@ Storefront password (ürün sayfasında yayınlı): **`1`** — aynı host, baş
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | open 1440 | [ ] Shop disclosure |
-| global-predictive-search | input | [ ] `lipstick` / katalog |
-| global-menu-drawer | open 375/768 | [ ] hamburger |
-| global-cart-drawer | filled + changed | [ ] ATC Stunna |
-| cart-page-main | filled + changed | [ ] |
-| product-info-main | changed | [ ] Color Red → Multi Color |
-| product-showcase-tabs | changed | [ ] BEST SELLERS → NEW ARRIVALS |
-| faq-collapsible-tabs | changed | [ ] ilk soru |
+| navigation-header-mega | open 1440 | [x] Shop disclosure: Lipstick · Serum · Concealer · Nails (görsel mega yok) |
+| global-predictive-search | input | [x] `nail` → 3 oje + Search for "nail" |
+| global-menu-drawer | open + changed 375/768 | [x] hamburger + Shop drill ← Shop |
+| global-cart-drawer | filled + changed | [x] Stunna Red $26 → adet 2 / total $52 |
+| cart-page-main | filled + changed | [x] aynı satır 1→2 · $26→$52 |
+| product-info-main | changed | [x] Color Red → Multi Color · galeri swatch ızgarası · $26 aynı |
+| product-showcase-tabs | changed | [x] BEST SELLERS → NEW ARRIVALS pembe çerçeve |
+| faq-collapsible-tabs | changed | [x] ilk soru açık + lorem |
+| promo-announcement-bar | changed | [x] 768/1440 mesaj 2 · **375 missingStates** (next gizli) |
+
+Şema upgrade yok — boş↔dolu / açık↔kapalı / sekme / swatch.
 
 ---
 
@@ -101,7 +106,7 @@ Storefront password (ürün sayfasında yayınlı): **`1`** — aynı host, baş
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact mega / search / cart / menu / PDP swatch / tabs / FAQ
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate` — 0 error
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact mega / search / cart / menu / PDP swatch / tabs / FAQ / announcement
+- [x] PNG bak → stateFindings
+- [x] `node scripts/validate-schemas.mjs` — 0 error (şema dokunulmadı)

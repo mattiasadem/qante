@@ -13,10 +13,10 @@
 ---
 
 ADAY: sachue-storefront-password  
-Gerekçe: `/` 302 → `/password`. Ürün sayfası “Please enter password 1 to view demo.” Aynı host’ta `1` ile açıldı. Title hâlâ “Pandora Beauty Store (password: 1)”.  
+Gerekçe: `/` 302 → `/password`. Ürün sayfası “Please enter password 1 to view demo.” Aynı host’ta `1` ile açıldı (`unlock-storefront.mjs`). Title hâlâ “Pandora Beauty Store (password: 1)”. Walk leftover’da durmadı.  
 Örnekler: https://pandora-beauty-store.myshopify.com/ · https://speedothemes.com/products/best-shopify-cosmetics-theme-for-product  
 Öneri: leftover — public demo unlock, hesap değil  
-Karar: onay bekliyor
+Karar: walk’ta kullanıldı · onay bekliyor
 
 ---
 
@@ -53,9 +53,9 @@ Karar: onay bekliyor
 ---
 
 ADAY: sachue-cart-footer-empty  
-Gerekçe: `#shopify-section-template--17492994621639__cart-footer` boş sepette h=0 (Estimated total gizli).  
-Örnekler: /cart  
-Öneri: leftover — dolu cart interact’te görünebilir  
+Gerekçe: `#shopify-section-template--17492994621639__cart-footer` boş sepette h=0 (Estimated total gizli). Dolu `cart-page-main` crop yalnız items tablosu (PRODUCT / QUANTITY / TOTAL). Estimated total + CHECK OUT dolu **drawer**’da görüldü ($26.00 → $52.00). cart-footer ayrı 3vp yok.  
+Örnekler: /cart · #CartDrawer  
+Öneri: leftover — totals chrome drawer’da; cart-footer section ayrı envanterlenmedi  
 Karar: onay bekliyor
 
 ---
