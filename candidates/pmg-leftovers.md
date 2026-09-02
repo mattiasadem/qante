@@ -67,10 +67,10 @@ Karar: onay bekliyor
 
 ---
 
-ADAY: pmg-no-product-variants  
-Gerekçe: PDP keyboard ve mouse’ta swatch/option yok; yalnız qty stepper. `varyantGosterim` kanıtı yok.  
+ADAY: pmg-keyboard-no-swatch  
+Gerekçe: PDP `/products/gaming-keyboard` tek varyant (swatch yok). Interact Color swatch `/products/gaming-chair` Blue→White ile alındı (aynı `#…__main` section).  
 Örnekler: `/products/gaming-keyboard`  
-Öneri: leftover — interact qty  
+Öneri: leftover — keyboard varyantsız  
 Karar: onay bekliyor
 
 ---
@@ -111,4 +111,20 @@ ADAY: pmg-account-login
 Gerekçe: Header “Log in” → `/account/login`. Hesap — dur.  
 Örnekler: header  
 Öneri: leftover — stop  
+Karar: onay bekliyor
+
+---
+
+ADAY: pmg-hamburger-open-capture  
+Gerekçe: 375/768 hamburger 2 resmi denemede kapalı homepage. Dawn `#menu-drawer` `menu-opening` olmadan `visibility:hidden`. Yoklama click menüyü açtı (HOME / SHOP ALL / ABOUT / SUPPORT / NEWS + wishlist/compare + LOG IN + USD/English) ama capture settle sonrası karede durmadı.  
+Örnekler: `#Details-menu-drawer-container` · `#menu-drawer`  
+Öneri: leftover — open state resmi karede yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: pmg-hero-slides-same-copy  
+Gerekçe: Hero 2 slayt; ikisi de BEST PRO GAMING ACCESSORIES + SHOP NOW. Next ok ve slayt-2 noktası resmi PNG’yi statikten ayırmadı.  
+Örnekler: home hero-slideshow  
+Öneri: leftover — changed kanıt yok  
 Karar: onay bekliyor

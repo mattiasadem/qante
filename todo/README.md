@@ -46,7 +46,7 @@
 | HexClad | [`hexclad.md`](./hexclad.md) | ✅ listicle-fathers-day · 5 obs · 15 PNG · 0 yeni şema |
 | Allbirds | [`allbirds.md`](./allbirds.md) | 🟡 Mod A — 30 obs · ~90 PNG · partial capture (search blocked) |
 | Legal / policy (Kreis recipe) | [`policy-legal.md`](./policy-legal.md) | ✅ page-recipes/policy · 3-col sticky TOC \| content \| sibling nav |
-| PMG (Speedo Themes) | [`pmg.md`](./pmg.md) | 🟡 first inventory — official demo gamming-store-1 · password `1` · 39 obs · 0 yeni şema |
+| PMG (Speedo Themes) | [`pmg.md`](./pmg.md) | ✅ first inventory — gamming-store-1 · password `1` · 39 obs · 0 yeni şema · interact mega/search/cart/chair/FAQ; hamburger+hero missingStates |
 
 **Interact (discover sonrası derinlik):** [`interact.md`](./interact.md) — kapalı kare yalanı; Stretch + Cocoon/Balance shop-the-look kapandı.
 

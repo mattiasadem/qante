@@ -9,7 +9,9 @@
   "selector": "#menu-drawer",
   "evidenceSlug": "global-menu-drawer",
   "evidence": [
-    "evidence/pmg/default/home/global-menu-drawer.768.png"
+    "evidence/pmg/default/home/global-menu-drawer.768.png",
+    "evidence/pmg/default/home/global-menu-drawer.open.hamburger-acik.375.png",
+    "evidence/pmg/default/home/global-menu-drawer.open.hamburger-acik.768.png"
   ],
   "notlar": "header-drawer #Details-menu-drawer-container → #menu-drawer. 1440'ta hamburger gizli olabilir.",
   "delta": "Shopify.theme.name PMG Game Store V-1.5.0 · id 123907113009 · schema_name PMG game store · schema_version 1.5.0 · theme_store_id null · role main · shop gamming-store-1.myshopify.com. Mobil drawer; country/language formları drawer içinde.",
@@ -23,11 +25,12 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T16:35:57.481Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T17:20:44.598Z",
     "prepareClick": "#Details-menu-drawer-container > summary"
   },
   "interactionStates": [
+    "initial",
     "open"
   ],
   "interactionSteps": [
@@ -45,10 +48,21 @@
         "375",
         "768"
       ],
+      "capture": false,
+      "not": "Native click → menu-opening"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-menu-drawer-container",
+      "viewports": [
+        "375",
+        "768"
+      ],
       "capture": true,
       "captureMode": "viewport",
       "etiket": "hamburger-acik",
-      "not": "Mobil drawer"
+      "not": "1. deneme 375 0px / 768 kapalı homepage; click + forceOpen"
     }
   ],
   "stateFindings": {
@@ -57,8 +71,8 @@
   "missingStates": [
     {
       "state": "open",
-      "sebep": "1440 hamburger yok — N/A"
+      "sebep": "2 deneme (click; click+forceOpen #Details-menu-drawer-container) 375/768 karesi kapalı homepage. Dawn drawer menu-opening olmadan visibility:hidden; capture settle tıkı düşürüyor. Üçüncü deneme yok."
     }
   ],
-  "interactionNote": "1440 inline mega; drawer yalnız 375/768."
+  "interactionNote": "1440 inline mega; drawer yalnız 375/768. LOG IN tıklanmadı. Yoklamada click HOME / SHOP ALL / ABOUT / SUPPORT / NEWS + wishlist/compare + LOG IN + Country/region USD + Language English gösterdi — resmi karede durmadı."
 }

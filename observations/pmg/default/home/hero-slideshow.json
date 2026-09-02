@@ -9,9 +9,12 @@
   "selector": "#shopify-section-template--14841912131633__3b7cb796-4e44-4edc-96f9-002a08ba8170",
   "evidenceSlug": "hero-slideshow",
   "evidence": [
+    "evidence/pmg/default/home/hero-slideshow.1440.png",
     "evidence/pmg/default/home/hero-slideshow.375.png",
     "evidence/pmg/default/home/hero-slideshow.768.png",
-    "evidence/pmg/default/home/hero-slideshow.1440.png"
+    "evidence/pmg/default/home/hero-slideshow.changed.sonraki-slayt.1440.png",
+    "evidence/pmg/default/home/hero-slideshow.changed.sonraki-slayt.375.png",
+    "evidence/pmg/default/home/hero-slideshow.changed.sonraki-slayt.768.png"
   ],
   "notlar": "BEST PRO GAMING ACCESSORIES + metin + SHOP NOW. Birden fazla slayt (all / women-collection / men-collection).",
   "delta": "Shopify.theme.name PMG Game Store V-1.5.0 · id 123907113009 · schema_name PMG game store · schema_version 1.5.0 · theme_store_id null · role main · shop gamming-store-1.myshopify.com. Dawn-benzeri slideshow; women/men koleksiyon slaytları gaming kopyasıyla karışık.",
@@ -23,10 +26,11 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T16:02:26.470Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T17:20:39.138Z"
   },
   "interactionStates": [
+    "initial",
     "changed"
   ],
   "interactionSteps": [
@@ -45,15 +49,27 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": "#shopify-section-template--14841912131633__3b7cb796-4e44-4edc-96f9-002a08ba8170 .slider-button--next",
+      "selector": "#shopify-section-template--14841912131633__3b7cb796-4e44-4edc-96f9-002a08ba8170 [aria-label='Load slide 2 of 2']",
+      "capture": false,
+      "not": "1. deneme next ok byte-aynı; slayt 2 noktası"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 2500,
       "capture": true,
       "etiket": "sonraki-slayt",
-      "not": "Next slide. SHOP NOW tıklanmaz."
+      "not": "Slide 2. SHOP NOW tıklanmaz."
     }
   ],
   "stateFindings": {
     "changed": ""
   },
-  "missingStates": [],
-  "interactionNote": "2 slayt. Autoplay kayabilir."
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "2 deneme (next ok; slayt 2 noktası + 2500ms) 375/768/1440 PNG statikle byte-aynı. İki slayt aynı BEST PRO GAMING ACCESSORIES kopyası. Üçüncü deneme yok."
+    }
+  ],
+  "interactionNote": "2 slayt, aynı başlık. Yoklamada slayt 2 main-banner-2.png ve aria-current değişti; resmi kare slayt 1 kaldı. SHOP NOW tıklanmadı."
 }
