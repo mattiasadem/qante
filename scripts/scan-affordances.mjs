@@ -15,6 +15,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { dismissAllOverlays } from "./dismiss-overlays.mjs";
+import { unlockStorefrontIfNeeded } from "./unlock-storefront.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DEFAULT_URLS = {
@@ -50,6 +51,7 @@ const page = await browser.newPage({ viewport: { width: VP[0], height: VP[1] } }
 
 try {
   await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
+  await unlockStorefrontIfNeeded(page, obs);
   await page.waitForTimeout(3000);
   await dismissAllOverlays(page);
   const rootLoc = page.locator(selector).first();
