@@ -92,3 +92,18 @@ ADAY: elektro-policy-pages
 Gerekçe: Footer Terms / Return / Privacy `/policies/*`. Walk minimumu dışı.  
 Öneri: leftover  
 Karar: onay bekliyor
+
+---
+
+ADAY: elektro-you-may-like-post-atc  
+Gerekçe: PDP Add To Cart sonrası 1440'ta drawer yanında ayrı "YOU MAY LIKE" modal (Onix / JBL / Nvidia + Add To Cart). 375'te aynı başlık drawer içi kapalı akordeon. `global-cart-drawer` oneriler slotu var — ayrı şema yazılmadı. Checkout tıklanmadı.  
+Örnekler: evidence/.../global-cart-drawer.filled.sepete-eklendi.1440.png  
+Öneri: leftover — post-ATC overlay  
+Karar: onay bekliyor
+
+---
+
+ADAY: elektro-interact-overlay-miss  
+Gerekçe: Resmi capture iki denemede kare değişmedi / zero-size: hamburger `#menu-drawer` 375/768; FAQ accordion; Best Selling kart hover; before-after drag; predictive search 375/768 (`#Search-In-Modal` hidden). 1440 search + mega + cart + PDP Color kanıtlı.  
+Öneri: leftover — missingStates  
+Karar: onay bekliyor

@@ -26,10 +26,11 @@
     ],
     "mode": "viewport",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-02T18:22:23.828Z",
+    "updatedAt": "2026-09-02T18:37:57.998Z",
     "prepareClick": "#Details-menu-drawer-container > summary.header__icon--menu"
   },
   "interactionStates": [
+    "initial",
     "open"
   ],
   "interactionSteps": [
@@ -89,7 +90,12 @@
       "not": "Açık drawer: Shop/Best Sellers/Themes/Collections/Shop By"
     }
   ],
-  "missingStates": [],
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "İki resmi deneme. 1) click summary.header__icon--menu + forceOpen: 375/768 kare kapalı homepage (hamburger üç çizgi). 2) scrollTo + #Details-menu-drawer-container > summary tık (forceOpen yok): 375 #menu-drawer zero-size; 768 yine kapalı homepage. Üçüncü yok."
+    }
+  ],
   "stateFindings": {},
-  "interactionNote": "1440'te #menu-drawer 0px. Yazılı Shop <a> koleksiyona gider — tıklanmadı."
+  "interactionNote": "1440 #menu-drawer 0px (tablet breakpoint). Yazılı Shop <a> tıklanmadı. Şema yok."
 }

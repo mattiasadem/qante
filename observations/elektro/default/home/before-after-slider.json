@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--17206180151361__before_after_G7rNQK",
   "evidenceSlug": "before-after-slider",
   "evidence": [
+    "evidence/elektro/default/home/before-after-slider.1440.png",
     "evidence/elektro/default/home/before-after-slider.375.png",
     "evidence/elektro/default/home/before-after-slider.768.png",
-    "evidence/elektro/default/home/before-after-slider.1440.png"
+    "evidence/elektro/default/home/before-after-slider.changed.after-genis.1440.png",
+    "evidence/elektro/default/home/before-after-slider.changed.after-genis.375.png",
+    "evidence/elektro/default/home/before-after-slider.changed.after-genis.768.png",
+    "evidence/elektro/default/home/before-after-slider.initial.orta.1440.png",
+    "evidence/elektro/default/home/before-after-slider.initial.orta.375.png",
+    "evidence/elektro/default/home/before-after-slider.initial.orta.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Vibrant Headphone Choices. home-before.jpg / home-after.jpg · --percent: 50%.",
@@ -23,8 +29,8 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T17:30:33.944Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:45:25.798Z"
   },
   "interactionStates": [
     "initial",
@@ -54,15 +60,22 @@
     {
       "state": "changed",
       "action": "drag",
-      "selector": "#shopify-section-template--17206180151361__before_after_G7rNQK .before-after-image--divider",
-      "dragContainer": "#shopify-section-template--17206180151361__before_after_G7rNQK",
+      "selector": "#shopify-section-template--17206180151361__before_after_G7rNQK input.before-after-image--slider",
+      "dragContainer": "#shopify-section-template--17206180151361__before_after_G7rNQK .before-after-image",
       "value": "pct:80",
       "capture": true,
       "etiket": "after-genis",
-      "not": "Tutamacı sağa — after (earbud case) genişler"
+      "not": "Range input sağa — after (earbud case) genişler"
     }
   ],
-  "missingStates": [],
-  "stateFindings": {},
-  "interactionNote": "Divider 4px. İlk kare ~%50."
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "İki resmi drag: .before-after-image--divider pct:80, sonra input.before-after-image--slider pct:80. changed PNG byte=initial — ayırıcı ortada (~%50). Üçüncü yok."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Vibrant Headphone Choices. Ayırıcı ortada; sol boyunluk (pembe ışın) / sağ TWS + case (mavi ışın). Tutamaç üç çizgi."
+  },
+  "interactionNote": "Range input + divider sürüklendi; resmi kare değişmedi. Şema yok."
 }

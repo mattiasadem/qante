@@ -20,6 +20,7 @@ Aynı chrome’u preset’te tekrar çekme (Allure drawer = diğer Prestige). Ye
 | Impact Cocoon / Balance | shop-the-look hotspot (Vase→Plica · Bra→Leggings) · Balance PDP Sizing accordion |
 | Symmetry default | lookbook hotspot Heavy Rotation · customer-help FAQ size guide |
 | Sachue (Speedo) default | Shop disclosure 1440 · search `nail` · hamburger Shop drill · cart drawer+sayfa $26→$52 · PDP Multi Color · tabs NEW ARRIVALS · FAQ · announcement 768/1440 (375 next gizli) |
+| Elektro (Speedo) default | Shop mega 6 kart 1440 · search `speaker` 1440 · cart drawer+sayfa $310→$620 · PDP Color Black · menu/FAQ/hover/BA/search375 missing |
 
 ---
 
@@ -201,3 +202,15 @@ Temsilci tarandı. Şema uydurulmadı. Form / kupon / ülke seçimi gönderilmed
 - [ ] `product-showcase-tabs` — Best seller missingStates (New Arrival kaldı)
 - [ ] `faq-collapsible-tabs` — accordion missingStates
 - [ ] `product-showcase-grid-plp` — Color Apply missingStates
+
+## Elektro (Speedo) · default
+
+- [x] `navigation-header-mega` — 1440 Shop: Cameras / Mobile Devices / Laptops / Refrigerators / Smart TV / Accessories
+- [x] `global-predictive-search` — 1440 speaker → JBL Clip + HomePod Mini; 375/768 missing
+- [x] `global-cart-drawer` — JBL Grayish Blue $310 / adet 2 $620
+- [x] `cart-page-main` — empty / $310 / $620
+- [x] `product-info-main` — Color Grayish Blue → Black
+- [ ] `global-menu-drawer` — open missingStates (375/768 kare homepage)
+- [ ] `faq-collapsible-tabs` — accordion missingStates
+- [ ] `product-showcase-grid-featured` — hover missingStates
+- [ ] `before-after-slider` — drag missingStates (ayırıcı %50)

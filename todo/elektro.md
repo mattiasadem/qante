@@ -15,7 +15,7 @@ Walk host + `Shopify.shop` = `sonix-electronics-store-2.myshopify.com` · locale
 
 **Password wall:** GET `/` → `/password`. Title `Elektro - Best Shopify Electronics Store – Sonix Electronics Store 2 (password: 1)`. Vendor ürün sayfası: *Please enter password 1 to view demo.* Public storefront-unlock `1` — hesap değil. **Başka host uydurulmadı.**
 
-**Durum:** Mod A observation yazıldı · 3vp + interact sırada  
+**Durum:** Mod A + 3vp + interact bitti (0 yeni şema)  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -39,22 +39,22 @@ Walk host + `Shopify.shop` = `sonix-electronics-store-2.myshopify.com` · locale
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | [x] obs | [ ] capture |
-| Shop mega hover 1440 | [ ] interact | [ ] |
-| Predictive search `speaker` | [ ] interact | [ ] |
-| Mobile menu 375 + 768 | [ ] interact | [ ] |
-| Cart drawer empty + filled + qty | [ ] interact | [ ] |
-| PDP JBL Clip Color Grayish Blue→Black | [ ] interact | [ ] |
-| PLP `/collections/cameras` | [x] obs | [ ] capture |
-| Collections `/collections` | [x] obs | [ ] capture |
-| Search `/search?q=speaker` | [x] obs | [ ] capture |
-| Cart page empty + filled | [x] obs | [ ] capture / interact |
-| About `/pages/about-layout-1` (footer About Us) | [x] obs | [ ] capture |
-| Our Story `/pages/our-story` | [x] obs | [ ] capture |
-| Contact `/pages/contact-layout-1` (submit yok) | [x] obs | [ ] capture |
+| Home roster (announcement→footer) | [x] obs | [x] 3vp |
+| Shop mega hover 1440 | [x] open — 6 kare kart | [x] |
+| Predictive search `speaker` | [x] 1440 PRODUCTS · 375/768 missing | [x] |
+| Mobile menu 375 + 768 | missingStates — kare kapalı | — |
+| Cart drawer empty + filled + qty | [x] $310 → $620 | [x] |
+| PDP JBL Clip Color Grayish Blue→Black | [x] galeri + label | [x] |
+| PLP `/collections/cameras` | [x] obs | [x] 3vp |
+| Collections `/collections` | [x] obs | [x] 3vp |
+| Search `/search?q=speaker` | [x] obs | [x] 3vp |
+| Cart page empty + filled | [x] boş → satır → qty 2 | [x] |
+| About `/pages/about-layout-1` (footer About Us) | [x] obs | [x] 3vp |
+| Our Story `/pages/our-story` | [x] obs | [x] 3vp |
+| Contact `/pages/contact-layout-1` (submit yok) | [x] obs | [x] 3vp |
 | FAQ `/pages/faq` | leftover — home'a düşüyor | — |
-| News + article | [x] obs | [ ] capture |
-| 404 | [x] obs | [ ] capture |
+| News + article | [x] obs | [x] 3vp |
+| 404 | [x] obs | [x] 3vp |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -96,33 +96,33 @@ Walk host + `Shopify.shop` = `sonix-electronics-store-2.myshopify.com` · locale
 
 | # | id | sayfa | Screenshot | Not | JSON | Done |
 |---|---|---|---|---|---|---|
-| 1–25 | home static + overlays | home | [ ] | [x] | reuse | [ ] |
-| 26–35 | PDP JBL + tabs/video/IWT/related | product-detail | [ ] | [x] | reuse | [ ] |
-| 36–38 | banner + slider + PLP | collection | [ ] | [x] | reuse | [ ] |
-| 39 | collection-nav-grid | collections | [ ] | [x] | reuse | [ ] |
-| 40 | search-results | search | [ ] | [x] | reuse | [ ] |
-| 41 | cart-page-main | cart | [ ] | [x] | reuse | [ ] |
-| 42–48 | about-layout-1 | about-brand | [ ] | [x] | reuse | [ ] |
-| 49 | page-content-main | our-story | [ ] | [x] | reuse | [ ] |
-| 50–52 | contact-layout-1 | contact | [ ] | [x] | reuse | [ ] |
-| 53–54 | news + post | blog-* | [ ] | [x] | reuse | [ ] |
-| 55 | 404 | not-found | [ ] | [x] | reuse | [ ] |
+| 1–25 | home static + overlays | home | [x] | [x] | reuse | [x] |
+| 26–35 | PDP JBL + tabs/video/IWT/related | product-detail | [x] | [x] | reuse | [x] |
+| 36–38 | banner + slider + PLP | collection | [x] | [x] | reuse | [x] |
+| 39 | collection-nav-grid | collections | [x] | [x] | reuse | [x] |
+| 40 | search-results | search | [x] | [x] | reuse | [x] |
+| 41 | cart-page-main | cart | [x] | [x] | reuse | [x] |
+| 42–48 | about-layout-1 | about-brand | [x] | [x] | reuse | [x] |
+| 49 | page-content-main | our-story | [x] | [x] | reuse | [x] |
+| 50–52 | contact-layout-1 | contact | [x] | [x] | reuse | [x] |
+| 53–54 | news + post | blog-* | [x] | [x] | reuse | [x] |
+| 55 | 404 | not-found | [x] | [x] | reuse | [x] |
 
 ---
 
 ## Interact (plan)
 
-| Bileşen | State | Hedef |
+| Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | open 1440 | Shop mega kolonları |
-| global-predictive-search | input speaker | öneri / ürün |
-| global-menu-drawer | open 375/768 | hamburger |
-| global-cart-drawer | filled + changed | JBL satır + adet |
-| cart-page-main | filled + changed | boş → satır → qty |
+| navigation-header-mega | open 1440 | 6 kare: Cameras / Mobile Devices / Laptops / Refrigerators / Smart TV / Accessories |
+| global-predictive-search | input speaker | 1440 PRODUCTS JBL + HomePod · 375/768 missing |
+| global-menu-drawer | open 375/768 | missingStates |
+| global-cart-drawer | filled + changed | Grayish Blue $310 → adet 2 $620 · YOU MAY LIKE leftover |
+| cart-page-main | filled + changed | boş → satır $310 → $620 |
 | product-info-main | changed Color | Grayish Blue → Black |
-| product-showcase-grid-featured | hover | 2. görsel / quick add |
-| faq-collapsible-tabs | changed | accordion |
-| before-after-slider | changed | drag |
+| product-showcase-grid-featured | hover | missingStates (kare=initial) |
+| faq-collapsible-tabs | changed | missingStates (kare=initial) |
+| before-after-slider | changed | missingStates (ayırıcı %50) |
 
 ---
 
