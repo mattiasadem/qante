@@ -5,7 +5,7 @@
 
 | Tema | Dosya | Durum |
 |---|---|---|
-| Olelia (Speedo) | [`olelia.md`](./olelia.md) | 🟡 Mod A — jewelry-online-shop-4 · password 1 (vendor) · 46 obs · 0 yeni şema |
+| Olelia (Speedo) | [`olelia.md`](./olelia.md) | ✅ first inventory — jewelry-online-shop-4 · password 1 · 46 obs · 0 yeni şema · interact |
 | Hyper (Shopify) | [`hyper.md`](./hyper.md) | ✅ **default tamam** — 45 şema · 80 evidence · compare dolu |
 | Hyper · Ceramide | [`hyper-ceramide.md`](./hyper-ceramide.md) | ✅ delta — 5 yeni şema · 5 obs |
 | Prestige · Allure | [`prestige.md`](./prestige.md) | ✅ Allure 9 sayfa · 66 obs · 4 yeni şema · dolu cart |

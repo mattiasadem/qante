@@ -66,6 +66,30 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: olelia-you-may-like-overlay  
+Gerekçe: ATC sonrası 1440'ta cart drawer yanında `YOU MAY LIKE` overlay (Amo Fashion Belt Buckle Bracelet vb. + Add To Cart). Ayrı schema yok; cart drawer `stateFindings`.  
+Örnekler: evidence `global-cart-drawer.filled.sepete-eklendi.1440.png`  
+Öneri: leftover — upsell overlay  
+Karar: onay bekliyor
+
+---
+
+ADAY: olelia-pdp-extras  
+Gerekçe: product-info-main içinde Fast Shipping/24-7/30 days badges, “Hurry up! Sales End In” timer, Size Guide, Pairs well with, NEED HELP WhatsApp, Buy it now. Ayrı section değil; PDP extras.  
+Örnekler: Gold Diamond Pendant Necklace buy box  
+Öneri: leftover — PDP alt bloklar  
+Karar: onay bekliyor
+
+---
+
+ADAY: olelia-plp-filter-sort  
+Gerekçe: `/collections/rings` sol filtre (Color / Ring size / Category / Availability / Price) + kolon toggle + Alphabetically A-Z. Interact bu pass'te yok.  
+Örnekler: product-showcase-grid-plp 1440  
+Öneri: leftover — PLP filter/sort  
+Karar: onay bekliyor
+
+---
+
 ADAY: olelia-gold-pdp-single-swatch  
 Gerekçe: Resmi Speedo PDP linki `/products/gold-diamond-pendant-necklace` yalnız Color=Gold. Çoklu varyant interact `candid-love-diamond-ring` (Color Gold/White Gold + Ring size).  
 Örnekler: products.json  

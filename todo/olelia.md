@@ -13,8 +13,8 @@
 `Shopify.shop` = `jewelry-online-shop-4.myshopify.com`  
 Storefront `/` **302** → `/password`. Vendor product page: *Please enter password "1" to view demo.* Public unlock used; no other host.
 
-**Durum:** Mod A walk (home + PLP + PDP + cart + search + collections) + interact + validate  
-**PR:** draft — **main'e merge yok**
+**Durum:** Mod A walk + 3vp + interact + validate **bitti**  
+**PR:** https://github.com/mattiasadem/qante/pull/330 · draft · **main'e merge yok**
 
 ---
 
@@ -37,16 +37,16 @@ Storefront `/` **302** → `/password`. Vendor product page: *Please enter passw
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | [x] obs | [ ] capture |
-| Shop mega hover 1440 | [ ] interact | [ ] |
-| Predictive search `gold` | [ ] interact | [ ] |
-| Mobile menu 375 + 768 | [ ] interact | [ ] |
-| Cart drawer empty + filled + qty | [ ] interact | [ ] |
-| PDP Gold necklace (static) + Candid Love variant | [x] obs | [ ] interact |
-| PLP `/collections/rings` | [x] obs | [ ] capture |
-| Collections `/collections` | [x] obs | [ ] capture |
-| Search `/search?q=gold` | [x] obs | [ ] capture |
-| Cart page empty + filled + qty | [x] obs | [ ] interact |
+| Home roster (announcement→footer) | [x] obs | [x] capture |
+| Shop mega hover 1440 | [x] interact | [x] |
+| Predictive search `gold` | [x] interact | [x] 375/768 #Search-In-Modal · 1440 -1 |
+| Mobile menu 375 + 768 | [x] interact | [x] 1440 yok |
+| Cart drawer empty + filled + qty | [x] interact | [x] $120 → $240 |
+| PDP Gold necklace (static) + Candid Love variant | [x] obs | [x] White Gold |
+| PLP `/collections/rings` | [x] obs | [x] capture |
+| Collections `/collections` | [x] obs | [x] capture |
+| Search `/search?q=gold` | [x] obs | [x] capture |
+| Cart page empty + filled + qty | [x] obs | [x] $120 → $240 |
 | About / FAQ / blog / contact | leftover | — |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
@@ -93,12 +93,12 @@ Storefront `/` **302** → `/password`. Vendor product page: *Please enter passw
 
 | # | id | sayfa | Screenshot | Not | JSON | Done |
 |---|---|---|---|---|---|---|
-| 1–30 | home static + overlays | home | [ ] | [x] | reuse | [ ] |
-| 31–33 | banner / slider / PLP | collection | [ ] | [x] | reuse | [ ] |
-| 34 | collection-nav-grid | collections | [ ] | [x] | reuse | [ ] |
-| 35–44 | PDP blocks | product-detail | [ ] | [x] | reuse | [ ] |
-| 45 | cart-page-main | cart | [ ] | [x] | reuse | [ ] |
-| 46 | search-results | search | [ ] | [x] | reuse | [ ] |
+| 1–30 | home static + overlays | home | [x] | [x] | reuse | [x] |
+| 31–33 | banner / slider / PLP | collection | [x] | [x] | reuse | [x] |
+| 34 | collection-nav-grid | collections | [x] | [x] | reuse | [x] |
+| 35–44 | PDP blocks | product-detail | [x] | [x] | reuse | [x] |
+| 45 | cart-page-main | cart | [x] | [x] | reuse | [x] |
+| 46 | search-results | search | [x] | [x] | reuse | [x] |
 
 ---
 
@@ -106,12 +106,12 @@ Storefront `/` **302** → `/password`. Vendor product page: *Please enter passw
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | open | pending |
-| global-predictive-search | input | pending |
-| global-menu-drawer | open | pending |
-| global-cart-drawer | filled + changed | pending |
-| cart-page-main | filled + changed | pending |
-| product-info-main | changed (Candid Love color) | pending |
+| navigation-header-mega | open | OK — 1440 Shop: 6 kare koleksiyon kartı |
+| global-predictive-search | input | OK — `gold` 3vp; 375/768 #Search-In-Modal |
+| global-menu-drawer | open | OK — 375 panel + 768 çekmece; 1440 yok |
+| global-cart-drawer | filled + changed | OK — $120 qty1 → $240 qty2 |
+| cart-page-main | filled + changed | OK — aynı tutarlar |
+| product-info-main | changed | OK — Candid Love White Gold |
 
 Stop: email / account / checkout / newsletter submit / PII
 
@@ -125,7 +125,7 @@ Stop: email / account / checkout / newsletter submit / PII
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact Shop mega / search / cart / menu / PDP Color
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate` — 0 error
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact Shop mega / search / cart / menu / PDP Color
+- [x] PNG bak → stateFindings
+- [x] `npm run validate` — 0 error
