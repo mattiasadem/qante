@@ -225,3 +225,85 @@ export async function assertCleanForScreenshot(page) {
     );
   }
 }
+
+/**
+ * Vendor storefront-unlock (public demo password), not a private account.
+ * Speedo Themes publishes password `1` on the product page.
+ */
+export function resolveStorefrontPassword(obs, url) {
+  if (obs?.storefrontPassword) return String(obs.storefrontPassword);
+  if (process.env.STOREFRONT_PASSWORD) return process.env.STOREFRONT_PASSWORD;
+  try {
+    const host = new URL(url).hostname;
+    if (host.startsWith("speedo-") && host.endsWith(".myshopify.com")) return "1";
+  } catch {}
+  return null;
+}
+
+async function pageLooksPasswordLocked(page) {
+  const href = page.url();
+  if (/\/password\/?(\?|$)/i.test(href)) return true;
+  return page.evaluate(() => {
+    const form = document.querySelector('form[action*="/password"]');
+    const input = document.querySelector(
+      'input[name="password"][type="password"], input[type="password"][name="password"]'
+    );
+    if (!form && !input) return false;
+    const title = document.title || "";
+    const body = (document.body?.innerText || "").slice(0, 400);
+    return /password|enter store|storefront/i.test(`${title} ${body}`);
+  });
+}
+
+export async function unlockStorefrontIfNeeded(page, { password, targetUrl } = {}) {
+  const pwd = password || null;
+  if (!pwd) return false;
+  if (!(await pageLooksPasswordLocked(page))) return false;
+
+  const input = page
+    .locator('input[type="password"], input[name="password"]')
+    .first();
+  await input.waitFor({ state: "visible", timeout: 8000 }).catch(() => {});
+  if (!(await input.count())) return false;
+
+  await input.fill(pwd);
+  const form = page.locator('form[action*="/password"]').first();
+  if (await form.count()) {
+    await Promise.all([
+      page
+        .waitForNavigation({ waitUntil: "domcontentloaded", timeout: 30000 })
+        .catch(() => {}),
+      form.evaluate((f) => f.submit()),
+    ]);
+  } else {
+    await page
+      .locator('button[type="submit"], input[type="submit"]')
+      .first()
+      .click()
+      .catch(() => {});
+    await page.waitForLoadState("domcontentloaded").catch(() => {});
+  }
+  await page.waitForTimeout(1200);
+
+  if (targetUrl && (await pageLooksPasswordLocked(page))) {
+    await page.goto(targetUrl, {
+      waitUntil: "domcontentloaded",
+      timeout: 90000,
+    });
+    await page.waitForTimeout(1200);
+  } else if (targetUrl) {
+    const landed = new URL(page.url());
+    const target = new URL(targetUrl);
+    if (
+      landed.origin === target.origin &&
+      landed.pathname.replace(/\/$/, "") !== target.pathname.replace(/\/$/, "")
+    ) {
+      await page.goto(targetUrl, {
+        waitUntil: "domcontentloaded",
+        timeout: 90000,
+      });
+      await page.waitForTimeout(1200);
+    }
+  }
+  return true;
+}

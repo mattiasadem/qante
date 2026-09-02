@@ -39,6 +39,8 @@ import { fileURLToPath } from "url";
 import {
   dismissAllOverlays,
   assertCleanForScreenshot,
+  resolveStorefrontPassword,
+  unlockStorefrontIfNeeded,
 } from "./dismiss-overlays.mjs";
 import { screenshotSectionWithPadding } from "./screenshot-section.mjs";
 
@@ -181,7 +183,12 @@ function iframeHostSelector(selector) {
 
 async function settle(page, url) {
   const target = new URL(url);
+  const storefrontPassword = resolveStorefrontPassword(obs, url);
   await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
+  await unlockStorefrontIfNeeded(page, {
+    password: storefrontPassword,
+    targetUrl: url,
+  });
   await page.waitForTimeout(3500);
 
   const landed = new URL(page.url());
