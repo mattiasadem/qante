@@ -41,6 +41,7 @@ import {
   assertCleanForScreenshot,
 } from "./dismiss-overlays.mjs";
 import { screenshotSectionWithPadding } from "./screenshot-section.mjs";
+import { unlockStorefrontPassword } from "./storefront-password.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const qanteRoot = path.resolve(__dirname, "..");
@@ -182,6 +183,7 @@ function iframeHostSelector(selector) {
 async function settle(page, url) {
   const target = new URL(url);
   await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
+  await unlockStorefrontPassword(page, obs);
   await page.waitForTimeout(3500);
 
   const landed = new URL(page.url());
