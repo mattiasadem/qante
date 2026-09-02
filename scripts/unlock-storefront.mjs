@@ -16,6 +16,16 @@ export async function ensureStorefrontUnlocked(page, { url, kaynak, password } =
   if (!pwd) return false;
   const origin = new URL(url || page.url() || "https://pandora-flower.myshopify.com/").origin;
 
+  const current = page.url();
+  if (
+    current &&
+    current.startsWith(origin) &&
+    current !== "about:blank" &&
+    !/\/password(?:\/|$|\?)/.test(new URL(current).pathname)
+  ) {
+    return true;
+  }
+
   await page.goto(`${origin}/password`, {
     waitUntil: "domcontentloaded",
     timeout: 90000,
@@ -38,6 +48,14 @@ export async function ensureStorefrontUnlocked(page, { url, kaynak, password } =
       else await input.press("Enter");
       await page.waitForTimeout(800);
     }
+  }
+
+  if (/\/password(?:\/|$|\?)/.test(new URL(page.url()).pathname)) {
+    await page.goto(`${origin}/`, {
+      waitUntil: "domcontentloaded",
+      timeout: 90000,
+    });
+    await page.waitForTimeout(400);
   }
 
   return !/\/password(?:\/|$|\?)/.test(new URL(page.url()).pathname);

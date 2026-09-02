@@ -15,8 +15,8 @@ Walk host `pandora-flower.myshopify.com` · `Shopify.shop` = **pandora-flower.my
 
 **Storefront unlock:** vendor product page publishes demo password `1` (`Please enter password "1" to view demo.`). Same host `/password` — not an account. Other hosts were not used.
 
-**Durum:** Mod A roster yazıldı; 3vp + interact sırada  
-**PR:** draft · **main'e merge yok**
+**Durum:** ✅ Mod A + interact kapandı — 28 obs · 132 PNG · 0 yeni şema  
+**PR:** https://github.com/mattiasadem/qante/pull/327 (draft) · **main'e merge yok**
 
 ---
 
@@ -28,11 +28,11 @@ Walk host `pandora-flower.myshopify.com` · `Shopify.shop` = **pandora-flower.my
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` + `scripts/unlock-storefront.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **28** |
-| PNG | (capture sonrası) |
+| PNG | **132** (82 static 3vp + 50 interact) |
 | Parallel | yalnız `observations/plantrex/`, `evidence/plantrex/`, `todo/plantrex.md`, `candidates/plantrex-leftovers.md`, capture unlock helper |
 
 **Kapsam satırı:**  
-`Plantrex · default · pandora-flower-v-1-5-0 / schema_name Pandora_flower 1.5.0 · theme_store_id null · shop pandora-flower.myshopify.com · home→PDP gerberas-flower-bouquet Mix→White→PLP /collections/best-seller→cart empty/filled→footer · 28 obs · 0 yeni şema · leftover: candidates/plantrex-leftovers.md`
+`Plantrex · default · pandora-flower-v-1-5-0 / schema_name Pandora_flower 1.5.0 · theme_store_id null · shop pandora-flower.myshopify.com · home→PDP gerberas-flower-bouquet Mix→White→PLP /collections/best-seller→cart empty/filled→footer · 28 obs · 132 PNG · 0 yeni şema · leftover: candidates/plantrex-leftovers.md`
 
 ---
 
@@ -40,14 +40,14 @@ Walk host `pandora-flower.myshopify.com` · `Shopify.shop` = **pandora-flower.my
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | [x] obs | [ ] capture |
-| Shop dropdown hover 1440 | [x] obs | [ ] interact |
-| Predictive search | [x] obs | [ ] interact |
-| Mobile menu 375 + 768 | [x] obs | [ ] interact |
-| Cart drawer empty + filled + qty | [x] obs | [ ] interact |
-| PDP Gerberas Color Mix→White | [x] obs | [ ] interact |
-| PLP `/collections/best-seller` | [x] obs | [ ] capture |
-| Cart page empty + filled + qty | [x] obs | [ ] interact |
+| Home roster (announcement→footer) | [x] obs | [x] capture |
+| Shop dropdown hover 1440 | [x] obs | [x] interact |
+| Predictive search | [x] obs | [x] interact |
+| Mobile menu 375 + 768 | [x] obs | [x] interact |
+| Cart drawer empty + filled + qty | [x] obs | [x] interact |
+| PDP Gerberas Color Mix→White | [x] obs | [x] interact |
+| PLP `/collections/best-seller` | [x] obs | [x] capture |
+| Cart page empty + filled + qty | [x] obs | [x] interact |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -83,11 +83,11 @@ Walk host `pandora-flower.myshopify.com` · `Shopify.shop` = **pandora-flower.my
 
 | # | id | sayfa | Screenshot | Not | JSON | Done |
 |---|---|---|---|---|---|---|
-| 1–19 | home static + overlays | home | [ ] | [x] | reuse | [ ] |
-| 20 | product-info-main | product-detail | [ ] | [x] | reuse | [ ] |
-| 21–24 | trust / IWT ×2 / related | product-detail | [ ] | [x] | reuse | [ ] |
-| 25–26 | banner + PLP grid | collection | [ ] | [x] | reuse | [ ] |
-| 27–28 | cart-items + featured | cart | [ ] | [x] | reuse | [ ] |
+| 1–19 | home static + overlays | home | [x] | [x] | reuse | [x] |
+| 20 | product-info-main | product-detail | [x] | [x] | reuse | [x] |
+| 21–24 | trust / IWT ×2 / related | product-detail | [x] | [x] | reuse | [x] |
+| 25–26 | banner + PLP grid | collection | [x] | [x] | reuse | [x] |
+| 27–28 | cart-items + featured | cart | [x] | [x] | reuse | [x] |
 
 ---
 
@@ -95,12 +95,14 @@ Walk host `pandora-flower.myshopify.com` · `Shopify.shop` = **pandora-flower.my
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | open | (sırada) 1440 Shop dropdown |
-| global-predictive-search | input | (sırada) katalog kelimesi |
-| global-menu-drawer | open | (sırada) 375 + 768 |
-| global-cart-drawer | filled + changed | (sırada) Gerberas Mix |
-| cart-page-main | filled + changed | (sırada) |
-| product-info-main | changed | (sırada) Mix → White |
+| navigation-header-mega | open | 1440 Shop hover: Birthday / Occasion / Anniversary / Luxurious. Tıklama `/collections`. |
+| global-predictive-search | input | `bouquet`: SUGGESTIONS + PRODUCTS. Statik 375/768 homepage sızmıştı; interact opener düzeltti. |
+| global-menu-drawer | open + changed | 375/768 hamburger + Shop accordion (← Shop + 4 alt). 1440 hamburger yok. |
+| global-cart-drawer | filled + changed | Gerberas Mix qty 1 $75 → qty 2 $150. Checkout tıklanmadı. |
+| cart-page-main | filled + changed | Aynı satır `/cart`. TOTAL $75 → $150. |
+| product-info-main | changed | Mix → White: galeri pembe/beyaz gül; fiyat $75 aynı. |
+| product-showcase-tabs | changed | Best Sellers → NEW arrivals; kart seti değişti. |
+| faq-collapsible-tabs | changed | İlk soru açık; lorem cevap + minus. |
 
 Stop: email / account / checkout / newsletter submit / PII
 
@@ -114,7 +116,7 @@ Stop: email / account / checkout / newsletter submit / PII
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact Shop / search / cart / menu / PDP Color
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate` — 0 error
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact Shop / search / cart / menu / PDP Color / tabs / FAQ
+- [x] PNG bak → stateFindings
+- [x] `npm run validate` — 0 error · 13 warn (pre-existing, Plantrex değil)

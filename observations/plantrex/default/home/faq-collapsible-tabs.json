@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--15003425603669__1663676130f16e8b3b",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/plantrex/default/home/faq-collapsible-tabs.1440.png",
     "evidence/plantrex/default/home/faq-collapsible-tabs.375.png",
     "evidence/plantrex/default/home/faq-collapsible-tabs.768.png",
-    "evidence/plantrex/default/home/faq-collapsible-tabs.1440.png"
+    "evidence/plantrex/default/home/faq-collapsible-tabs.changed.shipping-acik.1440.png",
+    "evidence/plantrex/default/home/faq-collapsible-tabs.changed.shipping-acik.375.png",
+    "evidence/plantrex/default/home/faq-collapsible-tabs.changed.shipping-acik.768.png",
+    "evidence/plantrex/default/home/faq-collapsible-tabs.initial.kapali.1440.png",
+    "evidence/plantrex/default/home/faq-collapsible-tabs.initial.kapali.375.png",
+    "evidence/plantrex/default/home/faq-collapsible-tabs.initial.kapali.768.png"
   ],
   "notlar": "Faqs: What Shipping Methods Are Available? · shipping times and costs · payment methods · exchanges, returns and refunds. component-accordion.",
   "delta": "Home accordion; kategori sekmesi yok. Speedo Plantrex · Shopify.theme.name pandora-flower-v-1-5-0 · schema_name Pandora_flower · schema_version 1.5.0 · theme_store_id null · role main · id 124515549269 · shop pandora-flower.myshopify.com · walk after vendor-published storefront password 1 on the same host.",
@@ -24,8 +30,48 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T13:44:43.487Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:16:36.456Z",
     "prepareClick": ".close_popup"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-flower.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15003425603669__1663676130f16e8b3b",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "Tüm sorular + kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Summary-1663676129b73b922e-0-template--15003425603669__1663676130f16e8b3b",
+      "capture": true,
+      "etiket": "shipping-acik",
+      "not": "İlk soru açık — cevap görünmeli"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Faqs. Dört soru + ikon. Hepsi kapalı.",
+    "changed": "What Shipping Methods Are Available? açık; lorem cevap + minus. Diğerleri +."
+  },
+  "missingStates": [],
+  "interactionNote": "İlk accordion. Form yok."
 }

@@ -8,9 +8,18 @@
   "selector": "#CartDrawer",
   "evidenceSlug": "global-cart-drawer",
   "evidence": [
+    "evidence/plantrex/default/home/global-cart-drawer.1440.png",
     "evidence/plantrex/default/home/global-cart-drawer.375.png",
     "evidence/plantrex/default/home/global-cart-drawer.768.png",
-    "evidence/plantrex/default/home/global-cart-drawer.1440.png"
+    "evidence/plantrex/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/plantrex/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/plantrex/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/plantrex/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/plantrex/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/plantrex/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/plantrex/default/home/global-cart-drawer.initial.sepet-bos.1440.png",
+    "evidence/plantrex/default/home/global-cart-drawer.initial.sepet-bos.375.png",
+    "evidence/plantrex/default/home/global-cart-drawer.initial.sepet-bos.768.png"
   ],
   "notlar": "cart-drawer #CartDrawer. Boş kare: Your cart is empty. Interact doldurur.",
   "delta": "Header içinde Dawn cart-drawer. Checkout tıklanmadı. Speedo Plantrex · Shopify.theme.name pandora-flower-v-1-5-0 · schema_name Pandora_flower · schema_version 1.5.0 · theme_store_id null · role main · id 124515549269 · shop pandora-flower.myshopify.com · walk after vendor-published storefront password 1 on the same host.",
@@ -25,8 +34,80 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T13:46:44.089Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:20:03.266Z",
     "prepareClick": "#cart-icon-bubble"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-flower.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://pandora-flower.myshopify.com/products/gerberas-flower-bouquet",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--15003425898581__main",
+      "capture": false,
+      "not": "Gerberas Mix $75"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC sonrası drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart boş + CONTINUE SHOPPING + Have an account? Log in. Free/Express shipping eşik çubuğu ($500 / $800).",
+    "filled": "Gerberas Flower Bouquet Color Mix qty 1 · $75.00. Estimated total $75.00 USD. CHECK OUT / View cart (tıklanmadı). Order special instructions kapalı.",
+    "changed": "Qty 2. Estimated total $150.00 USD. Satır birim $75 görünür."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart → ui. Checkout / Log in tıklanmadı. İkinci goto /password atlandı (aynı oturum)."
 }
