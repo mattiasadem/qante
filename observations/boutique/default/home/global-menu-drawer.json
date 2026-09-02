@@ -7,10 +7,64 @@
   "url": "https://fashion-store-clean-10.myshopify.com/",
   "selector": "#menu-drawer",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/boutique/default/home/global-menu-drawer.768.png",
+    "evidence/boutique/default/home/global-menu-drawer.1440.png"
+  ],
   "notlar": "Hamburger → #menu-drawer. Home · Shop (casual/office/party) · Best seller · New arrival · Mens/Womens/Childrens. Wishlist + Log in.",
   "delta": "1440 hamburger VAR (header.drawer-menu). Mega yok. Shopify.theme.name Boutique-v-1-5-0 · schema_name Boutique · schema_version 1.5.0 · theme_store_id null · role main · id 170605216055 · shop fashion-store-clean-10.myshopify.com · Speedo Themes third-party (Theme Store official değil).",
   "storefrontPassword": "1",
   "captureMode": "viewport",
-  "prepareClick": "#Details-menu-drawer-container > summary"
+  "prepareClick": "#Details-menu-drawer-container > summary",
+  "capture": {
+    "url": "https://fashion-store-clean-10.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "viewport",
+    "updatedAt": "2026-09-02T18:19:31.917Z",
+    "prepareClick": "#Details-menu-drawer-container > summary"
+  },
+  "interactionStates": [
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://fashion-store-clean-10.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Drawer açık — 375/768/1440 hamburger var"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-menu-drawer-menu-item-2 > summary, #HeaderDrawer-shop",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-akordeon",
+      "not": "Shop nested: casual/office/party wear"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Log in tıklanmadı. 1440 hamburger Dawn large-up inline değil."
 }

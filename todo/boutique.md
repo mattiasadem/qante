@@ -14,8 +14,8 @@
 Title: `Latest Shopify Fashion Store – Fashion Store Clean 10 (password: 1)`  
 Storefront password (ürün sayfasında yayın): **`1`** — aynı host `/password`, başka vitrin yok.
 
-**Durum:** Mod A walk + resmi 3vp (capture devam) + interact sırada  
-**PR:** draft · **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp (113 PNG) + interact sırada  
+**PR:** https://github.com/mattiasadem/qante/pull/360 · draft · **main'e merge yok**
 
 ---
 
@@ -38,21 +38,21 @@ Storefront password (ürün sayfasında yayın): **`1`** — aynı host `/passwo
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home + announcement/header/hero/featured/rich/cats/best/multirow/trust/IWT-2/news/footer | roster | [ ] capture |
+| Home + announcement/header/hero/featured/rich/cats/best/multirow/trust/IWT-2/news/footer | roster | [x] capture |
 | Mega | ⛔ yok (Dawn drawer-menu, hamburger 1440) | leftover |
 | Predictive search `dress` | roster | [ ] interact |
 | Mobile + 1440 hamburger | roster | [ ] interact |
 | Cart drawer empty + filled + qty | roster | [ ] interact |
 | PDP Color Pink→Yellow / Size S→M | roster | [ ] interact |
-| PLP `/collections/all` | roster | [ ] capture |
-| Collections `/collections` | roster | [ ] capture |
-| Search `/search?q=dress` | roster | [ ] capture |
+| PLP `/collections/all` | roster | [x] capture |
+| Collections `/collections` | roster | [x] capture |
+| Search `/search?q=dress` | roster | [x] capture |
 | Cart page empty + filled + qty | roster | [ ] interact |
-| About `/pages/about-us` | roster | [ ] capture |
-| Contact form (submit yok) | roster | [ ] capture |
-| FAQ `/pages/faqs` (`/pages/faq` 404) | roster | [ ] capture + interact |
-| News + favorite-looks-from-fashion-week | roster | [ ] capture |
-| 404 | roster | [ ] capture |
+| About `/pages/about-us` | roster | [x] capture |
+| Contact form (submit yok) | roster | [x] capture |
+| FAQ `/pages/faqs` (`/pages/faq` 404) | roster | [x] static · [ ] interact |
+| News + favorite-looks-from-fashion-week | roster | [x] capture |
+| 404 | roster | [x] capture |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -84,16 +84,16 @@ Storefront password (ürün sayfasında yayın): **`1`** — aynı host `/passwo
 
 | # | id | sayfa | Screenshot | Not | JSON | Done |
 |---|---|---|---|---|---|---|
-| 1–16 | home + overlays | home | [ ] | [x] | reuse | [ ] |
-| 17–21 | PDP main/tabs/IWT/banner/related | product-detail | [ ] | [x] | reuse | [ ] |
-| 22–23 | banner + PLP grid | collection | [ ] | [x] | reuse | [ ] |
-| 24 | collection-nav-grid | collections | [ ] | [x] | reuse | [ ] |
-| 25 | search-results | search | [ ] | [x] | reuse | [ ] |
-| 26 | cart-page-main | cart | [ ] | [x] | reuse | [ ] |
-| 27–31 | about banners / IWT / team | about-brand | [ ] | [x] | reuse | [ ] |
-| 32–33 | FAQ banner + accordion | faq-support | [ ] | [x] | reuse | [ ] |
-| 34–36 | contact banner / office / form | contact | [ ] | [x] | reuse | [ ] |
-| 37–38 | news + article + 404 | blog-* / not-found | [ ] | [x] | reuse | [ ] |
+| 1–16 | home + overlays | home | [x] | [x] | reuse | [x] |
+| 17–21 | PDP main/tabs/IWT/banner/related | product-detail | [x] | [x] | reuse | [x] |
+| 22–23 | banner + PLP grid | collection | [x] | [x] | reuse | [x] |
+| 24 | collection-nav-grid | collections | [x] | [x] | reuse | [x] |
+| 25 | search-results | search | [x] | [x] | reuse | [x] |
+| 26 | cart-page-main | cart | [x] | [x] | reuse | [x] |
+| 27–31 | about banners / IWT / team | about-brand | [x] | [x] | reuse | [x] |
+| 32–33 | FAQ banner + accordion | faq-support | [x] | [x] | reuse | [x] |
+| 34–36 | contact banner / office / form | contact | [x] | [x] | reuse | [x] |
+| 37–38 | news + article + 404 | blog-* / not-found | [x] | [x] | reuse | [x] |
 
 ---
 
@@ -121,7 +121,7 @@ Stop: email / account / checkout / newsletter submit / contact SUBMIT / PII
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
+- [x] Official 3vp static (`capture-observation.mjs`) — 113 PNG; menu-drawer 375 zero-size (interact open)
 - [ ] Interact hamburger / search / cart / PDP variant / FAQ
 - [ ] PNG bak → stateFindings
 - [ ] `node scripts/validate-schemas.mjs`

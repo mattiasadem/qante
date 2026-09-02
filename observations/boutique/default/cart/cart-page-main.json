@@ -7,8 +7,75 @@
   "url": "https://fashion-store-clean-10.myshopify.com/cart",
   "selector": "#shopify-section-template--23180235833655__cart-items",
   "evidenceSlug": "cart-page-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/boutique/default/cart/cart-page-main.375.png",
+    "evidence/boutique/default/cart/cart-page-main.768.png",
+    "evidence/boutique/default/cart/cart-page-main.1440.png"
+  ],
   "notlar": "Boş: Your cart is empty · CONTINUE SHOPPING · Have an account? Log in. cart-footer sibling h=0 boşken.",
   "delta": "Dolu + qty interact. Checkout tıklanmadı. Shopify.theme.name Boutique-v-1-5-0 · schema_name Boutique · schema_version 1.5.0 · theme_store_id null · role main · id 170605216055 · shop fashion-store-clean-10.myshopify.com · Speedo Themes third-party (Theme Store official değil).",
-  "storefrontPassword": "1"
+  "storefrontPassword": "1",
+  "capture": {
+    "url": "https://fashion-store-clean-10.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "margin-box+minPad8",
+    "updatedAt": "2026-09-02T18:02:37.376Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://fashion-store-clean-10.myshopify.com/cart",
+      "capture": true,
+      "etiket": "bos",
+      "not": "Boş sepet sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://fashion-store-clean-10.myshopify.com/products/party-wear-long-floral-dress",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add'], button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://fashion-store-clean-10.myshopify.com/cart",
+      "capture": true,
+      "etiket": "dolu",
+      "not": "PARTY WEAR satır + toplam"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], .quantity__button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "qty +1"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Checkout / Log in tıklanmadı. Dolu hâl PDP ADD TO CART sonra /cart."
 }

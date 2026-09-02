@@ -75,6 +75,14 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: boutique-menu-drawer-375-static  
+Gerekçe: `capture-observation` 375’te `#menu-drawer` zero-size (prepareClick sonrası kutu yok). 768/1440 viewport karesi hamburger kapalı homepage’e düştü — overlay açılmadı. Interact `open` 375’i alacak.  
+Örnekler: `evidence/boutique/default/home/global-menu-drawer.768.png`  
+Öneri: leftover — static overlay  
+Karar: onay bekliyor
+
+---
+
 ADAY: boutique-account-login  
 Gerekçe: Drawer `menu-drawer__account` → `/account/login`. Auth / PII.  
 Örnekler: header drawer  

@@ -7,10 +7,66 @@
   "url": "https://fashion-store-clean-10.myshopify.com/",
   "selector": "details:has(#Search-In-Modal)",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/boutique/default/home/global-predictive-search.375.png",
+    "evidence/boutique/default/home/global-predictive-search.768.png",
+    "evidence/boutique/default/home/global-predictive-search.1440.png"
+  ],
   "notlar": "Search summary → .search-modal form action=/search. Predictive host Dawn modal.",
   "delta": "Öneri listesi interact’te. Submit yok. Shopify.theme.name Boutique-v-1-5-0 · schema_name Boutique · schema_version 1.5.0 · theme_store_id null · role main · id 170605216055 · shop fashion-store-clean-10.myshopify.com · Speedo Themes third-party (Theme Store official değil).",
   "storefrontPassword": "1",
   "captureMode": "viewport",
-  "prepareClick": "summary.header__icon--search"
+  "prepareClick": "summary.header__icon--search",
+  "capture": {
+    "url": "https://fashion-store-clean-10.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "viewport",
+    "updatedAt": "2026-09-02T18:21:10.935Z",
+    "prepareClick": "summary.header__icon--search"
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://fashion-store-clean-10.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "modal-bos",
+      "not": "Arama modalı boş"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": ".search-modal input[type='search'], .search-modal input[name='q'], #Search-In-Modal",
+      "value": "dress",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "dress",
+      "not": "katalogSorgu dress — ürün önerisi"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "katalogSorgu=dress (PLP/search 15 sonuç). Submit / hesap yok."
 }
