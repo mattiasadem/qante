@@ -162,6 +162,16 @@ export async function dismissAllOverlays(page, { rounds = 8 } = {}) {
         el.hidden = true;
       });
 
+      document.querySelectorAll(".newsletter-popup, .zenon_popup, .popup_inside").forEach((el) => {
+        el.style?.setProperty("display", "none", "important");
+        el.removeAttribute("open");
+        el.hidden = true;
+      });
+
+      // Speedo / Dawn leftover: visual popup killed but body.popup-active
+      // keeps pointer-events off the header (hamburger/search unclickable).
+      document.body.classList.remove("popup-active");
+
       document.body.style.overflow = "auto";
       document.documentElement.style.overflow = "auto";
     });

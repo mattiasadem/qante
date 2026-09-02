@@ -7,16 +7,70 @@
   "url": "https://glidefeet.myshopify.com/",
   "selector": "details-modal.header__search",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/glidefeet/default/home/global-predictive-search.initial.arama-bos.1440.png",
+    "evidence/glidefeet/default/home/global-predictive-search.initial.arama-bos.375.png",
+    "evidence/glidefeet/default/home/global-predictive-search.initial.arama-bos.768.png",
+    "evidence/glidefeet/default/home/global-predictive-search.input.arama-huarache.1440.png",
+    "evidence/glidefeet/default/home/global-predictive-search.input.arama-huarache.375.png",
+    "evidence/glidefeet/default/home/global-predictive-search.input.arama-huarache.768.png"
+  ],
   "storefrontPassword": "1",
-  "notlar": "Header büyüteç → details-modal.search. predictive-search var. Kapalı kare boş; interact fill.",
-  "delta": "Dawn search-modal. Submit /search ayrı. katalogSorgu=huarache (ürün adı). Shopify.theme.name Glidefeet-v-1-5-0 · schema_name Glidefeet · schema_version 1.5.0 · theme_store_id null · role main · id 170474012955 · shop glidefeet.myshopify.com. Vendor Speedo Themes (third-party, Theme Store official değil). Storefront password 1 (vendor product page).",
+  "notlar": "Header büyüteç → details-modal. Input #Search-In-Modal. predictive-search. katalogSorgu=huarache (PDP adı).",
+  "delta": "Dawn search-modal. Submit /search ayrı. Shopify.theme.name Glidefeet-v-1-5-0 · schema_name Glidefeet · schema_version 1.5.0 · theme_store_id null · role main · id 170474012955 · shop glidefeet.myshopify.com. Vendor Speedo Themes (third-party, Theme Store official değil). Storefront password 1 (vendor product page).",
   "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://glidefeet.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "details-modal.header__search summary.header__icon--search, summary.header__icon--search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Boş search modal"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "huarache",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-huarache",
+      "not": "katalogSorgu=huarache — 1 ürün beklenir"
+    }
+  ],
+  "stateFindings": {
+    "initial": "375/768/1440: Search placeholder + büyüteç + X. Öneri listesi yok. Arkada hero IMPROVE YOUR PERFORMANCE.",
+    "input": "huarache: PRODUCTS — MEN'S AIR HUARACHE CASUAL SHOES (siyah sneaker thumb) + Search for “huarache”. 1 ürün. Koleksiyon/sayfa grubu yok. 375/768/1440."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu huarache. Submit /search sayfası ayrı. PII yok.",
   "capture": {
     "url": "https://glidefeet.myshopify.com/",
-    "viewports": ["375", "768", "1440"],
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
     "mode": "viewport",
-    "method": "margin-box+minPad8",
-    "updatedAt": ""
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:39:30.232Z"
   }
 }

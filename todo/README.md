@@ -45,7 +45,7 @@
 | Into The Gloss | [`intothegloss.md`](./intothegloss.md) | ✅ listicle-holiday-2025 · 9 obs · 27 PNG · 0 yeni şema · Next.js editorial |
 | HexClad | [`hexclad.md`](./hexclad.md) | ✅ listicle-fathers-day · 5 obs · 15 PNG · 0 yeni şema |
 | Allbirds | [`allbirds.md`](./allbirds.md) | 🟡 Mod A — 30 obs · ~90 PNG · partial capture (search blocked) |
-| Glidefeet (Speedo) | [`glidefeet.md`](./glidefeet.md) | 🟡 Mod A — 39 obs · 0 yeni şema · official demo glidefeet.myshopify.com |
+| Glidefeet (Speedo) | [`glidefeet.md`](./glidefeet.md) | ✅ Mod A + interact — 39 obs · 145 PNG · 0 yeni şema · glidefeet.myshopify.com · draft #339 |
 | Legal / policy (Kreis recipe) | [`policy-legal.md`](./policy-legal.md) | ✅ page-recipes/policy · 3-col sticky TOC \| content \| sibling nav |
 
 **Interact (discover sonrası derinlik):** [`interact.md`](./interact.md) — kapalı kare yalanı; Stretch + Cocoon/Balance shop-the-look kapandı.

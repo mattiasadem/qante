@@ -44,7 +44,7 @@ Karar: onay bekliyor
 ---
 
 ADAY: glidefeet-pdp-countdown-stock  
-Gerekçe: Buy-box içinde `Ending In` timer + `150 in stock`. Ayrı section değil; `product-info-main` delta.  
+Gerekçe: Buy-box içinde `Ending In` timer + stok satırı. Size 8 = 150 in stock; Size 10 = 50 in stock. Ayrı section değil; `product-info-main` delta + changed.  
 Örnekler: https://glidefeet.myshopify.com/products/mens-air-huarache-casual-shoes  
 Öneri: leftover — buy-box eki  
 Karar: onay bekliyor
@@ -84,7 +84,7 @@ Karar: onay bekliyor
 ---
 
 ADAY: glidefeet-color-single-swatch  
-Gerekçe: Huarache Color fieldset yalnız **Black**. Size 8–12 pills. İkinci renk yok; changed Size denenecek.  
+Gerekçe: Huarache Color fieldset yalnız **Black** (ikinci swatch yok). Size 8→10 interact: stok 150→50, galeri/fiyat aynı.  
 Örnekler: PDP Color swatch  
 Öneri: leftover — tek renk  
 Karar: onay bekliyor

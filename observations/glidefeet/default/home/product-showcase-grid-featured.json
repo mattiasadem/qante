@@ -8,13 +8,65 @@
   "selector": "#shopify-section-template--23179412242715__featured_collection",
   "evidenceSlug": "product-showcase-grid-featured",
   "evidence": [
+    "evidence/glidefeet/default/home/product-showcase-grid-featured.1440.png",
     "evidence/glidefeet/default/home/product-showcase-grid-featured.375.png",
     "evidence/glidefeet/default/home/product-showcase-grid-featured.768.png",
-    "evidence/glidefeet/default/home/product-showcase-grid-featured.1440.png"
+    "evidence/glidefeet/default/home/product-showcase-grid-featured.hover.kart-hover.1440.png",
+    "evidence/glidefeet/default/home/product-showcase-grid-featured.initial.grid.1440.png",
+    "evidence/glidefeet/default/home/product-showcase-grid-featured.initial.grid.375.png",
+    "evidence/glidefeet/default/home/product-showcase-grid-featured.initial.grid.768.png"
   ],
   "storefrontPassword": "1",
-  "notlar": "SHOP FOOTWEAR + lorem. Kartlar: MEN'S AIR HUARACHE CASUAL SHOES (Sale), Pair of gray female suede sneakers, Women's Steve Madden Perrin Sneaker, Blue sport shoes for men. 4 kart / 8 img.",
-  "delta": "Dawn featured-collection. Quick view karede yok. Shopify.theme.name Glidefeet-v-1-5-0 · schema_name Glidefeet · schema_version 1.5.0 · theme_store_id null · role main · id 170474012955 · shop glidefeet.myshopify.com. Vendor Speedo Themes (third-party, Theme Store official değil). Storefront password 1 (vendor product page).",
+  "notlar": "SHOP FOOTWEAR + lorem. Kartlar: MEN'S AIR HUARACHE CASUAL SHOES (Sale), Pair of gray female suede sneakers, Women's Steve Madden Perrin Sneaker (Sold out), Blue sport shoes for men.",
+  "delta": "Dawn featured-collection. Quick view yok. İkinci görsel kartta var. Shopify.theme.name Glidefeet-v-1-5-0 · schema_name Glidefeet · schema_version 1.5.0 · theme_store_id null · role main · id 170474012955 · shop glidefeet.myshopify.com. Vendor Speedo Themes (third-party, Theme Store official değil). Storefront password 1 (vendor product page).",
+  "interactionStates": [
+    "initial",
+    "hover"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://glidefeet.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--23179412242715__featured_collection",
+      "capture": true,
+      "etiket": "grid",
+      "not": "SHOP FOOTWEAR 4 kart"
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#shopify-section-template--23179412242715__featured_collection .card__media, #shopify-section-template--23179412242715__featured_collection .card .media",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "kart-hover",
+      "not": "İkinci görsel / quick-add"
+    }
+  ],
+  "stateFindings": {
+    "initial": "SHOP FOOTWEAR 4 kart. Sale Huarache $99.99 · gray suede $59.99 · Sold out Perrin $79.99 · blue sport $89. Wishlist/quick-add kapalı.",
+    "hover": "1440 ilk kart: başlık altı çizili + görsel sağ-alt kalp (wishlist). İkinci görsel swap / Quick View yok."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "375/768 parmakta hover yok — 1440 denendi"
+    }
+  ],
+  "interactionNote": "Hover 1440 kalp + underline. İkinci img DOM'da var, karede swap görünmedi. Quick view yok.",
   "capture": {
     "url": "https://glidefeet.myshopify.com/",
     "viewports": [
@@ -23,7 +75,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T15:21:16.815Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:41:32.019Z"
   }
 }
