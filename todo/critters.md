@@ -13,7 +13,7 @@
 Walk host `toyon-toys-2.myshopify.com` · `Shopify.shop` = **toyon-toys-2.myshopify.com** · locale `en` · country `US` · currency `USD`  
 Storefront unlock: vendor publishes password `1` on the product page (public demo, not an account).
 
-**Durum:** Mod A walk + resmi 3vp + interact (devam)  
+**Durum:** Mod A walk + resmi 3vp + interact (pixel-check) · 0 yeni şema  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -25,11 +25,11 @@ Storefront unlock: vendor publishes password `1` on the product page (public dem
 | Evidence kökü | `evidence/critters/default/` |
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
-| Observation | **39** |
+| Observation | **39** · evidence **150** PNG (statik 3vp + interact) |
 | Parallel | yalnız `observations/critters/`, `evidence/critters/`, `todo/critters.md`, `candidates/critters-leftovers.md` + viewer kaynak/endüstri map |
 
 **Kapsam satırı:**  
-`Critters · default · Critters kids toys V-1.5.0 / schema_name Critters kids toys 1.5.0 · theme_store_id null · Speedo third-party · shop toyon-toys-2.myshopify.com · home→PDP teddy→PLP kids-toys→/collections→search teddy→cart empty/filled→about-us→contact→faq→news+post→404 · 39 obs · 0 yeni şema · leftover: candidates/critters-leftovers.md`
+`Critters · default · Critters kids toys V-1.5.0 / schema_name Critters kids toys 1.5.0 · theme_store_id null · Speedo third-party · shop toyon-toys-2.myshopify.com · home→PDP teddy→PLP kids-toys→/collections→search teddy→cart empty/filled→about-us→contact→faq→news+post→404 · 39 obs · 0 yeni şema · interact mega/search1440/cart/PDP · leftover: candidates/critters-leftovers.md`
 
 ---
 
@@ -38,15 +38,15 @@ Storefront unlock: vendor publishes password `1` on the product page (public dem
 | Şablon | Durum | 3vp |
 |---|---|---|
 | Home roster (announcement→footer) | [x] obs | [x] capture |
-| Shop / category mega 1440 | [ ] interact | [ ] |
-| Predictive search `teddy` | [ ] interact | [ ] |
-| Mobile menu 375 + 768 | [ ] interact | [ ] |
-| Cart drawer empty + filled + qty | [ ] interact | [ ] |
-| PDP Teddy Size/Color change | [ ] interact | [ ] |
+| Shop / category mega 1440 | [x] interact | [x] mega; category panel missingStates |
+| Predictive search `teddy` | [x] interact | [x] 1440; 375/768 fill missingStates |
+| Mobile menu 375 + 768 | [x] interact | [ ] open PNG kapalı — missingStates |
+| Cart drawer empty + filled + qty | [x] interact | [x] filled+qty; empty PNG homepage |
+| PDP Teddy Size/Color change | [x] interact | [x] Size S→M |
 | PLP `/collections/kids-toys` | [x] obs | [x] capture |
 | Collections `/collections` | [x] obs | [x] capture |
 | Search `/search?q=teddy` | [x] obs | [x] capture |
-| Cart page empty + filled + qty | [ ] interact | [ ] |
+| Cart page empty + filled + qty | [x] interact | [x] |
 | About `/pages/about-us` | [x] obs | [x] capture |
 | Contact form (submit yok) | [x] obs | [x] capture |
 | FAQ `/pages/faq` | [x] obs | [x] capture |
@@ -85,13 +85,13 @@ Storefront unlock: vendor publishes password `1` on the product page (public dem
 
 | # | id | sayfa | Screenshot | Not | JSON | Done |
 |---|---|---|---|---|---|---|
-| 1–16 | home static + overlays | home | [x] | [x] | reuse | [ ] |
-| 17 | product-info-main | product-detail | [x] | [x] | reuse | [ ] |
+| 1–16 | home static + overlays | home | [x] | [x] | reuse | [x] |
+| 17 | product-info-main | product-detail | [x] | [x] | reuse | [x] |
 | 18–21 | tabs / latest / offer / related | product-detail | [x] | [x] | reuse | [ ] |
 | 22–23 | banner + PLP | collection | [x] | [x] | reuse | [ ] |
 | 24 | collection-nav-grid | collections | [x] | [x] | reuse | [ ] |
 | 25 | search-results | search | [x] | [x] | reuse | [ ] |
-| 26 | cart-page-main | cart | [x] | [x] | reuse | [ ] |
+| 26 | cart-page-main | cart | [x] | [x] | reuse | [x] |
 | 27–31 | title / IWT / team / rich / work | about-brand | [x] | [x] | reuse | [ ] |
 | 32–34 | title + office + form | contact | [x] | [x] | reuse | [ ] |
 | 35–36 | title + faq | faq-support | [x] | [x] | reuse | [ ] |
@@ -104,12 +104,12 @@ Storefront unlock: vendor publishes password `1` on the product page (public dem
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | open | [ ] |
-| global-predictive-search | input | [ ] |
-| global-menu-drawer | open | [ ] |
-| global-cart-drawer | filled + changed | [ ] |
-| cart-page-main | filled + changed | [ ] |
-| product-info-main | changed | [ ] |
+| navigation-header-mega | open | [x] Shop mega kartlar; category panel missingStates |
+| global-predictive-search | input | [x] 1440 teddy PRODUCTS; mobil fill missingStates |
+| global-menu-drawer | open | [ ] PNG kapalı — missingStates (probe metin) |
+| global-cart-drawer | filled + changed | [x] teddy $120→$240; empty PNG homepage |
+| cart-page-main | filled + changed | [x] empty + teddy 1 + adet 2 |
+| product-info-main | changed | [x] Size S → M |
 
 ---
 

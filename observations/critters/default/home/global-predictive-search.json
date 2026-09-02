@@ -8,7 +8,11 @@
   "selector": "predictive-search.header-search_box",
   "evidenceSlug": "global-predictive-search",
   "evidence": [
-    "evidence/critters/default/home/global-predictive-search.1440.png"
+    "evidence/critters/default/home/global-predictive-search.1440.png",
+    "evidence/critters/default/home/global-predictive-search.initial.kapali.1440.png",
+    "evidence/critters/default/home/global-predictive-search.initial.kapali.375.png",
+    "evidence/critters/default/home/global-predictive-search.initial.kapali.768.png",
+    "evidence/critters/default/home/global-predictive-search.input.arama-teddy.1440.png"
   ],
   "notlar": "1440: header-search_box 360×43 görünür. Mobil: details-modal.header__search + #Search-In-Modal (0px kapalı).",
   "delta": "İki host: desktop inline + mobil modal. Account/arama submit yok. katalogSorgu teddy. Shopify.theme.name Critters kids toys V-1.5.0 · schema_name Critters kids toys · schema_version 1.5.0 · theme_store_id null · role main · id 163267346616 · walk toyon-toys-2.myshopify.com · Shopify.shop toyon-toys-2.myshopify.com · locale en · country US · currency USD · Speedo third-party catalog (not Theme Store). Storefront unlock password 1.",
@@ -21,8 +25,8 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T16:55:26.123Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T17:36:40.136Z"
   },
   "interactionStates": [
     "initial",
@@ -47,19 +51,31 @@
       "value": "Escape",
       "capture": true,
       "captureMode": "viewport",
+      "captureSelector": "body",
       "etiket": "kapali",
       "not": "1440 inline search; 375/768 modal kapalı"
     },
     {
       "state": "input",
       "action": "click",
-      "selector": "summary.header__icon--search",
+      "selector": "details-modal.header__search summary",
       "viewports": [
         "375",
         "768"
       ],
       "capture": false,
       "not": "Mobil search modal opener"
+    },
+    {
+      "state": "input",
+      "action": "forceOpen",
+      "selector": "details-modal.header__search",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false,
+      "not": "details-modal open — #Search-In-Modal Playwright-hidden kalmasın"
     },
     {
       "state": "input",
@@ -81,6 +97,7 @@
       ],
       "capture": true,
       "captureMode": "viewport",
+      "captureSelector": "body",
       "etiket": "arama-teddy",
       "not": "katalogSorgu teddy (Teddy Bear)"
     },
@@ -95,11 +112,20 @@
       ],
       "capture": true,
       "captureMode": "viewport",
+      "captureSelector": "body",
       "etiket": "arama-teddy",
       "not": "Mobil modal #Search-In-Modal"
     }
   ],
-  "stateFindings": {},
-  "missingStates": [],
-  "interactionNote": "katalogSorgu teddy — scan kids zayıf; ürün adından."
+  "stateFindings": {
+    "initial": "1440 inline Search kutusu kapalı öneri yok. 375/768 ikon; modal kapalı (viewport homepage).",
+    "input": "1440 teddy: PRODUCTS Soft & cute teddy bear · Play Nation Teddy Bear Soft Toy… · Knitted Cat Dear Doll Toy + Search for “teddy”."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "375/768 #Search-In-Modal iki denemede Playwright hidden (details-modal opener + forceOpen). Mobil öneri karesi yok."
+    }
+  ],
+  "interactionNote": "katalogSorgu teddy — scan kids zayıf; ürün adından. Mobil fill ikinci denemede de olmadı."
 }

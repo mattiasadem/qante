@@ -34,6 +34,14 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: critters-atc-you-may-also-like  
+Gerekçe: PDP Add to cart 1440’te YOUR CART drawer yanında “YOU MAY ALSO LIKE” modal (5 ürün + Add to cart). 375 drawer içinde “YOU MAY LIKE” akordeon. Yeni schema değil — ATC overlay.  
+Örnekler: teddy ATC  
+Öneri: leftover — overlay  
+Karar: onay bekliyor
+
+---
+
 ADAY: critters-social-proof-popup  
 Gerekçe: `#shopify-section-newsletter-popup` h=0. “Someone liked and Buy” + ürün + “10 Minutes Ago From Paris” + Verified. Newsletter değil; sahte social-proof toast.  
 Örnekler: home / her şablon  

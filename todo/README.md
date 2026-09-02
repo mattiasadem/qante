@@ -61,7 +61,7 @@
 | Vedzila (Speedo) | [`vedzila.md`](./vedzila.md) | 🟡 first inventory + interact — vedzila-organic.myshopify.com · password `1` · 45 obs · 0 yeni şema · search input missing |
 | Wearix (Speedo / Pandora) | [`wearix.md`](./wearix.md) | 🟡 default — 35 obs · 143 PNG · 0 yeni şema · cart/PDP/FAQ interact; mega/search/menu overlay missingStates |
 | Legal / policy (Kreis recipe) | [`policy-legal.md`](./policy-legal.md) | ✅ page-recipes/policy · 3-col sticky TOC \| content \| sibling nav |
-| Critters (Speedo) | [`critters.md`](./critters.md) | 🟡 first inventory — toyon-toys-2 · 39 obs · 0 yeni şema · draft |
+| Critters (Speedo) | [`critters.md`](./critters.md) | 🟡 first inventory + interact — toyon-toys-2 · 39 obs · 0 yeni şema · draft |
 
 **Interact (discover sonrası derinlik):** [`interact.md`](./interact.md) — kapalı kare yalanı; Stretch + Cocoon/Balance shop-the-look kapandı.
 
