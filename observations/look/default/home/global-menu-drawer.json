@@ -21,9 +21,9 @@
       "768",
       "1440"
     ],
-    "mode": "viewport",
+    "mode": "section",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-02T17:43:45.059Z",
+    "updatedAt": "2026-09-02T18:07:44.481Z",
     "prepareClick": "#Details-menu-drawer-container > summary"
   },
   "captureMode": "section",
@@ -81,6 +81,11 @@
     }
   ],
   "stateFindings": {},
-  "missingStates": [],
-  "interactionNote": "1440 hamburger w=0 (data-breakpoint=tablet). İlk 375 #menu-drawer zero-size; 768 karesi kapalı homepage. Tık details[open] false bırakır. Retry: forceOpen container + #menu-drawer, section clip. SHOP <a href=/collections> tıklanmadı — nested expander yok. Log in tıklanmadı."
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "İki resmi deneme: (1) click hamburger → 375 zero-size, 768 kapalı homepage. (2) forceOpen #Details-menu-drawer-container + #menu-drawer section: 375 screenshot timeout (not visible), 768 188B sliver. Dawn overlay capture-interaction'da durmadı. 1440 hamburger 0px — mega kullanıldı."
+    }
+  ],
+  "interactionNote": "1440 hamburger w=0 (data-breakpoint=tablet). SHOP düz <a href=/collections> — tıklanmadı, nested expander yok. Log in tıklanmadı. Üçüncü deneme yok."
 }

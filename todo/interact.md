@@ -190,6 +190,18 @@ Temsilci tarandı. Şema uydurulmadı. Form / kupon / ülke seçimi gönderilmed
 - [ ] mega / arama / sepet — Impulse chrome, bu turda yok
 - [ ] Satchel / Memo CRO interact — sibling leftover
 
+## Look (Speedo) · default
+
+- [x] `navigation-header-mega` — 1440 SHOP forceOpen: 6 kart (POLARIZED…SUNGLASSES); hover opacity 0
+- [x] `global-predictive-search` — `goggle` + PRODUCTS başlığı (satırlar clip)
+- [x] `global-cart-drawer` — boş / HIPE $90 / qty 2 $180; Free $100 · Express $150; YOU MAY LIKE sibling leftover
+- [x] `cart-page-main` — empty / $90 / $180
+- [x] `product-info-main` — Color Clear → Charcoal
+- [x] `product-info-tabs` — DESCRIPTION → ADDITIONAL INFORMATION
+- [x] `faq-collapsible-tabs` — Q1 açık kalır + Q2 (allowMultipleOpen)
+- [x] `product-showcase-grid-plp` — Color Black 16→6
+- [x] `global-menu-drawer` — open missingStates (click + forceOpen section; 1440 hamburger 0px)
+
 ## Luxora (Speedo) · default
 
 - [x] `navigation-header-mega` — 1440 SHOP forceOpen: 5 koleksiyon kartı (hover durmadı)

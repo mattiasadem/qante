@@ -28,7 +28,7 @@ Walk host + `Shopify.shop` = `goggles-online-store.myshopify.com` · locale `en`
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` + `scripts/unlock-storefront.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **41** |
-| PNG | (capture) |
+| PNG | **172** |
 | Parallel | yalnız `observations/look/`, `evidence/look/`, `todo/look.md`, `candidates/look-leftovers.md`, unlock host satırı |
 
 **Kapsam satırı:**  
@@ -41,10 +41,10 @@ Walk host + `Shopify.shop` = `goggles-online-store.myshopify.com` · locale `en`
 | Şablon | Durum | 3vp |
 |---|---|---|
 | Home roster (announcement→footer) | [x] obs | [x] capture |
-| Shop mega hover 1440 | [ ] interact retry section | forceOpen; viewport kapanıyordu |
-| Predictive search `goggle` | [ ] interact retry | forceOpen + fill |
-| Mobile menu 375 + 768 | [ ] interact retry | forceOpen section |
-| Cart drawer empty + filled + qty | [x] filled/changed · [ ] empty retry | HIPE $90→$180 |
+| Shop mega hover 1440 | [x] interact | 6 kart POLARIZED…SUNGLASSES |
+| Predictive search `goggle` | [x] interact | boş çubuk + goggle/PRODUCTS |
+| Mobile menu 375 + 768 | [x] missingStates | 2 fail — overlay durmadı |
+| Cart drawer empty + filled + qty | [x] interact | boş + HIPE $90→$180 |
 | PDP HIPE Color Charcoal | [x] interact | Antique sold out |
 | PLP `/collections/sunglasses` | [x] obs | [x] capture |
 | Collections `/collections` | [x] obs | [x] capture |
@@ -86,16 +86,16 @@ Walk host + `Shopify.shop` = `goggles-online-store.myshopify.com` · locale `en`
 
 | # | id | sayfa | Screenshot | Not | JSON | Done |
 |---|---|---|---|---|---|---|
-| 1–16 | home static + overlays | home | [ ] | [x] | reuse | [ ] |
-| 17–21 | PDP main/tabs/icons/multirow/banner | product-detail | [ ] | [x] | reuse | [ ] |
-| 22–23 | banner + PLP grid | collection | [ ] | [x] | reuse | [ ] |
-| 24 | collection-nav-grid | collections | [ ] | [x] | reuse | [ ] |
-| 25 | search-results | search | [ ] | [x] | reuse | [ ] |
-| 26 | cart-page-main | cart | [ ] | [x] | reuse | [ ] |
-| 27–34 | about breadcrumbs/rich/banner/stats/why/quote/multirow/logos | about-brand | [ ] | [x] | reuse | [ ] |
-| 35–37 | contact crumbs/form/icons | contact | [ ] | [x] | reuse | [ ] |
-| 38–39 | FAQ crumbs + accordion | faq-support | [ ] | [x] | reuse | [ ] |
-| 40–41 | news + article + 404 | blog-* / not-found | [ ] | [x] | reuse | [ ] |
+| 1–16 | home static + overlays | home | [x] | [x] | reuse | [x] |
+| 17–21 | PDP main/tabs/icons/multirow/banner | product-detail | [x] | [x] | reuse | [x] |
+| 22–23 | banner + PLP grid | collection | [x] | [x] | reuse | [x] |
+| 24 | collection-nav-grid | collections | [x] | [x] | reuse | [x] |
+| 25 | search-results | search | [x] | [x] | reuse | [x] |
+| 26 | cart-page-main | cart | [x] | [x] | reuse | [x] |
+| 27–34 | about breadcrumbs/rich/banner/stats/why/quote/multirow/logos | about-brand | [x] | [x] | reuse | [x] |
+| 35–37 | contact crumbs/form/icons | contact | [x] | [x] | reuse | [x] |
+| 38–39 | FAQ crumbs + accordion | faq-support | [x] | [x] | reuse | [x] |
+| 40–41 | news + article + 404 | blog-* / not-found | [x] | [x] | reuse | [x] |
 
 ---
 
@@ -103,14 +103,14 @@ Walk host + `Shopify.shop` = `goggles-online-store.myshopify.com` · locale `en`
 
 | Bileşen | State | Not |
 |---|---|---|
-| navigation-header-mega | open 1440 | `#Details-HeaderMenu-1` SHOP mega |
-| global-predictive-search | input `goggle` | `#Search-In-Modal` |
-| global-menu-drawer | open 375/768 | hamburger; 1440 gizli |
-| global-cart-drawer | initial / filled / changed | HIPE $90 → qty2 |
-| cart-page-main | initial / filled / changed | boş + HIPE |
-| product-info-main | changed Color | Antique (veya görünen swatch) |
-| faq-collapsible-tabs | changed | ikinci soru |
-| product-showcase-grid-plp | changed Color | facet — yoklanır |
+| navigation-header-mega | open 1440 | 6 kart — alındı |
+| global-predictive-search | input `goggle` | PRODUCTS başlığı — alındı |
+| global-menu-drawer | open 375/768 | missingStates (2 fail) |
+| global-cart-drawer | initial / filled / changed | boş + HIPE $90→$180 |
+| cart-page-main | initial / filled / changed | boş + HIPE $90→$180 |
+| product-info-main | changed Color | Charcoal (Antique sold out) |
+| faq-collapsible-tabs | changed | Q1+Q2 birlikte açık |
+| product-showcase-grid-plp | changed Color | 16→6 Black |
 
 Stop: email / account / checkout / newsletter submit / contact SUBMIT / PII
 
@@ -124,9 +124,8 @@ Stop: email / account / checkout / newsletter submit / contact SUBMIT / PII
 
 ## Evidence backlog
 
-- [x] Official 3vp static (`capture-observation.mjs`) — 121 PNG; menu 375/1440 zero-size (interact)
-- [x] Cart page / PDP Color Charcoal / FAQ Q2 / tabs ADDITIONAL — PNG + stateFindings
-- [ ] Interact retry: mega section · search forceOpen · hamburger · cart empty
-- [ ] PLP Color Black 1440
-- [ ] `node scripts/validate-schemas.mjs`
+- [x] Official 3vp static (`capture-observation.mjs`) — 121 PNG
+- [x] Interact: mega 6 kart · search goggle · cart empty/filled/qty · PDP Charcoal · FAQ Q2 · tabs · PLP Black
+- [x] `global-menu-drawer` open missingStates (2 fail)
+- [x] `node scripts/validate-schemas.mjs`
 - [x] Email / account / checkout / newsletter submit — **yapılmayacak**
