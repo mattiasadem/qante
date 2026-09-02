@@ -9,7 +9,11 @@
   "evidenceSlug": "global-menu-drawer",
   "evidence": [
     "evidence/luxe/default/home/global-menu-drawer.375.png",
-    "evidence/luxe/default/home/global-menu-drawer.768.png"
+    "evidence/luxe/default/home/global-menu-drawer.768.png",
+    "evidence/luxe/default/home/global-menu-drawer.changed.shop-drill.375.png",
+    "evidence/luxe/default/home/global-menu-drawer.changed.shop-drill.768.png",
+    "evidence/luxe/default/home/global-menu-drawer.open.hamburger-acik.375.png",
+    "evidence/luxe/default/home/global-menu-drawer.open.hamburger-acik.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "375/768 hamburger summary.header__icon--menu → #menu-drawer. Shop #HeaderDrawer-shop: All Products / Best Seller / New Arrival / Makeup / Skin Care.",
@@ -24,8 +28,55 @@
     ],
     "url": "https://women-beauty-3.myshopify.com/",
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T20:57:21.770Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T21:19:41.389Z",
     "prepareClick": "summary.header__icon--menu"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://women-beauty-3.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "summary.header__icon--menu",
+      "value": 1200,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger-acik",
+      "not": "Hamburger drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#HeaderDrawer-shop",
+      "value": 1200,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-drill",
+      "not": "Shop summary — All Products/Best Seller/New Arrival/Makeup/Skin Care. Yazılı <a> değil."
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 hamburger: Home (aktif) · Shop (sağ ok) · Our Story · Contact Us · Faq’s · Blog · Log in · United States | USD $ · English · sosyal. 1440 drawer yok.",
+    "changed": "375 ve 768 Shop drill: ← Shop + All Products · Best Seller · New Arrival · Makeup · Skin Care. URL / kaldı."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 hamburger yok. #HeaderDrawer-shop summary, yazılı link değil."
 }

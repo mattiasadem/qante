@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--23224517493016__29680075-200c-4000-9de0-3df91944cabe",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/luxe/default/faq-support/faq-collapsible-tabs.1440.png",
     "evidence/luxe/default/faq-support/faq-collapsible-tabs.375.png",
     "evidence/luxe/default/faq-support/faq-collapsible-tabs.768.png",
-    "evidence/luxe/default/faq-support/faq-collapsible-tabs.1440.png"
+    "evidence/luxe/default/faq-support/faq-collapsible-tabs.changed.ilk-soru.1440.png",
+    "evidence/luxe/default/faq-support/faq-collapsible-tabs.changed.ilk-soru.375.png",
+    "evidence/luxe/default/faq-support/faq-collapsible-tabs.changed.ilk-soru.768.png",
+    "evidence/luxe/default/faq-support/faq-collapsible-tabs.initial.kapali.1440.png",
+    "evidence/luxe/default/faq-support/faq-collapsible-tabs.initial.kapali.375.png",
+    "evidence/luxe/default/faq-support/faq-collapsible-tabs.initial.kapali.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Frequently asked question · jewelry leftover 5 soru (home ile aynı).",
@@ -23,7 +29,42 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T20:46:47.132Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T21:22:32.178Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://women-beauty-3.myshopify.com/pages/faqs",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 500,
+      "capture": true,
+      "etiket": "kapali",
+      "not": "Tüm sorular +"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-template--17671517896986__29680075-200c-4000-9de0-3df91944cabe-1674465643b6c1cdf8-0-template--23224517493016__29680075-200c-4000-9de0-3df91944cabe > summary",
+      "value": 800,
+      "capture": true,
+      "etiket": "ilk-soru",
+      "not": "İlk soru accordion açık — jewelry leftover cevap"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Beş soru, hepsi + kapalı. Jewelry leftover başlıklar.",
+    "changed": "İlk soru açık (—): All jewelry metal components… nickel free… Sammers Clay. Diğerleri +."
+  },
+  "missingStates": [],
+  "interactionNote": "State changed (accordion), open değil. hover değil click."
 }

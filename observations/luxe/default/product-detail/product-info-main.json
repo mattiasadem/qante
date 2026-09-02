@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--23224517624088__main",
   "evidenceSlug": "product-info-main",
   "evidence": [
+    "evidence/luxe/default/product-detail/product-info-main.1440.png",
     "evidence/luxe/default/product-detail/product-info-main.375.png",
     "evidence/luxe/default/product-detail/product-info-main.768.png",
-    "evidence/luxe/default/product-detail/product-info-main.1440.png"
+    "evidence/luxe/default/product-detail/product-info-main.changed.size-100.1440.png",
+    "evidence/luxe/default/product-detail/product-info-main.changed.size-100.375.png",
+    "evidence/luxe/default/product-detail/product-info-main.changed.size-100.768.png",
+    "evidence/luxe/default/product-detail/product-info-main.initial.size-50.1440.png",
+    "evidence/luxe/default/product-detail/product-info-main.initial.size-50.375.png",
+    "evidence/luxe/default/product-detail/product-info-main.initial.size-50.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Natural oils for optimal moisturizes body · $140→$130 Sale · 500 in stock · Size 50/100/200 ml · qty stepper · ADD TO CART · BUY IT NOW · Materials/Care accordion · Free shipping / Secure Payment / Customer Support / 90 Days Return.",
@@ -23,7 +29,42 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T21:10:54.072Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T21:21:35.139Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://women-beauty-3.myshopify.com/products/natural-oils-for-optimal-moisturizes-body",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "etiket": "size-50",
+      "not": "Size 50 ml seçili $130"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='template--23224517624088__main-1-1']",
+      "value": 1500,
+      "capture": true,
+      "etiket": "size-100",
+      "not": "100 ml hap — URL ?variant= değişir, PDP kalır"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Natural oils $140→$130 Sale · 500 in stock · Size 50 ml seçili · ADD TO CART + BUY IT NOW · Materials/Care +.",
+    "changed": "100 ml tık: fiyat $250.00, stok 200. Sale rozeti yok. Galeri aynı şişe. URL variant değişti, PDP kaldı."
+  },
+  "missingStates": [],
+  "interactionNote": "BUY IT NOW tıklanmadı. Lip Gloss Red sold out — Size Natural oils kullanıldı."
 }

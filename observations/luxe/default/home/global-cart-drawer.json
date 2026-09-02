@@ -8,9 +8,15 @@
   "selector": "#CartDrawer",
   "evidenceSlug": "global-cart-drawer",
   "evidence": [
+    "evidence/luxe/default/home/global-cart-drawer.1440.png",
     "evidence/luxe/default/home/global-cart-drawer.375.png",
     "evidence/luxe/default/home/global-cart-drawer.768.png",
-    "evidence/luxe/default/home/global-cart-drawer.1440.png"
+    "evidence/luxe/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/luxe/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/luxe/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/luxe/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/luxe/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/luxe/default/home/global-cart-drawer.filled.sepete-eklendi.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Dawn #CartDrawer.cart-drawer. Opener #cart-icon-bubble href=/cart. Kapalı kare boş drawer.",
@@ -25,8 +31,53 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T20:55:54.318Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T21:25:27.746Z",
     "prepareClick": "#cart-icon-bubble"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://women-beauty-3.myshopify.com/products/natural-oils-for-optimal-moisturizes-body",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit",
+      "capture": false,
+      "not": "Natural oils ADD TO CART"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC sonrası drawer. Kapalıysa #cart-icon-bubble."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 2"
+    }
+  ],
+  "stateFindings": {
+    "filled": "375/768/1440: Your cart · Natural oils Size 50 ml · adet 1 · $130.00 · Free shipping yeşil · Express $150 · Estimated total $130.00 USD · CHECK OUT · View cart. Best seller akordeon kapalı.",
+    "changed": "375/768/1440: adet 2 · Estimated total $260.00 USD. Satır birim $130.00."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC button.product-form__submit UI (fallback yok). CHECK OUT tıklanmadı."
 }

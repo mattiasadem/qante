@@ -5,18 +5,21 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://women-beauty-3.myshopify.com/",
-  "selector": "quick-add-modal",
+  "selector": "#QuickAdd-8306237767960",
   "evidenceSlug": "global-quick-view",
   "evidence": [
+    "evidence/luxe/default/home/global-quick-view.1440.png",
     "evidence/luxe/default/home/global-quick-view.375.png",
     "evidence/luxe/default/home/global-quick-view.768.png",
-    "evidence/luxe/default/home/global-quick-view.1440.png"
+    "evidence/luxe/default/home/global-quick-view.open.quick-add-acik.1440.png",
+    "evidence/luxe/default/home/global-quick-view.open.quick-add-acik.375.png",
+    "evidence/luxe/default/home/global-quick-view.open.quick-add-acik.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "New Collection Choose options → Dawn quick-add-modal (#QuickAdd-*).",
   "delta": "Tam galeri QV değil; form modal. Kapalı kutu 0 olabilir. Shopify.theme.name women-beauty-3-v-1-5-0 · schema_name women_beauty_3 · schema_version 1.5.0 · theme_store_id null · role main · id 170888986904 · shop women-beauty-3.myshopify.com · vendor Speedo Themes · slug luxe · preset default. Public storefront password 1 (vendor product page). NOT luxe-luxuries / watchez-online-store.",
   "captureMode": "viewport",
-  "prepareClick": "button.quick-add__submit",
+  "prepareClick": "#quick-add-template--23224517361944__featured_collection8306237767960-submit",
   "capture": {
     "url": "https://women-beauty-3.myshopify.com/",
     "viewports": [
@@ -25,8 +28,35 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T20:59:27.394Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T21:24:15.724Z",
     "prepareClick": "button.quick-add__submit"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://women-beauty-3.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#quick-add-template--23224517361944__featured_collection8306237767960-submit",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "quick-add-acik",
+      "not": "Natural oils Choose options → #QuickAdd-8306237767960"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768/1440: Natural oils modal · $140→$130 · 500 in stock · Size 50/100/200 ml · ADD TO CART · BUY IT NOW · 4 trust kutu. Unique #QuickAdd-8306237767960."
+  },
+  "missingStates": [],
+  "interactionNote": "2 quick-add-modal vardı; unique id Natural oils. BUY IT NOW tıklanmadı."
 }

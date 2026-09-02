@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--23224516968728__cart-items",
   "evidenceSlug": "cart-page-main",
   "evidence": [
+    "evidence/luxe/default/cart/cart-page-main.1440.png",
     "evidence/luxe/default/cart/cart-page-main.375.png",
     "evidence/luxe/default/cart/cart-page-main.768.png",
-    "evidence/luxe/default/cart/cart-page-main.1440.png"
+    "evidence/luxe/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/luxe/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/luxe/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/luxe/default/cart/cart-page-main.filled.sepet-dolu.1440.png",
+    "evidence/luxe/default/cart/cart-page-main.filled.sepet-dolu.375.png",
+    "evidence/luxe/default/cart/cart-page-main.filled.sepet-dolu.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Boş: Your cart is empty · CONTINUE SHOPPING · Have an account? Log in…",
@@ -23,7 +29,50 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T20:36:38.569Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T21:27:05.727Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://women-beauty-3.myshopify.com/products/natural-oils-for-optimal-moisturizes-body",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit",
+      "capture": false,
+      "not": "Natural oils sepete"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://women-beauty-3.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepet-dolu",
+      "not": "Natural oils satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus']",
+      "value": 1200,
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet 2"
+    }
+  ],
+  "stateFindings": {
+    "filled": "Your cart · Natural oils Size 50 ml · adet 1 · $130.00 · PRODUCT / QUANTITY / TOTAL · Continue shopping.",
+    "changed": "Adet 2 · satır toplam $260.00."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı."
 }

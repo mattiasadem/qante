@@ -10,14 +10,15 @@
 `Shopify.theme.name` = **women-beauty-3-v-1-5-0**  
 `schema_name` = **women_beauty_3** · `schema_version` = **1.5.0** · `role` = **main** · theme id `170888986904`  
 `theme_store_id` = **null**  
-shop `women-beauty-3.myshopify.com` · locale `en` · currency `USD`
+shop `women-beauty-3.myshopify.com` · locale `en` · currency `USD`  
+Logo: **LUXE BY BOUTIQUE**
 
 **Password:** Speedo ürün sayfası “Please enter password `1` to view demo.” Aynı host `/password` — public storefront-unlock. Başka host yok.
 
 **Bu Luxe Luxuries değil.** `luxe-luxuries` / `watchez-online-store` ayrı envanter. Yalnız `women-beauty-3.myshopify.com`.
 
-**Durum:** Mod A walk + resmi 3vp + interact  
-**PR:** draft · **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact + validate **bitti** (0 error)  
+**PR:** draft #376 · **main'e merge yok**
 
 ---
 
@@ -29,10 +30,11 @@ shop `women-beauty-3.myshopify.com` · locale `en` · currency `USD`
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` + `unlock-storefront.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **42** |
+| Evidence | **166** PNG (125 statik 3vp + interact) |
 | Parallel | yalnız `observations/luxe/`, `evidence/luxe/`, `todo/luxe.md`, `candidates/luxe-leftovers.md` + Speedo password helper |
 
 **Kapsam satırı:**  
-`LUXE / Josiane · default · women-beauty-3-v-1-5-0 / schema_name women_beauty_3 1.5.0 · theme_store_id null · shop women-beauty-3.myshopify.com · password 1 · home→PDP Natural oils Size 50→100ml→PLP best-seller→/collections→search cream→cart empty/filled→drawer→our-story→faqs accordion→contact (submit yok)→news+skincare post→404 · 42 obs · 0 yeni şema · leftover: candidates/luxe-leftovers.md`
+`LUXE / Josiane · default · women-beauty-3-v-1-5-0 / schema_name women_beauty_3 1.5.0 · theme_store_id null · shop women-beauty-3.myshopify.com · password 1 · home→PDP Natural oils Size 50→100ml ($130→$250)→PLP best-seller→/collections→search cream→cart empty/filled/qty→drawer→our-story→faqs accordion→contact (submit yok)→news+skincare post→404 · 42 obs · 166 PNG · 0 yeni şema · leftover: candidates/luxe-leftovers.md`
 
 ---
 
@@ -40,21 +42,21 @@ shop `women-beauty-3.myshopify.com` · locale `en` · currency `USD`
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer + overlays) | [x] obs | [ ] capture |
-| Shop disclosure 1440 | [x] obs | [ ] interact |
-| Predictive search | [x] obs | [ ] interact |
-| Mobile menu 375+768 | [x] obs | [ ] interact |
-| Cart drawer empty + filled | [x] obs | [ ] interact |
-| PDP Natural oils Size | [x] obs | [ ] interact |
-| PLP `/collections/best-seller` | [x] obs | [ ] capture |
-| Collections `/collections` | [x] obs | [ ] capture |
-| Search `/search?q=cream` | [x] obs | [ ] capture |
-| Cart `/cart` empty + filled | [x] obs | [ ] interact |
-| About `/pages/our-story` | [x] obs | [ ] capture |
-| FAQ `/pages/faqs` | [x] obs | [ ] interact |
-| Contact form (submit yok) | [x] obs | [ ] capture |
-| News + Seasonal skincare post | [x] obs | [ ] capture |
-| 404 | [x] obs | [ ] capture |
+| Home roster (announcement→footer + overlays) | [x] obs | [x] capture |
+| Shop disclosure 1440 | [x] obs | [x] interact |
+| Predictive search `natural` | [x] obs | [x] interact |
+| Mobile menu 375+768 + Shop drill | [x] obs | [x] interact |
+| Cart drawer empty + filled + qty | [x] obs | [x] interact |
+| PDP Natural oils Size 50→100 | [x] obs | [x] interact |
+| PLP `/collections/best-seller` | [x] obs | [x] capture + hover |
+| Collections `/collections` | [x] obs | [x] capture |
+| Search `/search?q=cream` | [x] obs | [x] capture |
+| Cart `/cart` empty + filled + qty | [x] obs | [x] interact |
+| About `/pages/our-story` | [x] obs | [x] capture |
+| FAQ `/pages/faqs` accordion | [x] obs | [x] interact |
+| Contact form (submit yok) | [x] obs | [x] capture |
+| News + Seasonal skincare post | [x] obs | [x] capture |
+| 404 | [x] obs | [x] capture |
 | Email / account / checkout / newsletter submit | ⛔ PII | — |
 
 ---
@@ -82,23 +84,13 @@ shop `women-beauty-3.myshopify.com` · locale `en` · currency `USD`
 | 17 | CartDrawer | `global-cart-drawer` | reuse |
 | 18 | menu-drawer | `global-menu-drawer` | reuse · 375/768 |
 | 19 | details-modal.header__search | `global-predictive-search` | reuse |
-| 20 | quick-add-modal | `global-quick-view` | reuse |
+| 20 | #QuickAdd-8306237767960 | `global-quick-view` | reuse |
 
 ---
 
 ## Interact
 
-| Bileşen | State | Durum |
-|---|---|---|
-| navigation-header-mega | open Shop 1440 | [ ] |
-| global-menu-drawer | open 375/768 + Shop drill | [ ] |
-| global-predictive-search | input katalog | [ ] |
-| global-cart-drawer | filled + qty | [ ] |
-| cart-page-main | filled + qty | [ ] |
-| product-info-main | changed Size 50→100 | [ ] |
-| product-showcase-grid-plp | hover | [ ] |
-| faq-collapsible-tabs | changed accordion | [ ] |
-| global-quick-view | open | [ ] |
+Shop 1440 disclosure (görsel mega yok). Search `natural` → SUGGESTIONS + PRODUCTS. Menu 375/768 + Shop drill. Cart drawer Natural oils $130→$260. PDP Size 50→100 ml $130→$250 / stok 500→200. Cart sayfa adet 1→2. FAQ ilk soru açık (jewelry leftover). QV Natural oils modal. PLP hover PNG var; ikinci görsel grid kırpında net değil. Şema değişmedi.
 
 ---
 
@@ -110,7 +102,7 @@ shop `women-beauty-3.myshopify.com` · locale `en` · currency `USD`
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact header / search / menu / cart / PDP / FAQ / QV
-- [ ] PNG bak → stateFindings
-- [ ] `node scripts/validate-schemas.mjs`
+- [x] Official 3vp static (`capture-observation.mjs`) — 125 PNG; menu 1440 skip
+- [x] Interact (`capture-interaction.mjs`) — mega / menu / search natural / cart drawer+page / PDP Size / FAQ / PLP hover / QV
+- [x] PNG bak → stateFindings
+- [x] `node scripts/validate-schemas.mjs` — 0 error

@@ -8,9 +8,12 @@
   "selector": "details-modal.header__search",
   "evidenceSlug": "global-predictive-search",
   "evidence": [
+    "evidence/luxe/default/home/global-predictive-search.1440.png",
     "evidence/luxe/default/home/global-predictive-search.375.png",
     "evidence/luxe/default/home/global-predictive-search.768.png",
-    "evidence/luxe/default/home/global-predictive-search.1440.png"
+    "evidence/luxe/default/home/global-predictive-search.input.arama-natural.1440.png",
+    "evidence/luxe/default/home/global-predictive-search.input.arama-natural.375.png",
+    "evidence/luxe/default/home/global-predictive-search.input.arama-natural.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "details-modal.header__search. Kapalı kare küçük ikon — prepareClick Search.",
@@ -25,8 +28,43 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T20:58:24.518Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T21:20:33.559Z",
     "prepareClick": "summary.header__icon--search"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "input",
+      "action": "goto",
+      "value": "https://women-beauty-3.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "value": 800,
+      "capture": false,
+      "not": "Search modal aç"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input[name='q']",
+      "value": "natural",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-natural",
+      "not": "katalogSorgu natural — öneri/ürün"
+    }
+  ],
+  "stateFindings": {
+    "input": "375/768/1440: 'natural' + SUGGESTIONS natural oils · PRODUCTS — Natural oils…, Roots to Tips Bundle, Squalane plus vitamin-c rose oil, Brighten skin…, Rice amino + avocado…, VEIL Mineral primer. Altta Search for “natural”."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu natural (scan). details-modal 2 eşleşme — açık modal en büyük kutu."
 }
