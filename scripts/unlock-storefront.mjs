@@ -17,6 +17,7 @@ export const PUBLIC_DEMO_PASSWORDS = {
   "fashion-store-clean-11.myshopify.com": "1",
   "fashion-store-clean-20.myshopify.com": "1",
   "fashion-store-clean-5.myshopify.com": "1",
+  "fitness-online-store-1.myshopify.com": "1",
   "gamming-store-1.myshopify.com": "1",
   "glidefeet.myshopify.com": "1",
   "hubble-nutrition.myshopify.com": "1",
