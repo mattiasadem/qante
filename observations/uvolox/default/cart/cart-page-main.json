@@ -7,8 +7,88 @@
   "url": "https://uvolox-online.myshopify.com/cart",
   "selector": "#shopify-section-template--21687580524862__cart-items",
   "evidenceSlug": "cart-page-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/uvolox/default/cart/cart-page-main.375.png",
+    "evidence/uvolox/default/cart/cart-page-main.768.png",
+    "evidence/uvolox/default/cart/cart-page-main.1440.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "Your cart is empty · Continue shopping · Have an account? Log in. #cart-footer h=0 boşken.",
-  "delta": "Dawn cart-items + sibling cart-footer. Drawer yok — #cart-icon-bubble /cart. Dolu hâl interact. Shopify.theme.name Uvolox-online V-1.2.0 · schema_name uvolox-online · schema_version 1.2.0 · theme_store_id null · role main · id 163401662782 · shop uvolox-online.myshopify.com · Speedo Themes third-party (Theme Store official değil)."
+  "delta": "Dawn cart-items + sibling cart-footer. Drawer yok — #cart-icon-bubble /cart. Dolu hâl interact. Shopify.theme.name Uvolox-online V-1.2.0 · schema_name uvolox-online · schema_version 1.2.0 · theme_store_id null · role main · id 163401662782 · shop uvolox-online.myshopify.com · Speedo Themes third-party (Theme Store official değil).",
+  "capture": {
+    "url": "https://uvolox-online.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "margin-box+minPad8",
+    "updatedAt": "2026-09-02T20:04:59.108Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://uvolox-online.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "etiket": "bos",
+      "not": "Boş sepet sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://uvolox-online.myshopify.com/products/ux-covered-zip-shirt",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add'], button[name='add']",
+      "capture": false,
+      "not": "ADD TO CART — drawer yok, sonra /cart"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://uvolox-online.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Zip shirt satır"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--21687580524862__cart-items button[name='plus'], quantity-input button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "qty 1 → 2"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Cart drawer yok. Checkout / Log in tıklanmadı. addToCart sonra /cart."
 }

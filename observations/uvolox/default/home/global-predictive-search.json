@@ -7,10 +7,66 @@
   "url": "https://uvolox-online.myshopify.com/",
   "selector": "details-modal.header__search",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/uvolox/default/home/global-predictive-search.375.png",
+    "evidence/uvolox/default/home/global-predictive-search.768.png",
+    "evidence/uvolox/default/home/global-predictive-search.1440.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "Search summary → details-modal.header__search. #Search-In-Modal-1 · predictive-search · form action=/search.",
   "delta": "Öneri listesi interact. Submit yok. Shopify.theme.name Uvolox-online V-1.2.0 · schema_name uvolox-online · schema_version 1.2.0 · theme_store_id null · role main · id 163401662782 · shop uvolox-online.myshopify.com · Speedo Themes third-party (Theme Store official değil).",
   "captureMode": "viewport",
-  "prepareClick": "summary.header__icon--search"
+  "prepareClick": "summary.header__icon--search",
+  "capture": {
+    "url": "https://uvolox-online.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "viewport",
+    "updatedAt": "2026-09-02T20:15:24.440Z",
+    "prepareClick": "summary.header__icon--search"
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://uvolox-online.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "modal-bos",
+      "not": "Boş search modal"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal-1",
+      "value": "shirt",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shirt",
+      "not": "katalogSorgu shirt — PDP/search ürün adı"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "katalogSorgu=shirt (scan tabs + /search?q=shirt). Submit yok."
 }

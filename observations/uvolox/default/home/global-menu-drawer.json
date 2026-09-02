@@ -7,10 +7,54 @@
   "url": "https://uvolox-online.myshopify.com/",
   "selector": "#menu-drawer",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/uvolox/default/home/global-menu-drawer.768.png",
+    "evidence/uvolox/default/home/global-menu-drawer.1440.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "Hamburger → #menu-drawer. WOMEN / MEN / COLLECTIONS / UVOLOX NEWS / CONTACT. header-drawer data-breakpoint=desktop — 1440 de drawer.",
   "delta": "Mega yok; düz link listesi (nested Shop yok). Account / sosyal drawer içinde. Shopify.theme.name Uvolox-online V-1.2.0 · schema_name uvolox-online · schema_version 1.2.0 · theme_store_id null · role main · id 163401662782 · shop uvolox-online.myshopify.com · Speedo Themes third-party (Theme Store official değil).",
   "captureMode": "viewport",
-  "prepareClick": "#Details-menu-drawer-container > summary"
+  "prepareClick": "#Details-menu-drawer-container > summary",
+  "capture": {
+    "url": "https://uvolox-online.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "viewport",
+    "updatedAt": "2026-09-02T20:14:22.974Z",
+    "prepareClick": "#Details-menu-drawer-container > summary"
+  },
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://uvolox-online.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Drawer açık: WOMEN/MEN/COLLECTIONS/NEWS/CONTACT. Nested yok."
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "navExpanders yok — düz <a>. 375 static zero-size (kapalı drawer). Account tıklanmadı."
 }
