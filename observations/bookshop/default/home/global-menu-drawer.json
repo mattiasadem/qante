@@ -8,9 +8,67 @@
   "selector": "#menu-drawer",
   "storefrontPassword": "1",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/bookshop/default/home/global-menu-drawer.1440.png",
+    "evidence/bookshop/default/home/global-menu-drawer.768.png",
+    "evidence/bookshop/default/home/global-menu-drawer.open.hamburger.1440.png",
+    "evidence/bookshop/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
   "notlar": "Hamburger drawer: koleksiyon linkleri, wishlist/compare, hesap, locale. Header drawer-menu — 1440'ta da opener var.",
   "delta": "Drawer menü metinleri boş görünen koleksiyon satırları (ikon-only?). Yazılı Home/Shop satırları header'da.",
   "prepareClick": "#Details-menu-drawer-container > summary.header__icon--menu",
-  "captureMode": "viewport"
+  "prepareForceOpen": true,
+  "captureMode": "viewport",
+  "capture": {
+    "url": "https://book-online-store-1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:20:34.332Z",
+    "prepareClick": "#Details-menu-drawer-container > summary.header__icon--menu"
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://book-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary.header__icon--menu",
+      "viewports": [
+        "375",
+        "768",
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Header drawer-menu — hamburger 1440'ta da var"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "capture (375): zero-size / eşleşmedi: #menu-drawer"
+    }
+  ],
+  "interactionNote": "Statik 375 #menu-drawer zero-size. Interact tık ile açık kare. Collection <a> tıklanmadı."
 }

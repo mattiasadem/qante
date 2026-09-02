@@ -8,7 +8,65 @@
   "selector": "#shopify-section-sections--18135588110503__header",
   "storefrontPassword": "1",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
+  "evidence": [
+    "evidence/bookshop/default/home/navigation-header-mega.375.png",
+    "evidence/bookshop/default/home/navigation-header-mega.768.png",
+    "evidence/bookshop/default/home/navigation-header-mega.1440.png"
+  ],
   "notlar": "Üst sosyal + logo + Home/Shop/About/Contact/Blog. Shop = details#Details-HeaderMenu-2.mega-menu. Arama, hesap, sepet, wishlist, compare ikonları.",
-  "delta": "Mega yalnız Shop. Header class drawer-menu — hamburger 1440'ta da var. Wishlist/compare ikonları header utility. Locale/country drawer içinde."
+  "delta": "Mega yalnız Shop. Header class drawer-menu — hamburger 1440'ta da var. Wishlist/compare ikonları header utility. Locale/country drawer içinde.",
+  "capture": {
+    "url": "https://book-online-store-1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "viewport",
+    "updatedAt": "2026-09-02T16:20:18.945Z"
+  },
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://book-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Mega kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-2 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "Shop hover — 6 görsel+metin kolon (Business And Finance…Arts And Humanities)"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "375/768 mega yok; hamburger ayrı global-menu-drawer. Log in tıklanmadı."
 }

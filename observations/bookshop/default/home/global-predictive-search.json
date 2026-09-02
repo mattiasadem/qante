@@ -8,9 +8,74 @@
   "selector": "details-modal.header__search",
   "storefrontPassword": "1",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/bookshop/default/home/global-predictive-search.1440.png",
+    "evidence/bookshop/default/home/global-predictive-search.375.png",
+    "evidence/bookshop/default/home/global-predictive-search.768.png",
+    "evidence/bookshop/default/home/global-predictive-search.initial.arama-bos.1440.png",
+    "evidence/bookshop/default/home/global-predictive-search.initial.arama-bos.375.png",
+    "evidence/bookshop/default/home/global-predictive-search.initial.arama-bos.768.png"
+  ],
   "notlar": "Search modal; input #Search-In-Modal placeholder Search. Kapalı kare ikon.",
   "delta": "Predictive form w=0 kapalı. Dolu sonuç interact.",
-  "prepareClick": "summary.header__icon--search",
-  "captureMode": "viewport"
+  "prepareClick": "details-modal.header__search summary.header__icon--search",
+  "prepareForceOpen": true,
+  "captureMode": "viewport",
+  "capture": {
+    "url": "https://book-online-store-1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:21:58.251Z",
+    "prepareClick": "summary.header__icon--search"
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://book-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "details-modal.header__search summary.header__icon--search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Boş search modal"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "cookbook",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-cookbook",
+      "not": "katalogSorgu=cookbook (Cookbook: 100 recipes…)"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "adım 3 (fill #Search-In-Modal): locator.waitFor: Timeout 12000ms exceeded.\nCall log:\n  - waiting for locator('#Search-In-Modal').first() to be visible\n    28 × locator resolved to hidden <input name=\"q\" value=\"\" type=\"search\" role=\"combobox\" autocorrect=\"off\" autocomplete=\"off\" spellcheck=\"false\" id=\"Search-In-Modal\" placeholder=\"Search\" autocapitalize=\"off\" aria-expanded=\"false\" aria-haspopup=\"listbox\" aria-autocomplete=\"list\" class=\"search__input field__input\" aria-owns=\"predictive-search-results\" aria-controls=\"predictive-search-results\"/>\n"
+    }
+  ],
+  "interactionNote": "Submit yok. Scan katalogSorgu=book — ürün adından cookbook yazıldı."
 }

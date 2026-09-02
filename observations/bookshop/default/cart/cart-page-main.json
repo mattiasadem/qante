@@ -8,7 +8,117 @@
   "selector": "#shopify-section-template--18135592992935__cart-items",
   "storefrontPassword": "1",
   "evidenceSlug": "cart-page-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/bookshop/default/cart/cart-page-main.1440.png",
+    "evidence/bookshop/default/cart/cart-page-main.375.png",
+    "evidence/bookshop/default/cart/cart-page-main.768.png",
+    "evidence/bookshop/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/bookshop/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/bookshop/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/bookshop/default/cart/cart-page-main.filled.cookbook-qty1.1440.png",
+    "evidence/bookshop/default/cart/cart-page-main.filled.cookbook-qty1.375.png",
+    "evidence/bookshop/default/cart/cart-page-main.filled.cookbook-qty1.768.png",
+    "evidence/bookshop/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/bookshop/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/bookshop/default/cart/cart-page-main.initial.sepet-bos.768.png"
+  ],
   "notlar": "Boş sepet: Your cart is empty / CONTINUE SHOPPING / Have an account? Log in to check out faster.",
-  "delta": "cart-footer section 0px (boşken). Dolu hâl interact. Koleksiyon kartı yok."
+  "delta": "cart-footer section 0px (boşken). Dolu hâl interact. Koleksiyon kartı yok.",
+  "capture": {
+    "url": "https://book-online-store-1.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:24:30.987Z"
+  },
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://book-online-store-1.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://book-online-store-1.myshopify.com/products/cookbook-100-recipes-and-inspiration-for-cooking",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'], product-form button.product-form__submit",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://book-online-store-1.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cookbook-qty1",
+      "not": "Dolu cart satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "cart-items button[name='plus'], quantity-input button[name='plus'], button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Sayfa adet +1"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Checkout/login tıklanmadı. cart-footer boşken 0px."
 }
