@@ -1,0 +1,86 @@
+{
+  "kaynak": "wallpapsh",
+  "preset": "default",
+  "storefrontPassword": "1",
+  "evidence": [
+    "evidence/wallpapsh/default/home/global-cart-drawer.1440.png",
+    "evidence/wallpapsh/default/home/global-cart-drawer.375.png",
+    "evidence/wallpapsh/default/home/global-cart-drawer.768.png",
+    "evidence/wallpapsh/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/wallpapsh/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/wallpapsh/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/wallpapsh/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/wallpapsh/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/wallpapsh/default/home/global-cart-drawer.filled.sepete-eklendi.768.png"
+  ],
+  "observationId": "wallpapsh.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "sayfa": "home",
+  "url": "https://pandora-wallpaper.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "notlar": "Dawn #CartDrawer. Opener #cart-icon-bubble href=/cart. Boş hâl Your cart.",
+  "delta": "href=/cart — JS yakalamazsa /cart'a kaçar. Dolu drawer iki kargo eşiği ($500 / $800). Şema tek kargoEsigi — dokunulmadı.",
+  "capture": {
+    "url": "https://pandora-wallpaper.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "prepareClick": "#cart-icon-bubble",
+    "updatedAt": "2026-09-02T18:53:21.801Z"
+  },
+  "captureMode": "viewport",
+  "prepareClick": "#cart-icon-bubble",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "selector": null,
+      "value": "https://pandora-wallpaper.myshopify.com/products/wall-sticker-home-decor-backsplash-wallpaper-bathroom-kitchen",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit",
+      "value": null,
+      "capture": false,
+      "not": "Hobby Pink ADD TO CART"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": null,
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC sonrası drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 2"
+    }
+  ],
+  "stateFindings": {
+    "filled": "3vp: Your cart. Hobby Pink Size 8 x 8 Color Black qty 1 $80. Free Shipping! $500 / Express Shipping! $800 (kısmi yeşil). Estimated total $80.00 USD. CHECK OUT + View cart. Order special instructions kapalı.",
+    "changed": "3vp: qty 2, estimated total $160.00 USD. Aynı satır. CHECK OUT tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC button.product-form__submit (UI; AJAX fallback yok). Statik boş kare homepage idi."
+}

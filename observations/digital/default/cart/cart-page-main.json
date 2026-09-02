@@ -1,0 +1,75 @@
+{
+  "observationId": "digital.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "digital",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://digital-gallery-shop-2.myshopify.com/cart",
+  "selector": "#shopify-section-template--24481721024819__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/digital/default/cart/cart-page-main.1440.png",
+    "evidence/digital/default/cart/cart-page-main.375.png",
+    "evidence/digital/default/cart/cart-page-main.768.png",
+    "evidence/digital/default/cart/cart-page-main.filled.kurs-satir.1440.png",
+    "evidence/digital/default/cart/cart-page-main.filled.kurs-satir.375.png",
+    "evidence/digital/default/cart/cart-page-main.filled.kurs-satir.768.png",
+    "evidence/digital/default/cart/cart-page-main.initial.bos.1440.png",
+    "evidence/digital/default/cart/cart-page-main.initial.bos.375.png",
+    "evidence/digital/default/cart/cart-page-main.initial.bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Your cart is empty + Continue Shopping + Log in.",
+  "delta": "cart-footer 0px leftover. Filled interact'te.",
+  "capture": {
+    "url": "https://digital-gallery-shop-2.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:41:36.947Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://digital-gallery-shop-2.myshopify.com/cart",
+      "capture": true,
+      "etiket": "bos",
+      "not": "Your cart is empty"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://digital-gallery-shop-2.myshopify.com/products/health-and-wellness-a-comprehensive-complete-guide",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--24481723056435__main product-form button[name='add'], #shopify-section-template--24481723056435__main button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://digital-gallery-shop-2.myshopify.com/cart",
+      "capture": true,
+      "etiket": "kurs-satir",
+      "not": "Health And Wellness satırı /cart"
+    }
+  ],
+  "stateFindings": {
+    "initial": "3vp: Your cart is empty · Continue Shopping · Have an account? Log in to check out faster.",
+    "filled": "3vp Health And Wellness A Comprehensive Complete Guide · $89.00 · adet 1 · TOTAL $89.00 · Continue shopping. Çöp + adet. Checkout bu kesitte yok."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC UI PDP’den. Log in tıklanmadı. cart-footer boş leftover."
+}

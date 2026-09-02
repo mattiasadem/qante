@@ -1,0 +1,63 @@
+{
+  "observationId": "digital.default.product-detail.product-info-tabs",
+  "schemaId": "product-info-tabs",
+  "kaynak": "digital",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://digital-gallery-shop-2.myshopify.com/products/health-and-wellness-a-comprehensive-complete-guide",
+  "selector": "#shopify-section-template--24481723056435__79582f51-5736-4bff-b870-bba69393ad36",
+  "evidenceSlug": "product-info-tabs",
+  "evidence": [
+    "evidence/digital/default/product-detail/product-info-tabs.1440.png",
+    "evidence/digital/default/product-detail/product-info-tabs.375.png",
+    "evidence/digital/default/product-detail/product-info-tabs.768.png",
+    "evidence/digital/default/product-detail/product-info-tabs.changed.additional-information.1440.png",
+    "evidence/digital/default/product-detail/product-info-tabs.changed.additional-information.375.png",
+    "evidence/digital/default/product-detail/product-info-tabs.changed.additional-information.768.png",
+    "evidence/digital/default/product-detail/product-info-tabs.initial.description.1440.png",
+    "evidence/digital/default/product-detail/product-info-tabs.initial.description.375.png",
+    "evidence/digital/default/product-detail/product-info-tabs.initial.description.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Description (altı çizili) / Additional Information / Shipping And Delivery. İlk panel lorem.",
+  "delta": "Çerçeveli tab kabı. role=tab yok. changed interact'te.",
+  "capture": {
+    "url": "https://digital-gallery-shop-2.myshopify.com/products/health-and-wellness-a-comprehensive-complete-guide",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:28:50.229Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://digital-gallery-shop-2.myshopify.com/products/health-and-wellness-a-comprehensive-complete-guide",
+      "capture": true,
+      "etiket": "description",
+      "not": "Description altı çizili"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "a[href='#tab-e976ee83-b842-472e-9af8-76220b5e4b2b']",
+      "capture": true,
+      "etiket": "additional-information",
+      "not": "Additional Information paneli"
+    }
+  ],
+  "stateFindings": {
+    "initial": "3vp: Description altı çizili. Panel lorem. Additional Information + Shipping And Delivery gri.",
+    "changed": "3vp Additional Information altı çizili. Lorem paragraf + üç madde işaretli satır. Description altı çizgisiz."
+  },
+  "missingStates": [],
+  "interactionNote": "Shipping And Delivery tıklanmadı. role=tab yok. Varyant yok."
+}

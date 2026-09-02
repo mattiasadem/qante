@@ -1,0 +1,75 @@
+{
+  "observationId": "look.default.product-detail.product-info-tabs",
+  "schemaId": "product-info-tabs",
+  "kaynak": "look",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://goggles-online-store.myshopify.com/products/hipe-full-rim-ray-ban-frames",
+  "selector": "#shopify-section-template--18066270421233__79582f51-5736-4bff-b870-bba69393ad36",
+  "evidenceSlug": "product-info-tabs",
+  "evidence": [
+    "evidence/look/default/product-detail/product-info-tabs.1440.png",
+    "evidence/look/default/product-detail/product-info-tabs.375.png",
+    "evidence/look/default/product-detail/product-info-tabs.768.png",
+    "evidence/look/default/product-detail/product-info-tabs.changed.additional.1440.png",
+    "evidence/look/default/product-detail/product-info-tabs.changed.additional.375.png",
+    "evidence/look/default/product-detail/product-info-tabs.changed.additional.768.png",
+    "evidence/look/default/product-detail/product-info-tabs.initial.description.1440.png",
+    "evidence/look/default/product-detail/product-info-tabs.initial.description.375.png",
+    "evidence/look/default/product-detail/product-info-tabs.initial.description.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "DESCRIPTION · ADDITIONAL INFORMATION · SHIPPING AND DELIVERY. Lorem.",
+  "delta": "Üç sekme. Accordion/tab. Shopify.theme.name Look V-1.5.0 · schema_name Look · schema_version 1.5.0 · theme_store_id null · role main · id 143012102385 · shop goggles-online-store.myshopify.com · Speedo Look official demo (vendor-published password 1).",
+  "capture": {
+    "url": "https://goggles-online-store.myshopify.com/products/hipe-full-rim-ray-ban-frames",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T17:51:28.963Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://goggles-online-store.myshopify.com/products/hipe-full-rim-ray-ban-frames",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--18066270421233__79582f51-5736-4bff-b870-bba69393ad36",
+      "capture": true,
+      "etiket": "description",
+      "not": "DESCRIPTION sekmesi"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--18066270421233__79582f51-5736-4bff-b870-bba69393ad36 a:has-text(\"ADDITIONAL INFORMATION\")",
+      "capture": true,
+      "etiket": "additional",
+      "not": "ADDITIONAL INFORMATION (ikinci tab/button)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "DESCRIPTION siyah aktif sekme. Altında Feugiat… lorem paragraf. ADDITIONAL INFORMATION ve SHIPPING AND DELIVERY gri.",
+    "changed": "ADDITIONAL INFORMATION siyah aktif. Paragraf + üç madde işaretli lorem. DESCRIPTION ve SHIPPING AND DELIVERY gri."
+  },
+  "missingStates": [],
+  "interactionNote": "Üçüncü sekme SHIPPING AND DELIVERY yoklandı değil. Checkout yok."
+}

@@ -1,0 +1,118 @@
+{
+  "observationId": "bicycle.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "bicycle",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://bicycle-online-store-1.myshopify.com/cart",
+  "selector": "#shopify-section-template--16095886311559__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/bicycle/default/cart/cart-page-main.1440.png",
+    "evidence/bicycle/default/cart/cart-page-main.375.png",
+    "evidence/bicycle/default/cart/cart-page-main.768.png",
+    "evidence/bicycle/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/bicycle/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/bicycle/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/bicycle/default/cart/cart-page-main.filled.sepet-dolu.1440.png",
+    "evidence/bicycle/default/cart/cart-page-main.filled.sepet-dolu.375.png",
+    "evidence/bicycle/default/cart/cart-page-main.filled.sepet-dolu.768.png",
+    "evidence/bicycle/default/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/bicycle/default/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/bicycle/default/cart/cart-page-main.initial.cart-bos.768.png"
+  ],
+  "notlar": "Boş: Your cart is empty · CONTINUE SHOPPING · Have an account? Log in. cart-footer h=0 boşken.",
+  "delta": "Dawn cart-items. Dolu + qty interact. Checkout tıklanmadı. Shopify.theme.name Bicycle V-1.5.0 · schema_name Bicycle · schema_version 1.5.0 · theme_store_id null · role main · id 130165440647 · shop bicycle-online-store-1.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock).",
+  "storefrontPassword": "1",
+  "capture": {
+    "url": "https://bicycle-online-store-1.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T19:11:13.099Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://bicycle-online-store-1.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16095886311559__cart-items",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://bicycle-online-store-1.myshopify.com/products/norco-sight-a-framekit-29",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--16095886934151__main, button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://bicycle-online-store-1.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": true,
+      "etiket": "sepet-dolu",
+      "not": "Framekit satır"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--16095886311559__cart-items button[name='plus'], quantity-input button[name='plus']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "qty 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty · CONTINUE SHOPPING · Have an account? Log in to check out faster.",
+    "filled": "Your cart · Continue shopping. Satır Norco sight a framekit 29 · $80.00 · Color Hibiscus Leaf · qty 1 · TOTAL $80.00. Çöp ikonu.",
+    "changed": "qty 2 · TOTAL $160.00. Checkout bu section’da görünmedi (footer ayrı olabilir). CHECK OUT tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart UI sonra /cart. Checkout / Log in tıklanmadı."
+}

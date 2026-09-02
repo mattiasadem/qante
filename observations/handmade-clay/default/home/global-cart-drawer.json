@@ -1,0 +1,115 @@
+{
+  "observationId": "handmade-clay.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "handmade-clay",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://luxury-handmade-ultimate.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/handmade-clay/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/handmade-clay/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/handmade-clay/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/handmade-clay/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/handmade-clay/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/handmade-clay/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/handmade-clay/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/handmade-clay/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/handmade-clay/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "cart-drawer. Opener #cart-icon-bubble.",
+  "delta": "Shopify.theme.name Luxury-handmade-ultimate V-1-5-0 · schema_name luxury_handmade_ultimate · schema_version 1.5.0 · theme_store_id null · role main · id 173445611830 · shop luxury-handmade-ultimate.myshopify.com · Dawn-like OS 2.0. Vendor-published demo password 1 (public storefront unlock).",
+  "capture": {
+    "url": "https://luxury-handmade-ultimate.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T19:24:44.604Z",
+    "prepareClick": "#cart-icon-bubble"
+  },
+  "captureMode": "viewport",
+  "prepareClick": "#cart-icon-bubble",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://luxury-handmade-ultimate.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble, a.header__icon--cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer."
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://luxury-handmade-ultimate.myshopify.com/products/floral-leaf-clay-drop-earrings",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--23698074927414__main, button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Floral Leaf Clay Drop Earrings $22 ATC."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "qty 1→2."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty. CONTINUE SHOPPING.",
+    "filled": "Floral Leaf Clay Drop Earrings qty 1 $22.00. CHECK OUT + View Cart.",
+    "changed": "qty 2; Estimated total $44.00 USD."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC UI. Checkout tıklanmadı."
+}

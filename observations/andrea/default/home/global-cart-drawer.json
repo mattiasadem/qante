@@ -1,0 +1,86 @@
+{
+  "observationId": "andrea.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "andrea",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://women-beauty-7.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/andrea/default/home/global-cart-drawer.1440.png",
+    "evidence/andrea/default/home/global-cart-drawer.375.png",
+    "evidence/andrea/default/home/global-cart-drawer.768.png",
+    "evidence/andrea/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/andrea/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/andrea/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/andrea/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/andrea/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/andrea/default/home/global-cart-drawer.filled.sepete-eklendi.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Dawn #CartDrawer. Opener #cart-icon-bubble href=/cart. Boş hâl.",
+  "delta": "href=/cart — JS yakalamazsa /cart'a kaçar. filled interact.",
+  "captureMode": "viewport",
+  "prepareClick": "#cart-icon-bubble",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "selector": null,
+      "value": "https://women-beauty-7.myshopify.com/products/andrea-glitter-nail-polish-paint-multi-color",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit",
+      "value": null,
+      "capture": false,
+      "not": "Glitter nail ADD TO CART"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": null,
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC sonrası drawer. Kapalıysa #cart-icon-bubble."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 2"
+    }
+  ],
+  "stateFindings": {
+    "filled": "ATC glitter Chic Grey. YOUR CART: satır qty 1 · $60 · Color Chic Grey. Shipping progress Free $100 / Express $150 (çubuk $60). Estimated total $60 USD. 1440 ayrıca ortada YOU MAY LIKE upsell modal (Stunna Lip Paint, Liquid Foundation…). 375 drawer içinde YOU MAY LIKE akordeon. CHECK OUT tıklanmadı.",
+    "changed": "Adet 2 · satır $120 · estimated $120. Free shipping eşiği dolu; Express $150 hâlâ ileride. 1440 YOU MAY LIKE modal duruyor."
+  },
+  "missingStates": [],
+  "interactionNote": "CHECK OUT tıklanmadı. ATC gerçek UI tık. YOU MAY LIKE overlay leftover — yeni şema yok.",
+  "capture": {
+    "url": "https://women-beauty-7.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:18:34.575Z",
+    "prepareClick": "#cart-icon-bubble"
+  }
+}

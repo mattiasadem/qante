@@ -1,0 +1,127 @@
+{
+  "observationId": "handmade-clay.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "handmade-clay",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://luxury-handmade-ultimate.myshopify.com/cart",
+  "selector": "#shopify-section-template--23698074599734__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/handmade-clay/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/handmade-clay/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/handmade-clay/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/handmade-clay/default/cart/cart-page-main.filled.cart-dolu.1440.png",
+    "evidence/handmade-clay/default/cart/cart-page-main.filled.cart-dolu.375.png",
+    "evidence/handmade-clay/default/cart/cart-page-main.filled.cart-dolu.768.png",
+    "evidence/handmade-clay/default/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/handmade-clay/default/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/handmade-clay/default/cart/cart-page-main.initial.cart-bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Cart page — empty + filled + qty.",
+  "delta": "Shopify.theme.name Luxury-handmade-ultimate V-1-5-0 · schema_name luxury_handmade_ultimate · schema_version 1.5.0 · theme_store_id null · role main · id 173445611830 · shop luxury-handmade-ultimate.myshopify.com · Dawn-like OS 2.0. Vendor-published demo password 1 (public storefront unlock).",
+  "capture": {
+    "url": "https://luxury-handmade-ultimate.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T19:31:44.937Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://luxury-handmade-ultimate.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--23698074599734__cart-items",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş sepet."
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://luxury-handmade-ultimate.myshopify.com/products/floral-leaf-clay-drop-earrings",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--23698074927414__main",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://luxury-handmade-ultimate.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--23698074599734__cart-items",
+      "capture": true,
+      "etiket": "cart-dolu",
+      "not": "1 ürün $22."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--23698074599734__cart-items button[name='plus']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--23698074599734__cart-items",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "qty 2."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty. CONTINUE SHOPPING.",
+    "filled": "Floral Leaf Clay Drop Earrings qty 1 $22.00. Estimated total.",
+    "changed": "qty 2; total $44.00."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı."
+}

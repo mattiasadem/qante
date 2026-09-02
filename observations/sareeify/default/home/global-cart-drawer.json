@@ -1,0 +1,109 @@
+{
+  "observationId": "sareeify.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "sareeify",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://speedo-sarees.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/sareeify/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/sareeify/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/sareeify/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/sareeify/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/sareeify/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/sareeify/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/sareeify/default/home/global-cart-drawer.initial.bos.1440.png",
+    "evidence/sareeify/default/home/global-cart-drawer.initial.bos.375.png",
+    "evidence/sareeify/default/home/global-cart-drawer.initial.bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Cart drawer — empty Your cart + Check out. #cart-icon-bubble.",
+  "delta": "Dolu hâl interact PDP add to cart. Shopify.theme.name Speedo-Sarees V 1.5.0 · schema_name speedo_sarees · schema_version 1.5.0 · theme_store_id null · role main · id 175007367473 · shop speedo-sarees.myshopify.com · Speedo Themes third-party (Theme Store official değil). storefrontPassword=1 (speedothemes.com product page).",
+  "captureMode": "viewport",
+  "prepareClick": "#cart-icon-bubble",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://speedo-sarees.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bos",
+      "not": "Boş cart drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://speedo-sarees.myshopify.com/products/attractive-aqua-blue-colour-embroidered-malay-satin-silk-dulhan-lehenga-choli",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add'], button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Lehenga satırı + toplam"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus'], #CartDrawer .quantity__button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "qty +1 drawer içinde"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boş drawer: Your cart is empty · Check out.",
+    "filled": "Attractive Aqua Blue Lehenga satırı + $15,999.00 toplam.",
+    "changed": "Drawer qty 2 — toplam iki kat."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı.",
+  "capture": {
+    "url": "https://speedo-sarees.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T19:14:50.535Z",
+    "prepareClick": "#cart-icon-bubble"
+  }
+}
