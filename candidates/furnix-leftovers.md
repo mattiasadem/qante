@@ -56,3 +56,11 @@ Gerekçe: Log in / Check out / newsletter SUBSCRIBE — PII / ödeme. Tıklanmad
 Örnekler: header Log in · cart Check out · newsletter form  
 Öneri: leftover — dur  
 Karar: onay bekliyor
+
+---
+
+ADAY: furnix-you-may-like-overlay  
+Gerekçe: PDP Add to cart hem sağ `global-cart-drawer` hem ortada YOU MAY LIKE modal açıyor (6 ürün + ATC + lifestyle görsel). Mevcut cart-drawer şemasına yazılmadı; ayrı tip yok.  
+Örnekler: ATC Executive Arm Chair → overlay + drawer birlikte  
+Öneri: leftover — overlay / upsell modal  
+Karar: onay bekliyor

@@ -14,7 +14,7 @@
 `theme_store_id` = **null** · `handle` = `"null"` · `style.id` / `style.handle` = **null**  
 Walk host = `Shopify.shop` = `pandora-furniture-6.myshopify.com` · locale `en` · country `US` · currency `USD`
 
-**Durum:** Mod A walk + resmi 3vp (devam) + interact (devam)  
+**Durum:** Mod A walk + resmi 3vp + interact kapatıldı  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -27,10 +27,11 @@ Walk host = `Shopify.shop` = `pandora-furniture-6.myshopify.com` · locale `en` 
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` + `scripts/unlock-storefront.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **40** |
+| Evidence | **173 PNG** (119 statik 3vp + 54 interact) |
 | Parallel | yalnız `observations/furnix/`, `evidence/furnix/`, `todo/furnix.md`, `candidates/furnix-leftovers.md`, unlock helper |
 
 **Kapsam satırı:**  
-`Furnix · default · Decora 1.5.0 (listing slug furnix) · theme_store_id null · shop pandora-furniture-6.myshopify.com · password 1 (vendor-published) · home→PLP collection-layout-1→PDP Executive Arm Chair→search chair→collections→cart empty · 40 obs · 0 yeni şema · leftover: candidates/furnix-leftovers.md`
+`Furnix · default · Decora 1.5.0 (listing slug furnix) · theme_store_id null · shop pandora-furniture-6.myshopify.com · password 1 (vendor-published) · home→PLP collection-layout-1→PDP Executive Arm Chair→search chair→collections→cart · 40 obs · 173 PNG · 0 yeni şema · leftover: candidates/furnix-leftovers.md`
 
 ---
 
@@ -38,16 +39,16 @@ Walk host = `Shopify.shop` = `pandora-furniture-6.myshopify.com` · locale `en` 
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | [x] obs | [ ] capture |
-| Shop mega hover 1440 | [ ] interact | [ ] |
-| Predictive search `chair` | [ ] interact | [ ] |
-| Mobile menu 375 + 768 | [ ] interact | [ ] |
-| Cart drawer empty + filled + qty | [ ] interact | [ ] |
-| PDP Executive Arm Color / Leg Finish | [ ] interact | [ ] |
-| PLP `/collections/collection-layout-1` | [x] obs | [ ] capture |
-| Collections `/collections` | [x] obs | [ ] capture |
-| Search `/search?q=chair` | [x] obs | [ ] capture |
-| Cart page empty + filled + qty | [x] obs empty | [ ] interact |
+| Home roster (announcement→footer) | [x] obs | [x] capture |
+| Shop mega hover 1440 | [x] interact | [x] |
+| Predictive search `chair` | [x] interact | [x] |
+| Mobile menu 375 + 768 | [x] interact | [x] |
+| Cart drawer empty + filled + qty | [x] interact | [x] |
+| PDP Executive Arm Color | [x] interact Dark grey | [x] |
+| PLP `/collections/collection-layout-1` | [x] obs | [x] capture |
+| Collections `/collections` | [x] obs | [x] capture |
+| Search `/search?q=chair` | [x] obs | [x] capture |
+| Cart page empty + filled + qty | [x] interact | [x] |
 | Map / related-products empty / account / checkout / newsletter submit | ⛔ leftover / dur | — |
 
 ---
@@ -94,16 +95,16 @@ Walk host = `Shopify.shop` = `pandora-furniture-6.myshopify.com` · locale `en` 
 
 | # | id | sayfa | JSON | Done |
 |---|---|---|---|---|
-| 1 | collection-banner | collection | [x] | [ ] 3vp |
-| 2 | product-showcase-grid-plp | collection | [x] | [ ] 3vp |
-| 3 | collection-nav-grid | collections | [x] | [ ] 3vp |
-| 4 | search-results | search | [x] | [ ] 3vp |
-| 5 | cart-page-main | cart | [x] | [ ] 3vp |
-| 6 | product-info-main | product-detail | [x] | [ ] interact |
-| 7 | product-info-tabs | product-detail | [x] | [ ] 3vp |
-| 8 | media-video-hero | product-detail | [x] | [ ] 3vp |
-| 9 | features-multicolumn | product-detail | [x] | [ ] 3vp |
-| 10 | editorial-image-with-text | product-detail | [x] | [ ] 3vp |
+| 1 | collection-banner | collection | [x] | [x] 3vp |
+| 2 | product-showcase-grid-plp | collection | [x] | [x] 3vp |
+| 3 | collection-nav-grid | collections | [x] | [x] 3vp |
+| 4 | search-results | search | [x] | [x] 3vp |
+| 5 | cart-page-main | cart | [x] | [x] 3vp + interact |
+| 6 | product-info-main | product-detail | [x] | [x] interact Dark grey |
+| 7 | product-info-tabs | product-detail | [x] | [x] 3vp + changed |
+| 8 | media-video-hero | product-detail | [x] | [x] 3vp |
+| 9 | features-multicolumn | product-detail | [x] | [x] 3vp |
+| 10 | editorial-image-with-text | product-detail | [x] | [x] 3vp |
 
 ---
 
@@ -111,14 +112,15 @@ Walk host = `Shopify.shop` = `pandora-furniture-6.myshopify.com` · locale `en` 
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | open | [ ] 1440 Shop mega |
-| global-predictive-search | input | [ ] `chair` |
-| global-menu-drawer | open | [ ] 375+768 |
-| global-cart-drawer | filled + changed | [ ] |
-| cart-page-main | filled + changed | [ ] |
-| product-info-main | changed | [ ] Color / Leg Finish |
-| product-showcase-grid-featured | hover | [ ] ikinci görsel / quick-add |
-| faq-collapsible-tabs | changed | [ ] ilk soru |
+| navigation-header-mega | open | [x] 1440 Shop mega: All Collections + görsel kategori kartları |
+| global-predictive-search | input | [x] `chair` → PRODUCTS listesi |
+| global-menu-drawer | open | [x] 375+768; 1440 zero-size |
+| global-cart-drawer | filled + changed | [x] $102 → $204 + YOU MAY LIKE overlay |
+| cart-page-main | filled + changed | [x] $102 → $204 |
+| product-info-main | changed | [x] Color Dark grey (swatch label) |
+| product-showcase-grid-featured | hover | [x] 1440 ok + wishlist/compare/QV |
+| faq-collapsible-tabs | changed | [x] ilk soru açık |
+| product-info-tabs | changed | [x] Additional Information bakır ray |
 
 ---
 
@@ -130,6 +132,6 @@ Walk host = `Shopify.shop` = `pandora-furniture-6.myshopify.com` · locale `en` 
 
 ## Evidence backlog
 
-- [ ] Resmi 3vp `capture-observation.mjs` (40 obs)
-- [ ] Interact capture
-- [ ] `node scripts/validate-schemas.mjs`
+- [x] Resmi 3vp `capture-observation.mjs` (40 obs)
+- [x] Interact capture
+- [x] `node scripts/validate-schemas.mjs`
