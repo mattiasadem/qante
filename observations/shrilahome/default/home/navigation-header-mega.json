@@ -14,7 +14,8 @@
     "evidence/shrilahome/default/home/navigation-header-mega.768.png",
     "evidence/shrilahome/default/home/navigation-header-mega.initial.kapali.1440.png",
     "evidence/shrilahome/default/home/navigation-header-mega.initial.kapali.375.png",
-    "evidence/shrilahome/default/home/navigation-header-mega.initial.kapali.768.png"
+    "evidence/shrilahome/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/shrilahome/default/home/navigation-header-mega.open.hamburger-1440.1440.png"
   ],
   "notlar": "Sticky header. Logo + Search + Log in + Cart. 1440 section wrapper h=0 (Dawn sticky). 375 hamburger summary[aria-label=Menu] → #menu-drawer. HeaderDrawer-sofas-chairs nested.",
   "delta": "Shopify.theme.name Shrilahome-Furniture-v-1-5-0 · schema_name shrilahome · schema_version 1.5.0 · theme_store_id null · role main · id 169736438070 · shop pandora-furniture-5.myshopify.com. Vendor Speedo Themes (third-party OS 2.0, Theme Store değil). Storefront password 1 (speedothemes.com product page). Host pandora-furniture-5.myshopify.com — başka host uydurulmadı. Dawn-fork header. Mega kolon 1440 kapalı karede metin boş (görsel linkler: corner-sofas / leatherette / modular / mattresses / dining-set + about/contact/faqs/wishlist/compare). Interact open. Account tıklanmadı.",
@@ -59,10 +60,15 @@
     }
   ],
   "stateFindings": {
-    "initial": "375/768/1440: hamburger + Search + Log in + ortada Shrilahome + Cart. Inline mega/link yok. Announcement maroon. Hero arkada (karede slayt değişebilir — autoplay)."
+    "initial": "375/768/1440: hamburger + Search + Log in + ortada Shrilahome + Cart. Inline mega/link yok. Announcement maroon. Hero arkada (autoplay slayt değişebilir)."
   },
-  "missingStates": [],
-  "interactionNote": "375/768 hamburger ayrı global-menu-drawer. 1440 summary w=0 — tık SVG. Log in PII yok.",
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 summary w=0. Retry SVG tık PNG yazdı ama kare hâlâ kapalı homepage (drawer kolon yok). İkinci deneme. Inline mega yok."
+    }
+  ],
+  "interactionNote": "375/768 hamburger ayrı global-menu-drawer. 1440 open karede drawer görünmedi. Log in PII yok.",
   "capture": {
     "url": "https://pandora-furniture-5.myshopify.com/",
     "viewports": [
@@ -72,6 +78,6 @@
     ],
     "mode": "viewport",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-02T15:47:29.411Z"
+    "updatedAt": "2026-09-02T16:10:05.297Z"
   }
 }

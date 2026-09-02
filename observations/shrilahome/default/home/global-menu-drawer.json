@@ -14,6 +14,7 @@
     "evidence/shrilahome/default/home/global-menu-drawer.768.png",
     "evidence/shrilahome/default/home/global-menu-drawer.changed.sofas-nested.1440.png",
     "evidence/shrilahome/default/home/global-menu-drawer.changed.sofas-nested.768.png",
+    "evidence/shrilahome/default/home/global-menu-drawer.open.hamburger-acik.1440.png",
     "evidence/shrilahome/default/home/global-menu-drawer.open.hamburger-acik.768.png"
   ],
   "notlar": "375/768 hamburger summary[aria-label=Menu] → #menu-drawer. Nested HeaderDrawer-sofas-chairs.",
@@ -66,8 +67,18 @@
       "not": "Sofas & Chairs summary. Yazılı <a> tıklanmaz."
     }
   ],
-  "missingStates": [],
-  "interactionNote": "İlk koşuda summary w=0 / kapalı drawer 375 h=0. Retry SVG + #HeaderDrawer-sofas-chairs. Yazılı koleksiyon <a> yok.",
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375: tık sonrası #menu-drawer h=0. 768/1440: script kutu yazdı (kapalı drawer off-screen w=400) ama viewport kare homepage — Sofas & Chairs listesi yok. İkinci deneme."
+    },
+    {
+      "state": "changed",
+      "sebep": "375 zero-size. 768/1440 sofas-nested PNG de homepage; nested panel yok. İkinci deneme."
+    }
+  ],
+  "interactionNote": "Yoklamada forceOpen + SVG ile drawer DOM büyüyor; capture karesi drawer'ı göstermedi. Yazılı koleksiyon <a> yok. Üçüncü deneme yok.",
   "capture": {
     "url": "https://pandora-furniture-5.myshopify.com/",
     "viewports": [
@@ -77,7 +88,7 @@
     ],
     "mode": "viewport",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-02T15:48:50.105Z",
+    "updatedAt": "2026-09-02T16:11:37.562Z",
     "prepareClick": "summary.header__icon--menu, summary[aria-label='Menu']"
   }
 }

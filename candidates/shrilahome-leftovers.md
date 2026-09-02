@@ -98,7 +98,23 @@ Karar: onay bekliyor
 ---
 
 ADAY: cro-absent  
-Gerekçe: Home’da featured product grid, countdown, quiz, before-after, lookbook, shop-the-feed yok.  
+Gerekçe: Home’da featured product grid, countdown, quiz, before-after, lookbook, shop-the-feed yok. Countdown PDP buy-box içinde.  
 Örnekler: https://pandora-furniture-5.myshopify.com/  
 Öneri: leftover — CRO tipi yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: shrilahome-always-hamburger  
+Gerekçe: 1440’te de hamburger. Inline mega yok. `summary.header__icon--menu` 1440 w=0; SVG 32×32. Kapalı `#menu-drawer` off-screen w=400 — capture kutu yazar, viewport homepage kalır. 375 açık drawer yoklandı (DOM) ama PNG yazılmadı.  
+Örnekler: home header  
+Öneri: leftover — interact open/changed menü karesi yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: shrilahome-search-modal-split  
+Gerekçe: İki `details-modal.header__search`. 1440 `#Search-In-Modal-1`, 375 `#Search-In-Modal`. Overlay fill ikinci denemede hidden kaldı. `/search?q=sofa` PLP kanıtlı.  
+Örnekler: home header  
+Öneri: leftover — predictive overlay  
 Karar: onay bekliyor
