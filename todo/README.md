@@ -46,7 +46,7 @@
 | HexClad | [`hexclad.md`](./hexclad.md) | ✅ listicle-fathers-day · 5 obs · 15 PNG · 0 yeni şema |
 | Allbirds | [`allbirds.md`](./allbirds.md) | 🟡 Mod A — 30 obs · ~90 PNG · partial capture (search blocked) |
 | Legal / policy (Kreis recipe) | [`policy-legal.md`](./policy-legal.md) | ✅ page-recipes/policy · 3-col sticky TOC \| content \| sibling nav |
-| Tormeti (Speedo) | [`tormeti.md`](./tormeti.md) | 🟡 Mod A — Pandora_Jewellery 1.5.0 · public /password 1 · 36 obs · 0 yeni şema |
+| Tormeti (Speedo) | [`tormeti.md`](./tormeti.md) | 🟡 first inventory — Pandora_Jewellery 1.5.0 · public /password 1 · 36 obs · 0 yeni şema · mega/cart/PDP interact · search/menu overlay missing |
 
 **Interact (discover sonrası derinlik):** [`interact.md`](./interact.md) — kapalı kare yalanı; Stretch + Cocoon/Balance shop-the-look kapandı.
 

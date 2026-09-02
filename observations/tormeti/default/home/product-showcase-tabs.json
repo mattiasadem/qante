@@ -8,9 +8,16 @@
   "selector": "#shopify-section-template--18185184411865__165666889162d379a4",
   "evidenceSlug": "product-showcase-tabs",
   "evidence": [
+    "evidence/tormeti/default/home/product-showcase-tabs.1440.png",
     "evidence/tormeti/default/home/product-showcase-tabs.375.png",
     "evidence/tormeti/default/home/product-showcase-tabs.768.png",
-    "evidence/tormeti/default/home/product-showcase-tabs.1440.png"
+    "evidence/tormeti/default/home/product-showcase-tabs.changed.sekme-new-arrivals.1440.png",
+    "evidence/tormeti/default/home/product-showcase-tabs.changed.sekme-new-arrivals.375.png",
+    "evidence/tormeti/default/home/product-showcase-tabs.changed.sekme-new-arrivals.768.png",
+    "evidence/tormeti/default/home/product-showcase-tabs.hover.kart-hover.1440.png",
+    "evidence/tormeti/default/home/product-showcase-tabs.initial.ilk-hal.1440.png",
+    "evidence/tormeti/default/home/product-showcase-tabs.initial.ilk-hal.375.png",
+    "evidence/tormeti/default/home/product-showcase-tabs.initial.ilk-hal.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "TRENDY COLLECTION. Sekmeler BEST SELLERS / NEW ARRIVALS / TOP TRENDING. Kart: ADD TO WISHLIST · ADD TO CART · Jewellery Silver Diamond Ring $230 · Solid Silver Diamond Bar Bracelet $780. quick-add.",
@@ -23,8 +30,8 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T13:42:29.308Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:12:40.783Z"
   },
   "interactionStates": [
     "initial",
@@ -49,7 +56,7 @@
     {
       "state": "hover",
       "action": "hover",
-      "selector": "#shopify-section-template--18185184411865__165666889162d379a4 .card-wrapper",
+      "selector": "#shopify-section-template--18185184411865__165666889162d379a4 .card__media",
       "viewports": [
         "1440"
       ],
@@ -60,13 +67,24 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": "#home-page-tab-template--18185184411865__165666889162d379a4 .tabs .button:not(.active)",
+      "selector": "#home-page-tab-template--18185184411865__165666889162d379a4 a.button:text-is('NEW ARRIVALS')",
       "capture": true,
       "etiket": "sekme-new-arrivals",
-      "not": "NEW ARRIVALS / TOP TRENDING sekmesi"
+      "not": "NEW ARRIVALS sekmesi"
     }
   ],
-  "stateFindings": {},
-  "missingStates": [],
-  "interactionNote": "375/768 hover parmakta yok."
+  "stateFindings": {
+    "initial": "TRENDY COLLECTION · BEST SELLERS aktif hap · NEW ARRIVALS / TOP TRENDING · 4 kart: Jewellery Silver Diamond Ring $230 · Solid Silver Diamond Bar Bracelet $780 · Silver Plated Wedding Jewellery $230 · Diamond And Silver Earrings $140 · swatch 3 · ok'lar · SHOP NOW."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "1440 kart-hover karesi ilk-hal ile aynı; ikinci görsel / quick-add görünmedi."
+    },
+    {
+      "state": "changed",
+      "sebep": "NEW ARRIVALS tık sonrası kare hâlâ BEST SELLERS + aynı 4 ürün."
+    }
+  ],
+  "interactionNote": "375/768 hover parmakta yok. Wishlist leftover. İki resmi deneme aynı kare."
 }

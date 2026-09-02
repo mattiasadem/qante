@@ -8,9 +8,18 @@
   "selector": "#CartDrawer",
   "evidenceSlug": "global-cart-drawer",
   "evidence": [
+    "evidence/tormeti/default/home/global-cart-drawer.1440.png",
     "evidence/tormeti/default/home/global-cart-drawer.375.png",
     "evidence/tormeti/default/home/global-cart-drawer.768.png",
-    "evidence/tormeti/default/home/global-cart-drawer.1440.png"
+    "evidence/tormeti/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/tormeti/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/tormeti/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/tormeti/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/tormeti/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/tormeti/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/tormeti/default/home/global-cart-drawer.initial.sepet-bos.1440.png",
+    "evidence/tormeti/default/home/global-cart-drawer.initial.sepet-bos.375.png",
+    "evidence/tormeti/default/home/global-cart-drawer.initial.sepet-bos.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "#CartDrawer Dawn drawer. Kapalıda visibility:hidden ama kutu dolu. prepareClick #cart-icon-bubble.",
@@ -26,8 +35,8 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T13:50:26.604Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:14:09.152Z",
     "prepareClick": "#cart-icon-bubble"
   },
   "interactionStates": [
@@ -52,10 +61,17 @@
       "state": "initial",
       "action": "click",
       "selector": "#cart-icon-bubble",
+      "capture": false,
+      "not": "Cart ikon"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 1000,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "sepet-bos",
-      "not": "Boş drawer"
+      "not": "Boş drawer viewport — element screenshot kapalıda görünmez"
     },
     {
       "state": "filled",
@@ -87,21 +103,31 @@
       "action": "click",
       "selector": "#cart-icon-bubble",
       "capture": true,
-      "captureMode": "viewport",
+      "captureMode": "section",
+      "captureSelector": "#CartDrawer .drawer__inner",
       "etiket": "sepete-eklendi",
-      "not": "ATC sonrası drawer; yoksa ikon"
+      "not": "ATC sonrası drawer kutusu"
     },
     {
       "state": "changed",
       "action": "click",
       "selector": "#CartDrawer button[name='plus'], #CartDrawer button[aria-label*='Increase' i]",
       "capture": true,
-      "captureMode": "viewport",
+      "captureMode": "section",
+      "captureSelector": "#CartDrawer .drawer__inner",
       "etiket": "adet-artti",
       "not": "Adet 1→2"
     }
   ],
-  "stateFindings": {},
-  "missingStates": [],
-  "interactionNote": "Checkout tıklanmadı. Statik prepareClick kapalı kare verdi."
+  "stateFindings": {
+    "filled": "Drawer: Your cart · Back · Free Shipping! $500 + Express Shipping! $800 yeşil progress · Gold And Diamond Stud Earrings · Metal: Gold · adet 1 · $140 · çöp · Best seller / Order special instructions akordeon · Estimated total $140.00 USD · CHECK OUT · View cart. Checkout tıklanmadı.",
+    "changed": "Aynı satır adet 2 · Estimated total $280.00 USD. Progress bar doldu (hâlâ $500 altında)."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "Boş drawer element screenshot kapalıda görünmez; viewport sepet-bos kareleri homepage — boş panel resmi karede yok. Dolu hâl ATC sonrası açıldı."
+    }
+  ],
+  "interactionNote": "filled/addToCart → ui. Checkout / Log in tıklanmadı. Statik 3vp kapalı homepage."
 }

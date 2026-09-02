@@ -105,3 +105,27 @@ Gerekçe: `/collections/gold` banner h≈530 (görsel + lorem); best-seller bann
 Örnekler: `/collections/gold`  
 Öneri: leftover — preset/layout farkı  
 Karar: onay bekliyor
+
+---
+
+ADAY: tormeti-predictive-search-overlay  
+Gerekçe: Resmi interact viewport tık+fill sonrası `#Search-In-Modal-1` gizli; kare kapalı homepage. `/search?q=gold` sayfa envanterlendi.  
+Örnekler: home `details-modal.header__search`  
+Öneri: leftover — overlay capture  
+Karar: onay bekliyor
+
+---
+
+ADAY: tormeti-menu-drawer-official-frame  
+Gerekçe: 1440 hamburger 0px. 375 `#menu-drawer` 0px. 768 resmi viewport hamburger-acik/jewellery-alt homepage — panel yok.  
+Örnekler: `#header-menu` · `#menu-drawer`  
+Öneri: leftover — Dawn overlay  
+Karar: onay bekliyor
+
+---
+
+ADAY: tormeti-faq-placeholder-rows  
+Gerekçe: FAQ accordion başlığı “Collapsible content”; dört satır “Collapsible row” + check ikon. Merchant metni değil, tema placeholder.  
+Örnekler: `/pages/faq` `faq-collapsible-tabs`  
+Öneri: leftover  
+Karar: onay bekliyor

@@ -27,7 +27,7 @@
     ],
     "mode": "viewport",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-02T13:54:24.372Z",
+    "updatedAt": "2026-09-02T14:13:02.986Z",
     "prepareClick": "#Details-menu-drawer-container > summary"
   },
   "interactionStates": [
@@ -57,21 +57,12 @@
         "768"
       ],
       "capture": false,
-      "not": "Hamburger"
-    },
-    {
-      "state": "open",
-      "action": "forceOpen",
-      "selector": "#menu-drawer",
-      "viewports": [
-        "375"
-      ],
-      "capture": false
+      "not": "Hamburger — forceOpen kutuyu 0/şerit yapıyor"
     },
     {
       "state": "open",
       "action": "waitFor",
-      "value": 600,
+      "value": 900,
       "viewports": [
         "375",
         "768"
@@ -79,12 +70,12 @@
       "capture": true,
       "captureMode": "viewport",
       "etiket": "hamburger-acik",
-      "not": "Mobil menü paneli"
+      "not": "Açık drawer — section şerit verdi"
     },
     {
       "state": "changed",
       "action": "click",
-      "selector": "#Details-menu-drawer-menu-item-2 > summary",
+      "selector": "#HeaderDrawer-jewellery",
       "viewports": [
         "375",
         "768"
@@ -92,10 +83,19 @@
       "capture": true,
       "captureMode": "viewport",
       "etiket": "jewellery-alt",
-      "not": "Jewellery disclosure — yazılı <a> değil"
+      "not": "Jewellery disclosure summary"
     }
   ],
   "stateFindings": {},
-  "missingStates": [],
-  "interactionNote": "1440 hamburger 0px. 375 forceOpen #menu-drawer (kapalıda w=0)."
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375: #menu-drawer capture 0px. 768 viewport hamburger-acik karesi homepage — drawer paneli yok (hamburger ikon duruyor)."
+    },
+    {
+      "state": "changed",
+      "sebep": "375 sıfır kutu. 768 jewellery-alt karesi yine homepage; alt menü görünmedi."
+    }
+  ],
+  "interactionNote": "1440 hamburger 0px leftover. forceOpen şerit/0 verdi; viewport tık sonrası da drawer resmi karede yok. Yazılı <a> tıklanmadı."
 }
