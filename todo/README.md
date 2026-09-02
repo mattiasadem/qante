@@ -89,6 +89,7 @@
 | Sonix (Speedo) | [`sonix.md`](./sonix.md) | ✅ Mod A + interact — default · sonix-electronics-store · password `1` · 39 obs · 0 yeni şema |
 | Spacecraft (Speedo · home decor) | [`spacecraft.md`](./spacecraft.md) | 🟡 first inventory + interact — `pandora-furniture-3` · Pandora-furniture-3 V-1.5.0 · password `1` · 39 obs · 164 PNG · 0 yeni şema · search/cart/PDP/FAQ alındı; mega/menu/hover/tabs missing |
 | WALLPAPSH (Speedo) | [`wallpapsh.md`](./wallpapsh.md) | ✅ first inventory + interact — official `pandora-wallpaper.myshopify.com` · password `1` · 41 obs · 156 PNG · 0 yeni şema · menu/tabs/search-mobile missingStates |
+| WallFresh (Speedo) | [`wallfresh.md`](./wallfresh.md) | 🟡 first inventory — official `pandora-wallpaper-2.myshopify.com` · Wallfresh 1.5.0 · password `1` · 49 obs · 0 yeni şema · 3vp+interact sırada |
 | XOXO / Odzi (Speedo) | [`xoxo.md`](./xoxo.md) | 🟡 first inventory + interact — official `pandora-full-fashion.myshopify.com` · Pandora-full-fashion V-1.5.0 · vendor password `1` · 45 obs · 0 yeni şema · cart/PDP/FAQ/PLP 1440; menu/search 375 overlay missing |
 | Legal / policy (Kreis recipe) | [`policy-legal.md`](./policy-legal.md) | ✅ page-recipes/policy · 3-col sticky TOC \| content \| sibling nav |
 
