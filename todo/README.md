@@ -49,6 +49,7 @@
 | Candle (Speedo) | [`candle.md`](./candle.md) | ✅ Mod A + interact — password `1` · 41 obs · static 3vp + shopper states · 0 yeni şema |
 | Furnix (Speedo / Decora) | [`furnix.md`](./furnix.md) | 🟡 Mod A + interact — `pandora-furniture-6` · password 1 · 41 obs · 173 PNG · 0 yeni şema |
 | Guccy (Speedo) | [`guccy.md`](./guccy.md) | ✅ first inventory — fashion-store-clean-20 · Guccy 1.5.0 · password 1 · 46 obs · 157 PNG · 0 yeni şema · hamburger leftover |
+| Hiking (Speedo) | [`hiking.md`](./hiking.md) | 🟡 first inventory — hiking-online-store-1 · Hiking 1.5.0 · password `1` · 43 obs · 0 yeni şema |
 | Hubble (Speedo) | [`hubble.md`](./hubble.md) | ✅ default — Hubble-nutrition 1.2.0 · 34 obs · 133 PNG · 0 yeni şema · password `1` |
 | Luxora (Speedo) | [`luxora.md`](./luxora.md) | ✅ first inventory — 46 obs · 182 PNG · 0 yeni şema · Jewelry-online-shop2 V-1.5.0 · official password `1` · mega/cart alındı · menu/search/FAQ/tabs/PLP filter missingStates |
 | Nouk (Speedo) | [`nouk.md`](./nouk.md) | 🟡 first inventory — `jewelry-online-shop-3` · Nouk Jewellery 1.5.0 · password `1` (vendor) · 44 obs · ~185 PNG · 0 yeni şema |
