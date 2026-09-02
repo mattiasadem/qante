@@ -8,9 +8,13 @@
   "selector": "#shopify-section-template--17265142694065__0617c2f2-69ec-4df8-a506-b2616d4e1db4",
   "evidenceSlug": "product-showcase-grid-featured",
   "evidence": [
+    "evidence/food-drink/default/home/product-showcase-grid-featured.1440.png",
     "evidence/food-drink/default/home/product-showcase-grid-featured.375.png",
     "evidence/food-drink/default/home/product-showcase-grid-featured.768.png",
-    "evidence/food-drink/default/home/product-showcase-grid-featured.1440.png"
+    "evidence/food-drink/default/home/product-showcase-grid-featured.hover.hover-kart.1440.png",
+    "evidence/food-drink/default/home/product-showcase-grid-featured.initial.ilk-hal.1440.png",
+    "evidence/food-drink/default/home/product-showcase-grid-featured.initial.ilk-hal.375.png",
+    "evidence/food-drink/default/home/product-showcase-grid-featured.initial.ilk-hal.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "section-featured-collection. Our Best Seller. Banana $199→$180, Watermelon. ADD TO CART + Sale rozeti + Vendor. slider-component.",
@@ -23,7 +27,54 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T19:38:45.915Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:04:50.529Z"
+  },
+  "interactionStates": [
+    "initial",
+    "hover"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://food-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17265142694065__0617c2f2-69ec-4df8-a506-b2616d4e1db4",
+      "capture": true,
+      "etiket": "ilk-hal"
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#shopify-section-template--17265142694065__0617c2f2-69ec-4df8-a506-b2616d4e1db4 .card__media",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "hover-kart",
+      "not": "Probe: 2. görsel + wishlist/compare. ATC DOM'da kapalıdayken de var."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Our Best Seller. 4 kart (Banana $180/$199, Watermelon $190, Mango juice sale, Guava). VIEW ALL. Oklar.",
+    "hover": "1440 kare initial ile aynı byte — 2. görsel/ATC overlay karede yok."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "1440 hover PNG = initial (175260B). Probe DOM'da wishlist/compare + 2 img; piksel değişmedi. 375/768 hover yok."
+    }
+  ],
+  "interactionNote": "Quick View modal yok. ATC kart DOM'unda kapalıyken de var."
 }

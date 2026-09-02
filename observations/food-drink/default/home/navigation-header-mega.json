@@ -8,9 +8,13 @@
   "selector": "#shopify-section-sections--17265143283889__header",
   "evidenceSlug": "navigation-header-mega",
   "evidence": [
+    "evidence/food-drink/default/home/navigation-header-mega.1440.png",
     "evidence/food-drink/default/home/navigation-header-mega.375.png",
     "evidence/food-drink/default/home/navigation-header-mega.768.png",
-    "evidence/food-drink/default/home/navigation-header-mega.1440.png"
+    "evidence/food-drink/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/food-drink/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/food-drink/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/food-drink/default/home/navigation-header-mega.open.shop-mega.1440.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Logo Food & Drink. Nav: Home / Shop (details#Details-HeaderMenu-2, .mega-menu var) / About / Blog / Contact. Search details-modal + #cart-icon-bubble + wishlist 0 + compare 0 + Log in + localization. 375 hamburger summary.header__icon--menu.",
@@ -24,7 +28,58 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T19:36:45.674Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:11:25.426Z"
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://food-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Shop mega kapalı. 375/768 hamburger ayrı global-menu-drawer."
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-2 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "Hover summary — click Shop <a href=/collections/all> sayfaya gider. #MegaMenu-Content-2 FRUITS…SOFT DRINK.",
+      "value": 1800
+    }
+  ],
+  "stateFindings": {
+    "initial": "375/768: hamburger + logo + sepet + arama. 1440: Home (yeşil alt çizgi) / Shop chevron / About / Blog / Contact; ortada Food & Drink logo; sağda sepet + wishlist 0 + hesap + Search... Mega kapalı.",
+    "open": "1440 hover karesi kapalı homepage ile aynı (±144 byte). Panel karede durmadı."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "Hover #Details-HeaderMenu-2 > summary iki denemede de kare kapalı home ile aynı. Probe: #MegaMenu-Content-2 1440×375 FRUITS/VEGETABLES/ORGANIC JUICES/MILK/SEASONAL FRUITS/SOFT DRINK, URL home. 375/768 hamburger ayrı drawer."
+    }
+  ],
+  "interactionNote": "Click Shop /collections/all. Account/wishlist tıklanmadı. Probe mega gördü; capture PNG panel göstermedi."
 }

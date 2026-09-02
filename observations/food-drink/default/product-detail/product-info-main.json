@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--17265143021745__main",
   "evidenceSlug": "product-info-main",
   "evidence": [
+    "evidence/food-drink/default/product-detail/product-info-main.1440.png",
     "evidence/food-drink/default/product-detail/product-info-main.375.png",
     "evidence/food-drink/default/product-detail/product-info-main.768.png",
-    "evidence/food-drink/default/product-detail/product-info-main.1440.png"
+    "evidence/food-drink/default/product-detail/product-info-main.changed.full-fat.1440.png",
+    "evidence/food-drink/default/product-detail/product-info-main.changed.full-fat.375.png",
+    "evidence/food-drink/default/product-detail/product-info-main.changed.full-fat.768.png",
+    "evidence/food-drink/default/product-detail/product-info-main.initial.ilk-hal.1440.png",
+    "evidence/food-drink/default/product-detail/product-info-main.initial.ilk-hal.375.png",
+    "evidence/food-drink/default/product-detail/product-info-main.initial.ilk-hal.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Natural Cow's Milk $14.99. Varyant Fat-free / Full fat / Low fat (tek çoklu varyant ürün). People are viewing · stock · Delivery · Hurry up countdown. Add to cart.",
@@ -23,7 +29,41 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T19:45:08.734Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:02:52.387Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://food-online-store-1.myshopify.com/products/natural-cows-milk",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Fat-free seçili $14.99"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='template--17265143021745__main-1-1']",
+      "capture": true,
+      "etiket": "full-fat",
+      "not": "Full fat pill. Fiyat $14.99 aynı beklenir."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Fat-free siyah pill. $14.99. Galeri sol thumb. Countdown Hurry up. ADD TO CART + BUY IT NOW. Extra/Shipping/Materials accordion.",
+    "changed": "Full fat siyah seçili; Fat-free çerçeve. Pembe kutu görsel. Fiyat $14.99 aynı. URL aynı ürün."
+  },
+  "missingStates": [],
+  "interactionNote": "Low fat yoklandı değil. BUY IT NOW tıklanmadı."
 }

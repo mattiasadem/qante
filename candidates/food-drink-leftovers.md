@@ -90,7 +90,7 @@ Karar: onay bekliyor
 ---
 
 ADAY: food-drink-quick-view-unconfirmed  
-Gerekçe: Home DOM taraması `[id*='quick']` true döndü; açık modal/selector doğrulanmadı. Kör `global-quick-view` observation yazılmadı.  
+Gerekçe: Home DOM taraması `[id*='quick']` true döndü; interact hover Best Seller 1440 PNG = initial (175260B). Açık QV modal yok. Kör `global-quick-view` observation yazılmadı.  
 Örnekler: home featured ADD TO CART  
 Öneri: leftover — QV yoklandıktan sonra  
 Karar: onay bekliyor
@@ -101,4 +101,44 @@ ADAY: food-drink-native-policy
 Gerekçe: Policy sayfası walk'ta açılmadı. Native `/policies/*` gövdesi beklenir; `policy-page-layout` üç kolon değil.  
 Örnekler: (açılmadı)  
 Öneri: leftover — native policy varsayımı  
+Karar: onay bekliyor
+
+---
+
+ADAY: food-drink-you-may-like-overlay  
+Gerekçe: ATC sonrası `#CartDrawer` üstünde **YOU MAY LIKE** upsell overlay. Aynı host; yeni schemaId yok.  
+Örnekler: cart drawer filled `sepete-eklendi`  
+Öneri: leftover — post-ATC overlay  
+Karar: onay bekliyor
+
+---
+
+ADAY: food-drink-mega-capture-gap  
+Gerekçe: Probe `#MegaMenu-Content-2` 1440×375 FRUITS…SOFT DRINK, URL home. Official hover PNG kapalı homepage ile aynı. `missingStates: ["open"]`. Üçüncü deneme yok.  
+Örnekler: `#Details-HeaderMenu-2 > summary`  
+Öneri: leftover — mega kare durmadı  
+Karar: onay bekliyor
+
+---
+
+ADAY: food-drink-menu-drawer-capture-gap  
+Gerekçe: Probe 375 drawer 375×660. Official 375 PNG 0×0; 768 kare homepage. Shop yazılı `<a href=/collections/all>` — tıklama sayfaya gider. `missingStates` open + changed.  
+Örnekler: `#menu-drawer`  
+Öneri: leftover — drawer kare durmadı  
+Karar: onay bekliyor
+
+---
+
+ADAY: food-drink-search-modal-375-768  
+Gerekçe: `#Search-In-Modal` 375/768 capture'da hidden. 1440 inline `#Search-In-Menu` banana → Banana - Raw, Organically Grown.  
+Örnekler: header search  
+Öneri: leftover — modal 375/768  
+Karar: onay bekliyor
+
+---
+
+ADAY: food-drink-empty-cart-drawer-capture  
+Gerekçe: `#cart-icon-bubble` boş drawer karede homepage. Dolu drawer ATC ile kanıtlı.  
+Örnekler: `#CartDrawer` initial  
+Öneri: leftover — boş drawer kare durmadı  
 Karar: onay bekliyor

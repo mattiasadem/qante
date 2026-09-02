@@ -8,7 +8,8 @@
   "selector": "#menu-drawer",
   "evidenceSlug": "global-menu-drawer",
   "evidence": [
-    "evidence/food-drink/default/home/global-menu-drawer.768.png"
+    "evidence/food-drink/default/home/global-menu-drawer.768.png",
+    "evidence/food-drink/default/home/global-menu-drawer.open.hamburger.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "details#Details-menu-drawer-container → #menu-drawer. Home/Shop/About/Blog/Contact + wishlist/compare/login + localization.",
@@ -23,8 +24,74 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T19:33:23.595Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:12:28.173Z",
     "prepareClick": "summary.header__icon--menu"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://food-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "summary.header__icon--menu",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "value": 1200,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#menu-drawer",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 800,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Drawer açık"
+    }
+  ],
+  "stateFindings": {
+    "open": "768 kare homepage (drawer yok). 375 #menu-drawer zero-size (2. deneme)."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375 zero-size; 768 kare kapalı home. Probe 375: drawer 375×660 Home/Shop/About/Blog/Contact + wishlist/compare/LOG IN + USD/English."
+    },
+    {
+      "state": "changed",
+      "sebep": "Shop yazılı <a href=/collections/all>; boş chevron yok."
+    }
+  ],
+  "interactionNote": "1440 hamburger 0×0. Log in tıklanmadı. forceOpen ikinci denemede 375'i açmadı."
 }

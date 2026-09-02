@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--17265143021745__79582f51-5736-4bff-b870-bba69393ad36",
   "evidenceSlug": "product-info-tabs",
   "evidence": [
+    "evidence/food-drink/default/product-detail/product-info-tabs.1440.png",
     "evidence/food-drink/default/product-detail/product-info-tabs.375.png",
     "evidence/food-drink/default/product-detail/product-info-tabs.768.png",
-    "evidence/food-drink/default/product-detail/product-info-tabs.1440.png"
+    "evidence/food-drink/default/product-detail/product-info-tabs.changed.shipping.1440.png",
+    "evidence/food-drink/default/product-detail/product-info-tabs.changed.shipping.375.png",
+    "evidence/food-drink/default/product-detail/product-info-tabs.changed.shipping.768.png",
+    "evidence/food-drink/default/product-detail/product-info-tabs.initial.description.1440.png",
+    "evidence/food-drink/default/product-detail/product-info-tabs.initial.description.375.png",
+    "evidence/food-drink/default/product-detail/product-info-tabs.initial.description.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "DESCRIPTION / ADDITIONAL INFORMATION / SHIPPING AND DELIVERY. İlk sekme açık.",
@@ -23,7 +29,41 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T19:46:16.361Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:03:56.063Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://food-online-store-1.myshopify.com/products/natural-cows-milk",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "etiket": "description",
+      "not": "DESCRIPTION açık"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--17265143021745__79582f51-5736-4bff-b870-bba69393ad36 >> text=SHIPPING AND DELIVERY",
+      "capture": true,
+      "etiket": "shipping",
+      "not": "Üçüncü sekme"
+    }
+  ],
+  "stateFindings": {
+    "initial": "DESCRIPTION yeşil aktif. Natural Cow's Milk grass-fed paragrafı.",
+    "changed": "SHIPPING AND DELIVERY yeşil. Shipping 1–2 gün / Returns 10 gün maddeleri."
+  },
+  "missingStates": [],
+  "interactionNote": "ADDITIONAL INFORMATION yoklandı değil."
 }

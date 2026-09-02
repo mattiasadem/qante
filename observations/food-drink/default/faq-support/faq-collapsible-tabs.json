@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--17265142857905__cb435de1-8958-455d-8843-8a9ef3413466",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/food-drink/default/faq-support/faq-collapsible-tabs.1440.png",
     "evidence/food-drink/default/faq-support/faq-collapsible-tabs.375.png",
     "evidence/food-drink/default/faq-support/faq-collapsible-tabs.768.png",
-    "evidence/food-drink/default/faq-support/faq-collapsible-tabs.1440.png"
+    "evidence/food-drink/default/faq-support/faq-collapsible-tabs.changed.orangeglo.1440.png",
+    "evidence/food-drink/default/faq-support/faq-collapsible-tabs.changed.orangeglo.375.png",
+    "evidence/food-drink/default/faq-support/faq-collapsible-tabs.changed.orangeglo.768.png",
+    "evidence/food-drink/default/faq-support/faq-collapsible-tabs.initial.ilk-acik.1440.png",
+    "evidence/food-drink/default/faq-support/faq-collapsible-tabs.initial.ilk-acik.375.png",
+    "evidence/food-drink/default/faq-support/faq-collapsible-tabs.initial.ilk-acik.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Frequently asked question. Which of these fruits grows on palm trees? + coconut cevabı. details accordion.",
@@ -23,7 +29,41 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T19:26:25.490Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:14:46.316Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://food-online-store-1.myshopify.com/pages/faqs",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "etiket": "ilk-acik",
+      "not": "İlk soru (palm trees) açık"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--17265142857905__cb435de1-8958-455d-8843-8a9ef3413466 >> text=Orangeglo is a variety of which vegetable?",
+      "capture": true,
+      "etiket": "orangeglo",
+      "not": "İkinci soru açılır; ilki de açık kalabilir (allowMultipleOpen)."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Frequently asked question. İlk soru (palm trees) yeşil açık + coconut cevabı. Sağda lifestyle görsel.",
+    "changed": "Orangeglo sorusu da açık (allowMultipleOpen). Watermelon / deep orange flesh cevabı. İlk soru açık kaldı."
+  },
+  "missingStates": [],
+  "interactionNote": "3–4. soru yoklandı değil."
 }

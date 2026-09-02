@@ -8,9 +8,14 @@
   "selector": "#shopify-section-template--17265142431921__product-grid",
   "evidenceSlug": "product-showcase-grid-plp",
   "evidence": [
+    "evidence/food-drink/default/collection/product-showcase-grid-plp.1440.png",
     "evidence/food-drink/default/collection/product-showcase-grid-plp.375.png",
     "evidence/food-drink/default/collection/product-showcase-grid-plp.768.png",
-    "evidence/food-drink/default/collection/product-showcase-grid-plp.1440.png"
+    "evidence/food-drink/default/collection/product-showcase-grid-plp.changed.filtre-beer.1440.png",
+    "evidence/food-drink/default/collection/product-showcase-grid-plp.hover.hover-kart.1440.png",
+    "evidence/food-drink/default/collection/product-showcase-grid-plp.initial.ilk-hal.1440.png",
+    "evidence/food-drink/default/collection/product-showcase-grid-plp.initial.ilk-hal.375.png",
+    "evidence/food-drink/default/collection/product-showcase-grid-plp.initial.ilk-hal.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "HOME PRODUCTS breadcrumb + FILTERS (Vendor / Category / Availability / Price) + sort. ADD TO CART kartlar. ~40 ürün /collections/all.",
@@ -23,7 +28,62 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T19:20:48.481Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:05:54.038Z"
+  },
+  "interactionStates": [
+    "initial",
+    "hover",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://food-online-store-1.myshopify.com/collections/all",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "40 products 3 kolon"
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#shopify-section-template--17265142431921__product-grid .card__media",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "hover-kart"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--17265142431921__product-grid label:has-text('BEER (2)')",
+      "capture": true,
+      "etiket": "filtre-beer",
+      "not": "Vendor BEER — 40→2 beklenir"
+    }
+  ],
+  "stateFindings": {
+    "initial": "HOME / PRODUCTS. FILTERS sidebar. 40 products. 3 kolon aktif. Sale rozetleri.",
+    "hover": "1440 ilk kart (All Natural Chocolate Milk): yeşil ADD TO CART görsel altında + wishlist/compare ikonları.",
+    "changed": "1440 Vendor BEER işaretli. 2 of 40 products. Beer with Green Hops $17.99 + Light Ipa Beer $9.99/$19.99."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "375/768 BEER checkbox görünür değil (filtre çekmece). Yalnız 1440 sidebar."
+    },
+    {
+      "state": "hover",
+      "sebep": "375/768 parmakta hover yok"
+    }
+  ],
+  "interactionNote": "Quick View yok. Checkout yok."
 }

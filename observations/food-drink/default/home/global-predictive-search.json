@@ -5,16 +5,17 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://food-online-store-1.myshopify.com/",
-  "selector": "predictive-search.search-modal__form",
+  "selector": "details-modal.header__search, .header-full-width-search, predictive-search.search-modal__form",
   "evidenceSlug": "global-predictive-search",
   "evidence": [
-    "evidence/food-drink/default/home/global-predictive-search.1440.png"
+    "evidence/food-drink/default/home/global-predictive-search.1440.png",
+    "evidence/food-drink/default/home/global-predictive-search.input.arama-banana.1440.png"
   ],
   "storefrontPassword": "1",
   "notlar": "details-modal.header__search · #Search-In-Modal · predictive-search.search-modal__form.",
   "delta": "Shopify.theme.name Food & Drink V-1.5.0 · schema_name Food & Drink · schema_version 1.5.0 · theme_store_id null · role main · id 138021077169 · shop food-online-store-1.myshopify.com · Speedo Themes third-party OS 2.0 (Theme Store resmi değil). Vendor-published demo password 1 (public storefront unlock). Kapalı 0×0; input interact banana/milk.",
   "captureMode": "viewport",
-  "prepareClick": "details-modal.header__search summary.header__icon--search, summary.header__icon--search",
+  "prepareClick": "summary.header__icon--search, .header__icon--search",
   "capture": {
     "url": "https://food-online-store-1.myshopify.com/",
     "viewports": [
@@ -23,8 +24,76 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T19:34:45.964Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:13:46.829Z",
     "prepareClick": "details-modal.header__search summary.header__icon--search, summary.header__icon--search"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://food-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header summary.header__icon--search, .header-full-width-search input[name=q]",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "details-modal.header__search",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 600,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal, .header-full-width-search input[name=q], input[name=q]",
+      "value": "banana",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-banana",
+      "not": "katalogSorgu banana"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440 inline Search... header'da. 375/768 modal açılmadı (input hidden).",
+    "input": "1440 banana: PRODUCTS — Banana - Raw, Organically Grown + Search for “banana”. 375/768 fill görünür input bulamadı."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "375/768 predictive-search.search-modal__form / modal 0-size; ikon tık modalı karede tutmadı."
+    },
+    {
+      "state": "input",
+      "sebep": "375/768 #Search-In-Modal attached ama hidden (2. deneme). Probe 375'te banana sonucu görmüştü."
+    }
+  ],
+  "interactionNote": "katalogSorgu banana. 1440 header-full-width-search. Submit yok."
 }

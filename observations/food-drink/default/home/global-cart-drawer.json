@@ -8,9 +8,18 @@
   "selector": "#CartDrawer",
   "evidenceSlug": "global-cart-drawer",
   "evidence": [
+    "evidence/food-drink/default/home/global-cart-drawer.1440.png",
     "evidence/food-drink/default/home/global-cart-drawer.375.png",
     "evidence/food-drink/default/home/global-cart-drawer.768.png",
-    "evidence/food-drink/default/home/global-cart-drawer.1440.png"
+    "evidence/food-drink/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/food-drink/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/food-drink/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/food-drink/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/food-drink/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/food-drink/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/food-drink/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/food-drink/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/food-drink/default/home/global-cart-drawer.initial.cart-bos.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Dawn cart-drawer. Opener #cart-icon-bubble href=/cart. cart-drawer.is-empty. Checkout tıklanmadı.",
@@ -25,8 +34,93 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T19:31:53.211Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:17:14.831Z",
     "prepareClick": "#cart-icon-bubble"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://food-online-store-1.myshopify.com/",
+      "capture": false,
+      "not": "/cart/clear checkpoint riski — home unlock"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Your cart is empty + CONTINUE SHOPPING",
+      "value": 2000
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://food-online-store-1.myshopify.com/products/natural-cows-milk",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--17265143021745__main, button[name='add']",
+      "capture": false,
+      "not": "Natural Cow's Milk $14.99 Fat-free"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC sonrası drawer. Açılmazsa --state filled + #cart-icon-bubble."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "qty 1→2 · $14.99→$29.98 beklenir"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Icon click karede drawer yok (homepage). Boş metin probe'da Your cart is empty + CONTINUE SHOPPING.",
+    "filled": "YOUR CART. Natural Cow's Milk Fat-free qty 1 $14.99. Free Shipping $100 / Express $150 bar. YOU MAY LIKE overlay. Estimated total $14.99 USD. CHECK OUT.",
+    "changed": "qty 2; satır ve estimated total $29.98 USD. Checkout tıklanmadı."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "Boş drawer #cart-icon-bubble tık iki denemede karede açılmadı. Dolu hâl ATC ile kanıtlı."
+    }
+  ],
+  "interactionNote": "ATC UI (addToCart → ui). /cart/clear yok. YOU MAY LIKE upsell leftover. Checkout/Log in tıklanmadı."
 }

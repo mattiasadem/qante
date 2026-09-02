@@ -15,8 +15,8 @@
 
 **Unlock:** Vendor ürün sayfası “Please enter password 1 to view demo.” Aynı host `/password` — public storefront-unlock. Başka host yok.
 
-**Durum:** Mod A roster yazıldı · 3vp capture + interact sırada  
-**PR:** draft · **main'e merge yok**
+**Durum:** Mod A + static 3vp + interact yazıldı · 36 obs · 155 PNG · 0 yeni şema  
+**PR:** https://github.com/mattiasadem/qante/pull/367 · draft · **main'e merge yok**
 
 ---
 
@@ -39,21 +39,21 @@
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | [x] obs | [ ] static |
-| Header Shop mega 1440 | [x] obs | [ ] interact |
-| Predictive search `banana` | [x] obs | [ ] interact |
-| Mobile menu 375 + 768 | [x] obs | [ ] interact |
-| Cart drawer empty + filled + qty | [x] obs | [ ] interact |
-| PDP Natural Cow's Milk Fat-free→Full fat | [x] obs | [ ] interact |
-| PDP tabs DESCRIPTION→SHIPPING | [x] obs | [ ] interact |
-| PLP `/collections/all` + hover/filter | [x] obs | [ ] |
-| Collections `/collections` | [x] obs | [ ] static |
-| Search `/search?q=banana` | [x] obs | [ ] static |
-| Cart page empty + filled | [x] obs | [ ] interact |
-| About `/pages/about` | [x] obs | [ ] static |
-| Contact form (submit yok) | [x] obs | [ ] static |
-| FAQ `/pages/faqs` | [x] obs | [ ] interact |
-| News + prep post | [x] obs | [ ] static |
+| Home roster (announcement→footer) | [x] obs | [x] static |
+| Header Shop mega 1440 | [x] obs | [x] interact · `missingStates.open` (PNG kapalı home) |
+| Predictive search `banana` | [x] obs | [x] interact · 1440 OK · 375/768 `missingStates` |
+| Mobile menu 375 + 768 | [x] obs | [x] interact · `missingStates` (375 0×0 · 768 home) |
+| Cart drawer empty + filled + qty | [x] obs | [x] interact · filled+qty OK · empty `missingStates` |
+| PDP Natural Cow's Milk Fat-free→Full fat | [x] obs | [x] interact |
+| PDP tabs DESCRIPTION→SHIPPING | [x] obs | [x] interact |
+| PLP `/collections/all` + hover/filter | [x] obs | [x] static + 1440 hover/filter · 375/768 filter `missingStates` |
+| Collections `/collections` | [x] obs | [x] static |
+| Search `/search?q=banana` | [x] obs | [x] static |
+| Cart page empty + filled | [x] obs | [x] interact |
+| About `/pages/about` | [x] obs | [x] static |
+| Contact form (submit yok) | [x] obs | [x] static |
+| FAQ `/pages/faqs` | [x] obs | [x] interact |
+| News + prep post | [x] obs | [x] static |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -90,6 +90,6 @@
 
 ## Evidence backlog
 
-- [ ] Official 3vp static
-- [ ] Interact header / search / menu / cart / featured / FAQ / PDP / PLP
-- [ ] `node scripts/validate-schemas.mjs` — 0 error hedef
+- [x] Official 3vp static
+- [x] Interact header / search / menu / cart / featured / FAQ / PDP / PLP
+- [x] `node scripts/validate-schemas.mjs` — 0 error (13 preexisting warn, unrelated)

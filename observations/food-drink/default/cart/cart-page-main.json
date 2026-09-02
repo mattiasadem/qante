@@ -8,9 +8,18 @@
   "selector": "#shopify-section-template--17265142399153__cart-items",
   "evidenceSlug": "cart-page-main",
   "evidence": [
+    "evidence/food-drink/default/cart/cart-page-main.1440.png",
     "evidence/food-drink/default/cart/cart-page-main.375.png",
     "evidence/food-drink/default/cart/cart-page-main.768.png",
-    "evidence/food-drink/default/cart/cart-page-main.1440.png"
+    "evidence/food-drink/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/food-drink/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/food-drink/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/food-drink/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/food-drink/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/food-drink/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/food-drink/default/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/food-drink/default/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/food-drink/default/cart/cart-page-main.initial.cart-bos.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Your cart is empty · CONTINUE SHOPPING · Have an account? Log in. cart-footer sibling 0px boşken.",
@@ -23,7 +32,87 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T19:18:30.745Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:01:47.537Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://food-online-store-1.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Your cart is empty"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://food-online-store-1.myshopify.com/products/natural-cows-milk",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--17265143021745__main, button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://food-online-store-1.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Milk satırı qty 1 $14.99"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "qty 2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty. CONTINUE SHOPPING. Have an account? Log in to check out faster.",
+    "filled": "Natural Cow's Milk thumbnail · Fat content: Fat-free · qty 1 · $14.99. Continue shopping.",
+    "changed": "qty 2 · TOTAL $29.98. Checkout tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "cart-footer boşken 0px leftover. Log in tıklanmadı."
 }
