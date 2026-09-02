@@ -63,6 +63,7 @@
 | Bookshop (Speedo) | [`bookshop.md`](./bookshop.md) | ✅ default — 39 obs · 163 PNG · Bookshop 1.5.0 · password `1` · 0 yeni şema · interact |
 | Coffee Culture (Speedo) | [`coffee-culture.md`](./coffee-culture.md) | ✅ first inventory + interact — coffee-prime-2 · Coffee culture 1.5.0 · password `1` · 48 obs · 0 yeni şema · mega/search/cart/PDP/FAQ; menu/empty-drawer/hover missingStates |
 | Critters (Speedo) | [`critters.md`](./critters.md) | 🟡 first inventory + interact — toyon-toys-2 · 39 obs · 0 yeni şema |
+| Electronics (Speedo) | [`electronics.md`](./electronics.md) | ✅ first inventory + interact — speedo-electro-dropship · password `1` · 40 obs · 0 yeni şema |
 | Gemora (Speedo, jewelry) | [`gemora.md`](./gemora.md) | 🟡 first inventory + interact — jewelry-online-shop1 · 42 obs · 0 yeni şema · password `1` |
 | Glidefeet (Speedo) | [`glidefeet.md`](./glidefeet.md) | ✅ Mod A + interact — 39 obs · 145 PNG · 0 yeni şema · glidefeet.myshopify.com |
 | Hairva (Speedo) | [`hairva.md`](./hairva.md) | ✅ first inventory — pandora-hair-care-3 · 48 obs · 184 PNG · 0 yeni şema · interact + password `1` |
