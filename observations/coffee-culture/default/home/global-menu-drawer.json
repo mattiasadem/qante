@@ -29,7 +29,7 @@
     ],
     "mode": "viewport",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-02T17:23:44.407Z",
+    "updatedAt": "2026-09-02T17:41:47.413Z",
     "prepareClick": "header summary.header__icon--menu"
   },
   "interactionStates": [
@@ -111,7 +111,18 @@
       "not": "Shop summary #HeaderDrawer-shop"
     }
   ],
-  "stateFindings": {},
-  "missingStates": [],
-  "interactionNote": "Log in tıklanmadı. 1440 hamburger 0×0. İlk open karesi kapalı homepage; retry forceOpen details+#menu-drawer."
+  "stateFindings": {
+    "initial": "375/768 hamburger kapalı homepage — The Home of Coffee + SHOP NOW."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "İki deneme. Probe tıklanınca drawer 375×1018 (Home/Shop/Best Sellers/Themes/Collections + Wishlist/Compare/Log in). Resmi kare her iki seferde hamburger kapalı homepage (The Home of Coffee). click + wait + forceOpen details+#menu-drawer viewport scrollTo sonrası durmadı. 1440 hamburger 0×0."
+    },
+    {
+      "state": "changed",
+      "sebep": "İki deneme. #HeaderDrawer-shop görünür değil / viewport dışı — drawer resmi karede açılmadığı için Shop accordion yok. Üçüncü yok."
+    }
+  ],
+  "interactionNote": "Log in tıklanmadı. 1440 hamburger 0×0 — leftover. Probe drawer açıyor; capture-interaction karesi homepage."
 }

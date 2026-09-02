@@ -15,8 +15,8 @@ Title: `Coffee Culture - Best Coffee Theme – coffee-prime-2 (password: 1)`
 
 **Password wall:** GET `/` → `/password`. Vendor ürün sayfası: “Please enter password `"1"` to view demo.” Public storefront-unlock `1` — aynı host. Başka host uydurulmadı.
 
-**Durum:** Mod A roster yazıldı · 3vp + interact sırada  
-**PR:** draft · **main'e merge yok**
+**Durum:** Mod A + interact kapandı · 0 yeni şema  
+**PR:** https://github.com/mattiasadem/qante/pull/349 (draft) · **main'e merge yok**
 
 ---
 
@@ -39,21 +39,22 @@ Title: `Coffee Culture - Best Coffee Theme – coffee-prime-2 (password: 1)`
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (hero→footer + overlays) | [x] obs | [ ] capture |
-| Shop mega 1440 | [ ] interact | [ ] |
-| Predictive search `coffee` | [ ] interact | [ ] |
-| Mobile menu 375 + 768 | [ ] interact | [ ] |
-| Cart drawer empty + filled + qty | [ ] interact | [ ] |
-| PDP Size 120g→240g | [ ] interact | [ ] |
-| PLP `/collections/all` | [x] obs | [ ] capture |
-| Collections `/collections` | [x] obs | [ ] capture |
-| Search `/search?q=coffee` | [x] obs | [ ] capture |
-| Cart page empty + filled | [ ] interact | [ ] |
-| About `/pages/about-layout-1` | [x] obs | [ ] capture |
-| Contact form (submit yok) | [x] obs | [ ] capture |
-| FAQ `/pages/faqs` | [x] obs | [ ] capture |
-| News + first-coffee-shop | [x] obs | [ ] capture |
-| 404 | [x] obs | [ ] capture |
+| Home roster (hero→footer + overlays) | [x] obs | [x] capture |
+| Shop mega 1440 | [x] interact — 6 koleksiyon kartı | [x] |
+| Predictive search `coffee` | [x] interact — PRODUCTS 10 | [x] |
+| Mobile menu 375 + 768 | [x] interact — open/changed missingStates | [x] |
+| Cart drawer empty + filled + qty | [x] interact — empty missing; $180→$360 | [x] |
+| PDP Size 120g→240g | [x] interact — $180 aynı | [x] |
+| PLP `/collections/all` | [x] obs | [x] capture |
+| Collections `/collections` | [x] obs | [x] capture |
+| Search `/search?q=coffee` | [x] obs | [x] capture |
+| Cart page empty + filled | [x] interact — empty / $180 / $360 | [x] |
+| About `/pages/about-layout-1` | [x] obs | [x] capture |
+| Contact form (submit yok) | [x] obs | [x] capture |
+| FAQ `/pages/faqs` | [x] interact — Q2 açık, Q1 kaldı | [x] |
+| News + first-coffee-shop | [x] obs | [x] capture |
+| 404 | [x] obs | [x] capture |
+| Featured hover | [x] interact — Quick Shop karede yok | — |
 | Email / account / checkout / newsletter submit | ⛔ PII | — |
 
 ---
@@ -93,17 +94,17 @@ Title: `Coffee Culture - Best Coffee Theme – coffee-prime-2 (password: 1)`
 
 | # | id | sayfa | Screenshot | Not | JSON | Done |
 |---|---|---|---|---|---|---|
-| 1–23 | home + overlays | home | [ ] | [x] | reuse | [ ] |
-| 24–31 | PDP mushroom-chaga | product-detail | [ ] | [x] | reuse | [ ] |
-| 32–34 | banner / slider / PLP | collection | [ ] | [x] | reuse | [ ] |
-| 35 | collection-nav-grid | collections | [ ] | [x] | reuse | [ ] |
-| 36 | search-results | search | [ ] | [x] | reuse | [ ] |
-| 37 | cart-page-main | cart | [ ] | [x] | reuse | [ ] |
-| 38–41 | about-layout-1 | about-brand | [ ] | [x] | reuse | [ ] |
-| 42–44 | contact-layout-1 | contact | [ ] | [x] | reuse | [ ] |
-| 45–46 | faqs | faq-support | [ ] | [x] | reuse | [ ] |
-| 47–48 | news + article | blog | [ ] | [x] | reuse | [ ] |
-| 49 | 404 | not-found | [ ] | [x] | reuse | [ ] |
+| 1–23 | home + overlays | home | [x] | [x] | reuse | [x] |
+| 24–31 | PDP mushroom-chaga | product-detail | [x] | [x] | reuse | [x] |
+| 32–34 | banner / slider / PLP | collection | [x] | [x] | reuse | [x] |
+| 35 | collection-nav-grid | collections | [x] | [x] | reuse | [x] |
+| 36 | search-results | search | [x] | [x] | reuse | [x] |
+| 37 | cart-page-main | cart | [x] | [x] | reuse | [x] |
+| 38–41 | about-layout-1 | about-brand | [x] | [x] | reuse | [x] |
+| 42–44 | contact-layout-1 | contact | [x] | [x] | reuse | [x] |
+| 45–46 | faqs | faq-support | [x] | [x] | reuse | [x] |
+| 47–48 | news + article | blog | [x] | [x] | reuse | [x] |
+| 49 | 404 | not-found | [x] | [x] | reuse | [x] |
 
 ---
 
@@ -115,6 +116,6 @@ Title: `Coffee Culture - Best Coffee Theme – coffee-prime-2 (password: 1)`
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact mega / search / menu / cart / PDP variant / featured hover
-- [ ] `node scripts/validate-schemas.mjs` — 0 error (şema değişmedi)
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact mega / search / menu / cart / PDP variant / featured hover / FAQ
+- [x] `node scripts/validate-schemas.mjs` — 0 error (şema değişmedi)

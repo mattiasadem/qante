@@ -47,7 +47,7 @@
 | Allbirds | [`allbirds.md`](./allbirds.md) | 🟡 Mod A — 30 obs · ~90 PNG · partial capture (search blocked) |
 | Backpack (Speedo) | [`backpack.md`](./backpack.md) | ✅ default — adlwin-store · Debut 17.14.1 · password 1 · 22 obs · 81 PNG · 0 yeni şema |
 | Candle (Speedo) | [`candle.md`](./candle.md) | ✅ Mod A + interact — password `1` · 41 obs · static 3vp + shopper states · 0 yeni şema |
-| Coffee Culture (Speedo) | [`coffee-culture.md`](./coffee-culture.md) | 🟡 first inventory — coffee-prime-2 · Coffee culture 1.5.0 · password `1` · 48 obs · 0 yeni şema |
+| Coffee Culture (Speedo) | [`coffee-culture.md`](./coffee-culture.md) | ✅ first inventory + interact — coffee-prime-2 · Coffee culture 1.5.0 · password `1` · 48 obs · 0 yeni şema · mega/search/cart/PDP/FAQ; menu/empty-drawer/hover missingStates |
 | Furnix (Speedo / Decora) | [`furnix.md`](./furnix.md) | 🟡 Mod A + interact — `pandora-furniture-6` · password 1 · 41 obs · 173 PNG · 0 yeni şema |
 | Guccy (Speedo) | [`guccy.md`](./guccy.md) | ✅ first inventory — fashion-store-clean-20 · Guccy 1.5.0 · password 1 · 46 obs · 157 PNG · 0 yeni şema · hamburger leftover |
 | Hubble (Speedo) | [`hubble.md`](./hubble.md) | ✅ default — Hubble-nutrition 1.2.0 · 34 obs · 133 PNG · 0 yeni şema · password `1` |

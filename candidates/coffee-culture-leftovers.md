@@ -144,3 +144,27 @@ Gerekçe: 1440 `summary.header__icon--menu` 0×0. Hamburger yalnız 375/768.
 Örnekler: home header  
 Öneri: leftover — 1440 N/A  
 Karar: onay bekliyor
+
+---
+
+ADAY: coffee-culture-social-proof-toast  
+Gerekçe: Birçok karede sol alt “Someone liked and Buy … Minutes Ago From {şehir}” + Verified. Section değil; dismiss script öldürmedi. Şema yazılmadı.  
+Örnekler: home / PDP / PLP viewport  
+Öneri: leftover — app toast  
+Karar: onay bekliyor
+
+---
+
+ADAY: coffee-culture-you-may-like-atc  
+Gerekçe: ATC sonrası 1440 merkez “YOU MAY LIKE” modal (ürün + Add To Cart + alt görsel). 375 drawer içinde “YOU MAY LIKE” accordion. Şema yok.  
+Örnekler: mushroom-chaga ATC → cart drawer  
+Öneri: leftover — ATC overlay  
+Karar: onay bekliyor
+
+---
+
+ADAY: coffee-culture-menu-drawer-capture  
+Gerekçe: Probe drawer açıyor; resmi interact karesi iki denemede homepage. Shop accordion yoklandı değil.  
+Örnekler: global-menu-drawer missingStates  
+Öneri: leftover — capture tuzak  
+Karar: onay bekliyor

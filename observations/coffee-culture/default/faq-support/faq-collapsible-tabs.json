@@ -11,6 +11,9 @@
     "evidence/coffee-culture/default/faq-support/faq-collapsible-tabs.1440.png",
     "evidence/coffee-culture/default/faq-support/faq-collapsible-tabs.375.png",
     "evidence/coffee-culture/default/faq-support/faq-collapsible-tabs.768.png",
+    "evidence/coffee-culture/default/faq-support/faq-collapsible-tabs.changed.soru-2.1440.png",
+    "evidence/coffee-culture/default/faq-support/faq-collapsible-tabs.changed.soru-2.375.png",
+    "evidence/coffee-culture/default/faq-support/faq-collapsible-tabs.changed.soru-2.768.png",
     "evidence/coffee-culture/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.1440.png",
     "evidence/coffee-culture/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.375.png",
     "evidence/coffee-culture/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.768.png"
@@ -27,7 +30,7 @@
     ],
     "mode": "section",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-02T17:31:39.159Z"
+    "updatedAt": "2026-09-02T17:43:34.506Z"
   },
   "interactionStates": [
     "initial",
@@ -57,12 +60,10 @@
       "not": "İkinci soru aç"
     }
   ],
-  "stateFindings": {},
-  "missingStates": [
-    {
-      "state": "changed",
-      "sebep": "adım 2 (click #shopify-section-template--24587460641051__cb435de1-8958-455d-8843-8a9ef3413466 details:nth-of-type(2) > summary): selector eşleşmedi: #shopify-section-template--24587460641051__cb435de1-8958-455d-8843-8a9ef3413466 details:nth-of-type(2) > summary"
-    }
-  ],
-  "interactionNote": "Submit yok. Genel details>summary hamburger'a değmesin — section-scoped nth."
+  "stateFindings": {
+    "initial": "Frequently asked question. Sol latte görsel. Sağ 6 soru; ilki açık — Can I choose whichever styles I want? + lorem. Diğerleri kapalı.",
+    "changed": "İkinci soru da açık — I like my styles but they don't fit! + lorem. Birinci açık kaldı (çoklu açık accordion)."
+  },
+  "missingStates": [],
+  "interactionNote": "İlk nth-of-type(2) eşleşmedi ( Dawn details id şablon id karışık). Retry Details-…collapsible_row-2 summary. Submit yok."
 }

@@ -35,7 +35,7 @@
     ],
     "mode": "viewport",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-02T17:25:58.501Z",
+    "updatedAt": "2026-09-02T17:45:47.562Z",
     "prepareClick": "a.header__icon--cart"
   },
   "interactionStates": [
@@ -106,7 +106,15 @@
       "not": "Adet +1 → toplam güncellenir"
     }
   ],
-  "stateFindings": {},
-  "missingStates": [],
-  "interactionNote": "ATC button.product-form__submit. İlk boş kare homepage (drawer kapanıyor); retry forceOpen #CartDrawer. ATC sonrası merkezde YOU MAY LIKE overlay (leftover, şema yok). Checkout tıklanmadı."
+  "stateFindings": {
+    "filled": "375/768/1440 YOUR CART · Solve Labs Mushroom Coffee Chaga · Size 120g · adet 1 · $180.00 · Estimated total $180.00 USD · Check Out. Üstte Free shipping! / Express shipping! çubuğu. 1440'ta merkez YOU MAY LIKE modal (Espresso Beans $150…); 375 drawer içinde YOU MAY LIKE accordion.",
+    "changed": "375/768/1440 adet 2 · satır ve Estimated total $360.00 USD. Check Out tıklanmadı."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "İki deneme. Cart ikon tık + forceOpen #CartDrawer. Kare homepage (The Home of Coffee); boş YOUR CART paneli yok. Dolu hâl ATC ile geldi."
+    }
+  ],
+  "interactionNote": "ATC button.product-form__submit (ui, fallback yok). YOU MAY LIKE ATC overlay leftover — şema yok. Checkout tıklanmadı."
 }

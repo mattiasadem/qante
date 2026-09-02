@@ -28,7 +28,7 @@
     ],
     "mode": "section",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-02T17:30:11.473Z"
+    "updatedAt": "2026-09-02T17:42:39.509Z"
   },
   "interactionStates": [
     "initial",
@@ -78,7 +78,14 @@
       "not": "Quick Shop yazısı — viewport"
     }
   ],
-  "stateFindings": {},
-  "missingStates": [],
-  "interactionNote": "İlk hover karesi dim + Quick Shop yok. Retry .card__inner + wait. Quick Shop tıklanmadı. 375/768 hover yok (parmak)."
+  "stateFindings": {
+    "initial": "Best Selling · 4 kart: Espresso Coffee Beans Bag $150/$399 · New Trending Coffee Cups $110 · Espresso Coffee Powder Bag $240 · Patch Roast Coffee Bags $220/$399 · VIEW ALL. Toast overlay dim."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "İki deneme. Probe .card-wrapper innerText Quick Shop diyor; resmi karede buton yok. 1. viewport Best Selling dim (toast). 2. viewport scrollTo(0) hero'ya kaçtı — o PNG geri alındı. 375/768 hover yok (parmak)."
+    }
+  ],
+  "interactionNote": "Quick Shop tıklanmadı. 375/768 hover çekilmedi."
 }
