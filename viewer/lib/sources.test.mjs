@@ -82,10 +82,10 @@ describe("source list", () => {
     assert.deepEqual([...AWAITING_APPROVAL], []);
   });
 
-  it("counts 80 shopify / 85 dtc / 12 ikas", () => {
+  it("counts 96 shopify / 85 dtc / 12 ikas", () => {
     assert.deepEqual(sourceCounts(), {
-      kaynak: 177,
-      shopify: 80,
+      kaynak: 193,
+      shopify: 96,
       dtc: 85,
       ikas: 12,
       awaiting: 0,
@@ -106,11 +106,11 @@ describe("kaynak source coverage", () => {
     const md = fs.readFileSync(path.join(ROOT, "candidates/kaynak-tip.md"), "utf8");
     const missing = onDisk.filter((id) => !md.includes(`\`${id}\``));
     assert.deepEqual(missing, []);
-    assert.match(md, /177 \/ 177/);
+    assert.match(md, /193 \/ 193/);
     assert.match(md, /`kaynakTip`/);
   });
 
-  it("maps every observation kaynak to exactly one source (177/177)", () => {
+  it("maps every observation kaynak to exactly one source (193/193)", () => {
     const leftover = [];
     for (const kaynak of onDisk) {
       const tip = sourceForKaynak(kaynak);

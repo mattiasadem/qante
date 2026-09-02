@@ -7,7 +7,7 @@ This is a **kaynak → industry** map. SCHEMA `kategori` (navigation / hero / pr
 *Param:* `endustri` (comma-separated, same as other facets)  
 *UI label:* Endüstri  
 *Untagged token:* `—` (schema-only rows with no `kaynak` only — **0 untagged stores**)  
-*Coverage:* **147 / 147** disk `kaynak` mapped
+*Coverage:* **193 / 193** disk `kaynak` mapped
 
 Code: `viewer/lib/industries.mjs` (consumed by inventory + facets). Observation JSON is not rewritten.
 
@@ -131,17 +131,20 @@ Mapped from the **walked demo catalog** or an obvious official preset vertical. 
 | atelier | Fashion & Clothing | Horizon “Elements of Style” apparel |
 | atlas | Electronics & Software | devices / audio / accessories |
 | awaken | Beauty & Health | Essence Aura fragrance copy |
+| backpack | Fashion & Clothing | Speedo / Adlwin demo — hoodie/dress merch |
 | be-yours | Home & Furniture | roomscapes / plant drop |
 | blockshop | Beauty & Health | official Beauty preset (cleanse / tone / moisturize) |
 | borders | Fashion & Clothing | puffer / crewneck catalog |
 | bricks | Fashion & Clothing | women & men apparel |
 | broadcast | Beauty & Health | Bold preset — ashwagandha / mood boosters |
+| candle | Home & Furniture | Speedo candles store |
 | canopy | Food & Beverage | Natural preset **live catalog** is BBQ / meat / fish / veg (not home/beauty) |
 | colorblock | Fashion & Clothing, Home & Furniture | Shop mega: Clothing + Homeware |
 | combine | Home & Furniture | planters / glassware |
 | concept | Beauty & Health | cosmetics / skincare collections |
 | craft | Home & Furniture, Art & Handcraft | Fable ceramics |
 | crave | Food & Beverage | pantry / meal starters |
+| critters | Flowers & Gifts | Speedo kids toys demo — toys chip yok; hediye/oyuncak |
 | dawn | Fashion & Clothing | Bags / Shoes nav |
 | district | Fashion & Clothing | tees / lookbook |
 | dwell | Home & Furniture | Bedding / Bath / Decor |
@@ -152,23 +155,31 @@ Mapped from the **walked demo catalog** or an obvious official preset vertical. 
 | expanse | Home & Furniture | official Furniture preset |
 | fabric | Fashion & Clothing, Home & Furniture | Womenswear / Menswear / Home |
 | flow | Food & Beverage, Beauty & Health | Nourish — plant-powered food |
+| furnix | Home & Furniture | Speedo / Decora furniture demo |
+| guccy | Fashion & Clothing | Speedo fashion-store-clean-20 |
 | heritage | Fashion & Clothing | Shop Men / Women |
 | highlight | Fashion & Clothing, Home & Furniture, Food & Beverage | mixed demo (Apparel + Stationery/home objects + Food & home); multi-tag like ikas |
 | homage | Fashion & Clothing | alpine knitwear |
 | horizon | Fashion & Clothing | latest sweater collection |
+| hubble | Beauty & Health | Speedo nutrition supplement store |
 | hyper | Fashion & Clothing, Beauty & Health, Electronics & Software, Food & Beverage | kaynak-level union of official presets: pillar moda, ceramide beauty, nexvo teknoloji, trove market |
 | impact | Electronics & Software | official Sound preset (headphones) |
 | impulse | Fashion & Clothing, Beauty & Health | Fashion + Apothecary presets |
 | kingdom | Home & Furniture | home / garden / night light |
 | local | Food & Beverage, Home & Furniture | Fresh Organic Delivered + Kitchen & Dining |
+| luxora | Jewelry & Accessories | Speedo jewelry-online-shop2 |
 | maker | Food & Beverage | official Food preset (juices) |
 | minion | Electronics & Software | phones / tablets / drones |
 | motion | Sports & Activities, Fashion & Clothing | Adventure + Satchel accessories |
+| nouk | Jewelry & Accessories | Speedo jewelry-online-shop-3 |
+| olelia | Jewelry & Accessories | Speedo jewelry-online-shop-4 |
 | origin | Fashion & Clothing | walked catalog: 2Unfold Bag + Stuff it case (bags / cases), not a last-resort default |
 | palo-alto | Fashion & Clothing | wardrobe / new arrivals |
+| pawpets | Pet Care | Speedo Mightypetz demo |
 | pebble | Fashion & Clothing | Little kids apparel |
 | pipeline | Fashion & Clothing | official Fashion preset |
 | pitch | Beauty & Health | “Skincare, simplified” |
+| plantrex | Flowers & Gifts | Speedo pandora-flower demo |
 | prestige | Fashion & Clothing, Beauty & Health, Jewelry & Accessories | Allure beauties + fashion presets + Strass jewelry |
 | publisher | Fashion & Clothing, Books, Music & Video | apparel tote + magazine demo |
 | purevea | Beauty & Health | lip mask / glow |
@@ -176,7 +187,9 @@ Mapped from the **walked demo catalog** or an obvious official preset vertical. 
 | ride | Sports & Activities | surf / team athlete demo |
 | rise | Fashion & Clothing | essentials / white hoodie catalog |
 | ritual | Fashion & Clothing | tops / fashion-forward panels |
+| sachue | Beauty & Health | Speedo pandora-beauty-store |
 | savor | Food & Beverage | dipping sauces |
+| seabikini | Fashion & Clothing | Speedo fashion-store-clean-11 |
 | sense | Beauty & Health | Skin / Body / Nail Polish |
 | showcase | Home & Furniture | Betty — silicone / spill-proof home |
 | sleek | Beauty & Health | “Blend Beauty In You” |
@@ -189,18 +202,21 @@ Mapped from the **walked demo catalog** or an obvious official preset vertical. 
 | taiga | Sports & Activities, Fashion & Clothing | Savotta backpacks |
 | taste | Food & Beverage | drinks catalog |
 | tinker | Home & Furniture | desk / newest arrivals organizers |
+| tormeti | Jewelry & Accessories | Speedo Pandora_Jewellery |
 | trade | Home & Furniture | towels / robes / pillows / rugs |
 | triumph | Fashion & Clothing, Sports & Activities | activewear |
 | venue | Fashion & Clothing | Morning — tees / knits / wallet / pullover |
+| vedzila | Beauty & Health | Speedo organic hair oil / shampoo |
 | vessel | Food & Beverage, Home & Furniture | Coffee & Tea / Drinkware / Kitchenware |
 | warehouse | Electronics & Software | Metal — headphones / speakers / TVs |
+| wearix | Fashion & Clothing | Speedo Pandora fashion apparel |
 | wonder | Beauty & Health | official Beauty preset |
 | woodstock | Electronics & Software | speakers / cellphones |
 | zest | Fashion & Clothing | Flairy — tops / bras / shorts / leggings |
 
 ## Awaiting user approval
 
-None. **147 mapped / 0 untagged stores.** The former leftovers are in the Shopify-demo table:
+None. **193 mapped / 0 untagged stores.** The former leftovers are in the Shopify-demo table:
 
 - **highlight** — Fashion & Clothing, Home & Furniture, Food & Beverage (mixed demo, multi-tag).
 - **empire** — Electronics & Software (Electronic Super Pen + Oak Phone Charging Desk Organizer).
