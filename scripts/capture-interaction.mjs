@@ -360,7 +360,7 @@ async function forceOpenInDocument(sel) {
     el.hidden = false;
     el.removeAttribute("hidden");
     el.style.removeProperty("display");
-    el.classList.add("active", "open", "is-open");
+    el.classList.add("active", "open", "is-open", "menu-opening", "animate");
     el.classList.remove("drawer--loading", "loading", "is-loading");
     el.setAttribute("open", "");
     el.setAttribute("aria-hidden", "false");
@@ -370,12 +370,16 @@ async function forceOpenInDocument(sel) {
         el.open();
       } catch {}
     }
+    const headerDrawer = el.closest?.("header-drawer");
+    if (headerDrawer) headerDrawer.classList.add("menu-opening", "active");
   }
   document.documentElement.classList.add(
     "overflow-hidden",
     "drawer-open",
-    "modal-showing"
+    "modal-showing",
+    "menu-opening"
   );
+  document.querySelector("header-drawer")?.classList.add("menu-opening", "active");
 }
 
 async function forceOpen(page, selector) {

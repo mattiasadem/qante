@@ -10,11 +10,15 @@
   "captureMode": "viewport",
   "evidenceSlug": "global-menu-drawer",
   "evidence": [
-    "evidence/nutronix/default/home/global-menu-drawer.768.png"
+    "evidence/nutronix/default/home/global-menu-drawer.768.png",
+    "evidence/nutronix/default/home/global-menu-drawer.open.menu-acik.375.png"
   ],
   "notlar": "Dawn #menu-drawer · header-drawer data-breakpoint=tablet. summary#header-menu 0×0, .icon-hamburger 30×30.",
   "delta": "1440 hamburger 0px beklenir. Shopify.theme.name Speedo-nutronix-v-1-5-0 · id 170790388006 · schema_name Speedo nutronix · schema_version 1.5.0 · theme_store_id null · role main · shop speedo-nutronix.myshopify.com · walk https://speedo-nutronix.myshopify.com/ · Speedo Themes third-party (not Theme Store) · public demo password 1",
-  "interactionStates": ["open"],
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
   "interactionSteps": [
     {
       "state": "open",
@@ -24,24 +28,12 @@
     },
     {
       "state": "open",
-      "action": "click",
-      "selector": "#header-menu .icon-hamburger",
-      "viewports": ["375", "768"],
-      "capture": false,
-      "not": "summary 0×0; SVG 30×30 — JS click drawer'ı x=0'a getirir"
-    },
-    {
-      "state": "open",
-      "action": "waitFor",
-      "value": 800,
-      "viewports": ["375", "768"],
-      "capture": false
-    },
-    {
-      "state": "open",
       "action": "forceOpen",
-      "selector": "#Details-menu-drawer-container",
-      "viewports": ["375", "768"],
+      "selector": "header-drawer, #Details-menu-drawer-container, #menu-drawer",
+      "viewports": [
+        "375",
+        "768"
+      ],
       "capture": true,
       "captureMode": "viewport",
       "etiket": "menu-acik",
@@ -54,8 +46,19 @@
   "missingStates": [
     {
       "state": "open",
-      "sebep": "1440 hamburger yok (header-drawer data-breakpoint=tablet) — beklenen"
+      "sebep": "adım 1 (click #header-menu .icon-hamburger): selector eşleşmedi: #header-menu .icon-hamburger"
     }
   ],
-  "interactionNote": "Playwright summary tıkı 0×0 yüzünden viewport dışı. Retry: #header-menu .icon-hamburger. Account tıklanmadı."
+  "interactionNote": "Playwright summary tıkı 0×0 yüzünden viewport dışı. Retry: #header-menu .icon-hamburger. Account tıklanmadı.",
+  "capture": {
+    "url": "https://speedo-nutronix.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T17:30:45.490Z"
+  }
 }

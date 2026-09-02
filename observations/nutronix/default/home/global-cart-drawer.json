@@ -9,31 +9,29 @@
   "captureMode": "viewport",
   "evidenceSlug": "global-cart-drawer",
   "evidence": [
+    "evidence/nutronix/default/home/global-cart-drawer.1440.png",
     "evidence/nutronix/default/home/global-cart-drawer.375.png",
-    "evidence/nutronix/default/home/global-cart-drawer.768.png",
-    "evidence/nutronix/default/home/global-cart-drawer.1440.png"
+    "evidence/nutronix/default/home/global-cart-drawer.768.png"
   ],
   "notlar": "Dawn cart-drawer. Opener a.header__icon--cart. Boş tık bazen active olmaz — forceOpen. Dolu: ATC sonrası drawer.active + satır + $68.70 qty 2.",
   "delta": "Free Shipping $500 / Express $800. Checkout tıklanmadı. Shopify.theme.name Speedo-nutronix-v-1-5-0 · id 170790388006 · schema_name Speedo nutronix · schema_version 1.5.0 · theme_store_id null · role main · shop speedo-nutronix.myshopify.com · walk https://speedo-nutronix.myshopify.com/ · Speedo Themes third-party (not Theme Store) · public demo password 1",
-  "interactionStates": ["initial", "filled", "changed"],
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
   "interactionSteps": [
     {
       "state": "initial",
       "action": "goto",
-      "value": "https://speedo-nutronix.myshopify.com/cart/clear",
-      "capture": false,
-      "not": "Sepeti sıfırla"
-    },
-    {
-      "state": "initial",
-      "action": "goto",
       "value": "https://speedo-nutronix.myshopify.com/",
-      "capture": false
+      "capture": false,
+      "not": "Taze context = boş sepet; /cart/clear password duvarında kaldı"
     },
     {
       "state": "initial",
       "action": "click",
-      "selector": "a.header__icon--cart",
+      "selector": "#cart-icon-bubble, a.header__icon--cart, a[href='/cart']",
       "capture": false
     },
     {
@@ -54,14 +52,20 @@
     {
       "state": "filled",
       "action": "addToCart",
-      "selector": "#shopify-section-template--23257314197798__main button.product-form__submit",
+      "selector": "button.product-form__submit",
       "capture": false,
       "not": "UI ATC; olmazsa /cart/add.js"
     },
     {
       "state": "filled",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": false
+    },
+    {
+      "state": "filled",
       "action": "waitFor",
-      "value": 1800,
+      "value": 800,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "sepete-eklendi",
@@ -88,6 +92,30 @@
     "filled": "",
     "changed": ""
   },
-  "missingStates": [],
-  "interactionNote": "Boş opener bazen drawer'ı x=1440'ta bırakır; forceOpen. ATC yoklamada qty 2 / $68.70."
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "adım 2 (click a.header__icon--cart): selector eşleşmedi: a.header__icon--cart"
+    },
+    {
+      "state": "filled",
+      "sebep": "adım 5 (addToCart #shopify-section-template--23257314197798__main button.product-form__submit): sepete eklenemedi: varyant id bulunamadı"
+    },
+    {
+      "state": "changed",
+      "sebep": "adım 7 (click #CartDrawer .quantity__button[name='plus']): selector eşleşmedi: #CartDrawer .quantity__button[name='plus']"
+    }
+  ],
+  "interactionNote": "Boş opener bazen drawer'ı x=1440'ta bırakır; forceOpen. ATC yoklamada qty 2 / $68.70.",
+  "capture": {
+    "url": "https://speedo-nutronix.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T17:32:10.831Z"
+  }
 }

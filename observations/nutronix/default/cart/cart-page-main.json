@@ -8,27 +8,25 @@
   "selector": "#shopify-section-template--23257313345830__cart-items",
   "evidenceSlug": "cart-page-main",
   "evidence": [
+    "evidence/nutronix/default/cart/cart-page-main.1440.png",
     "evidence/nutronix/default/cart/cart-page-main.375.png",
-    "evidence/nutronix/default/cart/cart-page-main.768.png",
-    "evidence/nutronix/default/cart/cart-page-main.1440.png"
+    "evidence/nutronix/default/cart/cart-page-main.768.png"
   ],
   "notlar": "Boş: Your cart is empty CONTINUE SHOPPING. Dolu interact.",
   "delta": "cart-footer boşken h=0. Checkout tıklanmadı. Shopify.theme.name Speedo-nutronix-v-1-5-0 · id 170790388006 · schema_name Speedo nutronix · schema_version 1.5.0 · theme_store_id null · role main · shop speedo-nutronix.myshopify.com · walk https://speedo-nutronix.myshopify.com/ · Speedo Themes third-party (not Theme Store) · public demo password 1",
-  "interactionStates": ["initial", "filled", "changed"],
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
   "interactionSteps": [
-    {
-      "state": "initial",
-      "action": "goto",
-      "value": "https://speedo-nutronix.myshopify.com/cart/clear",
-      "capture": false
-    },
     {
       "state": "initial",
       "action": "goto",
       "value": "https://speedo-nutronix.myshopify.com/cart",
       "capture": true,
       "etiket": "cart-bos",
-      "not": "Boş cart sayfası"
+      "not": "Taze context boş cart — /cart/clear atlandı"
     },
     {
       "state": "filled",
@@ -39,7 +37,7 @@
     {
       "state": "filled",
       "action": "addToCart",
-      "selector": "#shopify-section-template--23257314197798__main button.product-form__submit",
+      "selector": "button.product-form__submit",
       "capture": false
     },
     {
@@ -72,6 +70,30 @@
     "filled": "",
     "changed": ""
   },
-  "missingStates": [],
-  "interactionNote": "Checkout tıklanmadı."
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "capture (375): zero-size / eşleşmedi: #shopify-section-template--23257313345830__cart-items"
+    },
+    {
+      "state": "filled",
+      "sebep": "adım 3 (addToCart #shopify-section-template--23257314197798__main button.product-form__submit): sepete eklenemedi: varyant id bulunamadı"
+    },
+    {
+      "state": "changed",
+      "sebep": "adım 5 (click .quantity__button[name='plus']): selector eşleşmedi: .quantity__button[name='plus']"
+    }
+  ],
+  "interactionNote": "Checkout tıklanmadı.",
+  "capture": {
+    "url": "https://speedo-nutronix.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T17:35:05.162Z"
+  }
 }
