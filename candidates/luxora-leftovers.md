@@ -108,3 +108,18 @@ ADAY: luxora-placeholder-copy
 Gerekçe: Pandora leisure-wear, MADE FOR YOUR SHADE cosmetics, rental-closet FAQ, chupa-chups Maria, Button label. Demo içerik sapması.  
 Öneri: leftover — içerik  
 Karar: onay bekliyor
+
+---
+
+ADAY: luxora-sales-pop-toast  
+Gerekçe: Birçok sayfada yüzen “Someone liked and Buy … Minutes Ago From …” toast. Section değil; envantere alınmadı.  
+Örnekler: home / PDP / PLP sol alt  
+Öneri: leftover — commerce-tools toast  
+Karar: onay bekliyor
+
+---
+
+ADAY: luxora-dawn-overlay-capture  
+Gerekçe: Probe'da hamburger drawer ve predictive search (`ring` SUGGESTIONS + PRODUCTS) açılıyor. `capture-interaction.mjs` 375/768/1440 karesi homepage / hidden `#Search-In-Modal-1` (çift id). Dawn transform + duplicate search ids. İki deneme; üçüncü yok.  
+Öneri: leftover — overlay capture tuzağı  
+Karar: onay bekliyor

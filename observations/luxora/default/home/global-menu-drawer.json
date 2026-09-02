@@ -7,10 +7,97 @@
   "url": "https://jewelry-online-shop2.myshopify.com/",
   "selector": "#menu-drawer",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/luxora/default/home/global-menu-drawer.768.png",
+    "evidence/luxora/default/home/global-menu-drawer.initial.kapali.768.png",
+    "evidence/luxora/default/home/global-menu-drawer.open.menu-acik.375.png",
+    "evidence/luxora/default/home/global-menu-drawer.open.menu-acik.768.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "details#Details-menu-drawer-container. HOME / SHOP submenu / OUR STORY / CONTACT US / FAQ'S / BLOGS / Wishlist / social.",
   "delta": "1440 host often 0px — open on 375/768. Log in not clicked. Shopify.theme.name Jewelry-online-shop2 V-1.5.0 · schema_name Jewelry_online_shop2 · schema_version 1.5.0 · theme_store_id null · role main · id 176034677037 · shop jewelry-online-shop2.myshopify.com · Speedo Luxora official demo (password from Live Demo form).",
   "captureMode": "viewport",
-  "prepareClick": "header .header__icon--menu"
+  "prepareClick": "#Details-menu-drawer-container > summary",
+  "capture": {
+    "url": "https://jewelry-online-shop2.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:12:15.917Z",
+    "prepareClick": "header .header__icon--menu"
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://jewelry-online-shop2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "viewports": [
+        "375",
+        "768"
+      ]
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-menu-drawer-container",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#menu-drawer",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "menu-acik"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "İki deneme: click #Details-menu-drawer-container > summary + forceOpen details/#menu-drawer. 375 ve 768 karesi hamburger kapalı homepage (MADE FOR YOUR SHADE). Dawn transform overlay capture-interaction'da durmadı. 1440 hamburger 0px — mega kullanıldı."
+    }
+  ],
+  "interactionNote": "Probe tıklanınca HOME / SHOP / OUR STORY drawer görünür; resmi capture karesi homepage kaldı. SHOP chevron (changed) yoklandı değil. Log in tıklanmadı."
 }

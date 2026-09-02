@@ -188,3 +188,15 @@ Temsilci tarandı. Şema uydurulmadı. Form / kupon / ülke seçimi gönderilmed
 - [x] official CRO leftover — FAQ ilk soru · countdown tick · reviews nokta 4 Cole
 - [ ] mega / arama / sepet — Impulse chrome, bu turda yok
 - [ ] Satchel / Memo CRO interact — sibling leftover
+
+## Luxora (Speedo) · default
+
+- [x] `navigation-header-mega` — 1440 SHOP forceOpen: 5 koleksiyon kartı (hover durmadı)
+- [x] `global-cart-drawer` — Ponte $100 / qty 2 $200; Free $500 · Express $800; boş open missing
+- [x] `cart-page-main` — empty / $100 / $200
+- [x] `product-info-main` — qty 1→2 (swatch yok; BUY IT NOW yok)
+- [ ] `global-predictive-search` — input missingStates (`#Search-In-Modal-1` hidden)
+- [ ] `global-menu-drawer` — open missingStates (375/768 kare homepage)
+- [ ] `product-showcase-tabs` — Best seller missingStates (New Arrival kaldı)
+- [ ] `faq-collapsible-tabs` — accordion missingStates
+- [ ] `product-showcase-grid-plp` — Color Apply missingStates

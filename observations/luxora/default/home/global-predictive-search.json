@@ -5,12 +5,79 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://jewelry-online-shop2.myshopify.com/",
-  "selector": "predictive-search.search-modal__form",
+  "selector": "#header-search",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/luxora/default/home/global-predictive-search.initial.arama-acik.1440.png",
+    "evidence/luxora/default/home/global-predictive-search.initial.arama-acik.375.png",
+    "evidence/luxora/default/home/global-predictive-search.initial.arama-acik.768.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "details-modal#header-search. predictive-search--header form.",
   "delta": "Closed kare 22px icon. Interact fill katalog ring. Shopify.theme.name Jewelry-online-shop2 V-1.5.0 · schema_name Jewelry_online_shop2 · schema_version 1.5.0 · theme_store_id null · role main · id 176034677037 · shop jewelry-online-shop2.myshopify.com · Speedo Luxora official demo (password from Live Demo form).",
   "captureMode": "viewport",
-  "prepareClick": "#header-search summary"
+  "prepareClick": "#header-search summary",
+  "capture": {
+    "url": "https://jewelry-online-shop2.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:13:47.204Z",
+    "prepareClick": "#header-search summary"
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://jewelry-online-shop2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header .header__icon--search",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "#header-search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "header input.search__input, #Search-In-Modal-1",
+      "value": "ring",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu"
+    }
+  ],
+  "stateFindings": {
+    "initial": "forceOpen #header-search sonrası kare hâlâ homepage. Arama modalı / Search input görünmüyor."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "fill #Search-In-Modal-1: input DOM'da hidden kaldı (timeout). Çift id Search-In-Modal / Search-In-Modal-1. İkinci denemede aynı. katalogSorgu ring."
+    }
+  ],
+  "interactionNote": "Probe: search ikon + ring → SUGGESTIONS (ring/rings/chain ring) + PRODUCTS (Classic Rings…). Resmi capture modalı açmadı. Hesap yok."
 }

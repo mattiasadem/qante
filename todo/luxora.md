@@ -15,7 +15,7 @@ Walk host + `Shopify.shop` = `jewelry-online-shop2.myshopify.com` · locale/curr
 
 **Password wall:** GET `/` → 302 `/password`. Title `Jewelry Online Shop2 (password: 1)`. Official Speedo Live Demo form POSTs `storefront_password` value `1` to this same host. **Başka host uydurulmadı.**
 
-**Durum:** Mod A walk + observation roster yazıldı · 3vp capture + interact sırada  
+**Durum:** Mod A + 3vp + interact kapandı · 46 obs · 182 PNG · 0 yeni şema  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -28,10 +28,11 @@ Walk host + `Shopify.shop` = `jewelry-online-shop2.myshopify.com` · locale/curr
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` + `scripts/unlock-storefront.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **46** |
+| PNG | **182** |
 | Parallel | yalnız `observations/luxora/`, `evidence/luxora/`, `todo/luxora.md`, `candidates/luxora-leftovers.md`, unlock helper |
 
 **Kapsam satırı:**  
-`Luxora · default · Jewelry-online-shop2 V-1.5.0 / schema_name Jewelry_online_shop2 1.5.0 · theme_store_id null · shop jewelry-online-shop2.myshopify.com · home→PDP Ponte Vecchio→PLP bracelets→/collections→search ring→cart empty→our-story→about-us→contact-us→faqs→news+gemstones post→404 · 46 obs · 0 yeni şema · leftover: candidates/luxora-leftovers.md`
+`Luxora · default · Jewelry-online-shop2 V-1.5.0 / schema_name Jewelry_online_shop2 1.5.0 · theme_store_id null · shop jewelry-online-shop2.myshopify.com · home→PDP Ponte Vecchio→PLP bracelets→/collections→search ring→cart→our-story→about-us→contact-us→faqs→news+gemstones post→404 · 46 obs · 182 PNG · 0 yeni şema · leftover: candidates/luxora-leftovers.md`
 
 ---
 
@@ -39,22 +40,22 @@ Walk host + `Shopify.shop` = `jewelry-online-shop2.myshopify.com` · locale/curr
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | [x] obs | [ ] capture |
-| Shop mega hover 1440 | [ ] interact | [ ] |
-| Predictive search `ring` | [ ] interact | [ ] |
-| Mobile menu 375 + 768 | [ ] interact | [ ] |
-| Cart drawer empty + filled + qty | [ ] interact | [ ] |
-| PDP Ponte Vecchio qty | [ ] interact | [ ] |
-| PLP `/collections/bracelets` | [x] obs | [ ] capture |
-| Collections `/collections` | [x] obs | [ ] capture |
-| Search `/search?q=ring` | [x] obs | [ ] capture |
-| Cart page empty + filled | [x] obs empty | [ ] capture / interact |
-| Our Story `/pages/our-story` | [x] obs | [ ] capture |
-| About `/pages/about-us` | [x] obs | [ ] capture |
-| Contact `/pages/contact-us` (submit yok) | [x] obs | [ ] capture |
-| FAQ `/pages/faqs` | [x] obs | [ ] capture |
-| News + gemstones post | [x] obs | [ ] capture |
-| 404 `/pages/about` | [x] obs | [ ] capture |
+| Home roster (announcement→footer) | [x] obs | [x] capture |
+| Shop mega hover 1440 | [x] interact | [x] open (forceOpen; hover durmadı) |
+| Predictive search `ring` | [x] interact | [x] missingStates input (modal hidden) |
+| Mobile menu 375 + 768 | [x] interact | [x] missingStates open (kare homepage) |
+| Cart drawer empty + filled + qty | [x] interact | [x] filled+changed; initial empty missing |
+| PDP Ponte Vecchio qty | [x] interact | [x] qty 1→2 |
+| PLP `/collections/bracelets` | [x] obs | [x] capture; Color Apply missingStates |
+| Collections `/collections` | [x] obs | [x] capture |
+| Search `/search?q=ring` | [x] obs | [x] capture |
+| Cart page empty + filled | [x] obs + interact | [x] empty / qty1 $100 / qty2 $200 |
+| Our Story `/pages/our-story` | [x] obs | [x] capture |
+| About `/pages/about-us` | [x] obs | [x] capture |
+| Contact `/pages/contact-us` (submit yok) | [x] obs | [x] capture |
+| FAQ `/pages/faqs` | [x] obs | [x] capture |
+| News + gemstones post | [x] obs | [x] capture |
+| 404 `/pages/about` | [x] obs | [x] capture |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -64,25 +65,25 @@ Walk host + `Shopify.shop` = `jewelry-online-shop2.myshopify.com` · locale/curr
 | # | Speedo / id | QANTE schemaId | Karar |
 |---|---|---|---|
 | 1 | announcement-bar utility-bar | `promo-announcement-bar` | reuse |
-| 2 | header mega | `navigation-header-mega` | reuse · interact |
+| 2 | header mega | `navigation-header-mega` | reuse · open 1440 alındı |
 | 3 | slideshow MADE FOR YOUR SHADE | `hero-slideshow` | reuse |
 | 4 | rich-text Welcome to Pandora | `editorial-rich-text` | reuse |
 | 5 | custom_icon Shop By Shape | `collection-nav-icon-buttons` | reuse |
 | 6 | collection-list Trending 4-col | `collection-nav-cards` | reuse |
 | 7 | collection-list Rings/Earrings | `collection-nav-image-cards` | reuse |
-| 8 | home-page-tab New Arrivals | `product-showcase-tabs` | reuse · interact |
+| 8 | home-page-tab New Arrivals | `product-showcase-tabs` | reuse · Best seller missingStates |
 | 9 | collection-list Bracelets/Pendants | `collection-nav-image-cards.2` | reuse |
 | 10 | rich-text Talk about your brand | `editorial-rich-text.2` | reuse |
 | 11 | logo_bar | `social-proof-brand-logos` | reuse |
-| 12 | collapsible FAQ's | `faq-collapsible-tabs` | reuse · interact |
+| 12 | collapsible FAQ's | `faq-collapsible-tabs` | reuse · accordion missingStates |
 | 13 | image-with-text Eco-Friendly | `editorial-image-with-text` | reuse |
 | 14 | offer-banner PAN40 | `promo-scrolling-marquee` | reuse |
 | 15 | custom_instagram | `media-shop-the-feed` | reuse |
 | 16 | footer | `footer-columns-newsletter` | reuse · submit yok |
 | 17 | newsletter-popup | — | leftover PII h=0 |
-| 18 | predictive-search | `global-predictive-search` | reuse · interact |
-| 19 | menu-drawer | `global-menu-drawer` | reuse · 375/768 |
-| 20 | CartDrawer | `global-cart-drawer` | reuse · interact |
+| 18 | predictive-search | `global-predictive-search` | reuse · input missingStates |
+| 19 | menu-drawer | `global-menu-drawer` | reuse · open missingStates |
+| 20 | CartDrawer | `global-cart-drawer` | reuse · filled+changed |
 
 ---
 
@@ -90,33 +91,35 @@ Walk host + `Shopify.shop` = `jewelry-online-shop2.myshopify.com` · locale/curr
 
 | # | id | sayfa | Screenshot | Not | JSON | Done |
 |---|---|---|---|---|---|---|
-| 1–19 | home static + overlays | home | [ ] | [x] | reuse | [ ] |
-| 20–23 | PDP main + IWT + banner + related | product-detail | [ ] | [x] | reuse | [ ] |
-| 24–25 | hero + PLP grid | collection | [ ] | [x] | reuse | [ ] |
-| 26 | collection-nav-grid | collections | [ ] | [x] | reuse | [ ] |
-| 27–28 | cart empty + featured | cart | [ ] | [x] | reuse | [ ] |
-| 29 | search-results | search | [ ] | [x] | reuse | [ ] |
-| 30–37 | our-story | about-brand | [ ] | [x] | reuse | [ ] |
-| 38–40 | about-us banner/IWT/mission | about-us | [ ] | [x] | reuse | [ ] |
-| 41 | lead-capture-form | contact | [ ] | [x] | reuse | [ ] |
-| 42–43 | FAQ page | faq-support | [ ] | [x] | reuse | [ ] |
-| 44–45 | news + post | blog-* | [ ] | [x] | reuse | [ ] |
-| 46 | 404 | not-found | [ ] | [x] | reuse | [ ] |
+| 1–19 | home static + overlays | home | [x] | [x] | reuse | [x] |
+| 20–23 | PDP main + IWT + banner + related | product-detail | [x] | [x] | reuse | [x] |
+| 24–25 | hero + PLP grid | collection | [x] | [x] | reuse | [x] |
+| 26 | collection-nav-grid | collections | [x] | [x] | reuse | [x] |
+| 27–28 | cart empty + featured | cart | [x] | [x] | reuse | [x] |
+| 29 | search-results | search | [x] | [x] | reuse | [x] |
+| 30–37 | our-story | about-brand | [x] | [x] | reuse | [x] |
+| 38–40 | about-us banner/IWT/mission | about-us | [x] | [x] | reuse | [x] |
+| 41 | lead-capture-form | contact | [x] | [x] | reuse | [x] |
+| 42–43 | FAQ page | faq-support | [x] | [x] | reuse | [x] |
+| 44–45 | news + post | blog-* | [x] | [x] | reuse | [x] |
+| 46 | 404 | not-found | [x] | [x] | reuse | [x] |
 
 ---
 
-## Interact (plan)
+## Interact (sonuç)
 
-| Bileşen | State | Not |
+| Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | open | 1440 SHOP mega |
-| global-predictive-search | input | `ring` |
-| global-menu-drawer | open | 375 + 768 |
-| global-cart-drawer | filled + changed | ATC if stock |
-| cart-page-main | filled + changed | aynı |
-| product-info-main | changed | qty (swatch yok bu SKU) |
-| product-showcase-tabs | changed | Best seller |
-| faq-collapsible-tabs | changed | accordion |
+| navigation-header-mega | open 1440 | alındı — 5 mega kart (forceOpen; hover durmadı) |
+| global-predictive-search | input ring | missingStates — `#Search-In-Modal-1` hidden |
+| global-menu-drawer | open 375/768 | missingStates — kare homepage |
+| global-cart-drawer | filled + changed | alındı — Ponte $100 → qty2 $200; eşik $500/$800 |
+| global-cart-drawer | initial empty | missingStates — cart ikon homepage karesi |
+| cart-page-main | initial + filled + changed | alındı — empty / $100 / $200 |
+| product-info-main | changed qty | alındı — qty 1→2; BUY IT NOW yok |
+| product-showcase-tabs | changed Best seller | missingStates — New Arrival kaldı |
+| faq-collapsible-tabs | changed | missingStates — dört soru kapalı |
+| product-showcase-grid-plp | changed Color | missingStates — facet görünür değil |
 
 ---
 

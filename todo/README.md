@@ -45,7 +45,7 @@
 | Into The Gloss | [`intothegloss.md`](./intothegloss.md) | ✅ listicle-holiday-2025 · 9 obs · 27 PNG · 0 yeni şema · Next.js editorial |
 | HexClad | [`hexclad.md`](./hexclad.md) | ✅ listicle-fathers-day · 5 obs · 15 PNG · 0 yeni şema |
 | Allbirds | [`allbirds.md`](./allbirds.md) | 🟡 Mod A — 30 obs · ~90 PNG · partial capture (search blocked) |
-| Luxora (Speedo) | [`luxora.md`](./luxora.md) | 🟡 Mod A — 46 obs roster · Jewelry-online-shop2 V-1.5.0 · official password wall · capture/interact sırada |
+| Luxora (Speedo) | [`luxora.md`](./luxora.md) | ✅ first inventory — 46 obs · 182 PNG · 0 yeni şema · Jewelry-online-shop2 V-1.5.0 · official password `1` · mega/cart alındı · menu/search/FAQ/tabs/PLP filter missingStates |
 | Legal / policy (Kreis recipe) | [`policy-legal.md`](./policy-legal.md) | ✅ page-recipes/policy · 3-col sticky TOC \| content \| sibling nav |
 
 **Interact (discover sonrası derinlik):** [`interact.md`](./interact.md) — kapalı kare yalanı; Stretch + Cocoon/Balance shop-the-look kapandı.

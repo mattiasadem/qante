@@ -7,8 +7,80 @@
   "url": "https://jewelry-online-shop2.myshopify.com/collections/bracelets",
   "selector": "#shopify-section-template--24163649847597__product-grid",
   "evidenceSlug": "product-showcase-grid-plp",
-  "evidence": [],
+  "evidence": [
+    "evidence/luxora/default/collection/product-showcase-grid-plp.1440.png",
+    "evidence/luxora/default/collection/product-showcase-grid-plp.375.png",
+    "evidence/luxora/default/collection/product-showcase-grid-plp.768.png",
+    "evidence/luxora/default/collection/product-showcase-grid-plp.initial.filtre-kapali.1440.png",
+    "evidence/luxora/default/collection/product-showcase-grid-plp.initial.filtre-kapali.375.png",
+    "evidence/luxora/default/collection/product-showcase-grid-plp.initial.filtre-kapali.768.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "facets-vertical Filter: Color / Size / Metal Purity. 5 products. Ponte Vecchio + Diamond Bracelet cards.",
-  "delta": "Vertical left facets. Apply/Clear present — interact later. Shopify.theme.name Jewelry-online-shop2 V-1.5.0 · schema_name Jewelry_online_shop2 · schema_version 1.5.0 · theme_store_id null · role main · id 176034677037 · shop jewelry-online-shop2.myshopify.com · Speedo Luxora official demo (password from Live Demo form)."
+  "delta": "Vertical left facets. Apply/Clear present — interact later. Shopify.theme.name Jewelry-online-shop2 V-1.5.0 · schema_name Jewelry_online_shop2 · schema_version 1.5.0 · theme_store_id null · role main · id 176034677037 · shop jewelry-online-shop2.myshopify.com · Speedo Luxora official demo (password from Live Demo form).",
+  "capture": {
+    "url": "https://jewelry-online-shop2.myshopify.com/collections/bracelets",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:15:25.538Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://jewelry-online-shop2.myshopify.com/collections/bracelets",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "etiket": "filtre-kapali"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--24163649847597__product-grid .facets__summary:has-text('Color'), #shopify-section-template--24163649847597__product-grid details.facets__disclosure summary",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 400,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Filter-filter\\.v\\.option.color-1, label[for='Filter-filter.v.option.color-1']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--24163649847597__product-grid button:has-text('Apply')",
+      "capture": true,
+      "etiket": "renk-gold"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Filter: Color / Size / Metal Purity / Brand / Availability / Price. 1440 Color açık: Gold (3) Rose Gold (1) Silver (1) White Gold (3). 5 Products; sort Best selling. Ponte Vecchio $100, Diamond Bracelet $65, Sterling Silver And Gold Plated $78, Diamond Tennis $65, Yellow Gold Diamond $110."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Color summary DOM'da (aria-expanded true) ama Playwright'a görünür değil; Apply tıklanamadı. İkinci denemede aynı. Mobil facets ayrı host."
+    }
+  ],
+  "interactionNote": "Filtre Apply / checkout yok. 375 dikey facet gizlenebilir."
 }
