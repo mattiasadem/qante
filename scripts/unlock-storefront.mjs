@@ -12,6 +12,7 @@
 
 export const PUBLIC_DEMO_PASSWORDS = {
   "adlwin-store.myshopify.com": "1",
+  "fashion-store-clean-10.myshopify.com": "1",
   "fashion-store-clean-11.myshopify.com": "1",
   "fashion-store-clean-20.myshopify.com": "1",
   "hubble-nutrition.myshopify.com": "1",
@@ -84,15 +85,41 @@ export async function unlockStorefrontIfNeeded(page, obs = {}) {
   }
   if (!password) return { unlocked: false, reason: "no-password" };
 
-  const input = page.locator("input[type='password'], input[name='password']").first();
-  if (!(await input.count())) return { unlocked: false, reason: "no-input" };
-  await input.fill(String(password));
+  // Dawn password template hides the field inside closed <details>
+  const details = page.locator("details:has(input[type='password'])").first();
+  if (await details.count()) {
+    const isOpen = await details.getAttribute("open");
+    if (!isOpen) {
+      await details
+        .locator("summary")
+        .first()
+        .click({ force: true })
+        .catch(() => {});
+      await page.waitForTimeout(400);
+    }
+  }
+
+  const candidates = page.locator(
+    "input[type='password']:not([type='hidden']), input[name='password']:not([type='hidden'])"
+  );
+  const n = await candidates.count();
+  let input = null;
+  for (let i = 0; i < n; i++) {
+    const c = candidates.nth(i);
+    if (await c.isVisible().catch(() => false)) {
+      input = c;
+      break;
+    }
+  }
+  if (!input && n) input = candidates.first();
+  if (!input) return { unlocked: false, reason: "no-input" };
+  await input.fill(String(password), { force: true });
   const submit = page
     .locator(
-      "form[action*='password'] button[type='submit'], form[action*='password'] input[type='submit'], form[action*='password'] button"
+      "form[action*='password'] button[type='submit'], form[action*='password'] input[type='submit'], form[action*='password'] button, button:has-text('Enter')"
     )
     .first();
-  await submit.click();
+  await submit.click({ force: true });
   await page.waitForTimeout(2000);
   const still = /\/password\/?$/.test(new URL(page.url()).pathname);
   const gate = await waitOutCheckpoint(page);
