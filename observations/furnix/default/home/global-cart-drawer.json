@@ -1,0 +1,112 @@
+{
+  "observationId": "furnix.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "furnix",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pandora-furniture-6.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/furnix/default/home/global-cart-drawer.1440.png",
+    "evidence/furnix/default/home/global-cart-drawer.375.png",
+    "evidence/furnix/default/home/global-cart-drawer.768.png",
+    "evidence/furnix/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/furnix/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/furnix/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/furnix/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/furnix/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/furnix/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/furnix/default/home/global-cart-drawer.initial.sepet-bos.1440.png",
+    "evidence/furnix/default/home/global-cart-drawer.initial.sepet-bos.375.png",
+    "evidence/furnix/default/home/global-cart-drawer.initial.sepet-bos.768.png"
+  ],
+  "notlar": "CART-DRAWER is-empty. Your cart / empty + Continue shopping. shipping class.",
+  "delta": "Shopify.theme.name Decora-v-1-5-0-latest-updates New · id 134494290128 · schema_name Decora · schema_version 1.5.0 · theme_store_id null · role main · shop pandora-furniture-6.myshopify.com · Speedo listing slug furnix Dawn cart-drawer. Boş kare; filled interact.",
+  "captureMode": "viewport",
+  "prepareClick": "#cart-icon-bubble",
+  "capture": {
+    "url": "https://pandora-furniture-6.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T13:54:17.619Z",
+    "prepareClick": "#cart-icon-bubble"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-furniture-6.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş drawer + You may like"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://pandora-furniture-6.myshopify.com/products/executive-arm-chair-wooden-legs",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--16969390031056__main",
+      "capture": false,
+      "not": "Executive Arm ATC"
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Sağ drawer boş: Your cart is empty + Continue Shopping + Have an account? Log in. Altta YOU MAY LIKE — Olerrup $160 Add To Cart.",
+    "filled": "PDP ATC sonrası YOUR CART: Executive Arm Chair Wooden Legs, Color Off white / Leg Finish Light Walnut, adet 1, $102; Free shipping bar; Check Out $102. Ortada YOU MAY LIKE overlay (6 ürün + ATC) açık.",
+    "changed": "Plus: adet 2, satır $204, estimated total $204. YOU MAY LIKE overlay hâlâ üstte. Check Out tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart UI tık (#ProductSubmitButton). Fallback kullanılmadı. ATC aynı anda YOU MAY LIKE modal açıyor — ayrı overlay, şema yazılmadı (leftover). Checkout / Log in yok."
+}

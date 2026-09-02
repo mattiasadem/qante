@@ -1,0 +1,134 @@
+{
+  "observationId": "candle.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "candle",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://speedo-candles-store.myshopify.com/cart",
+  "selector": "#shopify-section-template--23490799567129__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/candle/default/cart/cart-page-main.1440.png",
+    "evidence/candle/default/cart/cart-page-main.375.png",
+    "evidence/candle/default/cart/cart-page-main.768.png",
+    "evidence/candle/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/candle/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/candle/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/candle/default/cart/cart-page-main.filled.glass-jars-qty1.1440.png",
+    "evidence/candle/default/cart/cart-page-main.filled.glass-jars-qty1.375.png",
+    "evidence/candle/default/cart/cart-page-main.filled.glass-jars-qty1.768.png",
+    "evidence/candle/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/candle/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/candle/default/cart/cart-page-main.initial.sepet-bos.768.png"
+  ],
+  "notlar": "Boş: Your cart is empty / CONTINUE SHOPPING / Have an account? Log in…",
+  "delta": "Shopify.theme.name Speedo-candles-store-v-1-5-0 · schema_name Speedo candles Store · schema_version 1.5.0 · theme_store_id null · role main · id 171992645913 · shop speedo-candles-store.myshopify.com · Dawn-like OS 2.0. Vendor-published demo password 1 (public storefront unlock). Dawn cart-items. Sibling #…__cart-footer h=0 boşken. Log in tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://speedo-candles-store.myshopify.com/",
+      "capture": false,
+      "not": "/cart/clear checkpoint'e düşürüyor — önce home unlock"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://speedo-candles-store.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://speedo-candles-store.myshopify.com/products/candles-in-the-glass-jars",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--23490800124185__main, button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://speedo-candles-store.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "glass-jars-qty1",
+      "not": "Dolu cart satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "quantity-input button[name='plus'], cart-items button[name='plus'], button[name='plus']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +1"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + CONTINUE SHOPPING + Have an account? Log in…. Altta Featured collection kartları.",
+    "filled": "Your cart. Candles In The Glass Jars qty 1 · $45.00. Estimated total $45.00 USD + CHECK OUT. Sepet rozeti 1.",
+    "changed": "qty 2 · satır $90.00 · Estimated total $90.00 USD. Sepet rozeti 2. Checkout tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart UI. Checkout/login tıklanmadı. cart-footer sibling leftover.",
+  "capture": {
+    "url": "https://speedo-candles-store.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:31:51.095Z"
+  }
+}

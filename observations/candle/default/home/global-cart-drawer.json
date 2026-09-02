@@ -1,0 +1,119 @@
+{
+  "observationId": "candle.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "candle",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://speedo-candles-store.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/candle/default/home/global-cart-drawer.1440.png",
+    "evidence/candle/default/home/global-cart-drawer.375.png",
+    "evidence/candle/default/home/global-cart-drawer.768.png",
+    "evidence/candle/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/candle/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/candle/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/candle/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/candle/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/candle/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/candle/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/candle/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/candle/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "Dawn cart-drawer. Opener #cart-icon-bubble. is-empty + Check out / View Cart.",
+  "delta": "Shopify.theme.name Speedo-candles-store-v-1-5-0 · schema_name Speedo candles Store · schema_version 1.5.0 · theme_store_id null · role main · id 171992645913 · shop speedo-candles-store.myshopify.com · Dawn-like OS 2.0. Vendor-published demo password 1 (public storefront unlock). cart-drawer custom element. Checkout tıklanmadı.",
+  "captureMode": "viewport",
+  "prepareClick": "#cart-icon-bubble",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://speedo-candles-store.myshopify.com/",
+      "capture": false,
+      "not": "/cart/clear checkpoint'e düşürüyor — home'dan unlock"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble, a.header__icon--cart, a[href='/cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer — Your cart + shipping eşiği"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://speedo-candles-store.myshopify.com/products/candles-in-the-glass-jars",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--23490800124185__main, button[name='add']",
+      "capture": false,
+      "not": "Glass Jars $45 — UI tık; /cart/clear kullanılmadı"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC sonrası drawer. Açılmazsa bir kez --state filled ile #cart-icon-bubble dene."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "qty 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart. Free Shipping! $100 / Express Shipping! $150 (boş bar). Your cart is empty. CONTINUE SHOPPING. Have an account? Log in to check out faster.",
+    "filled": "Glass Jars thumbnail qty 1 $45. Shipping bar kısmi. Best seller accordion kapalı. Estimated total $45.00 USD. CHECK OUT + View Cart.",
+    "changed": "qty 2; Estimated total $90.00 USD; Free Shipping $100 barı dolu. Checkout tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC UI (#ProductSubmitButton-…). /cart/clear checkpoint'e düşürüyor — kullanılmadı. Checkout / Log in / Best seller tıklanmadı.",
+  "capture": {
+    "url": "https://speedo-candles-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:27:45.072Z",
+    "prepareClick": "#cart-icon-bubble"
+  }
+}

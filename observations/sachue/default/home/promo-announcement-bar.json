@@ -1,0 +1,76 @@
+{
+  "observationId": "sachue.default.home.promo-announcement-bar",
+  "schemaId": "promo-announcement-bar",
+  "kaynak": "sachue",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pandora-beauty-store.myshopify.com/",
+  "selector": "#shopify-section-sections--17492995670215__announcement-bar",
+  "evidenceSlug": "promo-announcement-bar",
+  "evidence": [
+    "evidence/sachue/default/home/promo-announcement-bar.1440.png",
+    "evidence/sachue/default/home/promo-announcement-bar.375.png",
+    "evidence/sachue/default/home/promo-announcement-bar.768.png",
+    "evidence/sachue/default/home/promo-announcement-bar.changed.mesaj-2.1440.png",
+    "evidence/sachue/default/home/promo-announcement-bar.changed.mesaj-2.768.png",
+    "evidence/sachue/default/home/promo-announcement-bar.initial.mesaj-1.1440.png",
+    "evidence/sachue/default/home/promo-announcement-bar.initial.mesaj-1.375.png",
+    "evidence/sachue/default/home/promo-announcement-bar.initial.mesaj-1.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Free shipping above on orders $200 · New Offers This Weekend only to Get 50%. Prev/Next announcement.",
+  "delta": "Dawn announcement-bar-slider. 2 mesaj, oklar var. Timer yok. Title hâlâ password: 1 (vitrin kilidi açık).",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "selector": null,
+      "value": "https://pandora-beauty-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "selector": null,
+      "value": 400,
+      "capture": true,
+      "etiket": "mesaj-1",
+      "not": "Free shipping…"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-sections--17492995670215__announcement-bar .slider-button--next",
+      "value": 900,
+      "capture": true,
+      "etiket": "mesaj-2",
+      "not": "Next announcement — New Offers…"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Free shipping above on orders $200. 768/1440 prev/next chevron var. 375 crop'ta ok yok.",
+    "changed": "768/1440: New Offers This Weekend only to Get 50% + her iki chevron."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "375: .slider-button--next DOM'da var ama görünür değil — locator.click Element is not visible (aria-label Next announcement). 768/1440 changed PNG yazıldı."
+    }
+  ],
+  "interactionNote": "375 next ikinci kez denenmedi. Swipe/autoplay yoklandı değil.",
+  "capture": {
+    "url": "https://pandora-beauty-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:41:44.554Z"
+  }
+}

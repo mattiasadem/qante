@@ -1,0 +1,120 @@
+{
+  "observationId": "wearix.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "wearix",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pandora-fashi.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/wearix/default/home/global-menu-drawer.768.png",
+    "evidence/wearix/default/home/global-menu-drawer.changed.shop-akordeon.768.png",
+    "evidence/wearix/default/home/global-menu-drawer.open.hamburger-acik.375.png",
+    "evidence/wearix/default/home/global-menu-drawer.open.hamburger-acik.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "375/768 hamburger → #menu-drawer. Home/Shop/Themes/Blog/About Us/More + Shop alt Men/Women/Kids.",
+  "delta": "Dawn menu-drawer-container details. 1440 hamburger gizli — zero-size olabilir.",
+  "captureMode": "viewport",
+  "prepareClick": "#header-menu",
+  "capture": {
+    "url": "https://pandora-fashi.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:40:11.042Z",
+    "prepareClick": "#header-menu"
+  },
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://pandora-fashi.myshopify.com/",
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ]
+    },
+    {
+      "state": "open",
+      "action": "scrollTo",
+      "selector": "#header-menu",
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Settle kaydırınca hamburger ekran dışı; tık açmıyor"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-menu-drawer-container",
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ]
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#header-menu",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger-acik",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Menu drawer açık"
+    },
+    {
+      "state": "changed",
+      "action": "forceOpen",
+      "selector": "#HeaderDrawer-shop",
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "#HeaderDrawer-shop bir summary — parent details açık"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#HeaderDrawer-shop",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-akordeon",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Boş ok Shop — yazılı <a> değil"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "İki deneme. Probe'da #header-menu tık 375: Home/Shop/Themes/Blog/About Us/Contact + Men/Women/Kids. Resmi 375/768 kareleri kapalı homepage (hamburger hâlâ üç çizgi). 1440 hamburger 0×0 — adım yok."
+    },
+    {
+      "state": "changed",
+      "sebep": "Shop akordeon (#HeaderDrawer-shop) drawer açık değilken viewport dışı. İkinci deneme click timeout. Yazılı Shop <a> tıklanmadı."
+    }
+  ],
+  "interactionNote": "1440 hamburger yok — mega ayrı observation. Yazılı Shop <a> tıklanmadı. Şema yok."
+}

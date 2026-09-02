@@ -1,0 +1,99 @@
+{
+  "observationId": "wearix.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "wearix",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pandora-fashi.myshopify.com/",
+  "selector": "#shopify-section-sections--17253160419502__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/wearix/default/home/navigation-header-mega.1440.png",
+    "evidence/wearix/default/home/navigation-header-mega.375.png",
+    "evidence/wearix/default/home/navigation-header-mega.768.png",
+    "evidence/wearix/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/wearix/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/wearix/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/wearix/default/home/navigation-header-mega.open.shop-mega-acik.1440.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "sticky-header. Logo + Home/Shop/Themes/Blog/About Us/More. Shop mega (mega-menu1/2.jpg). Search + cart ikon. 375 hamburger.",
+  "delta": "Pandora-fashi header. Account Log in. Wishlist ikon. Mega görseller Shop altında.",
+  "capture": {
+    "url": "https://pandora-fashi.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:40:33.328Z"
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-fashi.myshopify.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "scrollTo",
+      "selector": "#shopify-section-sections--17253160419502__header",
+      "capture": false,
+      "viewports": [
+        "1440"
+      ]
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "details#Details-HeaderMenu-2 > summary",
+      "capture": false,
+      "viewports": [
+        "1440"
+      ],
+      "not": "Shop mega hover — summary içindeki /collections/all tıklanmadı"
+    },
+    {
+      "state": "open",
+      "action": "mouseMove",
+      "value": "720,280",
+      "capture": false,
+      "viewports": [
+        "1440"
+      ],
+      "not": "İmleci panele al — viewport scroll mega'yı kapatıyor"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 500,
+      "capture": true,
+      "captureMode": "section",
+      "captureSelector": "#MegaMenu-Content-2",
+      "etiket": "shop-mega-acik",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Men/Women/Kids kolon + promo + ürün. forceOpen class ekleyince details kapanıyor."
+    }
+  ],
+  "stateFindings": {
+    "initial": "WEARIX CLOTHING STORE. Home altı çizili. Shop/Themes chevron. Blog / About Us / More. Sol arama + wishlist 0. Sağ hesap + sepet."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "İki deneme. Hover probe'da #MegaMenu-Content-2 1440×413 (Men/Women/Kids + 100% Real) açtı; resmi capture'da panel görünür değil (viewport scroll hover'ı kapatıyor; section crop 'element is not visible'). forceOpen class ekleyince details kapanıyor. Summary içinde /collections/all — tıklanmadı."
+    }
+  ],
+  "interactionNote": "Shop details#Details-HeaderMenu-2. Themes mega leftover. Account/wishlist tıklanmadı. Şema yok — aynı navigation-header-mega."
+}

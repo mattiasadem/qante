@@ -1,0 +1,86 @@
+{
+  "observationId": "plantrex.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "plantrex",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pandora-flower.myshopify.com/",
+  "selector": "#shopify-section-sections--15003426226261__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/plantrex/default/home/navigation-header-mega.1440.png",
+    "evidence/plantrex/default/home/navigation-header-mega.375.png",
+    "evidence/plantrex/default/home/navigation-header-mega.768.png",
+    "evidence/plantrex/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/plantrex/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/plantrex/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/plantrex/default/home/navigation-header-mega.open.shop-dropdown.1440.png"
+  ],
+  "notlar": "1440: logo + Home/Shop/Best Seller/Faq's/About Us/More + search + account + cart. Shop = details#Details-HeaderMenu-2 dropdown (Birthday/Occasion/Anniversary/Luxurious). 375 hamburger #Details-menu-drawer-container.",
+  "delta": "Dawn-like header; .mega-menu class yok — Shop details dropdown. Cart-drawer + predictive-search header içinde. Speedo Plantrex · Shopify.theme.name pandora-flower-v-1-5-0 · schema_name Pandora_flower · schema_version 1.5.0 · theme_store_id null · role main · id 124515549269 · shop pandora-flower.myshopify.com · walk after vendor-published storefront password 1 on the same host.",
+  "storefrontPassword": "1",
+  "prepareClick": ".close_popup",
+  "captureMode": "viewport",
+  "capture": {
+    "url": "https://pandora-flower.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:08:59.058Z",
+    "prepareClick": ".close_popup"
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-flower.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Mega/dropdown kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-2 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-dropdown",
+      "not": "Shop hover — Birthday/Occasion/Anniversary/Luxurious. Tıklama /collections'a gider."
+    }
+  ],
+  "stateFindings": {
+    "initial": "375: hamburger + search + cart; announcement Free Shipping $150; hero Find your own Happiness. 1440: logo FLORAL ortada; Home/Shop/Best Seller solda; Faq's/About Us/More sağda; search/wishlist/account/cart. Shop kapalı.",
+    "open": "1440 Shop hover: beyaz dropdown Birthday · Occasion · Anniversary · Luxurious. Mega kolon/görsel yok."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "open = Shop dropdown hover; ayrı hover yok"
+    }
+  ],
+  "interactionNote": "Shop tıklanınca /collections (probe). Yalnız hover. Account/Log in yok. 375 hamburger ayrı global-menu-drawer."
+}

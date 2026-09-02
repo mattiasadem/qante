@@ -1,0 +1,86 @@
+{
+  "observationId": "tormeti.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "tormeti",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://tormeti-fashi.myshopify.com/",
+  "selector": "#site-header",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/tormeti/default/home/global-predictive-search.initial.arama-bos.1440.png",
+    "evidence/tormeti/default/home/global-predictive-search.initial.arama-bos.375.png",
+    "evidence/tormeti/default/home/global-predictive-search.initial.arama-bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": ".search-modal Dawn overlay. Opener details-modal.header__search summary. form name=q.",
+  "delta": "details-modal host 25×22; açık kutu .search-modal. Tema (görülen, uydurulmadı): Shopify.theme.name Pandora-jewellery V-1.5.0 final · schema_name Pandora_Jewellery · schema_version 1.5.0 · theme_store_id null · role main · id 143506604249 · shop tormeti-fashi.myshopify.com · vendor Speedo Themes · slug tormeti · public storefront unlock /password 1 (Speedo ürün sayfası).",
+  "captureMode": "viewport",
+  "prepareClick": "details-modal.header__search summary",
+  "capture": {
+    "url": "https://tormeti-fashi.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:13:20.648Z",
+    "prepareClick": "details-modal.header__search > details > summary"
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://tormeti-fashi.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "details-modal.header__search summary",
+      "capture": false,
+      "not": "Search ikon (probe selector)"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Boş search overlay"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal-1",
+      "value": "diamond",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-diamond",
+      "not": "katalogSorgu=diamond"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Resmi viewport kareleri kapalı homepage: search ikon header'da, modal/bar yok."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "İki resmi denemede #Search-In-Modal-1 gizli kaldı. Viewport capture sonrası details kapanıyor veya tık modalı açık tutmuyor. Predictive liste resmi karede yok."
+    }
+  ],
+  "interactionNote": "katalogSorgu=diamond (scan). forceOpen details-modal input'u gizli bırakıyor. Submit yok. /search?q=gold ayrı search-results obs."
+}

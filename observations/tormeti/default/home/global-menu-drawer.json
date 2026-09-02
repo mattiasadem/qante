@@ -1,0 +1,101 @@
+{
+  "observationId": "tormeti.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "tormeti",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://tormeti-fashi.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/tormeti/default/home/global-menu-drawer.768.png",
+    "evidence/tormeti/default/home/global-menu-drawer.changed.jewellery-alt.768.png",
+    "evidence/tormeti/default/home/global-menu-drawer.open.hamburger-acik.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "#menu-drawer. Opener #header-menu. 1440 hamburger 0px — leftover.",
+  "delta": "Tema (görülen, uydurulmadı): Shopify.theme.name Pandora-jewellery V-1.5.0 final · schema_name Pandora_Jewellery · schema_version 1.5.0 · theme_store_id null · role main · id 143506604249 · shop tormeti-fashi.myshopify.com · vendor Speedo Themes · slug tormeti · public storefront unlock /password 1 (Speedo ürün sayfası).",
+  "captureMode": "viewport",
+  "prepareClick": "#header-menu",
+  "prepareForceOpen": true,
+  "capture": {
+    "url": "https://tormeti-fashi.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:13:02.986Z",
+    "prepareClick": "#Details-menu-drawer-container > summary"
+  },
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://tormeti-fashi.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#header-menu",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false,
+      "not": "Hamburger — forceOpen kutuyu 0/şerit yapıyor"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 900,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger-acik",
+      "not": "Açık drawer — section şerit verdi"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#HeaderDrawer-jewellery",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "jewellery-alt",
+      "not": "Jewellery disclosure summary"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375: #menu-drawer capture 0px. 768 viewport hamburger-acik karesi homepage — drawer paneli yok (hamburger ikon duruyor)."
+    },
+    {
+      "state": "changed",
+      "sebep": "375 sıfır kutu. 768 jewellery-alt karesi yine homepage; alt menü görünmedi."
+    }
+  ],
+  "interactionNote": "1440 hamburger 0px leftover. forceOpen şerit/0 verdi; viewport tık sonrası da drawer resmi karede yok. Yazılı <a> tıklanmadı."
+}

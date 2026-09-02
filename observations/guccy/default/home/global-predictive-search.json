@@ -1,0 +1,87 @@
+{
+  "observationId": "guccy.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "guccy",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://fashion-store-clean-20.myshopify.com/",
+  "selector": "details-modal.header__search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/guccy/default/home/global-predictive-search.input.arama-sonucu.1440.png",
+    "evidence/guccy/default/home/global-predictive-search.input.arama-sonucu.375.png",
+    "evidence/guccy/default/home/global-predictive-search.input.arama-sonucu.768.png",
+    "evidence/guccy/default/home/global-predictive-search.open.arama-acik.1440.png",
+    "evidence/guccy/default/home/global-predictive-search.open.arama-acik.375.png",
+    "evidence/guccy/default/home/global-predictive-search.open.arama-acik.768.png"
+  ],
+  "captureMode": "viewport",
+  "notlar": "summary.header__icon--search → #Search-In-Modal. katalogSorgu: shirt.",
+  "delta": "Kapalı kare boş. 1. deneme predictive-search 0px + #Search-In-Modal hidden. Retry forceOpen details.",
+  "interactionStates": [
+    "input",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://fashion-store-clean-20.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "details-modal.header__search details",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": ".search-modal",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "selector": "#Search-In-Modal",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik",
+      "not": "Search modal forceOpen. Beklenen: Search input, henüz sonuç yok."
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "shirt",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "selector": "#predictive-search-results",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "katalogSorgu shirt. Beklenen: SUGGESTIONS + PRODUCTS."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "open": "3vp: karartılmış homepage + üst Search input (boş) + X. Henüz SUGGESTIONS/PRODUCTS yok.",
+    "input": "3vp fill shirt: SUGGESTIONS (shirt / casual shirt / men s shirt) + PRODUCTS (Men Cotton Sustainable…, Casual Summer Holiday Shirt, Pure Cotton Heavyweight T-shirt, Checkered Casual Shirt, Heather Grey, Oversized Tee - Black, Tie-front chiffon blouse) + Search for \"shirt\"."
+  },
+  "interactionNote": "1. deneme opener click + predictive-search 0px. Retry forceOpen details-modal.header__search details + .search-modal. katalogSorgu shirt. Submit yok.",
+  "capture": {
+    "url": "https://fashion-store-clean-20.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:37:48.143Z"
+  }
+}

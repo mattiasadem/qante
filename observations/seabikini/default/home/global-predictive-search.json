@@ -1,0 +1,81 @@
+{
+  "observationId": "seabikini.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "seabikini",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://fashion-store-clean-11.myshopify.com/",
+  "selector": "details:has(#Search-In-Modal)",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/seabikini/default/home/global-predictive-search.1440.png",
+    "evidence/seabikini/default/home/global-predictive-search.375.png",
+    "evidence/seabikini/default/home/global-predictive-search.768.png",
+    "evidence/seabikini/default/home/global-predictive-search.initial.modal-bos.1440.png",
+    "evidence/seabikini/default/home/global-predictive-search.initial.modal-bos.375.png",
+    "evidence/seabikini/default/home/global-predictive-search.initial.modal-bos.768.png",
+    "evidence/seabikini/default/home/global-predictive-search.input.bikini.1440.png",
+    "evidence/seabikini/default/home/global-predictive-search.input.bikini.375.png",
+    "evidence/seabikini/default/home/global-predictive-search.input.bikini.768.png"
+  ],
+  "notlar": "Search summary → .search-modal form action=/search. Predictive host Dawn modal.",
+  "delta": "Öneri listesi interact'te. Submit yok. Shopify.theme.name Seabikini-v-1-5-0 · schema_name Seabikini · schema_version 1.5.0 · theme_store_id null · role main · id 171062952255 · shop fashion-store-clean-11.myshopify.com · Speedo Themes third-party (Theme Store official değil).",
+  "storefrontPassword": "1",
+  "captureMode": "viewport",
+  "prepareClick": "summary.header__icon--search",
+  "capture": {
+    "url": "https://fashion-store-clean-11.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:19:09.897Z",
+    "prepareClick": "summary.header__icon--search"
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://fashion-store-clean-11.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "modal-bos",
+      "not": "Arama modalı boş"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": ".search-modal input[type='search'], .search-modal input[name='q'], #Search-In-Modal",
+      "value": "bikini",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bikini",
+      "not": "katalogSorgu bikini — ürün önerisi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Search modal boş — placeholder Search, sağda X. Hero LUXURY SWIMWEAR arkada. Öneri/ürün yok.",
+    "input": "q=bikini. SUGGESTIONS: bikini · beachwear bikini · RETRO BIKINI · STRING BIKINI · DESIGNER BIKINI · CLASSIC BIKINI. PRODUCTS (4): YOUNG WOMAN IN BEACHWEAR BIKINI · SWIMSUIT SEXY DEEP V NECK… · WOMEN HOT SEXY BLACK NET… · YOUNG WOMAN NIGHTWEAR GRAY BIKINI. Altta Search for “bikini”. Form submit yok."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu=bikini (PLP/search). Submit / hesap yok. #Search-In-Modal."
+}

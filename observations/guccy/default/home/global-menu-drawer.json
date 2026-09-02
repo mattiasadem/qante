@@ -1,0 +1,79 @@
+{
+  "observationId": "guccy.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "guccy",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://fashion-store-clean-20.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/guccy/default/home/global-menu-drawer.changed.mobil-shop-akordeon.768.png",
+    "evidence/guccy/default/home/global-menu-drawer.open.mobil-menu-acik.768.png"
+  ],
+  "captureMode": "viewport",
+  "notlar": "Mobil hamburger: #Details-menu-drawer-container > summary → #menu-drawer. 1440 gizli.",
+  "delta": "375/768 birincil nav. Wishlist/Compare/Log in probe'da var — resmi açık kare yok. Şemaya dokunulmadı.",
+  "interactionStates": [],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://fashion-store-clean-20.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-menu-drawer-container",
+      "viewports": ["375", "768"],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "selector": "#menu-drawer",
+      "viewports": ["375", "768"],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mobil-menu-acik",
+      "not": "Hamburger forceOpen. Beklenen: Shop/Themes/… + Wishlist/Compare/Log in."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-menu-drawer-menu-item-1 > summary",
+      "viewports": ["375", "768"],
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "forceOpen",
+      "selector": "#Details-menu-drawer-menu-item-1",
+      "viewports": ["375", "768"],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mobil-shop-akordeon",
+      "not": "Shop satırı (yazılı <a> değil)."
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "2 deneme: click 768 kapalı homepage / 375 #menu-drawer 0px; forceOpen details sonrası #menu-drawer visibility:hidden (Dawn menu-opening class). Üçüncü yok — leftover."
+    },
+    {
+      "state": "changed",
+      "sebep": "Shop accordion drawer görünür olmadan tıklanamadı (viewport dışı)."
+    }
+  ],
+  "stateFindings": {},
+  "interactionNote": "768 PNG'ler 1. deneme kapalı homepage — kanıt değil. Account/wishlist tıklanmadı. 1440 hamburger yok.",
+  "capture": {
+    "url": "https://fashion-store-clean-20.myshopify.com/",
+    "viewports": ["375", "768", "1440"],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:36:42.593Z"
+  }
+}

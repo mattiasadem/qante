@@ -1,0 +1,70 @@
+{
+  "observationId": "seabikini.default.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "seabikini",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "url": "https://fashion-store-clean-11.myshopify.com/pages/faqs",
+  "selector": "#shopify-section-template--23256779522367__cb435de1-8958-455d-8843-8a9ef3413466",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/seabikini/default/faq-support/faq-collapsible-tabs.1440.png",
+    "evidence/seabikini/default/faq-support/faq-collapsible-tabs.375.png",
+    "evidence/seabikini/default/faq-support/faq-collapsible-tabs.768.png",
+    "evidence/seabikini/default/faq-support/faq-collapsible-tabs.changed.soru-acik.1440.png",
+    "evidence/seabikini/default/faq-support/faq-collapsible-tabs.changed.soru-acik.375.png",
+    "evidence/seabikini/default/faq-support/faq-collapsible-tabs.changed.soru-acik.768.png",
+    "evidence/seabikini/default/faq-support/faq-collapsible-tabs.initial.kapali.1440.png",
+    "evidence/seabikini/default/faq-support/faq-collapsible-tabs.initial.kapali.375.png",
+    "evidence/seabikini/default/faq-support/faq-collapsible-tabs.initial.kapali.768.png"
+  ],
+  "notlar": "Frequently asked question. İlk karede Q1 açık. Dört soru + check ikon.",
+  "delta": "Dawn collapsible-content. openFirst: Q1 default açık. allowMultipleOpen: Q2 açılınca Q1 kapanmıyor. Shopify.theme.name Seabikini-v-1-5-0 · schema_name Seabikini · schema_version 1.5.0 · theme_store_id null · role main · id 171062952255 · shop fashion-store-clean-11.myshopify.com · Speedo Themes third-party (Theme Store official değil).",
+  "storefrontPassword": "1",
+  "capture": {
+    "url": "https://fashion-store-clean-11.myshopify.com/pages/faqs",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:35:56.124Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://fashion-store-clean-11.myshopify.com/pages/faqs",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--23256779522367__cb435de1-8958-455d-8843-8a9ef3413466",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "İlk hâl — Q1 zaten açık (etiket kapali dosya adı)"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "details[id*='collapsible_row-2-template--23256779522367'] > summary",
+      "value": 1200,
+      "capture": true,
+      "etiket": "soru-acik",
+      "not": "Q2 açık: I like my styles but they don't fit!"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Frequently asked question. Q1 “Can I choose whichever styles I want?” açık (lorem, chevron yukarı). Q2–Q4 kapalı. Hamburger yok.",
+    "changed": "Q2 “I like my styles but they don’t fit!” açık (lorem). Q1 açık kaldı — çoklu açık. Q3–Q4 kapalı. details[id*=collapsible_row-2] — hamburger’a değmedi."
+  },
+  "missingStates": [],
+  "interactionNote": "Submit / PII yok. İlk kare kapalı değil (Q1 default açık). Genel details>summary 1440’te hamburger’ı açıyordu."
+}

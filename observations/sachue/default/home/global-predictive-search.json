@@ -1,0 +1,71 @@
+{
+  "observationId": "sachue.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "sachue",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pandora-beauty-store.myshopify.com/",
+  "selector": "#header-search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/sachue/default/home/global-predictive-search.1440.png",
+    "evidence/sachue/default/home/global-predictive-search.375.png",
+    "evidence/sachue/default/home/global-predictive-search.768.png",
+    "evidence/sachue/default/home/global-predictive-search.input.arama-sonucu.1440.png",
+    "evidence/sachue/default/home/global-predictive-search.input.arama-sonucu.375.png",
+    "evidence/sachue/default/home/global-predictive-search.input.arama-sonucu.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "details-modal#header-search · PREDICTIVE-SEARCH · #Search-In-Modal-1. Statik host (açık modal).",
+  "delta": "Yazınca öneri interact turunda. Kapalı kare 0×0 — prepareClick Search ikonu.",
+  "capture": {
+    "url": "https://pandora-beauty-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "prepareClick": "summary.header__icon--search",
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:39:09.527Z"
+  },
+  "captureMode": "viewport",
+  "prepareClick": "summary.header__icon--search",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "input",
+      "action": "goto",
+      "selector": null,
+      "value": "https://pandora-beauty-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "value": 800,
+      "capture": false,
+      "not": "Search modal aç"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input[name='q']",
+      "value": "nail",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "katalogSorgu nail — öneri/ürün listesi"
+    }
+  ],
+  "stateFindings": {
+    "input": "375/768/1440: 'nail' + PRODUCTS — Glossy Nail Polish, Gel Nail Polish, Plant Power Nail Polish 15ml (thumbnail+başlık). Altta Search for \"nail\". Boş sonuç yok."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu nail (scan). zzzzz boş-sonuç denenmedi — üç ürün geldi."
+}

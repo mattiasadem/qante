@@ -1,0 +1,80 @@
+{
+  "observationId": "furnix.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "furnix",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pandora-furniture-6.myshopify.com/",
+  "selector": "details-modal.header__search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/furnix/default/home/global-predictive-search.1440.png",
+    "evidence/furnix/default/home/global-predictive-search.375.png",
+    "evidence/furnix/default/home/global-predictive-search.768.png",
+    "evidence/furnix/default/home/global-predictive-search.initial.arama-bos.1440.png",
+    "evidence/furnix/default/home/global-predictive-search.initial.arama-bos.375.png",
+    "evidence/furnix/default/home/global-predictive-search.initial.arama-bos.768.png",
+    "evidence/furnix/default/home/global-predictive-search.input.arama-chair.1440.png",
+    "evidence/furnix/default/home/global-predictive-search.input.arama-chair.375.png",
+    "evidence/furnix/default/home/global-predictive-search.input.arama-chair.768.png"
+  ],
+  "notlar": "#Search-In-Modal name=q. Predictive aria. Search ikon 28px.",
+  "delta": "Shopify.theme.name Decora-v-1-5-0-latest-updates New · id 134494290128 · schema_name Decora · schema_version 1.5.0 · theme_store_id null · role main · shop pandora-furniture-6.myshopify.com · Speedo listing slug furnix details-modal overlay. input interact.",
+  "captureMode": "viewport",
+  "prepareClick": "details-modal.header__search summary.header__icon--search",
+  "capture": {
+    "url": "https://pandora-furniture-6.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T13:53:24.780Z",
+    "prepareClick": "details-modal.header__search summary.header__icon--search"
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-furniture-6.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "details-modal.header__search summary.header__icon--search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Büyüteç — boş overlay"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "chair",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-chair",
+      "not": "katalogSorgu=chair (Executive Arm Chair / Husk Chair)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Büyüteç tık: üstte yuvarlak beyaz Search overlay, boş placeholder, sağda X. Sonuç listesi yok. 375/768/1440 aynı iskelet.",
+    "input": "chair yazınca PRODUCTS listesi (thumbnail + başlık): Husk Chair, Arya accent chair, Greer Club Chair, Arne Jacobsen Paris Chair… + Search for \"chair\". 1440 on ürün; 375 ilk sekiz + overlay."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan katalogSorgu=table; chair ürün adından (Executive Arm Chair / Husk Chair). Form submit yok."
+}

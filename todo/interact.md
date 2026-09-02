@@ -19,6 +19,7 @@ Aynı chrome’u preset’te tekrar çekme (Allure drawer = diğer Prestige). Ye
 | Impact Sound | mega · search · cart drawer · featured hover · cart sayfa · PLP filtre · FAQ · PDP swatch · lookbook Read more · alıntı Next · timeline 2017 |
 | Impact Cocoon / Balance | shop-the-look hotspot (Vase→Plica · Bra→Leggings) · Balance PDP Sizing accordion |
 | Symmetry default | lookbook hotspot Heavy Rotation · customer-help FAQ size guide |
+| Sachue (Speedo) default | Shop disclosure 1440 · search `nail` · hamburger Shop drill · cart drawer+sayfa $26→$52 · PDP Multi Color · tabs NEW ARRIVALS · FAQ · announcement 768/1440 (375 next gizli) |
 
 ---
 
@@ -188,3 +189,15 @@ Temsilci tarandı. Şema uydurulmadı. Form / kupon / ülke seçimi gönderilmed
 - [x] official CRO leftover — FAQ ilk soru · countdown tick · reviews nokta 4 Cole
 - [ ] mega / arama / sepet — Impulse chrome, bu turda yok
 - [ ] Satchel / Memo CRO interact — sibling leftover
+
+## Luxora (Speedo) · default
+
+- [x] `navigation-header-mega` — 1440 SHOP forceOpen: 5 koleksiyon kartı (hover durmadı)
+- [x] `global-cart-drawer` — Ponte $100 / qty 2 $200; Free $500 · Express $800; boş open missing
+- [x] `cart-page-main` — empty / $100 / $200
+- [x] `product-info-main` — qty 1→2 (swatch yok; BUY IT NOW yok)
+- [ ] `global-predictive-search` — input missingStates (`#Search-In-Modal-1` hidden)
+- [ ] `global-menu-drawer` — open missingStates (375/768 kare homepage)
+- [ ] `product-showcase-tabs` — Best seller missingStates (New Arrival kaldı)
+- [ ] `faq-collapsible-tabs` — accordion missingStates
+- [ ] `product-showcase-grid-plp` — Color Apply missingStates

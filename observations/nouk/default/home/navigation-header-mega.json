@@ -1,0 +1,83 @@
+{
+  "observationId": "nouk.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "nouk",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://jewelry-online-shop-3.myshopify.com/",
+  "selector": "#shopify-section-sections--17443715973275__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/nouk/default/home/navigation-header-mega.1440.png",
+    "evidence/nouk/default/home/navigation-header-mega.375.png",
+    "evidence/nouk/default/home/navigation-header-mega.768.png",
+    "evidence/nouk/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/nouk/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/nouk/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/nouk/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
+  "storePassword": "1",
+  "notlar": "NOUK logo + sosyal + wishlist/compare/account + cart. Alt sıra: SHOP BY CATEGORY | HOME SHOP RINGS DIAMONDS. details#Details-HeaderMenu-2/3/4.mega-menu (SHOP/RINGS/DIAMONDS).",
+  "delta": "Speedo Nouk 1.5.0 sticky-header. Üst utility + alt mega. USD/English. Inline predictive-search.header-search_box masaüstünde görünür. Login tıklanmadı.",
+  "capture": {
+    "url": "https://jewelry-online-shop-3.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:27:16.283Z"
+  },
+  "captureMode": "viewport",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://jewelry-online-shop-3.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Mega kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-2",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "SHOP details hover — tıklama /collections/all'a gider"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-HeaderMenu-2",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "open pin — viewport scroll hover'ı kapatıyor"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "375: hamburger + NOUK + search/cart. 768: hamburger + logo + bag; alt sıra SHOP BY CATEGORY + search. 1440: sosyal + NOUK + wishlist 0 / account / bag; alt HOME SHOP RINGS DIAMONDS ABOUT US CONTACT US + inline search. Mega kapalı.",
+    "open": "1440 SHOP hover+open pin: 6 kolon — Women’s Necklace / Diamond Rings / Earrings (görsel+başlık+metin) · Main Features 1 (Product sub drawer, Free shipping, Newsletter popup, …) · Main Features 2 (Smart mega menu, Wishlist, Compare, …) · sağ featured SILVER PLATED CRYSTAL STUDDED RING $85. SHOP altı çizili. Tıklama /collections/all'a gider — hover kullanıldı."
+  },
+  "interactionNote": "SHOP summary içinde <a href=/collections/all>. Viewport scroll hover'ı kapatıyor → forceOpen #Details-HeaderMenu-2 pin. Account/login tıklanmadı. 375/768 mega yok; hamburger ayrı observation."
+}

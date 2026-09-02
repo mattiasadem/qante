@@ -1,0 +1,67 @@
+{
+  "observationId": "vedzila.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "vedzila",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://vedzila-organic.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/vedzila/default/home/global-menu-drawer.768.png",
+    "evidence/vedzila/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/vedzila/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "375/768 hamburger → #menu-drawer. 1440 hamburger gizli (mega var).",
+  "delta": "Dawn header-drawer. 1440 opener 0×0 — kare boş/skip olabilir.",
+  "prepareClick": "#Details-menu-drawer-container > summary.header__icon--menu",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://vedzila-organic.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "press",
+      "selector": "#Details-menu-drawer-container > summary.header__icon--menu",
+      "value": "Enter",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Playwright force-click settle sonrası açmıyor; focus+Enter native details açar"
+    }
+  ],
+  "stateFindings": {
+    "open": "375 koyu tam genişlik / 768 sol panel: Home, Shop, About Us, Blog, FAQ, Contact. Altta Language English + X / Facebook / Instagram. Shop expander yok — yazılı satır."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger 0×0 — mega navigation-header-mega."
+    }
+  ],
+  "interactionNote": "Yazılı Shop <a> tıklanmadı. force-click/mouse drawer açmadı; summary focus+Enter açtı. Locale tıklanmadı.",
+  "capture": {
+    "url": "https://vedzila-organic.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:09:25.297Z",
+    "prepareClick": "#Details-menu-drawer-container > summary.header__icon--menu"
+  }
+}

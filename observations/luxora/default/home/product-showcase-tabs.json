@@ -1,0 +1,79 @@
+{
+  "observationId": "luxora.default.home.product-showcase-tabs",
+  "schemaId": "product-showcase-tabs",
+  "kaynak": "luxora",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://jewelry-online-shop2.myshopify.com/",
+  "selector": "#shopify-section-template--24163650142509__165666889162d379a4",
+  "evidenceSlug": "product-showcase-tabs",
+  "evidence": [
+    "evidence/luxora/default/home/product-showcase-tabs.1440.png",
+    "evidence/luxora/default/home/product-showcase-tabs.375.png",
+    "evidence/luxora/default/home/product-showcase-tabs.768.png",
+    "evidence/luxora/default/home/product-showcase-tabs.changed.best-seller.1440.png",
+    "evidence/luxora/default/home/product-showcase-tabs.changed.best-seller.375.png",
+    "evidence/luxora/default/home/product-showcase-tabs.changed.best-seller.768.png",
+    "evidence/luxora/default/home/product-showcase-tabs.initial.new-arrival.1440.png",
+    "evidence/luxora/default/home/product-showcase-tabs.initial.new-arrival.375.png",
+    "evidence/luxora/default/home/product-showcase-tabs.initial.new-arrival.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "home-page-tab New Arrivals. Tabs New Arrival / Best seller. Cards: Ponte Vecchio Bracelet In Gold $110 + wishlist/ATC. Many ATC read Sold out.",
+  "delta": "Tab labels New Arrival vs Best seller. Quick-add sold-out leftover. Shopify.theme.name Jewelry-online-shop2 V-1.5.0 · schema_name Jewelry_online_shop2 · schema_version 1.5.0 · theme_store_id null · role main · id 176034677037 · shop jewelry-online-shop2.myshopify.com · Speedo Luxora official demo (password from Live Demo form).",
+  "capture": {
+    "url": "https://jewelry-online-shop2.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:03:51.741Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://jewelry-online-shop2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24163650142509__165666889162d379a4",
+      "capture": true,
+      "etiket": "new-arrival",
+      "not": "New Arrival aktif"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--24163650142509__165666889162d379a4 .tabs button:not(.active), #shopify-section-template--24163650142509__165666889162d379a4 button.button--secondary:not(.active)",
+      "capture": true,
+      "etiket": "best-seller",
+      "not": "Best seller tab"
+    }
+  ],
+  "stateFindings": {
+    "initial": "New Arrivals. New Arrival aktif (koyu), Best seller inaktif. 4 kart: Ponte Vecchio Bracelet In Gold $100/$110; Diamond Tennis Bracelet 1 Carat $65; Yellow Gold Diamond Bracelet $110/$120; Timeless Sparkling Heart Ketting Met 14 Karaat $95/$100. View All."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Best seller tıklandı. 1440 PNG byte-aynı. 375/768 New Arrival hâlâ aktif; aynı 4 ürün; fark satış-toast / View All crop. Tab içeriği değişmedi."
+    }
+  ],
+  "interactionNote": "İki deneme. Kart ATC Sold out leftover. Checkout yok."
+}
