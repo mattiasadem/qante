@@ -72,6 +72,7 @@
 | PMG (Speedo Themes) | [`pmg.md`](./pmg.md) | ✅ first inventory — gamming-store-1 · password `1` · 39 obs · 0 yeni şema · interact mega/search/cart/chair/FAQ; hamburger+hero missingStates |
 | Qreal (Speedo Cosmetic) | [`qreal.md`](./qreal.md) | 🟡 — 52 obs · 203 PNG · 0 yeni şema · women-beauty-8 · password 1 |
 | Roomify (Speedo · furniture) | [`roomify.md`](./roomify.md) | 🟡 default — 39 obs · 166 PNG · 0 yeni şema · interact findings (menu/tabs/hero/PDP changed missing) |
+| Spacecraft (Speedo · home decor) | [`spacecraft.md`](./spacecraft.md) | 🟡 first inventory — `pandora-furniture-3` · Pandora-furniture-3 V-1.5.0 · password `1` · 39 obs · 0 yeni şema |
 | Saffron (Speedo · Midnight Perfume) | [`saffron.md`](./saffron.md) | ✅ first inventory — password `1` · 39 obs · 167 PNG · 0 yeni şema |
 | Shrilahome (Speedo) | [`shrilahome.md`](./shrilahome.md) | ✅ Mod A + interact — 38 obs · 166 PNG · 0 yeni şema · password `1` · menu/search overlay missing |
 | Wide Fashion (Speedo) | [`wide-fashion.md`](./wide-fashion.md) | 🟡 first inventory + interact — Fashion-store-clean-5 1.2.0 · 42 obs · 169 PNG · 0 yeni şema · password `1` |
