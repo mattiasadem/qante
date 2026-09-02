@@ -45,7 +45,7 @@ Karar: onay bekliyor
 ---
 
 ADAY: hairva-cart-footer-empty-hidden  
-Gerekçe: `#shopify-section-template--24519367786795__cart-footer` boş sepetten h=0. Dolu hâl interact’te bakılacak.  
+Gerekçe: Dawn split — `#…__cart-items` = `cart-page-main`. Sibling `#…__cart-footer` boşken h=0. Dolu cart-items kırpında checkout/totals yok (kardeş section). Ayrı observation açılmadı (Dawn/Studio leftover aynı).  
 Örnekler: https://pandora-hair-care-3.myshopify.com/cart  
 Öneri: leftover — Dawn cart-footer  
 Karar: onay bekliyor

@@ -7,7 +7,17 @@
   "url": "https://pandora-hair-care-3.myshopify.com/",
   "selector": "#CartDrawer",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/hairva/default/home/global-cart-drawer.1440.png",
+    "evidence/hairva/default/home/global-cart-drawer.375.png",
+    "evidence/hairva/default/home/global-cart-drawer.768.png",
+    "evidence/hairva/default/home/global-cart-drawer.filled.victoria-eklendi.1440.png",
+    "evidence/hairva/default/home/global-cart-drawer.filled.victoria-eklendi.375.png",
+    "evidence/hairva/default/home/global-cart-drawer.filled.victoria-eklendi.768.png",
+    "evidence/hairva/default/home/global-cart-drawer.initial.bos.1440.png",
+    "evidence/hairva/default/home/global-cart-drawer.initial.bos.375.png",
+    "evidence/hairva/default/home/global-cart-drawer.initial.bos.768.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "cart-drawer.is-empty. #cart-icon-bubble tık → drawer active (URL / kalır). Boş: Your cart is empty + Continue shopping. cart-notification.js de yüklü.",
   "delta": "Dawn cart-drawer (Sense cart-notification değil). Icon href=/cart ama JS drawer açar. Boş hâl statik; dolu interact.",
@@ -18,9 +28,60 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": ""
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:58:51.209Z",
+    "mode": "viewport",
+    "prepareClick": "#cart-icon-bubble"
   },
   "prepareClick": "#cart-icon-bubble",
-  "captureMode": "viewport"
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-hair-care-3.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://pandora-hair-care-3.myshopify.com/products/victoria-silk-top-wig-blonde",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit",
+      "capture": false,
+      "not": "Victoria ATC — sold-out etiketi yanıltıcı, cart.js item_count 1"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "victoria-eklendi",
+      "not": "Drawer dolu: Victoria 18 / Black"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boş: Your cart is empty + CONTINUE SHOPPING. 1440 sağ panel + karartı.",
+    "filled": "Victoria Silk Top Wig Blonde, Length 12\", Color Black, $150. Adet 1. Free/Express shipping bar yeşil. Estimated total $150. CHECK OUT (tıklanmadı)."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC UI tık. Varsayılan Length 12\" / Color Black. Checkout yok."
 }

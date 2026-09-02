@@ -5,12 +5,22 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://pandora-hair-care-3.myshopify.com/",
-  "selector": "predictive-search.search-modal__form",
+  "selector": "details-modal.header__search",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/hairva/default/home/global-predictive-search.1440.png",
+    "evidence/hairva/default/home/global-predictive-search.375.png",
+    "evidence/hairva/default/home/global-predictive-search.768.png",
+    "evidence/hairva/default/home/global-predictive-search.initial.modal-bos.1440.png",
+    "evidence/hairva/default/home/global-predictive-search.initial.modal-bos.375.png",
+    "evidence/hairva/default/home/global-predictive-search.initial.modal-bos.768.png",
+    "evidence/hairva/default/home/global-predictive-search.input.arama-hair.1440.png",
+    "evidence/hairva/default/home/global-predictive-search.input.arama-hair.375.png",
+    "evidence/hairva/default/home/global-predictive-search.input.arama-hair.768.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "details-modal.header__search. Input #Search-In-Modal-1 placeholder Search. Kapalı kare 0-size — prepareClick ikon.",
-  "delta": "Dawn predictive-search modal (drawer değil). Statik host kapalı. Interact: wig.",
+  "delta": "Dawn predictive-search modal. 375/768 #Search-In-Modal, 1440 #Search-In-Modal-1. İki kolon öneri+ürün.",
   "capture": {
     "url": "https://pandora-hair-care-3.myshopify.com/",
     "viewports": [
@@ -18,9 +28,65 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": ""
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:05:25.795Z",
+    "mode": "viewport",
+    "prepareClick": "details-modal.header__search summary.header__icon--search"
   },
   "prepareClick": "details-modal.header__search summary.header__icon--search",
-  "captureMode": "viewport"
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-hair-care-3.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "details-modal.header__search summary.header__icon--search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "modal-bos",
+      "not": "Arama modalı açık, input boş"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "hair",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-hair",
+      "not": "375/768 görünür input #Search-In-Modal — katalogSorgu hair"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal-1",
+      "value": "hair",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-hair",
+      "not": "1440 görünür input #Search-In-Modal-1"
+    }
+  ],
+  "stateFindings": {
+    "initial": "İkon tık: üst modal, placeholder Search, öneri yok.",
+    "input": "hair yazılınca SUGGESTIONS: HAIR CARE / HAIR CARE KITS / HAIR CARE OIL. PRODUCTS: Pixie Silk Top Wig, Dream Filter, Honey Blonde Wig, Synthetic Wig, Nourishing Treatment Mask, Divine Lace Top… + Search for \"hair\". 375 tek kolon yığın; 1440 iki kolon."
+  },
+  "missingStates": [],
+  "interactionNote": "İki input: 375/768 #Search-In-Modal, 1440 #Search-In-Modal-1. Submit yok."
 }

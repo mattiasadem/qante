@@ -7,7 +7,17 @@
   "url": "https://pandora-hair-care-3.myshopify.com/pages/faq",
   "selector": "#shopify-section-template--24519368573227__11f877ea-f048-48aa-8452-bccbef46e42d",
   "evidenceSlug": "faq-collapsible-tabs",
-  "evidence": [],
+  "evidence": [
+    "evidence/hairva/default/faq-support/faq-collapsible-tabs.1440.png",
+    "evidence/hairva/default/faq-support/faq-collapsible-tabs.375.png",
+    "evidence/hairva/default/faq-support/faq-collapsible-tabs.768.png",
+    "evidence/hairva/default/faq-support/faq-collapsible-tabs.changed.ilk-soru-acik.1440.png",
+    "evidence/hairva/default/faq-support/faq-collapsible-tabs.changed.ilk-soru-acik.375.png",
+    "evidence/hairva/default/faq-support/faq-collapsible-tabs.changed.ilk-soru-acik.768.png",
+    "evidence/hairva/default/faq-support/faq-collapsible-tabs.initial.kapali.1440.png",
+    "evidence/hairva/default/faq-support/faq-collapsible-tabs.initial.kapali.375.png",
+    "evidence/hairva/default/faq-support/faq-collapsible-tabs.initial.kapali.768.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "Frequently asked question + 4 soru (about ile aynı kopya).",
   "delta": "Dawn collapsible-content.",
@@ -18,7 +28,42 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": ""
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:02:30.337Z",
+    "mode": "section"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-hair-care-3.myshopify.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24519368573227__11f877ea-f048-48aa-8452-bccbef46e42d",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "4 soru kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-template--15957084602561__11f877ea-f048-48aa-8452-bccbef46e42d-166513213384034377-0-template--24519368573227__11f877ea-f048-48aa-8452-bccbef46e42d > summary",
+      "capture": true,
+      "etiket": "ilk-soru-acik",
+      "not": "Can I choose whichever styles I want? açık"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Frequently asked question. 4 kapalı satır + chevron aşağı.",
+    "changed": "İlk soru açık: Can I choose whichever styles I want? + lorem; chevron yukarı, soru altı çizili."
+  },
+  "missingStates": [],
+  "interactionNote": "İlk summary. İkinci FAQ grubu (Shipping) ayrı obs — interact yok."
 }
