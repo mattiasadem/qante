@@ -40,6 +40,7 @@ export const PUBLIC_DEMO_PASSWORDS = {
   "toyon-toys-2.myshopify.com": "1",
   "vedzila-organic.myshopify.com": "1",
   "watchez-online-store.myshopify.com": "1",
+  "women-beauty-6.myshopify.com": "1",
   "women-beauty-8.myshopify.com": "1",
 };
 
@@ -99,15 +100,41 @@ export async function unlockStorefrontIfNeeded(page, obs = {}) {
   }
   if (!password) return { unlocked: false, reason: "no-password" };
 
-  const input = page.locator("input[type='password'], input[name='password']").first();
-  if (!(await input.count())) return { unlocked: false, reason: "no-input" };
-  await input.fill(String(password));
-  const submit = page
+  // Dawn password templates hide #Password inside a closed details/modal.
+  // Shopify's generic wall uses a visible #password. Prefer visible, then force.
+  const opener = page
     .locator(
-      "form[action*='password'] button[type='submit'], form[action*='password'] input[type='submit'], form[action*='password'] button"
+      "details:not([open]) summary, button:has-text('Enter using password'), a:has-text('Enter using password'), [aria-controls*='assword']"
     )
     .first();
-  await submit.click();
+  if (await opener.count()) {
+    const vis = await opener.isVisible().catch(() => false);
+    if (vis) await opener.click({ force: true }).catch(() => {});
+    await page.waitForTimeout(400);
+  }
+
+  const inputs = page.locator(
+    "form[action*='password'] input[type='password'], form[action*='password'] input[name='password'], input#Password, input#password, input[type='password']"
+  );
+  const n = await inputs.count();
+  if (!n) return { unlocked: false, reason: "no-input" };
+  let filled = false;
+  for (let i = 0; i < n; i++) {
+    const input = inputs.nth(i);
+    const visible = await input.isVisible().catch(() => false);
+    if (!visible && i < n - 1) continue;
+    await input.fill(String(password), { force: true }).catch(() => {});
+    filled = true;
+    break;
+  }
+  if (!filled) return { unlocked: false, reason: "fill-failed" };
+
+  const submit = page
+    .locator(
+      "form[action*='password'] button[type='submit'], form[action*='password'] input[type='submit'], form[action*='password'] button, button:has-text('Enter'), button:has-text('Enter store')"
+    )
+    .first();
+  await submit.click({ force: true }).catch(() => {});
   await page.waitForTimeout(2000);
   const still = /\/password\/?$/.test(new URL(page.url()).pathname);
   const gate = await waitOutCheckpoint(page);
