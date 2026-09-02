@@ -12,6 +12,8 @@ node capture-observation.mjs ../observations/hyper/default/home/hero-slideshow.j
 
 İsteğe bağlı: `--url https://...`
 
+Storefront password (Speedo vb.): observation `storePassword` veya `STOREFRONT_PASSWORD`. Yalnız o origin'in `/password` formuna yazar.
+
 ## Ne yapar
 
 1. Observation’dan `selector` + `url` okur  
