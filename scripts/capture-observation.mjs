@@ -21,6 +21,7 @@ import {
   assertCleanForScreenshot,
 } from "./dismiss-overlays.mjs";
 import { screenshotSectionWithPadding } from "./screenshot-section.mjs";
+import { unlockStorefrontIfNeeded } from "./unlock-storefront.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const qanteRoot = path.resolve(__dirname, "..");
@@ -115,16 +116,27 @@ try {
       });
     }
 
+    const storefrontPassword =
+      obs.storefrontPassword || obs.capture?.storefrontPassword || null;
+
     const warmupUrl = obs.warmupUrl || obs.capture?.warmupUrl || null;
     if (warmupUrl) {
       await page.goto(warmupUrl, { waitUntil: "domcontentloaded", timeout: 90000 });
       await page.waitForTimeout(2000);
+      if (await unlockStorefrontIfNeeded(page, storefrontPassword)) {
+        await page.goto(warmupUrl, { waitUntil: "domcontentloaded", timeout: 90000 });
+        await page.waitForTimeout(1500);
+      }
       await dismissAllOverlays(page);
     }
 
     const target = new URL(url);
     await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
     await page.waitForTimeout(3500);
+    if (await unlockStorefrontIfNeeded(page, storefrontPassword)) {
+      await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
+      await page.waitForTimeout(2500);
+    }
 
     // Cloudflare / bot interstitial — kısa bekle + reload (DTC storefront)
     for (let cf = 0; cf < 6; cf++) {
