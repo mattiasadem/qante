@@ -41,6 +41,7 @@ import {
   assertCleanForScreenshot,
 } from "./dismiss-overlays.mjs";
 import { screenshotSectionWithPadding } from "./screenshot-section.mjs";
+import { unlockStorefrontIfNeeded } from "./unlock-storefront.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const qanteRoot = path.resolve(__dirname, "..");
@@ -182,7 +183,12 @@ function iframeHostSelector(selector) {
 async function settle(page, url) {
   const target = new URL(url);
   await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
-  await page.waitForTimeout(3500);
+  await page.waitForTimeout(1500);
+  if (await unlockStorefrontIfNeeded(page, obs)) {
+    await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
+    await page.waitForTimeout(2000);
+  }
+  await page.waitForTimeout(2000);
 
   const landed = new URL(page.url());
   if (
