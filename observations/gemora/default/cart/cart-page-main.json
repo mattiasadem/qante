@@ -1,0 +1,106 @@
+{
+  "observationId": "gemora.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "gemora",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://jewelry-online-shop1.myshopify.com/cart",
+  "selector": "#shopify-section-template--24653292044606__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/gemora/default/cart/cart-page-main.1440.png",
+    "evidence/gemora/default/cart/cart-page-main.375.png",
+    "evidence/gemora/default/cart/cart-page-main.768.png",
+    "evidence/gemora/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/gemora/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/gemora/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/gemora/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/gemora/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/gemora/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/gemora/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/gemora/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/gemora/default/cart/cart-page-main.initial.sepet-bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "cart-items is-empty: Your cart is empty · Continue Shopping · Have an account? Log in to check out faster. Sibling #…__cart-footer h=0 boşken.",
+  "delta": "Dawn split cart-items + cart-footer. Dolu hâl interact. Login tıklanmadı.",
+  "capture": {
+    "url": "https://jewelry-online-shop1.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:38:08.041Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://jewelry-online-shop1.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "etiket": "sepet-bos",
+      "not": "Your cart is empty"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://jewelry-online-shop1.myshopify.com/products/18k-yellow-gold-luxury-diamond-earrings",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--24653292798270__main button.product-form__submit[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://jewelry-online-shop1.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Earrings satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--24653292044606__cart-items button[name='plus'], cart-items button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Qty artı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty · Continue Shopping · Have an account? Log in to check out faster. Satır yok. Log in tıklanmadı.",
+    "filled": "Your cart. PRODUCT / QUANTITY / TOTAL. Earrings thumbnail · 18K Yellow Gold Luxury Diamond Earrings · $75.00 · Color: Yellow Gold · adet 1 · satır $75.00. Çöp ikonu.",
+    "changed": "Adet 2; satır TOTAL $150.00. Aynı iskelet."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart → ui. Check Out sibling cart-footer leftover. Log in tıklanmadı."
+}

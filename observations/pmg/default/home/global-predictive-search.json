@@ -1,0 +1,76 @@
+{
+  "observationId": "pmg.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "pmg",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://gamming-store-1.myshopify.com/",
+  "storefrontPassword": "1",
+  "selector": "#Search-In-Modal",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/pmg/default/home/global-predictive-search.1440.png",
+    "evidence/pmg/default/home/global-predictive-search.375.png",
+    "evidence/pmg/default/home/global-predictive-search.768.png",
+    "evidence/pmg/default/home/global-predictive-search.input.arama-sonucu.1440.png",
+    "evidence/pmg/default/home/global-predictive-search.input.arama-sonucu.375.png",
+    "evidence/pmg/default/home/global-predictive-search.input.arama-sonucu.768.png"
+  ],
+  "notlar": "details-modal.header__search → #Search-In-Modal. Kapalı kare boş.",
+  "delta": "Shopify.theme.name PMG Game Store V-1.5.0 · id 123907113009 · schema_name PMG game store · schema_version 1.5.0 · theme_store_id null · role main · shop gamming-store-1.myshopify.com. Predictive overlay; statik kare opener sonrası.",
+  "captureMode": "viewport",
+  "prepareClick": "details-modal.header__search summary",
+  "capture": {
+    "url": "https://gamming-store-1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T17:20:36.752Z",
+    "prepareClick": "details-modal.header__search summary"
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "input",
+      "action": "goto",
+      "value": "https://gamming-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "details-modal.header__search summary",
+      "capture": false,
+      "not": "İç details açılır"
+    },
+    {
+      "state": "input",
+      "action": "forceOpen",
+      "selector": "details-modal.header__search details",
+      "capture": false,
+      "not": "Host forceOpen input'u açmaz — inner details"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "keyboard",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "katalogSorgu keyboard — 5 ürün önerisi"
+    }
+  ],
+  "stateFindings": {
+    "input": "375/768/1440 overlay; input keyboard. PRODUCTS: SONIC MECHANICAL RGB GAMING KEYBOARD, HIDEVOLUTION MSI TITAN GT77HX, GAMING COMPUTER CARBON FIBER DESK, FULLY MODULAR POWER SUPPLY, RGB GAMING LED MOUSE PAD. Altta Search for “keyboard”. Enter/submit yok."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu keyboard. Submit/Enter yok. 1. deneme host forceOpen input gizli; 2. inner details + fill."
+}

@@ -1,0 +1,94 @@
+{
+  "observationId": "shrilahome.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "shrilahome",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pandora-furniture-5.myshopify.com/",
+  "selector": "#menu-drawer",
+  "prepareClick": "summary.header__icon--menu, summary[aria-label='Menu']",
+  "storefrontPassword": "1",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/shrilahome/default/home/global-menu-drawer.1440.png",
+    "evidence/shrilahome/default/home/global-menu-drawer.768.png",
+    "evidence/shrilahome/default/home/global-menu-drawer.changed.sofas-nested.1440.png",
+    "evidence/shrilahome/default/home/global-menu-drawer.changed.sofas-nested.768.png",
+    "evidence/shrilahome/default/home/global-menu-drawer.open.hamburger-acik.1440.png",
+    "evidence/shrilahome/default/home/global-menu-drawer.open.hamburger-acik.768.png"
+  ],
+  "notlar": "375/768 hamburger summary[aria-label=Menu] → #menu-drawer. Nested HeaderDrawer-sofas-chairs.",
+  "delta": "Shopify.theme.name Shrilahome-Furniture-v-1-5-0 · schema_name shrilahome · schema_version 1.5.0 · theme_store_id null · role main · id 169736438070 · shop pandora-furniture-5.myshopify.com. Vendor Speedo Themes (third-party OS 2.0, Theme Store değil). Storefront password 1 (speedothemes.com product page). Host pandora-furniture-5.myshopify.com — başka host uydurulmadı. Dawn menu-drawer. 1440 de hamburger (inline mega yok).",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-furniture-5.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header-drawer summary.header__icon--menu svg",
+      "viewports": [
+        "375",
+        "768",
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger-acik",
+      "not": "SVG tık — 1440 summary w=0"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#HeaderDrawer-sofas-chairs",
+      "viewports": [
+        "375",
+        "768",
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sofas-nested",
+      "not": "Sofas & Chairs summary. Yazılı <a> tıklanmaz."
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375: tık sonrası #menu-drawer h=0. 768/1440: script kutu yazdı (kapalı drawer off-screen w=400) ama viewport kare homepage — Sofas & Chairs listesi yok. İkinci deneme."
+    },
+    {
+      "state": "changed",
+      "sebep": "375 zero-size. 768/1440 sofas-nested PNG de homepage; nested panel yok. İkinci deneme."
+    }
+  ],
+  "interactionNote": "Yoklamada forceOpen + SVG ile drawer DOM büyüyor; capture karesi drawer'ı göstermedi. Yazılı koleksiyon <a> yok. Üçüncü deneme yok.",
+  "capture": {
+    "url": "https://pandora-furniture-5.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:11:37.562Z",
+    "prepareClick": "summary.header__icon--menu, summary[aria-label='Menu']"
+  }
+}

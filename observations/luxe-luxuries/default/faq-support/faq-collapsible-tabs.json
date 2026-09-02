@@ -1,0 +1,75 @@
+{
+  "observationId": "luxe-luxuries.default.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "luxe-luxuries",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "url": "https://watchez-online-store.myshopify.com/pages/faqs",
+  "selector": "#shopify-section-template--23205603279128__165665932214209e57",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/luxe-luxuries/default/faq-support/faq-collapsible-tabs.1440.png",
+    "evidence/luxe-luxuries/default/faq-support/faq-collapsible-tabs.375.png",
+    "evidence/luxe-luxuries/default/faq-support/faq-collapsible-tabs.768.png",
+    "evidence/luxe-luxuries/default/faq-support/faq-collapsible-tabs.changed.shipping-methods.1440.png",
+    "evidence/luxe-luxuries/default/faq-support/faq-collapsible-tabs.changed.shipping-methods.375.png",
+    "evidence/luxe-luxuries/default/faq-support/faq-collapsible-tabs.changed.shipping-methods.768.png",
+    "evidence/luxe-luxuries/default/faq-support/faq-collapsible-tabs.initial.kapali.1440.png",
+    "evidence/luxe-luxuries/default/faq-support/faq-collapsible-tabs.initial.kapali.375.png",
+    "evidence/luxe-luxuries/default/faq-support/faq-collapsible-tabs.initial.kapali.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Frequently asked question + Shipping methods / times / payment / return.",
+  "delta": "İlk akordeon grubu.",
+  "capture": {
+    "url": "https://watchez-online-store.myshopify.com/pages/faqs",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:14:03.585Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://watchez-online-store.myshopify.com/pages/faqs",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--23205603279128__165665932214209e57",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "Tüm details kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--23205603279128__165665932214209e57 details > summary",
+      "capture": true,
+      "etiket": "shipping-methods",
+      "not": "İlk soru açık"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Frequently asked question. 4 kapalı satır (checkbox + chevron): Shipping Methods / shipping times and costs / payment methods / exchanges, returns and refunds.",
+    "changed": "İlk satır açık: What Shipping Methods Are Available? — gri satır zemini, chevron yukarı, lorem cevap. Diğer 3 kapalı."
+  },
+  "missingStates": [],
+  "interactionNote": "İlk summary: What Shipping Methods Are Available?"
+}

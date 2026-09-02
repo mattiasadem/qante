@@ -1,0 +1,142 @@
+{
+  "observationId": "gemora.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "gemora",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://jewelry-online-shop1.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/gemora/default/home/global-cart-drawer.1440.png",
+    "evidence/gemora/default/home/global-cart-drawer.375.png",
+    "evidence/gemora/default/home/global-cart-drawer.768.png",
+    "evidence/gemora/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/gemora/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/gemora/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/gemora/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/gemora/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/gemora/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/gemora/default/home/global-cart-drawer.initial.sepet-bos.1440.png",
+    "evidence/gemora/default/home/global-cart-drawer.initial.sepet-bos.375.png",
+    "evidence/gemora/default/home/global-cart-drawer.initial.sepet-bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "CART-DRAWER + #CartDrawer. Açıcı #cart-icon-bubble (href=/cart). Boş class is-empty.",
+  "delta": "Dawn çatalında gerçek drawer var (Dawn resmi demoda notification). /cart ayrı sayfa. Checkout tıklanmadı.",
+  "captureMode": "viewport",
+  "prepareClick": "#cart-icon-bubble",
+  "prepareForceOpen": true,
+  "capture": {
+    "url": "https://jewelry-online-shop1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:41:14.392Z",
+    "prepareClick": "#cart-icon-bubble"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://jewelry-online-shop1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a#cart-icon-bubble",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "#CartDrawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://jewelry-online-shop1.myshopify.com/products/18k-yellow-gold-luxury-diamond-earrings",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--24653292798270__main button.product-form__submit[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "a#cart-icon-bubble",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "forceOpen",
+      "selector": "#CartDrawer",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Earrings satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Qty 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "375/1440: boş drawer boyanmadı — kare kapalı homepage, cart rozet 0. forceOpen #CartDrawer empty panel göstermedi.",
+    "filled": "ATC UI (earrings). Sağ drawer: Your cart · Back · Free Shipping $500 / Express $800 progress; 18K Yellow Gold Luxury Diamond Earrings · Color Yellow Gold · adet 1 · $75.00; Best seller accordion; Estimated total $75.00 USD; Check Out; View cart. Check Out tıklanmadı.",
+    "changed": "Aynı drawer; adet 2; Estimated total $150.00 USD. Check Out tıklanmadı."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "Boş drawer karesi homepage (çekmece görünmedi). Dolu hâl ATC sonrası gerçek drawer."
+    }
+  ],
+  "interactionNote": "addToCart → ui. BUY IT NOW / Check Out / Log in tıklanmadı."
+}

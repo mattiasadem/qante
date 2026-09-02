@@ -1,0 +1,83 @@
+{
+  "observationId": "wide-fashion.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "wide-fashion",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://fashion-store-clean-5.myshopify.com/cart",
+  "selector": "#shopify-section-template--21734253494573__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/wide-fashion/default/cart/cart-page-main.1440.png",
+    "evidence/wide-fashion/default/cart/cart-page-main.375.png",
+    "evidence/wide-fashion/default/cart/cart-page-main.768.png",
+    "evidence/wide-fashion/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/wide-fashion/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/wide-fashion/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/wide-fashion/default/cart/cart-page-main.filled.dolu.1440.png",
+    "evidence/wide-fashion/default/cart/cart-page-main.filled.dolu.375.png",
+    "evidence/wide-fashion/default/cart/cart-page-main.filled.dolu.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Your cart is empty + CONTINUE SHOPPING + Have an account? Log in. cart-footer h=0 (boş sepet).",
+  "delta": "Dolu hâl interact. Checkout tıklanmadı. Login tıklanmadı.",
+  "capture": {
+    "url": "https://fashion-store-clean-5.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:21:36.195Z"
+  },
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://fashion-store-clean-5.myshopify.com/products/women-black-white-flower-design-dress",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://fashion-store-clean-5.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "etiket": "dolu",
+      "not": "Satır + toplam"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--21734253494573__cart-items button[name='plus'], .quantity__button:not(.disabled)",
+      "value": 1000,
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Qty +1"
+    }
+  ],
+  "stateFindings": {
+    "filled": "Your cart + Continue shopping. Satır: Flower dress Size S, qty 1, unit $130, TOTAL $130. Çöp kutusu.",
+    "changed": "Qty 2, satır TOTAL $260.00. Size S aynı. Checkout bu section kırpımında yok (cart-items)."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC PDP submit sonra /cart. Checkout / login tıklanmadı. Boş kare statik evidence.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ]
+}

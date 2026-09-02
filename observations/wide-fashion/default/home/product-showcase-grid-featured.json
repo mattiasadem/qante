@@ -1,0 +1,70 @@
+{
+  "observationId": "wide-fashion.default.home.product-showcase-grid-featured",
+  "schemaId": "product-showcase-grid-featured",
+  "kaynak": "wide-fashion",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://fashion-store-clean-5.myshopify.com/",
+  "selector": "#shopify-section-template--21734253789485__featured_collection",
+  "evidenceSlug": "product-showcase-grid-featured",
+  "evidence": [
+    "evidence/wide-fashion/default/home/product-showcase-grid-featured.1440.png",
+    "evidence/wide-fashion/default/home/product-showcase-grid-featured.375.png",
+    "evidence/wide-fashion/default/home/product-showcase-grid-featured.768.png",
+    "evidence/wide-fashion/default/home/product-showcase-grid-featured.hover.ikinci-gorsel.1440.png",
+    "evidence/wide-fashion/default/home/product-showcase-grid-featured.hover.ikinci-gorsel.375.png",
+    "evidence/wide-fashion/default/home/product-showcase-grid-featured.hover.ikinci-gorsel.768.png",
+    "evidence/wide-fashion/default/home/product-showcase-grid-featured.initial.ilk-hal.1440.png",
+    "evidence/wide-fashion/default/home/product-showcase-grid-featured.initial.ilk-hal.375.png",
+    "evidence/wide-fashion/default/home/product-showcase-grid-featured.initial.ilk-hal.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "✨New Collection — featured-collection. Kartlarda CHOOSE OPTIONS + Sale rozeti. İlk ürün Women Black & White Flower design Dress $140→$130.",
+  "delta": "Dawn featured-collection. Quick-add CHOOSE OPTIONS (varyantlı).",
+  "capture": {
+    "url": "https://fashion-store-clean-5.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:15:58.778Z"
+  },
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://fashion-store-clean-5.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21734253789485__featured_collection",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "4 kart, 1. görsel"
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#shopify-section-template--21734253789485__featured_collection .card-wrapper.product-card-wrapper",
+      "value": 800,
+      "capture": true,
+      "etiket": "ikinci-gorsel",
+      "not": "İlk kart 1.1→1.2 opacity. 375/768 aynıysa missing."
+    }
+  ],
+  "stateFindings": {
+    "initial": "✨ New Collection. 1440 dört kart (çiçekli elbise $140→$130, takım $148, tulum $80, pembe elbise $150). Hover chrome yok. 375/768 iki kart.",
+    "hover": "İlk kartta çerçeve, Sale rozeti, wishlist kalp, siyah CHOOSE OPTIONS. 375 ve 768 karede de aynı chrome (Playwright hover; parmak hover değil)."
+  },
+  "missingStates": [],
+  "interactionNote": "Quick view diyaloğu yok — yalnız kart overlay. Wishlist tıklanmadı. 375/768 hover kareleri silinmedi; Playwright mouse ile chrome göründü.",
+  "interactionStates": [
+    "initial",
+    "hover"
+  ]
+}

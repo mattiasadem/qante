@@ -1,0 +1,121 @@
+{
+  "observationId": "gemora.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "gemora",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://jewelry-online-shop1.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/gemora/default/home/global-menu-drawer.768.png",
+    "evidence/gemora/default/home/global-menu-drawer.changed.shop-akordeon.768.png",
+    "evidence/gemora/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/gemora/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "header-drawer → #menu-drawer. 375/768 hamburger. SHOP iç içe (#HeaderDrawer-shop).",
+  "delta": "1440 hamburger gizli (large-up inline + mega). 375/768 open ayrı interact.",
+  "captureMode": "viewport",
+  "prepareClick": "header-drawer .header__icon--menu, header-drawer summary, #Details-menu-drawer-container > summary",
+  "prepareForceOpen": true,
+  "capture": {
+    "url": "https://jewelry-online-shop1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:39:54.415Z",
+    "prepareClick": "header-drawer summary"
+  },
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://jewelry-online-shop1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-menu-drawer-container",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#menu-drawer",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Mobil menü — details host + drawer forceOpen"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-menu-drawer-menu-item-2 > summary, #HeaderDrawer-shop",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "forceOpen",
+      "selector": "#Details-menu-drawer-menu-item-2",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-akordeon",
+      "not": "SHOP drill forceOpen"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375/768 PNG homepage (hamburger görünür, çekmece yok). forceOpen #Details-menu-drawer-container + #menu-drawer Dawn transform'u boyamadı. Ayrı probe 375 click hamburger 375×686 HOME SHOP OUR STORY CONTACT US FAQ'S BLOG. Capture karesi probe ile örtüşmedi. İkinci deneme. 1440 hamburger gizli."
+    },
+    {
+      "state": "changed",
+      "sebep": "SHOP summary (#HeaderDrawer-shop) capture'da viewport dışı. Probe'da drill Bracelets Diamonds Earrings Pendants, URL değişmedi. İkinci deneme; üçüncü yok."
+    }
+  ],
+  "interactionNote": "1440 hamburger gizli. Statik 768 de homepage idi. leftover: gemora-menu-drawer-375."
+}

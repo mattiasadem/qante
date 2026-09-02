@@ -1,0 +1,107 @@
+{
+  "observationId": "pmg.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "pmg",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://gamming-store-1.myshopify.com/",
+  "storefrontPassword": "1",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/pmg/default/home/global-cart-drawer.1440.png",
+    "evidence/pmg/default/home/global-cart-drawer.375.png",
+    "evidence/pmg/default/home/global-cart-drawer.768.png",
+    "evidence/pmg/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/pmg/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/pmg/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/pmg/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/pmg/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/pmg/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/pmg/default/home/global-cart-drawer.initial.sepet-bos.1440.png",
+    "evidence/pmg/default/home/global-cart-drawer.initial.sepet-bos.375.png",
+    "evidence/pmg/default/home/global-cart-drawer.initial.sepet-bos.768.png"
+  ],
+  "notlar": "cart-drawer#CartDrawer. Opener #cart-icon-bubble href=/cart. Boş hâl is-empty.",
+  "delta": "Shopify.theme.name PMG Game Store V-1.5.0 · id 123907113009 · schema_name PMG game store · schema_version 1.5.0 · theme_store_id null · role main · shop gamming-store-1.myshopify.com. Dawn cart-drawer. Checkout tıklanmadı.",
+  "captureMode": "viewport",
+  "prepareClick": "#cart-icon-bubble",
+  "capture": {
+    "url": "https://gamming-store-1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T17:21:20.440Z",
+    "prepareClick": "#cart-icon-bubble"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://gamming-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": false,
+      "not": "Boş drawer opener"
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "1. deneme kapalı homepage; forceOpen cart-drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://gamming-store-1.myshopify.com/products/gaming-keyboard",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1600,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC drawer açar"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus'], cart-drawer button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Sağ drawer Your cart is empty + CONTINUE SHOPPING. Altta Have an account? Log in to check out faster (Log in tıklanmadı). 375 tam panel; 1440 homepage üzeri overlay.",
+    "filled": "Sağ drawer YOUR CART + Free shipping / Express shipping çubuğu. Satır SONIC MECHANICAL RGB GAMING KEYBOARD $449.00 qty 1. Estimated total $449.00 USD. CHECK OUT (tıklanmadı). Solda YOU MAY LIKE öneri listesi (keyboard, mouse pad, mouse, console, VR, chair) + ADD TO CART.",
+    "changed": "Aynı drawer; qty 2 · satır $898.00 · Estimated total $898.00 USD. Shipping çubuğu dolu yeşil."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC UI drawer açtı. Checkout tıklanmadı. 1. boş kare homepage idi — forceOpen retry."
+}

@@ -1,0 +1,127 @@
+{
+  "observationId": "paw.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "paw",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://petz-online-store.myshopify.com/cart",
+  "selector": "#shopify-section-template--24252637741343__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/paw/default/cart/cart-page-main.1440.png",
+    "evidence/paw/default/cart/cart-page-main.375.png",
+    "evidence/paw/default/cart/cart-page-main.768.png",
+    "evidence/paw/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/paw/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/paw/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/paw/default/cart/cart-page-main.filled.chicken-qty1.1440.png",
+    "evidence/paw/default/cart/cart-page-main.filled.chicken-qty1.375.png",
+    "evidence/paw/default/cart/cart-page-main.filled.chicken-qty1.768.png",
+    "evidence/paw/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/paw/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/paw/default/cart/cart-page-main.initial.sepet-bos.768.png"
+  ],
+  "notlar": "Boş: Your cart is empty + CONTINUE SHOPPING. Sibling cart-footer h=0. Altta featured-collection ayrı.",
+  "delta": "Dawn cart-items + cart-footer ayrık. Header cart ikonu drawer da açar (interact). Checkout/login yoklandı değil. Shopify.theme.name petz-online-store-v-1-5-0 · schema_name petz_online_store · schema_version 1.5.0 · theme_store_id null · role main · id 176281059615 · shop petz-online-store.myshopify.com · vendor Speedo Themes · product Speedo Petz / PAW · slug paw · preset default",
+  "captureMode": "viewport",
+  "capture": {
+    "url": "https://petz-online-store.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:44:41.096Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://petz-online-store.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://petz-online-store.myshopify.com/products/really-real-chicken-pulao-ready-to-eat-meals-100g",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'], form[action*='/cart/add'] button[type='submit']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://petz-online-store.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "chicken-qty1",
+      "not": "Dolu cart satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "quantity-input button[name='plus'], cart-items button[name='plus'], button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +1"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + CONTINUE SHOPPING. Satır yok. Altta FEATURED COLLECTION.",
+    "filled": "Your cart. Chicken Pulao qty 1 · $15.00. Estimated total $15.00 USD + CHECK OUT. Sepet rozeti 1.",
+    "changed": "Plus: qty 2 · satır $30.00 · Estimated total $30.00 USD. Sepet rozeti 2. Checkout tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart UI. Checkout/login tıklanmadı. cart-footer sibling leftover."
+}

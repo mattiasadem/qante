@@ -1,0 +1,121 @@
+{
+  "observationId": "bookshop.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "bookshop",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://book-online-store-1.myshopify.com/",
+  "selector": "cart-drawer",
+  "storefrontPassword": "1",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/bookshop/default/home/global-cart-drawer.1440.png",
+    "evidence/bookshop/default/home/global-cart-drawer.375.png",
+    "evidence/bookshop/default/home/global-cart-drawer.768.png",
+    "evidence/bookshop/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/bookshop/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/bookshop/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/bookshop/default/home/global-cart-drawer.filled.cookbook-eklendi.1440.png",
+    "evidence/bookshop/default/home/global-cart-drawer.filled.cookbook-eklendi.375.png",
+    "evidence/bookshop/default/home/global-cart-drawer.filled.cookbook-eklendi.768.png",
+    "evidence/bookshop/default/home/global-cart-drawer.open.sepet-bos.1440.png",
+    "evidence/bookshop/default/home/global-cart-drawer.open.sepet-bos.375.png",
+    "evidence/bookshop/default/home/global-cart-drawer.open.sepet-bos.768.png"
+  ],
+  "notlar": "Boş drawer: Your cart is empty / CONTINUE SHOPPING / Log in to check out faster.",
+  "delta": "Dawn-benzeri #CartDrawer 400px sağ panel. Dolu hâl interact.",
+  "prepareClick": "#cart-icon-bubble",
+  "prepareForceOpen": true,
+  "captureMode": "viewport",
+  "capture": {
+    "url": "https://book-online-store-1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "viewport",
+    "updatedAt": "2026-09-02T16:44:13.699Z",
+    "prepareClick": "#cart-icon-bubble"
+  },
+  "interactionStates": [
+    "initial",
+    "open",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://book-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "İkon tık drawer açmadı (href=/cart preventDefault). Parent cart-drawer active."
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://book-online-store-1.myshopify.com/products/cookbook-100-recipes-and-inspiration-for-cooking",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'], product-form button.product-form__submit",
+      "capture": false,
+      "not": "Cookbook ATC"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cookbook-eklendi",
+      "not": "Dolu drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus'], cart-drawer button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Drawer adet +1"
+    }
+  ],
+  "stateFindings": {
+    "open": "Sağ panel. Your cart is empty. CONTINUE SHOPPING. Have an account? Log in to check out faster. Checkout yok.",
+    "filled": "YOUR CART. Cookbook: 100 recipes… qty 1 $250. Free shipping! / Express shipping! bar. Estimated total $250.00 USD. CHECK OUT. 1440'ta ayrıca YOU MAY LIKE overlay (World Book Day, Forest Day Journal + ADD TO CART). 375/768 YOU MAY LIKE accordion kapalı.",
+    "changed": "Aynı satır qty 2, satır $500, estimated $500.00 USD."
+  },
+  "missingStates": [],
+  "interactionNote": "#cart-icon-bubble tık boş drawer açmadı (href=/cart). Boş = forceOpen cart-drawer. ATC via UI drawer'ı açtı. Checkout/login tıklanmadı. YOU MAY LIKE leftover (şema oneriler zaten var)."
+}

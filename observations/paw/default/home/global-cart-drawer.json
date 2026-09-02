@@ -1,0 +1,99 @@
+{
+  "observationId": "paw.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "paw",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://petz-online-store.myshopify.com/products/really-real-chicken-pulao-ready-to-eat-meals-100g",
+  "selector": "cart-drawer, #CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/paw/default/home/global-cart-drawer.filled.chicken-eklendi.1440.png",
+    "evidence/paw/default/home/global-cart-drawer.filled.chicken-eklendi.375.png",
+    "evidence/paw/default/home/global-cart-drawer.filled.chicken-eklendi.768.png",
+    "evidence/paw/default/home/global-cart-drawer.initial.sepet-bos.1440.png",
+    "evidence/paw/default/home/global-cart-drawer.initial.sepet-bos.375.png",
+    "evidence/paw/default/home/global-cart-drawer.initial.sepet-bos.768.png"
+  ],
+  "notlar": "cart-drawer.drawer is-empty evde. ATC sonrası dolu drawer beklenir. #cart-icon-bubble.",
+  "delta": "Dawn-türev AMA cart-drawer VAR (Dawn official notification). Checkout tıklanmadı. Shopify.theme.name petz-online-store-v-1-5-0 · schema_name petz_online_store · schema_version 1.5.0 · theme_store_id null · role main · id 176281059615 · shop petz-online-store.myshopify.com · vendor Speedo Themes · product Speedo Petz / PAW · slug paw · preset default",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://petz-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart-drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://petz-online-store.myshopify.com/products/really-real-chicken-pulao-ready-to-eat-meals-100g",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'], form[action*='/cart/add'] button[type='submit']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": "cart-drawer, #CartDrawer",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "chicken-eklendi",
+      "not": "Dolu cart-drawer"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boş cart-drawer: Your cart is empty + CONTINUE SHOPPING. 1440 sağ panel, arkada karartılı home.",
+    "filled": "Your cart. Free Shipping $100 / Express $150 progress. Chicken Pulao satırı qty 1 $15.00. Estimated total $15.00 USD + CHECK OUT. Checkout tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "cart-drawer VAR (Dawn official notification değil). Checkout tıklanmadı. ATC Chicken Pulao (varyantsız).",
+  "capture": {
+    "url": "https://petz-online-store.myshopify.com/products/really-real-chicken-pulao-ready-to-eat-meals-100g",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:40:15.240Z"
+  }
+}
