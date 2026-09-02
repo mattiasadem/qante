@@ -36,6 +36,8 @@
 | Home FAQ VIEW ALL | `/pages/faq` (ayrı observation). Home accordion kapalı |
 | cart-footer | Boş sepet 0px. Dolu hâl interact |
 | Quick view / compare | DOM’da quick-view yok |
+| Social proof toast | “Someone liked and Buy … Verified” — app popup, PDP/home karelerinde. Şema yok |
+| global-cart-drawer / menu static | Dawn host kutu viewport dolduruyor; kapalı kare homepage. Açık/dolu interact |
 
 ## Açık soru
 
