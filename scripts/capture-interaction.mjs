@@ -41,6 +41,10 @@ import {
   assertCleanForScreenshot,
 } from "./dismiss-overlays.mjs";
 import { screenshotSectionWithPadding } from "./screenshot-section.mjs";
+import {
+  unlockStorefront,
+  passwordFromObservation,
+} from "./unlock-storefront.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const qanteRoot = path.resolve(__dirname, "..");
@@ -48,6 +52,7 @@ const qanteRoot = path.resolve(__dirname, "..");
 const DEFAULT_URLS = {
   hyper: "https://hyper-theme-demo.myshopify.com/",
   impulse: "https://impulse-theme-fashion.myshopify.com/",
+  saffron: "https://midnight-perfume.myshopify.com/",
 };
 
 const STATES = ["initial", "hover", "input", "open", "filled", "changed"];
@@ -182,6 +187,10 @@ function iframeHostSelector(selector) {
 async function settle(page, url) {
   const target = new URL(url);
   await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
+  await unlockStorefront(page, passwordFromObservation(obs, url));
+  if (/\/password/i.test(page.url())) {
+    await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
+  }
   await page.waitForTimeout(3500);
 
   const landed = new URL(page.url());
