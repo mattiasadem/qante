@@ -10,7 +10,10 @@
   "evidence": [
     "evidence/sonix/default/home/global-cart-drawer.1440.png",
     "evidence/sonix/default/home/global-cart-drawer.375.png",
-    "evidence/sonix/default/home/global-cart-drawer.768.png"
+    "evidence/sonix/default/home/global-cart-drawer.768.png",
+    "evidence/sonix/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/sonix/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/sonix/default/home/global-cart-drawer.initial.cart-bos.768.png"
   ],
   "storePassword": "1",
   "notlar": "Boş drawer: Your cart is empty / CONTINUE SHOPPING / Log in to check out faster.",
@@ -19,23 +22,34 @@
   "prepareForceOpen": true,
   "capture": {
     "url": "https://sonix-electronics-store.myshopify.com/",
-    "viewports": ["375", "768", "1440"],
-    "mode": "viewport"
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:56:45.240Z"
   },
-  "interactionStates": ["initial", "filled", "changed"],
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
   "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sonix-electronics-store.myshopify.com/products/amazon-echo-dot-3rd-generation-smart-alexa-speaker",
+      "capture": false,
+      "not": "Tek tam navigasyon — /cart/clear HTML CF interstitial"
+    },
     {
       "state": "initial",
       "action": "goto",
       "value": "https://sonix-electronics-store.myshopify.com/cart/clear",
       "capture": false,
-      "not": "Viewport başına sepet sıfırla"
-    },
-    {
-      "state": "initial",
-      "action": "goto",
-      "value": "https://sonix-electronics-store.myshopify.com/",
-      "capture": false
+      "not": "AJAX /cart/clear.js (aynı sayfa)"
     },
     {
       "state": "initial",
@@ -54,14 +68,15 @@
     },
     {
       "state": "filled",
-      "action": "goto",
-      "value": "https://sonix-electronics-store.myshopify.com/products/amazon-echo-dot-3rd-generation-smart-alexa-speaker",
-      "capture": false
+      "action": "press",
+      "value": "Escape",
+      "capture": false,
+      "not": "Boş drawer kapat — ATC görünsün"
     },
     {
       "state": "filled",
       "action": "waitFor",
-      "value": 2000,
+      "value": 800,
       "capture": false
     },
     {
@@ -108,7 +123,18 @@
       "not": "qty 1→2"
     }
   ],
-  "stateFindings": {},
-  "missingStates": [],
-  "interactionNote": "ATC UI tık (yoklama: item_count 0→1, drawer.active). #cart-icon-bubble /cart link — tıklanmadı; forceOpen. Checkout / login tıklanmadı."
+  "stateFindings": {
+    "initial": "Your cart is empty / CONTINUE SHOPPING / Have an account? Log in to check out faster. X kapat. 1440'ta arkasında Echo Dot PDP. Login tıklanmadı."
+  },
+  "missingStates": [
+    {
+      "state": "filled",
+      "sebep": "İkinci deneme: ATC UI + /cart/add.js. 375/768 varyant id yok (ikinci goto/CF). 1440 add.js reddetti. Yoklamada tek sayfada ATC 0→1 çalıştı; resmi adımlar boş drawer açıkken / ikinci navigasyonda kırıldı. Üçüncü deneme yok."
+    },
+    {
+      "state": "changed",
+      "sebep": "filled yok — plus yok"
+    }
+  ],
+  "interactionNote": "/cart/clear HTML CF interstitial — AJAX /cart/clear.js. #cart-icon-bubble /cart link tıklanmadı. Checkout / login yok. Boş hâl kanıtlandı."
 }

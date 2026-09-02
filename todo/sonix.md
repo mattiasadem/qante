@@ -28,10 +28,10 @@ shop `sonix-electronics-store.myshopify.com`
 | Unlock | `scripts/unlock-storefront.mjs` · observation `storePassword: "1"` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **39** |
-| Parallel | yalnız `observations/sonix/`, `evidence/sonix/`, `todo/sonix.md`, `candidates/sonix-leftovers.md`, unlock helper |
+| Parallel | yalnız `observations/sonix/`, `evidence/sonix/`, `todo/sonix.md`, `candidates/sonix-leftovers.md`, unlock + interact script sertleştirmesi |
 
 **Kapsam satırı:**  
-`Sonix · default · Sonix V-1.5.0 / schema_name Sonix 1.5.0 · theme_store_id null · home→PDP Echo Dot→PLP alexa→collections→search iphone→cart→about-us/contact→faqs→news+article→404 · 39 obs · 0 yeni şema · leftover: candidates/sonix-leftovers.md`
+`Sonix · default · Sonix V-1.5.0 / schema_name Sonix 1.5.0 · theme_store_id null · home→PDP Echo Dot→PLP alexa→collections→search iphone→cart→about-us/contact→faqs→news+article→404 · 39 obs · 151 PNG · 0 yeni şema · leftover: candidates/sonix-leftovers.md · interact: mega/menu/search1440/FAQ/PLP Color/PDP White/cart-drawer boş · missing: hero slayt2 piksel, search 375/768, cart filled`
 
 ---
 
@@ -40,47 +40,21 @@ shop `sonix-electronics-store.myshopify.com`
 | Şablon | Durum | 3vp |
 |---|---|---|
 | Home + announcement/header/slideshow/marquee/categories/featured/promo/blog/trust/footer | roster | [x] |
-| Mega SHOP / FEATURES 1440 | interact | [ ] |
-| Predictive search `iphone` | interact | [ ] |
-| Mobile menu 375 + 768 | interact | [ ] |
-| Cart drawer empty + filled + qty | interact | [ ] |
-| PDP Echo Dot Color Black→White | interact | [ ] |
-| PLP `/collections/alexa` | roster | [x] |
+| Mega SHOP 1440 | interact | [x] 6 kart |
+| Predictive search `iphone` | interact | [x] 1440 · 375/768 missing |
+| Mobile menu 375 + 768 | interact | [x] |
+| Cart drawer empty + filled + qty | interact | [x] boş · filled missing |
+| PDP Echo Dot Color Black→White | interact | [x] etiket White, galeri charcoal |
+| PLP `/collections/alexa` Color Black | interact | [x] 1440 8→2 |
 | Collections index `/collections` | roster | [x] |
 | Search `/search?q=iphone` | roster | [x] |
-| Cart `/cart` empty + filled + qty | interact | [ ] |
+| Cart `/cart` empty + filled + qty | interact | [x] statik boş · filled missing |
 | About `/pages/about-us` | roster | [x] |
 | Contact `/pages/contact` (submit yok) | roster | [x] |
-| FAQ `/pages/faqs` | roster + interact | [x] roster |
+| FAQ `/pages/faqs` | roster + interact | [x] ikinci soru açık |
 | Blog `/blogs/news` + launching article | roster | [x] |
 | 404 leftover | roster | [x] |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
-
----
-
-## Home roster (DOM)
-
-| # | Sonix / id | QANTE schemaId | Karar |
-|---|---|---|---|
-| 1 | announcement_bar_fHNTbB | `promo-announcement-bar` | reuse |
-| 2 | header | `navigation-header-mega` | reuse · interact |
-| 3 | slideshow `3b7cb796-…` | `hero-slideshow` | reuse · interact |
-| 4 | custom_announcement_bar_4jhTBP | `promo-scrolling-marquee` | reuse |
-| 5 | categories_slider_KGcU6V | `collection-nav-slider` | reuse |
-| 6 | featured `0617c2f2-…` | `product-showcase-grid-featured` | reuse · QUICK SHOP leftover |
-| 7 | offer_banner_g7W7Wb | — | leftover · tek görsel ENDS SOON |
-| 8 | `07468762-…` | `collection-nav-image-cards` | reuse · HOME/OFFICE/OUTDOOR |
-| 9 | featured_collection | `product-showcase-grid-featured.2` | reuse |
-| 10 | `7722eea3-…` | `promo-grid-banner` | reuse · Kitchen/Sounds |
-| 11 | `8b5479f1-…` | `editorial-image-with-text-overlay` | reuse |
-| 12 | `588ae6a9-…` | `blog-list-main` | reuse · home teaser |
-| 13 | `6ce4ce05-…` | `trust-icon-row` | reuse |
-| 14 | custom_announcement_bar_4n3XyK | `promo-scrolling-marquee.2` | reuse |
-| 15 | footer | `footer-columns-newsletter` | reuse · submit yok |
-| 16 | newsletter-popup | — | leftover · cookie/PII h=0 |
-| 17 | #CartDrawer | `global-cart-drawer` | reuse · interact |
-| 18 | predictive-search | `global-predictive-search` | reuse · interact |
-| 19 | #menu-drawer | `global-menu-drawer` | reuse · 375/768 |
 
 ---
 
@@ -88,15 +62,15 @@ shop `sonix-electronics-store.myshopify.com`
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | open | [ ] SHOP mega 1440 |
-| global-predictive-search | input | [ ] `iphone` |
-| global-menu-drawer | open | [ ] 375/768 |
-| global-cart-drawer | filled + changed | [ ] Echo Dot |
-| cart-page-main | filled + changed | [ ] |
-| product-info-main | changed | [ ] Black→White |
-| hero-slideshow | changed | [ ] nokta/ok |
-| faq-collapsible-tabs | changed | [ ] ikinci soru |
-| product-showcase-grid-plp | changed | [ ] Color Black (şüphede yokla) |
+| navigation-header-mega | open | [x] SHOP 6 kart |
+| global-predictive-search | input | [x] 1440 iphone PRODUCTS · 375/768 missing |
+| global-menu-drawer | open | [x] 375/768 koyu liste |
+| global-cart-drawer | filled + changed | [ ] boş kanıt · filled missing (CF / add.js) |
+| cart-page-main | filled + changed | [ ] statik boş · filled missing |
+| product-info-main | changed | [x] Color: White |
+| hero-slideshow | changed | [ ] iki çekimde de slayt 1 |
+| faq-collapsible-tabs | changed | [x] 1+2 açık |
+| product-showcase-grid-plp | changed | [x] Color Black 2 of 8 |
 
 ---
 
@@ -108,8 +82,8 @@ shop `sonix-electronics-store.myshopify.com`
 
 ## Evidence backlog
 
-- [x] Official 3vp static (`capture-observation.mjs`) — 39 obs · 116 PNG
-- [ ] Interact mega / search / menu / cart / PDP Color / FAQ / slideshow
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate` — 0 error
-- [ ] Email / account / checkout / newsletter submit — **yapılmayacak**
+- [x] Official 3vp static (`capture-observation.mjs`) — 39 obs
+- [x] Interact mega / menu / search 1440 / PDP Color / FAQ / PLP Color / cart-drawer boş
+- [x] PNG bak → stateFindings
+- [x] `node scripts/validate-schemas.mjs` — 0 yeni şema
+- [x] Email / account / checkout / newsletter submit — **yapılmayacak**

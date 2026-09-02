@@ -11,17 +11,30 @@
   "evidence": [
     "evidence/sonix/default/home/global-predictive-search.1440.png",
     "evidence/sonix/default/home/global-predictive-search.375.png",
-    "evidence/sonix/default/home/global-predictive-search.768.png"
+    "evidence/sonix/default/home/global-predictive-search.768.png",
+    "evidence/sonix/default/home/global-predictive-search.initial.search-bos.1440.png",
+    "evidence/sonix/default/home/global-predictive-search.initial.search-bos.375.png",
+    "evidence/sonix/default/home/global-predictive-search.initial.search-bos.768.png",
+    "evidence/sonix/default/home/global-predictive-search.input.iphone.1440.png"
   ],
   "storePassword": "1",
   "notlar": "1440 inline #Search-In-Template (q). 375/768 summary.header__icon--search → #Search-In-Modal. Katalog kelimesi: iphone.",
   "delta": "İki predictive-search: header-search_box görünür; Search-In-Modal kapalı 0×0.",
   "capture": {
     "url": "https://sonix-electronics-store.myshopify.com/",
-    "viewports": ["375", "768", "1440"],
-    "mode": "viewport"
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:45:40.181Z"
   },
-  "interactionStates": ["initial", "input"],
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
   "interactionSteps": [
     {
       "state": "initial",
@@ -33,9 +46,23 @@
       "state": "initial",
       "action": "click",
       "selector": "summary.header__icon--search",
-      "viewports": ["375", "768"],
+      "viewports": [
+        "375",
+        "768"
+      ],
       "capture": false,
       "not": "Mobil search modal opener — details.header__search yok"
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "details-modal.header__search",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false,
+      "not": "Modal açık tut"
     },
     {
       "state": "initial",
@@ -51,7 +78,10 @@
       "action": "fill",
       "selector": "#Search-In-Modal",
       "value": "iphone",
-      "viewports": ["375", "768"],
+      "viewports": [
+        "375",
+        "768"
+      ],
       "capture": false
     },
     {
@@ -59,7 +89,9 @@
       "action": "fill",
       "selector": "#Search-In-Template",
       "value": "iphone",
-      "viewports": ["1440"],
+      "viewports": [
+        "1440"
+      ],
       "capture": false
     },
     {
@@ -72,7 +104,15 @@
       "not": "katalogSorgu iphone — PRODUCTS listesi beklenir"
     }
   ],
-  "stateFindings": {},
-  "missingStates": [],
-  "interactionNote": "375/768 opener summary.header__icon--search; fill #Search-In-Modal. 1440 fill #Search-In-Template. Submit / account yok."
+  "stateFindings": {
+    "initial": "1440: boş Search kutusu, dropdown yok. 375/768: search modal açılmadı — hamburger + Search ikonu duruyor (kapalı homepage).",
+    "input": "1440 iphone: PRODUCTS — APPLE IPHONE 15 PRO MAX, APPLE AIRPODS MAX WIRELESS HEADPHONES. Altta Search for \"iphone\" →."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "375/768: summary.header__icon--search + forceOpen details-modal sonrası #Search-In-Modal hâlâ hidden. İkinci deneme. 1440 input kanıtlandı."
+    }
+  ],
+  "interactionNote": "1440 fill #Search-In-Template. Submit / account yok."
 }

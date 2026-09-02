@@ -188,7 +188,17 @@ async function settle(page, url) {
     await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
     await page.waitForTimeout(2000);
   }
-  await page.waitForTimeout(2000);
+  // Shopify/CF "Just a moment" / "Verifying your connection"
+  {
+    const deadline = Date.now() + 20000;
+    while (Date.now() < deadline) {
+      const title = await page.title().catch(() => "");
+      const n = await page.locator("header, #MainContent, .shopify-section").count();
+      if (n > 0 && !/just a moment|verifying your connection/i.test(title)) break;
+      await page.waitForTimeout(500);
+    }
+  }
+  await page.waitForTimeout(800);
 
   const landed = new URL(page.url());
   if (
@@ -358,8 +368,7 @@ async function forceOpenInDocument(sel) {
   for (const el of document.querySelectorAll(sel)) {
     el.hidden = false;
     el.removeAttribute("hidden");
-    el.style.removeProperty("display");
-    el.classList.add("active", "open", "is-open");
+    el.classList.add("active", "open", "is-open", "menu-opening");
     el.classList.remove("drawer--loading", "loading", "is-loading");
     el.setAttribute("open", "");
     el.setAttribute("aria-hidden", "false");
@@ -368,6 +377,10 @@ async function forceOpenInDocument(sel) {
       try {
         el.open();
       } catch {}
+    }
+    if (typeof el.open === "boolean") el.open = true;
+    if (getComputedStyle(el).display === "none") {
+      el.style.setProperty("display", "block", "important");
     }
   }
   document.documentElement.classList.add(
@@ -425,13 +438,10 @@ async function addToCart(page, selector) {
 
   // Fallback: varyant id'yi formdan oku, AJAX ekle
   const variantId = await page.evaluate(() => {
-    const sels = [
-      'form[action*="/cart/add"] [name="id"]',
-      'form[action*="/cart/add"] input[name="id"]',
-      "[data-variant-id]",
-    ];
-    for (const s of sels) {
-      const el = document.querySelector(s);
+    const nodes = document.querySelectorAll(
+      'form[action*="/cart/add"] [name="id"], form[action*="/cart/add"] input[name="id"], [data-variant-id]'
+    );
+    for (const el of nodes) {
       const v = el?.value || el?.getAttribute?.("data-variant-id");
       if (v && /^\d+$/.test(String(v).trim())) return String(v).trim();
     }
@@ -446,7 +456,13 @@ async function addToCart(page, selector) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ items: [{ id: Number(id), quantity: 1 }] }),
       });
-      return r.ok;
+      if (r.ok) return true;
+      const r2 = await fetch("/cart/add.js", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `id=${encodeURIComponent(id)}&quantity=1`,
+      });
+      return r2.ok;
     } catch {
       return false;
     }
@@ -563,9 +579,30 @@ async function capture(page, step, vp) {
 async function runStep(page, step) {
   const sel = step.selector;
   switch (step.action) {
-    case "goto":
-      await settle(page, step.value || baseUrl);
+    case "goto": {
+      const target = step.value || baseUrl;
+      // /cart/clear HTML interstitial (Shopify/CF) — AJAX from an already-open storefront
+      if (/\/cart\/clear(\.js)?(\?|#|$)/i.test(target)) {
+        const current = page.url();
+        if (!/^https?:/i.test(current) || /about:blank/i.test(current)) {
+          await settle(page, new URL("/", target).href);
+        }
+        const cleared = await page.evaluate(async () => {
+          try {
+            const r = await fetch("/cart/clear.js", {
+              method: "POST",
+              credentials: "same-origin",
+            });
+            return r.ok;
+          } catch {
+            return false;
+          }
+        });
+        if (cleared) return null;
+      }
+      await settle(page, target);
       return null;
+    }
     case "scrollTo": {
       const parsed = splitIframeSelector(sel);
       const el = (parsed?.kind === "inner"
@@ -711,7 +748,20 @@ const capturedFiles = new Map(); // state → [rel...]
 const failures = new Map(); // state → sebep
 const stepLog = [];
 
-const browser = await chromium.launch({ headless: !headed });
+async function launchBrowser() {
+  if (!headed) return chromium.launch({ headless: true });
+  try {
+    return await chromium.launch({
+      headless: false,
+      channel: "chrome",
+      args: ["--disable-blink-features=AutomationControlled"],
+    });
+  } catch {
+    return chromium.launch({ headless: false });
+  }
+}
+
+const browser = await launchBrowser();
 
 try {
   for (const vp of viewports) {

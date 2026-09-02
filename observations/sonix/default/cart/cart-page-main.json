@@ -17,35 +17,39 @@
   "delta": "Dolu + adet interact. Checkout tıklanmadı.",
   "capture": {
     "url": "https://sonix-electronics-store.myshopify.com/cart",
-    "viewports": ["375", "768", "1440"],
-    "mode": "section"
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:30:26.811Z"
   },
-  "interactionStates": ["initial", "filled", "changed"],
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
   "interactionSteps": [
-    {
-      "state": "initial",
-      "action": "goto",
-      "value": "https://sonix-electronics-store.myshopify.com/cart/clear",
-      "capture": false
-    },
-    {
-      "state": "initial",
-      "action": "goto",
-      "value": "https://sonix-electronics-store.myshopify.com/cart",
-      "capture": true,
-      "etiket": "sepet-bos",
-      "not": "Your cart is empty"
-    },
     {
       "state": "filled",
       "action": "goto",
       "value": "https://sonix-electronics-store.myshopify.com/products/amazon-echo-dot-3rd-generation-smart-alexa-speaker",
-      "capture": false
+      "capture": false,
+      "not": "Tek tam navigasyon"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://sonix-electronics-store.myshopify.com/cart/clear",
+      "capture": false,
+      "not": "AJAX clear"
     },
     {
       "state": "filled",
       "action": "waitFor",
-      "value": 2000,
+      "value": 1500,
       "capture": false
     },
     {
@@ -56,11 +60,19 @@
     },
     {
       "state": "filled",
-      "action": "goto",
-      "value": "https://sonix-electronics-store.myshopify.com/cart",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "value": 2500,
+      "capture": false,
+      "not": "Sepet sayfasına link — ikinci page.goto CF tetikler"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
       "capture": true,
       "etiket": "echo-dot",
-      "not": "Echo Dot satırı"
+      "not": "Echo Dot satırı. Boş hâl statik 3vp."
     },
     {
       "state": "changed",
@@ -77,7 +89,18 @@
       "not": "qty 1→2"
     }
   ],
-  "stateFindings": {},
-  "missingStates": [],
-  "interactionNote": "Checkout / login tıklanmadı."
+  "stateFindings": {
+    "initial": "Statik 3vp: Your cart is empty / CONTINUE SHOPPING / Have an account? Log in. cart-footer h=0."
+  },
+  "missingStates": [
+    {
+      "state": "filled",
+      "sebep": "İkinci deneme: PDP→ATC sonrası /cart ikinci tam navigasyon Cloudflare 'Just a moment' / add.js reddi. Drawer boş hâl var; sayfa dolu yok. Üçüncü deneme yok."
+    },
+    {
+      "state": "changed",
+      "sebep": "filled yok — plus yok"
+    }
+  ],
+  "interactionNote": "Checkout / login tıklanmadı. /cart/clear HTML interstitial — AJAX yedek resmi scriptte."
 }
