@@ -8,9 +8,10 @@
   "selector": "#shopify-section-template--23167665340718__featured_collection",
   "evidenceSlug": "product-showcase-grid-featured",
   "evidence": [
+    "evidence/loranica/default/home/product-showcase-grid-featured.1440.png",
     "evidence/loranica/default/home/product-showcase-grid-featured.375.png",
     "evidence/loranica/default/home/product-showcase-grid-featured.768.png",
-    "evidence/loranica/default/home/product-showcase-grid-featured.1440.png"
+    "evidence/loranica/default/home/product-showcase-grid-featured.hover.hover-ikinci-gorsel.1440.png"
   ],
   "storefrontPassword": "1",
   "notlar": "SHOP TEES · lorem · ürün kartları (MILKY CLASSIC WHITE NAIL POLISH $69.99→$59.99, SHEER SKIN TINT…). Sale rozeti.",
@@ -23,7 +24,41 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T20:14:29.111Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:42:24.794Z"
+  },
+  "interactionStates": [
+    "initial",
+    "hover"
+  ],
+  "interactionSteps": [
+    {
+      "state": "hover",
+      "action": "goto",
+      "selector": null,
+      "value": "https://women-beauty-5.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "hover",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--23167665340718__featured_collection",
+      "capture": false
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#shopify-section-template--23167665340718__featured_collection .card-wrapper .card__inner",
+      "value": 1000,
+      "capture": true,
+      "etiket": "hover-ikinci-gorsel",
+      "viewports": [
+        "1440"
+      ],
+      "not": "1. deneme .card__media = static ile byte-aynı. Retry .card__inner (scan 12 kutuda 2+ img)."
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "375/768 hover denenmedi (parmak). Wishlist leftover. 1. hover PNG static 1440 ile identical."
 }

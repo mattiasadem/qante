@@ -15,7 +15,7 @@ Sayfa başlığı: **Best Shopify Loranica Beauty Care Store – Women Beauty 5 
 
 **Password:** Speedo ürün sayfası “Please enter password `1` to view demo.” Aynı host `/password` — public storefront-unlock. Başka host yok.
 
-**Durum:** 🟡 Mod A 3vp bitti (113 PNG) · interact sırada  
+**Durum:** 🟡 Mod A 3vp + interact 1. tur · retry: menu forceOpen / search inner details / cart plus / featured .card__inner  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -111,7 +111,8 @@ Aynı tip = şemaya dokunma, observation + delta. Yeni şema yok.
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact menu / search / cart / PDP swatch / FAQ / hover
-- [ ] PNG bak → stateFindings
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact 1. tur (PDP Pink, tabs, FAQ, cart filled kanıtlı)
+- [ ] Retry menu forceOpen / search fill / cart plus / featured hover
+- [x] PNG bak → stateFindings (doğrulananlar)
 - [ ] `node scripts/validate-schemas.mjs` — şema dokunulmadı

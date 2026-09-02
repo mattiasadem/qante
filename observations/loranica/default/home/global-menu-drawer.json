@@ -8,14 +8,18 @@
   "selector": "#menu-drawer",
   "evidenceSlug": "global-menu-drawer",
   "evidence": [
+    "evidence/loranica/default/home/global-menu-drawer.1440.png",
     "evidence/loranica/default/home/global-menu-drawer.768.png",
-    "evidence/loranica/default/home/global-menu-drawer.1440.png"
+    "evidence/loranica/default/home/global-menu-drawer.changed.shop-drill.1440.png",
+    "evidence/loranica/default/home/global-menu-drawer.changed.shop-drill.768.png",
+    "evidence/loranica/default/home/global-menu-drawer.open.hamburger-acik.1440.png",
+    "evidence/loranica/default/home/global-menu-drawer.open.hamburger-acik.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Hamburger → #menu-drawer. Home · Shop (Skin Care/Makeup/Cosmetics/Nail Lacquer) · Best Seller · New Arrival · Women's Care · Bath & Body · Women Cosmetic · wishlist · account.",
   "delta": "1440 hamburger de açık (mega yok). Yazılı <a> tıklanmadı. Account/login yok.",
   "captureMode": "viewport",
-  "prepareClick": "summary.header__icon--menu",
+  "prepareClick": "#Details-menu-drawer-container > summary",
   "capture": {
     "url": "https://women-beauty-5.myshopify.com/",
     "viewports": [
@@ -24,8 +28,75 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T20:09:41.995Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:35:01.366Z",
     "prepareClick": "summary.header__icon--menu"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "prepareForceOpen": true,
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "selector": null,
+      "value": "https://women-beauty-5.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "selector": null,
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary",
+      "value": 600,
+      "capture": false,
+      "not": "Hamburger — 1440 da Summary. Details-HeaderMenu yok."
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-menu-drawer-container",
+      "capture": false,
+      "not": "İlk tık details.open bırakmadı — kapalı kutu x=-336 yine homepage"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#menu-drawer",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger-acik",
+      "not": "Drawer x=0 — Home / Shop / Best Seller. 375 ilk denemede 0-size."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-menu-drawer-menu-item-2 > summary",
+      "value": 400,
+      "capture": false,
+      "not": "Shop disclosure — yazılı <a> değil"
+    },
+    {
+      "state": "changed",
+      "action": "forceOpen",
+      "selector": "#Details-menu-drawer-menu-item-2",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-drill",
+      "not": "Skin Care / Makeup / Cosmetics / Nail Lacquer"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "1. deneme click-only: 768/1440 kapalı homepage (kutu 400×968 x=-336). 375 0-size. Retry forceOpen details + #menu-drawer. Wishlist/Log in tıklanmadı."
 }

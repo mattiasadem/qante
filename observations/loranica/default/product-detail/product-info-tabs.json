@@ -8,9 +8,12 @@
   "selector": "#shopify-section-template--23167665602862__79582f51-5736-4bff-b870-bba69393ad36",
   "evidenceSlug": "product-info-tabs",
   "evidence": [
+    "evidence/loranica/default/product-detail/product-info-tabs.1440.png",
     "evidence/loranica/default/product-detail/product-info-tabs.375.png",
     "evidence/loranica/default/product-detail/product-info-tabs.768.png",
-    "evidence/loranica/default/product-detail/product-info-tabs.1440.png"
+    "evidence/loranica/default/product-detail/product-info-tabs.changed.tab-additional.1440.png",
+    "evidence/loranica/default/product-detail/product-info-tabs.changed.tab-additional.375.png",
+    "evidence/loranica/default/product-detail/product-info-tabs.changed.tab-additional.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "DESCRIPTION · ADDITIONAL INFORMATION · SHIPPING AND DELIVERY sekmeleri.",
@@ -23,7 +26,40 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T20:22:47.687Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:41:42.371Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "selector": null,
+      "value": "https://women-beauty-5.myshopify.com/products/extra-lip-tint-balm-with-jojoba-avocado-oil-for-plump-lips",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--23167665602862__79582f51-5736-4bff-b870-bba69393ad36",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--23167665602862__79582f51-5736-4bff-b870-bba69393ad36 a:not(.active)",
+      "value": 800,
+      "capture": true,
+      "etiket": "tab-additional",
+      "not": "İkinci sekme ADDITIONAL INFORMATION — selector birden fazlaysa en büyük kutu"
+    }
+  ],
+  "stateFindings": {
+    "changed": "ADDITIONAL INFORMATION aktif (siyah + alt çizgi). DESCRIPTION ve SHIPPING AND DELIVERY soluk. İçerik lorem paragraf + 3 madde. 375/768/1440 aynı sekme."
+  },
+  "missingStates": [],
+  "interactionNote": "Scan changer görmedi; tab click yoklandı. DESCRIPTION initial 3vp."
 }

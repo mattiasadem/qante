@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--23167664947502__cart-items",
   "evidenceSlug": "cart-page-main",
   "evidence": [
+    "evidence/loranica/default/cart/cart-page-main.1440.png",
     "evidence/loranica/default/cart/cart-page-main.375.png",
     "evidence/loranica/default/cart/cart-page-main.768.png",
-    "evidence/loranica/default/cart/cart-page-main.1440.png"
+    "evidence/loranica/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/loranica/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/loranica/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/loranica/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/loranica/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/loranica/default/cart/cart-page-main.filled.sepete-eklendi.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Boş: Your cart is empty · CONTINUE SHOPPING · Have an account? Log in. cart-footer h=0 boşken.",
@@ -23,7 +29,58 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T19:53:50.290Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:39:02.579Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "selector": null,
+      "value": "https://women-beauty-5.myshopify.com/products/extra-lip-tint-balm-with-jojoba-avocado-oil-for-plump-lips",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit",
+      "value": null,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "selector": null,
+      "value": "https://women-beauty-5.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": null,
+      "value": 800,
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart sayfası — satır + total"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus']",
+      "value": 1500,
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Plus — adet 2. :not(.disabled) eksiye denk geldi (min-1 tooltip)."
+    }
+  ],
+  "stateFindings": {
+    "filled": "Your cart · Continue shopping. Satır EXTRA LIP TINT… Color: Rose gold $59.99 · qty 1 · TOTAL $59.99. 375/768/1440 aynı satır."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı. 1. deneme qty minus → “This item has a minimum of 1”. Retry button[name='plus']."
 }

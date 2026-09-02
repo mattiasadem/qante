@@ -8,9 +8,9 @@
   "selector": "details-modal.header__search",
   "evidenceSlug": "global-predictive-search",
   "evidence": [
+    "evidence/loranica/default/home/global-predictive-search.1440.png",
     "evidence/loranica/default/home/global-predictive-search.375.png",
-    "evidence/loranica/default/home/global-predictive-search.768.png",
-    "evidence/loranica/default/home/global-predictive-search.1440.png"
+    "evidence/loranica/default/home/global-predictive-search.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "details-modal.header__search · PREDICTIVE-SEARCH · #Search-In-Modal. Kapalı 32×32 ikon.",
@@ -25,8 +25,56 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T20:10:42.344Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:36:18.742Z",
     "prepareClick": "summary.header__icon--search"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "input",
+      "action": "goto",
+      "selector": null,
+      "value": "https://women-beauty-5.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "value": 500,
+      "capture": false,
+      "not": "Search ikon"
+    },
+    {
+      "state": "input",
+      "action": "forceOpen",
+      "selector": "details-modal.header__search details",
+      "capture": false,
+      "not": "Host forceOpen input'u açmaz — inner details"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "selector": null,
+      "value": 400,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "skincare",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "katalogSorgu skincare — 9 ürün beklenir"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "1. deneme fill gizli input (aria-expanded=false). Retry: inner details forceOpen + #Search-In-Modal. Submit/Enter yok."
 }

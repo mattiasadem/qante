@@ -8,9 +8,15 @@
   "selector": "#CartDrawer",
   "evidenceSlug": "global-cart-drawer",
   "evidence": [
+    "evidence/loranica/default/home/global-cart-drawer.1440.png",
     "evidence/loranica/default/home/global-cart-drawer.375.png",
     "evidence/loranica/default/home/global-cart-drawer.768.png",
-    "evidence/loranica/default/home/global-cart-drawer.1440.png"
+    "evidence/loranica/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/loranica/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/loranica/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/loranica/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/loranica/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/loranica/default/home/global-cart-drawer.filled.sepete-eklendi.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Dawn #CartDrawer · opener #cart-icon-bubble href=/cart. Boş hâl is-empty.",
@@ -25,8 +31,55 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T20:08:31.098Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:37:27.731Z",
     "prepareClick": "#cart-icon-bubble"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "selector": null,
+      "value": "https://women-beauty-5.myshopify.com/products/extra-lip-tint-balm-with-jojoba-avocado-oil-for-plump-lips",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit",
+      "value": null,
+      "capture": false,
+      "not": "Lip tint ADD TO CART"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": null,
+      "value": 1600,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC sonrası drawer. Kapalıysa #cart-icon-bubble."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Plus — adet 2 / total $119.98. :not(.disabled) eksiye denk geldi (min-1 tooltip)."
+    }
+  ],
+  "stateFindings": {
+    "filled": "Sağ drawer YOUR CART + X. Free Shipping! $100.00 çubuğu. Satır EXTRA LIP TINT… Color: Rose gold $59.99 · qty 1. Estimated total $59.99 USD. CHECK OUT pembe (tıklanmadı). 375 tam panel; 1440 PDP üzeri."
+  },
+  "missingStates": [],
+  "interactionNote": "CHECK OUT tıklanmadı. ATC button.product-form__submit. 1. deneme qty :not(.disabled) = minus → “This item has a minimum of 1”, qty alanı 0. Retry button[name='plus']."
 }
