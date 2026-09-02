@@ -28,7 +28,7 @@
     ],
     "mode": "viewport",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-02T20:15:06.893Z"
+    "updatedAt": "2026-09-02T20:37:48.218Z"
   },
   "captureMode": "viewport",
   "interactionStates": [
@@ -64,21 +64,36 @@
       "viewports": [
         "1440"
       ],
+      "capture": false,
+      "not": "Hover Shop summary"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-HeaderMenu-2",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "Retry: hover tek başına panel bırakmadı"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-2 .header__submenu, #HeaderMenu-MenuList-2, #Details-HeaderMenu-2",
+      "viewports": [
+        "1440"
+      ],
       "capture": true,
       "captureMode": "viewport",
       "etiket": "shop-dropdown",
-      "not": "Hover Shop — Developmental Toys / Games / Dolls / Baby Toys. Mega kolon yok."
+      "not": "Shop dropdown — Developmental Toys / Games / Dolls / Baby Toys. Mega kolon yok."
     }
   ],
   "stateFindings": {
     "initial": "375/768: hamburger + search + TOYON + hesap + sepet; ticker. 1440: TOYON solda; New Arrivals / Shop chevron / Shop By Age / Best Sellers / Our Story / More; sağda search+wishlist 0+hesap+sepet. Dropdown paneli yok.",
-    "open": "1440 hover Shop: DOM details open + linkler (Developmental Toys / Games / Dolls / Baby Toys) probe’da var. 1440 karede dropdown kutusu görünmedi (ticker metni değişti). Mega kolon yok."
+    "open": "1440 Shop açık: açık gri dikey liste Developmental Toys / Games / Dolls / Baby Toys. Mega kolon / görsel yok. Wishlist / Log in tıklanmadı."
   },
-  "missingStates": [
-    {
-      "state": "open",
-      "sebep": "Hover probe open=true ama 1440 shop-dropdown karesi kapalı header ile aynı (panel yok). 375/768 hamburger ayrı global-menu-drawer."
-    }
-  ],
-  "interactionNote": "Hover #Details-HeaderMenu-2 > summary. Click Shop <a> /collections/all sayfaya gider. Wishlist / Log in tıklanmadı."
+  "missingStates": [],
+  "interactionNote": "İlk hover karesi paneli göstermedi. Retry: hover + forceOpen #Details-HeaderMenu-2 + submenu hover. Click Shop <a> /collections/all gider. Wishlist / Log in tıklanmadı."
 }

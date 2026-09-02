@@ -30,7 +30,7 @@
     ],
     "mode": "section",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-02T20:24:03.452Z"
+    "updatedAt": "2026-09-02T20:44:26.589Z"
   },
   "captureMode": "section",
   "interactionStates": [
@@ -62,19 +62,26 @@
       "state": "changed",
       "action": "click",
       "selector": "label[for='template--18675764461723__main-1-1'], #template--18675764461723__main-1-1",
+      "capture": false,
+      "not": "Green swatch"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1800,
       "capture": true,
       "etiket": "color-green",
-      "not": "Green swatch → Color: Green + variant URL."
+      "not": "Color: Green + variant URL (aynı fotoğraf olabilir)."
     }
   ],
   "stateFindings": {
     "initial": "Baby Teddy Animal Toy $111. Color: Brown. Kahverengi peluş + kırmızı eşarp. People viewing / 200 stock / delivery / countdown. Qty 1 + ADD TO CART + BUY IT NOW. 4 accordion kapalı.",
-    "changed": "Probe: Green swatch → Color: Green + ?variant=43346764497051. Capture 1440/375 kareleri hâlâ kahverengi peluş (aynı görsel); etiket Green okunmadı."
+    "changed": "İki deneme sonrası kare hâlâ Color: Brown + aynı kahverengi peluş. Probe’da Green swatch → Color: Green + ?variant=43346764497051; capture etiket Green göstermedi."
   },
   "missingStates": [
     {
       "state": "changed",
-      "sebep": "Probe URL/etiket Green; interact PNG kahverengi peluş — görsel değişmedi, label Green karede doğrulanamadı."
+      "sebep": "Green swatch tık + 1800ms wait: 1440/768/375 karede Color: Brown. Görsel değişmedi; Green label doğrulanamadı."
     }
   ],
   "interactionNote": "Buy it now tıklanmadı. Green varyant aynı fotoğraf olabilir."

@@ -11,6 +11,7 @@
   "evidence": [
     "evidence/toyon/default/home/global-menu-drawer.768.png",
     "evidence/toyon/default/home/global-menu-drawer.changed.shop-expand.768.png",
+    "evidence/toyon/default/home/global-menu-drawer.open.hamburger.375.png",
     "evidence/toyon/default/home/global-menu-drawer.open.hamburger.768.png"
   ],
   "notlar": "Hamburger drawer: New Arrivals / Shop / Shop By Age / Best Sellers / Our Story / Support. 1440 opener 0×0.",
@@ -24,7 +25,7 @@
     ],
     "mode": "viewport",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-02T20:17:54.717Z",
+    "updatedAt": "2026-09-02T20:38:43.940Z",
     "prepareClick": "#Details-menu-drawer-container > summary.header__icon--menu"
   },
   "captureMode": "viewport",
@@ -56,8 +57,30 @@
         "375",
         "768"
       ],
+      "capture": false,
+      "not": "Hamburger opener"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ]
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-menu-drawer-container",
+      "viewports": [
+        "375",
+        "768"
+      ],
       "capture": true,
       "captureMode": "viewport",
+      "captureSelector": "body",
       "etiket": "hamburger",
       "not": "Drawer: New Arrivals / Shop / Shop By Age / Best Sellers / Our Story / Support."
     },
@@ -69,25 +92,37 @@
         "375",
         "768"
       ],
+      "capture": false,
+      "not": "Shop chevron"
+    },
+    {
+      "state": "changed",
+      "action": "forceOpen",
+      "selector": "#Details-menu-drawer-menu-item-2",
+      "viewports": [
+        "375",
+        "768"
+      ],
       "capture": true,
       "captureMode": "viewport",
+      "captureSelector": "body",
       "etiket": "shop-expand",
-      "not": "Shop chevron — Developmental Toys / Games / Dolls / Baby Toys."
+      "not": "Shop — Developmental Toys / Games / Dolls / Baby Toys."
     }
   ],
   "stateFindings": {
-    "open": "Probe 375: hamburger 25×22 → #menu-drawer 375×701 New Arrivals / Shop / Shop By Age / Best Sellers / Our Story / Support. Interact 768 hamburger/shop-expand kareleri homepage (drawer yok). 375 capture zero-size.",
-    "changed": "Probe 375 Shop summary open → Developmental Toys / Games / Dolls / Baby Toys. 768 shop-expand karesi drawer göstermiyor."
+    "open": "Probe 375: hamburger → #menu-drawer 375×701 New Arrivals / Shop / Shop By Age / Best Sellers / Our Story / Support. Interact 375/768 hamburger kareleri kapalı homepage (drawer paneli yok).",
+    "changed": "Probe 375 Shop → Developmental Toys / Games / Dolls / Baby Toys. Interact Shop tık viewport dışı; forceOpen adımı koşulmadı."
   },
   "missingStates": [
     {
       "state": "open",
-      "sebep": "1440 hamburger 0×0. Interact 375 zero-size; 768 PNG homepage — drawer karede yok."
+      "sebep": "1440 hamburger 0×0. Click + forceOpen #Details-menu-drawer-container sonrası 375/768 PNG hâlâ kapalı homepage — drawer karede yok."
     },
     {
       "state": "changed",
-      "sebep": "375 capture eşleşmedi; 768 kare kapalı homepage."
+      "sebep": "#Details-menu-drawer-menu-item-2 > summary click: Element is outside of the viewport. Drawer açık değilken Shop summary tıklanamadı."
     }
   ],
-  "interactionNote": "Probe drawer açıldı; resmi interact PNG drawer göstermiyor. Log in tıklanmadı."
+  "interactionNote": "İki deneme (düz tık; forceOpen container) drawer panelini kareye yazmadı. Log in tıklanmadı."
 }

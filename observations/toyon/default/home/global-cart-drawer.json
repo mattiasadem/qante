@@ -33,7 +33,7 @@
     ],
     "mode": "viewport",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-02T20:20:22.110Z",
+    "updatedAt": "2026-09-02T20:41:54.806Z",
     "prepareClick": "#cart-icon-bubble"
   },
   "captureMode": "viewport",
@@ -61,6 +61,12 @@
       "state": "initial",
       "action": "click",
       "selector": "#cart-icon-bubble, a.header__icon--cart, a[href='/cart']",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "cart-drawer, #CartDrawer",
       "capture": true,
       "captureMode": "viewport",
       "etiket": "cart-bos",
@@ -110,15 +116,10 @@
     }
   ],
   "stateFindings": {
-    "initial": "cart-bos 1440 karesi homepage — boş drawer yok. Probe: drawer active, Your cart is empty / CONTINUE SHOPPING + Free Shipping $500 / Express $800.",
+    "initial": "Sağ drawer: Your cart / Back. Your cart is empty. CONTINUE SHOPPING. Have an account? Log in to check out faster. Free Shipping! $500 / Express Shipping! $800 (bar boş). 375/768/1440.",
     "filled": "PDP üstünde sağ drawer: Baby Teddy Animal Toy Color Brown qty 1 $111. Estimated total $111.00 USD. CHECK OUT + View cart. Kargo bar Free $500 / Express $800. Header sepet 1.",
     "changed": "Aynı drawer qty 2, estimated $222.00 USD. Header rozet 2."
   },
-  "missingStates": [
-    {
-      "state": "initial",
-      "sebep": "Interact cart-bos PNG homepage; boş drawer karede yok (probe metni var)."
-    }
-  ],
-  "interactionNote": "ATC UI button[name=add] (3 vp). Checkout tıklanmadı."
+  "missingStates": [],
+  "interactionNote": "İlk cart-bos karesi homepage. Retry: click + forceOpen cart-drawer. ATC UI button[name=add] (3 vp). Checkout / Log in tıklanmadı."
 }

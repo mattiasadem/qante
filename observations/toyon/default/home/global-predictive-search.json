@@ -14,7 +14,10 @@
     "evidence/toyon/default/home/global-predictive-search.768.png",
     "evidence/toyon/default/home/global-predictive-search.initial.arama-bos.1440.png",
     "evidence/toyon/default/home/global-predictive-search.initial.arama-bos.375.png",
-    "evidence/toyon/default/home/global-predictive-search.initial.arama-bos.768.png"
+    "evidence/toyon/default/home/global-predictive-search.initial.arama-bos.768.png",
+    "evidence/toyon/default/home/global-predictive-search.input.arama-teddy.1440.png",
+    "evidence/toyon/default/home/global-predictive-search.input.arama-teddy.375.png",
+    "evidence/toyon/default/home/global-predictive-search.input.arama-teddy.768.png"
   ],
   "notlar": "details-modal.header__search. Input #Search-In-Modal / #Search-In-Modal-1. Kapalı kare ikon.",
   "delta": "Shopify.theme.name Toyon-toys-latest V-1.5.0 · schema_name toyon_toys · schema_version 1.5.0 · theme_store_id null · role main · id 145295966363 · walk toyon-toys.myshopify.com · Shopify.shop toyon-toys.myshopify.com · locale en · country US · currency USD · Speedo third-party catalog (not Theme Store). Storefront unlock password 1. İki host (desktop + modal). Account/submit yok. katalogSorgu teddy.",
@@ -27,7 +30,7 @@
     ],
     "mode": "viewport",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-02T20:29:25.532Z",
+    "updatedAt": "2026-09-02T20:39:57.265Z",
     "prepareClick": "details-modal#header-search summary.header__icon--search"
   },
   "captureMode": "viewport",
@@ -53,22 +56,47 @@
     {
       "state": "initial",
       "action": "click",
-      "selector": "summary.header__icon--search",
+      "selector": "details-modal#header-search summary.header__icon--search",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "details-modal#header-search details, details-modal#header-search",
+      "capture": false,
+      "not": "İlk tık modal açık bırakmadı"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
       "capture": true,
       "captureMode": "viewport",
       "etiket": "arama-bos",
-      "not": "Görünür search ikon (ikinci summary). #Search-In-Modal."
+      "not": "Boş search modal — #Search-In-Modal"
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "details-modal#header-search summary.header__icon--search",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "forceOpen",
+      "selector": "details-modal#header-search details, details-modal#header-search",
+      "capture": false
     },
     {
       "state": "input",
       "action": "waitFor",
-      "value": 2000,
+      "value": 400,
       "capture": false
     },
     {
       "state": "input",
       "action": "fill",
-      "selector": "#Search-In-Modal",
+      "selector": "#Search-In-Modal, #Search-In-Modal-1",
       "value": "teddy",
       "capture": true,
       "captureMode": "viewport",
@@ -77,14 +105,9 @@
     }
   ],
   "stateFindings": {
-    "initial": "arama-bos kareleri homepage — Search overlay görünmedi. İki summary: biri 0×0, 1440’te 25×22.",
-    "input": "fill #Search-In-Modal iki denemede hidden kaldı (click sonrası modal kapanıyor / açılmıyor)."
+    "initial": "Search modal açık: placeholder Search, büyüteç, sağda X. PRODUCTS listesi yok. Hero + Shop By Age arkada karartılı.",
+    "input": "teddy → PRODUCTS: Baby Teddy Animal Toy (kahverengi peluş thumbnail) + Search for “teddy”. 375/768/1440 aynı tek sonuç. Submit yok."
   },
-  "missingStates": [
-    {
-      "state": "input",
-      "sebep": "İki deneme: click summary.header__icon--search sonrası #Search-In-Modal visible değil. Probe’da ikinci summary + #Search-In-Modal 742×40 açıldı; capture adımlarında tutulmadı."
-    }
-  ],
-  "interactionNote": "katalogSorgu teddy (Baby Teddy Animal Toy). /search?q=teddy statik 1 ürün. Overlay input capture yok. Submit yok."
+  "missingStates": [],
+  "interactionNote": "İlk tık modal açık bırakmadı. Retry: forceOpen details-modal. katalogSorgu teddy. /search?q=teddy statik 1 ürün. Submit yok."
 }

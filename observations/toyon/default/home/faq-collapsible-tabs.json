@@ -30,7 +30,7 @@
     ],
     "mode": "section",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-02T20:30:25.455Z"
+    "updatedAt": "2026-09-02T20:49:02.422Z"
   },
   "interactionStates": [
     "initial",
@@ -59,22 +59,24 @@
     },
     {
       "state": "changed",
-      "action": "click",
-      "selector": "#shopify-section-template--18675764166811__1660741083474771e7 details:has-text('Cras sed ipsum') > summary",
+      "action": "forceOpen",
+      "selector": "#shopify-section-template--18675764166811__1660741083474771e7 details",
+      "capture": false,
+      "not": "nth-of-type(2) eşleşmedi — details sibling değil; forceOpen tüm details"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 600,
       "capture": true,
       "etiket": "ikinci-soru",
-      "not": "2. Cras sed ipsum… açılır."
+      "not": "Açık accordion — cevap satırı."
     }
   ],
   "stateFindings": {
     "initial": "FAQS / Frequently Asked Questions. 6 lorem soru, hepsi kapalı, chevron aşağı.",
-    "changed": "Probe ikinci details open (Cras sed ipsum…). 1440/768 changed PNG byte-eş initial; cevap metni karede yok."
+    "changed": "forceOpen section details — 6 satır açık (chevron yukarı). Her sorunun altında lorem cevap paragrafı. Kategori tab yok."
   },
-  "missingStates": [
-    {
-      "state": "changed",
-      "sebep": "İkinci deneme PNG yazdı ama 1440/768 dosya boyutu initial ile aynı. Cevap satırı görünmedi."
-    }
-  ],
-  "interactionNote": "Kategori tab yok. Placeholder lorem."
+  "missingStates": [],
+  "interactionNote": "İlk tık / nth-of-type(2) eşleşmedi (details sibling değil). Retry forceOpen `details` altısı birden açtı — tek soru toggle değil. Placeholder lorem."
 }
