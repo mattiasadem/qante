@@ -12,6 +12,8 @@ node capture-observation.mjs ../observations/hyper/default/home/hero-slideshow.j
 
 İsteğe bağlı: `--url https://...`
 
+Storefront password (public demo wall): observation `storefrontPassword` / `storePassword` (or `capture.*`), else `QANTE_STOREFRONT_PASSWORD` / `SHOPIFY_STOREFRONT_PASSWORD` / `STOREFRONT_PASSWORD`. `unlock-storefront.mjs` fills the `/password` form and waits out Shopify checkpoint interstitials.
+
 ## Ne yapar
 
 1. Observation’dan `selector` + `url` okur  

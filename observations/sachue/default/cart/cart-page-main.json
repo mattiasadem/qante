@@ -1,0 +1,81 @@
+{
+  "observationId": "sachue.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "sachue",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://pandora-beauty-store.myshopify.com/cart",
+  "selector": "#shopify-section-template--17492994621639__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/sachue/default/cart/cart-page-main.1440.png",
+    "evidence/sachue/default/cart/cart-page-main.375.png",
+    "evidence/sachue/default/cart/cart-page-main.768.png",
+    "evidence/sachue/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/sachue/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/sachue/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/sachue/default/cart/cart-page-main.filled.sepet-dolu.1440.png",
+    "evidence/sachue/default/cart/cart-page-main.filled.sepet-dolu.375.png",
+    "evidence/sachue/default/cart/cart-page-main.filled.sepet-dolu.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Boş: Your cart is empty · CONTINUE SHOPPING · Have an account? Log in…",
+  "delta": "cart-footer Estimated total h=0 boşken. Dolu hâl interact.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "selector": null,
+      "value": "https://pandora-beauty-store.myshopify.com/products/stunna-lip-paint-longwear-fluid-lip-color",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit",
+      "value": null,
+      "capture": false,
+      "not": "Stunna sepete"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "selector": null,
+      "value": "https://pandora-beauty-store.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepet-dolu",
+      "not": "Stunna satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus']",
+      "value": 1200,
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet 2"
+    }
+  ],
+  "stateFindings": {
+    "filled": "Stunna satırı Color Red · adet 1 · $26. PRODUCT / QUANTITY / TOTAL.",
+    "changed": "Adet 2 · satır toplam $52.00."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı. cart-footer dolu halde ayrı kırpılmadı.",
+  "capture": {
+    "url": "https://pandora-beauty-store.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:40:49.896Z"
+  }
+}

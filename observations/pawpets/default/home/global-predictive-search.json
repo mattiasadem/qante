@@ -1,0 +1,84 @@
+{
+  "observationId": "pawpets.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "pawpets",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://petz-online-store-2.myshopify.com/",
+  "selector": ".search-modal",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/pawpets/default/home/global-predictive-search.initial.arama-bos.1440.png",
+    "evidence/pawpets/default/home/global-predictive-search.initial.arama-bos.375.png",
+    "evidence/pawpets/default/home/global-predictive-search.initial.arama-bos.768.png",
+    "evidence/pawpets/default/home/global-predictive-search.input.arama-omega.1440.png",
+    "evidence/pawpets/default/home/global-predictive-search.input.arama-omega.375.png",
+    "evidence/pawpets/default/home/global-predictive-search.input.arama-omega.768.png"
+  ],
+  "notlar": "Search-In-Modal + predictive-search--header. Kapalı kutu ~0px. Interact fill omega.",
+  "delta": "Dawn details-modal arama. Kapalı kare yanıltır. Shopify.theme.name Mightypetz V-1.5.0 · schema_name Mightypetz · schema_version 1.5.0 · theme_store_id null · role main · id 171030774048 · walk+shop petz-online-store-2.myshopify.com · Speedo PawPets (üçüncü taraf OS 2.0, Theme Store resmi değil).",
+  "captureMode": "viewport",
+  "prepareClick": "summary.header__icon--search",
+  "capture": {
+    "url": "https://petz-online-store-2.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:11:15.377Z",
+    "prepareClick": "summary.header__icon--search"
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://petz-online-store-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Büyüteç — boş search modal"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "omega",
+      "capture": false,
+      "not": "katalogSorgu=omega (Max Omega-3 Soft Chews)"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-omega",
+      "not": "Predictive öneri / ürün listesi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Büyüteç sonrası üst beyaz search bar: placeholder Search, mercek, sağda X. Öneri/ürün listesi yok. Hero slayt 1 arkada.",
+    "input": "omega yazılı. SUGGESTIONS: max omega 3 soft chews (omega kalın). PRODUCTS: Max Omega-3 Soft Chews for Dogs; Max Calming Chews With Hemp Seed Oil for Dogs; Mighty Petz PRO Expert Nutrition Active Adult Large Breed Dog Dry Food. Altta Search for 'omega' →. 375 aynı iki kolon değil, dikey liste."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu omega. Submit/hesap yok. İlk koşu popup-active yüzünden açılmadı; overlay class kalkınca tık+fill çalıştı."
+}

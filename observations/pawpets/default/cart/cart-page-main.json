@@ -1,0 +1,110 @@
+{
+  "observationId": "pawpets.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "pawpets",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://petz-online-store-2.myshopify.com/cart",
+  "selector": "#shopify-section-template--23265703035168__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/pawpets/default/cart/cart-page-main.1440.png",
+    "evidence/pawpets/default/cart/cart-page-main.375.png",
+    "evidence/pawpets/default/cart/cart-page-main.768.png",
+    "evidence/pawpets/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/pawpets/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/pawpets/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/pawpets/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/pawpets/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/pawpets/default/cart/cart-page-main.initial.sepet-bos.768.png"
+  ],
+  "notlar": "Boş: Your cart is empty / Continue shopping / Have an account? Log in… cart-footer h=0.",
+  "delta": "Boş state; dolu interact. Checkout tıklanmadı. Shopify.theme.name Mightypetz V-1.5.0 · schema_name Mightypetz · schema_version 1.5.0 · theme_store_id null · role main · id 171030774048 · walk+shop petz-online-store-2.myshopify.com · Speedo PawPets (üçüncü taraf OS 2.0, Theme Store resmi değil).",
+  "capture": {
+    "url": "https://petz-online-store-2.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:54:04.171Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://petz-online-store-2.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--23265703035168__cart-items",
+      "capture": true,
+      "etiket": "sepet-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://petz-online-store-2.myshopify.com/products/max-omega-3-soft-chews-for-dogs",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--23265703723296__main button.product-form__submit[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://petz-online-store-2.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--23265703035168__cart-items",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart sayfası"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty. Continue shopping (bordo dolu buton). Have an account? Log in to check out faster (Log in altı çizili). Satır/adet yok.",
+    "filled": "Your cart. PRODUCT / QUANTITY / TOTAL. Max Omega-3 Soft Chews for Dogs, $44.95, Size: 10kg, adet 1, çöp ikonu, satır total $44.95."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout / account tıklanmadı. cart-footer boş sepetken 0px."
+}

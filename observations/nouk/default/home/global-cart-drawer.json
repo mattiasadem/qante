@@ -1,0 +1,122 @@
+{
+  "observationId": "nouk.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "nouk",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://jewelry-online-shop-3.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/nouk/default/home/global-cart-drawer.1440.png",
+    "evidence/nouk/default/home/global-cart-drawer.375.png",
+    "evidence/nouk/default/home/global-cart-drawer.768.png",
+    "evidence/nouk/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/nouk/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/nouk/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/nouk/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/nouk/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/nouk/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/nouk/default/home/global-cart-drawer.initial.sepet-bos.1440.png",
+    "evidence/nouk/default/home/global-cart-drawer.initial.sepet-bos.375.png",
+    "evidence/nouk/default/home/global-cart-drawer.initial.sepet-bos.768.png"
+  ],
+  "storePassword": "1",
+  "notlar": "Dawn cart-drawer. Opener #cart-icon-bubble role=button. Boş: Your cart is empty + CONTINUE SHOPPING.",
+  "delta": "is-empty. Sağ 400px panel. Dolu hâl interact. Login tıklanmadı.",
+  "prepareClick": "#cart-icon-bubble",
+  "prepareForceOpen": true,
+  "captureMode": "viewport",
+  "capture": {
+    "url": "https://jewelry-online-shop-3.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:31:06.862Z",
+    "prepareClick": "#cart-icon-bubble"
+  },
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://jewelry-online-shop-3.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": false,
+      "not": "role=button href=/cart — JS drawer; sayfa değişmemeli"
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": false,
+      "not": "Playwright .active'i invisible sayıyor; class pin"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş drawer: Your cart is empty"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://jewelry-online-shop-3.myshopify.com/products/princess-diamond-earrings-stud-earrings",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--17443721609371__main button[name='add']",
+      "capture": false,
+      "not": "Princess stud ATC"
+    },
+    {
+      "state": "filled",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer — checkout/login yok"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "cart-drawer button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Sağ drawer. Your cart is empty · CONTINUE SHOPPING · Have an account? Log in to check out faster. X kapat. Login tıklanmadı.",
+    "filled": "YOUR CART. Princess Diamond Earrings Stud Earrings · Metal: Gold · $40 · qty 1. Free Shipping $100 / Express $150 bar. Estimated total $40 USD. CHECK OUT (tıklanmadı). 1440'ta ortada YOU MAY LIKE recs overlay (ATC sonrası); 375'te YOU MAY LIKE akordeon.",
+    "changed": "Qty 2. Satır/estimated total $80. Shipping bar ilerledi. CHECK OUT dur."
+  },
+  "interactionNote": "addToCart → ui (üç viewport). Playwright cart-drawer.active'i invisible sayıyor; click + forceOpen pin. Login/checkout yok. İkinci goto storefront_digest ile /password atlandı."
+}

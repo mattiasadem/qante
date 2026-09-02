@@ -1,0 +1,63 @@
+{
+  "observationId": "hubble.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "hubble",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://hubble-nutrition.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/hubble/default/home/global-menu-drawer.375.png",
+    "evidence/hubble/default/home/global-menu-drawer.768.png",
+    "evidence/hubble/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/hubble/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Hamburger → Shop / About Us / FAQ / Contact Us + Log in + Instagram/TikTok.",
+  "delta": "1440 hamburger Dawn large-up gizli olabilir; mega/akordeon yok (düz linkler).",
+  "captureMode": "viewport",
+  "prepareClick": "header-drawer summary.header__icon--menu, #Details-menu-drawer-container > summary",
+  "capture": {
+    "url": "https://hubble-nutrition.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:22:13.989Z",
+    "prepareClick": "header-drawer summary.header__icon--menu, #Details-menu-drawer-container > summary"
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://hubble-nutrition.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header-drawer summary.header__icon--menu, #Details-menu-drawer-container > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Drawer: Shop/About/FAQ/Contact + Log in + sosyal. 1440 hamburger yok."
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: X + HUBBLE + cart; Shop / About Us / FAQ / Contact Us; Log in; Instagram/TikTok. Mega/akordeon yok."
+  },
+  "missingStates": [],
+  "interactionNote": "Shop düz /collections/all; akordeon yok. Log in tıklanmadı."
+}

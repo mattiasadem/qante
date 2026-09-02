@@ -1,0 +1,116 @@
+{
+  "observationId": "luxora.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "luxora",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://jewelry-online-shop2.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/luxora/default/home/global-cart-drawer.1440.png",
+    "evidence/luxora/default/home/global-cart-drawer.375.png",
+    "evidence/luxora/default/home/global-cart-drawer.768.png",
+    "evidence/luxora/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/luxora/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/luxora/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/luxora/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/luxora/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/luxora/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/luxora/default/home/global-cart-drawer.initial.sepet-bos.1440.png",
+    "evidence/luxora/default/home/global-cart-drawer.initial.sepet-bos.375.png",
+    "evidence/luxora/default/home/global-cart-drawer.initial.sepet-bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "cart-drawer custom element. Empty: Your cart is empty. Checkout + view cart hosts in DOM.",
+  "delta": "Header cart also links /cart page. Drawer empty on first land. Shopify.theme.name Jewelry-online-shop2 V-1.5.0 · schema_name Jewelry_online_shop2 · schema_version 1.5.0 · theme_store_id null · role main · id 176034677037 · shop jewelry-online-shop2.myshopify.com · Speedo Luxora official demo (password from Live Demo form).",
+  "captureMode": "viewport",
+  "prepareClick": "a#cart-icon-bubble",
+  "capture": {
+    "url": "https://jewelry-online-shop2.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:07:16.249Z",
+    "prepareClick": "a#cart-icon-bubble"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://jewelry-online-shop2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://jewelry-online-shop2.myshopify.com/products/ponte-vecchio-bracelet-in-gold",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*=\"/cart/add\"] button[name=\"add\"], form[action*=\"/cart/add\"] button[type=\"submit\"]",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Ponte Vecchio $100 drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus'], #CartDrawer [name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Qty 1→2"
+    }
+  ],
+  "stateFindings": {
+    "filled": "Sağ drawer Your cart. Ponte Vecchio Bracelet In Gold $100.00 qty 1. Free Shipping! $500.00 / Express Shipping! $800.00 yeşil bar. Best seller kapalı. Estimated total $100.00 USD. Check Out + View cart. 375 tam genişlik overlay.",
+    "changed": "Aynı satır qty 2; estimated total $200.00 USD. Eşikler $500 / $800 aynı."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "a#cart-icon-bubble tıklandı; 375/768/1440 karesi homepage (hero MADE FOR YOUR SHADE). Boş drawer metni görünmedi. Dolu hâl PDP ATC ile alındı."
+    }
+  ],
+  "interactionNote": "Check Out tıklanmadı. ATC UI drawer'ı açtı; /cart/add.js fallback gerekmedi. Boş open ikinci denemede de homepage."
+}

@@ -1,0 +1,107 @@
+{
+  "observationId": "luxora.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "luxora",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://jewelry-online-shop2.myshopify.com/cart",
+  "selector": "#shopify-section-template--24163649716525__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/luxora/default/cart/cart-page-main.1440.png",
+    "evidence/luxora/default/cart/cart-page-main.375.png",
+    "evidence/luxora/default/cart/cart-page-main.768.png",
+    "evidence/luxora/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/luxora/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/luxora/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/luxora/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/luxora/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/luxora/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/luxora/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/luxora/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/luxora/default/cart/cart-page-main.initial.sepet-bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Empty: Your cart is empty / Continue Shopping / Have an account? Log in to check out faster.",
+  "delta": "Account login not used. cart-footer sibling h=0 leftover. Shopify.theme.name Jewelry-online-shop2 V-1.5.0 · schema_name Jewelry_online_shop2 · schema_version 1.5.0 · theme_store_id null · role main · id 176034677037 · shop jewelry-online-shop2.myshopify.com · Speedo Luxora official demo (password from Live Demo form).",
+  "captureMode": "section",
+  "capture": {
+    "url": "https://jewelry-online-shop2.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:08:03.522Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://jewelry-online-shop2.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "etiket": "sepet-bos",
+      "not": "Your cart is empty"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://jewelry-online-shop2.myshopify.com/products/ponte-vecchio-bracelet-in-gold",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*=\"/cart/add\"] button[name=\"add\"], form[action*=\"/cart/add\"] button[type=\"submit\"]",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://jewelry-online-shop2.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Ponte satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], [name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Qty artı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty. Continue Shopping. Have an account? Log in to check out faster.",
+    "filled": "Your cart tablosu: Ponte Vecchio Bracelet In Gold $100.00 qty 1; TOTAL $100.00. 375'te PRODUCT / TOTAL; qty stepper + çöp.",
+    "changed": "Qty 2; satır TOTAL $200.00."
+  },
+  "missingStates": [],
+  "interactionNote": "Check Out / Log in tıklanmadı. ATC UI; /cart/add.js fallback yok."
+}

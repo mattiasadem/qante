@@ -1,0 +1,85 @@
+{
+  "observationId": "wearix.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "wearix",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pandora-fashi.myshopify.com/",
+  "selector": "#header-search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "storefrontPassword": "1",
+  "notlar": "Header search ikon → details-modal + predictive-search--header.",
+  "delta": "Kapalı kare boş. input state interact turunda.",
+  "captureMode": "viewport",
+  "prepareClick": "summary.header__icon--search",
+  "katalogSorgu": "hoodie",
+  "capture": {
+    "url": "https://pandora-fashi.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:40:43.712Z",
+    "prepareClick": "summary.header__icon--search"
+  },
+  "interactionStates": [
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "input",
+      "action": "goto",
+      "value": "https://pandora-fashi.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "scrollTo",
+      "selector": "summary.header__icon--search",
+      "capture": false,
+      "not": "Settle kaydırınca ikon ekran dışı; input gizli kalıyor"
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "capture": false,
+      "not": "İç details aç — host details-modal forceOpen kutuyu 25px bırakıyor"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal-1",
+      "value": "hoodie",
+      "capture": false,
+      "not": "katalogSorgu hoodie"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hoodie",
+      "not": "Öneri listesi"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "İki deneme. #Search-In-Modal-1 resmi capture'da hidden kaldı (settle kaydırma + details-modal). Probe'da summary tık + hoodie: SUGGESTIONS (hoodie, zipped hoodie, sojo hoodie…) + PRODUCTS (Stylish Regular Hoodie For Men, Studio Black Hoodie For Women, Sojo Women Hoodie). /search?q=hoodie ayrı observation."
+    }
+  ],
+  "interactionNote": "katalogSorgu hoodie. Host #header-search details-modal; iç details tık ile açılıyor. forceOpen host kutuyu 25px bırakıyor. Submit yok."
+}

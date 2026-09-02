@@ -1,0 +1,74 @@
+{
+  "observationId": "pawpets.default.product-detail.product-info-tabs",
+  "schemaId": "product-info-tabs",
+  "kaynak": "pawpets",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://petz-online-store-2.myshopify.com/products/max-omega-3-soft-chews-for-dogs",
+  "selector": "#shopify-section-template--23265703723296__79582f51-5736-4bff-b870-bba69393ad36",
+  "evidenceSlug": "product-info-tabs",
+  "evidence": [
+    "evidence/pawpets/default/product-detail/product-info-tabs.1440.png",
+    "evidence/pawpets/default/product-detail/product-info-tabs.375.png",
+    "evidence/pawpets/default/product-detail/product-info-tabs.768.png",
+    "evidence/pawpets/default/product-detail/product-info-tabs.changed.additional-information.1440.png",
+    "evidence/pawpets/default/product-detail/product-info-tabs.changed.additional-information.375.png",
+    "evidence/pawpets/default/product-detail/product-info-tabs.changed.additional-information.768.png",
+    "evidence/pawpets/default/product-detail/product-info-tabs.initial.description.1440.png",
+    "evidence/pawpets/default/product-detail/product-info-tabs.initial.description.375.png",
+    "evidence/pawpets/default/product-detail/product-info-tabs.initial.description.768.png"
+  ],
+  "notlar": "product_accordian_tab: DESCRIPTION / ADDITIONAL INFORMATION / SHIPPING AND DELIVERY. Lorem ipsum.",
+  "delta": "Üst tab + accordion class; buy box içi EXTRA INFORMATION ayrı. Shopify.theme.name Mightypetz V-1.5.0 · schema_name Mightypetz · schema_version 1.5.0 · theme_store_id null · role main · id 171030774048 · walk+shop petz-online-store-2.myshopify.com · Speedo PawPets (üçüncü taraf OS 2.0, Theme Store resmi değil).",
+  "capture": {
+    "url": "https://petz-online-store-2.myshopify.com/products/max-omega-3-soft-chews-for-dogs",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:43:56.676Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://petz-online-store-2.myshopify.com/products/max-omega-3-soft-chews-for-dogs",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--23265703723296__79582f51-5736-4bff-b870-bba69393ad36",
+      "capture": true,
+      "etiket": "description",
+      "not": "DESCRIPTION aktif"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--23265703723296__79582f51-5736-4bff-b870-bba69393ad36 a:has-text('ADDITIONAL INFORMATION')",
+      "capture": true,
+      "etiket": "additional-information",
+      "not": "ADDITIONAL INFORMATION tab"
+    }
+  ],
+  "stateFindings": {
+    "initial": "DESCRIPTION pembe yazı + pembe underline. ADDITIONAL INFORMATION ve SHIPPING AND DELIVERY gri. Altta lorem paragraf.",
+    "changed": "ADDITIONAL INFORMATION pembe underline. İçerik lorem + üç maddelik liste. DESCRIPTION gri."
+  },
+  "missingStates": [],
+  "interactionNote": "Submit/form yok. Buy box EXTRA INFORMATION akordeonları bu section değil."
+}

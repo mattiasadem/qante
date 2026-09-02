@@ -1,0 +1,86 @@
+{
+  "observationId": "sachue.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "sachue",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pandora-beauty-store.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/sachue/default/home/global-cart-drawer.1440.png",
+    "evidence/sachue/default/home/global-cart-drawer.375.png",
+    "evidence/sachue/default/home/global-cart-drawer.768.png",
+    "evidence/sachue/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/sachue/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/sachue/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/sachue/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/sachue/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/sachue/default/home/global-cart-drawer.filled.sepete-eklendi.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Dawn #CartDrawer. Opener #cart-icon-bubble href=/cart (JS drawer beklenir). Boş hâl.",
+  "delta": "href=/cart — JS yakalamazsa /cart'a kaçar. filled interact.",
+  "capture": {
+    "url": "https://pandora-beauty-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "prepareClick": "#cart-icon-bubble",
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:40:17.223Z"
+  },
+  "captureMode": "viewport",
+  "prepareClick": "#cart-icon-bubble",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "selector": null,
+      "value": "https://pandora-beauty-store.myshopify.com/products/stunna-lip-paint-longwear-fluid-lip-color",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit",
+      "value": null,
+      "capture": false,
+      "not": "Stunna ADD TO CART"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": null,
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC sonrası drawer. Kapalıysa #cart-icon-bubble."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 2"
+    }
+  ],
+  "stateFindings": {
+    "filled": "375/768/1440: Your cart · Stunna Lip Paint Color Red · adet 1 · $26.00 · Estimated total $26.00 USD · CHECK OUT · View cart. Üstte Free Shipping $500 / Express $800 çubuğu.",
+    "changed": "375/768/1440: adet 2. Satır fiyatı $26.00 (birim). Estimated total $52.00 USD."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC button.product-form__submit — drawer PDP üzerinde açıldı. CHECK OUT tıklanmadı."
+}

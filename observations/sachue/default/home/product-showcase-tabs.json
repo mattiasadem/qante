@@ -1,0 +1,72 @@
+{
+  "observationId": "sachue.default.home.product-showcase-tabs",
+  "schemaId": "product-showcase-tabs",
+  "kaynak": "sachue",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pandora-beauty-store.myshopify.com/",
+  "selector": "#shopify-section-template--17492995047623__165666889162d379a4",
+  "evidenceSlug": "product-showcase-tabs",
+  "evidence": [
+    "evidence/sachue/default/home/product-showcase-tabs.1440.png",
+    "evidence/sachue/default/home/product-showcase-tabs.375.png",
+    "evidence/sachue/default/home/product-showcase-tabs.768.png",
+    "evidence/sachue/default/home/product-showcase-tabs.changed.new-arrivals.1440.png",
+    "evidence/sachue/default/home/product-showcase-tabs.changed.new-arrivals.375.png",
+    "evidence/sachue/default/home/product-showcase-tabs.changed.new-arrivals.768.png",
+    "evidence/sachue/default/home/product-showcase-tabs.initial.best-sellers.1440.png",
+    "evidence/sachue/default/home/product-showcase-tabs.initial.best-sellers.375.png",
+    "evidence/sachue/default/home/product-showcase-tabs.initial.best-sellers.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "TRENDY COLLECTION · BEST SELLERS / NEW ARRIVALS / TOP TRENDING · kartlarda ADD TO WISHLIST + ADD TO CART. 4 kolon desktop.",
+  "delta": "Üst sekmeler (stacked). QV yok. Wishlist kart aksiyonu leftover. grid--4-col-desktop + slider--desktop.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "selector": null,
+      "value": "https://pandora-beauty-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17492995047623__165666889162d379a4",
+      "value": null,
+      "capture": true,
+      "etiket": "best-sellers",
+      "not": "BEST SELLERS aktif"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "a.button[href='#template--17492995047623__165666889162d379a4-tab-2']",
+      "value": 1200,
+      "capture": true,
+      "etiket": "new-arrivals",
+      "not": "NEW ARRIVALS in-page hash — koleksiyona kaçmaz"
+    }
+  ],
+  "stateFindings": {
+    "initial": "BEST SELLERS pembe çerçeve. 4 kart (Stunna / Heat Shield / HoliRoots / Color-Depositing) + SHOP NOW.",
+    "changed": "NEW ARRIVALS pembe çerçeve. Sayfa / kaldı. İlk 4 kart aynı koleksiyon overlap; sekme aktifliği değişti."
+  },
+  "missingStates": [],
+  "interactionNote": "SHOP NOW /collections/* tıklanmadı.",
+  "capture": {
+    "url": "https://pandora-beauty-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:38:19.555Z"
+  }
+}

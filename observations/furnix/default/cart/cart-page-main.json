@@ -1,0 +1,93 @@
+{
+  "observationId": "furnix.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "furnix",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://pandora-furniture-6.myshopify.com/cart",
+  "selector": "#shopify-section-template--16969389048016__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/furnix/default/cart/cart-page-main.1440.png",
+    "evidence/furnix/default/cart/cart-page-main.375.png",
+    "evidence/furnix/default/cart/cart-page-main.768.png",
+    "evidence/furnix/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/furnix/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/furnix/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/furnix/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/furnix/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/furnix/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/furnix/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/furnix/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/furnix/default/cart/cart-page-main.initial.sepet-bos.768.png"
+  ],
+  "notlar": "Boş: Your cart is empty / Continue shopping / Access an account? Log in. cart-footer h=0 boşken.",
+  "delta": "Shopify.theme.name Decora-v-1-5-0-latest-updates New · id 134494290128 · schema_name Decora · schema_version 1.5.0 · theme_store_id null · role main · shop pandora-furniture-6.myshopify.com · Speedo listing slug furnix Boş sayfa. filled interact. Checkout tıklanmadı.",
+  "capture": {
+    "url": "https://pandora-furniture-6.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T13:56:33.370Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-furniture-6.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepet-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://pandora-furniture-6.myshopify.com/products/executive-arm-chair-wooden-legs",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--16969390031056__main",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://pandora-furniture-6.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + Continue Shopping + Have an account? Log in to check out faster.",
+    "filled": "Your cart: Executive Arm Chair Wooden Legs, Color Off white, Leg Finish Light Walnut, adet 1, $102 / TOTAL $102. Continue shopping sağda.",
+    "changed": "Plus: adet 2, TOTAL $204. Varyant metni aynı. Checkout tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout / Log in tıklanmadı. addToCart PDP UI sonra /cart."
+}

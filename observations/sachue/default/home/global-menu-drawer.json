@@ -1,0 +1,83 @@
+{
+  "observationId": "sachue.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "sachue",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pandora-beauty-store.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/sachue/default/home/global-menu-drawer.375.png",
+    "evidence/sachue/default/home/global-menu-drawer.768.png",
+    "evidence/sachue/default/home/global-menu-drawer.changed.shop-drill.375.png",
+    "evidence/sachue/default/home/global-menu-drawer.changed.shop-drill.768.png",
+    "evidence/sachue/default/home/global-menu-drawer.open.hamburger-acik.375.png",
+    "evidence/sachue/default/home/global-menu-drawer.open.hamburger-acik.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "375/768 hamburger #header-menu → #menu-drawer. Shop drill Lipstick/Serum/Concealer/Nails.",
+  "delta": "1440 #header-menu 0×0 (inline nav). Account/login tıklanmadı.",
+  "capture": {
+    "url": "https://pandora-beauty-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "prepareClick": "#header-menu",
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:38:12.330Z"
+  },
+  "captureMode": "viewport",
+  "prepareClick": "#header-menu",
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "selector": null,
+      "value": "https://pandora-beauty-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#header-menu",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger-acik",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Hamburger drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#HeaderDrawer-shop",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-drill",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Shop summary — Lipstick/Serum/Concealer/Nails. Yazılı <a> değil."
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 hamburger: Home (gri aktif) · Shop (sağ ok) · New Arrivals · About Us · Faq's · Contact · Wishlist 0 · altta X/Facebook/Pinterest/Instagram. 1440 drawer yok.",
+    "changed": "375 ve 768 Shop drill: ← Shop + Lipstick · Serum · Concealer · Nails. Drawer yerinde."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 hamburger yok — static skip. Yazılı menü <a> tıklanmadı."
+}

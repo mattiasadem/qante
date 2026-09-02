@@ -1,0 +1,77 @@
+{
+  "observationId": "luxora.default.home.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "luxora",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://jewelry-online-shop2.myshopify.com/",
+  "selector": "#shopify-section-template--24163650142509__38d870b7-7beb-4c1c-af20-fd5eae71feb5",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/luxora/default/home/faq-collapsible-tabs.1440.png",
+    "evidence/luxora/default/home/faq-collapsible-tabs.375.png",
+    "evidence/luxora/default/home/faq-collapsible-tabs.768.png",
+    "evidence/luxora/default/home/faq-collapsible-tabs.changed.soru-acik.1440.png",
+    "evidence/luxora/default/home/faq-collapsible-tabs.changed.soru-acik.375.png",
+    "evidence/luxora/default/home/faq-collapsible-tabs.changed.soru-acik.768.png",
+    "evidence/luxora/default/home/faq-collapsible-tabs.initial.kapali.1440.png",
+    "evidence/luxora/default/home/faq-collapsible-tabs.initial.kapali.375.png",
+    "evidence/luxora/default/home/faq-collapsible-tabs.initial.kapali.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "FAQ's accordion. Shipping methods / times / payment / exchanges. collapsible-content grid--2-col-tablet reverse.",
+  "delta": "Home FAQ; paypal.com leftover in answers. Shopify.theme.name Jewelry-online-shop2 V-1.5.0 · schema_name Jewelry_online_shop2 · schema_version 1.5.0 · theme_store_id null · role main · id 176034677037 · shop jewelry-online-shop2.myshopify.com · Speedo Luxora official demo (password from Live Demo form).",
+  "capture": {
+    "url": "https://jewelry-online-shop2.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:14:40.027Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://jewelry-online-shop2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24163650142509__38d870b7-7beb-4c1c-af20-fd5eae71feb5",
+      "capture": true,
+      "etiket": "kapali"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--24163650142509__38d870b7-7beb-4c1c-af20-fd5eae71feb5 .accordion details:first-of-type summary, #shopify-section-template--24163650142509__38d870b7-7beb-4c1c-af20-fd5eae71feb5 details summary",
+      "capture": true,
+      "etiket": "soru-acik"
+    }
+  ],
+  "stateFindings": {
+    "initial": "FAQ's. Dört kapalı satır: What Shipping Methods Are Available?; What are shipping times and costs?; What payment methods can I use?; What is your exchanges, returns and refunds policy? Checkbox + aşağı chevron."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "İlk summary tıklandı; changed PNG byte-aynı initial. Dört soru hâlâ kapalı. İkinci denemede aynı."
+    }
+  ],
+  "interactionNote": "Accordion cevap metni karede görünmedi. paypal.com leftover answers DOM'da; piksel yok."
+}

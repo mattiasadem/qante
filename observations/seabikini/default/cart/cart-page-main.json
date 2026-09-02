@@ -1,0 +1,94 @@
+{
+  "observationId": "seabikini.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "seabikini",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://fashion-store-clean-11.myshopify.com/cart",
+  "selector": "#shopify-section-template--23256778998079__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/seabikini/default/cart/cart-page-main.1440.png",
+    "evidence/seabikini/default/cart/cart-page-main.375.png",
+    "evidence/seabikini/default/cart/cart-page-main.768.png",
+    "evidence/seabikini/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/seabikini/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/seabikini/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/seabikini/default/cart/cart-page-main.filled.dolu.1440.png",
+    "evidence/seabikini/default/cart/cart-page-main.filled.dolu.375.png",
+    "evidence/seabikini/default/cart/cart-page-main.filled.dolu.768.png",
+    "evidence/seabikini/default/cart/cart-page-main.initial.bos.1440.png",
+    "evidence/seabikini/default/cart/cart-page-main.initial.bos.375.png",
+    "evidence/seabikini/default/cart/cart-page-main.initial.bos.768.png"
+  ],
+  "notlar": "Boş: Your cart is empty · CONTINUE SHOPPING · Have an account? Log in. cart-footer h=0 boşken.",
+  "delta": "Dolu + qty interact. Checkout tıklanmadı. Shopify.theme.name Seabikini-v-1-5-0 · schema_name Seabikini · schema_version 1.5.0 · theme_store_id null · role main · id 171062952255 · shop fashion-store-clean-11.myshopify.com · Speedo Themes third-party (Theme Store official değil).",
+  "storefrontPassword": "1",
+  "capture": {
+    "url": "https://fashion-store-clean-11.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:25:01.294Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://fashion-store-clean-11.myshopify.com/cart",
+      "capture": true,
+      "etiket": "bos",
+      "not": "Boş sepet sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://fashion-store-clean-11.myshopify.com/products/summer-swimwear-bathing-suit",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add'], button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://fashion-store-clean-11.myshopify.com/cart",
+      "capture": true,
+      "etiket": "dolu",
+      "not": "SUMMER SWIMWEAR satır + toplam"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], .quantity__button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "qty +1"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty · CONTINUE SHOPPING · Have an account? Log in to check out faster.",
+    "filled": "Your cart. SUMMER SWIMWEAR BATHING SUIT · $59.00 · Color Red · Size S · qty 1 · satır $59.00. Continue shopping. Crop = cart-items (checkout sibling leftover).",
+    "changed": "qty 2 · TOTAL $118.00. Color Red · Size S."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout / Log in tıklanmadı. Dolu hâl PDP ADD TO CART sonra /cart."
+}

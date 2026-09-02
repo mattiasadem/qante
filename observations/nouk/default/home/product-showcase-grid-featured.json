@@ -1,0 +1,73 @@
+{
+  "observationId": "nouk.default.home.product-showcase-grid-featured",
+  "schemaId": "product-showcase-grid-featured",
+  "kaynak": "nouk",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://jewelry-online-shop-3.myshopify.com/",
+  "selector": "#shopify-section-template--17443721281691__0617c2f2-69ec-4df8-a506-b2616d4e1db4",
+  "evidenceSlug": "product-showcase-grid-featured",
+  "evidence": [
+    "evidence/nouk/default/home/product-showcase-grid-featured.1440.png",
+    "evidence/nouk/default/home/product-showcase-grid-featured.375.png",
+    "evidence/nouk/default/home/product-showcase-grid-featured.768.png",
+    "evidence/nouk/default/home/product-showcase-grid-featured.hover.kart-hover.1440.png",
+    "evidence/nouk/default/home/product-showcase-grid-featured.initial.ilk-hal.1440.png",
+    "evidence/nouk/default/home/product-showcase-grid-featured.initial.ilk-hal.375.png",
+    "evidence/nouk/default/home/product-showcase-grid-featured.initial.ilk-hal.768.png"
+  ],
+  "storePassword": "1",
+  "notlar": "SHOP STUD. New/Sale rozet. QUICK SHOP + wishlist + compare. Princess Diamond Earrings $50→$40.",
+  "delta": "Dawn featured-collection. Hızlı ekle QUICK SHOP (QV). Kart hover ikinci görsel denenecek interact.",
+  "capture": {
+    "url": "https://jewelry-online-shop-3.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:25:55.889Z"
+  },
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://jewelry-online-shop-3.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17443721281691__0617c2f2-69ec-4df8-a506-b2616d4e1db4",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "SHOP STUD grid"
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#shopify-section-template--17443721281691__0617c2f2-69ec-4df8-a506-b2616d4e1db4 .card",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "kart-hover",
+      "not": "İkinci görsel + Quick shop"
+    }
+  ],
+  "interactionStates": [
+    "initial"
+  ],
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Section capture hover karesi initial ile aynı (90851B). Probe: 2. görsel opacity 1 + Quick shop. Capture scroll hover düşürdü; üçüncü deneme yok."
+    }
+  ],
+  "stateFindings": {
+    "initial": "SHOP STUD. 1440 4 kart: Princess $40/$50 New · Diamond Round Stud $150/$170 Sale · Wedding Bridal Bracelet From $58 · Round Cut Moissanite $75. Swatch'lar."
+  },
+  "interactionNote": "Probe kart hover ikinci görsel (product-3-5.jpg) + Quick shop. Evidence karesi değişmedi."
+}

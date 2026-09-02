@@ -1,0 +1,94 @@
+{
+  "observationId": "candle.default.collection.product-showcase-grid-plp",
+  "schemaId": "product-showcase-grid-plp",
+  "kaynak": "candle",
+  "preset": "default",
+  "sayfa": "collection",
+  "url": "https://speedo-candles-store.myshopify.com/collections/shop-all",
+  "selector": "#shopify-section-template--23490799599897__product-grid",
+  "evidenceSlug": "product-showcase-grid-plp",
+  "evidence": [
+    "evidence/candle/default/collection/product-showcase-grid-plp.1440.png",
+    "evidence/candle/default/collection/product-showcase-grid-plp.375.png",
+    "evidence/candle/default/collection/product-showcase-grid-plp.768.png",
+    "evidence/candle/default/collection/product-showcase-grid-plp.changed.availability-secildi.1440.png",
+    "evidence/candle/default/collection/product-showcase-grid-plp.initial.filtre-kapali.1440.png",
+    "evidence/candle/default/collection/product-showcase-grid-plp.initial.filtre-kapali.375.png",
+    "evidence/candle/default/collection/product-showcase-grid-plp.initial.filtre-kapali.768.png",
+    "evidence/candle/default/collection/product-showcase-grid-plp.open.availability-acik.1440.png"
+  ],
+  "notlar": "Filter: Availability / Price. Sort by: Featured / Most relevant. White Candle On Silk vb.",
+  "delta": "Shopify.theme.name Speedo-candles-store-v-1-5-0 · schema_name Speedo candles Store · schema_version 1.5.0 · theme_store_id null · role main · id 171992645913 · shop speedo-candles-store.myshopify.com · Dawn-like OS 2.0. Vendor-published demo password 1 (public storefront unlock). Dawn main-collection-product-grid.",
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://speedo-candles-store.myshopify.com/collections/shop-all",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--23490799599897__product-grid",
+      "capture": true,
+      "etiket": "filtre-kapali",
+      "not": "Availability / Price kapalı veya varsayılan"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "[id='Details-filter.v.availability-template--23490799599897__product-grid'] > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "availability-acik",
+      "not": "1440 Availability details. 375/768 mobil facet drawer ayrı."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Facet-1-template--23490799599897__product-grid input[name='filter.v.availability']",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "availability-secildi",
+      "not": "İlk görünür availability checkbox. Grid değişir mi."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Filter: Availability / Price kapalı. Sort by Best selling. 14 products. 4 kolon (1440).",
+    "open": "1440 Availability paneli: In stock / Out of stock. 0 selected + Reset.",
+    "changed": "Chip Availability: In stock + Remove all. Hâlâ 14 products (hepsi stokta). Grid aynı kartlar."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375/768 mobil Filter and sort drawer çekilmedi — 1440 desktop facet."
+    }
+  ],
+  "interactionNote": "1440 Availability details + ilk checkbox. Wishlist tıklanmadı.",
+  "capture": {
+    "url": "https://speedo-candles-store.myshopify.com/collections/shop-all",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:13:49.622Z"
+  }
+}

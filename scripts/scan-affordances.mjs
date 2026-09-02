@@ -15,6 +15,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { dismissAllOverlays } from "./dismiss-overlays.mjs";
+import { unlockStorefrontIfNeeded } from "./unlock-storefront.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DEFAULT_URLS = {
@@ -50,7 +51,20 @@ const page = await browser.newPage({ viewport: { width: VP[0], height: VP[1] } }
 
 try {
   await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
-  await page.waitForTimeout(3000);
+  await page.waitForTimeout(2000);
+  const unlocked = await unlockStorefrontIfNeeded(page, obs);
+  if (unlocked.unlocked) {
+    const target = new URL(url);
+    const after = new URL(page.url());
+    if (
+      /\/password/.test(target.pathname) === false &&
+      after.pathname.replace(/\/$/, "") !== target.pathname.replace(/\/$/, "")
+    ) {
+      await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
+      await page.waitForTimeout(2000);
+    }
+  }
+  await page.waitForTimeout(1000);
   await dismissAllOverlays(page);
   const rootLoc = page.locator(selector).first();
   await rootLoc.waitFor({ state: "attached", timeout: 12000 }).catch(() => {});

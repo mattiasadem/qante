@@ -1,0 +1,112 @@
+{
+  "observationId": "olelia.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "olelia",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://jewelry-online-shop-4.myshopify.com/cart",
+  "selector": "#shopify-section-template--18711811326117__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/olelia/default/cart/cart-page-main.1440.png",
+    "evidence/olelia/default/cart/cart-page-main.375.png",
+    "evidence/olelia/default/cart/cart-page-main.768.png",
+    "evidence/olelia/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/olelia/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/olelia/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/olelia/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/olelia/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/olelia/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/olelia/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/olelia/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/olelia/default/cart/cart-page-main.initial.sepet-bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "cart-items empty: Your cart is empty / Continue Shopping / Have an account? Log in. Sibling cart-footer #main-cart-footer h=0 when empty (Estimated total / Check out hidden).",
+  "delta": "Speedo Olelia 1.5.0 third-party (theme_store_id null). Storefront password 1 is vendor-published on speedothemes.com product page. Shopify.theme.name Olelia-v-1-5-0-latest-updates new · schema_name Olelia · schema_version 1.5.0 · theme_store_id null · role main · id 146057625765 · walk jewelry-online-shop-4.myshopify.com. cart-items + cart-footer are split sections; one schema cart-page-main. Account/checkout not clicked.",
+  "capture": {
+    "url": "https://jewelry-online-shop-4.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:09:55.857Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://jewelry-online-shop-4.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--18711811326117__cart-items",
+      "capture": true,
+      "etiket": "sepet-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://jewelry-online-shop-4.myshopify.com/products/gold-diamond-pendant-necklace",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--18711812309157__main button.product-form__submit[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://jewelry-online-shop-4.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart sayfası"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "cart-items button[name='plus'], #shopify-section-template--18711811326117__cart-items button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + Continue Shopping + Have an account? Log in. Footer sibling boşken gizli.",
+    "filled": "Your cart. Gold Diamond Pendant Necklace Color Gold qty 1 $120. Continue shopping link.",
+    "changed": "Qty 2. TOTAL $240."
+  },
+  "missingStates": [],
+  "interactionNote": "Account / checkout tıklanmadı. Sibling cart-footer doluyken görünür."
+}

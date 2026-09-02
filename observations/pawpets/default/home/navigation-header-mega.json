@@ -1,0 +1,78 @@
+{
+  "observationId": "pawpets.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "pawpets",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://petz-online-store-2.myshopify.com/",
+  "selector": "#shopify-section-sections--23265704050976__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/pawpets/default/home/navigation-header-mega.1440.png",
+    "evidence/pawpets/default/home/navigation-header-mega.375.png",
+    "evidence/pawpets/default/home/navigation-header-mega.768.png",
+    "evidence/pawpets/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/pawpets/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/pawpets/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/pawpets/default/home/navigation-header-mega.open.shop-dropdown.1440.png"
+  ],
+  "notlar": "sticky-header header--middle-center. 1440: HOME / SHOP (details#Details-HeaderMenu-2) / DOGS / CATS / BIRDS + wishlist / login / locale / search / cart. Logo 1 img. Hamburger 1440'ta 0px.",
+  "delta": "Dawn-benzeri header; mega class yok, SHOP details dropdown. Wishlist sayacı var. QV yok. Shopify.theme.name Mightypetz V-1.5.0 · schema_name Mightypetz · schema_version 1.5.0 · theme_store_id null · role main · id 171030774048 · walk+shop petz-online-store-2.myshopify.com · Speedo PawPets (üçüncü taraf OS 2.0, Theme Store resmi değil).",
+  "captureMode": "viewport",
+  "capture": {
+    "url": "https://petz-online-store-2.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:45:51.890Z"
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://petz-online-store-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "SHOP dropdown kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-HeaderMenu-2",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-dropdown",
+      "not": "SHOP summary içinde <a href=/collections/all> — hover/click sayfaya kaçar; details.open forceOpen. Alt: RABBIT/FISH/CHEMELON FOODS"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440: HOME (pembe alt çizgi) SHOP▾ DOGS CATS BIRDS; sağda search / wishlist 0 / hesap / cart. Logo ortada PETZ SHOP MIGHTYPETZ. SHOP liste kapalı. 375/768: hamburger + logo + search/cart.",
+    "open": "1440 SHOP details açık: açık gri kutu, RABBIT FOODS / FISH FOODS / CHEMELON FOODS. Mega kolon, görsel, promo yok."
+  },
+  "missingStates": [],
+  "interactionNote": "SHOP summary içinde <a href=/collections/all> — hover/click koleksiyona kaçar; forceOpen #Details-HeaderMenu-2. Hesap tıklanmadı."
+}

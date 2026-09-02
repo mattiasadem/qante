@@ -1,0 +1,79 @@
+{
+  "observationId": "candle.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "candle",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://speedo-candles-store.myshopify.com/products/candles-in-the-glass-jars",
+  "selector": "#shopify-section-template--23490800124185__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/candle/default/product-detail/product-info-main.1440.png",
+    "evidence/candle/default/product-detail/product-info-main.375.png",
+    "evidence/candle/default/product-detail/product-info-main.768.png",
+    "evidence/candle/default/product-detail/product-info-main.changed.materials-acik.1440.png",
+    "evidence/candle/default/product-detail/product-info-main.changed.materials-acik.375.png",
+    "evidence/candle/default/product-detail/product-info-main.changed.materials-acik.768.png",
+    "evidence/candle/default/product-detail/product-info-main.initial.accordion-kapali.1440.png",
+    "evidence/candle/default/product-detail/product-info-main.initial.accordion-kapali.375.png",
+    "evidence/candle/default/product-detail/product-info-main.initial.accordion-kapali.768.png"
+  ],
+  "notlar": "Candles In The Glass Jars. Galeri + ADD TO CART + BUY IT NOW + qty stepper. Varyant yok (Title only).",
+  "delta": "Shopify.theme.name Speedo-candles-store-v-1-5-0 · schema_name Speedo candles Store · schema_version 1.5.0 · theme_store_id null · role main · id 171992645913 · shop speedo-candles-store.myshopify.com · Dawn-like OS 2.0. Vendor-published demo password 1 (public storefront unlock). Dawn main-product. Shopify payment button. Variant UI yok — products.json tüm ürünler tek varyant.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://speedo-candles-store.myshopify.com/products/candles-in-the-glass-jars",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--23490800124185__main",
+      "capture": true,
+      "etiket": "accordion-kapali",
+      "not": "Materials / Shipping kapalı. Varyant UI yok."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-collapsible-row-0-template--23490800124185__main > summary",
+      "capture": true,
+      "etiket": "materials-acik",
+      "not": "Materials accordion. Probe 36→96, lorem placeholder. Swatch yok."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Candles In The Glass Jars. $45.00 / $49.00 Sale. 269 in stock. Qty 1. ADD TO CART + BUY IT NOW. Materials / Shipping & Returns kapalı (+). 2×2 trust. Varyant UI yok. 8 görsel.",
+    "changed": "Materials açık (−): lorem placeholder satırı. Shipping kapalı. Fiyat/görsel aynı. Buy it now tıklanmadı."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Varyant swatch/dropdown yok — products.json Title-only. Accordion changed var."
+    }
+  ],
+  "interactionNote": "Materials summary tık. Buy it now tıklanmadı. variant-selects yok.",
+  "capture": {
+    "url": "https://speedo-candles-store.myshopify.com/products/candles-in-the-glass-jars",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:12:44.011Z"
+  }
+}

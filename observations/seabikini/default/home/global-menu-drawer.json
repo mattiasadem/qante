@@ -1,0 +1,81 @@
+{
+  "observationId": "seabikini.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "seabikini",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://fashion-store-clean-11.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/seabikini/default/home/global-menu-drawer.1440.png",
+    "evidence/seabikini/default/home/global-menu-drawer.375.png",
+    "evidence/seabikini/default/home/global-menu-drawer.768.png",
+    "evidence/seabikini/default/home/global-menu-drawer.changed.shop-akordeon.1440.png",
+    "evidence/seabikini/default/home/global-menu-drawer.changed.shop-akordeon.375.png",
+    "evidence/seabikini/default/home/global-menu-drawer.changed.shop-akordeon.768.png",
+    "evidence/seabikini/default/home/global-menu-drawer.open.hamburger.1440.png",
+    "evidence/seabikini/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/seabikini/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "Hamburger → #menu-drawer. Home · Shop (classic/designer/string/retro bikini) · Best seller · New arrival · Beachwear · Swimwear · Nightwear. Log in + sosyal.",
+  "delta": "1440 hamburger VAR (Dawn large-up inline değil; header.drawer-menu). Mega yok. Shopify.theme.name Seabikini-v-1-5-0 · schema_name Seabikini · schema_version 1.5.0 · theme_store_id null · role main · id 171062952255 · shop fashion-store-clean-11.myshopify.com · Speedo Themes third-party (Theme Store official değil).",
+  "storefrontPassword": "1",
+  "captureMode": "viewport",
+  "prepareClick": "#Details-menu-drawer-container > summary",
+  "capture": {
+    "url": "https://fashion-store-clean-11.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:18:07.538Z",
+    "prepareClick": "#Details-menu-drawer-container > summary.header__icon--menu"
+  },
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://fashion-store-clean-11.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Drawer açık — 375/768/1440 hamburger var"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-menu-drawer-menu-item-2 > summary, #HeaderDrawer-shop",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-akordeon",
+      "not": "Shop nested: classic/designer/string/retro bikini"
+    }
+  ],
+  "stateFindings": {
+    "open": "Sol #menu-drawer: Home (gri aktif) · Shop (→) · Best seller · New arrival · Beachwear · Swimwear · Nightwear · Wishlist 0 · Log in. 1440 hamburger + hero arkada. 375 tam yükseklik, altta X/Facebook/Pinterest/Instagram.",
+    "changed": "Shop nested: ← Shop + Classic Bikini · Designer Bikini · String Bikini · Retro Bikini. Log in tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "Log in tıklanmadı. 1440 hamburger Dawn large-up inline değil. #Details-menu-drawer-container > summary sonra #Details-menu-drawer-menu-item-2 / #HeaderDrawer-shop."
+}

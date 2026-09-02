@@ -1,0 +1,94 @@
+{
+  "observationId": "nouk.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "nouk",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://jewelry-online-shop-3.myshopify.com/cart",
+  "selector": "#shopify-section-template--17443720954011__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/nouk/default/cart/cart-page-main.1440.png",
+    "evidence/nouk/default/cart/cart-page-main.375.png",
+    "evidence/nouk/default/cart/cart-page-main.768.png",
+    "evidence/nouk/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/nouk/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/nouk/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/nouk/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/nouk/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/nouk/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/nouk/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/nouk/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/nouk/default/cart/cart-page-main.initial.sepet-bos.768.png"
+  ],
+  "storePassword": "1",
+  "notlar": "Boş: Your cart is empty / CONTINUE SHOPPING / Have an account? Log in to check out faster. cart-footer 0px boşken.",
+  "delta": "Ayrı cart-footer section var (estimated total / Check out) — boşken gizli. Login tıklanmadı.",
+  "capture": {
+    "url": "https://jewelry-online-shop-3.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:31:22.443Z"
+  },
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://jewelry-online-shop-3.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "etiket": "sepet-bos",
+      "not": "Boş cart sayfa"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://jewelry-online-shop-3.myshopify.com/products/princess-diamond-earrings-stud-earrings",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--17443721609371__main button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://jewelry-online-shop-3.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Cart sayfa dolu"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--17443720954011__cart-items button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Your cart is empty + CONTINUE SHOPPING + Have an account? Log in… (tıklanmadı).",
+    "filled": "Your cart · Continue shopping. PRODUCT / QUANTITY / TOTAL. Princess Diamond Earrings Stud Earrings · $40 · Metal: Gold · qty 1 · satır $40. Trash. cart-footer (estimated total / Check out) bu section kırpısında yok.",
+    "changed": "Qty 2. Satır TOTAL $80."
+  },
+  "interactionNote": "addToCart → ui sonra /cart. Checkout / LOG IN tıklanmadı. Sibling cart-footer leftover."
+}

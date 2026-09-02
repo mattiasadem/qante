@@ -1,0 +1,90 @@
+{
+  "observationId": "vedzila.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "vedzila",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://vedzila-organic.myshopify.com/",
+  "selector": "#shopify-section-sections--23865693831452__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/vedzila/default/home/navigation-header-mega.1440.png",
+    "evidence/vedzila/default/home/navigation-header-mega.375.png",
+    "evidence/vedzila/default/home/navigation-header-mega.768.png",
+    "evidence/vedzila/default/home/navigation-header-mega.initial.mega-kapali.1440.png",
+    "evidence/vedzila/default/home/navigation-header-mega.initial.mega-kapali.375.png",
+    "evidence/vedzila/default/home/navigation-header-mega.initial.mega-kapali.768.png",
+    "evidence/vedzila/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Logo + Home/Shop/About Us/Blog/FAQ/Contact + language + search + account + cart. Shop = details#Details-HeaderMenu-2.mega-menu (görsel kolonlar).",
+  "delta": "Dawn-benzeri mega: details#Details-HeaderMenu-2 summary Shop. Mega görseller mega-menu-1..5. Locale English/Français (değiştirilmedi).",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://vedzila-organic.myshopify.com/",
+      "capture": true,
+      "etiket": "mega-kapali",
+      "not": "Shop mega kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-HeaderMenu-2",
+      "capture": false,
+      "viewports": [
+        "1440"
+      ],
+      "not": "Hover/click settle sonrası yapışmadı (click /collections/all). details[open] mega gösterir"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false,
+      "viewports": [
+        "1440"
+      ]
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#MegaMenu-Content-1",
+      "value": 600,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Panel 1440×437 — Shower Gel / Hair Oil kartları"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Kapalı bar: Vedzila + Home (altı çizili) / Shop▾ / About Us / Blog / FAQ / Contact. Solda search, sağda English / hesap / sepet. Mega yok.",
+    "open": "1440 Shop: beş kare kart — Shower Gel, Massage Cream, Hair Oil, Herbals Cream, Body Care. Hepsi /collections/all."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375/768 mega yok — hamburger global-menu-drawer."
+    }
+  ],
+  "interactionNote": "Shop <a> click /collections/all. Playwright hover settle+Escape sonrası yapışmadı; forceOpen #Details-HeaderMenu-2. Locale değiştirilmedi.",
+  "capture": {
+    "url": "https://vedzila-organic.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:09:23.263Z"
+  }
+}

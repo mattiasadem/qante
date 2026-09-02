@@ -1,0 +1,91 @@
+{
+  "observationId": "plantrex.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "plantrex",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pandora-flower.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/plantrex/default/home/global-menu-drawer.375.png",
+    "evidence/plantrex/default/home/global-menu-drawer.768.png",
+    "evidence/plantrex/default/home/global-menu-drawer.changed.shop-akordeon.375.png",
+    "evidence/plantrex/default/home/global-menu-drawer.changed.shop-akordeon.768.png",
+    "evidence/plantrex/default/home/global-menu-drawer.open.hamburger-acik.375.png",
+    "evidence/plantrex/default/home/global-menu-drawer.open.hamburger-acik.768.png"
+  ],
+  "notlar": "header-drawer #menu-drawer. Home / Shop (Birthday Occasion Anniversary Luxurious) / Best Seller / Faq's / About Us / Contact Us.",
+  "delta": "375/768 hamburger. Account tıklanmadı. Speedo Plantrex · Shopify.theme.name pandora-flower-v-1-5-0 · schema_name Pandora_flower · schema_version 1.5.0 · theme_store_id null · role main · id 124515549269 · shop pandora-flower.myshopify.com · walk after vendor-published storefront password 1 on the same host.",
+  "storefrontPassword": "1",
+  "prepareClick": "#Details-menu-drawer-container > summary",
+  "captureMode": "viewport",
+  "capture": {
+    "url": "https://pandora-flower.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:09:54.354Z",
+    "prepareClick": "#Details-menu-drawer-container > summary"
+  },
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-flower.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger-acik",
+      "not": "Mobil menü açık"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#HeaderDrawer-shop",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-akordeon",
+      "not": "Boş ok/summary Shop — Birthday/Occasion altı. Yazılı <a> değil."
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 tam ekran drawer: Home / Shop → / Best Seller / Faq's / About Us / Contact Us / Wishlist 0 / Log in. Sosyal altta. X kapat.",
+    "changed": "375/768 Shop summary: ← Shop + Birthday / Occasion / Anniversary / Luxurious. Yazılı <a> değil."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger zero-size; desktop Shop header hover"
+    }
+  ],
+  "interactionNote": "1440 static atlandı. Log in tıklanmadı."
+}

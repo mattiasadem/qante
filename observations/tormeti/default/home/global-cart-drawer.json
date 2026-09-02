@@ -1,0 +1,133 @@
+{
+  "observationId": "tormeti.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "tormeti",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://tormeti-fashi.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/tormeti/default/home/global-cart-drawer.1440.png",
+    "evidence/tormeti/default/home/global-cart-drawer.375.png",
+    "evidence/tormeti/default/home/global-cart-drawer.768.png",
+    "evidence/tormeti/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/tormeti/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/tormeti/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/tormeti/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/tormeti/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/tormeti/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/tormeti/default/home/global-cart-drawer.initial.sepet-bos.1440.png",
+    "evidence/tormeti/default/home/global-cart-drawer.initial.sepet-bos.375.png",
+    "evidence/tormeti/default/home/global-cart-drawer.initial.sepet-bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "#CartDrawer Dawn drawer. Kapalıda visibility:hidden ama kutu dolu. prepareClick #cart-icon-bubble.",
+  "delta": "Checkout tıklanmadı. Tema (görülen, uydurulmadı): Shopify.theme.name Pandora-jewellery V-1.5.0 final · schema_name Pandora_Jewellery · schema_version 1.5.0 · theme_store_id null · role main · id 143506604249 · shop tormeti-fashi.myshopify.com · vendor Speedo Themes · slug tormeti · public storefront unlock /password 1 (Speedo ürün sayfası).",
+  "captureMode": "viewport",
+  "prepareClick": "#cart-icon-bubble",
+  "prepareForceOpen": true,
+  "capture": {
+    "url": "https://tormeti-fashi.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:14:09.152Z",
+    "prepareClick": "#cart-icon-bubble"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://tormeti-fashi.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": false,
+      "not": "Cart ikon"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 1000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş drawer viewport — element screenshot kapalıda görünmez"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://tormeti-fashi.myshopify.com/products/gold-and-diamond-stud-earrings",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--18185184706777__main",
+      "capture": false,
+      "not": "Stud earrings $140"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "section",
+      "captureSelector": "#CartDrawer .drawer__inner",
+      "etiket": "sepete-eklendi",
+      "not": "ATC sonrası drawer kutusu"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus'], #CartDrawer button[aria-label*='Increase' i]",
+      "capture": true,
+      "captureMode": "section",
+      "captureSelector": "#CartDrawer .drawer__inner",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "filled": "Drawer: Your cart · Back · Free Shipping! $500 + Express Shipping! $800 yeşil progress · Gold And Diamond Stud Earrings · Metal: Gold · adet 1 · $140 · çöp · Best seller / Order special instructions akordeon · Estimated total $140.00 USD · CHECK OUT · View cart. Checkout tıklanmadı.",
+    "changed": "Aynı satır adet 2 · Estimated total $280.00 USD. Progress bar doldu (hâlâ $500 altında)."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "Boş drawer element screenshot kapalıda görünmez; viewport sepet-bos kareleri homepage — boş panel resmi karede yok. Dolu hâl ATC sonrası açıldı."
+    }
+  ],
+  "interactionNote": "filled/addToCart → ui. Checkout / Log in tıklanmadı. Statik 3vp kapalı homepage."
+}

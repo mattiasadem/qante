@@ -1,0 +1,74 @@
+{
+  "observationId": "candle.default.home.product-showcase-grid-featured",
+  "schemaId": "product-showcase-grid-featured",
+  "kaynak": "candle",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://speedo-candles-store.myshopify.com/",
+  "selector": "#shopify-section-template--23490799862041__featured_collection",
+  "evidenceSlug": "product-showcase-grid-featured",
+  "evidence": [
+    "evidence/candle/default/home/product-showcase-grid-featured.1440.png",
+    "evidence/candle/default/home/product-showcase-grid-featured.375.png",
+    "evidence/candle/default/home/product-showcase-grid-featured.768.png",
+    "evidence/candle/default/home/product-showcase-grid-featured.hover.hover-ikinci-gorsel.1440.png",
+    "evidence/candle/default/home/product-showcase-grid-featured.hover.hover-ikinci-gorsel.375.png",
+    "evidence/candle/default/home/product-showcase-grid-featured.hover.hover-ikinci-gorsel.768.png",
+    "evidence/candle/default/home/product-showcase-grid-featured.initial.ilk-kartlar.1440.png",
+    "evidence/candle/default/home/product-showcase-grid-featured.initial.ilk-kartlar.375.png",
+    "evidence/candle/default/home/product-showcase-grid-featured.initial.ilk-kartlar.768.png"
+  ],
+  "notlar": "New Collection. Kartlar + ADD TO CART (quick-add). Sale rozeti. Candles In The Glass Jars $49.",
+  "delta": "Shopify.theme.name Speedo-candles-store-v-1-5-0 · schema_name Speedo candles Store · schema_version 1.5.0 · theme_store_id null · role main · id 171992645913 · shop speedo-candles-store.myshopify.com · Dawn-like OS 2.0. Vendor-published demo password 1 (public storefront unlock). Dawn featured-collection. Quick-add form görünür; QV yok.",
+  "interactionStates": [
+    "initial",
+    "hover"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://speedo-candles-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--23490799862041__featured_collection",
+      "capture": true,
+      "etiket": "ilk-kartlar",
+      "not": "New Collection; ilk kart Glass Jars. Quick-add metin olarak duruyor."
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#Slide-template--23490799862041__featured_collection-1",
+      "capture": true,
+      "etiket": "hover-ikinci-gorsel",
+      "not": "İlk kart unique li. Probe: 2. img opacity 0→1. ATC zaten opacity 1. 375/768 aynıysa missingStates."
+    }
+  ],
+  "stateFindings": {
+    "initial": "New Collection. 1440 dört kart (Glass Jars / Shell / Simple White / Skull) $49→$45. 375 iki kart. ATC / Sale / kalp yok.",
+    "hover": "İlk kart: ADD TO CART şeridi + Sale rozeti + kalp. 1440 ikinci görsel (sonbahar/yaprak, yanık mum). 375 ATC görünür, ikinci görsel belirsiz."
+  },
+  "missingStates": [],
+  "interactionNote": "Unique #Slide-…-1. Wishlist tıklanmadı. Kart metninde gizli Sold out; disabled false.",
+  "capture": {
+    "url": "https://speedo-candles-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:08:10.311Z"
+  }
+}

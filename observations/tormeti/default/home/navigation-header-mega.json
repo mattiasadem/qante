@@ -1,0 +1,84 @@
+{
+  "observationId": "tormeti.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "tormeti",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://tormeti-fashi.myshopify.com/",
+  "selector": "#shopify-section-sections--18185178677465__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/tormeti/default/home/navigation-header-mega.1440.png",
+    "evidence/tormeti/default/home/navigation-header-mega.375.png",
+    "evidence/tormeti/default/home/navigation-header-mega.768.png",
+    "evidence/tormeti/default/home/navigation-header-mega.initial.ilk-hal.1440.png",
+    "evidence/tormeti/default/home/navigation-header-mega.initial.ilk-hal.375.png",
+    "evidence/tormeti/default/home/navigation-header-mega.initial.ilk-hal.768.png",
+    "evidence/tormeti/default/home/navigation-header-mega.open.jewellery-mega.1440.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "header--center-split. Nav: Home / Jewellery / Themes / Blog / Contact / More. Utility: Log in · Cart · search. Logo TORMETI. Interact: mega/hamburger ayrı.",
+  "delta": "Mega menü Jewellery altında koleksiyon kolonları. Sticky header. Tema (görülen, uydurulmadı): Shopify.theme.name Pandora-jewellery V-1.5.0 final · schema_name Pandora_Jewellery · schema_version 1.5.0 · theme_store_id null · role main · id 143506604249 · shop tormeti-fashi.myshopify.com · vendor Speedo Themes · slug tormeti · public storefront unlock /password 1 (Speedo ürün sayfası).",
+  "capture": {
+    "url": "https://tormeti-fashi.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:00:42.608Z"
+  },
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://tormeti-fashi.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "ilk-hal",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-2 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "Jewellery summary hover — tıklanmadı (sayfa kaçış)"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-HeaderMenu-2",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "section",
+      "captureSelector": "#Details-HeaderMenu-2 .mega-menu__content",
+      "etiket": "jewellery-mega",
+      "not": "details open + mega panel crop — viewport hover kapanıyordu"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440 viewport: announcement + header--center-split TORMETI (O=yüzük) · Home altı çizili · Jewellery/Themes chevron · Blog/Contact/More · search + wishlist 0 · account + bag. Mega kapalı. 375/768: hamburger + search solda, account + bag sağda.",
+    "open": "1440 Jewellery mega crop: kolon Necklaces (Gold Necklace, Collar Necklace, Necklaces, Earrings Buti) · Bracelets (Nosepin, Wedding & Bridal, Diamond Ring, Toe Ring) · Wedding & Bridal (Antique Jewellery, Bridal Jewellery, Gold Jewellery, Handmade jewellery) · promo 100% Real + 100% Ethical (lorem) · featured Gold And Diamond Stud Earrings Sale $150→$140."
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 mega yok — hamburger ayrı global-menu-drawer. İlk viewport hover karesi homepage kaldı; forceOpen + .mega-menu__content crop kolonları gösterdi. Account tıklanmadı."
+}

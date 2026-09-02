@@ -1,0 +1,69 @@
+{
+  "observationId": "nouk.default.product-detail.product-info-tabs",
+  "schemaId": "product-info-tabs",
+  "kaynak": "nouk",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://jewelry-online-shop-3.myshopify.com/products/princess-diamond-earrings-stud-earrings",
+  "selector": "#shopify-section-template--17443721609371__79582f51-5736-4bff-b870-bba69393ad36",
+  "evidenceSlug": "product-info-tabs",
+  "evidence": [
+    "evidence/nouk/default/product-detail/product-info-tabs.1440.png",
+    "evidence/nouk/default/product-detail/product-info-tabs.375.png",
+    "evidence/nouk/default/product-detail/product-info-tabs.768.png",
+    "evidence/nouk/default/product-detail/product-info-tabs.changed.additional-information.1440.png",
+    "evidence/nouk/default/product-detail/product-info-tabs.changed.additional-information.375.png",
+    "evidence/nouk/default/product-detail/product-info-tabs.changed.additional-information.768.png",
+    "evidence/nouk/default/product-detail/product-info-tabs.initial.description.1440.png",
+    "evidence/nouk/default/product-detail/product-info-tabs.initial.description.375.png",
+    "evidence/nouk/default/product-detail/product-info-tabs.initial.description.768.png"
+  ],
+  "storePassword": "1",
+  "notlar": "DESCRIPTION / ADDITIONAL INFORMATION / SHIPPING AND DELIVERY.",
+  "delta": "Üst tab. İlk panel açık.",
+  "capture": {
+    "url": "https://jewelry-online-shop-3.myshopify.com/products/princess-diamond-earrings-stud-earrings",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:24:20.477Z"
+  },
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://jewelry-online-shop-3.myshopify.com/products/princess-diamond-earrings-stud-earrings",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17443721609371__79582f51-5736-4bff-b870-bba69393ad36",
+      "capture": true,
+      "etiket": "description",
+      "not": "DESCRIPTION tab açık"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--17443721609371__79582f51-5736-4bff-b870-bba69393ad36 a[href='#tab2']",
+      "capture": true,
+      "etiket": "additional-information",
+      "not": "ADDITIONAL INFORMATION"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "DESCRIPTION aktif (siyah hap). ADDITIONAL INFORMATION / SHIPPING AND DELIVERY gri. Panel lorem.",
+    "changed": "ADDITIONAL INFORMATION aktif (siyah). Panel: lorem paragraflar + 3 madde işaretli liste. DESCRIPTION/SHIPPING gri."
+  },
+  "interactionNote": "a[href=#tab2]. Submit yok."
+}

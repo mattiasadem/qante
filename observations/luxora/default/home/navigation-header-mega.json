@@ -1,0 +1,88 @@
+{
+  "observationId": "luxora.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "luxora",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://jewelry-online-shop2.myshopify.com/",
+  "selector": "#shopify-section-sections--24163650830637__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/luxora/default/home/navigation-header-mega.1440.png",
+    "evidence/luxora/default/home/navigation-header-mega.375.png",
+    "evidence/luxora/default/home/navigation-header-mega.768.png",
+    "evidence/luxora/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/luxora/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/luxora/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/luxora/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "header--top-center. Logo. HOME / SHOP (mega Details-HeaderMenu-2) / OUR STORY / CONTACT US / FAQ'S / MORE (BLOGS). Wishlist count, Log in, Cart. Mega images mega-8/5/3 in DOM.",
+  "delta": "Wishlist icon in header chrome. Mega is details.mega-menu not hover-only class. Search details-modal#header-search. Shopify.theme.name Jewelry-online-shop2 V-1.5.0 · schema_name Jewelry_online_shop2 · schema_version 1.5.0 · theme_store_id null · role main · id 176034677037 · shop jewelry-online-shop2.myshopify.com · Speedo Luxora official demo (password from Live Demo form).",
+  "capture": {
+    "url": "https://jewelry-online-shop2.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:11:04.088Z"
+  },
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://jewelry-online-shop2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Mega kapalı"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-2 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-HeaderMenu-2",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "SHOP mega 5 koleksiyon kartı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Mega kapalı. HOME altı çizili; SHOP chevron. Logo Luxora JEWELRY; arama / wishlist 0 / Log in / Cart 0.",
+    "open": "1440 SHOP forceOpen: 5 kart — Women's Necklace Collection, Diamond Rings Collection, Earrings Collection, Bracelets Collection, Pendants Collection; her kartta görsel + Aliquam erat volutpat lorem."
+  },
+  "missingStates": [],
+  "interactionNote": "Hover #Details-HeaderMenu-2 > summary tek başına karede durmadı; open forceOpen ile alındı. Log in tıklanmadı. Mega yalnız 1440; 375/768 hamburger ayrı observation."
+}

@@ -1,0 +1,72 @@
+{
+  "observationId": "wearix.default.home.product-showcase-tabs",
+  "schemaId": "product-showcase-tabs",
+  "kaynak": "wearix",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pandora-fashi.myshopify.com/",
+  "selector": "#shopify-section-template--17253159796910__165666889162d379a4",
+  "evidenceSlug": "product-showcase-tabs",
+  "evidence": [
+    "evidence/wearix/default/home/product-showcase-tabs.1440.png",
+    "evidence/wearix/default/home/product-showcase-tabs.375.png",
+    "evidence/wearix/default/home/product-showcase-tabs.768.png",
+    "evidence/wearix/default/home/product-showcase-tabs.changed.new-arrivals.1440.png",
+    "evidence/wearix/default/home/product-showcase-tabs.changed.new-arrivals.375.png",
+    "evidence/wearix/default/home/product-showcase-tabs.changed.new-arrivals.768.png",
+    "evidence/wearix/default/home/product-showcase-tabs.initial.best-sellers.1440.png",
+    "evidence/wearix/default/home/product-showcase-tabs.initial.best-sellers.375.png",
+    "evidence/wearix/default/home/product-showcase-tabs.initial.best-sellers.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "TRENDY COLLECTION / Fashion As Unique As You Are. Sekmeler BEST SELLERS · NEW ARRIVALS · TOP TRENDING. Kartlarda ADD TO WISHLIST / ADD TO CART.",
+  "delta": "Üst sekmeler (tabPozisyon top). Quick view / wishlist ikonları kartta.",
+  "capture": {
+    "url": "https://pandora-fashi.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:42:13.497Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-fashi.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17253159796910__165666889162d379a4",
+      "capture": true,
+      "etiket": "best-sellers"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "text=NEW ARRIVALS",
+      "capture": true,
+      "etiket": "new-arrivals",
+      "not": "Yazı tık — href hash ilk denemede BEST SELLERS'da kaldı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "TRENDY COLLECTION. BEST SELLERS çerçeveli. 4 kart: Sojo Men Hoodie $690 · Studio Studio Hoodie For Women $540 · Maison Black Hoodie $820 · Sojo Women Hoodie - Black $690 (üstü $1,000). SHOP NOW."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "İki deneme (href hash + text=NEW ARRIVALS). Kare hâlâ BEST SELLERS çerçeveli, aynı 4 hoodie. Probe'da aria active NEW ARRIVALS oldu ama ızgara aynı koleksiyonu paylaşabilir."
+    }
+  ],
+  "interactionNote": "Kart hover ayrı denenmedi (ADD TO CART zaten görünür). Wishlist tıklanmadı."
+}

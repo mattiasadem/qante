@@ -1,0 +1,90 @@
+{
+  "observationId": "candle.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "candle",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://speedo-candles-store.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/candle/default/home/global-menu-drawer.375.png",
+    "evidence/candle/default/home/global-menu-drawer.768.png",
+    "evidence/candle/default/home/global-menu-drawer.changed.candles-akordeon.375.png",
+    "evidence/candle/default/home/global-menu-drawer.changed.candles-akordeon.768.png",
+    "evidence/candle/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/candle/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "details#Details-menu-drawer-container → #menu-drawer. Home / Candles alt: Shop All, Tealight, Candle Jars, Soy, Pillar.",
+  "delta": "Shopify.theme.name Speedo-candles-store-v-1-5-0 · schema_name Speedo candles Store · schema_version 1.5.0 · theme_store_id null · role main · id 171992645913 · shop speedo-candles-store.myshopify.com · Dawn-like OS 2.0. Vendor-published demo password 1 (public storefront unlock). 1440 hamburger 0×0 — open 375/768. Log in tıklanmadı.",
+  "captureMode": "viewport",
+  "prepareClick": "summary.header__icon--menu",
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://speedo-candles-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "summary.header__icon--menu",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Drawer açık; 1440 hamburger 0×0"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-menu-drawer-menu-item-2 > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "candles-akordeon",
+      "not": "Candles nested — Shop All / Tealight / Candle Jars / Soy / Pillar. Yazılı <a> değil."
+    }
+  ],
+  "stateFindings": {
+    "open": "375: tam genişlik — Home, Candles →, Our Story, Contact Us, Faq's, Blog; altta Log in + United States | USD $ + English + Facebook/Pinterest/Instagram. 768: sol yarı drawer, sağda karartılı hero.",
+    "changed": "375/768 Candles → geri oku + Shop All / Tealight Candles / Candle Jars / Soy Candle / Pillar Candles. In-place nested. URL home."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger 0×0 — beklenen"
+    }
+  ],
+  "interactionNote": "Log in / locale tıklanmadı. 1440 N/A.",
+  "capture": {
+    "url": "https://speedo-candles-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:11:16.222Z",
+    "prepareClick": "summary.header__icon--menu"
+  }
+}

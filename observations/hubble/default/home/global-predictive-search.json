@@ -1,0 +1,71 @@
+{
+  "observationId": "hubble.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "hubble",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://hubble-nutrition.myshopify.com/",
+  "selector": "details-modal.header__search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "storefrontPassword": "1",
+  "notlar": "Arama UI bu preset'te gizlenmiş. /search?q=chai sayfası ayrı observation.",
+  "delta": "Dawn details-modal.header__search class=hidden. İkon 375/1440 header'da görünmüyor. Predictive host DOM'da.",
+  "captureMode": "viewport",
+  "prepareClick": "summary.header__icon--search",
+  "capture": {
+    "url": "https://hubble-nutrition.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:23:26.743Z",
+    "prepareClick": "summary.header__icon--search"
+  },
+  "interactionStates": [
+    "input",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://hubble-nutrition.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Search modal; host class hidden olabilir"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal, predictive-search input[type='search']",
+      "value": "chai",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-chai",
+      "not": "katalogSorgu=chai"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "summary.header__icon--search görünür değil (parent hidden). İkinci deneme yok."
+    },
+    {
+      "state": "input",
+      "sebep": "#Search-In-Modal hidden kaldı. Açık kare yok."
+    }
+  ],
+  "interactionNote": "İki deneme (statik prepareClick + interact click/fill). Host var, piksel yok — leftover."
+}

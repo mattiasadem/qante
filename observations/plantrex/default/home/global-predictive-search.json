@@ -1,0 +1,80 @@
+{
+  "observationId": "plantrex.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "plantrex",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pandora-flower.myshopify.com/",
+  "selector": "details-modal.header__search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/plantrex/default/home/global-predictive-search.375.png",
+    "evidence/plantrex/default/home/global-predictive-search.768.png",
+    "evidence/plantrex/default/home/global-predictive-search.initial.arama-acik.1440.png",
+    "evidence/plantrex/default/home/global-predictive-search.initial.arama-acik.375.png",
+    "evidence/plantrex/default/home/global-predictive-search.initial.arama-acik.768.png",
+    "evidence/plantrex/default/home/global-predictive-search.input.arama-sonucu.1440.png",
+    "evidence/plantrex/default/home/global-predictive-search.input.arama-sonucu.375.png",
+    "evidence/plantrex/default/home/global-predictive-search.input.arama-sonucu.768.png"
+  ],
+  "notlar": "predictive-search.search-modal__form. Desktop #Search-In-Modal; mobil #Search-In-Modal-1.",
+  "delta": "İki kopya search modal (header split). Interact fill katalog kelimesi. Speedo Plantrex · Shopify.theme.name pandora-flower-v-1-5-0 · schema_name Pandora_flower · schema_version 1.5.0 · theme_store_id null · role main · id 124515549269 · shop pandora-flower.myshopify.com · walk after vendor-published storefront password 1 on the same host.",
+  "storefrontPassword": "1",
+  "prepareClick": "details#header-search > summary",
+  "captureMode": "viewport",
+  "capture": {
+    "url": "https://pandora-flower.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:10:54.548Z",
+    "prepareClick": "details#header-search > summary"
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-flower.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "summary[aria-label='Search']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik",
+      "not": "Görünür search summary (iki kopyadan görünür olan)"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input.search__input[name='q']",
+      "value": "bouquet",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "katalogSorgu bouquet — Gerberas/Tulips bouquet"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Arama overlay açık: Search placeholder + büyüteç + X. Sonuç listesi yok.",
+    "input": "bouquet: SUGGESTIONS (bouquet · cream white wedding bouquets) + PRODUCTS (Peaceful Roses Bouquet, Pops Bouquet, Gerberas Flower Bouquet ×2, bridal, burlap, Gypsophila…). Search for 'bouquet' link."
+  },
+  "missingStates": [],
+  "interactionNote": "Statik 375/768 homepage sızdı; interact opener summary[aria-label=Search] + fill bouquet. 1440 iki kolon öneri/ürün."
+}

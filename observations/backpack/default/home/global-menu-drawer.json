@@ -1,0 +1,75 @@
+{
+  "observationId": "backpack.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "backpack",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://adlwin-store.myshopify.com/",
+  "selector": ".mobile-nav-wrapper",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/backpack/default/home/global-menu-drawer.initial.menu-kapali.1440.png",
+    "evidence/backpack/default/home/global-menu-drawer.initial.menu-kapali.375.png",
+    "evidence/backpack/default/home/global-menu-drawer.initial.menu-kapali.768.png",
+    "evidence/backpack/default/home/global-menu-drawer.open.menu-acik.1440.png",
+    "evidence/backpack/default/home/global-menu-drawer.open.menu-acik.375.png",
+    "evidence/backpack/default/home/global-menu-drawer.open.menu-acik.768.png"
+  ],
+  "storefrontPassword": "1",
+  "captureMode": "viewport",
+  "notlar": "375 hamburger .js-mobile-nav-toggle → .mobile-nav-wrapper.js-menu--is-open: Home Catalog Contact Wishlist. #NavDrawer yok.",
+  "delta": "Debut inline mobile-nav-wrapper; yan drawer değil. 1440 hamburger de var (logo sol). Account tıklanmadı. Shopify.theme.name Theme export adlwin-com-adlwin-zenon… · schema_name Debut · schema_version 17.14.1 · theme_store_id null · role main · id 134700761330.",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://adlwin-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "menu-kapali",
+      "not": "Hamburger kapalı"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": ".js-mobile-nav-toggle",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "menu-acik",
+      "not": "Home / Catalog / Contact / Wishlist"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Hamburger kapalı. 375: logo + search + cart. 1440: hamburger + adlwin + Search pill + wishlist/account/cart.",
+    "open": "Siyah panel. 375 tam ekran: Home / Catalog / Contact / Wishlist + X. 1440 sol çekmece aynı linkler (Wishlist 1440 karede kesilebilir), home hero arkada."
+  },
+  "missingStates": [],
+  "interactionNote": "Log in tıklanmadı. 1440 hamburger görünür (Debut plus).",
+  "capture": {
+    "url": "https://adlwin-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T13:51:20.167Z"
+  }
+}

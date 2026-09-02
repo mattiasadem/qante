@@ -1,0 +1,97 @@
+{
+  "observationId": "vedzila.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "vedzila",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://vedzila-organic.myshopify.com/",
+  "selector": "details-modal.header__search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/vedzila/default/home/global-predictive-search.1440.png",
+    "evidence/vedzila/default/home/global-predictive-search.375.png",
+    "evidence/vedzila/default/home/global-predictive-search.768.png",
+    "evidence/vedzila/default/home/global-predictive-search.initial.arama-bos.1440.png",
+    "evidence/vedzila/default/home/global-predictive-search.initial.arama-bos.375.png",
+    "evidence/vedzila/default/home/global-predictive-search.initial.arama-bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Header search ikon → search-modal + #Search-In-Modal-1. Predictive host.",
+  "delta": "Dawn details-modal.header__search. Statik host; sonuç interact.",
+  "prepareClick": "details-modal.header__search summary.header__icon--search",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://vedzila-organic.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "selector": "details-modal.header__search summary.header__icon--search",
+      "value": "Enter",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "force-click/forceOpen modal açmadı; summary focus+Enter"
+    },
+    {
+      "state": "input",
+      "action": "goto",
+      "value": "https://vedzila-organic.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "press",
+      "selector": "details-modal.header__search summary.header__icon--search",
+      "value": "Enter",
+      "capture": false,
+      "not": "input için taze modal — araya SS koyma"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal-1",
+      "value": "oil",
+      "capture": false,
+      "not": "katalog: Hair Oil / Facial Oil — walk q=oil. Playwright visible değilse input event"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-oil",
+      "not": "Öneri + ürün satırı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Üstte boş Search kutusu + büyüteç + X. Sayfa karartılı. Öneri/ürün satırı yok."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "Boş modal açıldı; fill/evaluate sonrası resmi kare homepage kaldı (öneri listesi yok). İkinci deneme aynı. Probe'da q=oil: SUGGESTIONS oil/almond oil/giovanni shampoo/castor oil/red raspberry facial oil/Hair Oil + 5 ürün. Submit yok."
+    }
+  ],
+  "interactionNote": "İki search input: görünür #Search-In-Modal-1. details-modal 2 eşleşme — viewport. force-click açmadı; summary focus+Enter boş modal. katalogSorgu scan=hair, fill denemesi=oil.",
+  "capture": {
+    "url": "https://vedzila-organic.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:29:49.961Z",
+    "prepareClick": "details-modal.header__search summary.header__icon--search"
+  }
+}

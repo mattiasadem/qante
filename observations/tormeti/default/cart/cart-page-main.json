@@ -1,0 +1,106 @@
+{
+  "observationId": "tormeti.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "tormeti",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://tormeti-fashi.myshopify.com/cart",
+  "selector": "#shopify-section-template--18185183920345__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/tormeti/default/cart/cart-page-main.1440.png",
+    "evidence/tormeti/default/cart/cart-page-main.375.png",
+    "evidence/tormeti/default/cart/cart-page-main.768.png",
+    "evidence/tormeti/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/tormeti/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/tormeti/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/tormeti/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/tormeti/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/tormeti/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/tormeti/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/tormeti/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/tormeti/default/cart/cart-page-main.initial.sepet-bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Boş: Your cart is empty · CONTINUE SHOPPING · Have an account? Log in. Interact: filled + qty.",
+  "delta": "cart-footer boşken h=0. Checkout tıklanmadı. Tema (görülen, uydurulmadı): Shopify.theme.name Pandora-jewellery V-1.5.0 final · schema_name Pandora_Jewellery · schema_version 1.5.0 · theme_store_id null · role main · id 143506604249 · shop tormeti-fashi.myshopify.com · vendor Speedo Themes · slug tormeti · public storefront unlock /password 1 (Speedo ürün sayfası).",
+  "capture": {
+    "url": "https://tormeti-fashi.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:04:47.540Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://tormeti-fashi.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "etiket": "sepet-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://tormeti-fashi.myshopify.com/products/gold-and-diamond-stud-earrings",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--18185184706777__main",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://tormeti-fashi.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--18185183920345__cart-items button[name='plus'], button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty · CONTINUE SHOPPING · Have an account? Log in to check out faster.",
+    "filled": "Your cart · PRODUCT / QUANTITY / TOTAL · Gold And Diamond Stud Earrings thumb · $140 · Metal: Gold · adet 1 · çöp · satır total $140.",
+    "changed": "Adet 2 · satır total $280.00."
+  },
+  "missingStates": [],
+  "interactionNote": "filled/addToCart → ui. Checkout / Log in tıklanmadı."
+}
