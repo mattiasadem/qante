@@ -46,6 +46,7 @@
 | HexClad | [`hexclad.md`](./hexclad.md) | ✅ listicle-fathers-day · 5 obs · 15 PNG · 0 yeni şema |
 | Allbirds | [`allbirds.md`](./allbirds.md) | 🟡 Mod A — 30 obs · ~90 PNG · partial capture (search blocked) |
 | Backpack (Speedo) | [`backpack.md`](./backpack.md) | ✅ default — adlwin-store · Debut 17.14.1 · password 1 · 22 obs · 81 PNG · 0 yeni şema |
+| Bevaria (Speedo) | [`bevaria.md`](./bevaria.md) | 🟡 first inventory — beverages-online-store · Bevaria 1.5.0 · password `1` · 50 obs · 0 yeni şema |
 | Candle (Speedo) | [`candle.md`](./candle.md) | ✅ Mod A + interact — password `1` · 41 obs · static 3vp + shopper states · 0 yeni şema |
 | Furnix (Speedo / Decora) | [`furnix.md`](./furnix.md) | 🟡 Mod A + interact — `pandora-furniture-6` · password 1 · 41 obs · 173 PNG · 0 yeni şema |
 | Guccy (Speedo) | [`guccy.md`](./guccy.md) | ✅ first inventory — fashion-store-clean-20 · Guccy 1.5.0 · password 1 · 46 obs · 157 PNG · 0 yeni şema · hamburger leftover |
