@@ -39,21 +39,21 @@ shop `sonix-electronics-store.myshopify.com`
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home + announcement/header/slideshow/marquee/categories/featured/promo/blog/trust/footer | roster | [ ] |
+| Home + announcement/header/slideshow/marquee/categories/featured/promo/blog/trust/footer | roster | [x] |
 | Mega SHOP / FEATURES 1440 | interact | [ ] |
 | Predictive search `iphone` | interact | [ ] |
 | Mobile menu 375 + 768 | interact | [ ] |
 | Cart drawer empty + filled + qty | interact | [ ] |
 | PDP Echo Dot Color Black→White | interact | [ ] |
-| PLP `/collections/alexa` | roster | [ ] |
-| Collections index `/collections` | roster | [ ] |
-| Search `/search?q=iphone` | roster | [ ] |
+| PLP `/collections/alexa` | roster | [x] |
+| Collections index `/collections` | roster | [x] |
+| Search `/search?q=iphone` | roster | [x] |
 | Cart `/cart` empty + filled + qty | interact | [ ] |
-| About `/pages/about-us` | roster | [ ] |
-| Contact `/pages/contact` (submit yok) | roster | [ ] |
-| FAQ `/pages/faqs` | roster + interact | [ ] |
-| Blog `/blogs/news` + launching article | roster | [ ] |
-| 404 leftover | roster | [ ] |
+| About `/pages/about-us` | roster | [x] |
+| Contact `/pages/contact` (submit yok) | roster | [x] |
+| FAQ `/pages/faqs` | roster + interact | [x] roster |
+| Blog `/blogs/news` + launching article | roster | [x] |
+| 404 leftover | roster | [x] |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -108,7 +108,7 @@ shop `sonix-electronics-store.myshopify.com`
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
+- [x] Official 3vp static (`capture-observation.mjs`) — 39 obs · 116 PNG
 - [ ] Interact mega / search / menu / cart / PDP Color / FAQ / slideshow
 - [ ] PNG bak → stateFindings
 - [ ] `npm run validate` — 0 error

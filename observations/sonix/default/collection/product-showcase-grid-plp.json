@@ -14,16 +14,36 @@
   ],
   "storePassword": "1",
   "notlar": "FILTERS dikey: Color / SSD / Internal Storage / Availability / Price. 8 ALEXA ürün. Mobil Filters çekmece.",
-  "delta": "Dawn facets__disclosure-vertical. Interact: Color Black.",
+  "delta": "Dawn facets__disclosure-vertical. Interact: Color Black (1440 sidebar). 375/768 facet gizli — changed yalnız 1440.",
   "capture": {
     "url": "https://sonix-electronics-store.myshopify.com/collections/alexa",
-    "viewports": [
-      "375",
-      "768",
-      "1440"
-    ],
+    "viewports": ["375", "768", "1440"],
     "mode": "section",
     "method": "margin-box+minPad8",
     "updatedAt": "2026-09-02T17:13:04.898Z"
-  }
+  },
+  "interactionStates": ["initial", "changed"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sonix-electronics-store.myshopify.com/collections/alexa",
+      "capture": true,
+      "etiket": "filtre-yok",
+      "not": "8 ürün"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "[id='Filter-filter.v.option.color-1']",
+      "viewports": ["1440"],
+      "value": 2000,
+      "capture": true,
+      "etiket": "color-black",
+      "not": "Color Black (2) — ızgara 8→2 beklenir"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Color checkbox #Filter-filter.v.option.color-1 yalnız 1440 görünür. 375/768 Filters çekmece — changed yok (sidebar yok). Checkout yok."
 }

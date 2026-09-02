@@ -8,22 +8,40 @@
   "selector": "#shopify-section-sections--22992854974764__header",
   "evidenceSlug": "navigation-header-mega",
   "evidence": [
+    "evidence/sonix/default/home/navigation-header-mega.1440.png",
     "evidence/sonix/default/home/navigation-header-mega.375.png",
-    "evidence/sonix/default/home/navigation-header-mega.768.png",
-    "evidence/sonix/default/home/navigation-header-mega.1440.png"
+    "evidence/sonix/default/home/navigation-header-mega.768.png"
   ],
   "storePassword": "1",
   "notlar": "Logo + inline search + cart. Nav: SHOP BY CATEGORY / HOME / SHOP / FEATURES / OUR STORE / ABOUT US / CONTACT US. Mega: details#Details-HeaderMenu-2.SHOP + #Details-HeaderMenu-3.FEATURES. Account tıklanmadı.",
   "delta": "Dawn-benzeri header. 1440 inline predictive-search (#Search-In-Template). Wishlist/Compare ikonları /pages/wishlist /pages/compare — leftover. Hamburger 375/768 → global-menu-drawer.",
   "capture": {
     "url": "https://sonix-electronics-store.myshopify.com/",
-    "viewports": [
-      "375",
-      "768",
-      "1440"
-    ],
-    "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T17:30:17.944Z"
-  }
+    "viewports": ["375", "768", "1440"],
+    "mode": "section"
+  },
+  "interactionStates": ["initial", "open"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sonix-electronics-store.myshopify.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-2 > summary",
+      "viewports": ["1440"],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "SHOP hover — panel açıkken çek (ayrı wait hover düşürür). İç <a> tıklanmadı."
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "375/768 mega header'da değil — global-menu-drawer. SHOP summary hover; iç <a href=/collections/all> tıklanmadı."
 }

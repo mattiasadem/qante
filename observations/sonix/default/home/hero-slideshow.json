@@ -8,22 +8,51 @@
   "selector": "#shopify-section-template--22992854516012__3b7cb796-4e44-4edc-96f9-002a08ba8170",
   "evidenceSlug": "hero-slideshow",
   "evidence": [
+    "evidence/sonix/default/home/hero-slideshow.1440.png",
     "evidence/sonix/default/home/hero-slideshow.375.png",
-    "evidence/sonix/default/home/hero-slideshow.768.png",
-    "evidence/sonix/default/home/hero-slideshow.1440.png"
+    "evidence/sonix/default/home/hero-slideshow.768.png"
   ],
   "storePassword": "1",
-  "notlar": "PLAYSTATION VR / IPHONE 15 PRO MAX / NEW APPLE SMARTPHONE. SHOP NOW → /collections/all. slideshow-component + nokta + ok.",
-  "delta": "Metin slayt üzerinde. Slayt <a> koleksiyona gider.",
+  "notlar": "PLAYSTATION VR / IPHONE 15 PRO MAX / NEW APPLE SMARTPHONE. SHOP NOW → /collections/all. slideshow-component + nokta. Ok 0×0.",
+  "delta": "Metin slayt üzerinde. Slayt <a> koleksiyona gider. Next/prev gizli; nokta 30×30.",
   "capture": {
     "url": "https://sonix-electronics-store.myshopify.com/",
-    "viewports": [
-      "375",
-      "768",
-      "1440"
-    ],
-    "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T17:29:18.997Z"
-  }
+    "viewports": ["375", "768", "1440"],
+    "mode": "section"
+  },
+  "interactionStates": ["initial", "changed"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sonix-electronics-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--22992854516012__3b7cb796-4e44-4edc-96f9-002a08ba8170",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "etiket": "slayt-1",
+      "not": "PLAYSTATION VR — nokta 1 aktif"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[aria-label='Load slide 2 of 3']",
+      "value": 2000,
+      "capture": true,
+      "etiket": "slayt-2",
+      "not": "IPHONE 15 PRO MAX. Ok 0×0 — nokta. Slayt <a> tıklanmadı."
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Yoklama: nokta 2 tık → slayt 2 aria-hidden=false, nokta --active. İlk çekimde 800ms yetmedi / hover kaybı yok. Retry 2000ms."
 }

@@ -8,26 +8,107 @@
   "selector": "cart-drawer",
   "evidenceSlug": "global-cart-drawer",
   "evidence": [
+    "evidence/sonix/default/home/global-cart-drawer.1440.png",
     "evidence/sonix/default/home/global-cart-drawer.375.png",
-    "evidence/sonix/default/home/global-cart-drawer.768.png",
-    "evidence/sonix/default/home/global-cart-drawer.1440.png"
+    "evidence/sonix/default/home/global-cart-drawer.768.png"
   ],
   "storePassword": "1",
   "notlar": "Boş drawer: Your cart is empty / CONTINUE SHOPPING / Log in to check out faster.",
-  "delta": "Dawn cart-drawer. Dolu hâl interact'te. Login tıklanmadı.",
+  "delta": "Dawn cart-drawer. Dolu hâl interact'te. Login tıklanmadı. #cart-icon-bubble href=/cart — tıklanmaz (sayfa kaçar).",
   "captureMode": "viewport",
-  "prepareClick": "#cart-icon-bubble",
   "prepareForceOpen": true,
   "capture": {
     "url": "https://sonix-electronics-store.myshopify.com/",
-    "viewports": [
-      "375",
-      "768",
-      "1440"
-    ],
-    "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T17:52:32.122Z",
-    "prepareClick": "#cart-icon-bubble"
-  }
+    "viewports": ["375", "768", "1440"],
+    "mode": "viewport"
+  },
+  "interactionStates": ["initial", "filled", "changed"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sonix-electronics-store.myshopify.com/cart/clear",
+      "capture": false,
+      "not": "Viewport başına sepet sıfırla"
+    },
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sonix-electronics-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 700,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Your cart is empty"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://sonix-electronics-store.myshopify.com/products/amazon-echo-dot-3rd-generation-smart-alexa-speaker",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--22992854843692__main",
+      "capture": false,
+      "not": "Echo Dot Black $200 — hidden input name=id 47943176454444"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Echo Dot satırı qty 1"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "cart-drawer button[name='plus']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1600,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "qty 1→2"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "ATC UI tık (yoklama: item_count 0→1, drawer.active). #cart-icon-bubble /cart link — tıklanmadı; forceOpen. Checkout / login tıklanmadı."
 }

@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--22992854843692__main",
   "evidenceSlug": "product-info-main",
   "evidence": [
+    "evidence/sonix/default/product-detail/product-info-main.1440.png",
     "evidence/sonix/default/product-detail/product-info-main.375.png",
     "evidence/sonix/default/product-detail/product-info-main.768.png",
-    "evidence/sonix/default/product-detail/product-info-main.1440.png"
+    "evidence/sonix/default/product-detail/product-info-main.changed.color-white.1440.png",
+    "evidence/sonix/default/product-detail/product-info-main.changed.color-white.375.png",
+    "evidence/sonix/default/product-detail/product-info-main.changed.color-white.768.png",
+    "evidence/sonix/default/product-detail/product-info-main.initial.color-black.1440.png",
+    "evidence/sonix/default/product-detail/product-info-main.initial.color-black.375.png",
+    "evidence/sonix/default/product-detail/product-info-main.initial.color-black.768.png"
   ],
   "storePassword": "1",
   "notlar": "AMAZON ECHO DOT SMART ALEXA SPEAKER $200. Color Black|White. 256 in stock. Hurry up! Sales End In (sayaç). ADD TO CART / BUY IT NOW. EXTRA INFORMATION / SHIPPING & RETURNS / MATERIALS.",
@@ -23,7 +29,36 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T17:40:58.714Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:01:02.826Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sonix-electronics-store.myshopify.com/products/amazon-echo-dot-3rd-generation-smart-alexa-speaker",
+      "capture": true,
+      "etiket": "color-black",
+      "not": "Color Black $200"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='template--22992854843692__main-1-1']",
+      "value": 1200,
+      "capture": true,
+      "etiket": "color-white",
+      "not": "White swatch"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Color: Black, $200.00. Galeri charcoal Echo Dot + 4 thumbnail. 12–25 People are viewing; 256 in stock, Delivery by Sep 12, 2026. Hurry up! Sales End In sayaç. ADD TO CART / BUY IT NOW. EXTRA INFORMATION / SHIPPING & RETURNS / MATERIALS kapalı.",
+    "changed": "Color: White — beyaz swatch ince siyah halka. Etiket White. Ana görsel hâlâ charcoal Echo Dot (görsel değişmedi). Fiyat $200 aynı."
+  },
+  "missingStates": [],
+  "interactionNote": "BUY IT NOW / checkout tıklanmadı. White seçiminde galeri swap yok — yalnız etiket/swatch."
 }
