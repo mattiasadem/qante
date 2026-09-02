@@ -184,6 +184,7 @@ export const KAYNAK_SOURCES = Object.freeze({
   savor: "shopify",
   sense: "shopify",
   showcase: "shopify",
+  shrilahome: "shopify",
   sleek: "shopify",
   spotlight: "shopify",
   stack: "shopify",

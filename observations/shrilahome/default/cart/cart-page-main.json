@@ -1,0 +1,66 @@
+{
+  "observationId": "shrilahome.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "shrilahome",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://pandora-furniture-5.myshopify.com/cart",
+  "selector": "#shopify-section-template--22988896928054__cart-items",
+  "storefrontPassword": "1",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "notlar": "Boş: Your cart is empty + CONTINUE SHOPPING + Have an account? Log in. Sibling cart-footer h=0 boşken.",
+  "delta": "Shopify.theme.name Shrilahome-Furniture-v-1-5-0 · schema_name shrilahome · schema_version 1.5.0 · theme_store_id null · role main · id 169736438070 · shop pandora-furniture-5.myshopify.com. Vendor Speedo Themes (third-party OS 2.0, Theme Store değil). Storefront password 1 (speedothemes.com product page). Host pandora-furniture-5.myshopify.com — başka host uydurulmadı. Dawn cart-items + ayrı cart-footer leftover. Log in PII yok.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-furniture-5.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "etiket": "bos",
+      "not": "Boş sepet"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://pandora-furniture-5.myshopify.com/products/circle-lounge-chairs",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'], form[action*='/cart/add'] button[type='submit']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://pandora-furniture-5.myshopify.com/cart",
+      "capture": true,
+      "etiket": "dolu",
+      "not": "Circle Lounge 1"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], quantity-input button[name='plus']",
+      "capture": true,
+      "etiket": "adet-2",
+      "not": "qty 1→2"
+    }
+  ],
+  "missingStates": [],
+  "interactionNote": "Checkout / account yok."
+}

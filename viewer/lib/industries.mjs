@@ -205,6 +205,7 @@ export const KAYNAK_INDUSTRIES = Object.freeze({
   savor: [FOOD],
   sense: [BEAUTY],
   showcase: [HOME],
+  shrilahome: [HOME],
   sleek: [BEAUTY],
   spotlight: [FASHION],
   stack: [SPORTS],

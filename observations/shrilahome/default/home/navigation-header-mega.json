@@ -1,0 +1,56 @@
+{
+  "observationId": "shrilahome.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "shrilahome",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pandora-furniture-5.myshopify.com/",
+  "selector": "#shopify-section-sections--22988898894134__header",
+  "storefrontPassword": "1",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [],
+  "notlar": "Sticky header. Logo + Search + Log in + Cart. 1440 section wrapper h=0 (Dawn sticky). 375 hamburger summary[aria-label=Menu] → #menu-drawer. HeaderDrawer-sofas-chairs nested.",
+  "delta": "Shopify.theme.name Shrilahome-Furniture-v-1-5-0 · schema_name shrilahome · schema_version 1.5.0 · theme_store_id null · role main · id 169736438070 · shop pandora-furniture-5.myshopify.com. Vendor Speedo Themes (third-party OS 2.0, Theme Store değil). Storefront password 1 (speedothemes.com product page). Host pandora-furniture-5.myshopify.com — başka host uydurulmadı. Dawn-fork header. Mega kolon 1440 kapalı karede metin boş (görsel linkler: corner-sofas / leatherette / modular / mattresses / dining-set + about/contact/faqs/wishlist/compare). Interact open. Account tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-furniture-5.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Menü kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "header .header__inline-menu .list-menu--inline > li:first-child a, header .header__inline-menu details > summary, #Details-HeaderMenu-1 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "masaustu-menu",
+      "not": "1440 ilk nav/mega"
+    }
+  ],
+  "missingStates": [],
+  "interactionNote": "375/768 hamburger ayrı global-menu-drawer. Log in PII yoklandı değil."
+}

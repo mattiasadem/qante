@@ -179,6 +179,7 @@ Mapped from the **walked demo catalog** or an obvious official preset vertical. 
 | savor | Food & Beverage | dipping sauces |
 | sense | Beauty & Health | Skin / Body / Nail Polish |
 | showcase | Home & Furniture | Betty — silicone / spill-proof home |
+| shrilahome | Home & Furniture | Speedo Shrilahome furniture demo (sofas / chairs / tables) |
 | sleek | Beauty & Health | “Blend Beauty In You” |
 | spotlight | Fashion & Clothing | walked catalog: caps, tees, Sweater Icon Crewneck (footer “creative culture” is chrome, not merch) |
 | stack | Sports & Activities | Mass — cardio / indoor cycling bike |

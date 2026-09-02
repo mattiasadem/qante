@@ -1,0 +1,67 @@
+{
+  "observationId": "shrilahome.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "shrilahome",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pandora-furniture-5.myshopify.com/",
+  "selector": "#menu-drawer",
+  "storefrontPassword": "1",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [],
+  "notlar": "375/768 hamburger summary[aria-label=Menu] → #menu-drawer. Nested HeaderDrawer-sofas-chairs.",
+  "delta": "Shopify.theme.name Shrilahome-Furniture-v-1-5-0 · schema_name shrilahome · schema_version 1.5.0 · theme_store_id null · role main · id 169736438070 · shop pandora-furniture-5.myshopify.com. Vendor Speedo Themes (third-party OS 2.0, Theme Store değil). Storefront password 1 (speedothemes.com product page). Host pandora-furniture-5.myshopify.com — başka host uydurulmadı. Dawn menu-drawer. 1440 hamburger yok (inline).",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-furniture-5.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "summary.header__icon--menu, summary[aria-label='Menu']",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger-acik",
+      "not": "Drawer açık"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#HeaderDrawer-sofas-chairs",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sofas-nested",
+      "not": "Sofas & chairs nested. Yazılı <a> tıklanmaz."
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger yok — inline nav"
+    }
+  ],
+  "interactionNote": "Yazılı koleksiyon <a> tıklanmadı."
+}

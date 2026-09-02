@@ -1,0 +1,60 @@
+{
+  "observationId": "shrilahome.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "shrilahome",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pandora-furniture-5.myshopify.com/products/circle-lounge-chairs",
+  "selector": "#CartDrawer",
+  "storefrontPassword": "1",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [],
+  "notlar": "Dawn cart-drawer #CartDrawer + cart-notification CSS. Cart ikonu /cart. ATC Circle Lounge Chairs.",
+  "delta": "Shopify.theme.name Shrilahome-Furniture-v-1-5-0 · schema_name shrilahome · schema_version 1.5.0 · theme_store_id null · role main · id 169736438070 · shop pandora-furniture-5.myshopify.com. Vendor Speedo Themes (third-party OS 2.0, Theme Store değil). Storefront password 1 (speedothemes.com product page). Host pandora-furniture-5.myshopify.com — başka host uydurulmadı. Drawer DOM var (is-empty). ATC sonrası drawer mı notification mı interact'te. Checkout tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://pandora-furniture-5.myshopify.com/products/circle-lounge-chairs",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'], form[action*='/cart/add'] button[type='submit']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#cart-icon-bubble, a.header__icon--cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer veya /cart"
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "Boş drawer kapalı 0-size — filled ayrı"
+    }
+  ],
+  "interactionNote": "AJAX fallback olursa not. Checkout yok."
+}
