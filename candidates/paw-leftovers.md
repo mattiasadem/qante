@@ -21,7 +21,7 @@ Karar: onay bekliyor
 ---
 
 ADAY: paw-password-in-shop-name  
-Gerekçe: Title/shop adı `petz online store (password: 1)`. Vendor ürün sayfasında demo şifresi `1`. Walk'ta `/password` formu yoktu (mağaza açıktı). Başka host denenmedi.  
+Gerekçe: Title/shop adı `petz online store (password: 1)`. Vendor ürün sayfasında demo şifresi `1`. 375 capture `/password` duvarına düştü — aynı host’ta `1` ile açıldı. Başka host denenmedi.  
 Örnekler: document.title  
 Öneri: leftover — branding / unlock notu  
 Karar: onay bekliyor
@@ -29,7 +29,7 @@ Karar: onay bekliyor
 ---
 
 ADAY: paw-no-mega  
-Gerekçe: `.mega-menu` yok. 1440 SHOP ALL = `#Details-HeaderMenu-2` + `header__submenu` dikey liste (görsel/promo kolon yok). `navigation-header-mega` yazıldı; delta: dropdown.  
+Gerekçe: `.mega-menu` yok. 1440 SHOP ALL hover = `#Details-HeaderMenu-2` + `header__submenu` PET TOYS / PET CLOTHING / PET ACCESSORIES. Summary içindeki `<a href="/collections/all">` tıklanınca PLP. `navigation-header-mega` yazıldı; interact yalnız hover.  
 Örnekler: https://petz-online-store.myshopify.com/ `#Details-HeaderMenu-2`  
 Öneri: leftover — mega yok  
 Karar: onay bekliyor
@@ -112,6 +112,22 @@ ADAY: paw-newsletter-pii
 Gerekçe: Home newsletter + footer `#ContactFooter` + contact Send. PII — dur.  
 Örnekler: form#contact_form · form#ContactFooter  
 Öneri: leftover — submit yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: paw-cart-drawer-shipping-tiers  
+Gerekçe: Dolu `cart-drawer` Free Shipping $100 + Express Shipping $150 progress. `kargoEsigi` şemada var; ikinci eşik / express ayrı knob yazılmadı.  
+Örnekler: ATC Chicken Pulao  
+Öneri: leftover — çift kargo eşiği  
+Karar: onay bekliyor
+
+---
+
+ADAY: paw-product-card-hover  
+Gerekçe: Featured kartta 2 img + wishlist kalp. Hover karesi çekilmedi (ikinci görsel / quick-view doğrulanmadı).  
+Örnekler: home YOU MAY LOVE  
+Öneri: leftover — kart hover  
 Karar: onay bekliyor
 
 ---

@@ -7,8 +7,79 @@
   "url": "https://petz-online-store.myshopify.com/",
   "selector": "#menu-drawer",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/paw/default/home/global-menu-drawer.changed.shop-all-akordeon.375.png",
+    "evidence/paw/default/home/global-menu-drawer.changed.shop-all-akordeon.768.png",
+    "evidence/paw/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/paw/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
   "notlar": "375/768 hamburger → #menu-drawer. HOME / SHOP ALL / PET FOOD / OUR STORY / FAQ / CONTACT + wishlist translation missing + sosyal.",
   "delta": "Dawn menu-drawer. 1440 hamburger gizli (inline nav). SHOP ALL nested #Details-menu-drawer-menu-item-2. Shopify.theme.name petz-online-store-v-1-5-0 · schema_name petz_online_store · schema_version 1.5.0 · theme_store_id null · role main · id 176281059615 · shop petz-online-store.myshopify.com · vendor Speedo Themes · product Speedo Petz / PAW · slug paw · preset default",
-  "captureMode": "viewport"
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://petz-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header-drawer summary.header__icon--menu, #Details-menu-drawer-container > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Drawer açık; 1440 hamburger yok"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-menu-drawer-menu-item-2 > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-all-akordeon",
+      "not": "SHOP ALL nested"
+    }
+  ],
+  "stateFindings": {
+    "open": "375: tam genişlik drawer — HOME (aktif) / SHOP ALL → / PET FOOD / OUR STORY / FAQ / CONTACT; wishlist Translation missing; sosyal. 768: sol ~2/3 drawer, sağda karartılı hero.",
+    "changed": "375/768 SHOP ALL → geri oku + PET TOYS / PET CLOTHING / PET ACCESSORIES. In-place nested, mega değil."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger yok (Dawn large-up inline) — beklenen"
+    }
+  ],
+  "interactionNote": "Wishlist translation missing leftover. Account tıklanmadı. 1440 N/A.",
+  "capture": {
+    "url": "https://petz-online-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:36:34.347Z"
+  }
 }

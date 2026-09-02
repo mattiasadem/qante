@@ -7,8 +7,77 @@
   "url": "https://petz-online-store.myshopify.com/",
   "selector": "#shopify-section-sections--24252638429471__header",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
+  "evidence": [
+    "evidence/paw/default/home/navigation-header-mega.1440.png",
+    "evidence/paw/default/home/navigation-header-mega.375.png",
+    "evidence/paw/default/home/navigation-header-mega.768.png",
+    "evidence/paw/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/paw/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/paw/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/paw/default/home/navigation-header-mega.open.shop-all.1440.png"
+  ],
   "notlar": "sticky-header header--top-center. 1440: HOME / SHOP ALL / PET FOOD / OUR STORY / FAQ / CONTACT + search + cart. Logo petz. Sosyal ikonlar header'da.",
   "delta": "Mega yok — Dawn details + header__submenu. #Details-HeaderMenu-2 SHOP ALL. 375/768 hamburger ayrı global-menu-drawer. Wishlist translation missing leftover. Account/log in yoklandı değil. Shopify.theme.name petz-online-store-v-1-5-0 · schema_name petz_online_store · schema_version 1.5.0 · theme_store_id null · role main · id 176281059615 · shop petz-online-store.myshopify.com · vendor Speedo Themes · product Speedo Petz / PAW · slug paw · preset default",
-  "captureMode": "viewport"
+  "captureMode": "viewport",
+  "capture": {
+    "url": "https://petz-online-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:34:08.460Z"
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://petz-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Dropdown kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-2 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-all",
+      "not": "SHOP ALL hover — PET TOYS / PET CLOTHING / PET ACCESSORIES. İç <a href=/collections/all> tıklanınca PLP."
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440: PAW.com logo ortada; HOME altı çizili; SHOP ALL chevron; PET FOOD / OUR STORY / FAQ / CONTACT. Sol search+wishlist 0; sağ sosyal+sepet. Hero Organic Pet Food. 375/768: hamburger + logo + search + cart; mega yok.",
+    "open": "1440 SHOP ALL hover: krem dropdown — PET TOYS / PET CLOTHING / PET ACCESSORIES. Kolon/görsel/promo yok. Tık /collections/all PLP'ye kaçar (iç <a>)."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "open = SHOP ALL hover; ayrı hover state yok"
+    }
+  ],
+  "interactionNote": "Mega yok. Log in yok. Wishlist translation missing leftover. SHOP ALL tık PLP — yalnız hover."
 }
