@@ -8,9 +8,18 @@
   "selector": "#shopify-section-template--17443720954011__cart-items",
   "evidenceSlug": "cart-page-main",
   "evidence": [
+    "evidence/nouk/default/cart/cart-page-main.1440.png",
     "evidence/nouk/default/cart/cart-page-main.375.png",
     "evidence/nouk/default/cart/cart-page-main.768.png",
-    "evidence/nouk/default/cart/cart-page-main.1440.png"
+    "evidence/nouk/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/nouk/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/nouk/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/nouk/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/nouk/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/nouk/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/nouk/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/nouk/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/nouk/default/cart/cart-page-main.initial.sepet-bos.768.png"
   ],
   "storePassword": "1",
   "notlar": "Boş: Your cart is empty / CONTINUE SHOPPING / Have an account? Log in to check out faster. cart-footer 0px boşken.",
@@ -23,8 +32,8 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T13:36:58.678Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:31:22.443Z"
   },
   "interactionSteps": [
     {
@@ -69,5 +78,17 @@
       "etiket": "adet-artti",
       "not": "Adet 1→2"
     }
-  ]
+  ],
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Your cart is empty + CONTINUE SHOPPING + Have an account? Log in… (tıklanmadı).",
+    "filled": "Your cart · Continue shopping. PRODUCT / QUANTITY / TOTAL. Princess Diamond Earrings Stud Earrings · $40 · Metal: Gold · qty 1 · satır $40. Trash. cart-footer (estimated total / Check out) bu section kırpısında yok.",
+    "changed": "Qty 2. Satır TOTAL $80."
+  },
+  "interactionNote": "addToCart → ui sonra /cart. Checkout / LOG IN tıklanmadı. Sibling cart-footer leftover."
 }

@@ -3,6 +3,8 @@
  * Observation: storePassword or capture.storePassword
  * Env: STOREFRONT_PASSWORD
  * Only posts the published demo password on the observation's own origin.
+ * Skips when storefront_digest is already set or the password field is hidden
+ * (second goto in interaction steps must not hang on /password).
  */
 
 export function readStorePassword(obs) {
@@ -19,6 +21,10 @@ export async function unlockStorefrontIfNeeded(page, obs, originUrl) {
   if (!password) return false;
 
   const origin = new URL(originUrl || obs.url).origin;
+
+  const cookies = await page.context().cookies(origin);
+  if (cookies.some((c) => c.name === "storefront_digest")) return false;
+
   await page.goto(`${origin}/password`, {
     waitUntil: "domcontentloaded",
     timeout: 90000,
@@ -27,6 +33,7 @@ export async function unlockStorefrontIfNeeded(page, obs, originUrl) {
 
   const input = page.locator("input[type='password']").first();
   if ((await input.count()) === 0) return false;
+  if (!(await input.isVisible().catch(() => false))) return false;
 
   await input.fill(password);
   const submit = page

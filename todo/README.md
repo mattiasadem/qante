@@ -22,7 +22,7 @@
 | Stretch · Snow / Sand / Diffuse | [`stretch.md`](./stretch.md) | Snow ✅ · Sand ✅ · Diffuse ✅ · 86 obs · 365 kare · 0 yeni şema · interact |
 | Motion · Motion / Satchel / Memo | [`motion.md`](./motion.md) | ✅ 69 obs · 213 kare · 0 yeni şema · WEAR/CARRY |
 | Symmetry · 5 preset | [`symmetry.md`](./symmetry.md) | ✅ 145 obs · 447 kare · 0 yeni şema · hotspot + FAQ |
-| Nouk (Speedo) | [`nouk.md`](./nouk.md) | 🟡 first inventory — `jewelry-online-shop-3` · Nouk Jewellery 1.5.0 · password `1` (vendor) · 44 obs · 0 yeni şema |
+| Nouk (Speedo) | [`nouk.md`](./nouk.md) | 🟡 first inventory — `jewelry-online-shop-3` · Nouk Jewellery 1.5.0 · password `1` (vendor) · 44 obs · ~185 PNG · 0 yeni şema · draft PR |
 | Obvi (Platter custom) | [`obvi.md`](./obvi.md) | ✅ kapalı — 51 obs · community/team/FAQ/contact/policy · 404/scratch kayıtlı · **main'e merge yok** |
 | Bandit Running | [`bandit.md`](./bandit.md) | ✅ default — `bandit-ecomm/main` · DTC-69 #2 · statik 3vp + mega/search/cart/menu · 0 yeni şema |
 | Local (Krown) | [`local.md`](./local.md) | ✅ default — `local-build/light` · resmi 3vp + interact · 45 obs · 154 PNG · 0 yeni şema |

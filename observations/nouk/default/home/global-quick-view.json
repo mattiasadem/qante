@@ -8,7 +8,11 @@
   "selector": "quick-add-modal[open]",
   "prepareScroll": "#shopify-section-template--17443721281691__0617c2f2-69ec-4df8-a506-b2616d4e1db4",
   "evidenceSlug": "global-quick-view",
-  "evidence": [],
+  "evidence": [
+    "evidence/nouk/default/home/global-quick-view.1440.png",
+    "evidence/nouk/default/home/global-quick-view.375.png",
+    "evidence/nouk/default/home/global-quick-view.768.png"
+  ],
   "storePassword": "1",
   "notlar": "SHOP STUD kartı QUICK SHOP → Dawn quick-add-modal.",
   "delta": "Modal; drawer değil. ATC interact'te.",
@@ -22,8 +26,8 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T13:56:19.800Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:36:56.669Z",
     "prepareClick": "#shopify-section-template--17443721281691__0617c2f2-69ec-4df8-a506-b2616d4e1db4 .quick-add__submit"
   },
   "interactionSteps": [
@@ -41,6 +45,13 @@
     },
     {
       "state": "open",
+      "action": "hover",
+      "selector": "#shopify-section-template--17443721281691__0617c2f2-69ec-4df8-a506-b2616d4e1db4 .card",
+      "capture": false,
+      "not": "Kart hover — Quick shop"
+    },
+    {
+      "state": "open",
       "action": "click",
       "selector": "#quick-add-template--17443721281691__0617c2f2-69ec-4df8-a506-b2616d4e1db47855931261083-submit",
       "capture": false,
@@ -49,13 +60,21 @@
     {
       "state": "open",
       "action": "waitFor",
-      "selector": "#QuickAdd-7855931261083",
-      "value": 10000,
+      "value": 1600,
       "capture": true,
       "captureMode": "viewport",
-      "captureSelector": "#QuickAdd-7855931261083",
+      "captureSelector": "quick-add-modal[open]",
       "etiket": "quick-shop",
-      "not": "Unique modal — quick-add-modal[open] çoklu host"
+      "not": "Unique open modal after card hover + Quick shop"
     }
-  ]
+  ],
+  "interactionStates": [],
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "capture-interaction settle sonrası Quick shop modal[open] 0px (iki deneme). Probe (settle yok): #QuickAdd-7855931261083 açık — Princess stud $40, Metal Gold/White Gold, qty. forceOpen ModalDialog.show patlıyor. Üçüncü deneme yok."
+    }
+  ],
+  "stateFindings": {},
+  "interactionNote": "4 quick-add-modal host; unique #QuickAdd-7855931261083. Statik viewport homepage yalanı. ATC/checkout yok."
 }

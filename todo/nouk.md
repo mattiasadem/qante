@@ -27,10 +27,10 @@
 | Evidence kökü | `evidence/nouk/default/` |
 | Capture | `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
-| Parallel | yalnız `observations/nouk/`, `evidence/nouk/`, `todo/nouk.md`, `candidates/nouk-leftovers.md`, capture password helper |
+| Parallel | yalnız `observations/nouk/`, `evidence/nouk/`, `todo/nouk.md`, `candidates/nouk-leftovers.md`, storefront password helper |
 
 **Kapsam satırı:**  
-`Nouk · default · Nouk Jewellery 1.5.0 (theme_store_id null, Speedo) · jewelry-online-shop-3 · storefront password 1 (vendor published) · home→PDP→PLP→search→cart→about/contact/faq→blog→compare/wishlist→policy→collections · 44 obs · 0 yeni şema · leftover: candidates/nouk-leftovers.md`
+`Nouk · default · Nouk Jewellery 1.5.0 (theme_store_id null, Speedo) · jewelry-online-shop-3 · storefront password 1 (vendor published) · home→PDP→PLP→search→cart→about/contact/faq→blog→compare/wishlist→policy→collections · 44 obs · ~185 PNG · 0 yeni şema · leftover: candidates/nouk-leftovers.md`
 
 ---
 
@@ -38,29 +38,30 @@
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | roster + capture | [ ] |
-| Mega SHOP/RINGS/DIAMONDS 1440 | interact | [ ] |
-| Predictive search `diamond` | interact | [ ] |
-| Mobile menu 375+768 | interact | [ ] |
-| Cart drawer empty + filled + qty | interact | [ ] |
-| PDP Princess stud variant | interact | [ ] |
-| PLP `/collections/earrings` | roster + capture | [ ] |
-| Collections index `/collections` | roster + capture | [ ] |
-| Search `/search?q=diamond` | roster + capture | [ ] |
-| Cart page empty + filled | interact | [ ] |
-| About `/pages/about-us` | roster + capture | [ ] |
-| Contact `/pages/contact` (submit yok) | roster + capture | [ ] |
-| FAQ `/pages/faqs` | roster + capture + accordion | [ ] |
-| Journal + article | roster + capture | [ ] |
-| Compare / wishlist empty | roster + capture | [ ] |
-| Privacy policy | roster + capture | [ ] |
+| Home roster (announcement→footer) | roster + capture | [x] |
+| Mega SHOP 1440 | interact open | [x] |
+| Predictive search `diamond` | interact input 375/768/1440 | [x] |
+| Mobile menu 375+768 | interact open; RINGS submenu missing | [x] |
+| Cart drawer empty + filled + qty | interact | [x] |
+| PDP Princess stud White Gold | interact changed | [x] |
+| PLP `/collections/earrings` | roster + capture | [x] |
+| Collections index `/collections` | roster + capture | [x] |
+| Search `/search?q=diamond` | roster + capture | [x] |
+| Cart page empty + filled + qty | interact | [x] |
+| About `/pages/about-us` | roster + capture | [x] |
+| Contact `/pages/contact` (submit yok) | roster + capture | [x] |
+| FAQ `/pages/faqs` | roster + capture + 2. soru | [x] |
+| Journal + article | roster + capture | [x] |
+| Compare / wishlist empty | roster + capture | [x] |
+| Privacy policy | roster + capture | [x] |
+| Quick view modal | probe var; capture settle 0px | [ ] |
 | Email / account / checkout / newsletter submit | ⛔ PII | — |
 
 ---
 
 ## Bileşen roster (44)
 
-Home + chrome, PLP, PDP, search, cart, about, contact, FAQ, blog, compare, wishlist, policy, collections index. Şema reuse — `todo` satırları capture sonrası `[x]`.
+Home + chrome, PLP, PDP, search, cart, about, contact, FAQ, blog, compare, wishlist, policy, collections index. Şema reuse — 0 yeni dosya.
 
 ---
 
@@ -72,7 +73,10 @@ Home + chrome, PLP, PDP, search, cart, about, contact, FAQ, blog, compare, wishl
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact mega / search / cart / menu / PDP / FAQ / QV
-- [ ] PNG bak → stateFindings
-- [ ] `npm run validate` — 0 error
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact mega / search / cart / menu / PDP / FAQ / tabs
+- [x] PNG bak → stateFindings
+- [x] `node scripts/validate-schemas.mjs` — 0 error
+- [ ] QV official interact karesi (settle tuzağı)
+- [ ] Featured kart hover karesi (capture hover düşürdü)
+- [ ] Menu RINGS alt liste

@@ -8,7 +8,13 @@
   "selector": "#menu-drawer",
   "evidenceSlug": "global-menu-drawer",
   "evidence": [
-    "evidence/nouk/default/home/global-menu-drawer.768.png"
+    "evidence/nouk/default/home/global-menu-drawer.768.png",
+    "evidence/nouk/default/home/global-menu-drawer.changed.rings-acik.375.png",
+    "evidence/nouk/default/home/global-menu-drawer.changed.rings-acik.768.png",
+    "evidence/nouk/default/home/global-menu-drawer.initial.menu-kapali.375.png",
+    "evidence/nouk/default/home/global-menu-drawer.initial.menu-kapali.768.png",
+    "evidence/nouk/default/home/global-menu-drawer.open.menu-acik.375.png",
+    "evidence/nouk/default/home/global-menu-drawer.open.menu-acik.768.png"
   ],
   "storePassword": "1",
   "notlar": "Hamburger summary[aria=Menu]. #menu-drawer. 1440'ta opener gizli.",
@@ -24,8 +30,8 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T13:58:30.078Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:37:51.572Z",
     "prepareClick": "#Details-menu-drawer-container > summary"
   },
   "interactionSteps": [
@@ -53,27 +59,66 @@
       "state": "open",
       "action": "click",
       "selector": "#Details-menu-drawer-container > summary",
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Hamburger aria=Menu"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "header-drawer",
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Dawn menu-opening host"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-menu-drawer-container",
       "capture": true,
       "captureMode": "viewport",
+      "captureSelector": "#menu-drawer",
       "etiket": "menu-acik",
       "viewports": [
         "375",
         "768"
       ],
-      "not": "Hamburger → #menu-drawer"
+      "not": "details[open] + menu-opening"
     },
     {
       "state": "changed",
       "action": "click",
-      "selector": "#Details-menu-drawer-menu-item-3 > summary",
+      "selector": "#HeaderDrawer-rings",
       "capture": true,
       "captureMode": "viewport",
+      "captureSelector": "#menu-drawer",
       "etiket": "rings-acik",
       "viewports": [
         "375",
         "768"
       ],
-      "not": "RINGS expander (summary'de <a> yok)"
+      "not": "RINGS expander #HeaderDrawer-rings"
     }
-  ]
+  ],
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "RINGS #HeaderDrawer-rings tıklandı; kare open ile aynı (alt liste görünmedi). İkinci deneme yok."
+    }
+  ],
+  "stateFindings": {
+    "initial": "375/768: hamburger kapalı; header + hero. #menu-drawer visibility:hidden.",
+    "open": "375 tam panel / 768 sol çekmece: SHOP BY CATEGORY · HOME SHOP RINGS→ DIAMONDS→ ABOUT US CONTACT US · WISHLIST 0 · COMPARE 0 · LOG IN · USD · English. 768'de sosyal ikonlar altta. LOG IN tıklanmadı."
+  },
+  "interactionNote": "1440 hamburger 0px — mega. Settle sonrası düz click details açmıyor; header-drawer.menu-opening + details[open] gerekir. forceOpen menu-opening ekler. Yazılı <a> tıklanmadı."
 }

@@ -66,6 +66,22 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: nouk-you-may-like-post-atc  
+Gerekçe: PDP Add to cart sonrası 1440'ta ortada **YOU MAY LIKE** recs overlay (thumbnail + ADD TO CART + alt ring banner). 375 drawer içinde **YOU MAY LIKE** akordeon. `global-cart-drawer` filled karesinde görüldü; ayrı şema yazılmadı.  
+Örnekler: https://jewelry-online-shop-3.myshopify.com/products/princess-diamond-earrings-stud-earrings  
+Öneri: leftover — post-ATC recs overlay  
+Karar: onay bekliyor
+
+---
+
+ADAY: nouk-quick-view-settle  
+Gerekçe: Probe (settle yok) `#QuickAdd-7855931261083` açtı (Princess stud $40, Metal swatch). `capture-interaction` settle+dismiss sonrası `quick-add-modal[open]` 0px (iki deneme). forceOpen `ModalDialog.show` patlıyor. Official interact evidence yok.  
+Örnekler: https://jewelry-online-shop-3.myshopify.com/  
+Öneri: leftover — QV open karesi  
+Karar: onay bekliyor
+
+---
+
 ## Diğer leftover (aday değil)
 
 - Login / account / checkout — PII, tıklanmadı

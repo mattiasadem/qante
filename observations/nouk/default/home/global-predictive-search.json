@@ -8,8 +8,14 @@
   "selector": "predictive-search.header-search_box",
   "evidenceSlug": "global-predictive-search",
   "evidence": [
+    "evidence/nouk/default/home/global-predictive-search.1440.png",
     "evidence/nouk/default/home/global-predictive-search.768.png",
-    "evidence/nouk/default/home/global-predictive-search.1440.png"
+    "evidence/nouk/default/home/global-predictive-search.initial.arama-bos.1440.png",
+    "evidence/nouk/default/home/global-predictive-search.initial.arama-bos.375.png",
+    "evidence/nouk/default/home/global-predictive-search.initial.arama-bos.768.png",
+    "evidence/nouk/default/home/global-predictive-search.input.arama-diamond.1440.png",
+    "evidence/nouk/default/home/global-predictive-search.input.arama-diamond.375.png",
+    "evidence/nouk/default/home/global-predictive-search.input.arama-diamond.768.png"
   ],
   "storePassword": "1",
   "notlar": "1440'ta header içinde görünen inline predictive-search. Mobilde summary.header__icon--search modal.",
@@ -21,9 +27,9 @@
       "768",
       "1440"
     ],
-    "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T13:43:07.289Z"
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:35:17.558Z"
   },
   "captureMode": "viewport",
   "interactionSteps": [
@@ -40,10 +46,21 @@
       "viewports": [
         "375"
       ],
+      "capture": false,
+      "not": "Mobil büyüteç"
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "details-modal.header__search details",
+      "viewports": [
+        "375"
+      ],
       "capture": true,
       "captureMode": "viewport",
+      "captureSelector": "#shopify-section-sections--17443715973275__header",
       "etiket": "arama-bos",
-      "not": "Mobil büyüteç — modal input"
+      "not": "Modal pin — header-search_box 375'te 0px"
     },
     {
       "state": "initial",
@@ -61,13 +78,14 @@
     {
       "state": "input",
       "action": "fill",
-      "selector": "details-modal.header__search input[name='q']",
+      "selector": "#Search-In-Modal",
       "value": "diamond",
       "viewports": [
         "375"
       ],
       "capture": true,
       "captureMode": "viewport",
+      "captureSelector": "#shopify-section-sections--17443715973275__header",
       "etiket": "arama-diamond",
       "not": "katalogSorgu=diamond"
     },
@@ -85,5 +103,15 @@
       "etiket": "arama-diamond",
       "not": "katalogSorgu=diamond"
     }
-  ]
+  ],
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "375: büyüteç → Search boş input + X kapat; arka plan karartılı. 768/1440: inline kutu placeholder Search.",
+    "input": "q=diamond. SUGGESTIONS: diamond / diamond drop / diamond necklace / silver diamond necklace / diamond round stud / DIAMOND STUD. PRODUCTS: Diamond Round Stud Earrings, Elegant Designed Diamond Necklace, Diamond Double Uneven Bar Stud Earrings, 18kt Yellow Gold Enchanté Side Stones Diamond Ring. Alt: Search for 'diamond'."
+  },
+  "interactionNote": "katalogSorgu=diamond (katalog ürün adı). 375 #Search-In-Modal + details forceOpen. Submit yok."
 }
