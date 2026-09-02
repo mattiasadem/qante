@@ -14,7 +14,7 @@
 
 *Password wall:* vendor ürün sayfası “Please enter password `1` to view demo.” Aynı host `/password` — public storefront unlock.
 
-**Durum:** Mod A roster yazıldı · 3vp capture + interact sırada  
+**Durum:** Mod A roster + resmi 3vp (41 tam · menu-drawer 768) · interact sırada  
 **PR:** draft — main’e merge yok
 
 ---
@@ -38,21 +38,21 @@
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | roster | [ ] capture |
-| Mega SHOP 1440 | roster | [ ] interact |
-| Predictive search `ring` | roster | [ ] interact |
-| Mobile menu 375+768 | roster | [ ] interact |
-| Cart drawer empty + filled | roster | [ ] interact |
-| PDP earrings Yellow Gold→White Gold | roster | [ ] interact |
-| PLP `/collections/rings` | roster | [ ] capture |
-| Collections `/collections` | roster | [ ] capture |
-| Search `/search?q=ring` | roster | [ ] capture |
-| Cart `/cart` empty + filled | roster | [ ] interact |
-| Our Story `/pages/our-story` | roster | [ ] capture |
-| Contact form (Send yok) | roster | [ ] capture |
-| FAQ `/pages/faqs` | roster | [ ] interact accordion |
-| News + article | roster | [ ] capture |
-| 404 | roster | [ ] capture |
+| Home roster (announcement→footer) | roster + 3vp | [x] |
+| Mega SHOP 1440 | roster + 3vp kapalı | [ ] interact |
+| Predictive search `ring` | roster + 3vp kapalı | [ ] interact |
+| Mobile menu 375+768 | 768 homepage kare | [ ] interact |
+| Cart drawer empty + filled | empty 3vp | [ ] interact filled |
+| PDP earrings Yellow Gold→White Gold | roster + 3vp | [ ] interact |
+| PLP `/collections/rings` | roster + 3vp | [x] |
+| Collections `/collections` | roster + 3vp | [x] |
+| Search `/search?q=ring` | roster + 3vp | [x] |
+| Cart `/cart` empty + filled | empty 3vp | [ ] interact filled |
+| Our Story `/pages/our-story` | roster + 3vp | [x] |
+| Contact form (Send yok) | roster + 3vp | [x] |
+| FAQ `/pages/faqs` | roster + 3vp | [ ] interact accordion |
+| News + article | roster + 3vp | [x] |
+| 404 | roster + 3vp | [x] |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -127,6 +127,6 @@
 
 ## Evidence backlog
 
-- [ ] Resmi 3vp `capture-observation.mjs` (password unlock)
+- [x] Resmi 3vp `capture-observation.mjs` (password unlock) · 124 PNG · menu-drawer 375/1440 zero-size
 - [ ] Interact scan → capture → pixel-check
 - [ ] `node scripts/validate-schemas.mjs`

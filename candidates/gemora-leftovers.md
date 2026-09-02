@@ -80,6 +80,22 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: gemora-social-proof-popup  
+Gerekçe: Sabit karelerde sol alt “Someone liked and Buy …” toast (Amsterdam/Paris/Sydney). `#shopify-section` değil; app/script overlay. dismiss-overlays kapatmadı.  
+Örnekler: PLP, blog-list, PDP, search  
+Öneri: leftover — app overlay, yeni şema yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: gemora-menu-drawer-375  
+Gerekçe: `#menu-drawer` 375/1440 zero-size (Dawn transform). 768 viewport homepage (çekmece görünmedi). forceOpen + prepareClick denendi. Interact ikinci deneme.  
+Örnekler: home header-drawer  
+Öneri: leftover / interact  
+Karar: onay bekliyor
+
+---
+
 ## Bilerek dışarıda
 
 - Newsletter / contact Send / account Log in / checkout — PII
