@@ -65,6 +65,22 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: backpack-cart-qty-no-stepper  
+Gerekçe: Cart `.cart__qty-input` (number). +/− yok. Fill 2 inputu değiştirir; satır/subtotal $530 ve rozet 1 kaldı.  
+Örnekler: https://adlwin-store.myshopify.com/cart  
+Öneri: leftover — qty ajax  
+Karar: onay bekliyor
+
+---
+
+ADAY: backpack-predictive-empty  
+Gerekçe: `#SearchDrawer` + `.predictive-search-wrapper` h=0. hoodie yazıldı, ürün önerisi yok. Submit `/search?q=hoodie` 8 sonuç.  
+Örnekler: https://adlwin-store.myshopify.com/  
+Öneri: leftover — predictive boş  
+Karar: onay bekliyor
+
+---
+
 ADAY: backpack-iwt-two-rows  
 Gerekçe: `editorial-image-with-text` şema tek görsel+metin; canlı `cuatom_img_lr` iki feature-row tek section. Şemaya dokunulmadı.  
 Örnekler: home `#shopify-section-template--16546811379954__ddfd6d21-0c2b-40e7-8a03-b350b52a6794`  

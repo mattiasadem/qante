@@ -5,7 +5,7 @@
 
 | Tema | Dosya | Durum |
 |---|---|---|
-| Backpack (Speedo) | [`backpack.md`](./backpack.md) | 🟡 Mod A — adlwin-store · Debut 17.14.1 · password 1 · 22 obs · 0 yeni şema |
+| Backpack (Speedo) | [`backpack.md`](./backpack.md) | ✅ default — adlwin-store · Debut 17.14.1 · password 1 · 22 obs · 81 PNG · 0 yeni şema |
 | Hyper (Shopify) | [`hyper.md`](./hyper.md) | ✅ **default tamam** — 45 şema · 80 evidence · compare dolu |
 | Hyper · Ceramide | [`hyper-ceramide.md`](./hyper-ceramide.md) | ✅ delta — 5 yeni şema · 5 obs |
 | Prestige · Allure | [`prestige.md`](./prestige.md) | ✅ Allure 9 sayfa · 66 obs · 4 yeni şema · dolu cart |

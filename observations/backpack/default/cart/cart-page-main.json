@@ -7,7 +7,17 @@
   "url": "https://adlwin-store.myshopify.com/cart",
   "selector": "#shopify-section-cart-template",
   "evidenceSlug": "cart-page-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/backpack/default/cart/cart-page-main.changed.adet-2.1440.png",
+    "evidence/backpack/default/cart/cart-page-main.changed.adet-2.375.png",
+    "evidence/backpack/default/cart/cart-page-main.changed.adet-2.768.png",
+    "evidence/backpack/default/cart/cart-page-main.filled.dress-qty1.1440.png",
+    "evidence/backpack/default/cart/cart-page-main.filled.dress-qty1.375.png",
+    "evidence/backpack/default/cart/cart-page-main.filled.dress-qty1.768.png",
+    "evidence/backpack/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/backpack/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/backpack/default/cart/cart-page-main.initial.sepet-bos.768.png"
+  ],
   "storefrontPassword": "1",
   "captureMode": "viewport",
   "notlar": "Boş: Your cart is currently empty + CONTINUE SHOPPING. Drawer yok. Dolu interact: dress ATC → /cart.",
@@ -68,15 +78,31 @@
     },
     {
       "state": "changed",
-      "action": "click",
-      "selector": ".qtyplus, button[name='plus']",
+      "action": "fill",
+      "selector": "input.cart__qty-input[name='updates[]']",
+      "value": "2",
       "capture": true,
       "captureMode": "viewport",
-      "etiket": "adet-artti",
-      "not": "Adet +1"
+      "etiket": "adet-2",
+      "not": "Debut cart +/− yok; sayı input 1→2"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "Your cart + Your cart is currently empty. + CONTINUE SHOPPING. Satır yok.",
+    "filled": "Dress Grey/S qty 1 · $530.00 · Subtotal $530.00 USD + CHECK OUT. Rozet 1. ATC UI.",
+    "changed": "Qty input 2 görünür. Satır/subtotal $530 ve rozet 1 kaldı — ajax toplam güncellemedi."
+  },
   "missingStates": [],
-  "interactionNote": "Checkout/login tıklanmadı. ATC UI; fallback /cart/add.js interactionNote'a yazılır."
+  "interactionNote": "ATC UI. Checkout tıklanmadı. +/− yok; fill .cart__qty-input. Toplam 2. denemede de güncellenmedi.",
+  "capture": {
+    "url": "https://adlwin-store.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T13:59:48.163Z"
+  }
 }

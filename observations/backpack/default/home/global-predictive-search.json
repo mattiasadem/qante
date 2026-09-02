@@ -7,7 +7,14 @@
   "url": "https://adlwin-store.myshopify.com/",
   "selector": "#SearchDrawer",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/backpack/default/home/global-predictive-search.initial.arama-bos.1440.png",
+    "evidence/backpack/default/home/global-predictive-search.initial.arama-bos.375.png",
+    "evidence/backpack/default/home/global-predictive-search.initial.arama-bos.768.png",
+    "evidence/backpack/default/home/global-predictive-search.input.arama-hoodie.1440.png",
+    "evidence/backpack/default/home/global-predictive-search.input.arama-hoodie.375.png",
+    "evidence/backpack/default/home/global-predictive-search.input.arama-hoodie.768.png"
+  ],
   "storefrontPassword": "1",
   "captureMode": "viewport",
   "notlar": "1440: #SearchDrawer header içi görünür arama (w≈875). Toggle 0×0. 375: .js-drawer-open-top + üst drawer. katalogSorgu=hoodie.",
@@ -33,7 +40,10 @@
       "state": "initial",
       "action": "click",
       "selector": ".js-drawer-open-top",
-      "viewports": ["375", "768"],
+      "viewports": [
+        "375",
+        "768"
+      ],
       "capture": false,
       "not": "Mobil/tablet: üst arama drawer. 1440 toggle 0×0 — atlanır"
     },
@@ -57,7 +67,21 @@
       "not": "katalogSorgu=hoodie"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "1440: header pill Search boş + büyüteç; hero Design Your Own Shirts. 375/768: üst arama drawer kapalı veya Search placeholder.",
+    "input": "hoodie yazıldı. 375/768: üst bar + X + arka karartı. 1440: input metni hoodie; ürün/koleksiyon öneri listesi yok (.predictive-search-wrapper h=0)."
+  },
   "missingStates": [],
-  "interactionNote": "katalogSorgu hoodie. Submit/PII yok. 1440 fill doğrudan görünür input."
+  "interactionNote": "katalogSorgu hoodie. Öneri listesi yoklandı, boş kaldı. Submit/PII yok.",
+  "capture": {
+    "url": "https://adlwin-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T13:50:26.376Z"
+  }
 }
