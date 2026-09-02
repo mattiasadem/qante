@@ -66,6 +66,7 @@
 | Gemora (Speedo, jewelry) | [`gemora.md`](./gemora.md) | 🟡 first inventory + interact — jewelry-online-shop1 · 42 obs · 0 yeni şema · password `1` |
 | Glidefeet (Speedo) | [`glidefeet.md`](./glidefeet.md) | ✅ Mod A + interact — 39 obs · 145 PNG · 0 yeni şema · glidefeet.myshopify.com |
 | Hairva (Speedo) | [`hairva.md`](./hairva.md) | ✅ first inventory — pandora-hair-care-3 · 48 obs · 184 PNG · 0 yeni şema · interact + password `1` |
+| LUXE / Josiane (Speedo) | [`luxe.md`](./luxe.md) | ✅ first inventory + interact — women-beauty-3 · Josiane · password `1` · 42 obs · 166 PNG · 0 yeni şema · **not** luxe-luxuries |
 | Luxe Luxuries (Speedo) | [`luxe-luxuries.md`](./luxe-luxuries.md) | ✅ Mod A + interact — Watchez-online-store 1.5.0 · password `1` · 43 obs · 0 yeni şema |
 | Nutronix (Speedo Themes) | [`nutronix.md`](./nutronix.md) | ✅ first inventory + interact — `speedo-nutronix.myshopify.com` · password 1 · 50 obs · 0 yeni şema |
 | PAW (Speedo Petz) | [`paw.md`](./paw.md) | ✅ first inventory + interact — 42 obs · 152 PNG · 0 yeni şema |
