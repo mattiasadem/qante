@@ -9,9 +9,13 @@
   "storefrontPassword": "1",
   "evidenceSlug": "navigation-header-mega",
   "evidence": [
+    "evidence/toyon/default/home/navigation-header-mega.1440.png",
     "evidence/toyon/default/home/navigation-header-mega.375.png",
     "evidence/toyon/default/home/navigation-header-mega.768.png",
-    "evidence/toyon/default/home/navigation-header-mega.1440.png"
+    "evidence/toyon/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/toyon/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/toyon/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/toyon/default/home/navigation-header-mega.open.shop-dropdown.1440.png"
   ],
   "notlar": "header--top-center. Logo TOYON. Nav: New Arrivals / Shop (details#Details-HeaderMenu-2) / Shop By Age (details#Details-HeaderMenu-3) / Best Sellers / Our Story / More. Search + wishlist + Log in + #cart-icon-bubble. .mega-menu yok.",
   "delta": "Shopify.theme.name Toyon-toys-latest V-1.5.0 · schema_name toyon_toys · schema_version 1.5.0 · theme_store_id null · role main · id 145295966363 · walk toyon-toys.myshopify.com · Shopify.shop toyon-toys.myshopify.com · locale en · country US · currency USD · Speedo third-party catalog (not Theme Store). Storefront unlock password 1. Mega class yok — Shop ve Shop By Age basit details dropdown. 1440 hamburger 0×0. Wishlist / Log in tıklanmadı.",
@@ -23,8 +27,58 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T19:56:21.208Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:15:06.893Z"
   },
-  "captureMode": "viewport"
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://toyon-toys.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Dropdown kapalı header. 375/768 hamburger ayrı global-menu-drawer."
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-2 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-dropdown",
+      "not": "Hover Shop — Developmental Toys / Games / Dolls / Baby Toys. Mega kolon yok."
+    }
+  ],
+  "stateFindings": {
+    "initial": "375/768: hamburger + search + TOYON + hesap + sepet; ticker. 1440: TOYON solda; New Arrivals / Shop chevron / Shop By Age / Best Sellers / Our Story / More; sağda search+wishlist 0+hesap+sepet. Dropdown paneli yok.",
+    "open": "1440 hover Shop: DOM details open + linkler (Developmental Toys / Games / Dolls / Baby Toys) probe’da var. 1440 karede dropdown kutusu görünmedi (ticker metni değişti). Mega kolon yok."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "Hover probe open=true ama 1440 shop-dropdown karesi kapalı header ile aynı (panel yok). 375/768 hamburger ayrı global-menu-drawer."
+    }
+  ],
+  "interactionNote": "Hover #Details-HeaderMenu-2 > summary. Click Shop <a> /collections/all sayfaya gider. Wishlist / Log in tıklanmadı."
 }

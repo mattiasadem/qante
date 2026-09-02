@@ -159,3 +159,11 @@ Gerekçe: Önceki Speedo walk’larda unlock sonrası `/cart.js` HTML dönebilir
 Örnekler: home cart drawer  
 Öneri: leftover — AJAX fallback  
 Karar: onay bekliyor
+
+---
+
+ADAY: toyon-featured-hover-plp-filter  
+Gerekçe: Best Sellers kartında ATC + wishlist statik 1440 karede zaten görünür; ekstra hover katmanı yok. PLP Color/Size/Availability/Price facet DOM’da var; ilk probe tık koleksiyon dışına çıktı, filter-open evidence yazılmadı.  
+Örnekler: home `product-showcase-grid-featured` · `/collections/best-sellers`  
+Öneri: leftover — hover yok / filter capture yok  
+Karar: onay bekliyor

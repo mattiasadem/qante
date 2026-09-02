@@ -9,9 +9,18 @@
   "storefrontPassword": "1",
   "evidenceSlug": "cart-page-main",
   "evidence": [
+    "evidence/toyon/default/cart/cart-page-main.1440.png",
     "evidence/toyon/default/cart/cart-page-main.375.png",
     "evidence/toyon/default/cart/cart-page-main.768.png",
-    "evidence/toyon/default/cart/cart-page-main.1440.png"
+    "evidence/toyon/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/toyon/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/toyon/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/toyon/default/cart/cart-page-main.filled.teddy-qty1.1440.png",
+    "evidence/toyon/default/cart/cart-page-main.filled.teddy-qty1.375.png",
+    "evidence/toyon/default/cart/cart-page-main.filled.teddy-qty1.768.png",
+    "evidence/toyon/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/toyon/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/toyon/default/cart/cart-page-main.initial.sepet-bos.768.png"
   ],
   "notlar": "Boş: Your cart is empty / CONTINUE SHOPPING / Have an account? Log in to check out faster.",
   "delta": "Shopify.theme.name Toyon-toys-latest V-1.5.0 · schema_name toyon_toys · schema_version 1.5.0 · theme_store_id null · role main · id 145295966363 · walk toyon-toys.myshopify.com · Shopify.shop toyon-toys.myshopify.com · locale en · country US · currency USD · Speedo third-party catalog (not Theme Store). Storefront unlock password 1. cart-footer sibling boşken h=0. Dolu hâl interact.",
@@ -23,8 +32,97 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T19:34:29.323Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:22:58.124Z"
   },
-  "captureMode": "viewport"
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://toyon-toys.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://toyon-toys.myshopify.com/products/baby-teddy-animal-toy",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'], product-form button.product-form__submit",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://toyon-toys.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "teddy-qty1",
+      "not": "Dolu cart satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "cart-items button[name='plus'], quantity-input button[name='plus'], button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Sayfa adet +1"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty. CONTINUE SHOPPING. Have an account? Log in to check out faster. Altta Featured collection.",
+    "filled": "Your cart. Baby Teddy Animal Toy Color Brown qty 1 $111 / satır $111. Estimated total $111.00 USD. CHECK OUT. Header sepet 1. Order special instructions.",
+    "changed": "Qty 2, satır $222, estimated $222.00 USD. Header rozet 2."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout/login tıklanmadı. ATC PDP button[name=add] via UI."
 }

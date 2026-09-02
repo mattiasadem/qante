@@ -13,8 +13,8 @@
 
 **Unlock:** Vendor ürün sayfası demo password `1`. Title `TOYON TOYS (password: 1)`. Public storefront unlock; hesap değil. Başka host yok (`toyon-toys-2` Critters — bu walk değil).
 
-**Durum:** Mod A 41 obs · 121 static 3vp · interact sırada  
-**PR:** draft · **main'e merge yok**
+**Durum:** Mod A 41 obs · 121 static + 39 interact = 160 PNG · 0 yeni şema  
+**PR:** https://github.com/mattiasadem/qante/pull/369 · draft · **main'e merge yok**
 
 ---
 
@@ -26,6 +26,7 @@
 | Capture | resmi `capture-observation.mjs` + `capture-interaction.mjs` + `unlock-storefront.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **41** |
+| Evidence PNG | **160** (121 static + 39 interact) |
 | Parallel | `observations/toyon/`, `evidence/toyon/`, `todo/toyon.md`, `candidates/toyon-leftovers.md`, `scripts/unlock-storefront.mjs` |
 
 **Kapsam satırı:**  
@@ -38,15 +39,15 @@
 | Şablon | Durum | 3vp |
 |---|---|---|
 | Home roster (announcement→footer) | [x] obs | [x] static |
-| Header Shop / Shop By Age 1440 | [ ] interact | [ ] |
-| Predictive search `teddy` | [ ] interact | [ ] |
-| Mobile menu 375 + 768 | [ ] interact | [ ] |
-| Cart drawer empty + filled + qty | [ ] interact | [ ] |
-| PDP Baby Teddy Color Brown→Green | [ ] interact | [ ] |
+| Header Shop / Shop By Age 1440 | [x] interact | [x] hover; dropdown panel missingStates |
+| Predictive search `teddy` | [x] interact | [x] input missingStates |
+| Mobile menu 375 + 768 | [x] interact | [x] probe açık; PNG homepage missingStates |
+| Cart drawer empty + filled + qty | [x] interact | [x] filled+qty; empty PNG homepage |
+| PDP Baby Teddy Color Brown→Green | [x] interact | [x] probe Green; PNG kahverengi missingStates |
 | PLP `/collections/best-sellers` | [x] obs | [x] static |
 | Collections `/collections` | [x] obs | [x] static |
 | Search `/search?q=teddy` | [x] obs | [x] static |
-| Cart page empty + filled + qty | [ ] interact | [ ] |
+| Cart page empty + filled + qty | [x] interact | [x] 3vp filled+qty |
 | Our Story `/pages/our-story` | [x] obs | [x] static |
 | Contact form (submit yok) | [x] obs | [x] static |
 | FAQ `/pages/faqs` | [x] obs | [x] static |
@@ -90,5 +91,7 @@
 ## Evidence backlog
 
 - [x] Official 3vp static (121 PNG; menu 375/1440 zero-size)
-- [ ] Interact header / search / menu / cart / PDP variant / FAQ / PLP filter
-- [ ] `node scripts/validate-schemas.mjs` — 0 error
+- [x] Interact header / search / menu / cart / PDP / FAQ (bakıldı)
+- [x] Cart drawer + cart page filled/qty 3vp — pikseller değişti
+- [x] Header hover / search fill / menu / empty drawer / PDP Green / FAQ changed → `missingStates`
+- [x] `node scripts/validate-schemas.mjs` — 0 error

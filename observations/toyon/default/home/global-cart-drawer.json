@@ -9,9 +9,18 @@
   "storefrontPassword": "1",
   "evidenceSlug": "global-cart-drawer",
   "evidence": [
+    "evidence/toyon/default/home/global-cart-drawer.1440.png",
     "evidence/toyon/default/home/global-cart-drawer.375.png",
     "evidence/toyon/default/home/global-cart-drawer.768.png",
-    "evidence/toyon/default/home/global-cart-drawer.1440.png"
+    "evidence/toyon/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/toyon/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/toyon/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/toyon/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/toyon/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/toyon/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/toyon/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/toyon/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/toyon/default/home/global-cart-drawer.initial.cart-bos.768.png"
   ],
   "notlar": "Dawn cart-drawer. Opener #cart-icon-bubble. Boş hâl is-empty.",
   "delta": "Shopify.theme.name Toyon-toys-latest V-1.5.0 · schema_name toyon_toys · schema_version 1.5.0 · theme_store_id null · role main · id 145295966363 · walk toyon-toys.myshopify.com · Shopify.shop toyon-toys.myshopify.com · locale en · country US · currency USD · Speedo third-party catalog (not Theme Store). Storefront unlock password 1. Checkout tıklanmadı. cart-drawer custom element.",
@@ -23,11 +32,93 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T19:50:25.172Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:20:22.110Z",
     "prepareClick": "#cart-icon-bubble"
   },
   "captureMode": "viewport",
   "prepareClick": "#cart-icon-bubble",
-  "prepareForceOpen": true
+  "prepareForceOpen": true,
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://toyon-toys.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble, a.header__icon--cart, a[href='/cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer: Your cart is empty / CONTINUE SHOPPING."
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://toyon-toys.myshopify.com/products/baby-teddy-animal-toy",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'], product-form button.product-form__submit",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#cart-icon-bubble, a.header__icon--cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Baby Teddy Brown $111 satırı."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "cart-drawer button[name='plus'], #CartDrawer button[name='plus'], button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +1"
+    }
+  ],
+  "stateFindings": {
+    "initial": "cart-bos 1440 karesi homepage — boş drawer yok. Probe: drawer active, Your cart is empty / CONTINUE SHOPPING + Free Shipping $500 / Express $800.",
+    "filled": "PDP üstünde sağ drawer: Baby Teddy Animal Toy Color Brown qty 1 $111. Estimated total $111.00 USD. CHECK OUT + View cart. Kargo bar Free $500 / Express $800. Header sepet 1.",
+    "changed": "Aynı drawer qty 2, estimated $222.00 USD. Header rozet 2."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "Interact cart-bos PNG homepage; boş drawer karede yok (probe metni var)."
+    }
+  ],
+  "interactionNote": "ATC UI button[name=add] (3 vp). Checkout tıklanmadı."
 }

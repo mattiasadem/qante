@@ -9,7 +9,9 @@
   "storefrontPassword": "1",
   "evidenceSlug": "global-menu-drawer",
   "evidence": [
-    "evidence/toyon/default/home/global-menu-drawer.768.png"
+    "evidence/toyon/default/home/global-menu-drawer.768.png",
+    "evidence/toyon/default/home/global-menu-drawer.changed.shop-expand.768.png",
+    "evidence/toyon/default/home/global-menu-drawer.open.hamburger.768.png"
   ],
   "notlar": "Hamburger drawer: New Arrivals / Shop / Shop By Age / Best Sellers / Our Story / Support. 1440 opener 0×0.",
   "delta": "Shopify.theme.name Toyon-toys-latest V-1.5.0 · schema_name toyon_toys · schema_version 1.5.0 · theme_store_id null · role main · id 145295966363 · walk toyon-toys.myshopify.com · Shopify.shop toyon-toys.myshopify.com · locale en · country US · currency USD · Speedo third-party catalog (not Theme Store). Storefront unlock password 1. Open yalnız 375/768. Log in tıklanmadı.",
@@ -21,11 +23,71 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T19:51:55.507Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:17:54.717Z",
     "prepareClick": "#Details-menu-drawer-container > summary.header__icon--menu"
   },
   "captureMode": "viewport",
   "prepareClick": "#Details-menu-drawer-container > summary.header__icon--menu",
-  "prepareForceOpen": true
+  "prepareForceOpen": true,
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://toyon-toys.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "summary.header__icon--menu",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Drawer: New Arrivals / Shop / Shop By Age / Best Sellers / Our Story / Support."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-menu-drawer-menu-item-2 > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-expand",
+      "not": "Shop chevron — Developmental Toys / Games / Dolls / Baby Toys."
+    }
+  ],
+  "stateFindings": {
+    "open": "Probe 375: hamburger 25×22 → #menu-drawer 375×701 New Arrivals / Shop / Shop By Age / Best Sellers / Our Story / Support. Interact 768 hamburger/shop-expand kareleri homepage (drawer yok). 375 capture zero-size.",
+    "changed": "Probe 375 Shop summary open → Developmental Toys / Games / Dolls / Baby Toys. 768 shop-expand karesi drawer göstermiyor."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger 0×0. Interact 375 zero-size; 768 PNG homepage — drawer karede yok."
+    },
+    {
+      "state": "changed",
+      "sebep": "375 capture eşleşmedi; 768 kare kapalı homepage."
+    }
+  ],
+  "interactionNote": "Probe drawer açıldı; resmi interact PNG drawer göstermiyor. Log in tıklanmadı."
 }
