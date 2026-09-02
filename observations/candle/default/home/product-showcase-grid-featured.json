@@ -14,13 +14,43 @@
   ],
   "notlar": "New Collection. Kartlar + ADD TO CART (quick-add). Sale rozeti. Candles In The Glass Jars $49.",
   "delta": "Shopify.theme.name Speedo-candles-store-v-1-5-0 · schema_name Speedo candles Store · schema_version 1.5.0 · theme_store_id null · role main · id 171992645913 · shop speedo-candles-store.myshopify.com · Dawn-like OS 2.0. Vendor-published demo password 1 (public storefront unlock). Dawn featured-collection. Quick-add form görünür; QV yok.",
+  "interactionStates": ["initial", "hover"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://speedo-candles-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--23490799862041__featured_collection",
+      "capture": true,
+      "etiket": "ilk-kartlar",
+      "not": "New Collection; ilk kart Glass Jars. Quick-add metin olarak duruyor."
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#Slide-template--23490799862041__featured_collection-1",
+      "capture": true,
+      "etiket": "hover-ikinci-gorsel",
+      "not": "İlk kart unique li. Probe: 2. img opacity 0→1. ATC zaten opacity 1. 375/768 aynıysa missingStates."
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Scan hoverReveal: quick-add + 2+ img. Unique #Slide-…-1 (genel .product-card değil). Wishlist tıklanmadı. Kart ATC 'Sold out' gizli metin; disabled false.",
   "capture": {
     "url": "https://speedo-candles-store.myshopify.com/",
-    "viewports": [
-      "375",
-      "768",
-      "1440"
-    ],
+    "viewports": ["375", "768", "1440"],
     "mode": "section",
     "method": "margin-box+minPad8",
     "updatedAt": "2026-09-02T13:43:13.309Z"

@@ -102,3 +102,35 @@ Gerekçe: PDP Shopify payment button BUY IT NOW. Checkout — tıklanmadı.
 Örnekler: Glass Jars buy box  
 Öneri: leftover — ödeme  
 Karar: onay bekliyor
+
+---
+
+ADAY: candle-header-wishlist  
+Gerekçe: Header `.wishlist-header` “Add to wishlish” (yazım hatası). Kartlarda `.button-wishlist`. Interact yok.  
+Örnekler: home header + featured cards  
+Öneri: leftover — wishlist  
+Karar: onay bekliyor
+
+---
+
+ADAY: candle-cart-js-password-html  
+Gerekçe: Unlock sonrası `fetch('/cart.js')` / `/cart/add.js` HTML (password/DOCTYPE) dönebiliyor. ATC yalnız UI.  
+Örnekler: Glass Jars PDP  
+Öneri: leftover — XHR şifre duvarı  
+Karar: onay bekliyor
+
+---
+
+ADAY: candle-shopify-checkpoint  
+Gerekçe: Çok headless istekten sonra “Just a moment… / Your connection needs to be verified”. Password `1` değil; Shopify bot checkpoint. 40s bekleme çözmedi.  
+Örnekler: home / PDP after burst  
+Öneri: leftover — rate-limit  
+Karar: onay bekliyor
+
+---
+
+ADAY: candle-quickadd-soldout-copy  
+Gerekçe: Featured/PLP `quick-add__submit` metni “Add to cart Sold out”; `disabled` false. PDP Glass Jars “Add to cart”. Gizli sold-out span olabilir.  
+Örnekler: home featured kart 1  
+Öneri: leftover — kart kopyası  
+Karar: onay bekliyor

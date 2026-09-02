@@ -14,13 +14,53 @@
   ],
   "notlar": "Filter: Availability / Price. Sort by: Featured / Most relevant. White Candle On Silk vb.",
   "delta": "Shopify.theme.name Speedo-candles-store-v-1-5-0 · schema_name Speedo candles Store · schema_version 1.5.0 · theme_store_id null · role main · id 171992645913 · shop speedo-candles-store.myshopify.com · Dawn-like OS 2.0. Vendor-published demo password 1 (public storefront unlock). Dawn main-collection-product-grid.",
+  "interactionStates": ["initial", "open", "changed"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://speedo-candles-store.myshopify.com/collections/shop-all",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--23490799599897__product-grid",
+      "capture": true,
+      "etiket": "filtre-kapali",
+      "not": "Availability / Price kapalı veya varsayılan"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "[id='Details-filter.v.availability-template--23490799599897__product-grid'] > summary",
+      "viewports": ["1440"],
+      "capture": true,
+      "etiket": "availability-acik",
+      "not": "1440 Availability details. 375/768 mobil facet drawer ayrı."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Facet-1-template--23490799599897__product-grid input[name='filter.v.availability']",
+      "viewports": ["1440"],
+      "capture": true,
+      "etiket": "availability-secildi",
+      "not": "İlk görünür availability checkbox. Grid değişir mi."
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Scan 1440: Availability + Price details. Mobil Filter summary gorunur=false. Wishlist tıklanmadı.",
   "capture": {
     "url": "https://speedo-candles-store.myshopify.com/collections/shop-all",
-    "viewports": [
-      "375",
-      "768",
-      "1440"
-    ],
+    "viewports": ["375", "768", "1440"],
     "mode": "section",
     "method": "margin-box+minPad8",
     "updatedAt": "2026-09-02T13:35:59.330Z"

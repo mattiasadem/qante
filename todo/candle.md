@@ -13,7 +13,7 @@
 
 **Unlock:** Vendor ürün sayfası “Please enter password 1 to view demo.” Public storefront password `1` girildi → `/` açıldı. Başka host yok.
 
-**Durum:** Mod A roster yazıldı · 3vp capture + interact sırada  
+**Durum:** Mod A 41 obs + 122 static 3vp yazıldı · interact adımları yazıldı · capture sırada  
 **PR:** https://github.com/mattiasadem/qante/pull/322 · draft · **main'e merge yok**
 
 ---
@@ -37,20 +37,20 @@
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | [x] obs | [ ] capture |
-| Header Candles dropdown 1440 | [ ] interact | [ ] |
-| Predictive search `candle` | [ ] interact | [ ] |
-| Mobile menu 375 + 768 | [ ] interact | [ ] |
-| Cart drawer empty + filled + qty | [ ] interact | [ ] |
-| PDP Glass Jars (varyant yok) | [x] obs | [ ] capture |
-| PLP `/collections/shop-all` | [x] obs | [ ] capture |
-| Collections `/collections` | [x] obs | [ ] capture |
-| Search `/search?q=candle` | [x] obs | [ ] capture |
-| Cart page empty + filled + qty | [x] obs | [ ] interact |
-| Our Story `/pages/our-story` | [x] obs | [ ] capture |
-| Contact form (submit yok) | [x] obs | [ ] capture |
-| FAQ `/pages/faqs` | [x] obs | [ ] capture |
-| News + Candlefind post | [x] obs | [ ] capture |
+| Home roster (announcement→footer) | [x] obs | [x] static |
+| Header Candles dropdown 1440 | [x] steps | [ ] interact capture |
+| Predictive search `candles` | [x] steps | [ ] interact capture |
+| Mobile menu 375 + 768 | [x] steps | [ ] interact capture |
+| Cart drawer empty + filled + qty | [x] steps | [ ] interact capture |
+| PDP Glass Jars (varyant yok) | [x] obs + steps | [x] static |
+| PLP `/collections/shop-all` | [x] obs + filter steps | [x] static |
+| Collections `/collections` | [x] obs | [x] static |
+| Search `/search?q=candle` | [x] obs | [x] static |
+| Cart page empty + filled + qty | [x] obs + steps | [x] static empty |
+| Our Story `/pages/our-story` | [x] obs | [x] static |
+| Contact form (submit yok) | [x] obs | [x] static |
+| FAQ `/pages/faqs` | [x] obs | [x] static |
+| News + Candlefind post | [x] obs | [x] static |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -91,7 +91,8 @@
 
 ## Evidence backlog
 
-- [ ] Official 3vp static
-- [ ] Interact header / search / cart / menu
-- [ ] PDP variant — **yok** (products.json tek varyant)
+- [x] Official 3vp static (122 PNG)
+- [x] Interact steps (header / search / menu / cart / featured / FAQ / PDP / PLP)
+- [ ] Interact capture + stateFindings (PNG bak)
+- [x] PDP variant — **yok** (products.json tek varyant)
 - [ ] `node scripts/validate-schemas.mjs`

@@ -16,13 +16,86 @@
   "delta": "Shopify.theme.name Speedo-candles-store-v-1-5-0 · schema_name Speedo candles Store · schema_version 1.5.0 · theme_store_id null · role main · id 171992645913 · shop speedo-candles-store.myshopify.com · Dawn-like OS 2.0. Vendor-published demo password 1 (public storefront unlock). cart-drawer custom element. Checkout tıklanmadı.",
   "captureMode": "viewport",
   "prepareClick": "#cart-icon-bubble",
+  "interactionStates": ["initial", "filled", "changed"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://speedo-candles-store.myshopify.com/cart/clear",
+      "capture": false,
+      "not": "Viewport başına sepeti sıfırla"
+    },
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://speedo-candles-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer — Your cart + shipping eşiği"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://speedo-candles-store.myshopify.com/products/candles-in-the-glass-jars",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--23490800124185__main",
+      "capture": false,
+      "not": "Glass Jars $45 — UI tık; /cart.js şifre HTML dönerse fallback not"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC sonrası drawer. Açılmazsa bir kez --state filled ile #cart-icon-bubble dene."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "qty 1→2"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Scan: kapalı overlay, prepareClick #cart-icon-bubble. Checkout tıklanmadı. /cart.js XHR şifre HTML dönebiliyor — UI ATC.",
   "capture": {
     "url": "https://speedo-candles-store.myshopify.com/",
-    "viewports": [
-      "375",
-      "768",
-      "1440"
-    ],
+    "viewports": ["375", "768", "1440"],
     "mode": "viewport",
     "method": "viewport",
     "updatedAt": "2026-09-02T13:41:01.862Z",
