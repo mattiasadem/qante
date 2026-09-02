@@ -8,7 +8,14 @@
   "selector": "details-modal.header__search",
   "storefrontPassword": "1",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/shrilahome/default/home/global-predictive-search.1440.png",
+    "evidence/shrilahome/default/home/global-predictive-search.375.png",
+    "evidence/shrilahome/default/home/global-predictive-search.768.png",
+    "evidence/shrilahome/default/home/global-predictive-search.initial.arama-bos.1440.png",
+    "evidence/shrilahome/default/home/global-predictive-search.initial.arama-bos.375.png",
+    "evidence/shrilahome/default/home/global-predictive-search.initial.arama-bos.768.png"
+  ],
   "notlar": "Header büyüteç → details-modal. Input #Search-In-Modal / #Search-In-Modal-1. predictive-search-results.",
   "delta": "Shopify.theme.name Shrilahome-Furniture-v-1-5-0 · schema_name shrilahome · schema_version 1.5.0 · theme_store_id null · role main · id 169736438070 · shop pandora-furniture-5.myshopify.com. Vendor Speedo Themes (third-party OS 2.0, Theme Store değil). Storefront password 1 (speedothemes.com product page). Host pandora-furniture-5.myshopify.com — başka host uydurulmadı. Dawn predictive-search. katalogSorgu=sofa (PLP/search kanıtlı).",
   "captureMode": "viewport",
@@ -32,23 +39,67 @@
     {
       "state": "initial",
       "action": "click",
-      "selector": "details-modal.header__search > details > summary, summary.header__icon--search",
+      "selector": "header.header details-modal.header__search > details > summary",
+      "viewports": [
+        "1440"
+      ],
       "capture": true,
       "captureMode": "viewport",
       "etiket": "arama-bos",
-      "not": "Boş search modal"
+      "not": "1440 sol Search yazısı — modal aç"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".header__icons details-modal.header__search > details > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "375/768 sağ büyüteç — ilk modal 0-size"
     },
     {
       "state": "input",
       "action": "fill",
-      "selector": "#Search-In-Modal-1, #Search-In-Modal",
+      "selector": "#Search-In-Modal-1",
       "value": "sofa",
+      "viewports": [
+        "1440"
+      ],
       "capture": true,
       "captureMode": "viewport",
       "etiket": "arama-sofa",
-      "not": "katalogSorgu=sofa"
+      "not": "katalogSorgu=sofa · 1440 açık input"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "sofa",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sofa",
+      "not": "katalogSorgu=sofa · 375/768 açık input"
     }
   ],
   "missingStates": [],
-  "interactionNote": "Submit/PII yok."
+  "interactionNote": "İki details-modal. 1440 #Search-In-Modal-1; 375/768 #Search-In-Modal. Submit/PII yok.",
+  "capture": {
+    "url": "https://pandora-furniture-5.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:50:17.241Z"
+  }
 }

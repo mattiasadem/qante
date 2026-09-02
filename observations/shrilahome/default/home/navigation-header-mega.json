@@ -5,10 +5,17 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://pandora-furniture-5.myshopify.com/",
-  "selector": "#shopify-section-sections--22988898894134__header",
+  "selector": "#shopify-section-sections--22988898894134__header .header, #shopify-section-sections--22988898894134__header sticky-header, #shopify-section-sections--22988898894134__header header",
   "storefrontPassword": "1",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
+  "evidence": [
+    "evidence/shrilahome/default/home/navigation-header-mega.1440.png",
+    "evidence/shrilahome/default/home/navigation-header-mega.375.png",
+    "evidence/shrilahome/default/home/navigation-header-mega.768.png",
+    "evidence/shrilahome/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/shrilahome/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/shrilahome/default/home/navigation-header-mega.initial.kapali.768.png"
+  ],
   "notlar": "Sticky header. Logo + Search + Log in + Cart. 1440 section wrapper h=0 (Dawn sticky). 375 hamburger summary[aria-label=Menu] → #menu-drawer. HeaderDrawer-sofas-chairs nested.",
   "delta": "Shopify.theme.name Shrilahome-Furniture-v-1-5-0 · schema_name shrilahome · schema_version 1.5.0 · theme_store_id null · role main · id 169736438070 · shop pandora-furniture-5.myshopify.com. Vendor Speedo Themes (third-party OS 2.0, Theme Store değil). Storefront password 1 (speedothemes.com product page). Host pandora-furniture-5.myshopify.com — başka host uydurulmadı. Dawn-fork header. Mega kolon 1440 kapalı karede metin boş (görsel linkler: corner-sofas / leatherette / modular / mattresses / dining-set + about/contact/faqs/wishlist/compare). Interact open. Account tıklanmadı.",
   "captureMode": "viewport",
@@ -40,17 +47,31 @@
     },
     {
       "state": "open",
-      "action": "hover",
-      "selector": "header .header__inline-menu .list-menu--inline > li:first-child a, header .header__inline-menu details > summary, #Details-HeaderMenu-1 > summary",
+      "action": "click",
+      "selector": "header-drawer summary.header__icon--menu svg",
       "viewports": [
         "1440"
       ],
       "capture": true,
       "captureMode": "viewport",
-      "etiket": "masaustu-menu",
-      "not": "1440 ilk nav/mega"
+      "etiket": "hamburger-1440",
+      "not": "summary 1440 w=0; SVG 32x32 görünür. Inline mega yok."
     }
   ],
+  "stateFindings": {
+    "initial": "375/768/1440: hamburger + Search + Log in + ortada Shrilahome + Cart. Inline mega/link yok. Announcement maroon. Hero arkada (karede slayt değişebilir — autoplay)."
+  },
   "missingStates": [],
-  "interactionNote": "375/768 hamburger ayrı global-menu-drawer. Log in PII yoklandı değil."
+  "interactionNote": "375/768 hamburger ayrı global-menu-drawer. 1440 summary w=0 — tık SVG. Log in PII yok.",
+  "capture": {
+    "url": "https://pandora-furniture-5.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:47:29.411Z"
+  }
 }
