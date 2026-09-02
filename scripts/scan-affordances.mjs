@@ -54,9 +54,17 @@ const browser = await chromium.launch({ headless: true });
 const page = await browser.newPage({ viewport: { width: VP[0], height: VP[1] } });
 
 try {
+  const target = new URL(url);
   await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
   await unlockStorefront(page, passwordFromObservation(obs, url));
   if (/\/password/i.test(page.url())) {
+    await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
+  }
+  const landed = new URL(page.url());
+  if (
+    landed.origin === target.origin &&
+    landed.pathname.replace(/\/$/, "") !== target.pathname.replace(/\/$/, "")
+  ) {
     await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
   }
   await page.waitForTimeout(3000);

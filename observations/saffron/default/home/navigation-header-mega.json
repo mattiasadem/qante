@@ -7,8 +7,70 @@
   "url": "https://midnight-perfume.myshopify.com/",
   "selector": "#shopify-section-sections--23390876238137__header",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
+  "evidence": [
+    "evidence/saffron/default/home/navigation-header-mega.1440.png",
+    "evidence/saffron/default/home/navigation-header-mega.375.png",
+    "evidence/saffron/default/home/navigation-header-mega.768.png",
+    "evidence/saffron/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/saffron/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/saffron/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/saffron/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
   "storePassword": "1",
-  "notlar": "Logo Saffron + nav Home / Shop / Our Story / Contact Us / Faq’s / Blog. Utility: login, search, wishlist (yazım: wishlish), cart. Country/region.",
-  "delta": "Shop #Details-HeaderMenu-2 liste mega (görsel/promo kart yok): All Products, Best Seller, New Arrival, Aquatic, Oceanic, Scents, Gourmand. Wishlist ayrı overlay şeması yok."
+  "notlar": "Logo Saffron + nav Home / Shop / Our Story / Contact Us / Faq’s / Blog. Utility: login, search, wishlist (yazım: wishlish), cart.",
+  "delta": "Shop #Details-HeaderMenu-2 liste mega (görsel/promo kart yok): All Products, Best Seller, New Arrival, Aquatic, Oceanic, Scents, Gourmand. Wishlist ayrı overlay yok.",
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://midnight-perfume.myshopify.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-2 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "Shop hover — tıklama /collections/all'a kaçar"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-HeaderMenu-2",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "details open tutuldu — viewport scrollTo(0) hover'ı kapatmasın. Liste: All Products / Best Seller / New Arrival / Aquatic / Oceanic / Scents / Gourmand"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Logo Saffron Perfumes + nav Home / Shop / Our Story / Contact Us / Faq’s / Blog. Solda search + account, sağda wishlist 0 + cart. Shop’ta chevron; liste kapalı.",
+    "open": ""
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 mega header'da değil — global-menu-drawer. İlk open karesi hover sonrası scrollTo(0) ile kapandı; forceOpen #Details-HeaderMenu-2. Account/wishlist tıklanmadı.",
+  "capture": {
+    "url": "https://midnight-perfume.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:43:18.336Z"
+  }
 }

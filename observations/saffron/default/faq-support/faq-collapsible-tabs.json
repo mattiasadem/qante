@@ -7,8 +7,64 @@
   "url": "https://midnight-perfume.myshopify.com/pages/faqs",
   "selector": "#shopify-section-template--23390875975993__29680075-200c-4000-9de0-3df91944cabe",
   "evidenceSlug": "faq-collapsible-tabs",
-  "evidence": [],
+  "evidence": [
+    "evidence/saffron/default/faq-support/faq-collapsible-tabs.375.png",
+    "evidence/saffron/default/faq-support/faq-collapsible-tabs.768.png",
+    "evidence/saffron/default/faq-support/faq-collapsible-tabs.1440.png"
+  ],
   "storePassword": "1",
   "notlar": "Frequently asked question accordion.",
-  "delta": "Home FAQ’dan ayrı page section."
+  "delta": "Home FAQ’dan ayrı page section. Aynı ilk soru (jewelry lorem).",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://midnight-perfume.myshopify.com/pages/faqs",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--23390875975993__29680075-200c-4000-9de0-3df91944cabe",
+      "capture": true,
+      "etiket": "ilk-kapali",
+      "not": "Tüm sorular + ile kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--23390875975993__29680075-200c-4000-9de0-3df91944cabe details:first-of-type > summary",
+      "capture": false,
+      "not": "İlk soru: Are your jewelry hypoallergenic?"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 600,
+      "capture": true,
+      "etiket": "ilk-acik",
+      "not": "İlk accordion açık — cevap görünür"
+    }
+  ],
+  "stateFindings": {
+    "initial": "",
+    "changed": ""
+  },
+  "missingStates": [],
+  "interactionNote": "Home instance ayrı observation. Submit/form yok.",
+  "capture": {
+    "url": "https://midnight-perfume.myshopify.com/pages/faqs",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "margin-box+minPad8",
+    "updatedAt": "2026-09-02T15:13:52.763Z"
+  }
 }

@@ -7,8 +7,64 @@
   "url": "https://midnight-perfume.myshopify.com/",
   "selector": "#shopify-section-template--23390875844921__featured_collection",
   "evidenceSlug": "product-showcase-grid-featured",
-  "evidence": [],
+  "evidence": [
+    "evidence/saffron/default/home/product-showcase-grid-featured.1440.png",
+    "evidence/saffron/default/home/product-showcase-grid-featured.375.png",
+    "evidence/saffron/default/home/product-showcase-grid-featured.768.png",
+    "evidence/saffron/default/home/product-showcase-grid-featured.hover.kart-hover.1440.png",
+    "evidence/saffron/default/home/product-showcase-grid-featured.initial.grid.1440.png",
+    "evidence/saffron/default/home/product-showcase-grid-featured.initial.grid.375.png",
+    "evidence/saffron/default/home/product-showcase-grid-featured.initial.grid.768.png"
+  ],
   "storePassword": "1",
-  "notlar": "New Collection. Kartlarda CHOOSE OPTIONS / ADD TO CART / From $100.00. Jasmine and ambretta…",
-  "delta": "Dawn featured-collection. QuickAdd modal (#QuickAdd-*) CHOOSE OPTIONS ile açılıyor — ayrı quick-view şeması yazılmadı (leftover). emit:product.quickView şemada var; bu vitrinde QuickAdd."
+  "notlar": "New Collection. Statik karede ATC gizli; hover'da CHOOSE OPTIONS / ADD TO CART beklenir.",
+  "delta": "Dawn featured-collection. QuickAdd leftover. Hover yalnız renk ise token — şemaya girmez.",
+  "interactionStates": [
+    "initial",
+    "hover"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://midnight-perfume.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--23390875844921__featured_collection",
+      "capture": true,
+      "etiket": "grid",
+      "not": "Kapalı kartlar"
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#shopify-section-template--23390875844921__featured_collection .card__media, #shopify-section-template--23390875844921__featured_collection .card__inner",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "kart-hover",
+      "not": "İkinci görsel / CHOOSE OPTIONS / ADD TO CART"
+    }
+  ],
+  "stateFindings": {
+    "initial": "New Collection 4 kart: Jasmine From $100 / Eau de sun-kissed $85 / Secret Love Sale $140→From $130 / Fresh Rose From $70. Hover ikonu yok.",
+    "hover": "1440 ilk kart: sağ üstte tan daire kalp (wishlist) + büyüteç (Quick View). CHOOSE OPTIONS / ATC hover’da görünmedi. 375/768 hover parmakta yok — doğrulanamadı."
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 hover parmakta yok — doğrulanamadı yaz, silme.",
+  "capture": {
+    "url": "https://midnight-perfume.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:46:51.128Z"
+  }
 }

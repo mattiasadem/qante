@@ -7,8 +7,106 @@
   "url": "https://midnight-perfume.myshopify.com/cart",
   "selector": "#shopify-section-template--23390875550009__cart-items",
   "evidenceSlug": "cart-page-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/saffron/default/cart/cart-page-main.1440.png",
+    "evidence/saffron/default/cart/cart-page-main.375.png",
+    "evidence/saffron/default/cart/cart-page-main.768.png"
+  ],
   "storePassword": "1",
-  "notlar": "Boş: Your cart is empty / CONTINUE SHOPPING / Have an account? Log in… cart-footer h=0.",
-  "delta": "cart-items + cart-footer ayrı section; footer boşken 0px. Dolu hâl interact."
+  "notlar": "Boş: Your cart is empty / CONTINUE SHOPPING. cart-footer h=0.",
+  "delta": "cart-items + cart-footer ayrı section; footer boşken 0px.",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://midnight-perfume.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Yeni context boş sepet — /cart/clear Cloudflare tetikliyor"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://midnight-perfume.myshopify.com/products/jasmine-and-ambretta-floral-fragrance-for-women",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": "button.product-form__submit",
+      "value": 15000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "button.product-form__submit",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit",
+      "capture": false,
+      "not": "Jasmine 50ml $100"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://midnight-perfume.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu satır + özet"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--23390875550009__cart-items button[name='plus'], button[name='plus']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "qty 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + CONTINUE SHOPPING + Have an account? Log in to check out faster. cart-footer boşken 0px.",
+    "filled": "",
+    "changed": ""
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "capture (375): zero-size / eşleşmedi: #shopify-section-template--23390875550009__cart-items"
+    },
+    {
+      "state": "filled",
+      "sebep": "adım 4 (addToCart button.product-form__submit): sepete eklenemedi: varyant id bulunamadı"
+    },
+    {
+      "state": "changed",
+      "sebep": "adım 6 (click #shopify-section-template--23390875550009__cart-items button[name='plus'], button[name='plus']): selector eşleşmedi: #shopify-section-template--23390875550009__cart-items button[name='plus'], button[name='plus']"
+    }
+  ],
+  "interactionNote": "Checkout tıklanmadı. /cart/clear yok (Cloudflare). ATC sonrası /cart. Yeni context boş sepet.",
+  "capture": {
+    "url": "https://midnight-perfume.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:02:07.435Z"
+  }
 }

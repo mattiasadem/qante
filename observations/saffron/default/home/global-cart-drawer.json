@@ -7,10 +7,132 @@
   "url": "https://midnight-perfume.myshopify.com/",
   "selector": "#CartDrawer",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/saffron/default/home/global-cart-drawer.1440.png",
+    "evidence/saffron/default/home/global-cart-drawer.375.png",
+    "evidence/saffron/default/home/global-cart-drawer.768.png",
+    "evidence/saffron/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/saffron/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/saffron/default/home/global-cart-drawer.filled.sepete-eklendi.768.png"
+  ],
   "storePassword": "1",
-  "notlar": "Boş: Your cart is empty / CONTINUE SHOPPING / Log in… Free Shipping! $100.00 · Express Shipping! $150.00.",
-  "delta": "Dawn cart-drawer 400px sağ panel. Checkout tıklanmadı. Dolu hâl interact.",
+  "notlar": "Boş: Your cart is empty / CONTINUE SHOPPING. Free Shipping! $100 · Express $150.",
+  "delta": "Dawn cart-drawer 400px sağ panel. Checkout tıklanmadı.",
   "captureMode": "viewport",
-  "prepareClick": "#cart-icon-bubble"
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://midnight-perfume.myshopify.com/",
+      "capture": false,
+      "not": "Yeni context boş sepet — /cart/clear Cloudflare 'Just a moment' tetikliyor"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://midnight-perfume.myshopify.com/products/jasmine-and-ambretta-floral-fragrance-for-women",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": "button.product-form__submit",
+      "value": 15000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "button.product-form__submit",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit",
+      "capture": false,
+      "not": "Jasmine 50ml $100"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "forceOpen",
+      "selector": "#CartDrawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC sonrası drawer — forceOpen hover/scroll kapanmasın"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "forceOpen",
+      "selector": "#CartDrawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "qty 1→2 — drawer açık tutuldu"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart + X. Free Shipping! $100 / Express Shipping! $150 gri bar. Your cart is empty + CONTINUE SHOPPING. Altta Have an account? Log in to check out faster.",
+    "filled": "1440/768: Jasmine and ambretta… Size 50ml $100 qty 1. Free shipping dolu, Express $150 kısmi. Best seller akordeon. Estimated total $100.00 USD. CHECK OUT + View Cart. 375 yeniden.",
+    "changed": "768: qty 2, total $200.00 USD, her iki kargo eşiği yeşil. 375/1440 yeniden."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "adım 1 (click #cart-icon-bubble): selector eşleşmedi: #cart-icon-bubble"
+    },
+    {
+      "state": "filled",
+      "sebep": "adım 4 (addToCart button.product-form__submit): sepete eklenemedi: varyant id bulunamadı"
+    },
+    {
+      "state": "changed",
+      "sebep": "adım 6 (click #CartDrawer button[name='plus']): selector eşleşmedi: #CartDrawer button[name='plus']"
+    }
+  ],
+  "interactionNote": "Checkout tıklanmadı. /cart/clear yok — yeni Playwright context boş sepet. ATC UI; form hidden id 45321394356537.",
+  "capture": {
+    "url": "https://midnight-perfume.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:07:58.166Z"
+  }
 }

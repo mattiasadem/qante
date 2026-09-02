@@ -7,8 +7,70 @@
   "url": "https://midnight-perfume.myshopify.com/",
   "selector": "#shopify-section-template--23390875844921__fe3efae2-131f-4aca-bdc0-0dc718364dda",
   "evidenceSlug": "faq-collapsible-tabs",
-  "evidence": [],
+  "evidence": [
+    "evidence/saffron/default/home/faq-collapsible-tabs.1440.png",
+    "evidence/saffron/default/home/faq-collapsible-tabs.375.png",
+    "evidence/saffron/default/home/faq-collapsible-tabs.768.png",
+    "evidence/saffron/default/home/faq-collapsible-tabs.changed.ilk-acik.1440.png",
+    "evidence/saffron/default/home/faq-collapsible-tabs.changed.ilk-acik.375.png",
+    "evidence/saffron/default/home/faq-collapsible-tabs.changed.ilk-acik.768.png",
+    "evidence/saffron/default/home/faq-collapsible-tabs.initial.ilk-kapali.1440.png",
+    "evidence/saffron/default/home/faq-collapsible-tabs.initial.ilk-kapali.375.png",
+    "evidence/saffron/default/home/faq-collapsible-tabs.initial.ilk-kapali.768.png"
+  ],
   "storePassword": "1",
-  "notlar": "Frequently Asked Questions — jewelry/polymer clay lorem (tema stoğu).",
-  "delta": "Home accordion. /pages/faqs ayrı instance."
+  "notlar": "Frequently Asked Questions — jewelry/polymer clay lorem.",
+  "delta": "Home accordion. /pages/faqs ayrı instance.",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://midnight-perfume.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--23390875844921__fe3efae2-131f-4aca-bdc0-0dc718364dda",
+      "capture": true,
+      "etiket": "ilk-kapali",
+      "not": "Tüm sorular + ile kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--23390875844921__fe3efae2-131f-4aca-bdc0-0dc718364dda details:first-of-type > summary",
+      "capture": false,
+      "not": "İlk soru: Are your jewelry hypoallergenic?"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 600,
+      "capture": true,
+      "etiket": "ilk-acik",
+      "not": "İlk accordion açık — cevap görünür mü"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Frequently Asked Questions. Beş satır + ile kapalı: Are your jewelry hypoallergenic? / How durable is polymer clay jewelry? / What if my order never arrives? / Do you do custom orders? / How to clean and make my earrings last longer?",
+    "changed": "İlk satır açık (altı çizili, −). Cevap: All jewelry metal components… nickel free… Sammers Clay. Diğerleri + kapalı."
+  },
+  "missingStates": [],
+  "interactionNote": "İlk details summary. Çoklu açık denenmedi.",
+  "capture": {
+    "url": "https://midnight-perfume.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:46:06.601Z"
+  }
 }

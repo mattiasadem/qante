@@ -7,10 +7,88 @@
   "url": "https://midnight-perfume.myshopify.com/",
   "selector": "#menu-drawer",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/saffron/default/home/global-menu-drawer.375.png",
+    "evidence/saffron/default/home/global-menu-drawer.768.png",
+    "evidence/saffron/default/home/global-menu-drawer.changed.shop-akordeon.375.png",
+    "evidence/saffron/default/home/global-menu-drawer.changed.shop-akordeon.768.png",
+    "evidence/saffron/default/home/global-menu-drawer.open.hamburger-acik.375.png",
+    "evidence/saffron/default/home/global-menu-drawer.open.hamburger-acik.768.png"
+  ],
   "storePassword": "1",
   "notlar": "Hamburger #Details-menu-drawer-container. Home / Shop / Our Story / Contact / Faq’s / Blog + login + ülke/dil + sosyal.",
-  "delta": "1440’ta hamburger gizli olabilir (zero-size). Shop altı Details-menu-drawer-menu-item-2. Interact 375/768.",
+  "delta": "1440 hamburger zero-size (statik capture atlandı). Shop #Details-menu-drawer-menu-item-2.",
   "captureMode": "viewport",
-  "prepareClick": "#Details-menu-drawer-container > summary"
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://midnight-perfume.myshopify.com/",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger-acik",
+      "not": "Açık drawer; Shop ok kapalı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-menu-drawer-menu-item-2 > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false,
+      "not": "Shop boş ok — yazılı Shop <a> koleksiyona kaçar"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 600,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-akordeon",
+      "not": "Shop altı koleksiyon listesi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "375/768 hamburger kapalı — drawer DOM’da, statik karede panel yok.",
+    "open": "Tam yükseklik beyaz drawer. Home gri aktif; Shop sağ ok; Our Story / Contact Us / Faq’s / Blog. Altta Log in, United States | USD $, English, Facebook/Pinterest/Instagram.",
+    "changed": "Shop iç seviye: geri ok + All Products, Best Seller, New Arrival, Aquatic, Oceanic, Scents, Gourmand."
+  },
+  "missingStates": [],
+  "interactionNote": "Yalnız 375/768. Shop summary (ok) tıklandı, Shop yazısı değil.",
+  "capture": {
+    "url": "https://midnight-perfume.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:43:54.250Z"
+  }
 }
