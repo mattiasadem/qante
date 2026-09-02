@@ -7,7 +7,122 @@
   "url": "https://fashion-store-clean-20.myshopify.com/",
   "selector": "#shopify-section-sections--18953881911395__header",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
-  "notlar": "Logo + Shop/Themes/Shop By/Mens/Womens/Collections. Mega görseller DOM'da (third-mega-menu-img). Sepet 0, Log in. Arama #Search-In-Modal.",
-  "delta": "Dawn-türev header; mega görsel kolonları kapalı karede görünmez. Log in tıklanmadı."
+  "evidence": [
+    "evidence/guccy/default/home/navigation-header-mega.1440.png",
+    "evidence/guccy/default/home/navigation-header-mega.375.png",
+    "evidence/guccy/default/home/navigation-header-mega.768.png",
+    "evidence/guccy/default/home/navigation-header-mega.changed.mens-mega-acik.1440.png",
+    "evidence/guccy/default/home/navigation-header-mega.initial.ilk-hal.1440.png",
+    "evidence/guccy/default/home/navigation-header-mega.initial.ilk-hal.375.png",
+    "evidence/guccy/default/home/navigation-header-mega.initial.ilk-hal.768.png",
+    "evidence/guccy/default/home/navigation-header-mega.open.shop-mega-acik.1440.png"
+  ],
+  "captureMode": "viewport",
+  "notlar": "Logo + Shop/Themes/Shop By/Mens/Womens/Collections. Mega details#Details-HeaderMenu-*. Arama ve sepet ayrı overlay.",
+  "delta": "Dawn-türev mega (details.mega-menu). Wishlist/Compare ikonları var — tıklanmadı. Log in tıklanmadı. 1. hover karesi kapalı homepage (panel kapanıyor); retry hover+forceOpen.",
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://fashion-store-clean-20.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "ilk-hal",
+      "not": "Kapalı header. Mega panel yok."
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "details#Details-HeaderMenu-1 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "1440 Shop hover. Summary tıklanmadı (sayfa kaçış)."
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "details#Details-HeaderMenu-1",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "selector": "#MegaMenu-Content-3",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega-acik",
+      "not": "Beklenen: Men/Women kolonları (Jeans, Shirt, Tops…)."
+    },
+    {
+      "state": "changed",
+      "action": "mouseMove",
+      "value": "20,400",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "Panel dışına çık."
+    },
+    {
+      "state": "changed",
+      "action": "hover",
+      "selector": "details#Details-HeaderMenu-4 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "forceOpen",
+      "selector": "details#Details-HeaderMenu-4",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "selector": "#MegaMenu-Content-1",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mens-mega-acik",
+      "not": "Beklenen: Men's Fashion / Jacket / Denim — Shop'tan farklı."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "1440: GUCCY. + Shop/Themes/Shop By/Mens/Womens/Collections + search/wishlist/account/cart. Mega kapalı. 375/768: hamburger + logo + search/cart (wishlist 375'te yok).",
+    "open": "1440 Shop mega: 3 kolon Men (Jeans/Shirt/Shoes/Trousers/Tracksuits) · Women (Tops/Bottoms/Leggings/Jackets/Dresses) · Accessories (Handbags/Purses/Backpacks/Wallets/Sunglasses) + Best Sellers 4 kart + 2 banner (60% / 40%).",
+    "changed": "1440 Mens mega (Shop'tan farklı): 6 kare Men's Fashion / Jacket / Denim / Shirt Collection / Coat / Outerwear + aynı 2 banner."
+  },
+  "interactionNote": "scan: Women⊃Men tuzağı — details#id, has-text yok. 375/768 hamburger global-menu-drawer. 1. hover karesi kapalı; retry hover+forceOpen details#Details-HeaderMenu-1/4. Wishlist/account tıklanmadı.",
+  "capture": {
+    "url": "https://fashion-store-clean-20.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:35:21.505Z"
+  }
 }

@@ -53,7 +53,28 @@ Karar: onay bekliyor
 
 ---
 
-ADAY: guccy-wishlist  
-Gerekçe: `/pages/wishlist` header/footer linki. Account-adjacent; walk dışı.  
-Öneri: leftover  
+ADAY: guccy-social-proof-toast
+Gerekçe: "Someone liked and Buy…" toast + köşe görsel popup birçok evidence PNG'ye sızıyor. Section grammar değil; dismiss-overlays öldürmüyor.
+Öneri: leftover — overlay leak
+Karar: onay bekliyor
+
+---
+
+ADAY: guccy-wishlist
+Gerekçe: `/pages/wishlist` header/footer linki. Account-adjacent; walk dışı.
+Öneri: leftover
+Karar: onay bekliyor
+
+---
+
+ADAY: guccy-menu-drawer-open
+Gerekçe: 375/768 hamburger. 2 resmi deneme: click kapalı homepage / forceOpen sonrası `#menu-drawer` visibility:hidden (Dawn `menu-opening` class). Probe metin (Shop…Log in) var; resmi açık PNG yok. Üçüncü deneme yok.
+Öneri: leftover — interact kare yok
+Karar: onay bekliyor
+
+---
+
+ADAY: guccy-atc-lookbook-modal
+Gerekçe: 768 PDP add-to-cart sonrası lookbook/shopable modal (Solid Oversized Sweater + ATC). Cart drawer 375/1440 doldu; 768 kare bu overlay. PII yok.
+Öneri: leftover — 768 filled drawer karesi değil
 Karar: onay bekliyor

@@ -46,7 +46,7 @@
 | HexClad | [`hexclad.md`](./hexclad.md) | ✅ listicle-fathers-day · 5 obs · 15 PNG · 0 yeni şema |
 | Allbirds | [`allbirds.md`](./allbirds.md) | 🟡 Mod A — 30 obs · ~90 PNG · partial capture (search blocked) |
 | Legal / policy (Kreis recipe) | [`policy-legal.md`](./policy-legal.md) | ✅ page-recipes/policy · 3-col sticky TOC \| content \| sibling nav |
-| Guccy (Speedo) | [`guccy.md`](./guccy.md) | 🟡 Mod A — fashion-store-clean-20 · Guccy 1.5.0 · password 1 · 0 yeni şema |
+| Guccy (Speedo) | [`guccy.md`](./guccy.md) | ✅ first inventory — fashion-store-clean-20 · Guccy 1.5.0 · password 1 · 45 obs · 157 PNG · 0 yeni şema · hamburger leftover |
 
 **Interact (discover sonrası derinlik):** [`interact.md`](./interact.md) — kapalı kare yalanı; Stretch + Cocoon/Balance shop-the-look kapandı.
 

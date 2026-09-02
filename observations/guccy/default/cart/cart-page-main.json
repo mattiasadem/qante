@@ -7,7 +7,68 @@
   "url": "https://fashion-store-clean-20.myshopify.com/cart",
   "selector": "#shopify-section-template--18953880633443__cart-items",
   "evidenceSlug": "cart-page-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/guccy/default/cart/cart-page-main.1440.png",
+    "evidence/guccy/default/cart/cart-page-main.375.png",
+    "evidence/guccy/default/cart/cart-page-main.768.png",
+    "evidence/guccy/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/guccy/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/guccy/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/guccy/default/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/guccy/default/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/guccy/default/cart/cart-page-main.initial.cart-bos.768.png"
+  ],
   "notlar": "Boş sepet: Your cart is empty / Continue Shopping / Have an account? Log in.",
-  "delta": "cart-footer ayrı section sıfır yükseklik. Account tıklanmadı."
+  "delta": "cart-footer ayrı section sıfır yükseklik. Account tıklanmadı.",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://fashion-store-clean-20.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş sayfa — static 3vp ile aynı."
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://fashion-store-clean-20.myshopify.com/products/oversized-tee-black",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductInfo-template--18953881616483__main button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://fashion-store-clean-20.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart sayfa. Beklenen: Oversized Tee satırı + adet + toplam. Checkout tıklanmadı."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "3vp: Your cart is empty + Continue Shopping (kırmızı). 1440 ayrıca Have an account? / Log in to check out faster (tıklanmadı).",
+    "filled": "3vp: Your cart + Continue shopping. Oversized Tee - Black $99 satırı, Color: Black, Size: XS, adet 1, çöp ikonu, TOTAL $99. Checkout bu crop'ta yok (cart-footer 0px leftover). Account tıklanmadı."
+  },
+  "interactionNote": "Account / checkout tıklanmadı. filled/addToCart 768'de cart/add.js fallback.",
+  "capture": {
+    "url": "https://fashion-store-clean-20.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:34:26.037Z"
+  }
 }

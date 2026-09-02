@@ -7,9 +7,99 @@
   "url": "https://fashion-store-clean-20.myshopify.com/",
   "selector": "#CartDrawer",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
-  "notlar": "Dawn-türev #CartDrawer. class cart-drawer shipping. Boş hâl interact'te.",
-  "delta": "Drawer DOM home'da; kapalı kare yanıltır.",
+  "evidence": [
+    "evidence/guccy/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/guccy/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/guccy/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/guccy/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/guccy/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/guccy/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
   "captureMode": "viewport",
-  "prepareClick": "a#cart-icon-bubble, .header__icon--cart, a[href='/cart'][class*='icon']"
+  "notlar": "#CartDrawer · opener a#cart-icon-bubble. Boşta YOU MAY LIKE recs.",
+  "delta": "cart-drawer + kademeli kargo barı (Free $100 / Express $150). Checkout tıklanmadı. 768 filled kare lookbook modal — leftover.",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://fashion-store-clean-20.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a#cart-icon-bubble",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "#CartDrawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer forceOpen. Beklenen: Your cart is empty + Continue Shopping + YOU MAY LIKE."
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://fashion-store-clean-20.myshopify.com/products/oversized-tee-black",
+      "capture": false,
+      "not": "Sepeti doldurmak için PDP."
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductInfo-template--18953881616483__main button[name='add']",
+      "capture": false,
+      "not": "Görünür PDP ATC — gizli quick-add'e düşme."
+    },
+    {
+      "state": "filled",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "forceOpen",
+      "selector": "#CartDrawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer forceOpen (768 1. kare lookbook modal idi). Beklenen: Oversized Tee satırı + toplam. Checkout tıklanmadı."
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "filled",
+      "sebep": "768: 2 deneme lookbook/shopable modal (Solid Oversized Sweater + ATC) — drawer satırı yok. 375/1440 dolu drawer kanıtlı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "3vp sağ drawer: Your cart is empty + Continue Shopping + Have an account? Log in + YOU MAY LIKE (Girls Tapered Cotton Blend Trousers $70→$60 + Add To Cart). Checkout yok.",
+    "filled": "375/1440: YOUR CART + Free Shipping $100 / Express $150 bar + Oversized Tee - Black $99 Color Black Size XS adet 1 + Estimated total $99 USD + Check Out (tıklanmadı). 1440 yanında YOU MAY LIKE modal (6 kart). 768 kare lookbook (Solid Oversized Sweater) — drawer değil, missing."
+  },
+  "interactionNote": "addToCart PDP #ProductInfo… button[name=add]; 768 cart/add.js fallback. 1. empty click kapalı homepage; retry forceOpen cart-drawer. 768 filled 2. deneme hâlâ lookbook overlay.",
+  "capture": {
+    "url": "https://fashion-store-clean-20.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:39:42.518Z"
+  }
 }
