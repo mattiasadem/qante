@@ -12,6 +12,7 @@
 
 export const PUBLIC_DEMO_PASSWORDS = {
   "adlwin-store.myshopify.com": "1",
+  "digital-gallery-shop-2.myshopify.com": "1",
   "fashion-store-clean-11.myshopify.com": "1",
   "fashion-store-clean-20.myshopify.com": "1",
   "hubble-nutrition.myshopify.com": "1",
@@ -84,15 +85,28 @@ export async function unlockStorefrontIfNeeded(page, obs = {}) {
   }
   if (!password) return { unlocked: false, reason: "no-password" };
 
+  // Dawn password template: field sits in a closed <details.password-modal>.
+  const modalToggle = page.locator(
+    "details.password-modal summary, summary.modal__toggle, details.modal summary"
+  ).first();
+  if (await modalToggle.count()) {
+    const details = page.locator("details.password-modal, details.modal").first();
+    const alreadyOpen = (await details.getAttribute("open").catch(() => null)) != null;
+    if (!alreadyOpen) {
+      await modalToggle.click({ force: true }).catch(() => {});
+      await page.waitForTimeout(400);
+    }
+  }
+
   const input = page.locator("input[type='password'], input[name='password']").first();
   if (!(await input.count())) return { unlocked: false, reason: "no-input" };
-  await input.fill(String(password));
+  await input.fill(String(password), { force: true });
   const submit = page
     .locator(
       "form[action*='password'] button[type='submit'], form[action*='password'] input[type='submit'], form[action*='password'] button"
     )
     .first();
-  await submit.click();
+  await submit.click({ force: true });
   await page.waitForTimeout(2000);
   const still = /\/password\/?$/.test(new URL(page.url()).pathname);
   const gate = await waitOutCheckpoint(page);
