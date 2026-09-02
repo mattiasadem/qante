@@ -52,6 +52,7 @@ export const PUBLIC_DEMO_PASSWORDS = {
   "toyon-toys-2.myshopify.com": "1",
   "vedzila-organic.myshopify.com": "1",
   "watchez-online-store.myshopify.com": "1",
+  "women-beauty-5.myshopify.com": "1",
   "women-beauty-6.myshopify.com": "1",
   "women-beauty-7.myshopify.com": "1",
   "women-beauty-8.myshopify.com": "1",
