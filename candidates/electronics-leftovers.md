@@ -97,6 +97,22 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: electronics-search-icon-hidden  
+Gerekçe: `summary.header__icon--search` ve `#Search-In-Modal` DOM'da; 375/768/1440 kutu 0×0. details `open` + fill hâlâ 0px. Mobil drawer'da arama yok. `/search?q=jbl` sayfa ayrı.  
+Örnekler: https://speedo-electro-dropship.myshopify.com/  
+Öneri: leftover — gizli predictive search  
+Karar: onay bekliyor
+
+---
+
+ADAY: electronics-atc-hidden  
+Gerekçe: PDP `button.product-form__submit` (Add to cart) 0×0. Görünür CTA `BUY IT NOW` Shopify payment button — tıklanmadı. Sepet `/cart/add.js` ile dolduruldu.  
+Örnekler: https://speedo-electro-dropship.myshopify.com/products/jbl-xtreme-5-waterproof-bluetooth-speaker  
+Öneri: leftover — gizli ATC / ödeme CTA  
+Karar: onay bekliyor
+
+---
+
 ADAY: electronics-testimonial-detergent-copy  
 Gerekçe: Home testimonials “laundry detergent” kopyası; elektronik ürüne ait değil.  
 Örnekler: https://speedo-electro-dropship.myshopify.com/  

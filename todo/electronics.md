@@ -15,7 +15,7 @@ Walk host = `Shopify.shop` = **speedo-electro-dropship.myshopify.com**
 `/` **302** → `/password` · title `speedo-electro-dropship (password: 1)`  
 Public storefront-unlock `1` — başka host yok.
 
-**Durum:** 🟡 Mod A 3vp capture bitti (115 PNG) — interact sırada  
+**Durum:** ✅ Mod A + interact — 0 yeni şema  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -31,7 +31,7 @@ Public storefront-unlock `1` — başka host yok.
 | Parallel | yalnız `observations/electronics/`, `evidence/electronics/`, `todo/electronics.md`, `candidates/electronics-leftovers.md` + unlock host satırı |
 
 **Kapsam satırı:**  
-`Electronics · default · speedo-electro-dropship-v-1-5-0 / schema_name speedo-electro-dropship 1.5.0 · theme_store_id null · shop speedo-electro-dropship.myshopify.com · password 1 · home→PDP jbl-xtreme-5→PLP frontpage→/collections→search jbl→cart→our-story→contact→faq-s→news+article→404 · 40 obs · 0 yeni şema · leftover: candidates/electronics-leftovers.md`
+`Electronics · default · speedo-electro-dropship-v-1-5-0 / schema_name speedo-electro-dropship 1.5.0 · theme_store_id null · shop speedo-electro-dropship.myshopify.com · password 1 · home→PDP jbl-xtreme-5→PLP frontpage→/collections→search jbl→cart empty/filled/qty→our-story→contact→faq-s→news+article→404 · 40 obs · 0 yeni şema · leftover: candidates/electronics-leftovers.md · interact: EXPLORE/hamburger/PDP Blue/FAQ/cart qty; search+notification missingStates`
 
 ---
 
@@ -40,11 +40,12 @@ Public storefront-unlock `1` — başka host yok.
 | Şablon | Durum | 3vp |
 |---|---|---|
 | Home roster (announce→footer) | [x] obs | [x] capture |
-| EXPLORE dropdown 1440 | [ ] interact | — |
-| Predictive search `jbl` | [ ] interact | — |
-| Mobile hamburger 375+768 | [ ] interact | — |
-| Cart notification + cart page filled | [ ] interact | — |
-| PDP COLOR Black→Blue | [ ] interact | — |
+| EXPLORE dropdown 1440 | [x] interact | OUR STORY / FAQ’S / CONTACT |
+| Predictive search | missingStates | ikon 0×0 |
+| Mobile hamburger 375+768 | [x] interact | Shop/Blogs/Explore |
+| Cart notification filled | missingStates | ATC 0×0 |
+| Cart page filled + qty | [x] interact | $50 → $100 · add.js |
+| PDP COLOR Black→Blue | [x] interact | blue_jbl |
 | PLP `/collections/frontpage` | [x] obs | [x] capture |
 | Collections `/collections` | [x] obs | [x] capture |
 | Search `/search?q=jbl` | [x] obs | [x] capture |
@@ -94,5 +95,6 @@ Public storefront-unlock `1` — başka host yok.
 
 ## Evidence backlog
 
-- [x] resmi 3vp `capture-observation.mjs` (115 PNG; search overlay + menu 375/1440 zero-size → interact)
-- [ ] interact: EXPLORE / search jbl / hamburger / cart filled / PDP COLOR / FAQ
+- [x] resmi 3vp `capture-observation.mjs` (115 PNG)
+- [x] interact: EXPLORE 1440 / hamburger 375+768 / PDP Blue / FAQ / cart filled+qty
+- [x] search overlay + cart-notification filled → missingStates
