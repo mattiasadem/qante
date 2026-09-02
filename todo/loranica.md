@@ -15,7 +15,7 @@ Sayfa başlığı: **Best Shopify Loranica Beauty Care Store – Women Beauty 5 
 
 **Password:** Speedo ürün sayfası “Please enter password `1` to view demo.” Aynı host `/password` — public storefront-unlock. Başka host yok.
 
-**Durum:** 🟡 Mod A roster yazıldı · 3vp + interact sırada  
+**Durum:** 🟡 Mod A 3vp bitti (113 PNG) · interact sırada  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -28,7 +28,7 @@ Sayfa başlığı: **Best Shopify Loranica Beauty Care Store – Women Beauty 5 
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` |
 | Unlock | `scripts/unlock-storefront.mjs` — `/password` + `1` · host `women-beauty-5.myshopify.com` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
-| Observation | **38** (evidence henüz) |
+| Observation | **38** |
 | Parallel | yalnız `observations/loranica/`, `evidence/loranica/`, `todo/loranica.md`, `candidates/loranica-leftovers.md` + password helper |
 
 **Kapsam satırı:**  
@@ -92,7 +92,7 @@ Sayfa başlığı: **Best Shopify Loranica Beauty Care Store – Women Beauty 5 
 | collections | `/collections` | `collection-nav-grid` |
 | search | `/search?q=cream` | `search-results` |
 | cart | `/cart` | `cart-page-main` |
-| about-brand | `/pages/about-us` | overlay · IWT About Me · features team · IWT×2 |
+| about-brand | `/pages/about-us` | overlay · IWT About Me · features team · overlay.2 Makeup Kit · IWT Our Work |
 | contact | `/pages/contact` | overlay · features office · `lead-capture-form` |
 | faq-support | `/pages/faqs` | overlay · `faq-collapsible-tabs` |
 | blog-list | `/blogs/news` | `blog-list-main` |
