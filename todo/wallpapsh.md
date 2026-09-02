@@ -14,7 +14,7 @@
 
 **Unlock:** Vendor ürün sayfası “Please enter password "1" to view demo.” Aynı host `/password` — public storefront unlock. Başka host yok.
 
-**Durum:** 🟡 Mod A observations yazıldı — 3vp + interact sırada  
+**Durum:** 🟡 Mod A 41 obs + 121 static 3vp yazıldı — interact sırada  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -38,20 +38,20 @@
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | [x] obs | [ ] capture |
+| Home roster (announcement→footer) | [x] obs | [x] capture |
 | Header SHOP BY ROOM 1440 | [x] obs | [ ] interact |
 | Predictive search | [x] obs | [ ] interact |
 | Mobile menu 375 + 768 | [x] obs | [ ] interact |
 | Cart drawer empty + filled + qty | [x] obs | [ ] interact |
 | PDP Hobby Pink Size/Color | [x] obs | [ ] interact |
-| PLP `/collections/new-arrivals` | [x] obs | [ ] capture |
-| Collections `/collections` | [x] obs | [ ] capture |
-| Search `/search?q=wallpaper` | [x] obs | [ ] capture |
+| PLP `/collections/new-arrivals` | [x] obs | [x] capture |
+| Collections `/collections` | [x] obs | [x] capture |
+| Search `/search?q=wallpaper` | [x] obs | [x] capture |
 | Cart `/cart` empty | [x] obs | [ ] + filled |
-| About `/pages/about-us-1` | [x] obs | [ ] capture |
-| Contact `/pages/contact` (submit yok) | [x] obs | [ ] capture |
+| About `/pages/about-us-1` | [x] obs | [x] capture |
+| Contact `/pages/contact` (submit yok) | [x] obs | [x] capture |
 | FAQ `/pages/faq` | [x] obs | [ ] interact |
-| Blog `/blogs/news` + article | [x] obs | [ ] capture |
+| Blog `/blogs/news` + article | [x] obs | [x] capture |
 | Email / account / checkout / newsletter submit | ⛔ PII | — |
 
 ---
@@ -90,7 +90,7 @@
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
+- [x] Official 3vp static (`capture-observation.mjs`) — 41/41 · 121 PNG · overlay kapalı kare homepage (menu/search/cart)
 - [ ] Interact mega / search / cart / menu / PDP swatch / tabs / FAQ
 - [ ] PNG bak → stateFindings
 - [ ] `node scripts/validate-schemas.mjs`
