@@ -38,6 +38,7 @@ export const PUBLIC_DEMO_PASSWORDS = {
   "speedo-nutronix.myshopify.com": "1",
   "tormeti-fashi.myshopify.com": "1",
   "toyon-toys-2.myshopify.com": "1",
+  "toyon-toys.myshopify.com": "1",
   "vedzila-organic.myshopify.com": "1",
   "watchez-online-store.myshopify.com": "1",
   "women-beauty-8.myshopify.com": "1",
