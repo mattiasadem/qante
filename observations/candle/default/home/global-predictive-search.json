@@ -10,13 +10,22 @@
   "captureMode": "viewport",
   "prepareClick": "details summary.header__icon--search, .header__icon--search, #Search-In-Modal-1",
   "evidence": [
+    "evidence/candle/default/home/global-predictive-search.1440.png",
     "evidence/candle/default/home/global-predictive-search.375.png",
     "evidence/candle/default/home/global-predictive-search.768.png",
-    "evidence/candle/default/home/global-predictive-search.1440.png"
+    "evidence/candle/default/home/global-predictive-search.initial.arama-bos.1440.png",
+    "evidence/candle/default/home/global-predictive-search.initial.arama-bos.375.png",
+    "evidence/candle/default/home/global-predictive-search.initial.arama-bos.768.png",
+    "evidence/candle/default/home/global-predictive-search.input.arama-candles.1440.png",
+    "evidence/candle/default/home/global-predictive-search.input.arama-candles.375.png",
+    "evidence/candle/default/home/global-predictive-search.input.arama-candles.768.png"
   ],
   "notlar": "predictive-search + #Search-In-Modal-1 (1440 görünür). Modal #Search-In-Modal.",
   "delta": "Shopify.theme.name Speedo-candles-store-v-1-5-0 · schema_name Speedo candles Store · schema_version 1.5.0 · theme_store_id null · role main · id 171992645913 · shop speedo-candles-store.myshopify.com · Dawn-like OS 2.0. Vendor-published demo password 1 (public storefront unlock). Dawn predictive-search. Account tıklanmadı.",
-  "interactionStates": ["initial", "input"],
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
   "interactionSteps": [
     {
       "state": "initial",
@@ -50,15 +59,22 @@
       "not": "katalogSorgu=candles (scan). Suggestions + koleksiyon + ürün."
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "375/768/1440: Search placeholder + büyüteç + X. Öneri listesi yok. Arkada ticker + hero.",
+    "input": "candles: SUGGESTIONS — candles / design lit candles / TEALIGHT CANDLES / PILLAR CANDLES / BODY SHAPE CANDLES / CANDLE JARS. PRODUCTS — Simple White Candles, Candles In The Glass Jars, Body Shape Candles, Decorative Shapes Of Candles + Search for “candles”."
+  },
   "missingStates": [],
-  "interactionNote": "Scan 2 predictive-search (desktop+mobile kopya) — viewport en büyüğü alır. fill ilk görünür input. Submit/PII yok.",
+  "interactionNote": "katalogSorgu candles (scan). İki predictive-search kopyası — viewport. Submit/PII yok.",
   "capture": {
     "url": "https://speedo-candles-store.myshopify.com/",
-    "viewports": ["375", "768", "1440"],
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T13:40:54.844Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:10:16.353Z",
     "prepareClick": "details summary.header__icon--search, .header__icon--search, #Search-In-Modal-1"
   }
 }

@@ -41,7 +41,10 @@ import {
   assertCleanForScreenshot,
 } from "./dismiss-overlays.mjs";
 import { screenshotSectionWithPadding } from "./screenshot-section.mjs";
-import { unlockStorefrontIfNeeded } from "./unlock-storefront.mjs";
+import {
+  unlockStorefrontIfNeeded,
+  STOREFRONT_UA,
+} from "./unlock-storefront.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const qanteRoot = path.resolve(__dirname, "..");
@@ -724,6 +727,7 @@ try {
       deviceScaleFactor: 1,
       isMobile: false,
       hasTouch: false,
+      userAgent: STOREFRONT_UA,
     });
 
     // İlk adım goto değilse taban sayfayı biz açalım

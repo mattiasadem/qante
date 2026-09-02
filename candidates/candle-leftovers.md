@@ -134,3 +134,19 @@ Gerekçe: Featured/PLP `quick-add__submit` metni “Add to cart Sold out”; `di
 Örnekler: home featured kart 1  
 Öneri: leftover — kart kopyası  
 Karar: onay bekliyor
+
+---
+
+ADAY: candle-cart-drawer-best-seller  
+Gerekçe: Dolu cart-drawer’da “Best seller” accordion (kapalı). Upsell; tıklanmadı, yeni şema yok.  
+Örnekler: #CartDrawer filled  
+Öneri: leftover — drawer upsell  
+Karar: onay bekliyor
+
+---
+
+ADAY: candle-shipping-threshold-mismatch  
+Gerekçe: Announcement “FREE Shipping … USD60”; drawer Free $100 / Express $150. İki eşik.  
+Örnekler: home bar + cart-drawer  
+Öneri: leftover — demo eşik  
+Karar: onay bekliyor

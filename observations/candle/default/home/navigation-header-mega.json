@@ -8,14 +8,21 @@
   "selector": "#shopify-section-sections--23490800255257__header",
   "evidenceSlug": "navigation-header-mega",
   "evidence": [
+    "evidence/candle/default/home/navigation-header-mega.1440.png",
     "evidence/candle/default/home/navigation-header-mega.375.png",
     "evidence/candle/default/home/navigation-header-mega.768.png",
-    "evidence/candle/default/home/navigation-header-mega.1440.png"
+    "evidence/candle/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/candle/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/candle/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/candle/default/home/navigation-header-mega.open.candles-dropdown.1440.png"
   ],
   "notlar": "header--top-center. Logo Candee. Nav: Home / Candles (details#Details-HeaderMenu-2) / Our Story / Contact Us / Faq's. Search + account + #cart-icon-bubble. Mega class yok.",
   "delta": "Shopify.theme.name Speedo-candles-store-v-1-5-0 · schema_name Speedo candles Store · schema_version 1.5.0 · theme_store_id null · role main · id 171992645913 · shop speedo-candles-store.myshopify.com · Dawn-like OS 2.0. Vendor-published demo password 1 (public storefront unlock). Mega yok — Candles basit details dropdown. Log in tıklanmadı.",
   "captureMode": "viewport",
-  "interactionStates": ["initial", "open"],
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
   "interactionSteps": [
     {
       "state": "initial",
@@ -42,21 +49,35 @@
       "state": "open",
       "action": "hover",
       "selector": "#Details-HeaderMenu-2 > summary",
-      "viewports": ["1440"],
+      "viewports": [
+        "1440"
+      ],
       "capture": true,
       "captureMode": "viewport",
       "etiket": "candles-dropdown",
       "not": "Hover summary — click <a href=/collections/all> sayfaya gider. Shop All / Tealight / Candle Jars / Soy / Pillar. Mega kolon yok."
     }
   ],
-  "stateFindings": {},
-  "missingStates": [],
-  "interactionNote": "Scan: #Details-HeaderMenu-2 > summary. Probe: hover open=true URL home; click URL /collections/all. Wishlist / Log in tıklanmadı.",
+  "stateFindings": {
+    "initial": "375/768: hamburger + search + CANDEE + wishlist 0 + sepet; ticker + FREE Shipping USD60. 1440: CANDEE ortada; Home (altı çizili) / Candles chevron / Our Story / Contact Us / Faq's / Blog; solda search+hesap, sağda wishlist+sepet. Dropdown kapalı.",
+    "open": "1440 Candles hover: beyaz dikey kutu — Shop All, Tealight Candles, Candle Jars, Soy Candle, Pillar Candles. Mega kolon / görsel / promo yok. URL home."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375/768 hamburger ayrı global-menu-drawer — header'da mega/dropdown yok"
+    }
+  ],
+  "interactionNote": "Hover summary. Click <a href=/collections/all> sayfaya gider. Wishlist / Log in tıklanmadı.",
   "capture": {
     "url": "https://speedo-candles-store.myshopify.com/",
-    "viewports": ["375", "768", "1440"],
-    "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-02T13:42:56.093Z"
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:06:48.032Z"
   }
 }
