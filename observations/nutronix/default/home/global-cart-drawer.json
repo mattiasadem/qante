@@ -11,7 +11,10 @@
   "evidence": [
     "evidence/nutronix/default/home/global-cart-drawer.1440.png",
     "evidence/nutronix/default/home/global-cart-drawer.375.png",
-    "evidence/nutronix/default/home/global-cart-drawer.768.png"
+    "evidence/nutronix/default/home/global-cart-drawer.768.png",
+    "evidence/nutronix/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/nutronix/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/nutronix/default/home/global-cart-drawer.initial.cart-bos.768.png"
   ],
   "notlar": "Dawn cart-drawer. Opener a.header__icon--cart. Boş tık bazen active olmaz — forceOpen. Dolu: ATC sonrası drawer.active + satır + $68.70 qty 2.",
   "delta": "Free Shipping $500 / Express $800. Checkout tıklanmadı. Shopify.theme.name Speedo-nutronix-v-1-5-0 · id 170790388006 · schema_name Speedo nutronix · schema_version 1.5.0 · theme_store_id null · role main · shop speedo-nutronix.myshopify.com · walk https://speedo-nutronix.myshopify.com/ · Speedo Themes third-party (not Theme Store) · public demo password 1",
@@ -88,25 +91,25 @@
     }
   ],
   "stateFindings": {
-    "initial": "",
-    "filled": "",
-    "changed": ""
+    "initial": "768: sağ drawer — Your cart / Back. Empty: Your cart is empty, CONTINUE SHOPPING, Have an account? Log in. Free Shipping! $500 / Express Shipping! $800 (bar boş).",
+    "filled": "768 UI ATC: Gummies satırı qty 1 $34.35, trash, Best seller + Order special instructions accordion, Estimated total $34.35 USD, CHECK OUT, View cart. Kargo barı yeşil $500'e doğru.",
+    "changed": "768 qty 1→2, Estimated total $68.70 USD. Satır birim $34.35. Checkout tıklanmadı."
   },
   "missingStates": [
     {
       "state": "initial",
-      "sebep": "adım 2 (click a.header__icon--cart): selector eşleşmedi: a.header__icon--cart"
+      "sebep": "375/1440 ikinci denemede cart ikonu locator 0 — kare yok. 768 alındı."
     },
     {
       "state": "filled",
-      "sebep": "adım 5 (addToCart #shopify-section-template--23257314197798__main button.product-form__submit): sepete eklenemedi: varyant id bulunamadı"
+      "sebep": "375/1440 ATC bu turda varyant id yok (sayfa yükü). 768 UI ATC alındı."
     },
     {
       "state": "changed",
-      "sebep": "adım 7 (click #CartDrawer .quantity__button[name='plus']): selector eşleşmedi: #CartDrawer .quantity__button[name='plus']"
+      "sebep": "375/1440 drawer qty yok. 768 adet-arttı karesi var."
     }
   ],
-  "interactionNote": "Boş opener bazen drawer'ı x=1440'ta bırakır; forceOpen. ATC yoklamada qty 2 / $68.70.",
+  "interactionNote": "/cart/clear password duvarında bıraktı — atlandı. ATC 768 → ui (fallback yok). Checkout / Log in tıklanmadı.",
   "capture": {
     "url": "https://speedo-nutronix.myshopify.com/",
     "viewports": [
@@ -116,6 +119,6 @@
     ],
     "mode": "viewport",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-02T17:32:10.831Z"
+    "updatedAt": "2026-09-02T17:41:25.527Z"
   }
 }

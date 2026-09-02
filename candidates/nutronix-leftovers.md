@@ -66,7 +66,7 @@ Karar: onay bekliyor
 ---
 
 ADAY: nutronix-cart-footer-empty  
-Gerekçe: `#shopify-section-template--23257313345830__cart-footer` boş sepetken h=0 (Estimated total). Dolu hâl interact.  
+Gerekçe: `#shopify-section-template--23257313345830__cart-footer` boş sepetken h=0. Dolu cart sayfada footer görünür (Order special instructions + Estimated total + CHECK OUT).  
 Örnekler: https://speedo-nutronix.myshopify.com/cart  
 Öneri: leftover — boşken 0px  
 Karar: onay bekliyor
@@ -93,4 +93,20 @@ ADAY: nutronix-collection-layout-demos
 Gerekçe: `/collections` içinde collection-layout-2..5 adları — tema satış layout vitrini, ayrı walk yok.  
 Örnekler: https://speedo-nutronix.myshopify.com/collections/collection-layout-2  
 Öneri: leftover — layout demo  
+Karar: onay bekliyor
+
+---
+
+ADAY: nutronix-home-tabs-no-switch  
+Gerekçe: Top Products NEW ARRIVALS tıkı 3vp'de BEST SELLERS karesiyle byte-aynı; kart başlıkları değişmedi.  
+Örnekler: https://speedo-nutronix.myshopify.com/  
+Öneri: leftover — sekme hash UI  
+Karar: onay bekliyor
+
+---
+
+ADAY: nutronix-menu-drawer-zero  
+Gerekçe: 375 hamburger görünür; official `#menu-drawer` capture 0px (summary 0×0). Yoklamada JS click menü metnini açtı — kare yok.  
+Örnekler: https://speedo-nutronix.myshopify.com/  
+Öneri: leftover — drawer kare alınamadı  
 Karar: onay bekliyor
