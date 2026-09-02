@@ -1,0 +1,76 @@
+{
+  "observationId": "coffee-prime.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "coffee-prime",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://coffee-prime.myshopify.com/",
+  "selector": "#shopify-section-sections--23278860337458__header_1",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/coffee-prime/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/coffee-prime/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/coffee-prime/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/coffee-prime/default/home/navigation-header-mega.open.shop-dropdown.1440.png"
+  ],
+  "notlar": "header_1. Logo Coffee-Prime. All Categories (#category-box) + Home/Shop/Collection/New Arrival/Best Seller/More. Search, wishlist 0, Log in, Cart. Mega class yok.",
+  "delta": "Shopify.theme.name Coffee-prime V-1.5.0 · schema_name coffee_prime · schema_version 1.5.0 · theme_store_id null · role main · id 171096473906 · shop coffee-prime.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock). Mega yok — Shop details dropdown 1440. All Categories ayrı kategori kutusu. Log in tıklanmadı.",
+  "storefrontPassword": "1",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://coffee-prime.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Dropdown kapalı header. 375/768 hamburger ayrı global-menu-drawer."
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#shopify-section-sections--23278860337458__header_1 nav details#Details-HeaderMenu-2 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-dropdown",
+      "not": "1440 Shop hover nth(1) — Hot Brew / Cold Brew / Ground Coffee / Roasted Coffee / Instant Coffee"
+    }
+  ],
+  "stateFindings": {
+    "initial": "375/768: All Categories + Log in + Cart; ticker FREE SHIPPING. 1440: All Categories + Home / Shop / Collection / New Arrival / Best Seller / More + search + wishlist 0 + Log in + Cart.",
+    "open": "1440 Shop hover: dikey alt link listesi (Hot Brew … Instant Coffee). Mega kolon / görsel yok."
+  },
+  "missingStates": [],
+  "interactionNote": "Hover Shop summary. Click <a> sayfaya gider. Wishlist / Log in tıklanmadı.",
+  "capture": {
+    "url": "https://coffee-prime.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T21:01:33.354Z"
+  }
+}

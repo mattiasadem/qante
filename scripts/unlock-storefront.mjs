@@ -23,6 +23,7 @@ export const PUBLIC_DEMO_PASSWORDS = {
   "pandora-flower.myshopify.com": "1",
   "pandora-furniture-6.myshopify.com": "1",
   "petz-online-store-2.myshopify.com": "1",
+  "coffee-prime.myshopify.com": "1",
   "speedo-candles-store.myshopify.com": "1",
   "tormeti-fashi.myshopify.com": "1",
   "vedzila-organic.myshopify.com": "1",

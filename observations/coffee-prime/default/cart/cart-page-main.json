@@ -1,0 +1,84 @@
+{
+  "observationId": "coffee-prime.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "coffee-prime",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://coffee-prime.myshopify.com/cart",
+  "selector": "#shopify-section-template--23278859190578__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/coffee-prime/default/cart/cart-page-main.1440.png",
+    "evidence/coffee-prime/default/cart/cart-page-main.375.png",
+    "evidence/coffee-prime/default/cart/cart-page-main.768.png",
+    "evidence/coffee-prime/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/coffee-prime/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/coffee-prime/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/coffee-prime/default/cart/cart-page-main.filled.dolu.1440.png",
+    "evidence/coffee-prime/default/cart/cart-page-main.filled.dolu.375.png",
+    "evidence/coffee-prime/default/cart/cart-page-main.filled.dolu.768.png",
+    "evidence/coffee-prime/default/cart/cart-page-main.initial.bos.1440.png",
+    "evidence/coffee-prime/default/cart/cart-page-main.initial.bos.375.png",
+    "evidence/coffee-prime/default/cart/cart-page-main.initial.bos.768.png"
+  ],
+  "notlar": "Your cart is empty + Continue Shopping + Have an account?",
+  "delta": "Shopify.theme.name Coffee-prime V-1.5.0 · schema_name coffee_prime · schema_version 1.5.0 · theme_store_id null · role main · id 171096473906 · shop coffee-prime.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock).",
+  "storefrontPassword": "1",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://coffee-prime.myshopify.com/cart",
+      "capture": true,
+      "etiket": "bos",
+      "not": "Boş sepet"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://coffee-prime.myshopify.com/products/premium-filter-ground-coffee-powder-coffee",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://coffee-prime.myshopify.com/cart",
+      "capture": true,
+      "etiket": "dolu",
+      "not": "Premium Filter Ground Coffee satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--23278859190578__cart-items button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Qty 1→2"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı.",
+  "capture": {
+    "url": "https://coffee-prime.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:06:41.281Z"
+  }
+}

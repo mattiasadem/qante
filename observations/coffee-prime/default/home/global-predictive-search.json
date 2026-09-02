@@ -1,0 +1,116 @@
+{
+  "observationId": "coffee-prime.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "coffee-prime",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://coffee-prime.myshopify.com/",
+  "selector": "predictive-search.search-modal__form, .search-modal",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/coffee-prime/default/home/global-predictive-search.input.arama-coffee.1440.png"
+  ],
+  "notlar": "predictive-search search-modal__form. Header search summary + modal.",
+  "delta": "Shopify.theme.name Coffee-prime V-1.5.0 · schema_name coffee_prime · schema_version 1.5.0 · theme_store_id null · role main · id 171096473906 · shop coffee-prime.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock). Dawn predictive-search. Account tıklanmadı.",
+  "storefrontPassword": "1",
+  "captureMode": "viewport",
+  "prepareClick": "summary.header__icon--search, .header__icon--search",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://coffee-prime.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "1440: boş Search overlay"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "viewports": [
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "768: search ikonu → modal"
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-sections--23278860337458__header_1",
+      "viewports": [
+        "375"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "375: inline search input görünür"
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "capture": false,
+      "not": "Modal açık olsun"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "coffee",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-coffee",
+      "not": "katalogSorgu=coffee. Suggestions + ürün."
+    }
+  ],
+  "stateFindings": {
+    "initial": "375: header inline Search input. 768/1440: search ikonu → modal boş.",
+    "input": "coffee yazılınca SUGGESTIONS + PRODUCTS listesi (Hot Brew, Premium Filter Ground Coffee vb.)."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "375/768: search modal selector zero-size — 1440 initial boş modal kanıtı yok"
+    },
+    {
+      "state": "input",
+      "sebep": "375/768: #Search-In-Modal hidden — yalnız 1440 input.arama-coffee kanıtlandı"
+    }
+  ],
+  "interactionNote": "katalogSorgu coffee (scan). Submit/PII yok.",
+  "capture": {
+    "url": "https://coffee-prime.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T21:00:37.261Z",
+    "prepareClick": "summary.header__icon--search, .header__icon--search"
+  }
+}
