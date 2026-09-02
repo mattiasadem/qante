@@ -7,8 +7,68 @@
   "url": "https://pandora-fashi.myshopify.com/",
   "selector": "#shopify-section-template--17253159796910__1660827416940db5cc",
   "evidenceSlug": "faq-collapsible-tabs",
-  "evidence": [],
+  "evidence": [
+    "evidence/wearix/default/home/faq-collapsible-tabs.1440.png",
+    "evidence/wearix/default/home/faq-collapsible-tabs.375.png",
+    "evidence/wearix/default/home/faq-collapsible-tabs.768.png",
+    "evidence/wearix/default/home/faq-collapsible-tabs.changed.shipping-acik.1440.png",
+    "evidence/wearix/default/home/faq-collapsible-tabs.changed.shipping-acik.375.png",
+    "evidence/wearix/default/home/faq-collapsible-tabs.changed.shipping-acik.768.png",
+    "evidence/wearix/default/home/faq-collapsible-tabs.initial.kapali.1440.png",
+    "evidence/wearix/default/home/faq-collapsible-tabs.initial.kapali.375.png",
+    "evidence/wearix/default/home/faq-collapsible-tabs.initial.kapali.768.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "FAQs. 4 soru: Shipping Methods · times and costs · payment methods · exchanges/returns.",
-  "delta": "Accordion. Cevap kapalı karede görünmez. paypal.com link DOM'da."
+  "delta": "Accordion. Cevap kapalı karede görünmez. paypal.com link DOM'da.",
+  "capture": {
+    "url": "https://pandora-fashi.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:18:06.278Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-fashi.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17253159796910__1660827416940db5cc",
+      "capture": true,
+      "etiket": "kapali"
+    },
+    {
+      "state": "changed",
+      "action": "forceOpen",
+      "selector": "details#Details-16608274161ab3a2d9-0-template--17253159796910__1660827416940db5cc",
+      "capture": false,
+      "not": "Summary tık açık bırakmadı — details.open"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "etiket": "shipping-acik",
+      "not": "İlk accordion açık — cevap görünür"
+    }
+  ],
+  "stateFindings": {
+    "initial": "FAQs + 4 satır chevron kapalı: What Shipping Methods Are Available? / shipping times and costs / payment methods / exchanges, returns and refunds."
+  },
+  "missingStates": [],
+  "interactionNote": "İlk changed karesi kapalı ile aynı (summary tık). Retry: forceOpen ilk details. Hover değil."
 }

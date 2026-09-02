@@ -162,6 +162,13 @@ export async function dismissAllOverlays(page, { rounds = 8 } = {}) {
         el.hidden = true;
       });
 
+      // Speedo / third-party FOMO toast — fixed corner, not a section
+      document.querySelectorAll("#prodNotify").forEach((el) => {
+        el.style?.setProperty("display", "none", "important");
+        el.classList.remove("active");
+        el.hidden = true;
+      });
+
       document.body.style.overflow = "auto";
       document.documentElement.style.overflow = "auto";
     });

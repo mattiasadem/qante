@@ -4,6 +4,7 @@
  */
 
 export async function unlockStorefrontIfNeeded(page, { password, targetUrl } = {}) {
+  await hideStorefrontChrome(page);
   const pwd = page.locator(
     'form[action*="/password"] input[type="password"], input[name="password"]'
   );
@@ -33,9 +34,18 @@ export async function unlockStorefrontIfNeeded(page, { password, targetUrl } = {
     const wantPath = want.pathname.replace(/\/$/, "") + want.search;
     if (nowPath !== wantPath) {
       await page.goto(targetUrl, { waitUntil: "domcontentloaded", timeout: 90000 });
+      await hideStorefrontChrome(page);
       await page.waitForTimeout(1500);
     }
   }
 
+  await hideStorefrontChrome(page);
   return { unlocked: true };
+}
+
+/** Hide vendor FOMO toast so it cannot land on section crops. */
+export async function hideStorefrontChrome(page) {
+  await page.addStyleTag({
+    content: "#prodNotify{display:none!important;visibility:hidden!important;}",
+  }).catch(() => {});
 }

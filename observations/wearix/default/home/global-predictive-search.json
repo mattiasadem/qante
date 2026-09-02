@@ -5,12 +5,76 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://pandora-fashi.myshopify.com/",
-  "selector": "predictive-search",
+  "selector": "#header-search",
   "evidenceSlug": "global-predictive-search",
   "evidence": [],
   "storefrontPassword": "1",
   "notlar": "Header search ikon → details-modal + predictive-search--header.",
   "delta": "Kapalı kare boş. input state interact turunda.",
   "captureMode": "viewport",
-  "prepareClick": "summary.header__icon--search"
+  "prepareClick": "summary.header__icon--search",
+  "katalogSorgu": "hoodie",
+  "capture": {
+    "url": "https://pandora-fashi.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:17:08.834Z",
+    "prepareClick": "summary.header__icon--search"
+  },
+  "interactionStates": [
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "input",
+      "action": "goto",
+      "value": "https://pandora-fashi.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "scrollTo",
+      "selector": "summary.header__icon--search",
+      "capture": false,
+      "not": "Settle kaydırınca ikon ekran dışı; input gizli kalıyor"
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "capture": false,
+      "not": "İç details aç — host details-modal forceOpen kutuyu 25px bırakıyor"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal-1",
+      "value": "hoodie",
+      "capture": false,
+      "not": "katalogSorgu hoodie"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hoodie",
+      "not": "Öneri listesi"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "katalogSorgu hoodie (scan). İlk fill timeout (input hidden). Retry: scrollTo + summary tık. Submit /search ayrı observation."
 }

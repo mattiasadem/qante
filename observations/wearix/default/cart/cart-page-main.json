@@ -7,8 +7,86 @@
   "url": "https://pandora-fashi.myshopify.com/cart",
   "selector": "#shopify-section-template--17253159370926__cart-items",
   "evidenceSlug": "cart-page-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/wearix/default/cart/cart-page-main.1440.png",
+    "evidence/wearix/default/cart/cart-page-main.375.png",
+    "evidence/wearix/default/cart/cart-page-main.768.png",
+    "evidence/wearix/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/wearix/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/wearix/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/wearix/default/cart/cart-page-main.filled.dolu.1440.png",
+    "evidence/wearix/default/cart/cart-page-main.filled.dolu.375.png",
+    "evidence/wearix/default/cart/cart-page-main.filled.dolu.768.png",
+    "evidence/wearix/default/cart/cart-page-main.initial.bos.1440.png",
+    "evidence/wearix/default/cart/cart-page-main.initial.bos.375.png",
+    "evidence/wearix/default/cart/cart-page-main.initial.bos.768.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "Boş: Your cart is empty · CONTINUE SHOPPING · Have an account? Log in. cart-footer estimated total 0h boşken.",
-  "delta": "Boş state. filled interact. Login tıklanmadı."
+  "delta": "Boş state. filled interact. Login tıklanmadı.",
+  "capture": {
+    "url": "https://pandora-fashi.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:24:16.116Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-fashi.myshopify.com/cart",
+      "capture": true,
+      "etiket": "bos"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://pandora-fashi.myshopify.com/products/stylish-white-trouser-suit-for-women",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--17253160091822__main",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://pandora-fashi.myshopify.com/cart",
+      "capture": true,
+      "etiket": "dolu",
+      "not": "Satır + toplam. Checkout tıklanmadı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--17253159370926__cart-items button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty. CONTINUE SHOPPING. Have an account? Log in to check out faster.",
+    "filled": "Your cart. Stylish White trouser suit for women $320 Color White Size S. Adet 1. TOTAL $320. Çöp ikonu.",
+    "changed": "Adet 2. TOTAL $640."
+  },
+  "missingStates": [],
+  "interactionNote": "Login / checkout tıklanmadı. ATC sonra /cart."
 }

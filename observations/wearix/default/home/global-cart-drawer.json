@@ -7,10 +7,113 @@
   "url": "https://pandora-fashi.myshopify.com/",
   "selector": "cart-drawer",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/wearix/default/home/global-cart-drawer.1440.png",
+    "evidence/wearix/default/home/global-cart-drawer.375.png",
+    "evidence/wearix/default/home/global-cart-drawer.768.png",
+    "evidence/wearix/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/wearix/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/wearix/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/wearix/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/wearix/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/wearix/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/wearix/default/home/global-cart-drawer.initial.sepet-bos.1440.png",
+    "evidence/wearix/default/home/global-cart-drawer.initial.sepet-bos.375.png",
+    "evidence/wearix/default/home/global-cart-drawer.initial.sepet-bos.768.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "CART-DRAWER is-empty. Checkout + View cart. Order note details.",
   "delta": "Boş drawer initial. filled interact (ATC). Checkout tıklanmadı.",
   "captureMode": "viewport",
-  "prepareClick": "a#cart-icon-bubble, a.header__icon--cart"
+  "prepareClick": "a#cart-icon-bubble, a.header__icon--cart",
+  "capture": {
+    "url": "https://pandora-fashi.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:22:05.236Z",
+    "prepareClick": "a#cart-icon-bubble, a.header__icon--cart"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-fashi.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#cart-icon-bubble",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": false,
+      "not": "İkon tık drawer'ı açmadı (settle kaydırma). forceOpen active+animate"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş drawer — Your cart is empty"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://pandora-fashi.myshopify.com/products/stylish-white-trouser-suit-for-women",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--17253160091822__main",
+      "capture": false,
+      "not": "Stylish White trouser suit $320"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC drawer açar — checkout tıklanmadı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "cart-drawer button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "filled": "Your cart. Stylish White trouser suit Color White Size S adet 1 $320. Free Shipping $500 / Express $800 çubuk. Estimated total $320 USD. CHECK OUT + View cart. Best seller + Order special instructions accordion.",
+    "changed": "Aynı satır adet 2. Estimated total $640 USD. Free shipping eşiği dolu; Express $800 yarı."
+  },
+  "missingStates": [],
+  "interactionNote": "İlk empty karesi kapalı homepage. Retry forceOpen cart-drawer. BUY IT NOW / checkout tıklanmadı. ATC UI."
 }

@@ -7,8 +7,63 @@
   "url": "https://pandora-fashi.myshopify.com/products/stylish-white-trouser-suit-for-women",
   "selector": "#shopify-section-template--17253160091822__main",
   "evidenceSlug": "product-info-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/wearix/default/product-detail/product-info-main.1440.png",
+    "evidence/wearix/default/product-detail/product-info-main.375.png",
+    "evidence/wearix/default/product-detail/product-info-main.768.png",
+    "evidence/wearix/default/product-detail/product-info-main.changed.black.1440.png",
+    "evidence/wearix/default/product-detail/product-info-main.changed.black.375.png",
+    "evidence/wearix/default/product-detail/product-info-main.changed.black.768.png",
+    "evidence/wearix/default/product-detail/product-info-main.initial.white.1440.png",
+    "evidence/wearix/default/product-detail/product-info-main.initial.white.375.png",
+    "evidence/wearix/default/product-detail/product-info-main.initial.white.768.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "Stylish White trouser suit for women. Galeri modal. Discount details. Buy box + ATC.",
-  "delta": "Size guide / wishlist / discount accordion PDP içinde. Variant karede bakılacak."
+  "delta": "Size guide / wishlist / discount accordion / countdown / social proof PDP içinde. Variant karede bakılacak.",
+  "capture": {
+    "url": "https://pandora-fashi.myshopify.com/products/stylish-white-trouser-suit-for-women",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T14:19:53.242Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-fashi.myshopify.com/products/stylish-white-trouser-suit-for-women",
+      "capture": true,
+      "etiket": "white",
+      "not": "Color White seçili"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='template--17253160091822__main-1-1']",
+      "capture": false,
+      "not": "Black swatch label — radio gizli"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "etiket": "black",
+      "not": "Galeri/fiyat Black · Color: Black"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Stylish White trouser suit for women $320. Color: White + Black/Red swatch. Size S seçili (M/L/XL). ADD TO CART + BUY IT NOW. Hurry up countdown. Description lorem. 4 accordion + trust rozetleri."
+  },
+  "missingStates": [],
+  "interactionNote": "İlk changed radio #…-1-1 gizli, Color White kaldı. Retry label[for=…-1-1]. BUY IT NOW / Size Guide / account yok."
 }
