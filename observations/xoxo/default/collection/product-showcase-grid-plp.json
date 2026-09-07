@@ -1,0 +1,146 @@
+{
+  "observationId": "xoxo.default.collection.product-showcase-grid-plp",
+  "schemaId": "product-showcase-grid-plp",
+  "kaynak": "xoxo",
+  "preset": "default",
+  "sayfa": "collection",
+  "url": "https://pandora-full-fashion.myshopify.com/collections/all",
+  "selector": "#shopify-section-template--24474886046002__product-grid",
+  "evidenceSlug": "product-showcase-grid-plp",
+  "evidence": [
+    "evidence/xoxo/default/collection/product-showcase-grid-plp.1440.png",
+    "evidence/xoxo/default/collection/product-showcase-grid-plp.375.png",
+    "evidence/xoxo/default/collection/product-showcase-grid-plp.768.png",
+    "evidence/xoxo/default/collection/product-showcase-grid-plp.changed.renk-black.1440.png",
+    "evidence/xoxo/default/collection/product-showcase-grid-plp.initial.filtre-yok.1440.png",
+    "evidence/xoxo/default/collection/product-showcase-grid-plp.initial.filtre-yok.375.png",
+    "evidence/xoxo/default/collection/product-showcase-grid-plp.initial.filtre-yok.768.png",
+    "evidence/xoxo/default/collection/product-showcase-grid-plp.open.filtre-cekmece.375.png",
+    "evidence/xoxo/default/collection/product-showcase-grid-plp.open.filtre-cekmece.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "25 products. Filter: Color/Size/Availability/Price. Sort Relevance. Kart wishlist + fiyat. /collections/women aynı grid (14 ürün).",
+  "delta": "Dawn product-grid. Filtre 1440 sidebar / 375 muhtemel drawer.",
+  "capture": {
+    "url": "https://pandora-full-fashion.myshopify.com/collections/all",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:20:24.870Z"
+  },
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-full-fashion.myshopify.com/collections/all",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "summary.mobile-facets__open-wrapper",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "details.mobile-facets__disclosure",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 600,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "filtre-cekmece",
+      "not": "375/768 Filter and sort overlay. Beklenen: Color/Size listesi."
+    },
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://pandora-full-fashion.myshopify.com/collections/all",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "summary.mobile-facets__open-wrapper",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "forceOpen",
+      "selector": "details.mobile-facets__disclosure",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='Filter-filter.v.option.color-mobile-1']",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".mobile-facets__footer button.button--primary, .mobile-facets button.button--primary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "renk-black",
+      "not": "Mobile Black + Apply. Beklenen: 5 ürün."
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "375/768 Color drill-down. label[for=Filter-filter.v.option.color-mobile-1] viewport dışı (iki deneme). 1440 sidebar Black geldi."
+    }
+  ],
+  "interactionNote": "Desktop canlı filtre (Apply yok). Mobil Apply çekmece kapatır. Color akordeon resmi karede açılmadı.",
+  "stateFindings": {
+    "initial": "25 products. 1440 Color sidebar. 375 Filter and sort bar + 2 kolon ızgara.",
+    "open": "375: Filter and sort · 25 products · Color / Size / More filters / Availability / Price (ok) · Sort by Alphabetically, A-Z · REMOVE ALL + Apply. 768: sağ Filter çekmecesi, aynı satırlar.",
+    "changed": "1440 Color Black (5) işaretli, etiket Color: Black x, 5 Of 25 Products. Camo hoodie / Music City tee / Relaxed hoodie / White trouser / Terracotta cardigan."
+  }
+}
