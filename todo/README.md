@@ -56,6 +56,7 @@
 | Olelia (Speedo) | [`olelia.md`](./olelia.md) | ✅ first inventory — jewelry-online-shop-4 · password 1 · 46 obs · 0 yeni şema · interact |
 | PawPets (Speedo) | [`pawpets.md`](./pawpets.md) | 🟡 first inventory — Mightypetz 1.5.0 · 39 obs · 0 yeni şema |
 | Plantrex (Speedo) | [`plantrex.md`](./plantrex.md) | ✅ default — official `pandora-flower.myshopify.com` · vendor password `1` · 28 obs · 132 PNG · 0 yeni şema |
+| SARA Toys (Speedo) | [`sara.md`](./sara.md) | ✅ first inventory + interact — sara-toy-store · password `1` · 29 obs · 0 yeni şema |
 | Sachue (Speedo) | [`sachue.md`](./sachue.md) | ✅ first inventory — official demo pandora-beauty-store · 41 obs · 168 PNG · 0 yeni şema · interact |
 | Seabikini (Speedo Themes) | [`seabikini.md`](./seabikini.md) | ✅ first inventory — fashion-store-clean-11 · 39 obs · 162 PNG · 0 yeni şema · interact |
 | Digitech (Speedo) | [`digitech.md`](./digitech.md) | ✅ first inventory — Digital Gallery Shop V-1.5.0 · password `1` · 38 obs · 141 PNG · 0 yeni şema · interact |
