@@ -1,0 +1,75 @@
+{
+  "observationId": "qreal.default.collection.product-showcase-grid-plp",
+  "schemaId": "product-showcase-grid-plp",
+  "kaynak": "qreal",
+  "preset": "default",
+  "sayfa": "collection",
+  "url": "https://women-beauty-8.myshopify.com/collections/best-selling",
+  "selector": "#shopify-section-template--17877885845564__product-grid",
+  "evidenceSlug": "product-showcase-grid-plp",
+  "evidence": [
+    "evidence/qreal/default/collection/product-showcase-grid-plp.1440.png",
+    "evidence/qreal/default/collection/product-showcase-grid-plp.375.png",
+    "evidence/qreal/default/collection/product-showcase-grid-plp.768.png",
+    "evidence/qreal/default/collection/product-showcase-grid-plp.hover.kart-hover.1440.png",
+    "evidence/qreal/default/collection/product-showcase-grid-plp.initial.grid.1440.png",
+    "evidence/qreal/default/collection/product-showcase-grid-plp.initial.grid.375.png",
+    "evidence/qreal/default/collection/product-showcase-grid-plp.initial.grid.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Home Best Selling + Filters Color/Size + ürün grid.",
+  "delta": "Dawn product-grid. Filtre açık. Quick add leftover.",
+  "capture": {
+    "url": "https://women-beauty-8.myshopify.com/collections/best-selling",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T17:01:23.087Z"
+  },
+  "interactionStates": [
+    "initial",
+    "hover"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://women-beauty-8.myshopify.com/collections/best-selling",
+      "capture": true,
+      "etiket": "grid",
+      "not": "PLP grid"
+    },
+    {
+      "state": "hover",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17877885845564__product-grid .card-wrapper",
+      "capture": false
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#shopify-section-template--17877885845564__product-grid .card-wrapper .card__media",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "kart-hover",
+      "not": "İkinci görsel / Quick Shop. 375/768 hover yoklanmadı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Best Selling · 10 products · Featured. Sol filtre Color / Size / Category / Availability / Price. 4 kolon grid. İlk kart Gorgeous Cosmos Glossy Lipstick $40 + 3 swatch.",
+    "hover": "1440 ilk kart: sol/sağ ok + Wishlist / Compare / Quick View ikonları. Kart görseli aynı ruj — ikinci görsel yok. Quick View tıklanmadı."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "375/768 hover yoklanmadı (parmakta hover yok)"
+    }
+  ],
+  "interactionNote": "Probe src değişmedi; PNG’de ikon/ok belirdi. Quick View leftover. Şema zaten emit:product.quickView."
+}

@@ -1,0 +1,69 @@
+{
+  "observationId": "bookshop.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "bookshop",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://book-online-store-1.myshopify.com/products/cookbook-100-recipes-and-inspiration-for-cooking",
+  "selector": "#shopify-section-template--18135593648295__main",
+  "storefrontPassword": "1",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/bookshop/default/product-detail/product-info-main.1440.png",
+    "evidence/bookshop/default/product-detail/product-info-main.375.png",
+    "evidence/bookshop/default/product-detail/product-info-main.768.png",
+    "evidence/bookshop/default/product-detail/product-info-main.changed.qty2.1440.png",
+    "evidence/bookshop/default/product-detail/product-info-main.changed.qty2.375.png",
+    "evidence/bookshop/default/product-detail/product-info-main.changed.qty2.768.png",
+    "evidence/bookshop/default/product-detail/product-info-main.initial.qty1.1440.png",
+    "evidence/bookshop/default/product-detail/product-info-main.initial.qty1.375.png",
+    "evidence/bookshop/default/product-detail/product-info-main.initial.qty1.768.png"
+  ],
+  "notlar": "Cookbook: 100 recipes… $300→$250. People are viewing / 500 in stock / Delivery by Sep 12, 2026 / Hurry up! Sales End In timer. Qty stepper + ATC. Breadcrumb HOME COOKBOOK…",
+  "delta": "Tek varyant (swatch yok). Buy box'ta stok + teslimat tarihi + satış countdown. Wishlist/compare. Galeri 8 görsel.",
+  "capture": {
+    "url": "https://book-online-store-1.myshopify.com/products/cookbook-100-recipes-and-inspiration-for-cooking",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "margin-box+minPad8",
+    "updatedAt": "2026-09-02T16:32:23.145Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://book-online-store-1.myshopify.com/products/cookbook-100-recipes-and-inspiration-for-cooking",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--18135593648295__main",
+      "capture": true,
+      "etiket": "qty1",
+      "not": "Tek varyant Cookbook qty 1"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--18135593648295__main quantity-input button[name='plus'], #shopify-section-template--18135593648295__main .quantity__button:not(.disabled)",
+      "capture": true,
+      "etiket": "qty2",
+      "not": "Adet +1 — swatch yok"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Cookbook: 100 recipes… $250 / $300. People are viewing + 500 in stock, Delivery by Sep 12, 2026. Hurry up! Sales End In (gün/saat/dk/sn). Qty 1. ADD TO CART + BUY IT NOW. EXTRA INFORMATION / SHIPPING & RETURNS / MATERIALS. Share. Swatch yok.",
+    "changed": "Qty 2. Fiyat ve galeri değişmedi — tek varyant."
+  },
+  "missingStates": [],
+  "interactionNote": "Buy it now / checkout tıklanmadı. Wishlist/compare leftover. emit:variant.change kanıtı yok."
+}

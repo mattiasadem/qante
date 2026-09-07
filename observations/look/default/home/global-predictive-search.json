@@ -1,0 +1,90 @@
+{
+  "observationId": "look.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "look",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://goggles-online-store.myshopify.com/",
+  "selector": "details:has(#Search-In-Modal)",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/look/default/home/global-predictive-search.1440.png",
+    "evidence/look/default/home/global-predictive-search.375.png",
+    "evidence/look/default/home/global-predictive-search.768.png",
+    "evidence/look/default/home/global-predictive-search.initial.modal-bos.1440.png",
+    "evidence/look/default/home/global-predictive-search.initial.modal-bos.375.png",
+    "evidence/look/default/home/global-predictive-search.initial.modal-bos.768.png",
+    "evidence/look/default/home/global-predictive-search.input.goggle.1440.png",
+    "evidence/look/default/home/global-predictive-search.input.goggle.375.png",
+    "evidence/look/default/home/global-predictive-search.input.goggle.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "summary.header__icon--search → #Search-In-Modal. Predictive host. #header-search yok.",
+  "delta": "Öneri listesi interact. Submit yok. Shopify.theme.name Look V-1.5.0 · schema_name Look · schema_version 1.5.0 · theme_store_id null · role main · id 143012102385 · shop goggles-online-store.myshopify.com · Speedo Look official demo (vendor-published password 1).",
+  "capture": {
+    "url": "https://goggles-online-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:06:20.519Z",
+    "prepareClick": "summary.header__icon--search"
+  },
+  "captureMode": "section",
+  "prepareClick": "summary.header__icon--search",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://goggles-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "capture": false,
+      "not": "Tık tek başına details[open] false kalabilir"
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "details:has(#Search-In-Modal)",
+      "capture": true,
+      "captureMode": "section",
+      "captureSelector": ".search-modal",
+      "etiket": "modal-bos",
+      "not": "Boş arama çubuğu (Search placeholder)"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "goggle",
+      "capture": true,
+      "captureMode": "section",
+      "captureSelector": ".search-modal",
+      "etiket": "goggle",
+      "not": "katalogSorgu goggle — PRODUCTS listesi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Koyu overlay üstünde boş Search kutusu + sağda X. Placeholder Search; sonuç listesi yok.",
+    "input": "Kutuda goggle + temizle X. 1440'ta PRODUCTS başlığı modalın altında görünür (ürün satırları .search-modal clip'te kesildi)."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu=goggle. İlk fill hidden timeout. Retry forceOpen + section .search-modal: boş çubuk ve goggle+PRODUCTS. Tam 10 ürün satırı clip dışında kaldı — şema yok. Submit tıklanmadı."
+}

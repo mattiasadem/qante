@@ -1,0 +1,75 @@
+{
+  "observationId": "herbanicure.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "herbanicure",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://herbanicure.myshopify.com/cart",
+  "selector": "#shopify-section-template--21845676818730__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/herbanicure/default/cart/cart-page-main.1440.png",
+    "evidence/herbanicure/default/cart/cart-page-main.375.png",
+    "evidence/herbanicure/default/cart/cart-page-main.768.png",
+    "evidence/herbanicure/default/cart/cart-page-main.filled.dolu.1440.png",
+    "evidence/herbanicure/default/cart/cart-page-main.filled.dolu.375.png",
+    "evidence/herbanicure/default/cart/cart-page-main.filled.dolu.768.png",
+    "evidence/herbanicure/default/cart/cart-page-main.initial.bos.1440.png",
+    "evidence/herbanicure/default/cart/cart-page-main.initial.bos.375.png",
+    "evidence/herbanicure/default/cart/cart-page-main.initial.bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Your cart boş veya dolu.",
+  "delta": "cart-footer ayrı section; items ana blok.",
+  "capture": {
+    "url": "https://herbanicure.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T21:14:01.503Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://herbanicure.myshopify.com/cart",
+      "capture": true,
+      "etiket": "bos",
+      "not": "Boş sepet"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://herbanicure.myshopify.com/products/100-organically-grown-king-kratom-extract-powder",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'].product-form__submit",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://herbanicure.myshopify.com/cart",
+      "capture": true,
+      "etiket": "dolu",
+      "not": "King Kratom satırı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty.",
+    "filled": "King Kratom Extract Powder satırı + Estimated total $14.95."
+  },
+  "interactionNote": "Checkout tıklanmadı.",
+  "missingStates": []
+}

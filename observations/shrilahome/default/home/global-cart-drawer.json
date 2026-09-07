@@ -1,0 +1,77 @@
+{
+  "observationId": "shrilahome.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "shrilahome",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pandora-furniture-5.myshopify.com/products/circle-lounge-chairs",
+  "selector": "#CartDrawer",
+  "storefrontPassword": "1",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/shrilahome/default/home/global-cart-drawer.1440.png",
+    "evidence/shrilahome/default/home/global-cart-drawer.375.png",
+    "evidence/shrilahome/default/home/global-cart-drawer.768.png",
+    "evidence/shrilahome/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/shrilahome/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/shrilahome/default/home/global-cart-drawer.filled.sepete-eklendi.768.png"
+  ],
+  "notlar": "Dawn cart-drawer #CartDrawer + cart-notification CSS. Cart ikonu /cart. ATC Circle Lounge Chairs.",
+  "delta": "Shopify.theme.name Shrilahome-Furniture-v-1-5-0 · schema_name shrilahome · schema_version 1.5.0 · theme_store_id null · role main · id 169736438070 · shop pandora-furniture-5.myshopify.com. Vendor Speedo Themes (third-party OS 2.0, Theme Store değil). Storefront password 1 (speedothemes.com product page). Host pandora-furniture-5.myshopify.com — başka host uydurulmadı. Drawer DOM var (is-empty). ATC sonrası drawer mı notification mı interact'te. Checkout tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled"
+  ],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://pandora-furniture-5.myshopify.com/products/circle-lounge-chairs",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'], form[action*='/cart/add'] button[type='submit']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#cart-icon-bubble, a.header__icon--cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer veya /cart"
+    }
+  ],
+  "stateFindings": {
+    "filled": "YOUR CART — Circle Lounge Chairs Small/Brown $120 qty 1. Estimated total $120 USD + kırmızı CHECK OUT (tıklanmadı). 1440: ortada YOU MAY LIKE 6 ürün + fake-purchase toast. 375: YOU MAY LIKE çekmece içinde kapalı akordeon; kargo çubuğu Free shipping / Express $150."
+  },
+  "missingStates": [],
+  "interactionNote": "CHECK OUT tıklanmadı. YOU MAY LIKE cross-sell drawer ile aynı kare.",
+  "capture": {
+    "url": "https://pandora-furniture-5.myshopify.com/products/circle-lounge-chairs",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:51:27.588Z"
+  }
+}

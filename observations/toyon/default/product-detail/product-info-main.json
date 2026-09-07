@@ -1,0 +1,88 @@
+{
+  "observationId": "toyon.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "toyon",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://toyon-toys.myshopify.com/products/baby-teddy-animal-toy",
+  "selector": "#shopify-section-template--18675764461723__main",
+  "storefrontPassword": "1",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/toyon/default/product-detail/product-info-main.1440.png",
+    "evidence/toyon/default/product-detail/product-info-main.375.png",
+    "evidence/toyon/default/product-detail/product-info-main.768.png",
+    "evidence/toyon/default/product-detail/product-info-main.changed.color-green.1440.png",
+    "evidence/toyon/default/product-detail/product-info-main.changed.color-green.375.png",
+    "evidence/toyon/default/product-detail/product-info-main.changed.color-green.768.png",
+    "evidence/toyon/default/product-detail/product-info-main.initial.color-brown.1440.png",
+    "evidence/toyon/default/product-detail/product-info-main.initial.color-brown.375.png",
+    "evidence/toyon/default/product-detail/product-info-main.initial.color-brown.768.png"
+  ],
+  "notlar": "Baby Teddy Animal Toy $111. Color swatch Brown/Green (variant-selects). People are viewing + Availability 200 item(s). Qty + ADD TO CART + BUY IT NOW. Accordion: Additional Information / Shipping & Returns / Exclusive Offers / Secure Payments.",
+  "delta": "Shopify.theme.name Toyon-toys-latest V-1.5.0 · schema_name toyon_toys · schema_version 1.5.0 · theme_store_id null · role main · id 145295966363 · walk toyon-toys.myshopify.com · Shopify.shop toyon-toys.myshopify.com · locale en · country US · currency USD · Speedo third-party catalog (not Theme Store). Storefront unlock password 1. Color varyant var. Buy it now tıklanmadı. Accordion main içinde (ayrı product-info-tabs section yok). Breadcrumb main içinde.",
+  "capture": {
+    "url": "https://toyon-toys.myshopify.com/products/baby-teddy-animal-toy",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:44:26.589Z"
+  },
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://toyon-toys.myshopify.com/products/baby-teddy-animal-toy",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--18675764461723__main",
+      "capture": true,
+      "etiket": "color-brown",
+      "not": "Color: Brown"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='template--18675764461723__main-1-1'], #template--18675764461723__main-1-1",
+      "capture": false,
+      "not": "Green swatch"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "etiket": "color-green",
+      "not": "Color: Green + variant URL (aynı fotoğraf olabilir)."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Baby Teddy Animal Toy $111. Color: Brown. Kahverengi peluş + kırmızı eşarp. People viewing / 200 stock / delivery / countdown. Qty 1 + ADD TO CART + BUY IT NOW. 4 accordion kapalı.",
+    "changed": "İki deneme sonrası kare hâlâ Color: Brown + aynı kahverengi peluş. Probe’da Green swatch → Color: Green + ?variant=43346764497051; capture etiket Green göstermedi."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Green swatch tık + 1800ms wait: 1440/768/375 karede Color: Brown. Görsel değişmedi; Green label doğrulanamadı."
+    }
+  ],
+  "interactionNote": "Buy it now tıklanmadı. Green varyant aynı fotoğraf olabilir."
+}

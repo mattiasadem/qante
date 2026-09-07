@@ -1,0 +1,75 @@
+{
+  "observationId": "paw.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "paw",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://petz-online-store.myshopify.com/",
+  "selector": "details-modal.header__search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/paw/default/home/global-predictive-search.initial.arama-bos.1440.png",
+    "evidence/paw/default/home/global-predictive-search.initial.arama-bos.375.png",
+    "evidence/paw/default/home/global-predictive-search.initial.arama-bos.768.png",
+    "evidence/paw/default/home/global-predictive-search.input.arama-chicken.1440.png",
+    "evidence/paw/default/home/global-predictive-search.input.arama-chicken.375.png",
+    "evidence/paw/default/home/global-predictive-search.input.arama-chicken.768.png"
+  ],
+  "notlar": "Header büyüteç → details-modal. #Search-In-Modal-1. predictive-search var.",
+  "delta": "Dawn predictive-search. katalogSorgu=chicken (Chicken Pulao / Chicken In Gravy). Submit /search ayrı. Shopify.theme.name petz-online-store-v-1-5-0 · schema_name petz_online_store · schema_version 1.5.0 · theme_store_id null · role main · id 176281059615 · shop petz-online-store.myshopify.com · vendor Speedo Themes · product Speedo Petz / PAW · slug paw · preset default",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://petz-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "details-modal.header__search > details > summary, summary.header__icon--search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Boş search modal"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal, #Search-In-Modal-1",
+      "value": "chicken",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-chicken",
+      "not": "katalogSorgu=chicken"
+    }
+  ],
+  "stateFindings": {
+    "initial": "375: Search placeholder + büyüteç + X; arkada hero. 1440: ortada boş modal, öneri yok.",
+    "input": "chicken: SUGGESTIONS (chicken / chicken dry cat food / gourmet chicken jerky treats pack) + PRODUCTS (Khichdi, Chicken Pulao, Jerky Pack, Gravy, Multicare, Tuna & Chicken, Dry Food) + Search for “chicken”. 1440 iki kolon; 375 yığın."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu chicken. 375/768 fill #Search-In-Modal ( -1 gizli). Submit yok.",
+  "capture": {
+    "url": "https://petz-online-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:38:15.474Z"
+  }
+}

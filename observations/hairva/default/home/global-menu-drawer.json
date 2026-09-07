@@ -1,0 +1,80 @@
+{
+  "observationId": "hairva.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "hairva",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pandora-hair-care-3.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/hairva/default/home/global-menu-drawer.375.png",
+    "evidence/hairva/default/home/global-menu-drawer.768.png",
+    "evidence/hairva/default/home/global-menu-drawer.changed.shop-all-alt.375.png",
+    "evidence/hairva/default/home/global-menu-drawer.changed.shop-all-alt.768.png",
+    "evidence/hairva/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/hairva/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "header-drawer #Details-menu-drawer-container. 375/768 Menu summary. SHOP ALL submenu #link-shop-all. 1440 header-drawer display:none (min-width 990).",
+  "delta": "Dawn menu-drawer. 1440 hamburger yok — zero-size beklenir. Mobil accordion SHOP ALL.",
+  "capture": {
+    "url": "https://pandora-hair-care-3.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:57:18.798Z",
+    "mode": "viewport",
+    "prepareClick": "header-drawer summary.header__icon--menu"
+  },
+  "prepareClick": "header-drawer summary.header__icon--menu",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://pandora-hair-care-3.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header-drawer summary.header__icon--menu",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Menu drawer açık"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-menu-drawer-menu-item-2 > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-all-alt",
+      "not": "SHOP ALL submenu — yazılı <a> değil, boş ok/summary"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 sol drawer: HOME (aktif) · SHOP ALL → · HAIR CARE · OUR STORY · FAQ · CONTACT · Wishlist 0 · sosyal. 1440 yok.",
+    "changed": "SHOP ALL alt menü: geri oku + NEW ARRIVAL / BY CATEGORY / HAIR CARE OIL / HAIR CARE KITS."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 N/A. Wishlist tıklanmadı."
+}

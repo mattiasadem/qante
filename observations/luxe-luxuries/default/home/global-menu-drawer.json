@@ -1,0 +1,69 @@
+{
+  "observationId": "luxe-luxuries.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "luxe-luxuries",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://watchez-online-store.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/luxe-luxuries/default/home/global-menu-drawer.768.png",
+    "evidence/luxe-luxuries/default/home/global-menu-drawer.open.menu-acik.375.png",
+    "evidence/luxe-luxuries/default/home/global-menu-drawer.open.menu-acik.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "header-drawer data-breakpoint=tablet. Statik: 768 home karesi; 375/1440 zero-size skip.",
+  "delta": "1440 0px (inline mega). Open yalnız 375/768 interact. Log in tıklanmadı.",
+  "captureMode": "viewport",
+  "prepareClick": "header-drawer summary.header__icon--menu",
+  "capture": {
+    "url": "https://watchez-online-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:17:32.595Z",
+    "prepareClick": "header-drawer summary.header__icon--menu"
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://watchez-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-menu-drawer-container",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "section",
+      "captureSelector": "#menu-drawer",
+      "etiket": "menu-acik",
+      "not": "dismissAllOverlays hamburger tıkını kırıyor; details.open + menu-opening."
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 sol drawer: SHOP (sağ ok) / OUR STORY / FAQ'S / CONTACT / KID'S WATCH / SMART WATCH / SPORT WATCH, Wishlist 0, United States | USD $, English, X/Facebook/Instagram/YouTube. 1440 hamburger yok."
+  },
+  "missingStates": [],
+  "interactionNote": "Log in tıklanmadı. 1440 hamburger 0px. dismissAllOverlays hamburger tıkını kırıyor; details.open + menu-opening (forceOpen) açtı. SHOP expander tıklanmadı (kaçış)."
+}

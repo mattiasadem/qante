@@ -1,0 +1,75 @@
+{
+  "observationId": "bookshop.default.home.product-showcase-grid-featured",
+  "schemaId": "product-showcase-grid-featured",
+  "kaynak": "bookshop",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://book-online-store-1.myshopify.com/",
+  "selector": "#shopify-section-template--18135593320615__0617c2f2-69ec-4df8-a506-b2616d4e1db4",
+  "storefrontPassword": "1",
+  "evidenceSlug": "product-showcase-grid-featured",
+  "evidence": [
+    "evidence/bookshop/default/home/product-showcase-grid-featured.1440.png",
+    "evidence/bookshop/default/home/product-showcase-grid-featured.375.png",
+    "evidence/bookshop/default/home/product-showcase-grid-featured.768.png",
+    "evidence/bookshop/default/home/product-showcase-grid-featured.hover.kart-hover.1440.png",
+    "evidence/bookshop/default/home/product-showcase-grid-featured.initial.kart-kapali.1440.png",
+    "evidence/bookshop/default/home/product-showcase-grid-featured.initial.kart-kapali.375.png",
+    "evidence/bookshop/default/home/product-showcase-grid-featured.initial.kart-kapali.768.png"
+  ],
+  "notlar": "Best Sellers grid. Sale rozeti, ADD TO CART, wishlist/compare kart ikonları.",
+  "delta": "Kartta hızlı ekle + wishlist/compare. Quick-view dialog değil — quick-add submit.",
+  "capture": {
+    "url": "https://book-online-store-1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:25:26.068Z"
+  },
+  "interactionStates": [
+    "initial",
+    "hover"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://book-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--18135593320615__0617c2f2-69ec-4df8-a506-b2616d4e1db4",
+      "capture": true,
+      "etiket": "kart-kapali",
+      "not": "Best Sellers grid"
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#shopify-section-template--18135593320615__0617c2f2-69ec-4df8-a506-b2616d4e1db4 .card-wrapper",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "kart-hover",
+      "not": "İkinci görsel / wishlist / ADD TO CART"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Best Sellers 5 kart. Sale rozeti + fiyat/üstü çizili. VIEW ALL. Quick-view dialog yok.",
+    "hover": "Resmi 1440 hover karesi initial ile aynı (byte). Probe: ilk kart 2. görsel opacity 0→1. ADD TO CART DOM'da rest'te. Token — şema yok."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "1440 hover PNG initial ile aynı. Capture scroll :hover kaybediyor. Probe 2. görsel swap; quick-view dialog yok."
+    }
+  ],
+  "interactionNote": "375/768 hover parmakta yok. Quick-add submit, quick-view overlay kanıtı yok."
+}

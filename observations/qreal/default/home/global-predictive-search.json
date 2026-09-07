@@ -1,0 +1,83 @@
+{
+  "observationId": "qreal.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "qreal",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://women-beauty-8.myshopify.com/",
+  "selector": "details-modal.header__search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/qreal/default/home/global-predictive-search.1440.png",
+    "evidence/qreal/default/home/global-predictive-search.375.png",
+    "evidence/qreal/default/home/global-predictive-search.768.png",
+    "evidence/qreal/default/home/global-predictive-search.initial.ikon.1440.png",
+    "evidence/qreal/default/home/global-predictive-search.initial.ikon.375.png",
+    "evidence/qreal/default/home/global-predictive-search.initial.ikon.768.png",
+    "evidence/qreal/default/home/global-predictive-search.input.foundation.1440.png",
+    "evidence/qreal/default/home/global-predictive-search.input.foundation.375.png",
+    "evidence/qreal/default/home/global-predictive-search.input.foundation.768.png",
+    "evidence/qreal/default/home/global-predictive-search.open.arama-acik.1440.png",
+    "evidence/qreal/default/home/global-predictive-search.open.arama-acik.375.png",
+    "evidence/qreal/default/home/global-predictive-search.open.arama-acik.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Kapalı search ikon 28×28. predictive-search form host.",
+  "delta": "Açık hâl interact. Statik kare opener.",
+  "captureMode": "viewport",
+  "prepareClick": ".header__icon--search",
+  "capture": {
+    "url": "https://women-beauty-8.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T17:00:22.452Z",
+    "prepareClick": ".header__icon--search"
+  },
+  "interactionStates": [
+    "initial",
+    "input",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://women-beauty-8.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "ikon",
+      "not": "Kapalı search ikon"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": ".header__icon--search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik",
+      "not": "Boş predictive modal"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input[name='q']",
+      "value": "foundation",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "foundation",
+      "not": "katalogSorgu foundation — 3 ürün beklenir"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Kapalı büyüteç; yazılmış sorgu yok.",
+    "open": "Üst Search input boş + sağda X. Öneri / popular listesi yok. Arkasında home hero duruyor.",
+    "input": "q=foundation 375/768/1440: PRODUCTS — Prilora New Finish Water Proof Foundation · Makeup Foundation Brush · Tarte Smooth Operator Tinted Pressed Finishing Powder + Search for “foundation” →. Koleksiyon grubu yok."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu=foundation (scan). Submit / Enter yok. Account dur."
+}

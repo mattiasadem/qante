@@ -1,0 +1,88 @@
+{
+  "observationId": "gemora.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "gemora",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://jewelry-online-shop1.myshopify.com/",
+  "selector": "#shopify-section-sections--24653293158718__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/gemora/default/home/navigation-header-mega.1440.png",
+    "evidence/gemora/default/home/navigation-header-mega.375.png",
+    "evidence/gemora/default/home/navigation-header-mega.768.png",
+    "evidence/gemora/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/gemora/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/gemora/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/gemora/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Sticky header--top-center. 1440: HOME · SHOP (details#Details-HeaderMenu-2.mega-menu) · OUR STORY · CONTACT US · FAQ'S · MORE; sağda search + Log in + #cart-icon-bubble. Logo. 375 hamburger header-drawer.",
+  "delta": "Mega var: SHOP → details.mega-menu. 375/768 hamburger ayrı global-menu-drawer. Log in PII yoklandı değil. Wishlist sayacı 0. Shopify.theme.name jewelry-online-shop1-v-1-5-0 · schema_name Jewelry_online_shop1 · schema_version 1.5.0 · theme_store_id null · role main · id 178835947838 · shop jewelry-online-shop1.myshopify.com. Vendor Speedo Themes (third-party OS 2.0, not Theme Store). Live demo jewelry-online-shop1.myshopify.com. Storefront password wall; vendor publishes public demo password 1 on speedothemes.com product page. Slug gemora · preset default.",
+  "captureMode": "viewport",
+  "capture": {
+    "url": "https://jewelry-online-shop1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:32:12.555Z"
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://jewelry-online-shop1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Mega kapalı"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-2 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-HeaderMenu-2",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "SHOP mega — summary içindeki /collections/all linkine tıklama"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440/768/375: mega kapalı. HOME altı çizili; SHOP chevron; hero MADE FOR YOUR SHADE görünür.",
+    "open": "1440 SHOP hover+forceOpen: nav altında 5 koleksiyon kartı — Women's Necklace, Diamond Rings, Earrings, Bracelets, Pendants (her birinde Aliquam placeholder). Hero alta itildi. Log in tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "SHOP summary <a href=/collections/all>; click koleksiyona kaçar. 375/768 mega yok (hamburger ayrı). Social-proof toast bazı karelerde sol altta."
+}

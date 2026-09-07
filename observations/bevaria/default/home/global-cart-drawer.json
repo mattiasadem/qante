@@ -1,0 +1,143 @@
+{
+  "observationId": "bevaria.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "bevaria",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://beverages-online-store.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/bevaria/default/home/global-cart-drawer.1440.png",
+    "evidence/bevaria/default/home/global-cart-drawer.375.png",
+    "evidence/bevaria/default/home/global-cart-drawer.768.png",
+    "evidence/bevaria/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/bevaria/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/bevaria/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/bevaria/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/bevaria/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/bevaria/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/bevaria/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/bevaria/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/bevaria/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "#CartDrawer + cart-drawer. Opener a#cart-icon-bubble href=/cart. Kapalı kare yanıltır — interact.",
+  "delta": "Shopify.theme.name Bevaria-v-1-5-0-latest-updates-new · schema_name Bevaria · schema_version 1.5.0 · theme_store_id null · role main · id 150290759935 · shop beverages-online-store.myshopify.com · Speedo Themes OS 2.0 third-party. Vendor-published demo password 1 (public storefront unlock). Official host only. Dawn cart-drawer. Checkout tıklanmadı.",
+  "storefrontPassword": "1",
+  "captureMode": "viewport",
+  "prepareClick": "a#cart-icon-bubble",
+  "capture": {
+    "url": "https://beverages-online-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T19:15:16.029Z",
+    "prepareClick": "a#cart-icon-bubble"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://beverages-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "#CartDrawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer forceOpen. Beklenen: empty + YOU MAY LIKE."
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://beverages-online-store.myshopify.com/products/pura-mixed-flavors-low-sugar-soda-300ml",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductInfo-template--19375491743999__main button[name='add'], button[name='add']",
+      "capture": false,
+      "not": "PURA ATC. Checkout tıklanmadı."
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "forceOpen",
+      "selector": "#CartDrawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer. Beklenen: PURA satırı."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "forceOpen",
+      "selector": "#CartDrawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet + → ara toplam."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Sağ YOUR CART boş: Your cart is empty + Continue Shopping + Have an account? Log in. Altta YOU MAY LIKE kutu (Lauder $210/$399 + Add To Cart). Homepage karartılı. Checkout yok.",
+    "filled": "PURA Mixed Flavors satırı Flavour Cucumber & Lime · adet 1 · $90. Kargo çubuğu Free Shipping $100 / Express $150 (kısmi). Estimated total $90.00 USD + Check Out (tıklanmadı). 1440’ta ATC sonrası ortada YOU MAY LIKE modal (Lauder/Elixjer + Add To Cart). 375’te YOU MAY LIKE çekmece içi kapalı akordeon.",
+    "changed": "Aynı PURA satırı adet 2 · satır $180 · estimated $180.00 USD. Kargo çubuğu dolu (eşikler geçildi). Check Out duruyor, tıklanmadı."
+  },
+  "interactionNote": "Static prepareClick homepage kaldı. forceOpen cart-drawer. addToCart PDP button[name=add]. Checkout / kupon / hesap yok."
+}

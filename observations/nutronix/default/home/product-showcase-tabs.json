@@ -1,0 +1,80 @@
+{
+  "observationId": "nutronix.default.home.product-showcase-tabs",
+  "schemaId": "product-showcase-tabs",
+  "kaynak": "nutronix",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://speedo-nutronix.myshopify.com/",
+  "selector": "#shopify-section-template--23257313771814__165666889162d379a4",
+  "evidenceSlug": "product-showcase-tabs",
+  "evidence": [
+    "evidence/nutronix/default/home/product-showcase-tabs.1440.png",
+    "evidence/nutronix/default/home/product-showcase-tabs.375.png",
+    "evidence/nutronix/default/home/product-showcase-tabs.768.png",
+    "evidence/nutronix/default/home/product-showcase-tabs.changed.new-arrivals.1440.png",
+    "evidence/nutronix/default/home/product-showcase-tabs.changed.new-arrivals.375.png",
+    "evidence/nutronix/default/home/product-showcase-tabs.changed.new-arrivals.768.png",
+    "evidence/nutronix/default/home/product-showcase-tabs.initial.best-sellers.1440.png",
+    "evidence/nutronix/default/home/product-showcase-tabs.initial.best-sellers.375.png",
+    "evidence/nutronix/default/home/product-showcase-tabs.initial.best-sellers.768.png"
+  ],
+  "notlar": "Top Products sekmeleri BEST SELLERS / NEW ARRIVALS / TOP TRENDING. Kart: wishlist + ATC + Sale.",
+  "delta": "Sekme = koleksiyon (best-sellers / new-arrivals / top-trending). Wishlist leftover. Shopify.theme.name Speedo-nutronix-v-1-5-0 · id 170790388006 · schema_name Speedo nutronix · schema_version 1.5.0 · theme_store_id null · role main · shop speedo-nutronix.myshopify.com · walk https://speedo-nutronix.myshopify.com/ · Speedo Themes third-party (not Theme Store) · public demo password 1",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://speedo-nutronix.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--23257313771814__165666889162d379a4",
+      "capture": true,
+      "etiket": "best-sellers",
+      "not": "BEST SELLERS aktif"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "a.button[href='#template--23257313771814__165666889162d379a4-tab-2']",
+      "capture": false,
+      "not": "NEW ARRIVALS"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1000,
+      "capture": true,
+      "etiket": "new-arrivals",
+      "not": "Sekme/kart değişimi — yoklamada başlık aynı kaldı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Top Products · BEST SELLERS aktif (çerçeve) · NEW ARRIVALS / TOP TRENDING · 4 kart Vertigo×2 + Resveratrol×2 $29.95→$26.95 Sale · SHOP NOW.",
+    "changed": ""
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "NEW ARRIVALS tıkı 375/768/1440 karelerini BEST SELLERS ile byte-aynı bıraktı; aktif sekme ve kart başlıkları değişmedi. İkinci deneme."
+    }
+  ],
+  "interactionNote": "Sekme href hash #…tab-2. Wishlist leftover. Kart ATC bu turda yoklandı değil.",
+  "capture": {
+    "url": "https://speedo-nutronix.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T17:44:26.752Z"
+  }
+}

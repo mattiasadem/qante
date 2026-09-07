@@ -1,0 +1,106 @@
+{
+  "observationId": "coffee-culture.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "coffee-culture",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://coffee-prime-2.myshopify.com/cart",
+  "selector": "#shopify-section-template--24587459821851__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/coffee-culture/default/cart/cart-page-main.1440.png",
+    "evidence/coffee-culture/default/cart/cart-page-main.375.png",
+    "evidence/coffee-culture/default/cart/cart-page-main.768.png",
+    "evidence/coffee-culture/default/cart/cart-page-main.changed.adet-2.1440.png",
+    "evidence/coffee-culture/default/cart/cart-page-main.changed.adet-2.375.png",
+    "evidence/coffee-culture/default/cart/cart-page-main.changed.adet-2.768.png",
+    "evidence/coffee-culture/default/cart/cart-page-main.filled.chaga-satir.1440.png",
+    "evidence/coffee-culture/default/cart/cart-page-main.filled.chaga-satir.375.png",
+    "evidence/coffee-culture/default/cart/cart-page-main.filled.chaga-satir.768.png",
+    "evidence/coffee-culture/default/cart/cart-page-main.initial.bos.1440.png",
+    "evidence/coffee-culture/default/cart/cart-page-main.initial.bos.375.png",
+    "evidence/coffee-culture/default/cart/cart-page-main.initial.bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Your cart is empty · Continue Shopping · Have an account? Log in to check out faster.",
+  "delta": "cart-footer sibling h=0 boşken. Filled interact. Checkout/Log in yok. Speedo Coffee Culture 1.5.0 third-party (theme_store_id null). Storefront password 1 is vendor-published on speedothemes.com product page. Shopify.theme.name coffee-culture-v-1-5-0-latest-updates-new · schema_name Coffee culture · schema_version 1.5.0 · theme_store_id null · role main · id 178172789019 · shop coffee-prime-2.myshopify.com. Platform adı dataBindings'e yazılmadı.",
+  "capture": {
+    "url": "https://coffee-prime-2.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T17:28:19.930Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://coffee-prime-2.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24587459821851__cart-items",
+      "capture": true,
+      "etiket": "bos",
+      "not": "Boş sepet sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://coffee-prime-2.myshopify.com/products/solve-labs-mushroom-coffee-chaga",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://coffee-prime-2.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "etiket": "chaga-satir",
+      "not": "Dolu cart sayfası"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus']",
+      "capture": true,
+      "etiket": "adet-2",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty · Continue Shopping · Have an account? Log in to check out faster.",
+    "filled": "Your cart · Continue shopping · PRODUCT / QUANTITY / TOTAL · Solve Labs Mushroom Coffee Chaga · Size 120g · adet 1 · $180.00.",
+    "changed": "Adet 2 · TOTAL $360.00. Checkout / Log in tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout / Log in tıklanmadı. ATC ui."
+}

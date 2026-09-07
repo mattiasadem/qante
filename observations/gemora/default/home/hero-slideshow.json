@@ -1,0 +1,73 @@
+{
+  "observationId": "gemora.default.home.hero-slideshow",
+  "schemaId": "hero-slideshow",
+  "kaynak": "gemora",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://jewelry-online-shop1.myshopify.com/",
+  "selector": "#shopify-section-template--24653292470590__165665788459900955",
+  "evidenceSlug": "hero-slideshow",
+  "evidence": [
+    "evidence/gemora/default/home/hero-slideshow.1440.png",
+    "evidence/gemora/default/home/hero-slideshow.375.png",
+    "evidence/gemora/default/home/hero-slideshow.768.png",
+    "evidence/gemora/default/home/hero-slideshow.changed.slayt-2.1440.png",
+    "evidence/gemora/default/home/hero-slideshow.changed.slayt-2.375.png",
+    "evidence/gemora/default/home/hero-slideshow.changed.slayt-2.768.png",
+    "evidence/gemora/default/home/hero-slideshow.initial.slayt-1.1440.png",
+    "evidence/gemora/default/home/hero-slideshow.initial.slayt-1.375.png",
+    "evidence/gemora/default/home/hero-slideshow.initial.slayt-1.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "slideshow-component 2 slayt. MADE FOR YOUR SHADE / New Vital neutrals: made to complement your skin tone / Shop. Nokta: Load slide 1 of 2 / 2 of 2. mobile-text-below.",
+  "delta": "2 slayt aynı kopya (demo). Ok yerine nokta. Leisure-wear kopyası mücevher demoda kaldı.",
+  "capture": {
+    "url": "https://jewelry-online-shop1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:35:00.157Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://jewelry-online-shop1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "etiket": "slayt-1",
+      "not": "Load slide 1 aktif"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--24653292470590__165665788459900955 button[aria-label='Load slide 2 of 2']",
+      "capture": true,
+      "etiket": "slayt-2",
+      "not": "İkinci slayt noktası (oklar gizli)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Slayt 1: MADE FOR YOUR SHADE / New Vital neutrals / Shop. Nokta 1 aktif."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Load slide 2 of 2 tık; PNG byte-aynı initial (375/768/1440). İki slayt aynı kopya. Oklar gizli. İkinci deneme yok."
+    }
+  ],
+  "interactionNote": "Demo slaytları görsel olarak aynı — şema sapması değil."
+}

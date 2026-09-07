@@ -1,0 +1,100 @@
+{
+  "observationId": "hairva.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "hairva",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://pandora-hair-care-3.myshopify.com/cart",
+  "selector": "#shopify-section-template--24519367786795__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/hairva/default/cart/cart-page-main.1440.png",
+    "evidence/hairva/default/cart/cart-page-main.375.png",
+    "evidence/hairva/default/cart/cart-page-main.768.png",
+    "evidence/hairva/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/hairva/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/hairva/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/hairva/default/cart/cart-page-main.filled.dolu.1440.png",
+    "evidence/hairva/default/cart/cart-page-main.filled.dolu.375.png",
+    "evidence/hairva/default/cart/cart-page-main.filled.dolu.768.png",
+    "evidence/hairva/default/cart/cart-page-main.initial.bos.1440.png",
+    "evidence/hairva/default/cart/cart-page-main.initial.bos.375.png",
+    "evidence/hairva/default/cart/cart-page-main.initial.bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Boş: Your cart is empty · CONTINUE SHOPPING. cart-footer section h=0 (boşta gizli).",
+  "delta": "Dawn main-cart-items. Dolu/qty interact. Checkout tıklanmadı. Footer wrapper ayrı leftover (boş h=0).",
+  "capture": {
+    "url": "https://pandora-hair-care-3.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:01:41.273Z",
+    "mode": "section"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-hair-care-3.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24519367786795__cart-items",
+      "capture": true,
+      "etiket": "bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://pandora-hair-care-3.myshopify.com/products/victoria-silk-top-wig-blonde",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://pandora-hair-care-3.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24519367786795__cart-items",
+      "capture": true,
+      "etiket": "dolu",
+      "not": "Victoria satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button.quantity__button[name='plus'], button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet +1"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty · CONTINUE SHOPPING.",
+    "filled": "Victoria satırı Length 12\" / Color Black, adet 1, total $150.",
+    "changed": "Adet 2, satır total $300."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı. Sepet cookie viewport'lar arası sıfırlanır — her vp adımlar baştan."
+}

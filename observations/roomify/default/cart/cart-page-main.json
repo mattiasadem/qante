@@ -1,0 +1,128 @@
+{
+  "observationId": "roomify.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "roomify",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://pandora-furniture.myshopify.com/cart",
+  "selector": "#shopify-section-template--17748079542429__cart-items",
+  "storefrontPassword": "1",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/roomify/default/cart/cart-page-main.1440.png",
+    "evidence/roomify/default/cart/cart-page-main.375.png",
+    "evidence/roomify/default/cart/cart-page-main.768.png",
+    "evidence/roomify/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/roomify/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/roomify/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/roomify/default/cart/cart-page-main.filled.duane-qty1.1440.png",
+    "evidence/roomify/default/cart/cart-page-main.filled.duane-qty1.375.png",
+    "evidence/roomify/default/cart/cart-page-main.filled.duane-qty1.768.png",
+    "evidence/roomify/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/roomify/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/roomify/default/cart/cart-page-main.initial.sepet-bos.768.png"
+  ],
+  "notlar": "Boş: Your cart is empty + CONTINUE SHOPPING + Have an account? Log in… Sibling cart-footer h=0.",
+  "delta": "Dawn cart-items. Checkout/login tıklanmadı. Dolu hâl interact.",
+  "capture": {
+    "url": "https://pandora-furniture.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:15:58.020Z"
+  },
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-furniture.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://pandora-furniture.myshopify.com/products/duane-chair",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add'], form[action*='/cart/add'] button[type='submit']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://pandora-furniture.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "duane-qty1",
+      "not": "Dolu cart satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "quantity-input button[name='plus'], cart-items button[name='plus'], button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +1"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + CONTINUE SHOPPING + Have an account? Log in to check out faster (tıklanmadı). Altta Featured collection (Ableton 6 / Aiken Dining Table) sibling section.",
+    "filled": "Your cart. PRODUCT / TOTAL. Duane Chair · $400.00 · Size: Small · Color: Brown · qty 1 · satır $400.00 + çöp. Order special instructions textarea boş. Estimated total $400.00 USD. Taxes, discounts and shipping calculated at checkout. CHECK OUT tıklanmadı. Header cart rozeti 1.",
+    "changed": "Qty 2. Satır/estimated total $800.00 USD. Header rozet 2. CHECK OUT tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart UI sonra /cart. Checkout / Log in tıklanmadı. Yeni şema yok."
+}
