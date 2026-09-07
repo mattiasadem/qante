@@ -1,0 +1,89 @@
+{
+  "observationId": "elektro.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "elektro",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://sonix-electronics-store-2.myshopify.com/",
+  "selector": "header#site-header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/elektro/default/home/navigation-header-mega.1440.png",
+    "evidence/elektro/default/home/navigation-header-mega.375.png",
+    "evidence/elektro/default/home/navigation-header-mega.768.png",
+    "evidence/elektro/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/elektro/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/elektro/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/elektro/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "header--middle-left. 1440: Shop / Best Sellers / Themes / Collections / Shop By mega details#Details-HeaderMenu-1..5. Logo Elektro. Wishlist/Compare sayaç, Log in, Cart. Hamburger tablet-only.",
+  "delta": "Mega details.mega-menu (Shop, Best Sellers, Themes, Collections, Shop By). Selector header#site-header — section localization heading taşıyor. Shopify.theme.name Elektro-v-1-5-0-latest-updates-new-speed · schema_name Elektro · schema_version 1.5.0 · theme_store_id null · role main · id 136395325505 · shop sonix-electronics-store-2.myshopify.com · Speedo Themes third-party (Theme Store official değil) · public storefront unlock /password 1 (vendor Live Demo).",
+  "capture": {
+    "url": "https://sonix-electronics-store-2.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:21:13.045Z"
+  },
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sonix-electronics-store-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Mega kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "details#Details-HeaderMenu-1 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "Shop hover"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "details#Details-HeaderMenu-1",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "Shop mega forceOpen — Cameras / Mobile Devices / Laptops…"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "1440 header kapalı: ELEKTRO · Shop / Best Sellers / Themes / Collections / Shop By (caret). Wishlist 0 · hesap · sepet. Altında daire kategori slider (Mobiles/Laptops/…). Mega panel yok.",
+    "open": "1440 Shop açık: header altında 6 kare kart — Cameras / Mobile Devices / Laptops / Refrigerators / Smart TV / Accessories. Hero VR hâlâ altta. 375/768 open adımı yok (hamburger ayrı observation)."
+  },
+  "interactionNote": "Account/Log in tıklanmadı. Wishlist/Compare sayfa leftover. Shop yazılı <a> /collections/all tıklanmadı."
+}

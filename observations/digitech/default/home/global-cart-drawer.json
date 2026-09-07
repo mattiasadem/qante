@@ -1,0 +1,110 @@
+{
+  "observationId": "digitech.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "digitech",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://digital-gallery-shop.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/digitech/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/digitech/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/digitech/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/digitech/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/digitech/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/digitech/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/digitech/default/home/global-cart-drawer.initial.bos.1440.png",
+    "evidence/digitech/default/home/global-cart-drawer.initial.bos.375.png",
+    "evidence/digitech/default/home/global-cart-drawer.initial.bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Cart drawer overlay. Boş / dolu / qty. #cart-icon-bubble.",
+  "delta": "Shopify.theme.name Digital Gallery Shop V-1.5.0 · schema_name Digital gallery shop · schema_version 1.5.0 · theme_store_id null · role main · id 143567782103 · shop digital-gallery-shop.myshopify.com · Speedo Themes third-party (Theme Store official değil). storefrontPassword=1 (speedothemes.com product page).",
+  "captureMode": "viewport",
+  "prepareClick": "#cart-icon-bubble",
+  "capture": {
+    "url": "https://digital-gallery-shop.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T19:56:16.157Z",
+    "prepareClick": "#cart-icon-bubble"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://digital-gallery-shop.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bos",
+      "not": "Boş cart drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://digital-gallery-shop.myshopify.com/products/digital-planner-email-templates-for-digital-branding",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add'], button[name='add']",
+      "capture": false,
+      "not": "ADD TO CART — drawer beklenir"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Digital planner email templates satır $39"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus'], #CartDrawer .quantity__button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "qty 1 → 2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boş drawer: Your cart is empty · CONTINUE SHOPPING.",
+    "filled": "Digital planner email templates for digital branding · $39.00 · qty 1. Estimated total $39.00. CHECK OUT (tıklanmadı).",
+    "changed": "qty 2 · satır $78.00 · Estimated total $78.00."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout / Log in tıklanmadı. addToCart UI — PDP'de drawer açıldı."
+}

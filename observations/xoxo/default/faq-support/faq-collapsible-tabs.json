@@ -1,0 +1,63 @@
+{
+  "observationId": "xoxo.default.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "xoxo",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "url": "https://pandora-full-fashion.myshopify.com/pages/faq",
+  "selector": "#shopify-section-template--24474886504754__11f877ea-f048-48aa-8452-bccbef46e42d",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/xoxo/default/faq-support/faq-collapsible-tabs.1440.png",
+    "evidence/xoxo/default/faq-support/faq-collapsible-tabs.375.png",
+    "evidence/xoxo/default/faq-support/faq-collapsible-tabs.768.png",
+    "evidence/xoxo/default/faq-support/faq-collapsible-tabs.changed.soru1-acik.1440.png",
+    "evidence/xoxo/default/faq-support/faq-collapsible-tabs.changed.soru1-acik.375.png",
+    "evidence/xoxo/default/faq-support/faq-collapsible-tabs.changed.soru1-acik.768.png",
+    "evidence/xoxo/default/faq-support/faq-collapsible-tabs.initial.hepsi-kapali.1440.png",
+    "evidence/xoxo/default/faq-support/faq-collapsible-tabs.initial.hepsi-kapali.375.png",
+    "evidence/xoxo/default/faq-support/faq-collapsible-tabs.initial.hepsi-kapali.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Frequently asked question. 4 details, hepsi kapalı: Can I choose… / I like my styles… / How often… / I signed up…",
+  "delta": "Dawn collapsible. İlk öğe kapalı (openFirst görünmedi).",
+  "capture": {
+    "url": "https://pandora-full-fashion.myshopify.com/pages/faq",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:07:57.317Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-full-fashion.myshopify.com/pages/faq",
+      "capture": true,
+      "etiket": "hepsi-kapali",
+      "not": "4 soru kapalı."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--24474886504754__11f877ea-f048-48aa-8452-bccbef46e42d details >> summary",
+      "capture": true,
+      "etiket": "soru1-acik",
+      "not": "Can I choose whichever styles I want? + lorem."
+    }
+  ],
+  "missingStates": [],
+  "interactionNote": "İlk details click. openFirst yok. Account yok.",
+  "stateFindings": {
+    "initial": "3vp: Frequently asked question. 4 kapalı: Can I choose whichever styles I want? / I like my styles but they don't fit! / How often can I swap out my items? / I signed up! What now?",
+    "changed": "3vp ilk soru açık (chevron yukarı) + lorem ipsum. Diğer üçü kapalı."
+  }
+}

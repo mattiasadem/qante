@@ -1,0 +1,72 @@
+{
+  "kaynak": "wallpapsh",
+  "preset": "default",
+  "storefrontPassword": "1",
+  "evidence": [
+    "evidence/wallpapsh/default/product-detail/product-info-main.1440.png",
+    "evidence/wallpapsh/default/product-detail/product-info-main.375.png",
+    "evidence/wallpapsh/default/product-detail/product-info-main.768.png",
+    "evidence/wallpapsh/default/product-detail/product-info-main.changed.color-pink.1440.png",
+    "evidence/wallpapsh/default/product-detail/product-info-main.changed.color-pink.375.png",
+    "evidence/wallpapsh/default/product-detail/product-info-main.changed.color-pink.768.png",
+    "evidence/wallpapsh/default/product-detail/product-info-main.initial.color-black.1440.png",
+    "evidence/wallpapsh/default/product-detail/product-info-main.initial.color-black.375.png",
+    "evidence/wallpapsh/default/product-detail/product-info-main.initial.color-black.768.png"
+  ],
+  "observationId": "wallpapsh.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "sayfa": "product-detail",
+  "url": "https://pandora-wallpaper.myshopify.com/products/wall-sticker-home-decor-backsplash-wallpaper-bathroom-kitchen",
+  "selector": "#shopify-section-template--21433102368791__main",
+  "evidenceSlug": "product-info-main",
+  "notlar": "Hobby Pink · $100→$80 · People are viewing · Availability 465 · delivery window · Sales End In · Size 8x8/10x10/15x15 · Color Black/Pink · qty · ADD TO CART · BUY IT NOW · Description + accordion.",
+  "delta": "Countdown + social-proof buy box içinde. Accordion ayrı section değil. Wishlist/Size-Guide leftover. QV yok.",
+  "capture": {
+    "url": "https://pandora-wallpaper.myshopify.com/products/wall-sticker-home-decor-backsplash-wallpaper-bathroom-kitchen",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T19:01:55.648Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "selector": null,
+      "value": "https://pandora-wallpaper.myshopify.com/products/wall-sticker-home-decor-backsplash-wallpaper-bathroom-kitchen",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "selector": null,
+      "value": 500,
+      "capture": true,
+      "etiket": "color-black",
+      "not": "Color Black seçili"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='template--21433102368791__main-2-1']",
+      "value": 1500,
+      "capture": true,
+      "etiket": "color-pink",
+      "not": "Color Pink swatch — PDP kalır"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Hobby Pink $100→$80. Size 8 x 8 seçili. Color: Black + siyah swatch. Galeri siyah çizim. Availability 465. ADD TO CART + BUY IT NOW. Akordeonlar kapalı (+).",
+    "changed": "3vp: Color: Pink, pembe swatch seçili. Ana görsel pembe zemin + aynı çizim. Fiyat $80 ve Size 8 x 8 aynı. BUY IT NOW / Size / Size-Guide tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "İlk deneme label:has-text('Pink') boş metin. İkinci deneme label[for='template--21433102368791__main-2-1'] — Pink alındı."
+}

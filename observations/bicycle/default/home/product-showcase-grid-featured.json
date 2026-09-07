@@ -1,0 +1,76 @@
+{
+  "observationId": "bicycle.default.home.product-showcase-grid-featured",
+  "schemaId": "product-showcase-grid-featured",
+  "kaynak": "bicycle",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://bicycle-online-store-1.myshopify.com/",
+  "selector": "#shopify-section-template--16095886606471__featured_collection_h498CU",
+  "evidenceSlug": "product-showcase-grid-featured",
+  "evidence": [
+    "evidence/bicycle/default/home/product-showcase-grid-featured.1440.png",
+    "evidence/bicycle/default/home/product-showcase-grid-featured.375.png",
+    "evidence/bicycle/default/home/product-showcase-grid-featured.768.png",
+    "evidence/bicycle/default/home/product-showcase-grid-featured.hover.kart-hover.1440.png",
+    "evidence/bicycle/default/home/product-showcase-grid-featured.initial.ilk-hal.1440.png",
+    "evidence/bicycle/default/home/product-showcase-grid-featured.initial.ilk-hal.375.png",
+    "evidence/bicycle/default/home/product-showcase-grid-featured.initial.ilk-hal.768.png"
+  ],
+  "notlar": "Best Sellers. QUICK SHOP kartlarda (6). Norco / Schwinn / Apache… featured-collection. Quick-view overlay DOM’da yok.",
+  "delta": "Dawn featured-collection. QUICK SHOP yazısı var; #QuickView yok. Hover interact. Shopify.theme.name Bicycle V-1.5.0 · schema_name Bicycle · schema_version 1.5.0 · theme_store_id null · role main · id 130165440647 · shop bicycle-online-store-1.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock).",
+  "storefrontPassword": "1",
+  "capture": {
+    "url": "https://bicycle-online-store-1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T19:09:33.087Z"
+  },
+  "interactionStates": [
+    "initial",
+    "hover"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://bicycle-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16095886606471__featured_collection_h498CU",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Best Sellers 1440 4 kart; QUICK SHOP kapalı."
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#Slide-template--16095886606471__featured_collection_h498CU-1 .card, #shopify-section-template--16095886606471__featured_collection_h498CU .grid__item",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "kart-hover",
+      "not": "İlk kart. Probe: Quick shop opacity 0 kaldı — PNG bak."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Best Sellers 1440 4 kart. QUICK SHOP barı kapalı. Sale badge 2. ve 3. kartta. Bisiklet ikon swatch.",
+    "hover": "İlk kart (Norco xfr 1): siyah QUICK SHOP bar + wishlist kalp + compare ikon. 2. görsel swap yok. #QuickView overlay yok. 375/768 hover adımı yok."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 hover. Quick-view dialog yok — leftover. 375/768 hover denenmedi (parmak)."
+}

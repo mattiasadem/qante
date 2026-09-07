@@ -1,0 +1,88 @@
+{
+  "observationId": "spacecraft.default.home.product-showcase-tabs",
+  "schemaId": "product-showcase-tabs",
+  "kaynak": "spacecraft",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pandora-furniture-3.myshopify.com/",
+  "selector": "#shopify-section-template--23211688132888__165666889162d379a4",
+  "storefrontPassword": "1",
+  "evidenceSlug": "product-showcase-tabs",
+  "evidence": [
+    "evidence/spacecraft/default/home/product-showcase-tabs.1440.png",
+    "evidence/spacecraft/default/home/product-showcase-tabs.375.png",
+    "evidence/spacecraft/default/home/product-showcase-tabs.768.png",
+    "evidence/spacecraft/default/home/product-showcase-tabs.changed.best-seller.1440.png",
+    "evidence/spacecraft/default/home/product-showcase-tabs.changed.best-seller.375.png",
+    "evidence/spacecraft/default/home/product-showcase-tabs.changed.best-seller.768.png",
+    "evidence/spacecraft/default/home/product-showcase-tabs.initial.new-arrival.1440.png",
+    "evidence/spacecraft/default/home/product-showcase-tabs.initial.new-arrival.375.png",
+    "evidence/spacecraft/default/home/product-showcase-tabs.initial.new-arrival.768.png"
+  ],
+  "notlar": "New Arrivals / New Arrival / Best Seller sekmeleri. İlk kart Chaise L-shape Velvet Sofa. Wishlist + ATC.",
+  "delta": "Shopify.theme.name Pandora-furniture-3 V-1.5.0 · id 170818404632 · schema_name pandora_furniture_3 · schema_version 1.5.0 · theme_store_id null · role main · shop pandora-furniture-3.myshopify.com · Speedo listing slug spacecraft · home-page-tab. Yeni şema yok.",
+  "capture": {
+    "url": "https://pandora-furniture-3.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:09:45.475Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-furniture-3.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2200,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--23211688132888__165666889162d379a4",
+      "capture": true,
+      "etiket": "new-arrival",
+      "not": "New Arrival aktif"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "a.button[href='#template--23211688132888__165666889162d379a4-tab-2']",
+      "value": 1600,
+      "capture": false,
+      "not": "Best Seller — tab-2 display:block"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "etiket": "best-seller",
+      "not": "Landskrona / Marvel grid"
+    }
+  ],
+  "stateFindings": {
+    "initial": "New Arrivals. Sekmeler New Arrival (altı çizili) / Best Seller. Kartlar Chaise L-shape Velvet Sofa With Ottoman $1,000.00 · Mid Century Modern Bookshelf $1,200.00 (3 swatch) · Ridge Storage Cabinet, Grey $1,700.00 · Trio Leg Sleek Table Lamp (Black & Gold) $200.00. View All →.",
+    "changed": ""
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Best Seller a.button[href=#…tab-2] tık + 1600ms retry: 3vp PNG New Arrival ile md5 aynı. Üçüncü deneme yok."
+    }
+  ],
+  "interactionNote": "View All / kart / wishlist tıklanmadı. home-page-tab. Yeni şema yok."
+}

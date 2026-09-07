@@ -1,0 +1,88 @@
+{
+  "observationId": "xoxo.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "xoxo",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://pandora-full-fashion.myshopify.com/cart",
+  "selector": "#shopify-section-template--24474885914930__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/xoxo/default/cart/cart-page-main.1440.png",
+    "evidence/xoxo/default/cart/cart-page-main.375.png",
+    "evidence/xoxo/default/cart/cart-page-main.768.png",
+    "evidence/xoxo/default/cart/cart-page-main.changed.adet-2.1440.png",
+    "evidence/xoxo/default/cart/cart-page-main.changed.adet-2.375.png",
+    "evidence/xoxo/default/cart/cart-page-main.changed.adet-2.768.png",
+    "evidence/xoxo/default/cart/cart-page-main.filled.sneaker-qty1.1440.png",
+    "evidence/xoxo/default/cart/cart-page-main.filled.sneaker-qty1.375.png",
+    "evidence/xoxo/default/cart/cart-page-main.filled.sneaker-qty1.768.png",
+    "evidence/xoxo/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/xoxo/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/xoxo/default/cart/cart-page-main.initial.sepet-bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Your cart. Boş sayfa. cart-footer estimated total h=0 (boşta gizli).",
+  "delta": "Dawn main-cart-items. Checkout tıklanmadı.",
+  "capture": {
+    "url": "https://pandora-full-fashion.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:03:01.145Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-full-fashion.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepet-bos",
+      "not": "Your cart is empty + Continue shopping."
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://pandora-full-fashion.myshopify.com/products/fashion-running-sneaker-shoes",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://pandora-full-fashion.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sneaker-qty1",
+      "not": "Sneaker satırı $229 adet 1."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus']",
+      "capture": true,
+      "etiket": "adet-2",
+      "not": "Adet 2 / $458."
+    }
+  ],
+  "missingStates": [],
+  "interactionNote": "Checkout / Log in tıklanmadı. ATC UI.",
+  "stateFindings": {
+    "initial": "3vp: Your cart is empty + Continue shopping + Have an account? Log in to check out faster. Satır yok.",
+    "filled": "3vp: Your cart. PRODUCT / QUANTITY / TOTAL. Fashion Running Sneaker Shoes $229.00 adet 1, TOTAL $229.00, çöp ikonu. Section kırpımı — checkout altı karede yok.",
+    "changed": "3vp plus → adet 2, TOTAL $458.00."
+  }
+}

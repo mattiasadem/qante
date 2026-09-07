@@ -1,0 +1,146 @@
+{
+  "kaynak": "lingerie",
+  "preset": "default",
+  "evidence": [
+    "evidence/lingerie/default/home/global-predictive-search.375.png",
+    "evidence/lingerie/default/home/global-predictive-search.768.png",
+    "evidence/lingerie/default/home/global-predictive-search.input.bikini.1440.png",
+    "evidence/lingerie/default/home/global-predictive-search.input.bikini.375.png",
+    "evidence/lingerie/default/home/global-predictive-search.input.bikini.768.png",
+    "evidence/lingerie/default/home/global-predictive-search.open.modal-bos.1440.png",
+    "evidence/lingerie/default/home/global-predictive-search.open.modal-bos.375.png",
+    "evidence/lingerie/default/home/global-predictive-search.open.modal-bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "delta": "Öneri interact. Submit yok. Shopify.theme.name Lingerie-v-1-5-0-latest-updates-new · schema_name Lingerie · schema_version 1.5.0 · theme_store_id null · role main · id 176524362023 · shop fashion-store-clean-21.myshopify.com · Speedo Themes third-party (Theme Store official değil).",
+  "sayfa": "home",
+  "schemaId": "global-predictive-search",
+  "url": "https://fashion-store-clean-21.myshopify.com/",
+  "selector": "details:has(#Search-In-Modal)",
+  "captureMode": "viewport",
+  "prepareClick": "summary.header__icon--search",
+  "prepareForceOpen": "details:has(#Search-In-Modal), .search-modal",
+  "notlar": "375/768 Search summary → #Search-In-Modal. 1440 inline #Search-In-Template. katalogSorgu bikini.",
+  "observationId": "lingerie.default.home.global-predictive-search",
+  "evidenceSlug": "global-predictive-search",
+  "capture": {
+    "url": "https://fashion-store-clean-21.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T17:54:12.934Z",
+    "prepareClick": "summary.header__icon--search"
+  },
+  "interactionStates": [
+    "initial",
+    "input",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://fashion-store-clean-21.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "details:has(#Search-In-Modal)",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "selector": "#Search-In-Modal",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "modal-bos",
+      "not": "375/768 Dawn modal boş. 1440 summary 0px."
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Search-In-Template",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "predictive-search.header-search_box",
+      "etiket": "modal-bos",
+      "not": "1440 inline header-search_box #Search-In-Template"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "bikini",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bikini",
+      "not": "katalogSorgu bikini"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Template",
+      "value": "bikini",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1800,
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "predictive-search.header-search_box",
+      "etiket": "bikini",
+      "not": "1440 PRODUCTS listesi"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "open": "375/768: Search alanı + sağda X, PRODUCTS yok. 1440: #Search-In-Template hapı zaten header'da; tık sonrası dropdown yok (kapalı homepage ile neredeyse aynı).",
+    "input": "q=bikini. PRODUCTS: Sexy Black Two Piece Bikini with Bandeau Straps · Pengy Women's Bikini Set · Swimsuit Floral Straps · Strappy Swim Bikini Set · Cheeky Thong Bikini · Eco-Essential Yellow Bikini Bra · Smoothies Dita · Casual Bikini · Wave Crop Bikini Top. Altta Search for “bikini”. Form submit yok."
+  },
+  "interactionNote": "katalogSorgu=bikini. 375/768 #Search-In-Modal; 1440 #Search-In-Template + captureSelector predictive-search.header-search_box (details modal 0px). Submit / hesap yok."
+}

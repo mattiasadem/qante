@@ -1,0 +1,76 @@
+{
+  "observationId": "handmade-clay.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "handmade-clay",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://luxury-handmade-ultimate.myshopify.com/",
+  "selector": "#shopify-section-sections--23698075287862__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/handmade-clay/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/handmade-clay/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/handmade-clay/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/handmade-clay/default/home/navigation-header-mega.open.shop-dropdown.1440.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "header--top-center. Nav: Home / Shop (Details-HeaderMenu-2) / Our Story / Contact / Faq's / Blog. Search + wishlist + cart.",
+  "delta": "Shopify.theme.name Luxury-handmade-ultimate V-1-5-0 · schema_name luxury_handmade_ultimate · schema_version 1.5.0 · theme_store_id null · role main · id 173445611830 · shop luxury-handmade-ultimate.myshopify.com · Dawn-like OS 2.0. Vendor-published demo password 1 (public storefront unlock).",
+  "capture": {
+    "url": "https://luxury-handmade-ultimate.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T19:19:27.545Z"
+  },
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://luxury-handmade-ultimate.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Dropdown kapalı header."
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-2 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-dropdown",
+      "not": "Shop hover: Earrings / Necklace / Rings / Bracelet. Mega yok."
+    }
+  ],
+  "stateFindings": {
+    "initial": "375/768: hamburger + search + wishlist 0 + sepet. 1440: Home / Shop chevron / Our Story / Contact / Faq's / Blog.",
+    "open": "1440 Shop hover: Earrings, Necklace, Rings, Bracelet. URL home."
+  },
+  "missingStates": [],
+  "interactionNote": "Hover summary. Click Shop <a> PLP'ye gider. Log in / wishlist tıklanmadı."
+}
