@@ -1,0 +1,81 @@
+{
+  "observationId": "decora.default.home.product-showcase-tabs",
+  "schemaId": "product-showcase-tabs",
+  "kaynak": "decora",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pandora-furniture-2.myshopify.com/",
+  "selector": "#shopify-section-template--24649680224568__165666889162d379a4",
+  "evidenceSlug": "product-showcase-tabs",
+  "evidence": [
+    "evidence/decora/default/home/product-showcase-tabs.1440.png",
+    "evidence/decora/default/home/product-showcase-tabs.375.png",
+    "evidence/decora/default/home/product-showcase-tabs.768.png",
+    "evidence/decora/default/home/product-showcase-tabs.changed.new-arrivals.1440.png",
+    "evidence/decora/default/home/product-showcase-tabs.changed.new-arrivals.375.png",
+    "evidence/decora/default/home/product-showcase-tabs.changed.new-arrivals.768.png",
+    "evidence/decora/default/home/product-showcase-tabs.initial.best-sellers.1440.png",
+    "evidence/decora/default/home/product-showcase-tabs.initial.best-sellers.375.png",
+    "evidence/decora/default/home/product-showcase-tabs.initial.best-sellers.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Trendy Collection. Sekmeler BEST SELLERS / NEW ARRIVALS / TOP TRENDING. Kartlarda wishlist + ADD TO CART + slider ok. Wembley Dining Table $206→$156.",
+  "delta": "Shopify.theme.name Pandora-furniture-2-v-1-5-0 · schema_name Pandora furniture 2 · schema_version 1.5.0 · theme_store_id null · role main · id 178511216952 · shop pandora-furniture-2.myshopify.com · Speedo listing slug decora · vendor Speedo Themes (third-party OS 2.0, Theme Store official değil) · public storefront unlock /password 1 (ürün sayfası shopify-furniture-theme-store). Şemaya dokunulmadı. home-page-tab. Quick-add kartta.",
+  "capture": {
+    "url": "https://pandora-furniture-2.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:14:23.056Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-furniture-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2200,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24649680224568__165666889162d379a4",
+      "capture": true,
+      "etiket": "best-sellers",
+      "not": "BEST SELLERS · Wembley ilk kart"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "a[href='#template--24649680224568__165666889162d379a4-tab-2']",
+      "capture": true,
+      "etiket": "new-arrivals",
+      "not": "NEW ARRIVALS — Piedmont Martini Table (li sibling, href tab-2)",
+      "value": 2500
+    }
+  ],
+  "stateFindings": {
+    "initial": "Trendy Collection · BEST SELLERS aktif (çerçeve) · Wembley Dining Table $156 · Thompson Bed · Modrest Gates · Kate and Laurel Blake. SHOP NOW.",
+    "changed": "Capture karesi hâlâ BEST SELLERS + Wembley — NEW ARRIVALS aktif görünmedi."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "İki capture. 1) :has-text PNG byte-eş BEST SELLERS. 2) a.button.active+a.button selector yok (sekmeler ayrı li). Retry href=#…-tab-2 tıklandı ama kare yine BEST SELLERS / Wembley. Üçüncü yok."
+    }
+  ],
+  "interactionNote": "Sekmeler ayrı <li> içinde a.button. Probe NEW ARRIVALS → Piedmont gördü; resmi kare değişmedi. Sayfa kaçırmadı."
+}
