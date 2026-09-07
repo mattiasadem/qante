@@ -1,0 +1,72 @@
+{
+  "kaynak": "lingerie",
+  "preset": "default",
+  "evidence": [
+    "evidence/lingerie/default/home/global-menu-drawer.1440.png",
+    "evidence/lingerie/default/home/global-menu-drawer.375.png",
+    "evidence/lingerie/default/home/global-menu-drawer.768.png",
+    "evidence/lingerie/default/home/global-menu-drawer.open.hamburger.1440.png",
+    "evidence/lingerie/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/lingerie/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "storefrontPassword": "1",
+  "delta": "Mega + hamburger birlikte. Log in tıklanmadı. Shopify.theme.name Lingerie-v-1-5-0-latest-updates-new · schema_name Lingerie · schema_version 1.5.0 · theme_store_id null · role main · id 176524362023 · shop fashion-store-clean-21.myshopify.com · Speedo Themes third-party (Theme Store official değil).",
+  "sayfa": "home",
+  "schemaId": "global-menu-drawer",
+  "url": "https://fashion-store-clean-21.myshopify.com/",
+  "selector": "#menu-drawer",
+  "captureMode": "viewport",
+  "prepareClick": "#Details-menu-drawer-container > summary",
+  "notlar": "Hamburger → #menu-drawer. 1440'te de hamburger kutusu var (28px).",
+  "observationId": "lingerie.default.home.global-menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "capture": {
+    "url": "https://fashion-store-clean-21.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T17:36:41.336Z",
+    "prepareClick": "#Details-menu-drawer-container > summary"
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://fashion-store-clean-21.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Drawer açık — 375/768/1440 hamburger var"
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Shop satırı #HeaderDrawer-shop yazılı <a href=/collections/all> — #menu-drawer içinde details/akordeon yok. İlk deneme 768/1440 PLP'ye kaçtı; 375 #menu-drawer 0px. Probe ikinci: expander yok, tekrar çekilmedi."
+    }
+  ],
+  "stateFindings": {
+    "open": "Sol drawer 375/768/1440: HOME SHOP BEST SELLERS THEMES COLLECTIONS CATEGORY + Wishlist 0 + Compare 0 + Log in + USD / English. Shop satırında chevron/details yok."
+  },
+  "interactionNote": "Log in / wishlist / compare tıklanmadı. 1440 hamburger kutusu var. Shop #HeaderDrawer-shop yazılı <a href=/collections/all> — akordeon değil."
+}

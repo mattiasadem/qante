@@ -1,0 +1,130 @@
+{
+  "observationId": "zaba.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "zaba",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://speedo-toys-dropship.myshopify.com/",
+  "selector": "predictive-search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/zaba/default/home/global-predictive-search.initial.kapali.1440.png",
+    "evidence/zaba/default/home/global-predictive-search.initial.kapali.375.png",
+    "evidence/zaba/default/home/global-predictive-search.initial.kapali.768.png"
+  ],
+  "notlar": "Header search — predictive-search; 1440 inline, mobil details-modal.",
+  "delta": "katalogSorgu toyoma. Shopify.theme.name speedo-toys-dropship-v-1-5-0 · schema_name speedo_toys_dropship · schema_version 1.5.0 · theme_store_id null · role main · id 175126708505 · walk speedo-toys-dropship.myshopify.com · Shopify.shop speedo-toys-dropship.myshopify.com · locale en · country US · currency USD · Speedo Themes third-party ZABA (not Theme Store). Storefront unlock password 1.",
+  "capture": {
+    "url": "https://speedo-toys-dropship.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T21:14:38.393Z"
+  },
+  "captureMode": "viewport",
+  "storefrontPassword": "1",
+  "katalogSorgu": "toyoma",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://speedo-toys-dropship.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "body",
+      "etiket": "kapali",
+      "not": "Search modal kapalı"
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "details-modal.header__search summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false,
+      "not": "Mobil search opener"
+    },
+    {
+      "state": "input",
+      "action": "forceOpen",
+      "selector": "details-modal.header__search",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ]
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input[name='q']",
+      "value": "toyoma",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "body",
+      "etiket": "arama-toyoma",
+      "not": "1440 inline search — PRODUCTS toyoma"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "toyoma",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "body",
+      "etiket": "arama-toyoma",
+      "not": "Mobil modal predictive results"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Search modal kapalı; summary.header__icon--search tüm viewport'larda display:none — opener görünmez.",
+    "input": "Predictive fill denenmedi — input görünür değil."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "details-modal.header__search summary ve #Search-In-Modal 375/768/1440'da offsetParent=null; forceOpen/click sonrası da görünür değil. /search?q=toyoma sayfa sonuçları ayrı observation."
+    }
+  ],
+  "interactionNote": "Demo'da arama ikonu CSS ile gizli; global-predictive-search şeması reuse, input state kanıtlanamadı."
+}
