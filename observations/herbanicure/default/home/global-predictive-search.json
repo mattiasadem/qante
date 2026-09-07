@@ -1,0 +1,76 @@
+{
+  "observationId": "herbanicure.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "herbanicure",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://herbanicure.myshopify.com",
+  "selector": "details-modal.header__search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/herbanicure/default/home/global-predictive-search.1440.png",
+    "evidence/herbanicure/default/home/global-predictive-search.375.png",
+    "evidence/herbanicure/default/home/global-predictive-search.768.png",
+    "evidence/herbanicure/default/home/global-predictive-search.input.arama-kratom.1440.png",
+    "evidence/herbanicure/default/home/global-predictive-search.input.arama-kratom.375.png",
+    "evidence/herbanicure/default/home/global-predictive-search.input.arama-kratom.768.png",
+    "evidence/herbanicure/default/home/global-predictive-search.open.arama-bos.1440.png",
+    "evidence/herbanicure/default/home/global-predictive-search.open.arama-bos.375.png",
+    "evidence/herbanicure/default/home/global-predictive-search.open.arama-bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Arama modal + predictive-search.",
+  "delta": "Search görünür (Hubble'dan farklı).",
+  "capture": {
+    "url": "https://herbanicure.myshopify.com",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T21:09:16.554Z",
+    "prepareClick": "summary.header__icon--search"
+  },
+  "captureMode": "viewport",
+  "prepareClick": "summary.header__icon--search",
+  "interactionStates": [
+    "initial",
+    "input",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://herbanicure.myshopify.com",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Search modal açık"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal, predictive-search input[type='search']",
+      "value": "kratom",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-kratom",
+      "not": "katalogSorgu=kratom"
+    }
+  ],
+  "stateFindings": {
+    "open": "Search modal + boş input.",
+    "input": "kratom yazılınca ürün önerileri listesi."
+  },
+  "interactionNote": "Search görünür (Hubble leftover değil).",
+  "missingStates": []
+}

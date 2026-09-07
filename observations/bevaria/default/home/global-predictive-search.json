@@ -1,0 +1,100 @@
+{
+  "observationId": "bevaria.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "bevaria",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://beverages-online-store.myshopify.com/",
+  "selector": "details-modal.header__search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/bevaria/default/home/global-predictive-search.1440.png",
+    "evidence/bevaria/default/home/global-predictive-search.375.png",
+    "evidence/bevaria/default/home/global-predictive-search.768.png",
+    "evidence/bevaria/default/home/global-predictive-search.input.arama-energy.1440.png",
+    "evidence/bevaria/default/home/global-predictive-search.input.arama-energy.375.png",
+    "evidence/bevaria/default/home/global-predictive-search.input.arama-energy.768.png",
+    "evidence/bevaria/default/home/global-predictive-search.open.arama-acik.1440.png",
+    "evidence/bevaria/default/home/global-predictive-search.open.arama-acik.375.png",
+    "evidence/bevaria/default/home/global-predictive-search.open.arama-acik.768.png"
+  ],
+  "notlar": "summary.header__icon--search → #Search-In-Modal. Kapalı predictive-search 0px.",
+  "delta": "Shopify.theme.name Bevaria-v-1-5-0-latest-updates-new · schema_name Bevaria · schema_version 1.5.0 · theme_store_id null · role main · id 150290759935 · shop beverages-online-store.myshopify.com · Speedo Themes OS 2.0 third-party. Vendor-published demo password 1 (public storefront unlock). Official host only. Dawn details-modal.header__search.",
+  "storefrontPassword": "1",
+  "captureMode": "viewport",
+  "prepareClick": "summary.header__icon--search",
+  "capture": {
+    "url": "https://beverages-online-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T19:06:28.799Z",
+    "prepareClick": "summary.header__icon--search"
+  },
+  "interactionStates": [
+    "initial",
+    "input",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://beverages-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "details-modal.header__search details",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": ".search-modal",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "selector": "#Search-In-Modal",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik",
+      "not": "Search modal forceOpen. Static click kapalı homepage idi."
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "energy",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-energy",
+      "not": "katalogSorgu energy. Beklenen: PRODUCTS + Search for energy."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "open": "Karartılı homepage üstünde boş Search input + X kapat. 1440’ta altta daire koleksiyon etiketleri (Limca / Watermelon / Sugar-Free…) hâlâ görünür — home slider overlay altında. Satır yok.",
+    "input": "Search kutusunda energy. PRODUCTS: 8 satır (Red Bull Energy Drink 250 ML, Bivolt Soft Well Power Energy 270ml, Mothers Energy Drink 250ml, Monster Energy Extra Strength…, Hell Classic, Skye Energy, Elixjer Hydrogen Water, Rockstar Focus). 1440 altta Search for “energy”. Submit yok."
+  },
+  "interactionNote": "katalogSorgu energy (katalog ürün adları). Submit / hesap yok. forceOpen details — static prepareClick kapalı homepage bıraktı."
+}

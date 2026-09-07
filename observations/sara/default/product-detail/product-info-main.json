@@ -1,0 +1,76 @@
+{
+  "observationId": "sara.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "sara",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://sara-toy-store.myshopify.com/products/tablette-fluorescente",
+  "selector": "#shopify-section-template--21794986197313__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/sara/default/product-detail/product-info-main.1440.png",
+    "evidence/sara/default/product-detail/product-info-main.375.png",
+    "evidence/sara/default/product-detail/product-info-main.768.png",
+    "evidence/sara/default/product-detail/product-info-main.changed.qty-2.1440.png",
+    "evidence/sara/default/product-detail/product-info-main.changed.qty-2.375.png",
+    "evidence/sara/default/product-detail/product-info-main.changed.qty-2.768.png",
+    "evidence/sara/default/product-detail/product-info-main.initial.qty-1.1440.png",
+    "evidence/sara/default/product-detail/product-info-main.initial.qty-1.375.png",
+    "evidence/sara/default/product-detail/product-info-main.initial.qty-1.768.png"
+  ],
+  "notlar": "Tablette fluorescente *PRÉ-COMMANDE*. $12.95 USD · Sold out · Quantity · Add to cart. Varyant yok.",
+  "delta": "Shopify.theme.name Sara-toys-shop V-1.2.0 · schema_name sara-toy-store · schema_version 1.2.0 · theme_store_id null · role main · id 164101292353 · walk sara-toy-store.myshopify.com · Shopify.shop sara-toy-store.myshopify.com · locale en · country US · currency USD · Speedo third-party catalog (not Theme Store). Storefront unlock password 1.",
+  "storefrontPassword": "1",
+  "capture": {
+    "url": "https://sara-toy-store.myshopify.com/products/tablette-fluorescente",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:48:53.547Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sara-toy-store.myshopify.com/products/tablette-fluorescente",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21794986197313__main",
+      "capture": true,
+      "etiket": "qty-1",
+      "not": "Tablette fluorescente Sold out · qty 1"
+    },
+    {
+      "state": "changed",
+      "action": "fill",
+      "selector": "input[name='quantity']",
+      "value": "2",
+      "capture": true,
+      "etiket": "qty-2",
+      "not": "Quantity 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Tablette fluorescente PRÉ-COMMANDE · $12.95 · Sold out · Add to cart disabled · qty 1.",
+    "changed": "Quantity input 2 — fiyat satırı aynı (sold out)."
+  },
+  "missingStates": [],
+  "interactionNote": "Varyant yok. Buy it now/checkout tıklanmadı. Stoklu ürün cart interact için adaptateur-de-crayon."
+}

@@ -1,0 +1,60 @@
+{
+  "observationId": "sareeify.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "sareeify",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://speedo-sarees.myshopify.com/products/attractive-aqua-blue-colour-embroidered-malay-satin-silk-dulhan-lehenga-choli",
+  "selector": "#shopify-section-template--23960752685361__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/sareeify/default/product-detail/product-info-main.changed.adet-artti.1440.png",
+    "evidence/sareeify/default/product-detail/product-info-main.changed.adet-artti.375.png",
+    "evidence/sareeify/default/product-detail/product-info-main.changed.adet-artti.768.png",
+    "evidence/sareeify/default/product-detail/product-info-main.initial.ilk-hal.1440.png",
+    "evidence/sareeify/default/product-detail/product-info-main.initial.ilk-hal.375.png",
+    "evidence/sareeify/default/product-detail/product-info-main.initial.ilk-hal.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Galeri + Color Ocean Cruise + qty + ADD TO CART. Tek renk swatch.",
+  "delta": "Color swatch yalnız Ocean Cruise — changed qty ile. Shopify.theme.name Speedo-Sarees V 1.5.0 · schema_name speedo_sarees · schema_version 1.5.0 · theme_store_id null · role main · id 175007367473 · shop speedo-sarees.myshopify.com · Speedo Themes third-party (Theme Store official değil). storefrontPassword=1 (speedothemes.com product page).",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://speedo-sarees.myshopify.com/products/attractive-aqua-blue-colour-embroidered-malay-satin-silk-dulhan-lehenga-choli",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "qty=1 kapalı galeri"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], .quantity__button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "qty 1→2 (renk tek seçenek)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Galeri + Color Ocean Cruise + qty 1 + ADD TO CART.",
+    "changed": "qty 2 — tek renk swatch değişmedi."
+  },
+  "missingStates": [],
+  "interactionNote": "Tek Color swatch — variant changed yok; qty changed kullanıldı.",
+  "capture": {
+    "url": "https://speedo-sarees.myshopify.com/products/attractive-aqua-blue-colour-embroidered-malay-satin-silk-dulhan-lehenga-choli",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T19:19:06.221Z"
+  }
+}

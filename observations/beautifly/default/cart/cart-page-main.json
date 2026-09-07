@@ -1,0 +1,94 @@
+{
+  "observationId": "beautifly.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "beautifly",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://women-beauty-6.myshopify.com/cart",
+  "selector": "#shopify-section-template--17814603333859__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/beautifly/default/cart/cart-page-main.1440.png",
+    "evidence/beautifly/default/cart/cart-page-main.375.png",
+    "evidence/beautifly/default/cart/cart-page-main.768.png",
+    "evidence/beautifly/default/cart/cart-page-main.changed.adet-2.1440.png",
+    "evidence/beautifly/default/cart/cart-page-main.changed.adet-2.375.png",
+    "evidence/beautifly/default/cart/cart-page-main.changed.adet-2.768.png",
+    "evidence/beautifly/default/cart/cart-page-main.filled.dolu.1440.png",
+    "evidence/beautifly/default/cart/cart-page-main.filled.dolu.375.png",
+    "evidence/beautifly/default/cart/cart-page-main.filled.dolu.768.png",
+    "evidence/beautifly/default/cart/cart-page-main.initial.bos.1440.png",
+    "evidence/beautifly/default/cart/cart-page-main.initial.bos.375.png",
+    "evidence/beautifly/default/cart/cart-page-main.initial.bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Your cart is empty / CONTINUE SHOPPING / Have an account? Log in. cart-footer h=0 boşken.",
+  "delta": "Boş kare. Dolu interact. Checkout yok.",
+  "capture": {
+    "url": "https://women-beauty-6.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:00:34.038Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://women-beauty-6.myshopify.com/cart",
+      "capture": true,
+      "etiket": "bos",
+      "not": "Boş sepet"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://women-beauty-6.myshopify.com/products/bottle-of-perfume-with-flowers-on-color",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--17814603956451__main button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://women-beauty-6.myshopify.com/cart",
+      "capture": true,
+      "etiket": "dolu",
+      "not": "Perfume satırı — 375 cart-items 375×372"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], .quantity__button[name='plus']",
+      "capture": true,
+      "etiket": "adet-2",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + CONTINUE SHOPPING + Have an account? Log in to check out faster. Log in tıklanmadı. cart-footer h=0.",
+    "filled": "Your cart + Continue shopping. PRODUCT / QUANTITY / TOTAL (375: PRODUCT / TOTAL). Perfume $95.00 · Size: 50ml · qty 1 · TOTAL $95.00. Çöp ikonu.",
+    "changed": "qty 2. TOTAL $190.00."
+  },
+  "interactionNote": "addToCart → PDP sonra /cart (via ui). Checkout / Log in tıklanmadı.",
+  "missingStates": []
+}

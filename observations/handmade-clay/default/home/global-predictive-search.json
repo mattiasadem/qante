@@ -1,0 +1,73 @@
+{
+  "observationId": "handmade-clay.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "handmade-clay",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://luxury-handmade-ultimate.myshopify.com/",
+  "selector": ".search-modal",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "storefrontPassword": "1",
+  "notlar": "predictive-search + details-modal Search. settle() sonrası modal 2px — capture-interaction fill timeout (Luxora/Vedzila aynı aile).",
+  "delta": "Shopify.theme.name Luxury-handmade-ultimate V-1-5-0 · schema_name luxury_handmade_ultimate · schema_version 1.5.0 · theme_store_id null · role main · id 173445611830 · shop luxury-handmade-ultimate.myshopify.com · Dawn-like OS 2.0. Vendor-published demo password 1 (public storefront unlock).",
+  "captureMode": "viewport",
+  "prepareClick": "summary.header__icon--search",
+  "interactionStates": ["initial", "input"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://luxury-handmade-ultimate.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Boş Search overlay hedefi."
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal-1",
+      "value": "clay",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-clay",
+      "not": "katalogSorgu=clay."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Probe (settle olmadan): Search modal tam genişlik, placeholder Search + X. capture-interaction settle+scroll sonrası modal 2px — kare alınamadı.",
+    "input": "Probe: clay → SUGGESTIONS clay lotus hoop · PRODUCTS Handmade Clay Lotus Hoop / Floral Leaf Clay Drop / Handmade Polymer Clay / Polymer Clay Heart + Search for “clay”. Resmi capture: #Search-In-Modal-1 hidden (aria-expanded=false) after settle."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "capture-interaction settle (dismiss+scroll) sonrası search click modalı 2px bırakıyor — zero-size .search-modal. Reload sonrası probe ile modal açılıyor; script reload adımı yok."
+    },
+    {
+      "state": "input",
+      "sebep": "fill #Search-In-Modal-1: input hidden after settle. Probe (no settle) fill clay başarılı. Statik /search?q=clay observation mevcut."
+    }
+  ],
+  "interactionNote": "katalogSorgu clay (probe doğrulandı). Submit/PII yok. Speedo Dawn-family search modal + capture-interaction uyumsuzluğu — Luxora ile aynı sınıf.",
+  "capture": {
+    "url": "https://luxury-handmade-ultimate.myshopify.com/",
+    "viewports": ["375", "768", "1440"],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T19:45:00.000Z",
+    "prepareClick": "summary.header__icon--search"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "observationId": "sonix.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "sonix",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://sonix-electronics-store.myshopify.com/",
+  "selector": "#shopify-section-sections--22992854974764__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/sonix/default/home/navigation-header-mega.1440.png",
+    "evidence/sonix/default/home/navigation-header-mega.375.png",
+    "evidence/sonix/default/home/navigation-header-mega.768.png",
+    "evidence/sonix/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/sonix/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/sonix/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/sonix/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
+  "storePassword": "1",
+  "notlar": "Logo + inline search + cart. Nav: SHOP BY CATEGORY / HOME / SHOP / FEATURES / OUR STORE / ABOUT US / CONTACT US. Mega: details#Details-HeaderMenu-2.SHOP + #Details-HeaderMenu-3.FEATURES. Account tıklanmadı.",
+  "delta": "Dawn-benzeri header. 1440 inline predictive-search (#Search-In-Template). Wishlist/Compare ikonları /pages/wishlist /pages/compare — leftover. Hamburger 375/768 → global-menu-drawer.",
+  "capture": {
+    "url": "https://sonix-electronics-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:42:25.676Z"
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sonix-electronics-store.myshopify.com/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-2 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "SHOP hover — iç <a> tıklanmadı"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-HeaderMenu-2",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "Hover kaybolmasın: details[open]. Smartphone / Watches / Tablets."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Kapalı bar: Sonix. logo, Search kutusu, wishlist/account/cart. Nav HOME altı çizili, SHOP/FEATURES chevron. SHOP BY CATEGORY sol. Mega panel yok.",
+    "open": "1440 SHOP: koyu mega, 6 kart — Smartphone, Smart Watches, Tablets, CCTV Camera, Smart TV, Refrigerator. Her kart görsel + kısa metin. Arka plan loş. İç link tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 mega yok — global-menu-drawer. Hover tek başına SS'de kapanıyor; forceOpen details#Details-HeaderMenu-2. İç <a href=/collections/all> tıklanmadı."
+}
