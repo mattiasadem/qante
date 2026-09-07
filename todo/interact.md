@@ -24,6 +24,7 @@ Aynı chrome’u preset’te tekrar çekme (Allure drawer = diğer Prestige). Ye
 | Digital (Speedo) default | SHOP mega görsel kart · search `course` 1440 · cart drawer+sayfa $89→$178 · PDP tabs · FAQ allowMultipleOpen · PLP hover; menu/search-mobile/empty-drawer leftover |
 | Elektro (Speedo) default | Shop mega 6 kart 1440 · search `speaker` 1440 · cart drawer+sayfa $310→$620 · PDP Color Black · menu/FAQ/hover/BA/search375 missing |
 | Lingerie (Speedo) default | Shop+Category mega 1440 · search `bikini` · hamburger (Shop link leftover) · cart drawer+sayfa $80→$160 · PDP White→Orange · FAQ Q2 |
+| Kiddle (Speedo) default | Shop All mega 1440 · search `rainbow` · cart drawer+sayfa $79→$158 · PDP Color Red · FAQ ilk soru · hamburger/QV/PLAY missingStates |
 
 ---
 
