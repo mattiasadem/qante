@@ -1,0 +1,89 @@
+{
+  "observationId": "coffee-prime.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "coffee-prime",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://coffee-prime.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/coffee-prime/default/home/global-menu-drawer.768.png",
+    "evidence/coffee-prime/default/home/global-menu-drawer.changed.shop-akordeon.768.png",
+    "evidence/coffee-prime/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "details#Details-menu-drawer-container → #menu-drawer. Home / Shop / Collection / New Arrival / Best Seller / About / Blog / Contact + wishlist + sosyal.",
+  "delta": "Shopify.theme.name Coffee-prime V-1.5.0 · schema_name coffee_prime · schema_version 1.5.0 · theme_store_id null · role main · id 171096473906 · shop coffee-prime.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock). 1440 hamburger gizli — open 375/768. Log in tıklanmadı.",
+  "storefrontPassword": "1",
+  "captureMode": "viewport",
+  "prepareClick": "summary.header__icon--menu",
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://coffee-prime.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "summary.header__icon--menu",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Drawer açık; 1440 hamburger gizli"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-menu-drawer-menu-item-2 > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-akordeon",
+      "not": "Shop nested — Hot Brew / Cold Brew / Ground Coffee / Roasted Coffee / Instant Coffee. Yazılı <a> değil."
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "capture (375): zero-size / eşleşmedi: #menu-drawer"
+    },
+    {
+      "state": "changed",
+      "sebep": "capture (375): zero-size / eşleşmedi: #menu-drawer"
+    }
+  ],
+  "interactionNote": "Log in / locale tıklanmadı. 1440 N/A.",
+  "capture": {
+    "url": "https://coffee-prime.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T19:58:39.158Z",
+    "prepareClick": "summary.header__icon--menu"
+  }
+}

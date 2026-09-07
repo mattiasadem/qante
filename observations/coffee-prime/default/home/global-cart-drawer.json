@@ -1,0 +1,114 @@
+{
+  "observationId": "coffee-prime.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "coffee-prime",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://coffee-prime.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/coffee-prime/default/home/global-cart-drawer.1440.png",
+    "evidence/coffee-prime/default/home/global-cart-drawer.375.png",
+    "evidence/coffee-prime/default/home/global-cart-drawer.768.png",
+    "evidence/coffee-prime/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/coffee-prime/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/coffee-prime/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/coffee-prime/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/coffee-prime/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/coffee-prime/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/coffee-prime/default/home/global-cart-drawer.initial.bos.1440.png",
+    "evidence/coffee-prime/default/home/global-cart-drawer.initial.bos.375.png",
+    "evidence/coffee-prime/default/home/global-cart-drawer.initial.bos.768.png"
+  ],
+  "notlar": "cart-drawer is-empty. Cart link header'da /cart'a gidebilir — #cart-icon-bubble probe.",
+  "delta": "Shopify.theme.name Coffee-prime V-1.5.0 · schema_name coffee_prime · schema_version 1.5.0 · theme_store_id null · role main · id 171096473906 · shop coffee-prime.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock).",
+  "storefrontPassword": "1",
+  "captureMode": "viewport",
+  "prepareClick": "a[href='/cart'], #cart-icon-bubble",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://coffee-prime.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a[href='/cart'].header__icon, #cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bos",
+      "not": "Boş cart drawer veya /cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://coffee-prime.myshopify.com/products/premium-filter-ground-coffee-powder-coffee",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add'], button[name='add']",
+      "capture": false,
+      "not": "Add to cart — drawer beklenir"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Premium Filter Ground Coffee satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus'], #CartDrawer .quantity__button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Qty 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "375/768/1440: Search modal/overlay boş — placeholder Search + X.",
+    "input": "coffee: predictive SUGGESTIONS + PRODUCTS (Premium Filter Ground Coffee, Hot Brew vb.).",
+    "filled": "375/768/1440: Cart drawer Premium Filter Ground Coffee $18 · qty 1→2 Check out.",
+    "changed": "375/768/1440: qty 2 · subtotal $36."
+  },
+  "missingStates": [],
+  "interactionNote": "Cart header link /cart olabilir — drawer fallback addToCart AJAX.",
+  "capture": {
+    "url": "https://coffee-prime.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:02:32.933Z",
+    "prepareClick": "a[href='/cart'], #cart-icon-bubble"
+  }
+}
