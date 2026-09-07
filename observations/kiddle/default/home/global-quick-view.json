@@ -1,0 +1,76 @@
+{
+  "observationId": "kiddle.default.home.global-quick-view",
+  "schemaId": "global-quick-view",
+  "kaynak": "kiddle",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://toyon-toys-3.myshopify.com/",
+  "selector": "quick-add-modal[open]",
+  "evidenceSlug": "global-quick-view",
+  "evidence": [
+    "evidence/kiddle/default/home/global-quick-view.1440.png",
+    "evidence/kiddle/default/home/global-quick-view.375.png",
+    "evidence/kiddle/default/home/global-quick-view.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Kart QUICK SHOP → Dawn quick-add-modal (Best Seller sekmesi). Birden fazla host. CardLink id çift.",
+  "delta": "Tam galeri QV değil; Dawn quick-add form. Kapalı host 0. Unique modal interact.",
+  "captureMode": "viewport",
+  "prepareClick": "#shopify-section-template--18212694524124__homepage_product_tab_wd7ikC .quick-add__submit",
+  "prepareScroll": "#shopify-section-template--18212694524124__homepage_product_tab_wd7ikC",
+  "capture": {
+    "url": "https://toyon-toys-3.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "prepareClick": "#shopify-section-template--18212694524124__homepage_product_tab_wd7ikC .quick-add__submit",
+    "updatedAt": "2026-09-02T21:01:58.793Z"
+  },
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "selector": null,
+      "value": "https://toyon-toys-3.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--18212694524124__homepage_product_tab_wd7ikC",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#shopify-section-template--18212694524124__homepage_product_tab_wd7ikC .quick-add__submit",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "selector": null,
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "quick-shop",
+      "not": "Quick add modal — içerik fetch ile gelir"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "capture (375): zero-size / eşleşmedi: quick-add-modal[open]"
+    }
+  ],
+  "interactionNote": "Dawn quick-add-modal. ATC/checkout yok. CardLink id çift. forceOpen boş kabuk (show() modalDialog içi undefined). QUICK SHOP tık modal[open] üretmedi."
+}

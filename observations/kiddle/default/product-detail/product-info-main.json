@@ -1,0 +1,72 @@
+{
+  "observationId": "kiddle.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "kiddle",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://toyon-toys-3.myshopify.com/products/128pcs-big-coloring-trunk-1",
+  "selector": "#shopify-section-template--18212694851804__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/kiddle/default/product-detail/product-info-main.1440.png",
+    "evidence/kiddle/default/product-detail/product-info-main.375.png",
+    "evidence/kiddle/default/product-detail/product-info-main.768.png",
+    "evidence/kiddle/default/product-detail/product-info-main.changed.color-red.1440.png",
+    "evidence/kiddle/default/product-detail/product-info-main.changed.color-red.375.png",
+    "evidence/kiddle/default/product-detail/product-info-main.changed.color-red.768.png",
+    "evidence/kiddle/default/product-detail/product-info-main.initial.color-blue.1440.png",
+    "evidence/kiddle/default/product-detail/product-info-main.initial.color-blue.375.png",
+    "evidence/kiddle/default/product-detail/product-info-main.initial.color-blue.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "128PCS BIG COLORING TRUNK · $89→$79 SAVE $10 · Size S/M/L pill · Color Blue/Red/Yellow/Green swatch · qty stepper · ADD TO CART · BUY IT NOW · SHARE/TWEET/PIN · Free Shipping $99+ · 100% Joy Guaranteed · DESCRIPTION / INFORMATION / HOW TO USE sekmeleri buy box içinde. Breadcrumb HOME / ürün.",
+  "delta": "Sekmeler ayrı shopify-section değil (product-info-tabs yok). Breadcrumb main içinde. BUY IT NOW tıklanmadı.",
+  "capture": {
+    "url": "https://toyon-toys-3.myshopify.com/products/128pcs-big-coloring-trunk-1",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:38:07.843Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "selector": null,
+      "value": "https://toyon-toys-3.myshopify.com/products/128pcs-big-coloring-trunk-1",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "selector": null,
+      "value": 500,
+      "capture": true,
+      "etiket": "color-blue",
+      "not": "Color Blue · Size S · $79"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='template--18212694851804__main-2-1']",
+      "value": 1500,
+      "capture": true,
+      "etiket": "color-red",
+      "not": "Color Red swatch — URL ?variant= değişir, PDP kalır"
+    }
+  ],
+  "stateFindings": {
+    "initial": "375/768/1440: 128PCS BIG COLORING TRUNK · $79.00 USD ($89 üstü çizili) SAVE $10 · Size S · Color: Blue · ADD TO CART · BUY IT NOW · DESCRIPTION sekmesi.",
+    "changed": "375/768/1440: Color: Red (ikinci swatch çerçeveli). Fiyat $79.00 aynı. Size S. Galeri aynı bento görseli."
+  },
+  "missingStates": [],
+  "interactionNote": "BUY IT NOW / checkout tıklanmadı. Wishlist/compare ikonları galeride. DESCRIPTION/INFORMATION/HOW TO USE buy box içinde."
+}

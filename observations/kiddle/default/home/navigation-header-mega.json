@@ -1,0 +1,85 @@
+{
+  "observationId": "kiddle.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "kiddle",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://toyon-toys-3.myshopify.com/",
+  "selector": "#shopify-section-sections--18212694982876__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/kiddle/default/home/navigation-header-mega.1440.png",
+    "evidence/kiddle/default/home/navigation-header-mega.375.png",
+    "evidence/kiddle/default/home/navigation-header-mega.768.png",
+    "evidence/kiddle/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/kiddle/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/kiddle/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/kiddle/default/home/navigation-header-mega.open.shop-all-mega.1440.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Dawn header--middle-left · sticky on-scroll-up. KIDDLE logo. HOME · SHOP ALL (mega) · TOYS · KIDS CARE · ABOUT · DISCOVER. Cart · wishlist 0 · Log in. 1440 Search... inline. Announcement yok.",
+  "delta": "Shop All disclosure = MegaMenu-Content-2 (koleksiyon kareleri + ürün satırları). Discover = CONTACT/FAQ'S/BLOG. Wishlist ikonu var. sticky feature, ayrı section değil.",
+  "capture": {
+    "url": "https://toyon-toys-3.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:58:03.461Z"
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "selector": null,
+      "value": "https://toyon-toys-3.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "selector": null,
+      "value": 400,
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-HeaderMenu-2",
+      "capture": false,
+      "viewports": [
+        "1440"
+      ],
+      "not": "Hover details.open bırakmıyor; hover sonrası forceOpen kapanır. Yalnız open attribute."
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "selector": null,
+      "value": 700,
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#MegaMenu-Content-2",
+      "etiket": "shop-all-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Shop All mega — Kids' Toys / Collections / ürün satırları"
+    }
+  ],
+  "stateFindings": {
+    "initial": "375/768/1440: KIDDLE logo · HOME SHOP ALL TOYS KIDS CARE ABOUT DISCOVER · sepet · wishlist 0 · Log in. 1440’ta inline Search.... Mega kapalı.",
+    "open": "1440: SHOP ALL açık. Header altında 6 kare — Kids' Toys Collections, Toy Cars To Creative Sets, Backpack Essentials, Wooden Ring Stacker Toy, Blocks Game, Small Toy Town."
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 Shop All mega yok — hamburger ayrı schema. Playwright hover details.open=false bırakır (opacity 0). Discover 1440 ayrı çekilmedi — aynı disclosure."
+}
