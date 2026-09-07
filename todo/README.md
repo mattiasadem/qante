@@ -88,7 +88,7 @@
 | Sareeify (Speedo) | [`sareeify.md`](./sareeify.md) | ✅ first inventory — speedo-sarees.myshopify.com · password `1` · 39 obs · 141 PNG · 0 yeni şema · interact |
 | Sonix (Speedo) | [`sonix.md`](./sonix.md) | ✅ Mod A + interact — default · sonix-electronics-store · password `1` · 39 obs · 0 yeni şema |
 | Spacecraft (Speedo · home decor) | [`spacecraft.md`](./spacecraft.md) | 🟡 first inventory + interact — `pandora-furniture-3` · Pandora-furniture-3 V-1.5.0 · password `1` · 39 obs · 164 PNG · 0 yeni şema · search/cart/PDP/FAQ alındı; mega/menu/hover/tabs missing |
-| WALLAPSH (Speedo) | [`wallpapsh.md`](./wallpapsh.md) | ✅ first inventory + interact — official `pandora-wallpaper.myshopify.com` · password `1` · 41 obs · 156 PNG · 0 yeni şema · menu/tabs/search-mobile missingStates |
+| WALLOBSH (Speedo) | [`wallpapsh.md`](./wallpapsh.md) | ✅ first inventory + interact — official `pandora-wallpaper.myshopify.com` · password `1` · 41 obs · 156 PNG · 0 yeni şema · menu/tabs/search-mobile missingStates |
 | XOXO / Odzi (Speedo) | [`xoxo.md`](./xoxo.md) | 🟡 first inventory + interact — official `pandora-full-fashion.myshopify.com` · Pandora-full-fashion V-1.5.0 · vendor password `1` · 45 obs · 0 yeni şema · cart/PDP/FAQ/PLP 1440; menu/search 375 overlay missing |
 | Coffee Prime (Speedo) | [`coffee-prime.md`](./coffee-prime.md) | ✅ first inventory + interact — coffee-prime.myshopify.com · password `1` · 45 obs · 170 PNG · 0 yeni şema · search 375/768 missingStates |
 | Legal / policy (Kreis recipe) | [`policy-legal.md`](./policy-legal.md) | ✅ page-recipes/policy · 3-col sticky TOC \| content \| sibling nav |
