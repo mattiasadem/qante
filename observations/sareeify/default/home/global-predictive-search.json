@@ -1,0 +1,79 @@
+{
+  "observationId": "sareeify.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "sareeify",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://speedo-sarees.myshopify.com/",
+  "selector": "details:has(#Search-In-Modal)",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/sareeify/default/home/global-predictive-search.initial.modal-bos.1440.png",
+    "evidence/sareeify/default/home/global-predictive-search.initial.modal-bos.375.png",
+    "evidence/sareeify/default/home/global-predictive-search.initial.modal-bos.768.png",
+    "evidence/sareeify/default/home/global-predictive-search.input.saree.1440.png",
+    "evidence/sareeify/default/home/global-predictive-search.input.saree.375.png",
+    "evidence/sareeify/default/home/global-predictive-search.input.saree.768.png"
+  ],
+  "storefrontPassword": "1",
+  "katalogSorgu": "saree",
+  "notlar": "Search summary → predictive modal. katalogSorgu=saree.",
+  "delta": "Dawn search-modal. Shopify.theme.name Speedo-Sarees V 1.5.0 · schema_name speedo_sarees · schema_version 1.5.0 · theme_store_id null · role main · id 175007367473 · shop speedo-sarees.myshopify.com · Speedo Themes third-party (Theme Store official değil). storefrontPassword=1 (speedothemes.com product page).",
+  "captureMode": "viewport",
+  "prepareClick": "summary.header__icon--search",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://speedo-sarees.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "modal-bos",
+      "not": "Arama modalı boş"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": ".search-modal input[type='search'], #Search-In-Modal",
+      "value": "saree",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "saree",
+      "not": "SUGGESTIONS + PRODUCTS saree"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Search modal boş — placeholder Search, hero arkada.",
+    "input": "q=saree — SUGGESTIONS + PRODUCTS listesi (saree koleksiyon/ürün önerileri)."
+  },
+  "missingStates": [],
+  "interactionNote": "Form submit yok.",
+  "capture": {
+    "url": "https://speedo-sarees.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T19:15:56.237Z",
+    "prepareClick": "summary.header__icon--search"
+  }
+}

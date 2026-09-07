@@ -1,0 +1,90 @@
+{
+  "observationId": "luxe-luxuries.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "luxe-luxuries",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://watchez-online-store.myshopify.com/",
+  "selector": "#shopify-section-sections--23205603770648__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/luxe-luxuries/default/home/navigation-header-mega.1440.png",
+    "evidence/luxe-luxuries/default/home/navigation-header-mega.375.png",
+    "evidence/luxe-luxuries/default/home/navigation-header-mega.768.png",
+    "evidence/luxe-luxuries/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/luxe-luxuries/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/luxe-luxuries/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/luxe-luxuries/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Logo + SHOP / OUR STORY / FAQ'S / CONTACT / MORE + Search + Wishlist + Log in + Cart. 1440 details#Details-HeaderMenu-1.mega-menu.",
+  "delta": "SHOP mega: marka kolonları (Armani Exchange, Fire boltt…) + mega_image_with_text promo. Wishlist /pages/wishlist leftover. Sticky görüldü.",
+  "capture": {
+    "url": "https://watchez-online-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:55:35.127Z"
+  },
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://watchez-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Mega kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "details#Details-HeaderMenu-1",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "details[open] — hover scrollTo kapatıyor"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "details#Details-HeaderMenu-1 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "section",
+      "captureSelector": "#MegaMenu-Content-1",
+      "etiket": "shop-mega",
+      "not": "SHOP mega paneli kırp"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Header kapalı: LUXE LUXURIES logo, SHOP / OUR STORY / FAQ'S / CONTACT / MORE, Search, Wishlist 0, Log in, Cart. Mega panel yok.",
+    "open": "1440 SHOP: koyu panel. Sol kolon Top Brand Collection (Armani Exchange, Fire boltt, Allen Solly, Michael Kors, Kool Kidz, Caravelle, Olivia Burton, VICTORINOX, Quatix, Reign). Sağda 4 mega görsel kart: Women's / Men's / Classic / Latest Watch Collection + lorem alt metin."
+  },
+  "missingStates": [],
+  "interactionNote": "Hover scrollTo kapatıyor → forceOpen details#Details-HeaderMenu-1 + #MegaMenu-Content-1 kırp. 375/768 hamburger ayrı (global-menu-drawer). Account/Wishlist tıklanmadı."
+}

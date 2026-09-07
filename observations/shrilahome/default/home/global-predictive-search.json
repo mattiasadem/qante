@@ -1,0 +1,113 @@
+{
+  "observationId": "shrilahome.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "shrilahome",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pandora-furniture-5.myshopify.com/",
+  "selector": "details-modal.header__search",
+  "storefrontPassword": "1",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/shrilahome/default/home/global-predictive-search.1440.png",
+    "evidence/shrilahome/default/home/global-predictive-search.375.png",
+    "evidence/shrilahome/default/home/global-predictive-search.768.png",
+    "evidence/shrilahome/default/home/global-predictive-search.initial.arama-bos.1440.png",
+    "evidence/shrilahome/default/home/global-predictive-search.initial.arama-bos.375.png",
+    "evidence/shrilahome/default/home/global-predictive-search.initial.arama-bos.768.png"
+  ],
+  "notlar": "Header büyüteç → details-modal. Input #Search-In-Modal / #Search-In-Modal-1. predictive-search-results.",
+  "delta": "Shopify.theme.name Shrilahome-Furniture-v-1-5-0 · schema_name shrilahome · schema_version 1.5.0 · theme_store_id null · role main · id 169736438070 · shop pandora-furniture-5.myshopify.com. Vendor Speedo Themes (third-party OS 2.0, Theme Store değil). Storefront password 1 (speedothemes.com product page). Host pandora-furniture-5.myshopify.com — başka host uydurulmadı. Dawn predictive-search. katalogSorgu=sofa (PLP/search kanıtlı).",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-furniture-5.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header.header details-modal.header__search > details > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "1440 sol Search yazısı — modal aç"
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": ".header__icons details-modal.header__search > details > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "375/768 sağ büyüteç — ilk modal 0-size"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal-1",
+      "value": "sofa",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sofa",
+      "not": "katalogSorgu=sofa · 1440 açık input"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "sofa",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sofa",
+      "not": "katalogSorgu=sofa · 375/768 açık input"
+    }
+  ],
+  "stateFindings": {
+    "initial": "375/768/1440 kare homepage (CUSHION slayt). Search modal / placeholder / X yok. Büyüteç tık pikseli değiştirmedi."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "İki details-modal. Retry: 1440 #Search-In-Modal-1 ve 375/768 #Search-In-Modal fill hidden kaldı. İlk kare modal açmadı. İkinci deneme. Submit yok."
+    }
+  ],
+  "interactionNote": "katalogSorgu=sofa (search-results sayfasında kanıtlı). Overlay input yakalanamadı. Submit/PII yok. Üçüncü deneme yok.",
+  "capture": {
+    "url": "https://pandora-furniture-5.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:13:04.765Z"
+  }
+}

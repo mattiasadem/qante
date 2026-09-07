@@ -1,0 +1,80 @@
+{
+  "observationId": "glidefeet.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "glidefeet",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://glidefeet.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/glidefeet/default/home/global-menu-drawer.changed.shop-akordeon.1440.png",
+    "evidence/glidefeet/default/home/global-menu-drawer.changed.shop-akordeon.375.png",
+    "evidence/glidefeet/default/home/global-menu-drawer.changed.shop-akordeon.768.png",
+    "evidence/glidefeet/default/home/global-menu-drawer.open.hamburger.1440.png",
+    "evidence/glidefeet/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/glidefeet/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "drawer-menu: hamburger 375/768/1440. #Details-menu-drawer-container → #menu-drawer. Shop = #HeaderDrawer-shop. Wishlist / Log in tıklanmadı.",
+  "delta": "Dawn menu-drawer; 1440 de hamburger (inline mega yok). Shopify.theme.name Glidefeet-v-1-5-0 · schema_name Glidefeet · schema_version 1.5.0 · theme_store_id null · role main · id 170474012955 · shop glidefeet.myshopify.com. Vendor Speedo Themes (third-party, Theme Store official değil). Storefront password 1 (vendor product page).",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://glidefeet.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header-drawer summary.header__icon--menu, #Details-menu-drawer-container > summary",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Drawer açık — Home / Shop / Best Seller… Wishlist/Log in tıklama"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#HeaderDrawer-shop",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-akordeon",
+      "not": "Shop nested: Loafer Boot Sandal Sneakers Sports"
+    }
+  ],
+  "stateFindings": {
+    "open": "375 tam yükseklik drawer: Home (gri) · Shop → · Best Seller · New Arrival · Men's/Women's/Kids Shoes · Wishlist 0 · alt Log in + sosyal. 768/1440 sol ~400px beyaz panel, sağda karartılı hero. Header X + GLIDEFEET. Log in tıklanmadı.",
+    "changed": "Shop tık: geri oku + Shop + Loafer / Boot / Sandal / Sneakers / Sports. In-place nested, mega kolon yok. 375/768/1440."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "open/changed hamburger + Shop accordion; ayrı hover yok"
+    }
+  ],
+  "interactionNote": "1440 hamburger var (Dawn large-up inline değil). dismiss popup-active kalkmazsa tık yemez. Log in / Wishlist tıklanmadı.",
+  "capture": {
+    "url": "https://glidefeet.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T15:39:29.521Z"
+  }
+}

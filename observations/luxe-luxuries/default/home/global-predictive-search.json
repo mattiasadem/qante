@@ -1,0 +1,92 @@
+{
+  "observationId": "luxe-luxuries.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "luxe-luxuries",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://watchez-online-store.myshopify.com/",
+  "selector": "details-modal.header__search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/luxe-luxuries/default/home/global-predictive-search.1440.png",
+    "evidence/luxe-luxuries/default/home/global-predictive-search.375.png",
+    "evidence/luxe-luxuries/default/home/global-predictive-search.768.png",
+    "evidence/luxe-luxuries/default/home/global-predictive-search.input.arama-retro.1440.png",
+    "evidence/luxe-luxuries/default/home/global-predictive-search.input.arama-retro.375.png",
+    "evidence/luxe-luxuries/default/home/global-predictive-search.input.arama-retro.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Header büyüteç → Dawn details-modal + predictive-search. Statik kare kapalı (home).",
+  "delta": "Kapalı 0-size / prepareClick home karesi. Yazma interact. katalogSorgu=retro.",
+  "captureMode": "viewport",
+  "prepareClick": "summary.header__icon--search",
+  "capture": {
+    "url": "https://watchez-online-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:13:59.483Z",
+    "prepareClick": "summary.header__icon--search"
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "input",
+      "action": "goto",
+      "value": "https://watchez-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "forceOpen",
+      "selector": "details-modal.header__search details",
+      "capture": false,
+      "not": "Özet tık details[open] yapmıyor; forceOpen input'u büyütür."
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal-1",
+      "value": "retro",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-retro",
+      "not": "375/768 görünür input #Search-In-Modal-1. katalogSorgu=retro."
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "retro",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-retro",
+      "not": "1440 header input #Search-In-Modal."
+    }
+  ],
+  "stateFindings": {
+    "input": "retro yazınca PRODUCTS: Retro Watch (kırmızı kayış thumbnail) + Search for “retro”. Overlay karartılı home. Submit yok."
+  },
+  "missingStates": [],
+  "interactionNote": "İki #header-search (drawer kopyası display:none). Özet tık açmaz. 375/768 #Search-In-Modal-1; 1440 #Search-In-Modal. Submit yok."
+}

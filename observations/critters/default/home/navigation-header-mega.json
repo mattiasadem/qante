@@ -1,0 +1,157 @@
+{
+  "observationId": "critters.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "critters",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://toyon-toys-2.myshopify.com/",
+  "selector": "#shopify-section-sections--21777130717368__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/critters/default/home/navigation-header-mega.1440.png",
+    "evidence/critters/default/home/navigation-header-mega.375.png",
+    "evidence/critters/default/home/navigation-header-mega.768.png",
+    "evidence/critters/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/critters/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/critters/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/critters/default/home/navigation-header-mega.open.shop-by-category.1440.png",
+    "evidence/critters/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
+  "notlar": "header--custom-logo-center-menu-center. 1440: Search box + Log in + cart + SHOP BY CATEGORY + Home / Shop / Best seller / About Us / Contact Us. Wishlist + Compare sayfa linkleri. Mega class: header__submenu / header__menu-item (Kids Toys, Aeroplane…).",
+  "delta": "details#Details-HeaderMenu-2.mega-menu + #MegaMenu-Content-2 kart ızgarası. Wishlist/Compare /pages (hesap yok). Account /account/login tıklanmadı. Shopify.theme.name Critters kids toys V-1.5.0 · schema_name Critters kids toys · schema_version 1.5.0 · theme_store_id null · role main · id 163267346616 · walk toyon-toys-2.myshopify.com · Shopify.shop toyon-toys-2.myshopify.com · locale en · country US · currency USD · Speedo third-party catalog (not Theme Store). Storefront unlock password 1.",
+  "capture": {
+    "url": "https://toyon-toys-2.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T17:34:11.694Z"
+  },
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://toyon-toys-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Mega ve category paneli kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-2 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "Shop summary hover opens details[open]"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-HeaderMenu-2",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "scrollTo kapatmasın diye open attribute"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#MegaMenu-Content-2",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "Shop mega — Kids Toys / Aeroplane kolonları"
+    },
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://toyon-toys-2.myshopify.com/",
+      "capture": false,
+      "viewports": [
+        "1440"
+      ]
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false,
+      "viewports": [
+        "1440"
+      ]
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": ".category-title",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "SHOP BY CATEGORY span"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false,
+      "viewports": [
+        "1440"
+      ]
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": ".header-sidecategory",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-by-category",
+      "not": "SHOP BY CATEGORY — .header-sidecategory 300×456"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Kapalı header: Search + logo + Log in/wishlist/cart. Teal bar SHOP BY CATEGORY + Home / Shop / Best seller / About Us / Contact Us. Mega ve side panel yok.",
+    "open": "1440 Shop mega: tam genişlik kart ızgarası Kids Toys (teddy), Aeroplane, Ride On Toys, Card Games, Construction, Puzzels. Hover + forceOpen #Details-HeaderMenu-2."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "SHOP BY CATEGORY side panel (.header-sidecategory) probe’da 300×456 Kids Toys/Aeroplane…; ikinci capture hover Playwright hidden kaldı. Üçüncü deneme yok."
+    },
+    {
+      "state": "hover",
+      "sebep": "open = Shop mega; ayrı hover state yok"
+    }
+  ],
+  "interactionNote": "Account/Log in tıklanmadı. Wishlist/Compare sayfa. Hamburger ayrı global-menu-drawer. Mega capture forceOpen — düz hover karesi scrollTo ile kapanıyordu."
+}

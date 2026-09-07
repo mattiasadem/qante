@@ -1,0 +1,135 @@
+{
+  "observationId": "critters.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "critters",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://toyon-toys-2.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/critters/default/home/global-cart-drawer.1440.png",
+    "evidence/critters/default/home/global-cart-drawer.375.png",
+    "evidence/critters/default/home/global-cart-drawer.768.png",
+    "evidence/critters/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/critters/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/critters/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/critters/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/critters/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/critters/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/critters/default/home/global-cart-drawer.initial.sepet-bos.1440.png",
+    "evidence/critters/default/home/global-cart-drawer.initial.sepet-bos.375.png",
+    "evidence/critters/default/home/global-cart-drawer.initial.sepet-bos.768.png"
+  ],
+  "notlar": "Dawn #CartDrawer.cart-drawer. Boş: cart-drawer__empty-content. Opener #cart-icon-bubble href=/cart.",
+  "delta": "Checkout tıklanmadı. Shopify.theme.name Critters kids toys V-1.5.0 · schema_name Critters kids toys · schema_version 1.5.0 · theme_store_id null · role main · id 163267346616 · walk toyon-toys-2.myshopify.com · Shopify.shop toyon-toys-2.myshopify.com · locale en · country US · currency USD · Speedo third-party catalog (not Theme Store). Storefront unlock password 1.",
+  "captureMode": "viewport",
+  "prepareClick": "#cart-icon-bubble",
+  "capture": {
+    "url": "https://toyon-toys-2.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T17:39:04.471Z",
+    "prepareClick": "#cart-icon-bubble"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://toyon-toys-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": false,
+      "not": "Boş drawer opener"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "#CartDrawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş drawer Your cart is empty"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://toyon-toys-2.myshopify.com/products/play-nation-teddy-bear-soft-toy-with-bow-for-baby-boy-girl",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--21777130586296__main",
+      "capture": false,
+      "not": "Teddy Bear Add to cart"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer — ATC drawer açmazsa ikon"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus'], #CartDrawer button[aria-label*='Increase' i], #CartDrawer .quantity__button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "filled": "YOUR CART · Play Nation Teddy Bear Size S / Bristol Beige · $120 · adet 1 · Free shipping / Express Shipping $150 bar · YOU MAY LIKE · Check out. 1440’te ayrıca YOU MAY ALSO LIKE overlay.",
+    "changed": "Aynı drawer, adet 2 · satır ve estimated total $240.00 USD."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "Boş drawer PNG iki denemede homepage. Probe #cart-icon-bubble → Your cart is empty / Continue shopping / Have an account? Log in to check out faster. forceOpen karede görünür kılmadı."
+    }
+  ],
+  "interactionNote": "Checkout tıklanmadı. addToCart via ui (fallback yok). ATC 1440’te YOU MAY ALSO LIKE modal — leftover, yeni şema değil."
+}

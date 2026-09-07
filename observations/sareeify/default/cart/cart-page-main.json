@@ -1,0 +1,91 @@
+{
+  "observationId": "sareeify.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "sareeify",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://speedo-sarees.myshopify.com/cart",
+  "selector": "#shopify-section-template--23960751931697__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/sareeify/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/sareeify/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/sareeify/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/sareeify/default/cart/cart-page-main.filled.dolu.1440.png",
+    "evidence/sareeify/default/cart/cart-page-main.filled.dolu.375.png",
+    "evidence/sareeify/default/cart/cart-page-main.filled.dolu.768.png",
+    "evidence/sareeify/default/cart/cart-page-main.initial.bos.1440.png",
+    "evidence/sareeify/default/cart/cart-page-main.initial.bos.375.png",
+    "evidence/sareeify/default/cart/cart-page-main.initial.bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Boş: Your cart is empty · CONTINUE SHOPPING · Have an account?",
+  "delta": "Dolu + qty interact. Checkout tıklanmadı. Shopify.theme.name Speedo-Sarees V 1.5.0 · schema_name speedo_sarees · schema_version 1.5.0 · theme_store_id null · role main · id 175007367473 · shop speedo-sarees.myshopify.com · Speedo Themes third-party (Theme Store official değil). storefrontPassword=1 (speedothemes.com product page).",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://speedo-sarees.myshopify.com/cart",
+      "capture": true,
+      "etiket": "bos",
+      "not": "Boş sepet sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://speedo-sarees.myshopify.com/products/attractive-aqua-blue-colour-embroidered-malay-satin-silk-dulhan-lehenga-choli",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add'], button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://speedo-sarees.myshopify.com/cart",
+      "capture": true,
+      "etiket": "dolu",
+      "not": "Lehenga satırı + toplam"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], .quantity__button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "qty +1"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty · CONTINUE SHOPPING · Have an account? Log in.",
+    "filled": "Lehenga choli satırı · $15,999.00 · qty 1.",
+    "changed": "qty 2 · toplam iki kat."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout / Log in tıklanmadı.",
+  "capture": {
+    "url": "https://speedo-sarees.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T19:18:10.144Z"
+  }
+}

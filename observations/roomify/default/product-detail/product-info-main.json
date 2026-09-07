@@ -1,0 +1,86 @@
+{
+  "observationId": "roomify.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "roomify",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://pandora-furniture.myshopify.com/products/thompson-bed",
+  "selector": "#shopify-section-template--17748080263325__main",
+  "storefrontPassword": "1",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/roomify/default/product-detail/product-info-main.1440.png",
+    "evidence/roomify/default/product-detail/product-info-main.375.png",
+    "evidence/roomify/default/product-detail/product-info-main.768.png",
+    "evidence/roomify/default/product-detail/product-info-main.changed.additional-info.1440.png",
+    "evidence/roomify/default/product-detail/product-info-main.changed.additional-info.375.png",
+    "evidence/roomify/default/product-detail/product-info-main.changed.additional-info.768.png",
+    "evidence/roomify/default/product-detail/product-info-main.initial.size-small-white.1440.png",
+    "evidence/roomify/default/product-detail/product-info-main.initial.size-small-white.375.png",
+    "evidence/roomify/default/product-detail/product-info-main.initial.size-small-white.768.png"
+  ],
+  "notlar": "Thompson Bed. Size pills Small/Medium/Large (M/L sold out) + Color swatch White/Blue. ADD TO CART + BUY IT NOW + wishlist.",
+  "delta": "Dawn main-product + variant-selects. Accordion buy box içinde olabilir; ayrı product-info-tabs section yok. Buy it now tıklanmadı.",
+  "capture": {
+    "url": "https://pandora-furniture.myshopify.com/products/thompson-bed",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:23:53.185Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-furniture.myshopify.com/products/thompson-bed",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17748080263325__main",
+      "capture": true,
+      "etiket": "size-small-white",
+      "not": "Varsayılan Size Small + Color White. Medium/Large sold out."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--17748080263325__main summary:has-text('Additional Information')",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "forceOpen",
+      "selector": "#shopify-section-template--17748080263325__main details",
+      "capture": true,
+      "etiket": "additional-info",
+      "not": "forceOpen first details. Thompson Blue visually-disabled."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Thompson Bed $751.00 (üstü $850.00). 1440: sol galeri 5 thumbnail + sağ buy box. Size Small seçili; Medium/Large sold out (üstü çizili). Color: White (2 swatch; Blue visually-disabled). 11–16 people viewing · 21 in stock · estimated delivery Sep 9–17 2026. Hurry up! Sales End In countdown. Add To Wishlist + Size Guide. Qty 1 · ADD TO CART · BUY IT NOW. Description + 4 accordion (+) Additional Information / Shipping & Returns / Exclusive Offers / Secure Payments. Share + Money Back / Life Time Warranty / Free Signature Gift Box.",
+    "changed": ""
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Additional Information summary eşleşmedi; forceOpen details sonrası 3vp boyut aynı — accordion hâlâ +. PNG farkı countdown saniye. Color Blue visually-disabled; Medium/Large sold out — varyant değişmedi. Üçüncü deneme yok."
+    }
+  ],
+  "interactionNote": "Buy it now / wishlist / Size Guide tıklanmadı. Albany Ottoman’da Size/Color stoklu ama aynı observation’a karıştırılmadı. Yeni şema yok."
+}

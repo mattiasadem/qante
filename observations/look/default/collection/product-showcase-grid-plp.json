@@ -1,0 +1,73 @@
+{
+  "observationId": "look.default.collection.product-showcase-grid-plp",
+  "schemaId": "product-showcase-grid-plp",
+  "kaynak": "look",
+  "preset": "default",
+  "sayfa": "collection",
+  "url": "https://goggles-online-store.myshopify.com/collections/sunglasses",
+  "selector": "#shopify-section-template--18066269831409__product-grid",
+  "evidenceSlug": "product-showcase-grid-plp",
+  "evidence": [
+    "evidence/look/default/collection/product-showcase-grid-plp.1440.png",
+    "evidence/look/default/collection/product-showcase-grid-plp.375.png",
+    "evidence/look/default/collection/product-showcase-grid-plp.768.png",
+    "evidence/look/default/collection/product-showcase-grid-plp.changed.color-black.1440.png",
+    "evidence/look/default/collection/product-showcase-grid-plp.initial.16-urun.1440.png",
+    "evidence/look/default/collection/product-showcase-grid-plp.initial.16-urun.375.png",
+    "evidence/look/default/collection/product-showcase-grid-plp.initial.16-urun.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "HOME SUNGLASSES. FILTERS Color (Black 6, Blue 4…). Ürün ızgarası + facet. 1440 sidebar açık; 375 FILTERS buton.",
+  "delta": "Dawn product-grid. Color Black 16→6 anında (Apply yok). Shopify.theme.name Look V-1.5.0 · schema_name Look · schema_version 1.5.0 · theme_store_id null · role main · id 143012102385 · shop goggles-online-store.myshopify.com · Speedo Look official demo (vendor-published password 1).",
+  "capture": {
+    "url": "https://goggles-online-store.myshopify.com/collections/sunglasses",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:10:34.333Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://goggles-online-store.myshopify.com/collections/sunglasses",
+      "capture": true,
+      "etiket": "16-urun",
+      "not": "16 products · Color facet görünür (1440)"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='Filter-filter.v.option.color-1']",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1800,
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "color-black",
+      "not": "Color Black — 6 of 16 products"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440 FILTERS sidebar: Color swatch + Black (6) Blue (4)… Size Small/Medium/Large · Availability · Price. Toolbar 16 products · Best selling · 3 kolon. 375 FILTERS buton + 2 kolon ızgara.",
+    "changed": "1440 Color: Black chip + Remove all. Sayaç 6 of 16 products. Black (6) işaretli. Izgara: Thinoptics $149 · Chilli Beans $49 · Ray-Ban Rectangle $89.99 · Ray-Ban Round Metal $109.99 · VisionGlobal $65.99 · UV Protection Aviator $9.99."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 Color Black anında filtre (Apply görünmedi). 375 FILTERS çekmece bu turda yoklandı değil. Checkout yok."
+}

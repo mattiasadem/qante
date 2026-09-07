@@ -1,0 +1,89 @@
+{
+  "observationId": "bookshop.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "bookshop",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://book-online-store-1.myshopify.com/",
+  "selector": "#shopify-section-sections--18135588110503__header",
+  "storefrontPassword": "1",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/bookshop/default/home/navigation-header-mega.1440.png",
+    "evidence/bookshop/default/home/navigation-header-mega.375.png",
+    "evidence/bookshop/default/home/navigation-header-mega.768.png",
+    "evidence/bookshop/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/bookshop/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/bookshop/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/bookshop/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
+  "notlar": "Üst sosyal + logo + Home/Shop/About/Contact/Blog. Shop = details#Details-HeaderMenu-2.mega-menu. Arama, hesap, sepet, wishlist, compare ikonları.",
+  "delta": "Mega yalnız Shop. Header class drawer-menu — hamburger 1440'ta da var. Wishlist/compare ikonları header utility. Locale/country drawer içinde.",
+  "capture": {
+    "url": "https://book-online-store-1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:34:53.972Z"
+  },
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://book-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Mega kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-2 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "Shop hover — details open. Summary içindeki <a href=/collections> tıklanmadı."
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-HeaderMenu-2",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "forceOpen details — capture scroll hover'ı kapatmasın"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Kapalı header: hamburger + Home / Shop ▾ / About Us / Contact Us / Blog. Ortada BOOKSHOP. Sağda sosyal + Search / Wishlist 0 / Account / Cart. Mega panel yok.",
+    "open": "1440 Shop mega tam genişlik 6 kolon, her birinde kitap görseli + başlık + blurb: Business And Finance; Health And Wellness; Cooking And Food; Science And Technology; Travel; Arts And Humanities. Summary içindeki Shop <a href=/collections> tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 mega yok — hamburger ayrı global-menu-drawer. Hover capture scroll ile kapanıyordu; open = hover + forceOpen #Details-HeaderMenu-2. Log in tıklanmadı."
+}

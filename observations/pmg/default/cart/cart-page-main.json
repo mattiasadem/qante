@@ -1,0 +1,82 @@
+{
+  "observationId": "pmg.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "pmg",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://gamming-store-1.myshopify.com/cart",
+  "storefrontPassword": "1",
+  "selector": "#shopify-section-template--14841911836721__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/pmg/default/cart/cart-page-main.1440.png",
+    "evidence/pmg/default/cart/cart-page-main.375.png",
+    "evidence/pmg/default/cart/cart-page-main.768.png",
+    "evidence/pmg/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/pmg/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/pmg/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/pmg/default/cart/cart-page-main.filled.sepet-dolu.1440.png",
+    "evidence/pmg/default/cart/cart-page-main.filled.sepet-dolu.375.png",
+    "evidence/pmg/default/cart/cart-page-main.filled.sepet-dolu.768.png"
+  ],
+  "notlar": "Your cart is empty. CONTINUE SHOPPING. cart-footer 0px (boşken). Log in faster leftover.",
+  "delta": "Shopify.theme.name PMG Game Store V-1.5.0 · id 123907113009 · schema_name PMG game store · schema_version 1.5.0 · theme_store_id null · role main · shop gamming-store-1.myshopify.com. Boş cart. Footer section ayrı 0px — aynı sayfa şemasına alındı.",
+  "capture": {
+    "url": "https://gamming-store-1.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T17:01:47.311Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://gamming-store-1.myshopify.com/products/gaming-keyboard",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://gamming-store-1.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--14841911836721__cart-items",
+      "capture": true,
+      "etiket": "sepet-dolu",
+      "not": "Dolu cart sayfası"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--14841911836721__cart-items button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "filled": "Your cart + Continue shopping. Kolonlar PRODUCT / QUANTITY / TOTAL. Satır SONIC MECHANICAL RGB GAMING KEYBOARD $449.00 · qty 1 · TOTAL $449.00 + çöp ikonu.",
+    "changed": "Aynı satır qty 2 · TOTAL $898.00."
+  },
+  "missingStates": [],
+  "interactionNote": "Boş kare statik (Your cart is empty / CONTINUE SHOPPING). Checkout tıklanmadı."
+}

@@ -1,0 +1,108 @@
+{
+  "observationId": "digitech.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "digitech",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://digital-gallery-shop.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/digitech/default/home/global-menu-drawer.changed.shop-alt.375.png",
+    "evidence/digitech/default/home/global-menu-drawer.changed.shop-alt.768.png",
+    "evidence/digitech/default/home/global-menu-drawer.initial.kapali.768.png",
+    "evidence/digitech/default/home/global-menu-drawer.open.menu-acik.375.png",
+    "evidence/digitech/default/home/global-menu-drawer.open.menu-acik.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "details#Details-menu-drawer-container. HOME / SHOP nested (4 koleksiyon) / ABOUT / BLOG / CONTACT / Wishlist / Compare. 1440 hamburger gizli — yalnız 375/768.",
+  "delta": "Shopify.theme.name Digital Gallery Shop V-1.5.0 · schema_name Digital gallery shop · schema_version 1.5.0 · theme_store_id null · role main · id 143567782103 · shop digital-gallery-shop.myshopify.com · Speedo Themes third-party (Theme Store official değil). storefrontPassword=1 (speedothemes.com product page).",
+  "captureMode": "viewport",
+  "prepareClick": "#Details-menu-drawer-container > summary",
+  "capture": {
+    "url": "https://digital-gallery-shop.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:35:17.192Z",
+    "prepareClick": "#Details-menu-drawer-container > summary"
+  },
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://digital-gallery-shop.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "viewports": [
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Drawer kapalı — tam viewport"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-menu-drawer-container",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "menu-acik",
+      "not": "Ana drawer açık"
+    },
+    {
+      "state": "changed",
+      "action": "forceOpen",
+      "selector": "#Details-menu-drawer-menu-item-2",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-alt",
+      "not": "SHOP alt menü 4 koleksiyon — forceOpen, click dış viewport"
+    }
+  ],
+  "stateFindings": {
+    "initial": "768 drawer kapalı — tam viewport, hero Digital Planner Weekly 2024 görünür.",
+    "open": "375/768 ana drawer: HOME, SHOP (chevron), ABOUT, BLOG, CONTACT, Wishlist, Compare, Account.",
+    "changed": "SHOP forceOpen: Email Templates, Social Media Bundles, Business Branding, Digital Planners alt linkleri."
+  },
+  "missingStates": [],
+  "interactionNote": "375 initial kapalı kare atlandı (#menu-drawer w=0). 1440 hamburger gizli — mega header."
+}

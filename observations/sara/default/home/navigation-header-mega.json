@@ -1,0 +1,97 @@
+{
+  "observationId": "sara.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "sara",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://sara-toy-store.myshopify.com/",
+  "selector": "#shopify-section-sections--21794986328385__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/sara/default/home/navigation-header-mega.1440.png",
+    "evidence/sara/default/home/navigation-header-mega.375.png",
+    "evidence/sara/default/home/navigation-header-mega.768.png",
+    "evidence/sara/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/sara/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/sara/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/sara/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
+  "notlar": "Logo center. Nav: Welcome / Shop (mega Details-HeaderMenu-2) / Professionnal / Special needs / About / Blog / Contact. Log in + cart icon. details-modal search. Hamburger → #menu-drawer.",
+  "delta": "Shopify.theme.name Sara-toys-shop V-1.2.0 · schema_name sara-toy-store · schema_version 1.2.0 · theme_store_id null · role main · id 164101292353 · walk sara-toy-store.myshopify.com · Shopify.shop sara-toy-store.myshopify.com · locale en · country US · currency USD · Speedo third-party catalog (not Theme Store). Storefront unlock password 1.",
+  "storefrontPassword": "1",
+  "capture": {
+    "url": "https://sara-toy-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:43:28.215Z"
+  },
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sara-toy-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Mega kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-2 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-HeaderMenu-2",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#MegaMenu-Content-2",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "Shop mega panel — Creativity / Akros kolonları"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Kapalı header: Welcome / Shop / Professionnal / Special needs / About / Blog / Contact. Search modal + cart.",
+    "open": "1440 Shop mega açık — koleksiyon kartları."
+  },
+  "missingStates": [],
+  "interactionNote": "Account/Log in tıklanmadı. Mobil hamburger ayrı global-menu-drawer."
+}

@@ -1,0 +1,95 @@
+{
+  "observationId": "gemora.default.home.product-showcase-tabs",
+  "schemaId": "product-showcase-tabs",
+  "kaynak": "gemora",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://jewelry-online-shop1.myshopify.com/",
+  "selector": "#shopify-section-template--24653292470590__165666889162d379a4",
+  "evidenceSlug": "product-showcase-tabs",
+  "evidence": [
+    "evidence/gemora/default/home/product-showcase-tabs.1440.png",
+    "evidence/gemora/default/home/product-showcase-tabs.375.png",
+    "evidence/gemora/default/home/product-showcase-tabs.768.png",
+    "evidence/gemora/default/home/product-showcase-tabs.changed.best-seller.1440.png",
+    "evidence/gemora/default/home/product-showcase-tabs.changed.best-seller.375.png",
+    "evidence/gemora/default/home/product-showcase-tabs.changed.best-seller.768.png",
+    "evidence/gemora/default/home/product-showcase-tabs.hover.kart-hover.1440.png",
+    "evidence/gemora/default/home/product-showcase-tabs.hover.kart-hover.375.png",
+    "evidence/gemora/default/home/product-showcase-tabs.hover.kart-hover.768.png",
+    "evidence/gemora/default/home/product-showcase-tabs.initial.new-arrival.1440.png",
+    "evidence/gemora/default/home/product-showcase-tabs.initial.new-arrival.375.png",
+    "evidence/gemora/default/home/product-showcase-tabs.initial.new-arrival.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "New Arrivals. Sekmeler New Arrival | Best Seller. Kart: Add To Wishlist · Add To Cart · Vendor · fiyat. quick-add-modal host.",
+  "delta": "Üst sekmeler (tabPozisyon top). Hızlı ekle + wishlist. Vendor satırı JEWELRY-ONLINE-SHOP1.",
+  "capture": {
+    "url": "https://jewelry-online-shop1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T16:35:07.172Z"
+  },
+  "interactionStates": [
+    "initial",
+    "hover",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://jewelry-online-shop1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24653292470590__165666889162d379a4",
+      "capture": true,
+      "etiket": "new-arrival",
+      "not": "New Arrival aktif"
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#shopify-section-template--24653292470590__165666889162d379a4 .grid__item .card, #shopify-section-template--24653292470590__165666889162d379a4 .card-wrapper",
+      "capture": true,
+      "etiket": "kart-hover",
+      "not": "Kart hover: quick-add / 2. görsel"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--24653292470590__165666889162d379a4 a.button--secondary[href='#template--24653292470590__165666889162d379a4-tab-2']",
+      "capture": true,
+      "etiket": "best-seller",
+      "not": "Best Seller in-page tab — View All /collections/* değil"
+    }
+  ],
+  "stateFindings": {
+    "initial": "New Arrivals. Tab New Arrival altı çizili. 4 kart: Earrings, Heart Ketting, Ponte Vecchio, Yellow Gold Diamond Bracelet. View All."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "Kart hover PNG byte-aynı initial (375/768/1440). Quick-add / 2. görsel karede yok."
+    },
+    {
+      "state": "changed",
+      "sebep": "Best Seller in-page href tık; New Arrival hâlâ aktif, aynı 4 kart. 375 boyut farkı social-proof toast. İkinci deneme yok — piksel değişmedi."
+    }
+  ],
+  "interactionNote": "View All /collections/latest ve /best-seller tıklanmadı. Scan quick-add leftover; hover karede görünmedi."
+}
