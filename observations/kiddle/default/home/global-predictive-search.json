@@ -1,0 +1,101 @@
+{
+  "observationId": "kiddle.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "kiddle",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://toyon-toys-3.myshopify.com/",
+  "selector": "details-modal.header__search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/kiddle/default/home/global-predictive-search.375.png",
+    "evidence/kiddle/default/home/global-predictive-search.768.png",
+    "evidence/kiddle/default/home/global-predictive-search.input.arama-inline.1440.png",
+    "evidence/kiddle/default/home/global-predictive-search.input.arama-sonucu.375.png",
+    "evidence/kiddle/default/home/global-predictive-search.input.arama-sonucu.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "details-modal.header__search · predictive-search · input[name=q] Search... Kapalı kare 0×0. 1440 inline #Search-In-Template.",
+  "delta": "Yazınca öneri interact. Kapalı host boş.",
+  "captureMode": "viewport",
+  "prepareClick": "summary.header__icon--search",
+  "capture": {
+    "url": "https://toyon-toys-3.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "prepareClick": "summary.header__icon--search",
+    "updatedAt": "2026-09-02T20:58:54.062Z"
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "input",
+      "action": "goto",
+      "selector": null,
+      "value": "https://toyon-toys-3.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "forceOpen",
+      "selector": "details-modal.header__search",
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ]
+    },
+    {
+      "state": "input",
+      "action": "forceOpen",
+      "selector": "details-modal.header__search details",
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "İç details açık olmadan #Search-In-Modal gizli kalır"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "rainbow",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "katalogSorgu rainbow — Rainbow Pop It"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Template",
+      "value": "rainbow",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "header.header",
+      "etiket": "arama-inline",
+      "viewports": [
+        "1440"
+      ],
+      "not": "1440 header inline Search-In-Template — modal 0×0"
+    }
+  ],
+  "stateFindings": {
+    "input": "375/768: modal açık, sorgu rainbow. PRODUCTS — Rainbow Pop It + Zyozi Animal Safari Jungle Cupcake Toppers Multicolour · Search for “rainbow”. 1440: inline Search-In-Template aynı iki ürün + Search for “rainbow”."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu rainbow (Rainbow Pop It / vitrin adı). 1440 modal 0×0 — inline input. İkon tıklaması modalı açmıyor; iç details forceOpen şart."
+}

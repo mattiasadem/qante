@@ -1,0 +1,81 @@
+{
+  "observationId": "kiddle.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "kiddle",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://toyon-toys-3.myshopify.com/cart",
+  "selector": "#shopify-section-template--18212694229212__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/kiddle/default/cart/cart-page-main.1440.png",
+    "evidence/kiddle/default/cart/cart-page-main.375.png",
+    "evidence/kiddle/default/cart/cart-page-main.768.png",
+    "evidence/kiddle/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/kiddle/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/kiddle/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/kiddle/default/cart/cart-page-main.filled.dolu-sepet.1440.png",
+    "evidence/kiddle/default/cart/cart-page-main.filled.dolu-sepet.375.png",
+    "evidence/kiddle/default/cart/cart-page-main.filled.dolu-sepet.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Your cart is empty · CONTINUE SHOPPING · Have an account? Log in. cart-footer boş sepette h=0.",
+  "delta": "Dolu hâl + totals interact. cart-footer ayrı leftover.",
+  "capture": {
+    "url": "https://toyon-toys-3.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:41:43.165Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "selector": null,
+      "value": "https://toyon-toys-3.myshopify.com/products/128pcs-big-coloring-trunk-1",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit",
+      "value": null,
+      "capture": false,
+      "not": "Coloring Trunk ATC"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "selector": null,
+      "value": "https://toyon-toys-3.myshopify.com/cart",
+      "capture": true,
+      "etiket": "dolu-sepet",
+      "not": "Dolu cart sayfası"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], .quantity__button[name='plus']",
+      "value": 1200,
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet 2"
+    }
+  ],
+  "stateFindings": {
+    "filled": "375/768/1440: Your cart · Continue shopping · 128pcs Big Coloring Trunk Size S Color Blue · adet 1 · $79.00 satır ve toplam.",
+    "changed": "375/768/1440: adet 2 · TOTAL $158.00."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı. cart-footer boş sepette h=0 — leftover."
+}
