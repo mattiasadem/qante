@@ -47,7 +47,7 @@
 | Allbirds | [`allbirds.md`](./allbirds.md) | 🟡 Mod A — 30 obs · ~90 PNG · partial capture (search blocked) |
 | Backpack (Speedo) | [`backpack.md`](./backpack.md) | ✅ default — adlwin-store · Debut 17.14.1 · password 1 · 22 obs · 81 PNG · 0 yeni şema |
 | Candle (Speedo) | [`candle.md`](./candle.md) | ✅ Mod A + interact — password `1` · 41 obs · static 3vp + shopper states · 0 yeni şema |
-| Food & Drink (Speedo) | [`food-drink.md`](./food-drink.md) | ✅ first inventory + interact — official `food-online-store-1` · Food & Drink V-1.5.0 · password `1` · 36 obs · 155 PNG · 0 yeni şema · mega/menu/search/empty-cart missingStates |
+| Decora (Speedo furniture) | [`decora.md`](./decora.md) | ✅ first inventory + interact — official `pandora-furniture-2` · password `1` · 38 obs · 0 yeni şema · mega/search/cart/PDP alındı · menu/tabs/FAQ missingStates |
 | Furnix (Speedo / Decora) | [`furnix.md`](./furnix.md) | 🟡 Mod A + interact — `pandora-furniture-6` · password 1 · 41 obs · 173 PNG · 0 yeni şema |
 | Guccy (Speedo) | [`guccy.md`](./guccy.md) | ✅ first inventory — fashion-store-clean-20 · Guccy 1.5.0 · password 1 · 46 obs · 157 PNG · 0 yeni şema · hamburger leftover |
 | Hubble (Speedo) | [`hubble.md`](./hubble.md) | ✅ default — Hubble-nutrition 1.2.0 · 34 obs · 133 PNG · 0 yeni şema · password `1` |
@@ -56,11 +56,46 @@
 | Olelia (Speedo) | [`olelia.md`](./olelia.md) | ✅ first inventory — jewelry-online-shop-4 · password 1 · 46 obs · 0 yeni şema · interact |
 | PawPets (Speedo) | [`pawpets.md`](./pawpets.md) | 🟡 first inventory — Mightypetz 1.5.0 · 39 obs · 0 yeni şema |
 | Plantrex (Speedo) | [`plantrex.md`](./plantrex.md) | ✅ default — official `pandora-flower.myshopify.com` · vendor password `1` · 28 obs · 132 PNG · 0 yeni şema |
+| SARA Toys (Speedo) | [`sara.md`](./sara.md) | ✅ first inventory + interact — sara-toy-store · password `1` · 29 obs · 0 yeni şema |
 | Sachue (Speedo) | [`sachue.md`](./sachue.md) | ✅ first inventory — official demo pandora-beauty-store · 41 obs · 168 PNG · 0 yeni şema · interact |
 | Seabikini (Speedo Themes) | [`seabikini.md`](./seabikini.md) | ✅ first inventory — fashion-store-clean-11 · 39 obs · 162 PNG · 0 yeni şema · interact |
+| Digitech (Speedo) | [`digitech.md`](./digitech.md) | ✅ first inventory — Digital Gallery Shop V-1.5.0 · password `1` · 38 obs · 141 PNG · 0 yeni şema · interact |
 | Tormeti (Speedo) | [`tormeti.md`](./tormeti.md) | 🟡 first inventory — Pandora_Jewellery 1.5.0 · public /password 1 · 36 obs · 0 yeni şema · mega/cart/PDP interact · search/menu overlay missing |
 | Vedzila (Speedo) | [`vedzila.md`](./vedzila.md) | 🟡 first inventory + interact — vedzila-organic.myshopify.com · password `1` · 45 obs · 0 yeni şema · search input missing |
 | Wearix (Speedo / Pandora) | [`wearix.md`](./wearix.md) | 🟡 default — 35 obs · 143 PNG · 0 yeni şema · cart/PDP/FAQ interact; mega/search/menu overlay missingStates |
+| Bookshop (Speedo) | [`bookshop.md`](./bookshop.md) | ✅ default — 39 obs · 163 PNG · Bookshop 1.5.0 · password `1` · 0 yeni şema · interact |
+| Coffee Culture (Speedo) | [`coffee-culture.md`](./coffee-culture.md) | ✅ first inventory + interact — coffee-prime-2 · Coffee culture 1.5.0 · password `1` · 48 obs · 0 yeni şema · mega/search/cart/PDP/FAQ; menu/empty-drawer/hover missingStates |
+| Critters (Speedo) | [`critters.md`](./critters.md) | 🟡 first inventory + interact — toyon-toys-2 · 39 obs · 0 yeni şema |
+| Gemora (Speedo, jewelry) | [`gemora.md`](./gemora.md) | 🟡 first inventory + interact — jewelry-online-shop1 · 42 obs · 0 yeni şema · password `1` |
+| Glidefeet (Speedo) | [`glidefeet.md`](./glidefeet.md) | ✅ Mod A + interact — 39 obs · 145 PNG · 0 yeni şema · glidefeet.myshopify.com |
+| Hairva (Speedo) | [`hairva.md`](./hairva.md) | ✅ first inventory — pandora-hair-care-3 · 48 obs · 184 PNG · 0 yeni şema · interact + password `1` |
+| Herbanicure (Speedo) | [`herbanicure.md`](./herbanicure.md) | ✅ first inventory + interact — herbanicure.myshopify.com · Herbanicure 1.2.0 · password `1` · 32 obs · 136 PNG · 0 yeni şema |
+| Luxe Luxuries (Speedo) | [`luxe-luxuries.md`](./luxe-luxuries.md) | ✅ Mod A + interact — Watchez-online-store 1.5.0 · password `1` · 43 obs · 0 yeni şema |
+| Nutronix (Speedo Themes) | [`nutronix.md`](./nutronix.md) | ✅ first inventory + interact — `speedo-nutronix.myshopify.com` · password 1 · 50 obs · 0 yeni şema |
+| PAW (Speedo Petz) | [`paw.md`](./paw.md) | ✅ first inventory + interact — 42 obs · 152 PNG · 0 yeni şema |
+| PMG (Speedo Themes) | [`pmg.md`](./pmg.md) | ✅ first inventory — gamming-store-1 · password `1` · 39 obs · 0 yeni şema · interact mega/search/cart/chair/FAQ; hamburger+hero missingStates |
+| Qreal (Speedo Cosmetic) | [`qreal.md`](./qreal.md) | 🟡 — 52 obs · 203 PNG · 0 yeni şema · women-beauty-8 · password 1 |
+| Loranica (Speedo Beauty Care) | [`loranica.md`](./loranica.md) | ✅ first inventory + interact — women-beauty-5 · Loranica beauty care 1.5.0 · password `1` · 38 obs · 0 yeni şema · menu+featured hover missingStates |
+| Roomify (Speedo · furniture) | [`roomify.md`](./roomify.md) | 🟡 default — 39 obs · 166 PNG · 0 yeni şema · interact findings (menu/tabs/hero/PDP changed missing) |
+| Saffron (Speedo · Midnight Perfume) | [`saffron.md`](./saffron.md) | ✅ first inventory — password `1` · 39 obs · 167 PNG · 0 yeni şema |
+| Shrilahome (Speedo) | [`shrilahome.md`](./shrilahome.md) | ✅ Mod A + interact — 38 obs · 166 PNG · 0 yeni şema · password `1` · menu/search overlay missing |
+| Wide Fashion (Speedo) | [`wide-fashion.md`](./wide-fashion.md) | 🟡 first inventory + interact — Fashion-store-clean-5 1.2.0 · 42 obs · 169 PNG · 0 yeni şema · password `1` |
+| Andrea (Speedo) | [`andrea.md`](./andrea.md) | 🟢 first inventory + interact — women-beauty-7 · Andrea V-1.5.0 · password `1` · 41 obs · 0 yeni şema · menu open missingStates |
+| Beautifly (Speedo) | [`beautifly.md`](./beautifly.md) | ✅ first inventory + interact — `women-beauty-6` · Beautifly-v-1-5-0 · password `1` · 41 obs · 175 PNG · 0 yeni şema · hamburger open missingStates |
+| Bevaria (Speedo) | [`bevaria.md`](./bevaria.md) | ✅ first inventory + interact — beverages-online-store · Bevaria 1.5.0 · password `1` · 50 obs · 0 yeni şema |
+| Bicycle (Speedo) | [`bicycle.md`](./bicycle.md) | ✅ first inventory + interact — bicycle-online-store-1 · Bicycle V-1.5.0 · password 1 · 41 obs · 178 PNG · 0 yeni şema |
+| Boutique (Speedo) | [`boutique.md`](./boutique.md) | ✅ first inventory — fashion-store-clean-10 · Boutique-v-1-5-0 · password `1` · 38 obs · 157 PNG · 0 yeni şema · interact |
+| Digital (Speedo) | [`digital.md`](./digital.md) | ✅ first inventory + interact — digital-gallery-shop-2 · Digital 1.5.0 · password `1` · 39 obs · 148 PNG · 0 yeni şema · mega/cart/tabs/FAQ/PLP; menu/search-mobile/empty-drawer leftover |
+| Elektro (Speedo) | [`elektro.md`](./elektro.md) | 🟡 first inventory + interact — `sonix-electronics-store-2` · Elektro 1.5.0 · password `1` · 55 obs · 0 yeni şema · mega/search1440/cart/PDP Color; menu/FAQ/hover/BA/search375 missing |
+| Handmade Clay (Speedo) | [`handmade-clay.md`](./handmade-clay.md) | ✅ first inventory — luxury-handmade-ultimate · password `1` · 40 obs · 143 PNG · 0 yeni şema · search/menu 375 missingStates |
+| Lingerie (Speedo Themes) | [`lingerie.md`](./lingerie.md) | ✅ first inventory — fashion-store-clean-21 · Lingerie 1.5.0 · password `1` · 48 obs · ~187 PNG · 0 yeni şema · interact · menu Shop accordion leftover |
+| Look (Speedo) | [`look.md`](./look.md) | ✅ first inventory + interact — `goggles-online-store` · Look V-1.5.0 · password `1` · 41 obs · 0 yeni şema · mega/cart/search/PDP/FAQ/PLP alındı · hamburger missingStates |
+| Sareeify (Speedo) | [`sareeify.md`](./sareeify.md) | ✅ first inventory — speedo-sarees.myshopify.com · password `1` · 39 obs · 141 PNG · 0 yeni şema · interact |
+| Sonix (Speedo) | [`sonix.md`](./sonix.md) | ✅ Mod A + interact — default · sonix-electronics-store · password `1` · 39 obs · 0 yeni şema |
+| Spacecraft (Speedo · home decor) | [`spacecraft.md`](./spacecraft.md) | 🟡 first inventory + interact — `pandora-furniture-3` · Pandora-furniture-3 V-1.5.0 · password `1` · 39 obs · 164 PNG · 0 yeni şema · search/cart/PDP/FAQ alındı; mega/menu/hover/tabs missing |
+| WALLOBSH (Speedo) | [`wallpapsh.md`](./wallpapsh.md) | ✅ first inventory + interact — official `pandora-wallpaper.myshopify.com` · password `1` · 41 obs · 156 PNG · 0 yeni şema · menu/tabs/search-mobile missingStates |
+| XOXO / Odzi (Speedo) | [`xoxo.md`](./xoxo.md) | 🟡 first inventory + interact — official `pandora-full-fashion.myshopify.com` · Pandora-full-fashion V-1.5.0 · vendor password `1` · 45 obs · 0 yeni şema · cart/PDP/FAQ/PLP 1440; menu/search 375 overlay missing |
+| Coffee Prime (Speedo) | [`coffee-prime.md`](./coffee-prime.md) | ✅ first inventory + interact — coffee-prime.myshopify.com · password `1` · 45 obs · 170 PNG · 0 yeni şema · search 375/768 missingStates |
 | Legal / policy (Kreis recipe) | [`policy-legal.md`](./policy-legal.md) | ✅ page-recipes/policy · 3-col sticky TOC \| content \| sibling nav |
 
 **Interact (discover sonrası derinlik):** [`interact.md`](./interact.md) — kapalı kare yalanı; Stretch + Cocoon/Balance shop-the-look kapandı.
@@ -71,7 +106,7 @@
 
 ## Yeni tema bildirimi
 
-`main`’e push + yeni `observations/{tema}/` (veya yeni preset) → GitHub Action Slack/e-posta atar.
+`main`'e push + yeni `observations/{tema}/` (veya yeni preset) → GitHub Action Slack/e-posta atar.
 
 1. Slack: kanal → Incoming Webhook → repo secret `SLACK_WEBHOOK_URL`
 2. E-posta (opsiyonel): [Resend](https://resend.com) → secret `RESEND_API_KEY` + `NOTIFY_EMAIL`
@@ -90,7 +125,7 @@ Secret yoksa job sessiz geçer. Workflow: `.github/workflows/notify-theme.yml`
 
 ## Akış (her bileşen)
 
-1. Sayfa tara → todo’ya roster  
+1. Sayfa tara → todo'ya roster  
 2. Şema yoksa `sections/` JSON  
 3. `observations/{tema}/{preset}/{sayfa}/…` + `capture-observation.mjs`  
 4. Todo `[x]`
