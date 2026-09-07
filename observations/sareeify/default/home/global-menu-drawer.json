@@ -1,0 +1,83 @@
+{
+  "observationId": "sareeify.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "sareeify",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://speedo-sarees.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/sareeify/default/home/global-menu-drawer.changed.shop-akordeon.375.png",
+    "evidence/sareeify/default/home/global-menu-drawer.changed.shop-akordeon.768.png",
+    "evidence/sareeify/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/sareeify/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Hamburger drawer — SHOP · SAREES · COLLECTIONS · LENGHA CHOLI · Wishlist · Compare · Log in.",
+  "delta": "1440'da hamburger gizli (inline mega). Drawer yalnız 375/768. Shopify.theme.name Speedo-Sarees V 1.5.0 · schema_name speedo_sarees · schema_version 1.5.0 · theme_store_id null · role main · id 175007367473 · shop speedo-sarees.myshopify.com · Speedo Themes third-party (Theme Store official değil). storefrontPassword=1 (speedothemes.com product page).",
+  "captureMode": "viewport",
+  "prepareClick": "#Details-menu-drawer-container > summary",
+  "interactionStates": [
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://speedo-sarees.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Drawer açık — 375/768"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-menu-drawer-menu-item-1 > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-akordeon",
+      "not": "SHOP nested: Party Wear · Dress · Traditional · Lehenga Choli · Gowns · Sharara"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: sol drawer SHOP/SAREES/COLLECTIONS/LENGHA CHOLI + Wishlist 0 · Compare 0 · Log in.",
+    "changed": "SHOP nested alt linkler açık — Party Wear · Dress · Traditional · Lehenga Choli · Gowns · Sharara."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 hamburger display:none — mega navigation-header-mega. Log in / Wishlist / Compare tıklanmadı.",
+  "capture": {
+    "url": "https://speedo-sarees.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T19:25:19.898Z",
+    "prepareClick": "#Details-menu-drawer-container > summary"
+  }
+}

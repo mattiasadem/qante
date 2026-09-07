@@ -1,0 +1,119 @@
+{
+  "observationId": "sara.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "sara",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://sara-toy-store.myshopify.com/cart",
+  "selector": "#shopify-section-template--21794985607489__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/sara/default/cart/cart-page-main.1440.png",
+    "evidence/sara/default/cart/cart-page-main.375.png",
+    "evidence/sara/default/cart/cart-page-main.768.png",
+    "evidence/sara/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/sara/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/sara/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/sara/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/sara/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/sara/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/sara/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/sara/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/sara/default/cart/cart-page-main.initial.sepet-bos.768.png"
+  ],
+  "notlar": "Your cart boş/dolu. cart-footer Estimated total ayrı section.",
+  "delta": "Shopify.theme.name Sara-toys-shop V-1.2.0 · schema_name sara-toy-store · schema_version 1.2.0 · theme_store_id null · role main · id 164101292353 · walk sara-toy-store.myshopify.com · Shopify.shop sara-toy-store.myshopify.com · locale en · country US · currency USD · Speedo third-party catalog (not Theme Store). Storefront unlock password 1.",
+  "storefrontPassword": "1",
+  "capture": {
+    "url": "https://sara-toy-store.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:51:21.401Z"
+  },
+  "captureMode": "section",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sara-toy-store.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21794985607489__cart-items",
+      "capture": true,
+      "etiket": "sepet-bos",
+      "not": "Your cart is empty"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://sara-toy-store.myshopify.com/products/adaptateur-de-crayon",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--21794986197313__main",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://sara-toy-store.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--21794985607489__cart-items",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Adaptateur satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], .quantity__button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty · Continue shopping.",
+    "filled": "Adaptateur de crayon $4.99 · adet 1.",
+    "changed": "Adet 2 · Estimated total güncellendi."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout/login tıklanmadı."
+}

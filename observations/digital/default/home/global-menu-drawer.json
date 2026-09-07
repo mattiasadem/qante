@@ -1,0 +1,66 @@
+{
+  "observationId": "digital.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "digital",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://digital-gallery-shop-2.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/digital/default/home/global-menu-drawer.768.png",
+    "evidence/digital/default/home/global-menu-drawer.open.mobil-menu-acik.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "HOME/SHOP/THEMES/COLLECTIONS/CATEGORY + wishlist/compare/login. 1440 h=0.",
+  "delta": "Dawn header-drawer. 1440 hamburger yok; 375/768 birincil.",
+  "captureMode": "viewport",
+  "prepareClick": "header-drawer summary.header__icon--menu",
+  "capture": {
+    "url": "https://digital-gallery-shop-2.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:38:23.537Z",
+    "prepareClick": "header-drawer summary.header__icon--menu"
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://digital-gallery-shop-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mobil-menu-acik",
+      "not": "Hamburger. Beklenen: HOME/SHOP/THEMES listesi"
+    }
+  ],
+  "stateFindings": {
+    "open": "375: #menu-drawer 0-size, PNG yazılmadı. 768 open kare kapalı homepage ile byte-aynı — liste yok."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "İki resmi deneme. 375 zero-size #menu-drawer. 768 PNG kapalı homepage ile aynı. Üçüncü yok."
+    }
+  ],
+  "interactionNote": "1440 hamburger 0px. Mobil open leftover — candidates/digital-leftovers.md."
+}

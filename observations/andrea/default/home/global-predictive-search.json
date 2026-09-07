@@ -1,0 +1,100 @@
+{
+  "observationId": "andrea.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "andrea",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://women-beauty-7.myshopify.com/",
+  "selector": "details-modal.header__search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/andrea/default/home/global-predictive-search.375.png",
+    "evidence/andrea/default/home/global-predictive-search.input.arama-sonucu.1440.png",
+    "evidence/andrea/default/home/global-predictive-search.input.arama-sonucu.375.png",
+    "evidence/andrea/default/home/global-predictive-search.input.arama-sonucu.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "details-modal.header__search + PREDICTIVE-SEARCH. 1440 ayrıca inline header-search_box. Kapalı modal 0×0.",
+  "delta": "Dawn search modal. Inline kutu 1440 leftover. input interact.",
+  "captureMode": "viewport",
+  "prepareClick": "summary.header__icon--search",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "input",
+      "action": "goto",
+      "selector": null,
+      "value": "https://women-beauty-7.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "value": 800,
+      "capture": false,
+      "viewports": [
+        "375"
+      ],
+      "not": "375 büyüteç"
+    },
+    {
+      "state": "input",
+      "action": "forceOpen",
+      "selector": "details-modal.header__search details",
+      "capture": false,
+      "viewports": [
+        "375"
+      ],
+      "not": "Retry: click sonrası #Search-In-Modal hidden kaldı"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "cream",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "viewports": [
+        "375"
+      ],
+      "not": "katalogSorgu cream — modal"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Template",
+      "value": "cream",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#Search-In-Template",
+      "etiket": "arama-sonucu",
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "not": "katalogSorgu cream — inline kutu 158×30. captureSelector: modal host 768/1440 0px."
+    }
+  ],
+  "stateFindings": {
+    "input": "katalogSorgu cream. 375 modal: Search=cream + X; PRODUCTS 8 satır (Skin Brightening Cream for Skin Fairness, High White Skin Care Round Frosted Face Cream, Curology Skincare Pegmento Foaming Cream, Advanced Hydration Self-Tan Facial Creme, Beautifly Hand and Body Lotion, Different Type of Makeup Brushes Kit, Calming Moisturizer Serum, Natural Oils for Optimal Moisturizes Body) + Search for \"cream\". 768/1440 inline kutu cream + aynı 8 PRODUCTS dropdown."
+  },
+  "missingStates": [],
+  "interactionNote": "1. deneme fill #Search-In-Modal timeout (hidden). Retry: 375 forceOpen details + #Search-In-Modal; 768/1440 inline #Search-In-Template (modal host 0px). Submit yok.",
+  "capture": {
+    "url": "https://women-beauty-7.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T18:33:37.351Z",
+    "prepareClick": "summary.header__icon--search"
+  }
+}
