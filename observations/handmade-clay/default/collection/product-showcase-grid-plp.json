@@ -1,0 +1,87 @@
+{
+  "observationId": "handmade-clay.default.collection.product-showcase-grid-plp",
+  "schemaId": "product-showcase-grid-plp",
+  "kaynak": "handmade-clay",
+  "preset": "default",
+  "sayfa": "collection",
+  "url": "https://luxury-handmade-ultimate.myshopify.com/collections/all",
+  "selector": "#shopify-section-template--23698074632502__product-grid",
+  "evidenceSlug": "product-showcase-grid-plp",
+  "evidence": [
+    "evidence/handmade-clay/default/collection/product-showcase-grid-plp.changed.availability-secildi.1440.png",
+    "evidence/handmade-clay/default/collection/product-showcase-grid-plp.initial.filtre-kapali.1440.png",
+    "evidence/handmade-clay/default/collection/product-showcase-grid-plp.initial.filtre-kapali.375.png",
+    "evidence/handmade-clay/default/collection/product-showcase-grid-plp.initial.filtre-kapali.768.png",
+    "evidence/handmade-clay/default/collection/product-showcase-grid-plp.open.availability-acik.1440.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Filter: Color / Size / Availability / Price. Sort Featured.",
+  "delta": "Shopify.theme.name Luxury-handmade-ultimate V-1-5-0 · schema_name luxury_handmade_ultimate · schema_version 1.5.0 · theme_store_id null · role main · id 173445611830 · shop luxury-handmade-ultimate.myshopify.com · Dawn-like OS 2.0. Vendor-published demo password 1 (public storefront unlock).",
+  "capture": {
+    "url": "https://luxury-handmade-ultimate.myshopify.com/collections/all",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T19:40:55.722Z"
+  },
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://luxury-handmade-ultimate.myshopify.com/collections/all",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--23698074632502__product-grid",
+      "capture": true,
+      "etiket": "filtre-kapali",
+      "not": "Filtreler kapalı."
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "[id='Details-filter.v.availability-template--23698074632502__product-grid'] > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "availability-acik",
+      "not": "1440 Availability panel."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='Filter-filter.v.availability-1']",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "availability-secildi",
+      "not": "In stock checkbox."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Filter: Color / Size / Availability / Price. Sort Featured.",
+    "open": "Availability: In stock / Out of stock.",
+    "changed": "Chip Availability: In stock."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 desktop facet. Wishlist tıklanmadı."
+}

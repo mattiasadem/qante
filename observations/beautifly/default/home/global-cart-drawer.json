@@ -1,0 +1,118 @@
+{
+  "observationId": "beautifly.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "beautifly",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://women-beauty-6.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/beautifly/default/home/global-cart-drawer.1440.png",
+    "evidence/beautifly/default/home/global-cart-drawer.375.png",
+    "evidence/beautifly/default/home/global-cart-drawer.768.png",
+    "evidence/beautifly/default/home/global-cart-drawer.changed.adet-2.1440.png",
+    "evidence/beautifly/default/home/global-cart-drawer.changed.adet-2.375.png",
+    "evidence/beautifly/default/home/global-cart-drawer.changed.adet-2.768.png",
+    "evidence/beautifly/default/home/global-cart-drawer.filled.dolu.1440.png",
+    "evidence/beautifly/default/home/global-cart-drawer.filled.dolu.375.png",
+    "evidence/beautifly/default/home/global-cart-drawer.filled.dolu.768.png",
+    "evidence/beautifly/default/home/global-cart-drawer.initial.bos.1440.png",
+    "evidence/beautifly/default/home/global-cart-drawer.initial.bos.375.png",
+    "evidence/beautifly/default/home/global-cart-drawer.initial.bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Dawn #CartDrawer. Statik viewport karesi çekmeceyi açmadı (home üstü). Interact: boş open + dolu + adet.",
+  "delta": "Kapalı host off-screen. Dolu 1440: YOU MAY LIKE sol panel (mevcut oneriler slotu). 375/768: YOU MAY LIKE kapalı akordeon. Boş drawer’da upsell yok. Checkout yok.",
+  "captureMode": "viewport",
+  "prepareClick": "#cart-icon-bubble",
+  "capture": {
+    "url": "https://women-beauty-6.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T19:56:31.969Z",
+    "prepareClick": "#cart-icon-bubble"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://women-beauty-6.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "value": 1800,
+      "capture": false,
+      "not": "Probe: cart-drawer.animate.active + Your cart is empty"
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#shopify-section-sections--17814604087523__header",
+      "etiket": "bos",
+      "not": "Boş çekmece — #CartDrawer kapalıda kutu var ama görünmez"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://women-beauty-6.myshopify.com/products/bottle-of-perfume-with-flowers-on-color",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--17814603956451__main button[name='add']",
+      "capture": false,
+      "not": "PDP ATC — global name=add QuickAdd tuzağı"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#shopify-section-sections--17814604087523__header",
+      "etiket": "dolu",
+      "not": "Perfume satırı $95"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#shopify-section-sections--17814604087523__header",
+      "etiket": "adet-2",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Sağ çekmece: Your cart is empty + CONTINUE SHOPPING + Have an account? Log in to check out faster. X kapat. YOU MAY LIKE yok. Log in tıklanmadı.",
+    "filled": "YOUR CART. Free Shipping! $100 / Express Shipping! $150 bar. Bottle Of Perfume With Flowers On Color · Size: 50ml · $95.00 · qty 1. 1440: YOU MAY LIKE sol panel (Poudre De Beauté $65 · Guasha $16.42 · Hair Cream $177 · Dietary Supplements $35 · Glossy Body Lotion $74.99). 375/768: YOU MAY LIKE kapalı chevron. Estimated total $95.00 USD. CHECK OUT (tıklanmadı).",
+    "changed": "qty 2. Satır $190.00 · Estimated total $190.00 USD. CHECK OUT tıklanmadı."
+  },
+  "interactionNote": "addToCart → PDP #shopify-section-template--17814603956451__main button[name=add] (via ui). Checkout / Log in yok. YOU MAY LIKE leftover — şema oneriler zaten var.",
+  "missingStates": []
+}

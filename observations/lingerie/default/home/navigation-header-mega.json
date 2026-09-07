@@ -1,0 +1,128 @@
+{
+  "kaynak": "lingerie",
+  "preset": "default",
+  "evidence": [
+    "evidence/lingerie/default/home/navigation-header-mega.1440.png",
+    "evidence/lingerie/default/home/navigation-header-mega.375.png",
+    "evidence/lingerie/default/home/navigation-header-mega.768.png",
+    "evidence/lingerie/default/home/navigation-header-mega.changed.category-mega-acik.1440.png",
+    "evidence/lingerie/default/home/navigation-header-mega.initial.ilk-hal.1440.png",
+    "evidence/lingerie/default/home/navigation-header-mega.initial.ilk-hal.375.png",
+    "evidence/lingerie/default/home/navigation-header-mega.initial.ilk-hal.768.png",
+    "evidence/lingerie/default/home/navigation-header-mega.open.shop-mega-acik.1440.png"
+  ],
+  "storefrontPassword": "1",
+  "delta": "Dawn-türev details.mega-menu (Details-HeaderMenu-2..6). Wishlist/Compare/Log in tıklanmadı. Shopify.theme.name Lingerie-v-1-5-0-latest-updates-new · schema_name Lingerie · schema_version 1.5.0 · theme_store_id null · role main · id 176524362023 · shop fashion-store-clean-21.myshopify.com · Speedo Themes third-party (Theme Store official değil).",
+  "sayfa": "home",
+  "schemaId": "navigation-header-mega",
+  "url": "https://fashion-store-clean-21.myshopify.com/",
+  "selector": "#shopify-section-sections--24233889792295__header",
+  "captureMode": "viewport",
+  "notlar": "header--top-center. HOME + Shop/Best Sellers/Themes/Collections/Category mega. Wishlist/Compare/search/account/cart. 1440 hamburger de var (28px).",
+  "observationId": "lingerie.default.home.navigation-header-mega",
+  "evidenceSlug": "navigation-header-mega",
+  "capture": {
+    "url": "https://fashion-store-clean-21.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T17:35:17.486Z"
+  },
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://fashion-store-clean-21.myshopify.com/",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "ilk-hal",
+      "not": "Mega kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "details#Details-HeaderMenu-2 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "1440 Shop hover. Summary tıklanmadı (sayfa kaçış)."
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "details#Details-HeaderMenu-2",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "selector": "#MegaMenu-Content-1",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega-acik",
+      "not": "Beklenen: Swimwear's / Bikini Top / Bound Lurex / Sleepwear / Bodysuits / Tankini."
+    },
+    {
+      "state": "changed",
+      "action": "mouseMove",
+      "value": "20,400",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "hover",
+      "selector": "details#Details-HeaderMenu-6 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "forceOpen",
+      "selector": "details#Details-HeaderMenu-6",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "selector": "#MegaMenu-Content-5",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "category-mega-acik",
+      "not": "Beklenen: Swimwear's Summer wear / Bikini Top Daywear — Shop'tan farklı."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Mega kapalı. Hamburger + hap arama + Lingerie logo + wishlist 0 / hesap / sepet. Alt sıra: HOME (altı çizili) SHOP BEST SELLERS THEMES COLLECTIONS CATEGORY. Hero Summer's Hottest Bikini Styles + kırmızı SHOP NOW.",
+    "open": "1440 Shop mega (#MegaMenu-Content-1) tam genişlik: 6 koleksiyon kartı — Swimwear's, Bikini Top, Bound Lurex, Sleepwear, Bodysuits, Tankini.",
+    "changed": "1440 Category mega (#MegaMenu-Content-5) dikey liste: küçük görsel + başlık + alt başlık (Swimwear's Summer wear, Bikini Top Daywear, Bound Lurex Travel, Sleepwear Collection Night wear, Bodysuits Swimwear, Tankini For Girl Fashion wear). Shop mega ızgarasından farklı."
+  },
+  "interactionNote": "Account/wishlist/compare tıklanmadı. 375/768 hamburger global-menu-drawer. Hover yetmedi — forceOpen details#Details-HeaderMenu-2 / -6. has-text yok."
+}

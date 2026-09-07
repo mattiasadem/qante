@@ -1,0 +1,94 @@
+{
+  "observationId": "digitech.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "digitech",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://digital-gallery-shop.myshopify.com/",
+  "selector": "details:has(#Search-In-Modal)",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/digitech/default/home/global-predictive-search.initial.modal-bos.375.png",
+    "evidence/digitech/default/home/global-predictive-search.initial.modal-bos.768.png",
+    "evidence/digitech/default/home/global-predictive-search.input.planner.375.png",
+    "evidence/digitech/default/home/global-predictive-search.input.planner.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "details-modal.header__search. 1440'da arama ikonu gizli — yalnız 375/768. Predictive suggestions + products.",
+  "delta": "Shopify.theme.name Digital Gallery Shop V-1.5.0 · schema_name Digital gallery shop · schema_version 1.5.0 · theme_store_id null · role main · id 143567782103 · shop digital-gallery-shop.myshopify.com · Speedo Themes third-party (Theme Store official değil). storefrontPassword=1 (speedothemes.com product page).",
+  "captureMode": "viewport",
+  "prepareClick": "summary.header__icon--search",
+  "capture": {
+    "url": "https://digital-gallery-shop.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:33:30.194Z",
+    "prepareClick": "summary.header__icon--search"
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://digital-gallery-shop.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "modal-bos",
+      "not": "Arama modalı boş"
+    },
+    {
+      "state": "input",
+      "action": "forceOpen",
+      "selector": "details-modal.header__search details, details:has(#Search-In-Modal)",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal, .search-modal input[type='search']",
+      "value": "planner",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "planner",
+      "not": "katalogSorgu planner — ürün önerisi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Search modal boş — placeholder Search, X kapat. Hero arkada.",
+    "input": "q=planner. SUGGESTIONS + PRODUCTS listesi; Digital planner / Weekly planner ürünleri. Search for \"planner\" alt link."
+  },
+  "missingStates": [],
+  "interactionNote": "1440'da arama ikonu yok — yalnız 375/768. katalogSorgu=planner."
+}

@@ -1,0 +1,81 @@
+{
+  "observationId": "uvolox.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "uvolox",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://uvolox-online.myshopify.com/",
+  "selector": "details-modal.header__search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/uvolox/default/home/global-predictive-search.1440.png",
+    "evidence/uvolox/default/home/global-predictive-search.375.png",
+    "evidence/uvolox/default/home/global-predictive-search.768.png",
+    "evidence/uvolox/default/home/global-predictive-search.initial.modal-bos.1440.png",
+    "evidence/uvolox/default/home/global-predictive-search.initial.modal-bos.375.png",
+    "evidence/uvolox/default/home/global-predictive-search.initial.modal-bos.768.png",
+    "evidence/uvolox/default/home/global-predictive-search.input.shirt.1440.png",
+    "evidence/uvolox/default/home/global-predictive-search.input.shirt.375.png",
+    "evidence/uvolox/default/home/global-predictive-search.input.shirt.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Search summary → details-modal.header__search. #Search-In-Modal-1 · predictive-search · form action=/search.",
+  "delta": "Öneri listesi interact. Submit yok. Shopify.theme.name Uvolox-online V-1.2.0 · schema_name uvolox-online · schema_version 1.2.0 · theme_store_id null · role main · id 163401662782 · shop uvolox-online.myshopify.com · Speedo Themes third-party (Theme Store official değil).",
+  "captureMode": "viewport",
+  "prepareClick": "summary.header__icon--search",
+  "capture": {
+    "url": "https://uvolox-online.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-02T20:32:49.682Z",
+    "prepareClick": "summary.header__icon--search"
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://uvolox-online.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "modal-bos",
+      "not": "Boş search modal"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal-1",
+      "value": "shirt",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shirt",
+      "not": "katalogSorgu shirt — PDP/search ürün adı"
+    }
+  ],
+  "stateFindings": {
+    "initial": "375/768/1440: üstte Search placeholder + büyüteç + X. Öneri listesi yok. Arkada karartılı home (3 model hero + SHOP NOW kartlar).",
+    "input": "shirt: SUGGESTIONS — shirt / classy t shirt. PRODUCTS — Uvolox signature t-shirt · Ux classy t-shirt with dove logo · Ux knit turtleneck with dove logo. Altta Search for “shirt” ok. Submit/PII yok."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu=shirt (PDP/search ürün adı). Fill #Search-In-Modal-1. Submit yok."
+}
