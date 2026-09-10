@@ -68,6 +68,7 @@ export const PUBLIC_DEMO_PASSWORDS = {
   "women-beauty-6.myshopify.com": "1",
   "women-beauty-7.myshopify.com": "1",
   "women-beauty-8.myshopify.com": "1",
+  "women-beauty-9.myshopify.com": "1",
 
 };
 
