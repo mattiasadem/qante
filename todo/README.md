@@ -48,6 +48,7 @@
 | Backpack (Speedo) | [`backpack.md`](./backpack.md) | ✅ default — adlwin-store · Debut 17.14.1 · password 1 · 22 obs · 81 PNG · 0 yeni şema |
 | Candle (Speedo) | [`candle.md`](./candle.md) | ✅ Mod A + interact — password `1` · 41 obs · static 3vp + shopper states · 0 yeni şema |
 | Food & Drink (Speedo) | [`food-drink.md`](./food-drink.md) | ✅ first inventory + interact — official `food-online-store-1` · Food & Drink V-1.5.0 · password `1` · 36 obs · 155 PNG · 0 yeni şema · mega/menu/search/empty-cart missingStates |
+| Hot Sauce (Speedo) | [`hot-sauce.md`](./hot-sauce.md) | 🟡 first inventory — official `food-online-store-2` · Hot Sauce V-1.5.0 · password `1` · 41 obs · 0 yeni şema · 3vp+interact sırada |
 | Decora (Speedo furniture) | [`decora.md`](./decora.md) | ✅ first inventory + interact — official `pandora-furniture-2` · password `1` · 38 obs · 0 yeni şema · mega/search/cart/PDP alındı · menu/tabs/FAQ missingStates |
 | Furnix (Speedo / Decora) | [`furnix.md`](./furnix.md) | 🟡 Mod A + interact — `pandora-furniture-6` · password 1 · 41 obs · 173 PNG · 0 yeni şema |
 | Guccy (Speedo) | [`guccy.md`](./guccy.md) | ✅ first inventory — fashion-store-clean-20 · Guccy 1.5.0 · password 1 · 46 obs · 157 PNG · 0 yeni şema · hamburger leftover |
