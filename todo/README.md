@@ -103,6 +103,7 @@
 | Toyon (Speedo) | [`toyon.md`](./toyon.md) | 🟡 first inventory + interact — toyon-toys · password `1` · 41 obs · 164 PNG · 0 yeni şema · cart/search/Shop dropdown/FAQ; menu+PDP Green missingStates |
 | Uvolox (Speedo) | [`uvolox.md`](./uvolox.md) | ✅ first inventory + interact — uvolox-online · Uvolox-online V-1.2.0 · password `1` · 29 obs · 126 PNG · 0 yeni şema |
 | ZABA (Speedo · Toys Dropship) | [`zaba.md`](./zaba.md) | 🟡 first inventory + interact — speedo-toys-dropship · speedo_toys_dropship 1.5.0 · password `1` · 38 obs · 136 PNG · 0 yeni şema · search input missingStates |
+| Wine (Speedo) | [`wine.md`](./wine.md) | 🟡 first inventory — official `wineshop-online-store` · Wine-v-1-5-0-new · password `1` · 48 obs · 0 yeni şema · static+interact sırada |
 | Legal / policy (Kreis recipe) | [`policy-legal.md`](./policy-legal.md) | ✅ page-recipes/policy · 3-col sticky TOC \| content \| sibling nav |
 
 **Interact (discover sonrası derinlik):** [`interact.md`](./interact.md) — kapalı kare yalanı; Stretch + Cocoon/Balance shop-the-look kapandı.
