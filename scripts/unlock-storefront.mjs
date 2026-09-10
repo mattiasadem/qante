@@ -35,6 +35,7 @@ export const PUBLIC_DEMO_PASSWORDS = {
   "jewelry-online-shop1.myshopify.com": "1",
   "jewelry-online-shop2.myshopify.com": "1",
   "luxury-handmade-ultimate.myshopify.com": "1",
+  "medical-online-store.myshopify.com": "1",
   "midnight-perfume.myshopify.com": "1",
   "pandora-beauty-store.myshopify.com": "1",
   "pandora-fashi.myshopify.com": "1",
