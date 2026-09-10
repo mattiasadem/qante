@@ -1,0 +1,143 @@
+{
+  "observationId": "wine.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "wine",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://wineshop-online-store.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/wine/default/home/global-cart-drawer.1440.png",
+    "evidence/wine/default/home/global-cart-drawer.375.png",
+    "evidence/wine/default/home/global-cart-drawer.768.png",
+    "evidence/wine/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/wine/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/wine/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/wine/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/wine/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/wine/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/wine/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/wine/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/wine/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "notlar": "#CartDrawer + cart-drawer. Opener a#cart-icon-bubble href=/cart. Kapalı kare yanıltır — interact.",
+  "delta": "Shopify.theme.name Wine-v-1-5-0-new · schema_name Wine · schema_version 1.5.0 · theme_store_id null · role main · id 142703067292 · shop wineshop-online-store.myshopify.com · Speedo Themes third-party OS 2.0 (Theme Store resmi değil). Vendor-published demo password 1 (public storefront unlock). Official host wineshop-online-store.myshopify.com only.",
+  "storefrontPassword": "1",
+  "capture": {
+    "url": "https://wineshop-online-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:21:16.927Z",
+    "mode": "viewport",
+    "prepareClick": "a#cart-icon-bubble"
+  },
+  "captureMode": "viewport",
+  "prepareClick": "a#cart-icon-bubble",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://wineshop-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "#CartDrawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer."
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://wineshop-online-store.myshopify.com/products/ridge-vineyard-bohemian-bliss-natural-red-wine",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--18166097936540__main",
+      "capture": false,
+      "not": "Bohemian Bliss ATC. Checkout tıklanmadı."
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "forceOpen",
+      "selector": "#CartDrawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer. Beklenen: Bohemian Bliss satırı."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "forceOpen",
+      "selector": "#CartDrawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet + → ara toplam."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty · Continue Shopping · Have an account? Log in to checkout faster · YOU MAY LIKE Dolcetto 2018 Natural Red Wine $215/$315 Add to cart.",
+    "filled": "YOUR CART · Free shipping! / Express shipping! · Ridge Vineyard Bohemian Bliss Natural Red Wine qty 1 $520 · Estimated total $520.00 USD · Checkout. 1440’te YOU MAY LIKE overlay (Dolcetto, Grenache, Hacienda…). 375 drawer içi YOU MAY LIKE kapalı satır.",
+    "changed": "Aynı satır qty 2 · satır ve estimated total $1,040.00 USD. Checkout tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart PDP #ProductSubmitButton-…__main. Checkout / kupon / Log in tıklanmadı. YOU MAY LIKE leftover — şemaya girmedi."
+}
