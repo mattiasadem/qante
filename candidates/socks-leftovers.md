@@ -135,3 +135,11 @@ Gerekçe: Home’da ayrı announcement section yok. PDP `custom_announcement_bar
 Örnekler: home header group  
 Öneri: leftover — home ticker yok  
 Karar: onay bekliyor
+
+---
+
+ADAY: socks-cart-you-may-like  
+Gerekçe: Dolu cart drawer’da sibling YOU MAY LIKE öneri listesi (1440 ayrı panel; 375/768 chevron). Ayrı şema yok.  
+Örnekler: `#CartDrawer` filled interact  
+Öneri: leftover — drawer sibling  
+Karar: onay bekliyor
