@@ -1,0 +1,113 @@
+{
+  "observationId": "linda.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "linda",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pandora-vintage.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/linda/default/home/global-cart-drawer.1440.png",
+    "evidence/linda/default/home/global-cart-drawer.375.png",
+    "evidence/linda/default/home/global-cart-drawer.768.png",
+    "evidence/linda/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/linda/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/linda/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/linda/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/linda/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/linda/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/linda/default/home/global-cart-drawer.initial.sepet-bos.1440.png",
+    "evidence/linda/default/home/global-cart-drawer.initial.sepet-bos.375.png",
+    "evidence/linda/default/home/global-cart-drawer.initial.sepet-bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "cart-drawer.drawer is-empty. Opener a#cart-icon-bubble href=/cart. Form #CartDrawer-Form. Checkout #CartDrawer-Checkout.",
+  "delta": "Speedo LINDA / Pandora Vintage third-party (theme_store_id null). Storefront password 1 is vendor-published on the Speedo product page. Shopify.theme.name Pandora Vintage V-1.5.0 · schema_name pandora_vintage · schema_version 1.5.0 · theme_store_id null · role main · id 168503476417 · shop pandora-vintage.myshopify.com · walk https://pandora-vintage.myshopify.com/ after public /password 1. No other host.",
+  "captureMode": "viewport",
+  "prepareClick": "a#cart-icon-bubble",
+  "capture": {
+    "url": "https://pandora-vintage.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T09:01:08.845Z",
+    "prepareClick": "a#cart-icon-bubble"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-vintage.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://pandora-vintage.myshopify.com/products/beautiful-woman-wearing-ring",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--22740194066625__main button.product-form__submit[name='add']",
+      "capture": false,
+      "not": "Beautiful Woman Wearing Ring Size 8 $65"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC drawer dolu"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + CONTINUE SHOPPING + Have an account? Log in to check out faster. X kapat. Sayfa karartılmış.",
+    "filled": "Your cart. Free Shipping! $100.00 / Express Shipping! $150.00 bar. Beautiful Woman Wearing Ring $65 Size 8 qty 1; satır $65. Estimated total $65.00 USD. CHECK OUT. 375 tam genişlik; 768/1440 sağ panel.",
+    "changed": "Aynı satır Size 8 qty 2; satır ve Estimated total $130.00 USD. Eşikler $100 / $150 aynı. CHECK OUT duruyor."
+  },
+  "missingStates": [],
+  "interactionNote": "Check Out tıklanmadı. ATC UI drawer açtı; /cart/add.js fallback gerekmedi. Interact Size 8 default (probe Size 9 idi, fiyat $65 aynı)."
+}
