@@ -165,7 +165,7 @@ export async function dismissAllOverlays(page, { rounds = 8 } = {}) {
       // Speedo / Dawn zenon newsletter overlay (vendor demo password hosts)
       document
         .querySelectorAll(
-          "#shopify-section-newsletter-popup, .zenon_popup, .popup_inside, .popup-active"
+          "#shopify-section-newsletter-popup, .zenon_popup, .popup_inside"
         )
         .forEach((el) => {
           el.style?.setProperty("display", "none", "important");
