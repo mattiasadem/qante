@@ -115,6 +115,14 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: tools-cart-you-may-like  
+Gerekçe: Cart drawer doluyken sibling YOU MAY LIKE (Miter / Tape / Helmet…). 375’te çekmece içi chevron. Ayrı şema yazılmadı.  
+Örnekler: `#CartDrawer` + sibling  
+Öneri: leftover  
+Karar: onay bekliyor
+
+---
+
 ADAY: tools-account-login  
 Gerekçe: Header “Log in” → `/account/login`. Hesap — dur.  
 Örnekler: header  

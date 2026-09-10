@@ -14,7 +14,7 @@
 Title: `Tools - Shopify Tools Theme – Tools Online Store 1 (password: 1)`  
 Storefront password (ürün sayfasında yayın): **`1`** — “Please enter password "1" to view demo.” Aynı host `/password`, başka vitrin yok.
 
-**Durum:** Mod A walk + resmi 3vp (48/49 complete; menu 1440 0px) · interact adımları yazıldı, capture sırada  
+**Durum:** Mod A + interact pixel-check bitti · 0 yeni şema · draft PR #387 · merge yok  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -39,20 +39,20 @@ Storefront password (ürün sayfasında yayın): **`1`** — “Please enter pas
 | Şablon | Durum | 3vp |
 |---|---|---|
 | Home roster (header→footer + overlays) | roster | [x] capture |
-| Mega Shop 1440 | roster | [~] interact adımlar |
-| Predictive search katalog | roster | [~] interact adımlar |
-| Mobile menu 375 + 768 | roster | [~] interact adımlar |
-| Cart drawer empty + filled + qty | roster | [~] interact adımlar |
+| Mega Shop 1440 | roster | [x] interact |
+| Predictive search katalog | roster | [x] interact |
+| Mobile menu 375 + 768 | roster | [x] interact |
+| Cart drawer empty + filled + qty | roster | [x] interact |
 | PDP `/products/miter-saw-tool-ceramic-tile-cutter` | roster | [x] capture |
-| PDP Color jackhammer Yellow→Borage | — | [~] interact adımlar |
-| Featured Quick Shop hover | — | [~] interact adımlar |
-| PLP `/collections/cutter` + filter | roster | [x] capture · [~] interact adımlar |
+| PDP Color jackhammer Yellow→Borage | — | [x] interact |
+| Featured Quick Shop hover | — | [x] interact |
+| PLP `/collections/cutter` + filter | roster | [x] capture · [x] interact |
 | Collections `/collections` | roster | [x] capture |
 | Search `/search?q=tool` | roster | [x] capture |
-| Cart `/cart` empty + filled | roster | [x] empty · [~] interact adımlar |
+| Cart `/cart` empty + filled | roster | [x] empty · [x] interact |
 | About `/pages/about-layout-1` (footer About Us) | roster | [x] capture |
 | Contact `/pages/contact` (submit yok) | roster | [x] capture |
-| FAQ `/pages/faq` | roster | [x] capture · [~] interact adımlar |
+| FAQ `/pages/faq` | roster | [x] capture · [x] interact |
 | News + master-it article | roster | [x] capture |
 | 404 `/pages/does-not-exist-qante-404` | roster | [x] capture |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
@@ -109,16 +109,16 @@ Storefront password (ürün sayfasında yayın): **`1`** — “Please enter pas
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | open 1440 | [~] adımlar |
-| global-predictive-search | input | [~] adımlar |
-| global-menu-drawer | open 375+768 | [~] adımlar |
-| global-cart-drawer | initial + filled + changed | [~] adımlar |
-| cart-page-main | filled + changed | [~] adımlar |
-| product-info-main | changed Color jackhammer | [~] adımlar |
-| faq-collapsible-tabs | changed | [~] adımlar |
-| product-showcase-grid-plp | changed Color | [~] adımlar |
-| product-showcase-grid-featured | hover | [~] adımlar |
-| product-info-tabs | changed Additional Information | [~] adımlar |
+| navigation-header-mega | open 1440 | [x] 6 kart |
+| global-predictive-search | input | [x] drill PRODUCTS |
+| global-menu-drawer | open 375+768 | [x] |
+| global-cart-drawer | initial + filled + changed | [x] qty 1→2 $350→$700 |
+| cart-page-main | filled + changed | [x] |
+| product-info-main | changed Color jackhammer | [x] Yellow→Borage |
+| faq-collapsible-tabs | changed | [x] Q2 + Q1 açık |
+| product-showcase-grid-plp | changed Color | [x] Black 1 of 8 |
+| product-showcase-grid-featured | hover | [x] 1440/768 çerçeve; 375≈initial |
+| product-info-tabs | changed Additional Information | [x] |
 
 ---
 
