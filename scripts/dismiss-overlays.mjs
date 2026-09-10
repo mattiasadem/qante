@@ -31,6 +31,9 @@ export async function dismissAllOverlays(page, { rounds = 8 } = {}) {
       'button[aria-label*="close" i]',
       '[aria-label*="Dismiss" i]',
       ".popup-close",
+      "img.close_popup",
+      ".close_popup",
+      ".zenon_popup .close_popup",
       ".modal__close",
       ".modal-close",
       "[data-popup-close]",
@@ -162,18 +165,10 @@ export async function dismissAllOverlays(page, { rounds = 8 } = {}) {
         el.hidden = true;
       });
 
-      // Speedo / Dawn zenon newsletter overlay (vendor demo password hosts)
-      document
-        .querySelectorAll(
-          "#shopify-section-newsletter-popup, .zenon_popup, .popup_inside"
-        )
-        .forEach((el) => {
-          el.style?.setProperty("display", "none", "important");
-          el.hidden = true;
-          el.removeAttribute("open");
-        });
+      document.querySelectorAll(".zenon_popup, .popup_inside, #shopify-section-newsletter-popup").forEach((el) => {
+        el.style?.setProperty("display", "none", "important");
+      });
       document.body.classList.remove("popup-active");
-      document.documentElement.classList.remove("popup-active");
 
       document.body.style.overflow = "auto";
       document.documentElement.style.overflow = "auto";
