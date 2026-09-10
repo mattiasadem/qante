@@ -1,0 +1,124 @@
+{
+  "observationId": "matress.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "matress",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://mattress-online-store-1.myshopify.com/cart",
+  "selector": "#shopify-section-template--15527144718394__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/matress/default/cart/cart-page-main.1440.png",
+    "evidence/matress/default/cart/cart-page-main.375.png",
+    "evidence/matress/default/cart/cart-page-main.768.png",
+    "evidence/matress/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/matress/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/matress/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/matress/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/matress/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/matress/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/matress/default/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/matress/default/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/matress/default/cart/cart-page-main.initial.cart-bos.768.png"
+  ],
+  "notlar": "Your cart is empty · CONTINUE SHOPPING · Have an account? Log in. cart-footer sibling h=0 leftover.",
+  "delta": "Shopify.theme.name matress-v-1-5-0-latest-updates-new · schema_name Matress · schema_version 1.5.0 · theme_store_id null · role main · id 126821171258 · handle null · shop mattress-online-store-1.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock).",
+  "storefrontPassword": "1",
+  "capture": {
+    "url": "https://mattress-online-store-1.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T11:20:49.169Z",
+    "mode": "section"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://mattress-online-store-1.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15527144718394__cart-items",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Your cart is empty."
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://mattress-online-store-1.myshopify.com/products/duo-plus-mattress",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--15527145701434__main, button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://mattress-online-store-1.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15527144718394__cart-items",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Duo Plus satır qty 1 $150"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--15527144718394__cart-items button[name='plus'], quantity-input button[name='plus']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "qty 2 · $300"
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Your cart is empty · CONTINUE SHOPPING · Have an account? Log in to check out faster.",
+    "filled": "Your cart. Duo Plus Mattress $150 Size: Single qty 1 · TOTAL $150. Continue shopping. Checkout footer bu section’da yok (sibling h=0 leftover).",
+    "changed": "qty 2 · TOTAL $300. Birim $150 Size Single."
+  },
+  "interactionNote": "filled/addToCart → ui sonra /cart. Checkout tıklanmadı. Boş↔dolu yeni şema değil."
+}

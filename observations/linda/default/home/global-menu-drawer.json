@@ -1,0 +1,99 @@
+{
+  "observationId": "linda.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "linda",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pandora-vintage.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/linda/default/home/global-menu-drawer.375.png",
+    "evidence/linda/default/home/global-menu-drawer.768.png",
+    "evidence/linda/default/home/global-menu-drawer.initial.kapali.768.png",
+    "evidence/linda/default/home/global-menu-drawer.open.hamburger-acik.375.png",
+    "evidence/linda/default/home/global-menu-drawer.open.hamburger-acik.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "details#Details-menu-drawer-container > summary.header__icon--menu. 375/768. Shop By submenu #Details-menu-drawer-menu-item-2.",
+  "delta": "Speedo LINDA / Pandora Vintage third-party (theme_store_id null). Storefront password 1 is vendor-published on the Speedo product page. Shopify.theme.name Pandora Vintage V-1.5.0 · schema_name pandora_vintage · schema_version 1.5.0 · theme_store_id null · role main · id 168503476417 · shop pandora-vintage.myshopify.com · walk https://pandora-vintage.myshopify.com/ after public /password 1. No other host.",
+  "captureMode": "viewport",
+  "prepareClick": "#Details-menu-drawer-container > summary",
+  "capture": {
+    "url": "https://pandora-vintage.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T08:56:58.555Z",
+    "prepareClick": "#Details-menu-drawer-container > summary"
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-vintage.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Hamburger kapalı"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header summary.header__icon--menu",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-menu-drawer-container",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger-acik",
+      "not": "375/768 menü çekmecesi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "768 viewport: hamburger kapalı home (☰ LINDA büyüteç sepet). 375 #menu-drawer 0px — kare yok.",
+    "open": "375 tam genişlik: X + LINDA + büyüteç + sepet; Home, Shop By →, Blog, Our Story, Faq, Contact, Wishlist, Log in, United States | USD $, English, sosyal ikonlar. 768 sol panel aynı nav + Wishlist + locale + sosyal; sayfa karartılmış."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "capture (375): zero-size / eşleşmedi: #menu-drawer"
+    }
+  ],
+  "interactionNote": "1440 hamburger 0px — Shop By header'da. Shop By → alt menüye girilmedi. Log in tıklanmadı."
+}

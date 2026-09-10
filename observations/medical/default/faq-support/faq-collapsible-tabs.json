@@ -1,0 +1,64 @@
+{
+  "observationId": "medical.default.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "medical",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "url": "https://medical-online-store.myshopify.com/pages/faqs",
+  "selector": "#shopify-section-template--24404868465007__cb435de1-8958-455d-8843-8a9ef3413466",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/medical/default/faq-support/faq-collapsible-tabs.1440.png",
+    "evidence/medical/default/faq-support/faq-collapsible-tabs.375.png",
+    "evidence/medical/default/faq-support/faq-collapsible-tabs.768.png",
+    "evidence/medical/default/faq-support/faq-collapsible-tabs.changed.soru-2-acik.1440.png",
+    "evidence/medical/default/faq-support/faq-collapsible-tabs.changed.soru-2-acik.375.png",
+    "evidence/medical/default/faq-support/faq-collapsible-tabs.changed.soru-2-acik.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Frequently asked question — 4 soru accordion.",
+  "delta": "medical-v-1-5-0-latest-updates-new / schema_name Medical 1.5.0 · theme_store_id null · shop medical-online-store.myshopify.com · Speedo Themes third-party · password 1",
+  "capture": {
+    "url": "https://medical-online-store.myshopify.com/pages/faqs",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T10:06:16.932Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://medical-online-store.myshopify.com/pages/faqs",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-template--20640852508978__cb435de1-8958-455d-8843-8a9ef3413466-collapsible_row-2-template--24404868465007__cb435de1-8958-455d-8843-8a9ef3413466 > summary",
+      "capture": false,
+      "not": "İkinci soru — ilki zaten açık"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 500,
+      "capture": true,
+      "etiket": "soru-2-acik",
+      "not": "I like my styles but they don’t fit! açık"
+    }
+  ],
+  "missingStates": [],
+  "interactionNote": "İlk soru default açık. İkinci tıklandı.",
+  "stateFindings": {
+    "changed": "3vp ilk soru (default açık) + ikinci I like my styles but they don’t fit! açık. 3–4 kapalı."
+  }
+}

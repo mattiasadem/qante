@@ -1,0 +1,103 @@
+{
+  "observationId": "medical.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "medical",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://medical-online-store.myshopify.com/",
+  "selector": ".header-full-width-search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/medical/default/home/global-predictive-search.1440.png",
+    "evidence/medical/default/home/global-predictive-search.initial.arama-bos.1440.png",
+    "evidence/medical/default/home/global-predictive-search.input.arama-sonucu.1440.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "1440 inline #Search-In-Template. Modal ikon 0×0.",
+  "delta": "medical-v-1-5-0-latest-updates-new / schema_name Medical 1.5.0 · theme_store_id null · shop medical-online-store.myshopify.com · Speedo Themes third-party · password 1",
+  "capture": {
+    "url": "https://medical-online-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T10:01:19.678Z"
+  },
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://medical-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Inline search kapalı"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Template",
+      "value": "immune",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "katalogSorgu immune — refill yerine hero ürün adı"
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false,
+      "not": "Mobil search ikon"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "immune",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu-modal",
+      "not": "Modal predictive"
+    }
+  ],
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "375/768 .header-full-width-search 0px; modal fill karesi yazılmadı (selector kutu sıfır). 1440 input var."
+    }
+  ],
+  "interactionNote": "375/768 inline #Search-In-Template 0px — modal ikon.",
+  "stateFindings": {
+    "initial": "1440 inline Search… boş.",
+    "input": "1440 immune: SUGGESTIONS Immunity + PRODUCTS Immune Support · Energy Support Refill + Search for “immune”."
+  }
+}
