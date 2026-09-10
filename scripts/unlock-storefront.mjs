@@ -15,6 +15,7 @@ export const PUBLIC_DEMO_PASSWORDS = {
   "beverages-online-store.myshopify.com": "1",
   "bicycle-online-store-1.myshopify.com": "1",
   "book-online-store-1.myshopify.com": "1",
+  "book-online-store-2.myshopify.com": "1",
   "coffee-prime-2.myshopify.com": "1",
   "coffee-prime.myshopify.com": "1",
   "digital-gallery-shop-2.myshopify.com": "1",
