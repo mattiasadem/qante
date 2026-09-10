@@ -12,8 +12,8 @@
     "evidence/wallfresh/default/home/global-predictive-search.375.png",
     "evidence/wallfresh/default/home/global-predictive-search.768.png"
   ],
-  "notlar": "details-modal.header__search · #Search-In-Modal. Kapalı h=0.",
-  "delta": "Yazınca öneri interact. Submit yok.",
+  "notlar": "375/768: details-modal.header__search · #Search-In-Modal (kapalı 0×0). 1440: inline #Search-In-Template · .header-full-width-search.",
+  "delta": "Yazınca öneri interact. Submit yok. Masaüstü modal değil — header pill.",
   "captureMode": "viewport",
   "prepareClick": "summary.header__icon--search",
   "capture": {
@@ -27,5 +27,52 @@
     "method": "viewport",
     "updatedAt": "2026-09-10T09:27:32.384Z",
     "prepareClick": "summary.header__icon--search"
-  }
+  },
+  "interactionStates": [
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "input",
+      "action": "goto",
+      "selector": null,
+      "value": "https://pandora-wallpaper-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "value": 800,
+      "capture": false,
+      "viewports": ["375", "768"],
+      "not": "Mobil Search modal opener"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "wallpaper",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "viewports": ["375", "768"],
+      "not": "katalogSorgu wallpaper — PRODUCTS overlay"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Template",
+      "value": "wallpaper",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#site-header",
+      "etiket": "arama-sonucu",
+      "viewports": ["1440"],
+      "not": "1440 inline pill #Search-In-Template — PRODUCTS dropdown"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": ""
 }
