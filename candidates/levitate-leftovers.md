@@ -114,6 +114,22 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: levitate-social-proof-pop  
+Gerekçe: “Someone liked and Buy {ürün} N Minutes Ago From {şehir} Verified” floating kart. PII/sosyal kanıt pop; şema yok.  
+Örnekler: home / PLP / PDP viewport  
+Öneri: leftover — overlay  
+Karar: onay bekliyor
+
+---
+
+ADAY: levitate-header-absolute  
+Gerekçe: Home 1440’ta `#header` section / `sticky-header` / `.header-wrapper` h=0; iç `.header` position:absolute h=105. Capture selector `.header`.  
+Örnekler: home header  
+Öneri: leftover — Dawn sticky ölçü  
+Karar: onay bekliyor
+
+---
+
 ADAY: levitate-about-empty-logos  
 Gerekçe: about-layout-1 `brand_logo_k3ngrY` h=211, innerText boş.  
 Örnekler: `/pages/about-layout-1`  

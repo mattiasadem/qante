@@ -15,7 +15,7 @@
 
 **Unlock:** Vendor ürün sayfası “Please enter password 1 to view demo.” Aynı host `/password` — public storefront-unlock. Başka host yok.
 
-**Durum:** Mod A roster yazıldı · 3vp + interact sırada  
+**Durum:** Mod A roster + resmi 3vp · interact sırada  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -39,22 +39,22 @@
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | [x] obs | [ ] static |
-| Header Shop mega 1440 | [x] obs | [ ] interact |
-| Predictive search `ANDIBRO` | [x] obs | [ ] interact |
-| Mobile menu 375 + 768 | [x] obs | [ ] interact |
-| Cart drawer empty + filled + qty | [x] obs | [ ] interact |
+| Home roster (announcement→footer) | [x] obs | [x] static |
+| Header Shop mega 1440 | [x] obs | [ ] interact · static `.header` |
+| Predictive search `ANDIBRO` | [x] obs | [ ] interact · static modal |
+| Mobile menu 375 + 768 | [x] obs | [ ] interact · static 375 açık / 1440 0px |
+| Cart drawer empty + filled + qty | [x] obs | [ ] interact · static boş |
 | PDP SPORTS CHARMS BOGG Color Grey Mare→Pastel Grey | [x] obs | [ ] interact |
 | PDP tabs Description→Additional Information | [x] obs | [ ] interact |
-| PLP `/collections/all` + hover/filter | [x] obs | [ ] static + interact |
-| Collections `/collections` | [x] obs | [ ] static |
-| Search `/search?q=ANDIBRO` (boş) | [x] obs | [ ] static |
-| Cart page empty + filled | [x] obs | [ ] interact |
-| About `/pages/about-layout-1` | [x] obs | [ ] static |
-| Contact form (submit yok) | [x] obs | [ ] static |
-| FAQ `/pages/faq` | [x] obs | [ ] interact |
-| News + bowling post | [x] obs | [ ] static |
-| 404 | [x] obs | [ ] static |
+| PLP `/collections/all` + hover/filter | [x] obs | [x] static · interact sırada |
+| Collections `/collections` | [x] obs | [x] static |
+| Search `/search?q=ANDIBRO` (boş) | [x] obs | [x] static |
+| Cart page empty + filled | [x] obs | [ ] interact · static boş |
+| About `/pages/about-layout-1` | [x] obs | [x] static |
+| Contact form (submit yok) | [x] obs | [x] static |
+| FAQ `/pages/faq` | [x] obs | [ ] interact · static accordion |
+| News + bowling post | [x] obs | [x] static |
+| 404 | [x] obs | [x] static |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -97,6 +97,6 @@
 
 ## Evidence backlog
 
-- [ ] Official 3vp static
+- [x] Official 3vp static — 146 PNG (menu 1440 zero-size; header `.header`)
 - [ ] Interact header / search / menu / cart / featured / FAQ / PDP / PLP
 - [ ] `node scripts/validate-schemas.mjs`
