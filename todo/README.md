@@ -104,6 +104,14 @@
 | Toyon (Speedo) | [`toyon.md`](./toyon.md) | 🟡 first inventory + interact — toyon-toys · password `1` · 41 obs · 164 PNG · 0 yeni şema · cart/search/Shop dropdown/FAQ; menu+PDP Green missingStates |
 | Uvolox (Speedo) | [`uvolox.md`](./uvolox.md) | ✅ first inventory + interact — uvolox-online · Uvolox-online V-1.2.0 · password `1` · 29 obs · 126 PNG · 0 yeni şema |
 | ZABA (Speedo · Toys Dropship) | [`zaba.md`](./zaba.md) | 🟡 first inventory + interact — speedo-toys-dropship · speedo_toys_dropship 1.5.0 · password `1` · 38 obs · 136 PNG · 0 yeni şema · search input missingStates |
+| Sports Shoes (Speedo) | [`sports-shoes.md`](./sports-shoes.md) | ✅ first inventory + interact — shoes-online-store-1 · Shoes 1.5.0 · password `1` · 49 obs · 205 PNG · 0 yeni şema |
+| Hiking (Speedo) | [`hiking.md`](./hiking.md) | ✅ first inventory — hiking-online-store-1 · Hiking 1.5.0 · password `1` · 43 obs · 0 yeni şema · interact + validate · draft #384 · merge yok |
+| Fitness (Speedo) | [`fitness.md`](./fitness.md) | 🟡 first inventory + interact — `fitness-online-store-1` · Fitness 1.5.0 · password `1` · 51 obs · 0 yeni şema · menu open / featured hover missingStates |
+| Tools (Speedo) | [`tools.md`](./tools.md) | ✅ interact — tools-online-store-1 · Tools 1.5.0 · password `1` · 49 obs · 0 yeni şema · draft PR #387 |
+| Socks (Speedo · Socks And Fashion) | [`socks.md`](./socks.md) | ✅ first inventory + interact — official `socks-online-store-1.myshopify.com` · schema_name Socks 1.5.0 · password `1` · 46 obs · 183 PNG · 0 yeni şema |
+| WallFresh (Speedo) | [`wallfresh.md`](./wallfresh.md) | ✅ first inventory + interact — official `pandora-wallpaper-2.myshopify.com` · Wallfresh 1.5.0 · password `1` · 49 obs · 0 yeni şema · mega/search/menu/cart/PDP/FAQ/tabs |
+| LINDA (Speedo, boho jewellery) | [`linda.md`](./linda.md) | 🟡 first inventory — official `pandora-vintage.myshopify.com` · password `1` · 49 obs · 0 yeni şema |
+| Gifts Treasures (Speedo) | [`gifts.md`](./gifts.md) | ✅ first inventory + interact — official `gift-online-shop-1.myshopify.com` · Gifts-treasures 1.5.0 · password `1` · 39 obs · 0 yeni şema · mega/search/cart/PDP/FAQ/PLP |
 | Legal / policy (Kreis recipe) | [`policy-legal.md`](./policy-legal.md) | ✅ page-recipes/policy · 3-col sticky TOC \| content \| sibling nav |
 
 **Interact (discover sonrası derinlik):** [`interact.md`](./interact.md) — kapalı kare yalanı; Stretch + Cocoon/Balance shop-the-look kapandı.
