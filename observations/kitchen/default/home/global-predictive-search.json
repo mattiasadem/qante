@@ -1,0 +1,81 @@
+{
+  "observationId": "kitchen.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "kitchen",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://kitchen-ware-online-store.myshopify.com/",
+  "selector": "details-modal.header__search, predictive-search.search-modal__form",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/kitchen/default/home/global-predictive-search.1440.png",
+    "evidence/kitchen/default/home/global-predictive-search.375.png",
+    "evidence/kitchen/default/home/global-predictive-search.768.png",
+    "evidence/kitchen/default/home/global-predictive-search.input.arama-pan.1440.png",
+    "evidence/kitchen/default/home/global-predictive-search.input.arama-pan.375.png",
+    "evidence/kitchen/default/home/global-predictive-search.input.arama-pan.768.png"
+  ],
+  "notlar": "details-modal.header__search 28×28 ikon. predictive-search.search-modal__form kapalı w=0. katalogSorgu aday: pan / cooker.",
+  "delta": "Shopify.theme.name kitchen-ware-v-1-5-0-OPTIMIZED · schema_name Kitchen Ware · schema_version 1.5.0 · theme_store_id null · role main · id 150878355549 · shop kitchen-ware-online-store.myshopify.com · Speedo Themes third-party OS 2.0 (Theme Store resmi değil). Vendor-published demo password 1 (public storefront unlock).",
+  "storefrontPassword": "1",
+  "capture": {
+    "url": "https://kitchen-ware-online-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T11:08:29.786Z",
+    "mode": "viewport",
+    "prepareClick": "details-modal.header__search summary.header__icon--search, summary.header__icon--search"
+  },
+  "captureMode": "viewport",
+  "prepareClick": "details-modal.header__search summary.header__icon--search, summary.header__icon--search",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "input",
+      "action": "goto",
+      "value": "https://kitchen-ware-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "details-modal.header__search summary.header__icon--search, summary.header__icon--search",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "pan",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-pan",
+      "not": "katalogSorgu pan — Hawkins Futura / Pressure Cooker beklenir"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Search overlay açık, input boş (Search…). SUGGESTIONS/PRODUCTS yok. Arka plan karartılı.",
+    "input": "375/768/1440 fill 'pan': SUGGESTIONS pan. PRODUCTS — Hawkins Futura Nonstick Frying Pan, Ozazuco Bento Box Japanese Lunch Box, Pressure Cooker (5 litre), Kitchen Utensils Cooking Tools, Prato Auto Shut-off Timer Air Fryer. Search for “pan”."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu pan (vitrin ürün). Submit / hesap yok."
+}

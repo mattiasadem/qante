@@ -1,0 +1,125 @@
+{
+  "observationId": "levitate.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "levitate",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://backpack-online-store-2.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/levitate/default/home/global-cart-drawer.1440.png",
+    "evidence/levitate/default/home/global-cart-drawer.375.png",
+    "evidence/levitate/default/home/global-cart-drawer.768.png",
+    "evidence/levitate/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/levitate/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/levitate/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/levitate/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/levitate/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/levitate/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/levitate/default/home/global-cart-drawer.initial.bos.1440.png",
+    "evidence/levitate/default/home/global-cart-drawer.initial.bos.375.png",
+    "evidence/levitate/default/home/global-cart-drawer.initial.bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "cart-drawer.drawer.is-empty. #cart-icon-bubble → /cart + drawer.",
+  "delta": "Shopify.theme.name Levitate V-1.5.0 · schema_name Purse & Bags · schema_version 1.5.0 · theme_store_id null · role main · id 178196283681 · handle null · shop backpack-online-store-2.myshopify.com · locale en · country US · currency USD · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock). Platform adı dataBindings'e yazılmadı.",
+  "capture": {
+    "url": "https://backpack-online-store-2.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T11:31:21.600Z",
+    "mode": "viewport",
+    "prepareClick": "#cart-icon-bubble"
+  },
+  "captureMode": "viewport",
+  "prepareClick": "#cart-icon-bubble",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://backpack-online-store-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "#CartDrawer",
+      "capture": true,
+      "captureMode": "section",
+      "captureSelector": "#CartDrawer",
+      "etiket": "bos",
+      "not": "Boş cart drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://backpack-online-store-2.myshopify.com/products/sports-charms-bogg-bag",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add'], button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "BOGG satır"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus'], #CartDrawer .quantity__button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "qty 1 → 2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty. CONTINUE SHOPPING. Have an account? Log in to checkout faster. YOU MAY LIKE: WOMAN'S STRAP MESSENGER BAG $110 + ADD TO CART.",
+    "filled": "YOUR CART. Free shipping $100 / Express $150 çubuk. SPORTS CHARMS BOGG $85 Color Grey Mare qty 1. 1440 ortada YOU MAY LIKE listesi (strap / bogg / ANDIBRO / crossbody). Estimated total $85 USD. CHECK OUT (tıklanmadı).",
+    "changed": "qty 2. Satır ve Estimated total $170 USD. Grey Mare aynı."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart → ui (PDP SPORTS CHARMS BOGG). Check out / Log in tıklanmadı. 1440 filled/changed viewport: PDP karartı + öneri kolonu + drawer."
+}

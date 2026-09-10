@@ -1,0 +1,104 @@
+{
+  "observationId": "music.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "music",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://musical-online-store.myshopify.com/",
+  "selector": "details:has(#Search-In-Modal)",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/music/default/home/global-predictive-search.375.png",
+    "evidence/music/default/home/global-predictive-search.768.png",
+    "evidence/music/default/home/global-predictive-search.initial.modal-bos.375.png",
+    "evidence/music/default/home/global-predictive-search.initial.modal-bos.768.png",
+    "evidence/music/default/home/global-predictive-search.input.guitar.375.png",
+    "evidence/music/default/home/global-predictive-search.input.guitar.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "details-modal.header__search. #Search-In-Modal placeholder Search... Submit yok.",
+  "delta": "Predictive modal. katalogSorgu guitar. Shopify.theme.name Music-v-1-5-0-latest-updates-new · schema_name Music · schema_version 1.5.0 · theme_store_id null · role main · id 135699103818 · shop musical-online-store.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock).",
+  "captureMode": "viewport",
+  "prepareClick": "summary.header__icon--search",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://musical-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "modal-bos",
+      "not": "375/768 modal. 1440 hamburger search ikon gizli — inline #Search-In-Template."
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal, .search-modal input[name='q']",
+      "value": "guitar",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "guitar",
+      "not": "katalogSorgu guitar"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Template",
+      "value": "guitar",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "guitar",
+      "not": "1440 inline header #Search-In-Template"
+    }
+  ],
+  "stateFindings": {
+    "initial": "375/768 search overlay boş: Search... + büyüteç + X. Ürün listesi yok.",
+    "input": "375/768 q=guitar → PRODUCTS: Guitar Flamenco Guitar, Donner Guitar Amplifier, Yamaha Digital Piano, Gewa Maestro Violin. Altta Search for “guitar”. Submit yok."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "1440 ikinci deneme: fill #Search-In-Template çalıştı ama capture selector details:has(#Search-In-Modal) zero-size. Desktop inline arama; modal kutu yok. Üçüncü yok."
+    }
+  ],
+  "interactionNote": "katalogSorgu=guitar. 1440 #Search-In-Template (298×40) inline; #Search-In-Modal 0×0. Form submit yok.",
+  "capture": {
+    "url": "https://musical-online-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:28:13.627Z",
+    "prepareClick": "summary.header__icon--search"
+  }
+}
