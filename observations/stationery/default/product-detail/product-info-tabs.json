@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--16396373983326__79582f51-5736-4bff-b870-bba69393ad36",
   "evidenceSlug": "product-info-tabs",
   "evidence": [
+    "evidence/stationery/default/product-detail/product-info-tabs.1440.png",
     "evidence/stationery/default/product-detail/product-info-tabs.375.png",
     "evidence/stationery/default/product-detail/product-info-tabs.768.png",
-    "evidence/stationery/default/product-detail/product-info-tabs.1440.png"
+    "evidence/stationery/default/product-detail/product-info-tabs.changed.additional.1440.png",
+    "evidence/stationery/default/product-detail/product-info-tabs.changed.additional.375.png",
+    "evidence/stationery/default/product-detail/product-info-tabs.changed.additional.768.png",
+    "evidence/stationery/default/product-detail/product-info-tabs.initial.description.1440.png",
+    "evidence/stationery/default/product-detail/product-info-tabs.initial.description.375.png",
+    "evidence/stationery/default/product-detail/product-info-tabs.initial.description.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "custom_product__tab: Description / Additional Information / Shipping And Delivery. Description açık (yeşil kapak metni).",
@@ -23,7 +29,47 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-10T11:58:06.072Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:20:52.704Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://book-online-store-2.myshopify.com/products/green-plain-book-cover",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16396373983326__79582f51-5736-4bff-b870-bba69393ad36",
+      "capture": true,
+      "etiket": "description",
+      "not": "Description sekmesi açık"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--16396373983326__79582f51-5736-4bff-b870-bba69393ad36 [role='tab']:nth-child(2), #shopify-section-template--16396373983326__79582f51-5736-4bff-b870-bba69393ad36 button:has-text('Additional Information'), #shopify-section-template--16396373983326__79582f51-5736-4bff-b870-bba69393ad36 a:has-text('Additional Information')",
+      "capture": true,
+      "etiket": "additional",
+      "not": "Additional Information paneli"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Description turuncu. Gövde: Durable green book cover… 1440 sol dikey tab + sağ metin. 375 üstte üç etiket, altta metin.",
+    "changed": "Additional Information turuncu. Lorem paragraf + 3 madde. Description siyah."
+  },
+  "missingStates": [],
+  "interactionNote": "Shipping And Delivery tıklanmadı."
 }

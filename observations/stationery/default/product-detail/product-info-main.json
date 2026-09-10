@@ -8,13 +8,19 @@
   "selector": "#shopify-section-template--16396373983326__main",
   "evidenceSlug": "product-info-main",
   "evidence": [
+    "evidence/stationery/default/product-detail/product-info-main.1440.png",
     "evidence/stationery/default/product-detail/product-info-main.375.png",
     "evidence/stationery/default/product-detail/product-info-main.768.png",
-    "evidence/stationery/default/product-detail/product-info-main.1440.png"
+    "evidence/stationery/default/product-detail/product-info-main.changed.color-red.1440.png",
+    "evidence/stationery/default/product-detail/product-info-main.changed.color-red.375.png",
+    "evidence/stationery/default/product-detail/product-info-main.changed.color-red.768.png",
+    "evidence/stationery/default/product-detail/product-info-main.initial.color-green.1440.png",
+    "evidence/stationery/default/product-detail/product-info-main.initial.color-green.375.png",
+    "evidence/stationery/default/product-detail/product-info-main.initial.color-green.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Green Plain Book Cover $60. Sol thumb galeri. Fast Shipping / 24/7 support / 30 days return. 17 People are viewing · Low stock: 10 left · Delivery by Sep 20, 2026 · Hurry up! Sales End In. Color: Green swatch + qty stepper + Add To Cart / Buy it now. NEED HELP? WhatsApp kutusu.",
-  "delta": "Buy-box countdown + stok + teslimat + renk swatch product-info-main delta; ayrı şema değil. Breadcrumb Home ürün adı aynı section. Shopify.theme.name Stationary & Office Supplies  V-1.5.0 · schema_name Stationary Supplies · schema_version 1.5.0 · theme_store_id null · role main · id 131641770078 · shop book-online-store-2.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock). Platform adı dataBindings'e yazılmadı.",
+  "delta": "Buy-box countdown + stok + teslimat + renk swatch product-info-main delta; ayrı şema değil. Interact: Color Green→Red görsel+etiket değişti. Breadcrumb Home ürün adı aynı section. Shopify.theme.name Stationary & Office Supplies  V-1.5.0 · schema_name Stationary Supplies · schema_version 1.5.0 · theme_store_id null · role main · id 131641770078 · shop book-online-store-2.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock). Platform adı dataBindings'e yazılmadı.",
   "capture": {
     "url": "https://book-online-store-2.myshopify.com/products/green-plain-book-cover",
     "viewports": [
@@ -23,7 +29,47 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-10T11:58:42.945Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:17:42.068Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://book-online-store-2.myshopify.com/products/green-plain-book-cover",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16396373983326__main",
+      "capture": true,
+      "etiket": "color-green",
+      "not": "Color: Green qty 1"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label.swatch-input__label[for='template--16396373983326__main-1-1']",
+      "capture": true,
+      "etiket": "color-red",
+      "not": "Red swatch — probe: Color: Red + product-1-9.jpg"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Green Plain Book Cover $60. Galeri yeşil kapak. Color: Green (ilk swatch). Qty 1. Add To Cart / Buy it now. Low stock 10 left · Delivery by Sep 20, 2026 · Hurry up! Sales End In countdown. NEED HELP? WhatsApp kutusu.",
+    "changed": "Red swatch: Color: Red; ana görsel ve ilk thumb kırmızı kapak. Fiyat $60 aynı. Qty 1. URL varyant değişti (probe ?variant=41745752784990)."
+  },
+  "missingStates": [],
+  "interactionNote": "Buy it now / WhatsApp / hesap yok. emit:variant.change bu üründe kanıtlandı."
 }

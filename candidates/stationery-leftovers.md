@@ -26,7 +26,7 @@
 | Compare `/pages/compare` | Boş compare sayfa; drawer değil. `global-compare-drawer` uydurulmadı |
 | `/pages/our-story` | Header link; walk `/` home’a düştü (ayrı şablon yok) |
 | `/pages/about-us` · `/pages/faqs` | 404 — gerçek about `about-layout-1`, FAQ `/pages/faq` |
-| Quick-add modal | DOM’da `QUICK-ADD-MODAL`; PLP `quick-add__submit` = ATC. Ayrı quick-view overlay kanıtı yok |
+| Quick-add modal | DOM’da `QUICK-ADD-MODAL`; PLP `quick-add__submit` = ATC. Kart hover’da göz ikonu var; overlay tıklanmadı |
 | Account / login | Header Log in — tıklanmadı |
 | Checkout | Cart / drawer Check out — tıklanmadı |
 | Newsletter Subscribe / contact Submit | PII — dur |
@@ -45,7 +45,7 @@
 
 ## Açık soru
 
-- PDP buy box countdown + stok + teslimat — `product-info-main` delta; ayrı şema mı?
-- lookbook_card_slider hotspot pin merchant seçimi mi, yoksa yalnız kart rayı mı?
+- PDP buy box countdown + stok + teslimat — `product-info-main` delta; ayrı şema değil (interact karede duruyor).
+- lookbook_card_slider hotspot pin merchant seçimi mi, yoksa yalnız kart rayı mı? Interact’te pin tıklanmadı.
 - Home featured-product-section class’ı tek ürün şemasına mı map olmalı? Kare ızgara — `product-showcase-grid-featured` tutuldu.
-- Tüm ürünler tek varyant mı? `emit:variant.change` Colored pencil Crayon’da yoklandı (interact).
+- `emit:variant.change` Green Plain Book Cover Color Green→Red (görsel + etiket) — kanıtlandı.

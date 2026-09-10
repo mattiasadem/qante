@@ -29,7 +29,7 @@ shop `book-online-store-2.myshopify.com` · locale `en`
 | Parallel | `observations/stationery/` · `evidence/stationery/` · `todo/stationery.md` · `candidates/stationery-leftovers.md` |
 
 **Kapsam satırı:**  
-`Stationery · default · Stationary & Office Supplies V-1.5.0 / schema_name Stationary Supplies 1.5.0 · theme_store_id null · Speedo third-party · password 1 · home→PDP→PLP→collection-list→search→cart→blog→about→contact→FAQ→404 · 39 obs · 117 static PNG · 0 yeni şema · leftover: candidates/stationery-leftovers.md`
+`Stationery · default · Stationary & Office Supplies V-1.5.0 / schema_name Stationary Supplies 1.5.0 · theme_store_id null · Speedo third-party · password 1 · home→PDP→PLP→collection-list→search→cart→blog→about→contact→FAQ→404 · 39 obs · 117 static PNG · 52 interact PNG · 0 yeni şema · leftover: candidates/stationery-leftovers.md`
 
 ---
 
@@ -84,14 +84,15 @@ shop `book-online-store-2.myshopify.com` · locale `en`
 
 | Component | States | Durum |
 |---|---|---|
-| Header mega SHOP 1440 | open | [ ] |
-| Menu drawer 375/768 | open | [ ] |
-| Predictive search `pencil` | input | [ ] |
-| Cart drawer empty → filled + qty | filled / changed | [ ] |
-| Cart page filled | filled / changed | [ ] |
-| PDP qty / variant | changed | [ ] |
-| FAQ accordion | changed | [ ] |
-| Product card hover | hover | [ ] |
+| Header mega SHOP 1440 | open | [x] 7 ürün kartı |
+| Menu drawer 375/768/1440 | open | [x] click; forceOpen kaydırmadı |
+| Predictive search `pencil` | input | [x] 375/768 modal + 1440 inline |
+| Cart drawer empty → filled + qty | filled / changed | [x] $60 → $120 |
+| Cart page filled | filled / changed | [x] qty 1 → 2 |
+| PDP Color Green→Red | changed | [x] |
+| FAQ accordion | changed | [x] ikinci soru; ilk açık kaldı |
+| Product card hover | hover | [x] 2. görsel + QV/wishlist/compare |
+| PDP tabs Description→Additional | changed | [x] |
 
 ---
 
@@ -104,5 +105,5 @@ shop `book-online-store-2.myshopify.com` · locale `en`
 ## Evidence backlog
 
 - [x] Official 3vp static (`capture-observation.mjs`) — 39/39 · 117 PNG
-- [ ] Official interact (`capture-interaction.mjs`)
-- [ ] `node scripts/validate-schemas.mjs`
+- [x] Official interact (`capture-interaction.mjs`) — 52 state PNG
+- [x] `node scripts/validate-schemas.mjs`

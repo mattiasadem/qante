@@ -8,9 +8,18 @@
   "selector": "cart-drawer",
   "evidenceSlug": "global-cart-drawer",
   "evidence": [
+    "evidence/stationery/default/home/global-cart-drawer.1440.png",
     "evidence/stationery/default/home/global-cart-drawer.375.png",
     "evidence/stationery/default/home/global-cart-drawer.768.png",
-    "evidence/stationery/default/home/global-cart-drawer.1440.png"
+    "evidence/stationery/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/stationery/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/stationery/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/stationery/default/home/global-cart-drawer.filled.kitap-eklendi.1440.png",
+    "evidence/stationery/default/home/global-cart-drawer.filled.kitap-eklendi.375.png",
+    "evidence/stationery/default/home/global-cart-drawer.filled.kitap-eklendi.768.png",
+    "evidence/stationery/default/home/global-cart-drawer.open.sepet-bos.1440.png",
+    "evidence/stationery/default/home/global-cart-drawer.open.sepet-bos.375.png",
+    "evidence/stationery/default/home/global-cart-drawer.open.sepet-bos.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Dawn-benzeri cart-drawer.drawer.is-empty. #CartDrawer sağ panel + shipping.",
@@ -23,11 +32,90 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-10T11:42:42.218Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:13:55.715Z",
     "prepareClick": "#cart-icon-bubble, a.header__icon--cart"
   },
   "captureMode": "viewport",
   "prepareClick": "#cart-icon-bubble, a.header__icon--cart",
-  "prepareForceOpen": true
+  "prepareForceOpen": true,
+  "interactionStates": [
+    "initial",
+    "open",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://book-online-store-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş drawer + YOU MAY LIKE"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://book-online-store-2.myshopify.com/products/green-plain-book-cover",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "product-form button.product-form__submit, button[name='add']",
+      "capture": false,
+      "not": "Green Plain Book Cover ATC"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#cart-icon-bubble, a.header__icon--cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kitap-eklendi",
+      "not": "Dolu drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus'], cart-drawer button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Drawer adet +1"
+    }
+  ],
+  "stateFindings": {
+    "open": "Boş: Your cart is empty / Continue Shopping / Have an account? Log in to check out faster. Altta YOU MAY LIKE — Green Plain Book Cover $60 + Add To Cart. 375 tam sheet; 1440 sağ panel + karartı.",
+    "filled": "ATC Green Plain Book Cover Color Green qty 1 $60. YOUR CART; Free shipping $100 / Express $150 bar; satır − 1 + çöp; Estimated total $60 USD; Checkout. 1440 sağ drawer + ortada YOU MAY LIKE 4 ürün (book / crayon / Hello Kitty case / triangle). 375 YOU MAY LIKE kapalı akordeon.",
+    "changed": "Plus: qty 2, satır ve Estimated total $120. Shipping bar aynı. Checkout duruyor."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart UI (product-form submit). Checkout / Log in tıklanmadı. Boş drawer'daki YOU MAY LIKE Add To Cart tıklanmadı."
 }

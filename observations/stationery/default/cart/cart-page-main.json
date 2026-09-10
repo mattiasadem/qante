@@ -8,9 +8,18 @@
   "selector": "#shopify-section-template--16396373000286__cart-items",
   "evidenceSlug": "cart-page-main",
   "evidence": [
+    "evidence/stationery/default/cart/cart-page-main.1440.png",
     "evidence/stationery/default/cart/cart-page-main.375.png",
     "evidence/stationery/default/cart/cart-page-main.768.png",
-    "evidence/stationery/default/cart/cart-page-main.1440.png"
+    "evidence/stationery/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/stationery/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/stationery/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/stationery/default/cart/cart-page-main.filled.kitap-qty1.1440.png",
+    "evidence/stationery/default/cart/cart-page-main.filled.kitap-qty1.375.png",
+    "evidence/stationery/default/cart/cart-page-main.filled.kitap-qty1.768.png",
+    "evidence/stationery/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/stationery/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/stationery/default/cart/cart-page-main.initial.sepet-bos.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Boş: Your cart is empty / Continue Shopping / Have an account? Log in to check out faster.",
@@ -22,8 +31,98 @@
       "768",
       "1440"
     ],
-    "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-10T11:27:22.862Z"
-  }
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:16:33.094Z"
+  },
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://book-online-store-2.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://book-online-store-2.myshopify.com/products/green-plain-book-cover",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "product-form button.product-form__submit, button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://book-online-store-2.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kitap-qty1",
+      "not": "Dolu cart satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "cart-items button[name='plus'], quantity-input button[name='plus'], button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Sayfa adet +1"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty / Continue Shopping / Have an account? Log in to check out faster. Footer görünür.",
+    "filled": "Your cart: Green Plain Book Cover $60 Color Green, qty 1, satır $60, Estimated total $60 USD, Checkout. 1440 PRODUCT / QUANTITY / TOTAL kolonları.",
+    "changed": "Plus: qty 2, satır ve Estimated total $120."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart UI sonra /cart. Checkout / Log in tıklanmadı."
 }

@@ -8,9 +8,13 @@
   "selector": "#shopify-section-sections--16396374278238__header",
   "evidenceSlug": "navigation-header-mega",
   "evidence": [
+    "evidence/stationery/default/home/navigation-header-mega.1440.png",
     "evidence/stationery/default/home/navigation-header-mega.375.png",
     "evidence/stationery/default/home/navigation-header-mega.768.png",
-    "evidence/stationery/default/home/navigation-header-mega.1440.png"
+    "evidence/stationery/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/stationery/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/stationery/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/stationery/default/home/navigation-header-mega.open.shop-mega.1440.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Header: logo + SHOP / THEMES / SHOP BY / COLLECTIONS mega (details#Details-HeaderMenu-1..4.mega-menu, 6 görsel). Utility: search, wishlist 0, compare 0, Log in, Cart 0. Hamburger #Details-menu-drawer-container.",
@@ -23,8 +27,63 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-10T11:46:18.120Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:09:23.601Z"
   },
-  "captureMode": "viewport"
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://book-online-store-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Mega kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-1 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "SHOP hover — summary içindeki <a href=/collections/all> tıklanmadı"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-HeaderMenu-1",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "forceOpen details — 7 ürün kartı + görsel"
+    }
+  ],
+  "stateFindings": {
+    "initial": "375/768/1440: mega kapalı. Logo Stationery & Office Supplies; SHOP / THEMES / SHOP BY / COLLECTIONS; Search; hesap / wishlist 0 / compare 0 / cart. Hero görünür (Stationery That Inspires Productivity).",
+    "open": "1440 SHOP: header altında 7 ürün kartı — Q-Connect Paperclips, Colored pencil Crayon, Pencil Case, Cute Multi-Pocket Folder, Maxxelite Single Sided Washi Tape, Smiggle Super Backpack, Soft Oil Pastel Colors. Hero hâlâ altta. 375/768 mega yok (hamburger)."
+  },
+  "missingStates": [],
+  "interactionNote": "Yalnız SHOP 1440. THEMES / SHOP BY / COLLECTIONS yoklandı (layout linkleri / kategori dropdown / görsel grid) ama ayrı kare çekilmedi. SHOP içindeki <a href=/collections/all> tıklanmadı."
 }
