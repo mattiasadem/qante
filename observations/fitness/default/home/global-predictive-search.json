@@ -1,0 +1,100 @@
+{
+  "observationId": "fitness.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "fitness",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://fitness-online-store-1.myshopify.com/",
+  "selector": "header details-modal.header__search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/fitness/default/home/global-predictive-search.1440.png",
+    "evidence/fitness/default/home/global-predictive-search.375.png",
+    "evidence/fitness/default/home/global-predictive-search.768.png",
+    "evidence/fitness/default/home/global-predictive-search.initial.arama-bos.1440.png",
+    "evidence/fitness/default/home/global-predictive-search.initial.arama-bos.375.png",
+    "evidence/fitness/default/home/global-predictive-search.initial.arama-bos.768.png",
+    "evidence/fitness/default/home/global-predictive-search.input.arama-nike.1440.png",
+    "evidence/fitness/default/home/global-predictive-search.input.arama-nike.375.png",
+    "evidence/fitness/default/home/global-predictive-search.input.arama-nike.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "details-modal.header__search + predictive-search. Büyüteç opener.",
+  "delta": "İki kopya (header + drawer) olabilir; görünür header instance. Speedo Fitness 1.5.0 third-party (theme_store_id null). Storefront password 1 is vendor-published on speedothemes.com product page. Shopify.theme.name fitness-v-1-5-0-latest-updates-new · schema_name Fitness · schema_version 1.5.0 · theme_store_id null · role main · id 144062316591 · shop fitness-online-store-1.myshopify.com. Platform adı dataBindings'e yazılmadı.",
+  "captureMode": "viewport",
+  "prepareClick": "header summary.header__icon--search",
+  "capture": {
+    "url": "https://fitness-online-store-1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T09:31:23.304Z",
+    "prepareClick": "header summary.header__icon--search"
+  },
+  "prepareForceOpen": true,
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://fitness-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header summary.header__icon--search",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "header details-modal.header__search details",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Boş Search modal"
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "header summary.header__icon--search",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "forceOpen",
+      "selector": "header details-modal.header__search details",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "header #Search-In-Modal, header input.search__input",
+      "value": "nike",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-nike",
+      "not": "katalogSorgu=nike"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Büyüteç sonrası boş Search modal. Placeholder Search; öneri listesi yok.",
+    "input": "q=nike. PRODUCTS: Nike Dri-fit Men's Shorts, Nike Mens Striker Jersey. 375/768 ayrıca Life Fitness G5, Exercise Bikes, Casall Sports Bra, Thermal Pants, Matrix bench, Energetics ball. Altta Search for \"nike\"."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu=nike (Nike Dri-fit / Striker Jersey). Submit / hesap yok."
+}

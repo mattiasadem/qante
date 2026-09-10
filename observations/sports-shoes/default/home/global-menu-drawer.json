@@ -1,0 +1,79 @@
+{
+  "observationId": "sports-shoes.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "sports-shoes",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://shoes-online-store-1.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/sports-shoes/default/home/global-menu-drawer.1440.png",
+    "evidence/sports-shoes/default/home/global-menu-drawer.375.png",
+    "evidence/sports-shoes/default/home/global-menu-drawer.768.png",
+    "evidence/sports-shoes/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/sports-shoes/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "#menu-drawer. 375/768 hamburger. 1440 inline nav var; drawer opener denenecek.",
+  "delta": "Dawn menu-drawer. Desktop inline details/summary. Shopify.theme.name shoes-v-1-5-0-latest-updates-new · schema_name Shoes · schema_version 1.5.0 · theme_store_id null · role main · id 175941845279 · shop shoes-online-store-1.myshopify.com · locale en · country US · currency USD. Vendor Speedo Themes (third-party Shopify 2.0, Theme Store official değil). Storefront password 1 (vendor product page). Platform adı dataBindings'e yazılmadı.",
+  "captureMode": "viewport",
+  "prepareClick": "header-drawer summary.header__icon--menu, #Details-menu-drawer-container > summary",
+  "capture": {
+    "url": "https://shoes-online-store-1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T09:18:49.526Z",
+    "prepareClick": "header-drawer summary.header__icon--menu, #Details-menu-drawer-container > summary"
+  },
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://shoes-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "summary.header__icon--menu",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Drawer açık. 1440 hamburger 0×0. Shop <a href=/collections/all> tıklama."
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 interact adımı yok. Static 1440 karede hamburger ikonu görünür ama #Details-menu-drawer-container summary 0×0; Dawn opener tıklanınca drawer durmadı."
+    },
+    {
+      "state": "changed",
+      "sebep": "Shop #HeaderDrawer-shop <a href=/collections/all>. nested details yok. Yazılı link tıklanmadı."
+    }
+  ],
+  "stateFindings": {
+    "open": "375: tam genişlik Home / Shop / Best Sellers / Themes / Collections + Wishlist 0 / Compare 0; altta Account + USD + English + sosyal. 768: sağ yarı drawer, solda karartılı hero."
+  },
+  "interactionNote": "Log in / locale / wishlist tıklanmadı. 1440 N/A."
+}

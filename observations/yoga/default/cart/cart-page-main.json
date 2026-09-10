@@ -1,0 +1,124 @@
+{
+  "observationId": "yoga.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "yoga",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://sports-online-store-2.myshopify.com/cart",
+  "selector": "#shopify-section-template--15527517913146__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/yoga/default/cart/cart-page-main.1440.png",
+    "evidence/yoga/default/cart/cart-page-main.375.png",
+    "evidence/yoga/default/cart/cart-page-main.768.png",
+    "evidence/yoga/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/yoga/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/yoga/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/yoga/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/yoga/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/yoga/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/yoga/default/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/yoga/default/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/yoga/default/cart/cart-page-main.initial.cart-bos.768.png"
+  ],
+  "notlar": "Your cart is empty + CONTINUE SHOPPING + Have an account? Log in. cart-footer h=0 boş. Checkout yok.",
+  "delta": "Shopify.theme.name Yoga-and-meditation-v-1-5-0-new · schema_name Yoga and meditation · schema_version 1.5.0 · theme_store_id null · role main · id 126822776890 · handle \"null\" · shop sports-online-store-2.myshopify.com · locale en · country US · currency USD · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock, same host). Platform adı dataBindings'e yazılmadı.",
+  "storefrontPassword": "1",
+  "capture": {
+    "url": "https://sports-online-store-2.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:21:07.848Z",
+    "mode": "section"
+  },
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sports-online-store-2.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15527517913146__cart-items",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://sports-online-store-2.myshopify.com/products/yoga-pilates-mats-towel",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--15527518896186__main form[action*='/cart/add'] button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://sports-online-store-2.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15527517913146__cart-items",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "qty 1→2"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Your cart is empty · CONTINUE SHOPPING · Have an account? Log in to checkout faster.",
+    "filled": "Your cart: Yoga & Pilates Mats · Color Purple · adet 1 · $70.00. Continue shopping.",
+    "changed": "adet 2 · TOTAL $140.00."
+  },
+  "interactionNote": "ATC UI tık sonra /cart. Checkout bu section karesinde yok. cart-footer boş leftover."
+}

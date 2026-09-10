@@ -1,0 +1,115 @@
+{
+  "observationId": "stationery.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "stationery",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://book-online-store-2.myshopify.com/",
+  "selector": "details-modal.header__search, predictive-search.header-search_box",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/stationery/default/home/global-predictive-search.1440.png",
+    "evidence/stationery/default/home/global-predictive-search.375.png",
+    "evidence/stationery/default/home/global-predictive-search.768.png",
+    "evidence/stationery/default/home/global-predictive-search.initial.arama-bos.1440.png",
+    "evidence/stationery/default/home/global-predictive-search.initial.arama-bos.375.png",
+    "evidence/stationery/default/home/global-predictive-search.initial.arama-bos.768.png",
+    "evidence/stationery/default/home/global-predictive-search.input.arama-pencil.1440.png",
+    "evidence/stationery/default/home/global-predictive-search.input.arama-pencil.375.png",
+    "evidence/stationery/default/home/global-predictive-search.input.arama-pencil.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "375/768: details-modal.header__search + #Search-In-Modal. 1440: predictive-search.header-search_box + #Search-In-Template (modal display:none).",
+  "delta": "Açık sonuç interact; katalogSorgu pencil. 1440 inline pill + dropdown. Shopify.theme.name Stationary & Office Supplies  V-1.5.0 · schema_name Stationary Supplies · schema_version 1.5.0 · theme_store_id null · role main · id 131641770078 · shop book-online-store-2.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock). Platform adı dataBindings'e yazılmadı.",
+  "capture": {
+    "url": "https://book-online-store-2.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:27:40.807Z",
+    "prepareClick": "details-modal.header__search summary.header__icon--search, summary.header__icon--search"
+  },
+  "captureMode": "viewport",
+  "prepareClick": "details-modal.header__search summary.header__icon--search, summary.header__icon--search",
+  "prepareForceOpen": true,
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://book-online-store-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "details-modal.header__search details",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "375/768 modal. 1440 details-modal display:none"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "1440 inline #Search-In-Template — modal yok"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "pencil",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-pencil",
+      "not": "katalogSorgu=pencil — modal input"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Template",
+      "value": "pencil",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-pencil",
+      "not": "katalogSorgu=pencil — masaüstü header-search_box"
+    }
+  ],
+  "stateFindings": {
+    "initial": "375/768: search modal boş — Search input + X, arka plan karartılı. 1440: details-modal display:none; header'da inline Search pill (#Search-In-Template) boş.",
+    "input": "pencil: SUGGESTIONS kitty pencil / Pencil; PRODUCTS Hello Kitty Pencil case; Search for “pencil”. 375 dikey liste; 768/1440 iki kolon (öneri | ürün)."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu=pencil (scan). 1440 modal zero-size — fill #Search-In-Template. Submit / hesap yok. İlk 1440 koşu missingStates; bir retry ile kapandı."
+}

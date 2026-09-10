@@ -1,0 +1,80 @@
+{
+  "observationId": "gifts.default.collection.product-showcase-grid-plp",
+  "schemaId": "product-showcase-grid-plp",
+  "kaynak": "gifts",
+  "preset": "default",
+  "sayfa": "collection",
+  "url": "https://gift-online-shop-1.myshopify.com/collections/all",
+  "selector": "#shopify-section-template--24249643204772__product-grid",
+  "storefrontPassword": "1",
+  "evidenceSlug": "product-showcase-grid-plp",
+  "evidence": [
+    "evidence/gifts/default/collection/product-showcase-grid-plp.1440.png",
+    "evidence/gifts/default/collection/product-showcase-grid-plp.375.png",
+    "evidence/gifts/default/collection/product-showcase-grid-plp.768.png",
+    "evidence/gifts/default/collection/product-showcase-grid-plp.changed.chocolate.1440.png",
+    "evidence/gifts/default/collection/product-showcase-grid-plp.initial.filtre-yok.1440.png",
+    "evidence/gifts/default/collection/product-showcase-grid-plp.initial.filtre-yok.375.png",
+    "evidence/gifts/default/collection/product-showcase-grid-plp.initial.filtre-yok.768.png"
+  ],
+  "notlar": "Home Products breadcrumb + Filters Category/Availability/Price + grid.",
+  "delta": "Dawn main-collection-product-grid. Shopify.theme.name gifts-treasures-v-1-5-0-latest-updates-new · schema_name Gifts-treasures · schema_version 1.5.0 · theme_store_id null · role main · id 175659352228 · shop gift-online-shop-1.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock).",
+  "capture": {
+    "url": "https://gift-online-shop-1.myshopify.com/collections/all",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T09:14:32.585Z"
+  },
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://gift-online-shop-1.myshopify.com/collections/all",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24249643204772__product-grid",
+      "capture": true,
+      "etiket": "filtre-yok",
+      "not": "Category açık — Chocolate işaretli değil"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='Filter-filter.p.t.category-5']",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "Chocolate (3) — #id nokta class'a düşer, label[for=] kullan"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 2200,
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "chocolate",
+      "not": "Yoklama URL filter.p.t.category + 3 products"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Home / Products. FILTERS Category açık (Artificial Flora… Chocolate 3…). 29 products. Alphabetically, A-Z.",
+    "changed": "1440 Chocolate işaretli + Category: Chocolate chip + Remove all. 3 of 29 products: Maxim’s de Paris Chocolate Box, Mouth Watering Collection of Belgium…, Speciality Chocolate Box."
+  },
+  "interactionNote": "label[for=Filter-filter.p.t.category-5] — #Filter-filter.p.t.category-5 nokta kaçışı class’a düşer. 375 filtre drawer yoklandı değil."
+}

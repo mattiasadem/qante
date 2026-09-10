@@ -1,0 +1,112 @@
+{
+  "observationId": "linda.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "linda",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://pandora-vintage.myshopify.com/cart",
+  "selector": "#shopify-section-template--22740193509569__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/linda/default/cart/cart-page-main.1440.png",
+    "evidence/linda/default/cart/cart-page-main.375.png",
+    "evidence/linda/default/cart/cart-page-main.768.png",
+    "evidence/linda/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/linda/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/linda/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/linda/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/linda/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/linda/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/linda/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/linda/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/linda/default/cart/cart-page-main.initial.sepet-bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Empty: Your cart is empty / CONTINUE SHOPPING / Have an account? Log in to check out faster. Sibling #…__cart-footer h=0 empty. Account/checkout tıklanmadı.",
+  "delta": "Speedo LINDA / Pandora Vintage third-party (theme_store_id null). Storefront password 1 is vendor-published on the Speedo product page. Shopify.theme.name Pandora Vintage V-1.5.0 · schema_name pandora_vintage · schema_version 1.5.0 · theme_store_id null · role main · id 168503476417 · shop pandora-vintage.myshopify.com · walk https://pandora-vintage.myshopify.com/ after public /password 1. No other host.",
+  "capture": {
+    "url": "https://pandora-vintage.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T09:03:40.195Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-vintage.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--22740193509569__cart-items",
+      "capture": true,
+      "etiket": "sepet-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://pandora-vintage.myshopify.com/products/beautiful-woman-wearing-ring",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--22740194066625__main button.product-form__submit[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://pandora-vintage.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart sayfası"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "cart-items button[name='plus'], #shopify-section-template--22740193509569__cart-items button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + CONTINUE SHOPPING + Have an account? Log in to check out faster.",
+    "filled": "Your cart + Continue shopping. Satır Beautiful Woman Wearing Ring $65 Size 8 qty 1; TOTAL $65.00. 375 qty stepper satırın altında. Check out / estimated bu selector kırpımında yok (sibling cart-footer).",
+    "changed": "Aynı satır qty 2; TOTAL $130.00. Birim $65 Size 8 aynı."
+  },
+  "missingStates": [],
+  "interactionNote": "Account / checkout tıklanmadı. Sibling cart-footer doluyken görünür; cart-items kırpımı checkout göstermez."
+}
