@@ -92,6 +92,14 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: sports-equipment-you-may-like-empty-cart  
+Gerekçe: Boş `#CartDrawer` karesinde YOUR CART IS EMPTY + CONTINUE SHOPPING yanında YOU MAY LIKE (Basketball Sport Orange Add To Cart). Ayrı schema yok. Checkout / Log in tıklanmadı.  
+Örnekler: home `#CartDrawer`  
+Öneri: leftover — boş sepet önerisi  
+Karar: onay bekliyor
+
+---
+
 ADAY: sports-equipment-handle-title-mismatch  
 Gerekçe: İlk featured PDP handle `veena-retailnet-hexagon-style-dumbbells`, vitrin başlığı **Basketball Sport Orange**. Observation URL handle; notlara title yazıldı.  
 Örnekler: /products/veena-retailnet-hexagon-style-dumbbells  

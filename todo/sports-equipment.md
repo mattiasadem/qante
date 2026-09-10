@@ -15,7 +15,7 @@
 
 **Unlock:** Vendor ürün sayfası “Please enter password `1` to view demo.” Aynı host `/password` — public storefront-unlock. Başka host yok.
 
-**Durum:** Mod A roster yazıldı · 3vp + interact bekleniyor  
+**Durum:** Mod A walk + resmi 3vp (54/54, menu 1440 zero-size) · interact sırada  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -39,22 +39,22 @@
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | [x] obs | [ ] static |
+| Home roster (announcement→footer) | [x] obs | [x] static |
 | Shop mega 1440 | [ ] interact | — |
 | Predictive search `basketball` | [ ] interact | — |
 | Mobile menu 375 + 768 | [ ] interact | — |
 | Cart drawer empty + filled + qty | [ ] interact | — |
 | PDP Color Mate Orange → Button Blue | [ ] interact | — |
 | Featured hover | [ ] interact | — |
-| PLP `/collections/team-sports` + filter | [x] obs | [ ] static + interact |
-| Collections `/collections` | [x] obs | [ ] static |
-| Search `/search?q=sport` | [x] obs | [ ] static |
-| Cart page empty + filled | [x] obs | [ ] interact |
-| About `/pages/about-layout-1` | [x] obs | [ ] static |
-| Contact `/pages/contact-layout-1` (submit yok) | [x] obs | [ ] static |
-| FAQ `/pages/faq` | [x] obs | [ ] interact |
-| News + known-for-its-up-to-date-news | [x] obs | [ ] static |
-| 404 | [x] obs | [ ] static |
+| PLP `/collections/team-sports` + filter | [x] obs | [x] static + interact sırada |
+| Collections `/collections` | [x] obs | [x] static |
+| Search `/search?q=sport` | [x] obs | [x] static |
+| Cart page empty + filled | [x] obs | [x] empty 3vp · filled interact sırada |
+| About `/pages/about-layout-1` | [x] obs | [x] static |
+| Contact `/pages/contact-layout-1` (submit yok) | [x] obs | [x] static |
+| FAQ `/pages/faq` | [x] obs | [x] static · interact sırada |
+| News + known-for-its-up-to-date-news | [x] obs | [x] static |
+| 404 | [x] obs | [x] static |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -96,17 +96,17 @@
 
 | # | id | sayfa | Screenshot | Not | JSON | Done |
 |---|---|---|---|---|---|---|
-| 1–26 | home + overlays | home | [ ] | [x] | reuse | [ ] |
-| 27–35 | PDP main/tabs/video/IWT/trust/banner/FAQ/marquee | product-detail | [ ] | [x] | reuse | [ ] |
-| 36–38 | banner + slider + PLP grid | collection | [ ] | [x] | reuse | [ ] |
-| 39 | collection-nav-grid | collections | [ ] | [x] | reuse | [ ] |
-| 40 | search-results | search | [ ] | [x] | reuse | [ ] |
-| 41 | cart-page-main | cart | [ ] | [x] | reuse | [ ] |
-| 42–48 | about-layout-1 | about-brand | [ ] | [x] | reuse | [ ] |
-| 49–51 | contact-layout-1 | contact | [ ] | [x] | reuse | [ ] |
-| 52–53 | FAQ banner + accordion | faq-support | [ ] | [x] | reuse | [ ] |
-| 54–55 | news + article | blog-* | [ ] | [x] | reuse | [ ] |
-| 56 | 404 | not-found | [ ] | [x] | reuse | [ ] |
+| 1–26 | home + overlays | home | [x] 3vp · menu 1440 skip | [x] | reuse | [ ] interact |
+| 27–35 | PDP main/tabs/video/IWT/trust/banner/FAQ/marquee | product-detail | [x] | [x] | reuse | [ ] interact |
+| 36–38 | banner + slider + PLP grid | collection | [x] | [x] | reuse | [ ] interact |
+| 39 | collection-nav-grid | collections | [x] | [x] | reuse | [x] |
+| 40 | search-results | search | [x] | [x] | reuse | [x] |
+| 41 | cart-page-main | cart | [x] empty | [x] | reuse | [ ] interact |
+| 42–48 | about-layout-1 | about-brand | [x] | [x] | reuse | [x] |
+| 49–51 | contact-layout-1 | contact | [x] | [x] | reuse | [x] |
+| 52–53 | FAQ banner + accordion | faq-support | [x] | [x] | reuse | [ ] interact |
+| 54–55 | news + article | blog-* | [x] | [x] | reuse | [x] |
+| 56 | 404 | not-found | [x] | [x] | reuse | [x] |
 
 ---
 
@@ -118,7 +118,7 @@
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
+- [x] Official 3vp static (`capture-observation.mjs`) — 161 PNG (menu 1440 zero-size skip)
 - [ ] Interact mega / search / menu / cart / PDP Color / FAQ / featured hover / PLP filter
 - [ ] PNG bak → stateFindings (şema değişmedi)
 - [ ] `node scripts/validate-schemas.mjs`
