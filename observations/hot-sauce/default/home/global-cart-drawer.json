@@ -1,0 +1,121 @@
+{
+  "observationId": "hot-sauce.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "hot-sauce",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://food-online-store-2.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/hot-sauce/default/home/global-cart-drawer.1440.png",
+    "evidence/hot-sauce/default/home/global-cart-drawer.375.png",
+    "evidence/hot-sauce/default/home/global-cart-drawer.768.png",
+    "evidence/hot-sauce/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/hot-sauce/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/hot-sauce/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/hot-sauce/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/hot-sauce/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/hot-sauce/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/hot-sauce/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/hot-sauce/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/hot-sauce/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Dawn #CartDrawer. Opener #cart-icon-bubble href=/cart. Checkout tıklanmadı.",
+  "delta": "Shopify.theme.name Hot Sauce V-1.5.0 · schema_name Hot Sauce · schema_version 1.5.0 · theme_store_id null · role main · id 146022531235 · shop food-online-store-2.myshopify.com · Speedo Themes third-party OS 2.0 (Theme Store resmi değil). Vendor-published demo password 1 (public storefront unlock). Boş + filled interact. /cart/clear yok.",
+  "captureMode": "viewport",
+  "prepareClick": "#cart-icon-bubble",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://food-online-store-2.myshopify.com/",
+      "capture": false,
+      "not": "/cart/clear yok — home unlock"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Your cart is empty beklenir",
+      "value": 2000
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://food-online-store-2.myshopify.com/products/chili-sauce-bottle-mockup",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--18878615257251__main",
+      "capture": false,
+      "not": "Chili Sauce Bottle Mockup $22.00"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC sonrası drawer."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "qty 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Sağ drawer: Your cart is empty · CONTINUE SHOPPING · Have an account? YOU MAY LIKE — Hot Sauces Smoky & Roasted $9.99 ADD TO CART.",
+    "filled": "YOUR CART. Chili Sauce Bottle Mockup qty 1 $22.00. Free Shipping $100 / Express $150 bar. Estimated total $22.00 USD. CHECK OUT. YOU MAY LIKE overlay (5 ürün).",
+    "changed": "qty 2; satır ve estimated total $44.00 USD. Checkout tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC #ProductSubmitButton-template--18878615257251__main (quick-add id'leri elendi). /cart/clear yok. YOU MAY LIKE leftover. Checkout/Log in tıklanmadı.",
+  "capture": {
+    "url": "https://food-online-store-2.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:11:06.898Z",
+    "prepareClick": "#cart-icon-bubble"
+  }
+}

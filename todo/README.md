@@ -46,6 +46,7 @@
 | HexClad | [`hexclad.md`](./hexclad.md) | ✅ listicle-fathers-day · 5 obs · 15 PNG · 0 yeni şema |
 | Allbirds | [`allbirds.md`](./allbirds.md) | 🟡 Mod A — 30 obs · ~90 PNG · partial capture (search blocked) |
 | Backpack (Speedo) | [`backpack.md`](./backpack.md) | ✅ default — adlwin-store · Debut 17.14.1 · password 1 · 22 obs · 81 PNG · 0 yeni şema |
+| Levitate (Speedo · Purse & Bags) | [`levitate.md`](./levitate.md) | ✅ first inventory — official `backpack-online-store-2` · Levitate V-1.5.0 · password `1` · 49 obs · static 3vp + interact · 0 yeni şema |
 | Candle (Speedo) | [`candle.md`](./candle.md) | ✅ Mod A + interact — password `1` · 41 obs · static 3vp + shopper states · 0 yeni şema |
 | Food & Drink (Speedo) | [`food-drink.md`](./food-drink.md) | ✅ first inventory + interact — official `food-online-store-1` · Food & Drink V-1.5.0 · password `1` · 36 obs · 155 PNG · 0 yeni şema · mega/menu/search/empty-cart missingStates |
 | Decora (Speedo furniture) | [`decora.md`](./decora.md) | ✅ first inventory + interact — official `pandora-furniture-2` · password `1` · 38 obs · 0 yeni şema · mega/search/cart/PDP alındı · menu/tabs/FAQ missingStates |
@@ -53,6 +54,7 @@
 | Guccy (Speedo) | [`guccy.md`](./guccy.md) | ✅ first inventory — fashion-store-clean-20 · Guccy 1.5.0 · password 1 · 46 obs · 157 PNG · 0 yeni şema · hamburger leftover |
 | Hubble (Speedo) | [`hubble.md`](./hubble.md) | ✅ default — Hubble-nutrition 1.2.0 · 34 obs · 133 PNG · 0 yeni şema · password `1` |
 | Kiddle (Speedo) | [`kiddle.md`](./kiddle.md) | ✅ first inventory + interact — `toyon-toys-3` · Kiddle-v-1-5-0 · password `1` · 43 obs · ~161 PNG · 0 yeni şema · menu/QV/PLAY missingStates |
+| Kitchen Ware (Speedo) | [`kitchen.md`](./kitchen.md) | ✅ first inventory + interact — official `kitchen-ware-online-store` · Kitchen Ware 1.5.0 · password `1` · 45 obs · 183 PNG · 0 yeni şema · mega/search/menu/cart/PDP/FAQ alındı · PLP Color Black missingStates |
 | Luxora (Speedo) | [`luxora.md`](./luxora.md) | ✅ first inventory — 46 obs · 182 PNG · 0 yeni şema · Jewelry-online-shop2 V-1.5.0 · official password `1` · mega/cart alındı · menu/search/FAQ/tabs/PLP filter missingStates |
 | Nouk (Speedo) | [`nouk.md`](./nouk.md) | 🟡 first inventory — `jewelry-online-shop-3` · Nouk Jewellery 1.5.0 · password `1` (vendor) · 44 obs · ~185 PNG · 0 yeni şema |
 | Olelia (Speedo) | [`olelia.md`](./olelia.md) | ✅ first inventory — jewelry-online-shop-4 · password 1 · 46 obs · 0 yeni şema · interact |

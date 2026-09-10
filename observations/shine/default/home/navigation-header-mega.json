@@ -1,0 +1,89 @@
+{
+  "observationId": "shine.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "shine",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://women-beauty-9.myshopify.com/",
+  "selector": "#shopify-section-sections--19497186951424__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/shine/default/home/navigation-header-mega.1440.png",
+    "evidence/shine/default/home/navigation-header-mega.375.png",
+    "evidence/shine/default/home/navigation-header-mega.768.png",
+    "evidence/shine/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/shine/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/shine/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/shine/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "1440: hamburger + Shop/Best Sellers/Themes/Shop By/Collections + shine logo + search/wishlist/account/cart. Announcement üstte. Mega kapalı kare.",
+  "delta": "Shopify.theme.name Shine V-1.5.0 · schema_name Shine · schema_version 1.5.0 · theme_store_id null · role main · id 151002284288 · shop women-beauty-9.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock). Walk host women-beauty-9.myshopify.com only.",
+  "capture": {
+    "url": "https://women-beauty-9.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:20:29.797Z",
+    "mode": "viewport"
+  },
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://women-beauty-9.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Shop kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-1 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "Shop hover — probe open:true"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-HeaderMenu-1",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "6 koleksiyon kart + açıklama. Yazılı Shop <a> tıklanmadı."
+    }
+  ],
+  "stateFindings": {
+    "initial": "375: hamburger + shine + search/cart. 1440: hamburger + Shop / Best Sellers / Themes / Shop By / Collections + shine logo + search/wishlist/account/cart. Shop kapalı.",
+    "open": "1440 Shop: 6 kolon görsel+metin — Skincare, Make Up, Facecare, Bundle, Bodycare, Accessories. Shop altı çizili. Yazılı <a> tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "375/768 mega yok — hamburger ayrı global-menu-drawer (statik open: koleksiyon listesi). Themes leftover."
+}

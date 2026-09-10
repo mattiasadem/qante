@@ -1,0 +1,94 @@
+{
+  "observationId": "shine.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "shine",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://women-beauty-9.myshopify.com/cart",
+  "selector": "#shopify-section-template--19497185673472__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/shine/default/cart/cart-page-main.1440.png",
+    "evidence/shine/default/cart/cart-page-main.375.png",
+    "evidence/shine/default/cart/cart-page-main.768.png",
+    "evidence/shine/default/cart/cart-page-main.changed.adet-2.1440.png",
+    "evidence/shine/default/cart/cart-page-main.changed.adet-2.375.png",
+    "evidence/shine/default/cart/cart-page-main.changed.adet-2.768.png",
+    "evidence/shine/default/cart/cart-page-main.filled.dolu.1440.png",
+    "evidence/shine/default/cart/cart-page-main.filled.dolu.375.png",
+    "evidence/shine/default/cart/cart-page-main.filled.dolu.768.png",
+    "evidence/shine/default/cart/cart-page-main.initial.bos.1440.png",
+    "evidence/shine/default/cart/cart-page-main.initial.bos.375.png",
+    "evidence/shine/default/cart/cart-page-main.initial.bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Your cart is empty · Continue Shopping · Have an account? Log in. cart-footer h=0 boşken.",
+  "delta": "Boş kare. Dolu interact. Checkout / Log in yok.",
+  "capture": {
+    "url": "https://women-beauty-9.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:29:21.661Z",
+    "mode": "section"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://women-beauty-9.myshopify.com/cart",
+      "capture": true,
+      "etiket": "bos",
+      "not": "Boş sepet"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://women-beauty-9.myshopify.com/products/beauty-liquid-matte",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--19497186656512__main button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://women-beauty-9.myshopify.com/cart",
+      "capture": true,
+      "etiket": "dolu",
+      "not": "Matte satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], .quantity__button[name='plus']",
+      "capture": true,
+      "etiket": "adet-2",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty + Continue Shopping + Have an account? Log in. Log in tıklanmadı. cart-footer h=0.",
+    "filled": "Your cart. Beauty Liquid Matte $89.00 · Color Antique White · qty 1 · TOTAL $89.00.",
+    "changed": "qty 2. TOTAL $178.00."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart → PDP sonra /cart. Checkout / Log in tıklanmadı."
+}

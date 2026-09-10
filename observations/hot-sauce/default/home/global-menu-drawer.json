@@ -1,0 +1,78 @@
+{
+  "observationId": "hot-sauce.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "hot-sauce",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://food-online-store-2.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/hot-sauce/default/home/global-menu-drawer.375.png",
+    "evidence/hot-sauce/default/home/global-menu-drawer.768.png",
+    "evidence/hot-sauce/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/hot-sauce/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "#menu-drawer. Home / Shop / Bestsellers / Themes / Collections + wishlist/compare/login. 1440 hamburger 0×0 beklenir.",
+  "delta": "Shopify.theme.name Hot Sauce V-1.5.0 · schema_name Hot Sauce · schema_version 1.5.0 · theme_store_id null · role main · id 146022531235 · shop food-online-store-2.myshopify.com · Speedo Themes third-party OS 2.0 (Theme Store resmi değil). Vendor-published demo password 1 (public storefront unlock). Open yalnız 375/768. Shop yazılı <a href=/collections/all> sayfaya gider.",
+  "captureMode": "viewport",
+  "prepareClick": "#Details-menu-drawer-container > summary.header__icon--menu",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://food-online-store-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary.header__icon--menu",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "375/768 drawer. Yazılı Shop <a> tıklanmadı."
+    }
+  ],
+  "stateFindings": {
+    "open": "375 tam genişlik / 768 sol panel: Home, Shop, Bestsellers, Themes, Collections; Wishlist 0 · Compare 0; alt Log in + sosyal. Shop expander yok — yazılı satır."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Yazılı Shop <a href=/collections/all> — tıklama sayfaya gider."
+    },
+    {
+      "state": "open",
+      "sebep": "1440 hamburger 0×0 — mega navigation-header-mega."
+    }
+  ],
+  "interactionNote": "1440 drawer host yok. Locale/account tıklanmadı.",
+  "capture": {
+    "url": "https://food-online-store-2.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:07:48.308Z",
+    "prepareClick": "#Details-menu-drawer-container > summary.header__icon--menu"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "observationId": "hot-sauce.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "hot-sauce",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://food-online-store-2.myshopify.com/",
+  "selector": "#shopify-section-sections--18878615552163__header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/hot-sauce/default/home/navigation-header-mega.1440.png",
+    "evidence/hot-sauce/default/home/navigation-header-mega.375.png",
+    "evidence/hot-sauce/default/home/navigation-header-mega.768.png",
+    "evidence/hot-sauce/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/hot-sauce/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/hot-sauce/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/hot-sauce/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Logo vitrin. Nav: Home / Shop (details#Details-HeaderMenu-2 .mega-menu) / Bestsellers (#Details-HeaderMenu-3) / Themes (#Details-HeaderMenu-4) / Collections (#Details-HeaderMenu-5). Wishlist 0 · Compare 0 · Log in · #cart-icon-bubble. 375 hamburger summary.header__icon--menu. Search details-modal + predictive-search.",
+  "delta": "Shopify.theme.name Hot Sauce V-1.5.0 · schema_name Hot Sauce · schema_version 1.5.0 · theme_store_id null · role main · id 146022531235 · shop food-online-store-2.myshopify.com · Speedo Themes third-party OS 2.0 (Theme Store resmi değil). Vendor-published demo password 1 (public storefront unlock). Mega class var. Probe Shop hover #MegaMenu-Content-2 1440×376 Best Sellers / Citrus Zest / Classic Pepper / Extreme Heat / Fermented & Aged / Herb & Spice Blends. Account tıklanmadı.",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://food-online-store-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Mega kapalı. 375/768 hamburger ayrı global-menu-drawer."
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-2 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "Hover Shop summary — click Shop <a href=/collections/all> sayfaya gider. Probe #MegaMenu-Content-2 Best Sellers…Herb & Spice Blends.",
+      "value": 1800
+    }
+  ],
+  "stateFindings": {
+    "initial": "375/768: hamburger + HOT SAUCE logo + sepet/arama. 1440: Home / Shop chevron / Bestsellers / Themes / Collections; ortada HOT SAUCE (biber O); sağda arama · wishlist 0 · hesap · sepet. Mega kapalı; altta collection slider + hero.",
+    "open": "1440 Shop hover: 6 koleksiyon fotoğraf kartı — Best Sellers · Citrus Zest · Classic Pepper · Extreme Heat · Fermented & Aged · Herb & Spice Blends. Shop altı çizili. Hero slayt kırmızı salsa karesine geçmiş."
+  },
+  "missingStates": [],
+  "interactionNote": "Click Shop /collections/all. Account/wishlist tıklanmadı. Mega 1440 karede durdu (food-drink'te durmamıştı).",
+  "capture": {
+    "url": "https://food-online-store-2.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:06:54.461Z"
+  }
+}

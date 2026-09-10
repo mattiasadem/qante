@@ -12,9 +12,11 @@
 
 export const PUBLIC_DEMO_PASSWORDS = {
   "adlwin-store.myshopify.com": "1",
+  "backpack-online-store-2.myshopify.com": "1",
   "beverages-online-store.myshopify.com": "1",
   "bicycle-online-store-1.myshopify.com": "1",
   "book-online-store-1.myshopify.com": "1",
+  "book-online-store-2.myshopify.com": "1",
   "coffee-prime-2.myshopify.com": "1",
   "coffee-prime.myshopify.com": "1",
   "digital-gallery-shop-2.myshopify.com": "1",
@@ -26,6 +28,7 @@ export const PUBLIC_DEMO_PASSWORDS = {
   "fashion-store-clean-5.myshopify.com": "1",
   "fitness-online-store-1.myshopify.com": "1",
   "food-online-store-1.myshopify.com": "1",
+  "food-online-store-2.myshopify.com": "1",
   "gamming-store-1.myshopify.com": "1",
   "gift-online-shop-1.myshopify.com": "1",
   "glidefeet.myshopify.com": "1",
@@ -37,9 +40,12 @@ export const PUBLIC_DEMO_PASSWORDS = {
   "jewelry-online-shop-4.myshopify.com": "1",
   "jewelry-online-shop1.myshopify.com": "1",
   "jewelry-online-shop2.myshopify.com": "1",
+  "kitchen-ware-online-store.myshopify.com": "1",
   "luxury-handmade-ultimate.myshopify.com": "1",
+  "mattress-online-store-1.myshopify.com": "1",
   "medical-online-store.myshopify.com": "1",
   "midnight-perfume.myshopify.com": "1",
+  "musical-online-store.myshopify.com": "1",
   "pandora-beauty-store.myshopify.com": "1",
   "pandora-fashi.myshopify.com": "1",
   "pandora-flower.myshopify.com": "1",
@@ -55,6 +61,7 @@ export const PUBLIC_DEMO_PASSWORDS = {
   "pandora-wallpaper.myshopify.com": "1",
   "petz-online-store-2.myshopify.com": "1",
   "petz-online-store.myshopify.com": "1",
+  "photography-online-store.myshopify.com": "1",
   "sara-toy-store.myshopify.com": "1",
   "shoes-online-store-1.myshopify.com": "1",
   "socks-online-store-1.myshopify.com": "1",
@@ -64,6 +71,8 @@ export const PUBLIC_DEMO_PASSWORDS = {
   "speedo-nutronix.myshopify.com": "1",
   "speedo-sarees.myshopify.com": "1",
   "speedo-toys-dropship.myshopify.com": "1",
+  "sports-online-store-1.myshopify.com": "1",
+  "sports-online-store-2.myshopify.com": "1",
   "tools-online-store-1.myshopify.com": "1",
   "tormeti-fashi.myshopify.com": "1",
   "toyon-toys-2.myshopify.com": "1",
@@ -72,11 +81,13 @@ export const PUBLIC_DEMO_PASSWORDS = {
   "uvolox-online.myshopify.com": "1",
   "vedzila-organic.myshopify.com": "1",
   "watchez-online-store.myshopify.com": "1",
+  "wineshop-online-store.myshopify.com": "1",
   "women-beauty-3.myshopify.com": "1",
   "women-beauty-5.myshopify.com": "1",
   "women-beauty-6.myshopify.com": "1",
   "women-beauty-7.myshopify.com": "1",
   "women-beauty-8.myshopify.com": "1",
+  "women-beauty-9.myshopify.com": "1"
 
 };
 

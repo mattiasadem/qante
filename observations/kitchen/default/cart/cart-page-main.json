@@ -1,0 +1,112 @@
+{
+  "observationId": "kitchen.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "kitchen",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://kitchen-ware-online-store.myshopify.com/cart",
+  "selector": "#shopify-section-template--20650346971229__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/kitchen/default/cart/cart-page-main.1440.png",
+    "evidence/kitchen/default/cart/cart-page-main.375.png",
+    "evidence/kitchen/default/cart/cart-page-main.768.png",
+    "evidence/kitchen/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/kitchen/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/kitchen/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/kitchen/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/kitchen/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/kitchen/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/kitchen/default/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/kitchen/default/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/kitchen/default/cart/cart-page-main.initial.cart-bos.768.png"
+  ],
+  "notlar": "Your cart is empty · Continue Shopping · Have an account? Log in to check out faster. Sibling cart-footer h=0 boşken. Checkout/login yok.",
+  "delta": "Shopify.theme.name kitchen-ware-v-1-5-0-OPTIMIZED · schema_name Kitchen Ware · schema_version 1.5.0 · theme_store_id null · role main · id 150878355549 · shop kitchen-ware-online-store.myshopify.com · Speedo Themes third-party OS 2.0 (Theme Store resmi değil). Vendor-published demo password 1 (public storefront unlock).",
+  "storefrontPassword": "1",
+  "capture": {
+    "url": "https://kitchen-ware-online-store.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T11:13:44.399Z",
+    "mode": "section"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://kitchen-ware-online-store.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Your cart is empty"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://kitchen-ware-online-store.myshopify.com/products/pressure-cooker-3-litre",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add'], button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://kitchen-ware-online-store.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Pressure Cooker satırı $85"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "qty 2 · $170"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty. Continue Shopping. Have an account? Log in to check out faster.",
+    "filled": "Your cart. Pressure Cooker (5 litre) · Size: 1 Litre · qty 1 · $85.00. Continue shopping.",
+    "changed": "qty 2 · satır TOTAL $170.00. Checkout tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout / Log in tıklanmadı. cart-footer sibling boşken h=0. Section karesinde checkout bandı yok."
+}
