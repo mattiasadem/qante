@@ -10,7 +10,10 @@
   "storefrontPassword": "1",
   "evidence": [
     "evidence/wallfresh/default/home/global-predictive-search.375.png",
-    "evidence/wallfresh/default/home/global-predictive-search.768.png"
+    "evidence/wallfresh/default/home/global-predictive-search.768.png",
+    "evidence/wallfresh/default/home/global-predictive-search.input.arama-sonucu.1440.png",
+    "evidence/wallfresh/default/home/global-predictive-search.input.arama-sonucu.375.png",
+    "evidence/wallfresh/default/home/global-predictive-search.input.arama-sonucu.768.png"
   ],
   "notlar": "375/768: details-modal.header__search · #Search-In-Modal (kapalı 0×0). 1440: inline #Search-In-Template · .header-full-width-search.",
   "delta": "Yazınca öneri interact. Submit yok. Masaüstü modal değil — header pill.",
@@ -24,11 +27,12 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-10T09:27:32.384Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T10:04:09.842Z",
     "prepareClick": "summary.header__icon--search"
   },
   "interactionStates": [
+    "initial",
     "input"
   ],
   "interactionSteps": [
@@ -45,7 +49,10 @@
       "selector": "summary.header__icon--search",
       "value": 800,
       "capture": false,
-      "viewports": ["375", "768"],
+      "viewports": [
+        "375",
+        "768"
+      ],
       "not": "Mobil Search modal opener"
     },
     {
@@ -56,7 +63,10 @@
       "capture": true,
       "captureMode": "viewport",
       "etiket": "arama-sonucu",
-      "viewports": ["375", "768"],
+      "viewports": [
+        "375",
+        "768"
+      ],
       "not": "katalogSorgu wallpaper — PRODUCTS overlay"
     },
     {
@@ -68,11 +78,15 @@
       "captureMode": "viewport",
       "captureSelector": "#site-header",
       "etiket": "arama-sonucu",
-      "viewports": ["1440"],
+      "viewports": [
+        "1440"
+      ],
       "not": "1440 inline pill #Search-In-Template — PRODUCTS dropdown"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "input": "375/768 tam ekran siyah overlay: Search kutusunda wallpaper + PRODUCTS (Floral & Botanical, Newbridge, Deco Elegance, Milton Antique…). 1440 inline pill’de wallpaper + sağda aynı PRODUCTS dropdown. Submit tıklanmadı."
+  },
   "missingStates": [],
-  "interactionNote": ""
+  "interactionNote": "katalogSorgu wallpaper. 1440 Dawn #Search-In-Modal 0×0; görünür input #Search-In-Template (.header-full-width-search). 375/768 summary.header__icon--search → #Search-In-Modal."
 }

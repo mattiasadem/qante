@@ -9,9 +9,13 @@
   "evidenceSlug": "navigation-header-mega",
   "storefrontPassword": "1",
   "evidence": [
+    "evidence/wallfresh/default/home/navigation-header-mega.1440.png",
     "evidence/wallfresh/default/home/navigation-header-mega.375.png",
     "evidence/wallfresh/default/home/navigation-header-mega.768.png",
-    "evidence/wallfresh/default/home/navigation-header-mega.1440.png"
+    "evidence/wallfresh/default/home/navigation-header-mega.initial.bar.1440.png",
+    "evidence/wallfresh/default/home/navigation-header-mega.initial.bar.375.png",
+    "evidence/wallfresh/default/home/navigation-header-mega.initial.bar.768.png",
+    "evidence/wallfresh/default/home/navigation-header-mega.open.shop-mega.1440.png"
   ],
   "notlar": "WALLFRESH wordmark. Home · Shop · Bestseller · Themes · Collections · About Us · Contact Us. Utility: Search · Log in · Cart. Shop/Bestseller/Themes/Collections = details.mega-menu (#Details-HeaderMenu-2..5).",
   "delta": "Dawn sticky-header + mega-menu class. Wishlist yok (WALLPAPSH’te vardı). Announcement bar home’da yok.",
@@ -23,8 +27,8 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-10T09:31:31.835Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T10:02:20.726Z"
   },
   "interactionStates": [
     "initial",
@@ -72,7 +76,10 @@
       "not": "Shop panel Bedroom/Flower/Living Room/Nature/KidsRoom/Kitchen. scrollTo hover'ı kapatmasın."
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "Kapalı header: WALLFRESH + Home/Shop/Bestseller/Themes/Collections/About Us/Contact Us. Shop mega yok.",
+    "open": "1440 Shop: altı görsel kart — Bedroom · Flower · Living Room · Nature · KidsRoom · Kitchen. Shop altı çizili. Yazılı koleksiyon linkine tıklanmadı."
+  },
   "missingStates": [],
-  "interactionNote": ""
+  "interactionNote": "Hover #Details-HeaderMenu-2 panel açtı; capture scrollTo kapatmasın diye forceOpen de koştu. 375/768 mega yok — hamburger ayrı observation."
 }

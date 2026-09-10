@@ -9,12 +9,18 @@
   "evidenceSlug": "product-info-tabs",
   "storefrontPassword": "1",
   "evidence": [
+    "evidence/wallfresh/default/product-detail/product-info-tabs.1440.png",
     "evidence/wallfresh/default/product-detail/product-info-tabs.375.png",
     "evidence/wallfresh/default/product-detail/product-info-tabs.768.png",
-    "evidence/wallfresh/default/product-detail/product-info-tabs.1440.png"
+    "evidence/wallfresh/default/product-detail/product-info-tabs.changed.additional-information.1440.png",
+    "evidence/wallfresh/default/product-detail/product-info-tabs.changed.additional-information.375.png",
+    "evidence/wallfresh/default/product-detail/product-info-tabs.changed.additional-information.768.png",
+    "evidence/wallfresh/default/product-detail/product-info-tabs.initial.description.1440.png",
+    "evidence/wallfresh/default/product-detail/product-info-tabs.initial.description.375.png",
+    "evidence/wallfresh/default/product-detail/product-info-tabs.initial.description.768.png"
   ],
   "notlar": "Description / Additional Information / Shipping And Delivery. Görsel yok.",
-  "delta": "Tab etiketleri + lorem gövde. Accordion değil (kapalı karede üç etiket).",
+  "delta": "1440 dikey ray / 768 yatay etiket. 375 accordion (Description açık, diğer başlıklar kapalı).",
   "capture": {
     "url": "https://pandora-wallpaper-2.myshopify.com/products/milton-and-king-antique-straight-wallpaper",
     "viewports": [
@@ -23,8 +29,8 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-10T09:43:35.608Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T10:15:23.804Z"
   },
   "interactionStates": [
     "initial",
@@ -50,14 +56,33 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": "#shopify-section-template--24408109908283__79582f51-5736-4bff-b870-bba69393ad36 button:has-text(\"Additional Information\")",
+      "selector": "#product_tab-template--24408109908283__79582f51-5736-4bff-b870-bba69393ad36 .product_tab_wrapper--tab-title a[href='#tab-e976ee83-b842-472e-9af8-76220b5e4b2b']",
       "value": 800,
       "capture": true,
       "etiket": "additional-information",
-      "not": "Additional Information gövde değişir"
+      "viewports": [
+        "768",
+        "1440"
+      ],
+      "not": "Sol/üst Additional Information rayı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#tab-e976ee83-b842-472e-9af8-76220b5e4b2b .tab-content-title a",
+      "value": 800,
+      "capture": true,
+      "etiket": "additional-information",
+      "viewports": [
+        "375"
+      ],
+      "not": "375 accordion başlığı — sol ray gizli"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "Description seçili + Amet tellus… gövde. Additional Information / Shipping And Delivery etiket. 375’te Description akordeon açık, diğer iki başlık kapalı.",
+    "changed": "Additional Information seçili (sarı). Gövde Maecenas sed enim… + üç madde (Lorem / Nullam / Nam). Description ve Shipping kapalı/pasif."
+  },
   "missingStates": [],
-  "interactionNote": ""
+  "interactionNote": "Kontrol <a href=#tab-e976ee83-…> — button değil. 375 sol ray gizli; .tab-content-title accordion."
 }

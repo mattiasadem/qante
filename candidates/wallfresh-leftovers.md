@@ -141,9 +141,17 @@ Karar: onay bekliyor
 ---
 
 ADAY: wallfresh-quick-view-absent  
-Gerekçe: Kartlarda QV butonu kapalı karede görülmedi.  
-Örnekler: home Best Sellers · PLP  
-Öneri: leftover — QV yok (hover interact’te yoklanacak)  
+Gerekçe: Best Sellers kart hover 1440 — metin değişmedi, Quick View yok. Token-only (şemaya girmez).  
+Örnekler: home featured_collection_HjpWE7  
+Öneri: leftover — QV yok  
+Karar: interact yoklandı
+
+---
+
+ADAY: wallfresh-plp-filter-changed  
+Gerekçe: Bedroom PLP Color facet statik karede zaten açık (Beige/Black…). Filtre seçimi (changed) bu turda çekilmedi.  
+Örnekler: /collections/bedroom  
+Öneri: leftover — filter changed yok  
 Karar: onay bekliyor
 
 ---

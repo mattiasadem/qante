@@ -15,7 +15,7 @@
 
 **Unlock:** Vendor ürün sayfası “Please enter password "1" to view demo.” Aynı host `/password` — public storefront unlock. Başka host yok.
 
-**Durum:** 🟡 Mod A 3vp bitti — interact adımları yazıldı, capture sırada  
+**Durum:** ✅ Mod A + interact — 49 obs · 0 yeni şema · shopper states pixel-check edildi  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -40,19 +40,19 @@
 | Şablon | Durum | 3vp |
 |---|---|---|
 | Home roster (header→footer) | [x] obs | [x] 3vp |
-| Header Shop mega 1440 | [x] obs | [ ] interact capture |
-| Predictive search | [x] obs | [ ] interact capture |
-| Mobile menu 375 + 768 | [x] obs | [ ] interact capture |
-| Cart drawer empty + filled + qty | [x] obs | [ ] interact capture |
-| PDP Milton Antique Color Amphibian→Light Brume | [x] obs | [ ] interact capture |
+| Header Shop mega 1440 | [x] obs | [x] Shop mega |
+| Predictive search | [x] obs | [x] wallpaper |
+| Mobile menu 375 + 768 | [x] obs | [x] hamburger + Shop drill |
+| Cart drawer empty + filled + qty | [x] obs | [x] Milton 1→2 |
+| PDP Milton Antique Color Amphibian→Light Brume | [x] obs | [x] Light Brume |
 | PLP `/collections/bedroom` | [x] obs | [x] 3vp |
 | Collections `/collections` | [x] obs | [x] 3vp |
 | Search `/search?q=wallpaper` | [x] obs | [x] 3vp |
-| Cart `/cart` empty | [x] obs | [ ] filled + qty |
+| Cart `/cart` empty | [x] obs | [x] filled + qty |
 | About `/pages/about-layout-1` | [x] obs | [x] 3vp |
 | Our Story `/pages/our-story` | [x] obs | [x] 3vp |
 | Contact `/pages/contact` (submit yok) | [x] obs | [x] 3vp |
-| FAQ `/pages/faq` | [x] obs | [ ] ikinci soru |
+| FAQ `/pages/faq` | [x] obs | [x] 2. soru |
 | Blog `/blogs/news` + article | [x] obs | [x] 3vp |
 | Email / account / checkout / newsletter submit | ⛔ PII | — |
 
@@ -93,6 +93,6 @@
 ## Evidence backlog
 
 - [x] Official 3vp static (`capture-observation.mjs`) — 48 ok / 1 skip
-- [ ] Interact capture — mega 1440 · search wallpaper · hamburger+Shop · cart drawer+page · PDP Color · FAQ 2. soru · tabs Additional Information
-- [ ] PNG bak → stateFindings
-- [ ] `node scripts/validate-schemas.mjs`
+- [x] Interact capture — mega 1440 · search wallpaper · hamburger+Shop · cart drawer+page · PDP Color · FAQ 2. soru · tabs Additional Information
+- [x] PNG bak → stateFindings
+- [x] `node scripts/validate-schemas.mjs` — 8 touched schemaId temiz
