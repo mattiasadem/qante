@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--15527145537594__cb435de1-8958-455d-8843-8a9ef3413466",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/matress/default/faq-support/faq-collapsible-tabs.1440.png",
     "evidence/matress/default/faq-support/faq-collapsible-tabs.375.png",
     "evidence/matress/default/faq-support/faq-collapsible-tabs.768.png",
-    "evidence/matress/default/faq-support/faq-collapsible-tabs.1440.png"
+    "evidence/matress/default/faq-support/faq-collapsible-tabs.changed.q2.1440.png",
+    "evidence/matress/default/faq-support/faq-collapsible-tabs.changed.q2.375.png",
+    "evidence/matress/default/faq-support/faq-collapsible-tabs.changed.q2.768.png",
+    "evidence/matress/default/faq-support/faq-collapsible-tabs.initial.q1-acik.1440.png",
+    "evidence/matress/default/faq-support/faq-collapsible-tabs.initial.q1-acik.375.png",
+    "evidence/matress/default/faq-support/faq-collapsible-tabs.initial.q1-acik.768.png"
   ],
   "notlar": "FREQUENTLY ASKED QUESTIONS. 4 details: Can I choose whichever styles I want? (open) · don't fit · swap · I signed up. Giyim kopyası sapması.",
   "delta": "Shopify.theme.name matress-v-1-5-0-latest-updates-new · schema_name Matress · schema_version 1.5.0 · theme_store_id null · role main · id 126821171258 · handle null · shop mattress-online-store-1.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock).",
@@ -22,8 +28,8 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-10T10:28:38.135Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T11:29:18.587Z",
     "mode": "section"
   },
   "interactionStates": [
@@ -54,8 +60,9 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": "#shopify-section-template--15527145537594__cb435de1-8958-455d-8843-8a9ef3413466 details:nth-of-type(2) summary",
-      "capture": false
+      "selector": "#shopify-section-template--15527145537594__cb435de1-8958-455d-8843-8a9ef3413466 details[id*='collapsible_row-2'] summary",
+      "capture": false,
+      "not": "Her details kendi .accordion sarmalayıcısında; nth-of-type(2) eşleşmez."
     },
     {
       "state": "changed",
@@ -65,5 +72,11 @@
       "etiket": "q2",
       "not": "İkinci soru açık (don't fit)."
     }
-  ]
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "FREQUENTLY ASKED QUESTIONS. Q1 açık (Can I choose whichever styles I want? + lorem). Q2–Q4 kapalı: don’t fit / swap / I signed up. Giyim kopyası.",
+    "changed": "Q2 (I like my styles but they don’t fit!) da açık; Q1 açık kaldı (allowMultipleOpen). Q3–Q4 kapalı. 375/768/1440 aynı."
+  },
+  "interactionNote": "Her details kendi .accordion sarmalayıcısında — details:nth-of-type(2) eşleşmez. Retry: details[id*='collapsible_row-2'] summary."
 }

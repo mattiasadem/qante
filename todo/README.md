@@ -94,7 +94,7 @@
 | Handmade Clay (Speedo) | [`handmade-clay.md`](./handmade-clay.md) | ✅ first inventory — luxury-handmade-ultimate · password `1` · 40 obs · 143 PNG · 0 yeni şema · search/menu 375 missingStates |
 | Lingerie (Speedo Themes) | [`lingerie.md`](./lingerie.md) | ✅ first inventory — fashion-store-clean-21 · Lingerie 1.5.0 · password `1` · 48 obs · ~187 PNG · 0 yeni şema · interact · menu Shop accordion leftover |
 | Look (Speedo) | [`look.md`](./look.md) | ✅ first inventory + interact — `goggles-online-store` · Look V-1.5.0 · password `1` · 41 obs · 0 yeni şema · mega/cart/search/PDP/FAQ/PLP alındı · hamburger missingStates |
-| Matress (Speedo) | [`matress.md`](./matress.md) | 🟡 first inventory — official `mattress-online-store-1` · schema_name Matress 1.5.0 · password `1` · in progress |
+| Matress (Speedo) | [`matress.md`](./matress.md) | ✅ first inventory + interact — official `mattress-online-store-1` · Matress 1.5.0 · password `1` · 44 obs · 192 PNG · 0 yeni şema |
 | Sareeify (Speedo) | [`sareeify.md`](./sareeify.md) | ✅ first inventory — speedo-sarees.myshopify.com · password `1` · 39 obs · 141 PNG · 0 yeni şema · interact |
 | Sonix (Speedo) | [`sonix.md`](./sonix.md) | ✅ Mod A + interact — default · sonix-electronics-store · password `1` · 39 obs · 0 yeni şema |
 | Spacecraft (Speedo · home decor) | [`spacecraft.md`](./spacecraft.md) | 🟡 first inventory + interact — `pandora-furniture-3` · Pandora-furniture-3 V-1.5.0 · password `1` · 39 obs · 164 PNG · 0 yeni şema · search/cart/PDP/FAQ alındı; mega/menu/hover/tabs missing |

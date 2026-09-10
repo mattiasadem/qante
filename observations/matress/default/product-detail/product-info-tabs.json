@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--15527145701434__79582f51-5736-4bff-b870-bba69393ad36",
   "evidenceSlug": "product-info-tabs",
   "evidence": [
+    "evidence/matress/default/product-detail/product-info-tabs.1440.png",
     "evidence/matress/default/product-detail/product-info-tabs.375.png",
     "evidence/matress/default/product-detail/product-info-tabs.768.png",
-    "evidence/matress/default/product-detail/product-info-tabs.1440.png"
+    "evidence/matress/default/product-detail/product-info-tabs.changed.additional.1440.png",
+    "evidence/matress/default/product-detail/product-info-tabs.changed.additional.375.png",
+    "evidence/matress/default/product-detail/product-info-tabs.changed.additional.768.png",
+    "evidence/matress/default/product-detail/product-info-tabs.initial.description.1440.png",
+    "evidence/matress/default/product-detail/product-info-tabs.initial.description.375.png",
+    "evidence/matress/default/product-detail/product-info-tabs.initial.description.768.png"
   ],
   "notlar": "Description / Additional Information / Shipping And Delivery. İlk sekme Description lorem.",
   "delta": "Shopify.theme.name matress-v-1-5-0-latest-updates-new · schema_name Matress · schema_version 1.5.0 · theme_store_id null · role main · id 126821171258 · handle null · shop mattress-online-store-1.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock).",
@@ -22,8 +28,8 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-10T10:52:33.585Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T11:30:37.027Z",
     "mode": "section"
   },
   "interactionStates": [
@@ -55,8 +61,22 @@
       "state": "changed",
       "action": "click",
       "selector": "#shopify-section-template--15527145701434__79582f51-5736-4bff-b870-bba69393ad36 .product_tab_wrapper--tab-title ul.tabs li:nth-child(2) a",
+      "viewports": [
+        "768",
+        "1440"
+      ],
       "capture": false,
-      "not": "Additional Information — ul.tabs li:nth-child(2) a"
+      "not": "768/1440 yan sekmeler. 375 ul.tabs 0×0 display:none."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--15527145701434__79582f51-5736-4bff-b870-bba69393ad36 .tabs-content li:nth-child(2) .tab-content-title",
+      "viewports": [
+        "375"
+      ],
+      "capture": false,
+      "not": "375 accordion başlık Additional Information."
     },
     {
       "state": "changed",
@@ -66,5 +86,11 @@
       "etiket": "additional",
       "not": "Additional Information içeriği."
     }
-  ]
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "1440 sol dikey: Description (teal + çizgi) + lorem. 768 üst yatay aynı üç sekme. 375 accordion: Description açık (teal), Additional Information / Shipping kapalı.",
+    "changed": "Additional Information açık — başka lorem + 3 madde. 1440/768 sekme çizgisi Additional’a kayar. 375 Description kapanır, Additional teal açılır (Shipping kapalı)."
+  },
+  "interactionNote": "375 ul.tabs 0×0; .tabs-content li:nth-child(2) .tab-content-title. İlk koşu 375 missingStates; bir retry accordion."
 }
