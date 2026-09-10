@@ -15,7 +15,7 @@
 
 **Unlock:** Vendor ürün sayfası “Please enter password `1` to view demo.” Aynı host `/password` — public storefront-unlock. Başka host yok.
 
-**Durum:** Mod A walk + resmi 3vp (54/54, menu 1440 zero-size) · interact sırada  
+**Durum:** Mod A walk + resmi 3vp + interact (pixel-check) — **kapandı**  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -28,10 +28,11 @@
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` + `unlock-storefront.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **54** |
+| PNG | **213** (161 statik + 52 interact) |
 | Parallel | `observations/sports-equipment/`, `evidence/sports-equipment/`, `todo/sports-equipment.md`, `candidates/sports-equipment-leftovers.md`, unlock host satırı |
 
 **Kapsam satırı:**  
-`Sports Equipment · default · Sports-v-1-5-0-latest-updates-new / schema_name Sports 1.5.0 · theme_store_id null · shop sports-online-store-1.myshopify.com · Speedo Themes · password 1 · home→PDP basketball-sport-orange (handle veena-retailnet-hexagon-style-dumbbells)→PLP team-sports→/collections→search sport→cart→about-layout-1→contact-layout-1→faq→news+article→404 · 54 obs · 0 yeni şema · leftover: candidates/sports-equipment-leftovers.md`
+`Sports Equipment · default · Sports-v-1-5-0-latest-updates-new / schema_name Sports 1.5.0 · theme_store_id null · shop sports-online-store-1.myshopify.com · Speedo Themes · password 1 · home→PDP basketball-sport-orange (handle veena-retailnet-hexagon-style-dumbbells)→PLP team-sports→/collections→search sport→cart→about-layout-1→contact-layout-1→faq→news+article→404 · mega/search/menu/cart/PDP Color/tabs/FAQ/featured hover/PLP hover · 54 obs · 213 PNG · 0 yeni şema · leftover: candidates/sports-equipment-leftovers.md · missingStates: menu accordion + PLP Color Apply`
 
 ---
 
@@ -40,19 +41,19 @@
 | Şablon | Durum | 3vp |
 |---|---|---|
 | Home roster (announcement→footer) | [x] obs | [x] static |
-| Shop mega 1440 | [ ] interact | — |
-| Predictive search `basketball` | [ ] interact | — |
-| Mobile menu 375 + 768 | [ ] interact | — |
-| Cart drawer empty + filled + qty | [ ] interact | — |
-| PDP Color Mate Orange → Button Blue | [ ] interact | — |
-| Featured hover | [ ] interact | — |
-| PLP `/collections/team-sports` + filter | [x] obs | [x] static + interact sırada |
+| Shop mega 1440 | [x] interact | 6 image card |
+| Predictive search `ball` | [x] interact | PRODUCTS 375/768/1440 |
+| Mobile menu 375 + 768 | [x] interact | open var · accordion missingStates |
+| Cart drawer empty + filled + qty | [x] interact | $78 → $156 |
+| PDP Color Mate Orange → Button Blue | [x] interact | turuncu→mavi top · $78 |
+| Featured hover | [x] interact | 2. görsel · Quick shop yok |
+| PLP `/collections/team-sports` + filter | [x] obs + hover | Color Apply missingStates |
 | Collections `/collections` | [x] obs | [x] static |
 | Search `/search?q=sport` | [x] obs | [x] static |
-| Cart page empty + filled | [x] obs | [x] empty 3vp · filled interact sırada |
+| Cart page empty + filled | [x] interact | $78 → $156 |
 | About `/pages/about-layout-1` | [x] obs | [x] static |
 | Contact `/pages/contact-layout-1` (submit yok) | [x] obs | [x] static |
-| FAQ `/pages/faq` | [x] obs | [x] static · interact sırada |
+| FAQ `/pages/faq` | [x] interact | Q1+Q2 açık (allowMultipleOpen) |
 | News + known-for-its-up-to-date-news | [x] obs | [x] static |
 | 404 | [x] obs | [x] static |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
@@ -96,15 +97,15 @@
 
 | # | id | sayfa | Screenshot | Not | JSON | Done |
 |---|---|---|---|---|---|---|
-| 1–26 | home + overlays | home | [x] 3vp · menu 1440 skip | [x] | reuse | [ ] interact |
-| 27–35 | PDP main/tabs/video/IWT/trust/banner/FAQ/marquee | product-detail | [x] | [x] | reuse | [ ] interact |
-| 36–38 | banner + slider + PLP grid | collection | [x] | [x] | reuse | [ ] interact |
+| 1–26 | home + overlays | home | [x] 3vp · menu 1440 skip | [x] | reuse | [x] interact |
+| 27–35 | PDP main/tabs/video/IWT/trust/banner/FAQ/marquee | product-detail | [x] | [x] | reuse | [x] interact |
+| 36–38 | banner + slider + PLP grid | collection | [x] | [x] | reuse | [x] hover · Color missing |
 | 39 | collection-nav-grid | collections | [x] | [x] | reuse | [x] |
 | 40 | search-results | search | [x] | [x] | reuse | [x] |
-| 41 | cart-page-main | cart | [x] empty | [x] | reuse | [ ] interact |
+| 41 | cart-page-main | cart | [x] empty+filled+qty | [x] | reuse | [x] |
 | 42–48 | about-layout-1 | about-brand | [x] | [x] | reuse | [x] |
 | 49–51 | contact-layout-1 | contact | [x] | [x] | reuse | [x] |
-| 52–53 | FAQ banner + accordion | faq-support | [x] | [x] | reuse | [ ] interact |
+| 52–53 | FAQ banner + accordion | faq-support | [x] | [x] | reuse | [x] Q2 |
 | 54–55 | news + article | blog-* | [x] | [x] | reuse | [x] |
 | 56 | 404 | not-found | [x] | [x] | reuse | [x] |
 
@@ -119,7 +120,8 @@
 ## Evidence backlog
 
 - [x] Official 3vp static (`capture-observation.mjs`) — 161 PNG (menu 1440 zero-size skip)
-- [ ] Interact mega / search / menu / cart / PDP Color / FAQ / featured hover / PLP filter
-- [ ] PNG bak → stateFindings (şema değişmedi)
-- [ ] `node scripts/validate-schemas.mjs`
-- [ ] Email / account / checkout / newsletter submit — **yapılmayacak**
+- [x] Interact mega / search / menu / cart / PDP Color / tabs / FAQ / featured hover / PLP hover
+- [x] PNG bak → stateFindings (şema değişmedi)
+- [x] `node scripts/validate-schemas.mjs`
+- [x] Email / account / checkout / newsletter submit — **yapılmayacak**
+- [ ] PLP Color Apply + menu accordion — missingStates (üçüncü deneme yok)

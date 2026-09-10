@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--17923710812220__cb435de1-8958-455d-8843-8a9ef3413466",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/sports-equipment/default/faq-support/faq-collapsible-tabs.1440.png",
     "evidence/sports-equipment/default/faq-support/faq-collapsible-tabs.375.png",
     "evidence/sports-equipment/default/faq-support/faq-collapsible-tabs.768.png",
-    "evidence/sports-equipment/default/faq-support/faq-collapsible-tabs.1440.png"
+    "evidence/sports-equipment/default/faq-support/faq-collapsible-tabs.changed.q2.1440.png",
+    "evidence/sports-equipment/default/faq-support/faq-collapsible-tabs.changed.q2.375.png",
+    "evidence/sports-equipment/default/faq-support/faq-collapsible-tabs.changed.q2.768.png",
+    "evidence/sports-equipment/default/faq-support/faq-collapsible-tabs.initial.q1.1440.png",
+    "evidence/sports-equipment/default/faq-support/faq-collapsible-tabs.initial.q1.375.png",
+    "evidence/sports-equipment/default/faq-support/faq-collapsible-tabs.initial.q1.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "FREQUENTLY ASKED QUESTION accordion.",
@@ -23,7 +29,53 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-10T10:20:47.822Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T10:53:29.277Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sports-online-store-1.myshopify.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17923710812220__cb435de1-8958-455d-8843-8a9ef3413466",
+      "capture": true,
+      "etiket": "q1",
+      "not": "İlk soru açık olabilir"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-template--20640852508978__cb435de1-8958-455d-8843-8a9ef3413466-collapsible_row-2-template--17923710812220__cb435de1-8958-455d-8843-8a9ef3413466 > summary",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "etiket": "q2",
+      "not": "I LIKE MY STYLES BUT THEY DON’T FIT açılır"
+    }
+  ],
+  "stateFindings": {
+    "initial": "FREQUENTLY ASKED QUESTION. Sol görsel + sağ accordion. Q1 CAN I CHOOSE WHICH STYLES I WANT? açık (lorem). Q2–Q6 kapalı.",
+    "changed": "Q2 I LIKE MY STYLES BUT THEY DON'T FIT! da açık (lorem). Q1 açık kaldı — allowMultipleOpen. Diğerleri kapalı."
+  },
+  "missingStates": [],
+  "interactionNote": "HOW CAN I UPDATE ACCOUNT INFO tıklanmadı. Hesap formu yok."
 }

@@ -8,9 +8,12 @@
   "selector": "#shopify-section-template--17923710124092__product-grid",
   "evidenceSlug": "product-showcase-grid-plp",
   "evidence": [
+    "evidence/sports-equipment/default/collection/product-showcase-grid-plp.1440.png",
     "evidence/sports-equipment/default/collection/product-showcase-grid-plp.375.png",
     "evidence/sports-equipment/default/collection/product-showcase-grid-plp.768.png",
-    "evidence/sports-equipment/default/collection/product-showcase-grid-plp.1440.png"
+    "evidence/sports-equipment/default/collection/product-showcase-grid-plp.changed.color-black.375.png",
+    "evidence/sports-equipment/default/collection/product-showcase-grid-plp.changed.color-black.768.png",
+    "evidence/sports-equipment/default/collection/product-showcase-grid-plp.hover.kart-hover.1440.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Filters Color / Category / Availability / Price. FacetFiltersForm.",
@@ -23,7 +26,80 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-10T10:17:30.902Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T11:04:15.002Z"
+  },
+  "interactionStates": [
+    "initial",
+    "hover",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "hover",
+      "action": "goto",
+      "value": "https://sports-online-store-1.myshopify.com/collections/team-sports",
+      "capture": false
+    },
+    {
+      "state": "hover",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "hover",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17923710124092__product-grid",
+      "capture": false
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#product-grid .grid__item, #product-grid .card",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "kart-hover",
+      "not": "İlk kart hover"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Filter-filter\\.v\\.t\\.shopify\\.color-pattern-1",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "Color Black"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#FacetFiltersForm button:has-text('Apply'), #FacetFiltersForm [type='submit']",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "etiket": "color-black",
+      "not": "Black filtresi — 2 ürün beklenir"
+    }
+  ],
+  "stateFindings": {
+    "hover": "1440 ilk kart Ping pong Paddles & Sets: raket → kişi raket tutuyor + kalp / paylaş / sepet ikonları. Grid hâlâ 9 ürün. 375/768 hover çekilmedi."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "1440 Apply tıkı bir retry sonra da selector miss: #FacetFiltersForm button:has-text('Apply'), #FacetFiltersForm [type='submit']. color-black.1440.png yok. 375/768 color-black kareleri filtresiz 9 ürün (tık yalnız 1440’taydı). Üçüncü deneme yok."
+    }
+  ],
+  "interactionNote": "375/768 facet drawer ayrıca yoklanmadı. Color Black Apply bu temada görünür submit değil."
 }

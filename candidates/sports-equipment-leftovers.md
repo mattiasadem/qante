@@ -93,9 +93,9 @@ Karar: onay bekliyor
 ---
 
 ADAY: sports-equipment-you-may-like-empty-cart  
-Gerekçe: Boş `#CartDrawer` karesinde YOUR CART IS EMPTY + CONTINUE SHOPPING yanında YOU MAY LIKE (Basketball Sport Orange Add To Cart). Ayrı schema yok. Checkout / Log in tıklanmadı.  
+Gerekçe: Boş `#CartDrawer`: YOUR CART IS EMPTY + CONTINUE SHOPPING + YOU MAY LIKE (Basketball Sport Orange Add To Cart). Dolu 1440’ta YOU MAY LIKE merkez overlay (ürün listesi + Add To Cart); 375 drawer içinde kapalı accordion. Ayrı schema yok. Checkout / Log in tıklanmadı.  
 Örnekler: home `#CartDrawer`  
-Öneri: leftover — boş sepet önerisi  
+Öneri: leftover — boş/dolu sepet önerisi  
 Karar: onay bekliyor
 
 ---

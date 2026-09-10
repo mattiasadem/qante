@@ -8,9 +8,18 @@
   "selector": "#shopify-section-template--17923709993020__cart-items",
   "evidenceSlug": "cart-page-main",
   "evidence": [
+    "evidence/sports-equipment/default/cart/cart-page-main.1440.png",
     "evidence/sports-equipment/default/cart/cart-page-main.375.png",
     "evidence/sports-equipment/default/cart/cart-page-main.768.png",
-    "evidence/sports-equipment/default/cart/cart-page-main.1440.png"
+    "evidence/sports-equipment/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/sports-equipment/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/sports-equipment/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/sports-equipment/default/cart/cart-page-main.filled.dolu.1440.png",
+    "evidence/sports-equipment/default/cart/cart-page-main.filled.dolu.375.png",
+    "evidence/sports-equipment/default/cart/cart-page-main.filled.dolu.768.png",
+    "evidence/sports-equipment/default/cart/cart-page-main.initial.bos.1440.png",
+    "evidence/sports-equipment/default/cart/cart-page-main.initial.bos.375.png",
+    "evidence/sports-equipment/default/cart/cart-page-main.initial.bos.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Your cart. cart-footer sibling Estimated total. Checkout tıklanmadı.",
@@ -23,7 +32,63 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-10T10:15:16.816Z"
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T10:59:19.841Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sports-online-store-1.myshopify.com/cart",
+      "capture": true,
+      "etiket": "bos",
+      "not": "Boş sepet sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://sports-online-store-1.myshopify.com/products/veena-retailnet-hexagon-style-dumbbells",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--17923710976060__main, button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://sports-online-store-1.myshopify.com/cart",
+      "capture": true,
+      "etiket": "dolu",
+      "not": "Basketball satır"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], .quantity__button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "qty +1"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty. Continue Shopping. Have an account? Log in to check out faster.",
+    "filled": "Your cart. Basketball Sport Orange · Color Mate Orange · qty 1 · $78. Continue shopping sağda.",
+    "changed": "qty 2. Satır/toplam $156. Color Mate Orange aynı."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout / Log in tıklanmadı. cart-footer sibling (Estimated total) ayrı kutu — bu selector cart-items."
 }
