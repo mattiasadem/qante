@@ -25,5 +25,42 @@
     "mode": "section",
     "method": "margin-box+minPad8",
     "updatedAt": "2026-09-02T21:48:02.883Z"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-vintage.myshopify.com/products/beautiful-woman-wearing-ring",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--22740194066625__main",
+      "capture": true,
+      "etiket": "beden-8",
+      "not": "Size 8 seçili $65"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--22740194066625__main label[for=\"template--22740194066625__main-1-1\"]",
+      "capture": true,
+      "etiket": "beden-9",
+      "not": "Size 8→9. Fiyat probe'da $65 aynı; URL ?variant=…"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Buy It Now / Share tıklanmadı. Materials accordion ayrı changed yok."
 }
