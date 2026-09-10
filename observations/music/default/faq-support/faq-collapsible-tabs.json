@@ -1,0 +1,75 @@
+{
+  "observationId": "music.default.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "music",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "url": "https://musical-online-store.myshopify.com/pages/faq",
+  "selector": "#shopify-section-template--17181904240714__cb435de1-8958-455d-8843-8a9ef3413466",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/music/default/faq-support/faq-collapsible-tabs.1440.png",
+    "evidence/music/default/faq-support/faq-collapsible-tabs.375.png",
+    "evidence/music/default/faq-support/faq-collapsible-tabs.768.png",
+    "evidence/music/default/faq-support/faq-collapsible-tabs.changed.ikinci-acik.1440.png",
+    "evidence/music/default/faq-support/faq-collapsible-tabs.changed.ikinci-acik.375.png",
+    "evidence/music/default/faq-support/faq-collapsible-tabs.changed.ikinci-acik.768.png",
+    "evidence/music/default/faq-support/faq-collapsible-tabs.initial.ilk-acik.1440.png",
+    "evidence/music/default/faq-support/faq-collapsible-tabs.initial.ilk-acik.375.png",
+    "evidence/music/default/faq-support/faq-collapsible-tabs.initial.ilk-acik.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Frequently asked question. 4 details; ilki açık. Q1 Can I choose which instruments I want to learn?",
+  "delta": "collapsible-content. Q2 interact. Shopify.theme.name Music-v-1-5-0-latest-updates-new · schema_name Music · schema_version 1.5.0 · theme_store_id null · role main · id 135699103818 · shop musical-online-store.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock).",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://musical-online-store.myshopify.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17181904240714__cb435de1-8958-455d-8843-8a9ef3413466",
+      "capture": true,
+      "etiket": "ilk-acik",
+      "not": "Q1 açık (openFirst)"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Summary-template--20640852508978__cb435de1-8958-455d-8843-8a9ef3413466-collapsible_row-2-template--17181904240714__cb435de1-8958-455d-8843-8a9ef3413466",
+      "capture": true,
+      "etiket": "ikinci-acik",
+      "not": "Q2 I like my instruments, but they don't feel right for me anymore!"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Frequently asked question. Q1 “Can I choose which instruments I want to learn?” açık. Q2–Q4 kapalı.",
+    "changed": "Q2 “I like my instruments, but they don't feel right for me anymore!” açık. Q1 açık kaldı — çoklu açık. Q3–Q4 kapalı."
+  },
+  "missingStates": [],
+  "interactionNote": "İlk deneme details:nth-of-type(2) eşleşmedi (details .accordion içinde). İkinci: Summary-…collapsible_row-2. Form yok.",
+  "capture": {
+    "url": "https://musical-online-store.myshopify.com/pages/faq",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:27:15.887Z"
+  }
+}
