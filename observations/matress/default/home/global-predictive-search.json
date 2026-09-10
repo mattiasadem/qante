@@ -1,0 +1,126 @@
+{
+  "observationId": "matress.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "matress",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://mattress-online-store-1.myshopify.com/",
+  "selector": "details:has(#Search-In-Modal)",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/matress/default/home/global-predictive-search.375.png",
+    "evidence/matress/default/home/global-predictive-search.768.png",
+    "evidence/matress/default/home/global-predictive-search.initial.inline-bos.1440.png",
+    "evidence/matress/default/home/global-predictive-search.initial.modal-bos.375.png",
+    "evidence/matress/default/home/global-predictive-search.initial.modal-bos.768.png",
+    "evidence/matress/default/home/global-predictive-search.input.mattress.1440.png",
+    "evidence/matress/default/home/global-predictive-search.input.mattress.375.png",
+    "evidence/matress/default/home/global-predictive-search.input.mattress.768.png"
+  ],
+  "notlar": "details-modal.header__search. #Search-In-Modal name=q. İkinci predictive-search header-search_box. Submit yok.",
+  "delta": "Shopify.theme.name matress-v-1-5-0-latest-updates-new · schema_name Matress · schema_version 1.5.0 · theme_store_id null · role main · id 126821171258 · handle null · shop mattress-online-store-1.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock).",
+  "storefrontPassword": "1",
+  "capture": {
+    "url": "https://mattress-online-store-1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T11:31:50.954Z",
+    "mode": "viewport",
+    "prepareClick": "summary.header__icon--search"
+  },
+  "captureMode": "viewport",
+  "prepareClick": "summary.header__icon--search",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://mattress-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false,
+      "not": "375/768 modal ikon. 1440 ikon display 0 — inline #Search-In-Template."
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "details:has(#Search-In-Modal)",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "modal-bos",
+      "not": "Boş Search placeholder."
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "predictive-search.header-search_box",
+      "etiket": "inline-bos",
+      "not": "1440 modal yok; header-search_box 185×34. Modal uydurulmadı."
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "mattress",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mattress",
+      "not": "katalogSorgu mattress — SUGGESTIONS + PRODUCTS."
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Template",
+      "value": "mattress",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "predictive-search.header-search_box",
+      "etiket": "mattress",
+      "not": "1440 inline input. Dropdown büyürse viewport'ta görünür."
+    }
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "375/768: Search placeholder + X; modal hero üstünde. 1440 modal yok — header-search_box boş beyaz kutu (ikon 0×0).",
+    "input": "`mattress` → SUGGESTIONS (mattress, mattresses, lux mattress, zone spring mattress, COIR / HYBRID / INNERSPRING MATTRESSES) + PRODUCTS (Beautyrest Harmony Lux, Zinus Green Tea, Serta Classic) + Search for “mattress”. 375 liste dikey; 768/1440 iki kolon."
+  },
+  "interactionNote": "katalogSorgu mattress. 1440 #Search-In-Template / predictive-search.header-search_box — modal uydurulmadı. İlk koşuda 1440 ikon tıklaması patladı; bir retry inline fill."
+}
