@@ -21,7 +21,6 @@ Aynı chrome’u preset’te tekrar çekme (Allure drawer = diğer Prestige). Ye
 | Symmetry default | lookbook hotspot Heavy Rotation · customer-help FAQ size guide |
 | Sachue (Speedo) default | Shop disclosure 1440 · search `nail` · hamburger Shop drill · cart drawer+sayfa $26→$52 · PDP Multi Color · tabs NEW ARRIVALS · FAQ · announcement 768/1440 (375 next gizli) |
 | Andrea (Speedo) default | Shop mega 1440 6 kolon · search `cream` 8 PRODUCTS · cart drawer+sayfa $60→$120 · PDP Color Dirty Purple · tabs ADDITIONAL INFORMATION · FAQ Q2 · hamburger open missingStates |
-| Shine (Speedo) default | Shop mega 1440 6 kolon · search `cream` PRODUCTS · cart drawer+sayfa $89→$178 · PDP Color White Chocolate 350→290 · FAQ Q1+Q2 · PLP hover wishlist/compare · hamburger statik open |
 | Digital (Speedo) default | SHOP mega görsel kart · search `course` 1440 · cart drawer+sayfa $89→$178 · PDP tabs · FAQ allowMultipleOpen · PLP hover; menu/search-mobile/empty-drawer leftover |
 | Elektro (Speedo) default | Shop mega 6 kart 1440 · search `speaker` 1440 · cart drawer+sayfa $310→$620 · PDP Color Black · menu/FAQ/hover/BA/search375 missing |
 | Lingerie (Speedo) default | Shop+Category mega 1440 · search `bikini` · hamburger (Shop link leftover) · cart drawer+sayfa $80→$160 · PDP White→Orange · FAQ Q2 |
@@ -110,7 +109,7 @@ Temsilci only. Form gönder / sürükleme / chrome tekrarı yok.
 - [x] Hyper `blog-list-main` — Advice & Reviews tagged URL
 - [x] Allure `editorial-images-scroll` — 375 #1 DESIGN → #2 COMMITMENTS
 - [x] Hyper `collection-nav-slider` — görünür ok yok; kartlar koleksiyona gider
-- [x] Nexvo / Impact `comparison-quick-table` — Impact swatch PDP’ye kaçar; Nexvo statik; Hyper PDP swatch dekoratif
+- [x] Nexvo / Impact `comparison-quick-table` — Impact swatch PDP'ye kaçar; Nexvo statik; Hyper PDP swatch dekoratif
 - [x] Ceramide `media-shop-the-feed` — play timeout (üçüncü yok; not duruyor)
 
 ---
