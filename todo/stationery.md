@@ -29,7 +29,7 @@ shop `book-online-store-2.myshopify.com` · locale `en`
 | Parallel | `observations/stationery/` · `evidence/stationery/` · `todo/stationery.md` · `candidates/stationery-leftovers.md` |
 
 **Kapsam satırı:**  
-`Stationery · default · Stationary & Office Supplies V-1.5.0 / schema_name Stationary Supplies 1.5.0 · theme_store_id null · Speedo third-party · password 1 · home→PDP→PLP→collection-list→search→cart→blog→about→contact→FAQ→404 · 0 yeni şema · leftover: candidates/stationery-leftovers.md`
+`Stationery · default · Stationary & Office Supplies V-1.5.0 / schema_name Stationary Supplies 1.5.0 · theme_store_id null · Speedo third-party · password 1 · home→PDP→PLP→collection-list→search→cart→blog→about→contact→FAQ→404 · 39 obs · 117 static PNG · 0 yeni şema · leftover: candidates/stationery-leftovers.md`
 
 ---
 
@@ -37,21 +37,21 @@ shop `book-online-store-2.myshopify.com` · locale `en`
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (header→footer) | [ ] obs | [ ] |
-| Cart drawer empty | [ ] obs | [ ] |
-| Predictive search | [ ] obs | [ ] |
-| Menu drawer (hamburger) | [ ] obs | [ ] |
-| PDP `/products/green-plain-book-cover` | [ ] obs | [ ] |
-| PLP `/collections/all` | [ ] obs | [ ] |
-| Collection index `/collections` | [ ] obs | [ ] |
-| Search `/search?q=pen` | [ ] obs | [ ] |
-| Cart `/cart` empty | [ ] obs | [ ] |
-| Blog list `/blogs/news` | [ ] obs | [ ] |
-| Blog post office-stationery-organization | [ ] obs | [ ] |
-| About `/pages/about-layout-1` | [ ] obs | [ ] |
-| Contact `/pages/contact` (submit yok) | [ ] obs | [ ] |
-| FAQ `/pages/faq` | [ ] obs | [ ] |
-| 404 unknown page | [ ] obs | [ ] |
+| Home roster (header→footer) | [x] obs | [x] |
+| Cart drawer empty | [x] obs | [x] |
+| Predictive search | [x] obs | [x] static kapalı |
+| Menu drawer (hamburger) | [x] obs | [x] 375 açık |
+| PDP `/products/green-plain-book-cover` | [x] obs | [x] |
+| PLP `/collections/all` | [x] obs | [x] |
+| Collection index `/collections` | [x] obs | [x] |
+| Search `/search?q=pen` | [x] obs | [x] |
+| Cart `/cart` empty | [x] obs | [x] |
+| Blog list `/blogs/news` | [x] obs | [x] |
+| Blog post office-stationery-organization | [x] obs | [x] |
+| About `/pages/about-layout-1` | [x] obs | [x] |
+| Contact `/pages/contact` (submit yok) | [x] obs | [x] |
+| FAQ `/pages/faq` | [x] obs | [x] |
+| 404 unknown page | [x] obs | [x] |
 | Email / account / checkout / newsletter submit | ⛔ PII | — |
 
 ---
@@ -103,6 +103,6 @@ shop `book-online-store-2.myshopify.com` · locale `en`
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
+- [x] Official 3vp static (`capture-observation.mjs`) — 39/39 · 117 PNG
 - [ ] Official interact (`capture-interaction.mjs`)
 - [ ] `node scripts/validate-schemas.mjs`

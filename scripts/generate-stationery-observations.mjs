@@ -354,11 +354,13 @@ const items = [
   }),
   obs({
     sayfa: "about-brand",
-    schemaId: "editorial-rich-text",
+    schemaId: "editorial-image-with-text-overlay",
     url: ABOUT,
     selector:
       "#shopify-section-template--16396373459038__ae0f69b9-8d77-4132-bc45-5023d341eb82",
-    notlar: "Finding Unique Items + lorem. 560px.",
+    notlar:
+      "Finding Unique Items + lorem, tam genişlik görsel üstünde yarı saydam metin bandı.",
+    deltaExtra: "Kare overlay; editorial-rich-text uydurulmadı.",
   }),
   obs({
     sayfa: "about-brand",

@@ -53,28 +53,23 @@ for (const rel of observations) {
       await new Promise((r) => setTimeout(r, RETRY_WAIT_MS));
     }
     try {
-      const out = execSync(`node capture-observation.mjs ${abs}`, {
+      execSync(`node capture-observation.mjs ${abs}`, {
         cwd: path.join(root, "scripts"),
         encoding: "utf8",
         timeout: 300000,
+        stdio: ["ignore", "pipe", "pipe"],
       });
-      const lines = out.trim().split("\n");
-      let parsed = null;
-      for (let i = lines.length - 1; i >= 0; i--) {
-        try {
-          parsed = JSON.parse(lines[i]);
-          break;
-        } catch {
-          /* next */
-        }
-      }
-      const pngs = (parsed?.results || []).filter((r) => r.file).length;
+      const pngs = ["375", "768", "1440"].filter((vp) =>
+        fs.existsSync(path.join(evDir, `${slug}.${vp}.png`))
+      ).length;
       if (pngs >= 3) {
         results.push({ rel, ok: true, pngs });
         captured = true;
+        process.stdout.write(`    ok ${pngs} vp\n`);
       } else {
-        process.stdout.write(`    only ${pngs}/3\n`);
-        if (attempt === MAX_RETRIES) results.push({ rel, ok: false, error: `only ${pngs}/3` });
+        process.stdout.write(`    only ${pngs}/3 on disk\n`);
+        if (attempt === MAX_RETRIES)
+          results.push({ rel, ok: false, error: `only ${pngs}/3` });
       }
     } catch (e) {
       process.stdout.write(`    err ${String(e.message || e).slice(0, 220)}\n`);

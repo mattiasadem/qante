@@ -34,6 +34,7 @@
 
 ## Aday (yeni şema yok)
 
+- About `ae0f69b9` Finding Unique Items → **rematch** `editorial-image-with-text-overlay` (görsel üstü metin bandı).
 - **page-title-parallax** — 300px başlık bandı (FAQ / About).
 - **image-with-icons** — görsel + dikey ikon listesi (about).
 - **team-mosaic** — 3 kişi kartı (about). Taksonomide team yok.
