@@ -12,6 +12,7 @@
 
 export const PUBLIC_DEMO_PASSWORDS = {
   "adlwin-store.myshopify.com": "1",
+  "backpack-online-store-2.myshopify.com": "1",
   "beverages-online-store.myshopify.com": "1",
   "bicycle-online-store-1.myshopify.com": "1",
   "book-online-store-1.myshopify.com": "1",
@@ -37,7 +38,9 @@ export const PUBLIC_DEMO_PASSWORDS = {
   "jewelry-online-shop-4.myshopify.com": "1",
   "jewelry-online-shop1.myshopify.com": "1",
   "jewelry-online-shop2.myshopify.com": "1",
+  "kitchen-ware-online-store.myshopify.com": "1",
   "luxury-handmade-ultimate.myshopify.com": "1",
+  "mattress-online-store-1.myshopify.com": "1",
   "medical-online-store.myshopify.com": "1",
   "midnight-perfume.myshopify.com": "1",
   "pandora-beauty-store.myshopify.com": "1",
@@ -59,7 +62,6 @@ export const PUBLIC_DEMO_PASSWORDS = {
   "shoes-online-store-1.myshopify.com": "1",
   "socks-online-store-1.myshopify.com": "1",
   "sonix-electronics-store-2.myshopify.com": "1",
-  "sports-online-store-2.myshopify.com": "1",
   "speedo-candles-store.myshopify.com": "1",
   "speedo-electro-dropship.myshopify.com": "1",
   "speedo-nutronix.myshopify.com": "1",
