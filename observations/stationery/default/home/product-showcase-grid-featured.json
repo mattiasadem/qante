@@ -1,0 +1,69 @@
+{
+  "observationId": "stationery.default.home.product-showcase-grid-featured",
+  "schemaId": "product-showcase-grid-featured",
+  "kaynak": "stationery",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://book-online-store-2.myshopify.com/",
+  "selector": "#shopify-section-template--16396373393502__0617c2f2-69ec-4df8-a506-b2616d4e1db4",
+  "evidenceSlug": "product-showcase-grid-featured",
+  "evidence": [
+    "evidence/stationery/default/home/product-showcase-grid-featured.1440.png",
+    "evidence/stationery/default/home/product-showcase-grid-featured.375.png",
+    "evidence/stationery/default/home/product-showcase-grid-featured.768.png",
+    "evidence/stationery/default/home/product-showcase-grid-featured.hover.kart-hover.1440.png",
+    "evidence/stationery/default/home/product-showcase-grid-featured.hover.kart-hover.375.png",
+    "evidence/stationery/default/home/product-showcase-grid-featured.hover.kart-hover.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "featured-product-section class ama ızgara: Best Seller. Green Plain Book Cover $60 NEW, Colored pencil Crayon $50→$45 SALE, Hello Kitty Pencil case −50%.",
+  "delta": "Tema class featured-product-section; tek ürün buy-box değil, koleksiyon ızgarası. Şema product-showcase-featured uydurulmadı. Shopify.theme.name Stationary & Office Supplies  V-1.5.0 · schema_name Stationary Supplies · schema_version 1.5.0 · theme_store_id null · role main · id 131641770078 · shop book-online-store-2.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock). Platform adı dataBindings'e yazılmadı.",
+  "capture": {
+    "url": "https://book-online-store-2.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:19:44.409Z"
+  },
+  "interactionStates": [
+    "initial",
+    "hover"
+  ],
+  "interactionSteps": [
+    {
+      "state": "hover",
+      "action": "goto",
+      "value": "https://book-online-store-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "hover",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "hover",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--16396373393502__0617c2f2-69ec-4df8-a506-b2616d4e1db4",
+      "capture": false
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#shopify-section-template--16396373393502__0617c2f2-69ec-4df8-a506-b2616d4e1db4 .product-card-wrapper .card__inner",
+      "capture": true,
+      "etiket": "kart-hover",
+      "not": "İkinci görsel / quick-add çıkıyor mu"
+    }
+  ],
+  "stateFindings": {
+    "hover": "Best Seller ilk kart (Green Plain Book Cover): yeşil kapak → bej ikinci görsel; sol/sağ ok; altta wishlist / compare / quick-view (göz) ikonları. 1440/768/375 kareler değişti."
+  },
+  "missingStates": [],
+  "interactionNote": "375/768'de Playwright hover ikinci görsel + ikon açtı; parmakta hover yok — kare tutuldu, doğrulanamadı. Quick-view / wishlist / compare ikonları tıklanmadı. Yeni şema yok (hizliEkle / quickView / okGoster zaten var)."
+}
