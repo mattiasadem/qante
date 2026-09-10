@@ -7,7 +7,12 @@
   "url": "https://wineshop-online-store.myshopify.com/",
   "selector": "#shopify-section-template--18166097215644__0617c2f2-69ec-4df8-a506-b2616d4e1db4",
   "evidenceSlug": "product-showcase-grid-featured",
-  "evidence": [],
+  "evidence": [
+    "evidence/wine/default/home/product-showcase-grid-featured.1440.png",
+    "evidence/wine/default/home/product-showcase-grid-featured.375.png",
+    "evidence/wine/default/home/product-showcase-grid-featured.768.png",
+    "evidence/wine/default/home/product-showcase-grid-featured.hover.kart-hover.1440.png"
+  ],
   "notlar": "Başlık yok. Ürün şeridi: Rustic 2020 White Wine $325/$225 · Winter Spice 2021 Rosé · Amarone 2012. preorder/30% rozet + Add to cart.",
   "delta": "Shopify.theme.name Wine-v-1-5-0-new · schema_name Wine · schema_version 1.5.0 · theme_store_id null · role main · id 142703067292 · shop wineshop-online-store.myshopify.com · Speedo Themes third-party OS 2.0 (Theme Store resmi değil). Vendor-published demo password 1 (public storefront unlock). Official host wineshop-online-store.myshopify.com only.",
   "storefrontPassword": "1",
@@ -18,7 +23,53 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": ""
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:24:25.794Z",
+    "mode": "section"
+  },
+  "interactionStates": [
+    "initial",
+    "hover"
+  ],
+  "interactionSteps": [
+    {
+      "state": "hover",
+      "action": "goto",
+      "value": "https://wineshop-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "hover",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "hover",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--18166097215644__0617c2f2-69ec-4df8-a506-b2616d4e1db4",
+      "capture": false
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#shopify-section-template--18166097215644__0617c2f2-69ec-4df8-a506-b2616d4e1db4 .card__media",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "kart-hover",
+      "not": "İkinci görsel / quick add. 375/768 hover yok sayılabilir."
+    }
+  ],
+  "stateFindings": {
+    "hover": "1440 ilk kart (Rustic 2020 White Wine): ikinci görsel (el + kadeh) + wishlist/compare ikonları. Kart metni/fiyat aynı. Yalnız renk/gölge değil — medya değişti."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "375/768 hover çekilmedi (parmakta hover yok). 1440 ikinci görsel kanıtlı."
+    }
+  ],
+  "interactionNote": "375/768 hover doğrulanamadı, silinmedi. Hover’dan şema alanı uydurulmadı (ikinci görsel token/medya)."
 }

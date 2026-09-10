@@ -7,7 +7,20 @@
   "url": "https://wineshop-online-store.myshopify.com/cart",
   "selector": "#shopify-section-template--18166096822428__cart-items",
   "evidenceSlug": "cart-page-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/wine/default/cart/cart-page-main.1440.png",
+    "evidence/wine/default/cart/cart-page-main.375.png",
+    "evidence/wine/default/cart/cart-page-main.768.png",
+    "evidence/wine/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/wine/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/wine/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/wine/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/wine/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/wine/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/wine/default/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/wine/default/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/wine/default/cart/cart-page-main.initial.cart-bos.768.png"
+  ],
   "notlar": "Your cart is empty + Continue Shopping + Have an account? Log in. cart-footer boşken h=0.",
   "delta": "Shopify.theme.name Wine-v-1-5-0-new · schema_name Wine · schema_version 1.5.0 · theme_store_id null · role main · id 142703067292 · shop wineshop-online-store.myshopify.com · Speedo Themes third-party OS 2.0 (Theme Store resmi değil). Vendor-published demo password 1 (public storefront unlock). Official host wineshop-online-store.myshopify.com only.",
   "storefrontPassword": "1",
@@ -18,7 +31,64 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": ""
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:23:34.529Z",
+    "mode": "section"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://wineshop-online-store.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş cart sayfası."
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://wineshop-online-store.myshopify.com/products/ridge-vineyard-bohemian-bliss-natural-red-wine",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://wineshop-online-store.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "Dolu cart. Checkout tıklanmadı."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet 2."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty · Continue Shopping · Have an account? Log in to checkout faster. cart-footer boşken h=0.",
+    "filled": "Your cart · Ridge Vineyard Bohemian Bliss Natural Red Wine qty 1 $520 · Continue shopping. 375 aynı satır.",
+    "changed": "qty 2 · total $1,040. Birim fiyat $520 kaldı."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout / Log in tıklanmadı."
 }

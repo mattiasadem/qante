@@ -5,9 +5,17 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://wineshop-online-store.myshopify.com/",
-  "selector": "#shopify-section-sections--18166098100380__header",
+  "selector": "header.header",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
+  "evidence": [
+    "evidence/wine/default/home/navigation-header-mega.1440.png",
+    "evidence/wine/default/home/navigation-header-mega.375.png",
+    "evidence/wine/default/home/navigation-header-mega.768.png",
+    "evidence/wine/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/wine/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/wine/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/wine/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
   "notlar": "Logo Wine. Nav: Shop / Bestseller / Themes / Shop By / Collections. details#Details-HeaderMenu-1…5 + MegaMenu-Content-*. Sağ wishlist 0 + compare 0 + Log in + Cart. 375 hamburger summary.header__icon--menu. Account tıklanmadı.",
   "delta": "Shopify.theme.name Wine-v-1-5-0-new · schema_name Wine · schema_version 1.5.0 · theme_store_id null · role main · id 142703067292 · shop wineshop-online-store.myshopify.com · Speedo Themes third-party OS 2.0 (Theme Store resmi değil). Vendor-published demo password 1 (public storefront unlock). Official host wineshop-online-store.myshopify.com only.",
   "storefrontPassword": "1",
@@ -18,8 +26,55 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": ""
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:35:00.038Z",
+    "mode": "viewport"
   },
-  "captureMode": "viewport"
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://wineshop-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Shop mega kapalı. 375/768 hamburger ayrı global-menu-drawer."
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-1 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "Hover Shop summary — click Shop /collections/all sayfaya gider.",
+      "value": 1800
+    }
+  ],
+  "stateFindings": {
+    "initial": "375/768: hamburger + WINE logo + arama + sepet (768’de hesap da). 1440: Shop / Bestseller / Themes / Shop By / Collections; ortada WINE; sağda arama + wishlist 0 + hesap + sepet. Mega kapalı — hero WELCOME TO OUR WINE YARD FACTORY görünür.",
+    "open": "1440 Shop hover: Shop alt çizgili. Panel 6 görselli koleksiyon kartı — Red Wine · Best Choice · Super Green Wines · Super Detox Wine · Rose Wine · White Wine. URL home. 375/768 mega yok (hamburger ayrı drawer)."
+  },
+  "missingStates": [],
+  "interactionNote": "Click Shop /collections/all gider. Account/wishlist tıklanmadı. Capture host header.header (shopify-section 1px)."
 }

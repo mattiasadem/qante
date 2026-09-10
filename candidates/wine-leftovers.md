@@ -94,3 +94,19 @@ Gerekçe: `summary.header__icon--menu` 1440’te 0×0 beklenir. Open yalnız 375
 Örnekler: home hamburger  
 Öneri: leftover — masaüstü drawer host yok  
 Karar: onay bekliyor
+
+---
+
+ADAY: wine-cart-you-may-like  
+Gerekçe: Cart drawer boş ve dolu hâlinde YOU MAY LIKE (Dolcetto 2018… / dolu 1440 overlay). Upsell; `global-cart-drawer` şemasına alan eklenmedi.  
+Örnekler: `#CartDrawer` empty + filled  
+Öneri: leftover — drawer upsell  
+Karar: onay bekliyor
+
+---
+
+ADAY: wine-plp-mobile-filters  
+Gerekçe: 375 PLP `Filters` butonu; Dry checkbox `Filter-filter.v.t.shopify.wine-sweetness-mobile-1`. 1440 sidebar `changed` kanıtlı; 375/768 drawer çekilmedi.  
+Örnekler: `/collections/red-wine`  
+Öneri: leftover — mobil filtre  
+Karar: onay bekliyor

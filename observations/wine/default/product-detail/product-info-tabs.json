@@ -7,7 +7,17 @@
   "url": "https://wineshop-online-store.myshopify.com/products/ridge-vineyard-bohemian-bliss-natural-red-wine",
   "selector": "#shopify-section-template--18166097936540__79582f51-5736-4bff-b870-bba69393ad36",
   "evidenceSlug": "product-info-tabs",
-  "evidence": [],
+  "evidence": [
+    "evidence/wine/default/product-detail/product-info-tabs.1440.png",
+    "evidence/wine/default/product-detail/product-info-tabs.375.png",
+    "evidence/wine/default/product-detail/product-info-tabs.768.png",
+    "evidence/wine/default/product-detail/product-info-tabs.changed.shipping.1440.png",
+    "evidence/wine/default/product-detail/product-info-tabs.changed.shipping.375.png",
+    "evidence/wine/default/product-detail/product-info-tabs.changed.shipping.768.png",
+    "evidence/wine/default/product-detail/product-info-tabs.initial.description.1440.png",
+    "evidence/wine/default/product-detail/product-info-tabs.initial.description.375.png",
+    "evidence/wine/default/product-detail/product-info-tabs.initial.description.768.png"
+  ],
   "notlar": "Description / Additional Information / Shipping And Delivery. İlk sekme Bohemian bliss metni.",
   "delta": "Shopify.theme.name Wine-v-1-5-0-new · schema_name Wine · schema_version 1.5.0 · theme_store_id null · role main · id 142703067292 · shop wineshop-online-store.myshopify.com · Speedo Themes third-party OS 2.0 (Theme Store resmi değil). Vendor-published demo password 1 (public storefront unlock). Official host wineshop-online-store.myshopify.com only.",
   "storefrontPassword": "1",
@@ -18,7 +28,36 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": ""
-  }
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:35:55.751Z",
+    "mode": "section"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://wineshop-online-store.myshopify.com/products/ridge-vineyard-bohemian-bliss-natural-red-wine",
+      "capture": true,
+      "etiket": "description",
+      "not": "Description açık."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#product_tab-template--18166097936540__79582f51-5736-4bff-b870-bba69393ad36 .tabs a[href=\"#tab3\"]",
+      "capture": true,
+      "etiket": "shipping",
+      "not": "Shipping And Delivery sekmesi. Beklenen: Description alt çizgi kalkar, kargo metni."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Description kırmızı alt çizgi. Metin: Discover a true taste of Bohemian bliss with Ridge Vineyard's Natural Red Wine…. Additional Information + Shipping And Delivery. 375 sekmeler dikey.",
+    "changed": "Shipping And Delivery kırmızı alt çizgi; Description çizgisi kalktı. Shipping: processing 1–2 business days; delivery times vary. Returns: exchange within 10 days. 375/768 aynı metin."
+  },
+  "missingStates": [],
+  "interactionNote": "Varyant yok. Click a[href=#tab3]. Additional Information tıklanmadı."
 }

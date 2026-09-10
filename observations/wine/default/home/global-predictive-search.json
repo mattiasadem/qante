@@ -7,7 +7,17 @@
   "url": "https://wineshop-online-store.myshopify.com/",
   "selector": "details-modal.header__search",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/wine/default/home/global-predictive-search.1440.png",
+    "evidence/wine/default/home/global-predictive-search.375.png",
+    "evidence/wine/default/home/global-predictive-search.768.png",
+    "evidence/wine/default/home/global-predictive-search.input.arama-wine.1440.png",
+    "evidence/wine/default/home/global-predictive-search.input.arama-wine.375.png",
+    "evidence/wine/default/home/global-predictive-search.input.arama-wine.768.png",
+    "evidence/wine/default/home/global-predictive-search.open.arama-acik.1440.png",
+    "evidence/wine/default/home/global-predictive-search.open.arama-acik.375.png",
+    "evidence/wine/default/home/global-predictive-search.open.arama-acik.768.png"
+  ],
   "notlar": "summary.header__icon--search → #Search-In-Modal. Kapalı predictive-search 0px. katalogSorgu wine.",
   "delta": "Shopify.theme.name Wine-v-1-5-0-new · schema_name Wine · schema_version 1.5.0 · theme_store_id null · role main · id 142703067292 · shop wineshop-online-store.myshopify.com · Speedo Themes third-party OS 2.0 (Theme Store resmi değil). Vendor-published demo password 1 (public storefront unlock). Official host wineshop-online-store.myshopify.com only.",
   "storefrontPassword": "1",
@@ -18,9 +28,67 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": ""
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:18:14.953Z",
+    "mode": "viewport",
+    "prepareClick": "summary.header__icon--search"
   },
   "captureMode": "viewport",
-  "prepareClick": "summary.header__icon--search"
+  "prepareClick": "summary.header__icon--search",
+  "interactionStates": [
+    "initial",
+    "input",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://wineshop-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "details-modal.header__search details",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": ".search-modal",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "selector": "#Search-In-Modal",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik",
+      "not": "Search modal forceOpen."
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "wine",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-wine",
+      "not": "katalogSorgu wine — öneri/ürün listesi."
+    }
+  ],
+  "stateFindings": {
+    "open": "Boş Search alanı + kapat. Ürün listesi yok. Hero arkada (WELCOME TO OUR WINE YARD FACTORY).",
+    "input": "Search=wine. PRODUCTS: Rustic 2020 White Wine · Oasis 2020 Red Wine · Ridge Vineyard Bohemian Bliss Natural Red Wine · Royal Reserve 2023 White Wine · Dolcetto 2020 White Wine · Napa Nectar 2018 Red Wine 750ml · Ridge Vineyard Whispering Willow · Dolcetto 2018 Natural Red Wine · Hacienda California Riesling · Penfolds Bin 8… + Search for “wine”. 375/768 aynı liste."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu wine. Account yok. Sonuç satırına tıklanmadı."
 }
