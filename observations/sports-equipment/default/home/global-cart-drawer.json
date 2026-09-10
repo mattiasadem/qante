@@ -1,0 +1,126 @@
+{
+  "observationId": "sports-equipment.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "sports-equipment",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://sports-online-store-1.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/sports-equipment/default/home/global-cart-drawer.1440.png",
+    "evidence/sports-equipment/default/home/global-cart-drawer.375.png",
+    "evidence/sports-equipment/default/home/global-cart-drawer.768.png",
+    "evidence/sports-equipment/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/sports-equipment/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/sports-equipment/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/sports-equipment/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/sports-equipment/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/sports-equipment/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/sports-equipment/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/sports-equipment/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/sports-equipment/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "cart-drawer. Opener #cart-icon-bubble. Checkout tıklanmadı.",
+  "delta": "Shopify.theme.name Sports-v-1-5-0-latest-updates-new · schema_name Sports · schema_version 1.5.0 · theme_store_id null · role main · id 139796873276 · shop sports-online-store-1.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock).",
+  "captureMode": "viewport",
+  "prepareClick": "#cart-icon-bubble",
+  "capture": {
+    "url": "https://sports-online-store-1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T10:57:01.368Z",
+    "prepareClick": "#cart-icon-bubble"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sports-online-store-1.myshopify.com/",
+      "capture": false,
+      "not": "/cart/clear yok"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "#CartDrawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer + YOU MAY LIKE leftover"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://sports-online-store-1.myshopify.com/products/veena-retailnet-hexagon-style-dumbbells",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--17923710976060__main, button[name='add']",
+      "capture": false,
+      "not": "Basketball Sport Orange $78 Mate Orange"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC drawer açar"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "qty 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty · Continue Shopping · Have an account? Log in to check out faster. Altta YOU MAY LIKE + Basketball Sport Orange $78 Add To Cart.",
+    "filled": "YOUR CART. Basketball Sport Orange · Color Mate Orange · qty 1 · $78. Estimated total $78 USD. Free Shipping $100 / Express $150. Check Out. 1440 ortada YOU MAY LIKE overlay listesi; 375 drawer içinde YOU MAY LIKE accordion kapalı.",
+    "changed": "Aynı satır qty 2 · satır/toplam $156. Check Out duruyor."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout / Log in tıklanmadı. YOU MAY LIKE boş drawer dibinde; dolu 1440’ta merkez overlay — leftover."
+}

@@ -1,0 +1,76 @@
+{
+  "observationId": "yoga.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "yoga",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://sports-online-store-2.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/yoga/default/home/global-menu-drawer.1440.png",
+    "evidence/yoga/default/home/global-menu-drawer.768.png",
+    "evidence/yoga/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "notlar": "#menu-drawer. Hamburger summary.header__icon--menu (1440 w/h 0). 375/768 open interact.",
+  "delta": "Shopify.theme.name Yoga-and-meditation-v-1-5-0-new · schema_name Yoga and meditation · schema_version 1.5.0 · theme_store_id null · role main · id 126822776890 · handle \"null\" · shop sports-online-store-2.myshopify.com · locale en · country US · currency USD · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock, same host). Platform adı dataBindings'e yazılmadı.",
+  "storefrontPassword": "1",
+  "capture": {
+    "url": "https://sports-online-store-2.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:33:10.423Z",
+    "mode": "viewport"
+  },
+  "captureMode": "viewport",
+  "prepareClick": "header-drawer summary.header__icon--menu, #Details-menu-drawer-container > summary",
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://sports-online-store-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#menu-drawer",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "forceOpen — summary 0×0. Yazılı Shop <a> tıklama."
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375: #menu-drawer zero-size, PNG yazılmadı. Hamburger summary 0×0; click viewport dışı kaldı."
+    },
+    {
+      "state": "open",
+      "sebep": "768: forceOpen PNG kapalı anasayfa ile aynı (Fitness On Toast, drawer yok). İkinci deneme; üçüncü yok."
+    }
+  ],
+  "stateFindings": {
+    "open": "375 PNG yok (zero-size). 768 forceOpen karesi kapalı homepage (Fitness On Toast) — drawer yok."
+  },
+  "interactionNote": "Hamburger summary.header__icon--menu 0×0. Yazılı Shop <a> tıklanmadı. Drawer grammar mevcut — yeni şema yok."
+}

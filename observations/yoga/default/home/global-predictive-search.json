@@ -1,0 +1,81 @@
+{
+  "observationId": "yoga.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "yoga",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://sports-online-store-2.myshopify.com/",
+  "selector": "details-modal.header__search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/yoga/default/home/global-predictive-search.1440.png",
+    "evidence/yoga/default/home/global-predictive-search.375.png",
+    "evidence/yoga/default/home/global-predictive-search.768.png",
+    "evidence/yoga/default/home/global-predictive-search.input.arama-yoga.1440.png",
+    "evidence/yoga/default/home/global-predictive-search.input.arama-yoga.375.png",
+    "evidence/yoga/default/home/global-predictive-search.input.arama-yoga.768.png",
+    "evidence/yoga/default/home/global-predictive-search.open.arama-bos.1440.png",
+    "evidence/yoga/default/home/global-predictive-search.open.arama-bos.375.png",
+    "evidence/yoga/default/home/global-predictive-search.open.arama-bos.768.png"
+  ],
+  "notlar": "details-modal.header__search · #Search-In-Modal. Katalog sorgu yoga.",
+  "delta": "Shopify.theme.name Yoga-and-meditation-v-1-5-0-new · schema_name Yoga and meditation · schema_version 1.5.0 · theme_store_id null · role main · id 126822776890 · handle \"null\" · shop sports-online-store-2.myshopify.com · locale en · country US · currency USD · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock, same host). Platform adı dataBindings'e yazılmadı.",
+  "storefrontPassword": "1",
+  "capture": {
+    "url": "https://sports-online-store-2.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:15:20.741Z",
+    "mode": "viewport"
+  },
+  "captureMode": "viewport",
+  "prepareClick": "details-modal.header__search summary, summary.header__icon--search",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sports-online-store-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "summary.header__icon--search, details-modal.header__search summary",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Boş Search overlay. Input #Search-In-Modal."
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "yoga",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-yoga",
+      "not": "katalogSorgu yoga (Yoga & Pilates Mats). Chair değil."
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "input",
+    "open"
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "open": "375/768/1440 Search overlay: boş Search kutusu + X, arkada dimmed home. Sonuç listesi yok.",
+    "input": "Search kutusunda yoga. SUGGESTIONS: yoga · yoga core training · Yoga Cushions · Yoga Prop. PRODUCTS: PoseRight EVA Yoga Block · Black Yoga Headband · Yoga & Pilates Mats · Balance Board for Yoga & Core Training · Premium Resistance Stretch Band · High Comfort Plain blue leggings. Search for \"yoga\". Submit tıklanmadı."
+  },
+  "interactionNote": "katalogSorgu yoga (Yoga & Pilates Mats). Chair değil. #Search-In-Modal. 375 overlay de sonuç verdi."
+}

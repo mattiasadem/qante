@@ -1,0 +1,85 @@
+{
+  "observationId": "music.default.collection.product-showcase-grid-plp",
+  "schemaId": "product-showcase-grid-plp",
+  "kaynak": "music",
+  "preset": "default",
+  "sayfa": "collection",
+  "url": "https://musical-online-store.myshopify.com/collections/all",
+  "selector": "#shopify-section-template--17181903552586__product-grid",
+  "evidenceSlug": "product-showcase-grid-plp",
+  "evidence": [
+    "evidence/music/default/collection/product-showcase-grid-plp.1440.png",
+    "evidence/music/default/collection/product-showcase-grid-plp.375.png",
+    "evidence/music/default/collection/product-showcase-grid-plp.768.png",
+    "evidence/music/default/collection/product-showcase-grid-plp.changed.guitars.1440.png",
+    "evidence/music/default/collection/product-showcase-grid-plp.initial.filtre-yok.1440.png",
+    "evidence/music/default/collection/product-showcase-grid-plp.initial.filtre-yok.375.png",
+    "evidence/music/default/collection/product-showcase-grid-plp.initial.filtre-yok.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Filters Color (Black/Blue/Gray) + Category (Guitars 1, Hand Drums 4…). ~12 kart. Filtre interact.",
+  "delta": "main-collection-product-grid. Shopify.theme.name Music-v-1-5-0-latest-updates-new · schema_name Music · schema_version 1.5.0 · theme_store_id null · role main · id 135699103818 · shop musical-online-store.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock).",
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://musical-online-store.myshopify.com/collections/all",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--17181903552586__product-grid",
+      "capture": true,
+      "etiket": "filtre-yok",
+      "not": "Tüm ürünler"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='Filter-filter.p.t.category-5']",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": true,
+      "viewports": [
+        "1440"
+      ],
+      "etiket": "guitars",
+      "not": "Category Guitars (1)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "HOME / Products. Filters Color + Category. ~19 ürün 4 kolon. Alphabetically A-Z.",
+    "changed": "1440 Category: Guitars işaretli + chip. 1 of 19 products. Grid yalnız Guitar Flamenco Guitar $129."
+  },
+  "missingStates": [],
+  "interactionNote": "label[for=Filter-filter.p.t.category-5]. 375 filtre drawer yoklandı değil.",
+  "capture": {
+    "url": "https://musical-online-store.myshopify.com/collections/all",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:17:02.178Z"
+  }
+}
