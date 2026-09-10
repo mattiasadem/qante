@@ -15,7 +15,7 @@
 
 **Unlock:** Vendor ürün sayfası “Please enter password `1` to view demo.” Aynı host `/password` — public storefront-unlock. Başka host yok. Title unlock sonrası `food-online-store-2`.
 
-**Durum:** Mod A roster yazıldı · 41 obs · 0 yeni şema · 3vp + interact sırada  
+**Durum:** Mod A + official 3vp · 41 obs · 122 PNG · 0 yeni şema · interact sırada  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -39,21 +39,21 @@
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | [x] obs | [ ] static |
+| Home roster (announcement→footer) | [x] obs | [x] static |
 | Header Shop mega 1440 | [x] obs | [ ] interact |
 | Predictive search `chili` / `sauce` | [x] obs | [ ] interact |
-| Mobile menu 375 + 768 | [x] obs | [ ] interact |
-| Cart drawer empty + filled + qty | [x] obs | [ ] interact |
-| PDP Chili Sauce Bottle Mockup (qty; varyant yok) | [x] obs | [ ] interact qty + tabs |
-| Featured Best Sellers hover | [x] obs | [ ] interact |
-| PLP `/collections/best-sellers` + filter | [x] obs | [ ] static + interact |
-| Collections `/collections` | [x] obs | [ ] static |
-| Search `/search?q=sauce` | [x] obs | [ ] static |
-| Cart page empty + filled | [x] obs | [ ] interact |
-| About `/pages/our-story` | [x] obs | [ ] static |
-| Contact form (submit yok) | [x] obs | [ ] static |
-| FAQ `/pages/faqs` | [x] obs | [ ] interact |
-| News + funny-stories post | [x] obs | [ ] static |
+| Mobile menu 375 + 768 | [x] obs | [x] static open 375/768 · 1440 zero · [ ] interact |
+| Cart drawer empty + filled + qty | [x] obs | [x] static empty · [ ] interact filled |
+| PDP Chili Sauce Bottle Mockup (qty; varyant yok) | [x] obs | [x] static · [ ] interact qty + tabs |
+| Featured Best Sellers hover | [x] obs | [x] static · [ ] interact |
+| PLP `/collections/best-sellers` + filter | [x] obs | [x] static · [ ] interact |
+| Collections `/collections` | [x] obs | [x] static |
+| Search `/search?q=sauce` | [x] obs | [x] static |
+| Cart page empty + filled | [x] obs | [x] static empty · [ ] interact |
+| About `/pages/our-story` | [x] obs | [x] static |
+| Contact form (submit yok) | [x] obs | [x] static |
+| FAQ `/pages/faqs` | [x] obs | [x] static · [ ] interact |
+| News + funny-stories post | [x] obs | [x] static |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -96,6 +96,6 @@
 
 ## Evidence backlog
 
-- [ ] Official 3vp static
+- [x] Official 3vp static (122 PNG · menu 1440 zero-size)
 - [ ] Interact header / search / menu / cart / featured / FAQ / PDP / PLP
 - [ ] `node scripts/validate-schemas.mjs` — şema değişmedi

@@ -7,9 +7,85 @@
   "url": "https://food-online-store-2.myshopify.com/",
   "selector": "details-modal.header__search",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/hot-sauce/default/home/global-predictive-search.375.png",
+    "evidence/hot-sauce/default/home/global-predictive-search.768.png",
+    "evidence/hot-sauce/default/home/global-predictive-search.1440.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "details-modal.header__search + predictive-search. #Search-In-Menu yok; #Search-In-Modal var.",
   "delta": "Shopify.theme.name Hot Sauce V-1.5.0 · schema_name Hot Sauce · schema_version 1.5.0 · theme_store_id null · role main · id 146022531235 · shop food-online-store-2.myshopify.com · Speedo Themes third-party OS 2.0 (Theme Store resmi değil). Vendor-published demo password 1 (public storefront unlock). katalogSorgu chili / sauce. Overlay; /search sayfası ayrı.",
-  "captureMode": "viewport"
+  "captureMode": "viewport",
+  "prepareClick": "summary.header__icon--search, .header__icon--search",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://food-online-store-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header summary.header__icon--search, details-modal.header__search summary",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "details-modal.header__search",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 600,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal, predictive-search input[name=q], input[name=q]",
+      "value": "chili",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-chili",
+      "not": "katalogSorgu chili (Chili Sauce Bottle Mockup)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "(capture sonrası)",
+    "input": "(capture sonrası)"
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu chili. Submit yok.",
+  "capture": {
+    "url": "https://food-online-store-2.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "viewport",
+    "updatedAt": "2026-09-10T11:40:05.572Z",
+    "prepareClick": "summary.header__icon--search, .header__icon--search"
+  }
 }

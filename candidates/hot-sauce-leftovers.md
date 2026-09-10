@@ -121,6 +121,22 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: hot-sauce-social-proof-toast  
+Gerekçe: Birçok 3vp karede sol alt “Someone liked and Buy …” toast. Overlay dismiss etmedi. PII değil; app/social-proof overlay. Yeni şema yok.  
+Örnekler: home/blog/PDP evidence  
+Öneri: leftover — toast  
+Karar: onay bekliyor
+
+---
+
+ADAY: hot-sauce-you-may-like-empty-drawer  
+Gerekçe: Boş `#CartDrawer` sağ panelde **YOU MAY LIKE** + Hot Sauces Smoky & Roasted ADD TO CART. Food-drink leftover ile aynı aile.  
+Örnekler: `global-cart-drawer.1440.png`  
+Öneri: leftover — boş drawer upsell  
+Karar: onay bekliyor
+
+---
+
 ADAY: hot-sauce-about-contact-layout-pages  
 Gerekçe: about-layout-1–4, contact-layout-1–4 Themes mega altında. Typical walk our-story + contact; layout varyantları açılmadı.  
 Örnekler: `/pages/about-layout-1` …  

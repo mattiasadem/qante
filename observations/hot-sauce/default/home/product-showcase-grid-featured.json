@@ -7,8 +7,64 @@
   "url": "https://food-online-store-2.myshopify.com/",
   "selector": "#shopify-section-template--18878614667427__featured_collection_TzVDQq",
   "evidenceSlug": "product-showcase-grid-featured",
-  "evidence": [],
+  "evidence": [
+    "evidence/hot-sauce/default/home/product-showcase-grid-featured.375.png",
+    "evidence/hot-sauce/default/home/product-showcase-grid-featured.768.png",
+    "evidence/hot-sauce/default/home/product-showcase-grid-featured.1440.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "Best Sellers. Kartlar Hot Sauces Smoky & Roasted / Classic Pepper / Sweet & Spicy / Extreme Heat $19.99→$9.99 -50% + Chili Sauce Bottle Mockup. ADD TO CART. slider-component var.",
-  "delta": "Shopify.theme.name Hot Sauce V-1.5.0 · schema_name Hot Sauce · schema_version 1.5.0 · theme_store_id null · role main · id 146022531235 · shop food-online-store-2.myshopify.com · Speedo Themes third-party OS 2.0 (Theme Store resmi değil). Vendor-published demo password 1 (public storefront unlock). featured_collection. İkinci görsel kartta mevcut (hover adayı)."
+  "delta": "Shopify.theme.name Hot Sauce V-1.5.0 · schema_name Hot Sauce · schema_version 1.5.0 · theme_store_id null · role main · id 146022531235 · shop food-online-store-2.myshopify.com · Speedo Themes third-party OS 2.0 (Theme Store resmi değil). Vendor-published demo password 1 (public storefront unlock). featured_collection. İkinci görsel kartta mevcut (hover adayı).",
+  "interactionStates": [
+    "initial",
+    "hover"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://food-online-store-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": true,
+      "etiket": "ilk-hal"
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#shopify-section-template--18878614667427__featured_collection_TzVDQq .card__media",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "hover-kart",
+      "not": "İkinci görsel / ADD TO CART"
+    }
+  ],
+  "stateFindings": {
+    "initial": "(capture sonrası)",
+    "hover": "(capture sonrası)"
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "375/768 parmakta hover yok — yoklanır, silinmez."
+    }
+  ],
+  "interactionNote": "Quick View yoklandıktan sonra.",
+  "capture": {
+    "url": "https://food-online-store-2.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "margin-box+minPad8",
+    "updatedAt": "2026-09-10T11:46:02.050Z"
+  }
 }

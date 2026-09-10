@@ -7,8 +7,78 @@
   "url": "https://food-online-store-2.myshopify.com/collections/best-sellers",
   "selector": "#shopify-section-template--18878614405283__product-grid",
   "evidenceSlug": "product-showcase-grid-plp",
-  "evidence": [],
+  "evidence": [
+    "evidence/hot-sauce/default/collection/product-showcase-grid-plp.375.png",
+    "evidence/hot-sauce/default/collection/product-showcase-grid-plp.768.png",
+    "evidence/hot-sauce/default/collection/product-showcase-grid-plp.1440.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "Filters sidebar Category (Hot Sauce 5, Ketchup 4, Mustard 2…) · Availability · Price. 20 products / 12 kart DOM. Breadcrumb Home / Best Sellers.",
-  "delta": "Shopify.theme.name Hot Sauce V-1.5.0 · schema_name Hot Sauce · schema_version 1.5.0 · theme_store_id null · role main · id 146022531235 · shop food-online-store-2.myshopify.com · Speedo Themes third-party OS 2.0 (Theme Store resmi değil). Vendor-published demo password 1 (public storefront unlock). Breadcrumb ayrı section değil. Filtre/hover interact."
+  "delta": "Shopify.theme.name Hot Sauce V-1.5.0 · schema_name Hot Sauce · schema_version 1.5.0 · theme_store_id null · role main · id 146022531235 · shop food-online-store-2.myshopify.com · Speedo Themes third-party OS 2.0 (Theme Store resmi değil). Vendor-published demo password 1 (public storefront unlock). Breadcrumb ayrı section değil. Filtre/hover interact.",
+  "interactionStates": [
+    "initial",
+    "hover",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://food-online-store-2.myshopify.com/collections/best-sellers",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "20 products"
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#shopify-section-template--18878614405283__product-grid .card__media",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "hover-kart"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--18878614405283__product-grid label:has-text('Hot Sauce (5)')",
+      "capture": true,
+      "etiket": "filtre-hot-sauce",
+      "not": "Category Hot Sauce — 20→5 beklenir"
+    }
+  ],
+  "stateFindings": {
+    "initial": "(capture sonrası)",
+    "hover": "(capture sonrası)",
+    "changed": "(capture sonrası)"
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "375/768 filtre çekmece olabilir — 1440 sidebar."
+    },
+    {
+      "state": "hover",
+      "sebep": "375/768 parmakta hover yok"
+    }
+  ],
+  "interactionNote": "Checkout yok.",
+  "capture": {
+    "url": "https://food-online-store-2.myshopify.com/collections/best-sellers",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "margin-box+minPad8",
+    "updatedAt": "2026-09-10T11:24:50.034Z"
+  }
 }
