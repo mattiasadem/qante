@@ -7,10 +7,114 @@
   "url": "https://shoes-online-store-1.myshopify.com/",
   "selector": "#CartDrawer",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/sports-shoes/default/home/global-cart-drawer.1440.png",
+    "evidence/sports-shoes/default/home/global-cart-drawer.375.png",
+    "evidence/sports-shoes/default/home/global-cart-drawer.768.png",
+    "evidence/sports-shoes/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/sports-shoes/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/sports-shoes/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/sports-shoes/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/sports-shoes/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/sports-shoes/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/sports-shoes/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/sports-shoes/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/sports-shoes/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "#CartDrawer. Boş kare prepareClick cart. Dolu/qty interact. Checkout yok.",
   "delta": "Dawn cart-drawer. Shopify.theme.name shoes-v-1-5-0-latest-updates-new · schema_name Shoes · schema_version 1.5.0 · theme_store_id null · role main · id 175941845279 · shop shoes-online-store-1.myshopify.com · locale en · country US · currency USD. Vendor Speedo Themes (third-party Shopify 2.0, Theme Store official değil). Storefront password 1 (vendor product page). Platform adı dataBindings'e yazılmadı.",
   "captureMode": "viewport",
-  "prepareClick": "a#cart-icon-bubble, header a[href='/cart'], .header__icon--cart"
+  "prepareClick": "a#cart-icon-bubble, header a[href='/cart'], .header__icon--cart",
+  "capture": {
+    "url": "https://shoes-online-store-1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T09:20:58.035Z",
+    "prepareClick": "a#cart-icon-bubble, header a[href='/cart'], .header__icon--cart"
+  },
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://shoes-online-store-1.myshopify.com/",
+      "capture": false,
+      "not": "Home unlock — /cart/clear checkpoint'e düşürebilir"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble, a.header__icon--cart, a[href='/cart']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://shoes-online-store-1.myshopify.com/products/nike-mens-supreme-x-air-more-uptempo",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--24188156969247__main, button[name='add']",
+      "capture": false,
+      "not": "Uptempo $250 — UI tık"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC sonrası drawer. Açılmazsa #cart-icon-bubble."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "qty 1→2"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Your cart is empty. Continue shopping. Have an account? Log in to check out faster. Altta You may like (Pegasus $120 + Add to cart).",
+    "filled": "Uptempo satırı qty 1 · $250 · Size 10 · Color Gold. Estimated total $250.00 USD. Free shipping / Express shipping bar. Check out. Solda You may like. Checkout tıklanmadı.",
+    "changed": "qty 2; satır $500.00; Estimated total $500.00 USD. Checkout tıklanmadı."
+  },
+  "interactionNote": "ATC UI (#ProductSubmitButton-…). Checkout / Log in tıklanmadı. You may like leftover öneri."
 }

@@ -88,3 +88,19 @@ Gerekçe: `/pages/size-guide` sayfa listesinde. PDP Size Guide tıklanmadı.
 Örnekler: https://shoes-online-store-1.myshopify.com/pages/size-guide  
 Öneri: leftover — size guide  
 Karar: onay bekliyor
+
+---
+
+ADAY: sports-shoes-social-proof-toast  
+Gerekçe: Sabit/interact karelerde “Someone liked and Buy…” toast (ürün thumb + dakika + şehir + Verified). Section değil; overlay. Ayrı schemaId yok.  
+Örnekler: home header / search / collection-nav-tabs / PDP / cart  
+Öneri: leftover — floating social-proof toast  
+Karar: onay bekliyor
+
+---
+
+ADAY: sports-shoes-cart-discount  
+Gerekçe: Dolu `/cart` Discount code + Apply coupon. Kupon/ödeme dur.  
+Örnekler: cart-page-main filled  
+Öneri: leftover — kupon alanı  
+Karar: onay bekliyor

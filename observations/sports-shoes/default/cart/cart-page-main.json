@@ -7,8 +7,129 @@
   "url": "https://shoes-online-store-1.myshopify.com/cart",
   "selector": "#shopify-section-template--24188155986207__cart-items",
   "evidenceSlug": "cart-page-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/sports-shoes/default/cart/cart-page-main.1440.png",
+    "evidence/sports-shoes/default/cart/cart-page-main.375.png",
+    "evidence/sports-shoes/default/cart/cart-page-main.768.png",
+    "evidence/sports-shoes/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/sports-shoes/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/sports-shoes/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/sports-shoes/default/cart/cart-page-main.filled.uptempo-qty1.1440.png",
+    "evidence/sports-shoes/default/cart/cart-page-main.filled.uptempo-qty1.375.png",
+    "evidence/sports-shoes/default/cart/cart-page-main.filled.uptempo-qty1.768.png",
+    "evidence/sports-shoes/default/cart/cart-page-main.initial.sepet-bos.1440.png",
+    "evidence/sports-shoes/default/cart/cart-page-main.initial.sepet-bos.375.png",
+    "evidence/sports-shoes/default/cart/cart-page-main.initial.sepet-bos.768.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "Boş: Your cart is empty · Continue Shopping · Have an account? Log in… Checkout/login tıklanmadı. Dolu interact.",
-  "delta": "Dawn cart-items. Sibling cart-footer leftover. Shopify.theme.name shoes-v-1-5-0-latest-updates-new · schema_name Shoes · schema_version 1.5.0 · theme_store_id null · role main · id 175941845279 · shop shoes-online-store-1.myshopify.com · locale en · country US · currency USD. Vendor Speedo Themes (third-party Shopify 2.0, Theme Store official değil). Storefront password 1 (vendor product page). Platform adı dataBindings'e yazılmadı."
+  "delta": "Dawn cart-items. Sibling cart-footer leftover. Shopify.theme.name shoes-v-1-5-0-latest-updates-new · schema_name Shoes · schema_version 1.5.0 · theme_store_id null · role main · id 175941845279 · shop shoes-online-store-1.myshopify.com · locale en · country US · currency USD. Vendor Speedo Themes (third-party Shopify 2.0, Theme Store official değil). Storefront password 1 (vendor product page). Platform adı dataBindings'e yazılmadı.",
+  "captureMode": "viewport",
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://shoes-online-store-1.myshopify.com/",
+      "capture": false,
+      "not": "Önce home unlock"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://shoes-online-store-1.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş cart sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://shoes-online-store-1.myshopify.com/products/nike-mens-supreme-x-air-more-uptempo",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--24188156969247__main, button[name=add]",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://shoes-online-store-1.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "uptempo-qty1",
+      "not": "Dolu cart satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "quantity-input button[name='plus'], cart-items button[name='plus'], button[name='plus']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet +1"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "missingStates": [],
+  "capture": {
+    "url": "https://shoes-online-store-1.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T09:35:28.160Z"
+  },
+  "stateFindings": {
+    "initial": "Your cart is empty + Continue shopping + Have an account? Log in…",
+    "filled": "Your cart. Uptempo qty 1 · $250 · Size 10 · Color Gold. Estimated total $250.00 USD. Discount code alanı + Check out. Checkout/kupon tıklanmadı.",
+    "changed": "qty 2 · satır $500.00 · Estimated total $500.00 USD. Checkout tıklanmadı."
+  },
+  "interactionNote": "addToCart UI. Checkout / discount / login tıklanmadı. Sibling cart-footer leftover."
 }
