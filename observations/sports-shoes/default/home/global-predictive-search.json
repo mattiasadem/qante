@@ -1,0 +1,82 @@
+{
+  "observationId": "sports-shoes.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "sports-shoes",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://shoes-online-store-1.myshopify.com/",
+  "selector": "details-modal.header__search, predictive-search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/sports-shoes/default/home/global-predictive-search.1440.png",
+    "evidence/sports-shoes/default/home/global-predictive-search.375.png",
+    "evidence/sports-shoes/default/home/global-predictive-search.768.png",
+    "evidence/sports-shoes/default/home/global-predictive-search.input.arama-uptempo.1440.png",
+    "evidence/sports-shoes/default/home/global-predictive-search.input.arama-uptempo.375.png",
+    "evidence/sports-shoes/default/home/global-predictive-search.input.arama-uptempo.768.png",
+    "evidence/sports-shoes/default/home/global-predictive-search.open.arama-bos.1440.png",
+    "evidence/sports-shoes/default/home/global-predictive-search.open.arama-bos.375.png",
+    "evidence/sports-shoes/default/home/global-predictive-search.open.arama-bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Header search modal + predictive-search. katalogSorgu interact: uptempo / nike.",
+  "delta": "Dawn search-modal. Shopify.theme.name shoes-v-1-5-0-latest-updates-new · schema_name Shoes · schema_version 1.5.0 · theme_store_id null · role main · id 175941845279 · shop shoes-online-store-1.myshopify.com · locale en · country US · currency USD. Vendor Speedo Themes (third-party Shopify 2.0, Theme Store official değil). Storefront password 1 (vendor product page). Platform adı dataBindings'e yazılmadı.",
+  "captureMode": "viewport",
+  "prepareClick": "details-modal.header__search summary.header__icon--search, summary.header__icon--search",
+  "capture": {
+    "url": "https://shoes-online-store-1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T09:17:56.935Z",
+    "prepareClick": "details-modal.header__search summary.header__icon--search, summary.header__icon--search"
+  },
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://shoes-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Boş Search overlay. Input #Search-In-Modal."
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "uptempo",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-uptempo",
+      "not": "katalogSorgu uptempo (Nike Men's Supreme x Air More Uptempo). Chair değil."
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "input",
+    "open"
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "open": "375/768/1440: boş Search alanı + büyüteç + X. Öneri listesi yok. Arkada hero.",
+    "input": "uptempo: PRODUCTS — Nike Men's Supreme x Air More Uptempo + Search for “uptempo”. 1 ürün."
+  },
+  "interactionNote": "katalogSorgu uptempo (canlı PDP adı). Submit yok. Sosyal-kanıt toast leftover."
+}
