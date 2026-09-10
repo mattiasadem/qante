@@ -1,0 +1,90 @@
+{
+  "observationId": "socks.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "socks",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://socks-online-store-1.myshopify.com/",
+  "selector": "header.header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/socks/default/home/navigation-header-mega.1440.png",
+    "evidence/socks/default/home/navigation-header-mega.375.png",
+    "evidence/socks/default/home/navigation-header-mega.768.png",
+    "evidence/socks/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/socks/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/socks/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/socks/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Sticky header. Logo Socks. 1440: Home · Shop mega (#Details-HeaderMenu-2) · Best Sellers · Themes · Collections. Search · wishlist 0 · compare 0 · Log in · Cart. 375/768 hamburger. Country/region locale. Utility announcement yok.",
+  "delta": "Shopify.theme.name socks-online-store-v-1-5-0-latest-updates-new · schema_name Socks · schema_version 1.5.0 · theme_store_id null · role main · id 132680483023 · shop socks-online-store-1.myshopify.com · Speedo Themes OS 2.0 third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock). Official host only.",
+  "capture": {
+    "url": "https://socks-online-store-1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T10:00:24.232Z"
+  },
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://socks-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Mega kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-2 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "Hover Shop — probe’da panel açıldı; viewport scroll kapatabilir"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-HeaderMenu-2",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "section",
+      "captureSelector": "#MegaMenu-Content-1",
+      "etiket": "shop-mega",
+      "not": "SHOP mega koleksiyon kartları — section clip"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440 kapalı: SOCKS logo · Home / Shop▾ / Best Sellers▾ / Themes▾ / Collections▾ · wishlist 0 · compare 0 · Log in · Cart · Search. Mega panel yok. Hero Wear it and be proud. 375/768 hamburger + logo + search/cart; mega yok.",
+    "open": "1440 Shop forceOpen: 6 koleksiyon kartı — Flower Design, Loafer Shocks, Geometric Design, Animal Designs, Colourful Design, Snoozy Socks; her kartta çorap görseli + kısa açıklama."
+  },
+  "missingStates": [],
+  "interactionNote": "Shop summary #Details-HeaderMenu-2 → #MegaMenu-Content-1. Hover probe’da paneli açtı; resmi kare forceOpen + section clip (viewport scroll mega’yı kapatır). Shop <a> tıklanmadı. 375/768 hamburger ayrı global-menu-drawer. Log in / wishlist / compare tıklanmadı. Yeni şema yok."
+}

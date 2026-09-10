@@ -1,0 +1,119 @@
+{
+  "observationId": "music.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "music",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://musical-online-store.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/music/default/home/global-cart-drawer.1440.png",
+    "evidence/music/default/home/global-cart-drawer.375.png",
+    "evidence/music/default/home/global-cart-drawer.768.png",
+    "evidence/music/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/music/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/music/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/music/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/music/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/music/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/music/default/home/global-cart-drawer.initial.cart-bos.1440.png",
+    "evidence/music/default/home/global-cart-drawer.initial.cart-bos.375.png",
+    "evidence/music/default/home/global-cart-drawer.initial.cart-bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "#CartDrawer. Opener #cart-icon-bubble. Boş: Your cart is empty. Checkout tıklanmadı.",
+  "delta": "Dawn cart-drawer. Dolu hâl interact. Shopify.theme.name Music-v-1-5-0-latest-updates-new · schema_name Music · schema_version 1.5.0 · theme_store_id null · role main · id 135699103818 · shop musical-online-store.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock).",
+  "captureMode": "viewport",
+  "prepareClick": "#cart-icon-bubble",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://musical-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://musical-online-store.myshopify.com/products/guitar-flamenco-guitar",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#quick-add-7913126756426-submit, button[name='add'], [id^='ProductSubmitButton']",
+      "capture": false,
+      "not": "Flamenco Guitar $129 Orange"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC drawer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "qty 1→2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Sağ #CartDrawer boş: Your cart is empty · CONTINUE SHOPPING · Log in. Altta YOU MAY LIKE (Latin percussion $146) — leftover.",
+    "filled": "ATC Guitar Flamenco Guitar · Instrument color Orange · qty 1 · $129.00 · Estimated total $129.00 USD · CHECK OUT. Ortada YOU MAY LIKE listesi. Checkout tıklanmadı.",
+    "changed": "qty 2 · satır $258.00 · Estimated total $258.00 USD. YOU MAY LIKE duruyor. CHECK OUT tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart UI (#quick-add-7913126756426-submit). /cart/clear yok. YOU MAY LIKE ATC ile ve boşken de var.",
+  "capture": {
+    "url": "https://musical-online-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:12:40.607Z",
+    "prepareClick": "#cart-icon-bubble"
+  }
+}

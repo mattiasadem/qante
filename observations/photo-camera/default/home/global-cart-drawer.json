@@ -1,0 +1,125 @@
+{
+  "observationId": "photo-camera.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "photo-camera",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://photography-online-store.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/photo-camera/default/home/global-cart-drawer.1440.png",
+    "evidence/photo-camera/default/home/global-cart-drawer.375.png",
+    "evidence/photo-camera/default/home/global-cart-drawer.768.png",
+    "evidence/photo-camera/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/photo-camera/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/photo-camera/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/photo-camera/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/photo-camera/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/photo-camera/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/photo-camera/default/home/global-cart-drawer.initial.bos.1440.png",
+    "evidence/photo-camera/default/home/global-cart-drawer.initial.bos.375.png",
+    "evidence/photo-camera/default/home/global-cart-drawer.initial.bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "#CartDrawer cart-drawer shipping. Opener #cart-icon-bubble. Boş / dolu / qty.",
+  "delta": "Shopify.theme.name Photo-camera-v-1-5-0-latest-updates-new · schema_name Photo camera · schema_version 1.5.0 · theme_store_id null · role main · id 168518320375 · shop photography-online-store.myshopify.com · Speedo Themes third-party (Theme Store official değil). storefrontPassword=1 (speedothemes.com product page).",
+  "capture": {
+    "url": "https://photography-online-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T10:38:39.745Z",
+    "prepareClick": "#cart-icon-bubble"
+  },
+  "captureMode": "viewport",
+  "prepareClick": "#cart-icon-bubble",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://photography-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "#CartDrawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bos",
+      "not": "Boş cart drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://photography-online-store.myshopify.com/products/melcam-hd-digital-camera",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add'], button[name='add']",
+      "capture": false,
+      "not": "Melcam HD ATC"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Melcam satır"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus'], #CartDrawer .quantity__button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "qty 1 → 2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boş drawer: Your cart is empty + Continue Shopping + Have an account? Log in to check out faster. Altta YOU MAY LIKE — Premium tiny tough camera $149/$225 + Add To Cart. 1440 sağ panel, sayfa karartılı.",
+    "filled": "YOUR CART. Melcam HD Digital Camera Color: Black $400 qty 1. Free shipping! / Express shipping! bar. Estimated total $400.00 USD. Check Out. 1440 ortada YOU MAY LIKE overlay (Premium tiny / Sony / Melcam / Thamronz / Rangefinder / Canon lens). 375 tam genişlik; YOU MAY LIKE alt accordion kapalı.",
+    "changed": "Aynı satır qty 2; satır ve estimated total $800.00 USD. Check Out duruyor."
+  },
+  "missingStates": [],
+  "interactionNote": "Check Out / Log in tıklanmadı. ATC PDP Melcam; /cart/add.js fallback gerekmedi. Boş↔dolu aynı şema."
+}

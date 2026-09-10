@@ -1,0 +1,63 @@
+{
+  "observationId": "wine.default.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "wine",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "url": "https://wineshop-online-store.myshopify.com/pages/faq",
+  "selector": "#shopify-section-template--18166097641628__cb435de1-8958-455d-8843-8a9ef3413466",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/wine/default/faq-support/faq-collapsible-tabs.1440.png",
+    "evidence/wine/default/faq-support/faq-collapsible-tabs.375.png",
+    "evidence/wine/default/faq-support/faq-collapsible-tabs.768.png",
+    "evidence/wine/default/faq-support/faq-collapsible-tabs.changed.soru-acik.1440.png",
+    "evidence/wine/default/faq-support/faq-collapsible-tabs.changed.soru-acik.375.png",
+    "evidence/wine/default/faq-support/faq-collapsible-tabs.changed.soru-acik.768.png",
+    "evidence/wine/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.1440.png",
+    "evidence/wine/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.375.png",
+    "evidence/wine/default/faq-support/faq-collapsible-tabs.initial.ilk-hal.768.png"
+  ],
+  "notlar": "Frequently asked question. İlk: Can I choose whichever styles I want? + lorem.",
+  "delta": "Shopify.theme.name Wine-v-1-5-0-new · schema_name Wine · schema_version 1.5.0 · theme_store_id null · role main · id 142703067292 · shop wineshop-online-store.myshopify.com · Speedo Themes third-party OS 2.0 (Theme Store resmi değil). Vendor-published demo password 1 (public storefront unlock). Official host wineshop-online-store.myshopify.com only.",
+  "storefrontPassword": "1",
+  "capture": {
+    "url": "https://wineshop-online-store.myshopify.com/pages/faq",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:26:50.863Z",
+    "mode": "section"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://wineshop-online-store.myshopify.com/pages/faq",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "FAQ kapalı veya ilk açık."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-template--20640852508978__cb435de1-8958-455d-8843-8a9ef3413466-collapsible_row-2-template--18166097641628__cb435de1-8958-455d-8843-8a9ef3413466 > summary",
+      "capture": true,
+      "etiket": "soru-acik",
+      "not": "İkinci soru (I like my styles…) açık. İlk zaten açık."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Frequently asked question. İlk soru açık: Can I choose whichever styles I want? + lorem. Diğerleri kapalı (I like my styles… / How often… / I signed up… / How long do refunds… / How can I update account info?).",
+    "changed": "İkinci soru da açık: I like my styles but they don’t fit! + lorem. İlk hâlâ açık. 375/768 aynı."
+  },
+  "missingStates": [],
+  "interactionNote": "Submit/form yok. Fashion placeholder kopya leftover."
+}

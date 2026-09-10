@@ -1,0 +1,80 @@
+{
+  "observationId": "gifts.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "gifts",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://gift-online-shop-1.myshopify.com/",
+  "selector": "#shopify-section-sections--24249644351652__header",
+  "storefrontPassword": "1",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/gifts/default/home/navigation-header-mega.1440.png",
+    "evidence/gifts/default/home/navigation-header-mega.375.png",
+    "evidence/gifts/default/home/navigation-header-mega.768.png",
+    "evidence/gifts/default/home/navigation-header-mega.initial.mega-kapali.1440.png",
+    "evidence/gifts/default/home/navigation-header-mega.initial.mega-kapali.375.png",
+    "evidence/gifts/default/home/navigation-header-mega.initial.mega-kapali.768.png",
+    "evidence/gifts/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
+  "notlar": "Üst sosyal + logo + Home/Shop/Best Sellers/Themes/Collections/Shop By/Faq's/Blog. Mega: Shop, Best Sellers, Themes, Collections, Shop By. Sağda search, wishlist, compare, login, cart.",
+  "delta": "Dawn header + details.mega-menu (#Details-HeaderMenu-2..6). Shop mega kapalı karede kolon yok. Wishlist/compare utility. Shopify.theme.name gifts-treasures-v-1-5-0-latest-updates-new · schema_name Gifts-treasures · schema_version 1.5.0 · theme_store_id null · role main · id 175659352228 · shop gift-online-shop-1.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock).",
+  "capture": {
+    "url": "https://gift-online-shop-1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T09:10:53.000Z"
+  },
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://gift-online-shop-1.myshopify.com/",
+      "capture": true,
+      "etiket": "mega-kapali",
+      "not": "Shop mega kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-2 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "Shop summary hover — yoklama URL home kaldı, panel 1440×376"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 700,
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "Flowers / Personalized / Jewellery / Gourmet / Accessories / Home & Living"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "375/768 mega yok — hamburger global-menu-drawer."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Kapalı bar: GIFTS TREASURES + Home (altı çizili) / Shop▾ / Best Sellers▾ / Themes▾ / Collections▾ / Shop By▾ / Faq's / Blog. Sağda search. Mega kolon yok.",
+    "open": "1440 Shop: altı görsel kart — Flowers, Personalized, Jewellery, Gourmet, Accessories, Home & Living. Shop chevron yukarı. URL home kaldı."
+  },
+  "interactionNote": "Shop hover #Details-HeaderMenu-2 > summary. Sayfa /collections kaçmadı. Themes demo mega leftover. Wishlist/compare tıklanmadı."
+}
