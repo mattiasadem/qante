@@ -28,5 +28,93 @@
     "prepareClick": "#cart-icon-bubble"
   },
   "captureMode": "viewport",
-  "prepareClick": "#cart-icon-bubble"
+  "prepareClick": "#cart-icon-bubble",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://socks-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": false,
+      "not": "#cart-icon-bubble href=/cart — tıklanmadı"
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "#CartDrawer",
+      "capture": true,
+      "captureMode": "section",
+      "captureSelector": "#CartDrawer",
+      "etiket": "bos",
+      "not": "Boş cart drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://socks-online-store-1.myshopify.com/products/nintendo-donkey-kong-diddy-kong-socks",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--16195360587983__main button[name='add']",
+      "capture": false,
+      "not": "Yalnız PDP main ATC — sayfadaki diğer button[name=add] quick-add"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "forceOpen",
+      "selector": "#CartDrawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Nintendo satır"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus'], #CartDrawer .quantity__button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "qty 1 → 2"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": ""
 }

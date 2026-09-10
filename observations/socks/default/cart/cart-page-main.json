@@ -25,5 +25,57 @@
     "mode": "section",
     "method": "margin-box+minPad8",
     "updatedAt": "2026-09-10T09:07:04.592Z"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://socks-online-store-1.myshopify.com/cart",
+      "capture": true,
+      "etiket": "bos",
+      "not": "Boş cart sayfa"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://socks-online-store-1.myshopify.com/products/nintendo-donkey-kong-diddy-kong-socks",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--16195360587983__main button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://socks-online-store-1.myshopify.com/cart",
+      "capture": true,
+      "etiket": "nintendo-qty1",
+      "not": "Nintendo satır"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#MainContent button[name='plus'], #MainContent .quantity__button[name='plus'], button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "qty 1 → 2"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": ""
 }

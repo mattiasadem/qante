@@ -25,5 +25,43 @@
     "mode": "section",
     "method": "margin-box+minPad8",
     "updatedAt": "2026-09-10T09:10:28.824Z"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://socks-online-store-1.myshopify.com/collections/all",
+      "capture": true,
+      "etiket": "25-urun",
+      "not": "25 products · Color facet (1440)"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='Filter-filter.v.t.shopify.color-pattern-5']",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "Black (8) — 5. Color swatch"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1800,
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "color-black",
+      "not": "Color Black — 8 of 25"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": ""
 }

@@ -127,6 +127,7 @@ Stop: email / account / checkout / newsletter submit / contact SUBMIT / PII
 ## Evidence backlog
 
 - [x] Official 3vp static (`capture-observation.mjs`) — 137 PNG · menu 1440 zero-size
-- [ ] Interact: mega · search · cart empty/filled/qty · PDP Color · FAQ · PLP filter · hamburger
+- [x] Interact steps yazıldı (scan+probe; henüz capture yok)
+- [ ] Interact capture + pixel-check / stateFindings
 - [ ] `node scripts/validate-schemas.mjs`
 - [x] Email / account / checkout / newsletter submit — **yapılmayacak**

@@ -28,5 +28,59 @@
     "prepareClick": "summary.header__icon--search"
   },
   "captureMode": "viewport",
-  "prepareClick": "summary.header__icon--search"
+  "prepareClick": "summary.header__icon--search",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://socks-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "capture": false,
+      "not": "İki ikon; clickVisible görünür header__icons kopyasını alır"
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "div.header__icons details-modal.header__search details",
+      "capture": false,
+      "not": "İlk details 0×0; header__icons kopyası"
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "details:has(#Search-In-Modal)",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "modal-bos",
+      "not": "Boş Search çubuğu"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "socks",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "socks",
+      "not": "katalogSorgu socks — PRODUCTS listesi"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": ""
 }
