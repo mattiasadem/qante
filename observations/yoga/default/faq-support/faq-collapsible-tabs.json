@@ -1,0 +1,75 @@
+{
+  "observationId": "yoga.default.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "yoga",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "url": "https://sports-online-store-2.myshopify.com/pages/faq",
+  "selector": "#shopify-section-template--15527518732346__cb435de1-8958-455d-8843-8a9ef3413466",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/yoga/default/faq-support/faq-collapsible-tabs.1440.png",
+    "evidence/yoga/default/faq-support/faq-collapsible-tabs.375.png",
+    "evidence/yoga/default/faq-support/faq-collapsible-tabs.768.png",
+    "evidence/yoga/default/faq-support/faq-collapsible-tabs.changed.q2-acik.1440.png",
+    "evidence/yoga/default/faq-support/faq-collapsible-tabs.changed.q2-acik.375.png",
+    "evidence/yoga/default/faq-support/faq-collapsible-tabs.changed.q2-acik.768.png",
+    "evidence/yoga/default/faq-support/faq-collapsible-tabs.initial.faq-kapali.1440.png",
+    "evidence/yoga/default/faq-support/faq-collapsible-tabs.initial.faq-kapali.375.png",
+    "evidence/yoga/default/faq-support/faq-collapsible-tabs.initial.faq-kapali.768.png"
+  ],
+  "notlar": "Frequently asked question. Can I choose whichever styles… / they don’t fit / swap / I signed up. h≈526.",
+  "delta": "Shopify.theme.name Yoga-and-meditation-v-1-5-0-new · schema_name Yoga and meditation · schema_version 1.5.0 · theme_store_id null · role main · id 126822776890 · handle \"null\" · shop sports-online-store-2.myshopify.com · locale en · country US · currency USD · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock, same host). Platform adı dataBindings'e yazılmadı.",
+  "storefrontPassword": "1",
+  "capture": {
+    "url": "https://sports-online-store-2.myshopify.com/pages/faq",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:32:09.995Z",
+    "mode": "section"
+  },
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sports-online-store-2.myshopify.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15527518732346__cb435de1-8958-455d-8843-8a9ef3413466",
+      "capture": true,
+      "etiket": "faq-kapali",
+      "not": "Accordion kapalı/ilk"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--15527518732346__cb435de1-8958-455d-8843-8a9ef3413466 .accordion:nth-of-type(2) summary",
+      "capture": true,
+      "etiket": "q2-acik",
+      "not": "İkinci soru açık"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Frequently asked question. Q1 açık (Can I choose whichever styles I want? + lorem). Q2–Q4 kapalı.",
+    "changed": "Q2 de açık (I like my styles but they don't fit? + lorem). Q1 açık kaldı — bu preset’te birden fazla accordion aynı anda açık."
+  },
+  "interactionNote": "Q2 selector .accordion:nth-of-type(2) summary (details:nth-of-type(2) kaçırır). allowMultipleOpen mevcut knob; şema değiştirilmedi."
+}
