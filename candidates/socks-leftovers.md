@@ -114,6 +114,22 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: socks-social-proof-toast  
+Gerekçe: “Someone liked and Buy {ürün} … From {şehir} Verified” toast birçok kareye sızıyor (header 768/1440, PLP). Ayrı şema yok.  
+Örnekler: home / PLP  
+Öneri: leftover — app toast  
+Karar: onay bekliyor
+
+---
+
+ADAY: socks-cart-icon-navigates  
+Gerekçe: `#cart-icon-bubble` 1440’ta drawer açmak yerine `/cart` sayfasına kaçtı (static cart-drawer karesi boş cart sayfa). Interact `forceOpen` #CartDrawer.  
+Örnekler: home #cart-icon-bubble  
+Öneri: leftover — Dawn cart link  
+Karar: onay bekliyor
+
+---
+
 ADAY: socks-home-no-announcement  
 Gerekçe: Home’da ayrı announcement section yok. PDP `custom_announcement_bar_zqchrk` ticker var → `promo-announcement-bar` observation.  
 Örnekler: home header group  

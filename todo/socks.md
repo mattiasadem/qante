@@ -28,7 +28,7 @@ Walk host + `Shopify.shop` = `socks-online-store-1.myshopify.com` · locale `en`
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` + `scripts/unlock-storefront.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **46** |
-| PNG | (capture sonrası) |
+| PNG | **137** static 3vp (menu 1440 hamburger gizli / zero-size) |
 | Parallel | yalnız `observations/socks/`, `evidence/socks/`, `todo/socks.md`, `candidates/socks-leftovers.md`, unlock host satırı |
 
 **Kapsam satırı:**  
@@ -40,21 +40,21 @@ Walk host + `Shopify.shop` = `socks-online-store-1.myshopify.com` · locale `en`
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (header→footer) | [x] obs | [ ] capture |
-| Shop mega hover 1440 | [ ] interact | #Details-HeaderMenu-2 |
+| Home roster (header→footer) | [x] obs | [x] capture |
+| Shop mega hover 1440 | [ ] interact | #Details-HeaderMenu-2 → #MegaMenu-Content-1 |
 | Predictive search `sock` | [ ] interact | #Search-In-Modal |
-| Mobile menu 375 + 768 | [ ] interact | #menu-drawer |
-| Cart drawer empty + filled + qty | [ ] interact | #CartDrawer |
-| PDP Nintendo Color | [ ] interact | Red → başka renk |
-| PLP `/collections/all` | [x] obs | [ ] capture |
-| Collections `/collections` | [x] obs | [ ] capture |
-| Search `/search?q=sock` | [x] obs | [ ] capture |
-| Cart page empty + filled | [x] obs | [ ] capture / interact |
-| About `/pages/about-layout-1` | [x] obs | [ ] capture |
-| Contact `/pages/contact` (submit yok) | [x] obs | [ ] capture |
-| FAQ `/pages/faq` | [x] obs | [ ] capture · interact |
-| News + blooming gardens article | [x] obs | [ ] capture |
-| 404 `/pages/404` | [x] obs | [ ] capture |
+| Mobile menu 375 + 768 | [x] static open | [ ] interact confirm |
+| Cart drawer empty + filled + qty | [ ] interact | #CartDrawer · static 1440 /cart kaçtı |
+| PDP Nintendo Color | [ ] interact | Red → Razzmatazz Lips |
+| PLP `/collections/all` | [x] obs | [x] capture |
+| Collections `/collections` | [x] obs | [x] capture |
+| Search `/search?q=sock` | [x] obs | [x] capture |
+| Cart page empty + filled | [x] obs | [x] empty 3vp · filled interact |
+| About `/pages/about-layout-1` | [x] obs | [x] capture |
+| Contact `/pages/contact` (submit yok) | [x] obs | [x] capture |
+| FAQ `/pages/faq` | [x] obs | [x] capture · interact |
+| News + blooming gardens article | [x] obs | [x] capture |
+| 404 `/pages/404` | [x] obs | [x] capture |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -88,16 +88,16 @@ Home announcement section yok (PDP ticker ayrı).
 
 | # | id | sayfa | Screenshot | Not | JSON | Done |
 |---|---|---|---|---|---|---|
-| 1–16 | home static + overlays | home | [ ] | [x] | reuse | [ ] |
-| 17–25 | PDP main/tabs/video/cols/multirow/icons/banner/faq/ticker | product-detail | [ ] | [x] | reuse | [ ] |
-| 26–28 | banner + slider + PLP grid | collection | [ ] | [x] | reuse | [ ] |
-| 29 | collection-nav-grid | collections | [ ] | [x] | reuse | [ ] |
-| 30 | search-results | search | [ ] | [x] | reuse | [ ] |
-| 31 | cart-page-main | cart | [ ] | [x] | reuse | [ ] |
-| 32–38 | about parallax/IWT/cols/icons/rich/team/logos | about-brand | [ ] | [x] | reuse | [ ] |
-| 39–41 | contact parallax/office/form | contact | [ ] | [x] | reuse | [ ] |
-| 42–43 | FAQ parallax + accordion | faq-support | [ ] | [x] | reuse | [ ] |
-| 44–46 | news + article + 404 | blog-* / not-found | [ ] | [x] | reuse | [ ] |
+| 1–16 | home static + overlays | home | [x] | [x] | reuse | [ ] |
+| 17–25 | PDP main/tabs/video/cols/multirow/icons/banner/faq/ticker | product-detail | [x] | [x] | reuse | [ ] |
+| 26–28 | banner + slider + PLP grid | collection | [x] | [x] | reuse | [ ] |
+| 29 | collection-nav-grid | collections | [x] | [x] | reuse | [ ] |
+| 30 | search-results | search | [x] | [x] | reuse | [ ] |
+| 31 | cart-page-main | cart | [x] | [x] | reuse | [ ] |
+| 32–38 | about parallax/IWT/cols/icons/rich/team/logos | about-brand | [x] | [x] | reuse | [ ] |
+| 39–41 | contact parallax/office/form | contact | [x] | [x] | reuse | [ ] |
+| 42–43 | FAQ parallax + accordion | faq-support | [x] | [x] | reuse | [ ] |
+| 44–46 | news + article + 404 | blog-* / not-found | [x] | [x] | reuse | [ ] |
 
 ---
 
@@ -126,7 +126,7 @@ Stop: email / account / checkout / newsletter submit / contact SUBMIT / PII
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
+- [x] Official 3vp static (`capture-observation.mjs`) — 137 PNG · menu 1440 zero-size
 - [ ] Interact: mega · search · cart empty/filled/qty · PDP Color · FAQ · PLP filter · hamburger
 - [ ] `node scripts/validate-schemas.mjs`
 - [x] Email / account / checkout / newsletter submit — **yapılmayacak**
