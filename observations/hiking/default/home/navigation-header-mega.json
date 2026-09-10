@@ -5,14 +5,16 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://hiking-online-store-1.myshopify.com/",
-  "selector": "#shopify-section-sections--24842291249446__header sticky-header",
+  "selector": "header.header",
   "evidenceSlug": "navigation-header-mega",
   "evidence": [
     "evidence/hiking/default/home/navigation-header-mega.375.png",
-    "evidence/hiking/default/home/navigation-header-mega.768.png"
+    "evidence/hiking/default/home/navigation-header-mega.768.png",
+    "evidence/hiking/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/hiking/default/home/navigation-header-mega.initial.kapali.768.png"
   ],
   "storefrontPassword": "1",
-  "notlar": "sticky-header (section wrapper home'da h=1). Nav: HOME / SHOP / BEST SELLERS / THEMES / COLLECTIONS. Search + wishlist 0 + Log in + Cart. Shop mega #Details-HeaderMenu-2. 375/768 hamburger (#Details-menu-drawer-container).",
+  "notlar": "Home section wrapper h≈1; görünür kutu header.header (~1440×100). Nav: HOME / SHOP / BEST SELLERS / THEMES / COLLECTIONS. Search + wishlist 0 + Log in + Cart. Shop mega #Details-HeaderMenu-2. 375/768 hamburger (#Details-menu-drawer-container).",
   "delta": "Mega Shop koleksiyon kartları (Trekking Shoes / Bags / Camping / Hiking Goggles / Hiking Tools). Header section ~1px; kutu sticky-header. Log in tıklanmadı. Speedo Hiking 1.5.0 third-party (theme_store_id null). Storefront password 1 is vendor-published on speedothemes.com product page. Shopify.theme.name Hiking-v-1-5-0-latest-updates-new · schema_name Hiking · schema_version 1.5.0 · theme_store_id null · role main · id 179362103590 · shop hiking-online-store-1.myshopify.com. Platform adı dataBindings'e yazılmadı.",
   "captureMode": "viewport",
   "interactionStates": [
@@ -38,8 +40,9 @@
       "value": "Escape",
       "capture": true,
       "captureMode": "viewport",
+      "captureSelector": "header.header",
       "etiket": "kapali",
-      "not": "Dropdown kapalı header"
+      "not": "Dropdown kapalı header — header.header (sticky-header home'da 1px)"
     },
     {
       "state": "open",
@@ -60,13 +63,16 @@
       ],
       "capture": true,
       "captureMode": "viewport",
+      "captureSelector": "header.header",
       "etiket": "shop-mega",
       "not": "Shop mega pin — Trekking Shoes / Bags / Camping / Hiking Goggles / Hiking Tools"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "375/768 mega kapalı. Hamburger + HIKING logo + search + cart (768'de hesap ikonu). Hero Rucksacks Bag + SHOP NOW. 1440 kapalı kare retry header.header."
+  },
   "missingStates": [],
-  "interactionNote": "Log in tıklanmadı. 375/768 mega yok — hamburger ayrı observation.",
+  "interactionNote": "İlk 1440 zero-size (sticky-header h=1). Retry selector header.header + viewport. Log in tıklanmadı. 375/768 mega yok — hamburger ayrı observation.",
   "capture": {
     "url": "https://hiking-online-store-1.myshopify.com/",
     "viewports": [
@@ -75,7 +81,7 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-10T09:25:39.672Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T09:43:23.202Z"
   }
 }

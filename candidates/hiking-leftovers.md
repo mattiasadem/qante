@@ -161,3 +161,19 @@ Gerekçe: Home `image_slider_width_product_GRttWd` Best Selling — ürün slide
 Örnekler: home Best Selling  
 Öneri: leftover — hibrit slider  
 Karar: onay bekliyor
+
+---
+
+ADAY: hiking-you-may-like-atc  
+Gerekçe: ATC sonrası 1440 merkez “YOU MAY LIKE” modal (ürün + ADD TO CART + alt görsel). 375 drawer içinde “YOU MAY LIKE” accordion. Şema yok.  
+Örnekler: folding-camping-chair ATC → cart drawer  
+Öneri: leftover — ATC overlay  
+Karar: onay bekliyor
+
+---
+
+ADAY: hiking-pdp-buybox-extras  
+Gerekçe: Folding Camping Chair buy-box’ta “23 people are viewing” · Hurry up countdown · Buy it now · WhatsApp / Need help. Interact Color swatch; bu yüzeyler tıklanmadı, ayrı şema yok.  
+Örnekler: https://hiking-online-store-1.myshopify.com/products/folding-camping-chair  
+Öneri: leftover — PDP extras  
+Karar: onay bekliyor

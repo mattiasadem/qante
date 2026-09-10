@@ -9,7 +9,11 @@
   "evidenceSlug": "global-menu-drawer",
   "evidence": [
     "evidence/hiking/default/home/global-menu-drawer.375.png",
-    "evidence/hiking/default/home/global-menu-drawer.768.png"
+    "evidence/hiking/default/home/global-menu-drawer.768.png",
+    "evidence/hiking/default/home/global-menu-drawer.initial.kapali.375.png",
+    "evidence/hiking/default/home/global-menu-drawer.initial.kapali.768.png",
+    "evidence/hiking/default/home/global-menu-drawer.open.hamburger-acik.375.png",
+    "evidence/hiking/default/home/global-menu-drawer.open.hamburger-acik.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "details#Details-menu-drawer-container. 1440 hamburger 0px. 375/768 summary.header__icon--menu.",
@@ -59,8 +63,8 @@
     },
     {
       "state": "open",
-      "action": "forceOpen",
-      "selector": "#Details-menu-drawer-container",
+      "action": "waitFor",
+      "value": 800,
       "viewports": [
         "375",
         "768"
@@ -76,14 +80,17 @@
         "768"
       ],
       "capture": true,
-      "captureMode": "viewport",
+      "captureMode": "section",
+      "captureSelector": "#menu-drawer",
       "etiket": "hamburger-acik",
-      "not": "Drawer pin: Home/Shop/Best Sellers…"
+      "not": "Retry: section #menu-drawer — viewport scrollTo drawer'ı kapatıyor"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "375/768 hamburger kapalı homepage — HIKING + Rucksacks Bag + SHOP NOW + TREKKING/SHOES kartları."
+  },
   "missingStates": [],
-  "interactionNote": "HeaderDrawer-shop bir <a> — tıklanınca sayfa değişir, changed yoklandı değil. Log in tıklanmadı. 1440 hamburger 0×0.",
+  "interactionNote": "İlk open karesi hamburger kapalı homepage (viewport scrollTo). Retry section #menu-drawer. HeaderDrawer-shop bir <a> — tıklanınca sayfa değişir, changed yok. Log in tıklanmadı. 1440 hamburger 0×0.",
   "capture": {
     "url": "https://hiking-online-store-1.myshopify.com/",
     "viewports": [
@@ -92,8 +99,8 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-10T09:20:53.136Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T09:44:22.682Z",
     "prepareClick": "header summary.header__icon--menu"
   }
 }

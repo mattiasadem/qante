@@ -8,9 +8,18 @@
   "selector": "#CartDrawer",
   "evidenceSlug": "global-cart-drawer",
   "evidence": [
+    "evidence/hiking/default/home/global-cart-drawer.1440.png",
     "evidence/hiking/default/home/global-cart-drawer.375.png",
     "evidence/hiking/default/home/global-cart-drawer.768.png",
-    "evidence/hiking/default/home/global-cart-drawer.1440.png"
+    "evidence/hiking/default/home/global-cart-drawer.changed.adet-2.1440.png",
+    "evidence/hiking/default/home/global-cart-drawer.changed.adet-2.375.png",
+    "evidence/hiking/default/home/global-cart-drawer.changed.adet-2.768.png",
+    "evidence/hiking/default/home/global-cart-drawer.filled.chair-eklendi.1440.png",
+    "evidence/hiking/default/home/global-cart-drawer.filled.chair-eklendi.375.png",
+    "evidence/hiking/default/home/global-cart-drawer.filled.chair-eklendi.768.png",
+    "evidence/hiking/default/home/global-cart-drawer.initial.bos.1440.png",
+    "evidence/hiking/default/home/global-cart-drawer.initial.bos.375.png",
+    "evidence/hiking/default/home/global-cart-drawer.initial.bos.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Dawn cart-drawer. Boş hâl static; filled interact.",
@@ -44,12 +53,19 @@
     },
     {
       "state": "initial",
+      "action": "waitFor",
+      "value": 800,
+      "capture": false
+    },
+    {
+      "state": "initial",
       "action": "forceOpen",
       "selector": "#CartDrawer",
       "capture": true,
-      "captureMode": "viewport",
+      "captureMode": "section",
+      "captureSelector": "#CartDrawer",
       "etiket": "bos",
-      "not": "Boş drawer pin"
+      "not": "Retry: section #CartDrawer — viewport scrollTo boş drawer'ı kapatıyor"
     },
     {
       "state": "filled",
@@ -85,9 +101,12 @@
       "not": "Adet +1 → toplam güncellenir"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "filled": "375/768/1440 YOUR CART · Folding Camping Chair · Color Blue · adet 1 · $105.00 · Estimated total $105.00 USD · CHECK OUT. Üstte Free shipping! / Express shipping! $150. 1440 merkez YOU MAY LIKE modal; 375 drawer içinde YOU MAY LIKE accordion. Checkout tıklanmadı.",
+    "changed": "375/768/1440 adet 2 · satır ve Estimated total $210.00 USD. Check Out tıklanmadı."
+  },
   "missingStates": [],
-  "interactionNote": "ATC button.product-form__submit. Checkout tıklanmadı.",
+  "interactionNote": "ATC button.product-form__submit. İlk empty kare homepage. Retry section #CartDrawer. YOU MAY LIKE leftover — şema yok. Checkout tıklanmadı.",
   "capture": {
     "url": "https://hiking-online-store-1.myshopify.com/",
     "viewports": [
@@ -96,8 +115,8 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-10T09:19:27.828Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T09:47:48.391Z",
     "prepareClick": "a.header__icon--cart"
   }
 }
