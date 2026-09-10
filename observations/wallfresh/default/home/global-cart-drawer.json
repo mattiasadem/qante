@@ -1,0 +1,86 @@
+{
+  "observationId": "wallfresh.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "wallfresh",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pandora-wallpaper-2.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "storefrontPassword": "1",
+  "evidence": [
+    "evidence/wallfresh/default/home/global-cart-drawer.1440.png",
+    "evidence/wallfresh/default/home/global-cart-drawer.375.png",
+    "evidence/wallfresh/default/home/global-cart-drawer.768.png",
+    "evidence/wallfresh/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/wallfresh/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/wallfresh/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/wallfresh/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/wallfresh/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/wallfresh/default/home/global-cart-drawer.filled.sepete-eklendi.768.png"
+  ],
+  "notlar": "Dawn #CartDrawer. Opener #cart-icon-bubble href=/cart.",
+  "delta": "href=/cart — JS yakalamazsa /cart’a kaçar. Dolu hâl interact.",
+  "captureMode": "viewport",
+  "prepareClick": "#cart-icon-bubble",
+  "capture": {
+    "url": "https://pandora-wallpaper-2.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T10:09:16.599Z",
+    "prepareClick": "#cart-icon-bubble"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "selector": null,
+      "value": "https://pandora-wallpaper-2.myshopify.com/products/milton-and-king-antique-straight-wallpaper",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--24408109908283__main form[action*='/cart/add'] button[name='add']",
+      "value": null,
+      "capture": false,
+      "not": "Milton Antique Add To Cart — ana form, quick-add başka kart değil"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "selector": null,
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC sonrası drawer. Satır + You May Like"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 2"
+    }
+  ],
+  "stateFindings": {
+    "filled": "375/768/1440 YOUR CART: Milton And King Antique Straight Wallpaper · Color Amphibian · Size 100 X 100 · adet 1 · $162.00 · Estimated total $162.00 USD · Check Out. You May Like (Modern Metals…). Checkout tıklanmadı.",
+    "changed": "375/768/1440 adet 2 · satır ve Estimated total $324.00 USD."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC UI tıklaması (ana PDP form, quick-add başka kart değil). Drawer PDP üzerinde açıldı. /cart/add.js fallback yok."
+}
