@@ -1,0 +1,79 @@
+{
+  "observationId": "hollowsocks.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "hollowsocks",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://hollowsocks.com/",
+  "selector": "#header__mobile-menu",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/hollowsocks/default/home/global-menu-drawer.375.png",
+    "evidence/hollowsocks/default/home/global-menu-drawer.768.png",
+    "evidence/hollowsocks/default/home/global-menu-drawer.1440.png"
+  ],
+  "notlar": "375/768 açık: X + BEST SELLERS görseli + SHOP BY ACTIVITY 2×2 (COMPRESSION / EVERYDAY / TRADES / BUNDLES 50% OFF) + alt kartlar. 1440 viewport home (hamburger yok).",
+  "delta": "Shopify Theme Lab mobile drawer. 1440 N/A. Mega .ds-meganav ayrı; header linkleri data-meganav-ignore.",
+  "captureMode": "viewport",
+  "prepareClick": "button[data-menu-trigger][aria-label='Menu']",
+  "capture": {
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "url": "https://hollowsocks.com/",
+    "mode": "viewport",
+    "method": "viewport",
+    "updatedAt": "2026-08-15T22:25:47.378Z",
+    "prepareClick": "button[data-menu-trigger][aria-label='Menu']"
+  },
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://hollowsocks.com/",
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ]
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": "2500",
+      "capture": false,
+      "viewports": [
+        "375",
+        "768"
+      ]
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button[data-menu-trigger][aria-label='Menu']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "menu-acik",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Hamburger drawer"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: X + HOLLOW + CART(0); BEST SELLERS görsel + B2G2 mühür; SHOP BY ACTIVITY 2×2 COMPRESSION / EVERYDAY / TRADES / BUNDLES 50% OFF + alt kartlar (running/partial)."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "1440 hamburger xl:hidden — resmi 1440 kare tam homepage (drawer yok)"
+    }
+  ],
+  "interactionNote": "Açık drawer 375/768 static prepareClick. 1440 N/A.",
+}
