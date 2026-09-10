@@ -1,0 +1,93 @@
+{
+  "observationId": "wine.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "wine",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://wineshop-online-store.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/wine/default/home/global-menu-drawer.375.png",
+    "evidence/wine/default/home/global-menu-drawer.768.png",
+    "evidence/wine/default/home/global-menu-drawer.open.mobil-menu-acik.375.png",
+    "evidence/wine/default/home/global-menu-drawer.open.mobil-menu-acik.768.png"
+  ],
+  "notlar": "Hamburger #Details-menu-drawer-container → #menu-drawer. 1440 gizli (0×0).",
+  "delta": "Shopify.theme.name Wine-v-1-5-0-new · schema_name Wine · schema_version 1.5.0 · theme_store_id null · role main · id 142703067292 · shop wineshop-online-store.myshopify.com · Speedo Themes third-party OS 2.0 (Theme Store resmi değil). Vendor-published demo password 1 (public storefront unlock). Official host wineshop-online-store.myshopify.com only.",
+  "storefrontPassword": "1",
+  "capture": {
+    "url": "https://wineshop-online-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:19:08.865Z",
+    "mode": "viewport",
+    "prepareClick": "#Details-menu-drawer-container > summary"
+  },
+  "captureMode": "viewport",
+  "prepareClick": "#Details-menu-drawer-container > summary",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://wineshop-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2000,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 800,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#menu-drawer",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mobil-menu-acik",
+      "not": "375/768 hamburger. 1440 drawer yok."
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768: Shop / Bestseller / Themes / Shop By / Collections + Wishlist 0 + Compare 0 + Log in + USD + English + X/Facebook/Pinterest/Instagram. 375 tam ekran; 768 sol panel, sağda hero görünür."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 hamburger / #menu-drawer 0×0 — open yalnız 375/768. Log in / wishlist tıklanmadı. Alt menü expander denenmedi."
+}
