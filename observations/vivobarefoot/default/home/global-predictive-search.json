@@ -1,0 +1,59 @@
+{
+  "evidence": [],
+  "capture": {
+    "url": "https://www.vivobarefoot.com/us/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "blocked-datadome",
+    "updatedAt": "2026-08-15T23:45:00.000Z",
+    "note": "Resmi 3vp bu egress’ten alınamadı: DataDome 403 (captcha-delivery). capture-observation.mjs / capture-interaction.mjs / computerUse aynı IP’yi kesti. Kanıt uydurulmadı."
+  },
+  "observationId": "vivobarefoot.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "vivobarefoot",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.vivobarefoot.com/us/",
+  "selector": "section.amsearch-wrapper-block",
+  "evidenceSlug": "global-predictive-search",
+  "captureMode": "viewport",
+  "notlar": "Amasty amsearch. input.amsearch-input name=q placeholder Search Products. Autocomplete /us/amasty_xsearch/autocomplete/index/. Sonuç /us/catalogsearch/result/. minChars 3.",
+  "delta": "Shopify.theme yok (gözlendi, uydurulmadı). Magento 2 / Adobe Commerce Cloud (CNAME prod.magentocloud.map.fastly.net). Tema frontend/vivo/theme-frontend-vivo · body pl-thm-vivo pl-thm-vivo-theme-frontend-vivo · static/version1786509155. schema_name / schema_version / theme_store_id yok. Shopify predictive search değil — Amasty Xsearch. katalogSorgu primus (homepage ürün adı).",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.vivobarefoot.com/us/",
+      "capture": true,
+      "etiket": "arama-kapali"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input.amsearch-input[name='q']",
+      "value": "primus",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "primus"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Search Products input; full-width overlay sınıfı amsearch.",
+    "input": "Koşulamadı. Beklenen: ürün önerileri (Amasty product block enabled)."
+  },
+  "missingStates": [
+    {
+      "state": "input",
+      "sebep": "DataDome — fill karesi yok."
+    }
+  ],
+  "interactionNote": "Resmi 3vp bu egress’ten alınamadı: DataDome 403 (captcha-delivery). capture-observation.mjs / capture-interaction.mjs / computerUse aynı IP’yi kesti. Kanıt uydurulmadı."
+}

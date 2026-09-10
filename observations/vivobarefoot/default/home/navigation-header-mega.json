@@ -1,0 +1,66 @@
+{
+  "evidence": [],
+  "capture": {
+    "url": "https://www.vivobarefoot.com/us/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-15T23:44:11.210Z",
+    "note": "Resmi 3vp bu egress’ten alınamadı: DataDome 403 (captcha-delivery). capture-observation.mjs / capture-interaction.mjs / computerUse aynı IP’yi kesti. Kanıt uydurulmadı."
+  },
+  "observationId": "vivobarefoot.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "vivobarefoot",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://www.vivobarefoot.com/us/",
+  "selector": "header.page-header",
+  "evidenceSlug": "navigation-header-mega",
+  "notlar": "Üst utility: Help / Foot Assessment / Size Guide / Delivery / Returns / Repairs / FAQS & Contact / Track My Order / BLOG / REVIVO.COM. Logo Vivo; Mens / Womens / Kids / Shop All / Explore mega; Amasty search; minicart; My Account. Mobil: a.open-nav.nav-toggle.",
+  "delta": "Shopify.theme yok (gözlendi, uydurulmadı). Magento 2 / Adobe Commerce Cloud (CNAME prod.magentocloud.map.fastly.net). Tema frontend/vivo/theme-frontend-vivo · body pl-thm-vivo pl-thm-vivo-theme-frontend-vivo · static/version1786509155. schema_name / schema_version / theme_store_id yok. Mega nav.vivo-main-menu (data-menu menu-9058 Mens … menu-9070 Explore). Kolonlar Footwear / Shop By Use / Accessories / Trending. Dil yok; ülke+para birimi drawer’ı var. Shopify mega değil.",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://www.vivobarefoot.com/us/",
+      "capture": true,
+      "etiket": "bar",
+      "not": "Kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "a.vivo-main-menu__link[data-menu='menu-9058']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mens-mega",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Mens hover — Footwear / Shop By Use / Accessories / Trending"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Vivo logo; Mens Womens Kids Shop All Explore; Search; My Cart; utility Help…REVIVO.",
+    "open": "Koşulamadı — DataDome. HTML: Mens mega View all mens + Footwear + Shop By Use + Accessories + Trending Motus Strength II."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "capture-interaction.mjs 375/768/1440: zero-size / eşleşmedi header.page-header — DataDome interstitial, vitrin DOM yok."
+    },
+    {
+      "state": "open",
+      "sebep": "1440 hover timeout — aynı interstitial; Mens mega link görünür değil."
+    }
+  ],
+  "interactionNote": "Resmi 3vp bu egress’ten alınamadı: DataDome 403 (captcha-delivery). capture-observation.mjs / capture-interaction.mjs / computerUse aynı IP’yi kesti. Kanıt uydurulmadı."
+}
