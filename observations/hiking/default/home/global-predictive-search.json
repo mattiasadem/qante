@@ -12,5 +12,61 @@
   "notlar": "details-modal.header__search + predictive-search. #Search-In-Modal.",
   "delta": "Kapalı kare ikon; interact input. Speedo Hiking 1.5.0 third-party (theme_store_id null). Storefront password 1 is vendor-published on speedothemes.com product page. Shopify.theme.name Hiking-v-1-5-0-latest-updates-new · schema_name Hiking · schema_version 1.5.0 · theme_store_id null · role main · id 179362103590 · shop hiking-online-store-1.myshopify.com. Platform adı dataBindings'e yazılmadı.",
   "captureMode": "viewport",
-  "prepareClick": "header summary.header__icon--search"
+  "prepareClick": "header summary.header__icon--search",
+  "interactionStates": ["initial", "input"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hiking-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header summary.header__icon--search",
+      "capture": false,
+      "not": "Büyüteç"
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "header details-modal.header__search details",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Boş Search modal pin"
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "header summary.header__icon--search",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "forceOpen",
+      "selector": "header details-modal.header__search details",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "header input.search__input",
+      "value": "hike",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-hike",
+      "not": "katalogSorgu=hike — görünür header input"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "katalogSorgu=hike (search sayfası 11 sonuç). Submit / hesap yok."
 }

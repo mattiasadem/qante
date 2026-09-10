@@ -12,5 +12,72 @@
   "notlar": "Dawn cart-drawer. Boş hâl static; filled interact.",
   "delta": "Checkout tıklanmadı. Speedo Hiking 1.5.0 third-party (theme_store_id null). Storefront password 1 is vendor-published on speedothemes.com product page. Shopify.theme.name Hiking-v-1-5-0-latest-updates-new · schema_name Hiking · schema_version 1.5.0 · theme_store_id null · role main · id 179362103590 · shop hiking-online-store-1.myshopify.com. Platform adı dataBindings'e yazılmadı.",
   "captureMode": "viewport",
-  "prepareClick": "a.header__icon--cart"
+  "prepareClick": "a.header__icon--cart",
+  "interactionStates": ["initial", "filled", "changed"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hiking-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a.header__icon--cart",
+      "capture": false,
+      "not": "Cart ikon"
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "#CartDrawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "bos",
+      "not": "Boş drawer pin"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://hiking-online-store-1.myshopify.com/products/folding-camping-chair",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit",
+      "capture": false,
+      "not": "PDP ATC — drawer açılır"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#CartDrawer",
+      "etiket": "chair-eklendi",
+      "not": "Dolu drawer: Folding Camping Chair"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#CartDrawer",
+      "etiket": "adet-2",
+      "not": "Adet +1 → toplam güncellenir"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "ATC button.product-form__submit. Checkout tıklanmadı."
 }

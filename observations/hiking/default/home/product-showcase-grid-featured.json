@@ -10,5 +10,49 @@
   "evidence": [],
   "storefrontPassword": "1",
   "notlar": "Best Selling. Backpacking Speedo Hiking $70→$60 · Hiking Poles $130 · Sleeping Bags $160→$150 · Tent Camping.",
-  "delta": "image_slider_width_product — ürün slider + görsel şerit. Speedo Hiking 1.5.0 third-party (theme_store_id null). Storefront password 1 is vendor-published on speedothemes.com product page. Shopify.theme.name Hiking-v-1-5-0-latest-updates-new · schema_name Hiking · schema_version 1.5.0 · theme_store_id null · role main · id 179362103590 · shop hiking-online-store-1.myshopify.com. Platform adı dataBindings'e yazılmadı."
+  "delta": "image_slider_width_product — ürün slider + görsel şerit. Speedo Hiking 1.5.0 third-party (theme_store_id null). Storefront password 1 is vendor-published on speedothemes.com product page. Shopify.theme.name Hiking-v-1-5-0-latest-updates-new · schema_name Hiking · schema_version 1.5.0 · theme_store_id null · role main · id 179362103590 · shop hiking-online-store-1.myshopify.com. Platform adı dataBindings'e yazılmadı.",
+  "interactionStates": ["initial", "hover"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hiking-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24842290364710__image_slider_width_product_GRttWd",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Best Selling grid"
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#shopify-section-template--24842290364710__image_slider_width_product_GRttWd .card-wrapper .card__inner",
+      "viewports": ["1440"],
+      "capture": false,
+      "not": "İlk kart hover"
+    },
+    {
+      "state": "hover",
+      "action": "waitFor",
+      "value": 700,
+      "viewports": ["1440"],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "quick-shop",
+      "not": "Quick Shop / ikinci görsel — viewport"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Quick Shop tıklanmadı. 375/768 hover çekilmedi."
 }

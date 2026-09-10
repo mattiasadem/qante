@@ -10,5 +10,65 @@
   "evidence": [],
   "storefrontPassword": "1",
   "notlar": "Your cart is empty · CONTINUE SHOPPING · Have an account? Log in to check out faster.",
-  "delta": "cart-footer sibling h=0 boşken. Filled interact. Checkout/Log in yok. Speedo Hiking 1.5.0 third-party (theme_store_id null). Storefront password 1 is vendor-published on speedothemes.com product page. Shopify.theme.name Hiking-v-1-5-0-latest-updates-new · schema_name Hiking · schema_version 1.5.0 · theme_store_id null · role main · id 179362103590 · shop hiking-online-store-1.myshopify.com. Platform adı dataBindings'e yazılmadı."
+  "delta": "cart-footer sibling h=0 boşken. Filled interact. Checkout/Log in yok. Speedo Hiking 1.5.0 third-party (theme_store_id null). Storefront password 1 is vendor-published on speedothemes.com product page. Shopify.theme.name Hiking-v-1-5-0-latest-updates-new · schema_name Hiking · schema_version 1.5.0 · theme_store_id null · role main · id 179362103590 · shop hiking-online-store-1.myshopify.com. Platform adı dataBindings'e yazılmadı.",
+  "interactionStates": ["initial", "filled", "changed"],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://hiking-online-store-1.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24842289938726__cart-items",
+      "capture": true,
+      "etiket": "bos",
+      "not": "Boş sepet sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://hiking-online-store-1.myshopify.com/products/folding-camping-chair",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://hiking-online-store-1.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "etiket": "chair-satir",
+      "not": "Dolu cart sayfası"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus']",
+      "capture": true,
+      "etiket": "adet-2",
+      "not": "Adet 1→2"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Checkout / Log in tıklanmadı. ATC ui."
 }
