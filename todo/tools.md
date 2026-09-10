@@ -14,7 +14,7 @@
 Title: `Tools - Shopify Tools Theme – Tools Online Store 1 (password: 1)`  
 Storefront password (ürün sayfasında yayın): **`1`** — “Please enter password "1" to view demo.” Aynı host `/password`, başka vitrin yok.
 
-**Durum:** Mod A walk + resmi 3vp (devam) · interact sırada  
+**Durum:** Mod A walk + resmi 3vp (48/49 complete; menu 1440 0px) · interact sırada  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -91,17 +91,17 @@ Storefront password (ürün sayfasında yayın): **`1`** — “Please enter pas
 
 | # | id | sayfa | Screenshot | Not | JSON | Done |
 |---|---|---|---|---|---|---|
-| 1–20 | home + overlays | home | [ ] | [x] | reuse | [ ] |
-| 21–29 | PDP miter + tabs/video/IWT/FAQ | product-detail | [ ] | [x] | reuse | [ ] |
-| 30–32 | banner + slider + PLP | collection | [ ] | [x] | reuse | [ ] |
-| 33 | collection-nav-grid | collections | [ ] | [x] | reuse | [ ] |
-| 34 | search-results | search | [ ] | [x] | reuse | [ ] |
-| 35 | cart-page-main | cart | [ ] | [x] | reuse | [ ] |
-| 36–41 | about-layout-1 | about-brand | [ ] | [x] | reuse | [ ] |
-| 42–43 | faq banner + tabs | faq-support | [ ] | [x] | reuse | [ ] |
-| 44–46 | contact banner + office + form | contact | [ ] | [x] | reuse | [ ] |
-| 47–48 | news + article | blog / blog-post | [ ] | [x] | reuse | [ ] |
-| 49 | 404 | not-found | [ ] | [x] | reuse | [ ] |
+| 1–20 | home + overlays | home | [x] | [x] | reuse | [x] |
+| 21–29 | PDP miter + tabs/video/IWT/FAQ | product-detail | [x] | [x] | reuse | [x] |
+| 30–32 | banner + slider + PLP | collection | [x] | [x] | reuse | [x] |
+| 33 | collection-nav-grid | collections | [x] | [x] | reuse | [x] |
+| 34 | search-results | search | [x] | [x] | reuse | [x] |
+| 35 | cart-page-main | cart | [x] | [x] | reuse | [x] |
+| 36–41 | about-layout-1 (Finding Unique = overlay.2) | about-brand | [x] | [x] | reuse | [x] |
+| 42–43 | faq banner + tabs | faq-support | [x] | [x] | reuse | [x] |
+| 44–46 | contact banner + office + form | contact | [x] | [x] | reuse | [x] |
+| 47–48 | news + article | blog / blog-post | [x] | [x] | reuse | [x] |
+| 49 | 404 | not-found | [x] | [x] | reuse | [x] |
 
 ---
 
