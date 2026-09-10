@@ -8,9 +8,15 @@
   "selector": "details:has(#Search-In-Modal)",
   "evidenceSlug": "global-predictive-search",
   "evidence": [
+    "evidence/levitate/default/home/global-predictive-search.1440.png",
     "evidence/levitate/default/home/global-predictive-search.375.png",
     "evidence/levitate/default/home/global-predictive-search.768.png",
-    "evidence/levitate/default/home/global-predictive-search.1440.png"
+    "evidence/levitate/default/home/global-predictive-search.initial.modal-bos.1440.png",
+    "evidence/levitate/default/home/global-predictive-search.initial.modal-bos.375.png",
+    "evidence/levitate/default/home/global-predictive-search.initial.modal-bos.768.png",
+    "evidence/levitate/default/home/global-predictive-search.input.andibro.1440.png",
+    "evidence/levitate/default/home/global-predictive-search.input.andibro.375.png",
+    "evidence/levitate/default/home/global-predictive-search.input.andibro.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "summary.header__icon--search → #Search-In-Modal. Predictive ANDIBRO → WOMAN LEATHER ANDIBRO CHERRY BAG. Storefront /search ürün indeksi boş (leftover).",
@@ -22,12 +28,12 @@
       "768",
       "1440"
     ],
-    "method": "viewport",
-    "updatedAt": "2026-09-10T10:43:57.112Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T11:46:23.250Z",
     "mode": "viewport",
     "prepareClick": "summary.header__icon--search"
   },
-  "captureMode": "section",
+  "captureMode": "viewport",
   "prepareClick": "summary.header__icon--search",
   "interactionStates": [
     "initial",
@@ -57,24 +63,32 @@
       "action": "forceOpen",
       "selector": "details:has(#Search-In-Modal)",
       "capture": true,
-      "captureMode": "section",
-      "captureSelector": ".search-modal",
+      "captureMode": "viewport",
       "etiket": "modal-bos",
-      "not": "Boş Search çubuğu"
+      "not": "Boş Search çubuğu — .search-modal kutu PRODUCTS'ı kesiyordu"
     },
     {
       "state": "input",
       "action": "fill",
       "selector": "#Search-In-Modal",
       "value": "ANDIBRO",
+      "capture": false,
+      "not": "katalogSorgu ANDIBRO"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 2200,
       "capture": true,
-      "captureMode": "section",
-      "captureSelector": ".search-modal",
+      "captureMode": "viewport",
       "etiket": "andibro",
-      "not": "katalogSorgu ANDIBRO — PRODUCTS"
+      "not": "PRODUCTS listesi (section crop kesiyordu)"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "Search kutusu boş + kapat X. Home arkada karartılı. PRODUCTS listesi yok.",
+    "input": "ANDIBRO yazılı. PRODUCTS: WOMAN LEATHER ANDIBRO CHERRY BAG (küçük görsel). Altta Search for \"ANDIBRO\". Koleksiyon önerisi yok."
+  },
   "missingStates": [],
-  "interactionNote": "katalogSorgu=ANDIBRO (WOMAN LEATHER ANDIBRO CHERRY BAG). Storefront /search boş; predictive ürün döner."
+  "interactionNote": "katalogSorgu=ANDIBRO. İlk .search-modal section crop PRODUCTS satırını kesti; viewport + 2.2s wait ile yeniden çekildi. Storefront /search aynı sorguda ürün 0 (leftover)."
 }

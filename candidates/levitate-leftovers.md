@@ -135,3 +135,27 @@ Gerekçe: about-layout-1 `brand_logo_k3ngrY` h=211, innerText boş.
 Örnekler: `/pages/about-layout-1`  
 Öneri: leftover — boş sibling  
 Karar: onay bekliyor
+
+---
+
+ADAY: levitate-men-tab-cta  
+Gerekçe: Home OUR BEST SELLERS MEN sekmesinde kart seti değişir; CTA metni ALL WOMEN'S BAGS kalır.  
+Örnekler: `featured_tab_dGXFqP` changed.men  
+Öneri: leftover — kopya sapması  
+Karar: onay bekliyor
+
+---
+
+ADAY: levitate-search-modal-crop  
+Gerekçe: `.search-modal` kutu yüksekliği yalnız arama çubuğu; PRODUCTS listesi viewport'ta görünür.  
+Örnekler: `#Search-In-Modal`  
+Öneri: leftover — Dawn modal ölçü  
+Karar: onay bekliyor
+
+---
+
+ADAY: levitate-buy-it-now  
+Gerekçe: PDP BUY IT NOW (dinamik ödeme). Tıklanmadı.  
+Örnekler: `/products/sports-charms-bogg-bag`  
+Öneri: leftover — ödeme, dur  
+Karar: onay bekliyor

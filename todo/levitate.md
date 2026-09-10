@@ -15,7 +15,7 @@
 
 **Unlock:** Vendor ürün sayfası “Please enter password 1 to view demo.” Aynı host `/password` — public storefront-unlock. Başka host yok.
 
-**Durum:** Mod A roster + resmi 3vp · interact sırada  
+**Durum:** Mod A roster + resmi 3vp + interact (menu/search/cart/PDP/PLP)  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -31,7 +31,7 @@
 | Parallel | `observations/levitate/`, `evidence/levitate/`, `todo/levitate.md`, `candidates/levitate-leftovers.md`, unlock host map |
 
 **Kapsam satırı:**  
-`Levitate · default · Levitate V-1.5.0 / schema_name Purse & Bags 1.5.0 · theme_store_id null · shop backpack-online-store-2.myshopify.com · password 1 · home→PDP sports-charms-bogg-bag Grey Mare→Pastel Grey→PLP /collections/all→/collections→search ANDIBRO (boş)→cart→about-layout-1→contact→faq→news+bowling post→404 · 49 obs · 0 yeni şema · leftover: candidates/levitate-leftovers.md`
+`Levitate · default · Levitate V-1.5.0 / schema_name Purse & Bags 1.5.0 · theme_store_id null · shop backpack-online-store-2.myshopify.com · password 1 · home→PDP sports-charms-bogg-bag Grey Mare→Pastel Grey→PLP /collections/all→/collections→search ANDIBRO (boş storefront / PRODUCTS predictive)→cart $85→$170→about-layout-1→contact→faq 2. soru→news+bowling post→404 · 49 obs · interact 11 · 0 yeni şema · leftover: candidates/levitate-leftovers.md`
 
 ---
 
@@ -40,19 +40,19 @@
 | Şablon | Durum | 3vp |
 |---|---|---|
 | Home roster (announcement→footer) | [x] obs | [x] static |
-| Header Shop mega 1440 | [x] obs | [ ] interact · static `.header` |
-| Predictive search `ANDIBRO` | [x] obs | [ ] interact · static modal |
-| Mobile menu 375 + 768 | [x] obs | [ ] interact · static 375 açık / 1440 0px |
-| Cart drawer empty + filled + qty | [x] obs | [ ] interact · static boş |
-| PDP SPORTS CHARMS BOGG Color Grey Mare→Pastel Grey | [x] obs | [ ] interact |
-| PDP tabs Description→Additional Information | [x] obs | [ ] interact |
-| PLP `/collections/all` + hover/filter | [x] obs | [x] static · interact sırada |
+| Header Shop mega 1440 | [x] obs | [x] interact · 6 koleksiyon kartı |
+| Predictive search `ANDIBRO` | [x] obs | [x] interact · PRODUCTS satırı (viewport retry) |
+| Mobile menu 375 + 768 | [x] obs | [x] interact · 1440 hamburger gizli |
+| Cart drawer empty + filled + qty | [x] obs | [x] interact · $85 → $170 |
+| PDP SPORTS CHARMS BOGG Color Grey Mare→Pastel Grey | [x] obs | [x] interact |
+| PDP tabs Description→Additional Information | [x] obs | [x] interact |
+| PLP `/collections/all` + hover/filter | [x] obs | [x] interact · hover + Black 4/18 |
 | Collections `/collections` | [x] obs | [x] static |
 | Search `/search?q=ANDIBRO` (boş) | [x] obs | [x] static |
-| Cart page empty + filled | [x] obs | [ ] interact · static boş |
+| Cart page empty + filled | [x] obs | [x] interact · qty 1→2 |
 | About `/pages/about-layout-1` | [x] obs | [x] static |
 | Contact form (submit yok) | [x] obs | [x] static |
-| FAQ `/pages/faq` | [x] obs | [ ] interact · static accordion |
+| FAQ `/pages/faq` | [x] obs | [x] interact · 2. soru açık (çoklu) |
 | News + bowling post | [x] obs | [x] static |
 | 404 | [x] obs | [x] static |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
@@ -98,5 +98,5 @@
 ## Evidence backlog
 
 - [x] Official 3vp static — 146 PNG (menu 1440 zero-size; header `.header`)
-- [ ] Interact header / search / menu / cart / featured / FAQ / PDP / PLP
-- [ ] `node scripts/validate-schemas.mjs`
+- [x] Interact 11 component · stateFindings kareden · 0 yeni şema
+- [x] `node scripts/validate-schemas.mjs` — 0 error · 13 warn (önceki şemalar)
