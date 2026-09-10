@@ -7,10 +7,59 @@
   "url": "https://musical-online-store.myshopify.com/",
   "selector": "#menu-drawer",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/music/default/home/global-menu-drawer.375.png",
+    "evidence/music/default/home/global-menu-drawer.768.png",
+    "evidence/music/default/home/global-menu-drawer.1440.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "#menu-drawer. header-drawer data-breakpoint=desktop. Opener Menu summary.",
   "delta": "Hamburger drawer. Open interact. Shopify.theme.name Music-v-1-5-0-latest-updates-new · schema_name Music · schema_version 1.5.0 · theme_store_id null · role main · id 135699103818 · shop musical-online-store.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock).",
   "captureMode": "viewport",
-  "prepareClick": "#Details-menu-drawer-container > summary.header__icon--menu"
+  "prepareClick": "#Details-menu-drawer-container > summary.header__icon--menu",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://musical-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary.header__icon--menu",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "1440 inline mega olabilir — 375/768 hamburger."
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "header-drawer data-breakpoint=desktop. Yazılı <a> tıklanmadı. Log in / wishlist yok.",
+  "capture": {
+    "url": "https://musical-online-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "viewport",
+    "updatedAt": "2026-09-10T11:45:12.017Z",
+    "prepareClick": "#Details-menu-drawer-container > summary.header__icon--menu"
+  }
 }

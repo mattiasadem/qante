@@ -7,8 +7,76 @@
   "url": "https://musical-online-store.myshopify.com/",
   "selector": "#shopify-section-sections--17181904699466__header",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
+  "evidence": [
+    "evidence/music/default/home/navigation-header-mega.375.png",
+    "evidence/music/default/home/navigation-header-mega.768.png",
+    "evidence/music/default/home/navigation-header-mega.1440.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "1440: Shop · Bestseller · Themes · Shop By · Collections + Search / Log in / Cart. Mega details#Details-HeaderMenu-1..5. Wishlist/Compare ikon. header-drawer data-breakpoint=desktop.",
-  "delta": "Mega VAR (5 details). Interact Shop paneli. Shopify.theme.name Music-v-1-5-0-latest-updates-new · schema_name Music · schema_version 1.5.0 · theme_store_id null · role main · id 135699103818 · shop musical-online-store.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock)."
+  "delta": "Mega VAR (5 details). Interact Shop paneli. Shopify.theme.name Music-v-1-5-0-latest-updates-new · schema_name Music · schema_version 1.5.0 · theme_store_id null · role main · id 135699103818 · shop musical-online-store.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock).",
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://musical-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Mega kapalı header. 375/768 hamburger ayrı global-menu-drawer."
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-1 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "Hover önce; iç <a href=/collections/all> sayfaya gider."
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "details#Details-HeaderMenu-1",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mega-shop",
+      "not": "Shop mega image cards."
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Shop = Details-HeaderMenu-1. Hover details.open bırakmazsa forceOpen. 375/768 hamburger ayrı observation.",
+  "capture": {
+    "url": "https://musical-online-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "viewport",
+    "updatedAt": "2026-09-10T11:51:22.982Z"
+  }
 }

@@ -100,6 +100,22 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: music-you-may-like-empty-drawer  
+Gerekçe: Boş `#CartDrawer` 1440 karede YOUR CART boş + CONTINUE SHOPPING + Log in + altta YOU MAY LIKE (Latin percussion Drum $146). ATC olmadan upsell. Ayrı schema yok.  
+Örnekler: home `#CartDrawer`  
+Öneri: leftover — upsell  
+Karar: onay bekliyor
+
+---
+
+ADAY: music-search-1440-inline  
+Gerekçe: 1440 header’da `Search...` inline. `details:has(#Search-In-Modal)` zero-size skip. 375/768 search overlay bar açıldı. Desktop modal ayrı değil.  
+Örnekler: home header  
+Öneri: leftover — cihaz kırılımı  
+Karar: onay bekliyor
+
+---
+
 ADAY: music-instagram-typo  
 Gerekçe: Instagram bandı başlığı “Follow us on Intsagram @Music”. Hotspot yok; link `#`.  
 Örnekler: home `custom_instagram_3eM9FD`  
