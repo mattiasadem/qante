@@ -130,9 +130,9 @@ Karar: onay bekliyor
 ---
 
 ADAY: hot-sauce-you-may-like-empty-drawer  
-Gerekçe: Boş `#CartDrawer` sağ panelde **YOU MAY LIKE** + Hot Sauces Smoky & Roasted ADD TO CART. Food-drink leftover ile aynı aile.  
-Örnekler: `global-cart-drawer.1440.png`  
-Öneri: leftover — boş drawer upsell  
+Gerekçe: `#CartDrawer` sağ panelde **YOU MAY LIKE** + Hot Sauces Smoky & Roasted ADD TO CART — hem boş hem dolu (Chili Sauce qty 1/2) drawer interact karelerinde. Food-drink leftover ile aynı aile.  
+Örnekler: `global-cart-drawer.initial.cart-bos.1440.png` · `global-cart-drawer.filled.sepete-eklendi.1440.png`  
+Öneri: leftover — drawer upsell  
 Karar: onay bekliyor
 
 ---

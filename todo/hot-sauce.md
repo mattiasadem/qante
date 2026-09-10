@@ -15,8 +15,8 @@
 
 **Unlock:** Vendor ürün sayfası “Please enter password `1` to view demo.” Aynı host `/password` — public storefront-unlock. Başka host yok. Title unlock sonrası `food-online-store-2`.
 
-**Durum:** Mod A + official 3vp · 41 obs · 122 PNG · 0 yeni şema · interact sırada  
-**PR:** draft · **main'e merge yok**
+**Durum:** Mod A + static 3vp + interact yazıldı · 41 obs · 185 PNG · 0 yeni şema  
+**PR:** https://github.com/mattiasadem/qante/pull/421 · draft · **main'e merge yok**
 
 ---
 
@@ -31,7 +31,7 @@
 | Parallel | `observations/hot-sauce/`, `evidence/hot-sauce/`, `todo/hot-sauce.md`, `candidates/hot-sauce-leftovers.md` + unlock host map |
 
 **Kapsam satırı:**  
-`Hot Sauce · default · Hot Sauce V-1.5.0 / schema_name Hot Sauce 1.5.0 · theme_store_id null · shop food-online-store-2.myshopify.com · password 1 · home→PDP chili-sauce-bottle-mockup→PLP best-sellers→/collections→search sauce→cart empty→our-story/contact/faqs→news+funny-stories · 41 obs · 0 yeni şema · leftover: candidates/hot-sauce-leftovers.md`
+`Hot Sauce · default · Hot Sauce V-1.5.0 / schema_name Hot Sauce 1.5.0 · theme_store_id null · shop food-online-store-2.myshopify.com · password 1 · home→PDP chili-sauce-bottle-mockup→PLP best-sellers→/collections→search sauce→cart empty→our-story/contact/faqs→news+funny-stories · 41 obs · 185 PNG · 0 yeni şema · leftover: candidates/hot-sauce-leftovers.md`
 
 ---
 
@@ -40,19 +40,19 @@
 | Şablon | Durum | 3vp |
 |---|---|---|
 | Home roster (announcement→footer) | [x] obs | [x] static |
-| Header Shop mega 1440 | [x] obs | [ ] interact |
-| Predictive search `chili` / `sauce` | [x] obs | [ ] interact |
-| Mobile menu 375 + 768 | [x] obs | [x] static open 375/768 · 1440 zero · [ ] interact |
-| Cart drawer empty + filled + qty | [x] obs | [x] static empty · [ ] interact filled |
-| PDP Chili Sauce Bottle Mockup (qty; varyant yok) | [x] obs | [x] static · [ ] interact qty + tabs |
-| Featured Best Sellers hover | [x] obs | [x] static · [ ] interact |
-| PLP `/collections/best-sellers` + filter | [x] obs | [x] static · [ ] interact |
+| Header Shop mega 1440 | [x] obs | [x] interact · Shop hover 6 foto kart |
+| Predictive search `chili` / `sauce` | [x] obs | [x] interact `chili` 3vp |
+| Mobile menu 375 + 768 | [x] obs | [x] interact 375/768 · 1440 `missingStates` (0×0) |
+| Cart drawer empty + filled + qty | [x] obs | [x] interact empty→qty 1 $22→qty 2 $44 |
+| PDP Chili Sauce Bottle Mockup (qty; varyant yok) | [x] obs | [x] interact qty 1→2 + tabs |
+| Featured Best Sellers hover | [x] obs | [x] interact 1440 · 375/768 `missingStates` |
+| PLP `/collections/best-sellers` + filter | [x] obs | [x] interact 1440 hover + Category Hot Sauce 5/20 · 375/768 `missingStates` |
 | Collections `/collections` | [x] obs | [x] static |
 | Search `/search?q=sauce` | [x] obs | [x] static |
-| Cart page empty + filled | [x] obs | [x] static empty · [ ] interact |
+| Cart page empty + filled | [x] obs | [x] interact empty→qty 1 $22→qty 2 $44 |
 | About `/pages/our-story` | [x] obs | [x] static |
 | Contact form (submit yok) | [x] obs | [x] static |
-| FAQ `/pages/faqs` | [x] obs | [x] static · [ ] interact |
+| FAQ `/pages/faqs` | [x] obs | [x] interact ikinci soru (allowMultipleOpen) |
 | News + funny-stories post | [x] obs | [x] static |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
@@ -97,5 +97,5 @@
 ## Evidence backlog
 
 - [x] Official 3vp static (122 PNG · menu 1440 zero-size)
-- [ ] Interact header / search / menu / cart / featured / FAQ / PDP / PLP
-- [ ] `node scripts/validate-schemas.mjs` — şema değişmedi
+- [x] Interact header / search / menu / cart / featured / FAQ / PDP / PLP (11 gözlem · 63 PNG)
+- [x] `node scripts/validate-schemas.mjs` — 0 error (13 preexisting warn, unrelated)
