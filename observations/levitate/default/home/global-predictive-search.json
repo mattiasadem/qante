@@ -27,6 +27,54 @@
     "mode": "viewport",
     "prepareClick": "summary.header__icon--search"
   },
-  "captureMode": "viewport",
-  "prepareClick": "summary.header__icon--search"
+  "captureMode": "section",
+  "prepareClick": "summary.header__icon--search",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://backpack-online-store-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "details:has(#Search-In-Modal)",
+      "capture": true,
+      "captureMode": "section",
+      "captureSelector": ".search-modal",
+      "etiket": "modal-bos",
+      "not": "Boş Search çubuğu"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "ANDIBRO",
+      "capture": true,
+      "captureMode": "section",
+      "captureSelector": ".search-modal",
+      "etiket": "andibro",
+      "not": "katalogSorgu ANDIBRO — PRODUCTS"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "katalogSorgu=ANDIBRO (WOMAN LEATHER ANDIBRO CHERRY BAG). Storefront /search boş; predictive ürün döner."
 }
