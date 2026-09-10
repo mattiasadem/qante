@@ -1,0 +1,94 @@
+{
+  "observationId": "photo-camera.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "photo-camera",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://photography-online-store.myshopify.com/",
+  "selector": "predictive-search, details:has(#Search-In-Modal)",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [],
+  "storefrontPassword": "1",
+  "notlar": "1440 inline predictive-search ~215×32. 375/768 summary.header__icon--search → #Search-In-Modal. katalogSorgu camera.",
+  "delta": "Shopify.theme.name Photo-camera-v-1-5-0-latest-updates-new · schema_name Photo camera · schema_version 1.5.0 · theme_store_id null · role main · id 168518320375 · shop photography-online-store.myshopify.com · Speedo Themes third-party (Theme Store official değil). storefrontPassword=1 (speedothemes.com product page).",
+  "capture": {
+    "url": "https://photography-online-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": ""
+  },
+  "captureMode": "viewport",
+  "prepareClick": "summary.header__icon--search",
+  "interactionStates": [
+    "initial",
+    "open",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://photography-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "details:has(#Search-In-Modal)",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "modal-bos",
+      "not": "Mobil arama modal boş"
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "predictive-search input, #Search-In-Template",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "inline-bos",
+      "not": "1440 inline arama kutusu"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal, predictive-search input[type='search'], #Search-In-Template",
+      "value": "camera",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "camera-sonuc",
+      "not": "camera yazılı öneri / ürün"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": ""
+}

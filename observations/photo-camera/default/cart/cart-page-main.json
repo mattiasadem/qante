@@ -1,0 +1,77 @@
+{
+  "observationId": "photo-camera.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "photo-camera",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://photography-online-store.myshopify.com/cart",
+  "selector": "#shopify-section-template--23754393190647__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [],
+  "storefrontPassword": "1",
+  "notlar": "Boş: Your cart is empty · Continue Shopping · Log in to check out faster. cart-footer sibling h=0.",
+  "delta": "Shopify.theme.name Photo-camera-v-1-5-0-latest-updates-new · schema_name Photo camera · schema_version 1.5.0 · theme_store_id null · role main · id 168518320375 · shop photography-online-store.myshopify.com · Speedo Themes third-party (Theme Store official değil). storefrontPassword=1 (speedothemes.com product page).",
+  "capture": {
+    "url": "https://photography-online-store.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": ""
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://photography-online-store.myshopify.com/cart",
+      "capture": true,
+      "etiket": "bos",
+      "not": "Boş sepet sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://photography-online-store.myshopify.com/products/melcam-hd-digital-camera",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add'], button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://photography-online-store.myshopify.com/cart",
+      "capture": true,
+      "etiket": "dolu",
+      "not": "Melcam satır + toplam"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], .quantity__button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "qty 1 → 2"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": ""
+}

@@ -49,6 +49,7 @@ export const PUBLIC_DEMO_PASSWORDS = {
   "pandora-wallpaper.myshopify.com": "1",
   "petz-online-store-2.myshopify.com": "1",
   "petz-online-store.myshopify.com": "1",
+  "photography-online-store.myshopify.com": "1",
   "sara-toy-store.myshopify.com": "1",
   "sonix-electronics-store-2.myshopify.com": "1",
   "speedo-candles-store.myshopify.com": "1",

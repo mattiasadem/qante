@@ -57,6 +57,7 @@
 | Nouk (Speedo) | [`nouk.md`](./nouk.md) | 🟡 first inventory — `jewelry-online-shop-3` · Nouk Jewellery 1.5.0 · password `1` (vendor) · 44 obs · ~185 PNG · 0 yeni şema |
 | Olelia (Speedo) | [`olelia.md`](./olelia.md) | ✅ first inventory — jewelry-online-shop-4 · password 1 · 46 obs · 0 yeni şema · interact |
 | PawPets (Speedo) | [`pawpets.md`](./pawpets.md) | 🟡 first inventory — Mightypetz 1.5.0 · 39 obs · 0 yeni şema |
+| Photo Camera (Speedo) | [`photo-camera.md`](./photo-camera.md) | 🟡 first inventory + interact — official `photography-online-store` · Photo-camera-v-1-5-0-latest-updates-new · password `1` · 48 obs · 0 yeni şema |
 | Plantrex (Speedo) | [`plantrex.md`](./plantrex.md) | ✅ default — official `pandora-flower.myshopify.com` · vendor password `1` · 28 obs · 132 PNG · 0 yeni şema |
 | SARA Toys (Speedo) | [`sara.md`](./sara.md) | ✅ first inventory + interact — sara-toy-store · password `1` · 29 obs · 0 yeni şema |
 | Sachue (Speedo) | [`sachue.md`](./sachue.md) | ✅ first inventory — official demo pandora-beauty-store · 41 obs · 168 PNG · 0 yeni şema · interact |
