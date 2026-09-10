@@ -1,0 +1,95 @@
+{
+  "observationId": "socks.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "socks",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://socks-online-store-1.myshopify.com/",
+  "selector": "details:has(#Search-In-Modal)",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/socks/default/home/global-predictive-search.1440.png",
+    "evidence/socks/default/home/global-predictive-search.375.png",
+    "evidence/socks/default/home/global-predictive-search.768.png",
+    "evidence/socks/default/home/global-predictive-search.initial.modal-bos.1440.png",
+    "evidence/socks/default/home/global-predictive-search.initial.modal-bos.375.png",
+    "evidence/socks/default/home/global-predictive-search.initial.modal-bos.768.png",
+    "evidence/socks/default/home/global-predictive-search.input.socks.1440.png",
+    "evidence/socks/default/home/global-predictive-search.input.socks.375.png",
+    "evidence/socks/default/home/global-predictive-search.input.socks.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "summary.header__icon--search → #Search-In-Modal input. Predictive host. Submit yok.",
+  "delta": "Shopify.theme.name socks-online-store-v-1-5-0-latest-updates-new · schema_name Socks · schema_version 1.5.0 · theme_store_id null · role main · id 132680483023 · shop socks-online-store-1.myshopify.com · Speedo Themes OS 2.0 third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock). Official host only.",
+  "capture": {
+    "url": "https://socks-online-store-1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T10:01:32.281Z",
+    "prepareClick": "summary.header__icon--search"
+  },
+  "captureMode": "viewport",
+  "prepareClick": "summary.header__icon--search",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://socks-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "capture": false,
+      "not": "İki ikon; clickVisible görünür header__icons kopyasını alır"
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "div.header__icons details-modal.header__search details",
+      "capture": false,
+      "not": "İlk details 0×0; header__icons kopyası"
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "details:has(#Search-In-Modal)",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "modal-bos",
+      "not": "Boş Search çubuğu"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "socks",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "socks",
+      "not": "katalogSorgu socks — PRODUCTS listesi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Açık Search overlay: boş Search çubuğu + büyüteç + sağda X. Sonuç listesi yok. Arka plan dim homepage (Wear it and be proud).",
+    "input": "q=socks. PRODUCTS: Abstract Formal Unisex Socks · Autumn Unisex Crew Socks · Extra Stretchy Breathable Striped Socks for Women · Women's Pineapple Socks · Freshfoot Cute and Colorful Organic Cotton Socks · Handmade Knitted Socks · A pair of colorful socks with a green and orange pattern · Zebra Ankle Length Towel Socks · Unisex Anti-Friction High Ankle Socks · Cotton Men's Striped Cotton High Ankle Socks. Altta Search for “socks”. Koleksiyon grubu yok."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu=socks (scan). İki #Search-In-Modal kopyası; görünür header__icons + forceOpen details. Fill görünür input’u aldı. Submit / PII yok. Yeni şema yok."
+}

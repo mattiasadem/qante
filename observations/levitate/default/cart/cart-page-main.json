@@ -1,0 +1,100 @@
+{
+  "observationId": "levitate.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "levitate",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://backpack-online-store-2.myshopify.com/cart",
+  "selector": "#shopify-section-template--24569857769761__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/levitate/default/cart/cart-page-main.1440.png",
+    "evidence/levitate/default/cart/cart-page-main.375.png",
+    "evidence/levitate/default/cart/cart-page-main.768.png",
+    "evidence/levitate/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/levitate/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/levitate/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/levitate/default/cart/cart-page-main.filled.sepete-eklendi.1440.png",
+    "evidence/levitate/default/cart/cart-page-main.filled.sepete-eklendi.375.png",
+    "evidence/levitate/default/cart/cart-page-main.filled.sepete-eklendi.768.png",
+    "evidence/levitate/default/cart/cart-page-main.initial.bos.1440.png",
+    "evidence/levitate/default/cart/cart-page-main.initial.bos.375.png",
+    "evidence/levitate/default/cart/cart-page-main.initial.bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Your cart is empty + CONTINUE SHOPPING + Have an account? Log in. cart-footer h=0 leftover.",
+  "delta": "Shopify.theme.name Levitate V-1.5.0 · schema_name Purse & Bags · schema_version 1.5.0 · theme_store_id null · role main · id 178196283681 · handle null · shop backpack-online-store-2.myshopify.com · locale en · country US · currency USD · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock). Platform adı dataBindings'e yazılmadı.",
+  "capture": {
+    "url": "https://backpack-online-store-2.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T11:33:45.103Z",
+    "mode": "section"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://backpack-online-store-2.myshopify.com/cart",
+      "capture": true,
+      "etiket": "bos",
+      "not": "Boş sepet sayfası"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://backpack-online-store-2.myshopify.com/products/sports-charms-bogg-bag",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add'], button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://backpack-online-store-2.myshopify.com/cart",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "etiket": "sepete-eklendi",
+      "not": "BOGG satır"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], .quantity__button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "qty 1 → 2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty. CONTINUE SHOPPING. Have an account? Log in to checkout faster.",
+    "filled": "SPORTS CHARMS BOGG BAG $85 Color Grey Mare qty 1, satır total $85. Continue shopping.",
+    "changed": "qty 2, satır total $170. Grey Mare aynı."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart → ui. Capture #cart-items; checkout / cart-footer sibling empty-cart'ta h=0 leftover. Check out tıklanmadı."
+}
