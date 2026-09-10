@@ -1,0 +1,133 @@
+{
+  "observationId": "socks.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "socks",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://socks-online-store-1.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/socks/default/home/global-cart-drawer.1440.png",
+    "evidence/socks/default/home/global-cart-drawer.375.png",
+    "evidence/socks/default/home/global-cart-drawer.768.png",
+    "evidence/socks/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/socks/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/socks/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/socks/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/socks/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/socks/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/socks/default/home/global-cart-drawer.initial.bos.1440.png",
+    "evidence/socks/default/home/global-cart-drawer.initial.bos.375.png",
+    "evidence/socks/default/home/global-cart-drawer.initial.bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "cart-drawer #CartDrawer. Boş: Your cart is empty. #cart-icon-bubble.",
+  "delta": "Shopify.theme.name socks-online-store-v-1-5-0-latest-updates-new · schema_name Socks · schema_version 1.5.0 · theme_store_id null · role main · id 132680483023 · shop socks-online-store-1.myshopify.com · Speedo Themes OS 2.0 third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock). Official host only.",
+  "capture": {
+    "url": "https://socks-online-store-1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T10:07:22.108Z",
+    "prepareClick": "#cart-icon-bubble"
+  },
+  "captureMode": "viewport",
+  "prepareClick": "#cart-icon-bubble",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://socks-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": false,
+      "not": "#cart-icon-bubble href=/cart — tıklanmadı"
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "#CartDrawer",
+      "capture": true,
+      "captureMode": "section",
+      "captureSelector": "#CartDrawer",
+      "etiket": "bos",
+      "not": "Boş cart drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://socks-online-store-1.myshopify.com/products/nintendo-donkey-kong-diddy-kong-socks",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--16195360587983__main button[name='add']",
+      "capture": false,
+      "not": "Yalnız PDP main ATC — sayfadaki diğer button[name=add] quick-add"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "forceOpen",
+      "selector": "#CartDrawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Nintendo satır"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus'], #CartDrawer .quantity__button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "qty 1 → 2"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Your cart is empty. Continue Shopping. Have an account? Log in to check out faster. X. Altta YOU MAY LIKE: Minigooose Safari Animal Crew Socks $14.26 Add To Cart.",
+    "filled": "YOUR CART. Nintendo Donkey Kong Diddy Kong Socks · Color: Red · qty 1 · $215. Free shipping / Express shipping bar. Estimated total $215.00 USD. Check out. 1440 solda sibling YOU MAY LIKE listesi (Minigooose / Republic Funky / Extra Stretchy…). 375/768 YOU MAY LIKE chevron kapalı.",
+    "changed": "Aynı satır qty 2 · satır ve estimated total $430.00 USD. Check out duruyor; tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "#cart-icon-bubble href=/cart — tıklanmadı; boş hâl forceOpen cart-drawer + #CartDrawer. ATC UI path (#shopify-section-…__main button[name=add]) — fallback yok. Checkout / Log in / YOU MAY LIKE Add To Cart tıklanmadı. YOU MAY LIKE sibling leftover. Yeni şema yok (boş↔dolu aynı component)."
+}

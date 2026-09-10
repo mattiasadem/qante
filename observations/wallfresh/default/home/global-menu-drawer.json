@@ -1,0 +1,84 @@
+{
+  "observationId": "wallfresh.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "wallfresh",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pandora-wallpaper-2.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "storefrontPassword": "1",
+  "evidence": [
+    "evidence/wallfresh/default/home/global-menu-drawer.1440.png",
+    "evidence/wallfresh/default/home/global-menu-drawer.375.png",
+    "evidence/wallfresh/default/home/global-menu-drawer.768.png",
+    "evidence/wallfresh/default/home/global-menu-drawer.changed.shop-drill.375.png",
+    "evidence/wallfresh/default/home/global-menu-drawer.changed.shop-drill.768.png",
+    "evidence/wallfresh/default/home/global-menu-drawer.open.hamburger-acik.375.png",
+    "evidence/wallfresh/default/home/global-menu-drawer.open.hamburger-acik.768.png"
+  ],
+  "notlar": "header-drawer · #Details-menu-drawer-container. 375/768 hamburger. Shop/Bestseller/Themes/Collections #HeaderDrawer-* details.",
+  "delta": "1440 hamburger 0×0 (inline nav). Kapalı kare yanıltır.",
+  "captureMode": "viewport",
+  "prepareClick": "#Details-menu-drawer-container > summary",
+  "capture": {
+    "url": "https://pandora-wallpaper-2.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T10:03:14.900Z",
+    "prepareClick": "#Details-menu-drawer-container > summary"
+  },
+  "interactionStates": [
+    "initial",
+    "open",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "selector": null,
+      "value": "https://pandora-wallpaper-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger-acik",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Hamburger drawer. 1440 inline nav."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-menu-drawer-menu-item-2 > summary",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-drill",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "not": "Shop boş ok — Bedroom/Flower… Yazılı koleksiyon <a> değil."
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 hamburger: Home · Shop/Bestseller/Themes/Collections (sağ ok) · About Us · Contact Us · Wishlist · Compare · Log in · USD · English · sosyal. 768’de sağda home görünür. 1440 drawer yok.",
+    "changed": "375/768 Shop drill: ← Shop + Bedroom/Flower/Living Room/Nature (KidsRoom/Kitchen altta). Drawer yerinde, koleksiyon sayfasına kaçmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "Shop #Details-menu-drawer-menu-item-2 > summary — yazılı <a> tıklanmadı. Log in tıklanmadı."
+}

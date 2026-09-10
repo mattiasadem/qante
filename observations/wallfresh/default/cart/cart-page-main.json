@@ -1,0 +1,81 @@
+{
+  "observationId": "wallfresh.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "wallfresh",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://pandora-wallpaper-2.myshopify.com/cart",
+  "selector": "#shopify-section-template--24408108925243__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "storefrontPassword": "1",
+  "evidence": [
+    "evidence/wallfresh/default/cart/cart-page-main.1440.png",
+    "evidence/wallfresh/default/cart/cart-page-main.375.png",
+    "evidence/wallfresh/default/cart/cart-page-main.768.png",
+    "evidence/wallfresh/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/wallfresh/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/wallfresh/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/wallfresh/default/cart/cart-page-main.filled.sepet-dolu.1440.png",
+    "evidence/wallfresh/default/cart/cart-page-main.filled.sepet-dolu.375.png",
+    "evidence/wallfresh/default/cart/cart-page-main.filled.sepet-dolu.768.png"
+  ],
+  "notlar": "Your cart is empty · Continue Shopping · Have an account? Log in…",
+  "delta": "cart-footer h=0 leftover. filled interact.",
+  "capture": {
+    "url": "https://pandora-wallpaper-2.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T10:11:00.049Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "selector": null,
+      "value": "https://pandora-wallpaper-2.myshopify.com/products/milton-and-king-antique-straight-wallpaper",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--24408109908283__main form[action*='/cart/add'] button[name='add']",
+      "value": null,
+      "capture": false,
+      "not": "Milton Antique sepete"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "selector": null,
+      "value": "https://pandora-wallpaper-2.myshopify.com/cart",
+      "capture": true,
+      "etiket": "sepet-dolu",
+      "not": "Dolu cart sayfası"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus']",
+      "value": 1200,
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "Adet 2"
+    }
+  ],
+  "stateFindings": {
+    "filled": "Your cart · Milton And King Antique Straight Wallpaper · Color Amphibian · Size 100 X 100 · adet 1 · $162.00 · Continue shopping.",
+    "changed": "Adet 2 · satır toplam $324.00."
+  },
+  "missingStates": [],
+  "interactionNote": "Checkout tıklanmadı. ATC UI."
+}
