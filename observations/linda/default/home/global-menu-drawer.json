@@ -9,7 +9,10 @@
   "evidenceSlug": "global-menu-drawer",
   "evidence": [
     "evidence/linda/default/home/global-menu-drawer.375.png",
-    "evidence/linda/default/home/global-menu-drawer.768.png"
+    "evidence/linda/default/home/global-menu-drawer.768.png",
+    "evidence/linda/default/home/global-menu-drawer.initial.kapali.768.png",
+    "evidence/linda/default/home/global-menu-drawer.open.hamburger-acik.375.png",
+    "evidence/linda/default/home/global-menu-drawer.open.hamburger-acik.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "details#Details-menu-drawer-container > summary.header__icon--menu. 375/768. Shop By submenu #Details-menu-drawer-menu-item-2.",
@@ -24,8 +27,8 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T21:31:59.171Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T08:56:58.555Z",
     "prepareClick": "#Details-menu-drawer-container > summary"
   },
   "interactionStates": [
@@ -82,7 +85,15 @@
       "not": "375/768 menü çekmecesi"
     }
   ],
-  "stateFindings": {},
-  "missingStates": [],
-  "interactionNote": "1440 hamburger 0px — Shop By header'da. Log in tıklanmadı."
+  "stateFindings": {
+    "initial": "768 viewport: hamburger kapalı home (☰ LINDA büyüteç sepet). 375 #menu-drawer 0px — kare yok.",
+    "open": "375 tam genişlik: X + LINDA + büyüteç + sepet; Home, Shop By →, Blog, Our Story, Faq, Contact, Wishlist, Log in, United States | USD $, English, sosyal ikonlar. 768 sol panel aynı nav + Wishlist + locale + sosyal; sayfa karartılmış."
+  },
+  "missingStates": [
+    {
+      "state": "initial",
+      "sebep": "capture (375): zero-size / eşleşmedi: #menu-drawer"
+    }
+  ],
+  "interactionNote": "1440 hamburger 0px — Shop By header'da. Shop By → alt menüye girilmedi. Log in tıklanmadı."
 }

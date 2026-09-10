@@ -13,8 +13,8 @@
 `Shopify.shop` = `pandora-vintage.myshopify.com`  
 Storefront `/` **302** → `/password`. Vendor product page: *Please enter password "1" to view demo.* Public unlock used; no other host.
 
-**Durum:** Mod A walk + 3vp + interact (devam)  
-**PR:** draft · **main'e merge yok**
+**Durum:** Mod A walk + 3vp + interact pixel-check (search 1440 bir retry)  
+**PR:** draft #380 · **main'e merge yok**
 
 ---
 
@@ -38,15 +38,15 @@ Storefront `/` **302** → `/password`. Vendor product page: *Please enter passw
 | Şablon | Durum | 3vp |
 |---|---|---|
 | Home roster (announcement→footer) | [x] obs | [x] capture |
-| Shop By mega hover 1440 | interact | [ ] |
-| Predictive search `ring` | interact | [ ] |
-| Mobile menu 375 + 768 | interact | [x] 375/768 open via prepareClick; 1440 zero-size |
-| Cart drawer empty + filled + qty | interact | [x] empty 3vp |
-| PDP ring Size 8→9 | interact | [ ] |
+| Shop By mega hover 1440 | interact | [x] open 1440 (375/768 mega yok) |
+| Predictive search `ring` | interact | [x] 375/768 empty+input; 1440 retry details-modal |
+| Mobile menu 375 + 768 | interact | [x] open 375/768; 375 initial zero-size |
+| Cart drawer empty + filled + qty | interact | [x] empty/filled/qty 3vp |
+| PDP ring Size 8→9 | interact | [x] Size 8→9, $65 aynı |
 | PLP `/collections/jewellery` | [x] obs | [x] capture |
 | Collections `/collections` | [x] obs | [x] capture |
 | Search `/search?q=ring` | [x] obs | [x] capture |
-| Cart page empty + filled + qty | [x] obs | [x] empty |
+| Cart page empty + filled + qty | [x] obs | [x] empty/filled/qty 3vp |
 | Our Story / FAQ / contact / blog | [x] obs | [x] capture |
 | 404 | [x] obs | [x] capture |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
@@ -103,12 +103,12 @@ Storefront `/` **302** → `/password`. Vendor product page: *Please enter passw
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | open | pending |
-| global-predictive-search | input | pending |
-| global-menu-drawer | open | pending |
-| global-cart-drawer | filled + changed | pending |
-| cart-page-main | filled + changed | pending |
-| product-info-main | changed | pending |
+| navigation-header-mega | open | 1440 Shop By listesi (Best Seller…Boho Clothing). Şema yok. |
+| global-predictive-search | input | 375/768 SUGGESTIONS+PRODUCTS `ring`. 1440 retry. Şema yok. |
+| global-menu-drawer | open | 375/768 nav + Wishlist + locale. 375 initial 0px. Şema yok. |
+| global-cart-drawer | filled + changed | Size 8 $65 → qty2 $130. CHECK OUT dur. Şema yok. |
+| cart-page-main | filled + changed | Aynı satır $65 → $130. Footer sibling. Şema yok. |
+| product-info-main | changed | Size 8→9, fiyat $65 aynı. Şema yok. |
 
 Stop: email / account / checkout / newsletter submit / PII
 
@@ -123,6 +123,7 @@ Stop: email / account / checkout / newsletter submit / PII
 ## Evidence backlog
 
 - [x] Official 3vp static (`capture-observation.mjs`) — 145 PNG (menu/search 1440 zero-size)
-- [ ] Interact Shop By mega / search / cart / menu / PDP Size
-- [ ] PNG bak → stateFindings
+- [x] Interact Shop By / menu / cart drawer / cart page / PDP Size + search 375/768
+- [x] PNG bak → stateFindings (6 obs)
+- [ ] Search 1440 bir retry (`header details-modal.header__search`)
 - [ ] `npm run validate` — 0 error

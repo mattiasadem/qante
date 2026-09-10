@@ -8,9 +8,18 @@
   "selector": "#CartDrawer",
   "evidenceSlug": "global-cart-drawer",
   "evidence": [
+    "evidence/linda/default/home/global-cart-drawer.1440.png",
     "evidence/linda/default/home/global-cart-drawer.375.png",
     "evidence/linda/default/home/global-cart-drawer.768.png",
-    "evidence/linda/default/home/global-cart-drawer.1440.png"
+    "evidence/linda/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/linda/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/linda/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/linda/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/linda/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/linda/default/home/global-cart-drawer.filled.sepete-eklendi.768.png",
+    "evidence/linda/default/home/global-cart-drawer.initial.sepet-bos.1440.png",
+    "evidence/linda/default/home/global-cart-drawer.initial.sepet-bos.375.png",
+    "evidence/linda/default/home/global-cart-drawer.initial.sepet-bos.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "cart-drawer.drawer is-empty. Opener a#cart-icon-bubble href=/cart. Form #CartDrawer-Form. Checkout #CartDrawer-Checkout.",
@@ -25,8 +34,8 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-02T21:30:31.527Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T09:01:08.845Z",
     "prepareClick": "a#cart-icon-bubble"
   },
   "interactionStates": [
@@ -94,7 +103,11 @@
       "not": "Adet 1→2"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "Your cart is empty + CONTINUE SHOPPING + Have an account? Log in to check out faster. X kapat. Sayfa karartılmış.",
+    "filled": "Your cart. Free Shipping! $100.00 / Express Shipping! $150.00 bar. Beautiful Woman Wearing Ring $65 Size 8 qty 1; satır $65. Estimated total $65.00 USD. CHECK OUT. 375 tam genişlik; 768/1440 sağ panel.",
+    "changed": "Aynı satır Size 8 qty 2; satır ve Estimated total $130.00 USD. Eşikler $100 / $150 aynı. CHECK OUT duruyor."
+  },
   "missingStates": [],
-  "interactionNote": "Check Out tıklanmadı. Probe: ATC UI drawer açtı; /cart.js item_count 1, $65 Size 9 (probe size tıkı). Interact Size 8 default."
+  "interactionNote": "Check Out tıklanmadı. ATC UI drawer açtı; /cart/add.js fallback gerekmedi. Interact Size 8 default (probe Size 9 idi, fiyat $65 aynı)."
 }
