@@ -1,0 +1,75 @@
+{
+  "observationId": "shine.default.faq-support.faq-collapsible-tabs",
+  "schemaId": "faq-collapsible-tabs",
+  "kaynak": "shine",
+  "preset": "default",
+  "sayfa": "faq-support",
+  "url": "https://women-beauty-9.myshopify.com/pages/faq",
+  "selector": "#shopify-section-template--19497186492672__cb435de1-8958-455d-8843-8a9ef3413466",
+  "evidenceSlug": "faq-collapsible-tabs",
+  "evidence": [
+    "evidence/shine/default/faq-support/faq-collapsible-tabs.1440.png",
+    "evidence/shine/default/faq-support/faq-collapsible-tabs.375.png",
+    "evidence/shine/default/faq-support/faq-collapsible-tabs.768.png",
+    "evidence/shine/default/faq-support/faq-collapsible-tabs.changed.q2-acik.1440.png",
+    "evidence/shine/default/faq-support/faq-collapsible-tabs.changed.q2-acik.375.png",
+    "evidence/shine/default/faq-support/faq-collapsible-tabs.changed.q2-acik.768.png",
+    "evidence/shine/default/faq-support/faq-collapsible-tabs.initial.q1-acik.1440.png",
+    "evidence/shine/default/faq-support/faq-collapsible-tabs.initial.q1-acik.375.png",
+    "evidence/shine/default/faq-support/faq-collapsible-tabs.initial.q1-acik.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Frequently asked question · Can I choose whichever styles I want? (açık) + 5 kapalı.",
+  "delta": "İlk soru açık (openFirst).",
+  "capture": {
+    "url": "https://women-beauty-9.myshopify.com/pages/faq",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:31:45.625Z",
+    "mode": "section"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://women-beauty-9.myshopify.com/pages/faq",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19497186492672__cb435de1-8958-455d-8843-8a9ef3413466",
+      "capture": true,
+      "etiket": "q1-acik",
+      "not": "İlk soru açık"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--19497186492672__cb435de1-8958-455d-8843-8a9ef3413466 details summary:has-text(\"I like my styles\")",
+      "capture": true,
+      "etiket": "q2-acik",
+      "not": "İkinci soru da açık (allowMultipleOpen)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Frequently asked question. Q1 Can I choose whichever styles I want? açık + lorem. Q2–Q6 kapalı.",
+    "changed": "Q1 + Q2 (I like my styles but they don’t fit!) ikisi açık, lorem cevap. allowMultipleOpen."
+  },
+  "missingStates": [],
+  "interactionNote": "İlk click nth-of-type(2) eşleşmedi. Retry summary:has-text('I like my styles') — q2-acik alındı."
+}

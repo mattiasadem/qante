@@ -109,7 +109,7 @@ Temsilci only. Form gönder / sürükleme / chrome tekrarı yok.
 - [x] Hyper `blog-list-main` — Advice & Reviews tagged URL
 - [x] Allure `editorial-images-scroll` — 375 #1 DESIGN → #2 COMMITMENTS
 - [x] Hyper `collection-nav-slider` — görünür ok yok; kartlar koleksiyona gider
-- [x] Nexvo / Impact `comparison-quick-table` — Impact swatch PDP’ye kaçar; Nexvo statik; Hyper PDP swatch dekoratif
+- [x] Nexvo / Impact `comparison-quick-table` — Impact swatch PDP'ye kaçar; Nexvo statik; Hyper PDP swatch dekoratif
 - [x] Ceramide `media-shop-the-feed` — play timeout (üçüncü yok; not duruyor)
 
 ---
