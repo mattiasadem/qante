@@ -112,6 +112,7 @@
 | WallFresh (Speedo) | [`wallfresh.md`](./wallfresh.md) | ✅ first inventory + interact — official `pandora-wallpaper-2.myshopify.com` · Wallfresh 1.5.0 · password `1` · 49 obs · 0 yeni şema · mega/search/menu/cart/PDP/FAQ/tabs |
 | LINDA (Speedo, boho jewellery) | [`linda.md`](./linda.md) | 🟡 first inventory — official `pandora-vintage.myshopify.com` · password `1` · 49 obs · 0 yeni şema |
 | Gifts Treasures (Speedo) | [`gifts.md`](./gifts.md) | ✅ first inventory + interact — official `gift-online-shop-1.myshopify.com` · Gifts-treasures 1.5.0 · password `1` · 39 obs · 0 yeni şema · mega/search/cart/PDP/FAQ/PLP |
+| Yoga (Speedo · Yoga & Meditation) | [`yoga.md`](./yoga.md) | 🟡 first inventory — official `sports-online-store-2.myshopify.com` · Yoga and meditation 1.5.0 · password `1` · 47 obs · 0 yeni şema · 3vp + interact sırada |
 | Legal / policy (Kreis recipe) | [`policy-legal.md`](./policy-legal.md) | ✅ page-recipes/policy · 3-col sticky TOC \| content \| sibling nav |
 
 **Interact (discover sonrası derinlik):** [`interact.md`](./interact.md) — kapalı kare yalanı; Stretch + Cocoon/Balance shop-the-look kapandı.
