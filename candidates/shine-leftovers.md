@@ -69,10 +69,10 @@ Karar: onay bekliyor
 
 ---
 
-ADAY: shine-cart-footer-empty  
-Gerekçe: `#shopify-section-template--19497185673472__cart-footer` boş sepette h=0 (Estimated total gizli).  
-Örnekler: https://women-beauty-9.myshopify.com/cart  
-Öneri: leftover — totals dolu drawer/sayfada  
+ADAY: shine-cart-you-may-like  
+Gerekçe: Boş `#CartDrawer` 1440’ta da YOU MAY LIKE (Beauty Liquid Matte $89 + add to cart). cart-footer boş sayfada h=0. `global-cart-drawer.oneriler` zaten var.  
+Örnekler: evidence/shine/default/home/global-cart-drawer.1440.png  
+Öneri: leftover — mevcut oneriler  
 Karar: onay bekliyor
 
 ---

@@ -15,7 +15,7 @@ Sayfa başlığı: **Shine - New Beauty Store – women-beauty-9**
 
 **Password:** Speedo ürün sayfası “Please enter password `1` to view demo.” Aynı host `/password` — public storefront-unlock. Başka host yok.
 
-**Durum:** Mod A walk + observation yazıldı · 3vp capture / interact sırada  
+**Durum:** Mod A walk + resmi 3vp **bitti** (49/49) · interact sırada  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -40,22 +40,22 @@ Sayfa başlığı: **Shine - New Beauty Store – women-beauty-9**
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer + overlays) | [x] obs | [ ] capture |
+| Home roster (announcement→footer + overlays) | [x] obs | [x] capture |
 | Shop / Shop By mega 1440 | [ ] interact | [ ] |
 | Predictive search `cream` | [ ] interact | [ ] |
-| Mobile menu 375+768 | [ ] interact | [ ] |
-| Cart drawer empty + filled + qty | [ ] interact | [ ] |
-| PDP Beauty Liquid Matte Color Antique White→White Chocolate | [ ] interact | [ ] |
-| PLP `/collections/skincare` | [x] obs | [ ] capture |
-| Collections `/collections` | [x] obs | [ ] capture |
-| Search `/search?q=cream` | [x] obs | [ ] capture |
-| Cart `/cart` empty + filled | [x] obs | [ ] interact |
-| About `/pages/about-layout-1` | [x] obs | [ ] capture |
-| Our Story `/pages/our-story` | [x] obs | [ ] capture |
-| Contact `/pages/contact-layout-1` (submit yok) | [x] obs | [ ] capture |
+| Mobile menu 375+768 | [x] static open | [ ] interact drill |
+| Cart drawer empty + filled + qty | [x] empty | [ ] filled |
+| PDP Beauty Liquid Matte Color Antique White→White Chocolate | [x] obs | [ ] interact |
+| PLP `/collections/skincare` | [x] obs | [x] capture |
+| Collections `/collections` | [x] obs | [x] capture |
+| Search `/search?q=cream` | [x] obs | [x] capture |
+| Cart `/cart` empty + filled | [x] empty | [ ] filled |
+| About `/pages/about-layout-1` | [x] obs | [x] capture |
+| Our Story `/pages/our-story` | [x] obs | [x] capture |
+| Contact `/pages/contact-layout-1` (submit yok) | [x] obs | [x] capture |
 | FAQ `/pages/faq` accordion | [x] obs | [ ] interact |
-| News + Natural Beauty Tips post | [x] obs | [ ] capture |
-| 404 `/pages/this-page-does-not-exist-qante` | [x] obs | [ ] capture |
+| News + Natural Beauty Tips post | [x] obs | [x] capture |
+| 404 `/pages/this-page-does-not-exist-qante` | [x] obs | [x] capture |
 | Email / account / checkout / newsletter submit | ⛔ PII | — |
 
 ---
@@ -115,7 +115,7 @@ Aynı tip = şemaya dokunma, observation + delta. Yeni şema yok.
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact mega / search / cart empty+filled+qty / PDP Color / FAQ / PLP hover / menu
+- [x] Official 3vp static (`capture-observation.mjs`) — 49/49 · 147 PNG
+- [ ] Interact mega / search cream / cart filled+qty / PDP Color / FAQ / PLP hover
 - [ ] PNG bak → stateFindings
 - [ ] `node scripts/validate-schemas.mjs` — şema dokunulmadı
