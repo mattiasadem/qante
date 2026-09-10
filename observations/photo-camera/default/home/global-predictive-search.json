@@ -5,12 +5,18 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://photography-online-store.myshopify.com/",
-  "selector": "predictive-search, details:has(#Search-In-Modal)",
+  "selector": "#Search-In-Template",
   "evidenceSlug": "global-predictive-search",
   "evidence": [
+    "evidence/photo-camera/default/home/global-predictive-search.1440.png",
     "evidence/photo-camera/default/home/global-predictive-search.375.png",
     "evidence/photo-camera/default/home/global-predictive-search.768.png",
-    "evidence/photo-camera/default/home/global-predictive-search.1440.png"
+    "evidence/photo-camera/default/home/global-predictive-search.input.camera-sonuc.1440.png",
+    "evidence/photo-camera/default/home/global-predictive-search.input.camera-sonuc.375.png",
+    "evidence/photo-camera/default/home/global-predictive-search.input.camera-sonuc.768.png",
+    "evidence/photo-camera/default/home/global-predictive-search.open.inline-bos.1440.png",
+    "evidence/photo-camera/default/home/global-predictive-search.open.modal-bos.375.png",
+    "evidence/photo-camera/default/home/global-predictive-search.open.modal-bos.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "1440 inline predictive-search ~215×32. 375/768 summary.header__icon--search → #Search-In-Modal. katalogSorgu camera.",
@@ -23,16 +29,16 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-10T10:23:14.866Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T10:50:13.895Z",
     "prepareClick": "summary.header__icon--search"
   },
   "captureMode": "viewport",
   "prepareClick": "summary.header__icon--search",
   "interactionStates": [
     "initial",
-    "open",
-    "input"
+    "input",
+    "open"
   ],
   "interactionSteps": [
     {
@@ -67,8 +73,9 @@
       ],
       "capture": true,
       "captureMode": "viewport",
+      "captureSelector": "#shopify-section-sections--23754394370295__header",
       "etiket": "modal-bos",
-      "not": "Mobil arama modal boş"
+      "not": "Mobil arama modal boş — capture header (Search-In-Template 375 0px)"
     },
     {
       "state": "open",
@@ -85,15 +92,19 @@
     {
       "state": "input",
       "action": "fill",
-      "selector": "#Search-In-Modal, predictive-search input[type='search'], #Search-In-Template",
+      "selector": "#Search-In-Modal, #Search-In-Template input[name='q'], predictive-search input[type='search']",
       "value": "camera",
       "capture": true,
       "captureMode": "viewport",
+      "captureSelector": "#shopify-section-sections--23754394370295__header",
       "etiket": "camera-sonuc",
       "not": "camera yazılı öneri / ürün"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "open": "1440: header hapı boş, PRODUCTS listesi yok. 375/768: Search hapı + kapat; öneri yok, arka sayfa karartılı.",
+    "input": "katalogSorgu camera. 1440 hapta camera + PRODUCTS dropdown (Camera Rangefinder, Sony Photo camera S-C, Melcam HD Digital Camera, Sony Alpha, Premium tiny tough, GoPro HERO5, Axis Cinema, DJI Avata, 4K camcorder, DJI Mini) + Search for \"camera\". 375/768 aynı PRODUCTS listesi modalda."
+  },
   "missingStates": [],
-  "interactionNote": ""
+  "interactionNote": "375/768 captureSelector header (#Search-In-Template 0px). zzzzz boş-sonuç yoklandı değil. Form submit yok."
 }

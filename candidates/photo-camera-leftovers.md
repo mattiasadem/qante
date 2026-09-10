@@ -104,3 +104,19 @@ Gerekçe: `header-drawer data-breakpoint=tablet`. 1440 hamburger summary 0×0. D
 Örnekler: https://photography-online-store.myshopify.com/  
 Öneri: leftover — breakpoint  
 Karar: onay bekliyor
+
+---
+
+ADAY: photo-camera-plp-mobile-filter-drawer  
+Gerekçe: Accessories 375/768 Color swatch görünmez (`facets small-hide`). Filters tetik var; drawer ikinci denemede de açılmadı (üçüncü yok). 1440 Color Black alındı (7/10).  
+Örnekler: https://photography-online-store.myshopify.com/collections/accessories  
+Öneri: leftover — mobil filtre  
+Karar: onay bekliyor
+
+---
+
+ADAY: photo-camera-menu-drawer-initial-375  
+Gerekçe: Kapalı `#menu-drawer` 375 0px — initial kare yok. 768 kapalı + 375/768 open alındı.  
+Örnekler: https://photography-online-store.myshopify.com/  
+Öneri: leftover — kapalı overlay 0px  
+Karar: onay bekliyor
