@@ -1,0 +1,95 @@
+{
+  "observationId": "kitchen.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "kitchen",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://kitchen-ware-online-store.myshopify.com/",
+  "selector": "#CartDrawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/kitchen/default/home/global-cart-drawer.1440.png",
+    "evidence/kitchen/default/home/global-cart-drawer.375.png",
+    "evidence/kitchen/default/home/global-cart-drawer.768.png",
+    "evidence/kitchen/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/kitchen/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/kitchen/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/kitchen/default/home/global-cart-drawer.filled.sepete-eklendi.1440.png",
+    "evidence/kitchen/default/home/global-cart-drawer.filled.sepete-eklendi.375.png",
+    "evidence/kitchen/default/home/global-cart-drawer.filled.sepete-eklendi.768.png"
+  ],
+  "notlar": "Dawn cart-drawer.shipping. cart-drawer.is-empty. Opener #cart-icon-bubble. Checkout tıklanmadı.",
+  "delta": "Shopify.theme.name kitchen-ware-v-1-5-0-OPTIMIZED · schema_name Kitchen Ware · schema_version 1.5.0 · theme_store_id null · role main · id 150878355549 · shop kitchen-ware-online-store.myshopify.com · Speedo Themes third-party OS 2.0 (Theme Store resmi değil). Vendor-published demo password 1 (public storefront unlock).",
+  "storefrontPassword": "1",
+  "capture": {
+    "url": "https://kitchen-ware-online-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T11:11:04.541Z",
+    "mode": "viewport",
+    "prepareClick": "#cart-icon-bubble"
+  },
+  "captureMode": "viewport",
+  "prepareClick": "#cart-icon-bubble",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://kitchen-ware-online-store.myshopify.com/products/pressure-cooker-3-litre",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button[name='add'], button[name='add']",
+      "capture": false,
+      "not": "Pressure Cooker $85 1 Litre"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC sonrası drawer. Açılmazsa #cart-icon-bubble."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "qty 1→2 · $85→$170 beklenir"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Boş drawer: Your cart is empty · Continue Shopping · Have an account? Log in… Altta YOU MAY LIKE (Pressure Cooker $85 ADD TO CART).",
+    "filled": "YOUR CART. Pressure Cooker (5 litre) $85 · Size: 1 Litre · qty 1. Free shipping $100 / Express $150. Estimated total $85.00 USD. Checkout. 1440 ortada YOU MAY LIKE listesi; 375 drawer içinde YOU MAY LIKE accordion.",
+    "changed": "qty 2. Satır ve estimated total $170.00 USD. Size 1 Litre aynı. Checkout tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "ATC UI (addToCart → ui). /cart/add.js fallback yok. YOU MAY LIKE leftover. Checkout / Log in tıklanmadı."
+}

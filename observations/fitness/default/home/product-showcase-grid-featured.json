@@ -1,0 +1,90 @@
+{
+  "observationId": "fitness.default.home.product-showcase-grid-featured",
+  "schemaId": "product-showcase-grid-featured",
+  "kaynak": "fitness",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://fitness-online-store-1.myshopify.com/",
+  "selector": "#shopify-section-template--18492662186031__0617c2f2-69ec-4df8-a506-b2616d4e1db4",
+  "evidenceSlug": "product-showcase-grid-featured",
+  "evidence": [
+    "evidence/fitness/default/home/product-showcase-grid-featured.1440.png",
+    "evidence/fitness/default/home/product-showcase-grid-featured.375.png",
+    "evidence/fitness/default/home/product-showcase-grid-featured.768.png",
+    "evidence/fitness/default/home/product-showcase-grid-featured.hover.kart-hover.1440.png",
+    "evidence/fitness/default/home/product-showcase-grid-featured.initial.ilk-hal.1440.png",
+    "evidence/fitness/default/home/product-showcase-grid-featured.initial.ilk-hal.375.png",
+    "evidence/fitness/default/home/product-showcase-grid-featured.initial.ilk-hal.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Top Brand Products. featured-product-section slider: Exercise Bikes Elliptical Trainers $250→$210 + Big Prime Sale / Matrix Olympic Flat Bench / Life Fitness G5. Quick shop + wishlist.",
+  "delta": "Kart Quick shop. QV overlay ayrı modal yok (quick-add). Speedo Fitness 1.5.0 third-party (theme_store_id null). Storefront password 1 is vendor-published on speedothemes.com product page. Shopify.theme.name fitness-v-1-5-0-latest-updates-new · schema_name Fitness · schema_version 1.5.0 · theme_store_id null · role main · id 144062316591 · shop fitness-online-store-1.myshopify.com. Platform adı dataBindings'e yazılmadı.",
+  "capture": {
+    "url": "https://fitness-online-store-1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T09:45:18.073Z"
+  },
+  "interactionStates": [
+    "initial",
+    "hover"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://fitness-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--18492662186031__0617c2f2-69ec-4df8-a506-b2616d4e1db4",
+      "capture": true,
+      "etiket": "ilk-hal",
+      "not": "Top Brand Products"
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#shopify-section-template--18492662186031__0617c2f2-69ec-4df8-a506-b2616d4e1db4 .card-wrapper .card__inner",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "hover",
+      "action": "waitFor",
+      "value": 700,
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "kart-hover",
+      "not": "Section crop — Quick shop / ikinci görsel (viewport mode scrolls to top)"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Top Brand Products: Exercise Bikes $210/$250, Matrix Olympic Flat Bench $250, Life Fitness G5 $450, Matrix Magnum Incline $500 + View all. Big Prime Sale badge.",
+    "hover": "1440 section crop initial ile aynı — Quick shop / ikinci görsel karede yok."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "İlk tur viewport capture sayfa tepesine kaydı. İkinci tur section crop: hover sonrası kart initial ile aynı. Quick shop tıklanmadı (QV modal yok)."
+    }
+  ],
+  "interactionNote": "375/768 hover yok (parmak). Quick shop leftover — global-quick-view açılmadı."
+}

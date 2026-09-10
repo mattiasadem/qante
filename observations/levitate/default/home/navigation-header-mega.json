@@ -1,0 +1,90 @@
+{
+  "observationId": "levitate.default.home.navigation-header-mega",
+  "schemaId": "navigation-header-mega",
+  "kaynak": "levitate",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://backpack-online-store-2.myshopify.com/",
+  "selector": "#shopify-section-sections--24569859047713__header .header",
+  "evidenceSlug": "navigation-header-mega",
+  "evidence": [
+    "evidence/levitate/default/home/navigation-header-mega.1440.png",
+    "evidence/levitate/default/home/navigation-header-mega.375.png",
+    "evidence/levitate/default/home/navigation-header-mega.768.png",
+    "evidence/levitate/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/levitate/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/levitate/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/levitate/default/home/navigation-header-mega.open.shop-mega.1440.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Logo Levitate. 1440 mega: SHOP / BEST SELLERS / THEMES / COLLECTIONS / SHOP BY. Search · wishlist 0 · compare 0 · Log in · Cart. header-drawer data-breakpoint=tablet. Home 1440 section/sticky-header/.header-wrapper h=0; iç .header position:absolute h=105 — selector `.header`.",
+  "delta": "Shopify.theme.name Levitate V-1.5.0 · schema_name Purse & Bags · schema_version 1.5.0 · theme_store_id null · role main · id 178196283681 · handle null · shop backpack-online-store-2.myshopify.com · locale en · country US · currency USD · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock). Platform adı dataBindings'e yazılmadı.",
+  "capture": {
+    "url": "https://backpack-online-store-2.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T11:27:05.077Z",
+    "mode": "viewport"
+  },
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://backpack-online-store-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Mega kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-1 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "SHOP summary — tıklama /collections'a gider"
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-HeaderMenu-1",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "section",
+      "captureSelector": "#MegaMenu-Content-1",
+      "etiket": "shop-mega",
+      "not": "SHOP mega koleksiyon kartları"
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440: LEVITATE wordmark, SHOP / BEST SELLERS / THEMES / COLLECTIONS / SHOP BY, search · wishlist 0 · compare 0 · cart. Announcement + hero arkada. 375: hamburger + LEVITATE + search + cart; mega yok.",
+    "open": "1440 SHOP mega: 6 koleksiyon kartı — BOWLING BAGS / BACKPACK BAG / SHOULDER BAGS / HOBO BAG / MICRO BAG / CLUTCHES. 375/768 mega yok (hamburger ayrı observation)."
+  },
+  "missingStates": [],
+  "interactionNote": "SHOP summary <a href=/collections> — tıklama koleksiyona gider, forceOpen #Details-HeaderMenu-1. Mega yalnız 1440."
+}

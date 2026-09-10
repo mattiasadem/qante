@@ -1,0 +1,64 @@
+{
+  "observationId": "medical.default.product-detail.product-info-tabs",
+  "schemaId": "product-info-tabs",
+  "kaynak": "medical",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://medical-online-store.myshopify.com/products/medical-immune-support",
+  "selector": "#shopify-section-template--24404868628847__79582f51-5736-4bff-b870-bba69393ad36",
+  "evidenceSlug": "product-info-tabs",
+  "evidence": [
+    "evidence/medical/default/product-detail/product-info-tabs.1440.png",
+    "evidence/medical/default/product-detail/product-info-tabs.375.png",
+    "evidence/medical/default/product-detail/product-info-tabs.768.png",
+    "evidence/medical/default/product-detail/product-info-tabs.changed.additional.1440.png",
+    "evidence/medical/default/product-detail/product-info-tabs.changed.additional.375.png",
+    "evidence/medical/default/product-detail/product-info-tabs.changed.additional.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Description · Additional Information · Shipping And Delivery.",
+  "delta": "medical-v-1-5-0-latest-updates-new / schema_name Medical 1.5.0 · theme_store_id null · shop medical-online-store.myshopify.com · Speedo Themes third-party · password 1",
+  "capture": {
+    "url": "https://medical-online-store.myshopify.com/products/medical-immune-support",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T10:04:14.516Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://medical-online-store.myshopify.com/products/medical-immune-support",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "a[href='#tab-e976ee83-b842-472e-9af8-76220b5e4b2b']",
+      "capture": false,
+      "not": "Additional Information"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 500,
+      "capture": true,
+      "etiket": "additional",
+      "not": "İkinci sekme aktif"
+    }
+  ],
+  "missingStates": [],
+  "interactionNote": "Description default. Shipping sekmesi yoklandı değil.",
+  "stateFindings": {
+    "changed": "3vp Additional Information yeşil aktif; Description metni gitti, lorem + madde listesi."
+  }
+}

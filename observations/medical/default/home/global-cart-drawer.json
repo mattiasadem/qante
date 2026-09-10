@@ -1,0 +1,93 @@
+{
+  "observationId": "medical.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "kaynak": "medical",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://medical-online-store.myshopify.com/",
+  "selector": "cart-drawer",
+  "evidenceSlug": "global-cart-drawer",
+  "evidence": [
+    "evidence/medical/default/home/global-cart-drawer.1440.png",
+    "evidence/medical/default/home/global-cart-drawer.375.png",
+    "evidence/medical/default/home/global-cart-drawer.768.png",
+    "evidence/medical/default/home/global-cart-drawer.changed.adet-artti.1440.png",
+    "evidence/medical/default/home/global-cart-drawer.changed.adet-artti.375.png",
+    "evidence/medical/default/home/global-cart-drawer.changed.adet-artti.768.png",
+    "evidence/medical/default/home/global-cart-drawer.filled.dolu.1440.png",
+    "evidence/medical/default/home/global-cart-drawer.filled.dolu.375.png",
+    "evidence/medical/default/home/global-cart-drawer.filled.dolu.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "cart-drawer #CartDrawer. Opener #cart-icon-bubble.",
+  "delta": "medical-v-1-5-0-latest-updates-new / schema_name Medical 1.5.0 · theme_store_id null · shop medical-online-store.myshopify.com · Speedo Themes third-party · password 1",
+  "capture": {
+    "url": "https://medical-online-store.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T10:07:39.329Z",
+    "prepareClick": "#cart-icon-bubble"
+  },
+  "captureMode": "viewport",
+  "prepareClick": "#cart-icon-bubble",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://medical-online-store.myshopify.com/products/medical-immune-support",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 900,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "dolu",
+      "not": "Immune Support satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".quantity__button[name='plus']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ],
+  "missingStates": [],
+  "interactionNote": "Checkout / Log in tıklanmadı.",
+  "stateFindings": {
+    "filled": "3vp YOUR CART: Immune Support qty 1 $32.00 · Estimated total $32.00 USD · YOU MAY LIKE + Checkout. Header badge 1.",
+    "changed": "3vp qty 1→2, satır/total $64.00. Checkout tıklanmadı."
+  }
+}

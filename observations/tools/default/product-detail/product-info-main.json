@@ -1,0 +1,79 @@
+{
+  "observationId": "tools.default.product-detail.product-info-main",
+  "schemaId": "product-info-main",
+  "kaynak": "tools",
+  "preset": "default",
+  "sayfa": "product-detail",
+  "url": "https://tools-online-store-1.myshopify.com/products/miter-saw-tool-ceramic-tile-cutter",
+  "selector": "#shopify-section-template--24398242382191__main",
+  "evidenceSlug": "product-info-main",
+  "evidence": [
+    "evidence/tools/default/product-detail/product-info-main.1440.png",
+    "evidence/tools/default/product-detail/product-info-main.375.png",
+    "evidence/tools/default/product-detail/product-info-main.768.png",
+    "evidence/tools/default/product-detail/product-info-main.changed.color-borage.1440.png",
+    "evidence/tools/default/product-detail/product-info-main.changed.color-borage.375.png",
+    "evidence/tools/default/product-detail/product-info-main.changed.color-borage.768.png",
+    "evidence/tools/default/product-detail/product-info-main.initial.color-yellow.1440.png",
+    "evidence/tools/default/product-detail/product-info-main.initial.color-yellow.375.png",
+    "evidence/tools/default/product-detail/product-info-main.initial.color-yellow.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Miter Saw Tool Ceramic Tile Cutter. $399/$350. Fast Shipping / 24/7 / 30 days. Low stock 10. Countdown. Qty + Add To Cart + Buy it now. Pairs well with 3 ürün. Swatch yok.",
+  "delta": "Buy it now / checkout yoklandı değil. Color interact ayrı PDP jackhammer (aynı schemaId, delta). Shopify.theme.name tools-v-1-5-0-latest-updates-new · id 176874815855 · schema_name Tools · schema_version 1.5.0 · theme_store_id null · role main · handle \"null\" · shop tools-online-store-1.myshopify.com · Speedo Themes third-party (Theme Store official değil) · public storefront unlock /password 1 (vendor Live Demo).",
+  "capture": {
+    "url": "https://tools-online-store-1.myshopify.com/products/miter-saw-tool-ceramic-tile-cutter",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T10:12:57.199Z"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://tools-online-store-1.myshopify.com/products/breaker-jackhammer-robert-hammer-drill",
+      "capture": false,
+      "not": "Color interact jackhammer (Mode A static miter swatch yok)"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureSelector": "#shopify-section-template--24398242546031__main",
+      "etiket": "color-yellow",
+      "not": "Color Yellow seçili"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='template--24398242546031__main-1-1']",
+      "value": 2000,
+      "capture": true,
+      "captureSelector": "#shopify-section-template--24398242546031__main",
+      "etiket": "color-borage",
+      "not": "Color Yellow → Borage"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Mode A static: miter (swatch yok). Interact jackhammer Yellow: sarı/siyah kırıcı · $440 · Color: Yellow (ilk swatch seçili) · 248 in stock · Add To Cart + Buy it now. Buy it now tıklanmadı.",
+    "changed": "Color: Borage · gövde mavi/lacivert · ikinci swatch seçili · stok 125 · fiyat $440 aynı."
+  },
+  "missingStates": [],
+  "interactionNote": "Color yoklaması /products/breaker-jackhammer-robert-hammer-drill template --24398242546031. Mode A walk miter static .375/.768/.1440 duruyor. Buy it now / checkout tıklanmadı."
+}

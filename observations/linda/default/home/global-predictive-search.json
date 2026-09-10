@@ -1,0 +1,100 @@
+{
+  "observationId": "linda.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "linda",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://pandora-vintage.myshopify.com/",
+  "selector": "header details-modal.header__search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/linda/default/home/global-predictive-search.375.png",
+    "evidence/linda/default/home/global-predictive-search.768.png",
+    "evidence/linda/default/home/global-predictive-search.initial.arama-bos.1440.png",
+    "evidence/linda/default/home/global-predictive-search.initial.arama-bos.375.png",
+    "evidence/linda/default/home/global-predictive-search.initial.arama-bos.768.png",
+    "evidence/linda/default/home/global-predictive-search.input.arama-ring.1440.png",
+    "evidence/linda/default/home/global-predictive-search.input.arama-ring.375.png",
+    "evidence/linda/default/home/global-predictive-search.input.arama-ring.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Dawn search modal. İki input: #Search-In-Modal-1 (1440 görünür) + #Search-In-Modal (gizli). predictive-search.search-modal__form. Opener header .header__icon--search.",
+  "delta": "Speedo LINDA / Pandora Vintage third-party (theme_store_id null). Storefront password 1 is vendor-published on the Speedo product page. Shopify.theme.name Pandora Vintage V-1.5.0 · schema_name pandora_vintage · schema_version 1.5.0 · theme_store_id null · role main · id 168503476417 · shop pandora-vintage.myshopify.com · walk https://pandora-vintage.myshopify.com/ after public /password 1. No other host.",
+  "captureMode": "viewport",
+  "prepareClick": "header summary.header__icon--search",
+  "capture": {
+    "url": "https://pandora-vintage.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T09:09:18.103Z",
+    "prepareClick": "header .header__icon--search"
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://pandora-vintage.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "header summary.header__icon--search",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "header details-modal.header__search",
+      "etiket": "arama-bos",
+      "not": "Büyüteç — boş Search. 1440 retry: details-modal (#Search-In-Modal 0px)."
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal-1",
+      "value": "ring",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "header details-modal.header__search",
+      "etiket": "arama-ring",
+      "not": "katalogSorgu ring — 1440 #Search-In-Modal-1"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "ring",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "header details-modal.header__search",
+      "etiket": "arama-ring",
+      "not": "katalogSorgu ring — 375/768 #Search-In-Modal"
+    }
+  ],
+  "stateFindings": {
+    "initial": "375/768/1440: Search alanı boş + X; arkasında karartılmış home (New Arrival / SHOP HERE). 1440 üst şerit modal (LINDA header gizlenir).",
+    "input": "Alan 'ring'. SUGGESTIONS ring / rings / gold ring. PRODUCTS Two Golden Wedding Rings, Beautiful Woman Wearing Ring, Bohemian Earrings Rose Pink Earrings, Wind Chime Bell, Spring Raindrop Necklace. 768/1440 iki kolon + Search for \"ring\"; ek Beautiful Woman Wearing Earring, Amazonite Stone For Apple Watch Strap. 375 tek kolon, daha az satır."
+  },
+  "missingStates": [],
+  "interactionNote": "katalogSorgu=ring (Beautiful Woman Wearing Ring). Header scan da beautiful üretti; ring vitrin kelimesi. Submit yok. İlk 1440 #Search-In-Modal 0px; bir retry header details-modal.header__search ile 1440 empty+input alındı."
+}
