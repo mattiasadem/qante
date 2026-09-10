@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--19497186656512__main",
   "evidenceSlug": "product-info-main",
   "evidence": [
+    "evidence/shine/default/product-detail/product-info-main.1440.png",
     "evidence/shine/default/product-detail/product-info-main.375.png",
     "evidence/shine/default/product-detail/product-info-main.768.png",
-    "evidence/shine/default/product-detail/product-info-main.1440.png"
+    "evidence/shine/default/product-detail/product-info-main.changed.white-chocolate.1440.png",
+    "evidence/shine/default/product-detail/product-info-main.changed.white-chocolate.375.png",
+    "evidence/shine/default/product-detail/product-info-main.changed.white-chocolate.768.png",
+    "evidence/shine/default/product-detail/product-info-main.initial.antique-white.1440.png",
+    "evidence/shine/default/product-detail/product-info-main.initial.antique-white.375.png",
+    "evidence/shine/default/product-detail/product-info-main.initial.antique-white.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Beauty Liquid Matte $99/$89 · Color Antique White / White Chocolate / Pale Taupe · qty · Add To Cart · Buy it now. Stock 350 · Hurry up countdown. Size Guide.",
@@ -22,8 +28,48 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-10T12:06:56.025Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:22:34.656Z",
     "mode": "section"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://women-beauty-9.myshopify.com/products/beauty-liquid-matte",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--19497186656512__main",
+      "capture": true,
+      "etiket": "antique-white",
+      "not": "Color Antique White · 350 in stock"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='template--19497186656512__main-1-1']",
+      "capture": true,
+      "etiket": "white-chocolate",
+      "not": "White Chocolate — URL ?variant= · stok 290. PDP kalır."
+    }
+  ],
+  "stateFindings": {
+    "initial": "Beauty Liquid Matte $89/$99. Color Antique White. 350 in stock. Şişe galeri. ADD TO CART + BUY IT NOW (tıklanmadı).",
+    "changed": "Color White Chocolate. Galeri PROFESSIONAL Moisturizing Concealer. Stok 290 in stock. Fiyat aynı $89. BUY IT NOW tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "label[for=template--19497186656512__main-1-1] = White Chocolate. URL ?variant=. Checkout yok."
 }

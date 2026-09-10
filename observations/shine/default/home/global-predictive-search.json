@@ -8,9 +8,12 @@
   "selector": "details-modal.header__search",
   "evidenceSlug": "global-predictive-search",
   "evidence": [
+    "evidence/shine/default/home/global-predictive-search.1440.png",
     "evidence/shine/default/home/global-predictive-search.375.png",
     "evidence/shine/default/home/global-predictive-search.768.png",
-    "evidence/shine/default/home/global-predictive-search.1440.png"
+    "evidence/shine/default/home/global-predictive-search.input.cream.1440.png",
+    "evidence/shine/default/home/global-predictive-search.input.cream.375.png",
+    "evidence/shine/default/home/global-predictive-search.input.cream.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "1440 prepareClick: üst search bar boş (placeholder Search) + X. Öneri yok. Interact fill cream.",
@@ -22,11 +25,54 @@
       "768",
       "1440"
     ],
-    "method": "viewport",
-    "updatedAt": "2026-09-10T11:50:35.545Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:21:24.681Z",
     "mode": "viewport",
     "prepareClick": "summary.header__icon--search"
   },
   "captureMode": "viewport",
-  "prepareClick": "summary.header__icon--search"
+  "prepareClick": "summary.header__icon--search",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "input",
+      "action": "goto",
+      "value": "https://women-beauty-9.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "value": 800,
+      "capture": false,
+      "not": "Search modal"
+    },
+    {
+      "state": "input",
+      "action": "forceOpen",
+      "selector": "details-modal.header__search details",
+      "capture": false,
+      "not": "Pin modal if click missed"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "cream",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#shopify-section-sections--19497186951424__header",
+      "etiket": "cream",
+      "not": "katalogSorgu cream — Face Cream / Cosmetics Cream"
+    }
+  ],
+  "stateFindings": {
+    "input": "q=cream. PRODUCTS: Face Cream Beauty · Sephora Cosmetics Cream · Eyeliner Pencil Creamy Eyeshadow · Color essence HD foundation · SK-II Facial Treatment Essence · Eye Shadow Lipstick · Himalayan Jade roller · Pore Blur Primer · Foundation Enchant Cool · Charlotte Tilbury Airbrush. Alt: Search for “cream”. Submit yok."
+  },
+  "missingStates": [],
+  "interactionNote": "Yalnız #Search-In-Modal. 375/768/1440 sonuç listesi geldi."
 }

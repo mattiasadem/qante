@@ -8,9 +8,18 @@
   "selector": "#CartDrawer",
   "evidenceSlug": "global-cart-drawer",
   "evidence": [
+    "evidence/shine/default/home/global-cart-drawer.1440.png",
     "evidence/shine/default/home/global-cart-drawer.375.png",
     "evidence/shine/default/home/global-cart-drawer.768.png",
-    "evidence/shine/default/home/global-cart-drawer.1440.png"
+    "evidence/shine/default/home/global-cart-drawer.changed.adet-2.1440.png",
+    "evidence/shine/default/home/global-cart-drawer.changed.adet-2.375.png",
+    "evidence/shine/default/home/global-cart-drawer.changed.adet-2.768.png",
+    "evidence/shine/default/home/global-cart-drawer.filled.dolu.1440.png",
+    "evidence/shine/default/home/global-cart-drawer.filled.dolu.375.png",
+    "evidence/shine/default/home/global-cart-drawer.filled.dolu.768.png",
+    "evidence/shine/default/home/global-cart-drawer.initial.bos.1440.png",
+    "evidence/shine/default/home/global-cart-drawer.initial.bos.375.png",
+    "evidence/shine/default/home/global-cart-drawer.initial.bos.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Dawn #CartDrawer. Boş: Your cart is empty + CONTINUE SHOPPING + Log in + YOU MAY LIKE Beauty Liquid Matte $89. Statik prepareClick #cart-icon-bubble.",
@@ -22,11 +31,87 @@
       "768",
       "1440"
     ],
-    "method": "viewport",
-    "updatedAt": "2026-09-10T11:48:27.312Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:27:01.055Z",
     "mode": "viewport",
     "prepareClick": "#cart-icon-bubble"
   },
   "captureMode": "viewport",
-  "prepareClick": "#cart-icon-bubble"
+  "prepareClick": "#cart-icon-bubble",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://women-beauty-9.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "value": 1800,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#shopify-section-sections--19497186951424__header",
+      "etiket": "bos",
+      "not": "Boş çekmece + YOU MAY LIKE"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://women-beauty-9.myshopify.com/products/beauty-liquid-matte",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#shopify-section-template--19497186656512__main button[name='add']",
+      "capture": false,
+      "not": "PDP ATC — global name=add QuickAdd tuzağı"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#shopify-section-sections--19497186951424__header",
+      "etiket": "dolu",
+      "not": "Beauty Liquid Matte satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#shopify-section-sections--19497186951424__header",
+      "etiket": "adet-2",
+      "not": "Adet +"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Sağ çekmece: Your cart is empty + CONTINUE SHOPPING + Log in. YOU MAY LIKE (Beauty Liquid Matte) boşken de var. Log in tıklanmadı.",
+    "filled": "YOUR CART. Free Shipping $100 / Express $150. Beauty Liquid Matte · Color Antique White · $89 · qty 1. 1440 YOU MAY LIKE orta panel (Foundation Enchant Cool $110, Dazzleshadow $24.99, Eye Shadow Lipstick, SK-II…). Estimated total $89.00 USD. CHECK OUT tıklanmadı.",
+    "changed": "qty 2. Satır $178.00 · Estimated total $178.00 USD. CHECK OUT tıklanmadı."
+  },
+  "missingStates": [],
+  "interactionNote": "addToCart → PDP main button[name=add] (via ui). Checkout / Log in yok."
 }

@@ -15,8 +15,8 @@ Sayfa başlığı: **Shine - New Beauty Store – women-beauty-9**
 
 **Password:** Speedo ürün sayfası “Please enter password `1` to view demo.” Aynı host `/password` — public storefront-unlock. Başka host yok.
 
-**Durum:** Mod A walk + resmi 3vp **bitti** (49/49) · interact sırada  
-**PR:** draft · **main'e merge yok**
+**Durum:** Mod A walk + resmi 3vp + interact **bitti** (0 error)  
+**PR:** draft #426 · **main'e merge yok**
 
 ---
 
@@ -29,10 +29,11 @@ Sayfa başlığı: **Shine - New Beauty Store – women-beauty-9**
 | Unlock | `/password` + `1` (`women-beauty-9.myshopify.com` PUBLIC_DEMO_PASSWORDS) |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **49** |
+| Evidence | **188** PNG (147 statik 3vp + interact) |
 | Parallel | yalnız `observations/shine/`, `evidence/shine/`, `todo/shine.md`, `candidates/shine-leftovers.md` + unlock host |
 
 **Kapsam satırı:**  
-`Shine · default · Shine V-1.5.0 / schema_name Shine 1.5.0 · theme_store_id null · shop women-beauty-9.myshopify.com · password 1 · home→PDP beauty-liquid-matte Color→PLP skincare→/collections→search cream→cart→about-layout-1+our-story→contact-layout-1 (submit yok)→faq accordion→news+natural-beauty post→404 · 49 obs · 0 yeni şema · leftover: candidates/shine-leftovers.md`
+`Shine · default · Shine V-1.5.0 / schema_name Shine 1.5.0 · theme_store_id null · shop women-beauty-9.myshopify.com · password 1 · home→PDP beauty-liquid-matte Color Antique White→White Chocolate (350→290)→PLP skincare hover→/collections→search cream→cart empty/filled/qty $89→$178→drawer→about-layout-1+our-story→contact-layout-1 (submit yok)→faq Q1+Q2→news+natural-beauty post→404 · 49 obs · 188 PNG · 0 yeni şema · leftover: candidates/shine-leftovers.md`
 
 ---
 
@@ -41,19 +42,19 @@ Sayfa başlığı: **Shine - New Beauty Store – women-beauty-9**
 | Şablon | Durum | 3vp |
 |---|---|---|
 | Home roster (announcement→footer + overlays) | [x] obs | [x] capture |
-| Shop / Shop By mega 1440 | [ ] interact | [ ] |
-| Predictive search `cream` | [ ] interact | [ ] |
-| Mobile menu 375+768 | [x] static open | [ ] interact drill |
-| Cart drawer empty + filled + qty | [x] empty | [ ] filled |
-| PDP Beauty Liquid Matte Color Antique White→White Chocolate | [x] obs | [ ] interact |
+| Shop mega 1440 | [x] interact | [x] 6 kolon |
+| Predictive search `cream` | [x] interact | [x] 375/768/1440 |
+| Mobile menu 375+768+1440 | [x] static open | leftover flat links |
+| Cart drawer empty + filled + qty | [x] interact | [x] $89→$178 |
+| PDP Beauty Liquid Matte Color Antique White→White Chocolate | [x] interact | [x] 350→290 |
 | PLP `/collections/skincare` | [x] obs | [x] capture |
 | Collections `/collections` | [x] obs | [x] capture |
 | Search `/search?q=cream` | [x] obs | [x] capture |
-| Cart `/cart` empty + filled | [x] empty | [ ] filled |
+| Cart `/cart` empty + filled | [x] interact | [x] $89→$178 |
 | About `/pages/about-layout-1` | [x] obs | [x] capture |
 | Our Story `/pages/our-story` | [x] obs | [x] capture |
 | Contact `/pages/contact-layout-1` (submit yok) | [x] obs | [x] capture |
-| FAQ `/pages/faq` accordion | [x] obs | [ ] interact |
+| FAQ `/pages/faq` accordion | [x] interact | [x] Q1+Q2 |
 | News + Natural Beauty Tips post | [x] obs | [x] capture |
 | 404 `/pages/this-page-does-not-exist-qante` | [x] obs | [x] capture |
 | Email / account / checkout / newsletter submit | ⛔ PII | — |
@@ -107,6 +108,12 @@ Aynı tip = şemaya dokunma, observation + delta. Yeni şema yok.
 
 ---
 
+## Interact
+
+Shop 1440: 6 kolon görsel mega (Skincare…Accessories). Search `cream` → PRODUCTS listesi 375/768/1440. Menu hamburger statik open (düz link, drill yok). Cart drawer+sayfa Beauty Liquid Matte $89→$178. PDP Color Antique White→White Chocolate / stok 350→290 / galeri değişti. FAQ Q1+Q2 açık (allowMultipleOpen). PLP hover: wishlist/compare + ok. Şema değişmedi.
+
+---
+
 ## Aday / leftover
 
 [`candidates/shine-leftovers.md`](../candidates/shine-leftovers.md)
@@ -116,6 +123,6 @@ Aynı tip = şemaya dokunma, observation + delta. Yeni şema yok.
 ## Evidence backlog
 
 - [x] Official 3vp static (`capture-observation.mjs`) — 49/49 · 147 PNG
-- [ ] Interact mega / search cream / cart filled+qty / PDP Color / FAQ / PLP hover
-- [ ] PNG bak → stateFindings
-- [ ] `node scripts/validate-schemas.mjs` — şema dokunulmadı
+- [x] Interact mega / search cream / cart drawer+page $89→$178 / PDP Color / FAQ Q2 / PLP hover — 188 PNG toplam
+- [x] PNG bak → stateFindings
+- [x] `node scripts/validate-schemas.mjs` — 0 error · şema dokunulmadı
