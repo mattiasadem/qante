@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--20650346840157__79582f51-5736-4bff-b870-bba69393ad36",
   "evidenceSlug": "product-info-tabs",
   "evidence": [
+    "evidence/kitchen/default/product-detail/product-info-tabs.1440.png",
     "evidence/kitchen/default/product-detail/product-info-tabs.375.png",
     "evidence/kitchen/default/product-detail/product-info-tabs.768.png",
-    "evidence/kitchen/default/product-detail/product-info-tabs.1440.png"
+    "evidence/kitchen/default/product-detail/product-info-tabs.changed.shipping.1440.png",
+    "evidence/kitchen/default/product-detail/product-info-tabs.changed.shipping.375.png",
+    "evidence/kitchen/default/product-detail/product-info-tabs.changed.shipping.768.png",
+    "evidence/kitchen/default/product-detail/product-info-tabs.initial.description.1440.png",
+    "evidence/kitchen/default/product-detail/product-info-tabs.initial.description.375.png",
+    "evidence/kitchen/default/product-detail/product-info-tabs.initial.description.768.png"
   ],
   "notlar": "Description / Additional Information / Shipping And Delivery. Açık kare Description lorem. BUY IT NOW yok bu blokta.",
   "delta": "Shopify.theme.name kitchen-ware-v-1-5-0-OPTIMIZED · schema_name Kitchen Ware · schema_version 1.5.0 · theme_store_id null · role main · id 150878355549 · shop kitchen-ware-online-store.myshopify.com · Speedo Themes third-party OS 2.0 (Theme Store resmi değil). Vendor-published demo password 1 (public storefront unlock).",
@@ -22,8 +28,42 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-10T10:56:19.956Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T11:16:02.608Z",
     "mode": "section"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://kitchen-ware-online-store.myshopify.com/products/pressure-cooker-3-litre",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "etiket": "description",
+      "not": "Description açık"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--20650346840157__79582f51-5736-4bff-b870-bba69393ad36 a[href='#tab3']",
+      "capture": true,
+      "etiket": "shipping",
+      "not": "Shipping And Delivery sekmesi"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Description altın aktif. Lorem paragraf. Additional Information / Shipping And Delivery kapalı.",
+    "changed": "Shipping And Delivery altın. Shipping: processing 1–2 business days. Returns: exchange within 10 days."
+  },
+  "missingStates": [],
+  "interactionNote": "Additional Information yoklandı değil."
 }

@@ -8,9 +8,10 @@
   "selector": "#shopify-section-template--20650347266141__product-grid",
   "evidenceSlug": "product-showcase-grid-plp",
   "evidence": [
+    "evidence/kitchen/default/collection/product-showcase-grid-plp.1440.png",
     "evidence/kitchen/default/collection/product-showcase-grid-plp.375.png",
     "evidence/kitchen/default/collection/product-showcase-grid-plp.768.png",
-    "evidence/kitchen/default/collection/product-showcase-grid-plp.1440.png"
+    "evidence/kitchen/default/collection/product-showcase-grid-plp.hover.kart-hover.1440.png"
   ],
   "notlar": "Home Products. Filters Color (Beige 4 / Black 7 / Blue 5 / Brown 4…). Sort + grid. Filtre interact ayrı.",
   "delta": "Shopify.theme.name kitchen-ware-v-1-5-0-OPTIMIZED · schema_name Kitchen Ware · schema_version 1.5.0 · theme_store_id null · role main · id 150878355549 · shop kitchen-ware-online-store.myshopify.com · Speedo Themes third-party OS 2.0 (Theme Store resmi değil). Vendor-published demo password 1 (public storefront unlock).",
@@ -22,8 +23,81 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-10T10:24:18.830Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T11:23:42.362Z",
     "mode": "section"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "hover",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "hover",
+      "action": "goto",
+      "value": "https://kitchen-ware-online-store.myshopify.com/collections/all",
+      "capture": false
+    },
+    {
+      "state": "hover",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#shopify-section-template--20650347266141__product-grid .card-wrapper",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "kart-hover",
+      "not": "İlk kart hover — ikinci görsel / quick add"
+    },
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://kitchen-ware-online-store.myshopify.com/collections/all",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 2500,
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--20650347266141__product-grid input[value='Black'], #shopify-section-template--20650347266141__product-grid input[value='black']",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "filter-black",
+      "not": "Color Black — grid daralır (7 ürün). İkinci deneme; has-text eşleşmedi."
+    }
+  ],
+  "stateFindings": {
+    "hover": "1440 ilk kart Cooler Picnic Basket With Blanket: hasır sepet → kişi + piknik/kitap ikinci görsel. QUICK SHOP duruyor."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Color Black filter iki denemede selector eşleşmedi (label Black (7), sonra input[value=Black/black]). Üçüncü deneme yok."
+    },
+    {
+      "state": "hover",
+      "sebep": "375/768 parmakta hover yok"
+    }
+  ],
+  "interactionNote": "375/768 hover parmakta yok. Filter yalnız 1440 sidebar; Black alınamadı."
 }

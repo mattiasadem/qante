@@ -9,7 +9,9 @@
   "evidenceSlug": "global-menu-drawer",
   "evidence": [
     "evidence/kitchen/default/home/global-menu-drawer.375.png",
-    "evidence/kitchen/default/home/global-menu-drawer.768.png"
+    "evidence/kitchen/default/home/global-menu-drawer.768.png",
+    "evidence/kitchen/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/kitchen/default/home/global-menu-drawer.open.hamburger.768.png"
   ],
   "notlar": "details#Details-menu-drawer-container → #menu-drawer. 1440 0×0. Home/Shop/Best Sellers/Themes/Collections/Category + wishlist/compare/Log in + localization. Shop yazılı <a href=/collections/all>.",
   "delta": "Shopify.theme.name kitchen-ware-v-1-5-0-OPTIMIZED · schema_name Kitchen Ware · schema_version 1.5.0 · theme_store_id null · role main · id 150878355549 · shop kitchen-ware-online-store.myshopify.com · Speedo Themes third-party OS 2.0 (Theme Store resmi değil). Vendor-published demo password 1 (public storefront unlock).",
@@ -21,11 +23,68 @@
       "768",
       "1440"
     ],
-    "method": "viewport",
-    "updatedAt": "2026-09-10T10:40:19.695Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T11:07:24.577Z",
     "mode": "viewport",
     "prepareClick": "summary.header__icon--menu"
   },
   "captureMode": "viewport",
-  "prepareClick": "summary.header__icon--menu"
+  "prepareClick": "summary.header__icon--menu",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://kitchen-ware-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "summary.header__icon--menu",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "value": 1200,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#menu-drawer",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 800,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Drawer açık: Home/Shop/Best Sellers…"
+    }
+  ],
+  "stateFindings": {
+    "open": "375/768 hamburger: Home, Shop, Best Sellers, Themes, Collections, Category, Wishlist 0, Compare 0, Log in, USD, English. 1440 drawer display:none — open PNG yok (0×0 beklenir)."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 hamburger 0×0; desktop mega ayrı. Shop yazılı <a href=/collections/all>; boş chevron yoklandı değil. Log in tıklanmadı."
 }

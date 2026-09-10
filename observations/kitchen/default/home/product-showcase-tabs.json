@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--20650347331677__homepage_product_tab_RncYLf",
   "evidenceSlug": "product-showcase-tabs",
   "evidence": [
+    "evidence/kitchen/default/home/product-showcase-tabs.1440.png",
     "evidence/kitchen/default/home/product-showcase-tabs.375.png",
     "evidence/kitchen/default/home/product-showcase-tabs.768.png",
-    "evidence/kitchen/default/home/product-showcase-tabs.1440.png"
+    "evidence/kitchen/default/home/product-showcase-tabs.changed.featured.1440.png",
+    "evidence/kitchen/default/home/product-showcase-tabs.changed.featured.375.png",
+    "evidence/kitchen/default/home/product-showcase-tabs.changed.featured.768.png",
+    "evidence/kitchen/default/home/product-showcase-tabs.initial.accessories.1440.png",
+    "evidence/kitchen/default/home/product-showcase-tabs.initial.accessories.375.png",
+    "evidence/kitchen/default/home/product-showcase-tabs.initial.accessories.768.png"
   ],
   "notlar": "Best Seller. Sekmeler ACCESSORIES / FEATURED / LATEST. Kart: BESTSELLER · Pressure Cooker (5 litre) $85 · QUICK SHOP. Slider + product grid. Tab href #…-tab-1/2/3.",
   "delta": "Shopify.theme.name kitchen-ware-v-1-5-0-OPTIMIZED · schema_name Kitchen Ware · schema_version 1.5.0 · theme_store_id null · role main · id 150878355549 · shop kitchen-ware-online-store.myshopify.com · Speedo Themes third-party OS 2.0 (Theme Store resmi değil). Vendor-published demo password 1 (public storefront unlock).",
@@ -22,8 +28,42 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-10T10:46:25.733Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T11:09:30.954Z",
     "mode": "section"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://kitchen-ware-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": true,
+      "etiket": "accessories",
+      "not": "ACCESSORIES aktif · Pressure Cooker / Vegetable Slicer"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "a[href='#template--20650347331677__homepage_product_tab_RncYLf-tab-2']",
+      "capture": true,
+      "etiket": "featured",
+      "not": "FEATURED sekmesi — kart seti değişmeli"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Best Seller. ACCESSORIES altı çizili. Pressure Cooker (5 litre) $85 · Vegetable Slicer $49.99 · Hand Mixer $30 · Pop-up Toaster $120. BESTSELLER rozeti. QUICK SHOP / ADD TO CART.",
+    "changed": "FEATURED altı çizili. Kart seti değişti: Prato Air Fryer $240 · Hawkins Futura pan $90 · Natural Bamboo Chopping Board from $50 · Dragon Pattern Teapot $95."
+  },
+  "missingStates": [],
+  "interactionNote": "QUICK SHOP dialog leftover; LATEST yoklandı değil."
 }

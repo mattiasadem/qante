@@ -15,8 +15,8 @@
 
 **Unlock:** Vendor ürün sayfası demo password `1`. Aynı host `/password` — public storefront-unlock. Başka host yok.
 
-**Durum:** Mod A observation yazıldı · static 3vp + interact sırada · 45 obs · 0 yeni şema  
-**PR:** draft · **main'e merge yok**
+**Durum:** Mod A + static 3vp + interact yazıldı · 45 obs · 183 PNG · 0 yeni şema  
+**PR:** https://github.com/mattiasadem/qante/pull/406 · draft · **main'e merge yok**
 
 ---
 
@@ -28,10 +28,11 @@
 | Capture | resmi `capture-observation.mjs` + `capture-interaction.mjs` + `unlock-storefront.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **45** |
+| Evidence PNG | **183** |
 | Parallel | `observations/kitchen/`, `evidence/kitchen/`, `todo/kitchen.md`, `candidates/kitchen-leftovers.md`, unlock host map |
 
 **Kapsam satırı:**  
-`Kitchen Ware · default · kitchen-ware-v-1-5-0-OPTIMIZED / schema_name Kitchen Ware 1.5.0 · theme_store_id null · shop kitchen-ware-online-store.myshopify.com · password 1 · home→PDP pressure-cooker-3-litre→PLP /collections/all→/collections→search pan→cart→about-layout-1/contact/faq→news+post · 45 obs · 0 yeni şema · leftover: candidates/kitchen-leftovers.md`
+`Kitchen Ware · default · kitchen-ware-v-1-5-0-OPTIMIZED / schema_name Kitchen Ware 1.5.0 · theme_store_id null · shop kitchen-ware-online-store.myshopify.com · password 1 · home→PDP pressure-cooker-3-litre→PLP /collections/all→/collections→search pan→cart→about-layout-1/contact/faq→news+post · 45 obs · 183 PNG · 0 yeni şema · leftover: candidates/kitchen-leftovers.md`
 
 ---
 
@@ -39,21 +40,21 @@
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announce→footer) | [x] obs | [ ] static |
-| Header Shop mega 1440 | [x] obs | [ ] interact |
-| Predictive search `pan` | [x] obs | [ ] interact |
-| Mobile menu 375 + 768 | [x] obs | [ ] interact |
-| Cart drawer empty + filled + qty | [x] obs | [ ] interact |
-| PDP Size 1 Litre→5 Litre | [x] obs | [ ] interact |
-| PDP tabs DESCRIPTION→SHIPPING | [x] obs | [ ] interact |
-| PLP `/collections/all` + hover/filter | [x] obs | [ ] static + interact |
-| Collections `/collections` | [x] obs | [ ] static |
-| Search `/search?q=pan` | [x] obs | [ ] static |
-| Cart page empty + filled | [x] obs | [ ] interact |
-| About `/pages/about-layout-1` (`/pages/about` 404) | [x] obs | [ ] static |
-| Contact form (submit yok) | [x] obs | [ ] static |
-| FAQ `/pages/faq` | [x] obs | [ ] interact |
-| News + post | [x] obs | [ ] static |
+| Home roster (announce→footer) | [x] obs | [x] static |
+| Header Shop mega 1440 | [x] obs | [x] interact · 6 kart (Bowls / Dining / Accessories / Coasters / Cookware / Candle) |
+| Predictive search `pan` | [x] obs | [x] interact · 375/768/1440 PRODUCTS listesi |
+| Mobile menu 375 + 768 | [x] obs | [x] interact · 1440 drawer 0×0 leftover |
+| Cart drawer empty + filled + qty | [x] obs | [x] interact · $85 → $170 · YOU MAY LIKE leftover |
+| PDP Size 1 Litre→5 Litre | [x] obs | [x] interact · galeri değişti · $85 aynı |
+| PDP tabs DESCRIPTION→SHIPPING | [x] obs | [x] interact |
+| PLP `/collections/all` + hover/filter | [x] obs | [x] static + 1440 hover · Color Black `missingStates.changed` |
+| Collections `/collections` | [x] obs | [x] static |
+| Search `/search?q=pan` | [x] obs | [x] static |
+| Cart page empty + filled | [x] obs | [x] interact · qty 2 $170 |
+| About `/pages/about-layout-1` (`/pages/about` 404) | [x] obs | [x] static |
+| Contact form (submit yok) | [x] obs | [x] static |
+| FAQ `/pages/faq` | [x] obs | [x] interact · allowMultipleOpen |
+| News + post | [x] obs | [x] static |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -93,6 +94,6 @@
 
 ## Evidence backlog
 
-- [ ] Official 3vp static
-- [ ] Interact header / search / menu / cart / PDP / FAQ / PLP / tabs
-- [ ] `node scripts/validate-schemas.mjs` — şema değişmedi
+- [x] Official 3vp static
+- [x] Interact header / search / menu / cart / PDP / FAQ / PLP / tabs
+- [x] `node scripts/validate-schemas.mjs` — 0 error (13 preexisting warn, unrelated) · 0 yeni şema

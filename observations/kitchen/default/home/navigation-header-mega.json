@@ -8,9 +8,13 @@
   "selector": "#shopify-section-sections--20650346807389__header",
   "evidenceSlug": "navigation-header-mega",
   "evidence": [
+    "evidence/kitchen/default/home/navigation-header-mega.1440.png",
     "evidence/kitchen/default/home/navigation-header-mega.375.png",
     "evidence/kitchen/default/home/navigation-header-mega.768.png",
-    "evidence/kitchen/default/home/navigation-header-mega.1440.png"
+    "evidence/kitchen/default/home/navigation-header-mega.initial.kapali.1440.png",
+    "evidence/kitchen/default/home/navigation-header-mega.initial.kapali.375.png",
+    "evidence/kitchen/default/home/navigation-header-mega.initial.kapali.768.png",
+    "evidence/kitchen/default/home/navigation-header-mega.open.shop-mega.1440.png"
   ],
   "notlar": "header--middle-left. Nav Home / Shop (details#Details-HeaderMenu-2.mega-menu) / Best Sellers / Themes / Collections / Category. Search details-modal.header__search, wishlist 0, compare 0, Log in, #cart-icon-bubble Cart. 1440 hamburger 0×0; 375 summary.header__icon--menu. Account tıklanmadı.",
   "delta": "Shopify.theme.name kitchen-ware-v-1-5-0-OPTIMIZED · schema_name Kitchen Ware · schema_version 1.5.0 · theme_store_id null · role main · id 150878355549 · shop kitchen-ware-online-store.myshopify.com · Speedo Themes third-party OS 2.0 (Theme Store resmi değil). Vendor-published demo password 1 (public storefront unlock).",
@@ -22,9 +26,57 @@
       "768",
       "1440"
     ],
-    "method": "viewport",
-    "updatedAt": "2026-09-10T10:45:25.276Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T11:06:26.476Z",
     "mode": "viewport"
   },
-  "captureMode": "viewport"
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://kitchen-ware-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Shop mega kapalı"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-2 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 800,
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "Shop mega kolon/koleksiyon kartları. Yazılı Shop <a> tıklanmaz."
+    }
+  ],
+  "stateFindings": {
+    "initial": "1440: EXTRA 25% OFF bar; KITCHENWARE; Home / Shop / Best Sellers / Themes / Collections / Category; search · wishlist 0 · compare 0 · account · cart. Shop mega kapalı — altta daire koleksiyon slider. 375/768 hamburger.",
+    "open": "1440 Shop hover: 6 görsel kart — Bowls Collection, Dining Ware, Accessories, Coasters, Cookware, Candle Collection. Shop altı çizili. Announcement duruyor."
+  },
+  "missingStates": [],
+  "interactionNote": "1440 hover details#Details-HeaderMenu-2. 375/768 hamburger ayrı global-menu-drawer. Account tıklanmadı. Yazılı Shop <a> tıklanmaz."
 }

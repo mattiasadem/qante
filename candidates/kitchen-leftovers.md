@@ -118,3 +118,43 @@ Gerekçe: PDP `multicolumn_VH4Wqb` “We handcraft clothes from soft natural fab
 Örnekler: pressure-cooker PDP  
 Öneri: leftover — yanlış dikey kopya  
 Karar: onay bekliyor
+
+---
+
+ADAY: kitchen-social-proof-toast  
+Gerekçe: “Someone liked and Buy {ürün} {N} Minutes Ago From {şehir} · Verified” yüzen toast (home, PDP, PLP, search). Üçüncü-parti widget; tema section değil.  
+Örnekler: navigation-header-mega.1440 · product-info-main.1440 · product-showcase-grid-plp.1440  
+Öneri: leftover — social-proof toast  
+Karar: onay bekliyor
+
+---
+
+ADAY: kitchen-you-may-like-after-atc  
+Gerekçe: ATC sonrası cart drawer ile YOU MAY LIKE. 1440 ortada overlay liste + ADD TO CART; 375 drawer içinde accordion. `global-cart-drawer` leftover; yeni şema yok. Checkout tıklanmadı.  
+Örnekler: `#CartDrawer` filled/changed  
+Öneri: leftover — upsell overlay  
+Karar: onay bekliyor
+
+---
+
+ADAY: kitchen-shopable-video-bubble  
+Gerekçe: Home sağ-alt küçük ürün balonu (X ile kapanır). `media-shop-the-feed` kromu; ayrı section değil. Sibling `shopable-videos-fixed` h=0.  
+Örnekler: home COOKING EXPERIENCES kareleri  
+Öneri: leftover — shopable bubble  
+Karar: onay bekliyor
+
+---
+
+ADAY: kitchen-menu-drawer-desktop-zero  
+Gerekçe: `#menu-drawer` 1440×900 `display:none` — resmi capture 0×0 PNG yazmaz. Open yalnız 375/768. Desktop Shop mega ayrı.  
+Örnekler: global-menu-drawer  
+Öneri: leftover — desktop drawer yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: kitchen-plp-color-black-filter  
+Gerekçe: `/collections/all` Color Black (7) iki selector denemesi eşleşmedi (`label:has-text('Black (7)')`, `input[value=Black/black]`). Üçüncü yok. Hover 1440 alındı.  
+Örnekler: product-showcase-grid-plp missingStates.changed  
+Öneri: leftover — filtre kontrolü  
+Karar: onay bekliyor
