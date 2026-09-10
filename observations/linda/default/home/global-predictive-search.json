@@ -10,8 +10,10 @@
   "evidence": [
     "evidence/linda/default/home/global-predictive-search.375.png",
     "evidence/linda/default/home/global-predictive-search.768.png",
+    "evidence/linda/default/home/global-predictive-search.initial.arama-bos.1440.png",
     "evidence/linda/default/home/global-predictive-search.initial.arama-bos.375.png",
     "evidence/linda/default/home/global-predictive-search.initial.arama-bos.768.png",
+    "evidence/linda/default/home/global-predictive-search.input.arama-ring.1440.png",
     "evidence/linda/default/home/global-predictive-search.input.arama-ring.375.png",
     "evidence/linda/default/home/global-predictive-search.input.arama-ring.768.png"
   ],
@@ -29,7 +31,7 @@
     ],
     "mode": "viewport",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-10T08:58:02.541Z",
+    "updatedAt": "2026-09-10T09:09:18.103Z",
     "prepareClick": "header .header__icon--search"
   },
   "interactionStates": [
@@ -90,18 +92,9 @@
     }
   ],
   "stateFindings": {
-    "initial": "375: Search alanı boş + X; arkasında karartılmış hero. 768 aynı boş modal. 1440 ilk çekimde #Search-In-Modal 0px.",
-    "input": "375 alan 'ring'; SUGGESTIONS ring / rings / gold ring; PRODUCTS Two Golden Wedding Rings, Beautiful Woman Wearing Ring, Bohemian Earrings Rose Pink Earrings, Wind Chime Bell, Spring Raindrop Necklace. 768 iki kolon + Search for \"ring\"; ek ürün Beautiful Woman Wearing Earring, Amazonite Stone For Apple Watch Strap."
+    "initial": "375/768/1440: Search alanı boş + X; arkasında karartılmış home (New Arrival / SHOP HERE). 1440 üst şerit modal (LINDA header gizlenir).",
+    "input": "Alan 'ring'. SUGGESTIONS ring / rings / gold ring. PRODUCTS Two Golden Wedding Rings, Beautiful Woman Wearing Ring, Bohemian Earrings Rose Pink Earrings, Wind Chime Bell, Spring Raindrop Necklace. 768/1440 iki kolon + Search for \"ring\"; ek Beautiful Woman Wearing Earring, Amazonite Stone For Apple Watch Strap. 375 tek kolon, daha az satır."
   },
-  "missingStates": [
-    {
-      "state": "initial",
-      "sebep": "capture (1440): zero-size / eşleşmedi: #Search-In-Modal — bir retry details-modal.header__search"
-    },
-    {
-      "state": "input",
-      "sebep": "capture (1440): zero-size / eşleşmedi: #Search-In-Modal — bir retry details-modal.header__search"
-    }
-  ],
-  "interactionNote": "katalogSorgu=ring (Beautiful Woman Wearing Ring). Header scan da beautiful üretti; ring vitrin kelimesi. Submit yok. 1440 selector retry: header details-modal.header__search."
+  "missingStates": [],
+  "interactionNote": "katalogSorgu=ring (Beautiful Woman Wearing Ring). Header scan da beautiful üretti; ring vitrin kelimesi. Submit yok. İlk 1440 #Search-In-Modal 0px; bir retry header details-modal.header__search ile 1440 empty+input alındı."
 }
