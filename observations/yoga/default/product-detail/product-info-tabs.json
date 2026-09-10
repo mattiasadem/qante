@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--15527518896186__79582f51-5736-4bff-b870-bba69393ad36",
   "evidenceSlug": "product-info-tabs",
   "evidence": [
+    "evidence/yoga/default/product-detail/product-info-tabs.1440.png",
     "evidence/yoga/default/product-detail/product-info-tabs.375.png",
     "evidence/yoga/default/product-detail/product-info-tabs.768.png",
-    "evidence/yoga/default/product-detail/product-info-tabs.1440.png"
+    "evidence/yoga/default/product-detail/product-info-tabs.changed.additional.1440.png",
+    "evidence/yoga/default/product-detail/product-info-tabs.changed.additional.375.png",
+    "evidence/yoga/default/product-detail/product-info-tabs.changed.additional.768.png",
+    "evidence/yoga/default/product-detail/product-info-tabs.initial.description.1440.png",
+    "evidence/yoga/default/product-detail/product-info-tabs.initial.description.375.png",
+    "evidence/yoga/default/product-detail/product-info-tabs.initial.description.768.png"
   ],
   "notlar": "Description / Additional Information / Shipping And Delivery. Enhance your yoga and pilates practice… h≈364.",
   "delta": "Shopify.theme.name Yoga-and-meditation-v-1-5-0-new · schema_name Yoga and meditation · schema_version 1.5.0 · theme_store_id null · role main · id 126822776890 · handle \"null\" · shop sports-online-store-2.myshopify.com · locale en · country US · currency USD · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock, same host). Platform adı dataBindings'e yazılmadı.",
@@ -22,8 +28,48 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-10T12:05:16.255Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:23:32.597Z",
     "mode": "section"
-  }
+  },
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sports-online-store-2.myshopify.com/products/yoga-pilates-mats-towel",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15527518896186__79582f51-5736-4bff-b870-bba69393ad36",
+      "capture": true,
+      "etiket": "description",
+      "not": "Description tab"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--15527518896186__79582f51-5736-4bff-b870-bba69393ad36 a[href='#tab2']",
+      "capture": true,
+      "etiket": "additional",
+      "not": "Additional Information"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Description seçili (teal). Enhance your yoga and pilates practice… Additional Information / Shipping And Delivery kapalı.",
+    "changed": "Additional Information seçili (teal). Lorem + üç madde. Description artık siyah."
+  },
+  "interactionNote": "a[href='#tab2']. Shipping And Delivery tıklanmadı."
 }

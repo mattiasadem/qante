@@ -107,8 +107,32 @@ Karar: onay bekliyor
 
 ---
 
-ADAY: yoga-lookbook-hotspot  
-Gerekçe: `lookbook_with_video_text` kapalı karede hotspot nokta yok; ürün thumb + ALL COLLECTION. media-lookbook-banner observation yazıldı.  
+ADAY: yoga-lookbook-hotspot-click  
+Gerekçe: Static 3vp’de look görseli üzerinde iki + hotspot + sağda video play var (ilk leftover “yok” yanlışı). Hotspot tık / ürün popover envanterde yok.  
 Örnekler: home lookbook_with_video_text_tAXRRB  
-Öneri: leftover — kapalı kare hotspot  
+Öneri: leftover — hotspot tık yok  
 Karar: onay bekliyor
+
+---
+
+ADAY: yoga-cart-you-may-like  
+Gerekçe: Cart drawer boşta YOU MAY LIKE (Yoga & Pilates Mats). Dolu 1440’ta ayrı YOU MAY LIKE overlay + 375’te çekmece içi chevron. Ayrı şema yazılmadı.  
+Örnekler: `#CartDrawer`  
+Öneri: leftover  
+Karar: onay bekliyor
+
+---
+
+ADAY: yoga-card-hover-icons  
+Gerekçe: 1440 kart hover ikinci görsel + wishlist/compare/eye. Eye tıklanmadı; QV modal envanterde yok. Hover token değil — stateFindings.  
+Örnekler: product-showcase-tabs · product-showcase-grid-featured  
+Öneri: leftover — QV modal  
+Karar: onay bekliyor
+
+---
+
+ADAY: yoga-menu-drawer-overlay  
+Gerekçe: 375 `#menu-drawer` zero-size (PNG yok). 768 forceOpen karesi kapalı homepage. Hamburger summary 0×0. İkinci deneme; üçüncü yok. Drawer grammar mevcut.  
+Örnekler: `#menu-drawer` · `summary.header__icon--menu`  
+Öneri: leftover — overlay karede yok  
+Karar: observation missingStates

@@ -8,9 +8,16 @@
   "selector": "#shopify-section-template--15527518306362__homepage_product_tab_QagAUq",
   "evidenceSlug": "product-showcase-tabs",
   "evidence": [
+    "evidence/yoga/default/home/product-showcase-tabs.1440.png",
     "evidence/yoga/default/home/product-showcase-tabs.375.png",
     "evidence/yoga/default/home/product-showcase-tabs.768.png",
-    "evidence/yoga/default/home/product-showcase-tabs.1440.png"
+    "evidence/yoga/default/home/product-showcase-tabs.changed.best-selling.1440.png",
+    "evidence/yoga/default/home/product-showcase-tabs.changed.best-selling.375.png",
+    "evidence/yoga/default/home/product-showcase-tabs.changed.best-selling.768.png",
+    "evidence/yoga/default/home/product-showcase-tabs.hover.kart-hover.1440.png",
+    "evidence/yoga/default/home/product-showcase-tabs.initial.new-product.1440.png",
+    "evidence/yoga/default/home/product-showcase-tabs.initial.new-product.375.png",
+    "evidence/yoga/default/home/product-showcase-tabs.initial.new-product.768.png"
   ],
   "notlar": "Trending Products sekmeleri: New Product / Best Selling / Featured. High Comfort leeveless Tanktop. h≈933.",
   "delta": "Shopify.theme.name Yoga-and-meditation-v-1-5-0-new · schema_name Yoga and meditation · schema_version 1.5.0 · theme_store_id null · role main · id 126822776890 · handle \"null\" · shop sports-online-store-2.myshopify.com · locale en · country US · currency USD · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock, same host). Platform adı dataBindings'e yazılmadı.",
@@ -22,8 +29,61 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-10T11:52:15.649Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:24:36.936Z",
     "mode": "section"
-  }
+  },
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://sports-online-store-2.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15527518306362__homepage_product_tab_QagAUq",
+      "capture": true,
+      "etiket": "new-product",
+      "not": "New Product sekmesi"
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#shopify-section-template--15527518306362__homepage_product_tab_QagAUq .product-card-wrapper .card__media, #shopify-section-template--15527518306362__homepage_product_tab_QagAUq .card__inner .card__media",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "kart-hover",
+      "not": "İkinci görsel / quick-add. Yalnız renk ise token"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "a[href='#template--15527518306362__homepage_product_tab_QagAUq-tab-2']",
+      "capture": true,
+      "etiket": "best-selling",
+      "not": "Best Selling sekmesi"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "hover",
+    "changed"
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Trending Products · New Product seçili. High Comfort sleeveless Tanktop · High Comfort Plain blue leggings · Shorts Clothing Fitness Centre · Sports bra Clothing Sportswear.",
+    "hover": "1440 ilk kart ikinci görsel (kadın, pembe üst) + oklar + wishlist/compare/eye. Yalnız renk/gölge değil.",
+    "changed": "Best Selling seçili. Yoga & Pilates Mats · CoreBalance Anti-Burst Exercise Ball · HydraGrip Sports Water Bottle · AquaDry Microfiber Fitness Towel."
+  },
+  "interactionNote": "Hover 1440. 375/768 hover yok. Eye/wishlist tıklanmadı — QV modal envanterde yok. Yeni şema yok."
 }
