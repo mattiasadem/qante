@@ -25,5 +25,57 @@
     "mode": "section",
     "method": "margin-box+minPad8",
     "updatedAt": "2026-09-10T09:04:45.151Z"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://tools-online-store-1.myshopify.com/cart",
+      "capture": true,
+      "etiket": "bos",
+      "not": "Boş cart sayfa"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://tools-online-store-1.myshopify.com/products/miter-saw-tool-ceramic-tile-cutter",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button.product-form__submit, button[name='add']",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://tools-online-store-1.myshopify.com/cart",
+      "capture": true,
+      "etiket": "miter-qty1",
+      "not": "Dolu cart — Miter Saw"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "button[name='plus'], .quantity__button[name='plus']",
+      "capture": true,
+      "etiket": "adet-artti",
+      "not": "qty 1 → 2"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Checkout / Log in tıklanmadı. cart-footer boşta 0px leftover."
 }

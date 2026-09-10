@@ -26,5 +26,45 @@
     "mode": "viewport",
     "method": "viewport",
     "updatedAt": "2026-09-10T09:23:21.774Z"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://tools-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 400,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "Header Search input görünür (modal yok)"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "header input[name='q']",
+      "value": "drill",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "drill-sonuc",
+      "not": "katalog kelimesi drill (Stanley Hammer Drill). Shop adı Tools olduğu için tool zayıf."
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "1440/375/768 header input[name=q] görünür; Look-tarzı #Search-In-Modal yok. Fill drill → #predictive-search-results PRODUCTS. Submit tıklanmadı."
 }

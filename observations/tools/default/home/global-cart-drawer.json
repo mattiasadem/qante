@@ -28,5 +28,86 @@
     "method": "viewport",
     "updatedAt": "2026-09-10T09:20:41.772Z",
     "prepareClick": "a#cart-icon-bubble"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://tools-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "a#cart-icon-bubble",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "#CartDrawer",
+      "capture": true,
+      "captureMode": "section",
+      "captureSelector": "#CartDrawer",
+      "etiket": "bos",
+      "not": "Boş cart drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://tools-online-store-1.myshopify.com/products/miter-saw-tool-ceramic-tile-cutter",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "form[action*='/cart/add'] button.product-form__submit, button[name='add']",
+      "capture": false,
+      "not": "Miter Saw ATC"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "miter-qty1",
+      "not": "Dolu drawer — Miter Saw satır"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus'], #CartDrawer .quantity__button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "qty 1 → 2"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Checkout / Log in tıklanmadı. YOU MAY LIKE sibling leftover. ATC UI; fallback /cart/add.js olursa not."
 }

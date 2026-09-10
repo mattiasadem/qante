@@ -27,5 +27,49 @@
     "method": "viewport",
     "updatedAt": "2026-09-10T09:22:23.871Z",
     "prepareClick": "#Details-menu-drawer-container > summary"
-  }
+  },
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://tools-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container .icon-hamburger",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false,
+      "not": "summary 0px / outside viewport; SVG .icon-hamburger 30×30 tıklanır"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 800,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Drawer açık — 1440 hamburger gizli (tablet breakpoint)"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "summary[aria-label=Menu] Playwright'ta 0×0 outside viewport. Yoklama: mouse/SVG click drawer açtı (Home/Shop/…). forceOpen tek başına innerText boş. Log in tıklanmadı."
 }

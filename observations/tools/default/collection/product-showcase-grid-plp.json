@@ -25,5 +25,43 @@
     "mode": "section",
     "method": "margin-box+minPad8",
     "updatedAt": "2026-09-10T09:08:07.966Z"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://tools-online-store-1.myshopify.com/collections/cutter",
+      "capture": true,
+      "etiket": "8-urun",
+      "not": "8 products · Color facet 1440 açık"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='Filter-filter.v.t.shopify.color-pattern-1']",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "Color Black swatch (TaxonomyValue/1, rgb 0 0 0). Mobile -mobile-1 gizli."
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1800,
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "color-black",
+      "not": "Color Black — 1 of 8 (yoklama: Stanley Fatmax)"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "1440 Color Black anında filtre (Apply yok). 375 FILTERS çekmece bu turda yoklandı değil. Checkout yok."
 }

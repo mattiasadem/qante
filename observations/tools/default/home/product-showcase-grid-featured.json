@@ -25,5 +25,42 @@
     "mode": "section",
     "method": "margin-box+minPad8",
     "updatedAt": "2026-09-10T09:29:54.481Z"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "hover"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://tools-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24398241792367__0617c2f2-69ec-4df8-a506-b2616d4e1db4",
+      "capture": true,
+      "etiket": "new-products",
+      "not": "New Products — Add To Cart kartta görünür"
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#shopify-section-template--24398241792367__0617c2f2-69ec-4df8-a506-b2616d4e1db4 .card-wrapper",
+      "capture": true,
+      "etiket": "kart-hover",
+      "not": "İlk kart hover — gizli buton değil kart"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "1440 Add To Cart zaten statik karede. Hover piksel değişmezse missingStates. 375/768 hover aynı olabilir."
 }

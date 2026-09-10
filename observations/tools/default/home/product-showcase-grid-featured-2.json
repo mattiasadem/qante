@@ -25,5 +25,42 @@
     "mode": "section",
     "method": "margin-box+minPad8",
     "updatedAt": "2026-09-10T09:28:55.749Z"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "hover"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://tools-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#Slide-template--24398241792367__featured_collection_K9MEmt-1",
+      "capture": true,
+      "etiket": "featured",
+      "not": "Featured Collection — Quick Shop ilk kartlarda görünür"
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#Slide-template--24398241792367__featured_collection_K9MEmt-1",
+      "capture": true,
+      "etiket": "quick-shop",
+      "not": "Jackhammer kart hover"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "1440 Quick Shop statik karede zaten var. Hover değişmezse missingStates. Quick Shop tıklanmadı."
 }
