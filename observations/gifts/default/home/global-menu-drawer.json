@@ -27,5 +27,26 @@
     "method": "viewport",
     "updatedAt": "2026-09-02T21:26:31.408Z",
     "prepareClick": "#Details-menu-drawer-container > summary.header__icon--menu"
-  }
+  },
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://gift-online-shop-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container > summary.header__icon--menu",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "375/768 drawer. Scan navExpanders boş — yazılı <a> tıklanmadı"
+    }
+  ]
 }

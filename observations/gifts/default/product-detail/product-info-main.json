@@ -25,5 +25,29 @@
     "mode": "section",
     "method": "margin-box+minPad8",
     "updatedAt": "2026-09-02T21:41:45.525Z"
-  }
+  },
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://gift-online-shop-1.myshopify.com/products/wireless-headphones",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24249644056740__main",
+      "capture": true,
+      "etiket": "adet-1",
+      "not": "Qty 1 — varyant yok"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Quantity-Form-template--24249644056740__main button[name='plus']",
+      "capture": true,
+      "etiket": "adet-2",
+      "not": "Yoklama qty 1→2"
+    }
+  ]
 }

@@ -28,5 +28,59 @@
     "method": "viewport",
     "updatedAt": "2026-09-02T21:25:02.612Z",
     "prepareClick": "#cart-icon-bubble"
-  }
+  },
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://gift-online-shop-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepet-bos",
+      "not": "Boş drawer + YOU MAY LIKE"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://gift-online-shop-1.myshopify.com/products/wireless-headphones",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--24249644056740__main",
+      "capture": false,
+      "not": "Wireless Headphones — unique PDP ATC (quick-add değil)"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Dolu drawer — yoklama item_count 1"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet 1→2"
+    }
+  ]
 }

@@ -24,5 +24,59 @@
     "method": "viewport",
     "updatedAt": "2026-09-02T21:28:49.032Z",
     "prepareClick": "summary.header__icon--search"
-  }
+  },
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://gift-online-shop-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "capture": false,
+      "not": "Görünür search ikon (3 summary; clickVisible)"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "not": "1440 genişleyen #Search-In-Modal; overlay .search-modal 0×0"
+    },
+    {
+      "state": "input",
+      "action": "goto",
+      "value": "https://gift-online-shop-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input[name='q']",
+      "value": "headphones",
+      "capture": false,
+      "not": "scan.katalogSorgu=heart; probe headphones → ürün satırı. İlk görünür input"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1600,
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#predictive-search-results",
+      "etiket": "arama-headphones",
+      "not": "Yoklama: Wireless Headphones + Apple AirPods Pro"
+    }
+  ]
 }

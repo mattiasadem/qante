@@ -25,5 +25,40 @@
     "mode": "section",
     "method": "margin-box+minPad8",
     "updatedAt": "2026-09-02T21:31:51.731Z"
-  }
+  },
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://gift-online-shop-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--24249643466916__homepage_product_tab_drR49d",
+      "capture": true,
+      "etiket": "featured",
+      "not": "Featured Products — Organic skincare beauty hamper"
+    },
+    {
+      "state": "hover",
+      "action": "hover",
+      "selector": "#shopify-section-template--24249643466916__homepage_product_tab_drR49d .card__media",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "etiket": "kart-hover",
+      "not": "İkinci görsel / quick-add. Yalnız renk ise token"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--24249643466916__homepage_product_tab_drR49d a[href='#template--24249643466916__homepage_product_tab_drR49d-tab-2']",
+      "capture": true,
+      "etiket": "new-arrival",
+      "not": "New Arrival — yoklama Noble Heart Ring Box"
+    }
+  ]
 }

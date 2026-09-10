@@ -25,5 +25,37 @@
     "mode": "section",
     "method": "margin-box+minPad8",
     "updatedAt": "2026-09-02T21:30:51.170Z"
-  }
+  },
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://gift-online-shop-1.myshopify.com/",
+      "capture": true,
+      "etiket": "mega-kapali",
+      "not": "Shop mega kapalı header"
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-2 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "Shop summary hover — yoklama URL home kaldı, panel 1440×376"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 700,
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "shop-mega",
+      "not": "Flowers / Personalized / Jewellery / Gourmet / Accessories / Home & Living"
+    }
+  ]
 }
