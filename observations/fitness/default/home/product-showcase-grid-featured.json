@@ -8,9 +8,13 @@
   "selector": "#shopify-section-template--18492662186031__0617c2f2-69ec-4df8-a506-b2616d4e1db4",
   "evidenceSlug": "product-showcase-grid-featured",
   "evidence": [
+    "evidence/fitness/default/home/product-showcase-grid-featured.1440.png",
     "evidence/fitness/default/home/product-showcase-grid-featured.375.png",
     "evidence/fitness/default/home/product-showcase-grid-featured.768.png",
-    "evidence/fitness/default/home/product-showcase-grid-featured.1440.png"
+    "evidence/fitness/default/home/product-showcase-grid-featured.hover.kart-hover.1440.png",
+    "evidence/fitness/default/home/product-showcase-grid-featured.initial.ilk-hal.1440.png",
+    "evidence/fitness/default/home/product-showcase-grid-featured.initial.ilk-hal.375.png",
+    "evidence/fitness/default/home/product-showcase-grid-featured.initial.ilk-hal.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Top Brand Products. featured-product-section slider: Exercise Bikes Elliptical Trainers $250→$210 + Big Prime Sale / Matrix Olympic Flat Bench / Life Fitness G5. Quick shop + wishlist.",
@@ -23,8 +27,8 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-10T09:14:23.643Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T09:45:18.073Z"
   },
   "interactionStates": [
     "initial",
@@ -68,12 +72,19 @@
         "1440"
       ],
       "capture": true,
-      "captureMode": "viewport",
       "etiket": "kart-hover",
-      "not": "Quick shop / ikinci görsel"
+      "not": "Section crop — Quick shop / ikinci görsel (viewport mode scrolls to top)"
     }
   ],
-  "stateFindings": {},
-  "missingStates": [],
-  "interactionNote": "375/768 hover yok (parmak). Quick shop tıklanmadı (QV modal yok)."
+  "stateFindings": {
+    "initial": "Top Brand Products: Exercise Bikes $210/$250, Matrix Olympic Flat Bench $250, Life Fitness G5 $450, Matrix Magnum Incline $500 + View all. Big Prime Sale badge.",
+    "hover": "1440 section crop initial ile aynı — Quick shop / ikinci görsel karede yok."
+  },
+  "missingStates": [
+    {
+      "state": "hover",
+      "sebep": "İlk tur viewport capture sayfa tepesine kaydı. İkinci tur section crop: hover sonrası kart initial ile aynı. Quick shop tıklanmadı (QV modal yok)."
+    }
+  ],
+  "interactionNote": "375/768 hover yok (parmak). Quick shop leftover — global-quick-view açılmadı."
 }

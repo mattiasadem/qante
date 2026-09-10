@@ -121,6 +121,14 @@ Karar: onay bekliyor
 
 ---
 
+ADAY: fitness-social-proof-toast  
+Gerekçe: Sabit “Someone liked and Buy…” toast (ürün + dakika + şehir + Verified). `dismiss-overlays` kapatmıyor; PLP/PDP/search/header karelerine biniyor. Ayrı schema yok.  
+Örnekler: https://fitness-online-store-1.myshopify.com/  
+Öneri: leftover — app/toast  
+Karar: onay bekliyor
+
+---
+
 ADAY: fitness-layout-demos  
 Gerekçe: `/pages/about-layout-2..4`, `/pages/contact-layout-1..4`, `/pages/contact-us` (basit form), `/collections/collection-layout-1..3` — tema satış layout vitrini. Walk: about-layout-1 + `/pages/contact` + `/collections`.  
 Örnekler: https://fitness-online-store-1.myshopify.com/pages/about-layout-2  
