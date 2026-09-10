@@ -8,9 +8,11 @@
   "selector": "#menu-drawer",
   "evidenceSlug": "global-menu-drawer",
   "evidence": [
+    "evidence/music/default/home/global-menu-drawer.1440.png",
     "evidence/music/default/home/global-menu-drawer.375.png",
     "evidence/music/default/home/global-menu-drawer.768.png",
-    "evidence/music/default/home/global-menu-drawer.1440.png"
+    "evidence/music/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/music/default/home/global-menu-drawer.open.hamburger.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "#menu-drawer. header-drawer data-breakpoint=desktop. Opener Menu summary.",
@@ -18,6 +20,7 @@
   "captureMode": "viewport",
   "prepareClick": "#Details-menu-drawer-container > summary.header__icon--menu",
   "interactionStates": [
+    "initial",
     "open"
   ],
   "interactionSteps": [
@@ -47,9 +50,16 @@
       "not": "1440 inline mega olabilir — 375/768 hamburger."
     }
   ],
-  "stateFindings": {},
-  "missingStates": [],
-  "interactionNote": "header-drawer data-breakpoint=desktop. Yazılı <a> tıklanmadı. Log in / wishlist yok.",
+  "stateFindings": {
+    "open": "375 tam genişlik + 768 sol yarı: Home · Shop · About · Page · Contact · Wishlist 0 · Compare 0 · Log in · sosyal. Shop düz link — expander yok. 1440 hamburger de var (data-breakpoint=desktop) ama open adımı 375/768."
+  },
+  "missingStates": [
+    {
+      "state": "changed",
+      "sebep": "Shop drawer’da düz link. Nested navExpanders yok. Yazılı <a> tıklanmadı."
+    }
+  ],
+  "interactionNote": "header-drawer data-breakpoint=desktop. Wishlist/Compare/Log in tıklanmadı.",
   "capture": {
     "url": "https://musical-online-store.myshopify.com/",
     "viewports": [
@@ -58,8 +68,8 @@
       "1440"
     ],
     "mode": "viewport",
-    "method": "viewport",
-    "updatedAt": "2026-09-10T11:45:12.017Z",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:09:14.984Z",
     "prepareClick": "#Details-menu-drawer-container > summary.header__icon--menu"
   }
 }

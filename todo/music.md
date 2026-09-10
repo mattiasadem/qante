@@ -14,7 +14,7 @@
 Title: `Music - Musical Instruments Store – musical-online-store`  
 Storefront password (ürün sayfasında yayın): **`1`** — “Please enter password "1" to view demo.” Aynı host `/password`, başka vitrin yok.
 
-**Durum:** Mod A walk + resmi 3vp + interact — devam  
+**Durum:** Mod A walk + resmi 3vp + interact (pixel-check) — **kapandı**  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -27,10 +27,11 @@ Storefront password (ürün sayfasında yayın): **`1`** — “Please enter pas
 | Capture | resmi `scripts/capture-observation.mjs` + `scripts/capture-interaction.mjs` + `scripts/unlock-storefront.mjs` |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **43** |
+| PNG | **179** (128 statik 3vp + interact) |
 | Parallel | yalnız `observations/music/`, `evidence/music/`, `todo/music.md`, `candidates/music-leftovers.md` + unlock host |
 
 **Kapsam satırı:**  
-`Music · default · Music-v-1-5-0-latest-updates-new / schema_name Music 1.5.0 · theme_store_id null · shop musical-online-store.myshopify.com · Speedo Themes · password 1 (vendor) · home→PDP guitar-flamenco-guitar Color→PLP /collections/all→/collections→search guitar→cart empty+filled→about-us→faq Q2→contact→news+article→404 · 43 obs · 0 yeni şema · leftover: candidates/music-leftovers.md`
+`Music · default · Music-v-1-5-0-latest-updates-new / schema_name Music 1.5.0 · theme_store_id null · shop musical-online-store.myshopify.com · Speedo Themes · password 1 (vendor) · home→PDP guitar-flamenco-guitar Color Red→PLP Guitars→/collections→search guitar→cart empty+filled+qty $129→$258→about-us→faq Q2→contact→news+article→404 · mega/search375/menu/cart/PDP/FAQ/tabs/hover/PLP · 43 obs · 179 PNG · 0 yeni şema · leftover: candidates/music-leftovers.md`
 
 ---
 
@@ -38,22 +39,22 @@ Storefront password (ürün sayfasında yayın): **`1`** — “Please enter pas
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | roster | [ ] capture |
-| Mega Shop 1440 | roster | [ ] interact |
-| Predictive search `guitar` | roster | [ ] interact |
-| Mobile menu | roster | [ ] interact |
-| Cart drawer empty + filled + qty | roster | [ ] interact |
-| PDP Guitar Flamenco Color Orange→Red | roster | [ ] interact |
-| Featured Best Sellers hover | roster | [ ] interact |
-| PLP `/collections/all` + filter | roster | [ ] capture + interact |
-| Collections `/collections` | roster | [ ] capture |
-| Search `/search?q=guitar` | roster | [ ] capture |
-| Cart page empty + filled | roster | [ ] interact |
-| About `/pages/about-us` | roster | [ ] capture |
-| Contact `/pages/contact` (submit yok) | roster | [ ] capture |
-| FAQ `/pages/faq` ikinci soru | roster | [ ] capture + interact |
-| News + world-of-strings | roster | [ ] capture |
-| 404 | roster | [ ] capture |
+| Home roster (announcement→footer) | roster | [x] capture |
+| Mega Shop 1440 | roster | [x] interact · 6 image card |
+| Predictive search `guitar` | roster | [x] 375/768 PRODUCTS · 1440 missingStates |
+| Mobile menu 375 + 768 | roster | [x] interact · changed yok (düz link) |
+| Cart drawer empty + filled + qty | roster | [x] interact · 1→2 $129→$258 |
+| PDP Guitar Flamenco Color Orange→Red | roster | [x] interact · etiket değişti, görsel aynı |
+| Featured Best Sellers hover | roster | [x] interact · kalp/compare/çanta |
+| PLP `/collections/all` + filter | roster | [x] capture + interact Guitars |
+| Collections `/collections` | roster | [x] capture |
+| Search `/search?q=guitar` | roster | [x] capture |
+| Cart page empty + filled | roster | [x] interact · $129→$258 |
+| About `/pages/about-us` | roster | [x] capture |
+| Contact `/pages/contact` (submit yok) | roster | [x] capture |
+| FAQ `/pages/faq` ikinci soru | roster | [x] capture + interact Q2 |
+| News + world-of-strings | roster | [x] capture |
+| 404 | roster | [x] capture |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -87,17 +88,17 @@ Storefront password (ürün sayfasında yayın): **`1`** — “Please enter pas
 
 | # | id | sayfa | Screenshot | Not | JSON | Done |
 |---|---|---|---|---|---|---|
-| 1–17 | home + overlays | home | [ ] 3vp + interact | [x] | reuse | [ ] |
-| 18–22 | product-info + video + tabs + IWT + trust | product-detail | [ ] 3vp + Color | [x] | reuse | [ ] |
-| 23–25 | banner + slider + grid | collection | [ ] 3vp + filter | [x] | reuse | [ ] |
-| 26 | collections index | collections | [ ] 3vp | [x] | reuse | [ ] |
-| 27 | search guitar | search | [ ] 3vp | [x] | reuse | [ ] |
-| 28 | cart | cart | [ ] 3vp + filled | [x] | reuse | [ ] |
-| 29–31 | overlay + adres + form | contact | [ ] 3vp | [x] | reuse | [ ] |
-| 32–38 | about blocks | about-brand | [ ] 3vp | [x] | reuse | [ ] |
-| 39–40 | overlay + FAQ | faq-support | [ ] 3vp + Q2 | [x] | reuse | [ ] |
-| 41–42 | news + article | blog | [ ] 3vp | [x] | reuse | [ ] |
-| 43 | 404 | not-found | [ ] 3vp | [x] | reuse | [ ] |
+| 1–17 | home + overlays | home | [x] 3vp + interact | [x] | reuse | [x] |
+| 18–22 | product-info + video + tabs + IWT + trust | product-detail | [x] 3vp + Color/tabs | [x] | reuse | [x] |
+| 23–25 | banner + slider + grid | collection | [x] 3vp + Guitars | [x] | reuse | [x] |
+| 26 | collections index | collections | [x] 3vp | [x] | reuse | [x] |
+| 27 | search guitar | search | [x] 3vp | [x] | reuse | [x] |
+| 28 | cart | cart | [x] 3vp + filled | [x] | reuse | [x] |
+| 29–31 | overlay + adres + form | contact | [x] 3vp | [x] | reuse | [x] |
+| 32–38 | about blocks | about-brand | [x] 3vp | [x] | reuse | [x] |
+| 39–40 | overlay + FAQ | faq-support | [x] 3vp + Q2 | [x] | reuse | [x] |
+| 41–42 | news + article | blog | [x] 3vp | [x] | reuse | [x] |
+| 43 | 404 | not-found | [x] 3vp | [x] | reuse | [x] |
 
 ---
 
@@ -109,7 +110,7 @@ Storefront password (ürün sayfasında yayın): **`1`** — “Please enter pas
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact mega / search / menu / cart / PDP Color / FAQ / featured hover / tabs / PLP filter
-- [ ] PNG bak → stateFindings (şema değişmedi)
-- [ ] `node scripts/validate-schemas.mjs`
+- [x] Official 3vp static (`capture-observation.mjs`) — 128 PNG (search 1440 zero-size skip)
+- [x] Interact mega / search 375/768 / menu / cart / PDP Color / FAQ / featured hover / tabs / PLP filter
+- [x] PNG bak → stateFindings (şema değişmedi)
+- [x] `node scripts/validate-schemas.mjs` — 0 error (69 şema, 13 pre-existing warn)

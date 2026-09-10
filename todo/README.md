@@ -45,7 +45,7 @@
 | Into The Gloss | [`intothegloss.md`](./intothegloss.md) | ✅ listicle-holiday-2025 · 9 obs · 27 PNG · 0 yeni şema · Next.js editorial |
 | HexClad | [`hexclad.md`](./hexclad.md) | ✅ listicle-fathers-day · 5 obs · 15 PNG · 0 yeni şema |
 | Allbirds | [`allbirds.md`](./allbirds.md) | 🟡 Mod A — 30 obs · ~90 PNG · partial capture (search blocked) |
-| Music (Speedo) | [`music.md`](./music.md) | 🟡 first inventory + interact — official `musical-online-store` · Music 1.5.0 · password `1` · 43 obs · 0 yeni şema |
+| Music (Speedo) | [`music.md`](./music.md) | ✅ first inventory + interact — official `musical-online-store` · Music 1.5.0 · password `1` · 43 obs · 179 PNG · 0 yeni şema · search 1440 leftover |
 | Backpack (Speedo) | [`backpack.md`](./backpack.md) | ✅ default — adlwin-store · Debut 17.14.1 · password 1 · 22 obs · 81 PNG · 0 yeni şema |
 | Candle (Speedo) | [`candle.md`](./candle.md) | ✅ Mod A + interact — password `1` · 41 obs · static 3vp + shopper states · 0 yeni şema |
 | Food & Drink (Speedo) | [`food-drink.md`](./food-drink.md) | ✅ first inventory + interact — official `food-online-store-1` · Food & Drink V-1.5.0 · password `1` · 36 obs · 155 PNG · 0 yeni şema · mega/menu/search/empty-cart missingStates |

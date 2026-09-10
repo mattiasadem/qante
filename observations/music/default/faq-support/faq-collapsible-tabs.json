@@ -8,9 +8,15 @@
   "selector": "#shopify-section-template--17181904240714__cb435de1-8958-455d-8843-8a9ef3413466",
   "evidenceSlug": "faq-collapsible-tabs",
   "evidence": [
+    "evidence/music/default/faq-support/faq-collapsible-tabs.1440.png",
     "evidence/music/default/faq-support/faq-collapsible-tabs.375.png",
     "evidence/music/default/faq-support/faq-collapsible-tabs.768.png",
-    "evidence/music/default/faq-support/faq-collapsible-tabs.1440.png"
+    "evidence/music/default/faq-support/faq-collapsible-tabs.changed.ikinci-acik.1440.png",
+    "evidence/music/default/faq-support/faq-collapsible-tabs.changed.ikinci-acik.375.png",
+    "evidence/music/default/faq-support/faq-collapsible-tabs.changed.ikinci-acik.768.png",
+    "evidence/music/default/faq-support/faq-collapsible-tabs.initial.ilk-acik.1440.png",
+    "evidence/music/default/faq-support/faq-collapsible-tabs.initial.ilk-acik.375.png",
+    "evidence/music/default/faq-support/faq-collapsible-tabs.initial.ilk-acik.768.png"
   ],
   "storefrontPassword": "1",
   "notlar": "Frequently asked question. 4 details; ilki açık. Q1 Can I choose which instruments I want to learn?",
@@ -43,15 +49,18 @@
     {
       "state": "changed",
       "action": "click",
-      "selector": "#shopify-section-template--17181904240714__cb435de1-8958-455d-8843-8a9ef3413466 details:nth-of-type(2) > summary",
+      "selector": "#Summary-template--20640852508978__cb435de1-8958-455d-8843-8a9ef3413466-collapsible_row-2-template--17181904240714__cb435de1-8958-455d-8843-8a9ef3413466",
       "capture": true,
       "etiket": "ikinci-acik",
       "not": "Q2 I like my instruments, but they don't feel right for me anymore!"
     }
   ],
-  "stateFindings": {},
+  "stateFindings": {
+    "initial": "Frequently asked question. Q1 “Can I choose which instruments I want to learn?” açık. Q2–Q4 kapalı.",
+    "changed": "Q2 “I like my instruments, but they don't feel right for me anymore!” açık. Q1 açık kaldı — çoklu açık. Q3–Q4 kapalı."
+  },
   "missingStates": [],
-  "interactionNote": "İkinci details > summary. Form yok.",
+  "interactionNote": "İlk deneme details:nth-of-type(2) eşleşmedi (details .accordion içinde). İkinci: Summary-…collapsible_row-2. Form yok.",
   "capture": {
     "url": "https://musical-online-store.myshopify.com/pages/faq",
     "viewports": [
@@ -60,7 +69,7 @@
       "1440"
     ],
     "mode": "section",
-    "method": "margin-box+minPad8",
-    "updatedAt": "2026-09-10T11:39:20.783Z"
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T12:27:15.887Z"
   }
 }
