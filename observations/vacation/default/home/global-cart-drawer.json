@@ -1,0 +1,45 @@
+{
+  "kaynak": "vacation",
+  "preset": "default",
+  "evidence": [],
+  "observationId": "vacation.default.home.global-cart-drawer",
+  "schemaId": "global-cart-drawer",
+  "sayfa": "home",
+  "evidenceSlug": "global-cart-drawer",
+  "url": "https://vacation.inc/",
+  "selector": ".cart",
+  "captureMode": "viewport",
+  "prepareClick": "button:has-text(\"Bag\")",
+  "notlar": "Bag → `/?cart=true` + sağ `.cart`. Boş: $45.00 Away From Free Shipping (US Only); Empty? Order while supplies last. Bestsellers ADD (Orange Gelée Spray Oil, Grand Cuvée, …).",
+  "delta": "`/cart` client-side `/?cart=true` (home + drawer). `cart-page-main` yok.",
+  "interactionStates": [
+    "initial"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://vacation.inc/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "button:has-text(\"Bag\")",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş bag + bestsellers"
+    }
+  ],
+  "stateFindings": {
+    "initial": "Bag boş; $45 away from free shipping (US only); Empty? Order while supplies last; bestsellers ADD."
+  },
+  "missingStates": [
+    {
+      "state": "filled",
+      "sebep": "PDP ADD TO BAG bu oturumda `.cart` satırı üretmedi. Checkout/PII yok. Resmi interact CF."
+    }
+  ],
+  "interactionNote": "Dolu sepet yoklandı değil. Kupon yok."
+}

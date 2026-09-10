@@ -1,0 +1,56 @@
+{
+  "kaynak": "vacation",
+  "preset": "default",
+  "evidence": [],
+  "observationId": "vacation.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "sayfa": "home",
+  "evidenceSlug": "global-menu-drawer",
+  "url": "https://vacation.inc/",
+  "selector": ".order-wrapper",
+  "captureMode": "viewport",
+  "prepareClick": "button[aria-label=\"Toggle Navigation\"]",
+  "notlar": "Menu tık → `.header__nav.is-open` + `.order-wrapper`: Store, Pepsi® Sweepstakes, 100 Years of Gelée, The Company, Raven Run 50th, Store Locator, Employment, Contact, FAQ.",
+  "delta": "1440 ve 375 aynı opener (mega yok). Tan overlay `div.pf.fill.bg--tan` tıklamayı keser.",
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://vacation.inc/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button[aria-label=\"Toggle Navigation\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "menu-acik",
+      "not": "Store / Sweepstakes / Company listesi"
+    }
+  ],
+  "stateFindings": {
+    "open": "Menu açık — Store, Pepsi® Sweepstakes, 100 Years of Gelée, The Company, Raven Run 50th, Store Locator, Employment, Contact, FAQ."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "Resmi capture-interaction default Chromium Cloudflare Turnstile — Menu butonu yok (selector eşleşmedi). Stealth oturumda `.order-wrapper` + Store…FAQ görüldü."
+    }
+  ],
+  "interactionNote": "Resmi 3vp 0 PNG. Script değiştirilmedi.",
+  "capture": {
+    "url": "https://vacation.inc/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-08-20T17:11:48.843Z"
+  }
+}

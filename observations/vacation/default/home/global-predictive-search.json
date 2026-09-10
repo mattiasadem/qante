@@ -1,0 +1,63 @@
+{
+  "kaynak": "vacation",
+  "preset": "default",
+  "evidence": [],
+  "observationId": "vacation.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "sayfa": "home",
+  "evidenceSlug": "global-predictive-search",
+  "url": "https://vacation.inc/",
+  "selector": "div.search",
+  "captureMode": "viewport",
+  "prepareClick": "button[aria-label=\"Open search\"]",
+  "notlar": "1440 `Open search`; 375 `Toggle search`. Overlay `div.search` cream ~480px. Input aria-label Search input, placeholder Search...",
+  "delta": "Headless overlay. Stealth fill `whip` → 7 ürün + VIEW 7 RESULTS. Tam sayfa `/search/products?q=whip`.",
+  "interactionStates": [
+    "open",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://vacation.inc/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "button[aria-label=\"Open search\"]",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-acik",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Cream overlay + Search... input"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input[aria-label=\"Search input\"]",
+      "value": "whip",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "whip",
+      "not": "katalogSorgu Classic Whip’ten"
+    }
+  ],
+  "stateFindings": {
+    "open": "1440 sağ cream overlay; input Search...",
+    "input": "whip → Classic Whip Air Freshener / Lip Balm / SPF 50 / Glow / SPF 30 / Pack of 3 / Mini Pack of 6 + VIEW 7 RESULTS."
+  },
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "Resmi capture-interaction default Chromium Cloudflare Turnstile."
+    },
+    {
+      "state": "input",
+      "sebep": "Stealth’te görüldü; resmi 3vp yok."
+    }
+  ]
+}
