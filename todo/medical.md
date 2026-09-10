@@ -13,7 +13,7 @@
 `Shopify.shop` = `medical-online-store.myshopify.com`  
 Storefront password (Speedo ürün sayfası): **`1`** — aynı host, başka demo uydurulmadı.
 
-**Durum:** 🟡 Mod A observations yazılı · 3vp + interact devam  
+**Durum:** ✅ Mod A 3vp + shopper interact + validate  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -27,10 +27,11 @@ Storefront password (Speedo ürün sayfası): **`1`** — aynı host, başka dem
 | Unlock | `/password` + `1` (`medical-online-store.myshopify.com` PUBLIC_DEMO_PASSWORDS) |
 | Şema | **0 yeni** — mevcut tiplere observation + delta |
 | Observation | **45** |
+| Evidence PNG | **172** (132 static + 40 interact) |
 | Parallel | `observations/medical/`, `evidence/medical/`, `todo/medical.md`, `candidates/medical-leftovers.md` + unlock host |
 
 **Kapsam satırı:**  
-`Medical · default · medical-v-1-5-0-latest-updates-new / schema_name Medical 1.5.0 · theme_store_id null · shop medical-online-store.myshopify.com · password 1 · home→PDP medical-immune-support→PLP /collections/all→/collections→search vitamin→cart→about-layout-1→contact→faqs→news+article→404 · 45 obs · 0 yeni şema · leftover: candidates/medical-leftovers.md`
+`Medical · default · medical-v-1-5-0-latest-updates-new / schema_name Medical 1.5.0 · theme_store_id null · shop medical-online-store.myshopify.com · password 1 · home→PDP medical-immune-support→PLP /collections/all→/collections→search vitamin→cart→about-layout-1→contact→faqs→news+article→404 · 45 obs · 172 PNG · 0 yeni şema · leftover: candidates/medical-leftovers.md · interact mega/menu/search1440/cart/PDP qty+tabs+FAQ/announcement; search 375/768 missingStates`
 
 ---
 
@@ -38,21 +39,21 @@ Storefront password (Speedo ürün sayfası): **`1`** — aynı host, başka dem
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | [x] obs | [ ] capture |
-| Header + Shop mega 1440 | [x] obs | [ ] interact |
-| Predictive search | [x] obs | [ ] interact |
-| Mobile menu 375/768 | [x] obs | [ ] interact |
-| Cart drawer | [x] obs | [ ] interact |
-| PDP `/products/medical-immune-support` | [x] obs | [ ] capture |
-| PLP `/collections/all` | [x] obs | [ ] capture |
-| Collections `/collections` | [x] obs | [ ] capture |
-| Search `/search?q=vitamin` | [x] obs | [ ] capture |
-| Cart `/cart` | [x] obs | [ ] interact |
-| About `/pages/about-layout-1` | [x] obs | [ ] capture |
-| Contact `/pages/contact` (submit yok) | [x] obs | [ ] capture |
-| FAQ `/pages/faqs` | [x] obs | [ ] interact |
-| Blog `/blogs/news` + article | [x] obs | [ ] capture |
-| 404 `/pages/404` | [x] obs | [ ] capture |
+| Home roster (announcement→footer) | [x] obs | [x] capture |
+| Header + Shop mega 1440 | [x] interact | [x] 6 görsel kart |
+| Predictive search | [x] 1440 immune | 375/768 missingStates |
+| Mobile menu 375/768 | [x] interact | [x] open + Shop drill |
+| Cart drawer empty + filled + qty | [x] interact | [x] $32→$64 |
+| PDP `/products/medical-immune-support` | [x] obs | [x] qty 1→2 |
+| PLP `/collections/all` | [x] obs | [x] capture |
+| Collections `/collections` | [x] obs | [x] capture |
+| Search `/search?q=vitamin` | [x] obs | [x] capture |
+| Cart `/cart` empty + filled | [x] interact | [x] $32→$64 |
+| About `/pages/about-layout-1` | [x] obs | [x] capture |
+| Contact `/pages/contact` (submit yok) | [x] obs | [x] capture |
+| FAQ `/pages/faqs` | [x] interact | [x] Q2 açık |
+| Blog `/blogs/news` + article | [x] obs | [x] capture |
+| 404 `/pages/404` | [x] obs | [x] capture |
 | Email / account / checkout / newsletter submit | ⛔ PII | — |
 
 ---
@@ -61,10 +62,10 @@ Storefront password (Speedo ürün sayfası): **`1`** — aynı host, başka dem
 
 | # | Section id | QANTE schemaId | Karar |
 |---|---|---|---|
-| 1 | announcement_bar_fHNTbB | `promo-announcement-bar` | reuse |
-| 2 | header | `navigation-header-mega` | reuse |
-| 3 | menu-drawer | `global-menu-drawer` | reuse · prepareClick hamburger |
-| 4 | header-full-width-search | `global-predictive-search` | reuse |
+| 1 | announcement_bar_fHNTbB | `promo-announcement-bar` | reuse · next Free shipping |
+| 2 | header | `navigation-header-mega` | reuse · görsel Shop mega |
+| 3 | menu-drawer | `global-menu-drawer` | reuse |
+| 4 | header-full-width-search | `global-predictive-search` | reuse · 1440 input |
 | 5 | CartDrawer | `global-cart-drawer` | reuse |
 | 6 | product_with_banner_EbLrTh | `product-showcase-featured` | reuse · delta hero banner |
 | 7 | text_with_image_mmjnd7 | `editorial-image-with-text` | reuse |
@@ -82,6 +83,25 @@ Storefront password (Speedo ürün sayfası): **`1`** — aynı host, başka dem
 
 ---
 
+## Interact (shopper-state)
+
+| Bileşen | State | Sonuç |
+|---|---|---|
+| navigation-header-mega | open 1440 | [x] Shop 6 görsel kart |
+| global-menu-drawer | open + changed 375/768 | [x] hamburger + Shop drill |
+| global-predictive-search | input | [x] 1440 immune · **375/768 missingStates** |
+| promo-announcement-bar | changed | [x] SUMMERSALE → Free shipping £75 |
+| global-cart-drawer | filled + changed | [x] Immune $32 → qty2 $64 |
+| cart-page-main | filled + changed | [x] aynı $32→$64 |
+| product-info-main | changed | [x] qty 1→2 · swatch yok |
+| product-info-tabs | changed | [x] Additional Information |
+| faq-collapsible-tabs (PDP) | changed | [x] ilk soru açık |
+| faq-collapsible-tabs (page) | changed | [x] Q2 açık |
+
+Şema upgrade yok — boş↔dolu / açık↔kapalı / sekme / accordion / qty.
+
+---
+
 ## Aday / leftover
 
 [`candidates/medical-leftovers.md`](../candidates/medical-leftovers.md)
@@ -90,7 +110,7 @@ Storefront password (Speedo ürün sayfası): **`1`** — aynı host, başka dem
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact mega / search / cart / menu / PDP / FAQ
-- [ ] PNG bak → stateFindings
-- [ ] `node scripts/validate-schemas.mjs`
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact mega / search1440 / cart / menu / PDP qty+tabs / FAQ / announcement
+- [x] PNG bak → stateFindings
+- [x] `node scripts/validate-schemas.mjs`

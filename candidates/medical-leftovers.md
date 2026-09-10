@@ -104,3 +104,11 @@ Karar: onay bekliyor
 | About/Contact layout 2–5 | Demo layout varyantları — layout-1 yeterli |
 | Newsletter / contact submit | PII — doldurulmadı |
 | Checkout | Ödeme — dur |
+| FOMO “Someone liked and Buyed” | Sabit köşe popup; overlay değil leftover |
+| Cart Discount code / Apply coupon | Form — doldurulmadı |
+| Search 375/768 modal | input missingStates — inline selector 0px |
+
+ADAY: medical-fomo-popup  
+Gerekçe: “Someone liked and Buyed …” sabit kart PLP/PDP/cart karelerinde. Section değil.  
+Öneri: leftover — toast  
+Karar: onay bekliyor
