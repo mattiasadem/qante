@@ -1,0 +1,88 @@
+{
+  "observationId": "sports-equipment.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "sports-equipment",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://sports-online-store-1.myshopify.com/",
+  "selector": "details-modal.header__search",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/sports-equipment/default/home/global-predictive-search.1440.png",
+    "evidence/sports-equipment/default/home/global-predictive-search.375.png",
+    "evidence/sports-equipment/default/home/global-predictive-search.768.png",
+    "evidence/sports-equipment/default/home/global-predictive-search.input.ball.1440.png",
+    "evidence/sports-equipment/default/home/global-predictive-search.input.ball.375.png",
+    "evidence/sports-equipment/default/home/global-predictive-search.input.ball.768.png",
+    "evidence/sports-equipment/default/home/global-predictive-search.open.modal-bos.1440.png",
+    "evidence/sports-equipment/default/home/global-predictive-search.open.modal-bos.375.png",
+    "evidence/sports-equipment/default/home/global-predictive-search.open.modal-bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "details-modal.header__search + predictive-search. Submit yok.",
+  "delta": "Shopify.theme.name Sports-v-1-5-0-latest-updates-new · schema_name Sports · schema_version 1.5.0 · theme_store_id null · role main · id 139796873276 · shop sports-online-store-1.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock).",
+  "captureMode": "viewport",
+  "prepareClick": "summary.header__icon--search",
+  "capture": {
+    "url": "https://sports-online-store-1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T10:48:09.583Z",
+    "prepareClick": "summary.header__icon--search"
+  },
+  "interactionStates": [
+    "initial",
+    "input",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://sports-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "details-modal.header__search",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "modal-bos",
+      "not": "Boş arama çubuğu. Submit yok."
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal-1",
+      "value": "ball",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "ball",
+      "not": "katalogSorgu ball — PRODUCTS listesi beklenir."
+    }
+  ],
+  "stateFindings": {
+    "open": "Boş arama çubuğu. PRODUCTS listesi yok. 375/768/1440 aynı.",
+    "input": "katalogSorgu ball. PRODUCTS: Golf Ball With Dimples · Tennis ball Sport Yellow · Racket Tennis ball Tennis ball · Poster Classic Leather Vector Soccer Ball · Basketball Sport Orange · American Rugby Football · Ping pong Paddles & Sets · Cricket Bat Stump Wicket. Altta Search for \"ball\". 375 ve 768 de liste geldi."
+  },
+  "missingStates": [],
+  "interactionNote": "Input id #Search-In-Modal-1 (Search-In-Modal yok). Enter/submit yok. Sonuç satırına tıklanmadı."
+}

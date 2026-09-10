@@ -1,0 +1,100 @@
+{
+  "observationId": "gifts.default.home.global-predictive-search",
+  "schemaId": "global-predictive-search",
+  "kaynak": "gifts",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://gift-online-shop-1.myshopify.com/",
+  "selector": "details:has(#Search-In-Modal-1)",
+  "storefrontPassword": "1",
+  "evidenceSlug": "global-predictive-search",
+  "evidence": [
+    "evidence/gifts/default/home/global-predictive-search.initial.arama-bos.1440.png",
+    "evidence/gifts/default/home/global-predictive-search.initial.arama-bos.375.png",
+    "evidence/gifts/default/home/global-predictive-search.initial.arama-bos.768.png",
+    "evidence/gifts/default/home/global-predictive-search.input.arama-headphones.1440.png",
+    "evidence/gifts/default/home/global-predictive-search.input.arama-headphones.375.png",
+    "evidence/gifts/default/home/global-predictive-search.input.arama-headphones.768.png"
+  ],
+  "notlar": "predictive-search. Input #Search-In-Modal-1 name=q. Opener summary.header__icon--search.",
+  "delta": "Dawn search modal. Input id Search-In-Modal-1. Shopify.theme.name gifts-treasures-v-1-5-0-latest-updates-new · schema_name Gifts-treasures · schema_version 1.5.0 · theme_store_id null · role main · id 175659352228 · shop gift-online-shop-1.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock).",
+  "captureMode": "viewport",
+  "prepareClick": "summary.header__icon--search",
+  "capture": {
+    "url": "https://gift-online-shop-1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T09:21:24.173Z",
+    "prepareClick": "summary.header__icon--search"
+  },
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://gift-online-shop-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "capture": false,
+      "not": "Görünür search ikon (3 summary; clickVisible)"
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "header",
+      "etiket": "arama-bos",
+      "not": "1440 genişleyen #Search-In-Modal; overlay .search-modal 0×0. Host details 0×0 — header crop."
+    },
+    {
+      "state": "input",
+      "action": "goto",
+      "value": "https://gift-online-shop-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "capture": false
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "input[name='q']",
+      "value": "headphones",
+      "capture": false,
+      "not": "scan.katalogSorgu=heart; probe headphones → ürün satırı. İlk görünür input"
+    },
+    {
+      "state": "input",
+      "action": "waitFor",
+      "value": 1600,
+      "capture": true,
+      "captureMode": "viewport",
+      "captureSelector": "#predictive-search-results",
+      "etiket": "arama-headphones",
+      "not": "Yoklama: Wireless Headphones + Apple AirPods Pro"
+    }
+  ],
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "missingStates": [],
+  "stateFindings": {
+    "initial": "Boş Search kutusu + büyüteç + X. Öneri/ürün satırı yok. Sayfa karartılı. Dawn .search-modal 0×0; 1440 genişleyen inline bar.",
+    "input": "headphones: PRODUCTS Wireless Headphones + Apple AirPods Pro + Search for “headphones”. Submit yok."
+  },
+  "interactionNote": "scan.katalogSorgu=heart; fill headphones (katalog: Wireless Headphones). Host details:has(#Search-In-Modal-1) 0×0 — initial captureSelector=header, input #predictive-search-results. İlk denemede initial zero-size; header crop ile boş bar göründü."
+}

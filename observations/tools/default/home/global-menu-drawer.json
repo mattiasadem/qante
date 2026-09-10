@@ -1,0 +1,80 @@
+{
+  "observationId": "tools.default.home.global-menu-drawer",
+  "schemaId": "global-menu-drawer",
+  "kaynak": "tools",
+  "preset": "default",
+  "sayfa": "home",
+  "url": "https://tools-online-store-1.myshopify.com/",
+  "selector": "#menu-drawer",
+  "evidenceSlug": "global-menu-drawer",
+  "evidence": [
+    "evidence/tools/default/home/global-menu-drawer.375.png",
+    "evidence/tools/default/home/global-menu-drawer.768.png",
+    "evidence/tools/default/home/global-menu-drawer.open.hamburger.375.png",
+    "evidence/tools/default/home/global-menu-drawer.open.hamburger.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "#Details-menu-drawer-container · #menu-drawer. Home/Shop/Bestseller/Themes/Collections/About/Contact + wishlist/compare + Log in + locale. 1440 0px.",
+  "delta": "Shopify.theme.name tools-v-1-5-0-latest-updates-new · id 176874815855 · schema_name Tools · schema_version 1.5.0 · theme_store_id null · role main · handle \"null\" · shop tools-online-store-1.myshopify.com · Speedo Themes third-party (Theme Store official değil) · public storefront unlock /password 1 (vendor Live Demo).",
+  "captureMode": "viewport",
+  "prepareClick": "#Details-menu-drawer-container > summary",
+  "capture": {
+    "url": "https://tools-online-store-1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T10:07:21.808Z",
+    "prepareClick": "#Details-menu-drawer-container > summary"
+  },
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://tools-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "#Details-menu-drawer-container .icon-hamburger",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false,
+      "not": "summary 0px / outside viewport; SVG .icon-hamburger 30×30 tıklanır"
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 800,
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "hamburger",
+      "not": "Drawer açık — 1440 hamburger gizli (tablet breakpoint)"
+    }
+  ],
+  "stateFindings": {
+    "open": "375: X + TOOLS + sepet + Search. Liste Home / Shop / Bestseller / Themes / Collections / About Us / Contact Us · 0 Wishlist · 0 Compare · Log in · USD · English · sosyal. 768: sol çekmece aynı linkler; sağda homepage soluk. 1440 adım yok (hamburger 0px)."
+  },
+  "missingStates": [],
+  "interactionNote": "summary[aria-label=Menu] 0×0 outside viewport. Click #Details-menu-drawer-container .icon-hamburger drawer’ı açtı. Log in / Wishlist / Compare tıklanmadı."
+}

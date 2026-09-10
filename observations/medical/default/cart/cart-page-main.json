@@ -1,0 +1,96 @@
+{
+  "observationId": "medical.default.cart.cart-page-main",
+  "schemaId": "cart-page-main",
+  "kaynak": "medical",
+  "preset": "default",
+  "sayfa": "cart",
+  "url": "https://medical-online-store.myshopify.com/cart",
+  "selector": "#shopify-section-template--24404867645807__cart-items",
+  "evidenceSlug": "cart-page-main",
+  "evidence": [
+    "evidence/medical/default/cart/cart-page-main.1440.png",
+    "evidence/medical/default/cart/cart-page-main.375.png",
+    "evidence/medical/default/cart/cart-page-main.768.png",
+    "evidence/medical/default/cart/cart-page-main.changed.adet-artti.1440.png",
+    "evidence/medical/default/cart/cart-page-main.changed.adet-artti.375.png",
+    "evidence/medical/default/cart/cart-page-main.changed.adet-artti.768.png",
+    "evidence/medical/default/cart/cart-page-main.filled.dolu.1440.png",
+    "evidence/medical/default/cart/cart-page-main.filled.dolu.375.png",
+    "evidence/medical/default/cart/cart-page-main.filled.dolu.768.png",
+    "evidence/medical/default/cart/cart-page-main.initial.cart-bos.1440.png",
+    "evidence/medical/default/cart/cart-page-main.initial.cart-bos.375.png",
+    "evidence/medical/default/cart/cart-page-main.initial.cart-bos.768.png"
+  ],
+  "storefrontPassword": "1",
+  "notlar": "Your cart is empty · Continue Shopping · Have an account?",
+  "delta": "medical-v-1-5-0-latest-updates-new / schema_name Medical 1.5.0 · theme_store_id null · shop medical-online-store.myshopify.com · Speedo Themes third-party · password 1",
+  "capture": {
+    "url": "https://medical-online-store.myshopify.com/cart",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "section",
+    "method": "interaction-steps",
+    "updatedAt": "2026-09-10T10:09:56.484Z"
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://medical-online-store.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş cart"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://medical-online-store.myshopify.com/products/medical-immune-support",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://medical-online-store.myshopify.com/cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "dolu",
+      "not": "Immune Support satırı + toplam"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".quantity__button[name='plus']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet artır"
+    }
+  ],
+  "missingStates": [],
+  "interactionNote": "Checkout / Log in tıklanmadı. Order notes yazılmadı.",
+  "stateFindings": {
+    "initial": "3vp: Your cart is empty + Continue Shopping + Have an account?",
+    "filled": "3vp Your cart · Immune Support qty 1 $32.00 · Estimated total $32.00 USD · Discount code (yazılmadı) · Checkout.",
+    "changed": "3vp qty 1→2, satır/total $64.00. Checkout / coupon tıklanmadı."
+  }
+}
