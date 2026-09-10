@@ -14,7 +14,7 @@
 Title: `Gifts Treasures - Best Shopify Gifts Store – gift-online-shop-1 (password: 1)`  
 Storefront password (ürün sayfasında yayın): **`1`** — public storefront-unlock. Aynı host `/password`, başka vitrin yok.
 
-**Durum:** Mod A walk + resmi 3vp + interact  
+**Durum:** Mod A walk + resmi 3vp + interact (pixel-check + stateFindings)  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -38,22 +38,22 @@ Storefront password (ürün sayfasında yayın): **`1`** — public storefront-u
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (announcement→footer) | roster | [ ] capture |
-| Mega Shop / Best Sellers / Shop By 1440 | roster | [ ] interact |
-| Predictive search `gift` | roster | [ ] interact |
-| Mobile menu 375 + 768 | roster | [ ] interact |
-| Cart drawer empty + filled + qty | roster | [ ] interact |
-| PDP Wireless Headphones (qty; varyant yok) | roster | [ ] capture + qty |
-| Featured / tabs / card hover | roster | [ ] interact |
-| PLP `/collections/all` + filter | roster | [ ] capture + interact |
-| Collections `/collections` | roster | [ ] capture |
-| Search `/search?q=gift` | roster | [ ] capture |
-| Cart page empty + filled + qty | roster | [ ] interact |
-| About `/pages/our-story` | roster | [ ] capture |
-| Contact form (submit yok) | roster | [ ] capture |
-| FAQ `/pages/faq` | roster | [ ] capture + interact |
-| News + presents-that-bring-joy | roster | [ ] capture |
-| 404 `/pages/about-us` | roster | [ ] capture |
+| Home roster (announcement→footer) | roster | [x] capture |
+| Mega Shop / Best Sellers / Shop By 1440 | roster | [x] interact Shop 1440 |
+| Predictive search `headphones` | roster | [x] interact |
+| Mobile menu 375 + 768 | roster | [x] interact open; changed expander yok |
+| Cart drawer empty + filled + qty | roster | [x] interact |
+| PDP Wireless Headphones (qty; varyant yok) | roster | [x] capture + qty |
+| Featured / tabs / card hover | roster | [x] interact; hover ikon |
+| PLP `/collections/all` + filter | roster | [x] capture + Chocolate 1440 |
+| Collections `/collections` | roster | [x] capture |
+| Search `/search?q=gift` | roster | [x] capture |
+| Cart page empty + filled + qty | roster | [x] interact |
+| About `/pages/our-story` | roster | [x] capture |
+| Contact form (submit yok) | roster | [x] capture |
+| FAQ `/pages/faq` | roster | [x] capture + Q2 |
+| News + presents-that-bring-joy | roster | [x] capture |
+| 404 `/pages/about-us` | roster | [x] capture |
 | Email / account / checkout / newsletter submit | ⛔ dur | — |
 
 ---
@@ -91,6 +91,6 @@ Storefront password (ürün sayfasında yayın): **`1`** — public storefront-u
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact mega / search / menu / cart / FAQ / tabs / hover / PLP / qty
-- [ ] `node scripts/validate-schemas.mjs`
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact mega / search / menu / cart / FAQ / tabs / hover / PLP / qty
+- [x] `node scripts/validate-schemas.mjs`

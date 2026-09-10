@@ -126,3 +126,35 @@ Gerekçe: `pages.json` about-layout-1..4, contact-layout-1..5. Walk dışı (ski
 Örnekler: `/pages/about-layout-1`  
 Öneri: leftover — ekstra layout sayfaları  
 Karar: onay bekliyor
+
+---
+
+ADAY: gifts-search-modal-zero-size  
+Gerekçe: `.search-modal.modal__content` 0×0. 1440/375 açık hâl genişleyen inline `#Search-In-Modal` + `#predictive-search-results`. Host `details:has(#Search-In-Modal-1)` static 0×0.  
+Örnekler: home header search  
+Öneri: leftover — Dawn overlay kutusu boş; sonuç viewport  
+Karar: onay bekliyor
+
+---
+
+ADAY: gifts-menu-no-nav-expanders  
+Gerekçe: 375/768 `#menu-drawer` düz `<a>` (Shop/Best Sellers…). Scan `navExpanders` boş. Yazılı satır tıklanmadı.  
+Örnekler: home hamburger  
+Öneri: leftover — changed yok  
+Karar: onay bekliyor
+
+---
+
+ADAY: gifts-cart-you-may-like  
+Gerekçe: Boş drawer + dolu drawer YOU MAY LIKE (hoodie / roses / ring box). Ayrı related şema yazılmadı.  
+Örnekler: `#CartDrawer`  
+Öneri: leftover — drawer içi öneri  
+Karar: onay bekliyor
+
+---
+
+ADAY: gifts-card-hover-wishlist-icons  
+Gerekçe: Home tabs 1440 hover: wishlist + compare ikon. İkinci görsel / Quick View yok. Şemaya girmedi.  
+Örnekler: homepage_product_tab_drR49d  
+Öneri: leftover — hover ikon  
+Karar: onay bekliyor
