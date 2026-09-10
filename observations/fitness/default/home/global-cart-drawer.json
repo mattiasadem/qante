@@ -7,10 +7,106 @@
   "url": "https://fitness-online-store-1.myshopify.com/",
   "selector": "#CartDrawer",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/fitness/default/home/global-cart-drawer.375.png",
+    "evidence/fitness/default/home/global-cart-drawer.768.png",
+    "evidence/fitness/default/home/global-cart-drawer.1440.png"
+  ],
   "storefrontPassword": "1",
   "notlar": "Dawn cart-drawer. Opener #cart-icon-bubble. Boş: Your cart is empty. class cart-drawer shipping.",
   "delta": "Checkout tıklanmadı. Interact doldurur. Speedo Fitness 1.5.0 third-party (theme_store_id null). Storefront password 1 is vendor-published on speedothemes.com product page. Shopify.theme.name fitness-v-1-5-0-latest-updates-new · schema_name Fitness · schema_version 1.5.0 · theme_store_id null · role main · id 144062316591 · shop fitness-online-store-1.myshopify.com. Platform adı dataBindings'e yazılmadı.",
   "captureMode": "viewport",
-  "prepareClick": "#cart-icon-bubble"
+  "prepareClick": "#cart-icon-bubble",
+  "capture": {
+    "url": "https://fitness-online-store-1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "viewport",
+    "updatedAt": "2026-09-10T09:10:20.037Z",
+    "prepareClick": "#cart-icon-bubble"
+  },
+  "prepareForceOpen": true,
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://fitness-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://fitness-online-store-1.myshopify.com/products/direct-alpine-thermal-pants-tonale-lady",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "forceOpen",
+      "selector": "cart-drawer",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "Thermal Pants satırı"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer .quantity__button[name='plus']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Qty 1→2 toplam"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "Checkout / Log in tıklanmadı. ATC UI; fallback /cart/add.js olursa not."
 }

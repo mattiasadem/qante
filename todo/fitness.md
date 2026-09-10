@@ -15,7 +15,7 @@ Title: `Fitness Equipment & Gym Clothing – Fitness-online-store-1`
 
 **Password wall:** GET `/` → `/password`. Vendor ürün sayfası: *Please enter password "1" to view demo.* Public storefront-unlock `1` — aynı host. Başka host uydurulmadı.
 
-**Durum:** 🟡 Mod A observations yazıldı · 3vp capture + interact sırada  
+**Durum:** 🟡 51 obs + 3vp evidence (menu 375/1440 zero-size) · interact adımları yazıldı, capture sırada  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -39,21 +39,21 @@ Title: `Fitness Equipment & Gym Clothing – Fitness-online-store-1`
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (hero→footer + overlays) | [x] obs | [ ] capture |
+| Home roster (hero→footer + overlays) | [x] obs | [x] capture |
 | Shop mega 1440 | [ ] interact | [ ] |
 | Predictive search `gym`/`nike` | [ ] interact | [ ] |
 | Mobile menu 375 + 768 | [ ] interact | [ ] |
 | Cart drawer empty + filled + qty | [ ] interact | [ ] |
 | PDP Color Black→Grey | [ ] interact | [ ] |
-| PLP `/collections/best-seller` + filter | [x] obs | [ ] capture |
-| Collections `/collections` | [x] obs | [ ] capture |
-| Search `/search?q=gym` | [x] obs | [ ] capture |
-| Cart page empty + filled | [x] obs | [ ] capture / interact |
-| About `/pages/about-layout-1` + our-story | [x] obs | [ ] capture |
-| Contact form (submit yok) | [x] obs | [ ] capture |
-| FAQ `/pages/faq` | [x] obs | [ ] capture / interact |
-| News + article | [x] obs | [ ] capture |
-| 404 | [x] obs | [ ] capture |
+| PLP `/collections/best-seller` + filter | [x] obs | [x] capture |
+| Collections `/collections` | [x] obs | [x] capture |
+| Search `/search?q=gym` | [x] obs | [x] capture |
+| Cart page empty + filled | [x] obs | [x] capture / [ ] interact |
+| About `/pages/about-layout-1` + our-story | [x] obs | [x] capture |
+| Contact form (submit yok) | [x] obs | [x] capture |
+| FAQ `/pages/faq` | [x] obs | [x] capture / [ ] interact |
+| News + article | [x] obs | [x] capture |
+| 404 | [x] obs | [x] capture |
 | Email / account / checkout / newsletter submit | ⛔ PII | — |
 
 ---
@@ -93,17 +93,17 @@ Title: `Fitness Equipment & Gym Clothing – Fitness-online-store-1`
 
 | # | id | sayfa | Screenshot | Not | JSON | Done |
 |---|---|---|---|---|---|---|
-| 1–21 | home + overlays | home | [ ] | [x] | reuse | [ ] |
-| 22–30 | PDP thermal-pants | product-detail | [ ] | [x] | reuse | [ ] |
-| 31–33 | banner / slider / PLP | collection | [ ] | [x] | reuse | [ ] |
-| 34 | collection-nav-grid | collections | [ ] | [x] | reuse | [ ] |
-| 35 | search-results | search | [ ] | [x] | reuse | [ ] |
-| 36 | cart-page-main | cart | [ ] | [x] | reuse | [ ] |
-| 37–44 | about-layout-1 + our-story | about-brand | [ ] | [x] | reuse | [ ] |
-| 45–47 | contact | contact | [ ] | [x] | reuse | [ ] |
-| 48–49 | faq | faq-support | [ ] | [x] | reuse | [ ] |
-| 50–51 | news + article | blog | [ ] | [x] | reuse | [ ] |
-| 52 | 404 | not-found | [ ] | [x] | reuse | [ ] |
+| 1–21 | home + overlays | home | [x] | [x] | reuse | [ ] |
+| 22–30 | PDP thermal-pants | product-detail | [x] | [x] | reuse | [ ] |
+| 31–33 | banner / slider / PLP | collection | [x] | [x] | reuse | [ ] |
+| 34 | collection-nav-grid | collections | [x] | [x] | reuse | [ ] |
+| 35 | search-results | search | [x] | [x] | reuse | [ ] |
+| 36 | cart-page-main | cart | [x] | [x] | reuse | [ ] |
+| 37–44 | about-layout-1 + our-story | about-brand | [x] | [x] | reuse | [ ] |
+| 45–47 | contact | contact | [x] | [x] | reuse | [ ] |
+| 48–49 | faq | faq-support | [x] | [x] | reuse | [ ] |
+| 50–51 | news + article | blog | [x] | [x] | reuse | [ ] |
+| 52 | 404 | not-found | [x] | [x] | reuse | [ ] |
 
 ---
 
@@ -115,5 +115,5 @@ Title: `Fitness Equipment & Gym Clothing – Fitness-online-store-1`
 
 ## Evidence backlog
 
-- [ ] Official 3vp `capture-observation.mjs`
+- [x] Official 3vp `capture-observation.mjs` (menu 375/1440 `#menu-drawer` width 0 until details open — interact forceOpen)
 - [ ] Interact: mega / search / menu / cart drawer+page / PDP swatch / FAQ / PLP filter / featured hover

@@ -7,10 +7,78 @@
   "url": "https://fitness-online-store-1.myshopify.com/",
   "selector": "#menu-drawer",
   "evidenceSlug": "global-menu-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/fitness/default/home/global-menu-drawer.768.png"
+  ],
   "storefrontPassword": "1",
-  "notlar": "header-drawer data-breakpoint=tablet. HOME / SHOP / BEST SELLERS / THEMES / COLLECTIONS + Wishlist + Compare + Log in. 1440 hamburger 0px.",
+  "notlar": "header-drawer data-breakpoint=tablet. HOME / SHOP / BEST SELLERS / THEMES / COLLECTIONS + Wishlist + Compare + Log in. 1440 hamburger 0px. 375 #menu-drawer width 0 until #Details-menu-drawer-container open (hamburger click alone did not toggle).",
   "delta": "1440 mega header; drawer tablet/mobil. Speedo Fitness 1.5.0 third-party (theme_store_id null). Storefront password 1 is vendor-published on speedothemes.com product page. Shopify.theme.name fitness-v-1-5-0-latest-updates-new · schema_name Fitness · schema_version 1.5.0 · theme_store_id null · role main · id 144062316591 · shop fitness-online-store-1.myshopify.com. Platform adı dataBindings'e yazılmadı.",
   "captureMode": "viewport",
-  "prepareClick": "header-drawer summary.header__icon--menu"
+  "prepareClick": "header-drawer summary.header__icon--menu",
+  "prepareForceOpen": true,
+  "capture": {
+    "url": "https://fitness-online-store-1.myshopify.com/",
+    "viewports": [
+      "375",
+      "768",
+      "1440"
+    ],
+    "mode": "viewport",
+    "method": "viewport",
+    "updatedAt": "2026-09-10T09:26:37.997Z",
+    "prepareClick": "header-drawer summary.header__icon--menu"
+  },
+  "interactionStates": [
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "open",
+      "action": "goto",
+      "value": "https://fitness-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "waitFor",
+      "value": 2000,
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "click",
+      "selector": "header-drawer summary.header__icon--menu",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#Details-menu-drawer-container",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "#menu-drawer",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "menu-acik",
+      "not": "HOME / SHOP / BEST SELLERS / THEMES / COLLECTIONS + Wishlist + Compare + Log in"
+    }
+  ],
+  "stateFindings": {},
+  "missingStates": [],
+  "interactionNote": "1440 hamburger 0px (data-breakpoint=tablet). Log in tıklanmadı. Shop yazılı <a> — accordion changed yoklandı değil."
 }
