@@ -23,5 +23,70 @@
     "mode": "section",
     "method": "margin-box+minPad8",
     "updatedAt": "2026-09-10T09:32:44.350Z"
-  }
+  },
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://medical-online-store.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-bos",
+      "viewports": [
+        "1440"
+      ],
+      "not": "Inline search kapalı"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Template",
+      "value": "immune",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu",
+      "not": "katalogSorgu immune — refill yerine hero ürün adı"
+    },
+    {
+      "state": "input",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": false,
+      "not": "Mobil search ikon"
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal",
+      "value": "immune",
+      "viewports": [
+        "375",
+        "768"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "arama-sonucu-modal",
+      "not": "Modal predictive"
+    }
+  ],
+  "missingStates": [],
+  "interactionNote": "375/768 inline #Search-In-Template 0px — modal ikon."
 }

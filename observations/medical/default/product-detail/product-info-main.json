@@ -25,5 +25,33 @@
     "mode": "section",
     "method": "margin-box+minPad8",
     "updatedAt": "2026-09-10T09:46:54.609Z"
-  }
+  },
+  "interactionStates": [
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://medical-online-store.myshopify.com/products/medical-immune-support",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--24404868628847__main .quantity__button[name='plus']",
+      "capture": false,
+      "not": "Varyant yok — qty 1→2"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 600,
+      "capture": true,
+      "etiket": "adet-2",
+      "not": "Adet 2"
+    }
+  ],
+  "missingStates": [],
+  "interactionNote": "Immune Support varyant swatch yok. Buy it now tıklanmadı."
 }

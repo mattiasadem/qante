@@ -25,5 +25,58 @@
     "mode": "section",
     "method": "margin-box+minPad8",
     "updatedAt": "2026-09-10T09:11:46.891Z"
-  }
+  },
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://medical-online-store.myshopify.com/cart",
+      "capture": true,
+      "etiket": "cart-bos",
+      "not": "Boş cart"
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://medical-online-store.myshopify.com/products/medical-immune-support",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "button.product-form__submit",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://medical-online-store.myshopify.com/cart",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "dolu",
+      "not": "Immune Support satırı + toplam"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": ".quantity__button[name='plus']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1200,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "Adet artır"
+    }
+  ],
+  "missingStates": [],
+  "interactionNote": "Checkout / Log in tıklanmadı. Order notes yazılmadı."
 }

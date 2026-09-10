@@ -25,5 +25,33 @@
     "mode": "section",
     "method": "margin-box+minPad8",
     "updatedAt": "2026-09-10T09:21:09.721Z"
-  }
+  },
+  "interactionStates": [
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "changed",
+      "action": "goto",
+      "value": "https://medical-online-store.myshopify.com/pages/faqs",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#Details-template--20640852508978__cb435de1-8958-455d-8843-8a9ef3413466-collapsible_row-2-template--24404868465007__cb435de1-8958-455d-8843-8a9ef3413466 > summary",
+      "capture": false,
+      "not": "İkinci soru — ilki zaten açık"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 500,
+      "capture": true,
+      "etiket": "soru-2-acik",
+      "not": "I like my styles but they don’t fit! açık"
+    }
+  ],
+  "missingStates": [],
+  "interactionNote": "İlk soru default açık. İkinci tıklandı."
 }
