@@ -7,7 +7,11 @@
   "url": "https://mattress-online-store-1.myshopify.com/",
   "selector": "#CartDrawer",
   "evidenceSlug": "global-cart-drawer",
-  "evidence": [],
+  "evidence": [
+    "evidence/matress/default/home/global-cart-drawer.375.png",
+    "evidence/matress/default/home/global-cart-drawer.768.png",
+    "evidence/matress/default/home/global-cart-drawer.1440.png"
+  ],
   "notlar": "cart-drawer.shipping. #cart-icon-bubble. Boş: is-empty. Checkout tıklanmadı.",
   "delta": "Shopify.theme.name matress-v-1-5-0-latest-updates-new · schema_name Matress · schema_version 1.5.0 · theme_store_id null · role main · id 126821171258 · handle null · shop mattress-online-store-1.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock).",
   "storefrontPassword": "1",
@@ -18,9 +22,82 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": ""
+    "method": "viewport",
+    "updatedAt": "2026-09-10T10:33:27.804Z",
+    "mode": "viewport",
+    "prepareClick": "#cart-icon-bubble"
   },
   "captureMode": "viewport",
-  "prepareClick": "#cart-icon-bubble"
+  "prepareClick": "#cart-icon-bubble",
+  "interactionStates": [
+    "initial",
+    "filled",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://mattress-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "#cart-icon-bubble",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "cart-bos",
+      "not": "Boş drawer + YOU MAY LIKE olabilir."
+    },
+    {
+      "state": "filled",
+      "action": "goto",
+      "value": "https://mattress-online-store-1.myshopify.com/products/duo-plus-mattress",
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 4000,
+      "capture": false
+    },
+    {
+      "state": "filled",
+      "action": "addToCart",
+      "selector": "#ProductSubmitButton-template--15527145701434__main, button[name='add']",
+      "capture": false,
+      "not": "Duo Plus Mattress $150 Single"
+    },
+    {
+      "state": "filled",
+      "action": "waitFor",
+      "value": 1800,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "sepete-eklendi",
+      "not": "ATC drawer satır Duo Plus qty 1 $150"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#CartDrawer button[name='plus']",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "adet-artti",
+      "not": "qty 1→2 toplam $300 beklenir"
+    }
+  ]
 }

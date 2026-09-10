@@ -7,7 +7,11 @@
   "url": "https://mattress-online-store-1.myshopify.com/",
   "selector": "#shopify-section-sections--15527145996346__header",
   "evidenceSlug": "navigation-header-mega",
-  "evidence": [],
+  "evidence": [
+    "evidence/matress/default/home/navigation-header-mega.375.png",
+    "evidence/matress/default/home/navigation-header-mega.768.png",
+    "evidence/matress/default/home/navigation-header-mega.1440.png"
+  ],
   "notlar": "header--middle. 1440 inline SHOP · BESTSELLER · THEMES · SHOP BY · COLLECTIONS. details#Details-HeaderMenu-1..5.mega-menu. Search + Wishlist 0 + Compare 0 + Log in + Cart. Hamburger #Details-menu-drawer-container.",
   "delta": "Shopify.theme.name matress-v-1-5-0-latest-updates-new · schema_name Matress · schema_version 1.5.0 · theme_store_id null · role main · id 126821171258 · handle null · shop mattress-online-store-1.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock).",
   "storefrontPassword": "1",
@@ -18,8 +22,58 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": ""
+    "method": "viewport",
+    "updatedAt": "2026-09-10T10:40:09.339Z",
+    "mode": "viewport"
   },
-  "captureMode": "viewport"
+  "captureMode": "viewport",
+  "interactionStates": [
+    "initial",
+    "open"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://mattress-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "press",
+      "value": "Escape",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "kapali",
+      "not": "Mega kapalı header. 375/768 hamburger ayrı."
+    },
+    {
+      "state": "open",
+      "action": "hover",
+      "selector": "#Details-HeaderMenu-1 > summary",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "SHOP summary içinde <a href=/collections/all> — tıklama sayfaya gider."
+    },
+    {
+      "state": "open",
+      "action": "forceOpen",
+      "selector": "details#Details-HeaderMenu-1",
+      "viewports": [
+        "1440"
+      ],
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mega-shop",
+      "not": "SHOP mega #MegaMenu-Content-1. Beklenen: görsel kartlar."
+    }
+  ]
 }

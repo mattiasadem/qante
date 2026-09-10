@@ -5,9 +5,12 @@
   "preset": "default",
   "sayfa": "home",
   "url": "https://mattress-online-store-1.myshopify.com/",
-  "selector": "details-modal.header__search, details:has(#Search-In-Modal)",
+  "selector": "details:has(#Search-In-Modal)",
   "evidenceSlug": "global-predictive-search",
-  "evidence": [],
+  "evidence": [
+    "evidence/matress/default/home/global-predictive-search.375.png",
+    "evidence/matress/default/home/global-predictive-search.768.png"
+  ],
   "notlar": "details-modal.header__search. #Search-In-Modal name=q. İkinci predictive-search header-search_box. Submit yok.",
   "delta": "Shopify.theme.name matress-v-1-5-0-latest-updates-new · schema_name Matress · schema_version 1.5.0 · theme_store_id null · role main · id 126821171258 · handle null · shop mattress-online-store-1.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock).",
   "storefrontPassword": "1",
@@ -18,9 +21,55 @@
       "768",
       "1440"
     ],
-    "method": "margin-box+minPad8",
-    "updatedAt": ""
+    "method": "viewport",
+    "updatedAt": "2026-09-10T10:36:18.232Z",
+    "mode": "viewport",
+    "prepareClick": "summary.header__icon--search"
   },
   "captureMode": "viewport",
-  "prepareClick": "summary.header__icon--search"
+  "prepareClick": "summary.header__icon--search",
+  "interactionStates": [
+    "initial",
+    "input"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://mattress-online-store-1.myshopify.com/",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "click",
+      "selector": "summary.header__icon--search",
+      "capture": false,
+      "not": "375/768 ikon; 1440 inline kutu da var."
+    },
+    {
+      "state": "initial",
+      "action": "forceOpen",
+      "selector": "details:has(#Search-In-Modal)",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "modal-bos",
+      "not": "Boş Search placeholder."
+    },
+    {
+      "state": "input",
+      "action": "fill",
+      "selector": "#Search-In-Modal, predictive-search input[name='q']",
+      "value": "mattress",
+      "capture": true,
+      "captureMode": "viewport",
+      "etiket": "mattress",
+      "not": "katalogSorgu mattress — PRODUCTS listesi beklenir."
+    }
+  ]
 }

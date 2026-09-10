@@ -7,7 +7,11 @@
   "url": "https://mattress-online-store-1.myshopify.com/collections/all",
   "selector": "#shopify-section-template--15527144849466__product-grid",
   "evidenceSlug": "product-showcase-grid-plp",
-  "evidence": [],
+  "evidence": [
+    "evidence/matress/default/collection/product-showcase-grid-plp.375.png",
+    "evidence/matress/default/collection/product-showcase-grid-plp.768.png",
+    "evidence/matress/default/collection/product-showcase-grid-plp.1440.png"
+  ],
   "notlar": "Home / Products. Filters Size (Single 21…) Category Fabric Availability Price. Grid Beautyrest Harmony Lux $185. Sort Featured…",
   "delta": "Shopify.theme.name matress-v-1-5-0-latest-updates-new · schema_name Matress · schema_version 1.5.0 · theme_store_id null · role main · id 126821171258 · handle null · shop mattress-online-store-1.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock).",
   "storefrontPassword": "1",
@@ -19,6 +23,54 @@
       "1440"
     ],
     "method": "margin-box+minPad8",
-    "updatedAt": ""
-  }
+    "updatedAt": "2026-09-10T10:23:13.798Z",
+    "mode": "section"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://mattress-online-store-1.myshopify.com/collections/all",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15527144849466__product-grid",
+      "capture": true,
+      "etiket": "filtre-yok",
+      "not": "21 ürün, Size açık."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='Filter-filter.v.option.size-3']",
+      "viewports": [
+        "1440"
+      ],
+      "capture": false,
+      "not": "Queen (21) — noktalı id class'a düşmesin diye for=."
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": true,
+      "viewports": [
+        "1440"
+      ],
+      "etiket": "size-queen",
+      "not": "Queen filtre. Grid daralmalı veya aynı kalabilir (21/21)."
+    }
+  ]
 }

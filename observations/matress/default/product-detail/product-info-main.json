@@ -7,7 +7,11 @@
   "url": "https://mattress-online-store-1.myshopify.com/products/duo-plus-mattress",
   "selector": "#shopify-section-template--15527145701434__main",
   "evidenceSlug": "product-info-main",
-  "evidence": [],
+  "evidence": [
+    "evidence/matress/default/product-detail/product-info-main.375.png",
+    "evidence/matress/default/product-detail/product-info-main.768.png",
+    "evidence/matress/default/product-detail/product-info-main.1440.png"
+  ],
   "notlar": "DUO PLUS MATTRESS $160→$150. Size Single/Double/Queen/King/Custom. Qty stepper. ADD TO CART + Buy it now (tıklanmadı). Stock 100 · Delivery Sep 20, 2026 · 17 viewing · countdown. Pairs well with EGO HYBRID. Size Guide.",
   "delta": "Shopify.theme.name matress-v-1-5-0-latest-updates-new · schema_name Matress · schema_version 1.5.0 · theme_store_id null · role main · id 126821171258 · handle null · shop mattress-online-store-1.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock).",
   "storefrontPassword": "1",
@@ -19,6 +23,48 @@
       "1440"
     ],
     "method": "margin-box+minPad8",
-    "updatedAt": ""
-  }
+    "updatedAt": "2026-09-10T10:51:27.818Z",
+    "mode": "section"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://mattress-online-store-1.myshopify.com/products/duo-plus-mattress",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 3000,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15527145701434__main",
+      "capture": true,
+      "etiket": "single",
+      "not": "Size Single $150"
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "label[for='template--15527145701434__main-1-2']",
+      "capture": false,
+      "not": "Queen swatch"
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 1500,
+      "capture": true,
+      "etiket": "queen",
+      "not": "Size → Queen. Görsel/fiyat değişir mi."
+    }
+  ]
 }

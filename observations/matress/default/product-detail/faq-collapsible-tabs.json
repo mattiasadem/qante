@@ -7,7 +7,11 @@
   "url": "https://mattress-online-store-1.myshopify.com/products/duo-plus-mattress",
   "selector": "#shopify-section-template--15527145701434__collapsible_content_Ya3Wzj",
   "evidenceSlug": "faq-collapsible-tabs",
-  "evidence": [],
+  "evidence": [
+    "evidence/matress/default/product-detail/faq-collapsible-tabs.375.png",
+    "evidence/matress/default/product-detail/faq-collapsible-tabs.768.png",
+    "evidence/matress/default/product-detail/faq-collapsible-tabs.1440.png"
+  ],
   "notlar": "FAQ: How do I place an order? · shipping · return policy · return/exchange · find… collapsible_content.",
   "delta": "Shopify.theme.name matress-v-1-5-0-latest-updates-new · schema_name Matress · schema_version 1.5.0 · theme_store_id null · role main · id 126821171258 · handle null · shop mattress-online-store-1.myshopify.com · Speedo Themes third-party (Theme Store official değil). Vendor-published demo password 1 (public storefront unlock).",
   "storefrontPassword": "1",
@@ -19,6 +23,47 @@
       "1440"
     ],
     "method": "margin-box+minPad8",
-    "updatedAt": ""
-  }
+    "updatedAt": "2026-09-10T10:49:16.815Z",
+    "mode": "section"
+  },
+  "interactionStates": [
+    "initial",
+    "changed"
+  ],
+  "interactionSteps": [
+    {
+      "state": "initial",
+      "action": "goto",
+      "value": "https://mattress-online-store-1.myshopify.com/products/duo-plus-mattress",
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "waitFor",
+      "value": 2500,
+      "capture": false
+    },
+    {
+      "state": "initial",
+      "action": "scrollTo",
+      "selector": "#shopify-section-template--15527145701434__collapsible_content_Ya3Wzj",
+      "capture": true,
+      "etiket": "kapali",
+      "not": "5 soru kapalı."
+    },
+    {
+      "state": "changed",
+      "action": "click",
+      "selector": "#shopify-section-template--15527145701434__collapsible_content_Ya3Wzj details:nth-of-type(1) summary",
+      "capture": false
+    },
+    {
+      "state": "changed",
+      "action": "waitFor",
+      "value": 800,
+      "capture": true,
+      "etiket": "q1",
+      "not": "How do I place an order? açık."
+    }
+  ]
 }

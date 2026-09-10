@@ -15,7 +15,7 @@
 Title: `Matress - Best Mattress Store – mattress-online-store-1`  
 Storefront password (ürün sayfasında yayın): **`1`** — “Please enter password "1" to view demo.” Aynı host `/password`, başka vitrin yok.
 
-**Durum:** Mod A walk yazıldı · 3vp + interact sırada  
+**Durum:** Mod A walk + resmi 3vp · interact sırada  
 **PR:** draft · **main'e merge yok**
 
 ---
@@ -109,7 +109,7 @@ Storefront password (ürün sayfasında yayın): **`1`** — “Please enter pas
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
+- [x] Official 3vp static (`capture-observation.mjs`) — 130 PNG (menu+search 1440 zero-size skip)
 - [ ] Interact mega / search / menu / cart / PDP Size / FAQ / featured hover / tabs / PLP filter
 - [ ] PNG bak → stateFindings (şema değişmedi)
 - [ ] `node scripts/validate-schemas.mjs`
