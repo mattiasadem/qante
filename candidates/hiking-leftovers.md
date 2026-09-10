@@ -177,3 +177,27 @@ Gerekçe: Folding Camping Chair buy-box’ta “23 people are viewing” · Hurr
 Örnekler: https://hiking-online-store-1.myshopify.com/products/folding-camping-chair  
 Öneri: leftover — PDP extras  
 Karar: onay bekliyor
+
+---
+
+ADAY: hiking-menu-drawer-capture  
+Gerekçe: İki interact denemesi hamburger açık paneli resmi karede tutmadı (viewport homepage; section 375 zero-size / 768 hero şeridi). Shop `<a>` changed yok.  
+Örnekler: global-menu-drawer missingStates  
+Öneri: leftover — capture tuzak  
+Karar: onay bekliyor
+
+---
+
+ADAY: hiking-empty-cart-drawer-capture  
+Gerekçe: Boş YOUR CART paneli iki denemede yok (viewport homepage; section #CartDrawer görünmez). Dolu drawer ATC ile geldi.  
+Örnekler: global-cart-drawer missingStates.initial  
+Öneri: leftover — capture tuzak  
+Karar: onay bekliyor
+
+---
+
+ADAY: hiking-featured-hover-miss  
+Gerekçe: Best Selling kart hover iki denemede Quick Shop / ikinci görsel göstermedi (1. hero, 2. initial ile aynı section).  
+Örnekler: product-showcase-grid-featured missingStates.hover  
+Öneri: leftover — hover doğrulanamadı  
+Karar: onay bekliyor

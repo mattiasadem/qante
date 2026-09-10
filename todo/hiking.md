@@ -14,8 +14,8 @@
 Title: `Hiking - Best Shopify Hiking Store – hiking-online-store-1 (password: 1)`  
 Storefront password **1** (Speedo product page + title). Public storefront-unlock — aynı host.
 
-**Durum:** Mod A walk + observation yazıldı · 3vp capture / interact sürüyor  
-**PR:** draft · **main'e merge yok**
+**Durum:** Mod A + 3vp + interact pixel-check bitti · 0 yeni şema  
+**PR:** draft #384 · **main'e merge yok**
 
 ---
 
@@ -38,22 +38,22 @@ Storefront password **1** (Speedo product page + title). Public storefront-unloc
 
 | Şablon | Durum | 3vp |
 |---|---|---|
-| Home roster (hero→footer + overlays) | [x] obs | [ ] capture |
-| Header / Shop mega 1440 | [x] obs | [ ] interact |
-| Predictive search | [x] obs | [ ] interact |
-| Mobile menu 375 + 768 | [x] obs | [ ] interact |
-| Cart drawer empty + filled + qty | [x] obs | [ ] interact |
-| PDP Folding Camping Chair Color | [x] obs | [ ] interact |
-| PLP `/collections/all` | [x] obs | [ ] capture |
-| Collections `/collections` | [x] obs | [ ] capture |
-| Search `/search?q=hike` | [x] obs | [ ] capture |
-| Cart page empty + filled + qty | [x] obs | [ ] interact |
-| About `/pages/about-layout-1` | [x] obs | [ ] capture |
-| Contact form (submit yok) | [x] obs | [ ] capture |
-| FAQ `/pages/faq` | [x] obs | [ ] interact |
-| News + mastering-the-mountain | [x] obs | [ ] capture |
-| 404 | [x] obs | [ ] capture |
-| Featured hover | [ ] | [ ] interact |
+| Home roster (hero→footer + overlays) | [x] obs | [x] capture |
+| Header / Shop mega 1440 | [x] obs | [x] interact |
+| Predictive search | [x] obs | [x] interact |
+| Mobile menu 375 + 768 | [x] obs | [x] interact (open missingStates) |
+| Cart drawer empty + filled + qty | [x] obs | [x] interact (empty missingStates) |
+| PDP Folding Camping Chair Color | [x] obs | [x] interact |
+| PLP `/collections/all` | [x] obs | [x] capture |
+| Collections `/collections` | [x] obs | [x] capture |
+| Search `/search?q=hike` | [x] obs | [x] capture |
+| Cart page empty + filled + qty | [x] obs | [x] interact |
+| About `/pages/about-layout-1` | [x] obs | [x] capture |
+| Contact form (submit yok) | [x] obs | [x] capture |
+| FAQ `/pages/faq` | [x] obs | [x] interact |
+| News + mastering-the-mountain | [x] obs | [x] capture |
+| 404 | [x] obs | [x] capture |
+| Featured hover | [x] obs | [x] interact (hover missingStates) |
 | Email / account / checkout / newsletter submit | ⛔ PII | — |
 
 ---
@@ -86,17 +86,17 @@ Storefront password **1** (Speedo product page + title). Public storefront-unloc
 
 | # | id | sayfa | Screenshot | Not | JSON | Done |
 |---|---|---|---|---|---|---|
-| 1–16 | home + overlays | home | [ ] | [x] | reuse | [ ] |
-| 17–25 | chair PDP | product-detail | [ ] | [x] | reuse | [ ] |
-| 26–28 | banner / slider / PLP | collection | [ ] | [x] | reuse | [ ] |
-| 29 | collection-nav-grid | collections | [ ] | [x] | reuse | [ ] |
-| 30 | search-results | search | [ ] | [x] | reuse | [ ] |
-| 31 | cart-page-main | cart | [ ] | [x] | reuse | [ ] |
-| 32–35 | about-layout-1 | about-brand | [ ] | [x] | reuse | [ ] |
-| 36–38 | banner / icon-band / form | contact | [ ] | [x] | reuse | [ ] |
-| 39–40 | banner + faq | faq-support | [ ] | [x] | reuse | [ ] |
-| 41–42 | list + post | blog* | [ ] | [x] | reuse | [ ] |
-| 43 | page-content-main | not-found | [ ] | [x] | reuse | [ ] |
+| 1–16 | home + overlays | home | [x] | [x] | reuse | [x] |
+| 17–25 | chair PDP | product-detail | [x] | [x] | reuse | [x] |
+| 26–28 | banner / slider / PLP | collection | [x] | [x] | reuse | [x] |
+| 29 | collection-nav-grid | collections | [x] | [x] | reuse | [x] |
+| 30 | search-results | search | [x] | [x] | reuse | [x] |
+| 31 | cart-page-main | cart | [x] | [x] | reuse | [x] |
+| 32–35 | about-layout-1 | about-brand | [x] | [x] | reuse | [x] |
+| 36–38 | banner / icon-band / form | contact | [x] | [x] | reuse | [x] |
+| 39–40 | banner + faq | faq-support | [x] | [x] | reuse | [x] |
+| 41–42 | list + post | blog* | [x] | [x] | reuse | [x] |
+| 43 | page-content-main | not-found | [x] | [x] | reuse | [x] |
 
 ---
 
@@ -104,14 +104,14 @@ Storefront password **1** (Speedo product page + title). Public storefront-unloc
 
 | Bileşen | State | Sonuç |
 |---|---|---|
-| navigation-header-mega | open | [ ] Shop mega 1440 |
-| global-menu-drawer | open | [ ] hamburger 375/768 |
-| global-predictive-search | input | [ ] katalogSorgu |
-| global-cart-drawer | filled + changed | [ ] |
-| cart-page-main | filled + changed | [ ] |
-| product-info-main | changed Color | [ ] Blue→Red |
-| faq-collapsible-tabs | changed | [ ] |
-| product-showcase-grid-featured | hover 1440 | [ ] |
+| navigation-header-mega | open | [x] 1440 Shop mega 6 kart (Trekking / Shoes / Bags / Camping / Hiking Goggles / Hiking Tools) |
+| global-menu-drawer | open | [x] iki deneme — missingStates (kare drawer değil) |
+| global-predictive-search | input | [x] hike + PRODUCTS listesi |
+| global-cart-drawer | filled + changed | [x] chair $105 → $210; empty missingStates |
+| cart-page-main | filled + changed | [x] empty + chair $105 → $210 |
+| product-info-main | changed Color | [x] Blue→Red; stok 100→50 |
+| faq-collapsible-tabs | changed | [x] Q1+Q2 çoklu açık |
+| product-showcase-grid-featured | hover 1440 | [x] iki deneme — missingStates (Quick Shop yok) |
 
 Stop: email / account / checkout / newsletter submit / contact SUBMIT / PII
 
@@ -125,7 +125,7 @@ Stop: email / account / checkout / newsletter submit / contact SUBMIT / PII
 
 ## Evidence backlog
 
-- [ ] Official 3vp static (`capture-observation.mjs`)
-- [ ] Interact mega / search / menu / cart / PDP Color / FAQ
-- [ ] PNG bak → stateFindings
-- [ ] `node scripts/validate-schemas.mjs`
+- [x] Official 3vp static (`capture-observation.mjs`)
+- [x] Interact mega / search / menu / cart / PDP Color / FAQ
+- [x] PNG bak → stateFindings
+- [x] `node scripts/validate-schemas.mjs`

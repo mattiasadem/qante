@@ -89,8 +89,13 @@
   "stateFindings": {
     "initial": "375/768 hamburger kapalı homepage — HIKING + Rucksacks Bag + SHOP NOW + TREKKING/SHOES kartları."
   },
-  "missingStates": [],
-  "interactionNote": "İlk open karesi hamburger kapalı homepage (viewport scrollTo). Retry section #menu-drawer. HeaderDrawer-shop bir <a> — tıklanınca sayfa değişir, changed yok. Log in tıklanmadı. 1440 hamburger 0×0.",
+  "missingStates": [
+    {
+      "state": "open",
+      "sebep": "İki deneme. 1. viewport hamburger kapalı homepage. 2. section #menu-drawer: 375 zero-size; 768 kare hero şeridi (drawer paneli yok). HeaderDrawer-shop bir <a> — changed yok. 1440 hamburger 0×0. Üçüncü yok."
+    }
+  ],
+  "interactionNote": "Log in tıklanmadı. 1440 hamburger 0×0 leftover. Probe/tık drawer açabilir; resmi kare iki denemede panel göstermedi.",
   "capture": {
     "url": "https://hiking-online-store-1.myshopify.com/",
     "viewports": [
@@ -100,7 +105,7 @@
     ],
     "mode": "viewport",
     "method": "interaction-steps",
-    "updatedAt": "2026-09-10T09:44:22.682Z",
+    "updatedAt": "2026-09-10T10:01:53.378Z",
     "prepareClick": "header summary.header__icon--menu"
   }
 }
