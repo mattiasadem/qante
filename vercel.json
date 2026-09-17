@@ -1,10 +1,17 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
+  "git": {
+    "deploymentEnabled": {
+      "*": false,
+      "main": true
+    }
+  },
+  "ignoreCommand": "node scripts/ignore-vercel-build.mjs",
   "functions": {
     "api/index.mjs": {
       "includeFiles": "{sections,observations,taxonomy,candidates,viewer,apps}/**",
-      "excludeFiles": "{evidence/**,public/evidence/**}",
+      "excludeFiles": "{evidence/**,public/evidence/**,viewer/**/*.test.mjs}",
       "maxDuration": 30
     }
   },
