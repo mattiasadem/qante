@@ -46,6 +46,38 @@ const fn = vercelJson.functions?.["api/index.mjs"];
 if (!fn?.excludeFiles?.includes("evidence")) {
   fail("vercel.json must exclude evidence from api/index.mjs bundle");
 }
+if (!String(fn.excludeFiles).includes("viewer/**/*.test.mjs")) {
+  fail("vercel.json must exclude viewer tests from api/index.mjs bundle");
+}
+
+const deployEnabled = vercelJson.git?.deploymentEnabled;
+if (!deployEnabled || deployEnabled["*"] !== false || deployEnabled.main !== true) {
+  fail("vercel.json must disable Git deploys on every branch except main");
+}
+if (vercelJson.ignoreCommand !== "node scripts/ignore-vercel-build.mjs") {
+  fail("vercel.json must skip preview builds via scripts/ignore-vercel-build.mjs");
+}
+
+const ignoreMain = spawnSync(
+  process.execPath,
+  ["scripts/ignore-vercel-build.mjs"],
+  { cwd: ROOT, env: { ...process.env, VERCEL_GIT_COMMIT_REF: "main" } },
+);
+if (ignoreMain.status !== 1) {
+  fail("ignore-vercel-build must continue (exit 1) on main");
+}
+const ignorePreview = spawnSync(
+  process.execPath,
+  ["scripts/ignore-vercel-build.mjs"],
+  {
+    cwd: ROOT,
+    env: { ...process.env, VERCEL_GIT_COMMIT_REF: "cursor/example-inventory" },
+  },
+);
+if (ignorePreview.status !== 0) {
+  fail("ignore-vercel-build must skip (exit 0) on preview branches");
+}
+console.log("verify-vercel-deploy: Git deploys only on main; preview branches skipped");
 
 const cdnUrl = externalEvidenceUrl(SAMPLE_PATH);
 if (!cdnUrl?.startsWith(EVIDENCE_CDN_BASE)) {
